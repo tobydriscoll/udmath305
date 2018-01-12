@@ -26,7 +26,7 @@ if $I$ is any interval containing the origin. You can think of $\delta$, and its
 
 We can give an impulse an amplitude too, as in $a\delta(t)$. For an impulse at another time $t_i$, we use $\delta(t-t_i)$.
 
-Here's an interesting and critical property. Suppose we integrate a function $f$ over a tiny interval $(-\epsilon,\epsilon)$ that supports a spike $\delta_\epsilon(t)$ of height $1/(2\epsilon)$. Again let $I$ contain the origin, so it also contains $(-\epsilon,\epsilon)$. Then
+Here's an interesting and critical property. Suppose we integrate a function $f$ over a tiny interval $(-\epsilon,\epsilon)$ that supports a spike $\delta_\epsilon(t)$ of height $1/(2\epsilon)$. Again let $I$ contain the origin, so it also contains $(-\epsilon,\epsilon)$ if we're small enough. Then
 
 $$\int_{I} \delta_\epsilon(t) f(t)\,dt = \frac{\phi(\epsilon)-\phi(-\epsilon)}{2\epsilon},$$
 
@@ -56,9 +56,11 @@ $$Y(s) = \frac{Ae^{-t_is}}{s^2+1} = A e^{-t_is} \left(\frac{1}{s^2+1}\right),$$
 
 so $y(t)=A u_{t_i}(t) \sin(t-t_i)$. The system just sits there until kicked, after which it oscillates forever.
 
-### Example *(see Exercise 5.7.17)* 
+### Example 
 
-*Solve $y'' + y = \sum_{k=1}^{20} \delta(t-k\pi)$.*
+*(see Exercise 5.7.17)* 
+
+> *Solve $y'' + y = \sum_{k=1}^{20} \delta(t-k\pi)$.*
 
 It's easy to see that
 

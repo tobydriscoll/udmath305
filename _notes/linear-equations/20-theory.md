@@ -8,9 +8,11 @@ chapter: "Linear equations"
 
 ## Existence and uniqueness
 
+*(See pp. 70-71)*
+
 Previously we saw how to solve a FLaShI problem using integrating factors. Now, what could possibly go wrong? Really, the only potential downfall is if one of the integrals fails to exist. And we can rule that out if the functions appearing in the standard form are, say, continuous. (To be clear, we may not be able to *find* the antiderivatives, but even so, they will exist.) Also recall that the one arbitrary constant of integration can be determined by a single initial value. In short, we have the theorem
 
-**Theorem** Suppose $p(t)$ and $g(t)$ are continuous in an open interval $I$, and that $t_0\in I$. Then the IVP
+**Theorem** *(Theorem 2.4.1)* Suppose $p(t)$ and $g(t)$ are continuous in an open interval $I$, and that $t_0\in I$. Then the IVP
 
 $$
 y' + p(t)y = g(t), \qquad y(t_0)=y_0
@@ -24,7 +26,7 @@ There are really three conclusions here: a solution exists, it is unique, and it
 
 Pretty much exactly the same thing is true for higher-order linear problems, with one change: if the ODE has $n$ derivatives in it, then there need to be $n$ initial conditions. 
 
-**Theorem (*see Theorem 4.2.1*)** Suppose $p_1(t),\ldots,p_n(t)$ and $g(t)$ are continuous in an open interval $I$, and that $t_0\in I$. Then the IVP
+**Theorem** *(see Theorem 4.2.1)*  Suppose $p_1(t),\ldots,p_n(t)$ and $g(t)$ are continuous in an open interval $I$, and that $t_0\in I$. Then the IVP
 
 $$
 \begin{gather}
@@ -39,7 +41,7 @@ has a unique solution, existing for all $t\in I$.
 
 Cool, huh? The case we will be most interested in is $n\le 2$. For the rest of this discussion, in fact, let $n=2$. Remember that in a second-order linear problem, we need initial values on $y$ and $y'$ to get a *unique* solution. 
 
-See (4.1 Definitions and Examples, 4.2 Theory of Second Order Linear Homogeneous Equations)
+*(See section 4.2 for the remainder. But ignore everything involving the matrix **P**, and Abel's Theorem.)*
         
 ## Linear operators
 

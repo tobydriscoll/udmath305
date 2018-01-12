@@ -6,6 +6,8 @@ chapter: "Linear equations"
 * TOC
 {:toc}
 
+*(See section 4.3. However, it uses jargon from matrices that we won't discuss yet, and don't need.)*
+
 AKA 2nd-order linear homogeneous ODEs with constant coefficients. 
 
 We now have a roadmap for solving the 2nd order problem $L[y]=0$: find two independent solutions $y_1$ and $y_2$. From there, we have the general solution, and can solve any IVP with just some algebra. 
@@ -20,7 +22,7 @@ That is, we again have solutions to the original problem parameterized by two co
 
 ## Characteristic equation
 
-Suppose we are given $L[y]=ay''+by'+cy=0$, where $a$, $b$, and $c$ are all (real) constants. It so happens that we can guess our way to the answer. Let's just plug in $y=e^{rt}$ for an unknown constant $r$:
+Suppose we are given $L[y]=ay'' +by'+cy=0$, where $a$, $b$, and $c$ are all (real) constants. It so happens that we can guess our way to the answer. Let's just plug in $y=e^{rt}$ for an unknown constant $r$:
 
 $$a r^2 y + b r y + c y = 0.$$
 
@@ -49,7 +51,7 @@ Mathematically, that's really all there is to it. But when the roots are complex
 
 No. If the initial conditions are real, then the algebra will work out so that the result is always real, too. But it might not *look* real, and sometimes we want to see it that way. 
 
-Here are the details. If $r$ is a complex root, then $\bar{r}$ is the other root. It works out that whatever the initial conditions are, $c_1=\bar{c_2}=c$. So the general solution is
+Here are the details. If $r$ is a complex root, then $\bar{r}$ is the other root. It works out that whatever the initial conditions are, $c_1=\bar{c}_2=c$. So the general solution is
 
 $$
 y = c e^{rt} + \bar{c} e^{\bar{r}t}.
@@ -97,7 +99,9 @@ $$
 x_1 = \frac{\begin{vmatrix} f & b \\ g & d \end{vmatrix}}{\begin{vmatrix} a & b \\ c & d \end{vmatrix}}, \qquad 
 x_2 = \frac{\begin{vmatrix} a & f \\ c & g \end{vmatrix}}{\begin{vmatrix} a & b \\ c & d \end{vmatrix}}.$$
 
-### Example (*see Example 4, section 4.3*)
+### Example 
+
+*(see Example 4, section 4.3)*
 
 *Solve $16y'' -8y' + 145y = 0$, $y(0)=-2$, $y'(0)=1$.*
 
@@ -121,5 +125,5 @@ It's common to portray solutions of the equation in *phase space* or *state spac
 *See MATLAB on the following examples from B&B.*
 
 * $16y'' -8y' + 145y = 0$, $y(0)=-2$, $y'(0)=1$
-* $y''+5y'+6y=0,\quad y(0)=2,\, y'(0)=3$
+* $y'' +5y'+6y=0,\quad y(0)=2,\, y'(0)=3$
 * $y'' - y' + y/4 = 0, \quad y(0)=2,\, y'(0)=1/3$

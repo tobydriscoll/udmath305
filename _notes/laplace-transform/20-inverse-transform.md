@@ -18,11 +18,11 @@ In some cases, this is not hard to apply.
 
 ### Examples
 
-*Invert for $F(s) = \frac{24}{(s+2)^4}$.*
+> *Invert for $F(s) = \frac{24}{(s+2)^4}$.*
 
 Check out line 11 of the table with $n=3$, $a=-2$. We get $4e^{-2t}t^3$. 
 
-*Invert for $F(s)=\frac{s+1}{s^2+2s+5}$.*
+> *Invert for $F(s)=\frac{s+1}{s^2+2s+5}$.*
 
 This is a little trickier. We want to use the idea of a shift, $G(s-a)$, for some $G$ and $a$. Here's the idea.
 
@@ -45,15 +45,17 @@ $$ F(s)=\frac{P(s)}{Q(s)} = \frac{a_1}{s-z_1} + \frac{a_2}{s-z_2} + \cdots + \fr
 
 where the $z_j$ are the roots of $Q$, and the numerator has degree less than $n$.
 
-**WARNING! I am about to do things differently from the way the book, and seemingly most books, do this. Hang on and pray.**
+**WARNING! I am about to do things differently from the way the book, and seemingly most books, do this. Hang on!**
 
 The quantities $z_j$ are called *poles* and the $a_j$ are *residues*. They may be complex numbers--but we are not scared, oh no. 
 
 The command `resiude` in MATLAB will find the poles and residues for us. From there, inversion is trivial; the $j$th term produces $a_j e^{z_jt}$. 
 
-### Example *(see Example 6, section 5.3)*
+### Example 
 
-*Invert $F(s) = (s-2)/(s^2+4s-5)$.*
+*(see Example 6, section 5.3)*
+
+> *Invert $F(s) = (s-2)/(s^2+4s-5)$.*
 
 First, by hand. The denominator is $(s+5)(s-1)$, so we should have
 
@@ -85,9 +87,11 @@ z =
 
 which confirms what we got by hand. 
 
-### Example *(see Example 8, section 5.3)*
+### Example 
 
-*Invert $F(s) = (14s^2+70s+134)/[(2s+1)(s^2+6s+13)]$.*
+*(see Example 8, section 5.3)*
+
+> *Invert $F(s) = (14s^2+70s+134)/[(2s+1)(s^2+6s+13)]$.*
 
 This problem gets easier if you know that you can multiply polynomials using the mysteriously (for now) named `conv`.
 
@@ -132,9 +136,11 @@ when there are $k$ copies of the pole. The terms are easy to invert using line 1
 
 The slight issue here is that finding the poles is what we call a badly conditioned problem. It's highly sensitive to the roundoff error that's in MATLAB's arithmetic. You may have to use some judgment. In practice you probably won't have much trouble, since we tend to stick to integers and simple rational numbers for the answers. 
 
-### Example *(see Example 7 of section 5.3)*
+### Example 
 
-*Invert $F(s)=(s^2+20s+31)/[(s-3)(s^2+4s+4)]$.*
+*(see Example 7 of section 5.3)*
+
+> *Invert $F(s)=(s^2+20s+31)/[(s-3)(s^2+4s+4)]$.*
 
 ```matlab
 format rat
@@ -158,7 +164,7 @@ So the answer is $f(t)=4e^{3t} - 3e^{-2t} +1te^{-2t}$.
 
 ## Example
 
-*Invert $F(s) = (s^3+3s^2+3s+1)/(s^2+2s+5)^2$.*
+> *Invert $F(s) = (s^3+3s^2+3s+1)/(s^2+2s+5)^2$.*
 
 Here you can see from the form that we will either get two double poles, or a 4th-order pole.
 

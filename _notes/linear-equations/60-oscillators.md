@@ -42,7 +42,7 @@ As you can see, it's mathematically identical to the mechanical oscillator. Unde
 
 We'll stick with the mechanical names, $$my'' + \gamma y' + ky = F(t)$$, and first consider what happens in the idealized case of no damping, $\gamma=0$. 
 
-The homogeneous problem is $my''+ky=0$, and this has roots $\pm\sqrt{k/m}$. We're going to define
+The homogeneous problem is $my'' +ky=0$, and this has roots $\pm\sqrt{k/m}$. We're going to define
 
 $$\omega_0 = \sqrt{\frac{k}{m}}$$,
 
@@ -62,7 +62,7 @@ in which the free parameters are the *amplitude* $R$ and the *phase* $\delta$. (
 
 ### Forced motion
 
-Things get interesting when we introduce a periodic forcing term, $y''+\omega_0^2y = A\cos(\omega t)$. Here $\omega$ is the driving frequency. The method of particular solutions leads directly to
+Things get interesting when we introduce a periodic forcing term, $y'' +\omega_0^2y = A\cos(\omega t)$. Here $\omega$ is the driving frequency. The method of particular solutions leads directly to
 
 $$y_p = \frac{A}{\omega_0^2 - \omega^2} \cos(\omega t),$$
 

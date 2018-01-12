@@ -12,7 +12,7 @@ What if we lived in Exponential Town?
 
 In Exponential Town, every function is an exponential. Taking its derivative is so easy--just multiply by a number. Integration is pretty easy, too (as soon as you figure out how to get a unique result). 
 
-Sadly, Exponential Town isn't rich enough to sustain itself. But that doesn't mean we can't visit. While we're there, the functions we bring with us are remarkably chill about being differentiated. ODEs look like simple algebra. The tricky part is trying to bring the functions back home with us. Some of them, including a lot that are fun to hang out with, make the trip back just fine. But many require extensive surgery. Some just don't make it.
+Sadly, Exponential Town is a dull place to live. But that doesn't mean we can't visit. While we're there, the functions we bring with us are remarkably chill about being differentiated. ODEs look like simple algebra. The tricky part is trying to bring the functions back home with us. Some of them, including a lot that are fun to hang out with, make the trip back just fine. But many require extensive surgery. Some just don't make it.
 
 Here's how we take a function $f(t)$, defined for all $t\ge 0$, to Exponential Town. It's called the Laplace Express--I mean, Transform.
 
@@ -105,24 +105,24 @@ $${\cal L}[c_1f_1(t)+c_2f_2(t)] = c_1 {\cal L}[f_1(t)] + c_2 {\cal L}[f_2(t)].$$
 
 ### Examples
 
-*Transform $f(t)=e^{-t}\cos(3t)$.*
+> *Transform $f(t)=e^{-t}\cos(3t)$.*
 
 Let $g(t) = \cos(3t)$. We use [Canonical Example trig](#canonical-example-trig) first and get $G(s) = s/(s^2+9)$. 
 
 Now use [Canonical Example shift](#canonical-example-shift) to get $F(s) = G(s+1) = (s+1)/((s+1)^2+9)$. No need to simplify, really.  
 
-*Transform $f(t)=t^2-te^{2t}$.*
+> *Transform $f(t)=t^2-te^{2t}$.*
 
 Let $f_1=t^2$ and $f_2=te^{2t}$. Referring to [Canonical Example $d/dt$](#canonical-example-ddt), [Canonical Example 1](#canonical-example-1), and
 [Canonical Example exp](#canonical-example-exp),
 
 $$F_1(s) = (-1)^2 \frac{d^2}{ds^2} {\cal L}[1] = \frac{d^2}{ds^2}[1/s] = 2s^{-3}.$$
 
-$$F_2(s) = (-1)^1 \frac{d}{ds} {\cal L}[e^{2t}] = (s-2)^{-2}. 
+$$F_2(s) = (-1)^1 \frac{d}{ds} {\cal L}[e^{2t}] = (s-2)^{-2}. $$
 
 Hence $$F(s) = (2/s^3) - 1/(s-2)^2.$$
 
-*How about a driven, undamped oscillator? Say, $my'' + ky = \sin(\omega t)$, $y(0)=1$, y'(0)=0$.*
+> *How about a driven, undamped oscillator? Say, $my'' + ky = \sin(\omega t)$, $y(0)=1$, $y'(0)=0$.*
 
 Go piece by piece.
 

@@ -6,9 +6,7 @@ chapter: "Linear equations"
 * TOC
 {:toc}
 
-* MATLAB topics: Functions, plotting, polynomial roots, (?) Chebfun IVP solving
-
-*See section 2.2.* 
+*See section 2.2, and section 2.3 excluding Example 4.* 
 
 We start with first-order linear equations, which is about as simple as ODEs can get. That is, we are already guaranteeing F, L, and S in our classification scheme. Let's go even further and specify A and H as well:
 

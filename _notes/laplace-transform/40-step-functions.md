@@ -22,19 +22,25 @@ This represents "throwing a switch" at time $t=0$. We can turn it on at another 
 
 Switches allow us to express any piecewise continuous function easily.
 
-### Example *(see Example 1 of section 5.5)*
+### Example 
 
-Suppose 
+*(see Example 1 of section 5.5)*
 
-$$f(t) = \begin{cases} t, & 0< t < 2,\\ 1, & 2 < t < 3, \\ e^{-2t}, & t> 3. \end{cases}$$ 
+> Express
+>
+> $$f(t) = \begin{cases} t, & 0< t < 2,\\ 1, & 2 < t < 3, \\ e^{-2t}, & t> 3. \end{cases}$$ 
+>
+> using unit step functions. 
 
-Then we can use 
+We can use 
 
 $$\begin{aligned}
 f(t) &= tu_{02}(t) + u_{23}(t) + e^{-2t}u_3(t)\\
 &= t[1-u_2(t)] + [u_2(t)-u_3(t)] + e^{-2t}u_3(t) \\
 &= t + (1-t) u_2(t) + (e^{-2t}-1) u_3(t).
 \end{aligned}$$
+
+## Laplace transform
 
 Now for some yummy transforms.
 
@@ -45,11 +51,13 @@ You can follow the same trail to get *(see Theorem 5.5.1)*
 
 $$ {\cal L}[u(t-c)f(t-c)] = e^{-cs} {\cal L}[f].$$
 
-### Example *(see Example 3 of section 5.5)*
+### Example 
 
-In the previous example we had 
+*(see Example 3 of section 5.5)*
 
-$$f(t) = t + (1-t) u_2(t) + (e^{-2t}-1) u_3(t).$$
+> Transform the function from the previous example,
+> 
+> $$f(t) = t + (1-t) u_2(t) + (e^{-2t}-1) u_3(t).$$
 
 The tricky bit is that to apply the transform formula on $u_c(t)f(t-c)$, we need the shift $c$ to be the same in both pieces. Use the add-and-subtract trick:
 
@@ -70,7 +78,7 @@ We have a new addition to the inversion library: exponentials in $F(s)$.
 
 ### Example
 
-*Invert $F(s) = 6 e^{-5s}/(s^2+s-2)$.*
+> *Invert $F(s) = 6 e^{-5s}/(s^2+s-2)$.*
 
 Write $F(s) = e^{-5s} G(s)$. Then $f(t) = g(t-5)u_5(t)$. 
 
@@ -102,7 +110,9 @@ $${\cal L}[f] = \frac{F_T(s)}{1-e^{-sT}} = \frac{\int_0^T e^{-st} f(t)\, dt}{1-e
 
 ### Example
 
-Let's try the sawtooth wave $f(t) = t \text{ mod } 1$, which is just the line $y=t$ repeated over and over. 
+> Transform the sawtooth wave $f(t) = t \text{ mod } 1$.
+
+This is just the line $y=t$ over $[0,1]$ then repeated over and over. 
 
 $$F_T(s) = \int_0^1 te^{-st}\, dt = \frac{1 - e^{-s}(1+s)}{s^2}.$$
 
@@ -131,7 +141,9 @@ Solving an ODE is a smoothing process. The answers come out with more derivative
 
 Let's consider a case of *ramp loading*, where a forcing ramps up from zero to a steady value. *(Similar to Example 1 of section 5.6.)*
 
-*Solve $y'' +4y=u_{04}(t)t + 4u_4(t)$, with $y(0)=y'(0)=0$.*
+### Example
+
+> *Solve $y'' +4y=u_{04}(t)t + 4u_4(t)$, with $y(0)=y'(0)=0$.*
 
 The transform of the forcing function $g(t)=t - (t-4) u_4(t) -4u_4(t) + 4u_4$ is 
 
