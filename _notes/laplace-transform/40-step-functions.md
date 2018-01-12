@@ -123,7 +123,7 @@ $y(t) = 0 + \int_1^t  y'(\tau)\, d\tau = (t-1)$.
 
 The resulting solution, $y=(t-1)u_1(t)$, is continuous. It's even differentiable, everywhere but at $t=1$, where the derivative (of course) jumps.  
 
-Now suppose we did $y''=u_1(t)$. You'd integrate again to get $y=(t-1)^2/2 u_1(t)$. This function is continuous and differentiable, and the 2nd derivative has a jump. 
+Now suppose we did $y'' =u_1(t)$. You'd integrate again to get $y=(t-1)^2/2 u_1(t)$. This function is continuous and differentiable, and the 2nd derivative has a jump. 
 
 Solving an ODE is a smoothing process. The answers come out with more derivatives than the data (at least in the forcing term). 
 
@@ -131,7 +131,7 @@ Solving an ODE is a smoothing process. The answers come out with more derivative
 
 Let's consider a case of *ramp loading*, where a forcing ramps up from zero to a steady value. *(Similar to Example 1 of section 5.6.)*
 
-*Solve $y''+4y=u_{04}(t)t + 4u_4(t)$, with $y(0)=y'(0)=0$.*
+*Solve $y'' +4y=u_{04}(t)t + 4u_4(t)$, with $y(0)=y'(0)=0$.*
 
 The transform of the forcing function $g(t)=t - (t-4) u_4(t) -4u_4(t) + 4u_4$ is 
 
