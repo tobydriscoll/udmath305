@@ -11,7 +11,7 @@ chapter: "Laplace transform"
 Laplace transforms are good at solving some fLaShI problems, particularly those with constant coefficients on the $y$ terms. 
 
 ## Example
-*Solve $y''+y = \sin(t)$, with $y(0)=0$ and $y'(0)=1$.*
+*Solve $y'' +y = \sin(t)$, with $y(0)=0$ and $y'(0)=1$.*
 
 Transform party! 
 
@@ -47,7 +47,7 @@ So $y(t) = 2\text{Re}[(-i/2)e^{it}] + 2t \text{Re}[(-i/4)e^{it}]$, or $y(t)= \si
 
 You may have noticed that by the time we get done inverting transforms, we see the usual suspects from our study of oscillators. This is no coincidence.
 
-Take $y''+2cy' + \omega_0^2 y = A e^{i\omega t}$, which was our general resonance problem. Upon transformation,
+Take $y'' +2cy' + \omega_0^2 y = A e^{i\omega t}$, which was our general resonance problem. Upon transformation,
 
 $$ (s^2Y(s)-sy(0)-y'(0)) + 2c( sY(s)-y(0)) + \omega_0^2 Y(s) = \frac{A}{s-i\omega},$$
 

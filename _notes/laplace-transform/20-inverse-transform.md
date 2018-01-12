@@ -125,7 +125,8 @@ $$2e^{-3t}\cos(2t)-e^{-3t}\sin(2t).$$
 
 We have to make a slight change when the denominator has a repeated root, because the partial fraction expansion gets terms like
 
-$$\frac{1}{s-z_j}, \quad \frac{1{(s-z_j)^2}, \quad \cdots \quad \frac{1{(s-z_j)^k}$$
+$$ \frac{1}{s-z_j}, \; \frac{1}{(s-z_j)^2}, \; \cdots \;
+\frac{1}{(s-z_j)^k} $$
 
 when there are $k$ copies of the pole. The terms are easy to invert using line 11 of the table, as the inverse of $1/(s-z_j)^m$ is $t^{m-1}e^{z_jt}/(m-1)!$. 
 
@@ -133,7 +134,7 @@ The slight issue here is that finding the poles is what we call a badly conditio
 
 ### Example *(see Example 7 of section 5.3)*
 
-$*Invert $F(s)=(s^2+20s+31)/[(s-3)(s^2+4s+4)]$.*
+*Invert $F(s)=(s^2+20s+31)/[(s-3)(s^2+4s+4)]$.*
 
 ```matlab
 format rat
