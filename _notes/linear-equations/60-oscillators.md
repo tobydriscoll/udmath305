@@ -143,7 +143,7 @@ The general solution will be $y_c+y_p$. As noted above, we know that $y_c\to 0$ 
 
 $$y_p(t) = \frac{A}{(i\omega)^2+2c(i\omega)+\omega_0^2} e^{i\omega t}.$$
 
-We call this the (misnomer) *steady-state response* or the forced response. Once the transient has (exponentially) died away, this is all that's left. 
+We call this the (slight misnomer) *steady-state response* or the forced response. Once the transient has (exponentially) died away, this is all that's left. 
 
 If the driving force were $3\sin(6t)$, for example, we'd set $\omega=6$, $A=3$, and take the imaginary part of $y_p$. 
 
@@ -155,7 +155,7 @@ In chebgui, try $u" +0.1u' + 9u = \sin(\omega t)$ over $[0,80]$.
 
 The ratio
 
-$$G(i\omega) = \frac{y_p(t)}{Ae^{i\omega t}} = \frac{1}{(i\omega)^2+2c(i\omega)+\omega_0^2} = \frac{1}{(i\omega+c)^2+\omega_0^2-c^2}$$
+$$G(i\omega) = \frac{y_p(t)}{Ae^{i\omega t}} = \frac{1}{(i\omega)^2+2c(i\omega)+\omega_0^2} = \frac{1}{2i\omega c +\omega_0^2-\omega^2}$$
 
 is called the *frequency response*. As a complex-valued function, it's best expressed in polar form,
 
@@ -195,11 +195,11 @@ or $\omega_r^2 = \omega_0^2-2c^2$. As long as $c$ is small, the maximally resona
 
 The phase is also interesting. Look back at the response $G$, 
 
-$$\frac{1}{(i\omega+c)^2+\omega_0^2-c^2}.$$
+$$ G = \frac{1}{2i\omega c +\omega_0^2-\omega^2}.$$
 
-Suppose $\omega$ is close to zero. The denominator is then nearly a positive real number, so the phase of $G$ will be nearly zero. Now suppose $\omega$ is large. Then the denominator is roughly $\omega_0^2-c^2-\omega^2$, which is a negative number with phase $\pi$. 
+Suppose $\omega$ is close to zero. The denominator is then nearly a positive real number, so the phase of $G$ will be nearly zero. Now suppose $\omega$ is very large. Then the denominator is roughly a negative number with phase $\pi$. Finally, it's clear that when $\omega=\omega_0$, $G$ is pure imaginary, and the phase is $\pi/2$. Thus, as $\omega$ increases, the phase increases from zero (in phase) to $\pi$ (out of phase), crossing over at resonance (90 degree phase lag).
 
-Finally, at $\omega_r$ one can show that the response is imaginary, with phase $\pi/2$. Thus, as $\omega$ increases, the phase increases from zero (in phase) to $\pi$ (out of phase), crossing over at resonance (90 degree phase lag). The steepness of the transition increases as the damping coefficient $c\to 0$. 
+If $c$ is close to zero, it's a very quick change from a nearly positive number to a nearly negative one. The steepness of this transition softens as $c$ increases. 
 
 ### Example
 
