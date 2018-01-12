@@ -23,7 +23,7 @@
     <ul>
       {% assign items = site.notes | where: "chapter", chapter %}
       {% for item in items %}
-      <li><a class="sidebar-nav-item{% if page.url == item.url %} active{% endif %}" href="{{item.url}}">{{item.title}}</a></li>
+      <li><a class="sidebar-nav-item{% if page.url == item.url %} active{% endif %}" href="{{item.url | relative_url}}">{{item.title}}</a></li>
       {% endfor %}
     </ul>
     {% endfor %}
