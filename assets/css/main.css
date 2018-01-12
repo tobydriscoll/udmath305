@@ -427,6 +427,13 @@ textarea {
     }
 }
 
+@media print {
+    .container {
+        max-width: none;
+        margin: 1cm;
+        font-size: 14px;
+    }
+}
 /*
  * Masthead
  *
