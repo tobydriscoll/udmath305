@@ -41,14 +41,19 @@ Cool, huh? The case we will be most interested in is $n\le 2$. For the rest of t
 
 See (4.1 Definitions and Examples, 4.2 Theory of Second Order Linear Homogeneous Equations)
         
-## Linear operators (*see pp 219-220*)
+## Linear operators
+
+*(see pp 219-220)*
 
 The most important thing about a linear problem is that it is linear. (Duh.) What exactly do we mean by that? 
 
-For this discussion we need to express the problem as an *operator*. Much as a function describes a mapping from numbers to numbers, an operator describes a mapping from functions to functions. Say we have the 2nd order problem $y''+py'+qy=g$. Then the operator we want is defined by 
+For this discussion we need to express the problem as an
+*operator*. Much as a function describes a mapping from numbers to
+numbers, an operator describes a mapping from functions to
+functions. Say we have the 2nd order problem $y'' +py'+qy=g$. Then the operator we want is defined by 
 
 $$
-L[y] = y''+py'+qy, \text{ or } L = D^2 + pD + q,
+L[y] = y'' +py'+qy, \text{ or } L = D^2 + pD + q,
 $$
 
 where $D$ (as is common) is used to denote the standard differentiation operator. 
@@ -62,7 +67,8 @@ $$
 
 where $y_1$ and $y_2$ are any functions and $c_1$ and $c_2$ are any constants. (The quantity $c_1y_1 + c_2y_2$ is called a *linear combination* of the functions.) In fact, this property is best thought of as the *definition* of linearity. 
 
-## Superposition (*see p 220*)
+## Superposition
+*(see p 220)*
 
 Superposition is a fancy term for "addition".  Suppose we want to solve the homogeneous problem $L[y]=0$. If we happen to have two solutions, $y_1$ and $y_2$, just lying around, then for any constants $c_1$ and $c_2$,
 
@@ -80,11 +86,14 @@ $$
 
 So we would either have to have $g=0$ or $c1+c2=1$ (this is called a *convex combination*). This is the main reason that among linear problems, homogeneous ones are extra special. 
 
-## General solutions and the Wronskian (*see Theorem 4.2.7*)
+## General solutions and the Wronskian
+
+*(see Theorem 4.2.7)*
 
 We have come to a good place. On one hand, if $y_1$ and $y_2$ solve a 2nd order LH problem, then so does any linear combination of them. On the other hand, we are supposed to use two initial conditions to specify the solution uniquely. We have just exactly as many free constants (two) as constraints to satisfy!
 
-But there is a catch. Let's be concrete for a moment. It's clear that $\sin(t)$ is a solution of $y''+y=0$. If we tried to take $y_1=y_2=\sin(t)$, then the linear combination would be $(c_1+c_2)\sin(t)$. Even though it has two free constants, there is no way to make this expression satisfy the initial condition $y(0)=1$. In other words, it's impossible to get truly "new" solutions to the ODE by superposing $\sin(t)$ with itself.
+But there is a catch. Let's be concrete for a moment. It's clear that
+$\sin(t)$ is a solution of $y'' +y=0$. If we tried to take $y_1=y_2=\sin(t)$, then the linear combination would be $(c_1+c_2)\sin(t)$. Even though it has two free constants, there is no way to make this expression satisfy the initial condition $y(0)=1$. In other words, it's impossible to get truly "new" solutions to the ODE by superposing $\sin(t)$ with itself.
 
 If $y_1$ and $y_2$ are such that their linear combination can't be used to satisfy two arbitrary initial conditions, then we say they are *linearly dependent*. Otherwise, they are *linearly independent*, or (in the book's preferred jargon) they form a *fundamental set*. 
 
@@ -96,7 +105,7 @@ $$
 
 Yes, this is a 2-by-2 determinant, evaluated in the usual "X" fashion. 
 
-**Theorem (*see Theorem 4.2.7*)** Suppose $L[y_1]=L[y_2]=0$, where the coefficient functions of $L$ are continuous on interval $I$. If the Wronskian is nonzero at any value of $t\in I$, then the solutions are independent, and 
+**Theorem** *(see Theorem 4.2.7)* Suppose $L[y_1]=L[y_2]=0$, where the coefficient functions of $L$ are continuous on interval $I$. If the Wronskian is nonzero at any value of $t\in I$, then the solutions are independent, and 
 
 $$
 y = c_1 y_1+ c_2 y_2
@@ -104,5 +113,4 @@ $$
 
 is the general solution of $L[y]=0$. That is, *all* solutions can be expressed this way, including the unique solution of an IVP.
 
-___
 

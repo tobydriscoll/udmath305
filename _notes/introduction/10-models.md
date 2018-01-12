@@ -16,17 +16,23 @@ See Keynote.
 
 ## Exponential growth/decay
 
+*(See section 1.1 for much of this.)*
+
 The very simplest nontrivial ODE is 
 
 $$\frac{dy}{dt} = ky,$$
 
 where $k$ is a constant. Many phenomena obey such a model, at least approximately:
 
-* **Population.** A population $y(t)$ of organisms has a constant net per capita birth (or death) rate. 
+* **Population.** A population $y(t)$ of organisms has a constant net per capita birth (or death) rate. *(See p. 7.)*
 * **Interest.** Here $y(t)$ is an amount invested with fixed positive interest rate $k$.
 * **Radioactivity.** $y(t)$ is the mass of a radioactive isotope, and $k<0$. 
 * **Pharmacokinetics.** $y(t)$ is the amount of a drug being metabolized in the body (called first-order kinetics).
-* **Cooling.** If $y(t)$ is the temperature of a body kept in an environment at fixed temperature $E$, let $z(t)=y(t)-E$. Then $z'=kz$ for cooling rate $k<0$; temperature tends toward $E$ exponentially. This is *Newton's Law of Cooling*. 
+* **Cooling.** If $y(t)$ is the temperature of a body kept in an
+  environment at fixed temperature $E$, let $z(t)=y(t)-E$. Then
+  $z'=kz$ for cooling rate $k<0$; temperature tends toward $E$
+  exponentially. This is *Newton's Law of Cooling*. *(See Example 1,
+  section 1.1.)*
 
 ## Verifying solutions
 
@@ -38,7 +44,8 @@ $$y' = kCe^{kt}=ky.$$
 
 As a matter of fact, *all* solutions have the form $y=Ce^{kt}$. Hence we call this the *general solution*. 
 
-Graphically, "the" solution $y=Ce^{kt}$ is actually a family of curves, called *integral curves*, parameterized by $C$. 
+Graphically, "the" solution $y=Ce^{kt}$ is actually a family of
+curves, called *integral curves*, parameterized by $C$. *(See pp. 5-6.)*
 
 ```matlab
 k = -0.5;
