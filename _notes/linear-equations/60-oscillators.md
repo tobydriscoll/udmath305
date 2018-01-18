@@ -149,7 +149,7 @@ If the driving force were $3\sin(6t)$, for example, we'd set $\omega=6$, $A=3$, 
 
 ### Example
 
-In chebgui, try $u" +0.1u' + 9u = \sin(\omega t)$ over $[0,80]$. 
+In chebgui, try $u'' +0.1u' + 9u = \sin(\omega t)$ over $[0,80]$. 
 
 ---
 
@@ -161,7 +161,7 @@ is called the *frequency response*. As a complex-valued function, it's best expr
 
 $$ G(i\omega) = g(\omega) e^{-i\phi(\omega)}, $$
 
-where $g(\omega)=|G(i\omega)|$ is the *gain* and $\phi(\omega)$ is the *phase*. 
+where $g(\omega)=\|G(i\omega)\|$ is the *gain* and $\phi(\omega)$ is the *phase*. 
 
 ### Example
 
@@ -197,7 +197,7 @@ The phase is also interesting. Look back at the response $G$,
 
 $$ G = \frac{1}{2i\omega c +\omega_0^2-\omega^2}.$$
 
-Suppose $\omega$ is close to zero. The denominator is then nearly a positive real number, so the phase of $G$ will be nearly zero. Now suppose $\omega$ is very large. Then the denominator is roughly a negative number with phase $\pi$. Finally, it's clear that when $\omega=\omega_0$, $G$ is pure imaginary, and the phase is $\pi/2$. Thus, as $\omega$ increases, the phase increases from zero (in phase) to $\pi$ (out of phase), crossing over at resonance (90 degree phase lag).
+Suppose $\omega$ is close to zero. The denominator is then nearly a positive real number, so the phase of $G$ will be nearly zero. Now suppose $\omega$ is very large. Then the denominator is roughly a negative number with phase $\pi$. Finally, it's clear that when $\omega=\omega_0$, $G$ is pure imaginary, and the phase is $\pi/2$. Thus, as $\omega$ increases, the phase increases from zero (in phase) to $\pi$ (out of phase), crossing over at the natural frequency (90 degree phase lag).
 
 If $c$ is close to zero, it's a very quick change from a nearly positive number to a nearly negative one. The steepness of this transition softens as $c$ increases. 
 
