@@ -7,6 +7,5 @@ y = linspace(ybounds(1),ybounds(2),25);
 f = eval(vectorize(f));
 quiver(T,Y,ones(size(T)),f(T,Y),'.')
 axis tight
-axis equal
 
 end
