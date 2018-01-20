@@ -12,7 +12,7 @@ In this section we consider **first-order problems only**.
 
 ## Equilibria  
 
-Suppose $y'=f(y)$ (FlAShi) and that there is some value $y_e$ such that $f(y_e)=0$. Then the solution satisfies $y'=0$ if it ever achieves the value $y_e$; it is stuck there forever. We call such a value an *equilibrium*. 
+Suppose $y'=f(y)$ (FlASh) and that there is some value $y_e$ such that $f(y_e)=0$. Then the solution satisfies $y'=0$ if it ever achieves the value $y_e$; it is stuck there forever. We call such a value an *equilibrium*. 
 
 Instinctively you know that not all equilibria are the same. A ball sitting at the bottom of a valley will sit there happily forever, while one sitting at the top of a hill might be technically motionless but will roll off at the slightest breeze. More relevantly, you are very likely to see a ball come to rest at the bottom of a valley, but you will never see one come to rest at the top of a hill! We call the relevant property *stability*. The valley has it; the hill does not. 
 
@@ -29,7 +29,7 @@ We have $f(y)=y-y^3/3=y(1-y^2/3)$, so $y=0$ and $y=\pm\sqrt{3}$ are the equilibr
 
 ## Slope field/Direction field
 
-Suppose now $y'=f(t,y)$ (FlaShi). (This includes the previous case, of course.) One device for getting some understanding of the solutions is the *slope field* or direction field of the ODE. At points in the $(t,y)$ plane, we evaluate $f$. Since that gives the slope of the solution there, we draw a tiny tangent line having that slope. The result gives a good idea of how solutions will look. 
+Suppose now $y'=f(t,y)$ (FlaSh). (This includes the previous case, of course.) One device for getting some understanding of the solutions is the *slope field* or direction field of the ODE. At points in the $(t,y)$ plane, we evaluate $f$. Since that gives the slope of the solution there, we draw a tiny tangent line having that slope. The result gives a good idea of how solutions will look. 
 
 ```matlab
 function slopefield(f,tbounds,ybounds) 

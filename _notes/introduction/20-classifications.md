@@ -68,6 +68,8 @@ If a problem of order $n$ also specifies values for $y,y',\ldots,y^{(n-1)}$ at a
 
 You may instead be given the same data but at two values of $t$. In that case you have a *boundary-value problem (BVP).* In an IVP, time $t$ flows in one direction, but in a BVP, $t$ flows in both directions and is actually therefore more likely a space variable. We may do a little bit with BVPs if we have time (pun intended). 
 
+| $y'' + y' + \sin(y) = 0,\quad y(0)=1,\, y'(0)=0$ | $ y'' + y' + \sin(y) = 0, \quad y(0)=1,\, y(4)=0$  | 
+
 ## The FLASHI system
 
 Except for the ordinary/partial distinction, each one of the traits above can be tracked by what we will call the FLASHI system. Each letter is capitalized when its corresponding property is true:
@@ -77,11 +79,11 @@ Except for the ordinary/partial distinction, each one of the traits above can be
 * **A**utonomous?
 * **S**calar?
 * **H**omogeneous?
-* **I**VP?
+* **I**VP? (We leave this letter off altogether if it's a bare ODE with no extra conditions.)
 
 Thus,
 
-| $y'' + y' + \sin(y) = 0$ | flASHi | 
-| $ y'' + y' + y = \sin(t) $ | fLaShi |
-| $ u' = v,\quad v'+v - \sin(u) = 0 $ | FlAsHi |
+| $y'' + y' + \sin(y) = 0$ | flASH | 
+| $ y'' + y' + y = \sin(t) $ | fLaSh |
+| $ u' = v,\quad v'+v - \sin(u) = 0 $ | FlAsH |
 | $y'+ty=1$, $y(2)=0$ | FLaShI |
