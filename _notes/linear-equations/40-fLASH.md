@@ -76,7 +76,7 @@ for some purely real constants $k_1,k_2$. The bottom line is that we can *start*
 
 ## Repeated root
 
-If $r_1=r_2=r$, then $y_1=e^{rt}$ is a solution of $L[y]=0$. But the general solution requires us to find a second, independent solution as well. Without proof or fanfare, we may just show that $y_2=te^{rt}$ fills the bill. (This is sometimes called a *secular solution*.) So the general solution is
+If $r_1=r_2=r$, then $y_1=e^{rt}$ is a solution of $L[y]=0$. But the general solution requires us to find a second, independent solution as well. Without proof or fanfare, we may just show that $y_2=te^{rt}$ fills the bill. (This is sometimes called a *secular solution*{:.def}.) So the general solution is
 
 $$
 y = c_1 e^{rt} + c_2 te^{rt}.
@@ -103,7 +103,7 @@ x_2 = \frac{\begin{vmatrix} a & f \\ c & g \end{vmatrix}}{\begin{vmatrix} a & b 
 
 *(see Example 4, section 4.3)*
 
-*Solve $16y'' -8y' + 145y = 0$, $y(0)=-2$, $y'(0)=1$.*
+> Solve $16y'' -8y' + 145y = 0$, $y(0)=-2$, $y'(0)=1$.
 
 Roots are $1/4\pm 3i$. System to solve is 
 
@@ -120,7 +120,7 @@ $$
 
 ## Phase portraits
 
-It's common to portray solutions of the equation in *phase space* or *state space*. The idea is that both $y$ and $y'$ must be known at a given time to fully specify the state of the underlying system. 
+It's common to portray solutions of the equation in *phase space*{:.def} or *state space*{:.def}. The idea is that both $y$ and $y'$ must be known at a given time to fully specify the state of the underlying system. 
 
 *See MATLAB on the following examples from B&B.*
 

@@ -6,7 +6,7 @@ chapter: "Linear equations"
 * TOC
 {:toc}
 
-*For a really nice and entertaining introduction to complex numbers, I recommend [this video series](https://youtu.be/T647CGsuOVU).*
+*For a really smart and entertaining introduction to complex numbers, I recommend [this video series](https://youtu.be/T647CGsuOVU).*
 
 ## The reality of imaginary numbers
 
@@ -46,25 +46,25 @@ Yet something amazing happens if you do accept imaginary numbers, and their expa
 
 ## Basics
 
-We can write a complex number $z\in \mathbb{C}$ as $z=x+iy$, where $i^2=-1$ and $x$ and $y$ are real numbers known as the *real* and *imaginary* parts of $z$,
+We can write a complex number $z\in \mathbb{C}$ as $z=x+iy$, where $i^2=-1$ and $x$ and $y$ are real numbers known as the *real*{:.def} and *imaginary*{:.def} parts of $z$,
 
 $$
 z = x+iy \quad \Leftrightarrow \quad x = \text{Re}(z), \quad y = \text{Im}(z).
 $$
 
-You add, subtract, and multiply complex numbers by applying the obvious algebraic rules. Division is a little trickier. It's easiest to use the *conjugate*,
+You add, subtract, and multiply complex numbers by applying the obvious algebraic rules. Division is a little trickier. It's easiest to use the *conjugate*{:.def},
 
 $$
-\bar{z} =\text{Re}(z) - i \text{Im}(z).
+\bar{z} =\text{Re}(z) - i \,\text{Im}(z).
 $$
 
-Then 
+(No matter how complicated the expression, you just replace $i$ by $-i$ to get the conjugate.) Then 
 
 $$ 
 \frac{w}{z} = \frac{w \bar{z}}{z \bar{z}} = \frac{w \bar{z}}{|z|^2},
 $$
 
-where $\|z\|$ is the *modulus*, easily computed via
+where $\|z\|$ is the *modulus*{:.def}, easily computed via
 
 $$
 |z|^2 = [\text{Re}(z)]^2 + [\text{Im}(z)]^2.
@@ -78,7 +78,17 @@ $$
 e^{it} = \cos(t) + i \sin(t).
 $$
 
-This makes some trig identities into child's play:
+Hence for real $t$, $e^{it}$ is the point at angle $t$ on the unit circle. Note also that for such a point,
+
+$$ \left( e^{it}\right)^{-1} = e^{-it} = \overline{e^{it}}. $$
+
+Key are the three special cases, $e^{i\pi/2} = i$, $e^{i\pi}=-1$, and $e^{2i\pi}=1$. For example,
+
+$$
+i^i = (e^{i\pi/2})^i = e^{i^2\pi/2} = e^{-\pi/2}.
+$$
+
+Euler's formula makes some trig identities into child's play:
 
 $$
 \begin{aligned}
@@ -88,11 +98,6 @@ $$
 \end{aligned}
 $$
 
-Key are the three special cases, $e^{i\pi/2} = i$, $e^{i\pi}=-1$, and $e^{2i\pi}=1$. For example,
-
-$$
-i^i = (e^{i\pi/2})^i = e^{i^2\pi/2} = e^{-\pi/2}.
-$$
 
 ## Geometry
 

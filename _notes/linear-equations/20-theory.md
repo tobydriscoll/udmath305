@@ -50,7 +50,7 @@ Cool, huh? The case we will be most interested in is $n\le 2$. For the rest of t
 The most important thing about a linear problem is that it is linear. (Duh.) What exactly do we mean by that? 
 
 For this discussion we need to express the problem as an
-*operator*. Much as a function describes a mapping from numbers to
+*operator*{:.def}. Much as a function describes a mapping from numbers to
 numbers, an operator describes a mapping from functions to
 functions. Say we have the 2nd order problem $y'' +py'+qy=g$. Then the operator we want is defined by 
 
@@ -67,7 +67,7 @@ $$
 L[c_1y_1 + c_2y_2] = c_1 L[y_1] + c_2 L[y_2],
 $$
 
-where $y_1$ and $y_2$ are any functions and $c_1$ and $c_2$ are any constants. (The quantity $c_1y_1 + c_2y_2$ is called a *linear combination* of the functions.) In fact, this property is best thought of as the *definition* of linearity. 
+where $y_1$ and $y_2$ are any functions and $c_1$ and $c_2$ are any constants. (The quantity $c_1y_1 + c_2y_2$ is called a *linear combination*{:.def} of the functions.) In fact, this property is best thought of as the *definition*{:.def} of linearity. 
 
 ## Superposition
 *(see p 220)*
@@ -97,9 +97,9 @@ We have come to a good place. On one hand, if $y_1$ and $y_2$ solve a 2nd order 
 But there is a catch. Let's be concrete for a moment. It's clear that
 $\sin(t)$ is a solution of $y'' +y=0$. If we tried to take $y_1=y_2=\sin(t)$, then the linear combination would be $(c_1+c_2)\sin(t)$. Even though it has two free constants, there is no way to make this expression satisfy the initial condition $y(0)=1$. In other words, it's impossible to get truly "new" solutions to the ODE by superposing $\sin(t)$ with itself.
 
-If $y_1$ and $y_2$ are such that their linear combination can't be used to satisfy two arbitrary initial conditions, then we say they are *linearly dependent*. Otherwise, they are *linearly independent*, or (in the book's preferred jargon) they form a *fundamental set*. 
+If $y_1$ and $y_2$ are such that their linear combination can't be used to satisfy two arbitrary initial conditions, then we say they are *linearly dependent*{:.def}. Otherwise, they are *linearly independent*{:.def}, or (in the book's preferred jargon) they form a *fundamental set*{:.def}. 
 
-Fortunately, there is a relatively easy, if unexpected, way to determine whether two given solutions to $L[y]=0$ are independent. Define the *Wronskian* as the function
+Fortunately, there is a relatively easy, if unexpected, way to determine whether two given solutions to $L[y]=0$ are independent. Define the *Wronskian*{:.def} as the function
 
 $$
 W[y_1,y_2] = \begin{vmatrix} y_1 & y_2 \\ y_1' & y_2' \end{vmatrix}.

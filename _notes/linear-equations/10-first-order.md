@@ -22,7 +22,7 @@ $$
 
 This is truly a minimalist ODE! 
 
-You already know the answer to this problem. Once we rewrite it as $y=-by$, it's clear that the solution must be $y(t)=Ce^{-bt}$ for any choice of the constant $C$. We'll call this the *general solution* of the ODE.
+You already know the answer to this problem. Once we rewrite it as $y=-by$, it's clear that the solution must be $y(t)=Ce^{-bt}$ for any choice of the constant $C$. We'll call this the *general solution*{:.def} of the ODE.
 
 Our next step up the ladder will be to go from type A to a. That is, we let the coefficient become a function of the independent variable $t$:
 
@@ -58,7 +58,7 @@ $$
 a(t) \frac{dy}{dt} + b(t)y = c(t).
 $$
 
-First we divide through by $a(t)$ to get what the book calls *standard form*,
+First we divide through by $a(t)$ to get what the book calls *standard form*{:.def},
 
 $$
 \frac{dy}{dt} + p(t)y = q(t).
@@ -76,7 +76,7 @@ $$
 \frac{d}{dt} \left[ e^{\mu(t)} y(t) \right] = e^{\mu(t)} q(t),
 $$
 
-provided only that $p(t)=\mu'(t)$. The left side can be integrated immediately (which is why $e^\mu$ is called an *integrating factor*), leading to the formal solution
+provided only that $p(t)=\mu'(t)$. The left side can be integrated immediately (which is why $e^\mu$ is called an *integrating factor*{:.def}), leading to the formal solution
 
 $$
  y(t) = e^{-\mu(t)} \int e^{\mu(t)} q(t)\, dt.
@@ -93,7 +93,7 @@ This is a bit of a mouthful as a formula, and remember that the integral written
 
 ### Example
 
-*Solve $y'+2y = te^{-2t}$.*
+> Solve $y'+2y = te^{-2t}$.
 
 This is already in standard form.
 
@@ -123,7 +123,7 @@ xlabel t, ylabel y
 
 ### Example
 
-*Solve $ty'+2y = 4t^2$.*
+> Solve $ty'+2y = 4t^2$.
 
 A common error is to forget to put the equation into standard form first. Here, that means dividing through by $t$.
 

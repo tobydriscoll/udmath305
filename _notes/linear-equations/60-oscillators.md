@@ -46,7 +46,7 @@ The homogeneous problem is $my'' +ky=0$, and this has roots $\pm\sqrt{k/m}$. We'
 
 $$\omega_0 = \sqrt{\frac{k}{m}}$$,
 
-which is the *natural frequency* of the oscillator.
+which is the *natural frequency*{:.def} of the oscillator.
 
 *(About the term "frequency": In math we mean the multiplier of $t$ inside the sin or cos function. Engineers sometimes call this "angular frequency" or "circular frequency", and use frequency to mean angular frequency over $2\pi$. In particular, this is what is meant by Hz units.)*
 
@@ -58,7 +58,7 @@ However, we sometimes prefer an alternate form,
 
 $$y_c = R\cos(\omega_0 t - \delta),$$
 
-in which the free parameters are the *amplitude* $R$ and the *phase* $\delta$. (Equivalence of the two forms is just some trig identity manipulation.) We can use either form, theoretically or to match up with initial data.
+in which the free parameters are the *amplitude*{:.def} $R$ and the *phase*{:.def} $\delta$. (Equivalence of the two forms is just some trig identity manipulation.) We can use either form, theoretically or to match up with initial data.
 
 ### Forced motion
 
@@ -76,7 +76,7 @@ Now, say $\omega = \omega_0 + 2\epsilon$ for some $\epsilon\approx 0$. Some trig
 
 $$y = \left[ \frac{-2A}{\omega_0^2 - \omega^2} \sin (\epsilon t) \right] \cos((\omega_0+\epsilon) t).$$
 
-We can think of the term inside the square brackets as an amplitude that varies at low frequency $\epsilon$. This phenomenon is called *beating* and is how experienced musicians can hear when they're slightly out of tune. 
+We can think of the term inside the square brackets as an amplitude that varies at low frequency $\epsilon$. This phenomenon is called *beating*{:.def} and is how experienced musicians can hear when they're slightly out of tune. 
 
 ```matlab
 t=linspace(0,4,30000);
@@ -121,15 +121,15 @@ or alternatively
 
 $$y_c = R e^{-ct} \cos(t\sqrt{\omega_0^2-c^2}) - \delta).$$
 
-(Technically, it's a pseudofrequency, as the solution isn't periodic.) This situation is called *underdamped*. 
+(Technically, it's a pseudofrequency, as the solution isn't periodic.) This situation is called *underdamped*{:.def}. 
 
 If we let $\gamma$ continue to increase, then when $c=\omega_0$ the complex roots fuse into a single repeated root, $r=-c$, and the solution becomes
 
 $$y_c = c_1 e^{-ct} + c_2 t e^{-ct}.$$
 
-This situation is called *critically damped*. 
+This situation is called *critically damped*{:.def}. 
 
-Finally, as $\gamma$ continues to increase, the roots become distinct, real, and negative. We get $y_c = c_1 e^{r_1t} + c_2 e^{r_2t}$ for $r_1 < -c < r_2 < 0.$ This is called the *overdamped* case. 
+Finally, as $\gamma$ continues to increase, the roots become distinct, real, and negative. We get $y_c = c_1 e^{r_1t} + c_2 e^{r_2t}$ for $r_1 < -c < r_2 < 0.$ This is called the *overdamped*{:.def} case. 
 
 Note that whatever the nonzero damping level is, the fate of all solutions is $y_c\to 0$ as $t\to\infty$. Damping removes energy, and there's nothing to replace it. 
 
@@ -143,7 +143,7 @@ The general solution will be $y_c+y_p$. As noted above, we know that $y_c\to 0$ 
 
 $$y_p(t) = \frac{A}{(i\omega)^2+2c(i\omega)+\omega_0^2} e^{i\omega t}.$$
 
-We call this the (slight misnomer) *steady-state response* or the forced response. Once the transient has (exponentially) died away, this is all that's left. 
+We call this the (slight misnomer) *steady-state response*{:.def} or the forced response. Once the transient has (exponentially) died away, this is all that's left. 
 
 If the driving force were $3\sin(6t)$, for example, we'd set $\omega=6$, $A=3$, and take the imaginary part of $y_p$. 
 
@@ -157,11 +157,11 @@ The ratio
 
 $$G(i\omega) = \frac{y_p(t)}{Ae^{i\omega t}} = \frac{1}{(i\omega)^2+2c(i\omega)+\omega_0^2} = \frac{1}{2i\omega c +\omega_0^2-\omega^2}$$
 
-is called the *frequency response*. As a complex-valued function, it's best expressed in polar form,
+is called the *frequency response*{:.def}. As a complex-valued function, it's best expressed in polar form,
 
 $$ G(i\omega) = g(\omega) e^{-i\phi(\omega)}, $$
 
-where $g(\omega)=\|G(i\omega)\|$ is the *gain* and $\phi(\omega)$ is the *phase*. 
+where $g(\omega)=\|G(i\omega)\|$ is the *gain*{:.def} and $\phi(\omega)$ is the *phase*{:.def}. 
 
 ### Example
 

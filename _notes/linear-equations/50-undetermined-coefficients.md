@@ -18,7 +18,7 @@ $$y_c(t) = c_1 y_1(t) + c_2 y_2(t).$$
 
 We know how to find $y_1$ and $y_2$, as well. 
 
-We also pointed out before that if $L[y_p]=g$, then $L[y_c+y_p]=g$ is a general solution. We now call $y_c$ the *complementary solution* and $y_p$ is a (nonunique) *particular solution*. Once we have any way to find $y_p$, we have the general solution and win the game. (But, the cake is a lie.)
+We also pointed out before that if $L[y_p]=g$, then $L[y_c+y_p]=g$ is a general solution. We now call $y_c$ the *complementary solution*{:.def} and $y_p$ is a (nonunique) *particular solution*{:.def}. Once we have any way to find $y_p$, we have the general solution and win the game. (But, the cake is a lie.)
 
 This may not sound super-advanced, but sometimes the best way to get a particular solution is by judicious guessing. 
 
@@ -28,7 +28,7 @@ In the case $L[y]=a e^{kt}$, we guess $y_p = A e^{kt}$ for a constant $A$ to be 
 
 ### Example 
 
-*Find the general solution of $y'' -2y'-3y=3e^{2t}$.*
+> Find the general solution of $y'' -2y'-3y=3e^{2t}$.
 
 First you find the roots for $L[y]=0$. These are $3$ and $-1$. So $y_c=c_1 e^{3t}+c_2e^{-t}$. 
 
@@ -46,7 +46,7 @@ If $L[y]=q(t)$ for a polynomial $q$ of degree $m$, then try $y_p=Q(t)$ for anoth
 
 ### Example
 
-*Solve $y'' +4y'+4y=8t^2$.*
+> Solve $y'' +4y'+4y=8t^2$.
 
 This has a double root at $r=-2$. So $y_c=c_1 e^{-2t} + c_2 t e^{-2t}$. 
 
@@ -64,7 +64,7 @@ If $L[y]=e^{at} \sin(bt)$ or $L[y]=e^{at} \cos(bt)$, use $y_p=Ae^{at} \sin(bt) +
 
 ### Example
 
-*Solve $y'' -2y'+2y=10\sin(2t)$.*
+> Solve $y'' -2y'+2y=10\sin(2t)$.
 
 The roots are $1\pm 1i$. Hence $y_c = c_1 e^t \sin(t) + c_2e^t \cos(t)$. 
 
@@ -92,7 +92,7 @@ Finally, the method as presented here can **fail**.
 
 ### Example
 
-*Solve $y'' +4y = \sin(2t)$.*
+> Solve $y'' +4y = \sin(2t)$.
 
 The roots are $\pm 2i$, and $y_c=c_1 \sin(2t) + c_2 \cos(2t)$. We try $y_p=A\sin(2t)$. 
 
