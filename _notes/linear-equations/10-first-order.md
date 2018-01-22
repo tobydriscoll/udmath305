@@ -8,7 +8,7 @@ chapter: "Linear equations"
 
 *See section 2.2, and section 2.3 excluding Example 4.* 
 
-We start with first-order linear equations, which is about as simple as ODEs can get. That is, we are already guaranteeing F, L, and S in our classification scheme. Let's go even further and specify A and H as well:
+We start with first-order linear equations, which is about as simple as ODEs can get. That is, we are already guaranteeing F, L, and S in our classification scheme. Let's go even further and go for the all-caps FLASH:
 
 $$
 a \frac{dy}{dt} + by = 0,
@@ -24,7 +24,7 @@ This is truly a minimalist ODE!
 
 You already know the answer to this problem. Once we rewrite it as $y=-by$, it's clear that the solution must be $y(t)=Ce^{-bt}$ for any choice of the constant $C$. We'll call this the *general solution*{:.def} of the ODE.
 
-Our next step up the ladder will be to go from type A to a. That is, we let the coefficient become a function of the independent variable $t$:
+Our next step up the ladder will be to go from type A to a, to get FLaSH. That is, we let the coefficient become a function of the independent variable $t$:
 
 $$
 \frac{dy}{dt} + b(t)y = 0.
@@ -52,7 +52,7 @@ which means that nothing new is introduced by $K$, as we still just have an arbi
 
 ## Integrating factor
 
-Now let's look at the most general case of a linear, first-order equation (FLaShi),
+Now let's look at the most general case of a linear, first-order equation (FLaSh),
 
 $$
 a(t) \frac{dy}{dt} + b(t)y = c(t).
@@ -89,7 +89,10 @@ This is a bit of a mouthful as a formula, and remember that the integral written
 1. Multiply both sides of the original ODE by $e^{\mu(t)}$. 
 1. Rearrange the left-hand side into the derivative of $e^{\mu(t)} y(t)$. (If this is impossible, you've messed up.)
 1. (Second integration) Integrate both sides, this time including the integration constant on the right-hand side. 
-1. Multiply through by $e^{-\mu(t)}$. Solved! 
+1. Multiply through by $e^{-\mu(t)}$. Solved!
+
+
+![Integrating factor]({{ site.baseurl }}/assets/images/integrating-factor.jpg)
 
 ### Example
 

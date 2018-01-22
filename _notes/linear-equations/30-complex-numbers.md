@@ -72,11 +72,14 @@ $$
 
 ## Euler's formula
 
-Things really start to heat up with the amazing identity
+
+Things really start to heat up with this amazing identity, due to Leonhard Euler (pronounced "oiler"):
 
 $$
 e^{it} = \cos(t) + i \sin(t).
 $$
+
+![Euler]({{ site.baseurl }}/assets/images/goes-blind-by.jpg)
 
 Hence for real $t$, $e^{it}$ is the point at angle $t$ on the unit circle. Note also that for such a point,
 

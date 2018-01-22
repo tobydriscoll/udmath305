@@ -66,7 +66,7 @@ y &= e^{\alpha t}( c e^{i\beta t} + \bar{c} e^{-i\beta t} ) \\
 \end{aligned}
 $$
 
-But $c+\bar{c}=2\text{Re}(c)$ and $c-\bar{c}=2i\text{Im}(c)$. Renaming constants leads finally to 
+But $c+\bar{c}=2\,\text{Re}(c)$ and $c-\bar{c}=2i\,\text{Im}(c)$. Renaming constants leads finally to 
 
 $$
 y = k_1 e^{\alpha t}  \cos(\beta t) + k_2 e^{\alpha t} \sin(\beta t)   
@@ -85,6 +85,8 @@ $$
 ## Cramer's rule
 
 Note: *Not* Kramer's rule. ("Without rules, there's chaos!")
+
+![2 by 2]({{ site.baseurl }}/assets/images/2x2-linear-systems.jpg)
 
 For an IVP, you will have to solve 2-by-2 linear systems. Here's a mechanical process to take some of the pain out. The solution to 
 

@@ -10,7 +10,7 @@ chapter: "Linear equations"
 
 *(See pp. 70-71)*
 
-Previously we saw how to solve a FLaShI problem using integrating factors. Now, what could possibly go wrong? Really, the only potential downfall is if one of the integrals fails to exist. And we can rule that out if the functions appearing in the standard form are, say, continuous. (To be clear, we may not be able to *find* the antiderivatives, but even so, they will exist.) Also recall that the one arbitrary constant of integration can be determined by a single initial value. In short, we have the theorem
+Previously we saw how to solve a FLaSh problem using integrating factors. Now, what could possibly go wrong? Really, the only potential downfall is if one of the integrals fails to exist. And we can rule that out if the functions appearing in the standard form are, say, continuous. (To be clear, we may not be able to *find* the antiderivatives, but even so, they will exist.) Also recall that the one arbitrary constant of integration can be determined by a single initial value. In short, we have the theorem
 
 **Theorem** *(Theorem 2.4.1)* Suppose $p(t)$ and $g(t)$ are continuous in an open interval $I$, and that $t_0\in I$. Then the IVP
 
@@ -97,7 +97,10 @@ We have come to a good place. On one hand, if $y_1$ and $y_2$ solve a 2nd order 
 But there is a catch. Let's be concrete for a moment. It's clear that
 $\sin(t)$ is a solution of $y'' +y=0$. If we tried to take $y_1=y_2=\sin(t)$, then the linear combination would be $(c_1+c_2)\sin(t)$. Even though it has two free constants, there is no way to make this expression satisfy the initial condition $y(0)=1$. In other words, it's impossible to get truly "new" solutions to the ODE by superposing $\sin(t)$ with itself.
 
-If $y_1$ and $y_2$ are such that their linear combination can't be used to satisfy two arbitrary initial conditions, then we say they are *linearly dependent*{:.def}. Otherwise, they are *linearly independent*{:.def}, or (in the book's preferred jargon) they form a *fundamental set*{:.def}. 
+If $y_1$ and $y_2$ are such that their linear combination can't be used to satisfy two arbitrary initial conditions, then we say they are *linearly dependent*{:.def}. Otherwise, they are *linearly independent*{:.def}, or (in the book's preferred jargon) they form a *fundamental set*{:.def}.
+
+![Independent solutions]({{ site.baseurl }}/assets/images/independent.jpg)
+
 
 Fortunately, there is a relatively easy, if unexpected, way to determine whether two given solutions to $L[y]=0$ are independent. Define the *Wronskian*{:.def} as the function
 
