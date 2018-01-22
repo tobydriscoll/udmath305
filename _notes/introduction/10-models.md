@@ -8,7 +8,7 @@ title: "Models and solutions"
 
 ## Sexy models
 
-See Keynote.
+*(See Keynote presentation.)*
 
 * Beer, FitzHugh-Nagumo, Circulatory system
 * Numerical solutions
@@ -42,10 +42,10 @@ $$y' = kCe^{kt}=ky.$$
 
 ## General solution, integral curves
 
-As a matter of fact, *all* solutions have the form $y=Ce^{kt}$. Hence we call this the *general solution*. 
+As a matter of fact, *all* solutions have the form $y=Ce^{kt}$. Hence we call this the *general solution*{:.def}. 
 
 Graphically, "the" solution $y=Ce^{kt}$ is actually a family of
-curves, called *integral curves*, parameterized by $C$. *(See pp. 5-6.)*
+curves, called *integral curves*{:.def}, parameterized by $C$. *(See pp. 5-6.)*
 
 ```matlab
 k = -0.5;
@@ -62,9 +62,9 @@ xlabel t, ylabel y
 
 ## Initial-value problem (IVP)
 
-We may be given additional information, such as the *initial condition* $y(0)=y_0$. The ODE together with this condition is an *initial-value problem*. In this IVP, only one value of $C$ will work, and the solution is $y=y_0e^{kt}$. 
+We may be given additional information, such as the *initial condition*{:.def} $y(0)=y_0$. The ODE together with this condition is an *initial-value problem*{:.def}. In this IVP, only one value of $C$ will work, and the solution is $y=y_0e^{kt}$. 
 
-The solution of the problem is unbounded exponential growth (or decrease) as $t\to\infty$ if $k>0$, and exponential decay to zero if $k<0$. At the boundary case $k=0$, the solution is constant. 
+The solution of the problem is unbounded exponential growth (or decrease) as $t\to\infty$ if $k>0$, and exponential decay to zero if $k<0.$ At the boundary case $k=0$, the solution is constant. 
 
 
 *Show in Chebfun GUI.*
@@ -73,7 +73,7 @@ The solution of the problem is unbounded exponential growth (or decrease) as $t\
 
 *Reference: R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52.*
 
-Let $y(t)$ denote the amount of caffeine in the bloodstream. Experimentally this satisfies first-order kinetics, $y'=-ky$, for a positive rate constant $k$. The constant is most often expressed as a *half-life* $t_H$, the time at which the amount has been reduced by a factor of 2. Thus, $e^{-kt_H}=1/2$, so
+Let $y(t)$ denote the amount of caffeine in the bloodstream. Experimentally this satisfies first-order kinetics, $y'=-ky$, for a positive rate constant $k$. The constant is most often expressed as a *half-life*{:.def} $t_H$, the time at which the amount has been reduced by a factor of 2. Thus, $e^{-kt_H}=1/2$, so
 
 $$k=\ln(2)/t_H.$$
 
