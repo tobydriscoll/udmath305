@@ -27,24 +27,12 @@ We have $f(y)=y-y^3/3=y(1-y^2/3)$, so $y=0$ and $y=\pm\sqrt{3}$ are the equilibr
 * $f'(0) = 1-0 = 1 > 0$ (unstable)
 * $f'(\pm\sqrt{3}) = 1-3 = -2 <0$ (stable)
 
-## Slope field/Direction field
+## Slope field / Direction field
 
-Suppose now $y'=f(t,y)$ (FlaSh). (This includes the previous case, of course.) One device for getting some understanding of the solutions is the *slope field* or direction field of the ODE. At points in the $(t,y)$ plane, we evaluate $f$. Since that gives the slope of the solution there, we draw a tiny tangent line having that slope. The result gives a good idea of how solutions will look. 
+Suppose now $y'=f(t,y)$ (FlaSh). (This includes the previous case, of course.) One device for getting some understanding of the solutions is the *slope field* or direction field of the ODE. At points in the $(t,y)$ plane, we evaluate $f$. Since that gives the slope of the solution there, we draw a tiny tangent line having that slope. The result gives a good idea of how solutions will look.
 
-```matlab
-function slopefield(f,tbounds,ybounds) 
+See the [MATLAB code](https://www.dropbox.com/s/ch2lbv7m6u3spst/slopefield.m?dl=0) for `slopefield`.
 
-t = linspace(tbounds(1),tbounds(2),25);
-y = linspace(ybounds(1),ybounds(2),25);
-[T,Y] = ndgrid(t,y);
-
-f = eval(vectorize(f));
-quiver(T,Y,ones(size(T)),f(T,Y),'.')
-axis tight
-axis equal
-
-end
-```
 ### Examples
 
 ```matlab
