@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/syntax.css">
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/tipuesearch/css/tipuesearch.css">
 
 <!-- Icons -->
 <link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/assets/favicon/apple-icon-57x57.png">
@@ -39,5 +40,14 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+
+<!-- tipue search results -->
+{% if page.tipue_search_active or layout.tipue_search_active %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="{{ site.baseurl }}/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/tipuesearch/css/tipuesearch.css" | relative_url }}">
+<script src="{{ site.baseurl }}/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
+<script src="{{ site.baseurl }}/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
+{% endif %}
 
 </head>
