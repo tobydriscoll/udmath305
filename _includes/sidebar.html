@@ -20,11 +20,9 @@
   <ol>
     {% for chapter in cs.chapters %}    
     <li>{{chapter}}</li>
-    <ul>
-      {% assign items = site.notes | where: "chapter", chapter %}
-      {% for item in items %}
-      <li><a class="sidebar-nav-item{% if page.url == item.url %} active{% endif %}" href="{{item.url | relative_url}}">{{item.title}}</a></li>
-      {% endfor %}
+    {% assign items = site.notes | where: "chapter", chapter %}
+    <ul>{% for item in items %}
+      <li><a class="sidebar-nav-item{% if page.url == item.url %} active{% endif %}" href="{{item.url | relative_url}}">{{item.title}}</a></li>{% endfor %}
     </ul>
     {% endfor %}
   </ol>
