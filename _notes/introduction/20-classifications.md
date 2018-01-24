@@ -48,7 +48,7 @@ In an autonomous problem, the meaning of "$t=0"$ is completely arbitrary. Otherw
 
 ## Scalar/Vector
 
-The dependent variable may be a scalar or a vector quantity. There should be one scalar equation per dependent variable. 
+The dependent variable may be a scalar or a vector quantity. If more than one dependent scalar variable is named, we can bundle them together as components of a vector. There should be one scalar equation per scalar dependent variable. 
 
 | $y'' + y' + \sin(y) = 0$ | $ u' = v,\quad v'+v - \sin(u) = 0 $ | 
 
