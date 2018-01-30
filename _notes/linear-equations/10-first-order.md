@@ -8,6 +8,8 @@ chapter: "Linear equations"
 
 *See section 2.2, and section 2.3 excluding Example 4.* 
 
+## Exponential solutions
+
 We start with first-order linear equations, which is about as simple as ODEs can get. That is, we are already guaranteeing F, L, and S in our classification scheme. Let's go even further and go for the all-caps FLASH:
 
 $$
@@ -39,13 +41,13 @@ $$
 There's an interesting aspect to this result. The indefinite integral (i.e., antiderivative) gives us an extra additive constant. So we ought to get 
 
 $$
-y = C \exp(B(t)+K)
+y = C \exp\left(\int -b(t)\, dt+K\right)
 $$
 
 for another aribtrary constant $K$. But this is the same as 
 
 $$
-y = (Ce^K) \exp(B(t)),
+y = (Ce^K) \exp\left(\int -b(t)\, dt \right),
 $$
 
 which means that nothing new is introduced by $K$, as we still just have an arbitrary constant out in front. So we can ignore the integration constant. 
@@ -159,7 +161,7 @@ When initial conditions are given, it pins down the value of the arbitrary const
 
 ### Example (*see Example 3 in section 2.3*)
 
-*A pond holds 10 million L of water. Each year, 5 million L flow in and out of the pond (leaving its volume constant). Though the pond [was originally pristine](https://youtu.be/94bdMSCdw20), the inflowing water has become contaminated with benzene, whose concentration varies according to $\gamma(t) = 2 + \sin 2t$ g/L. Find the mass of benzene in the pond as a function of time.*
+> A pond holds 10 million L of water. Each year, 5 million L flow in and out of the pond (leaving its volume constant). Though the pond [was originally pristine](https://youtu.be/94bdMSCdw20), the inflowing water has become contaminated with benzene, whose concentration varies according to $\gamma(t) = 2 + \sin 2t$ g/L. Find the mass of benzene in the pond as a function of time.
 
 In a "word problem", the first item of business is to find a mathematical model. Here we apply conservation of mass. If $Q(t)$ is the mass of benzene in the pond, then
 
@@ -204,3 +206,22 @@ plot(q, 'LineWidth', 2)
 xlabel('t'), ylabel('q')
 ```
 
+Here goes. The integrating factor is $e^{t/2}$, so we get
+
+$$
+[e^{t/2}q]' = 5 e^{t/2} \gamma(t) = 10e^{t/2} + 5e^{t/2}\sin(2t).
+$$
+
+Integrals like $e^t\sin(t)$ are done using integration by parts. It's a bit tedious, so you might want to resort to [Wolfram Alpha](http://wolframalpha.com) or what have you. Instead of an integration constant, I'm going to use definite integrals as follows:
+
+$$ 
+\int_0^t [e^{s/2}q(s)]'\, ds = \int_0^t (10e^{s/2} + 5e^{s/2}\sin(2s))\, ds
+$$
+
+$$
+e^{t/2} q(t) - q(0) = 20(e^{t/2}-1) + \frac{10}{17}[ e^{t/2} (\sin(2t)-4\cos(2t)) + 4 ].
+$$
+
+$$
+q(t) = 20 + \frac{10}{17}(\sin(2t)-4\cos(2t)) - \frac{300}{17} e^{-t/2}.
+$$

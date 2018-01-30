@@ -158,6 +158,35 @@ $$
 
 and so on.
 
+## Why?
+
+It's not necessary to understand where the rules of matrix multiplication come from, but it might put you at ease to know why they aren't completely arbitrary.
+
+The most immediate connection is to the linear system of equations
+
+$$
+\begin{align}
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n &= b_1, \\
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n &= b_2, \\
+$ \vdots \\
+a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n &= b_n.
+\end{align}
+$$
+
+The rules of matrix-vector multiplication ensure that this system can be stated simply as $ \mathbf{A} \mathbf{x} = \mathbf{b}.$ Note that $A_{ij}$ is the influence on the $i$th equation of the $j$th variable.
+
+Another explanation is the connection with linear combination. We got used to doing things like $y=c_1\cos(t) + c_2\sin(t)$ for a general solution to an ODE. Now imagine that a function such as $\cos(t)$ is really an infinite "vector" whose values are "indexed" by the continuous variable $t$. Since a matrix-vector product is a linear combination of the columns of the matrix, it's not crazy to see $ \mathbf{A} \mathbf{x} = x_1 \mathbf{a}_1 + \cdots + x_n \mathbf{a}_n$ as a finite-dimensional version of something like
+
+$$ y =
+\begin{bmatrix}
+\cos(t) & \sin(t)
+\end{bmatrix}
+\begin{bmatrix}
+c_1 & c_2
+\end{bmatrix}.
+$$
+
+
 ## Identity and inverse
 
 A very important type of matrix is the *identity matrix*, defined as a square diagonal matrix whose diagonal entries are all equal to one:
