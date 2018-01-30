@@ -104,4 +104,4 @@ This is impossible!
 
 ---
 
-We could have expected trouble since in the above, $y_p=Ay_1$, and then $y_c+y_p$ is essentially the same as $y_c$. The method can be fixed in this case, and it's not all that bad, but we're going to punt.   
+We could have expected trouble since in the above, $y_p=Ay_1$, and then $y_c+y_p$ is essentially the same as $y_c$. The method can be fixed in this case, and it's not all that bad, but we're going to punt. In the next chapter we'll use a different approach to solve this and similar problems.

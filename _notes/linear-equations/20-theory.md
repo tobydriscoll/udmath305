@@ -67,7 +67,7 @@ $$
 L[c_1y_1 + c_2y_2] = c_1 L[y_1] + c_2 L[y_2],
 $$
 
-where $y_1$ and $y_2$ are any functions and $c_1$ and $c_2$ are any constants. (The quantity $c_1y_1 + c_2y_2$ is called a *linear combination*{:.def} of the functions.) In fact, this property is best thought of as the *definition*{:.def} of linearity. 
+where $y_1$ and $y_2$ are any functions and $c_1$ and $c_2$ are any constants. (The quantity $c_1y_1 + c_2y_2$ is called a *linear combination*{:.def} of the functions.) In fact, this property is best thought of as the *definition* of linearity. 
 
 ## Superposition
 *(see p 220)*
@@ -108,7 +108,7 @@ $$
 W[y_1,y_2] = \begin{vmatrix} y_1 & y_2 \\ y_1' & y_2' \end{vmatrix}.
 $$
 
-Yes, this is a 2-by-2 determinant, evaluated in the usual "X" fashion. 
+This is a 2-by-2 determinant, evaluated in the usual "X" fashion. 
 
 **Theorem** *(see Theorem 4.2.7)* Suppose $L[y_1]=L[y_2]=0$, where the coefficient functions of $L$ are continuous on interval $I$. If the Wronskian is nonzero at any value of $t\in I$, then the solutions are independent, and 
 
