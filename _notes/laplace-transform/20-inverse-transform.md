@@ -125,6 +125,9 @@ We needn't worry about the ... terms, as they're all imaginary. The inverse tran
 
 $$2e^{-3t}\cos(2t)-e^{-3t}\sin(2t).$$
 
+![PFD]({{ site.baseurl }}/assets/images/shut-up-pfd.jpg)
+
+
 ## Repeated poles
 
 We have to make a slight change when the denominator has a repeated root, because the partial fraction expansion gets terms like

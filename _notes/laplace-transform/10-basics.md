@@ -8,19 +8,17 @@ chapter: "Laplace transform"
 
 *(See sections 5.1 and 5.2)*
 
-What if we lived in Exponential Town? 
+*We hop aboard the Laplace Express, which takes us to a curious corner of Linearity Land. It's rumored that the inhabitants live by strange rules, and trying to leave it with functions in your luggage famously causes a nightmare of paperwork, if you can get them out at all. But stories of beautiful solutions for complicated inputs give the place a mysterious pull.*
 
-In Exponential Town, every function is an exponential. Taking its derivative is so easy--just multiply by a number. Integration is pretty easy, too (as soon as you figure out how to get a unique result). 
-
-Sadly, Exponential Town is a dull place to live. But that doesn't mean we can't visit. While we're there, the functions we bring with us are remarkably chill about being differentiated. ODEs look like simple algebra. The tricky part is trying to bring the functions back home with us. Some of them, including a lot that are fun to hang out with, make the trip back just fine. But many require extensive surgery. Some just don't make it.
-
-Here's how we take a function $f(t)$, defined for all $t\ge 0$, to Exponential Town. It's called the Laplace Express--I mean, Transform.
+Here is a rule for replacing a function $f(t)$ (defined for $t\ge 0$) by a counterpart $F(s)$ called its *Laplace transform*{:.def}:
 
 $${\cal L}[f] = F(s) = \int_0^\infty f(t) e^{-st}\, dt.$$
 
-(I use square brackets instead of curly braces, which the book uses, because they're a tad easier to type. Don't make it a thing.) See what's happening here? The transformed function depends on a variable which we consistently call $s$. It's inside the integral. After the integration, we get a number that depends on $s$. That's the value of $F(s)$. 
+(I use square brackets instead of the curly braces that the book uses, because they're a tad easier to type. Don't make it a thing.) In principle, for a given $s$ we could plug it into the integral and get a number, which is the value of $F(s)$.
 
-### Canonical Example 1
+In practice, though, you learn to do Laplace transforms the same way you learned to take derivatives, by learning key canonical cases and how they combine in more complicated instances. 
+
+## Canonical Example 1
 
 Let $f(t)\equiv 1$. 
 
@@ -28,13 +26,13 @@ $${\cal L}[1] = \int_0^\infty e^{-st}\, dt = \left[ -\frac{1}{s} e^{-st} \right]
 
 assuming we restrict to $s>0$. 
 
-### Canonical Example exp
+## Canonical Example exp
 
 $${\cal L}[e^{(a+bi)t}] = \int_0^\infty e^{(a+bi-s)t}\, dt = \left[ -\frac{1}{s-a-bi} e^{(a+bi-s)t} \right]_0^\infty = \frac{1}{s-a-bi},$$
 
 though we must restrict to $s>a$. 
 
-### Canonical Example trig
+## Canonical Example trig
 
 Here's some fun. Since $\sin(bt) = \text{Im}[e^{ibt}]$, 
 
@@ -42,15 +40,17 @@ $${\cal L}[\sin(bt)] = \text{Im}({\cal L}[e^{ibt}]) = \text{Im}\left( \frac{1}{s
 
 where $s>0$. 
 
-For cos, we just take the real part instead, and get $s/(s^2+b^2)$. 
+For cos, we just take the real part instead, and get
 
-### Canonical Example $d/dt$
+$${\cal L}[\cos(bt)] =  \frac{s}{s^2+b^2}.$$
+
+## Canonical Example $d/dt$
 
 *(See Theorem 5.2.2)*
 
-Remember why we're going to Exponential Town? The whole idea was to make calculus into algebra. 
+Here we come the main attraction of riding the Laplace Express: it turns calculus into algebra. 
 
-You'll have to brush up on integration by parts to follow. 
+You'll have to brush up on integration by parts to follow this derivation:
 
 $$\begin{aligned}
 {\cal L}[f'] = \int_0^\infty f'(t) e^{-st}\, dt 
@@ -68,11 +68,11 @@ and
 
 $${\cal L} [f^{(n)}] = s^n F(s) - s^{(n-1)}f(0) - \cdots - f^{(n-1)}(0).$$
 
-### Canonical Example power
+## Canonical Example power
 
 *(See Theorem 5.2.4)*
 
-OK. If we differentiate in $t$-space, we multiply in $s$-space. What if we differentiate in $s$-space? 
+OK. We just saw that if we differentiate in $t$-space, then we multiply in $s$-space. What if we differentiate in $s$-space? 
 
 $$
 \begin{aligned}
@@ -82,28 +82,30 @@ F'(s) &= \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt \\
 \end{aligned}
 $$
 
-That. Is. Cool! The general rule is
+![Diff/mult]({{ site.baseurl }}/assets/images/diff-mult.jpg)
+
+The general rule is
 
 $$\frac{d}{ds} {\cal L}[f(t)] = (-1)^n {\cal L}[t^nf(t)].$$
 
 
-### Canonical Example shift
+## Canonical Example shift
 
 *(See Theorem 5.2.1)*
 
-Finally, remember that if we multiply exponentials together, you get another exponential with added exponents. How does this affect Exponential Town?
+Finally, something memorable happens if we multiply any $f(t)$ by an exponential: 
 
 $${\cal L}[e^{at}f(t)] = \int_0^\infty f(t)e^{(a-s)t}\,dt = \left[\int_0^\infty f(t)e^{-ut}\,dt\right]_{u=s-a} =F(s-a).$$
 
-### Linearity
+## Linearity
 
 *(See Theorem 5.1.2)*
 
-One more thing before we see some examples. It's almost trivial to show that the transform is a linear operator, that is,
+One more important thing before we see some examples. It's trivial to show that the Laplace transform is a linear operator. That is,
 
 $${\cal L}[c_1f_1(t)+c_2f_2(t)] = c_1 {\cal L}[f_1(t)] + c_2 {\cal L}[f_2(t)].$$
 
-### Examples
+## Examples
 
 > *Transform $f(t)=e^{-t}\cos(3t)$.*
 
@@ -136,4 +138,6 @@ It's impossible to resist the temptation to solve for $Y$!
 
 $$ Y(s) = \frac{\omega + s(s^2+\omega^2)}{(ms^2+k)(s^2+\omega^2)}.$$
 
-Uh, now what? 
+Uh, now what?
+
+![Inverse transforms]({{ site.baseurl }}/assets/images/inverse-transforms.jpg)

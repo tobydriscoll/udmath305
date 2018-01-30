@@ -8,15 +8,15 @@ chapter: "Laplace transform"
 
 So far, LTs have supplied us with new tools to solve the same old problems. Things start to get interesting when we look at other kinds of forcing functions that were out of our league before. These functions happen to be very interesting and useful from an engineering point of view.
 
-## [Unit step function](https://youtu.be/pKH63cRJ3p4)
+## Unit step function
 
 *(See section 5.5)*
 
-The *unit step function* or *Heaviside function* is 
+The *unit step function*{:.def} or [*Heaviside function*](https://youtu.be/pKH63cRJ3p4) is 
 
 $$ u(t) = \begin{cases} 0, & t<0,\\ 1, & t\ge 0. \end{cases} $$
 
-This represents "throwing a switch" at time $t=0$. We can turn it on at another time $c$ by using $u_c(t)=u(t-c)$. Also useful is the *indicator function* $u_{cd}(t)=u_c(t)-u_d(t)$, which will be on only for $t\in[c,d)$. 
+This represents "throwing a switch" at time $t=0$. We can turn it on at another time $c$ by using $u_c(t)=u(t-c)$. Also useful is the *indicator function*{:.def} $u_{cd}(t)=u_c(t)-u_d(t)$, which will be on only for $t\in[c,d)$. 
 
 (Note: The precise value of $u_c$ at $t=c$ is not important. It has no effect on IVP solutions and can be ignored.) 
 
@@ -40,7 +40,7 @@ f(t) &= tu_{02}(t) + u_{23}(t) + e^{-2t}u_3(t)\\
 &= t + (1-t) u_2(t) + (e^{-2t}-1) u_3(t).
 \end{aligned}$$
 
-## Laplace transform
+## Laplace transform of steps
 
 Now for some yummy transforms.
 
@@ -51,7 +51,7 @@ You can follow the same trail to get *(see Theorem 5.5.1)*
 
 $$ {\cal L}[u(t-c)f(t-c)] = e^{-cs} {\cal L}[f].$$
 
-### Example 
+### Example (forward transform)
 
 *(see Example 3 of section 5.5)*
 
@@ -76,9 +76,9 @@ $$F(s) = \frac{1}{s^2} - \frac{e^{-2s}}{s}  - \frac{e^{-2s}}{s^2}
 
 We have a new addition to the inversion library: exponentials in $F(s)$. 
 
-### Example
+### Example (inverse transform)
 
-> *Invert $F(s) = 6 e^{-5s}/(s^2+s-2)$.*
+> *Invert $F(s) = \frac{6 e^{-5s}}{s^2+s-2}$.*
 
 Write $F(s) = e^{-5s} G(s)$. Then $f(t) = g(t-5)u_5(t)$. 
 
@@ -86,7 +86,7 @@ We find residues of $(-1/3,1/3)$ at poles $(-2,1)$. So $g(t)=-2e^{-2t}+2e^{t}$. 
 
 ### Sawtooths and square waves
 
-A common signal in engineering is the *square wave*, which we define as being $1$ in all the intervals $(2n,2n+1)$ for integer $n\ge 0$, and zero elsewhere. It alternates between on and off.
+A common signal in engineering is the *square wave*{:.def}, which we define as being $1$ in all the intervals $(2n,2n+1)$ for integer $n\ge 0$, and zero elsewhere. It alternates between on and off.
 
 How do we like this?
 
@@ -108,9 +108,11 @@ If you want to do things this way, I love you. For the rest, we may need somethi
 
 $${\cal L}[f] = \frac{F_T(s)}{1-e^{-sT}} = \frac{\int_0^T e^{-st} f(t)\, dt}{1-e^{-sT}}.$$
 
-### Example
+#### Example
 
-> Transform the sawtooth wave $f(t) = t \text{ mod } 1$.
+*(This is similar to, but not quite the same as, Example 6 of section 5.5.)*
+
+> Transform the *sawtooth wave*{:.def} $f(t) = t \text{ mod } 1$.
 
 This is just the line $y=t$ over $[0,1]$ then repeated over and over. 
 
@@ -118,7 +120,6 @@ $$F_T(s) = \int_0^1 te^{-st}\, dt = \frac{1 - e^{-s}(1+s)}{s^2}.$$
 
 Hence $F(s) = \frac{1 - e^{-s}(1+s)}{s^2(1-e^{-s})}.$ 
 
-*(This is not quite the same as Example 6 of section 5.5.)*
 
 
 ## IVPs
@@ -137,11 +138,9 @@ Now suppose we did $y'' =u_1(t)$. You'd integrate again to get $y=(t-1)^2/2 u_1(
 
 Solving an ODE is a smoothing process. The answers come out with more derivatives than the data (at least in the forcing term). 
 
-### Ramp loading
+### Ramp loading example
 
-Let's consider a case of *ramp loading*, where a forcing ramps up from zero to a steady value. *(Similar to Example 1 of section 5.6.)*
-
-### Example
+Let's consider a case of *ramp loading*{:.def}, where a forcing ramps up from zero to a steady value. *(Similar to Example 1 of section 5.6.)*
 
 > *Solve $y'' +4y=u_{04}(t)t + 4u_4(t)$, with $y(0)=y'(0)=0$.*
 

@@ -14,15 +14,18 @@ We again assume that a large cup of coffee contains 300 mg of caffeine. One simp
 
 Now suppose you guzzle the coffee in 15 minutes. That would be modeled as $32(u(t-t_c) - u(t-t_c-1/4)$, again in our wheelhouse. If you slammed it all down in 5 minutes, first of all, that's kind of sad. Yet we could model it as the spike $96(u(t-t_c) - u(t-t_c-1/12)$.
 
-But say you prefer espresso and drink it like the Italians do, as one shot. We could model the spike to last a second or so. Often, though, we find it's more convenient to pass to an instantaneous limit. That's the idea behind an *impulse* forcing.
+But say you prefer espresso and drink it like the Italians do, as one shot. We could model the spike to last a second or so. Often, though, we find it's more convenient to pass to an instantaneous limit. That's the idea behind an *impulse*{:.def} forcing.
 
 ## Dirac delta
 
-An impulse is designated using the *Dirac delta* $\delta(t)$. (We write it like a function, and people will call it a function, but it's not technically a function.) The value of $\delta(t)$ is zero if $t\neq 0$ and undefined at zero. We also have the defining property
+An impulse is designated using the *Dirac delta*{:.def} $\delta(t)$. (We write it like a function, and people will call it a function, but it's not technically a function.) The value of $\delta(t)$ is zero if $t\neq 0$ and undefined at zero. We also have the defining property
 
 $$ \int_I \delta(t)\, dt = 1,$$
 
-if $I$ is any interval containing the origin. You can think of $\delta$, and its effects, as the limit of a family of spikes that get taller and narrower, with constant unit area inside. It's also called a "kick", informally. 
+if $I$ is any interval containing the origin. You can think of $\delta$, and its effects, as the limit of a family of spikes that get taller and narrower, with constant unit area inside. It's also called a "kick", informally.
+
+![Dirac]({{ site.baseurl }}/assets/images/dirac.jpeg)
+
 
 We can give an impulse an amplitude too, as in $a\delta(t)$. For an impulse at another time $t_i$, we use $\delta(t-t_i)$.
 

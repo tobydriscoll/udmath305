@@ -48,7 +48,7 @@ Note that each new value $z_i$ is a linear combination of the elements of $v$, w
 
 ## Convolution integral
 
-With that in mind, let's consider the definition of the *convolution integral*. Given two functions on $[0,\infty)$, the convolution is a third function, written $f*g$, with
+With that in mind, let's consider the definition of the *convolution integral*{:.def}. Given two functions on $[0,\infty)$, the convolution is a third function, written $f*g$, with
 
 $$ [f*g](t) = \int_0^t f(t-\tau)g(\tau)\, d\tau. $$
 
@@ -62,13 +62,13 @@ While we interpreted $f*g$ as $g$ acting on $f$, in fact the operation is symmet
 
 $$[g*f](t) = \int_0^t f(t-\tau)g(\tau)\, d\tau = \int_t^0 f(u)g(t-u)\, (-du) = \int_0^t g(t-u)f(u)\, du = [f*g](t).$$
 
-We can also easily prove some properties we really like to have, such as $f*(g*h)=(f*g)*h$, $f*(g+h)=(f*g)+(f*h)$, and $f*0=0$.
+We can also easily prove some properties we really like to have, such as $f * ( g * h )=( f * g) * h$, $f * (g+h)=(f * g)+(f*h)$, and $f * 0=0$.
 
 It is *not* true, however, that $f*1=f$, unless $f$ is the zero function. Instead, the right formula is
 
-$$[f*\delta](t) = \int_0^t f(t-\tau) \delta(\tau)\, d\tau = f(t)$$. 
+$$[f*\delta](t) = \displaystyle\int_0^t f(t-\tau) \delta(\tau)\, d\tau = f(t).$$ 
 
-A big part of convolution's appeal is the way it interacts with transforms. This is the *convolution theorem*.
+A big part of convolution's appeal is the way it interacts with transforms. This is the *convolution theorem*{:.def}.
 
 **Theorem** *(Theorem 5.8.3)* Suppose ${\cal L}[f] = F(s)$, ${\cal L}[g] = G(s)$, $h=f*g$, and ${\cal L}[h] = H(s)$. Then $H(s)=F(s)G(s)$.
 
@@ -76,19 +76,19 @@ I.e., convolution in time is multiplication in transform space. Since ${\cal L}[
 
 ## The last word on the 2nd-order, linear, constant-coefficient problem
 
-Once more, with feeling! Say $ay'' + by' + c = g(t)$, $y(0)=y_0$, $y'(0)=y_1$. This has everything. We want to solve the *input-output problem*: given inputs $a,b,c,g,y_0,y_1$, what is the result?
+Once more, with feeling! Say $ay'' + by' + c = g(t)$, $y(0)=y_0$, $y'(0)=y_1$. This has everything. We want to solve the *input-output problem*{:.def}: given inputs $a,b,c,g,y_0,y_1$, what is the result?
 
 In transform space,
 
 $$(as^2 +bs + c)Y(s) = G(s) + (as+b)y_0 + ay_1.$$
 
-The function $H(s)=1/(as^2 + bs+c)$ is known as the *transfer function*, as it plays a key role in transferring inputs to outputs. Now we can write
+The function $H(s)=1/(as^2 + bs+c)$ is known as the *transfer function*{:.def}, as it plays a key role in transferring inputs to outputs. Now we can write
 
 $$Y(s) = H(s)[(as+b)y_0 + ay_1] + H(s)G(s).$$
 
-The first term on the right is the *free response*, depending only on initial state and no forcing. By contrast, the *forced response* is $h*g$.
+The first term on the right is the *free response*{:.def}, depending only on initial state and no forcing. By contrast, the *forced response*{:.def} is $h * g$.
 
-Of particular interest is when $G(s)=1$, i.e. $g(t)=\delta(t)$, because then the forced response is $h(t)$, called the *impulse response*. In theory, measuring the impulse response gives you everything you need to solve the completely general IVP! 
+Of particular interest is when $G(s)=1$, i.e. $g(t)=\delta(t)$, because then the forced response is $h(t)$, called the *impulse response*{:.def}. In theory, measuring the impulse response gives you everything you need to solve the completely general IVP! 
 
 ### Example
 
