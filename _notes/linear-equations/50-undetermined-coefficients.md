@@ -89,6 +89,7 @@ If $L[y]=g$ and $g$ is a linear combination of terms like those seen above, then
 There are rules for polynomial times exponential/trig, too. You should be glad we're ignoring those, as the algebra gets crazy. You can always ask a computer.
 
 ![Doesn't work]({{ site.baseurl }}/assets/images/doesnt-work.jpg)
+{:.meme}
 
 Finally, the method as presented here can **fail**. 
 

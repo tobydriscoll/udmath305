@@ -83,6 +83,7 @@ F'(s) &= \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt \\
 $$
 
 ![Diff/mult]({{ site.baseurl }}/assets/images/diff-mult.jpg)
+{:.meme}
 
 The general rule is
 
@@ -141,3 +142,4 @@ $$ Y(s) = \frac{\omega + s(s^2+\omega^2)}{(ms^2+k)(s^2+\omega^2)}.$$
 Uh, now what?
 
 ![Inverse transforms]({{ site.baseurl }}/assets/images/inverse-transforms.jpg)
+{:.meme}

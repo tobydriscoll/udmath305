@@ -77,6 +77,7 @@ I.e., convolution in time is multiplication in transform space. Since ${\cal L}[
 ## The last word on the 2nd-order, linear, constant-coefficient problem
 
 ![Sick of this ODE]({{site.baseurl}}/assets/images/sick-ode.jpg)
+{:.meme}
 
 Once more, with feeling! Say $ay'' + by' + c = g(t)$, $y(0)=y_0$, $y'(0)=y_1$. This has everything. We want to solve the *input-output problem*{:.def}: given inputs $a,b,c,g,y_0,y_1$, what is the result?
 

@@ -11,6 +11,7 @@ chapter: "Laplace transform"
 Laplace transforms are good at solving some fLaShI problems, particularly those with constant coefficients on the $y$ terms.
 
 ![distracted]({{ site.baseurl }}/assets/images/distracted.jpg)
+{:.meme}
 
 ## Example
 > *Solve $y'' +y = \sin(t)$, with $y(0)=0$ and $y'(0)=1$.*

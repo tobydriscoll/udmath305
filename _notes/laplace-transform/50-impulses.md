@@ -25,7 +25,7 @@ $$ \int_I \delta(t)\, dt = 1,$$
 if $I$ is any interval containing the origin. You can think of $\delta$, and its effects, as the limit of a family of spikes that get taller and narrower, with constant unit area inside. It's also called a "kick", informally.
 
 ![Dirac]({{ site.baseurl }}/assets/images/dirac.jpeg)
-
+{:.meme}
 
 We can give an impulse an amplitude too, as in $a\delta(t)$. For an impulse at another time $t_i$, we use $\delta(t-t_i)$.
 

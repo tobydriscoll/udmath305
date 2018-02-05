@@ -100,6 +100,7 @@ $\sin(t)$ is a solution of $y'' +y=0$. If we tried to take $y_1=y_2=\sin(t)$, th
 If $y_1$ and $y_2$ are such that their linear combination can't be used to satisfy two arbitrary initial conditions, then we say they are *linearly dependent*{:.def}. Otherwise, they are *linearly independent*{:.def}, or (in the book's preferred jargon) they form a *fundamental set*{:.def}.
 
 ![Independent solutions]({{ site.baseurl }}/assets/images/independent.jpg)
+{:.meme}
 
 
 Fortunately, there is a relatively easy, if unexpected, way to determine whether two given solutions to $L[y]=0$ are independent. Define the *Wronskian*{:.def} as the function

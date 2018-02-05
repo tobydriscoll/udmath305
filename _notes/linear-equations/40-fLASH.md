@@ -87,6 +87,7 @@ $$
 Note: *Not* Kramer's rule. ("Without rules, there's chaos!")
 
 ![2 by 2]({{ site.baseurl }}/assets/images/2x2-linear-systems.jpg)
+{:.meme}
 
 For an IVP, you will have to solve 2-by-2 linear systems. Here's a mechanical process to take some of the pain out. The solution to 
 

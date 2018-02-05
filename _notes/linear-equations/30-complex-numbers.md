@@ -80,6 +80,7 @@ e^{it} = \cos(t) + i \sin(t).
 $$
 
 ![Euler]({{ site.baseurl }}/assets/images/goes-blind-by.jpg)
+{:.meme}
 
 Hence for real $t$, $e^{it}$ is the point at angle $t$ on the unit circle. Note also that for such a point,
 

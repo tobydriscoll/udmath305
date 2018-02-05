@@ -109,6 +109,7 @@ plot(yr,'k')
 ## Damped oscillations
 
 ![Damping]({{ site.baseurl }}/assets/images/damping.jpg)
+{:.meme}
 
 We now turn on the damping term and consider the homogeneous problem $my'' + \gamma y' + k y = 0$. Obviously, everything comes down to how the characteristic roots depend on $\gamma$:
 

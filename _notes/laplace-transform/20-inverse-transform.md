@@ -14,7 +14,7 @@ The real goal is to recover $y(t)$ from this. Here's what we have to work with:
 
 ![transform table](transform-table.jpeg)
 
-In some cases, this is not hard to apply.
+(Some of the stuff in this table we haven't covered yet.) Now it's a matter of pattern-matching from the given $F(s)$ to something in the table. 
 
 ### Examples
 
@@ -126,6 +126,7 @@ We needn't worry about the ... terms, as they're all imaginary. The inverse tran
 $$2e^{-3t}\cos(2t)-e^{-3t}\sin(2t).$$
 
 ![PFD]({{ site.baseurl }}/assets/images/shut-up-pfd.jpg)
+{:.meme}
 
 
 ## Repeated poles

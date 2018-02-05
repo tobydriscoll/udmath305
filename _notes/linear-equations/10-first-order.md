@@ -95,6 +95,7 @@ This is a bit of a mouthful as a formula, and remember that the integral written
 
 
 ![Integrating factor]({{ site.baseurl }}/assets/images/integrating-factor.jpg)
+{:.meme}
 
 ### Example
 
