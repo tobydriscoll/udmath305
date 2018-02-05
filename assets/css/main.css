@@ -381,7 +381,11 @@ textarea {
     color: #c0c0c0;
     letter-spacing: 0;
   }
-  
+
+  .meme img {
+      max-height: 20em;
+      max-width: 100%;
+  }
   
   /* Next section from 'lanyon.css'. */
   /*
@@ -447,6 +451,9 @@ textarea {
         font-size: 12px;
     }
     .masthead {
+	display: none;
+    }
+    .meme {
 	display: none;
     }
 }
@@ -595,6 +602,9 @@ textarea {
   @media print {
     .sidebar-toggle {
       display: none;
+    }
+    .meme {
+	display: none;
     }
   }
   
