@@ -10,49 +10,61 @@ chapter: "Linear equations"
 
 ## Exponential solutions
 
+### FLASH
+
 We start with first-order linear equations, which is about as simple as ODEs can get. That is, we are already guaranteeing F, L, and S in our classification scheme. Let's go even further and go for the all-caps FLASH:
 
 $$
 a \frac{dy}{dt} + by = 0,
 $$
 
-where $a$ and $b$ are constants. Of course, it's not an ODE if $a=0$, so we rule that out. And then we might as well divide through by $a$ and rename the constant to get simply
+where $a$ and $b$ are constants. Of course, it's not an ODE if $a=0$, so we rule that out. And then we might as well divide through by $a$ and rename $b/a=k$ to get simply
 
 $$
-\frac{dy}{dt} + by = 0.
+\frac{dy}{dt} + ky = 0.
 $$
 
 This is truly a minimalist ODE! 
 
-You already know the answer to this problem. Once we rewrite it as $y=-by$, it's clear that the solution must be $y(t)=Ce^{-bt}$ for any choice of the constant $C$. We'll call this the *general solution*{:.def} of the ODE.
+You already know the answer to this problem. Once we rewrite it as $y=-ky$, it's clear that the solution must be $y(t)=Ce^{-kt}$ for any choice of the constant $C$. We call this the *general solution*{:.def} of the ODE. It's a slightly misleading term, because it really refers to the infinite *family* of functions $Ce^{-kt}$ for all possible choices of $C$. 
 
-Our next step up the ladder will be to go from type A to a, to get FLaSH. That is, we let the coefficient become a function of the independent variable $t$:
+### FLaSH
 
-$$
-\frac{dy}{dt} + b(t)y = 0.
-$$
-
-It's pretty tempting to continue with the exponential function to get the solution. To do this, suppose $y(t)=C\exp(B(t))$. Then by the chain rule for derivatives, we'll be fine as long as $B'(t)=-b(t)$. In other words, we just need to find an antiderivative of $-b$, and we get a solution:
+Our next step up the ladder will be to go from type A to a, to get FLaSH. That is, we let the coefficients become functions of the independent variable $t$:
 
 $$
-\frac{dy}{dt} + b(t)y = 0 \Rightarrow y = C \exp\left[\int -b(t)\,dt\right].
+a(t) \frac{dy}{dt} + b(t)y = 0.
 $$
 
-There's an interesting aspect to this result. The indefinite integral (i.e., antiderivative) gives us an extra additive constant. So we ought to get 
+The question of what happens if $a(t)=0$ somewhere is an interesting one, and we will get back to it. For now we will just divide through by $a(t)$ and hope for the best:
 
 $$
-y = C \exp\left(\int -b(t)\, dt+K\right)
+\frac{dy}{dt} + p(t)y = 0.
 $$
 
-for another aribtrary constant $K$. But this is the same as 
+Faced with $y'=-p(t)y$, we see that an exponential function will still solve the problem. Suppose $y=Ce^{u(t)}$. By the Chain Rule, this will be a solution provided that $u'=-p$. That is, $u(t)$ is an antiderivative of $-p(t)$: 
 
 $$
-y = (Ce^K) \exp\left(\int -b(t)\, dt \right),
+\frac{dy}{dt} + p(t)y = 0 \Rightarrow y = C \exp\left[\int -p(t)\,dt\right].
 $$
 
-which means that nothing new is introduced by $K$, as we still just have an arbitrary constant out in front. So we can ignore the integration constant. 
+### The integration constant
 
-## Integrating factor
+Recall that the indefinite integral (i.e., antiderivative) allows an arbitrary additive constant. So if $u'=-p$ as above, then $\tilde{u}(t)=u(t)+K$ also satisfies $\tilde{u}'=-p$, and therefore
+
+$$
+\tilde{y} = C \exp[ \tilde{u}(t) ]
+$$
+
+is also a solution. It follows that
+
+$$
+\tilde{y} = C \exp[ u(t) + K ] = ( Ce^K) \exp[u(t)].
+$$
+
+This looks superficially different from the solution we defined as $y=Ce^{u(t)}$. But when we consider the family of *all* such solutions for arbitrary constant $C$, we see that $\tilde{y}$ brings us nothing new. So $y$ really is the general solution. The moral of this story is that any antiderivative will do, and we can ignore the integration constant when we write out $u(t)$.
+
+## FLaSh: Integrating factor
 
 Now let's look at the most general case of a linear, first-order equation (FLaSh),
 
@@ -66,25 +78,33 @@ $$
 \frac{dy}{dt} + p(t)y = q(t).
 $$
 
-(The question of what happens if $a$ is zero at some value of $t$ is an interesting one, and we'll get back there soon.) The presence of $q(t)$ on the right side is a new wrinkle, and we need to modify our approach. Suppose we multiply through on both sides by a term in the form of $\exp(\mu(t))$, with $\mu(t)$ to be determined shortly. Then
+(The question of what happens if $a(t)$ is zero remains one that we will revisit soon.) The presence of $q(t)$ on the right side is an important new wrinkle. If we try to plug in $y=Ce^{u(t)}$ again, we get results only if $q(t)$ is identically zero.
+
+A modified approach turns out to save the situation. We still use a function $\exp(\mu(t))$, with $\mu(t)$ to be determined shortly. But instead of proposing it as a solution, we multiply the ODE through by it to get
 
 $$
 e^{\mu(t)} \frac{dy}{dt} + p(t)e^{\mu(t)} y = e^{\mu(t)} q(t).
 $$
 
-Why was this a good idea? Well, if we use the product and chain rules for differentiation, we see that we can rewrite this as
+Why was this a good idea? Well, if we insist that $\mu'=p$, then the chain rule will still be applicable:
 
 $$
-\frac{d}{dt} \left[ e^{\mu(t)} y(t) \right] = e^{\mu(t)} q(t),
+e^{\mu(t)} y'(t) + \frac{d}{dt} \left[ e^{\mu(t)} \right] y(t) = e^{\mu(t)} q(t).
 $$
 
-provided only that $p(t)=\mu'(t)$. The left side can be integrated immediately (which is why $e^\mu$ is called an *integrating factor*{:.def}), leading to the formal solution
+And then we interpret the left-hand side as a differentiation product rule, to get
 
 $$
- y(t) = e^{-\mu(t)} \int e^{\mu(t)} q(t)\, dt.
+\frac{d}{dt} \left[ e^{\mu(t)} y(t) \right] = e^{\mu(t)} q(t).
 $$
 
-This is a bit of a mouthful as a formula, and remember that the integral written here is an indefinite one, so it brings out an arbitrary constant. It's better to think of the solution as a process, rather than a formula:
+The left side can be integrated immediately (which is why $e^\mu$ is called an *integrating factor*{:.def}), leading to the formal solution
+
+$$
+y(t) = e^{-\mu(t)} \int e^{\mu(t)} q(t)\, dt, \qquad \mu(t) = \int p(t)\, dt.
+$$
+
+This is a bit of a mouthful as a formula. It's better to focus on the process:
 
 1. If necessary, bring the equation into standard form; the coefficient of $dy/dt$ must equal one.
 1. (First integration) Find $\mu(t)=\int p(t)\, dt$. You can omit this integration constant (for the same reasons we did in the simpler case above). 
