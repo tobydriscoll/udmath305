@@ -42,27 +42,27 @@ $$
 \frac{dy}{dt} + p(t)y = 0.
 $$
 
-Faced with $y'=-p(t)y$, we see that an exponential function will still solve the problem. Suppose $y=Ce^{u(t)}$. By the Chain Rule, this will be a solution provided that $u'=-p$. That is, $u(t)$ is an antiderivative of $-p(t)$: 
+Faced with $y'=-p(t)y$, we see that an exponential function will still solve the problem. Suppose $y=Ce^{-\mu(t)}$. By the Chain Rule, this will be a solution provided that $\mu'=p$. That is, $\mu(t)$ is an antiderivative of $p(t)$: 
 
 $$
-\frac{dy}{dt} + p(t)y = 0 \Rightarrow y = C \exp\left[\int -p(t)\,dt\right].
+\frac{dy}{dt} + p(t)y = 0 \quad \Rightarrow \quad y = C \exp\left[-\int p(t)\,dt\right].
 $$
 
 ### The integration constant
 
-Recall that the indefinite integral (i.e., antiderivative) allows an arbitrary additive constant. So if $u'=-p$ as above, then $\tilde{u}(t)=u(t)+K$ also satisfies $\tilde{u}'=-p$, and therefore
+Recall that the indefinite integral (i.e., antiderivative) allows an arbitrary additive constant. So if $\mu'=p$ as above, then $u(t)=\mu(t)+K$ also satisfies $u'=p$, and therefore
 
 $$
-\tilde{y} = C \exp[ \tilde{u}(t) ]
+\tilde{y} = C \exp[ -u(t) ]
 $$
 
 is also a solution. It follows that
 
 $$
-\tilde{y} = C \exp[ u(t) + K ] = ( Ce^K) \exp[u(t)].
+\tilde{y} = C \exp[ -\mu(t) - K ] = ( Ce^{-K}) \exp[-\mu(t)].
 $$
 
-This looks superficially different from the solution we defined as $y=Ce^{u(t)}$. But when we consider the family of *all* such solutions for arbitrary constant $C$, we see that $\tilde{y}$ brings us nothing new. So $y$ really is the general solution. The moral of this story is that any antiderivative will do, and we can ignore the integration constant when we write out $u(t)$.
+This looks superficially different from the solution we defined as $y=Ce^{-\mu(t)}$. But when we consider the family of *all* such solutions for arbitrary constant $C$, we see that $\tilde{y}$ brings us nothing new. So $y$ really is the general solution. The moral of this story is that any antiderivative will do, and we can ignore the integration constant when we find $\mu(t)$.
 
 ## FLaSh: Integrating factor
 
@@ -78,15 +78,15 @@ $$
 \frac{dy}{dt} + p(t)y = q(t).
 $$
 
-(The question of what happens if $a(t)$ is zero remains one that we will revisit soon.) The presence of $q(t)$ on the right side is an important new wrinkle. If we try to plug in $y=Ce^{u(t)}$ again, we get results only if $q(t)$ is identically zero.
+(The question of what happens if $a(t)$ is zero remains one that we will revisit soon.) The presence of $q(t)$ on the right side is an important new wrinkle. If we try to plug in $y=Ce^{-\mu(t)}$ again, we get results only if $q(t)$ is identically zero.
 
-A modified approach turns out to save the situation. We still use a function $\exp(\mu(t))$, with $\mu(t)$ to be determined shortly. But instead of proposing it as a solution, we multiply the ODE through by it to get
+A modified approach turns out to save the situation. We still use $\exp(\mu(t))$, with $\mu(t)$ to be determined shortly. But instead of proposing it as a solution, we multiply the ODE through by it to get
 
 $$
 e^{\mu(t)} \frac{dy}{dt} + p(t)e^{\mu(t)} y = e^{\mu(t)} q(t).
 $$
 
-Why was this a good idea? Well, if we insist that $\mu'=p$, then the chain rule will still be applicable:
+Why was this a good idea? Well, if we again insist that $\mu'=p$, then the chain rule will still be applicable:
 
 $$
 e^{\mu(t)} y'(t) + \frac{d}{dt} \left[ e^{\mu(t)} \right] y(t) = e^{\mu(t)} q(t).
