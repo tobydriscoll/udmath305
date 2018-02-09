@@ -70,9 +70,9 @@ You may instead be given the same data but at two values of $t$. In that case yo
 
 | $y'' + y' + \sin(y) = 0,\quad y(0)=1,\, y'(0)=0$ | $ y'' + y' + \sin(y) = 0, \quad y(0)=1,\, y(4)=0$  | 
 
-## The FLASHI system
+## The FLASHI scheme
 
-Except for the ordinary/partial distinction, each one of the traits above can be tracked by what we will call the FLASHI system. Each letter is capitalized when its corresponding property is true:
+Except for the ordinary/partial distinction, each one of the traits above can be tracked by what we will call the FLASHI scheme. Each letter is capitalized when its corresponding property is true:
 
 * **F**irst order?
 * **L**inear?
@@ -87,3 +87,5 @@ Thus,
 | $ y'' + y' + y = \sin(t) $ | fLaSh |
 | $ u' = v,\quad v'+v - \sin(u) = 0 $ | FlAsH |
 | $y'+ty=1$, $y(2)=0$ | FLaShI |
+
+In every case, the capitalized form is easier than the lowercase form. In fact, the lowercase form is typically a generalization of the uppercase form. Thus, theoretical statements about fLaSh problems should also technically be applicable to FLASh problems, for example. The exception is I; while IVPs are easier than BVPs for the most part, the relationship is not one of special case/generalization. 
