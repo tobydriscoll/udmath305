@@ -106,16 +106,14 @@ $$
 
 This is a bit of a mouthful as a formula. It's better to focus on the process:
 
-1. If necessary, bring the equation into standard form; the coefficient of $dy/dt$ must equal one.
-1. (First integration) Find $\mu(t)=\int p(t)\, dt$. You can omit this integration constant (for the same reasons we did in the simpler case above). 
-1. Multiply both sides of the original ODE by $e^{\mu(t)}$. 
-1. Rearrange the left-hand side into the derivative of $e^{\mu(t)} y(t)$. (If this is impossible, you've messed up.)
-1. (Second integration) Integrate both sides, this time including the integration constant on the right-hand side. 
-1. Multiply through by $e^{-\mu(t)}$. Solved!
+1. **Standardize** by dividing through by the coefficient of $y'$. 
+1. **Integrate** to find $\mu(t)=\int p(t)\, dt$. Omit this integration constant (for the same reasons we did in the simpler case above).
+1. **Exponentiate** to find the integrating factor, $e^{\mu(t)}$.
+1. **Multiply** both sides of the ODE from step 1 by the integrating factor.
+1. **Rearrange** the left-hand side into the derivative of $e^{\mu(t)} y(t)$. (If this is impossible, you've messed up.)
+1. **Integrate** both sides, this time including the integration constant on the right-hand side. 
+1. **Multiply** through by $e^{-\mu(t)}$ (or equivalently, divide through by the integrating factor). Solved!
 
-
-![Integrating factor]({{ site.baseurl }}/assets/images/integrating-factor.jpg)
-{:.meme}
 
 ### Example
 
@@ -149,6 +147,37 @@ xlabel t, ylabel y
 
 ### Example
 
+> Solve $y'+2y = t$.
+
+The left side is the same as the previous example, so the integrating factor is the same. We arrive at
+
+$$ 
+\left[ e^{2t} y \right]' = t e^{2t}, 
+$$ 
+
+$$ 
+e^{2t} y  = \int t e^{2t}\, dt. 
+$$ 
+
+![Integrating factor]({{ site.baseurl }}/assets/images/integrating-factor.jpg)
+{:.meme}
+
+The way to do this integral is by parts ($u=t$, $dv=e^{2t}\,dt$):
+
+$$
+\int t e^{2t}\, dt = \int u\, dv = uv - \int v\,du = \frac{1}{2}te^{2t} - \int \frac{1}{2} e^{2t}\, dt = \frac{1}{4}e^{2t}( 2t-1) + C.
+$$
+
+Hence $e^{2t}y = \frac{1}{4}e^{2t}( 2t-1) + C$, or
+
+$$
+y = Ce^{-2t} + \frac{1}{4}( 2t-1).
+$$
+
+The term $Ce^{-2t}$ popped up in the solution of both examples. Do you think that's a coincidence? (Hint: no.) 
+
+### Example
+
 > Solve $ty'+2y = 4t^2$.
 
 A common error is to forget to put the equation into standard form first. Here, that means dividing through by $t$.
@@ -163,7 +192,7 @@ y &=  t^2 + C t^{-2}
 \end{aligned}
 $$
 
-An interesting thing about this solution is that it (usually) does not exist at $t=0$. This is where the coefficient function $2/t$ fails to exist, too. 
+An interesting thing about this solution is that it does not exist at $t=0$, unless $C=0$. This is where the coefficient function $2/t$ fails to exist, too. 
 
 ![plot of solutions](10-example2.svg)
 
@@ -179,6 +208,7 @@ xlabel t, ylabel y
 ## IVPs
 
 When initial conditions are given, it pins down the value of the arbitrary constant. That is, one of the solution curves is selected--the one that passes through the point specified by the initial condition. 
+
 
 ### Example (*see Example 3 in section 2.3*)
 
