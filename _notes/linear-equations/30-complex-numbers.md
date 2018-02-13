@@ -8,13 +8,13 @@ chapter: "Linear equations"
 
 *For a really smart and entertaining introduction to complex numbers, I recommend [this video series](https://youtu.be/T647CGsuOVU).*
 
-## The reality of imaginary numbers
-
 We need to take a short but highly relevant detour to talk about complex numbers. 
 
-There's a lot of weirdness about complex numbers. Terminology is part of the reason. Using "real" and "imaginary" to label numbers suggests a strong value judgment, one that ruled mathematics for centuries. But complex numbers are actually just as "real" as so-called real numbers--if anything, they are more fundamental to the universe, by a country mile. 
+There's often a lot of uneasiness about complex numbers. Terminology is part of the reason. Using "real" and "imaginary" to label numbers suggests a strong value judgment, one that ruled mathematics for centuries. But complex numbers are actually just as "real" as so-called real numbers. If anything, they are actually *more* fundamental to the universe. 
 
-Let's rewind a bit. We can probably take for granted the positive integers 1, 2, 3, and so on (although the "and so on" part is a bit fishy in a finite universe), and we'll throw in zero too (though this too was controversial for centuries). It's not long before we want to solve a problem like $x+1=0$. Annoyingly, we can pose the problem using just nonnegative integers, but we can't solve it. So we accept the existence of the negative integers. 
+## The reality of imaginary numbers (optional)
+
+Let's rewind a bit. We can probably take for granted the positive integers 1, 2, 3, and so on, and we'll throw in zero too (though this too was controversial for centuries). It's not long before we want to solve a problem like $x+1=0$. Annoyingly, we can pose the problem using just nonnegative integers, but we can't solve it. So we accept the existence of the negative integers. 
 
 I can imagine quite a bit of skepticism about this historically. ("Sure, Wei. Ever seen a negative goat?") But if you've ever taken out a loan, you know that negative numbers can have very real consequences. 
 
@@ -42,7 +42,56 @@ $$
 
 which is purely "real" but insolvable. Solutions to this equation were widely resisted for a very long time (say, the 18th century), to the point they were called "imaginary" (thanks, Descartes). 
 
-Yet something amazing happens if you do accept imaginary numbers, and their expansion to the complex numbers. Namely, *The Fundamental Theorem of Algebra*, which states that if you write down a polynomial using complex numbers, it will have only complex numbers as solutions. So there's no infinite ladder of hypercomplex numbers that we have to ascend--just one rung past the "real" ones. 
+Yet something amazing happens if you do accept imaginary numbers, and their expansion to the complex numbers. Namely, *The Fundamental Theorem of Algebra*, which states that if you write down a polynomial using complex numbers, it will have only complex numbers as solutions. So there's no infinite ladder of hypercomplex numbers that we have to ascend--just one rung past the "real" ones.
+
+## The curious case of the missing singularities (optional)
+
+In Calc II you learn how to derive this power series using the geometric series:
+
+$$
+\frac{1}{1-x^2} = 1 + x^2 + x^4 + x^6 + \cdots.
+$$
+
+It's only valid for $\|x\| < 1$. This seems reasonable, as the function blows up at $\|x\|=1$ anyway.
+
+~~~matlab
+clf
+func = @(x) 1./(1-x.^2);
+series = @(x) sum( (x.^2).^(0:50) );
+fplot(func,[-1.4 1.4],'linew',2)
+hold on
+fplot(series,[-1.4 1.4],'linew',2)
+ylim([-6 6])
+~~~
+
+![Series 1]({{ site.baseurl }}/assets/images/series-converge1.svg)
+
+Now we can substitute $-x^2$ for $x^2$ and get
+
+$$
+\frac{1}{1+x^2} = 1 - x^2 + x^4 - x^6 + \cdots,
+$$
+
+still good only for $\|x\| < 1$. This is harder to understand, though, because the function is continuous, with infinitely many derivatives, on the whole real line.
+
+~~~matlab
+clf
+func = @(x) 1./(1+x.^2);
+series = @(x) sum( (-x.^2).^(0:50) );
+fplot(func,[-1.4 1.4],'linew',2)
+hold on
+fplot(series,[-1.4 1.4],'linew',2)
+ylim([-1 5])
+grid on
+~~~
+
+![Series 2]({{ site.baseurl }}/assets/images/series-converge2.svg)
+
+Why does the series go bad, with no clear barrier in sight?
+
+The answer is that power series for complex variables always converge inside of disks. Because $1/(1+x^2)$ blows up at $x=\pm i$, the largest disk we can fit at the origin still has radius 1. That is, even though the singularities are "imaginary", they have a very "real" effect on the convergence. 
+
+
 
 ## Basics
 
