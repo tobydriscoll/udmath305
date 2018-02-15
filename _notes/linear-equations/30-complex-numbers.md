@@ -216,3 +216,24 @@ $$
 Using the polar interpretation, we see that $\|f(t)\|=e^{\alpha t}$. That is, the magnitude of $f(t)$ grows or decays exponentially in time, as controlled by the sign of the real part of $\gamma$. (The magnitude is constant at 1 in the edge case of $\alpha=0$.) The angle (or phase) of $f(t)$ varies linearly in time, at a frequency $\beta$. Of course, phase is only relevant modulo $2\pi$. 
 
 (See MATLAB app complexExp.)
+
+~~~matlab
+gamma = -0.5 + 6i;
+f = @(t) exp(gamma*t);
+Re_f = @(t) real(f(t));
+Im_f = @(t) imag(f(t));
+
+clf
+subplot(2,1,1)
+fplot(Re_f,[0 10],'linew',2)
+hold on
+fplot(Im_f,[0 10],'linew',2)
+fplot(@(t) exp(real(gamma)*t),[0 10],'k--')
+fplot(@(t) -exp(real(gamma)*t),[0 10],'k--')
+xlabel('t'), ylabel('Re/Im parts of f(t)')
+
+subplot(2,1,2)
+t = linspace(0,10,250);
+comet(Re_f(t),Im_f(t))
+~~~
+
