@@ -131,7 +131,7 @@ $$
 ![Euler]({{ site.baseurl }}/assets/images/goes-blind-by.jpg)
 {:.meme}
 
-Hence for real $t$, $e^{it}$ is the point at angle $t$ on the unit circle. Note also that for such a point,
+Note that when $t$ is real,
 
 $$ \left( e^{it}\right)^{-1} = e^{-it} = \overline{e^{it}}. $$
 
@@ -151,33 +151,68 @@ $$
 \end{aligned}
 $$
 
+Exponentials of complex numbers (having nonzero real and imaginary parts) simply obey the usual rules for exponentials:
+
+$$
+e^{a+ib} = e^a e^{ib} = e^a(\cos b + i\sin b) = (e^a \cos b) + i(e^a \sin b).
+$$
+
 
 ## Geometry
 
 There are profound connections between complex numbers and two-dimensional geometry. The starting point is the *complex plane*, where you plot with the real part horizontally and the imaginary part vertically. So $z=x+iy$ is the same as supplying the Cartesian coordinates $(x,y)$ of a point in the plane. By the Pythagorean Theorem, $\|z\|$ is the distance from $z$ to the origin. 
 
-Note that Euler's identity is really about points on the unit circle of the complex plane; the point at angle $\theta$ lies at $(\cos \theta,\sin \theta)$, and thus $e^{i\theta}$ is equal to that point. For any nonzero point not on the unit circle, we can normalize it to get the angle, and therefore write
+Note that Euler's identity for real $t$,
 
 $$
-z = |z|\cdot \frac{z}{|z|} = |z| e^{i\theta},
+e^{it} = \cos(t) + i \sin(t),
 $$
 
-which is an expression in polar coordinates. And if we multiply together two numbers in polar form,
+is really about points on the unit circle of the complex plane; the point at angle $\theta$ lies at $(\cos \theta,\sin \theta)$, and thus $e^{i\theta}$ is equivalent to that point. As you know, any number in the plane can be expressed in polar coordinates $(r,\theta)$. As stated above, $r=\|z\|$. Observe that
+
+$$re^{i\theta} = (r\cos \theta) + i (r\sin\theta) = x + iy.$$
+
+The expression on the left can be thought of as the complex variables expression of a point using polar coordinates.
+
+For complex numbers in rectangular or Cartesian form, it's easy to think of complex addition in terms of 2D vectors:
+
+$$
+(x_1+iy_1) + (x_2 + iy_2) = (x_1+x_2) + i(y_1+y_2).
+$$
+
+This is clearly just a restatement of
+
+$$
+\begin{bmatrix}
+x_1 \\ y_1
+\end{bmatrix}
++
+\begin{bmatrix}
+x_2 \\ y_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+x_1+x_2 \\ y_1+y_2
+\end{bmatrix}.
+$$
+
+In polar form, it's multiplication that becomes interesting:
 
 $$
 (r_1 e^{i\theta_1})(r_2 e^{i\theta_2}) = (r_1r_2) e^{i(\theta_1+\theta_2)}.
 $$
 
-So multiplication in the complex plane is equivalent to scaling and rotation. 
+That is, multiplication in the complex plane is equivalent to scaling and rotation. 
 
-## Complex exponentials
 
-If $\alpha$, $\beta$, and $t$ are real, then in polar form,
+## Complex exponential functions
+
+Suppose $\gamma = \alpha +i\beta$ and $t$ is real. Define
 
 $$
-f(t) = e^{(\alpha + i\beta)t} = e^{\alpha t} e^{i\beta t}.
+f(t) = e^{\gamma t} = e^{(\alpha + i\beta)t} = e^{\alpha t} e^{i\beta t}.
 $$
 
-As $t$ increases, the magnitude of $f(t)$ varies exponentially, at rate $\alpha$. The angle (or phase) of $f$ increases linearly in time at rate $\beta$, though of course phase is only relevant modulo $2\pi$. 
+Using the polar interpretation, we see that $\|f(t)\|=e^{\alpha t}$. That is, the magnitude of $f(t)$ grows or decays exponentially in time, as controlled by the sign of the real part of $\gamma$. (The magnitude is constant at 1 in the edge case of $\alpha=0$.) The angle (or phase) of $f(t)$ varies linearly in time, at a frequency $\beta$. Of course, phase is only relevant modulo $2\pi$. 
 
 (See MATLAB app complexExp.)
