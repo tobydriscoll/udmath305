@@ -218,12 +218,13 @@ Using the polar interpretation, we see that $\|f(t)\|=e^{\alpha t}$. That is, th
 (See MATLAB app complexExp.)
 
 ~~~matlab
-gamma = -0.5 + 6i;
+gamma = 0.15 + 6i;
 f = @(t) exp(gamma*t);
 Re_f = @(t) real(f(t));
 Im_f = @(t) imag(f(t));
 
 clf
+set(gcf,'defaultaxesdataaspectratiomode','manual')
 subplot(2,1,1)
 fplot(Re_f,[0 10],'linew',2)
 hold on
@@ -233,7 +234,7 @@ fplot(@(t) -exp(real(gamma)*t),[0 10],'k--')
 xlabel('t'), ylabel('Re/Im parts of f(t)')
 
 subplot(2,1,2)
-t = linspace(0,10,250);
+t = linspace(0,6,350);
 comet(Re_f(t),Im_f(t))
 ~~~
 
