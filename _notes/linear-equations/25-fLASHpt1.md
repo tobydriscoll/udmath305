@@ -22,7 +22,7 @@ That is, we again have solutions to the original problem parameterized by two co
 
 ## Characteristic equation
 
-Suppose we are given $L[y]=ay''+by'+cy=0$, where $a$, $b$, and $c$ are all constants. It so happens that we can guess our way to the answer. Let's just plug in $y=e^{rt}$ for an unknown constant $r$:
+Suppose we are given $L[y]=ay'' +by'+cy=0$, where $a$, $b$, and $c$ are all constants. It so happens that we can guess our way to the answer. Let's just plug in $y=e^{rt}$ for an unknown constant $r$:
 
 $$a r^2 y + b r y + c y = 0.$$
 
@@ -36,7 +36,7 @@ Obviously this is just an application of the quadratic formula to find $r$ in te
 
 ## Distinct real roots
 
-If real values $r_1$ and $r_2$ both satisfy the characteristic equation, with $r_1\neq r_2$, then $y_1=e^{r_1t}$ and $y_2=e^{r2 t}$ are solutions to the ODE. Their Wronskian is
+If real values $r_1$ and $r_2$ both satisfy the characteristic equation, with $r_1\neq r_2$, then $y_1=e^{r_1t}$ and $y_2=e^{r_2 t}$ are solutions to the ODE. Their Wronskian is
 
 $$
 W = \begin{vmatrix} e^{r_1t} & e^{r_2t} \\ r_1 e^{r_1t} & r_2 e^{r_2t} \end{vmatrix} = (r_2-r_1)e^{(r_1+r_2)t}\neq 0,
@@ -50,7 +50,7 @@ Given initial conditions on $y$ and $y'$, we can solve for unique values of $c_1
 
 ### Example
 
-> Solve $y''-y=0$.
+> Solve $y'' -y=0$.
 
 The characteristic equation is $r^2-1=0$, which has roots $r_1=1$ and $r_2=-1$. Hence the general solution is
 
@@ -58,7 +58,7 @@ $$y = c_1 e^{t} + c_2 e^{-t}.$$
 
 ### Example
 
-> Solve $y''+3y'=0$, $y(1)=2$, $y'(1)=6$.
+> Solve $y'' +3y'=0$, $y(1)=2$, $y'(1)=6$.
 
 We get $r^2+3r=0$, which has roots $r_1=0$ and $r_2=-3$. So the general solution is
 
@@ -82,10 +82,10 @@ These are satisfied if $c_2=-2e^3$ and $c_1=4$. Our solution, finally, is $y=4-2
 
 If $b^2=4ac$ in the characteristic equation, then  $r_1=b/(2a)$ is a double root. Our reasoning still shows that $y_1=e^{r_1t}$ is a solution of $L[y]=0$. But the general solution requires us to find a second, independent solution as well. If you're curious to see how that can be done, read on. If you just want to know how to do the homework, skip to the "bottom line" below.
 
-Now, $L=aD^2+bD+c$ and $ar^2+br+c=(r-r_1)^2$, so it's tempting to write $L(D-r_1)^2$. This is actually legal (just expand the square). So our problem, which is to find $y_2$ such that $L[y_2]=0$, is equivalent to
+Now, $L=aD^2+bD+c$ and $ar^2+br+c=(r-r_1)^2$, so it's tempting to write $L=(D-r_1)^2$. This is actually legal (just expand the square). So our problem, which is to find $y_2$ such that $L[y_2]=0$, is equivalent to
 
 $$
-(D-r_1)[(D-r_1)[y_2]] = 0.
+(D-r_1)\bigl[(D-r_1)[y_2]\bigr] = 0.
 $$
 
 It should be clear that $(D-r_1)e^{r_1t}=0$. This changes our goal to
@@ -134,7 +134,7 @@ x_2 = \frac{\begin{vmatrix} a & f \\ c & g \end{vmatrix}}{\begin{vmatrix} a & b 
 
 ### Example
 
-> Solve $y''-4y'+4y=0$, $y(0)=1$, $y'(0)=4$.
+> Solve $y'' -4y'+4y=0$, $y(0)=1$, $y'(0)=4$.
 
 Since $r^2-4r+4=(r-2)^2$, we have a double root, and $y=c_1 e^{2t} + c_2te^{2t}$. The initial conditions imply
 
