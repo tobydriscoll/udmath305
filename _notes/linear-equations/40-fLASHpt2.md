@@ -8,11 +8,11 @@ chapter: "Linear equations"
 
 *(See section 4.3. However, it uses jargon from matrices that we won't discuss yet, and don't need.)*
 
-So here we are, back at $ay''+by'+cy=0$, and we want to know what happens when the characteristic equation has complex conjugate roots.
+So here we are, back at $ay'' +by'+cy=0$, and we want to know what happens when the characteristic equation has complex conjugate roots.
 
 ## Instructive example
 
-> Solve $y''+y=0$.
+> Solve $y'' +y=0$.
 
 We have $r^2+1=0$, so $r_1=i$ and $r_2=-i$. The general solution is
 
@@ -24,12 +24,12 @@ This is a perfectly fine solution. Nothing wrong with it at all.
 
 What's that? You're upset that a purely real problem has complex-valued solutions? Don't sweat it.
 
-What? Still not happy? OK, fine. Suppose $y(0)=2a$ and $y'(0)=2b$ for real values of $a$ and $b$. We get a linear system,
+What? Still not happy? OK, fine. Suppose $y(0)=a$ and $y'(0)=b$ for real values of $a$ and $b$. We get a linear system,
 
 $$
 \begin{aligned}
-2a &= y(0) = c_1 + c_2  \\
-2b &= y'(0) = ic_1 - ic_2 
+a &= y(0) = c_1 + c_2  \\
+b &= y'(0) = ic_1 - ic_2 
 \end{aligned}
 $$
 
@@ -37,24 +37,34 @@ And then
 
 $$
 \begin{aligned}
-c_1 &= \frac{(2a)(-i)-(1)(2b)}{(1)(-i)-(1)(i)}=\frac{2b+2ia}{2i}=a-ib\\
-c_2 &= \frac{(1)(2b)-(2a)(i)}{(1)(-i)-(1)(i)}=\frac{-2b+2ia}{2i}=a+ib
+c_1 &= \frac{(2a)(-i)-(1)(2b)}{(1)(-i)-(1)(i)}=\frac{b+ia}{2i}=\frac{a-ib}{2}\\
+c_2 &= \frac{(1)(2b)-(2a)(i)}{(1)(-i)-(1)(i)}=\frac{-b+ia}{2i}=\frac{a+ib}{2}
 \end{aligned}
 $$
 
 And then
 
 $$
-y = (a-ib)e^{it} + (a+ib)e^{-it} = a ( e^{it}+e^{-it}) + ib( e^{-it} - e^{it})
+y = \frac{a-ib}{2} e^{it} + \frac{a+ib}{2} e^{-it} = \frac{a}{2} ( e^{it}+e^{-it}) + i\frac{b}{2}( e^{-it} - e^{it})
 $$
 
 from which
 
 $$
-y = 2a\cos(t) +2b\sin(t).
+y = a\cos(t) +b\sin(t).
 $$
 
-So you see, the solution was real all along. It just didn't *look* that way. 
+So you see, the solution was real all along. It just didn't *look* that way.
+
+(It's worth noting that in the course of the above we used
+
+$$
+\frac{e^{it}+e^{-it}}{2} = \cos(t),\qquad \frac{e^{it}-e^{-it}}{2i} = \sin(t).
+$$
+
+If these remind you at all of the definitions of the hyperbolic functions cosh and sinh, then you've just had your moment of Zen.)
+
+
 
 ## General complex case
 

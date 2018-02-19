@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: note
 title: "Complex numbers"
 chapter: "Linear equations"
 ---
@@ -113,11 +113,20 @@ $$
 \frac{w}{z} = \frac{w \bar{z}}{z \bar{z}} = \frac{w \bar{z}}{|z|^2},
 $$
 
-where $\|z\|$ is the *modulus*{:.def}, easily computed via
+where $\|z\|$ is the *modulus*{:.def}, a real nonnegative quantity easily computed via
 
 $$
 |z|^2 = [\text{Re}(z)]^2 + [\text{Im}(z)]^2.
 $$
+
+Sometimes you have a ratio of complex numbers and you want to get a purely real denominator:
+
+$$
+\frac{z}{w} = \frac{z \bar{w}}{|w|^2}.
+$$
+
+Memorize the special case $1/i = -i$. 
+
 
 ## Euler's formula
 
