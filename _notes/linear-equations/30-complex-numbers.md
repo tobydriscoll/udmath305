@@ -160,12 +160,6 @@ $$
 \end{aligned}
 $$
 
-Exponentials of complex numbers (having nonzero real and imaginary parts) simply obey the usual rules for exponentials:
-
-$$
-e^{a+ib} = e^a e^{ib} = e^a(\cos b + i\sin b) = (e^a \cos b) + i(e^a \sin b).
-$$
-
 
 ## Geometry
 
@@ -216,15 +210,23 @@ That is, multiplication in the complex plane is equivalent to scaling and rotati
 
 ## Complex exponential functions
 
-Suppose $\gamma = \alpha +i\beta$ and $t$ is real. Define
+Suppose $\gamma = \alpha +i\beta$ (real $\alpha$ and $\beta$) and $t>0$ is real. Define
 
 $$
 f(t) = e^{\gamma t} = e^{(\alpha + i\beta)t} = e^{\alpha t} e^{i\beta t}.
 $$
 
-Using the polar interpretation, we see that $\|f(t)\|=e^{\alpha t}$. That is, the magnitude of $f(t)$ grows or decays exponentially in time, as controlled by the sign of the real part of $\gamma$. (The magnitude is constant at 1 in the edge case of $\alpha=0$.) The angle (or phase) of $f(t)$ varies linearly in time, at a frequency $\beta$. Of course, phase is only relevant modulo $2\pi$. 
+Using the polar interpretation, we see that $\|f(t)\|=e^{\alpha t}$. That is, the magnitude of $f(t)$ grows or decays exponentially in time, as controlled by the sign of the real part of $\gamma$. (The magnitude is constant at 1 in the edge case of $\alpha=0$.) The angle (or phase) of $f(t)$ varies linearly in time, at a frequency $\beta$. Of course, phase is only relevant modulo $2\pi$.
 
-(See MATLAB app complexExp.)
+For the record, we also write out the Cartesian form of $f(t)$:
+$$
+f(t) = e^{\gamma t} =  e^{\alpha t} e^{i\beta t} = (e^{\alpha t}\cos \beta t)) + i (e^{\alpha t} \sin\beta t).
+$$
+
+Those real and imaginary parts are about to become very relevant to us. 
+
+Differentiation of a complex exponential is the same as in the real case. That is, $f'(t)=\gamma e^{\gamma t}$ even when $\gamma$ is complex. 
+
 
 ~~~matlab
 gamma = 0.15 + 6i;
