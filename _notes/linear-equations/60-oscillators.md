@@ -20,7 +20,7 @@ The model is really just a statement of Newton's 2nd Law:
 
 $$my'' = -ky - \gamma y' + F(t).$$
 
-Unless the string is overstretched, it tends to produce a restoring force proportional and opposed to its displacement. It's this oppositional character that creates oscillatory motion. The damping force opposes motion. 
+Unless the spring is overstretched, it tends to produce a restoring force proportional and opposed to its displacement. It's this oppositional character that creates oscillatory motion. The damping force opposes motion. 
 
 There are many analogous physical situations. In some cases, molecular bonds can be well modeled as linear springs. And when displacements are small, the gravitational restoring force on a pendulum bob has the same mathematical form,
 
@@ -30,11 +30,15 @@ $$\theta'' + \gamma \theta' + \frac{g}{L}\theta = F(t).$$
 
 A seemingly entirely different physical situation is an AC circuit having a resistor, capacitor, and inductor in series with a generator providing voltage $E(t)$. The capacitor gets a time-varying charge $q(t)$, and all elements experience a current $I(t)=q'(t)$. Kirchoff's laws lead to 
 
-$$Lq'' + Rq' + \frac{1}{C}q = E(t)$$,
+$$
+Lq'' + Rq' + \frac{1}{C}q = E(t),
+$$
 
-where $L$, $R$, and $C$ are inductance, resistance, and capacitance. It's often more convenient to differentiate and get an ODE for the current,
+where $L$, $R$, and $C$ are inductance, resistance, and capacitance. It's often more convenient to differentiate and get an ODE for the current:
 
-$$LI'' + RI' + \frac{1}{C}I = E'(t).$$
+$$
+LI'' + RI' + \frac{1}{C}I = E'(t).
+$$
 
 As you can see, it's mathematically identical to the mechanical oscillator. Understanding in one domain translates immediately to the other.
 
@@ -42,9 +46,11 @@ As you can see, it's mathematically identical to the mechanical oscillator. Unde
 
 We'll stick with the mechanical names, $$my'' + \gamma y' + ky = F(t)$$, and first consider what happens in the idealized case of no damping, $\gamma=0$. 
 
-The homogeneous problem is $my'' +ky=0$, and this has roots $\pm\sqrt{k/m}$. We're going to define
+The homogeneous problem is $my'' +ky=0$, and this has roots $\pm\sqrt{k/m}$. We define
 
-$$\omega_0 = \sqrt{\frac{k}{m}}$$,
+$$
+\omega_0 = \sqrt{\frac{k}{m}},
+$$
 
 which is the *natural frequency*{:.def} of the oscillator.
 
@@ -134,7 +140,7 @@ This situation is called *critically damped*{:.def}.
 
 Finally, as $\gamma$ continues to increase, the roots become distinct, real, and negative. We get $y_c = c_1 e^{r_1t} + c_2 e^{r_2t}$ for $r_1 < -c < r_2 < 0.$ This is called the *overdamped*{:.def} case. 
 
-Note that whatever the nonzero damping level is, the fate of all solutions is $y_c\to 0$ as $t\to\infty$. Damping removes energy, and there's nothing to replace it. 
+Note that whatever the nonzero damping level is, the fate of all solutions is $y_c\to 0$ as $t\to\infty$. Damping removes energy, and there's nothing to replace it.
 
 ## Frequency response
 
@@ -142,7 +148,7 @@ Now for the full monty. We'll use a complex representation for the driving force
 
 $$y'' + 2c y' + \omega_0^2 y = A e^{i\omega t}.$$
 
-The general solution will be $y_c+y_p$. As noted above, we know that $y_c\to 0$ as $t$ increases, and we call this the *transient solution*. We're more interested in the particular part. Plugging in $y_p=Ce^{i\omega t}$ leads to
+The general solution will be $y_c+y_p$. As noted above, we know that $y_c\to 0$ as $t$ increases, and we call this the *transient solution*{:.def}. We're more interested in the particular part. Plugging in $y_p=Ce^{i\omega t}$ leads to
 
 $$y_p(t) = \frac{A}{(i\omega)^2+2c(i\omega)+\omega_0^2} e^{i\omega t}.$$
 

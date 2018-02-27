@@ -20,7 +20,7 @@ We know how to find $y_1$ and $y_2$, as well.
 
 We also pointed out before that if $L[y_p]=g$, then $L[y_c+y_p]=g$ is a general solution. We now call $y_c$ the *complementary solution*{:.def} and $y_p$ is a (nonunique) *particular solution*{:.def}. Once we have any way to find $y_p$, we have the general solution and win the game. (But, the cake is a lie.)
 
-This may not sound super-advanced, but sometimes the best way to get a particular solution is by judicious guessing. 
+This may not sound super-advanced, but sometimes the best way to get a particular solution is by judicious guessing. This is more properly called the *method of undetermined coefficients*{:.def}.  
 
 ## Exponentials
 
@@ -56,6 +56,7 @@ $$\begin{align}
 2C + 4(B+2Ct) + 4(A+Bt+Ct^2) &= 8t^2 \\
 4C t^2 + (8C+4B) + (2C+4B+4A) &= 8t^2.
 \end{align}$$
+
 This has to be an identity for all $t$. Matching powers, we can read off $C=2$, then $B=-4$, and finally $A=3$. This gives the solution. 
 
 ## Trig
@@ -84,7 +85,7 @@ The solution is found to be $A=-1$, $B=2$.
 
 ## The fine print
 
-If $L[y]=g$ and $g$ is a linear combination of terms like those seen above, then you can pick it apart and find a $Y(t)$ for each piece, then add them all together to get $y_p$. Yay linearity!
+If $L[y]=g$ and $g$ is a linear combination of terms like those seen above, then you can pick it apart and find a $Y_p(t)$ for each piece, then add them all together to get $y_p$. Yay linearity!
 
 There are rules for polynomial times exponential/trig, too. You should be glad we're ignoring those, as the algebra gets crazy. You can always ask a computer.
 
@@ -95,14 +96,14 @@ Finally, the method as presented here can **fail**.
 
 ### Example
 
-> Solve $y'' +4y = \sin(2t)$.
+> Solve $y'' +y = 5\sin(t)$.
 
-The roots are $\pm 2i$, and $y_c=c_1 \sin(2t) + c_2 \cos(2t)$. We try $y_p=A\sin(2t)$. 
+The roots are $\pm i$, and $y_c=c_1 \sin(t) + c_2 \cos(t)$. We try $y_p=A\sin(t)+B\cos(t)$. 
 
-$$-4A \sin(2t) +4A \sin(2t) = \sin(2t).$$
+$$(-A\sin(t)-B\cos(t)) + (A\sin(t)+B\cos(t)) = 5\sin(t).$$
 
 This is impossible! 
 
 ---
 
-We could have expected trouble since in the above, $y_p=Ay_1$, and then $y_c+y_p$ is essentially the same as $y_c$. The method can be fixed in this case, and it's not all that bad, but we're going to punt. In the next chapter we'll use a different approach to solve this and similar problems.
+We could have expected trouble since in the above, $y_c+y_p$ is not essentially different from $y_c$. This is an issue of independence again. The method is fixable, and it's not all that bad to do it, but we're going to punt. In the next chapter we'll use a different approach to solve this and similar problems.

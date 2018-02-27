@@ -36,7 +36,9 @@ though we must restrict to $s>a$.
 
 Here's some fun. Since $\sin(bt) = \text{Im}[e^{ibt}]$, 
 
-$${\cal L}[\sin(bt)] = \text{Im}({\cal L}[e^{ibt}]) = \text{Im}\left( \frac{1}{s-ib} \frac{s+ib}{s+ib} \right) = \frac{b}{s^2+b^2}$$,
+$$
+{\cal L}[\sin(bt)] = \text{Im}({\cal L}[e^{ibt}]) = \text{Im}\left( \frac{1}{s-ib} \frac{s+ib}{s+ib} \right) = \frac{b}{s^2+b^2},
+$$
 
 where $s>0$. 
 
