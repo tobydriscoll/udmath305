@@ -64,7 +64,57 @@ However, we sometimes prefer an alternate form,
 
 $$y_c = R\cos(\omega_0 t - \delta),$$
 
-in which the free parameters are the *amplitude*{:.def} $R$ and the *phase*{:.def} $\delta$. (Equivalence of the two forms is just some trig identity manipulation.) We can use either form, theoretically or to match up with initial data.
+in which the free parameters are the *amplitude*{:.def} $R$ and the *phase*{:.def} $\delta$. Here's how to show they are equivalent. The right-hand side of the last equation is
+
+$$
+\text{Re}\Bigl[ R e^{i(\omega_0t-\delta)} \Bigr] = \text{Re}\Bigl[ R e^{-i\delta} e^{i\omega_0t} \Bigr].
+$$
+
+Suppose we change the expression of the leading two terms from complex polar to complex Cartesian:
+
+$$
+R e^{-i\delta} = A - iB.
+$$
+
+Applying Euler's identity, we get
+
+$$
+\text{Re}\Bigl[ (A - iB) ( \cos(\omega_0 t) + i\sin(\omega_0 t))  \Bigr]
+= A \cos(\omega_0 t) + B\sin(\omega_0 t).
+$$
+
+Thus the two forms of the general solution are identical, connected by $R e^{i\delta} = A + iB$. We can use either form, for theory or to match up with initial data.
+
+#### Example
+
+> A 4 lb weight stretches a spring 8 in. The mass is stretched another 6 in and set in motion from that position with a downward velocity of 12 in/s. Ignore damping effects. Find the frequency, period, and amplitude of the motion.
+
+This problem is in freedom units. You'll want to use ft, sec, and $g=32$ ft/sec$^2$.
+
+At rest, $F=-ky$, so we find $k=(4 \text{lb})/(2/3 \text{ft})=6$. The motion is thus governed by $(4/32)y'' + 6y = 0$, or $y'' +48y=0$. The natural frequency is $\omega_0=\sqrt{48}=4\sqrt{3}$, for a period of $\pi/(2\sqrt{3})$. The general solution is
+
+$$
+y = A \cos( \sqrt{48}t ) + B\sin(\sqrt{48}t).
+$$
+
+In this setup we define the *downward* direction as positive. So we have
+
+$$
+\begin{align}
+0.5 &= y(0) = A + 0B, \\
+1 &= y'(0) = 0A + \sqrt{48}B. 
+\end{align}
+$$
+
+So $y = \frac{1}{2}\cos( \sqrt{48}t ) + \frac{1}{\sqrt{48}}\sin( \sqrt{48}t ).$ We can express this in amplitude-phase form via
+
+$$
+R e^{i\phi} = \frac{1}{2} + i \frac{1}{\sqrt{48}}.
+$$
+
+Hence $R^2=(1/4)+(1/48) = 13/48$, and $R=\sqrt{13/48}\approx 0.5204$ is the amplitude.  
+
+
 
 ### Forced motion
 
@@ -89,27 +139,52 @@ t=linspace(0,4,30000);
 sound(cos(3000*t)-cos(2990*t))
 ```
 
+#### Example
+
+> A mass of $2 kg$ is hanging at rest from a spring of constant $k=12$ N/m. Then it is subjected to a driving force of $\cos(\omega t)$. For what value(s) of $\omega$ is the amplitude of the motion equal to $50$ cm? Neglect damping effects.
+
+We can go straight to the solution above, $y_c = \cos(\omega t)/(\omega_0^2 - \omega^2)$. We have $\omega_0^2=k/m=6$. We have to solve $0.5=1/|6-\omega^2|$. There are two possibilities:
+
+$$
+\frac{1}{2} = \frac{1}{6-\omega^2}, \Longrightarrow \omega^2=4.  
+$$
+
+$$
+\frac{1}{2} = \frac{1}{\omega^2-6}, \Longrightarrow \omega^2=8. 
+$$
+
+So $\omega=2$ or $\omega=2\sqrt{2}$. 
+
+
+
 ### Resonance
 
-Perhaps no one topic has been linked to Nobel prizes in physics more than resonance. 
+Perhaps no one topic has been linked to more Nobel prizes in physics than resonance. 
 
 What happens to our particular solution when $\omega=\omega_0$? This is the case where our naive version of undetermined coefficients fails. It works out instead that
 
 $$y_p = \frac{A}{2\omega_0} t \sin(\omega_0 t).$$
 
-The amplitude increases without bound, forever. This is a "pure" resonance, where the input can be infinitely amplified. 
+The amplitude increases without bound, forever. This is a "pure" resonance, where the input can be infinitely amplified. The driving force constantly inputs energy to the system with perfect efficiency, and there is no friction or damping to take out energy. 
 
 ```matlab
+clf
 dom = [0 30];
-for omega = [2.5 2.7 2.85 2.92]
+lbl = {};
+for omega = [2.7 2.85 2.94 3.1]
     N = chebop(@(t,u) diff(u,2)+9*u-cos(omega*t), dom, [0;0], []);
     y = N\0;
     plot(y)
-    hold on, xlabel t, ylabel y
-    pause
+    hold on, xlabel('t'), ylabel('y')
+    title('Natural frequency \omega_0=3')
+    lbl{end+1} = ['\omega = ',num2str(omega)];
+    legend(lbl{:})
+    shg, pause
 end
 yr = chebfun(@(t) t.*sin(3*t)/6,[0 30]);
 plot(yr,'k')
+lbl{end+1} = 'resonance';
+legend(lbl{:})
 ```
 
 ## Damped oscillations
@@ -124,13 +199,39 @@ $$r_{1,2} = \frac{ -\gamma \pm \sqrt{ \gamma^2 - 4mk} }{2m}
 
 where $c=\gamma/2m$ and (as before) $\omega_0^2=k/m$. We get pure imaginary/pure oscillation roots $\pm i \omega_0$ in the undamped case. If damping is positive but very small, then we introduce an exponential envelope and decrease frequency a tad:
 
-$$y_c = c_1 e^{-ct} \sin(t\sqrt{\omega_0^2-c^2}) + c_2 e^{-ct} \cos(t\sqrt{\omega_0^2-c^2}),$$
+$$y_c = c_1 e^{-ct} \sin(t\sqrt{\omega_0^2-c^2}) + c_2 e^{-ct} \cos(t\sqrt{\omega_0^2-c^2}).$$
 
-or alternatively
+(Technically, it's a pseudofrequency, as the solution isn't periodic.) Alternative form:
 
 $$y_c = R e^{-ct} \cos(t\sqrt{\omega_0^2-c^2}) - \delta).$$
 
-(Technically, it's a pseudofrequency, as the solution isn't periodic.) This situation is called *underdamped*{:.def}. 
+This situation is called *underdamped*{:.def} and is the most typical physically.
+
+### Example
+
+> Examine the phase plane for an oscillator $0.25 y'' + \gamma y' + 4y=0$, where $0\le \gamma \le 1$.
+
+The system is underdamped so long as $c<\omega_0$, or $\gamma/0.5 < \sqrt{16}$. We'll do it numerically.
+
+```matlab
+dom = [0 8];
+for gamma = [0 0.1 0.2 0.3 0.4 0.5]
+    clf
+    N = chebop(@(t,y) 0.25*diff(y,2)+gamma*diff(y) + 4*y, dom, [4;0], []);
+    for y0 = [5 4 3]
+        N.lbc = [y0;0];
+        y = N\0;
+        arrowplot(y,diff(y))
+        hold on, xlabel('y'), ylabel('y''')
+    end
+    title(['Damping \gamma = ',num2str(gamma)])
+    axis equal
+    shg, pause
+end
+```	
+
+---
+
 
 If we let $\gamma$ continue to increase, then when $c=\omega_0$ the complex roots fuse into a single repeated root, $r=-c$, and the solution becomes
 
@@ -142,9 +243,33 @@ Finally, as $\gamma$ continues to increase, the roots become distinct, real, and
 
 Note that whatever the nonzero damping level is, the fate of all solutions is $y_c\to 0$ as $t\to\infty$. Damping removes energy, and there's nothing to replace it.
 
+### Example
+
+> Continue the previous example to $1.5 \le \gamma \le 3$.
+
+The system is critically damped at $\gamma=2$ and overdamped after that. 
+
+```matlab
+dom = [0 8];
+for gamma = [1.5 1.9 2 2.3 3]
+    clf
+    N = chebop(@(t,y) 0.25*diff(y,2)+gamma*diff(y) + 4*y, dom, [4;0], []);
+    for y0 = [5 4 3]
+        N.lbc = [y0;0];
+        y = N\0;
+        arrowplot(y,diff(y))
+        hold on, xlabel('y'), ylabel('y''')
+    end
+    title(['Damping \gamma = ',num2str(gamma)])
+    axis equal
+    shg, pause
+end
+```
+
+
 ## Frequency response
 
-Now for the full monty. We'll use a complex representation for the driving force (it lets us handle both sin and cos driving simultaneously). Our equation is 
+Now for the full monty. We include everything. We'll use a complex representation for the driving force (it lets us handle both cos and sin cases simultaneously, by real and imaginary parts). Our equation is 
 
 $$y'' + 2c y' + \omega_0^2 y = A e^{i\omega t}.$$
 
@@ -158,7 +283,24 @@ If the driving force were $3\sin(6t)$, for example, we'd set $\omega=6$, $A=3$, 
 
 ### Example
 
-In chebgui, try $u'' +0.1u' + 9u = \sin(\omega t)$ over $[0,80]$. 
+```matlab
+clf
+dom = [0 100];
+gamma = 0.4;  % also try 1.5
+lbl = {};
+for omega = [2.4 2.6 2.8 3 3.2 3.4]
+    N = chebop(@(t,y) diff(y,2)+gamma*diff(y)+9*y-cos(omega*t), dom, [0;0], []);
+    y = N\0;
+    %plot(y) % to show transient
+    y = restrict(y,[50 100]);
+    arrowplot(y,diff(y))
+    hold on, xlabel('t'), ylabel('y')
+    title(['Natural frequency \omega_0=3, damping \gamma=' num2str(gamma)])
+    lbl{end+1} = ['\omega = ',num2str(omega)];
+    legend(lbl{:})
+    shg, pause
+end
+```
 
 ---
 
@@ -175,17 +317,22 @@ where $g(\omega)=\|G(i\omega)\|$ is the *gain*{:.def} and $\phi(\omega)$ is the 
 ### Example
 
 ```matlab
+clf
+lbl = {}; h = [];
 omega0 = 3;
 for c = [0.02 0.05 0.2 0.4]
     G = @(iom) 1/((iom+c)^2+omega0^2-c^2);
     g = chebfun(@(om) abs(G(1i*om)),[2.5 3.5]);
-    plot(g,'linewidth',2)
+    h(end+1) = plot(g,'linewidth',2);
     hold on
     [gmax,ommax] = max(g)
-    plot(ommax,gmax,'*')
+    plot(ommax,gmax,'k*')
+    lbl{end+1} = ['c = ',num2str(c)];
 end
 grid on
 xlabel \omega, ylabel g
+legend(h,lbl{:})
+title('Gain in a driven damped oscillator, \omega_0=3')
 ```
 
 ---
@@ -213,14 +360,18 @@ If $c$ is close to zero, it's a very quick change from a nearly positive number 
 ### Example
 
 ```matlab
+clf
+lbl = {}; h = [];
 omega0 = 3;
 for c = [0.02 0.05 0.2 0.4]
     G = @(iom) 1/((iom+c)^2+omega0^2-c^2);
-    phi = chebfun(@(om) angle(conj(G(1i*om))),[2.5 3.5]);
-    plot(phi/pi,'linewidth',2)
+    phi = chebfun(@(om) angle(conj(G(1i*om))),[2.5 3.5]); 
+    h(end+1) = plot(phi/pi,'linewidth',2);
     hold on
-    ylim([0 1])
+    lbl{end+1} = ['c = ',num2str(c)];
 end
 grid on
+legend(h,lbl{:})
+title('Phase in a driven damped oscillator, \omega_0=3')
 xlabel \omega, ylabel \phi/\pi
 ```

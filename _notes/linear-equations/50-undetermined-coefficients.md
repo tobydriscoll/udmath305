@@ -28,21 +28,21 @@ In the case $L[y]=a e^{kt}$, we guess $y_p = A e^{kt}$ for a constant $A$ to be 
 
 ### Example 
 
-> Find the general solution of $y'' -2y'-3y=3e^{2t}$.
+> Find the general solution of $y'' -2y'-3y=-10e^{4t}$.
 
 First you find the roots for $L[y]=0$. These are $3$ and $-1$. So $y_c=c_1 e^{3t}+c_2e^{-t}$. 
 
-Next, you plug in $y_p=A e^{2t}$ and try to make it work:
+Next, you plug $y_p=A e^{4t}$ into the original ODE and try to make it work:
 
-$$A e^{2t}(4 - 4 - 3) = 3e^{2t} \Longrightarrow -3A = 3,$$
+$$(16A e^{4t}) -2(4Ae^{4t}) -3(Ae^{4t})  = -10e^{4t}.$$
 
-so $A=-1$ does the job. The general solution is 
+We require this to be true for all $t$. The exponentials cancel to give $16A-8A-3A=-10$, or $A=-2$. The general solution is 
 
-$$y=y_c+y_p = c_1 e^{3t}+c_2e^{-t} - e^{2t}.$$
+$$y=y_c+y_p = c_1 e^{3t}+c_2e^{-t} - 2e^{4t}.$$
 
 ## Polynomials
 
-If $L[y]=q(t)$ for a polynomial $q$ of degree $m$, then try $y_p=Q(t)$ for another polynomial of degree $m$ whose coefficients are to be determined. 
+If $L[y]=q(t)$ for a polynomial $q$ of degree $m$, then try $y_p=Q(t)$ for a generic polynomial $Q$ of degree $m$ whose coefficients are to be determined. 
 
 ### Example
 
@@ -61,7 +61,7 @@ This has to be an identity for all $t$. Matching powers, we can read off $C=2$, 
 
 ## Trig
 
-If $L[y]=e^{at} \sin(bt)$ or $L[y]=e^{at} \cos(bt)$, use $y_p=Ae^{at} \sin(bt) + Be^{at} \cos(bt)$. 
+If $L[y]=k_1 e^{at} \cos(bt) + k_2e^{at} \sin(bt)$, use $y_p=Ae^{at} \cos(bt) + Be^{at} \sin(bt)$. Note the special case $a=0$ (pure sin/cos). Also, both terms must be used in $y_p$ even if $k_1$ or $k_2$ is zero. 
 
 ### Example
 
@@ -75,7 +75,7 @@ $$
 -4A \sin(2t) -4B\cos(2t)  - 2[2A\cos(2t)-2B\sin(2t)] + 2[A\sin(2t)+B\cos(2t)] = 10 \sin(2t).
 $$
 
-Again, this must be an identity. Collecting like terms, we conclude 
+Again, this must be an identity for all $t$. Collecting like terms, we conclude 
 
 $$
 -4A+4B+2A = 10, \quad -4B-4A+2B = 0.
@@ -88,6 +88,8 @@ The solution is found to be $A=-1$, $B=2$.
 If $L[y]=g$ and $g$ is a linear combination of terms like those seen above, then you can pick it apart and find a $Y_p(t)$ for each piece, then add them all together to get $y_p$. Yay linearity!
 
 There are rules for polynomial times exponential/trig, too. You should be glad we're ignoring those, as the algebra gets crazy. You can always ask a computer.
+
+## One more thing
 
 ![Doesn't work]({{ site.baseurl }}/assets/images/doesnt-work.jpg)
 {:.meme}
