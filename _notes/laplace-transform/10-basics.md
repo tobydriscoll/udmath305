@@ -14,9 +14,9 @@ Here is a rule for replacing a function $f(t)$ (defined for $t\ge 0$) by a count
 
 $${\cal L}[f] = F(s) = \int_0^\infty f(t) e^{-st}\, dt.$$
 
-(I use square brackets instead of the curly braces that the book uses, because they're a tad easier to type. Don't make it a thing.) In principle, for a given $s$ we could plug it into the integral and get a number, which is the value of $F(s)$.
+(I use square brackets instead of the curly braces that the book uses. You use what you like.) In principle, for a given $s$ we could plug it into the integral and get a number, which is the value of $F(s)$. Often we could evaluate the defining integral symbolically to get an expression for $F(s)$. 
 
-In practice, though, you learn to do Laplace transforms the same way you learned to take derivatives, by learning key canonical cases and how they combine in more complicated instances. 
+In practice, though, you learn to do Laplace transforms on actual functions the same way you learned to take derivatives, by learning key canonical cases and how they combine in more complicated instances. 
 
 ## Canonical Example 1
 
@@ -30,17 +30,15 @@ assuming we restrict to $s>0$.
 
 $${\cal L}[e^{(a+bi)t}] = \int_0^\infty e^{(a+bi-s)t}\, dt = \left[ -\frac{1}{s-a-bi} e^{(a+bi-s)t} \right]_0^\infty = \frac{1}{s-a-bi},$$
 
-though we must restrict to $s>a$. 
+though we must restrict to $s>a$. We're just going to ignore those restrictions on $s$, which only matter when you dive into the technicalities.
 
 ## Canonical Example trig
 
 Here's some fun. Since $\sin(bt) = \text{Im}[e^{ibt}]$, 
 
 $$
-{\cal L}[\sin(bt)] = \text{Im}({\cal L}[e^{ibt}]) = \text{Im}\left( \frac{1}{s-ib} \frac{s+ib}{s+ib} \right) = \frac{b}{s^2+b^2},
+{\cal L}[\sin(bt)] = \text{Im}({\cal L}[e^{ibt}]) = \text{Im}\left( \frac{1}{s-ib} \frac{s+ib}{s+ib} \right) = \frac{b}{s^2+b^2}.
 $$
-
-where $s>0$. 
 
 For cos, we just take the real part instead, and get
 
@@ -60,7 +58,7 @@ $$\begin{aligned}
     &= -f(0) + s {\cal L}[f].
 \end{aligned}$$
 
-That is, if the transform of $f(t)$ is $F(s)$, then the transform of $f'(t)$ is $sF(s)-f(0)$. Algebra, as promised.
+That is, if the transform of $f(t)$ is $F(s)$, then the transform of $f'(t)$ is $sF(s)-f(0)$. See? calculus became algebra.
 
 This generalizes to 
 
@@ -89,7 +87,11 @@ $$
 
 The general rule is
 
-$$\frac{d}{ds} {\cal L}[f(t)] = (-1)^n {\cal L}[t^nf(t)].$$
+$$\frac{d}{ds} {\cal L}[f(t)] = (-1)^n {\cal L}[t^nf(t)].$$ 
+
+A very important special case of this rule is if $f(t)\equiv 1$. We repeatedly differentiate $F(s)=s^{-1}$ and get
+
+$$ {\cal L}[t^n] = \frac{n!}{s^{n+1}}.$$ 
 
 
 ## Canonical Example shift

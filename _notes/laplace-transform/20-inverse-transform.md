@@ -18,11 +18,11 @@ The real goal is to recover $y(t)$ from this. Here's what we have to work with:
 
 ### Examples
 
-> *Invert for $F(s) = \frac{24}{(s+2)^4}$.*
+> *Invert for $F(s) = \displaystyle \frac{24}{(s+2)^4}$.*
 
 Check out line 11 of the table with $n=3$, $a=-2$. We get $4e^{-2t}t^3$. 
 
-> *Invert for $F(s)=\frac{s+1}{s^2+2s+5}$.*
+> *Invert for $F(s)=\displaystyle\frac{s+1}{s^2+2s+5}$.*
 
 This is a little trickier. We want to use the idea of a shift, $G(s-a)$, for some $G$ and $a$. Here's the idea.
 
@@ -55,7 +55,7 @@ The command `resiude` in MATLAB will find the poles and residues for us. From th
 
 *(see Example 6, section 5.3)*
 
-> *Invert $F(s) = (s-2)/(s^2+4s-5)$.*
+> *Invert $F(s) = \displaystyle \frac{s-2}{s^2+4s-5}$.*
 
 First, by hand. The denominator is $(s+5)(s-1)$, so we should have
 
@@ -144,7 +144,7 @@ The slight issue here is that finding the poles is what we call a badly conditio
 
 *(see Example 7 of section 5.3)*
 
-> *Invert $F(s)=(s^2+20s+31)/[(s-3)(s^2+4s+4)]$.*
+> Invert $F(s)=\displaystyle \frac{s^2+20s+31}{(s-3)(s^2+4s+4)}$.
 
 ```matlab
 format rat
@@ -168,7 +168,7 @@ So the answer is $f(t)=4e^{3t} - 3e^{-2t} +1te^{-2t}$.
 
 ## Example
 
-> *Invert $F(s) = (s^3+3s^2+3s+1)/(s^2+2s+5)^2$.*
+> Invert $F(s) = \displaystyle \frac{s^3+3s^2+3s+1}{(s^2+2s+5)^2}$.
 
 Here you can see from the form that we will either get two double poles, or a 4th-order pole.
 
