@@ -143,7 +143,7 @@ sound(cos(3000*t)-cos(2990*t))
 
 > A mass of $2 kg$ is hanging at rest from a spring of constant $k=12$ N/m. Then it is subjected to a driving force of $\cos(\omega t)$. For what value(s) of $\omega$ is the amplitude of the motion equal to $50$ cm? Neglect damping effects.
 
-We can go straight to the solution above, $y_c = \cos(\omega t)/(\omega_0^2 - \omega^2)$. We have $\omega_0^2=k/m=6$. We have to solve $0.5=1/|6-\omega^2|$. There are two possibilities:
+We can go straight to the solution above, $y_c = \cos(\omega t)/(\omega_0^2 - \omega^2)$. We have $\omega_0^2=k/m=6$. We have to solve $0.5=1/\|6-\omega^2\|$. There are two possibilities:
 
 $$
 \frac{1}{2} = \frac{1}{6-\omega^2}, \Longrightarrow \omega^2=4.  
