@@ -51,6 +51,9 @@ You can follow the same trail to get *(see Theorem 5.5.1)*
 
 $$ {\cal L}[u(t-c)f(t-c)] = e^{-cs} {\cal L}[f].$$
 
+![Unit step]({{ site.baseurl }}/assets/images/unit-step.jpg)
+{:.meme}
+
 ### Example (forward transform)
 
 *(see Example 3 of section 5.5)*

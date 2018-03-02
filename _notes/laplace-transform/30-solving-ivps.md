@@ -50,7 +50,7 @@ So $y(t) = 2\text{Re}[(-i/2)e^{it}] + 2t \text{Re}[(-i/4)e^{it}]$, or $y(t)= \si
 
 You may have noticed that by the time we get done inverting transforms, we see the usual suspects from our study of oscillators. This is no coincidence.
 
-Take $y'' +2cy' + \omega_0^2 y = A e^{i\omega t}$, which was our general resonance problem. Upon transformation,
+Take $y'' +2cy' + \omega_0^2 y = A e^{i\omega t}$, which was our most general linear oscillator problem. Upon transformation,
 
 $$ (s^2Y(s)-sy(0)-y'(0)) + 2c( sY(s)-y(0)) + \omega_0^2 Y(s) = \frac{A}{s-i\omega},$$
 
@@ -60,13 +60,13 @@ $$ Y(s) = \frac{(s+2c)y(0)+ y'(0)}{s^2+2cs+\omega_0^2} + \frac{A}{(s-i\omega)(s^
 
 For both pieces, we need to find roots of $s^2+2cs+\omega_0^2$. This is our old friend, the characteristic equation. Each root gives us a related exponential solution, unless one root is repeated, in which case we also get the secular solution. This is just what we have seen using ILTs as well. 
 
-The split in terms above is equivalent to $y_c$ and $y_p$. Note that in $y_p$, we get the same two exponential terms as in $y_c$--that is, the transient solution. Only the term associated with the pure imaginary pole $i\omega$ survives in the long run. In the PFE
+Only the first term in $Y(s)$ depends on initial conditions. Since the real parts of its poles are negative, it's transient. The second term of $Y$ will produce three poles, two of which are the same as before and therefore transient. Only the term associated with the pure imaginary pole $i\omega$ survives in the long run, and its inverse is the steady response. We can find its residue by hand. In the PFE
 
-$$\frac{1}{(s-i\omega)(s^2+2cs+\omega_0^2)} = \frac{B}{s-i\omega} + \cdots $$
+$$\frac{1}{(s-i\omega)(s^2+2cs+\omega_0^2)} = \frac{G}{s-i\omega} + \cdots $$
 
-we get $B$ by multiplying through and setting $s=i\omega$: 
+we get $G$ by clearing the denominator and setting $s=i\omega$: 
 
-$$ B = \frac{1}{(i\omega)^2 + 2c(i\omega) + \omega_0^2}. $$
+$$ G = \frac{1}{(i\omega)^2 + 2c(i\omega) + \omega_0^2}. $$
 
-If this looks familiar, that's because it's exactly the frequency response function.
+If this looks familiar, that's because it's exactly the frequency response function we presented in the previous chapter.
 

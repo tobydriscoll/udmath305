@@ -14,7 +14,7 @@ The real goal is to recover $y(t)$ from this. Here's what we have to work with:
 
 ![transform table](transform-table.jpeg)
 
-(Some of the stuff in this table we haven't covered yet.) Now it's a matter of pattern-matching from the given $F(s)$ to something in the table. 
+(So far we've only covered items 1, 2, 3, 5, 6, 14, 17, and 18. You could say that 9, 10, and 11 all follow from 14.) Now the game is a matter of pattern-matching from the given $F(s)$ to something in the table. 
 
 ### Examples
 
@@ -44,6 +44,10 @@ Generally speaking, we want to get
 $$ F(s)=\frac{P(s)}{Q(s)} = \frac{a_1}{s-z_1} + \frac{a_2}{s-z_2} + \cdots + \frac{a_n}{s-z_n},$$
 
 where the $z_j$ are the roots of $Q$, and the numerator has degree less than $n$.
+
+![My way]({{ site.baseurl }}/assets/images/my-way.jpg)
+{:.meme}
+
 
 **WARNING! I am about to do things differently from the way the book, and seemingly most books, do this. Hang on!**
 
@@ -91,7 +95,7 @@ which confirms what we got by hand.
 
 *(see Example 8, section 5.3)*
 
-> *Invert $F(s) = (14s^2+70s+134)/[(2s+1)(s^2+6s+13)]$.*
+> Invert $F(s) = \displaystyle \frac{14s^2+70s+134}{(2s+1)(s^2+6s+13)}$.
 
 This problem gets easier if you know that you can multiply polynomials using the mysteriously (for now) named `conv`.
 
