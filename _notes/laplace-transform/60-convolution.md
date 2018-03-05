@@ -64,7 +64,7 @@ $$[g*f](t) = \int_0^t f(t-\tau)g(\tau)\, d\tau = \int_t^0 f(u)g(t-u)\, (-du) = \
 
 We can also easily prove some properties we really like to have, such as $f * ( g * h )=( f * g) * h$, $f * (g+h)=(f * g)+(f*h)$, and $f * 0=0$.
 
-It is *not* true, however, that $f*1=f$, unless $f$ is the zero function. Instead, the right formula is
+It is *not* true, however, that $f*1=f$, unless $f$ is the zero function. Instead, the right formula is $f * \delta=f$:
 
 $$[f*\delta](t) = \displaystyle\int_0^t f(t-\tau) \delta(\tau)\, d\tau = f(t).$$ 
 
@@ -72,7 +72,7 @@ A big part of convolution's appeal is the way it interacts with transforms. This
 
 **Theorem** *(Theorem 5.8.3)* Suppose ${\cal L}[f] = F(s)$, ${\cal L}[g] = G(s)$, $h=f*g$, and ${\cal L}[h] = H(s)$. Then $H(s)=F(s)G(s)$.
 
-I.e., convolution in time is multiplication in transform space. Since ${\cal L}[\delta]=1$, for example, this confirms that $f*\delta=f$. 
+I.e., **convolution in time is multiplication in transform space**. Since ${\cal L}[\delta]=1$, for example, this confirms that $f*\delta=f$. 
 
 ## The last word on the 2nd-order, linear, constant-coefficient problem
 

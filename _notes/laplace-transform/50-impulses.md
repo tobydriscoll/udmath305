@@ -22,24 +22,26 @@ An impulse is designated using the *Dirac delta*{:.def} $\delta(t)$. (We write i
 
 $$ \int_I \delta(t)\, dt = 1,$$
 
-if $I$ is any interval containing the origin. You can think of $\delta$, and its effects, as the limit of a family of spikes that get taller and narrower, with constant unit area inside. It's also called a "kick", informally.
+if $I$ is any interval containing the origin. You can think of $\delta$ as a "kick" to the system being modeled, informally.
 
 ![Dirac]({{ site.baseurl }}/assets/images/dirac.jpeg)
 {:.meme}
 
-We can give an impulse an amplitude too, as in $a\delta(t)$. For an impulse at another time $t_i$, we use $\delta(t-t_i)$.
+We can give an impulse an amplitude too, as in $A\delta(t)$. For an impulse at another time $t_i$, we use $\delta(t-t_i)$.
 
-Here's an interesting and critical property. Suppose we integrate a function $f$ over a tiny interval $(-\epsilon,\epsilon)$ that supports a spike $\delta_\epsilon(t)$ of height $1/(2\epsilon)$. Again let $I$ contain the origin, so it also contains $(-\epsilon,\epsilon)$ if we're small enough. Then
+One way to think about $\delta$ is as a limiting process. Let $\delta_\epsilon(t)$ be a spike that is height $1/2\epsilon$ over $t\in[-\epsilon,\epsilon]$ and zero elsewhere. The area underneath the graph of $\delta_\epsilon(t)$ is one for all $\epsilon>0$. For many purposes, $\delta$ acts like the limit of $\delta_\epsilon$ as $\epsilon\to 0$. You get a spike of infinite height but infinitesimal width, such that the "area" underneath is one.
 
-$$\int_{I} \delta_\epsilon(t) f(t)\,dt = \frac{\phi(\epsilon)-\phi(-\epsilon)}{2\epsilon},$$
+Let's make this more concrete. Suppose we integrate a function $f$ against the finite spike $\delta_\epsilon(t)$, over any interval $I$ containing the entire nonzero part of the spike. Then
 
-where $\phi$ is the antiderivative of $f$. Taking the limit as $\epsilon\to 0$,
+$$\int_{I} \delta_\epsilon(t) f(t)\,dt = \int_{-\epsilon}^\epsilon \delta_\epsilon(t) f(t)\,dt= \frac{\phi(\epsilon)-\phi(-\epsilon)}{2\epsilon},$$
 
-$$\int_I \delta(t) f(t)\, dt  = \frac{[\phi(\epsilon) - \phi(0)] + [\phi(0) - \phi(-\epsilon)]}{2\epsilon} = \phi'(0) = f(0).$$
+where $\phi$ is an antiderivative of $f$. Taking the limit as $\epsilon\to 0$,
 
-In general, if $t_i\in I$,
+$$\int_I \delta_\epsilon(t) f(t)\, dt  = \frac{1}{2} \frac{[\phi(\epsilon) - \phi(0)] + [\phi(0) - \phi(-\epsilon)]}{\epsilon} \rightarrow  \phi'(0) = f(0).$$
 
-$$\int_I \delta(t) f(t)\, dt = f(t_i).$$
+This justifies us saying that $\int_I \delta(t) f(t)\, dt=f(0)$, or more generally, 
+
+$$\int_I \delta(t) f(t)\, dt = f(t_i), \quad \text{if } t_i\in I.$$
 
 ## Transform
 
@@ -84,6 +86,6 @@ Remember how ${\cal L}[f'] = sF(s)-f(0)$? Then (assuming $c>0$),
 
 $${\cal L}[u'_c(t)] = s(e^{-cs}/s) = e^{-cs} = {\cal L}[\delta(t-c)].$$
 
-Yep. The derivative of $u_c$ is zero everwhere except at $t_c$, where it is infinite in a particular way. 
+Yep. The derivative of $u_c$ is zero everwhere except at $t=c$, where it is infinite in a particular way. 
 
 

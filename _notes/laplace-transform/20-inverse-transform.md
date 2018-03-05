@@ -45,7 +45,7 @@ $$ F(s)=\frac{P(s)}{Q(s)} = \frac{a_1}{s-z_1} + \frac{a_2}{s-z_2} + \cdots + \fr
 
 where the $z_j$ are the roots of $Q$, and the numerator has degree less than $n$.
 
-![My way]({{ site.baseurl }}/assets/images/my-way.jpg)
+![Unpopular complex numbers]({{ site.baseurl }}/assets/images/partial-complex.jpg)
 {:.meme}
 
 
