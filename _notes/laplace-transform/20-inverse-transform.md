@@ -155,9 +155,9 @@ We have a quantity plus its conjugate. This always gives twice the real part of 
 
 $$ 2 e^{-3t}\text{Re} \left[  ( 1\cos(2t) - \frac{1}{2} \sin(2t)) + ...   \right]$$
 
-We needn't worry about the ... terms, as they're all imaginary. The inverse transform is now
+We needn't worry about the ... terms, as they're all imaginary. The inverse transform is now (adding back in the contribution from the third pole)
 
-$$2e^{-3t}\cos(2t)-e^{-3t}\sin(2t).$$
+$$2e^{-3t}\cos(2t)-e^{-3t}\sin(2t)+ 5e^{-t/2}.$$
 
 ![PFD]({{ site.baseurl }}/assets/images/shut-up-pfd.jpg)
 {:.meme}
