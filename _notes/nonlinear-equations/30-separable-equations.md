@@ -34,7 +34,9 @@ $$ |y| = e^C te^{-t} \Rightarrow y = \pm e^C te^{-t}.$$
 
 We have to be a little careful here. While $C$ is arbitrary, $e^C$ must be positive. So all we can say now is that $y=Ate^{-t}$ is a solution for any nonzero $A$. However, we can simply go back to the original problem and observe that $y\equiv 0$ is also a solution, so we can drop the restriction on $A$.
 
----
+![Separated at birth]({{site.baseurl}}/assets/images/separated-at-birth.jpg)
+{:.meme}
+
 
 When we divide by expressions to get a separated form, we rule out any case in which those expressions could be zero. That's what happened above. However, it's easy to check those cases after the fact.
 

@@ -12,7 +12,7 @@ In this section we consider **first-order problems only**.
 
 ## Equilibria
 
-Suppose $y'=f(y)$ (FlASh) and that there is some value $y_e$ such that $f(y_e)=0$. Then the solution satisfies $y'=0$ if it ever achieves the value $y_e$; it is stuck there forever. We call such a value an *equilibrium*{:.def}. 
+Suppose $y'=f(y)$ (FlASh) and that there is some value $y_e$ such that $f(y_e)=0$. Then the constant value $y\equiv y_e$ is a solution. We call such a value an *equilibrium*{:.def}. 
 
 Instinctively you know that not all equilibria are the same. A ball sitting at the bottom of a valley will sit there happily forever, while one sitting at the top of a hill might be technically motionless but will roll off at the slightest breeze. More relevantly, you are very likely to see a ball come to rest at the bottom of a valley, but you will never see one come to rest at the top of a hill! We call the relevant property *stability*{:.def}. The valley has it; the hill does not. 
 

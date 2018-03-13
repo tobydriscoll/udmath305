@@ -22,6 +22,10 @@ Don't it always seem to go that you don't know what you've got til it's gone?  R
 
 For example, consider the nonlinear problem $y'=y^2$. You can easily check that $y_1=1/(1-t)$ is a solution. (Note that it is certainly not in the form of an exponential function.) So is $y_2=1/(2-t)$. But $2y_1$ is not. Neither is $y_1+y_2$. Buh-bye, superposition.
 
+![Fist]({{site.baseurl}}/assets/images/fist.png)
+{:.meme}
+
+
 ## Existence and uniqueness
 
 *(See parts of section 2.4.)*
