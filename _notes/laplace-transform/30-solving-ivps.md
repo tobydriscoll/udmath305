@@ -62,66 +62,89 @@ $$
 
 The final answer is $y_1+y_2=e^{-2t}(-3-3t) + 3 - 4t + 2t^2$. 
 
+---
 
+Let's compare that last example to the method of undetermined coefficients. First we would find the roots of $r^2+4r+4$, and get a double root at $-2$. This implies
+
+$$
+y_c = c_1 e^{-2t} + c_2 t e^{-2t}.
+$$
+
+The forcing term implies $y_p=At^2+Bt+C$. We'd have to solve for those coefficients. Then $y=y_c+y_p = c_1 e^{-2t} + c_2 t e^{-2t} + At^2+Bt+C$ is the general solution. Finally, we'd apply the initial conditions to get values for $c_1$ and $c_2$. This is equivalent to the answer we got with Laplace transforms, and clearly $A=2$, $B=-4$, and so on came out as part of the inversion process. 
 
 ## Example (resonance)
-> *Solve $y'' +y = \sin(t)$, with $y(0)=0$ and $y'(0)=1$.*
+> *Solve $y'' +y = \sin(t)$, with $y(0)=2$ and $y'(0)=1$.*
 
 This is the case of perfect resonance, which we glossed over a bit with the M.U.C. But let's have a transform party! 
 
-$$ (s^2Y(s)-sy(0)-y'(0)) + Y(s) = \frac{s}{s^2+1} $$
+$$ (s^2Y(s)-sy(0)-y'(0)) + Y(s) = \frac{1}{s^2+1} $$
 
-$$ (s^2+1) Y(s) = 1 + \frac{s}{s^2+1} = \frac{s^2 + s + 1}{s^2+1} $$
+$$ (s^2+1) Y(s) = 2s + 1 + \frac{1}{s^2+1} $$
 
-$$Y(s) = \frac{(s^2 + s + 1)}{(s^2+1)^2}$$
+$$Y(s) = \frac{2s + 1}{s^2+1} +  \frac{1}{(s^2+1)^2} = Y_1(s) + Y_2(s)$$
 
-Let's look at this for a moment before turning to MATLAB. There are two double poles, at $\pm i$. That means we will get a solution with terms $e^{\pm it}$ and $te^{\pm it}$. Or if we take real and imaginary parts of these, a solution in the form
+Let's look at $Y_1$ first. It has two poles, so we can handle it manually (without a computer). In fact, we can just write it as
 
 $$
-y(t) = A\cos(t) + B\sin(t) + Ct \cos(t) + D t\sin(t).
+Y_1(s) = 2 \frac{s}{s^2+1} + \frac{1}{s^2+1},
 $$
 
-The first two terms arise from $y_c$, which means that the last two are what we ought to use as $y_p$ in the M.U.C. However, we're just going to continue with inverting the transform instead. 
+so that $y_1(t) = 2\cos(t) + \sin(t)$. For $Y_2$, we are well served to use MATLAB for the PFD.
 
 ```matlab
-format rat
-P = [1 1 1];
 Q = conv([1 0 1],[1 0 1]);
-[r,z] = residue(P,Q)
+[a,z] = residue(1,Q)
 ```
 
 ```
-r =
-      -1/144115188075855776 -    1/2i    
-      -1/12009599006321320 -    1/4i    
-      -1/144115188075855776 +    1/2i    
-      -1/12009599006321320 +    1/4i    
+a =
+
+   0.0000 - 0.2500i
+  -0.2500 + 0.0000i
+   0.0000 + 0.2500i
+  -0.2500 + 0.0000i
+
+
 z =
-       1/10293942005418276 +    1i      
-       1/10293942005418276 +    1i      
-       1/10293942005418276 -    1i      
-       1/10293942005418276 -    1i      
+
+   0.0000 + 1.0000i
+   0.0000 + 1.0000i
+   0.0000 - 1.0000i
+   0.0000 - 1.0000i
 ```
+
 
 So
 
 $$
-y(t) = 2\text{Re}\left[\frac{-i}{2}e^{it}\right] + 2t \text{Re}\left[\frac{-i}{4}e^{it}\right],
+Y_2(s) = \frac{-i/4}{s-i} + \frac{-1/4}{(s-i)^2} + \frac{i/4}{s+i} + \frac{-1/4}{(s+i)^2}.
 $$
 
-or $y(t)= \sin(t) +\frac{1}{2} t\sin(t)$. 
+It helps to recognize that the first and third terms are conjugates, as are the 2nd and 4th. So
+
+$$
+y_2(t) = 2\text{Re}\left[\frac{-i}{4}e^{it}\right] + 2 \text{Re}\left[\frac{-1}{4}te^{it}\right],
+$$
+
+or $y_2= \frac{1}{2} \sin(t) - \frac{1}{2}t\cos(t)$. Altogether, then,
+
+$$
+y = y_1 + y_2 = 2\cos(t) + \frac{3}{2} \sin(t) - \frac{1}{2}t\cos(t).
+$$
+
+
 
 ## Revenge of the oscillator
 
 You may have noticed that by the time we get done inverting transforms, we see the usual suspects from our study of oscillators. This is no coincidence.
 
-Take $y'' +2cy' + \omega_0^2 y = A e^{i\omega t}$, which was our most general linear oscillator problem. Upon transformation,
+Take $y'' +2cy' + \omega_0^2 y = e^{i\omega t}$, which was our most general linear oscillator problem. (For simplicity, assume $c>0$.) Upon transformation,
 
-$$ [s^2Y(s)-sy(0)-y'(0)] + 2c[ sY(s)-y(0)] + \omega_0^2 Y(s) = \frac{A}{s-i\omega},$$
+$$ [s^2Y(s)-sy(0)-y'(0)] + 2c[ sY(s)-y(0)] + \omega_0^2 Y(s) = \frac{1}{s-i\omega},$$
 
 which leads to 
 
-$$ Y(s) = \frac{(s+2c)y(0)+ y'(0)}{s^2+2cs+\omega_0^2} + \frac{A}{(s-i\omega)(s^2+2cs+\omega_0^2)}.$$
+$$ Y(s) = \frac{(s+2c)y(0)+ y'(0)}{s^2+2cs+\omega_0^2} + \frac{1}{(s-i\omega)(s^2+2cs+\omega_0^2)}.$$
 
 For both pieces of $Y$, we need to find roots of $s^2+2cs+\omega_0^2$. This is our old friend, the characteristic equation. As before, each root gives us a related exponential solution, unless one root is repeated, in which case we also get the secular solution.  
 

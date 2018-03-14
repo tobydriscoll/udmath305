@@ -20,7 +20,7 @@ This represents "throwing a switch" at time $t=0$. We can turn it on at another 
 
 (Note: The precise value of $u_c$ at $t=c$ is not important. It has no effect on IVP solutions and can be ignored.) 
 
-Switches allow us to express any piecewise continuous function easily.
+Steps allow us to express any piecewise continuous function easily.
 
 ### Example 
 
@@ -188,10 +188,39 @@ diff(tmax)/pi
 
 ### Square wave resonance
 
+Consider an undamped oscillator $y'' + \pi^2 y =f(t)$. To date we have only considered sinusoidal forcing functions. But the square wave is a different kind of periodic forcing. Above we found that if
+
+$$f(t) = u_{01}(t) + u_{23}(t) + u_{45}(t) + \cdots,$$
+
+then
+
+$$F(s) = \frac{1}{s(1+e^{-s})}.$$
+
+Say $y(0)=y'(0)=0$, and transform the ODE. We solve for $Y$:
+
+$$
+Y(s) = \frac{1}{s(s^2+\pi^2)(1+e^{-s})} = \frac{1}{1+e^{-s}} G(s).
+$$
+
+Now $G$ is the kind of rational function we know what to do with. In the usual fashion we can find $g(t)=(1-\cos(\pi t))/\pi^2$. To make sense of $Y$ we have to go back through the geometric series that got us $F$ in the first place.
+
+$$
+Y(s) = \frac{1}{1+e^{-s}} G(s) = \left[ 1 - e^{-s} + e^{-2s} - e^{3s} + \cdots \right] G(s).
+$$
+
+From here we can see that $y(t)$ is a series of step/shifts of $g$:
+
+$$
+y(t) = g(t) - u_1(t)g(t-1) + u_2(t)g(t-2) - u_3(t)g(t-3) + \cdots.
+$$
+
+It's not easy to see from this, but in fact the system has a resonance similar to what we get with forcing $\sin(\pi t)$. 
+
+
 ```matlab
 clf
 dom = [0, 20];
-N = chebop(@(t,u) diff(u,2)+pi.^2.*u-1, dom);
+N = chebop(@(t,u) diff(u,2)+pi.^2.*u, dom);
 N.lbc = @(u) [u; diff(u)];
 %%
 t = chebfun('t',[0 20]);
