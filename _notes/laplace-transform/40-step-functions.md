@@ -14,9 +14,9 @@ So far, LTs have supplied us with new tools to solve the same old problems. Thin
 
 The *unit step function*{:.def} or [*Heaviside function*](https://youtu.be/pKH63cRJ3p4) is 
 
-$$ u(t) = \begin{cases} 0, & t<0,\\ 1, & t\ge 0. \end{cases} $$
+$$ u_0(t) = \begin{cases} 0, & t<0,\\ 1, & t\ge 0. \end{cases} $$
 
-This represents "throwing a switch" at time $t=0$. We can turn it on at another time $c$ by using $u_c(t)=u(t-c)$. Also useful is the *indicator function*{:.def} $u_{cd}(t)=u_c(t)-u_d(t)$, which will be on only for $t\in[c,d)$. 
+This represents "throwing a switch" at time $t=0$. We can turn it on at another time $c$ by using $u_c(t)=u_0(t-c)$. Also useful is the *indicator function*{:.def} $u_{cd}(t)=u_c(t)-u_d(t)$, which will be on only for $t\in[c,d)$. 
 
 (Note: The precise value of $u_c$ at $t=c$ is not important. It has no effect on IVP solutions and can be ignored.) 
 
@@ -45,11 +45,11 @@ f(t) &= tu_{02}(t) + u_{23}(t) + e^{-2t}u_3(t)\\
 Now for some yummy transforms.
 
 $${\cal L}[u_c(t)] = \int_0^\infty u_c(t) e^{-st}\, dt 
-= \int_c^\infty e^{-st}\, dt = \left[ \frac{e^{-st}}{-s} \right]_c^\infty = e^{-ct}{s}.$$
+= \int_c^\infty e^{-st}\, dt = \left[ \frac{e^{-st}}{-s} \right]_c^\infty = e^{-ct}\frac{1}{s}.$$
 
-You can follow the same trail to get *(see Theorem 5.5.1)* 
+More generally, you can follow the same trail to get *(see Theorem 5.5.1)* 
 
-$$ {\cal L}[u(t-c)f(t-c)] = e^{-cs} {\cal L}[f].$$
+$$ {\cal L}[u_c(t)f(t-c)] = e^{-cs} {\cal L}[f].$$
 
 ![Unit step]({{ site.baseurl }}/assets/images/unit-step.jpg)
 {:.meme}
@@ -85,63 +85,10 @@ We have a new addition to the inversion library: exponentials in $F(s)$.
 
 Write $F(s) = e^{-5s} G(s)$. Then $f(t) = g(t-5)u_5(t)$. 
 
-We find residues of $(-1/3,1/3)$ at poles $(-2,1)$. So $g(t)=-2e^{-2t}+2e^{t}$. Then $f(t) = u_5(t)(2e^{-2t+10}+2e^{t-5}).$
-
-### Sawtooths and square waves
-
-A common signal in engineering is the *square wave*{:.def}, which we define as being $1$ in all the intervals $(2n,2n+1)$ for integer $n\ge 0$, and zero elsewhere. It alternates between on and off.
-
-How do we like this?
-
-$$f(t) = u_{01}(t) + u_{23}(t) + u_{45}(t) + \cdots$$
-
-$$f(t) = 1 - u_{1}(t) + u_{2}(t) - u_3(t) + u_{4}(t) + \cdots$$
-
-$$F(s) = \frac{1}{s} - \frac{e^{-s}}{s} + \frac{e^{2s}}{s} - \cdots$$
-
-$$F(s) = s^{-1} ( 1  - e^{-s} + e^{2s} - e^{-3s} + \cdots )$$
-
-Define $r=-e^{-s}$. 
-
-$$F(s) = s^{-1}(1 + r + r^2 + r^3 + \cdots) = \frac{1}{s(1-r)} = \frac{1}{s(1+e^{-s})}.$$
-
-If you want to do things this way, I love you. For the rest, we may need something more reliable. 
-
-**Theorem** *(See Theorem 5.5.3)* Suppose $f$ is periodic with period $T$. Then 
-
-$${\cal L}[f] = \frac{F_T(s)}{1-e^{-sT}} = \frac{\int_0^T e^{-st} f(t)\, dt}{1-e^{-sT}}.$$
-
-#### Example
-
-*(This is similar to, but not quite the same as, Example 6 of section 5.5.)*
-
-> Transform the *sawtooth wave*{:.def} $f(t) = t \text{ mod } 1$.
-
-This is just the line $y=t$ over $[0,1]$ then repeated over and over. 
-
-$$F_T(s) = \int_0^1 te^{-st}\, dt = \frac{1 - e^{-s}(1+s)}{s^2}.$$
-
-Hence $F(s) = \frac{1 - e^{-s}(1+s)}{s^2(1-e^{-s})}.$ 
+We find residues of $(-2,2)$ at poles $(-2,1)$. So $g(t)=-2e^{-2t}+2e^{t}$. Then $f(t) = u_5(t)(-2e^{-2t+10}+2e^{t-5}).$
 
 
-
-## IVPs
-
-*(See section 5.6)*
-
-Of course we don't *really* turn things on instantaneously. It's an idealization. Does it even make sense in an ODE? 
-
-Consider $y'=u_1(t)$, $y(0)=0$. The system sits at zero until $t=1$. Then,
-
-$y(t) = 0 + \int_1^t  y'(\tau)\, d\tau = (t-1)$. 
-
-The resulting solution, $y=(t-1)u_1(t)$, is continuous. It's even differentiable, everywhere but at $t=1$, where the derivative (of course) jumps.  
-
-Now suppose we did $y'' =u_1(t)$. You'd integrate again to get $y=(t-1)^2/2 u_1(t)$. This function is continuous and differentiable, and the 2nd derivative has a jump. 
-
-Solving an ODE is a smoothing process. The answers come out with more derivatives than the data (at least in the forcing term). 
-
-### Ramp loading example
+## IVPs with step forcing
 
 Let's consider a case of *ramp loading*{:.def}, where a forcing ramps up from zero to a steady value. *(Similar to Example 1 of section 5.6.)*
 
@@ -186,6 +133,62 @@ plot(tmax,ymax,'*')
 diff(tmax)/pi
 ```
 
+### Some justification (optional)
+
+*(See section 5.6)*
+
+Of course we don't *really* turn things on instantaneously. It's an idealization. Does it even make sense in an ODE? 
+
+Consider $y'=u_1(t)$, $y(0)=0$. The system sits at zero until $t=1$. Then,
+
+$y(t) = 0 + \int_1^t  y'(\tau)\, d\tau = (t-1)$. 
+
+The resulting solution, $y=(t-1)u_1(t)$, is continuous. It's even differentiable, everywhere but at $t=1$, where the derivative (of course) jumps.  
+
+Now suppose we did $y'' =u_1(t)$. You'd integrate again to get $y=(t-1)^2/2 u_1(t)$. This function is continuous and differentiable, and the 2nd derivative has a jump. 
+
+Solving an ODE is a smoothing process. The answers come out with more derivatives than the data (at least in the forcing term). 
+
+
+
+## Periodic signals (sawtooths and square waves)
+
+A common signal in engineering is the *square wave*{:.def}, which we define as being $1$ in all the intervals $(2n,2n+1)$ for integer $n\ge 0$, and zero elsewhere. It alternates between on and off.
+
+How do we like this?
+
+$$f(t) = u_{01}(t) + u_{23}(t) + u_{45}(t) + \cdots$$
+
+$$f(t) = 1 - u_{1}(t) + u_{2}(t) - u_3(t) + u_{4}(t) + \cdots$$
+
+$$F(s) = \frac{1}{s} - \frac{e^{-s}}{s} + \frac{e^{2s}}{s} - \cdots$$
+
+$$F(s) = s^{-1} ( 1  - e^{-s} + e^{2s} - e^{-3s} + \cdots )$$
+
+Define $r=-e^{-s}$. 
+
+$$F(s) = s^{-1}(1 + r + r^2 + r^3 + \cdots) = \frac{1}{s(1-r)} = \frac{1}{s(1+e^{-s})}.$$
+
+If you want to do things this way, I love you. For the rest, we may need something more reliable. 
+
+**Theorem** *(See Theorem 5.5.3)* Suppose $f$ is periodic with period $T$. Then 
+
+$${\cal L}[f] = \frac{F_T(s)}{1-e^{-sT}} = \frac{\int_0^T e^{-st} f(t)\, dt}{1-e^{-sT}}.$$
+
+#### Example
+
+*(This is similar to, but not quite the same as, Example 6 of section 5.5.)*
+
+> Transform the *sawtooth wave*{:.def} $f(t) = t \text{ mod } 1$.
+
+This is just the line $y=t$ over $[0,1]$ then repeated over and over. 
+
+$$F_T(s) = \int_0^1 te^{-st}\, dt = \frac{1 - e^{-s}(1+s)}{s^2}.$$
+
+Hence $F(s) = \frac{1 - e^{-s}(1+s)}{s^2(1-e^{-s})}.$ 
+
+
+
 ### Square wave resonance
 
 Consider an undamped oscillator $y'' + \pi^2 y =f(t)$. To date we have only considered sinusoidal forcing functions. But the square wave is a different kind of periodic forcing. Above we found that if
@@ -214,8 +217,19 @@ $$
 y(t) = g(t) - u_1(t)g(t-1) + u_2(t)g(t-2) - u_3(t)g(t-3) + \cdots.
 $$
 
-It's not easy to see from this, but in fact the system has a resonance similar to what we get with forcing $\sin(\pi t)$. 
+To get some feeling for what happens, let's evaluate at integer times. Note that $g(n)=(1-(-1)^n)/\pi^2$, which is zero for even $n$ and $2/\pi^2$ for odd $n$. So at an odd value of $n$,
 
+$$
+y(n) = (2/\pi^2)[1 +  u_2(n) + u_4(n) + \cdots].
+$$
+
+As we step from one odd value of $n$ to the next, a new step function in this series switches on. So the solution steadily increases at these times. Now at an even value of $n$,
+
+$$
+y(n) = (2/\pi^2)[-u_1(n) -  u_3(n) - u_5(n) - \cdots].
+$$
+
+So at even $n$ we get steadily decreasing values. In fact, the system is at resonance. Even though the forcing function is not sinusoidal, it does have the same period as the natural frequency of the system. 
 
 ```matlab
 clf
