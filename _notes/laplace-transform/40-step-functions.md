@@ -88,7 +88,7 @@ Write $F(s) = e^{-5s} G(s)$. Then $f(t) = g(t-5)u_5(t)$.
 We find residues of $(-2,2)$ at poles $(-2,1)$. So $g(t)=-2e^{-2t}+2e^{t}$. Then $f(t) = u_5(t)(-2e^{-2t+10}+2e^{t-5}).$
 
 
-## IVPs with step forcing
+## IVPs with piecewise continuous forcing
 
 Let's consider a case of *ramp loading*{:.def}, where a forcing ramps up from zero to a steady value. *(Similar to Example 1 of section 5.6.)*
 
@@ -151,7 +151,7 @@ Solving an ODE is a smoothing process. The answers come out with more derivative
 
 
 
-## Periodic signals (sawtooths and square waves)
+## Sawtooths and square waves
 
 A common signal in engineering is the *square wave*{:.def}, which we define as being $1$ in all the intervals $(2n,2n+1)$ for integer $n\ge 0$, and zero elsewhere. It alternates between on and off.
 
