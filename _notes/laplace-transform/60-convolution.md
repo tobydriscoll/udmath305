@@ -85,21 +85,23 @@ In transform space,
 
 $$(as^2 +bs + c)Y(s) = G(s) + (as+b)y_0 + ay_1.$$
 
-The function $H(s)=1/(as^2 + bs+c)$ is known as the *transfer function*{:.def}, as it plays a key role in transferring inputs to outputs. Now we can write
+The function $H(s)=1/(as^2 + bs+c)$ is known as the *transfer function*{:.def}, as it plays a key role in transferring inputs to outputs. It creates two poles in $Y(s)$, corresponding to the roots of the characteristic polynomial we learned about when we were just starting this problem. They cause the characteristic exponential/oscillatory terms in the solution. 
+
+Now we can write
 
 $$Y(s) = H(s)[(as+b)y_0 + ay_1] + H(s)G(s).$$
 
 The first term on the right is the *free response*{:.def}, depending only on initial state and no forcing. By contrast, the *forced response*{:.def} is $h * g$.
 
-Of particular interest is when $G(s)=1$, i.e. $g(t)=\delta(t)$, because then the forced response is $h(t)$, called the *impulse response*{:.def}. In theory, measuring the impulse response gives you everything you need to solve the completely general IVP! 
+Of particular interest is when $G(s)=1$, i.e. $g(t)=\delta(t)$, with zero initial conditions. In this case, called the *impulse response*{:.def}, the solution is just $h(t)$. If you have the impulse response, then in principle you could take its transform to get $H$ and then know everything you need to solve the problem with any initial conditions and any forcing term. 
 
 ### Example
 
 *Given $y'' + 3y' + 2y = g(t)$, find the transfer function and impulse response. Then find the forced response for $g(t)=\cos(t)$.*
 
-The transfer function pops right out: $H(s)=1/(s^2+3s+2) = 1/(s+1) - 1/(s+2)$. So the impulse response is $h(t) = e^{-t} - e^{-2t}$. For the forced response, we could try to evaluate the convolution integral, but usually it's easier to proceed through the transform.
+The transfer function pops right out: $H(s)=1/(s^2+3s+2) = 1/(s+1) - 1/(s+2)$. So the impulse response is $h(t) = e^{-t} - e^{-2t}$. For the forced response, we could try to evaluate the convolution integral $h * g$ directly, but usually it's much easier to proceed by inverting $H(s)G(s)$. 
 
-$Y(s) = H(s)\frac{s}{s^2+1}$, with residues $(2/5,-1/2,(1-3i)/20,(1+3i)/20)$ at $(-2,-1,i,-i)$. So
+Here, $Y(s) = H(s)\frac{s}{s^2+1}$, with residues $(2/5,-1/2,(1-3i)/20,(1+3i)/20)$ at $(-2,-1,i,-i)$. So
 
 $$y(t) = \frac{2}{5}e^{-2t} - \frac{1}{2} e^{-t} + \frac{e^t}{10} \text{Re}[(1-3i)e^{it}]
 =  \frac{2}{5}e^{-2t} - \frac{1}{2} e^{-t} + \frac{e^t}{10} (\cos(t) + 3\sin(t)).$$
