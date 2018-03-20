@@ -96,6 +96,8 @@ $$ y(t) = y_1(t) + u(t-\pi) y_2(t-\pi) = e^{-t} [ \cos(t)+\sin(t)] - u(t-\pi) e^
 
 ## What does delta do?
 
+### First-order problems
+
 Let's look at the first-order IVP
 
 $$ y' + ay = b \delta(t), \quad y(0)=0$$
@@ -107,22 +109,6 @@ Y(s) = \frac{b}{s+a},
 $$
 
 or $y(t)=be^{-at}$. This is identical to the solution of the homogeneous equation $y'+ay=0$ with $y(0)=b$. That is, delta "kicks" the $y$ value a bit, and then things evolve freely. If the kick occurs at a later time, as in $ y' + ay = b \delta(t-p)$, then $y=b u_p(t) e^{-a(t-p)}$. That is, nothing happens until the kick, and things evolve freely from there.
-
-What happens in a second-order problem? Consider
-
-$$y'' + 2c y' + \omega_0^2 y = b \delta(t), \quad y(0)=y'(0)=0.$$
-
-Then
-
-$$Y(s) = \frac{b}{s^2 + 2c s + \omega_0^2}.$$
-
-You can easily check that we get the same result for $Y$ from the problem 
-
-$$y'' + 2c y' + \omega_0^2 y  = 0, \quad y(0)=0, \, y'(0)=b.$$
-
-In the second-order case, impulse is equivalent to a kick in the *velocity*.
-
-## Many kicks
 
 Two kicks must be twice as good, right?
 
@@ -150,8 +136,23 @@ Hold on. We can solve $y'+ay=b(t)$ with an integrating factor of $e^{at}$:
 
 $$e^{at}y(t) - y(0) = \int_0^t b(\tau) e^{a\tau}\, d\tau.$$
 
-It's exactly. The same. Formula! The forced system is the same as a system constantly subjected to impulses, each giving a nudge to the solution value. 
+It's exactly. The same. Formula! The forced system $y'+ay=b(t)$ is essentially constantly subjected to impulses, each giving a nudge to the solution value. 
 
+### Second-order problems
+
+What happens with impulses in a second-order problem? Consider
+
+$$y'' + 2c y' + \omega_0^2 y = b \delta(t), \quad y(0)=y'(0)=0.$$
+
+Then
+
+$$Y(s) = \frac{b}{s^2 + 2c s + \omega_0^2}.$$
+
+You can easily check that we get the same result for $Y$ from the problem 
+
+$$y'' + 2c y' + \omega_0^2 y  = 0, \quad y(0)=0, \, y'(0)=b.$$
+
+In the second-order case, impulse is equivalent to a kick in the *velocity*. 
 
 ### Example 
 
@@ -169,6 +170,11 @@ $$y(t) = \sin(t) \sum_{k=1}^{20} (-1)^k u_{k\pi}(t) = \sin(t) \sum_{m=1}^{10} u_
 = -\sin(t) \sum_{m=1}^{10} u_{(2m-1)\pi,2m\pi}(t).$$
 
 So on intervals (odd,even) you get $-\sin(t)$, and on intervals (even,odd) you get zero. You keep kicking it and stopping it, over and over.
+
+---
+
+It's a little harder to summarize the continuous-impulse case with a formula, but the idea remains valid: a general forcing function is like a continuously varying impulse, each instant of which contributes to the motion. 
+
 
 ## Weird derivatives
 
