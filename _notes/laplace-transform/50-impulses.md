@@ -152,13 +152,13 @@ You can easily check that we get the same result for $Y$ from the problem
 
 $$y'' + 2c y' + \omega_0^2 y  = 0, \quad y(0)=0, \, y'(0)=b.$$
 
-In the second-order case, impulse is equivalent to a kick in the *velocity*. 
+In the second-order case, impulse is equivalent to a nudge in the *velocity*. 
 
 ### Example 
 
 *(see Exercise 5.7.17)* 
 
-> Solve $y'' + y = \sum_{k=1}^{20} \delta(t-k\pi)$, y(0)=y'(0)=0$.
+> Solve $y'' + y = \sum_{k=1}^{20} \delta(t-k\pi)$, $y(0)=y'(0)=0$.
 
 It's easy to see that
 
