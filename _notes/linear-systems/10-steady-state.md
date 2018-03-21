@@ -10,7 +10,7 @@ chapter: "Linear systems"
 
 *Having found the world beyond Linearity Land a mostly scary and confusing place, we sail home. But we are blown off course to a part of Linearity Land that we have not visited--Vector Valley, nestled in the shadow of Matrix Mountain. The terrain and language are familiar, but some of the local customs are perplexing....*
 
-When we are given $n$ equations with $n$ variables, we find it much more convenient to write the analysis in terms of vectors. When the system is linear, we furthermore use a specialized notation involving *matrices*. 
+When we are given $n$ equations with $n$ variables, we find it much more convenient to write the analysis in terms of vectors. When the system is linear, we furthermore use a specialized notation. 
 
 ### Example
 
@@ -26,7 +26,7 @@ $$\begin{align}
 &= \mathbf{A} \mathbf{u} + \mathbf{b}.
 \end{align}$$
 
-We call $ \mathbf{A} $ a 2-by-2 *matrix* and $\mathbf{b}$ a 2-vector. In this case we say the equation has *constant coefficients*. 
+We call $ \mathbf{A} $ a 2-by-2 *matrix*{:.def} and $\mathbf{b}$ a 2-vector. In this case we say the equation has *constant coefficients*{:.def}. 
 
 ## Matrix-vector multiplication
 
@@ -40,10 +40,16 @@ This is, in fact, how multiplication of a $2\times 2$ matrix and $2\times 1$ vec
 $$ \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix} \begin{bmatrix} u_1 \\ u_2 \end{bmatrix} =
 \begin{bmatrix} a_{11}u_1 + a_{12}u_2  \\ a_{21}u_1 + a_{22} u_2  \end{bmatrix}.$$
 
+![Not commutative]({{ site.baseurl }}/assets/images/commutative.jpg)
+{:.meme}
+
+
 Some important things to note right off the bat:
 
 * We always refer to rows first, then columns. So $a_{21}$ is in the second row, first column.
 * This multiplication is **not commutative**. That is, $ \mathbf{A} \mathbf{u} \neq \mathbf{u} \mathbf{A} $. In fact, the second product isn't even defined. So always write your products carefully, without changing the order.
+
+
 
 ## Steady-state solutions
 
@@ -56,6 +62,6 @@ Decoding the symbols for the example above, this means
 $$ \begin{align}
 2u_1-3u_2 &= 0, \\
 -u_1+5u_2 &= -7.
-\end{bmatrix}$$
+\end{align}$$
 
 This is a linear system of 2 algebraic equations in 2 variables. You know how to solve this in practical terms already (Cramer's rule). But now we're going to take a more abstract look, one that generalizes to systems with more than 2 variables. Ultimately we can use MATLAB to solve these systems for numerical values. (The name MATLAB stands for "matrix laboratory.") 
