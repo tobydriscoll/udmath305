@@ -42,3 +42,5 @@ slopefield(@(t,y) t^2-y,[0 2],[-1 1])
 slopefield(@(t,y) y-y^3/3,[0 3],[-2 2])
 ```
 
+![Cartoon]({{ site.baseurl }}/assets/images/just-a-cartoon.jpg)
+{:.meme}

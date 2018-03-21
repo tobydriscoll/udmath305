@@ -61,13 +61,17 @@ There are three growth regimes: the subclinical phase, marked by increasing $P'$
 
 ## Toricelli's Law
 
-Suppose a tank of cross-sectional area $A$ contains water of height $h(t)$. The tank has a small hole at the bottom of cross-sectional area $a$. Then *Toricelli's Law* states that the water exiting through the hole has the same kinetic energy as water at the top of the tank; that is, it exits with velocity $v$ satisfying
+Suppose a bucket of cross-sectional area $A$ contains water of height $h(t)$. The tank has a small hole at the bottom of cross-sectional area $a$. Then *Toricelli's Law* states that the water exiting through the hole has the same kinetic energy as water at the top of the bucket; that is, it exits with velocity $v$ satisfying
 
 $$v^2=2gh,$$
 
 where $g$ is gravitational acceleration. The rate of volume decrease due to exiting water is $av$, which must be equaled by a change in height, $h'A$. So
 
 $$\frac{dh}{dt} = -\frac{a}{A}\sqrt{2gh}.$$
+
+![Bucket]({{ site.baseurl }}/assets/images/bucket.jpg)
+{:.meme}
+
 
 This equation is separable:
 
@@ -77,5 +81,5 @@ $$2\sqrt{h} = -\frac{a\sqrt{2g}}{A}t + 2\sqrt{h_0}$$
 
 $$h = \left( \sqrt{h_0} - \frac{a\sqrt{g}}{A\sqrt{2}}t  \right)^2.$$
 
-The time it takes for the tank to empty is $A\sqrt{2h_0}/(a\sqrt{g})$.  
+The time it takes for the bucket to empty is $A\sqrt{2h_0}/(a\sqrt{g})$.  
 

@@ -8,6 +8,9 @@ chapter: "Nonlinear equations"
 
 ## True pendulum
 
+![Swing]({{ site.baseurl }}/assets/images/swing.jpg)
+{:.meme}
+
 [Go to page](pendulum_chebfun.html)
 
 ## van der Pol
