@@ -52,7 +52,10 @@ With that in mind, let's consider the definition of the *convolution integral*{:
 
 $$ [f*g](t) = \int_0^t f(t-\tau)g(\tau)\, d\tau. $$
 
-Ignore the integation limits for a moment and focus on the integrand. The term $g(\tau)$ is like the vector $w$ above, always being accessed like $1,2,3,4$. The term $f(t-\tau)$ is like a sliding access to $f$, going backward, such that the "indices" add to $t$, which varies to give us a new function. So you can view this convolution as a moving weighted average of the values of $f$, as weighted by $g$. It is, in fact, a smoothing operation.
+Ignore the integation limits for a moment and focus on the integrand. The term $g(\tau)$ is like the vector $w$ above, always being accessed like $1,2,3,4$. The term $f(t-\tau)$ is like a sliding access to $f$, going backward, such that the "indices" of $f$ and $g$ add to $t$. As $t$ varies, we get a new function. So you can view convolution as a moving weighted average of the values of $f$, as weighted by $g$. It is, in fact, a smoothing operation.
+
+See the [matlab demo on convolution](Convolution.html) (Chebfun required). 
+
 
 ## Properties
 
@@ -68,11 +71,37 @@ It is *not* true, however, that $f*1=f$, unless $f$ is the zero function. Instea
 
 $$[f*\delta](t) = \displaystyle\int_0^t f(t-\tau) \delta(\tau)\, d\tau = f(t).$$ 
 
-A big part of convolution's appeal is the way it interacts with transforms. This is the *convolution theorem*{:.def}.
+
+## Convolution theorem
+
+Here's why we're talking about convolution now. Let's multiply together two transforms.
+
+$$
+F(s)G(s) = \left[ \int_0^\infty f(r) e^{-sr}\, dr \right] \left[ \int_0^\infty g(\tau) e^{-s\tau}\, d\tau \right]
+$$
+
+$$
+= \int_0^\infty \int_0^\infty f(r)g(\tau) e^{-s(r+\tau)} \, dr\, d\tau.
+$$
+
+We change to a different integration variable $t=r+\tau$.
+
+$$F(s)G(s) = \int_0^\infty \int_\tau^\infty f(t-\tau)g(\tau) e^{-st} \, dt \, d\tau.$$
+
+Remember how to switch the order of a double integral?
+
+$$F(s)G(s) = \int_0^\infty \int_0^t f(t-\tau)g(\tau) e^{-st} \, d\tau \,dt$$
+
+$$ = \int_0^\infty e^{-st} \left[ \int_0^t f(t-\tau)g(\tau) \, d\tau \right] \,dt.$$
+
+We now can see that $F(s)G(s)$ is the transform of $f * g$. This is called the *convolution theorem*{:.def}.
 
 **Theorem** *(Theorem 5.8.3)* Suppose ${\cal L}[f] = F(s)$, ${\cal L}[g] = G(s)$, $h=f*g$, and ${\cal L}[h] = H(s)$. Then $H(s)=F(s)G(s)$.
 
-I.e., **convolution in time is multiplication in transform space**. Since ${\cal L}[\delta]=1$, for example, this confirms that $f*\delta=f$. 
+I.e., **convolution in time is multiplication in transform space**. For example, the fact that ${\cal L}[\delta]=1$ fits nicely with the above observation that $f*\delta=f$. 
+
+As you might imagine, doing a convolution directly from the definition is usually not easy. But if $f$ and $g$ are themselves easy to transform, we can instead try to find $f * g$ by taking the inverse transform of $F(s)G(s)$.
+
 
 ## The last word on the 2nd-order, linear, constant-coefficient problem
 
@@ -91,7 +120,7 @@ Now we can write
 
 $$Y(s) = H(s)[(as+b)y_0 + ay_1] + H(s)G(s).$$
 
-The first term on the right is the *free response*{:.def}, depending only on initial state and no forcing. By contrast, the *forced response*{:.def} is $h * g$.
+The first term on the right is the *free response*{:.def}, depending only on initial state and no forcing. If there is any damping present, this part of the solution will be transient in time; the only poles present are those brought by $H$. By contrast, the *forced response*{:.def} is $h * g$. The poles of both $H$ and $G$ will contribute to this term. In the simple case where $G$ is a pure imaginary exponential, $G$ has a single pole that will create the same mode in the forced response. This is the  steady response. 
 
 Of particular interest is when $G(s)=1$, i.e. $g(t)=\delta(t)$, with zero initial conditions. In this case, called the *impulse response*{:.def}, the solution is just $h(t)$. If you have the impulse response, then in principle you could take its transform to get $H$ and then know everything you need to solve the problem with any initial conditions and any forcing term. 
 
