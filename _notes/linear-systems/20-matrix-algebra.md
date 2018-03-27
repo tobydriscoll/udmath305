@@ -12,7 +12,7 @@ chapter: "Linear systems"
 
 An $m\times n$ matrix $ \mathbf{A} $ is a rectangular $m$-by-$n$ array of numbers called *elements*{:.def} or *entries*{:.def}.  The numbers $m$ and $n$ are called the *row dimension*{:.def} and the *column dimension*{:.def}, respectively; collectively they describe the *size*{:.def} of $ \mathbf{A}$. We say $\mathbf{A}$ belongs to $\mathbb{R}^{m\times n}$ if its entries are real or $\mathbb{C}^{m\times n}$ if they are complex-valued.
 
-A *square*{:.def} matrix has equal row and column dimensions. A *row vector*{:.def} has dimension $1\times n$, while a *column vector*{:.def} has dimension $m \times 1$. By default, a vector is understood to be a column vector, and we use $\mathbb{R}^n$ or $\mathbb{C}^n$ to denote spaces of vectors.  An ordinary number may be called a \textbf{scalar}.
+A *square*{:.def} matrix has equal row and column dimensions. A *row vector*{:.def} has dimension $1\times n$, while a *column vector*{:.def} has dimension $m \times 1$. By default, a vector is understood to be a column vector, and we use $\mathbb{R}^n$ or $\mathbb{C}^n$ to denote spaces of vectors.  An ordinary number may be called a *scalar*{:.def}.
 
 We will mainly be dealing with vectors and square matrices. Please recall that "scalar/vector" and "constant/function" are separate attributes. All 4 combinations of them are possible.
 
@@ -22,21 +22,10 @@ To refer to a specific element of a matrix, we use the uppercase name of the mat
 
 We will need to refer to the individual columns of a matrix as vectors. Our convention is to use a lowercase bold version of the matrix name, with a subscript to represent the column number. Thus, $\mathbf{a}_1,\mathbf{a}_2,\ldots,\mathbf{a}_n$ are the columns of the $m\times n$ matrix $\mathbf{A}$. Conversely, whenever we define a sequence of vectors $\mathbf{v}_1,\ldots,\mathbf{v}_p$, we can implicitly consider them to be columns of a matrix $\mathbf{V}$. Sometimes we might write $\mathbf{V}=\bigl[ \mathbf{v}_j \bigr]$ to emphasize the connection.
 
-The *diagonal*{:.def} (or main diagonal) of an $n\times n$ matrix $\mathbf{A}$ refers to the entries $A_{ii}$, $i=1,\ldots,n$. The entries $A_{ij}$ where $j-i=k$ are on a *superdiagonal*{:.def} if $k>0$ and a *subdiagonal*{:.def} if $k<0$. The diagonals are numbered as suggested here:
-
-$$
-\begin{bmatrix}
-    0 & 1 & 2 & \cdots & n-1 \\
-	-1 & 0 & 1 & \cdots & n-2 \\
-    \vdots & \ddots & \ddots & \ddots & \vdots \\
-    -n+2 & \cdots & -1 & 0 & 1\\
-    -n+1 & \cdots & -2 & -1 & 0
-\end{bmatrix}.
-$$
+The *diagonal*{:.def} (or main diagonal) of an $n\times n$ matrix $\mathbf{A}$ refers to the entries $A_{ii}$, $i=1,\ldots,n$.
 
 ![Diagonally]({{ site.baseurl }}/assets/images/diagon.jpg)
 {:.meme}
-
 
 A *diagonal matrix*{:.def} is one whose entries are all zero off the main diagonal.  An *upper triangular*{:.def} matrix $\mathbf{U}$ has entries $U_{ij}$ with $U_{ij}=0$ if $i>j$, and a *lower triangular*{:.def} matrix $\mathbf{L}$ has $L_{ij}=0$ if $i<j$.
 
@@ -52,11 +41,7 @@ A_{1n} & A_{2n} & \cdots & A_{mn}
 \end{bmatrix}.
 $$
 
-The *conjugate transpose*{:.def} or *hermitian*{:.def} of $\mathbf{A}$ is given by
-
-$$\mathbf{A}^*=\bar{\mathbf{A}}^T,$$
-
-where the bar denotes taking a complex conjugate. If $\mathbf{A}$ is real, then hermitian is the same as transpose. A square matrix is  *symmetric*{:.def} if $\mathbf{A}^T=\mathbf{A}$ and *hermitian*{:.def} if $\mathbf{A}^*=\mathbf{A}$.
+A real square matrix is  *symmetric*{:.def} if $\mathbf{A}^T=\mathbf{A}$.
 
 ## Algebra
 
@@ -105,9 +90,9 @@ A_{1n}\\A_{2n}\\\vdots\\A_{mn}
 \end{bmatrix} = v_1 \mathbf{a}_1 + \cdots + v_n \mathbf{a}_n.
 $$
 
-In words, we say that $\mathbf{A}\mathbf{v}$ is a *linear combination*{:.def} of the columns of $\mathbf{A}$. (There is a similar interpretation of multiplying $\mathbf{A}$ on the left by a row vector, but we won't need that.)
+In words, we say that $\mathbf{A}\mathbf{v}$ is a *linear combination*{:.def} of the columns of $\mathbf{A}$.
 
-This last observation extends to more general matrix-matrix
+We can extend this interpretation to more general matrix-matrix
 multiplications. One can show that (here again $\mathbf{A}$ is $m\times p$ and $\mathbf{B}$ is
 $p\times n$)
 
@@ -152,7 +137,7 @@ $$
 \end{align*}
 $$
 
-But note also, for instance, that
+Note also, for instance, that
 
 $$
 \mathbf{A} \begin{bmatrix} 2 \\ 1 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ 0 \\ -3
@@ -177,7 +162,7 @@ a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n &= b_n.
 \end{align}
 $$
 
-The rules of matrix-vector multiplication ensure that this system can be stated simply as $ \mathbf{A} \mathbf{x} = \mathbf{b}.$ Note that $A_{ij}$ is the influence on the $i$th equation of the $j$th variable.
+The rules of matrix-vector multiplication ensure that this system can be stated simply as $ \mathbf{A} \mathbf{x} = \mathbf{b}.$ Note that $A_{ij}$ is the influence of the $j$th variable on the $i$th equation.
 
 Another explanation is the connection with linear combination. We got used to doing things like $y=c_1\cos(t) + c_2\sin(t)$ for a general solution to an ODE. Now imagine that a function such as $\cos(t)$ is really an infinite "vector" whose values are "indexed" by the continuous variable $t$. Since a matrix-vector product is a linear combination of the columns of the matrix, it's not crazy to see $ \mathbf{A} \mathbf{x} = x_1 \mathbf{a}_1 + \cdots + x_n \mathbf{a}_n$ as a finite-dimensional version of something like
 
@@ -214,7 +199,7 @@ Every nonzero scalar has a multiplicative inverse: $a\cdot (1/a)=1$. The *invers
 
 $$ \mathbf{A} \mathbf{A}^{-1} = \mathbf{A}^{-1} \mathbf{A} = \mathbf{I}.$$
 
-The zero matrix has no inverse. However, there are also nonzero matrices that have no inverse. They are called *singular*{:.def} or *noninvertible*{:.def}. The simplest example is
+The zero matrix has no inverse. However, there are also nonzero matrices that have no inverse. They are called *singular*{:.def}. The simplest example is
 
 $$
 \begin{bmatrix} 0 & 1 \\0 & 0 \end{bmatrix}.
@@ -268,4 +253,4 @@ $$  \mathbf{I}  \mathbf{x} = \mathbf{A}^{-1} \mathbf{b} $$
 
 $$  \mathbf{x} = \mathbf{A}^{-1} \mathbf{b}. $$ 
 
-Now, this does suggest that if the matrix inverse is unique--which it is--then the solution to the linear system is also unique. Beyond that, this answer is not very satisfying. It doesn't tell us how to find $\mathbf{A}$, or how to know whether it even exists. So more remains to be done.
+Now, this does suggest that if the matrix inverse is unique--which it is--then the solution to the linear system is also unique. But this answer is purely theoretical. It doesn't tell us how to find $\mathbf{x}$, or how to know whether it even exists. So more remains to be done.
