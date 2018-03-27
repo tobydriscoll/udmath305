@@ -27,6 +27,15 @@ We have $f(y)=y-y^3/3=y(1-y^2/3)$, so $y=0$ and $y=\pm\sqrt{3}$ are the equilibr
 * $f'(0) = 1-0 = 1 > 0$ (unstable)
 * $f'(\pm\sqrt{3}) = 1-3 = -2 <0$ (stable)
 
+## Phase line
+
+Staying with the case of $y'=f(y)$, we can use a graph of $f(y)$ to help visualize what is happening. To continue the example above:
+
+![phase line](phaseline.svg)
+
+The red stars are the equilibria. Imagine the state $y(t)$ as a particle on the $x$-axis, which we now call the *phase line*{:.def}. Where $f(y)<0$ (curve is below the $x$-axis), the state moves leftward, and where $f(y)>0$, it moves rightward. This makes the stability properties apparent.
+
+
 ## Slope field / Direction field
 
 Suppose now $y'=f(t,y)$ (FlaSh). (This includes the previous case, of course.) One device for getting some understanding of the solutions is the *slope field*{:.def} or direction field of the ODE. At points in the $(t,y)$ plane, we evaluate $f$. Since that gives the slope of the solution there, we draw a tiny tangent line having that slope. The result gives a good idea of how solutions will look.
