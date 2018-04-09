@@ -119,3 +119,45 @@ $$h = \left( \sqrt{h_0} - \frac{a\sqrt{g}}{A\sqrt{2}}t  \right)^2.$$
 
 The time it takes for the bucket to empty is $A\sqrt{2h_0}/(a\sqrt{g})$.  
 
+## Bullet-proof water
+
+(This example is adapted from [here](https://sinews.siam.org/Details-Page/slings-bullets-blow-up-and-linearity).)
+
+Suppose someone shoots a gun at you while you're underwater? How deep do you have to be in order to be safe? Take a moment to think about it and guess.
+
+The most common model for free fall with air resistance is $m\dfrac{dv}{dt}=-cv^2 + mg$, where $v$ is velocity (downward is positive) and $c>0$ is a drag coefficient. We're going to use the resistance of water, not air, by the same model. We divide out the mass to get
+
+$$\dfrac{dv}{dt}=-kv^2 + g,$$
+
+for some $k>0$ and $g\approx 10$ m/s$^2$.
+
+This ODE has a stable equilibrium at $v^2=g/k$, which defines *terminal velocity*. Let's guesstimate that the terminal velocity of a bullet in water is 1 m/s, which implies $k\approx g \approx 10$.
+
+This equation is already separable, and can be solved that way. But we're about to make it even simpler. First, consider that an M16 has a muzzle velocity of 960 m/s, so we can use $v(0)=v_0\approx 10^3$. Next, what is a "safe" value of $v(t)$ for the bullet?  Let's use $v_s=10$ m/s, which is the speed the bullet would gather if dropped from 15 feet. For $v_0>v>v_s$, the $+g$ term in our ODE is insignificant compared to $10v^2$. So we approximate the ODE as
+
+$$\dfrac{dv}{dt}=-kv^2.$$
+
+This is our finite-time blowup problem, but run in reverse. It's separable:
+
+$$\int - \frac{dv}{v^2} = \int 10 dt$$
+
+$$ v^{-1} = 10t + C. $$
+
+From the initial condition we see that $v_0^{-1}=C$. So
+
+$$ v = \frac{ 1 }{10t + C} = \frac{ v_0 }{10v_0 t + 1}.$$
+
+From here we get two things. First, we solve $v(t_s)=v_s$ to get the time at which the bullet is slow enough to be safe for us:
+
+
+$$ t_s = \frac{v_0-v_s}{10v_0v_s} \approx \frac{v_0}{10v_0v_s} = (10v_s)^{-1},$$
+
+in seconds. From the formula for $v(t)$, we can integrate again to get the depth $y(t)$:
+
+$$ y = 0 + \int_0^t \frac{ v_0 }{10v_0 \tau + 1}\, d\tau = \frac{1}{10} \ln(10v_0 t + 1).$$
+
+At the slow-time $t_s$ we found above, this is
+
+$$ y_s \approx \frac{1}{10} \ln\left( \frac{v_0}{v_s} + 1 \right).$$
+
+Now for the numbers. With $v_0=10^3$, $v_s=10$, this is $0.1\ln(1001)$, or just $0.69$ m (less than $2.3$ feet). That logarithm in $y_s$ is powerful. Even with $v_0=10^8$ (a third of the speed of light), the safe depth is just 1.84 m! 

@@ -20,7 +20,12 @@ Don't it always seem to go that you don't know what you've got til it's gone?  R
 
 **All of these properties now go away.**
 
-For example, consider the nonlinear problem $y'=y^2$. You can easily check that $y_1=1/(1-t)$ is a solution. (Note that it is certainly not in the form of an exponential function.) So is $y_2=1/(2-t)$. But $2y_1$ is not. Neither is $y_1+y_2$. Buh-bye, superposition.
+For example, consider the nonlinear problem $y'=y^2$. This ODE governs the evolution of the slope of the line of sight to an airplane flying overhead.
+
+![Airplane](airplane.jpg)
+
+
+You can easily check that $y_1=1/(1-t)$ is a solution. So is $y_2=1/(2-t)$. But $2y_1$ is not. Neither is $y_1+y_2$. Buh-bye, superposition.
 
 ![Not a solution]({{site.baseurl}}/assets/images/not-a-solution.jpg)
 {:.meme}
@@ -36,7 +41,7 @@ $$
 y = \frac{y_0}{1 - y_0t}.
 $$
 
-But this solution is undefined at $t=1/y_0$. That is, we lose the *existence* of this solution, even though there is no lack of continuity in the ODE itself. 
+But this solution is undefined at $t=1/y_0$. (In the line-of-sight diagram above, the slope becomes infinite when the airplane is directly overhead.) We lose the *existence* of this solution, even though there is no lack of continuity in the ODE itself. 
 
 Here's another instructive case. Suppose $y'=2\sqrt{y}$, and $y(0)=0$. It's clear that $y=t^2$ is a solution for all $t\ge 0$. But so is the zero function, $y\equiv 0$. For that matter, so is $y=u_c(t)(t-c)^2$ for any $c>0$. These solutions lack *uniqueness*. 
 
