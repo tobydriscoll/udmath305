@@ -14,9 +14,13 @@ Consideration of the linear, constant-coefficient ODE system led us to believe t
 
 $$ \mathbf{A} \mathbf{v} = \lambda \mathbf{v} $$
 
-for a scalar $\lambda$ and a nonzero vector $ \mathbf{v}$, then we would have an exponential solution of $ \mathbf{x}'= \mathbf{A} \mathbf{x}$. Such a value $\lambda$ is called an *eigenvalue*, and $ \mathbf{v}$ is an associated *eigenvector*.
+for a scalar $\lambda$ and a nonzero vector $ \mathbf{v}$, then we would have an exponential solution of $ \mathbf{x}'= \mathbf{A} \mathbf{x}$. Such a value $\lambda$ is called an *eigenvalue*{:.def}, and $ \mathbf{v}$ is an associated *eigenvector*{:.def}.
 
-Let's write the defining eigenvalue equation as $ \mathbf{A} \mathbf{v} = \lambda \mathbf{I} \mathbf{v}, $ or $(\mathbf{A}-\lambda \mathbf{I})  \mathbf{v} = \boldsymbol{0}.$ If $(\mathbf{A}-\lambda \mathbf{I})$ is a nonsingular matrix, then this linear system has a unique solution, which is $\mathbf{v} = \boldsymbol{0}$. So, no eigenvalue. In other words, $\lambda$ is an eigenvalue only if $\mathbf{A}-\lambda \mathbf{I}$ is a singular matrix. But in that case, the system has no solution or infinitely many solutions. We know that zero is a solution, so there must be infinitely many. We call all such solutions for a fixed eigenvalue $\lambda$ the associated *eigenspace*.
+The defining eigenvalue equation is equivalent to $ \mathbf{A} \mathbf{v} = \lambda \mathbf{I} \mathbf{v}, $ or $(\mathbf{A}-\lambda \mathbf{I})  \mathbf{v} = \boldsymbol{0}.$ If $(\mathbf{A}-\lambda \mathbf{I})$ is a nonsingular matrix, then this linear system has a unique solution, which is $\mathbf{v} = \boldsymbol{0}$. So, no eigenvector exists for this value of $\lambda$. In other words,
+
+**$\lambda$ is an eigenvalue if and only if $\mathbf{A}-\lambda \mathbf{I}$ is a singular matrix.**
+
+Furthermore, we know that if $\mathbf{A}-\lambda \mathbf{I}$ is singular, then $(\mathbf{A}-\lambda \mathbf{I})  \mathbf{v} = \boldsymbol{0}$ has infinitely many nonzero solutions. These include all nonzero scalar multiples of any eigenvector. We call all such solutions for a fixed eigenvalue $\lambda$ the associated *eigenspace*{:.def}.
 
 Let's bring this down to a $2\times 2$ situation.
 
@@ -26,11 +30,11 @@ $$ \left( \begin{bmatrix} a & b \\ c & d \end{bmatrix} - \lambda \begin{bmatrix}
 $$  \begin{bmatrix} a-\lambda & b \\ c & d-\lambda \end{bmatrix} 
 \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}. $$ 
 
-Earlier I claimed that this system matrix has a simple formula for its inverse unless $(1,1)(2,2)-(1,2)(2,1)=0$. That is,
+This matrix is singular if it has zero determinant:
 
-$$ \det( \mathbf{A} -\lambda \mathbf{I} ) =   \begin{vmatrix} a-\lambda & b \\ c & d-\lambda \end{vmatrix} = 0.$$
+$$ 0 = \det( \mathbf{A} -\lambda \mathbf{I} ) =   \begin{vmatrix} a-\lambda & b \\ c & d-\lambda \end{vmatrix} = (a-\lambda)(d-\lambda)-bc.$$
 
-Note that this is a quadratic polynomial in $\lambda$, called the *characteristic polynomial*. Thus, a matrix has two eigenvalues (counting multiplicity), they may be complex even if the matrix is real, but they come in conjugate pairs when complex. 
+Note that this is a quadratic polynomial in $\lambda$, called the *characteristic polynomial*{:.def}. Thus, a matrix has two eigenvalues (counting multiplicity). They may be complex even if the matrix is real, but those come in conjugate pairs. 
 
 ### Example
 
@@ -45,9 +49,9 @@ Now, $( \mathbf{A} -3 \mathbf{I}) \mathbf{v} = \boldsymbol{0} $ looks like
 $$  \begin{bmatrix} -2 & 1 \\ 4 & -2 \end{bmatrix} 
 \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}. $$
 
-There must be infinitely many solutions, so these equations must be redundant (the second row is a multiple of the first). This will always happen with $2\times 2$ eigenvalue problems. So we can focus on solving only $-2v_1+v_2=0$. That is, any vector with $v_2=2v_1$ is in the eigenspace. That is, all vectors of the form $[c,2c]^T=c[1,2]^T$ for a constant $c$.
+There must be infinitely many solutions, so these equations must be redundant. Note that the second row is a multiple of the first---this will always happen with $2\times 2$ eigenvalue problems. So we can focus on solving only $-2v_1+v_2=0$. I.e., any vector with $v_2=2v_1$ is in the eigenspace. These are all vectors of the form $[c,2c]^T=c[1,2]^T$ for a constant $c$.
 
-Repeating for $\lambda=\lambda_2=-1$, we have to solve $2v_1+v_2=0$, or $v_2=-2v_1$, or any vector in the form $c[1,-2]^T$.
+Repeating for $\lambda=\lambda_2=-1$, we have to solve $2v_1+v_2=0$, or $v_2=-2v_1$, hence any vector in the form $c[1,-2]^T$.
 
 ---
 
@@ -63,7 +67,7 @@ The roots of this polynomial are $\lambda_{1,2} = -1 \pm 1i.$
 
 To find an eigenvector for $\lambda_1$, we use the first row of $ \mathbf{A} - \lambda_1 \mathbf{I} $ to conclude $(2-i)v_1 -v_2 = 0$, so $v_2=(2-i)v_1$. Any multiple of the vector $[1,2-i]^T$ will do.
 
-We get a benefit from the complex eigenvalues: the second eigenvector, like the second eigenvalue, is just the conjugate of the first. So we have $[1,2+i]^T$ to go with $\lambda_2$. 
+We get a benefit from the complex eigenvalues: the second eigenvector, like the second eigenvalue, is just the conjugate of the first. So we have $[1,2+i]^T$ (and all its multiples) to go with $\lambda_2$. 
 
 
 ## Multiple eigenvalues

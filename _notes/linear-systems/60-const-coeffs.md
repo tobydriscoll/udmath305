@@ -32,7 +32,11 @@ D =
 
      0     0
      0    -3
+~~~
 
+The eigenvalues are the diagonal entries of $\mathbf{D}$. Thus $\lambda_1=0$ and $\lambda_2=-3$. The corresponding columns of $\mathbf{V}$ are associated eigenvectors. So we could use $\mathbf{v}_1=[0.9701,0.2425]^T$, for example. However, remember that every scalar multiple of an eigenvector is also an eigenvector, and it's often convenient to normalize so that the smallest entry is one. Thus
+
+~~~matlab
 >> V(:,1)/V(2,1)
 
 ans =
@@ -48,7 +52,7 @@ ans =
      1
 ~~~
 
-Thus the general solution is
+Thus the general solution of the ODE is
 
 $$c_1 \begin{bmatrix} 4\\1 \end{bmatrix} + c_2 e^{-3t} \begin{bmatrix} -2 \\ 1 \end{bmatrix}.$$
 
@@ -61,17 +65,26 @@ $$c_1 \begin{bmatrix} 4\\1 \end{bmatrix} + c_2 e^{-3t} \begin{bmatrix} -2 \\ 1 \
 We use MATLAB for the eigenvalue stuff.
 
 ~~~matlab
-[V,D] = eig([1 -1;5 -3])
-V(:,1)/V(1,1)
+>> [V,D] = eig([1 -1;5 -3])
+
+V =
+   0.3651 + 0.1826i   0.3651 - 0.1826i
+   0.9129 + 0.0000i   0.9129 + 0.0000i
+
+D =
+  -1.0000 + 1.0000i   0.0000 + 0.0000i
+   0.0000 + 0.0000i  -1.0000 - 1.0000i
+
+>> V(:,1)/V(1,1)  
+
+ans =
+   1.0000 + 0.0000i
+   2.0000 - 1.0000i
 ~~~
 
-From here, we could write down the general solution as
+From here, we could easily write down the general solution in complex form. But we probably prefer a purely real form, and that takes more work. To get it, we use the Re and Im parts of $e^{\lambda_1t}\mathbf{v}_1$:
 
-$$ c_1 e^{(-1+i)t} \begin{bmatrix} 1 \\ 2-i \end{bmatrix} + \bar{c}_1 e^{(-1-i)t} \begin{bmatrix} 1 \\ 2+i \end{bmatrix}.$$
-
-But we probably prefer a purely real form. To get it, we use the Re and Im parts of 
-
-$$ e^{-t} \left[  e^{it} \left( \begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} 0 \\ -i \end{bmatrix} \right) \right],$$
+$$ e^{(-1+i)t} \begin{bmatrix} 1 \\ 2-i \end{bmatrix}  = e^{-t} \left[  e^{it} \left( \begin{bmatrix} 1 \\ 2 \end{bmatrix} + i \begin{bmatrix} 0 \\ -1 \end{bmatrix} \right) \right],$$
 
 giving
 
@@ -98,37 +111,34 @@ $$ \mathbf{c} = \begin{bmatrix} 1 & 0 \\ 2 & -1 \end{bmatrix}^{-1} \begin{bmatri
 
 The solution is
 
-$$ \mathbf{x}(t) =  e^{-t} \begin{bmatrix} \cos(t) & \sin(t) \\ 2\cos(t)+\sin(t) & 2\sin(t)-\cos(t) \end{bmatrix} \begin{bmatrix} 1 \\ 4 \end{bmatrix}.$$
+$$ \mathbf{x}(t) =  e^{-t} \begin{bmatrix} \cos(t) & \sin(t) \\ 2\cos(t)+\sin(t) & 2\sin(t)-\cos(t) \end{bmatrix} \begin{bmatrix} 1 \\ 4 \end{bmatrix} = e^{-t} \begin{bmatrix} \cos(t) + 4\sin(t) \\ -2\cos(t)+9\sin(t) \end{bmatrix}.$$
+
+OK, the details are a drag. But the eigenvalues $-1\pm i$ lead directly to combinations of $e^{-t}\cos(t)$ and $e^{-t}\sin(t)$ (different combinations in the two components). 
 
 ## Phase plane
 
-The eigenvalues and eigenvectors dictate how the phase plane looks. The general solution is
+The eigenvalues and eigenvectors dictate how the phase plane looks. The general solution of $\mathbf{x}' = \mathbf{A}\mathbf{x}$   is
 
 $$c_1 e^{\lambda_1 t} \mathbf{v}_1 + c_2 e^{\lambda_2 t} \mathbf{v}_2.$$
+
+Note also that $\mathbf{x}=\boldsymbol{0}$ is an equilibrium solution. 
 
 ### Real eigenvalues
 
 The sign of $\lambda_k$ forces growth or decay in the direction of $\mathbf{v}_k$ as $t\to\infty$. 
 
-Now say also that $\lambda_1>\lambda_2$. As $t\to\infty$, the relative contribution from $e^{\lambda_2 t}$ is insignificant, and the solution lies nearly on the line through the origin in the direction of $\mathbf{v}_1$. 
+Now say also that $\lambda_1>\lambda_2$. As $t\to\infty$, the relative contribution from $e^{\lambda_2 t}$ is insignificant, and the solution lies nearly on the line through the origin in the direction of $\mathbf{v}_1$.
+
 
 **Nodal sink / stable node**
 
-If $\lambda_{1,2}<0$, all solutions eventually decay into the origin.
-
-![stable node](phaseplane1.svg)
-
-If $\lambda_2<\lambda_1<0$, then eventually the direction $\mathbf{v}_1$ dominates (unless its coefficient is zero).
+If both eigenvalues are negative, all solutions eventually decay into the origin. That is, the origin is asymptotically stable. If $\lambda_2<\lambda_1<0$, then eventually the direction $\mathbf{v}_1$ dominates (unless its coefficient is zero).
 
 ![stable node](phaseplane2.svg) 
 
 **Nodal source / unstable node**
 
-If $\lambda_{1,2}>0$, all solutions eventually move away from the origin.
-
-![stable node](phaseplane3.svg)
-
-If $\lambda_2<\lambda_1<0$, then eventually the direction $\mathbf{v}_1$ dominates (unless its coefficient is zero).
+If both eigenvalues are positive, all solutions eventually move away from the origin. that is, the origin is unstable. If $\lambda_2<\lambda_1<0$, then eventually the direction $\mathbf{v}_1$ dominates (unless its coefficient is zero).
 
 ![stable node](phaseplane4.svg)
 
@@ -151,20 +161,20 @@ When the eigenvalues and eigenvectors are complex, there are no fixed real direc
 
 **Spiral sink / stable spiral**
 
-When the real parts are both negative, solutions spiral inward.
+When the real parts are both negative, solutions spiral inward (origin is stable).
 
 ![stable node](phaseplane8.svg)
 ![stable node](phaseplane9.svg)
 
 **Spiral source / unstable spiral**
 
-When the real parts are both positive, solutions spiral outward.
+When the real parts are both positive, solutions spiral outward (origin is unstable).
 
 ![stable node](phaseplane10.svg)
 
 **Center**
 
-When the real parts are zero, we get "neutral stability." You see this a lot when energy is being conserved.
+When the real parts are zero, we get *neutral stability*{:.def}. You see this a lot when energy is being conserved.
 
 ![stable node](phaseplane11.svg)
 ![stable node](phaseplane12.svg)

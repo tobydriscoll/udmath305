@@ -15,13 +15,23 @@ Note: Some of what follows is specific to $2\times 2$, and is a little complicat
 
 ## Diagonal
 
-If the matrix is diagonal and has repeated eigenvalues, then it is a multiple of the identity, $ \mathbf{A} = a \mathbf{I}$. This turns out to be easy. First, note that $\det(a \mathbf{I} - \lambda \mathbf{I} )=(a-\lambda)^2$, so $a$ is the repeated eigenvalue. Now, an eigenvector has to satisfy $( \mathbf{A} - \lambda \mathbf{I} ) \mathbf{v} = \boldsymbol{0}$. But $\mathbf{A} - a \mathbf{I}$ is the zero matrix, so we can choose any $ \mathbf{v} $ at all! To get independent solutions, it's easiest to choose columns of the identity. So the general solution is
+If the matrix is diagonal and has repeated eigenvalues, then it is a multiple of the identity, $ \mathbf{A} = a \mathbf{I}$. This turns out to be easy. First, note that $\det(a \mathbf{I} - \lambda \mathbf{I} )=(a-\lambda)^2$, so $a$ is the repeated eigenvalue. Now, an eigenvector has to satisfy $( \mathbf{A} - \lambda \mathbf{I} ) \mathbf{v} = \boldsymbol{0}$. But $\mathbf{A} - a \mathbf{I}$ is the zero matrix, so we can choose any $ \mathbf{v} $ at all! To get independent solutions, it's easiest to choose columns of the identity. So the general solution of $\mathbf{x}' = \mathbf{A} \mathbf{x}$  is
 
 $$ c_1 e^{\lambda t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{\lambda t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}.$$
 
-## Nondiagonal
+This case brings two new pictures in the phase plane. If eigenvalues are negative and equal, the origin is stable, and all directions are treated equally:
 
-If an eigenvalue is repeated in a nondiagonal $2\times 2$ matrix, it turns out that we can only find one independent eigenvector.
+![stable node](phaseplane1.svg)
+
+If the eigenvalues are positive and equal, we reverse the arrows and have an unstable origin:
+
+![stable node](phaseplane3.svg)
+
+
+
+## Nondiagonal/Defective
+
+If an eigenvalue is repeated in a nondiagonal $2\times 2$ matrix, it turns out that we can only find one independent eigenvector. In this case we say the eigenvalue (and by extension the matrix) is *defective*{:.def}.
 
 ### Example
 
@@ -35,9 +45,9 @@ $$ \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} \mathbf{v} = \boldsymbol{0}.$$
 
 The second row of the system is just $0=0$, i.e., no restriction. But the first row dictates that $v_2=0$. So the eigenvectors all have the form $[c,0]^T$, and they span only one dimension (the $x_1$-axis).
 
-## ODE with a defective matrix
+### ODE with a defective matrix
 
-Suppose $ \mathbf{x}' = \mathbf{A} \mathbf{x}$ and $ \mathbf{A} $ is defective with eigenvalue $\lambda$. We do get one solution $ \mathbf{x} = e^{\lambda t} \mathbf{v}$, where $( \mathbf{A} - \lambda \mathbf{I} ) \mathbf{v} = \boldsymbol{0} $. We need to find a second, independent solution to get the general solution.
+Suppose $\mathbf{x}' = \mathbf{A} \mathbf{x}$ and $ \mathbf{A} $ is defective with eigenvalue $\lambda$. We do get one solution $ \mathbf{x} = e^{\lambda t} \mathbf{v}$, where $( \mathbf{A} - \lambda \mathbf{I} ) \mathbf{v} = \boldsymbol{0} $. We need to find a second, independent solution to get the general solution.
 
 From our experiences with 2nd-order equations, it's reasonable to assume that $te^{\lambda t}$ will play some role. So we plug in $te^{\lambda t} \mathbf{w}$ for an unknown $ \mathbf{w} $:
 
@@ -55,9 +65,9 @@ The term multiplying $t$ is zero, by the eigenvector property. So we've got a so
 
 $$ (  \mathbf{A} - \lambda \mathbf{I} )  \mathbf{w} = \mathbf{v} $$
 
-can be solved for $ \mathbf{w}$. Fortunately, this is always possible. We call $ \mathbf{w}$ a *generalized eigenvector*.  
+can be solved for $ \mathbf{w}$. Fortunately, this is always possible. We call $ \mathbf{w}$ a *generalized eigenvector*{:.def}.  
 
-### Example
+#### Example
 
 > Find the general solution of
 > $$ \mathbf{x}' = \begin{bmatrix} -1 & 1 \\ 0 & -1 \end{bmatrix} \mathbf{x}.$$
@@ -71,13 +81,20 @@ The first row of this system tells us $w_2=c_1$. The second row makes no restric
 $$ t e^{-t} \begin{bmatrix} c_1 \\ 0 \end{bmatrix} + e^{-t} \begin{bmatrix} c_2 \\ c_1 \end{bmatrix}
 = c_1 e^{-t} \begin{bmatrix} t \\ 1 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} 1 \\ 0 \end{bmatrix}.$$
 
-## Asymptotic behavior
+---
 
-Compared to a factor $t$, an exponential always wins. So if $\lambda < 0$, the origin is a sink, and if $\lambda > 0$, it is a source. Sometimes it gets the label *improper* or *degenerate* attached.
+Compared to a factor $t$, an exponential always wins. So if $\lambda < 0$, the origin is a sink, and if $\lambda > 0$, it is a source. Sometimes it gets the label *improper*{:.def} or *degenerate*{:.def} attached.
+
+
+## Flowchart for $\mathbf{x}' = \mathbf{A} \mathbf{x}$ in $2\times 2$ case
+
+![Flowchart](eigflow.png)
+
+
 
 ## Matrix exponential
 
-If $ \mathbf{x}' = \mathbf{A} \mathbf{x}$, then the general solution should be $ \mathbf{x} = e^{t \mathbf{A}} \mathbf{c}$, right? Suppose we use a Taylor series to define the exponential function for a matrix:
+If $ \mathbf{x}' = \mathbf{A} \mathbf{x}$, then the general solution should be $ \mathbf{x}(t) = e^{t \mathbf{A}} \mathbf{x}(0)$, right? Suppose we use a Taylor series to define the exponential function for a matrix:
 
 $$ e^{t \mathbf{A}} = \mathbf{I} + t \mathbf{A} + \frac{t^2}{2!} \mathbf{A}^2 + \frac{t^3}{3!} \mathbf{A}^3 + \cdots.$$
 

@@ -10,25 +10,25 @@ chapter: "Linear systems"
 
 You now have all you need to find the general solution of $ \mathbf{x}' = \mathbf{A} \mathbf{x}$ with constant matrix $ \mathbf{A}$, in the form of $ \mathbf{x}(t) = \mathbf{X}(t) \mathbf{c}$ for a fundamental matrix $ \mathbf{X}(t)$ (whose columns are independent solutions).
 
-So what should we do with the nonhomogeneous problem $\mathbf{x}' = \mathbf{A} \mathbf{x} + \mathbf{g}(t)$? One answer is to follow our earlier blueprint and use undetermined coefficients. We're going to try a different trick here, called *variation of parameters*.
+So what should we do with the nonhomogeneous problem $\mathbf{x}' = \mathbf{A} \mathbf{x} + \mathbf{g}(t)$? One answer is to follow our earlier blueprint and use undetermined coefficients. We're going to try a different trick here, called *variation of parameters*{:.def}.
 
-Here's the trick: instead of a constant vector $\mathbf{c}$ in the general solution, make it a function $\mathbf{u}(t)$. That's it! Here goes:
+Here's the trick: instead of a constant vector $\mathbf{c}$ in the general solution, make it a function $\mathbf{u}(t)$. That's it! Plug in $ \mathbf{x}(t) = \mathbf{X}(t) \mathbf{u}(t)$ and you get
 
 $$ \mathbf{X}' \mathbf{u} + \mathbf{X} \mathbf{u}' = \mathbf{A} \mathbf{X} \mathbf{u} + \mathbf{g}.$$
 
-By construction, $ \mathbf{X}' = \mathbf{A} \mathbf{X}$ (look at it columnwise). So the game is to solve
+By construction, $ \mathbf{X}' = \mathbf{A} \mathbf{X}$ (look at it columnwise, since each column of $\mathbf{X}$ is a solution). So the game is to solve
 
 $$ \mathbf{X} \mathbf{u}' = \mathbf{g} $$
 
 for $ \mathbf{u}$. Analytically,
 
-$$ \mathbf{u}(t) = \mathbf{c} + \int \mathbf{X}^{-1}(t) \mathbf{g}(t)\, dt. $$ 
+$$ \mathbf{u}(t) = \mathbf{c} + \int \mathbf{X}^{-1}(t) \mathbf{g}(t)\, dt, $$ 
 
-Then our general solution is
+where $\mathbf{c}$ is a constant vector. Then our general solution is
 
 $$ \mathbf{X}(t) \mathbf{u}(t) = \mathbf{X}(t) \mathbf{c} +  \mathbf{X}(t) \left[\int \mathbf{X}^{-1}(t) \mathbf{g}(t)\, dt \right]. $$ 
 
-This has the form of a complementary solution plus particular solution.
+This has the form of a complementary solution plus particular solution. Of course, to apply this formula you get to do two of your favorite things: invert a matrix and integrate. 
 
 ### Example
 

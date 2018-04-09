@@ -1,6 +1,6 @@
 ---
 layout: note
-title: "Theory"
+title: "ODE theory"
 chapter: "Linear systems"
 ---
 * TOC
@@ -12,11 +12,11 @@ chapter: "Linear systems"
 
 We now turn our attention to the first-order vector ODE problem
 
-$$ \mathbf{x}' = \mathbf{P}(t) \mathbf{x} + \mathbf{f}(t).$$
+$$ \mathbf{x}' = \mathbf{P}(t) \mathbf{x} + \mathbf{g}(t).$$
 
-Here $ \mathbf{P} $ is $n\times n$, and $ \mathbf{x} $ and $ \mathbf{f} $ are both $n$-vectors. As this is a first-order vector problem, it requires a single vector initial condition, $ \mathbf{x}(t_0) = \mathbf{x}_0$. When it comes to existence and uniqueness, linearity remains a great friend.
+Here $ \mathbf{P} $ is $n\times n$, and $ \mathbf{x} $ and $ \mathbf{g} $ are both $n$-vectors. As this is a first-order vector problem, it requires a single vector initial condition, $ \mathbf{x}(t_0) = \mathbf{x}_0$. When it comes to existence and uniqueness, linearity remains a great friend.
 
-**Theorem** (Theorem 6.2.1) If $ \mathbf{P} $ and $ \mathbf{f} $ are continuous on an open interval $I$, and $t_0\in I$, then the IVP $ \mathbf{x}' = \mathbf{P}\mathbf{x} + \mathbf{f},$ $\mathbf{x}(t_0) = \mathbf{x}_0$ has a unique solution throughout the interval $I$.
+**Theorem** *(Theorem 6.2.1)* If $ \mathbf{P} $ and $ \mathbf{g} $ are continuous on an open interval $I$, and $t_0\in I$, then the IVP $ \mathbf{x}' = \mathbf{P}\mathbf{x} + \mathbf{g},$ $\mathbf{x}(t_0) = \mathbf{x}_0$ has a unique solution throughout the interval $I$.
 
 ## Fundamental solutions
 
@@ -26,17 +26,22 @@ In the homogeneous linear case we continue to enjoy superposition of solutions.
 
 ---
 
-Just as with high-order scalar linear problems, the general solution is expressed as a linear combination of a fundamental set of solutions. We say that the solutions $\mathbf{x}_1(t), \ldots, \mathbf{x}_n(t)$ are *fundamental* if the matrix
+We sometimes use matrix-vector multiplication to express this kind of linear combination. Suppose that $\mathbf{x}_1(t), \ldots, \mathbf{x}_n(t)$ are solutions of the linear homogenous ODE $\mathbf{x}' = \mathbf{P}(t) \mathbf{x}$. Define the $n\times n$ matrix
 
-$$ \mathbf{X}(t) = \begin{bmatrix} \mathbf{x}_1(t) & \ldots & \mathbf{x}_n(t) \end{bmatrix} $$
+$$ \mathbf{X}(t) = \begin{bmatrix} \mathbf{x}_1(t) & \ldots & \mathbf{x}_n(t) \end{bmatrix}. $$
 
-is nonsingular at any particular time. Given such a matrix, then the *general solution* is $\mathbf{X}(t) \mathbf{c}$ for an arbitrary $n$-vector $\mathbf{c}$. Note that if we are also given an initial condition, then we must satsify
+In the vector case, we define the *Wronskian*{:.def} of this solution set as the determinant of $\mathbf{X}$. Just as with high-order scalar linear problems, we say these solutions are *linearly independent*{:.def} if their Wronskian is nonzero (and if it is nonzero at any single time, then it is nonzero at all times in the interval where \mathbf{P} is continuous). We also call this set of solutions *fundamental*{:.def} in this case.
 
-$$ \mathbf{X}(t_0) \mathbf{c} = \mathbf{x}_0.$$
+Why is this important? Welp, we know that by superposition, $\mathbf{X(t)}\mathbf{c}$ is also a solution for any constant $n$-vector $\mathbf{c}$. We can furthermore use this constant vector to satisfy any initial condition, as long as we can solve
 
-It turns out that if $ \mathbf{X} $ is nonsingular at one time, then it is nonsingular at all times (within an interval of coefficient continuity). So this is a linear system of equations that has a unique solution for $\mathbf{c}$.
+$$ \mathbf{x}_0 = \mathbf{X(t_0)}\mathbf{c}.$$
 
-## Equivalence to second-order equations
+But this is guaranteed to be possible if $\mathbf{X(t_0)}$ is nonsingular, which is guaranteed if the Wronskian is nonzero. 
+
+In summary: If $\mathbf{x}_1(t), \ldots, \mathbf{x}_n(t)$ are a fundamental (i.e., independent) set of solutions of $\mathbf{x}' = \mathbf{P}(t) \mathbf{x}$, then $\mathbf{x(t)}=\mathbf{X(t)}\mathbf{c}$ is the *general solution*{:.def} of that problem.
+
+
+## Equivalence to second-order scalar equations
 
 Consider the linear 2nd order problem $y'' + p(t)y' + q(t)y = f(t)$. Let's define a vector $ \mathbf{x} $ by $x_1(t)=y$, $x_2(t)=y'$. Then we find
 
