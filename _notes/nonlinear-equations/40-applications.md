@@ -30,7 +30,7 @@ Partial fractions alert!
 
 $$\int \left[ \frac{1}{P} + \frac{1}{K-P} \right] \, dP = \int r\, dt$$
 
-$$\ln\left( \frac{P}{K-P} \right) = rt + C$$ 
+$$\ln\left| \frac{P}{K-P} \right| = rt + C$$ 
 
 $$ \frac{P}{K-P}  = Ae^{rt}$$
 
@@ -74,7 +74,7 @@ These basic models can be combined with effects such as harvesting, species comp
 
 ## Gompertz growth
 
-The *Gompertz equation*{:.def} is considered a fundamental model of tumor growth ([West et al., 2016](http://epubs.siam.org.udel.idm.oclc.org/doi/abs/10.1137/15M1044825)). Here $P$ is a population of cancer cells, growing at a decreasing rate:
+The *Gompertz equation*{:.def} is considered a fundamental model of tumor growth ([West et al., 2016](http://epubs.siam.org/doi/abs/10.1137/15M1044825)). Here $P$ is a population of cancer cells, growing at a decreasing rate:
 
 $$P' = \gamma(t) P, \qquad \gamma' = -\alpha \gamma.$$
 
@@ -103,7 +103,7 @@ $$v^2=2gh,$$
 
 where $g$ is gravitational acceleration. The rate of volume decrease due to exiting water is $av$, which must be equaled by a change in height, $h'A$. So
 
-$$\frac{dh}{dt} = -\frac{a}{A}\sqrt{2gh}.$$
+$$\frac{dh}{dt} = -\frac{a}{A}\sqrt{2gh} = -2k\sqrt{h}, \qquad k= \frac{a}{A} \sqrt{\frac{g}{2}}.$$
 
 ![Bucket]({{ site.baseurl }}/assets/images/bucket.jpg)
 {:.meme}
@@ -111,13 +111,14 @@ $$\frac{dh}{dt} = -\frac{a}{A}\sqrt{2gh}.$$
 
 This equation is separable:
 
-$$2\sqrt{h} = -\frac{a\sqrt{2g}}{A}t + C$$ 
+$$ \sqrt{h} = -kt + C$$ 
 
-$$2\sqrt{h} = -\frac{a\sqrt{2g}}{A}t + 2\sqrt{h_0}$$
+$$h = \left( C-kt  \right)^2.$$ 
 
-$$h = \left( \sqrt{h_0} - \frac{a\sqrt{g}}{A\sqrt{2}}t  \right)^2.$$
+$$h = \left( \sqrt{h_0} -kt  \right)^2.$$ 
 
-The time it takes for the bucket to empty is $A\sqrt{2h_0}/(a\sqrt{g})$.  
+
+The time it takes for the bucket to empty is $\sqrt{h_0}/k = A\sqrt{2h_0}/(a\sqrt{g})$.  
 
 ## Bullet-proof water
 
