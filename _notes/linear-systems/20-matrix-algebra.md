@@ -14,34 +14,15 @@ An $m\times n$ matrix $ \mathbf{A} $ is a rectangular $m$-by-$n$ array of number
 
 A *square*{:.def} matrix has equal row and column dimensions. A *row vector*{:.def} has dimension $1\times n$, while a *column vector*{:.def} has dimension $m \times 1$. By default, a vector is understood to be a column vector, and we use $\mathbb{R}^n$ or $\mathbb{C}^n$ to denote spaces of vectors.  An ordinary number may be called a *scalar*{:.def}.
 
-We will mainly be dealing with vectors and square matrices. Please recall that "scalar/vector" and "constant/function" are separate attributes. All 4 combinations of them are possible.
+We will mainly be dealing with scalars, vectors and square matrices. Please recall that "scalar/vector" and "constant/function" are separate attributes. All 4 combinations of them are possible.
 
 We use capital letters in bold to refer to matrices, and lowercase bold letters for vectors. The bold symbol $\boldsymbol{0}$ may refer to a vector of all zeros or to a zero matrix, depending on context; we use $0$ as the scalar zero only.
 
 To refer to a specific element of a matrix, we use the uppercase name of the matrix *without* boldface, as in $A_{24}$ to mean the $(2,4)$ element of $\mathbf{A}$. (This is not universal practice, but it is most like MATLAB.) To refer to an element of a vector, we use just one subscript, as in $x_3$. If you see a boldface character with one or more subscripts, then you know that it is a matrix or vector that belongs to a numbered collection.
 
-We will need to refer to the individual columns of a matrix as vectors. Our convention is to use a lowercase bold version of the matrix name, with a subscript to represent the column number. Thus, $\mathbf{a}_1,\mathbf{a}_2,\ldots,\mathbf{a}_n$ are the columns of the $m\times n$ matrix $\mathbf{A}$. Conversely, whenever we define a sequence of vectors $\mathbf{v}_1,\ldots,\mathbf{v}_p$, we can implicitly consider them to be columns of a matrix $\mathbf{V}$. Sometimes we might write $\mathbf{V}=\bigl[ \mathbf{v}_j \bigr]$ to emphasize the connection.
+We sometimes find it useful to refer to the individual columns of a matrix as vectors. Our convention is to use a lowercase bold version of the matrix name, with a subscript to represent the column number. Thus, $\mathbf{a}_1,\mathbf{a}_2,\ldots,\mathbf{a}_n$ are the columns of the $m\times n$ matrix $\mathbf{A}$.
 
-The *diagonal*{:.def} (or main diagonal) of an $n\times n$ matrix $\mathbf{A}$ refers to the entries $A_{ii}$, $i=1,\ldots,n$.
 
-![Diagonally]({{ site.baseurl }}/assets/images/diagon.jpg)
-{:.meme}
-
-A *diagonal matrix*{:.def} is one whose entries are all zero off the main diagonal.  An *upper triangular*{:.def} matrix $\mathbf{U}$ has entries $U_{ij}$ with $U_{ij}=0$ if $i>j$, and a *lower triangular*{:.def} matrix $\mathbf{L}$ has $L_{ij}=0$ if $i<j$.
-
-The *transpose*{:.def} of $m\times n$ matrix $\mathbf{A}$ is the matrix
-$\mathbf{A}^T\in\mathbb{C}^{n\times m}$ given by
-
-$$
-\mathbf{A}^T =
-\begin{bmatrix}
-A_{11} & A_{21} & \cdots & A_{m1}\\
-\vdots & \vdots & & \vdots\\
-A_{1n} & A_{2n} & \cdots & A_{mn}
-\end{bmatrix}.
-$$
-
-A real square matrix is  *symmetric*{:.def} if $\mathbf{A}^T=\mathbf{A}$.
 
 ## Algebra
 
@@ -53,12 +34,6 @@ n$. Note that even if $\mathbf{A}\mathbf{B}$ is defined, $\mathbf{B}\mathbf{A}$ 
 of scalar components, the $(i,j)$ entry of $\mathbf{C}=\mathbf{A}\mathbf{B}$ is given by
 
 $$C_{ij} = \sum_{k=1}^p A_{ik} B_{kj}.$$
-
-An important identity is that when $\mathbf{A}\mathbf{B}$ is defined,
-
-$$  (\mathbf{A}\mathbf{B})^T=\mathbf{B}^T\mathbf{A}^T. $$
-
-The latter product is always defined in this situation.
 
 Note that $\mathbf{A}\mathbf{B}= \mathbf{B}\mathbf{A}$ is **not** true in general, even when both products are defined. That is, matrix multiplication is not
   commutative. It is, however, associative: $\mathbf{A}\mathbf{B}\mathbf{C}=(\mathbf{A}\mathbf{B})\mathbf{C}=\mathbf{A}(\mathbf{B}\mathbf{C})$. 
@@ -176,13 +151,25 @@ c_1 \\ c_2
 $$
 
 
+## Structured matrices
+
+From now on, **assume $\mathbf{A}$ is a square matrix**. Aside from vectors, we won't have much use for rectangular matrices. 
+
+The *diagonal*{:.def} (or main diagonal) of an $n\times n$ matrix $\mathbf{A}$ refers to the entries $A_{ii}$, $i=1,\ldots,n$.
+
+![Diagonally]({{ site.baseurl }}/assets/images/diagon.jpg)
+{:.meme}
+
+A *diagonal matrix*{:.def} is one whose entries are all zero off the main diagonal.  An *upper triangular*{:.def} matrix $\mathbf{U}$ has entries $U_{ij}$ with $U_{ij}=0$ if $i>j$, and a *lower triangular*{:.def} matrix $\mathbf{L}$ has $L_{ij}=0$ if $i<j$.
+
+
 ## Identity and inverse
 
 
 ![Identity]({{ site.baseurl }}/assets/images/identity.jpg)
 {:.meme}
 
-A very important type of matrix is the *identity matrix*{:.def}, defined as a square diagonal matrix whose diagonal entries are all equal to one:
+A very important matrix is the *identity matrix*{:.def}, defined as a square diagonal matrix whose diagonal entries are all equal to one:
 
 $$
 \mathbf{I} = \begin{bmatrix} 1 & 0 & 0 & \cdots & 0 \\
