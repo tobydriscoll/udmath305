@@ -150,6 +150,7 @@ c_1 \\ c_2
 \end{bmatrix}.
 $$
 
+Finally, matrices represent linear transformations between multidimensional spaces. If you compose two such transformations, the resulting transformation has as its matrix the product of the component matrices.
 
 ## Structured matrices
 
@@ -157,8 +158,6 @@ From now on, **assume $\mathbf{A}$ is a square matrix**. Aside from vectors, we 
 
 The *diagonal*{:.def} (or main diagonal) of an $n\times n$ matrix $\mathbf{A}$ refers to the entries $A_{ii}$, $i=1,\ldots,n$.
 
-![Diagonally]({{ site.baseurl }}/assets/images/diagon.jpg)
-{:.meme}
 
 A *diagonal matrix*{:.def} is one whose entries are all zero off the main diagonal.  An *upper triangular*{:.def} matrix $\mathbf{U}$ has entries $U_{ij}$ with $U_{ij}=0$ if $i>j$, and a *lower triangular*{:.def} matrix $\mathbf{L}$ has $L_{ij}=0$ if $i<j$.
 
