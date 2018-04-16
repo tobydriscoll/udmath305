@@ -30,7 +30,7 @@ We sometimes use matrix-vector multiplication to express this kind of linear com
 
 $$ \mathbf{X}(t) = \begin{bmatrix} \mathbf{x}_1(t) & \ldots & \mathbf{x}_n(t) \end{bmatrix}. $$
 
-In the vector case, we define the *Wronskian*{:.def} of this solution set as the determinant of $\mathbf{X}$. Just as with high-order scalar linear problems, we say these solutions are *linearly independent*{:.def} if their Wronskian is nonzero (and if it is nonzero at any single time, then it is nonzero at all times in the interval where \mathbf{P} is continuous). We also call this set of solutions *fundamental*{:.def} in this case.
+In the vector case, we define the *Wronskian*{:.def} of this solution set as the determinant of $\mathbf{X}$. Just as with high-order scalar linear problems, we say these solutions are *linearly independent*{:.def} if their Wronskian is nonzero (and if it is nonzero at any single time, then it is nonzero at all times in the interval where $\mathbf{P}$ is continuous). We also call this set of solutions *fundamental*{:.def} in this case.
 
 Why is this important? Welp, we know that by superposition, $\mathbf{X(t)}\mathbf{c}$ is also a solution for any constant $n$-vector $\mathbf{c}$. We can furthermore use this constant vector to satisfy any initial condition, as long as we can solve
 
@@ -38,7 +38,7 @@ $$ \mathbf{x}_0 = \mathbf{X(t_0)}\mathbf{c}.$$
 
 But this is guaranteed to be possible if $\mathbf{X(t_0)}$ is nonsingular, which is guaranteed if the Wronskian is nonzero. 
 
-In summary: If $\mathbf{x}_1(t), \ldots, \mathbf{x}_n(t)$ are a fundamental (i.e., independent) set of solutions of $\mathbf{x}' = \mathbf{P}(t) \mathbf{x}$, then $\mathbf{x(t)}=\mathbf{X(t)}\mathbf{c}$ is the *general solution*{:.def} of that problem.
+In summary: If $\mathbf{x}_1(t), \ldots, \mathbf{x}_n(t)$ are a fundamental (i.e., independent) set of solutions of $\mathbf{x}' = \mathbf{P}(t) \mathbf{x}$, then $\mathbf{x}(t)=\mathbf{X}(t)\mathbf{c}$ is the *general solution*{:.def} of that problem.
 
 
 ## Equivalence to second-order scalar equations
@@ -55,5 +55,5 @@ In the case of constant coefficients, this gives us some idea what lies ahead: c
 
 $$ \mathbf{x}(t) = e^{rt} \mathbf{u} \Rightarrow r e^{rt} \mathbf{u} = \mathbf{A} (e^{rt} \mathbf{u}),$$
 
-or simply $ \mathbf{A} \mathbf{u} = r \mathbf{u}$. Can such a problem be solved? (And no, you can't just "cancel out" the vectors.) This leads us to the other Big Problem of linear algebra. 
+or simply $ \mathbf{A} \mathbf{u} = r \mathbf{u}$. Can such a problem be solved? (And no, you can't just "cancel out" the vectors.) This leads us to another Big Problem of linear algebra. 
 

@@ -39,7 +39,7 @@ If $ \mathbf{A} $ is nonsingular, then Gaussian elimination produces a unique so
 * If $ \mathbf{A} $ is nonsingular, then there is a unique solution for any $ \mathbf{b} $, and Gaussian elimination finds it.
 * If $ \mathbf{A} $ is singular, then the system has either no solution or infinitely many solutions. 
 
-Consider a special case for a moment. (Remember how special homogeneous equations are for linear ODEs?) It's clear that the system $\mathbf{A}\mathbf{x}=\boldsymbol{0}$ has the solution $\mathbf{x}=\boldsymbol{0}$ regardless of what $\mathbf{A}$ is. Now, if $\mathbf{A}$ is nonsingular, this is the *only* solution. But if $\mathbf{A}$ is singular, then there must be infinitely many other solutions as well. That is,
+Consider the special case $\mathbf{b}=\boldsymbol{0}$ for a moment. (Remember how special homogeneous equations are for linear ODEs?) It's clear that the system $\mathbf{A}\mathbf{x}=\boldsymbol{0}$ has the solution $\mathbf{x}=\boldsymbol{0}$ regardless of what $\mathbf{A}$ is. Now, if $\mathbf{A}$ is nonsingular, this is the *only* solution. But if $\mathbf{A}$ is singular, then there must be infinitely many other solutions as well. That is,
 
 **$\mathbf{A}\mathbf{x}=\boldsymbol{0}$ has nonzero solutions if, and only if, $\mathbf{A}$ is singular.**
 
