@@ -28,15 +28,15 @@ In the homogeneous linear case we continue to enjoy superposition of solutions.
 
 We sometimes use matrix-vector multiplication to express this kind of linear combination. Suppose that $\mathbf{x}_1(t), \ldots, \mathbf{x}_n(t)$ are solutions of the linear homogenous ODE $\mathbf{x}' = \mathbf{P}(t) \mathbf{x}$. Define the $n\times n$ matrix
 
-$$ \mathbf{X}(t) = \begin{bmatrix} \mathbf{x}_1(t) & \ldots & \mathbf{x}_n(t) \end{bmatrix}. $$
+$$ \mathbf{X}(t) = \begin{bmatrix} \mathbf{x}_1(t) & \cdots & \mathbf{x}_n(t) \end{bmatrix}. $$
 
 In the vector case, we define the *Wronskian*{:.def} of this solution set as the determinant of $\mathbf{X}$. Just as with high-order scalar linear problems, we say these solutions are *linearly independent*{:.def} if their Wronskian is nonzero (and if it is nonzero at any single time, then it is nonzero at all times in the interval where $\mathbf{P}$ is continuous). We also call this set of solutions *fundamental*{:.def} in this case.
 
-Why is this important? Welp, we know that by superposition, $\mathbf{X(t)}\mathbf{c}$ is also a solution for any constant $n$-vector $\mathbf{c}$. We can furthermore use this constant vector to satisfy any initial condition, as long as we can solve
+Why is this important? Welp, we know that by superposition, $\mathbf{X}(t)\mathbf{c}$ is also a solution for any constant $n$-vector $\mathbf{c}$. We can furthermore use this constant vector to satisfy any initial condition, as long as we can solve
 
-$$ \mathbf{x}_0 = \mathbf{X(t_0)}\mathbf{c}.$$
+$$ \mathbf{x}_0 = \mathbf{X}(t_0)\mathbf{c}.$$
 
-But this is guaranteed to be possible if $\mathbf{X(t_0)}$ is nonsingular, which is guaranteed if the Wronskian is nonzero. 
+But this is guaranteed to be possible if $\mathbf{X}(t_0)$ is nonsingular, which is guaranteed if the Wronskian is nonzero. 
 
 In summary: If $\mathbf{x}_1(t), \ldots, \mathbf{x}_n(t)$ are a fundamental (i.e., independent) set of solutions of $\mathbf{x}' = \mathbf{P}(t) \mathbf{x}$, then $\mathbf{x}(t)=\mathbf{X}(t)\mathbf{c}$ is the *general solution*{:.def} of that problem.
 

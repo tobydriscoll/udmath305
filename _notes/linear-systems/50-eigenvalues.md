@@ -79,3 +79,5 @@ The characteristic polynomial may have a repeated root. We'll discuss what happe
 
 If $ \mathbf{A} $ is an $n\times n$ matrix, then $\det( \mathbf{A} - \lambda \mathbf{I} )$ can be defined and is a polynomial of degree $n$. Thus  $ \mathbf{A} $ has $n$ eigenvalues, counting algebraic multiplicity. The algebra of finding them and their associated eigenvectors gets pretty onerous, and we instead can use the MATLAB command `eig` for the job. 
 
+![eig]({{ site.baseurl }}/assets/images/offramp.jpg)
+{:.meme}
