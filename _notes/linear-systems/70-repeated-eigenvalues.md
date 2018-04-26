@@ -47,13 +47,13 @@ The second row of the system is just $0=0$, i.e., no restriction. But the first 
 
 ### ODE with a defective matrix
 
-Suppose $\mathbf{x}' = \mathbf{A} \mathbf{x}$ and $ \mathbf{A} $ is defective with eigenvalue $\lambda$. We do get one solution $ \mathbf{x} = e^{\lambda t} \mathbf{v}$, where $( \mathbf{A} - \lambda \mathbf{I} ) \mathbf{v} = \boldsymbol{0} $. We need to find a second, independent solution to get the general solution.
+Suppose $\mathbf{x}' = \mathbf{A} \mathbf{x}$ and $ \mathbf{A} $ is defective with eigenvalue $\lambda$. We still get one solution $ \mathbf{x_1} = e^{\lambda t} \mathbf{v}$, where $( \mathbf{A} - \lambda \mathbf{I} ) \mathbf{v} = \boldsymbol{0} $. We need to find a second, independent solution to get the general solution.
 
 From our experiences with 2nd-order equations, it's reasonable to assume that $te^{\lambda t}$ will play some role. So we plug in $te^{\lambda t} \mathbf{w}$ for an unknown $ \mathbf{w} $:
 
 $$ (\lambda t e^{\lambda t} + e^{\lambda t}) \mathbf{w} = t e^{\lambda t} \mathbf{A} \mathbf{w}.$$
 
-The exponentials all cancel. But we don't have enough to balance both the $t^0$ and $t^1$ terms. A better guess is  $ \mathbf{x} = te^{\lambda t} \mathbf{v} + e^{\lambda t} \mathbf{w}$, where $ \mathbf{v} $ is an eigenvector. Then
+The exponentials all cancel. But we don't have enough to balance both the $t^0$ and $t^1$ terms. A better guess is  $ \mathbf{x_2} = te^{\lambda t} \mathbf{v} + e^{\lambda t} \mathbf{w}$, where $ \mathbf{v} $ is an eigenvector. Then
 
 $$ (\lambda t e^{\lambda t} + e^{\lambda t}) \mathbf{v} + \lambda e^{\lambda t} \mathbf{w} = t e^{\lambda t} \mathbf{A} \mathbf{v} + e^{\lambda t} \mathbf{A} \mathbf{w}.$$
 
@@ -61,25 +61,27 @@ Grouping together like terms, we have
 
 $$ t( \mathbf{A} \mathbf{v} - \lambda \mathbf{v} ) + (  \mathbf{A} \mathbf{w} - \lambda \mathbf{w} ) = \mathbf{v}.$$
 
-The term multiplying $t$ is zero, by the eigenvector property. So we've got a solution if
+The term multiplying $t$ is zero, by the eigenvector property. So $\mathbf{x}_2$ is a solution if
 
 $$ (  \mathbf{A} - \lambda \mathbf{I} )  \mathbf{w} = \mathbf{v} $$
 
-can be solved for $ \mathbf{w}$. Fortunately, this is always possible. We call $ \mathbf{w}$ a *generalized eigenvector*{:.def}.  
+can be solved for $ \mathbf{w}$. Fortunately, this is always possible (despite the fact that the matrix involved is singular). We call $ \mathbf{w}$ a *generalized eigenvector*{:.def}.  
 
 #### Example
 
 > Find the general solution of
 > $$ \mathbf{x}' = \begin{bmatrix} -1 & 1 \\ 0 & -1 \end{bmatrix} \mathbf{x}.$$
 
-This is the same matrix as in the example above, with double eigenvalue $\lambda=-1$ and eigenvector $[c_1,0]^T$. We solve for the generalized eigenvector:
+This is the same matrix as in the example above, with double eigenvalue $\lambda=-1$ and eigenvector $[1,0]^T$. We solve for the generalized eigenvector:
 
-$$ \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} \mathbf{w} = \begin{bmatrix} c_1 \\ 0 \end{bmatrix}. $$
+$$ \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} \mathbf{w} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}. $$
 
-The first row of this system tells us $w_2=c_1$. The second row makes no restrictions on us, so $ \mathbf{w} = [ c_2,c_1 ]$. Hence the general solution is
+The first row of this system tells us $w_2=1$. The second row makes no restrictions. We may as well let $w_1=0$, since it's not forbidden.
 
-$$ t e^{-t} \begin{bmatrix} c_1 \\ 0 \end{bmatrix} + e^{-t} \begin{bmatrix} c_2 \\ c_1 \end{bmatrix}
-= c_1 e^{-t} \begin{bmatrix} t \\ 1 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} 1 \\ 0 \end{bmatrix}.$$
+We have now shown that $\mathbf{x}_2= e^{-t}(t\mathbf{v}+\mathbf{w})$ is a second solution. Hence the general solution is
+
+$$ c_1 e^{-t} \mathbf{v} + c_2 e^{-t}(t\mathbf{v}+\mathbf{w})
+= c_1 e^{-t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} t \\ 1 \end{bmatrix}.$$
 
 ---
 
