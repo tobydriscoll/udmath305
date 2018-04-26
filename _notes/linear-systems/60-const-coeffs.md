@@ -8,7 +8,7 @@ chapter: "Linear systems"
 
 ## Fundamental ODE solutions
 
-As we derived before, if $ \mathbf{A} \mathbf{v} = \lambda \mathbf{v}$, then one solution of $ \mathbf{x}'= \mathbf{A} \mathbf{x}$ is $ \mathbf{x}(t) = e^{\lambda t} \mathbf{v}$. If the eigenvalues of $ \mathbf{A} $ are distinct, or if there are nondefective repeats, then these provide a fundamental set of solutions. (If an eigenvalue is repeated and defective, more analysis needs to be done. To be continued.)
+As we derived before, if $ \mathbf{A} \mathbf{v} = \lambda \mathbf{v}$, then one solution of $ \mathbf{x}'= \mathbf{A} \mathbf{x}$ is $ \mathbf{x}(t) = e^{\lambda t} \mathbf{v}$. If the eigenvalues of $ \mathbf{A} $ are distinct, then these provide a fundamental set of solutions. (If an eigenvalue is repeated, more analysis needs to be done. To be continued.)
 
 ### Example
 
