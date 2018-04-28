@@ -16,7 +16,7 @@ Similar to what we did for $y'=f(t,y)$ in the $(t,y)$-plane, we can make a *dire
 
 First we need to convert to a first-order system in 2 variables:
 
-$\begin{align} x_1' &= x_2, \\\\ x_2' &= x_1 - \mu(x_1^2-1)x_2.\end{align}$
+$\begin{align} x_1' &= x_2, \\\\ x_2' &= -x_1 - \mu(x_1^2-1)x_2.\end{align}$
 
 Then we can feed this into code I wrote for making these direction fields. (I use $x$ and $y$ as the two variables in the code.) 
 
