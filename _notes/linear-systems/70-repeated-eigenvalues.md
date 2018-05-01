@@ -131,3 +131,4 @@ $$ \mathbf{x}(t) = \begin{bmatrix} e^{-t}  & te^{-t} \\ 0 & e^{-t} \end{bmatrix}
 =c_1 e^{-t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} t \\ 1 \end{bmatrix}. $$
 
 ![mind blown](mind-blown.jpg)
+{:.meme}

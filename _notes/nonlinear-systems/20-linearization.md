@@ -43,6 +43,10 @@ We have arrived at a homogeneous linear system, $\mathbf{u}'=\mathbf{J}\mathbf{u
 
 (The precise meaning of "close enough" is pretty technical and usually difficult or impossible to calculate in practice.)
 
+![Party]({{ site.baseurl }}/assets/images/leave-this-party.gif)
+{:.meme}
+
+
 ### Example
 
 > Find and characterize the fixed points of 
@@ -50,7 +54,7 @@ We have arrived at a homogeneous linear system, $\mathbf{u}'=\mathbf{J}\mathbf{u
 
 From the first component we get $x_1=-4$ or $x_1=x_2$. Plugging into the second component, we get $(-4,4)$, $(10,10)$, and $(0,0)$ as the only possibilities. Now
 
-$$ \mathbf{J} = \begin{bmatrix} x_2 -2x_1 -4 & 4+x_1 \\ -2x_1 -x_2 + 10 & 10-x_1 \end{bmatrix}.$$
+$$ \mathbf{J}(\mathbf{x}) = \begin{bmatrix} x_2 -2x_1 -4 & 4+x_1 \\ -2x_1 -x_2 + 10 & 10-x_1 \end{bmatrix}.$$
 
 * At $(0,0)$: 
 
@@ -145,9 +149,9 @@ In all cases, the origin is unstable.
 
 ---
 
-## Centers
+## Stability and centers
 
-For all linearized fixed point types except one, the stability of the fixed point in the nonlinear system is the same as in the linearized system. The exception is when the linearized case is a center (pure imaginary eigenvalues). Informally, the stability in this case is right on the borderline, and can be tipped either way depending on the details of what's in the nonlinear terms.
+For all linearized fixed point types except one, the stability of the fixed point in the nonlinear system is the same as in the linearized system. The exception is when the linearized system is a center (pure imaginary eigenvalues). Informally, the stability in this case is right on the borderline, and can be tipped either way depending on the details of the nonlinear terms.
 
 ### Example
 

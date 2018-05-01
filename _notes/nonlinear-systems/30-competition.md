@@ -32,13 +32,17 @@ There is a fixed point at $(0,0)$. Is it stable?
 
 $$ \mathbf{J}(0,0) = \begin{bmatrix} r_1 & 0 \\ 0 & r_2 \end{bmatrix}. $$
 
-Both eigenvalues are positive, so the origin is a source. (If it were a sink, we'd expect a lot of extinctions.)
+Both eigenvalues are positive, so the origin is a source. (If it were a sink, we'd expect a lot of mutual extinctions.)
 
-There are two fixed points where only one species lives: $(r_1/\sigma_1,0)$ and $(0,r_2/\sigma_2)$. 
+## Single-species states
+
+Logically speaking, one species can exist when the other isn't around. For instance, if we set $y=0$, then $y$ remains zero forever, and $\frac{dx}{dt}=x(r_1-\sigma_1 x)$. This is logistic if $r_1>\sigma_1$, and "doomsday" if $\sigma_1>r_1$. This has implications for the stability of the equilibrium at $x=r_1/\sigma_1$. 
+
+Back to both species. We can easily see that there are two more fixed points where only one species lives: $(r_1/\sigma_1,0)$ and $(0,r_2/\sigma_2)$. But the stability of these points is slightly more subtle than just looking at one species at a time. For instance, one of the Jacobian matrices is
 
 $$ \mathbf{J}(r_1/\sigma_1,0) = \begin{bmatrix} -r_1 & -\alpha_1 r_1/\sigma_1 \\ 0 & r_2 - \alpha_2 r_1/\sigma_1\end{bmatrix}. $$
 
-Here's a good thing to know: **the eigenvalues of a triangular matrix are the diagonal entries.** (This is true for all matrix sizes.) So we definitely have one negative eigenvalue. If $r_2 < \alpha_2 r_1/\sigma_1$, then the other eigenvalue is negative, too, and this becomes a sink that attracts solutions. Otherwise, it's a saddle and we are not likely to see this solution in practice.
+Here's a good fact to know: **the eigenvalues of a triangular matrix are the diagonal entries.** (This is true for all square matrices.) So we definitely have one negative eigenvalue. If $r_2 < \alpha_2 r_1/\sigma_1$, then the other eigenvalue is negative, too, and this becomes a sink that attracts solutions and can be observed. Otherwise, it's a saddle and we are not likely to see this solution in practice.
 
 We can play a similar game with the other single-species fixed point and get a sink if $r_1 < \alpha_1 r_2/\sigma_2$, and a saddle otherwise.
 
@@ -46,14 +50,14 @@ We can play a similar game with the other single-species fixed point and get a s
 
 ![coexist](coexist.jpg)
 
-The really interesting case is when the species can coexist:
+The really interesting case is when the species can coexist. We set $dx/dt=dy/dt=0$ in the ODEs and get
 
 $$\begin{align}
 r_1 &= \sigma_1 x  +\alpha_1 y, \\
 r_2 &= \sigma_2 y + \alpha_2 x.
 \end{align}$$
 
-This is a linear system that is readily solved for the fixed point $(x_0,y_0)$.
+This is a linear system that is readily solved for a fourth fixed point $(x_0,y_0)$.
 
 $$ \begin{bmatrix} x_0  \\ y_0 \end{bmatrix} = \frac{1}{\sigma_1\sigma_2 - \alpha_1\alpha_2} \begin{bmatrix} \sigma_2 & -\alpha_1 \\ -\alpha_2 & \sigma_1 \end{bmatrix} 
 \begin{bmatrix} r_1  \\ r_2 \end{bmatrix} =  \frac{1}{\sigma_1\sigma_2 - \alpha_1\alpha_2} \begin{bmatrix} r_1\sigma_2-r_2\alpha_1  \\ r_2\sigma_1 - r_1\alpha_2\end{bmatrix}.$$
@@ -61,9 +65,17 @@ $$ \begin{bmatrix} x_0  \\ y_0 \end{bmatrix} = \frac{1}{\sigma_1\sigma_2 - \alph
 We want positive populations, so we are interested in when $(x_0,y_0)$ is in the first quadrant. There are two cases to consider:
 
 * If $\alpha_1\alpha_2 < \sigma_1 \sigma_2$, then we need $ r_1\sigma_2-r_2\alpha_1>0$ and $ r_2\sigma_1 - r_1\alpha_2>0$. These are exactly the conditions we have above that make the one-species solutions be saddle points.
-* If $\alpha_1\alpha_2 > \sigma_1 \sigma_2$, then the opposite conditions must hold, and the one-species solutions must be sinks. 
+* If $\alpha_1\alpha_2 > \sigma_1 \sigma_2$, then the opposite conditions must hold, and the one-species solutions must both be sinks. 
 
 Conversely, if exactly one of the one-species solutions is a sink, then there is no fixed point inside the first quadrant. We should expect the stable one-species solution to attract everything.
+
+Here's a table summarizing the existence of a feasible $(x_0,y_0)$ fixed point, based on the stability of the single-species points:
+
+| | | species x |
+| | | sink  | saddle | 
+| species y | sink | yes | no |
+| | saddle | no | yes |
+
 
 Supposing that $(x_0,y_0)$ does exist, we need to consider its stability. Fortunately, the Jacobian simplifies a bit:
 
@@ -72,16 +84,24 @@ $$ \mathbf{J}(x_0,y_0) = \begin{bmatrix} -\sigma_1 x_0 & -\alpha_1 x_0 \\ -\alph
 Here's another couple of nifty facts:
 
 * The product of the eigenvalues equals the determinant of the matrix.
-* The sum of the eigenvalues equals the *trace* of the matrix (sum of its diagonal entries).
+* The sum of the eigenvalues equals the *trace*{:.def} of the matrix (sum of its diagonal entries).
 
 Assuming $(x_0,y_0)$ is in the first quadrant, we can say that $\lambda_1+\lambda_2=-(\sigma_1x_0+\sigma_2y_0)<0$, so at least one eigenvalue has negative real part. Also  $\lambda_1\lambda_2 = x_0y_0(\sigma_1\sigma_2 - \alpha_1\alpha_2)$. As above, the sign of $\sigma_1\sigma_2 - \alpha_1\alpha_2$  is crucial.
 
 * If $\alpha_1\alpha_2 < \sigma_1 \sigma_2$ (so the one-species points are saddles), then $\lambda_1\lambda_2$ is positive, so both eigenvalues must have negative real part--a sink.
 *  If $\alpha_1\alpha_2 > \sigma_1 \sigma_2$ (so the one-species points are sinks), then $\lambda_1\lambda_2<0$, so the eigenvalues are real and of different signs--a saddle.
 
+Here's an update to the table above, showing the type of fixed point at $(x_0,y_0)$ related to the single-species points.
+
+| | | species x |
+| | | sink  | saddle | 
+| species y | sink | saddle | n/a |
+| | saddle | n/a | sink |
+
+
 ### Case study 1
 
-Different 1-species point types, no positive coexistence. I call this result "natural selection."
+Different 1-species point types, hence no positive coexistence. I call this result "natural selection," because the same species must win out every time. 
 
 ~~~matlab
 r = [1 0.2];
@@ -97,11 +117,12 @@ ywin = r(2)/sigma(2)
 coex = [ sigma(1) alpha(1); alpha(2) sigma(2) ] \ r(:)
 
 clf
-slopefieldxy(f,g,[0 3],[0 1])
+slopefieldxy(f,g,[0 6],[0 4],1)
 hold on
-plot(xwin,0,'r*')
+plot(xwin,0,'b*')
 plot(0,ywin,'r*')
 axis equal
+title('')
 
 %%
 J = @(x,y) [ r(1)-2*sigma(1)*x-alpha(1)*y  -alpha(1)*x; 
@@ -113,19 +134,20 @@ ywin_eig = eig(J(0,ywin))
 %%
 
 N = chebop(@(t,x,y) [diff(x)-f(x,y); diff(y)-g(x,y)],[0 16],[],[]);
-[X,Y] = ndgrid(0.3:.5:6,0.2:0.5:4);
+[X,Y] = ndgrid(0.3:1:6,0.2:0.8:4);
 for i = 1:numel(X)
     N.lbc = [ X(i); Y(i) ];
     [x,y] = N\0; 
     arrowplot(x,y,'color','b')
-    axis([0 6 0 4]), drawnow
+    drawnow
 end
 ~~~
+![case 1](compete_case1.svg)
 
 
 ### Case study 2
 
-Saddles at the 1-species points, sink at coexistence. This demonstrates inevitable coexistence.
+Saddles at the 1-species points, hence sink at coexistence. Coexistence is inevitable. I call this the "Rodney King" case. 
 
 ~~~matlab
 r = [0.2 0.4];
@@ -141,9 +163,9 @@ ywin = r(2)/sigma(2)
 coex = [ sigma(1) alpha(1); alpha(2) sigma(2) ] \ r(:)
 
 clf
-slopefieldxy(f,g,[0 1],[0 1])
+slopefieldxy(f,g,[0 1.5],[0 1.5],1)
 hold on
-plot(coex(1),coex(2),'r*')
+plot(coex(1),coex(2),'b*')
 plot(xwin,0,'r*')
 plot(0,ywin,'r*')
 axis equal
@@ -158,19 +180,23 @@ coex_eig = eig(J(coex(1),coex(2)))
 
 %%
 
-N = chebop(@(t,x,y) [diff(x)-f(x,y); diff(y)-g(x,y)],[0 6],[],[]);
-[X,Y] = ndgrid(0.1:0.2:1,0.1:0.2:1);
+N = chebop(@(t,x,y) [diff(x)-f(x,y); diff(y)-g(x,y)],[0 15],[],[]);
+[X,Y] = ndgrid(0.1:0.3:1.3,0.1:0.3:1.3);
 for i = 1:numel(X)
     N.lbc = [ X(i); Y(i) ];
     [x,y] = N\0; 
     arrowplot(x,y,'color','b')
-    axis([0 1 0 1]), drawnow
+    axis([0 1.5 0 1.5]), drawnow
 end
+axis square
 ~~~
+
+![case 2](compete_case2.svg)
+
 
 ### Case study 3
 
-Sinks at the 1-species points, saddle at coexistence. I call this "winner takes all." 
+Sinks at the 1-species points, hence saddle at coexistence. I call this "winner takes all." Only one species will survive, but the outcome depends on the initial conditions. 
 
 ~~~matlab
 r = [0.2 0.4];
@@ -186,11 +212,11 @@ ywin = r(2)/sigma(2)
 coex = [ sigma(1) alpha(1); alpha(2) sigma(2) ] \ r(:)
 
 clf
-slopefieldxy(f,g,[0 6],[0 5])
+slopefieldxy(f,g,[0 5.5],[0 4.5],1)
 hold on
 plot(coex(1),coex(2),'r*')
-plot(xwin,0,'r*')
-plot(0,ywin,'r*')
+plot(xwin,0,'b*')
+plot(0,ywin,'b*')
 axis equal
 
 %%
@@ -204,12 +230,13 @@ coex_eig = eig(J(coex(1),coex(2)))
 %%
 
 N = chebop(@(t,x,y) [diff(x)-f(x,y); diff(y)-g(x,y)],[0 16],[],[]);
-[X,Y] = ndgrid(0.3:.5:6,0.2:0.5:4);
+[X,Y] = ndgrid(0.25:.6:6,0.2:.9:4.5);
 for i = 1:numel(X)
     N.lbc = [ X(i); Y(i) ];
     [x,y] = N\0; 
     arrowplot(x,y,'color','b')
-    axis([0 6 0 4]), drawnow
+    drawnow
 end
 ~~~
 
+![case 3](compete_case3.svg)
