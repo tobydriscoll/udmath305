@@ -1,6 +1,6 @@
 ---
 layout: note
-title: "Slope fields"
+title: "Direction fields"
 chapter: "Nonlinear systems"
 ---
 * TOC
@@ -10,7 +10,7 @@ chapter: "Nonlinear systems"
 
 We are mainly going to be concerned with autonomous problems. This turns out not to be any real limitation. Suppose that $\mathbf{x}' = \mathbf{f}(t,\mathbf{x})$ and $\mathbf{x} $ has $n$ components. We can add another one by defining $x_{n+1}=t$, leading to the ODE $x_{n+1}'=1$. Now the system can be rewritten autonomously as $\mathbf{x}' = \mathbf{g}(\mathbf{x})$ in $n+1$ dimensions.
 
-Thus henceforth, we assume $\mathbf{x}' = \mathbf{f}(\mathbf{x})$ is our equation.
+Thus we lose nothing by restricting our attention to $\mathbf{x}' = \mathbf{f}(\mathbf{x})$ from here on.
 
 ## Fixed points
 
