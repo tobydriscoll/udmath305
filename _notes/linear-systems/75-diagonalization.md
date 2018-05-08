@@ -176,7 +176,7 @@ $$ = e^{-t}\frac{i}{2}\begin{bmatrix} e^{it} & e^{-it} \\ (2-i)e^{it} & (2+i)e^{
 
 $$ = e^{-t}\frac{i}{2} \begin{bmatrix} -(2+i)e^{it}+(2-i) e^{-it} & e^{it}-e^{-it} \\ -(2-i)(2+i)e^{it}+(2+i)(2-i) e^{-it} & (2-i)e^{it}-(2+i) e^{-it} \end{bmatrix}. $$
 
-Each entry is written in the form of a complex number minus its conjugate, which gives twice the imaginary part. This helps.
+Each entry is written in the form of a complex number minus its conjugate, which gives $2i$ times the imaginary part. This helps.
 
 $$ = -e^{-t} \begin{bmatrix} -\cos(t)-2\sin(t) &  \sin(t)\\ -5\sin(t) & -\cos(t)+2\sin(t) \end{bmatrix}. $$
 
