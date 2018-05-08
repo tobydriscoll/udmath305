@@ -62,36 +62,36 @@ This is a linear system that is readily solved for a fourth fixed point $(x_0,y_
 $$ \begin{bmatrix} x_0  \\ y_0 \end{bmatrix} = \frac{1}{\sigma_1\sigma_2 - \alpha_1\alpha_2} \begin{bmatrix} \sigma_2 & -\alpha_1 \\ -\alpha_2 & \sigma_1 \end{bmatrix} 
 \begin{bmatrix} r_1  \\ r_2 \end{bmatrix} =  \frac{1}{\sigma_1\sigma_2 - \alpha_1\alpha_2} \begin{bmatrix} r_1\sigma_2-r_2\alpha_1  \\ r_2\sigma_1 - r_1\alpha_2\end{bmatrix}.$$
 
-We want positive populations, so we are interested in when $(x_0,y_0)$ is in the first quadrant. There are two cases to consider:
+We want positive populations, so we are interested in when $(x_0,y_0)$ is in the first quadrant. There are three cases to consider:
 
-* If $\alpha_1\alpha_2 < \sigma_1 \sigma_2$, then we need $ r_1\sigma_2-r_2\alpha_1>0$ and $ r_2\sigma_1 - r_1\alpha_2>0$. These are exactly the conditions we have above that make the one-species solutions be saddle points.
-* If $\alpha_1\alpha_2 > \sigma_1 \sigma_2$, then the opposite conditions must hold, and the one-species solutions must both be sinks. 
-
-Conversely, if exactly one of the one-species solutions is a sink, then there is no fixed point inside the first quadrant. We should expect the stable one-species solution to attract everything.
+* Suppose $ r_1\sigma_2-r_2\alpha_1>0$ and $ r_2\sigma_1 - r_1\alpha_2>0$ (according to the above, this means the single-species points are saddles). We derive
+$$ \sigma_1 \sigma_2 > \sigma_1 \frac{r_2\alpha_1}{r_1} > (r_1\alpha_2) \frac{\alpha_1}{r_1} = \alpha_1 \alpha_2.$$
+So we can conclude that $x_0>0$ and $y_0>0$. 
+* Suppose $ r_1\sigma_2-r_2\alpha_1<0$ and $r_2\sigma_1 - r_1\alpha_2<0$ (according to the above, this means the single-species points are sinks). We reverse all the inequalities in the chain above and conclude that $\sigma_1\sigma_2 < \alpha_1\alpha_2$. Again, we get $x_0>0$ and $y_0>0$.
+* If $ r_1\sigma_2-r_2\alpha_1$ and $ r_2\sigma_1 - r_1\alpha_2$ have opposite signs, then $x_0$ and $y_0$ do too. 
 
 Here's a table summarizing the existence of a feasible $(x_0,y_0)$ fixed point, based on the stability of the single-species points:
 
 | | | species x |
 | | | sink  | saddle | 
 | species y | sink | yes | no |
-| | saddle | no | yes |
+| | saddle | no | yes|
 
-
-Supposing that $(x_0,y_0)$ does exist, we need to consider its stability. Fortunately, the Jacobian simplifies a bit:
+Supposing that $(x_0,y_0)$ does exist, we need to consider its stability. Fortunately, the Jacobian simplifies quite a bit:
 
 $$ \mathbf{J}(x_0,y_0) = \begin{bmatrix} -\sigma_1 x_0 & -\alpha_1 x_0 \\ -\alpha_2 y_0  & -\sigma_2y_0  \end{bmatrix}. $$
 
-Here's another couple of nifty facts:
+Here's a couple of nifty facts:
 
 * The product of the eigenvalues equals the determinant of the matrix.
 * The sum of the eigenvalues equals the *trace*{:.def} of the matrix (sum of its diagonal entries).
 
-Assuming $(x_0,y_0)$ is in the first quadrant, we can say that $\lambda_1+\lambda_2=-(\sigma_1x_0+\sigma_2y_0)<0$, so at least one eigenvalue has negative real part. Also  $\lambda_1\lambda_2 = x_0y_0(\sigma_1\sigma_2 - \alpha_1\alpha_2)$. As above, the sign of $\sigma_1\sigma_2 - \alpha_1\alpha_2$  is crucial.
+Suppose $(x_0,y_0)$ is in the first quadrant. Then we can say that $\lambda_1+\lambda_2=-(\sigma_1x_0+\sigma_2y_0)<0$, so at least one eigenvalue has negative real part. Also  $\lambda_1\lambda_2 = x_0y_0(\sigma_1\sigma_2 - \alpha_1\alpha_2)$. As above, the sign of $\sigma_1\sigma_2 - \alpha_1\alpha_2$  is crucial.
 
-* If $\alpha_1\alpha_2 < \sigma_1 \sigma_2$ (so the one-species points are saddles), then $\lambda_1\lambda_2$ is positive, so both eigenvalues must have negative real part--a sink.
-*  If $\alpha_1\alpha_2 > \sigma_1 \sigma_2$ (so the one-species points are sinks), then $\lambda_1\lambda_2<0$, so the eigenvalues are real and of different signs--a saddle.
+* When both single-species points are saddles, we showed above that $\sigma_1 \sigma_2 >\alpha_1\alpha_2$. Then $\lambda_1\lambda_2$ is positive, so both eigenvalues must have negative real part--a sink.
+*  When both single-species points are sinks, we showed above that $\sigma_1 \sigma_2 <\alpha_1\alpha_2$. So $\lambda_1\lambda_2<0$, so the eigenvalues must be real and of different signs--a saddle.
 
-Here's an update to the table above, showing the type of fixed point at $(x_0,y_0)$ related to the single-species points.
+Here's an update to the table above, showing the type of fixed point at $(x_0,y_0)$ in the first quadrant related to the single-species points.
 
 | | | species x |
 | | | sink  | saddle | 
@@ -108,39 +108,7 @@ r = [1 0.2];
 sigma = [0.4 0.6];
 alpha = [0.1 0.1];
 
-f = @(x,y) x.*(r(1)-sigma(1)*x-alpha(1)*y);
-g = @(x,y) y.*(r(2)-sigma(2)*y-alpha(2)*x);
-
-% three fixed points
-xwin = r(1)/sigma(1)
-ywin = r(2)/sigma(2)
-coex = [ sigma(1) alpha(1); alpha(2) sigma(2) ] \ r(:)
-
-clf
-slopefieldxy(f,g,[0 6],[0 4],1)
-hold on
-plot(xwin,0,'b*')
-plot(0,ywin,'r*')
-axis equal
-title('')
-
-%%
-J = @(x,y) [ r(1)-2*sigma(1)*x-alpha(1)*y  -alpha(1)*x; 
-    -alpha(2)*y  r(2) - 2*sigma(2)*y - alpha(2)*x ];
-
-xwin_eig = eig(J(xwin,0))
-ywin_eig = eig(J(0,ywin))
-
-%%
-
-N = chebop(@(t,x,y) [diff(x)-f(x,y); diff(y)-g(x,y)],[0 16],[],[]);
-[X,Y] = ndgrid(0.3:1:6,0.2:0.8:4);
-for i = 1:numel(X)
-    N.lbc = [ X(i); Y(i) ];
-    [x,y] = N\0; 
-    arrowplot(x,y,'color','b')
-    drawnow
-end
+compete(r,sigma,alpha)
 ~~~
 ![case 1](compete_case1.svg)
 
@@ -154,41 +122,7 @@ r = [0.2 0.4];
 sigma = [0.2 0.6];
 alpha = [0.1 0.1];
 
-f = @(x,y) x.*(r(1)-sigma(1)*x-alpha(1)*y);
-g = @(x,y) y.*(r(2)-sigma(2)*y-alpha(2)*x);
-
-% three fixed points
-xwin = r(1)/sigma(1)
-ywin = r(2)/sigma(2)
-coex = [ sigma(1) alpha(1); alpha(2) sigma(2) ] \ r(:)
-
-clf
-slopefieldxy(f,g,[0 1.5],[0 1.5],1)
-hold on
-plot(coex(1),coex(2),'b*')
-plot(xwin,0,'r*')
-plot(0,ywin,'r*')
-axis equal
-
-%%
-J = @(x,y) [ r(1)-2*sigma(1)*x-alpha(1)*y  -alpha(1)*x; 
-    -alpha(2)*y  r(2) - 2*sigma(2)*y - alpha(2)*x ];
-
-xwin_eig = eig(J(xwin,0))
-ywin_eig = eig(J(0,ywin))
-coex_eig = eig(J(coex(1),coex(2)))
-
-%%
-
-N = chebop(@(t,x,y) [diff(x)-f(x,y); diff(y)-g(x,y)],[0 15],[],[]);
-[X,Y] = ndgrid(0.1:0.3:1.3,0.1:0.3:1.3);
-for i = 1:numel(X)
-    N.lbc = [ X(i); Y(i) ];
-    [x,y] = N\0; 
-    arrowplot(x,y,'color','b')
-    axis([0 1.5 0 1.5]), drawnow
-end
-axis square
+compete(r,sigma,alpha)
 ~~~
 
 ![case 2](compete_case2.svg)
@@ -200,43 +134,10 @@ Sinks at the 1-species points, hence saddle at coexistence. I call this "winner 
 
 ~~~matlab
 r = [0.2 0.4];
-sigma = [0.04 0.1];
+sigma = [0.04 0.17];
 alpha = [0.1 0.1];
 
-f = @(x,y) x.*(r(1)-sigma(1)*x-alpha(1)*y);
-g = @(x,y) y.*(r(2)-sigma(2)*y-alpha(2)*x);
-
-% three fixed points
-xwin = r(1)/sigma(1)
-ywin = r(2)/sigma(2)
-coex = [ sigma(1) alpha(1); alpha(2) sigma(2) ] \ r(:)
-
-clf
-slopefieldxy(f,g,[0 5.5],[0 4.5],1)
-hold on
-plot(coex(1),coex(2),'r*')
-plot(xwin,0,'b*')
-plot(0,ywin,'b*')
-axis equal
-
-%%
-J = @(x,y) [ r(1)-2*sigma(1)*x-alpha(1)*y  -alpha(1)*x; 
-    -alpha(2)*y  r(2) - 2*sigma(2)*y - alpha(2)*x ];
-
-xwin_eig = eig(J(xwin,0))
-ywin_eig = eig(J(0,ywin))
-coex_eig = eig(J(coex(1),coex(2)))
-
-%%
-
-N = chebop(@(t,x,y) [diff(x)-f(x,y); diff(y)-g(x,y)],[0 16],[],[]);
-[X,Y] = ndgrid(0.25:.6:6,0.2:.9:4.5);
-for i = 1:numel(X)
-    N.lbc = [ X(i); Y(i) ];
-    [x,y] = N\0; 
-    arrowplot(x,y,'color','b')
-    drawnow
-end
+compete(r,sigma,alpha)
 ~~~
 
 ![case 3](compete_case3.svg)
