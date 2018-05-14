@@ -37,9 +37,17 @@ As you can see, understanding what type of ODE you have is vital to choosing the
 
 Linearity has dominated the discussion for two reasons: we can dissect (many) linear problems completely, and they influence every system through linearization.
 
+## Polynomial roots
+
+Again and again we have found polynomial roots to be the key to unlocking solutions of linear, constant-coefficient equations, in the guises of characteristic polynomials/Laplace transform poles/eigenvalues. Broadly speaking, there are always three outcomes:
+
+* **Distinct real roots** produce combinations of the associated exponential functions.
+* **Repeated real roots** introduce the secular term $te^{rt}$.
+* **Complex conjugate roots** bring the associated complex exponentials, or an exponential of the real part with sin and cos of the imaginary part.
+
 ## Oscillators
 
-Of particular importance are equations in the form $ay''+by'+cy=g(t)$. Mathematically they fit into the frameworks we used for linear equations and are no particular challenge. However, oscillators are so important in numerous diverse areas of application that a lot of terminology sprang up to describe all the possible phenomena in detail:
+Of particular importance are equations in the form $ay'' +by'+cy=g(t)$. Mathematically they fit into the frameworks we used for linear equations and are no particular challenge. However, oscillators are so important in numerous diverse areas of application that a lot of terminology sprang up to describe all the possible phenomena in detail:
 
 * Forced/free equations, and forced/free responses.
 * Undamped/underdamped/critically damped/overdamped oscillations.
@@ -49,13 +57,8 @@ Of particular importance are equations in the form $ay''+by'+cy=g(t)$. Mathemati
 * Frequency response, gain, and resonance.
 * Transfer function and impulse response.
 
-## Polynomial roots
+For mechanical mass-spring systems, we used the alternative notations $my'' + $\gamma y' + k y$, or equivalently $y'' + 2cy' + \omega_0^2 y$. 
 
-Again and again we have found polynomial roots to be the key to unlocking solutions of linear, constant-coefficient equations, in the guises of characteristic polynomials/Laplace transform poles/eigenvalues. Broadly speaking, there are always three outcomes:
-
-* **Distinct real roots** produce combinations of the associated exponential functions.
-* **Repeated real roots** introduce the secular term $te^{rt}$.
-* **Complex conjugate roots** bring the associated complex exponentials, or an exponential of the real part with sin and cos of the imaginary part.
 
 ## Models
 
