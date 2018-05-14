@@ -21,14 +21,15 @@ We started with a gimmicky classification scheme:
 
 Here are some key facts for various groupings of these traits.
 
-* **FLS** Always solvable by an integrating factor.
+* **FLS** Solvable by an integrating factor.
 * **LSI** Unique solution for continuous coefficients. 
 * **LASH** Solvable by characteristic equation.
 * **LS (constant coeffs)** Solve H case first, then add undetermined coefficients.
 * **LS (constant coeffs)** Solvable by Laplace transforms, including steps and impulses.
 * **fa** Can be transformed to FA in higher dimensions.
-* **FLsH** Solve by eigenvalues and (maybe generalized) eigenvectors.
-* **FLsHI** Solved by the matrix exponential.
+* **FLs** Can be expressed as $\mathbf{x}'=\mathbf{A}\mathbf{x}+\mathbf{g}$.
+* **FLAsH** Solved by eigenvalues and (maybe generalized) eigenvectors.
+* **FLAsHI** Solved by the matrix exponential.
 * **FLsh** Solvable (in principle) by variation of parameters. 
 * **FS** May be solvable by separation. 
 * **Fl** Equilibria and their stability matter. 
@@ -57,7 +58,7 @@ Of particular importance are equations in the form $ay'' +by'+cy=g(t)$. Mathemat
 * Frequency response, gain, and resonance.
 * Transfer function and impulse response.
 
-For mechanical mass-spring systems, we used the alternative notations $my'' + $\gamma y' + k y$, or equivalently $y'' + 2cy' + \omega_0^2 y$. 
+For mechanical mass-spring systems, we used the alternative notations $my'' + \gamma y' + k y$, or equivalently $y'' + 2cy' + \omega_0^2 y$. 
 
 
 ## Models
