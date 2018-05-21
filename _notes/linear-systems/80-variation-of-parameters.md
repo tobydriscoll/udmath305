@@ -87,7 +87,7 @@ $$ = \begin{bmatrix} -\frac{1}{2} e^t \left(2t+\cos\left(t\right)-\sin\left(t\ri
 
 Hence
 
-$$ \mathbf{x}(t) = \begin{bmatrix} e^{t} & -e^t \\ -e^{-t} & 2e^{-t} \end{bmatrix} \left( \mathbf{c} + \begin{bmatrix} -\frac{1}{2} e^t \left(2t+\cos\left(t\right)-\sin\left(t\right)-2\right) \\ \frac{1}{2} e^{-t} \left(\cos\left(t\right)+\sin\left(t\right)-4\right) \end{bmatrix} \right).$$
+$$ \mathbf{x}(t) = \begin{bmatrix} 2 e^{-t} & e^t \\ e^{-t} & e^t \end{bmatrix} \left( \mathbf{c} + \begin{bmatrix} -\frac{1}{2} e^t \left(2t+\cos\left(t\right)-\sin\left(t\right)-2\right) \\ \frac{1}{2} e^{-t} \left(\cos\left(t\right)+\sin\left(t\right)-4\right) \end{bmatrix} \right).$$
 
 Look bub, if you wanted something easy, you should have taken Rocks For Jocks.
 
