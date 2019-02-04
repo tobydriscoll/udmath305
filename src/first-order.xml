@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<chapter xml:id="first-order-ode" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>First-order ODEs</title>
+  
+
+  <section xml:id="linearity">
+    <title>Introduction</title>
+    <p><em>Refer to section 1.1 of the text.</em></p>
+
+    <p>A <term>differential equation</term> is an equation that has some derivatives in it. (Duh.) The variable whose derivative is taken is called the <term>dependent variable</term> and is considered the "unknown" of the differential equation. We'll be concerned with the case where there is only one <term>independent variable</term>  (a "with respect to" variable in the denominator of a derivative), so there are no partial derivatives and we say the equation is  an <term>ordinary differential equation</term>, or ODE. For discussions and theory we will stick to <m>y</m> and <m>t</m> as the dependent and independent variables, but in general these are determined by what is being modeled by the ODE. </p>
+
+    <p>If only first derivatives appear (that is, no <m>y''</m>, <m>y'''</m>, etc.), it's a <term>first-order</term> ODE. We're going to stick to this kind of ODE for a while.</p>
+
+    <p>An equation like <m>\dd{y}{t}=f(t)</m> is the simplest kind of ODE. You can just integrate both sides straightaway, getting <m>y(t) = \int f(t)\,dt + C</m>. Notice that arbitrary constant <m>C</m>. It comes up in all first-order ODEs; that is, we expect a family of solutions, not a single solution, unless more information is given to pin it down.</p> 
+
+    <p>Things get interesting when both <m>y</m> and <m>y'</m> appear in the equation. The text uses four examples or archetypes to begin the discussion. 
+</p>
+    <example xml:id="ex-constant-growth">
+      <title>Constant growth rate</title>
+      <p>
+	<me>\dd{y}{t} = y</me>
+	It's trivial to check that <m>y=e^t</m> is a <term>solution</term> of <m>y'=y</m>, in the sense that it makes the ODE a true equation.  (However, it isn't the only solution.) As a mathematical model, the ODE states that the rate of change in <m>y</m> is equal to <m>y</m> itself, and the result is <term>exponential growth</term>: the solution grows larger, which increases the rate of growth, and so on.
+      </p>
+      <sidebyside>
+	<program language="matlab" permid="fo_intro_const_growth">
+	  <input>
+	    y = @(t) exp(t);
+	    fplot(y,[0,4])
+	    xlabel('t'), ylabel('y(t)')
+	    title('Exponential growth')
+	  </input>
+	</program>
+	<image source="matlab/fo_intro_const_growth.svg"/>
+      </sidebyside>
+    </example>
+
+    <example xml:id="ex-constant-decay">
+       <title>Constant decay rate</title>
+      <p>
+	<me>\dd{y}{t} = -y</me>
+	Now the model states that the rate of change is negative when <m>y</m> is positive. So a positive starting value will decrease, but the rate of decrease will then lessen, etc. From this qualitative description it's impossible to tell whether the solution ever reaches zero (at which point its rate of change would be zero.)
+      </p>
+      <p>But we can end the suspense by easily verifying that <m>y=e^{-t}</m> is a solution. This function asymptotically approaches zero as <m>t\to\infty</m>, which we call <term>exponential decay</term>. In other, related problems we will find that solutions can decay (or "relax") to any value, not just zero.
+      </p>
+      <sidebyside>
+	<program language="matlab" permid="fo_intro_const_decay">
+	  <input>
+	    y = @(t) exp(-t);
+	    fplot(y,[0,4])
+	    xlabel('t'), ylabel('y(t)')
+	    title('Exponential decay')
+	  </input>
+	</program>
+	<image source="matlab/fo_intro_const_decay.svg"/>
+      </sidebyside>
+
+    </example>
+    <example xml:id="ex-variable-growth">
+       <title>Variable growth rate</title>
+      <p>
+	<me>\dd{y}{t} = 2ty</me>
+	In this case we are back to a positive growth rate for positive solution values. In fact, the growth rate increases with time as wwell as with the solution itself. You can check that <m>y=e^{t^2}</m> is a solution, and indeed this grows at a "super-exponential" rate.
+      </p>
+      <sidebyside>
+	<program language="matlab" permid="fo_intro_var_growth">
+	  <input>
+	    y = @(t) exp(t.^2);
+	    fplot(y,[0,4])
+	    xlabel('t'), ylabel('y(t)')
+	    title('Variable growth')
+	  </input>
+	</program>
+	<image source="matlab/fo_intro_var_growth.svg"/>
+      </sidebyside>
+
+    </example>
+    <example xml:id="ex-nonlinear-growth">
+       <title>Nonlinear growth</title>
+      <p>
+	<me>\dd{y}{t} = y^2</me>
+	This is our first example featuring a nonlinear expression in the variable <m>y</m>. As a rule, nonlinear ODEs are much harder to solve and have less predictable mathematical structure than linear problems. This particular problem isn't so tough, though; you can check that <m>y=1/(1-t)</m> is a solution. Note that the growth is even faster--literally off the charts as <m>t\to 1</m>. </p>
+      <p>(You might wonder about the validity of any mathematical model that leads to an infinite result in finite time. But in fact this ODE describes the evolution of the slope of the line of sight to an airplane flying straight over you, and when the airplane is directly overhead, the slope is infinite. So while the model becomes mathematically invalid at that moment, it does describe a concrete physical situation.)
+      </p>
+      <sidebyside>
+	<program language="matlab" permid="fo_intro_nonlin_growth">
+	  <input>
+	    y = @(t) 1./(1-t);
+	    fplot(y,[0,1])
+	    xlabel('t'), ylabel('y(t)')
+	    title('Nonlinear growth')
+	  </input>
+	</program>
+	<image source="matlab/fo_intro_nonlin_growth.svg"/>
+      </sidebyside>
+
+    </example>
+   </section>
+
+  <section xml:id="exponentials">
+    <title>Exponentials</title>
+
+    <introduction>
+      <p>The simplest nontrivial ODE of all is <m>y'=ay</m>, where <m>a</m> is a constant. It takes no effort at all to verify that <m>y(t)=e^{at}</m> is a solution, as we have seen a couple of times already. One way to view the role of <m>a</m> is to switch between growth (positive values),  decay (negative values), and stasis (zero). But you can also interpret it as a rescaling of the time measurement. For instance, if we change from measuring time in minutes to measuring it in seconds, it's equivalent to multiplying <m>a</m> by 60. One consequence is that exponential decay is just like running a movie of exponential growth in reverse.</p>
+
+      <p>From the perspective of someone who already knows <m>e</m> well from calculus, the exponential solution may seem obvious. But even if we didn't already know this "obvious" fact, we'd get to pretty much the same place by basic reasoning. </p>
+    </introduction>
+    
+    <subsection>
+      <title>Exponentials from first principles</title>
+
+      <p> Suppose the ODE solution is expressed in terms of some infinite power series with unknown coefficients:
+      <me>
+	y(t) = c_0 + c_1 t + c_2 t^2 + c_3 t^3 + c_4 t^4 + \cdots
+	</me>.
+	We can easily differentiate term by term to get
+	<me>
+	  y'(t) = c_1 + 2c_2 t + 3c_3 t^2 + 4c_4 t^3 + \cdots
+	  </me>.
+	  Setting each coefficient here equal to its match in the series for <m>ay(t)</m> leads to the equations
+	  <me>
+	    c_1 = ac_0, \quad c_2=a c_1/2, \quad c_3=ac_2/3, \quad \ldots
+	    </me>,
+	    from which we quickly derive
+	    <me>
+	      y(t) = c_0\left( 1 + a t + \frac{1}{2} a^2 t^2 + \frac{1}{6} a^3 t^3 +  \frac{1}{4!} a^4 t^4 + \cdots \right) = c_0 f(t)
+	      </me>.
+      The undetermined constant <m>c_0</m> plays the role of the integration constant. In fact, since <m>f(0)=1</m>, we see that <m>c_0=y(0)</m>, so it's convenient to write the solution as <m>y(t)=y(0)f(t)</m>, with the understanding that <m>y(0)</m> is arbitrary.</p>
+
+      <p>Now, at this point we don't know much else about <m>f(t)</m>. But we can show next using the ODE that it has the key property of an exponential function: <m>f(A+B)=f(A)f(B)</m> for any values of <m>A</m> and <m>B</m>. First, we can say immediately that <m>y(A+B)=y(0)f(A+B)</m>. Now imagine letting the ODE solution evolve from <m>t=0</m> to <m>t=A</m>, where we freeze time for a moment. We have that <m>y(A)=y(0)f(A)</m>, of course. Now suppose we let things continue to evolve by <m>B</m> additional time units. The solution becomes <m>y(A)f(B)=y(0)f(A)f(B)</m>. But this is the same as <m>y(A+B)</m>, and we are done.</p>
+
+      <p>From here it's just a matter of noting that because of the exponential property, <m>f(t)=e^t</m> for some base <m>e=f(1)=1+\sum_{n=1}^\infty \frac{1}{n!}</m>. The point here is that exponential functions don't just "happen to solve" <m>y'=at</m>; if they didn't exist already, we would have had to invent them for the purpose.</p>
+
+    </subsection>
+
+    <subsection>
+      <title>Complex exponents</title>
+
+      <p>We're going to get a little weird now and consider the case <m>y'=iy</m>, where <m>i^2=-1</m>. As we'll eventually see, this is out of much more than idle curiosity in the long run. In any event, we'll assume that the solution <m>y(t)=e^{it}</m> just takes on complex values at all times. So we could write it in real and imaginary parts as <m>e^{it} = u(t) + iv(t)</m>. But then applying the ODE, we must conclude
+      <me>
+	u'(t) + iv'(t) = i(u(t)+iv(t)) = -v(t) + iu(t)
+	</me>,
+	having applied <m>i^2=-1</m>. Equating real and imaginary parts, we conclude the pair of real equations <m>u'=-v</m>, <m>v'=u</m>. Perhaps you recognize these as old friends, sine and cosine. That is,
+	<me>
+	  e^{it} = \cos(t) + i\sin(t)
+      </me>. This is <term>Euler's identity</term>. It reveals one of the big surprises of applied math: exponential functions, when you go in an imaginary direction, become sin/cos oscillations. This is easily illustrated within MATLAB, which handles complex values routinely. Note the use of <c>1i</c> to get the imaginary unit.</p>
+      <sidebyside>
+	<program permid="exp_complex" language="matlab">
+	  <input>
+	    c = @(t) real(exp(1i*t));
+	    s = @(t) imag(exp(1i*t));
+	    fplot({c,s},[0,4*pi])
+	    xlabel('t'), ylabel('e^{it}')
+	    title('Complex exponential')
+	    legend('Re part','Im part')
+	  </input>
+	</program>
+	<image source="matlab/exp_complex.svg"/>
+      </sidebyside>
+
+      <p>If we conceive of parametrically defining <m>x(t)</m> and <m>y(t)</m> as the real and imginary parts of the complex exponential, then this plot becomes the unit circle. We often write this set as <m>|z|=1</m> in the complex plane.</p>
+
+      <sidebyside>
+	<program language="matlab" permid="exp_circle">
+	  <input>
+	    c = @(t) real(exp(1i*t));
+	    s = @(t) imag(exp(1i*t));
+	    fplot(c,s,[0,2*pi])
+	    axis equal, axis(1.05*[-1 1 -1 1])
+	    xlabel('Re'), ylabel('Im')
+	    title('Complex exponential = Unit circle')
+	  </input>
+	</program>
+	<image source="matlab/exp_circle.svg"/>
+      </sidebyside>
+
+      <p>Euler's identity also leads as a special case to one of the most popular choices of "favorite equation," <m>e^{i\pi}=-1</m>, which is an almost mystical combination of the four fundamental numbers <m>1,i,\pi,e</m>.</p>
+
+      <p>All that from a little ol' first-order linear ODE!</p>
+
+    </subsection>
+    
+  </section>
+
+  <section xml:id="first-linear-ode">
+    <title>Linear ODEs</title>
+
+    <p>Linear ODEs are the most fundamental type. If you could only get one yes-or-no answer about a new ODE, your question should be, "Is it linear?" In the first-order case, all linear problems have the form
+    <men xml:id="eq-first-linear">
+      \dd{y}{t} = a(t)y(t) + q(t) 
+    </men>. Note that it is <em>not</em> necessary for <m>a(t)</m> and <m>q(t)</m> to be linear functions of time; nor is the solution <m>y(t)</m> generally a linear function. The linearity being referred to is the fact that there are no terms such as <m>\sin(y')</m>, <m>e^y</m>, <m>yy'</m>, etc. </p>
+
+    <p>All solutions to first-order linear problems share a basic structure. In fact there is a perfect (and rather deep) analogy to how one can specify a line using a direction parallel to the line, and one point on the line. For the line direction we could use a vector <m>\vec{v}</m>. Note that the set of all vectors <m>\{C\vec{v}: C\in\mathbb{R}\}</m> is a line through the origin. We can then translate this line by adding any constant vector <m>\vec{p}</m> representing a point on the line. Thus the set of all vectors representing points on the line is <m>C\vec{v}+\vec{p}</m>.</p>
+
+    <p>In the linear ODE case the role of <m>\vec{v}</m> is played by a solution of the <term>homogeneous</term> equation, which is <xref ref="eq-first-linear"/> with <m>q(t)\equiv 0</m>. With such a solution <m>y_h(t)</m>, we define the homogeneous or <term>null solution</term> <m>y_n(t)=Cy_h(t)</m>, where it is understood that <m>C</m> is an arbitrary constant. Note that (due to the linearity and homogeneity) the null solution is always a solution of the homogeneous ODE for any choice of the constant..</p>
+
+    <p>Playing the role of a point on the line is a <term>particular solution</term> <m>y_p(t)</m>.  As the name implies, it is one, any one, solution of the original <xref ref="eq-first-linear"/>. For definiteness the text uses <m>y_p(0)=0</m> to specify the particular solution uniquely (the "very particular" solution).</p>
+
+    <p>With these two special solutions in hand, we can write the <term>general solution</term> of <xref ref="eq-first-linear"/> as <m>y=y_n+y_p</m>. Every solution of the ODE can be written in that form. This structure pertains only to linear problems. We don't always approach practically solving the problem this way, but we can always recognize the structure after the fact. It can be useful to know that the structure exists even when exact formulas can't be found for the null and particular solutions.</p>
+
+    <p>Before we go on to derive some exact solutions for important special cases, let's consider how to solve <xref ref="eq-first-linear"/> with <m>a(t)=\cos(2t)</m> and <m>q(t)=t</m> numerically (approximately but to high accuracy) using MATLAB. For an ODE in the general form <m>y'=f(t,y)</m>, we have to define a function for <m>f</m>.
+    <cd>
+a = @(t) cos(2*t);
+q = @(t) t;
+
+f = @(t,y) a(t)*y + q(t);
+    </cd>
+    (This could be done directly in one line, but we have stayed with the general linear form here for illustration.) Now we call the function <c>ode45</c> to solve the problem, designating times of interest and an initial value.
+    <cd>
+t = linspace(0,5,500);
+[t,y] = ode45(f,t,1);
+    </cd>
+    The outputs here are vectors of equal length, giving the times we selected and values of the solution at those times. For instance, to get values at the final time we use
+    <cd>
+format long
+[ t(end), y(end) ]
+    </cd>
+    and get the response
+    <cd>
+ans =
+   5.000000000000000  10.064799099008786
+    </cd>
+    The outputs are also in a form easy to plot.
+    <cd>
+plot(t,y)
+xlabel('t'), ylabel('y(t)')
+title('Solution of a linear problem')
+    </cd>
+    </p>
+    <sidebyside>
+      <image source="matlab/fo_linear_first_ivp.svg"/>
+    </sidebyside>
+  </section>
+
+  <section xml:id="first-linear-const">
+    <title>Linear, constant-coefficients</title>
+
+    <introduction>
+      <p>For this section we will limit <xref ref="eq-first-linear"/> to the important special case when the growth/decay rate, is constant:
+      <men xml:id="eq-first-linear-const">
+	\dd{y}{t} = ay(t) + q(t) 
+	</men>.
+      The term <m>q(t)</m> is called a <term>forcing function</term> or <term>source function</term>. </p>
+
+      <p>By multiplying <xref ref="eq-first-linear-const"/> through by the <term>integrating factor</term> <m>M(t)=e^{-at}</m>, we can render it into a form easily solved by calculus:
+      <md>
+	<mrow> e^{-at} y'(t) - (a e^{-at})y(t) \amp = e^{-at}q(t) </mrow>
+	<mrow>\dd{}{t}\bigl[ e^{-at} y(t) \bigr] \amp = e^{-at}q(t) </mrow>
+	<mrow>e^{-at} y(t) \amp = C + \int e^{-at}q(t)\, dt </mrow>
+	<mrow>        \amp = C  +  \int_0^t e^{-as}q(s)\, ds</mrow>		    
+	</md>.
+	In the last step above we changed from an indefinite integral to a definite one whose value is zero when <m>t=0</m>. (We could have chosen any starting time, but this is the most convenient one.) Then it is easy to see that the integration constant satisfies <m>C=y(0)</m>, which is a bit less abstract. Altogether,
+	<men xml:id="eq-flc-solution">
+	  y(t) = e^{at}y(0) + \int_0^t e^{a(t-s)}q(s)\, ds
+      </men>.</p> 
+
+      <p>We can dissect this expression in some detail. The null solution <m>e^{at}y(0)</m> is by itself a solution to <m>y'=ay</m>. The particular solution represented by the integral is new. Think of the integral as a sum over all the moments <m>s\lt t</m>. At every such moment there is an input to <m>y'</m> of size <m>q(s)</m>. That little input evolves all on its own for the remaining time <m>t-s</m> according to <m>e^{a(t-s)}q(s)</m>. So it's equivalent to having started a problem with initial value <m>q(s)</m> at that moment.</p>
+
+      <p>Hence the complete solution combines the natural evolution of the true initial condition at time zero, plus the contributions of momentary "kicks" evolving from each instant up to the present. This idea proves to be quite fundamental to all linear problems, though the mathematical details will get more complicated.</p>
+    </introduction>
+
+    <subsection xml:id="flcs-constant">
+      <title>Constant forcing</title>
+
+      <p>Suppose <m>q(t)\equiv q</m>, a constant. Applying the solution formula gives
+      <me>
+	y(t) = e^{at}y(0) + \frac{q}{a}\bigl( e^{at}-1 \bigr)
+      </me>. This solution is of particular interest when <m>a\lt 0</m>. In that case <m>e^{at}\to 0</m> as <m>t\to\infty</m>, so <m>y\to -q/a</m>, a constant value, in the long term. In some contexts we might say that <m>y</m> "relaxes" to a <term>steady state</term> value <m>y_\infty=-q/a</m>. </p>
+
+      <p>It might be simplest to ignore this formula and just apply <xref ref="eq-flc-solution"/> as needed, since the integration involved is easy.</p>
+
+      <example>
+	<p>To solve <m>y'+3y=7</m>, we have
+	<me>y(t) = e^{-3t}y(0) + 7 \int_0^t e^{-3(t-s)} \, ds = e^{-3t}y(0) + \frac{7}{3}( 1 - e^{-3t})</me>. From here it's immediate to see that <m>y\to 7/3</m> as <m>t\to\infty</m>.</p>
+	<sidebyside>
+	  <program language="matlab" permid="fo_lcc_constant">
+	    <input>
+	    dydt = @(t,y) 7-3*y;
+	    [t,y] = ode45(dydt,[0,5],-1);
+	    plot(t,y)
+	    xlabel('t'), ylabel('y(t)')
+	    title('Constant forcing')
+	    </input>
+	</program>
+	<image source="matlab/fo_lcc_constant.svg"/>	  
+	</sidebyside>
+      </example>
+
+      <p>Be careful! To use our formula, you may have to rewrite the given problem in our standard form first. E.g. <m>3y+12y=12</m>, should be expressed as <m>y'=-4y+4</m>, so that we find <m>a=-4</m>, etc.</p>
+
+    </subsection>
+
+    <subsection xml:id="flcs-step">
+      <title>Step forcing</title>
+
+      <p>The <term>unit step function</term> or <term>Heaviside function</term> <m>H(t)</m> is zero for <m>t\le 0</m> and one for <m>t\gt 0</m>. It represents throwing on a switch. The solution when <m>q(t)=H(t)</m> is called the <term>step response</term> and follows from the formula as <m>y(t) = \frac{q}{a}\bigl( e^{at}-1 \bigr)</m>. </p>
+
+      <p>It's often useful to introduce a delay into the switch. To have the forcing turn on at time <m>T\gt 0</m>, we use <m>H(t-T)</m>. The response becomes
+      <me>y(t) = \frac{q}{a}H(t-T) \bigl[ e^{a(t-T)}-1 \bigr]</me>.
+      The step remains in the solution because nothing happens until the switch is turned on.</p>
+      <p>It's worth mentioning here the related idea of a <term>window</term> function, which turns on and then back off. To get a forcing that is one only between times <m>S</m> and <m>T</m>, for example, we can use <m>q(t)=H(t-S)-H(t-T)</m>. The formulas for the window solution become a bit messy, so we will skip them for now. Eventually we'll develop a system that handles the algebra systematically.</p>
+
+      <example>
+	<p>Let's solve <m>y'=y+f(t)</m>, where <m>f(t)</m> is 5 for <m>3 \lt t \le 6</m> and zero elsewhere. Again, it's probably easiest to get comfortable with applying the general solution formula <xref ref="eq-flc-solution"/>:
+	<me>y(t) = e^{t}y(0) + \int_0^t e^{t-s}q(s)\, ds</me>.
+	The integral part is zero if <m>t \le 3</m>. For <m>t\in(3,6)</m> we get
+	<me>y(t) = e^{t}y(0) + 5 \int_3^t e^{t-s} \, ds = e^{t}y(0) - 5(1-e^{t-3}) </me>.
+	Finally, for <m>t \ge 6</m> we get
+	<me>y(t) = e^{t}y(0) + 5 \int_3^6 e^{t-s} \, ds = e^{t}y(0) - 5(e^{t-6}-e^{t-3}) </me>.
+	(We can always express piecewise results like this using step functions and window functions. We'll get back to that eventually.) </p>
+	<sidebyside>
+	  <program language="matlab" permid="fo_lcc_window">
+	    <input>
+	    step = @(t) double(t>0);
+	    dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
+	    [t,y] = ode45(dydt,[0,8],1);
+	    plot(t,y)
+	    xlabel('t'), ylabel('y(t)')
+	    title('Window forcing')
+	    </input>
+	</program>
+	<image source="matlab/fo_lcc_window.svg"/>	  
+	</sidebyside>
+	<sidebyside>
+	  <program language="matlab" permid="fo_lcc_window_2">
+	    <input>
+	    step = @(t) double(t>0);
+	    dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
+	    [t,y] = ode45(dydt,[0,8],1);
+	    semilogy(t,y)
+	    xlabel('t'), ylabel('y(t)')
+	    title('Window forcing (semi-log)')
+	    </input>
+	</program>
+	<image source="matlab/fo_lcc_window_2.svg"/>	  
+	</sidebyside>
+        </example>
+    </subsection>
+
+    <subsection xml:id="flcs-impulse">
+      <title>Impulse forcing</title>
+
+      <p>We next come to a curious type of input called an <term>impulse</term>. The idea is that the system is given an instantaneous jolt. To make this work, start by imagining a forcing of constant strength <m>1/h</m> that is turned on only for <m>0\lt t \le h</m>:
+      <me>\delta_h(t) = \frac{H(t-h)-H(t)}{h}</me>.
+      The area under <m>\delta_h</m> is one for all <m>h \gt 0</m>.</p>
+
+      <p>Now we idealize the situation by taking the limit as <m>h\to 0</m>. Effectively, we are taking the derivative of a step. The resulting "function", which we call <m>\delta(t)</m>, is zero at all points except <m>t=0</m>, yet should have unit area under its curve!</p>
+
+      <p>It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If <m>I</m> is any interval containing <m>[0,h]</m> and <m>f(t)</m> is any other function, then
+      <me>\int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \delta_h(t) f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}</me>, where <m>\phi</m> is an antiderivative of <m>f</m>. In the limit this suggests
+      <me>\int_I \delta(t)f(t)\, dt = f(0)</me>.
+      As with the step, we often want to introduce a delay in the impulse by using <m>\delta(t-T)</m>. Then the math becomes
+      <men xml:id="eq-delta-integrate">\int_I \delta(t-T)f(t)\, dt = f(T)</men>,
+      where <m>I</m> is any interval containing <m>T</m>. This is the key identity for working with impulses.</p>
+
+      <p>The solution to the linear ODE with an impulse forcing is called an <term>impulse response</term>. Consider <m>y'=at+\delta_h(t)</m>, with <m>y(0)=0</m>. Integration of both sides over <m>[0,h]</m> gives <m>y(h)=ath + 1</m>. In the limit, this suggests <m>y(0^+)=1</m>, where I have used the plus superscript to suggest "at some infinitesimally later moment." When the math is worked out nicely to avoid the seeming contradiction, the conclusion is that the impulse response is <m>y(t)=e^{at}</m>, which is the <em>same as if</em> <m>y(0)=1</m>. More generally we have the following.</p>
+
+      <fact>
+	<title>Impulse forcing (first order)</title>
+      <p>In a first-order linear ODE, an impulse forcing is equivalent to adding the impulse amplitude to the momentary solution value and then doing unforced evolution.</p></fact>
+
+      <p>The conclusion with a delayed impulse plays out as follows: solving <m>y'=at+b\delta(t-T)</m> leads to <m>y(t)=e^{at}y(0)+ be^{a(t-T)}H(t-T)</m>. (Note: equation (15) on page 24 of Strang is wrong.) But the beauty of working with deltas is that they turn integration into function evaluation, and working directly from <xref ref="eq-flc-solution"/> continues to be straightforward.</p>
+
+      <example>
+	<p>Suppose we solve <m>y'+5y=3\delta(t-2)</m>, with <m>y(0)=1</m>. Start with
+	<me>y(t) = e^{-5t} + 3 \int_0^t e^{-5(t-s)}\delta(s-2)\, ds</me>.
+	If <m>t \lt 2</m>, the integration interval does not contain the impulse, so the solution is just <m>e^{-5t}</m>. But if <m>t \gt 2</m>, <m>y(t) = e^{-5t} + 3 e^{-5(t-2)}</m>.</p>
+	<sidebyside>
+	  <program language="matlab" permid="fo_lcc_impulse">
+	    <input>
+	    dydt = @(t,y) -5*y;
+	    [t1,y1] = ode45(dydt,[0,2],1);
+	    [t2,y2] = ode45(dydt,[2,6],3+y1(end));
+	    plot([t1;t2],[y1;y2])
+	    xlabel('t'), ylabel('y(t)')
+	    title('Impulse forcing')
+	    semilogy([t1;t2],[y1;y2])
+	    xlabel('t'), ylabel('y(t)')
+	    title('Impulse forcing')
+	    </input>
+	</program>
+	<image source="matlab/fo_lcc_impulse.svg"/>	  
+	</sidebyside>
+	<sidebyside>
+	  <program language="matlab" permid="fo_lcc_impulse_2">
+	    <input>
+	    dydt = @(t,y) -5*y;
+	    [t1,y1] = ode45(dydt,[0,2],1);
+	    [t2,y2] = ode45(dydt,[2,6],3+y1(end));
+	    semilogy([t1;t2],[y1;y2])
+	    xlabel('t'), ylabel('y(t)')
+	    title('Impulse forcing (semi-log)')
+	    </input>
+	</program>
+	<image source="matlab/fo_lcc_impulse_2.svg"/>	  
+	</sidebyside> 
+      </example>
+    </subsection>
+
+    <subsection xml:id="flcs-exp">
+      <title>Exponential forcing</title>
+
+      <p>There is one final easy forcing case for working with <xref ref="eq-flc-solution"/>: <m>q(t)=e^{ct}</m> for constant <m>c</m>. Plugging this into <xref ref="eq-flc-solution"/> yields
+      <md>
+	<mrow>y(t) \amp = e^{at}y(0) + \frac{e^{at}}{c-a} \bigl( e^{t(c-a)}-1 \bigr)</mrow>
+	<mrow>\amp = e^{at}y(0) + \frac{1}{c-a} \bigl( e^{ct}-e^{at} \bigr)</mrow>
+      </md>. Clearly this won't work, however, if <m>c=a</m> The text calls this case <term>resonance</term>, though that's maybe a stretch of how that term is typically understood.</p>
+
+      <p>In the resonant case, we can go back to <xref ref="eq-flc-solution"/>, and we get <m>y(t) = e^{at}y(0) + te^{at}</m>. That extra factor of <m>t</m> is new, and the first time something genuinely non-exponential has arisen for the linear problem.</p>
+
+    </subsection>
+  </section>
+
+  <section xml:id="complex-exp">
+    <title>Complex exponentials</title>
+    <introduction>
+      <p>(For a really smart and entertaining introduction to complex numbers, I recommend <url href="https://youtu.be/T647CGsuOVU">this video series</url>.)</p>
+
+      <p>We need to take a short but highly relevant detour to talk about complex numbers.</p> 
+
+      <p>There's often a lot of uneasiness about complex numbers. Terminology is part of the reason. Using "real" and "imaginary" to label numbers suggests a strong value judgment, one that ruled mathematics for centuries. But complex numbers are actually just as "real" as so-called real numbers. If anything, they are actually <em>more</em> fundamental to the universe.</p>
+
+      <p>As a practical matter, you can pretty much always replace a complex value with two real ones, and vice versa. But sometimes the manipulations are a lot easier in the complex form. In particular, you may be able to replace trigonometry with algebra.</p> 
+    </introduction>
+    
+    <subsection>
+      <title>The reality of imaginary numbers (optional)</title>
+
+      <p>Let's rewind a bit. We can probably take for granted the positive integers 1, 2, 3, and so on, and we'll throw in zero too (though this too was controversial for centuries). It's not long before we want to solve a problem like $x+1=0$. Annoyingly, we can pose the problem using just nonnegative integers, but we can't solve it. So we accept the existence of the negative integers.</p>
+
+      <p>I can imagine quite a bit of skepticism about this historically. ("Sure, Wei. Ever seen a negative goat?") But if you've ever taken out a loan, you know that negative numbers can have very real consequences.</p> 
+
+      <p>Eventually, the negative integers seem "obvious" and perfectly natural. But then we run into a problem like
+      <me>
+	2x - 1 = 0
+	</me>.
+      We can pose this problem with integers, but we can't solve it. So we get used to accepting rational numbers, too.</p>
+
+      <p>Rational numbers are pretty weird. Between any pair of them, you have infinitely more rational numbers! Yet it turns out they have (huge) gaps as well. You can't solve
+      <me>
+	x^2 - 2 = 0
+      </me>
+      using only rational numbers. So, you're willing to take on irrational numbers too. Talk about weird--every one of them has an infinite, non-repeating decimal expansion.</p> 
+
+      <p>So much for the "real" numbers. At least we have filled in the so-called number line. But then you get to
+      <me>
+	x^2 + 1 = 0
+	</me>,
+      which is purely "real" but insolvable. Solutions to this equation were widely resisted for a very long time (say, the 18th century), to the point they were called "imaginary" (thanks, Descartes). </p>
+
+      <p>Yet something amazing happens if you do accept imaginary numbers, and their expansion to the complex numbers. Namely, <em>The Fundamental Theorem of Algebra</em>, which states that if you write down a polynomial using complex numbers, it will have only complex numbers as solutions. So there's no infinite ladder of hypercomplex numbers that we have to ascend--just one rung past the "real" ones.</p>
+    </subsection>
+
+    <subsection xml:id="frc-polar">
+      <title>The polar form of complex numbers</title>
+
+      <p>When you first learned complex numbers, you probably wrote them as <m>z=x+iy</m>, where <m>x=\Re(z)</m> and <m>y=\Im(z)</m> are real. This is equivalent to rectangular or Cartesian coordinates in the plane to specify the point <m>(x,y)</m>.</p>
+
+      <p>Euler's identity gives us an equally important alternative. Recall that <m>e^{it}=\cos(t)+i\sin(t)</m> for real values of <m>t</m>. If <m>r</m> is a positive number, and we write
+      <me>re^{i\theta} = (r\cos(\theta))+i(r\sin(\theta))</me>,
+      then it is clear that <m>(r,\theta)</m> represent the polar coordinates of the point with <m>x=r\cos\theta</m>, <m>y=r\sin \theta</m>. The polar <m>r</m> has another name and notation in the complex context: the <term>modulus</term> <m>|z|</m>. (The angle <m>\theta</m> might variously be called the <term>argument</term> or <term>phase</term> of <m>z</m>.) </p>
+
+      <p>In rectangular form, addition and subtraction of complex numbers is trivial: <m>(x+iy) \pm (u+iv)= (x+u)+i(y+v)</m>. In polar form, it's multiplication and division that become easy:
+      <me>
+	(re^{i\theta})(se^{i\phi}) = rse^{i(\theta+\phi)}, \qquad
+	\frac{re^{i\theta}}{se^{i\phi}} = \frac{r}{s}e^{i(\theta-\phi)}
+      </me>. </p>
+      
+      <p>A common operation on complex numbers that has no real analog is taking <term>conjugates</term>. We find the conjugate <m>\overline{z}</m> of <m>z</m> by replacing all instances of <m>i</m> with <m>-i</m>. In the two canonical forms we have
+      <me>\overline{x+iy} = x-iy, \qquad \overline{re^{i\theta}} = re^{-i\theta}</me>.
+      An important identity, easy to work out, is <m>|z|^2=z\cdot \overline{z}</m>.</p>
+    </subsection>
+
+    <subsection xml:id="frc-conjugate">
+      <title>Shifted cosines</title>
+      <p>Here comes a trick we will be relying upon later. The the <term>shifted cosine</term> function
+      <men xml:id="eq-fo-ampphase">f(t)=R\cos(\omega t - \phi)</men>
+      has <term>amplitude</term> <m>R</m>, <term>angular frequency</term> <m>\omega</m>, and <term>phase shift</term> <m>\phi</m>. Using Euler's identity, we can think of <m>f</m> as the real part of a complex exponential <m>Re^{i(\omega t-\phi)}</m>. This can be manipulated into
+      <me> R e^{-i\phi} e^{i\omega t} = (R\cos \phi - i R \sin \phi) ( \cos \omega t + i \sin \omega t)</me>.
+      Upon taking the real part of the product, we conclude
+      <me> f(t) = R\cos \phi \cos \omega t + R \sin \phi \sin \omega t</me>.  </p>
+
+      <p>What's more, we can run that process in reverse. Suppose we are given some real harmonic signal
+      <men xml:id="eq-fo-sincos">g(t) = A \cos \omega t + B \sin  \omega t</men>.
+      Now find <m>R</m> and <m>\phi</m> such that <m>A=R\cos \phi</m> and <m>B=R \sin \phi</m>. This is equivalent to converting a Cartesian point <m>(A,B)</m> to polar form <m>(R,\phi)</m>, which is easy-peasy. But now we can say that <m>g</m> is equivalent to <m>f</m> in <xref ref="eq-fo-ampphase"/>.</p>
+
+      <p>The bottom line is that we can write a harmonic signal in either the amplitude/phase form <xref ref="eq-fo-ampphase"/> or the sin/cos form <xref ref="eq-fo-sincos"/>. They are completely equivalent, and we can use whichever one is more convenient at a particular moment.</p>
+    </subsection>
+
+    <subsection xml:id="frc-forcing">
+      <title>Forcing with a complex exponential</title>
+      <p>Time for some payoff. If we force the ODE <m>y'=ay+q(t)</m> using <m>q(t)=Re^{i\omega t}</m>, we can take the real part to get the result of cosine forcing, or the imaginary part to get of a sine forcing. Moreover, finding a particular solution with exponential forcing remains very easy. To make <m>y=Ye^{i\omega t}</m> a particular solution, we need only require that
+      <me>i\omega Y e^{i\omega t} = a Ye^{i\omega t} + Re^{i\omega t} \quad \Rightarrow
+      \quad Y = R  \cdot \frac{1}{i\omega - a}</me>.
+      That is, the particular solution is just <m>\frac{1}{i\omega - a}</m> times the input signal. 
+      Let's express this multiplicative factor in polar form:
+      <me>\frac{1}{i\omega - a} = G e^{-i\alpha}</me>.
+      Then the relationship between the forcing signal <m>q(t)</m> and the particular solution is
+      <me> y(t) = G e^{-i\alpha} q(t) = (GR) e^{i(\omega t - \alpha)}</me>.    
+      </p>
+
+      <p>We call the real values <m>G</m> and <m>\alpha</m> the <term>gain</term> and <term>phase lag</term>, respectively. A plot of <m>G</m> as a function of <m>\omega</m> (for fixed rate <m>a</m>) is referred to by various names in different fields, such as a <term>frequency response plot</term> or <term>gain curve</term>. 
+      </p>
+
+      <example xml:id="ex-fl-complex">
+	<p>Suppose we are given the purely real problem <m>y'+y = 2 \sin(t) - 2 \cos(t)</m>. Formula (3) on page 31 gives a full solution to this problem. But it's useful to see how complex formulation can help us do without formulas.</p>
+	<p>First, look at the forcing function. As a combination of sine and cosine at frequency 1, we can write it as a lagged cosine, <m>R\cos(t-\phi)</m>. The values <m>(R,\phi)</m> are the polar form of the complex number <m>-2+2i</m>. It takes only a moment to deduce that <m>R=\sqrt{8}</m> and <m>\phi=3\pi/4</m>. </p>
+	<p>Next, the shifted cosine is the real part of the complex forcing function <m>R\exp[i(t-\phi)]</m>. To get a particular solution, then, we multiply the forcing by <m>1/(i\omega-a)= 1/(i+1)</m>. We can use "realization of the denominator" to find that
+	<me>
+	  \frac{1}{i + 1} = \frac{1}{i + 1} \frac{-i+1}{-i + 1} = \frac{1-i}{2}
+	  </me>. This is also easy to put into polar form. So the complex particular solution is
+	  <md>
+	    <mrow>y = \frac{1}{i+1} R e^{i(t-\phi)} \amp = \frac{\sqrt{2}}{2} e^{-i\pi/4} \sqrt{8} e^{i(t-3\pi/4)}</mrow>
+	    <mrow>\amp = 2 e^{i(t-\pi)} = 2 e^{it} e^{-i\pi} = -2e^{it}</mrow>
+	</md>. Finally, the real particular solution is the real part of this, which is simply <m>-2\cos(t)</m>.</p>
+      </example>
+
+      <p>Now, slogging through these formulas may not feel like a revelation. But if you tried to find a particular solution for just a cosine or sine forcing term, you'd find that the result has to have both the sine and cosine in general, and the total amount of ugly algebra is basically conserved. In truth, the complex form is the more fundamental one. Writing the ratio of forcing and solution in <xref ref="ex-fl-complex"/> as <m>e^{-i\pi/4}/\sqrt{2}</m> instantly reveals how the amplitude is reduced and the phase is shifted. Insisting on writing the forcing and solution in real form just obfuscates those simple observations.</p>
+      
+    </subsection>
+    
+  </section>
+
+  <section xml:id="variable-coeffs">
+    <title>Linear, variable coefficient</title>
+    <p>We now consider how to solve the most general first-order linear problem,
+    <me>
+      \dd{y}{t} = a(t)y(t) + q(t) 
+      </me>. One approach is to upgrade the integrating factor <m>M=e^{-at}</m> we used in <xref ref="eq-first-linear-const"/>. What made that work is that <m>M'=-aM</m>. For a nonconstant <m>a(t)</m>, the same thing is accomplished by <m>M(t) = e^{-b(t)}</m>, so long as <m>b'=a</m>. That is, we need <m>b(t)</m> to be any antiderivative of <m>a(t)</m>. With that, we can essentially repeat the same calculation as before:
+      <md>
+	<mrow> M(t) y'(t) - a(t) M(t) y(t) \amp = M(t)q(t) </mrow>
+	<mrow>\dd{}{t}\bigl[ M(t) y(t) \bigr] \amp = M(t) q(t) </mrow>
+	<mrow>M(t) y(t) \amp = M(0) y(0)  +  \int_0^t M(s) q(s)\, ds</mrow>
+	</md>.
+	We now pick the antiderivative <m>b(t)</m> such that <m>b(0)=0</m>. That is, let
+	<me>M(t) = \exp\left( -\int_0^t a(r)\, dr \right)</me>,
+	and <m>M(0)=1</m>. Now the solution above becomes 
+	<me>y(t)  = \exp\left( \int_0^t a(r)\, dr \right) y(0)   +
+	\int_0^t \exp\left( \int_0^t a(r)\, dr - \int_0^s a(r)\, dr \right)   q(s)\, ds</me>.
+    </p>
+
+    <p>This mess inspires the definition
+    <men xml:id="eq-growth-factor">
+      G(s,t) = \exp\left( \int_s^t a(r)\, dr \right)
+      </men>, which we call the <term>growth factor</term>. So we have the more manageable
+      <men xml:id="eq-fl-solution">
+	y(t) = G(0,t)y(0) + \int_0^t G(s,t) q(s)\, ds
+    </men>. This format takes us back to familiar territory. The total solution has one part (the null solution) that is evolution of the initial value and another (particular solution) that comes from evolution of an impulse of size <m>q(s)</m> at each time <m> 0 \le s \lt t</m>. The only difference from the constant-coefficient case is how to express the growth factor.</p>
+
+    <p>There are two steps to finding the solution of a linear first-order ODE. First, you integrate the growth rate to get the growth factor. Then, you integrate the product of the growth factor with the forcing function.</p>
+
+    <example>
+      <p>Let's solve <m>y'=2y+1</m>, with <m>y(0)=6</m>. We have <m>a(t)=2</m>, hence <m>G(s,t)=\exp[2(t-s)]=e^{2(t-s)}</m>. So the solution is
+      <me>
+	e^{2t}\cdot 6 + \int_0^t e^{2(t-s)}\, ds
+	= 6e^{2t} - \frac{1}{2} \left[ 1 - e^{2t} \right] = - \frac{1}{2} + \frac{13}{2} e^{2t}
+      </me>.</p>
+      	<sidebyside>
+	  <program language="matlab" permid="fo_lvc_constant">
+	    <input>
+	    dydt = @(t,y) 2*y + 1;
+	    [t,y] = ode45(dydt,[0,1],6);
+	    plot(t,y)
+	    xlabel('t'), ylabel('y(t)')
+	    </input>
+	</program>
+	<image source="matlab/fo_lvc_constant.svg"/>	  
+	</sidebyside>
+      </example>
+
+    <example>
+      <p>To solve <m>y'=2ty - t</m> with <m>y(0)=0</m>, we identify <m>a(t)=2t</m>. Hence <m>G(s,t)=\exp(t^2-s^2)</m>. Then
+      <me>
+	y(t) = \int_0^t (-s) e^{t^2-s^2}\, ds = \frac{1}{2} \left( 1 - e^{t^2} \right)
+	</me>.
+      </p>
+      <sidebyside>
+	  <program language="matlab" permid="fo_lvc_linear">
+	    <input>
+	    dydt = @(t,y) 2*t*y - t;
+	    [t,y] = ode45(dydt,[0,2],0);
+	    plot(t,y)
+	    xlabel('t'), ylabel('y(t)')
+	    </input>
+	</program>
+	<image source="matlab/fo_lvc_linear.svg"/>	  
+	</sidebyside>
+    </example>
+
+          <example>
+	<p>Consider the problem <m>ty' + 2y = 4t^2</m>, with initial value <m>y(1)=2</m>. In order to identify this with the standard way we present a linear, first-order ODE, we have to isolate the <m>y'</m> term to get
+	<me>y' = -\frac{2}{t}y + 4t</me>.
+	Note that we probably ought to stay away from <m>t=0</m>, where the variable coefficient blows up. Fortunately, it's easy to use the growth factor formula starting from any value of <m>t</m>. The growth factor is, as usual, 
+	<me>G(s,t) = \exp\left( \int_s^t -\frac{2}{r}\, dr \right)
+	= \exp\left( -2 \log(t/s) \right) = \left(\frac{s}{t}\right)^2</me>.
+	The solution is
+	<md>
+	  <mrow>y(t) \amp = G(t,1)y(1) + \int_1^t G(s,t) q(s)\, ds  </mrow>
+	  <mrow>\amp = 2t^{-2} + \int_1^t \left(\frac{s}{t}\right)^2 4s\, ds </mrow>
+	  <mrow>\amp = 2t^{-2} + t^{-2}\left[ t^4-1^4 \right] = t^2 + t^{-2} </mrow>
+	</md>.
+	Indeed, we now see that trying to go backward to time zero would cause the solution to blow up. (That's in the math sense, not the chemical engineering sense, but still.)</p>
+	<sidebyside>
+	  <program language="matlab" permid="fo_lvc_sing">
+	    <input>
+	    dydt = @(t,y) (4*t^2 - 2*y)/t;
+	    [t,y] = ode45(dydt,[1,3],2);
+	    plot(t,y)
+	    xlabel('t'), ylabel('y(t)')
+	    </input>
+	</program>
+	<image source="matlab/fo_lvc_sing.svg"/>	  
+	</sidebyside>
+
+      </example>
+
+   <p>As you know, many integrals are difficult or impossible to reduce to simple fomulas, so we have to temper our expectations. Actually it's a great situation for using a computer, which can apply the formulas blindly and yet do a much wider variety of integrals than we can. </p>
+  </section>
+
+  <section xml:id="first-order-models">
+    <title>Modeling with first-order ODEs</title>
+
+    <p>First-order ODEs are often used to model situations of growth and decay. The linear problem <m>y'=ay+q(t)</m> is a prototype for many important problems:
+    <dl>
+      <li><title>Population</title><p>A population <m>y(t)</m> of organisms has a constant net per capita birth (or death) rate.</p></li>
+      <li><title>Interest</title><p>Here <m>y(t)</m> is an amount invested with fixed positive interest rate <m>a</m>.</p></li>
+      <li><title>Radioactivity</title><p><m>y(t)</m> is the mass of a radioactive isotope, and <m>k
+      lt 0</m>.</p></li>
+      <li><title>Pharmacokinetics</title><p>In first-order kinetics, <m>y(t)</m> is the amount of a drug being metabolized in the body.</p></li>
+      <li><title>Cooling</title><p>If <m>y(t)</m> is the temperature of a body kept in an
+      environment at fixed temperature <m>E</m>, let <m>z(t)=y(t)-E</m> be the "difference from environment." Then
+      <m>z'=a z</m> for a cooling rate <m>a \lt 0</m>; temperature tends toward <m>E</m>
+      exponentially. This is <term>Newton's Law of Cooling</term>.</p></li>
+    </dl>
+    To belabor the obvious, positive <m>a</m> represents growth and negative <m>a</m> leads to decay. In the simplest contexts, the rate <m>a</m> is constant, but in some models (like finance) a variable rate is more realistic. 
+    </p>
+
+    <p>(A note about interest: Rates in the real world may be quoted yearly, or quarterly, or according to any other finite time period. The rate in an ODE model is the "continuously compounded" rate. This is explained somewhat on page 45 of the text.)</p>
+
+    <p>The units of the derivative <m>dy/dt</m> are those of <m>y</m> divided by those of <m>t</m>. Let's write these as <m>Y/T</m>. Additive terms all need to have the same units, so both <m>q(t)</m> and <m>a(t)y</m> have those units as well. Consequently <m>a</m> has units <m>1/T</m>, or "per time," and has various interpretations when inverted:
+    <ul>
+      <li>When <m>a \lt 0</m>, the time <m>\tau=-1/a</m> is the <term>relaxation time</term> or <term>characteristic time</term>. If there is no forcing <m>q</m>, then <m>y(\tau)= e^{-1} y(0) \approx 0.37 y(0)</m>. </li>
+      <li>In radioactivity it's more common to use <m>t_h=-\ln(2)/a</m>, which is the <term>half-life</term>. That's because <m>\exp(at_h)=1/2</m>, so half of the radioactive isotope is depleted in that much time.</li>
+      <li>Similarly, in population or another growth situation with <m>a \gt 0</m>, the time <m>t_D=\ln(2)/a</m> is the <term>doubling time</term>. Note that populations and interest don't grow arithmetically, like <m>1,2,3,4,\ldots</m>, but geometrically, like <m>1,2,4,8,\ldots</m>.</li>
+    </ul></p>
+
+    <example>
+      <title>First-order pharmacokinetics</title>
+      <p>According to <em>R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52</em>, caffeine in the bloodstream approximately satisfies first-order kinetics, though the half-life varies a great deal from one person to the next.</p>
+      <p>Suppose <m>t_h=6</m> hours. We can calculate <m>a=-\ln(2)/t_h\approx 0.116</m> per hour, and then the predicted effects of one cup of coffee are <m>y(t) = e^{0.116t}y(0)</m>. You can check that an equivalent, more direct expression is
+      <me>y(t) = 2^{-t/t_h} y(0)</me>.</p>
+    </example>
+
+    <p>A <term>continuously stirred tank reactor</term> (CSTR) appears often in chemical engineering. One ideally assumes that the contents of the tank are mixed perfectly and instantaneously at all times. Then one writes an ODE that expresses mass balance.</p> 
+    <exercise>
+      <statement><p>A 200 L tank contains 10 kg of dye. Pure water is added at a rate of 4 L per minute, while the mixture is drained at the same rate. How much dye is in the tank after 10 minutes?</p></statement>
+      <solution>
+	<p>Let <m>y(t)</m> be the mass of dye in the tank. The trick is to realize how rapidly it is being removed, and that depends on the time-varying concentration, <m>y(t)/200</m>. Specifically,
+	<me>\dd{y}{t} = - \frac{4 \text{ L}}{\text{minute}} \cdot \frac{y \text{ kg}}{200 \text{ L}}
+	= -0.02 y \text{ kg/min}</me>.
+	So <m>y(t)=e^{-0.02 t}y(0)</m> and <m>y(10)=10 e^{-0.2}</m> kg.</p>
+	<p>(These problems can also be solved by using concentration, not mass, as the dependent variable. But I find it easier to apply mass conservation in the form above.)</p>
+      </solution>
+    </exercise>
+
+    <todo>(Cooling problem example.)</todo>
+  </section>
+
+  <section xml:id="steady-states">
+    <title>Steady states</title>
+
+    <p>We're about to embark on some nonlinear ODEs. First consider a generic first-order problem in the form <m>y'=f(y)</m>. Even before attempting a full solution of the problem, we can see that a value <m>y_0</m> that satisfies <m>f(y_0)=0</m> is special, because then we get <m>y'=0</m> and the solution is constant. Such a value is called a <term>steady state</term> or <term>equilibrium</term>.</p>
+
+    <p>A steady state is an idealization possible only in the world of mathematical models. Consider holding a broom with bristles pointed down using two fingers. This is ideally a pendulum with a steady state of the broom pointing straight down. You will find no difficulty holding the broom in approximately that position as long as you want.</p>
+
+    <p>Now imagine trying to hold the broom using the same two fingers, but with the bristles pointing upward. This is an "inverted pendulum," and it has a steady state with the broom pointing straight up (more precisely, with the center of mass directly above your fingers). Yet you will find it very difficult to hold the broom in that position for more than a few seconds.</p>
+
+    <p>The difference between these situations is the property of <term>stability</term>. It's impossible to place the broom in <em>exactly</em> the equilibrium position with no motion whatsoever of your hand. In the real world, a steady state is constantly undergoing small perturbations. If the effects of those perturbations die out with time, the steady state is called stable, but if they grow, it is unstable.</p>
+
+    <example>
+      <p>Consider the ODE <m>y'=y-y^3</m>. The equilibrium solutions are <m>y=0</m> and <m>y=\pm 1</m>. Consider also that <m>y'\lt 0</m> if <m>-1\lt y \lt 0</m> or <m>y\gt 1</m>; otherwise, <m>y' \gt 0</m>. This allows us to make a <term>phase line diagram</term> clarifying that the steady states at <m>y=\pm 1</m> are stable, while the one at <m>y=0</m> is unstable. (TODO: Phase line diagram.)</p>
+    </example>
+
+    <p>The phase line diagram clarifies stability of equilibria. A more analytical test that you can easily see to be equivalent is that <m>y' \lt 0</m> at a stable equilbrium, and <m>y' \gt 0</m> at an unstable one.</p>
+    
+  </section>
+  
+  <section xml:id="logistic-equation">
+    <title>Logistic equation</title>
+    <introduction>
+    <p>Say <m>y(t)</m> represents a population of bacteria. (There is always a whole number of bacteria, of course, but we'll allow real values. For large numbers that shouldn't matter.) If we assume that each bacterium produces offspring and ages at a constant rate, the result is a constant <em>net per capita growth rate</em>:
+    <me>\frac{1}{y} \dd{y}{t} = a</me>.
+    If <m>a\gt 0</m>, then this is a recipe for exponential growth, a la <m>y'=ay</m>. 
+    </p>
+
+    <p>There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let <m>b\gt 0</m> be another positive parameter, and define
+    <men xml:id="eq-logistic">\frac{1}{y} \dd{y}{t} = a - by, \qquad or \dd{y}{t} = ay - by^2 </men>.
+    This is the <term>logistic equation</term>.</p>
+    </introduction>
+
+    <subsection xml:id="fl-steady">
+      <title>Steady states</title>
+
+      <p>The logistic equation is our first real look at a nonlinear ODE. We'll begin with the steady states. We have <m>f(y)=y(a-by)</m> with roots <m>y=0</m> and <m>y=a/b</m>. Since <m>f'(y)=a-2by</m>, we have that the former steady state is unstable and the latter is stable. The stable equilibrium value <m>K=a/b</m> is important and known as the <term>carrying capacity</term> of the environment. We will find later that this value is the long-term fate of the system for any positive initial condition.</p>
+      <p>We can get creative and show that the halfway value <m>y=K/2</m> is also special. Still without knowing explicitly what <m>y</m> is, we can differentiate the ODE and use the chain rule to obtain
+      <me>y'' = ay'-2byy' = (a-2by)(ay-by^2)</me>.
+      This is zero for <m>y=K/2=a/2b</m>, suggesting that <m>dy/dt</m> has an extreme value there.</p>
+    </subsection>
+
+    <subsection xml:id="fl-solution-easy">
+      <title>First solution method: Easy but lucky</title>
+      <p>When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of "lucky" solutions is the idea of variable substitution, and the logistic equation is a nice case study. Define <m>z=1/y</m>. From the chain rule we have <m>z'=-y^{-2}y'=-y'z^2</m>. The logistic equation converts to
+      <me>-\frac{z'}{z^2} = \frac{a}{z} - \frac{b}{z^2}</me>,
+      or <m>z'=b-az</m>. This is a linear equation! It even has constant coefficients. In terms of <m>z</m>, we jump right to the solution:
+      <me>z(t) = e^{-at}z(0) - \frac{b}{a} \left( e^{-at}-1 \right) = \frac{e^{-at}(Kz_0-1)+1)}{K}</me>.
+      Finally, with <m>y=1/z</m> we get
+      <men xml:id="eq-logistic-solution">
+	y(t) = \frac{Ky_0}{e^{-at}(K-y_0)+y_0}
+	</men>.
+	You can easily check that <m>y(0)=y_0</m>. Moreover, <m>y\to K</m> as <m>t\to \infty</m>. As Figure 1.9 of the text shows, the logistic curve is an S-shaped or <term>sigmoidal</term> curve. You can think of it as a nice, smooth transition between two states (the two equilibria).
+      </p>
+      <example>
+	<sidebyside>
+	  <program language="matlab" permid="fo_log_solutions">
+	    <input>
+	      a = 6; b = 2;
+	      K = a/b;
+
+	      f = @(t,y) a*y - b*y^2;
+	      t = linspace(0,2.5,300);
+	      for y0 = K*[0.02 0.15 0.4 0.8 1.2 1.5]
+	          [t,y] = ode45(f,t,y0);
+	          plot(t,y), hold on
+	      end
+	      xlabel('t'), ylabel('y(t)')
+	      set(gca,'ygrid','on',...
+	        'ytick',K*(0:.25:1),'yticklabel',{'0','','0.5K','','K'})
+	    </input>
+	</program>
+	<image source="matlab/fo_log_solutions.svg"/>	  
+	</sidebyside>
+      </example>
+
+
+      <p>It's not easy to say "why" the variable substitution works out so well here. It's also not something you can expect to happen in most problems. The situation is very much like substitutions to solve integration problems: when they work, they're golden, and when they don't, you try something else. </p>
+    </subsection>
+
+    <subsection xml:id="fl-solution-long">
+      <title>Second solution method: Systematic but long</title>
+      
+      <p>The logistic equation, being of the particular form <m>y'(t)=f(y)</m>, is known as an <term>autonomous</term> problem. The ODE (not the solution) has no explicit dependence on time. We have a process for solving autonomous equations known as <term>separation of variables</term>. It's based on the rearrangement
+      <me>\frac{dy}{dt} = f(y) \quad \Rightarrow \quad \frac{dy}{f(y)} = dt</me>.
+      The right-hand side can be integrated to get <m>t+C</m>. If we can integrate the left-hand side, we get a solution formula.</p>
+
+      <p>In the logistic equation the separation strategy yields
+      <me> t +C = \int \frac{dy}{y(a-by)} = \frac{1}{b} \int \frac{dy}{y(K-y)} = \frac{1}{bK} \int \left( \frac{1}{y} + \frac{1}{K-y} \right)\,dy</me>.
+      That last step was a big one. We converted the single fraction into a combination of <term>partial fractions</term>. To review how that goes, we write
+      <me>\frac{1}{y(K-y)} = \frac{A}{y} + \frac{B}{y-K}</me>,
+      and determine <m>A</m> and <m>B</m> by clearing the denominators to get <m>1=A(K-y)-By</m>. This is an identity for all values of <m>y</m>, so we can match powers of <m>y</m> to get a linear system of two equations. Or we could judiciously plug in <m>y=0</m> to get <m>A=1/K</m> and <m>y=K</m> to get <m>B=-1/K</m>. </p>
+
+      <p>Any way you get them, the partial fractions are easily integrated to get logs, and the solution follows from there. The details are given in the text. Obviously we have to end up with <xref ref="eq-logistic-solution"/> again. The success of the separation strategy in general rests on whether we can actually perform the <m>y</m> integration we set up. As you know, that's no small thing.</p>
+    </subsection>
+
+    <subsection xml:id="fl-harvesting">
+      <title>Harvesting</title>
+
+      <p>As a final wrinkle, suppose a population is being reduced at a constant rate due to harvesting. (That may not be realistic as the population dwindles, but we are going for simplicity here.) It's easiest to do the discussion with only one varying parameter, so let's modify the pure logisitc model <m>y'=6y-y^2</m> to get <m>y'=6y-y^2-h</m>, for a positive constant <m>h</m>.</p>
+
+      <p>We get steady states whenever <m>f(y)=6y-y^2-h=0</m>. Since this is a quadratic in <m>y</m>, we expect to see either two steady states (distinct real roots), one (double real root), or none (when there are complex roots). The changeover happens at the double root, when <m>6^2-4h=0</m>, or <m>h=9</m>.</p>
+
+      <p><em>Underharvesting, <m>h\lt 9</m>:</em> For example, say <m>h=8</m>. The roots of <m>f(y)</m> are <m>(6\pm\sqrt{36-32})/2</m>, or 4 and 2, so these are the steady states. It's possible to repeat the partial fractions computation above for this problem, but there's an easier path. Define the new variable <m>v=y-2</m>. Then <m>v'=y'</m>, and
+      <me>v' = 6(v+2) -(v+2)^2 - 8 = 6v+12 -v^2 -4v - 4 - 8 = 2v -v^2</me>,
+      which is a pure logistic equation with different parameters and steady states 0 and 2. The problem can be solved for <m>v</m> and then turned back into <m>y</m> by adding 2. So the population will have a logistic or sigmoidal solution between an unstable 2 and a stable 4.</p>
+
+      <p><em>Critical harvesting, <m>h= 9</m>:</em> There is a double root at <m>y=3</m>, and now <m>y'=6y-y^2-9=-(y-3)^2</m>. If we change now to <m>v=y-3</m>, we get just <m>v'=-v^2</m>, which is a nonlinear equation very similar to the one in <xref ref="linearity"/>. It's autonomous and thus can be integrated by separation:
+      <me>t = \int -\frac{dv}{v^2} = \frac{1}{v} + C</me>,
+      so that <m>v=1/(t-C)</m> for arbitrary <m>C</m>. From here we get <m>v(t)=v(0)/(1+tv(0))</m>. There are two possibilities. If <m>v(0)\gt 0</m>, then the denominator is never zero, and <m>v\to 0</m> (thus <m>y \to 3</m>) as <m>t\to\infty</m>. But if <m>v(0)\lt 0</m>, then <m>v\to -\infty</m> as <m>t\to -1/v(0)</m>. We interpret that as a population crash (our model would have to stop at <m>v=-3</m>). So a large enough initial population will tend toward a nonzero steady state, but if it ever dips below that value, it will die out. We might call this precarious situation "semistable".</p>
+
+      <p><em>Overharvesting, <m>h\gt 9</m>:</em> The harvested logistic equation has no real steady states. For example, say <m>y'=6y-y^2-13</m>. We define <m>v=y-3</m> and get
+      <me>v' = 6(v+3) - (v+3)^2 - 13 = -v^2 - 4</me>. This problem is also solvable by separation, leading to
+      <me>t = -\frac{1}{2} \arctan \left(\frac{v}{2}\right) + C</me>,
+      or
+      <me>v = -2\tan( 2t+C )</me>
+      for a (different) arbitrary <m>C</m>. As <m>2t+C\to \pi/2</m> from the left, this will crash to <m>v\to -\infty</m>. Thus the population is doomed. </p>
+      
+    </subsection>
+    
+  </section>
+
+  <section xml:id="separable">
+    <title>Separable equations</title>
+    <p>We saw in <xref ref="logistic-equation"/> that problems in the form <m>y'=f(y)</m> may be solvable by separating the variables. In fact the same trick works for problems of the more general form <m>y'=f(y)g(t)</m>. These are called <term>separable equations</term>. Rather than deriving a formula for them, we just repeat the process for each new problem.</p>
+
+    <example>
+      <p>Consider the <xref ref="ex-variable-growth">variable growth archetype</xref> <m>y'=2ty</m>. We express <m>y'</m> as <m>dy/dt</m> and then isolate the variables:
+      <me>\frac{dy}{y} = 2t\,dt</me>.
+      Integrating both sides leads to <m>\log |y| = t^2 + C</m>, or <m>|y|=Ae^{t^2}</m> for a positive constant <m>A</m> (since it is the exponential of a real constant). Taking the absolute value off of <m>y</m> means that <m>A</m> can be negative as well. Also, <m>A=0</m> clearly leads to a solution. Finally, then, <m>y=Ce^{t^2}</m> for arbitrary <m>C</m>.</p>
+    </example>
+
+    <example>
+      <p>Suppose <m>y'=t^2/(y^3-2)</m>. Separation and integration lead to
+      <me>\int y^3\, dy = \int t^2\, dt</me>,
+      or <m>\frac{1}{4}y^4 - 2y  = C + \frac{1}{3}t^3</m>. We could work hard to try to solve explicitly for <m>y</m>, but it's probably best to leave it in implicit form. This is a common limitation to separable "solutions".</p>
+      <p>Even in implicit form, we can solve for the arbitrary constant if given an initial condition. For instance, suppose <m>y(0)=4</m> is given for this ODE. Then <m>4^4/4-2\cdot4 = C+0</m>, so <m>C=56</m>.</p>
+    </example>
+
+    <p>Sometimes the separable structure isn't immediately apparent, and you have to manipulate the expressions a bit.</p>
+    <example>
+      <p>Suppose <m>ty' = y-ty</m>. Nothing happens until you see that you can factor out <m>y</m> on the right side. Then we have <m>dy/dt = y(1-t)/t</m>, or
+      <me> \frac{dy}{y} = (t^{-1}-1)\,dt</me>.
+      Thus <m>\ln|y| = \ln|t|-t+C</m>, or <m>y=A te^{-t}</m>. </p>
+      <p>Note that this problem is also linear, so it could be approached that way as well. Of course you must get the same solution in the end!</p>
+    </example>
+    
+  </section>
+
+
+</chapter>

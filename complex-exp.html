@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-02-04T12:36:15-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Complex exponentials</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="mathbook-delaware.css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
+<p class="byline">Toby Driscoll</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="first-linear-const.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="first-order-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="variable-coeffs.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="first-linear-const.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="first-order-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="variable-coeffs.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></h2>
+<ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+<h2 class="link"><a href="first-order-ode.html" data-scroll="first-order-ode"><span class="codenumber">1</span> <span class="title">First-order ODEs</span></a></h2>
+<ul>
+<li><a href="linearity.html" data-scroll="linearity">Introduction</a></li>
+<li><a href="exponentials.html" data-scroll="exponentials">Exponentials</a></li>
+<li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
+<li><a href="first-linear-const.html" data-scroll="first-linear-const">Linear, constant-coefficients</a></li>
+<li><a href="complex-exp.html" data-scroll="complex-exp" class="active">Complex exponentials</a></li>
+<li><a href="variable-coeffs.html" data-scroll="variable-coeffs">Linear, variable coefficient</a></li>
+<li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
+<li><a href="steady-states.html" data-scroll="steady-states">Steady states</a></li>
+<li><a href="logistic-equation.html" data-scroll="logistic-equation">Logistic equation</a></li>
+<li><a href="separable.html" data-scroll="separable">Separable equations</a></li>
+</ul>
+<h2 class="link"><a href="second-order-ode.html" data-scroll="second-order-ode"><span class="codenumber">2</span> <span class="title">Second-order ODEs</span></a></h2>
+<ul>
+<li><a href="second-derivatives.html" data-scroll="second-derivatives">Importance of second derivatives</a></li>
+<li><a href="complex-numbers.html" data-scroll="complex-numbers">Working with complex numbers</a></li>
+<li><a href="constant-coefficients.html" data-scroll="constant-coefficients">Unforced harmonic oscillators</a></li>
+<li><a href="forced-oscillators.html" data-scroll="forced-oscillators">Exponentially forced oscillators</a></li>
+<li><a href="oscillator-applications.html" data-scroll="oscillator-applications">Applications of oscillators</a></li>
+<li><a href="general-forcing.html" data-scroll="general-forcing">Other forcing terms</a></li>
+<li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
+<li><a href="laplace-properties.html" data-scroll="laplace-properties">Laplace transform properties</a></li>
+<li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
+</ul>
+<h2 class="link"><a href="qualitative.html" data-scroll="qualitative"><span class="codenumber">3</span> <span class="title">Qualitative analysis</span></a></h2>
+<ul>
+<li><a href="direction-fields.html" data-scroll="direction-fields">Direction fields</a></li>
+<li><a href="planar-stability.html" data-scroll="planar-stability">Planar stability</a></li>
+<li><a href="equilibria-linearization.html" data-scroll="equilibria-linearization">Equilibria and linearization</a></li>
+</ul>
+<h2 class="link"><a href="matrix-algebra.html" data-scroll="matrix-algebra"><span class="codenumber">4</span> <span class="title">Matrix algebra</span></a></h2>
+<ul>
+<li><a href="linear-equations.html" data-scroll="linear-equations">Linear equations</a></li>
+<li><a href="elimination.html" data-scroll="elimination">Solution by elimination</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix multiplication</a></li>
+</ul>
+<h2 class="link"><a href="linear-ode-systems.html" data-scroll="linear-ode-systems"><span class="codenumber">5</span> <span class="title">Linear ODE systems</span></a></h2>
+<ul>
+<li><a href="eigenvalues.html" data-scroll="eigenvalues">Eigenvalues and eigenvectors</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="linear-system-solutions.html" data-scroll="linear-system-solutions">Solutions of linear ODEs</a></li>
+<li><a href="matrix-exponential.html" data-scroll="matrix-exponential">The matrix exponential</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="complex-exp"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Complex exponentials</span>
+</h2>
+<a href="complex-exp.html" class="permalink">¶</a><section class="introduction" id="introduction-3"><p id="p-51">(For a really smart and entertaining introduction to complex numbers, I recommend <a class="url" href="https://youtu.be/T647CGsuOVU" target="_blank">this video series</a>.)</p>
+<p id="p-52">We need to take a short but highly relevant detour to talk about complex numbers.</p>
+<p id="p-53">There's often a lot of uneasiness about complex numbers. Terminology is part of the reason. Using "real" and "imaginary" to label numbers suggests a strong value judgment, one that ruled mathematics for centuries. But complex numbers are actually just as "real" as so-called real numbers. If anything, they are actually <em class="emphasis">more</em> fundamental to the universe.</p>
+<p id="p-54">As a practical matter, you can pretty much always replace a complex value with two real ones, and vice versa. But sometimes the manipulations are a lot easier in the complex form. In particular, you may be able to replace trigonometry with algebra.</p></section><section class="subsection" id="subsection-7"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.1</span> <span class="title">The reality of imaginary numbers (optional)</span>
+</h3>
+<p id="p-55">Let's rewind a bit. We can probably take for granted the positive integers 1, 2, 3, and so on, and we'll throw in zero too (though this too was controversial for centuries). It's not long before we want to solve a problem like $x+1=0$. Annoyingly, we can pose the problem using just nonnegative integers, but we can't solve it. So we accept the existence of the negative integers.</p>
+<p id="p-56">I can imagine quite a bit of skepticism about this historically. ("Sure, Wei. Ever seen a negative goat?") But if you've ever taken out a loan, you know that negative numbers can have very real consequences.</p>
+<p id="p-57">Eventually, the negative integers seem "obvious" and perfectly natural. But then we run into a problem like</p>
+<div class="displaymath">
+\begin{equation*}
+2x - 1 = 0\text{.}
+\end{equation*}
+</div>
+<p>We can pose this problem with integers, but we can't solve it. So we get used to accepting rational numbers, too.</p>
+<p id="p-58">Rational numbers are pretty weird. Between any pair of them, you have infinitely more rational numbers! Yet it turns out they have (huge) gaps as well. You can't solve</p>
+<div class="displaymath">
+\begin{equation*}
+x^2 - 2 = 0
+\end{equation*}
+</div>
+<p>using only rational numbers. So, you're willing to take on irrational numbers too. Talk about weird--every one of them has an infinite, non-repeating decimal expansion.</p>
+<p id="p-59">So much for the "real" numbers. At least we have filled in the so-called number line. But then you get to</p>
+<div class="displaymath">
+\begin{equation*}
+x^2 + 1 = 0\text{,}
+\end{equation*}
+</div>
+<p>which is purely "real" but insolvable. Solutions to this equation were widely resisted for a very long time (say, the 18th century), to the point they were called "imaginary" (thanks, Descartes).</p>
+<p id="p-60">Yet something amazing happens if you do accept imaginary numbers, and their expansion to the complex numbers. Namely, <em class="emphasis">The Fundamental Theorem of Algebra</em>, which states that if you write down a polynomial using complex numbers, it will have only complex numbers as solutions. So there's no infinite ladder of hypercomplex numbers that we have to ascend--just one rung past the "real" ones.</p></section><section class="subsection" id="frc-polar"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.2</span> <span class="title">The polar form of complex numbers</span>
+</h3>
+<a href="complex-exp.html#frc-polar" class="permalink">¶</a><p id="p-61">When you first learned complex numbers, you probably wrote them as \(z=x+iy\text{,}\) where \(x=\Re(z)\) and \(y=\Im(z)\) are real. This is equivalent to rectangular or Cartesian coordinates in the plane to specify the point \((x,y)\text{.}\)</p>
+<p id="p-62">Euler's identity gives us an equally important alternative. Recall that \(e^{it}=\cos(t)+i\sin(t)\) for real values of \(t\text{.}\) If \(r\) is a positive number, and we write</p>
+<div class="displaymath">
+\begin{equation*}
+re^{i\theta} = (r\cos(\theta))+i(r\sin(\theta))\text{,}
+\end{equation*}
+</div>
+<p>then it is clear that \((r,\theta)\) represent the polar coordinates of the point with \(x=r\cos\theta\text{,}\) \(y=r\sin \theta\text{.}\) The polar \(r\) has another name and notation in the complex context: the <dfn class="terminology">modulus</dfn> \(|z|\text{.}\) (The angle \(\theta\) might variously be called the <dfn class="terminology">argument</dfn> or <dfn class="terminology">phase</dfn> of \(z\text{.}\))</p>
+<p id="p-63">In rectangular form, addition and subtraction of complex numbers is trivial: \((x+iy) \pm (u+iv)= (x+u)+i(y+v)\text{.}\) In polar form, it's multiplication and division that become easy:</p>
+<div class="displaymath">
+\begin{equation*}
+(re^{i\theta})(se^{i\phi}) = rse^{i(\theta+\phi)}, \qquad
+\frac{re^{i\theta}}{se^{i\phi}} = \frac{r}{s}e^{i(\theta-\phi)}\text{.}
+\end{equation*}
+</div>
+<p id="p-64">A common operation on complex numbers that has no real analog is taking <dfn class="terminology">conjugates</dfn>. We find the conjugate \(\overline{z}\) of \(z\) by replacing all instances of \(i\) with \(-i\text{.}\) In the two canonical forms we have</p>
+<div class="displaymath">
+\begin{equation*}
+\overline{x+iy} = x-iy, \qquad \overline{re^{i\theta}} = re^{-i\theta}\text{.}
+\end{equation*}
+</div>
+<p>An important identity, easy to work out, is \(|z|^2=z\cdot \overline{z}\text{.}\)</p></section><section class="subsection" id="frc-conjugate"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.3</span> <span class="title">Shifted cosines</span>
+</h3>
+<a href="complex-exp.html#frc-conjugate" class="permalink">¶</a><p id="p-65">Here comes a trick we will be relying upon later. The the <dfn class="terminology">shifted cosine</dfn> function</p>
+<div class="displaymath">
+\begin{equation}
+f(t)=R\cos(\omega t - \phi)\label{eq-fo-ampphase}\tag{1.5.1}
+\end{equation}
+</div>
+<p>has <dfn class="terminology">amplitude</dfn> \(R\text{,}\) <dfn class="terminology">angular frequency</dfn> \(\omega\text{,}\) and <dfn class="terminology">phase shift</dfn> \(\phi\text{.}\) Using Euler's identity, we can think of \(f\) as the real part of a complex exponential \(Re^{i(\omega t-\phi)}\text{.}\) This can be manipulated into</p>
+<div class="displaymath">
+\begin{equation*}
+R e^{-i\phi} e^{i\omega t} = (R\cos \phi - i R \sin \phi) ( \cos \omega t + i \sin \omega t)\text{.}
+\end{equation*}
+</div>
+<p>Upon taking the real part of the product, we conclude</p>
+<div class="displaymath">
+\begin{equation*}
+f(t) = R\cos \phi \cos \omega t + R \sin \phi \sin \omega t\text{.}
+\end{equation*}
+</div>
+<p id="p-66">What's more, we can run that process in reverse. Suppose we are given some real harmonic signal</p>
+<div class="displaymath">
+\begin{equation}
+g(t) = A \cos \omega t + B \sin  \omega t\text{.}\label{eq-fo-sincos}\tag{1.5.2}
+\end{equation}
+</div>
+<p>Now find \(R\) and \(\phi\) such that \(A=R\cos \phi\) and \(B=R \sin \phi\text{.}\) This is equivalent to converting a Cartesian point \((A,B)\) to polar form \((R,\phi)\text{,}\) which is easy-peasy. But now we can say that \(g\) is equivalent to \(f\) in <a knowl="./knowl/eq-fo-ampphase.html" title="Equation 1.5.1">(1.5.1)</a>.</p>
+<p id="p-67">The bottom line is that we can write a harmonic signal in either the amplitude/phase form <a knowl="./knowl/eq-fo-ampphase.html" title="Equation 1.5.1">(1.5.1)</a> or the sin/cos form <a knowl="./knowl/eq-fo-sincos.html" title="Equation 1.5.2">(1.5.2)</a>. They are completely equivalent, and we can use whichever one is more convenient at a particular moment.</p></section><section class="subsection" id="frc-forcing"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.4</span> <span class="title">Forcing with a complex exponential</span>
+</h3>
+<a href="complex-exp.html#frc-forcing" class="permalink">¶</a><p id="p-68">Time for some payoff. If we force the ODE \(y'=ay+q(t)\) using \(q(t)=Re^{i\omega t}\text{,}\) we can take the real part to get the result of cosine forcing, or the imaginary part to get of a sine forcing. Moreover, finding a particular solution with exponential forcing remains very easy. To make \(y=Ye^{i\omega t}\) a particular solution, we need only require that</p>
+<div class="displaymath">
+\begin{equation*}
+i\omega Y e^{i\omega t} = a Ye^{i\omega t} + Re^{i\omega t} \quad \Rightarrow
+\quad Y = R  \cdot \frac{1}{i\omega - a}\text{.}
+\end{equation*}
+</div>
+<p>That is, the particular solution is just \(\frac{1}{i\omega - a}\) times the input signal. Let's express this multiplicative factor in polar form:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{i\omega - a} = G e^{-i\alpha}\text{.}
+\end{equation*}
+</div>
+<p>Then the relationship between the forcing signal \(q(t)\) and the particular solution is</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = G e^{-i\alpha} q(t) = (GR) e^{i(\omega t - \alpha)}\text{.}
+\end{equation*}
+</div>
+<p id="p-69">We call the real values \(G\) and \(\alpha\) the <dfn class="terminology">gain</dfn> and <dfn class="terminology">phase lag</dfn>, respectively. A plot of \(G\) as a function of \(\omega\) (for fixed rate \(a\)) is referred to by various names in different fields, such as a <dfn class="terminology">frequency response plot</dfn> or <dfn class="terminology">gain curve</dfn>.</p>
+<article class="example-like" id="ex-fl-complex"><a knowl="" class="id-ref" refid="hk-ex-fl-complex"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.5.1</span>
+</h6></a></article><div id="hk-ex-fl-complex" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-70">Suppose we are given the purely real problem \(y'+y = 2 \sin(t) - 2 \cos(t)\text{.}\) Formula (3) on page 31 gives a full solution to this problem. But it's useful to see how complex formulation can help us do without formulas.</p>
+<p id="p-71">First, look at the forcing function. As a combination of sine and cosine at frequency 1, we can write it as a lagged cosine, \(R\cos(t-\phi)\text{.}\) The values \((R,\phi)\) are the polar form of the complex number \(-2+2i\text{.}\) It takes only a moment to deduce that \(R=\sqrt{8}\) and \(\phi=3\pi/4\text{.}\)</p>
+<p id="p-72">Next, the shifted cosine is the real part of the complex forcing function \(R\exp[i(t-\phi)]\text{.}\) To get a particular solution, then, we multiply the forcing by \(1/(i\omega-a)= 1/(i+1)\text{.}\) We can use "realization of the denominator" to find that</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{i + 1} = \frac{1}{i + 1} \frac{-i+1}{-i + 1} = \frac{1-i}{2}\text{.}
+\end{equation*}
+</div>
+<p>This is also easy to put into polar form. So the complex particular solution is</p>
+<div class="displaymath">
+\begin{align*}
+y = \frac{1}{i+1} R e^{i(t-\phi)} \amp = \frac{\sqrt{2}}{2} e^{-i\pi/4} \sqrt{8} e^{i(t-3\pi/4)}\\
+\amp = 2 e^{i(t-\pi)} = 2 e^{it} e^{-i\pi} = -2e^{it}\text{.}
+\end{align*}
+</div>
+<p>Finally, the real particular solution is the real part of this, which is simply \(-2\cos(t)\text{.}\)</p></article></div>
+<p id="p-73">Now, slogging through these formulas may not feel like a revelation. But if you tried to find a particular solution for just a cosine or sine forcing term, you'd find that the result has to have both the sine and cosine in general, and the total amount of ugly algebra is basically conserved. In truth, the complex form is the more fundamental one. Writing the ratio of forcing and solution in <a knowl="./knowl/ex-fl-complex.html" title="Example 1.5.1">Example 1.5.1</a> as \(e^{-i\pi/4}/\sqrt{2}\) instantly reveals how the amplitude is reduced and the phase is shifted. Insisting on writing the forcing and solution in real form just obfuscates those simple observations.</p></section></section></div></main>
+</div>
+</body>
+</html>

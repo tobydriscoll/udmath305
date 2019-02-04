@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-01-30T16:46:24-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Suppose the ODE solution is expressed in terms of some infinite power series with unknown coefficients:</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = c_0 + c_1 t + c_2 t^2 + c_3 t^3 + c_4 t^4 + \cdots\text{.}
+\end{equation*}
+</div>
+<p>We can easily differentiate term by term to get</p>
+<div class="displaymath">
+\begin{equation*}
+y'(t) = c_1 + 2c_2 t + 3c_3 t^2 + 4c_4 t^3 + \cdots\text{.}
+\end{equation*}
+</div>
+<p>Setting each coefficient here equal to its match in the series for \(ay(t)\) leads to the equations</p>
+<div class="displaymath">
+\begin{equation*}
+c_1 = ac_0, \quad c_2=a c_1/2, \quad c_3=ac_2/3, \quad \ldots\text{,}
+\end{equation*}
+</div>
+<p>from which we quickly derive</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = c_0\left( 1 + a t + \frac{1}{2} a^2 t^2 + \frac{1}{6} a^3 t^3 +  \frac{1}{4!} a^4 t^4 + \cdots \right) = c_0 f(t)\text{.}
+\end{equation*}
+</div>
+<p>The undetermined constant \(c_0\) plays the role of the integration constant. In fact, since \(f(0)=1\text{,}\) we see that \(c_0=y(0)\text{,}\) so it's convenient to write the solution as \(y(t)=y(0)f(t)\text{,}\) with the understanding that \(y(0)\) is arbitrary.</p>
+<span class="incontext"><a href="exponentials.html#p-17">in-context</a></span>
+</body>
+</html>

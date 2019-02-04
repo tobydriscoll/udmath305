@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-01-30T16:46:24-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>We now consider how to solve the most general first-order linear problem,</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{y}{t} = a(t)y(t) + q(t) \text{.}
+\end{equation*}
+</div>
+<p>One approach is to upgrade the integrating factor \(M=e^{-at}\) we used in <a knowl="./knowl/eq-first-linear-const.html" title="Equation 1.4.1">(1.4.1)</a>. What made that work is that \(M'=-aM\text{.}\) For a nonconstant \(a(t)\text{,}\) the same thing is accomplished by \(M(t) = e^{-b(t)}\text{,}\) so long as \(b'=a\text{.}\) That is, we need \(b(t)\) to be any antiderivative of \(a(t)\text{.}\) With that, we can essentially repeat the same calculation as before:</p>
+<div class="displaymath">
+\begin{align*}
+M(t) y'(t) - a(t) M(t) y(t) \amp = M(t)q(t) \\
+\dd{}{t}\bigl[ M(t) y(t) \bigr] \amp = M(t) q(t) \\
+M(t) y(t) \amp = M(0) y(0)  +  \int_0^t M(s) q(s)\, ds\text{.}
+\end{align*}
+</div>
+<p>We now pick the antiderivative \(b(t)\) such that \(b(0)=0\text{.}\) That is, let</p>
+<div class="displaymath">
+\begin{equation*}
+M(t) = \exp\left( -\int_0^t a(r)\, dr \right)\text{,}
+\end{equation*}
+</div>
+<p>and \(M(0)=1\text{.}\) Now the solution above becomes</p>
+<div class="displaymath">
+\begin{equation*}
+y(t)  = \exp\left( \int_0^t a(r)\, dr \right) y(0)   +
+\int_0^t \exp\left( \int_0^t a(r)\, dr - \int_0^s a(r)\, dr \right)   q(s)\, ds\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="variable-coeffs.html#p-74">in-context</a></span>
+</body>
+</html>

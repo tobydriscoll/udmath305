@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-02-04T12:36:16-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><div class="displaymath">
+\begin{equation*}
+\dd{y}{t} = y
+\end{equation*}
+</div>
+<p>It's trivial to check that \(y=e^t\) is a <dfn class="terminology">solution</dfn> of \(y'=y\text{,}\) in the sense that it makes the ODE a true equation.  (However, it isn't the only solution.) As a mathematical model, the ODE states that the rate of change in \(y\) is equal to \(y\) itself, and the result is <dfn class="terminology">exponential growth</dfn>: the solution grows larger, which increases the rate of growth, and so on.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">y = @(t) exp(t);
+fplot(y,[0,4])
+xlabel('t'), ylabel('y(t)')
+title('Exponential growth')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_intro_const_growth.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article></body>
+</html>

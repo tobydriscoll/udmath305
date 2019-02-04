@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mathbook xmlns:xi="http://www.w3.org/2001/XInclude">
+  
+  <docinfo>
+    <macros>
+      \newcommand{\dd}[2]{\frac{d #1}{d #2}}
+      \renewcommand{\Re}{\text{Re}}
+      \renewcommand{\Im}{\text{Im}}
+    </macros>
+  </docinfo>
+  
+  <book xml:id="notes">
+    <title>Notes for MATH 305</title>
+
+    <frontmatter xml:id="index">
+       <titlepage>
+        <author>
+            <personname>Toby Driscoll</personname>
+            <department>Department of Mathematical Sciences</department>
+            <institution>University of Delaware</institution>
+            <email>driscoll@math.udel.edu</email>
+        </author>
+
+        <date> <today /> </date>
+      </titlepage>
+
+      <preface>
+
+	<p>These are course notes written for the course MATH 305 at the University of Delaware. They were started in January 2018.</p>
+	
+	<p>These are a lot rougher than a book! Don't expect perfection. Also, while I use them to guide lectures, they're not meant as a substitute, as I don't follow them slavishly.</p>
+
+	<p>I follow the organization of the textbook <url href="http://math.mit.edu/~gs/dela/">Differential Equations and Linear Algebra</url>, by Gil Strang.</p>   
+      </preface>
+
+    </frontmatter>
+
+    <xi:include href="first-order.xml" />
+ 
+    <chapter xml:id="second-order-ode">
+      <title>Second-order ODEs</title>
+
+      <section xml:id="second-derivatives">
+	<title>Importance of second derivatives</title>
+	<p>harmonic motion; frequency response; impulse response</p>
+      </section>
+
+      <section xml:id="complex-numbers">
+	<title>Working with complex numbers</title>
+	<p></p>
+      </section>
+
+      <section xml:id="constant-coefficients">
+	<title>Unforced harmonic oscillators</title>
+	<p></p>
+      </section>
+
+      <section xml:id="forced-oscillators">
+	<title>Exponentially forced oscillators</title>
+	<p></p>
+      </section>
+
+      <section xml:id="oscillator-applications">
+	<title>Applications of oscillators</title>
+	<p></p>
+      </section>
+
+      <section xml:id="general-forcing">
+	<title>Other forcing terms</title>
+	<p>undetermined coefficients; variation of parameters</p>
+      </section>
+
+      <section xml:id="laplace-solutions">
+	<title>Laplace transform methods</title>
+	<p></p>
+      </section>
+
+      <section xml:id="laplace-properties">
+	<title>Laplace transform properties</title>
+	<p>From section 8.5</p>
+      </section>
+
+      <section xml:id="convolutions">
+	<title>Convolutions</title>
+	<p>From section 8.6</p>
+      </section>
+    </chapter>
+
+    <chapter xml:id="qualitative">
+      <title>Qualitative analysis</title>
+
+      <section xml:id="direction-fields">
+	<title>Direction fields</title>
+	<p>phase lines and slope portraits</p>
+      </section>
+
+      <section xml:id="planar-stability">
+	<title>Planar stability</title>
+	<p></p>
+      </section>
+
+      <section xml:id="equilibria-linearization">
+	<title>Equilibria and linearization</title>
+	<p></p>
+      </section>
+    </chapter>
+
+    <chapter xml:id="matrix-algebra">
+      <title>Matrix algebra</title>
+
+      <section xml:id="linear-equations">
+	<title>Linear equations</title>
+	<p></p>
+      </section>
+
+      <section xml:id="elimination">
+	<title>Solution by elimination</title>
+	<p></p>
+      </section>
+
+      <section xml:id="matrix-multiplication">
+	<title>Matrix multiplication</title>
+	<p></p>
+      </section>
+
+      <!--section xml:id="matrix-inverses">
+	<title>Matrix inverses</title>
+	<p></p>
+      </section-->
+    </chapter>
+
+    <chapter xml:id="linear-ode-systems">
+      <title>Linear ODE systems</title>
+
+      <section xml:id="eigenvalues">
+	<title>Eigenvalues and eigenvectors</title>
+	<p></p>
+      </section>
+
+      <section xml:id="diagonalization">
+	<title>Diagonalization</title>
+	<p></p>
+      </section>
+
+
+      <section xml:id="linear-system-solutions">
+	<title>Solutions of linear ODEs</title>
+	<p></p>
+      </section>
+
+
+      <section xml:id="matrix-exponential">
+	<title>The matrix exponential</title>
+	<p></p>
+      </section>
+    </chapter>
+
+  </book>
+  
+</mathbook>
+
