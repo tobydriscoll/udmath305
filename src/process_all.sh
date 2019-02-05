@@ -11,16 +11,16 @@ echo "...done schematron"
 echo "Conversion to html..."
 xsltproc --xinclude --stringparam html.css.extra "mathbook-delaware.css" ~/Dropbox/books/mathbook/xsl/mathbook-html.xsl notes305.xml
 echo "...done html"
-cp *.html ..
+mv *.html ..
 
 echo "Extraction of matlab codes..."
 xsltproc --xinclude ~/Dropbox/books/mathbook/xsl/extract-matlab.xsl notes305.xml
 echo "...done extraction"
 
-echo "Running matlab codes..."
-matlab -nodisplay -r process_matlab
-echo "...done codes"
-mv matlab/*.svg ../matlab
+#echo "Running matlab codes..."
+#matlab -nodisplay -r process_matlab
+#echo "...done codes"
+#mv matlab/*.svg ../matlab
 
 
 #cp -r * ~/Sites/305/

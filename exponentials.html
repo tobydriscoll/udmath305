@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-04T12:36:15-05:00    *-->
+<!--*    on 2019-02-05T11:08:26-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -73,7 +73,7 @@ MathJax.Hub.Config({
 <li><a href="exponentials.html" data-scroll="exponentials" class="active">Exponentials</a></li>
 <li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
 <li><a href="first-linear-const.html" data-scroll="first-linear-const">Linear, constant-coefficients</a></li>
-<li><a href="complex-exp.html" data-scroll="complex-exp">Complex exponentials</a></li>
+<li><a href="complex-exp.html" data-scroll="complex-exp">Using complex numbers</a></li>
 <li><a href="variable-coeffs.html" data-scroll="variable-coeffs">Linear, variable coefficient</a></li>
 <li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
 <li><a href="steady-states.html" data-scroll="steady-states">Steady states</a></li>
@@ -82,8 +82,8 @@ MathJax.Hub.Config({
 </ul>
 <h2 class="link"><a href="second-order-ode.html" data-scroll="second-order-ode"><span class="codenumber">2</span> <span class="title">Second-order ODEs</span></a></h2>
 <ul>
-<li><a href="second-derivatives.html" data-scroll="second-derivatives">Importance of second derivatives</a></li>
-<li><a href="complex-numbers.html" data-scroll="complex-numbers">Working with complex numbers</a></li>
+<li><a href="so-simple-harmonic.html" data-scroll="so-simple-harmonic">Simple harmonic motion</a></li>
+<li><a href="so-complex-exponentials.html" data-scroll="so-complex-exponentials">Complex exponentials</a></li>
 <li><a href="constant-coefficients.html" data-scroll="constant-coefficients">Unforced harmonic oscillators</a></li>
 <li><a href="forced-oscillators.html" data-scroll="forced-oscillators">Exponentially forced oscillators</a></li>
 <li><a href="oscillator-applications.html" data-scroll="oscillator-applications">Applications of oscillators</a></li>
@@ -156,9 +156,9 @@ u'(t) + iv'(t) = i(u(t)+iv(t)) = -v(t) + iu(t)\text{,}
 </div>
 <p>having applied \(i^2=-1\text{.}\) Equating real and imaginary parts, we conclude the pair of real equations \(u'=-v\text{,}\) \(v'=u\text{.}\) Perhaps you recognize these as old friends, sine and cosine. That is,</p>
 <div class="displaymath">
-\begin{equation*}
-e^{it} = \cos(t) + i\sin(t)\text{.}
-\end{equation*}
+\begin{equation}
+e^{it} = \cos(t) + i\sin(t)\text{.}\label{eq-euler-identity}\tag{1.2.1}
+\end{equation}
 </div>
 <p>This is <dfn class="terminology">Euler's identity</dfn>. It reveals one of the big surprises of applied math: exponential functions, when you go in an imaginary direction, become sin/cos oscillations. This is easily illustrated within MATLAB, which handles complex values routinely. Note the use of <code class="code-inline tex2jax_ignore">1i</code> to get the imaginary unit.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">

@@ -142,9 +142,9 @@
 	u'(t) + iv'(t) = i(u(t)+iv(t)) = -v(t) + iu(t)
 	</me>,
 	having applied <m>i^2=-1</m>. Equating real and imaginary parts, we conclude the pair of real equations <m>u'=-v</m>, <m>v'=u</m>. Perhaps you recognize these as old friends, sine and cosine. That is,
-	<me>
+	<men xml:id="eq-euler-identity">
 	  e^{it} = \cos(t) + i\sin(t)
-      </me>. This is <term>Euler's identity</term>. It reveals one of the big surprises of applied math: exponential functions, when you go in an imaginary direction, become sin/cos oscillations. This is easily illustrated within MATLAB, which handles complex values routinely. Note the use of <c>1i</c> to get the imaginary unit.</p>
+      </men>. This is <term>Euler's identity</term>. It reveals one of the big surprises of applied math: exponential functions, when you go in an imaginary direction, become sin/cos oscillations. This is easily illustrated within MATLAB, which handles complex values routinely. Note the use of <c>1i</c> to get the imaginary unit.</p>
       <sidebyside>
 	<program permid="exp_complex" language="matlab">
 	  <input>
@@ -413,7 +413,7 @@ title('Solution of a linear problem')
   </section>
 
   <section xml:id="complex-exp">
-    <title>Complex exponentials</title>
+    <title>Using complex numbers</title>
     <introduction>
       <p>(For a really smart and entertaining introduction to complex numbers, I recommend <url href="https://youtu.be/T647CGsuOVU">this video series</url>.)</p>
 
@@ -457,8 +457,8 @@ title('Solution of a linear problem')
 
       <p>When you first learned complex numbers, you probably wrote them as <m>z=x+iy</m>, where <m>x=\Re(z)</m> and <m>y=\Im(z)</m> are real. This is equivalent to rectangular or Cartesian coordinates in the plane to specify the point <m>(x,y)</m>.</p>
 
-      <p>Euler's identity gives us an equally important alternative. Recall that <m>e^{it}=\cos(t)+i\sin(t)</m> for real values of <m>t</m>. If <m>r</m> is a positive number, and we write
-      <me>re^{i\theta} = (r\cos(\theta))+i(r\sin(\theta))</me>,
+      <p>Euler's identity <xref ref="eq-euler-identity"/> gives us an equally important alternative. Recall that <m>e^{it}=\cos(t)+i\sin(t)</m> for real values of <m>t</m>. If <m>r</m> is a positive number, and we write
+      <me>re^{i\theta} = (r\cos \theta)+i(r\sin \theta)</me>,
       then it is clear that <m>(r,\theta)</m> represent the polar coordinates of the point with <m>x=r\cos\theta</m>, <m>y=r\sin \theta</m>. The polar <m>r</m> has another name and notation in the complex context: the <term>modulus</term> <m>|z|</m>. (The angle <m>\theta</m> might variously be called the <term>argument</term> or <term>phase</term> of <m>z</m>.) </p>
 
       <p>In rectangular form, addition and subtraction of complex numbers is trivial: <m>(x+iy) \pm (u+iv)= (x+u)+i(y+v)</m>. In polar form, it's multiplication and division that become easy:
@@ -472,7 +472,7 @@ title('Solution of a linear problem')
       An important identity, easy to work out, is <m>|z|^2=z\cdot \overline{z}</m>.</p>
     </subsection>
 
-    <subsection xml:id="frc-conjugate">
+    <subsection xml:id="frc-shifted-cos">
       <title>Shifted cosines</title>
       <p>Here comes a trick we will be relying upon later. The the <term>shifted cosine</term> function
       <men xml:id="eq-fo-ampphase">f(t)=R\cos(\omega t - \phi)</men>
@@ -679,7 +679,10 @@ title('Solution of a linear problem')
     <p>The difference between these situations is the property of <term>stability</term>. It's impossible to place the broom in <em>exactly</em> the equilibrium position with no motion whatsoever of your hand. In the real world, a steady state is constantly undergoing small perturbations. If the effects of those perturbations die out with time, the steady state is called stable, but if they grow, it is unstable.</p>
 
     <example>
-      <p>Consider the ODE <m>y'=y-y^3</m>. The equilibrium solutions are <m>y=0</m> and <m>y=\pm 1</m>. Consider also that <m>y'\lt 0</m> if <m>-1\lt y \lt 0</m> or <m>y\gt 1</m>; otherwise, <m>y' \gt 0</m>. This allows us to make a <term>phase line diagram</term> clarifying that the steady states at <m>y=\pm 1</m> are stable, while the one at <m>y=0</m> is unstable. (TODO: Phase line diagram.)</p>
+      <p>Consider the ODE <m>y'=y-y^3</m>. The equilibrium solutions are <m>y=0</m> and <m>y=\pm 1</m>. Consider also that <m>y'\lt 0</m> if <m>-1\lt y \lt 0</m> or <m>y\gt 1</m>; otherwise, <m>y' \gt 0</m>. This allows us to make a <term>phase line diagram</term> clarifying that the steady states at <m>y=\pm 1</m> are stable, while the one at <m>y=0</m> is unstable. </p>
+    <sidebyside>
+	<image source="matlab/fo_ss_phaseline.svg"/>
+      </sidebyside>
     </example>
 
     <p>The phase line diagram clarifies stability of equilibria. A more analytical test that you can easily see to be equivalent is that <m>y' \lt 0</m> at a stable equilbrium, and <m>y' \gt 0</m> at an unstable one.</p>

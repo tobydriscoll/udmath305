@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-04T12:36:15-05:00    *-->
+<!--*    on 2019-02-05T11:08:26-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Complex exponentials</title>
+<title>Using complex numbers</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
@@ -73,7 +73,7 @@ MathJax.Hub.Config({
 <li><a href="exponentials.html" data-scroll="exponentials">Exponentials</a></li>
 <li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
 <li><a href="first-linear-const.html" data-scroll="first-linear-const">Linear, constant-coefficients</a></li>
-<li><a href="complex-exp.html" data-scroll="complex-exp" class="active">Complex exponentials</a></li>
+<li><a href="complex-exp.html" data-scroll="complex-exp" class="active">Using complex numbers</a></li>
 <li><a href="variable-coeffs.html" data-scroll="variable-coeffs">Linear, variable coefficient</a></li>
 <li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
 <li><a href="steady-states.html" data-scroll="steady-states">Steady states</a></li>
@@ -82,8 +82,8 @@ MathJax.Hub.Config({
 </ul>
 <h2 class="link"><a href="second-order-ode.html" data-scroll="second-order-ode"><span class="codenumber">2</span> <span class="title">Second-order ODEs</span></a></h2>
 <ul>
-<li><a href="second-derivatives.html" data-scroll="second-derivatives">Importance of second derivatives</a></li>
-<li><a href="complex-numbers.html" data-scroll="complex-numbers">Working with complex numbers</a></li>
+<li><a href="so-simple-harmonic.html" data-scroll="so-simple-harmonic">Simple harmonic motion</a></li>
+<li><a href="so-complex-exponentials.html" data-scroll="so-complex-exponentials">Complex exponentials</a></li>
 <li><a href="constant-coefficients.html" data-scroll="constant-coefficients">Unforced harmonic oscillators</a></li>
 <li><a href="forced-oscillators.html" data-scroll="forced-oscillators">Exponentially forced oscillators</a></li>
 <li><a href="oscillator-applications.html" data-scroll="oscillator-applications">Applications of oscillators</a></li>
@@ -113,7 +113,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="complex-exp"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Complex exponentials</span>
+<span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Using complex numbers</span>
 </h2>
 <a href="complex-exp.html" class="permalink">¶</a><section class="introduction" id="introduction-3"><p id="p-51">(For a really smart and entertaining introduction to complex numbers, I recommend <a class="url" href="https://youtu.be/T647CGsuOVU" target="_blank">this video series</a>.)</p>
 <p id="p-52">We need to take a short but highly relevant detour to talk about complex numbers.</p>
@@ -148,10 +148,10 @@ x^2 + 1 = 0\text{,}
 <span class="type">Subsection</span> <span class="codenumber">1.5.2</span> <span class="title">The polar form of complex numbers</span>
 </h3>
 <a href="complex-exp.html#frc-polar" class="permalink">¶</a><p id="p-61">When you first learned complex numbers, you probably wrote them as \(z=x+iy\text{,}\) where \(x=\Re(z)\) and \(y=\Im(z)\) are real. This is equivalent to rectangular or Cartesian coordinates in the plane to specify the point \((x,y)\text{.}\)</p>
-<p id="p-62">Euler's identity gives us an equally important alternative. Recall that \(e^{it}=\cos(t)+i\sin(t)\) for real values of \(t\text{.}\) If \(r\) is a positive number, and we write</p>
+<p id="p-62">Euler's identity <a knowl="./knowl/eq-euler-identity.html" title="Equation 1.2.1">(1.2.1)</a> gives us an equally important alternative. Recall that \(e^{it}=\cos(t)+i\sin(t)\) for real values of \(t\text{.}\) If \(r\) is a positive number, and we write</p>
 <div class="displaymath">
 \begin{equation*}
-re^{i\theta} = (r\cos(\theta))+i(r\sin(\theta))\text{,}
+re^{i\theta} = (r\cos \theta)+i(r\sin \theta)\text{,}
 \end{equation*}
 </div>
 <p>then it is clear that \((r,\theta)\) represent the polar coordinates of the point with \(x=r\cos\theta\text{,}\) \(y=r\sin \theta\text{.}\) The polar \(r\) has another name and notation in the complex context: the <dfn class="terminology">modulus</dfn> \(|z|\text{.}\) (The angle \(\theta\) might variously be called the <dfn class="terminology">argument</dfn> or <dfn class="terminology">phase</dfn> of \(z\text{.}\))</p>
@@ -168,10 +168,10 @@ re^{i\theta} = (r\cos(\theta))+i(r\sin(\theta))\text{,}
 \overline{x+iy} = x-iy, \qquad \overline{re^{i\theta}} = re^{-i\theta}\text{.}
 \end{equation*}
 </div>
-<p>An important identity, easy to work out, is \(|z|^2=z\cdot \overline{z}\text{.}\)</p></section><section class="subsection" id="frc-conjugate"><h3 class="heading hide-type">
+<p>An important identity, easy to work out, is \(|z|^2=z\cdot \overline{z}\text{.}\)</p></section><section class="subsection" id="frc-shifted-cos"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.5.3</span> <span class="title">Shifted cosines</span>
 </h3>
-<a href="complex-exp.html#frc-conjugate" class="permalink">¶</a><p id="p-65">Here comes a trick we will be relying upon later. The the <dfn class="terminology">shifted cosine</dfn> function</p>
+<a href="complex-exp.html#frc-shifted-cos" class="permalink">¶</a><p id="p-65">Here comes a trick we will be relying upon later. The the <dfn class="terminology">shifted cosine</dfn> function</p>
 <div class="displaymath">
 \begin{equation}
 f(t)=R\cos(\omega t - \phi)\label{eq-fo-ampphase}\tag{1.5.1}

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="second-order-ode" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Second-order ODEs</title>
+ 
+      <section xml:id="so-simple-harmonic">
+	<title>Simple harmonic motion</title>
+
+	<subsection xml:id="so-sh-newton">
+	  <title>Newton's law</title>
+	<p>The subtext of this chapter is, "F=ma is not just a good idea; it's the law." Newton's second law, to be exact. Since acceleration is the second derivative of position, this leads us to second-order ODEs of the form <m>y''=F(t,y,y')</m>. You can always think about this as a problem specifying a position-dependent force, though it's much more general than that.</p>
+
+	<p>Suppose you ask a question such as, "Where will my car be after 4 seconds of maximum acceleration?" You can't fully answer it unless you know two more pieces of data: the position and velocity of the car at the start. In general, we need to know <m>y(0)</m> and <m>y'(0)</m> (or values at some other time) in order to solve a second-order problem uniquely.</p>
+
+	<p>The grandpappy of all second-order ODEs is <m>y''=-ay</m>, for a positive constant <m>a</m>. In terms of Newton's second law, this arises with a force term defined as <m>F=-ky</m>, because then <m>my''=-ky</m>. Most springs behave like this to a good approximation, provided you don't stretch or compress them too far (an idea called Hooke's Law). Playground swings, molecular bonds, and electrical inductors are often well-approximated this way as well. </p>
+
+	<p>The negative sign in the force is crucial. It makes the force a "restoring" one: move to the right, and you are pushed to the left, and vice versa. Soon we will let additional external forces act, in which case the ODE becomes <m>my''+ky=f(t)</m>.</p>
+	</subsection>
+
+	<subsection xml:id="so-sh-null">
+	  <title>Unforced solution</title>
+	<p>Solutions of <m>my''+ky=0</m> are quite easy to get. Define <m>\omega_n=\sqrt{k/m}</m>. Then you can easily check that <m>\cos(\omega_n t)</m> is a solution. So are <m>-\cos(\omega_n t)</m> and <m>7164\cos(\omega_n t)</m>, for that matter; any constant multiplier is allowed. You can also check that <m>A\sin(\omega_n t)</m> is a solution for any constant multiplier. Finally, we can combine them as well, into
+	<me>y = c_1 \cos(\omega_n t) + c_2 \sin(\omega_n t).</me>
+	It turns out that this expression captures all possible solutions. We have <term>simple harmonic motion</term>.	</p>
+
+	<p>We started with a second derivative in the ODE and now we have two arbitrary "integration constants." That's no coincidence. It's also not a coincidence that we need two initial values to find a unique solution. For the record, we can easily find that
+	<me>y(t) = y(0) \cos(\omega_n t) + \frac{y'(0)}{\omega_n} \sin(\omega_n t).</me></p>
+
+	<p>Recall from <xref ref="frc-shifted-cos"/> that a combination of sin and cos at the same frequency is equivalent to a shifted cosine, so we can also write <m>y=R\cos(\omega_n t - \alpha)</m> for an amplitude <m>R</m> and a phase <m>\alpha</m>, and we get those values by expressing the cartesian point <m>(y(0),y'(0)/\omega_n)</m> in polar form. </p>
+
+	<exercise>
+	  <statement><p>Find the solution in shifted cosine form of <m>2y''+32y=0</m> with <m>y(0)=1</m>, <m>y'(0)=-8</m>.</p>
+	  </statement>
+	  <solution>
+	    <p>We have <m>\omega_n=\sqrt{16}=4</m>, so <m>y = c_1 \cos(4 t) + c_2 \sin(4 t).</m> We then derive <m>1=y(0)=c_1</m> and <m>-8=y'(0)=4c_2</m>, so <m>y = \cos(4 t) -2 \sin(4 t).</m> Converting <m>(1,-2)</m> to polar form gives <m>R=\sqrt{5}</m> and <m>\alpha = \tan^{-1}(-2)</m>. </p>
+	  </solution>
+	</exercise>
+	    
+
+	<p>A quick word about words. In math we typically use the term frequency to mean an <term>angular frequency</term>, as with the value <m>\omega_n</m> that multiplies <m>t</m> inside the trig functions. You can think of this value as meaning "radians per second." In engineering and physics one might be more comfortable using "cycles per second" (or Hertz), which leads to a different value of frequency, <m>\omega_n/2\pi</m>. We won't be using that, just to avoid confusion, but now you're aware that corresponding formulas in other sources might have extra factors of <m>2\pi</m> sprinkled about.</p>
+	
+	</subsection>
+
+	<subsection>
+	  <title>Forced response</title>
+	  <p>Let's consider the forced problem now, <m>my''+ky=f(t)</m>. The most natural type of forcing is also harmonic, but at a different frequency <m>\omega</m>. This is a linear problem, and just as in the first-order case, we get a solution consisting of the unforced part from above plus a particular solution <m>y_p</m> which we often call the <term>response</term> to the forcing term.</p>
+
+	  <p>The math remains incredibly simple for now. Suppose <m>f(t)=\cos(\omega t)</m>, and let <m>y_p=Y\cos(\omega t)</m>. (Why? Because it works.) Plug <m>y_p</m> into the equation and you find that it's valid if <m>Y=1/(k-m\omega^2)</m>. Let's write the complete solution using <m>k=m\omega_n^2</m>:
+	  <men xml:id="eq-so-sh-response">y(t) = R\cos(\omega_n t-\alpha) + \frac{1}{m(\omega_n^2-\omega^2)}\cos(\omega t).</men>
+	  It's clear that this formula breaks when <m>\omega=\omega_n</m>, which is the case of <term>resonance</term>. We'll worry about that later on. Notice that otherwise the solution consists of one part at the natural frequency and another at the forcing (or driving) frequency. This is the "null plus particular" structure we have seen all along for linear equations. </p>
+
+	  <exercise>
+	    <statement>
+	      <p>Find a particular solution of <m>y''+9y = \sin(t)-\cos(t).</m></p>
+	    </statement>
+	    <solution>
+	      <p>It's not hard to see that the sin forcing term can be solved by <m>y_p=Y\sin(t)</m> for a constant <m>Y</m>. We can put both forcing terms together with <m>y_p=A\cos(t)+B\sin(t)</m> and insert it into the equation to find
+	      <me>(9-A)\cos(t)+(9-B)\sin(t) = \sin(t)-\cos(t),</me>
+	      which is identically true if and only if <m>9-A=-1</m> and <m>9-B=1</m>. So
+	      <me>y_p=10\cos(t)+8\sin(t)</me>.</p>
+	    </solution>
+	  </exercise>
+	  
+	  <p>The analogy goes even deeper. Recall in <xref ref="flcs-impulse"/> that the null solution was relatable to the impulse response, i.e., the particular solution when <m>f(t)=\delta(t)</m>. That happens here, too. In fact, the solution of <m>my''+ky=\delta(t)</m> with zero initial conditions is
+	  <men xml:id="eq-so-sh-fundsol">g(t) = \frac{1}{m\omega_n} \sin(\omega_n t).</men>
+	  This solution has <m>g(0)=0</m>, <m>g'(0)=1/m</m>, and solves <m>my''+ky=0</m> for <m>t\gt 0</m>.</p>
+
+	  <p>(Sort-of justification: Since <m>g(0)=0</m>, we have <m>mg''=\delta(t)</m> there. Integrating once tells us that <m>mg'</m> is a step function, so <m>g'=1/m</m> immediately at time zero. Kinda.)</p>
+
+	  <p>The kicker is that the impulse response can be used to solve <em>any</em> forcing problem, at least in principle. Given the forcing term <m>f(t)</m>, a particular solution is
+	  <me>y_p(t) = \int_0^t g(t-s)f(s)\,ds.</me>
+	  Again, in a linear problem we just need to add up the contributions of impulses at every moment. Because of this formula, the impulse response <m>g</m> is also called a <term>fundamental solution</term>. We'll be using and coming at this formula a few different ways throughout the chapter. </p>
+	</subsection>
+
+      </section>
+
+      <section xml:id="so-complex-exponentials">
+	<title>Complex exponentials</title>
+	<p>For second-order equations the complex plane becomes indispensible. Recall again the polar form of a complex number,
+	<me>re^{i\theta} = (r\cos \theta)+i(r\sin \theta)</me>.
+	This gives us a way of looking at the exponential of any complex number as
+	<me>e^{x+iy} = e^x e^{iy} = (e^x\cos y)+i(e^x\sin y)</me>.
+	More importantly, we can look at exponential functions of time more generally as
+	<men xml:id="eq-so-exp-exp">e^{(a+i \omega)t} =  e^{at} (\cos \omega t + i \sin \omega t)</men>.
+	Reading from right to left, we have the product of <m>e^{i\omega t}</m>, which goes around and around the unit circle at constant speed, and <m>e^{at}</m>, which is an amplitude that exponentially grows or decays (or stays fixed if <m>a=0</m>).  </p>
+
+	<p>The upshot is that in the function <m>e^{st}</m>, the real part of <m>s</m> determines exponential growth or decay, and the imaginary part of <m>s</m> determines frequency of oscillation. All real exponentials, and all harmonic sines and cosines, are just special cases.</p>
+
+	<p>Let's look back a moment at <m>my''+ky=0</m>. If we now try an exponential solution of the form <m>y_n=e^{st}</m>, then we arrive at <m>(ms^2+k)e^{st}=0</m>, which we can make true if <m>s^2=-k/m</m>. this has two roots, <m>s=\pm i \omega_n</m>, and we are led to
+	<me> y_n = c_1 e^{i\omega t} + c_2 e^{-i\omega t}</me>.
+	A little rearrangement should convince you that this is equivalent to the form we got in the last section, just using complex numbers.</p>
+
+	<p>Similarly, for the forced problem <m>my''+ky=e^{i\omega t}</m>, we can get a particular solution <m>y_p=Y e^{i\omega t}</m> if we let <m>Y=1/(k-m\omega^2)</m>. This works for both cosine and sine forcing upon taking real and imaginary parts, and we go right back to the formulas from before.</p>
+
+      </section>
+
+      <section xml:id="constant-coefficients">
+	<title>Unforced harmonic oscillators</title>
+	<p></p>
+      </section>
+
+      <section xml:id="forced-oscillators">
+	<title>Exponentially forced oscillators</title>
+	<p></p>
+      </section>
+
+      <section xml:id="oscillator-applications">
+	<title>Applications of oscillators</title>
+	<p></p>
+      </section>
+
+      <section xml:id="general-forcing">
+	<title>Other forcing terms</title>
+	<p>undetermined coefficients; variation of parameters</p>
+      </section>
+
+      <section xml:id="laplace-solutions">
+	<title>Laplace transform methods</title>
+	<p></p>
+      </section>
+
+      <section xml:id="laplace-properties">
+	<title>Laplace transform properties</title>
+	<p>From section 8.5</p>
+      </section>
+
+      <section xml:id="convolutions">
+	<title>Convolutions</title>
+	<p>From section 8.6</p>
+      </section>
+    </chapter>
