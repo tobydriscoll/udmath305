@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>Consider \(y''+y'=\sin(2t)\text{.}\) Since the forcing term is the imaginary part of \(e^{2it}\text{,}\) we use</p>
+<div class="displaymath">
+\begin{equation*}
+Y(2i) = \frac{1}{(2i)^2+2i} = \frac{1}{2i-4}\text{.}
+\end{equation*}
+</div>
+<p>We need to take the imaginary part of \(Y(2i)e^{2it}\) to get the particular solution we seek. The course of least resistance is to make the denominator of \(Y\) real by using a complex conjugate:</p>
+<div class="displaymath">
+\begin{equation*}
+Y(2i) = \frac{1}{2i-4}\cdot \frac{2i+4}{2i+4} = \frac{2i+4}{4+16} = \frac{i+2}{10} = \frac{1}{5} + i\frac{1}{10}\text{.}
+\end{equation*}
+</div>
+<p>There are <em class="emphasis">two</em> contributions to each of the real and imaginary parts of the product:</p>
+<div class="displaymath">
+\begin{align*}
+Y(2i)e^{2it} \amp = \left(\frac{1}{5} + i\frac{1}{10}\right) \bigl( \cos(2t) + i \sin(2t) \bigr)\\
+\amp = \Bigl[ \cdots \Bigr] + i \Bigl[ \frac{1}{5}\sin(2t) + \frac{1}{10}\cos(2t) \Bigr]\text{.}
+\end{align*}
+</div>
+<p>(We don't need the real part, inside the first set of brackets.) Thus \(y_p = [2\sin(2t)+\cos(2t)]/10\text{.}\)</p>
+<p>In retrospect we might have come at this problem from an entirely real standpoint. We could posit \(y_p=A\cos(2t) + B\sin(2t)\) and then plug in to get some algebraic conditions to determine \(A\) and \(B\text{.}\) There's still a fair amount of algebra and plenty of chances to make silly errors (see the derivation of formula (23) in section 2.4 of the textbook). I recommend that you give the complex method a fair try before retreating to the familiarity of the real-only method.</p></article></body>
+</html>

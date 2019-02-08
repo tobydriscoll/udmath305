@@ -161,7 +161,7 @@
 
 	  <p>Finally, as <m>b</m> increases more our roots again separate but stay on the negative real axis. The solutions are all decaying real exponentials, and we call the situation <term>overdamped</term>. (This is what you want for your airplane's wings!)</p>
 
-	  <p>The four types of oscillation can be predicted from the sign of <m>b^2-4ac</m>, or equivalently from the sign of <m>\omega_n-p</m>. Or you can use the dimensionless value <m>Z=p/\omega_n</m>, but enough already.</p>
+	  <p>The four types of oscillation can be predicted from the sign of <m>b^2-4ac</m>, or equivalently from the sign of <m>\omega_n-p</m>. Or you can use the dimensionless value <m>\zeta=p/\omega_n</m>, but enough already.</p>
 	</subsection>
 
 	<subsection xml:id="so-cc-impulse">
@@ -339,7 +339,7 @@
 
   </section>
 
-      <section xml:id="so-applications">
+  <section xml:id="so-applications">
 	<title>Applications of oscillators</title>
 	<introduction>
 		<p>Oscillations appear all over science and engineering, and 2nd order linear equations are often used to model them. The best-known examples are mechanical and electrical, but there are chemical and biochemical ones as well.</p>
@@ -381,18 +381,14 @@
 			The mechanical oscillator <m>ay'' + by' + cy = f(t)</m> is more conveniently expressed as
 	  	<me> y'' + \frac{b}{a} y' + \frac{c}{a} y + \frac{c}{a} F(t)</me>.
 			One reason to prefer this form is that <m>y</m> must have the same units as the forcing <m>F</m>. Furthermore, we see the undamped natural frequency <m>\omega_n=\sqrt{c/a}</m>, and this has units of inverse time only. The same units apply to <m>b/a</m>, so we introduce the new dimensionless parameter
-			<me>Z = \frac{1}{2} \frac{b/a}{\omega_n} = \frac{b}{\sqrt{4ac}}</me>. 
+			<me>\zeta = \frac{1}{2} \frac{b/a}{\omega_n} = \frac{b}{\sqrt{4ac}}</me>. 
 			Now the ODE becomes 
-			<me> y'' + 2 Z \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)</me>.
-			Everything about the ODE can be understood and described in terms of <m>\omega_n</m> and <m>Z</m>. 
+			<me> y'' + 2 \zeta \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)</me>.
 		</p>
 		<p>
-			The characteristic roots become <m>-Z \omega_n \pm \omega_n \sqrt{Z^2-1}</m>. We see that the condition for being underdamped is simply <m>Z \lt 1</m>. In this case we express the roots as <m>-Z \omega_n \pm \omega_d</m>, using the damped frequency <m>\omega_d=\omega_n\sqrt{1-Z^2}</m>. 
-		</p>
-		<p>
-			The gain in the underdamped case works out to be
+			The characteristic roots are now conveniently <m>-\zeta \omega_n \pm \omega_n \sqrt{\zeta^2-1}</m>. We see that the condition for being underdamped is simply <m>\zeta \lt 1</m>. In this case we express the roots as <m>-\zeta \omega_n \pm \omega_d</m>, using the damped frequency <m>\omega_d=\omega_n\sqrt{1-Z^2}</m>. The gain works out to be
 	  	<me>G^2 = \frac{1}{(\omega_n^2-\omega^2)^2 + 4\omega_n^2Z^2\omega^2}  = \frac{\omega_n^4}{(1-\rho^2)^2 + 4Z^2\rho^2}</me>,
-			where <m>\rho=\omega/\omega_n</m> is a dimensionless frequency ratio. If also <m>Z^2\lt 1/2</m>, the gain is maximized when <m>\rho=\sqrt{1-2Z^2} \lt 1</m>. The gain at that maximum is proportional to <m>1/Z</m>, so much growth in the response is possible near the natural frequency when damping is small in the sense of <m>Z\approx 0</m>. This can be considered a practical resonance for lightly damped systems. 
+			where <m>\rho=\omega/\omega_n</m> is a dimensionless frequency ratio. If <m>\zeta^2\lt 1/2</m>, the gain is maximized when <m>\rho=\sqrt{1-2\zeta^2} \lt 1</m>. The gain at that maximum is proportional to <m>1/\zeta</m>, so much growth in the response is possible near the natural frequency when damping is small in the sense of <m>\zeta\approx 0</m>. This can be considered a practical resonance for lightly damped systems. 
 		</p>
 
 	  <example>
@@ -402,7 +398,13 @@
 
 	</subsection>
 	
-	</section>
+		<subsection>
+			<title>Step response</title>
+			<p>
+				Instead of using a generator, let's find the solution to a step input. 
+			</p>
+		</subsection>
+			</section>
 
       <section xml:id="so-general-forcing">
 	<title>Other forcing functions</title>

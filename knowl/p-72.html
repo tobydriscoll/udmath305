@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-01-30T16:46:24-05:00    *-->
+<!--*    on 2019-02-08T14:49:41-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,20 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Next, the shifted cosine is the real part of the complex forcing function \(R\exp[i(t-\phi)]\text{.}\) To get a particular solution, then, we multiply the forcing by \(1/(i\omega-a)= 1/(i+1)\text{.}\) We can use "realization of the denominator" to find that</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{1}{i + 1} = \frac{1}{i + 1} \frac{-i+1}{-i + 1} = \frac{1-i}{2}\text{.}
-\end{equation*}
-</div>
-<p>This is also easy to put into polar form. So the complex particular solution is</p>
+<p>As for the details? The particular solution for \(Re^{i\omega t}\) is \(GR e^{i(\omega t - \alpha)}\text{,}\) as derived above. To recover the given forcing term we need only set \(\omega=1,R=2\) and take the imaginary part minus the real part:</p>
 <div class="displaymath">
 \begin{align*}
-y = \frac{1}{i+1} R e^{i(t-\phi)} \amp = \frac{\sqrt{2}}{2} e^{-i\pi/4} \sqrt{8} e^{i(t-3\pi/4)}\\
-\amp = 2 e^{i(t-\pi)} = 2 e^{it} e^{-i\pi} = -2e^{it}\text{.}
+y \amp = \text{Im} \left[ 2 Ge^{i(t - \alpha)} \right]  - \text{Re} \left[ 2 Ge^{i(t - \alpha)} \right]\\
+\amp =  \text{Im} \left[ \sqrt{2} e^{i(t - \pi/4)} \right]  - \text{Re} \left[ \sqrt{2} e^{i(t - \pi/4)}  \right] \\
+\amp = \sqrt{2} \bigl[\sin(t - \pi/4) - \cos(t - \pi/4)\bigr] \text{.}
 \end{align*}
 </div>
-<p>Finally, the real particular solution is the real part of this, which is simply \(-2\cos(t)\text{.}\)</p>
+<p>We could convert that into a single shifted cosine if required. In this case it happens to get a simpler answer, \(y=-2\cos(t)\text{.}\)</p>
 <span class="incontext"><a href="complex-exp.html#p-72">in-context</a></span>
 </body>
 </html>

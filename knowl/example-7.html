@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-01-30T16:46:24-05:00    *-->
+<!--*    on 2019-02-08T14:49:41-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -36,7 +36,10 @@ title('Impulse forcing')
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_impulse.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">semilogy([t1;t2],[y1;y2])
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">dydt = @(t,y) -5*y;
+[t1,y1] = ode45(dydt,[0,2],1);
+[t2,y2] = ode45(dydt,[2,6],3+y1(end));
+semilogy([t1;t2],[y1;y2])
 xlabel('t'), ylabel('y(t)')
 title('Impulse forcing (semi-log)')
 </pre></div>

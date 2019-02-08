@@ -12,6 +12,7 @@ echo "Conversion to html..."
 xsltproc --xinclude --stringparam html.css.extra "mathbook-delaware.css" ~/Dropbox/books/mathbook/xsl/mathbook-html.xsl notes305.xml
 echo "...done html"
 mv *.html ..
+mv knowl/* ../knowl
 
 echo "Extraction of matlab codes..."
 xsltproc --xinclude ~/Dropbox/books/mathbook/xsl/extract-matlab.xsl notes305.xml

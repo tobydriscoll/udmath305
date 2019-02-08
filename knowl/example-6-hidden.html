@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-01-30T16:46:24-05:00    *-->
+<!--*    on 2019-02-08T14:49:41-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -41,7 +41,10 @@ title('Window forcing')
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_window.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">semilogy(t,y)
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">step = @(t) double(t&gt;0);
+dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
+[t,y] = ode45(dydt,[0,8],1);
+semilogy(t,y)
 xlabel('t'), ylabel('y(t)')
 title('Window forcing (semi-log)')
 </pre></div>

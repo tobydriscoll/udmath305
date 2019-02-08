@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:14:40-05:00    *-->
+<!--*    on 2019-02-08T14:49:40-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -225,17 +225,17 @@ y(t) = G e^{-i\alpha} q(t) = (GR) e^{i(\omega t - \alpha)}\text{.}
 </h6></a></article><div id="hk-ex-fl-complex" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-70">Suppose we are given the purely real problem \(y'+y = 2 \sin(t) - 2 \cos(t)\text{.}\) Formula (3) on page 31 gives a full solution to this problem. The tedious details hide the fact that the essence of the matter is quite simple. A plot of a solution tells the story.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">f = @(t) 2*sin(t)-2*cos(t);
- dydt = @(t,y) -y + f(t);
- t = linspace(0,30,500);
- [t,y] = ode45(dydt,t,0);
+dydt = @(t,y) -y + f(t);
+t = linspace(0,30,500);
+[t,y] = ode45(dydt,t,0);
 
- plot(t,[f(t),y]), grid on
- xlabel('t'), ylabel('y(t)')
- legend('forcing','solution')
+plot(t,[f(t),y]), grid on
+xlabel('t'), ylabel('y(t)')
+legend('forcing','solution')
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_cx_response.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-71">The forcing function is, as we now know, a shifted cosine. You can see that after a short initial stage, the solution is too, though with a different phase and amplitude relative to the driving force. The polar complex form tells this story neatly, in the form of \(\alpha\) and \(G\) from above. To wit, for an input at frequency \(\omega\text{,}\)</p>
+<p id="p-71">The forcing function is, as we now know, a shifted cosine. You can see that after a short initial stage, the solution is too, though with a different phase and amplitude. The polar complex form tells this story neatly, in the form of \(\alpha\) and \(G\) from above. To wit, for an input at frequency \(\omega\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 G e^{-i\alpha} = \frac{1}{i\omega  + 1}\text{.}
@@ -253,11 +253,11 @@ G e^{-i\alpha} = \frac{1}{i  + 1} = \frac{1}{i + 1}\cdot \frac{-i+1}{-i + 1} = \
 \begin{align*}
 y \amp = \text{Im} \left[ 2 Ge^{i(t - \alpha)} \right]  - \text{Re} \left[ 2 Ge^{i(t - \alpha)} \right]\\
 \amp =  \text{Im} \left[ \sqrt{2} e^{i(t - \pi/4)} \right]  - \text{Re} \left[ \sqrt{2} e^{i(t - \pi/4)}  \right] \\
-\amp = \sqrt{2} [\sin(t - \pi/4) - \cos(t - \pi/4)] \text{.}
+\amp = \sqrt{2} \bigl[\sin(t - \pi/4) - \cos(t - \pi/4)\bigr] \text{.}
 \end{align*}
 </div>
 <p>We could convert that into a single shifted cosine if required. In this case it happens to get a simpler answer, \(y=-2\cos(t)\text{.}\)</p></article></div>
-<p id="p-73">The reason the numerical solution converged to the particular solution in the above example is that the null solution is \(e{-t}y(0)\text{,}\) which decays. If this were exponentially growing, then a sinusoidal forcing term becomes irrelevant by comparion!</p></section></section></div></main>
+<p id="p-73">The reason the numerical solution converged to the particular solution in the above example is that the null solution is \(e^{-t}y(0)\text{,}\) which decays. If this were exponentially growing, then a sinusoidal forcing term becomes irrelevant by comparion!</p></section></section></div></main>
 </div>
 </body>
 </html>

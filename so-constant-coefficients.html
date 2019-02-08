@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:14:40-05:00    *-->
+<!--*    on 2019-02-08T14:49:40-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -188,7 +188,7 @@ s_{1,2} = \frac{ -b \pm \sqrt{b^2-4ac} }{ 2a }\text{.}
 <p>where \(p=b/2a\text{,}\) and \(\omega_d^2 = \omega_n^2-p^2\) defines a <dfn class="terminology">damped frequency</dfn> that's a bit lower than the natural undamped frequency. The solutions oscillate at \(\omega_d\) and decay with exponential rate \(-p\text{.}\) This is called <dfn class="terminology">underdamped oscillation</dfn>.</p>
 <p id="p-156">As \(b\) continues to increase, eventually our complex roots coalesce into the double real root \(-b/2a\text{.}\) Even though the mathematical expression for the solution changes here, the behavior is continuous; we continue to see exponential decay, but the oscillatory component has gone from very slow to nonexistent. This is called <dfn class="terminology">critical damping</dfn>.</p>
 <p id="p-157">Finally, as \(b\) increases more our roots again separate but stay on the negative real axis. The solutions are all decaying real exponentials, and we call the situation <dfn class="terminology">overdamped</dfn>. (This is what you want for your airplane's wings!)</p>
-<p id="p-158">The four types of oscillation can be predicted from the sign of \(b^2-4ac\text{,}\) or equivalently from the sign of \(\omega_n-p\text{.}\) Or you can use the dimensionless value \(Z=p/\omega_n\text{,}\) but enough already.</p></section><section class="subsection" id="so-cc-impulse"><h3 class="heading hide-type">
+<p id="p-158">The four types of oscillation can be predicted from the sign of \(b^2-4ac\text{,}\) or equivalently from the sign of \(\omega_n-p\text{.}\) Or you can use the dimensionless value \(\zeta=p/\omega_n\text{,}\) but enough already.</p></section><section class="subsection" id="so-cc-impulse"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.5</span> <span class="title">Impulse response</span>
 </h3>
 <a href="so-constant-coefficients.html#so-cc-impulse" class="permalink">¶</a><p id="p-159">Recall our claim that the fundamental solution \(g(t)\) of the impulse forcing problem \(ay''+by'+c=\delta(t)\) leads to the particular response to any input \(f(t)\) via \(y_p(t)=\int_0^t g(t-s)f(s)\,ds\text{.}\) Also recall that we can fudge finding \(g\) by having no forcing, \(g(0)=0\text{,}\) and \(g'(0)\) becoming instantly nonzero. Consider an infinitesimally small time \(\epsilon\text{.}\) If we integrate \(ay''+by'+c=\delta(t)\) up to this time, then we can estimate</p>

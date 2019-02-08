@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:14:40-05:00    *-->
+<!--*    on 2019-02-08T14:49:40-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -160,27 +160,28 @@ y'' + \frac{b}{a} y' + \frac{c}{a} y + \frac{c}{a} F(t)\text{.}
 <p>One reason to prefer this form is that \(y\) must have the same units as the forcing \(F\text{.}\) Furthermore, we see the undamped natural frequency \(\omega_n=\sqrt{c/a}\text{,}\) and this has units of inverse time only. The same units apply to \(b/a\text{,}\) so we introduce the new dimensionless parameter</p>
 <div class="displaymath">
 \begin{equation*}
-Z = \frac{1}{2} \frac{b/a}{\omega_n} = \frac{b}{\sqrt{4ac}}\text{.}
+\zeta = \frac{1}{2} \frac{b/a}{\omega_n} = \frac{b}{\sqrt{4ac}}\text{.}
 \end{equation*}
 </div>
 <p>Now the ODE becomes</p>
 <div class="displaymath">
 \begin{equation*}
-y'' + 2 Z \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)\text{.}
+y'' + 2 \zeta \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)\text{.}
 \end{equation*}
 </div>
-<p>Everything about the ODE can be understood and described in terms of \(\omega_n\) and \(Z\text{.}\)</p>
-<p id="p-200">The characteristic roots become \(-Z \omega_n \pm \omega_n \sqrt{Z^2-1}\text{.}\) We see that the condition for being underdamped is simply \(Z \lt 1\text{.}\) In this case we express the roots as \(-Z \omega_n \pm \omega_d\text{,}\) using the damped frequency \(\omega_d=\omega_n\sqrt{1-Z^2}\text{.}\)</p>
-<p id="p-201">The gain in the underdamped case works out to be</p>
+<p id="p-200">The characteristic roots are now conveniently \(-\zeta \omega_n \pm \omega_n \sqrt{\zeta^2-1}\text{.}\) We see that the condition for being underdamped is simply \(\zeta \lt 1\text{.}\) In this case we express the roots as \(-\zeta \omega_n \pm \omega_d\text{,}\) using the damped frequency \(\omega_d=\omega_n\sqrt{1-Z^2}\text{.}\) The gain works out to be</p>
 <div class="displaymath">
 \begin{equation*}
 G^2 = \frac{1}{(\omega_n^2-\omega^2)^2 + 4\omega_n^2Z^2\omega^2}  = \frac{\omega_n^4}{(1-\rho^2)^2 + 4Z^2\rho^2}\text{,}
 \end{equation*}
 </div>
-<p>where \(\rho=\omega/\omega_n\) is a dimensionless frequency ratio. If also \(Z^2\lt 1/2\text{,}\) the gain is maximized when \(\rho=\sqrt{1-2Z^2} \lt 1\text{.}\) The gain at that maximum is proportional to \(1/Z\text{,}\) so much growth in the response is possible near the natural frequency when damping is small in the sense of \(Z\approx 0\text{.}\) This can be considered a practical resonance for lightly damped systems.</p>
+<p>where \(\rho=\omega/\omega_n\) is a dimensionless frequency ratio. If \(\zeta^2\lt 1/2\text{,}\) the gain is maximized when \(\rho=\sqrt{1-2\zeta^2} \lt 1\text{.}\) The gain at that maximum is proportional to \(1/\zeta\text{,}\) so much growth in the response is possible near the natural frequency when damping is small in the sense of \(\zeta\approx 0\text{.}\) This can be considered a practical resonance for lightly damped systems.</p>
 <article class="example-like" id="example-25"><a knowl="" class="id-ref" refid="hk-example-25"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.6.1</span>
-</h6></a></article><div id="hk-example-25" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-202">The oscillator \(4y'' + y' + 36y\) from an earlier example has \(\omega_n=3\) and \(Z=1/\sqrt{16\cdot 36}=1/24\text{.}\) Accordingly, gain is maximized when \(\omega/\omega_n=1-\frac{1}{288}\approx 0.9965\text{,}\) so for practical purposes a resonance occurs at just slightly less than the natural, undamped frequency.</p></article></div></section></section></div></main>
+</h6></a></article><div id="hk-example-25" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-201">The oscillator \(4y'' + y' + 36y\) from an earlier example has \(\omega_n=3\) and \(Z=1/\sqrt{16\cdot 36}=1/24\text{.}\) Accordingly, gain is maximized when \(\omega/\omega_n=1-\frac{1}{288}\approx 0.9965\text{,}\) so for practical purposes a resonance occurs at just slightly less than the natural, undamped frequency.</p></article></div></section><section class="subsection" id="subsection-31"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.4</span> <span class="title">Step response</span>
+</h3>
+<p id="p-202">Instead of using a generator, let's find the solution to a step input.</p></section></section></div></main>
 </div>
 </body>
 </html>
