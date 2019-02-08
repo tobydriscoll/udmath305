@@ -128,9 +128,9 @@
 	      </me>.
       The undetermined constant <m>c_0</m> plays the role of the integration constant. In fact, since <m>f(0)=1</m>, we see that <m>c_0=y(0)</m>, so it's convenient to write the solution as <m>y(t)=y(0)f(t)</m>, with the understanding that <m>y(0)</m> is arbitrary.</p>
 
-      <p>Now, at this point we don't know much else about <m>f(t)</m>. But we can show next using the ODE that it has the key property of an exponential function: <m>f(A+B)=f(A)f(B)</m> for any values of <m>A</m> and <m>B</m>. First, we can say immediately that <m>y(A+B)=y(0)f(A+B)</m>. Now imagine letting the ODE solution evolve from <m>t=0</m> to <m>t=A</m>, where we freeze time for a moment. We have that <m>y(A)=y(0)f(A)</m>, of course. Now suppose we let things continue to evolve by <m>B</m> additional time units. The solution becomes <m>y(A)f(B)=y(0)f(A)f(B)</m>. But this is the same as <m>y(A+B)</m>, and we are done.</p>
+      <p>Now, at this point we don't know much else about <m>f(t)</m>. But we can show next using the ODE that it has the key property of an exponential function: <m>f(A+B)=f(A)f(B)</m> for any values of <m>A</m> and <m>B</m>. To see this, start with <m>y(A+B)=y(0)f(A+B)</m>. Now imagine letting the ODE solution evolve from <m>t=0</m> to <m>t=A</m>, where we freeze time for a moment. We have that <m>y(A)=y(0)f(A)</m>, of course. Now suppose we let things continue to evolve by <m>B</m> additional time units. The solution becomes <m>y(A)f(B)=y(0)f(A)f(B)</m>. But this is the same as <m>y(A+B)</m>, and we are done.</p>
 
-      <p>From here it's just a matter of noting that because of the exponential property, <m>f(t)=e^t</m> for some base <m>e=f(1)=1+\sum_{n=1}^\infty \frac{1}{n!}</m>. The point here is that exponential functions don't just "happen to solve" <m>y'=at</m>; if they didn't exist already, we would have had to invent them for the purpose.</p>
+      <p>From here it's just a matter of noting that because of the exponential property, <m>f(t)=e^t</m> for some base <m>e=f(1)=1+\sum_{n=1}^\infty \frac{1}{n!}</m>. The point here is that exponential functions don't just "happen to solve" <m>y'=ay</m>; if they didn't exist already, we would have had to invent them for the purpose.</p>
 
     </subsection>
 
@@ -504,19 +504,46 @@ title('Solution of a linear problem')
       </p>
 
       <example xml:id="ex-fl-complex">
-	<p>Suppose we are given the purely real problem <m>y'+y = 2 \sin(t) - 2 \cos(t)</m>. Formula (3) on page 31 gives a full solution to this problem. But it's useful to see how complex formulation can help us do without formulas.</p>
-	<p>First, look at the forcing function. As a combination of sine and cosine at frequency 1, we can write it as a lagged cosine, <m>R\cos(t-\phi)</m>. The values <m>(R,\phi)</m> are the polar form of the complex number <m>-2+2i</m>. It takes only a moment to deduce that <m>R=\sqrt{8}</m> and <m>\phi=3\pi/4</m>. </p>
-	<p>Next, the shifted cosine is the real part of the complex forcing function <m>R\exp[i(t-\phi)]</m>. To get a particular solution, then, we multiply the forcing by <m>1/(i\omega-a)= 1/(i+1)</m>. We can use "realization of the denominator" to find that
-	<me>
-	  \frac{1}{i + 1} = \frac{1}{i + 1} \frac{-i+1}{-i + 1} = \frac{1-i}{2}
-	  </me>. This is also easy to put into polar form. So the complex particular solution is
-	  <md>
-	    <mrow>y = \frac{1}{i+1} R e^{i(t-\phi)} \amp = \frac{\sqrt{2}}{2} e^{-i\pi/4} \sqrt{8} e^{i(t-3\pi/4)}</mrow>
-	    <mrow>\amp = 2 e^{i(t-\pi)} = 2 e^{it} e^{-i\pi} = -2e^{it}</mrow>
-	</md>. Finally, the real particular solution is the real part of this, which is simply <m>-2\cos(t)</m>.</p>
+	    <p>
+        Suppose we are given the purely real problem <m>y'+y = 2 \sin(t) - 2 \cos(t)</m>. Formula (3) on page 31 gives a full solution to this problem. The tedious details hide the fact that the essence of the matter is quite simple. A plot of a solution tells the story.
+      </p>
+      <sidebyside>
+        <program language="matlab" permid="fo_cx_response">
+	       <input>
+f = @(t) 2*sin(t)-2*cos(t);
+dydt = @(t,y) -y + f(t);
+t = linspace(0,30,500);
+[t,y] = ode45(dydt,t,0);
+
+plot(t,[f(t),y]), grid on
+xlabel('t'), ylabel('y(t)')
+legend('forcing','solution')
+          </input>
+	      </program>
+	      <image source="matlab/fo_cx_response.svg"/>	  
+	    </sidebyside>
+    
+      <p>
+        The forcing function is, as we now know, a shifted cosine. You can see that after a short initial stage, the solution is too, though with a different phase and amplitude. The polar complex form tells this story neatly, in the form of <m>\alpha</m> and <m>G</m> from above. To wit, for an input at frequency <m>\omega</m>,
+          <me>G e^{-i\alpha} = \frac{1}{i\omega  + 1}</me>. 
+        Here we have <m>\omega=1</m>, and thus 
+          <me>G e^{-i\alpha} = \frac{1}{i  + 1} = \frac{1}{i + 1}\cdot \frac{-i+1}{-i + 1} = \frac{1-i}{2}</me>. 
+        The cartesian point <m>(1/2,-1/2)</m> is easy to put into polar form, and we find <m>G=1/\sqrt{2}</m> and <m>\alpha=\pi/4</m>. That is, the particular solution has 70% of the amplitude and lags the driving force by one-eighth of a cycle. 
+      </p> 
+	    <p>
+        As for the details? The particular solution for <m>Re^{i\omega t}</m> is <m>GR e^{i(\omega t - \alpha)}</m>, as derived above. To recover the given forcing term we need only set <m>\omega=1,R=2</m> and take the imaginary part minus the real part:
+        <md>
+          <mrow>y \amp = \text{Im} \left[ 2 Ge^{i(t - \alpha)} \right]  - \text{Re} \left[ 2 Ge^{i(t - \alpha)} \right]</mrow>
+          <mrow>\amp =  \text{Im} \left[ \sqrt{2} e^{i(t - \pi/4)} \right]  - \text{Re} \left[ \sqrt{2} e^{i(t - \pi/4)}  \right] </mrow>
+          <mrow>\amp = \sqrt{2} \bigl[\sin(t - \pi/4) - \cos(t - \pi/4)\bigr] </mrow>
+        </md>. 
+        We could convert that into a single shifted cosine if required. In this case it happens to get a simpler answer, <m>y=-2\cos(t)</m>.
+        </p>
       </example>
 
-      <p>Now, slogging through these formulas may not feel like a revelation. But if you tried to find a particular solution for just a cosine or sine forcing term, you'd find that the result has to have both the sine and cosine in general, and the total amount of ugly algebra is basically conserved. In truth, the complex form is the more fundamental one. Writing the ratio of forcing and solution in <xref ref="ex-fl-complex"/> as <m>e^{-i\pi/4}/\sqrt{2}</m> instantly reveals how the amplitude is reduced and the phase is shifted. Insisting on writing the forcing and solution in real form just obfuscates those simple observations.</p>
+      <p>
+        The reason the numerical solution converged to the particular solution in the above example is that the null solution is <m>e^{-t}y(0)</m>, which decays. If this were exponentially growing, then a sinusoidal forcing term becomes irrelevant by comparion! 
+      </p>
       
     </subsection>
     

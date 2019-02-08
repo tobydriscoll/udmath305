@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-02-08T14:14:40-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Constant coefficients</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="mathbook-delaware.css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
+<p class="byline">Toby Driscoll</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="so-complex-exponentials.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="so-forced-oscillators.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="so-complex-exponentials.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="so-forced-oscillators.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></h2>
+<ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+<h2 class="link"><a href="first-order-ode.html" data-scroll="first-order-ode"><span class="codenumber">1</span> <span class="title">First-order ODEs</span></a></h2>
+<ul>
+<li><a href="linearity.html" data-scroll="linearity">Introduction</a></li>
+<li><a href="exponentials.html" data-scroll="exponentials">Exponentials</a></li>
+<li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
+<li><a href="first-linear-const.html" data-scroll="first-linear-const">Linear, constant-coefficients</a></li>
+<li><a href="complex-exp.html" data-scroll="complex-exp">Using complex numbers</a></li>
+<li><a href="variable-coeffs.html" data-scroll="variable-coeffs">Linear, variable coefficient</a></li>
+<li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
+<li><a href="steady-states.html" data-scroll="steady-states">Steady states</a></li>
+<li><a href="logistic-equation.html" data-scroll="logistic-equation">Logistic equation</a></li>
+<li><a href="separable.html" data-scroll="separable">Separable equations</a></li>
+</ul>
+<h2 class="link"><a href="second-order-ode.html" data-scroll="second-order-ode"><span class="codenumber">2</span> <span class="title">Second-order ODEs</span></a></h2>
+<ul>
+<li><a href="so-simple-harmonic.html" data-scroll="so-simple-harmonic">Simple harmonic motion</a></li>
+<li><a href="so-complex-exponentials.html" data-scroll="so-complex-exponentials">Complex exponentials</a></li>
+<li><a href="so-constant-coefficients.html" data-scroll="so-constant-coefficients" class="active">Constant coefficients</a></li>
+<li><a href="so-forced-oscillators.html" data-scroll="so-forced-oscillators">Exponentially forced oscillators</a></li>
+<li><a href="so-higher-order.html" data-scroll="so-higher-order">Higher-order ODEs</a></li>
+<li><a href="so-applications.html" data-scroll="so-applications">Applications of oscillators</a></li>
+<li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
+<li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
+<li><a href="laplace-properties.html" data-scroll="laplace-properties">Laplace transform properties</a></li>
+<li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
+</ul>
+<h2 class="link"><a href="qualitative.html" data-scroll="qualitative"><span class="codenumber">3</span> <span class="title">Qualitative analysis</span></a></h2>
+<ul>
+<li><a href="direction-fields.html" data-scroll="direction-fields">Direction fields</a></li>
+<li><a href="planar-stability.html" data-scroll="planar-stability">Planar stability</a></li>
+<li><a href="equilibria-linearization.html" data-scroll="equilibria-linearization">Equilibria and linearization</a></li>
+</ul>
+<h2 class="link"><a href="matrix-algebra.html" data-scroll="matrix-algebra"><span class="codenumber">4</span> <span class="title">Matrix algebra</span></a></h2>
+<ul>
+<li><a href="linear-equations.html" data-scroll="linear-equations">Linear equations</a></li>
+<li><a href="elimination.html" data-scroll="elimination">Solution by elimination</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix multiplication</a></li>
+</ul>
+<h2 class="link"><a href="linear-ode-systems.html" data-scroll="linear-ode-systems"><span class="codenumber">5</span> <span class="title">Linear ODE systems</span></a></h2>
+<ul>
+<li><a href="eigenvalues.html" data-scroll="eigenvalues">Eigenvalues and eigenvectors</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="linear-system-solutions.html" data-scroll="linear-system-solutions">Solutions of linear ODEs</a></li>
+<li><a href="matrix-exponential.html" data-scroll="matrix-exponential">The matrix exponential</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="so-constant-coefficients"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Constant coefficients</span>
+</h2>
+<a href="so-constant-coefficients.html" class="permalink">¶</a><section class="introduction" id="introduction-5"><p id="p-143">We're now set to tackle the linear, 2nd order ODE \(a \frac{d^2y}{dt^2}+b\frac{dy}{dt}+cy=0\) for constants \(a,b,c\text{.}\) (This is the only second-order problem we will solve. In fact, there aren't many more second-order problems that even can be solved with relatively little effort.) In order to cut down on the options in our explanations, we'll assume these constants are all real, and that \(a\gt 0\text{.}\)</p>
+<p id="p-144">It's going to be easy to lose track of the most basic fact of this equation: <em class="emphasis">the solutions are exponentials</em>. (Well, with an asterisk.) In fact plugging in \(y=e^{st}\) takes us to \((as^2+bs+c)e^{st}=0\text{,}\) which is obviously true if we can solve the <dfn class="terminology">characteristic equation</dfn></p>
+<div class="displaymath">
+\begin{equation}
+as^2+bs+c = 0\text{.}\label{eq-so-char}\tag{2.3.1}
+\end{equation}
+</div>
+<p>As you know, there are two (counting multiplicity) and only two solutions for \(s\) in this equation. Let's call them \(s_1\) and \(s_2\text{.}\) I won't insult you by writing out the quadratic formula here.</p>
+<p id="p-145">With two roots for the characteristic equation, the general null solution is</p>
+<div class="displaymath">
+\begin{equation*}
+y = c_1 e^{s_1t} + c_2 e^{s_2t}\text{.}
+\end{equation*}
+</div>
+<p>There are two integration constants here, just what we need to satisfy two initial conditions. Except for that pesky asterisk!</p></section><section class="subsection" id="so-cc-double"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">Double root</span>
+</h3>
+<a href="so-constant-coefficients.html#so-cc-double" class="permalink">¶</a><p id="p-146">Suppose \(s_1=s_2\) is a double root of <a knowl="./knowl/eq-so-char.html" title="Equation 2.3.1">(2.3.1)</a>. This happens when \(b^2=4ac\text{,}\) and \(s_1=-b/(2a)\text{.}\) In that case our candidate for the general solution is inadequate, because we can add the two terms together. Having \(c_1+c_2\) is no more general than having a single integration constant. Somehow we have to come up with a genuinely different second solution. It turns out that the job is done by \(te^{s_1t}\text{.}\) The proof is just a bunch of algebra: plug it in and show that it works.</p>
+<p id="p-147">So in the double-root case our null solution is</p>
+<div class="displaymath">
+\begin{equation*}
+y = c_1 e^{s_1t} + c_2 t e^{s_1t}\text{.}
+\end{equation*}
+</div>
+<p>Honestly, this is the only odd thing that happens in this entire section. Everything else is just exploring the consequences of the solutions, and naming things that we find out.</p></section><section class="subsection" id="so-cc-real"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">Distinct real roots</span>
+</h3>
+<a href="so-constant-coefficients.html#so-cc-real" class="permalink">¶</a><p id="p-148">Our two roots of the characterstic equation <a knowl="./knowl/eq-so-char.html" title="Equation 2.3.1">(2.3.1)</a> might be distinct real numbers. This happens when \(b^2\gt 4ac\text{.}\) There isn't a whole lot else to say. The null solution is, as already stated,</p>
+<div class="displaymath">
+\begin{equation*}
+y = c_1 e^{s_1t} + c_2 e^{s_2t}\text{.}
+\end{equation*}
+</div>
+<article class="example-like" id="example-18"><a knowl="" class="id-ref" refid="hk-example-18"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.3.1</span>
+</h6></a></article><div id="hk-example-18" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-149">Consider \(y''-y'-2y=0\text{.}\) The characteristic equation \(s^2-s-2=0\) has roots \(s_1=-1\text{,}\) \(s_2=2\text{.}\) This gives the solution \(y=c_1 e^{-t} + c_2 e^{2t}\text{.}\)</p></article></div></section><section class="subsection" id="so-cc-complex"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">Complex roots</span>
+</h3>
+<a href="so-constant-coefficients.html#so-cc-complex" class="permalink">¶</a><p id="p-150">There is exactly one more possibility for our characteristic roots: they are complex numbers. This happens if \(b^2\lt 4ac\text{.}\) In this case the roots must be conjugates of one another: \(s_1=\overline{s}_2\text{.}\) We'll find it convenient to write them in cartesian form, as \(r\pm i\omega\text{.}\) Then our null solution is</p>
+<div class="displaymath">
+\begin{equation*}
+y = c_1 e^{s_1t} + c_2 e^{s_2t} = e^{rt}\left( c_1 e^{i\omega t} + c_2 e^{-i \omega t} \right)\text{.}
+\end{equation*}
+</div>
+<p>This is a perfectly fine way to write the solution, but not the only way. If we use Euler's formula and rearrange, we get</p>
+<div class="displaymath">
+\begin{equation*}
+y = e^{rt}\left( C_1 \cos(\omega t) + C_2 \sin(\omega t) \right)\text{.}
+\end{equation*}
+</div>
+<p>These are still exponential solutions, but in disguise.</p></section><section class="subsection" id="so-cc-oscillators"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.4</span> <span class="title">Unforced oscillators</span>
+</h3>
+<a href="so-constant-coefficients.html#so-cc-oscillators" class="permalink">¶</a><p id="p-151">We're going to narrow things a bit here and require both \(a\gt 0\) and \(c\gt 0\text{.}\) Remember, this arises from Newton's law to describe a restorative force.</p>
+<p id="p-152">What shall we make of the \(by'\) term here? We didn't have it with simple harmonic motion. Let's look at that quadratic formula after all:</p>
+<div class="displaymath">
+\begin{equation*}
+s_{1,2} = \frac{ -b \pm \sqrt{b^2-4ac} }{ 2a }\text{.}
+\end{equation*}
+</div>
+<p>Recall our three cases, depending on the sign of \(b^2-4ac\) (aka the discriminant). If this is negative, then the roots are complex with real part equal to \(r=-b/2a\text{.}\) The amplitude of the complex exponential solutions is \(e^{rt}\text{.}\) So these decay to zero if \(b \gt 0\) and grow unboundedly if \(b\lt 0\text{.}\)</p>
+<p id="p-153">In the case \(b^2-4ac= 0\text{,}\) we have the double root \(s_1=-b/2a\text{,}\) and we reach the same conclusions about the sign of \(b\) (exponential decay beats linear growth). Finally, if \(b^2-4ac \gt 0\text{,}\) it's not hard to conclude that the same things happen. Physically, the ODE term \(by'\) represents <dfn class="terminology">damping</dfn>, but only if \(b\gt 0\text{.}\) Typically this represents loss of energy due to damping or thermodynamic effects. It's not impossible to have \(b\lt 0\text{,}\) meaning energy is being pumped into the system, but it is far more rare.</p>
+<p id="p-154">It's instructive to do a thought experiment in which we increase \(b\) from zero while everything else is fixed. First, at \(b=0\text{,}\) we have the idealized situation of an <dfn class="terminology">undamped oscillator</dfn>. This is back to simple harmonic motion, with perfectly sinusoidal results. The characteristic roots in this case are imaginary, \(s_{1,2}=\pm i \omega_n=\pm i \sqrt{c/a}\text{,}\) corresponding to purely oscillating complex exponentials.</p>
+<p id="p-155">If we increase \(b\) slightly, the roots will behave continuously. They go into the complex plane as conjugates with negative real part \(-b/2a\text{.}\) At this point it's convenient to shift notation by renaming our constants:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{-b}{ 2a } \pm i \frac{ \sqrt{4ac-b^2} }{ 2a } = -p \pm i\omega_d\text{,}
+\end{equation*}
+</div>
+<p>where \(p=b/2a\text{,}\) and \(\omega_d^2 = \omega_n^2-p^2\) defines a <dfn class="terminology">damped frequency</dfn> that's a bit lower than the natural undamped frequency. The solutions oscillate at \(\omega_d\) and decay with exponential rate \(-p\text{.}\) This is called <dfn class="terminology">underdamped oscillation</dfn>.</p>
+<p id="p-156">As \(b\) continues to increase, eventually our complex roots coalesce into the double real root \(-b/2a\text{.}\) Even though the mathematical expression for the solution changes here, the behavior is continuous; we continue to see exponential decay, but the oscillatory component has gone from very slow to nonexistent. This is called <dfn class="terminology">critical damping</dfn>.</p>
+<p id="p-157">Finally, as \(b\) increases more our roots again separate but stay on the negative real axis. The solutions are all decaying real exponentials, and we call the situation <dfn class="terminology">overdamped</dfn>. (This is what you want for your airplane's wings!)</p>
+<p id="p-158">The four types of oscillation can be predicted from the sign of \(b^2-4ac\text{,}\) or equivalently from the sign of \(\omega_n-p\text{.}\) Or you can use the dimensionless value \(Z=p/\omega_n\text{,}\) but enough already.</p></section><section class="subsection" id="so-cc-impulse"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.5</span> <span class="title">Impulse response</span>
+</h3>
+<a href="so-constant-coefficients.html#so-cc-impulse" class="permalink">¶</a><p id="p-159">Recall our claim that the fundamental solution \(g(t)\) of the impulse forcing problem \(ay''+by'+c=\delta(t)\) leads to the particular response to any input \(f(t)\) via \(y_p(t)=\int_0^t g(t-s)f(s)\,ds\text{.}\) Also recall that we can fudge finding \(g\) by having no forcing, \(g(0)=0\text{,}\) and \(g'(0)\) becoming instantly nonzero. Consider an infinitesimally small time \(\epsilon\text{.}\) If we integrate \(ay''+by'+c=\delta(t)\) up to this time, then we can estimate</p>
+<div class="displaymath">
+\begin{equation*}
+a(g'(\epsilon)-g'(0)) + b(g(\epsilon)-g(0)) + c\int_0^\epsilon g(t)\,dt = 1 \text{.}
+\end{equation*}
+</div>
+<p>Assuming that \(g\) itself is continuous, as \(\epsilon\to 0\) we conclude that \(g'(\epsilon)-g'(0) = 1/a\text{,}\) which is the jump we seek. That is, we use \(g'(0)=1/a\) as the "cheater's way" to get the fundamental solution.</p>
+<article class="example-like" id="example-19"><a knowl="" class="id-ref" refid="hk-example-19"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.3.2</span>
+</h6></a></article><div id="hk-example-19" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-160">The solution of \(g''=\delta(t)\) is equivalent to \(g''=0\) with \(g(0)=0\text{,}\) \(g'(0)=1\text{.}\) We have \(g(t)=c_1+c_2t\) and then conclude that \(c_1=0\text{,}\) \(c_2=1\text{.}\)</p></article></div></section></section></div></main>
+</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <chapter xml:id="second-order-ode" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Second-order ODEs</title>
  
-      <section xml:id="so-simple-harmonic">
+	<section xml:id="so-simple-harmonic">
 	<title>Simple harmonic motion</title>
 
 	<subsection xml:id="so-sh-newton">
@@ -72,9 +72,9 @@
 	  Again, in a linear problem we just need to add up the contributions of impulses at every moment. Because of this formula, the impulse response <m>g</m> is also called a <term>fundamental solution</term>. We'll be using and coming at this formula a few different ways throughout the chapter. </p>
 	</subsection>
 
-      </section>
+	</section>
 
-      <section xml:id="so-complex-exponentials">
+  <section xml:id="so-complex-exponentials">
 	<title>Complex exponentials</title>
 	<p>For second-order equations the complex plane becomes indispensible. Recall again the polar form of a complex number,
 	<me>re^{i\theta} = (r\cos \theta)+i(r\sin \theta)</me>.
@@ -92,25 +92,320 @@
 
 	<p>Similarly, for the forced problem <m>my''+ky=e^{i\omega t}</m>, we can get a particular solution <m>y_p=Y e^{i\omega t}</m> if we let <m>Y=1/(k-m\omega^2)</m>. This works for both cosine and sine forcing upon taking real and imaginary parts, and we go right back to the formulas from before.</p>
 
-      </section>
+  </section>
 
-      <section xml:id="constant-coefficients">
-	<title>Unforced harmonic oscillators</title>
-	<p></p>
-      </section>
+	<section xml:id="so-constant-coefficients">
+	<title>Constant coefficients</title>
+		<introduction>
+	  <p>We're now set to tackle the linear, 2nd order ODE <m>a \frac{d^2y}{dt^2}+b\frac{dy}{dt}+cy=0</m> for constants <m>a,b,c</m>. (This is the only second-order problem we will solve. In fact, there aren't many more second-order problems that even can be solved with relatively little effort.) In order to cut down on the options in our explanations, we'll assume these constants are all real, and that <m>a\gt 0</m>. </p>
 
-      <section xml:id="forced-oscillators">
+	  <p>It's going to be easy to lose track of the most basic fact of this equation: <em>the solutions are exponentials</em>. (Well, with an asterisk.) In fact plugging in <m>y=e^{st}</m> takes us to <m>(as^2+bs+c)e^{st}=0</m>, which is obviously true if we can solve the <term>characteristic equation</term>
+	<men xml:id="eq-so-char">as^2+bs+c = 0</men>.
+	As you know, there are two (counting multiplicity) and only two solutions for <m>s</m> in this equation. Let's call them <m>s_1</m> and <m>s_2</m>. I won't insult you by writing out the quadratic formula here.</p>
+
+	<p>With two roots for the characteristic equation, the general null solution is
+	<me> y = c_1 e^{s_1t} + c_2 e^{s_2t}</me>.
+	There are two integration constants here, just what we need to satisfy two initial conditions. Except for that pesky asterisk!</p>
+	</introduction>
+
+	<subsection xml:id="so-cc-double">
+	  <title>Double root</title>
+	  <p>Suppose <m>s_1=s_2</m> is a double root of <xref ref="eq-so-char"/>. This happens when <m>b^2=4ac</m>, and <m>s_1=-b/(2a)</m>. In that case our candidate for the general solution is inadequate, because we can add the two terms together. Having <m>c_1+c_2</m> is no more general than having a single integration constant. Somehow we have to come up with a genuinely different second solution. It turns out that the job is done by <m>te^{s_1t}</m>. The proof is just a bunch of algebra: plug it in and show that it works.</p>
+
+	  <p>So in the double-root case our null solution is 
+	  <me> y = c_1 e^{s_1t} + c_2 t e^{s_1t}</me>.
+	  Honestly, this is the only odd thing that happens in this entire section. Everything else is just exploring the consequences of the solutions, and naming things that we find out.</p>
+	</subsection>
+
+	<subsection xml:id="so-cc-real">
+	  <title>Distinct real roots</title>
+	  <p>Our two roots of the characterstic equation <xref ref="eq-so-char"/> might be distinct real numbers. This happens when <m>b^2\gt 4ac</m>. There isn't a whole lot else to say. The null solution is, as already stated,
+	  <me> y = c_1 e^{s_1t} + c_2 e^{s_2t}</me>.
+	  </p>
+
+	  <example>
+	    <p>Consider <m>y''-y'-2y=0</m>. The characteristic equation <m>s^2-s-2=0</m> has roots <m>s_1=-1</m>, <m>s_2=2</m>. This gives the solution <m>y=c_1 e^{-t} + c_2 e^{2t}</m>.</p>
+	  </example>
+
+	  <!--p>Let's look at that quadratic formula after all:
+	  <me> s_{1,2} = \frac{ -b \pm \sqrt{b^2-4ac} }{ 2a }</me>.
+	  Suppose <m>b\lt 0</m>. Then at least the "+" root is positive, because <m>-b</m> is positive and then something is added to it. Now suppose <m>b\gt 0</m>. The "-" root is trivially negative. But the other "+" root is negative too, because <m>\sqrt{b^2-4ac}-->
+	</subsection>
+
+	<subsection xml:id="so-cc-complex">
+	  <title>Complex roots</title>
+	  <p>There is exactly one more possibility for our characteristic roots: they are complex numbers. This happens if <m>b^2\lt 4ac</m>. In this case the roots must be conjugates of one another: <m>s_1=\overline{s}_2</m>. We'll find it convenient to write them in cartesian form, as <m>r\pm i\omega</m>. Then our null solution is
+	  <me> y = c_1 e^{s_1t} + c_2 e^{s_2t} = e^{rt}\left( c_1 e^{i\omega t} + c_2 e^{-i \omega t} \right)</me>.
+	  This is a perfectly fine way to write the solution, but not the only way. If we use Euler's formula and rearrange, we get
+	  <me> y = e^{rt}\left( C_1 \cos(\omega t) + C_2 \sin(\omega t) \right)</me>.
+	  These are still exponential solutions, but in disguise. </p>
+	</subsection>
+
+	<subsection xml:id="so-cc-oscillators">
+	  <title>Unforced oscillators</title>
+	  <p>We're going to narrow things a bit here and require both <m>a\gt 0</m> and <m>c\gt 0</m>. Remember, this arises from Newton's law to describe a restorative force. </p>
+
+	  <p>What shall we make of the <m>by'</m> term here? We didn't have it with simple harmonic motion. Let's look at that quadratic formula after all:
+	  <me> s_{1,2} = \frac{ -b \pm \sqrt{b^2-4ac} }{ 2a }</me>.
+	  Recall our three cases, depending on the sign of <m>b^2-4ac</m> (aka the discriminant). If this is negative, then the roots are complex with real part equal to <m>r=-b/2a</m>. The amplitude of the complex exponential solutions is <m>e^{rt}</m>. So these decay to zero if <m>b \gt 0</m> and grow unboundedly if <m>b\lt 0</m>.</p>
+
+	  <p>In the case <m>b^2-4ac= 0</m>, we have the double root <m>s_1=-b/2a</m>, and we reach the same conclusions about the sign of <m>b</m> (exponential decay beats linear growth). Finally, if <m>b^2-4ac \gt 0</m>, it's not hard to conclude that the same things happen. Physically, the ODE term <m>by'</m> represents <term>damping</term>, but only if <m>b\gt 0</m>. Typically this represents loss of energy due to damping or thermodynamic effects. It's not impossible to have <m>b\lt 0</m>, meaning energy is being pumped into the system, but it is far more rare.</p>
+
+	  <p>It's instructive to do a thought experiment in which we increase <m>b</m> from zero while everything else is fixed. First, at <m>b=0</m>, we have the idealized situation of an <term>undamped oscillator</term>. This is back to simple harmonic motion, with perfectly sinusoidal results. The characteristic roots in this case are imaginary, <m>s_{1,2}=\pm i \omega_n=\pm i \sqrt{c/a}</m>, corresponding to purely oscillating complex exponentials.</p>
+
+	  <p>If we increase <m>b</m> slightly, the roots will behave continuously. They go into the complex plane as conjugates with negative real part <m>-b/2a</m>. At this point it's convenient to shift notation by renaming our constants:
+	  <me>\frac{-b}{ 2a } \pm i \frac{ \sqrt{4ac-b^2} }{ 2a } = -p \pm i\omega_d</me>,
+	  where <m>p=b/2a</m>, and <m>\omega_d^2 = \omega_n^2-p^2</m> defines a <term>damped frequency</term> that's a bit lower than the natural undamped frequency. The solutions oscillate at <m>\omega_d</m> and decay with exponential rate <m>-p</m>. This is called <term>underdamped oscillation</term>. </p>
+
+	  <p>As <m>b</m> continues to increase, eventually our complex roots coalesce into the double real root <m>-b/2a</m>. Even though the mathematical expression for the solution changes here, the behavior is continuous; we continue to see exponential decay, but the oscillatory component has gone from very slow to nonexistent. This is called <term>critical damping</term>.</p>
+
+	  <p>Finally, as <m>b</m> increases more our roots again separate but stay on the negative real axis. The solutions are all decaying real exponentials, and we call the situation <term>overdamped</term>. (This is what you want for your airplane's wings!)</p>
+
+	  <p>The four types of oscillation can be predicted from the sign of <m>b^2-4ac</m>, or equivalently from the sign of <m>\omega_n-p</m>. Or you can use the dimensionless value <m>Z=p/\omega_n</m>, but enough already.</p>
+	</subsection>
+
+	<subsection xml:id="so-cc-impulse">
+	  <title>Impulse response</title>
+
+	  <p>Recall our claim that the fundamental solution <m>g(t)</m> of the impulse forcing problem <m>ay''+by'+c=\delta(t)</m> leads to the particular response to any input <m>f(t)</m> via <m>y_p(t)=\int_0^t g(t-s)f(s)\,ds</m>. Also recall that we can fudge finding <m>g</m> by having no forcing, <m>g(0)=0</m>, and <m>g'(0)</m> becoming instantly nonzero. Consider an infinitesimally small time <m>\epsilon</m>. If we integrate <m>ay''+by'+c=\delta(t)</m> up to this time, then we can estimate
+	  <me>a(g'(\epsilon)-g'(0)) + b(g(\epsilon)-g(0)) + c\int_0^\epsilon g(t)\,dt = 1 </me>.
+	  Assuming that <m>g</m> itself is continuous, as <m>\epsilon\to 0</m> we conclude that <m>g'(\epsilon)-g'(0) = 1/a</m>, which is the jump we seek. That is, we use <m>g'(0)=1/a</m> as the "cheater's way" to get the fundamental solution.  </p>
+
+	  <example>
+	    <p>The solution of <m>g''=\delta(t)</m> is equivalent to <m>g''=0</m> with <m>g(0)=0</m>, <m>g'(0)=1</m>. We have <m>g(t)=c_1+c_2t</m> and then conclude that <m>c_1=0</m>, <m>c_2=1</m>. </p>
+	  </example>
+	</subsection>
+	  
+    </section>
+
+    <section xml:id="so-forced-oscillators">
 	<title>Exponentially forced oscillators</title>
-	<p></p>
-      </section>
+	<introduction>
+	  <p>We now consider problems in the form <m>ay''+by'+cy=f(t)</m>, where the coefficients are constant, <m>a</m> and <m>c</m> are positive (oscillation), and the driving force is exponential, <m>f(t)=e^{rt}</m> for constant <m>r</m>.</p>
 
-      <section xml:id="oscillator-applications">
+	  <p> There are plently of details to sift through, but the essence is quite simple. The general solution of this problem has two contributions, <m>y=y_n+y_p</m>. The first, <m>y_n</m>, is the null solution to the associated <term>homogeneous</term> equation <m>ay''+by'+cy=0</m>, and the second, <m>y_p</m>, is any particular solution of the original problem. To see how this works, plug in:
+	  <md><mrow>ay''+by'+cy \amp = a(y_n+y_p)''+b(y_n+y_p)'+c(y_n+y_p) </mrow>
+	  <mrow> \amp = (ay_n''+by_n'+cy_n) + (ay_p''+by_p'+cy_p) </mrow>
+	  <mrow> \amp = 0 + f = f</mrow>
+	  </md>.
+	  The null solution contains two arbitary constants that are used to soak up the initial conditions. We add that the particular solution is not unique, so the complete representation is not either. However, all such expressions are equivalent in the end, and the solution is always expressible in this form.</p>
+
+	  <p>In the context of underdamped oscillators, <m>y_n</m> is also called the <term>transient solution</term>, because it decays to zero as time increases. What remains might be called the <term>steady response</term>. It depends only on the oscillator parameters and the forcing function; all dependence on initial conditions vanishes with the transient solution. </p>
+
+	  <p>We covered finding the null solution in detail in <xref ref="so-constant-coefficients"/>. So the particular solution is our first item of business.</p>
+	</introduction>
+
+	<subsection xml:id="so-fo-expresponse">
+	  <title>Exponential response</title>
+	  <p>For <m>f(t)=e^{rt}</m> we let <m>y_p=Y e^{rt}</m> and plug into the ODE:
+	  <me>(ar^2 + br + c)Ye^{rt} = e^{rt}</me>.
+	  This is identically satisfied if we choose
+	  <me>Y = \frac{1}{ar^2 + br + c}</me>.
+	  In various contexts we call this the <term>exponential response function</term> or the <term>transfer function</term>. It's constant in time, but a function of the forcing exponent <m>r</m> (which is usually called <m>s</m> in transfer functions).</p>
+
+	  <example>
+	    <p>Let's solve <m>y''+5y'+6y=4 e^{-t}</m>, with <m>y(0)=0</m>, <m>y'(0)=1</m>. In stages:
+	    <ol>
+	      <li><p><em>Null solution</em>.
+	      The characteristic equation of <m>y''+5y'+6y=0</m> is <m>s^2+5s+6=0</m>, which has roots <m>s_1=-2</m>, <m>s_2=-3</m>. Thus <m>y_n=c_1 e^{-2t}+c_2e^{-3t}</m>. </p>
+	      </li>
+	      <li><p><em>Particular solution</em>.
+	      The transfer function is <m>Y(s)=1/(s^2+5s+6)</m>, and <m>Y(-1)=1/2</m>. Hence <m>y_p=\frac{1}{2}\cdot 4 e^{-t}=2e^{-t}</m>. </p></li>
+	      <li><p><em>Complete solution</em>.
+	      <m>y=y_n+y_p=c_1 e^{-2t}+c_2e^{-3t} + 2 e^{-t}</m></p>
+	      </li>
+	      <li><p><em>Initial values</em>.
+	      We get <m>0=y(0)=c_1+c_2+2</m> and <m>1=y'(0)=-2c_1-3c_2-2</m>. This implies <m>c_1=-3</m>, <m>c_2=1</m>. Finally, <m>y=-3 e^{-2t}+e^{-3t} + 2 e^{-t}</m>.</p>
+	      </li>
+	    </ol>
+	    </p>
+	  </example>
+
+	  <p>You may have noticed that the denominator of the transfer function is simply the characteristic polynomial of the homogeneous problem. That is always the case. The textbook uses <m>Y(s)=1/P(s)</m> in many spots to emphasize the connection.</p>
+
+	  <p>You should be getting comfortable with the idea that exponential forcing includes sin and cos! We are simply interested in the transfer function for imaginary exponents, <m>Y(i\omega)</m> followed by the imaginary or real part of <m>Ye^{i\omega t}</m>. There is some complex-number algebra required here. </p>
+
+	  <example>
+	    <p>Consider <m>y''+y'=\sin(2t)</m>. Since the forcing term is the imaginary part of <m>e^{2it}</m>, we use
+	    <me>Y(2i) = \frac{1}{(2i)^2+2i} = \frac{1}{2i-4}</me>.
+	    We need to take the imaginary part of <m>Y(2i)e^{2it}</m> to get the particular solution we seek. The course of least resistance is to make the denominator of <m>Y</m> real by using a complex conjugate:
+	    <me> Y(2i) = \frac{1}{2i-4}\cdot \frac{2i+4}{2i+4} = \frac{2i+4}{4+16} = \frac{i+2}{10} = \frac{1}{5} + i\frac{1}{10}</me>.
+	    There are <em>two</em> contributions to each of the real and imaginary parts of the product:
+	    <md>
+	      <mrow>Y(2i)e^{2it} \amp = \left(\frac{1}{5} + i\frac{1}{10}\right) \bigl( \cos(2t) + i \sin(2t) \bigr)</mrow>
+	      <mrow> \amp = \Bigl[ \cdots \Bigr] + i \Bigl[ \frac{1}{5}\sin(2t) + \frac{1}{10}\cos(2t) \Bigr]</mrow>
+	      </md>.
+	    (We don't need the real part, inside the first set of brackets.) Thus <m>y_p = [2\sin(2t)+\cos(2t)]/10</m>. </p>
+
+	    <p>In retrospect we might have come at this problem from an entirely real standpoint. We could posit <m>y_p=A\cos(2t) + B\sin(2t)</m> and then plug in to get some algebraic conditions to determine <m>A</m> and <m>B</m>. There's still a fair amount of algebra and plenty of chances to make silly errors (see the derivation of formula (23) in section 2.4 of the textbook). I recommend that you give the complex method a fair try before retreating to the familiarity of the real-only method. </p>
+	  </example>
+	</subsection>
+
+	<subsection xml:id="so-fo-resonance">
+	  <title>Resonance</title>
+	  <p>Time for some deja vu. When we solved <m>y'-at=e^{ct}</m> in <xref ref="flcs-exp"/>, we found that we got different formulas in the case <m>c=a</m>. We also needed a special formula for <m>y_n</m> when we got a double root in <xref ref="so-cc-double"/> The same sort of thing happens to <m>y_p</m> if we force an oscillator at one of the characteristic exponents. The reason is simple: if we try <m>y_p=Ye^{rt}</m> and <m>r</m> is a characteristic root, then we get <m>0=f(t)</m>, which can't be solved. Equivalently, the transfer function <m>Y</m> requires taking <m>1/0</m>. </p>
+
+	  <p>Suppose we have a root <m>s</m> and that <m>r</m> is close to but not equal to <m>s</m>. Then <m>y_p=e^{rt}/P(r)</m> is a particular solution to the exponential forcing. We can add any null solution to this and it will remain a solution, thus
+	  <me>y=\frac{e^{rt}-e^{st}}{P(r)}</me>
+	  is a valid particular solution as well. Since <m>P(s)=0</m> by assumption, we can also write
+	  <me>y=\frac{e^{rt}-e^{st}}{P(r)-P(s)}</me>.
+	  Suddenly this becomes very interesting as <m>r\to s</m>; we get an indeterminate <m>0/0</m>. Using L'Hopital's rule (but with <m>r</m> as the variable, not <m>t</m>), we get the limit
+	  <me>y_p = \frac{te^{st}}{P'(s)}</me>,
+	  which is a valid particular solution even when forcing exactly at exponent <m>s</m>. </p>
+
+	  <p>Realistically we only care about this effect for harmonic forcing, <m>f(t)=e^{i\omega t}</m>, where we call it <term>resonance</term>. Since the characteristic polynomial <m>P(s)=as^2+bs+c</m> has imaginary roots only if <m>b=0</m>, we only see resonance in an undamped oscillator. The resonant particular solution has an amplitude that is linearly growing in time. The derivation above shows that though the solution formula (and unboundedness) is singular at the resonant frequency, the actual behavior is a continuous limit of near-resonant behavior. </p>
+	</subsection>
+
+	<subsection xml:id="so-fo-gain-lag">
+	  <title>Gain and lag</title>
+	  <p>By now we have seen multiple times that forcing with <m>\cos(\omega t)</m> or <m>\sin(\omega t)</m> leads to solutions with a combination of both terms. We also know that such a result is equivalent to a shifted cosine in amplitude/phase form, and we turn our attention to this interpretation next.</p>
+
+	  <p>With forcing <m>f(t)=e^{i\omega t}</m> we get a solution <m>y_p=Y(i\omega) e^{i\omega t}</m>. If we write the transfer function in polar form, we can express this as <m>y_p = (G e^{-i\alpha }) e^{i\omega t} = Ge^{i(\omega t - \alpha)}</m> for positive amplitude <m>G</m>, which we call the <term>gain</term>. It depends on the forcing frequency; in fact, <m>G(\omega) = |Y(i\omega)|</m>. The <m>\alpha</m> term is a <term>phase lag</term> that shows how the response may lag behind the driving force. It's usually not as interesting as the gain.  </p>
+
+	  <example>
+	    <p>The oscillator <m>4y'' + y' + 36y</m> has transfer function <m>Y(s)=1/(4s^2+s+36)</m>. At <m>s=i\omega</m> we get
+	    <me>Y(i\omega) = \frac{1}{ -4\omega^2 +i\omega + 36}</me>.
+	    We can compute the gain using a complex conjugate.
+	    <me> G^2 = |Y|^2 = \frac{1}{ 36-4\omega^2 +i\omega} \frac{1}{ 36-4\omega^2 - i\omega} = \frac{1}{(36-4\omega^2)^2+\omega^2}</me>.
+	    The gain is maximized when the denominator is minimized. This happens when <m>2 (36-4\omega^2)(-8\omega)+2\omega = 0</m>, or <m>\omega^2=9-(1/32)</m>. This is just slightly smaller than the natural undamped frequency <m>\omega_n^2=36/4=9</m>.</p>
+	  </example>
+
+	  <p>In the undamped limit, resonance produces an infinite gain. Damping reduces the peak and the maximal frequency, at first gradually and then dramatically.</p>
+
+	</subsection>
+  
+    </section>
+
+  <section xml:id="so-higher-order">
+	<title>Higher-order ODEs</title>
+	<introduction>
+	<p>First-order and second-order ODEs dominate the landscape when it comes to scientific applications. But once in a while we go to higher order. For linear problems with constant coefficients, this looks a lot like the second-order case.</p>
+	</introduction>
+
+	<subsection>
+		<title>Solving linear high-order ODEs</title>
+		<p>
+		Any solution of the linear ODE
+		<me>a_N \frac{d^Ny}{dt^N} + \cdots + a_2 \frac{d^2y}{dt^2} + a_1 \frac{dy}{dt}  + a_0y = f(t)</me>,
+		where the <m>a_N,\ldots,a_0</m> are all constants, can be expressed as <m>y=y_n+y_p</m>, the sum of a null part <m>y_n</m> that solves the problem when <m>f(t)\equiv 0</m> and a particular solution <m>y_p</m>. 
+	</p>
+	<p>An exponential <m>e^{st}</m> is a null solution if <m>s</m> is a root of the characteristic polynomial
+		<me>P(s) = a_N s^N + \cdots + a_1 s  + a_0</me>. 
+		If the roots <m>s_1,\ldots,s_N</m> are all distinct, then every null solution has the form 
+		<me>y_n = c_1 e^{s_1t} + c_2 e^{s_2t} + \cdots + c_N e^{s_Nt}</me>. 
+		(Repeated roots are handled by using powers of <m>t</m> as multipliers of repeated terms; we do not give the details.) 
+	</p>
+	<p>
+		If <m>f(t)=e^{rt}</m>, then a particular solution is <m>y_p=Ye^{rt}</m> for the transfer function <m>Y(r)=1/P(r)</m>. 
+	</p>
+
+	<example>
+		<p>The ODE <m>y'''+2y''-y'-2y=4 e^{2t}</m> has characteristic polynomial <m>P(s)=s^2+2s^2-s-2</m>. The roots of <m>P</m> are <m>-2,-1,1</m>. So the general null solution is 
+		<me>y_n = c_1 e^{-2t} + c_2 e^{-t} + c_3 e^{2t}</me>. 
+		The transfer function is evaluated at <m>r=2</m> to get <m>Y(2)=1/P(2)=1/12</m>. So the complete solution is 
+		<me>y = c_1 e^{-2t} + c_2 e^{-t} + c_3 e^{2t} + \frac{1}{3}e^{2t}</me>. 
+		We would need three initial conditions in order to specify the integration constants uniquely.		
+		</p>
+	</example>
+
+	<p>Factoring a polynomial of degree three or higher requires luck or a computer. Only a relative few special problems yield simple closed answers.</p>
+
+	<example>
+		<p>The characteristic polynomial of <m>y''''-y=0</m> is <m>s^4-1</m>. The roots are the "fourth roots of unity," given by <m>s_j=\exp(2\pi i j/4)</m> for <m>j=0,1,2,3</m>. These simplify to <m>\pm 1, \pm i</m>. In real form the null solution is 
+		<me> y_n = c_1 e^{-t} + c_2 e^{t} + c_3 \cos(t) + c_4\sin(t)</me>. 
+		</p>
+	</example>
+	</subsection>
+
+	<subsection>
+		<title>Linear operator notation</title>
+		<p>
+			You're familiar with a function as a rule mapping a value (number) to another value. A rule for mapping functions to other functions is called an <term>operator</term>. The first nontrivial operator you ever encountered was differentiation, the map from <m>u(x)</m> to <m>u'(x)</m>. We sometimes write this operator as a capital D: <m>u'=D[u]</m>. (Many times we leave out the square brackets, too.)
+		 </p>
+		 <p>
+			 One of the most salient and familiar facts about the differentiation operator is that it is <term>linear</term>. By this we mean that it obeys two rules:
+			 <ul>
+				 <li><p><m>D[ku] = kD[u]</m> if <m>k</m> is any constant, and</p> </li>
+				 <li><p><m>D[u+v] = D[u]+D[v]</m> if <m>u,v</m> are any functions.</p></li>
+			 </ul>
+			 We use <m>D^k</m> to refer to the operation of taking the <m>k</m>th derivative.
+			</p>
+			<p>
+			 Given a linear ODE of order <m>N</m> as above, we can define 
+			 <me>L[y] = a_N D^N y + \cdots  + a_1 Dy + a_0 y</me>.   
+			This makes it much easier to write the ODE, as <m>L[y]=f</m>. Furthermore, it's easy to check that <m>L</m> satisfies the two rules above and thus is a linear operator as well. The linearity also makes certain kinds of reasoning very simple, such as <m>L[y_n+y_p] = L[y_n]+L[y_p] = 0+f=f</m>. 
+		 </p>
+	</subsection>
+
+  </section>
+
+      <section xml:id="so-applications">
 	<title>Applications of oscillators</title>
-	<p></p>
-      </section>
+	<introduction>
+		<p>Oscillations appear all over science and engineering, and 2nd order linear equations are often used to model them. The best-known examples are mechanical and electrical, but there are chemical and biochemical ones as well.</p>
+	</introduction>
+	
 
-      <section xml:id="general-forcing">
-	<title>Other forcing terms</title>
+		<subsection>
+			<title>Mechanical oscillators</title>
+			<p>
+				As we have already seen, a mass hanging from a spring satisfies the ODE
+				<me>my'' + b y' + ky = f(t)</me>.
+				(As is typical, all the named constants are nonnegative.) Here <m>m</m>> is the mass, <m>b</m>>is a coefficient of friction or other damping forces, and <m>k</m>> is a characteristic constant of the spring. The term <m>f(t)</m> represents an external driving force. If we have initial conditions, they give values for <m>y</m> and <m>y'</m>.
+			</p>
+
+			<p>
+				The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is 
+				<me>\theta'' + \gamma \theta + \frac{g}{L}\sin \theta = f(t)</me>,
+				where <m>\theta(t)</m> is the angle made with vertical-down and <m>L</m> is the arm length. This equation is nonlinear. But if the angle remains small, then a reasonable approximation is 
+				<me>\theta'' + \gamma \theta + \frac{g}{L}\theta = f(t)</me>, 
+				which is a linear oscillator. 
+			</p>
+		</subsection>
+
+		<subsection>
+			<title>Electrical oscillators</title>
+			<p>
+				An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is
+				<me>LI'' + RI' + CI = \mathcal{E}(t)</me>,
+				where <m>L</m> is inductance, <m>R</m> is resistance, <m>C</m> is capacitance, and <m>I(t)</m> is the current flowing through the circuit. The forcing term represents the generator (EMF). For alternating current this is modeled as a cosine (or complex exponential) forcing.  The transfer function is expressed a little differently, because often the target quantity is 
+			</p>
+		</subsection>
+      
+		<subsection xml:id="so-ap-notation">
+	  <title>Unifying notation</title>
+
+	  <p>When you have lots of different versions of the same root problem, with different symbols and units, you have three options. You can solve each new problem from scratch, you can derive custom formulas for each application, or you can try to find a minimal set of parameters and express each problem using those. Let's consider the last pathway here.</p>
+
+	  <p>
+			The mechanical oscillator <m>ay'' + by' + cy = f(t)</m> is more conveniently expressed as
+	  	<me> y'' + \frac{b}{a} y' + \frac{c}{a} y + \frac{c}{a} F(t)</me>.
+			One reason to prefer this form is that <m>y</m> must have the same units as the forcing <m>F</m>. Furthermore, we see the undamped natural frequency <m>\omega_n=\sqrt{c/a}</m>, and this has units of inverse time only. The same units apply to <m>b/a</m>, so we introduce the new dimensionless parameter
+			<me>Z = \frac{1}{2} \frac{b/a}{\omega_n} = \frac{b}{\sqrt{4ac}}</me>. 
+			Now the ODE becomes 
+			<me> y'' + 2 Z \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)</me>.
+			Everything about the ODE can be understood and described in terms of <m>\omega_n</m> and <m>Z</m>. 
+		</p>
+		<p>
+			The characteristic roots become <m>-Z \omega_n \pm \omega_n \sqrt{Z^2-1}</m>. We see that the condition for being underdamped is simply <m>Z \lt 1</m>. In this case we express the roots as <m>-Z \omega_n \pm \omega_d</m>, using the damped frequency <m>\omega_d=\omega_n\sqrt{1-Z^2}</m>. 
+		</p>
+		<p>
+			The gain in the underdamped case works out to be
+	  	<me>G^2 = \frac{1}{(\omega_n^2-\omega^2)^2 + 4\omega_n^2Z^2\omega^2}  = \frac{\omega_n^4}{(1-\rho^2)^2 + 4Z^2\rho^2}</me>,
+			where <m>\rho=\omega/\omega_n</m> is a dimensionless frequency ratio. If also <m>Z^2\lt 1/2</m>, the gain is maximized when <m>\rho=\sqrt{1-2Z^2} \lt 1</m>. The gain at that maximum is proportional to <m>1/Z</m>, so much growth in the response is possible near the natural frequency when damping is small in the sense of <m>Z\approx 0</m>. This can be considered a practical resonance for lightly damped systems. 
+		</p>
+
+	  <example>
+	    <p>The oscillator <m>4y'' + y' + 36y</m> from an earlier example has <m>\omega_n=3</m> and <m>Z=1/\sqrt{16\cdot 36}=1/24</m>. Accordingly, gain is maximized when <m>\omega/\omega_n=1-\frac{1}{288}\approx 0.9965</m>, so for practical purposes a resonance occurs at just slightly less than the natural, undamped frequency.
+			</p>
+		</example>
+
+	</subsection>
+	
+	</section>
+
+      <section xml:id="so-general-forcing">
+	<title>Other forcing functions</title>
 	<p>undetermined coefficients; variation of parameters</p>
       </section>
 

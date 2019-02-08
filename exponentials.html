@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-05T11:08:26-05:00    *-->
+<!--*    on 2019-02-08T14:14:40-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -84,10 +84,11 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="so-simple-harmonic.html" data-scroll="so-simple-harmonic">Simple harmonic motion</a></li>
 <li><a href="so-complex-exponentials.html" data-scroll="so-complex-exponentials">Complex exponentials</a></li>
-<li><a href="constant-coefficients.html" data-scroll="constant-coefficients">Unforced harmonic oscillators</a></li>
-<li><a href="forced-oscillators.html" data-scroll="forced-oscillators">Exponentially forced oscillators</a></li>
-<li><a href="oscillator-applications.html" data-scroll="oscillator-applications">Applications of oscillators</a></li>
-<li><a href="general-forcing.html" data-scroll="general-forcing">Other forcing terms</a></li>
+<li><a href="so-constant-coefficients.html" data-scroll="so-constant-coefficients">Constant coefficients</a></li>
+<li><a href="so-forced-oscillators.html" data-scroll="so-forced-oscillators">Exponentially forced oscillators</a></li>
+<li><a href="so-higher-order.html" data-scroll="so-higher-order">Higher-order ODEs</a></li>
+<li><a href="so-applications.html" data-scroll="so-applications">Applications of oscillators</a></li>
+<li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
 <li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
 <li><a href="laplace-properties.html" data-scroll="laplace-properties">Laplace transform properties</a></li>
 <li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
@@ -144,8 +145,8 @@ y(t) = c_0\left( 1 + a t + \frac{1}{2} a^2 t^2 + \frac{1}{6} a^3 t^3 +  \frac{1}
 \end{equation*}
 </div>
 <p>The undetermined constant \(c_0\) plays the role of the integration constant. In fact, since \(f(0)=1\text{,}\) we see that \(c_0=y(0)\text{,}\) so it's convenient to write the solution as \(y(t)=y(0)f(t)\text{,}\) with the understanding that \(y(0)\) is arbitrary.</p>
-<p id="p-18">Now, at this point we don't know much else about \(f(t)\text{.}\) But we can show next using the ODE that it has the key property of an exponential function: \(f(A+B)=f(A)f(B)\) for any values of \(A\) and \(B\text{.}\) First, we can say immediately that \(y(A+B)=y(0)f(A+B)\text{.}\) Now imagine letting the ODE solution evolve from \(t=0\) to \(t=A\text{,}\) where we freeze time for a moment. We have that \(y(A)=y(0)f(A)\text{,}\) of course. Now suppose we let things continue to evolve by \(B\) additional time units. The solution becomes \(y(A)f(B)=y(0)f(A)f(B)\text{.}\) But this is the same as \(y(A+B)\text{,}\) and we are done.</p>
-<p id="p-19">From here it's just a matter of noting that because of the exponential property, \(f(t)=e^t\) for some base \(e=f(1)=1+\sum_{n=1}^\infty \frac{1}{n!}\text{.}\) The point here is that exponential functions don't just "happen to solve" \(y'=at\text{;}\) if they didn't exist already, we would have had to invent them for the purpose.</p></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+<p id="p-18">Now, at this point we don't know much else about \(f(t)\text{.}\) But we can show next using the ODE that it has the key property of an exponential function: \(f(A+B)=f(A)f(B)\) for any values of \(A\) and \(B\text{.}\) To see this, start with \(y(A+B)=y(0)f(A+B)\text{.}\) Now imagine letting the ODE solution evolve from \(t=0\) to \(t=A\text{,}\) where we freeze time for a moment. We have that \(y(A)=y(0)f(A)\text{,}\) of course. Now suppose we let things continue to evolve by \(B\) additional time units. The solution becomes \(y(A)f(B)=y(0)f(A)f(B)\text{.}\) But this is the same as \(y(A+B)\text{,}\) and we are done.</p>
+<p id="p-19">From here it's just a matter of noting that because of the exponential property, \(f(t)=e^t\) for some base \(e=f(1)=1+\sum_{n=1}^\infty \frac{1}{n!}\text{.}\) The point here is that exponential functions don't just "happen to solve" \(y'=ay\text{;}\) if they didn't exist already, we would have had to invent them for the purpose.</p></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title">Complex exponents</span>
 </h3>
 <p id="p-20">We're going to get a little weird now and consider the case \(y'=iy\text{,}\) where \(i^2=-1\text{.}\) As we'll eventually see, this is out of much more than idle curiosity in the long run. In any event, we'll assume that the solution \(y(t)=e^{it}\) just takes on complex values at all times. So we could write it in real and imaginary parts as \(e^{it} = u(t) + iv(t)\text{.}\) But then applying the ODE, we must conclude</p>

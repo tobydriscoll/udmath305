@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:14:41-05:00    *-->
+<!--*    on 2019-02-08T14:14:40-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Diagonalization</title>
+<title>Applications of oscillators</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
@@ -57,11 +57,11 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="eigenvalues.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="linear-ode-systems.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="linear-system-solutions.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="so-higher-order.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="so-general-forcing.html" title="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="eigenvalues.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="linear-ode-systems.html" title="Up">Up</a><a class="next-button button toolbar-item" href="linear-system-solutions.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="so-higher-order.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="so-general-forcing.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -87,7 +87,7 @@ MathJax.Hub.Config({
 <li><a href="so-constant-coefficients.html" data-scroll="so-constant-coefficients">Constant coefficients</a></li>
 <li><a href="so-forced-oscillators.html" data-scroll="so-forced-oscillators">Exponentially forced oscillators</a></li>
 <li><a href="so-higher-order.html" data-scroll="so-higher-order">Higher-order ODEs</a></li>
-<li><a href="so-applications.html" data-scroll="so-applications">Applications of oscillators</a></li>
+<li><a href="so-applications.html" data-scroll="so-applications" class="active">Applications of oscillators</a></li>
 <li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
 <li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
 <li><a href="laplace-properties.html" data-scroll="laplace-properties">Laplace transform properties</a></li>
@@ -108,15 +108,79 @@ MathJax.Hub.Config({
 <h2 class="link"><a href="linear-ode-systems.html" data-scroll="linear-ode-systems"><span class="codenumber">5</span> <span class="title">Linear ODE systems</span></a></h2>
 <ul>
 <li><a href="eigenvalues.html" data-scroll="eigenvalues">Eigenvalues and eigenvectors</a></li>
-<li><a href="diagonalization.html" data-scroll="diagonalization" class="active">Diagonalization</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
 <li><a href="linear-system-solutions.html" data-scroll="linear-system-solutions">Solutions of linear ODEs</a></li>
 <li><a href="matrix-exponential.html" data-scroll="matrix-exponential">The matrix exponential</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="mathbook-content"><section class="section" id="diagonalization"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Diagonalization</span>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="so-applications"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Applications of oscillators</span>
 </h2>
-<a href="diagonalization.html" class="permalink">¶</a><p id="p-214"></p></section></div></main>
+<a href="so-applications.html" class="permalink">¶</a><section class="introduction" id="introduction-8"><p id="p-194">Oscillations appear all over science and engineering, and 2nd order linear equations are often used to model them. The best-known examples are mechanical and electrical, but there are chemical and biochemical ones as well.</p></section><section class="subsection" id="subsection-28"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Mechanical oscillators</span>
+</h3>
+<p id="p-195">As we have already seen, a mass hanging from a spring satisfies the ODE</p>
+<div class="displaymath">
+\begin{equation*}
+my'' + b y' + ky = f(t)\text{.}
+\end{equation*}
+</div>
+<p>(As is typical, all the named constants are nonnegative.) Here \(m\)&gt; is the mass, \(b\)&gt;is a coefficient of friction or other damping forces, and \(k\)&gt; is a characteristic constant of the spring. The term \(f(t)\) represents an external driving force. If we have initial conditions, they give values for \(y\) and \(y'\text{.}\)</p>
+<p id="p-196">The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
+<div class="displaymath">
+\begin{equation*}
+\theta'' + \gamma \theta + \frac{g}{L}\sin \theta = f(t)\text{,}
+\end{equation*}
+</div>
+<p>where \(\theta(t)\) is the angle made with vertical-down and \(L\) is the arm length. This equation is nonlinear. But if the angle remains small, then a reasonable approximation is</p>
+<div class="displaymath">
+\begin{equation*}
+\theta'' + \gamma \theta + \frac{g}{L}\theta = f(t)\text{,}
+\end{equation*}
+</div>
+<p>which is a linear oscillator.</p></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">Electrical oscillators</span>
+</h3>
+<p id="p-197">An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is</p>
+<div class="displaymath">
+\begin{equation*}
+LI'' + RI' + CI = \mathcal{E}(t)\text{,}
+\end{equation*}
+</div>
+<p>where \(L\) is inductance, \(R\) is resistance, \(C\) is capacitance, and \(I(t)\) is the current flowing through the circuit. The forcing term represents the generator (EMF). For alternating current this is modeled as a cosine (or complex exponential) forcing.  The transfer function is expressed a little differently, because often the target quantity is</p></section><section class="subsection" id="so-ap-notation"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.3</span> <span class="title">Unifying notation</span>
+</h3>
+<a href="so-applications.html#so-ap-notation" class="permalink">¶</a><p id="p-198">When you have lots of different versions of the same root problem, with different symbols and units, you have three options. You can solve each new problem from scratch, you can derive custom formulas for each application, or you can try to find a minimal set of parameters and express each problem using those. Let's consider the last pathway here.</p>
+<p id="p-199">The mechanical oscillator \(ay'' + by' + cy = f(t)\) is more conveniently expressed as</p>
+<div class="displaymath">
+\begin{equation*}
+y'' + \frac{b}{a} y' + \frac{c}{a} y + \frac{c}{a} F(t)\text{.}
+\end{equation*}
+</div>
+<p>One reason to prefer this form is that \(y\) must have the same units as the forcing \(F\text{.}\) Furthermore, we see the undamped natural frequency \(\omega_n=\sqrt{c/a}\text{,}\) and this has units of inverse time only. The same units apply to \(b/a\text{,}\) so we introduce the new dimensionless parameter</p>
+<div class="displaymath">
+\begin{equation*}
+Z = \frac{1}{2} \frac{b/a}{\omega_n} = \frac{b}{\sqrt{4ac}}\text{.}
+\end{equation*}
+</div>
+<p>Now the ODE becomes</p>
+<div class="displaymath">
+\begin{equation*}
+y'' + 2 Z \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)\text{.}
+\end{equation*}
+</div>
+<p>Everything about the ODE can be understood and described in terms of \(\omega_n\) and \(Z\text{.}\)</p>
+<p id="p-200">The characteristic roots become \(-Z \omega_n \pm \omega_n \sqrt{Z^2-1}\text{.}\) We see that the condition for being underdamped is simply \(Z \lt 1\text{.}\) In this case we express the roots as \(-Z \omega_n \pm \omega_d\text{,}\) using the damped frequency \(\omega_d=\omega_n\sqrt{1-Z^2}\text{.}\)</p>
+<p id="p-201">The gain in the underdamped case works out to be</p>
+<div class="displaymath">
+\begin{equation*}
+G^2 = \frac{1}{(\omega_n^2-\omega^2)^2 + 4\omega_n^2Z^2\omega^2}  = \frac{\omega_n^4}{(1-\rho^2)^2 + 4Z^2\rho^2}\text{,}
+\end{equation*}
+</div>
+<p>where \(\rho=\omega/\omega_n\) is a dimensionless frequency ratio. If also \(Z^2\lt 1/2\text{,}\) the gain is maximized when \(\rho=\sqrt{1-2Z^2} \lt 1\text{.}\) The gain at that maximum is proportional to \(1/Z\text{,}\) so much growth in the response is possible near the natural frequency when damping is small in the sense of \(Z\approx 0\text{.}\) This can be considered a practical resonance for lightly damped systems.</p>
+<article class="example-like" id="example-25"><a knowl="" class="id-ref" refid="hk-example-25"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.6.1</span>
+</h6></a></article><div id="hk-example-25" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-202">The oscillator \(4y'' + y' + 36y\) from an earlier example has \(\omega_n=3\) and \(Z=1/\sqrt{16\cdot 36}=1/24\text{.}\) Accordingly, gain is maximized when \(\omega/\omega_n=1-\frac{1}{288}\approx 0.9965\text{,}\) so for practical purposes a resonance occurs at just slightly less than the natural, undamped frequency.</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>
