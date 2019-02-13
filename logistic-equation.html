@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:40-05:00    *-->
+<!--*    on 2019-02-13T16:20:07-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -116,14 +116,15 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="logistic-equation"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.9</span> <span class="title">Logistic equation</span>
 </h2>
-<a href="logistic-equation.html" class="permalink">¶</a><section class="introduction" id="introduction-4"><p id="p-101">Say \(y(t)\) represents a population of bacteria. (There is always a whole number of bacteria, of course, but we'll allow real values. For large numbers that shouldn't matter.) If we assume that each bacterium produces offspring and ages at a constant rate, the result is a constant <em class="emphasis">net per capita growth rate</em>:</p>
+<a href="logistic-equation.html" class="permalink">¶</a><section class="introduction" id="introduction-4"><p id="p-108"><em class="emphasis">Refer to section 1.7 of the text (pp. 53-57).</em></p>
+<p id="p-109">Say \(y(t)\) represents a population of bacteria. (There is always a whole number of bacteria, of course, but we'll allow real values. For large numbers that shouldn't matter.) If we assume that each bacterium produces offspring and ages at a constant rate, the result is a constant <em class="emphasis">net per capita growth rate</em>:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{y} \dd{y}{t} = a\text{.}
 \end{equation*}
 </div>
 <p>If \(a\gt 0\text{,}\) then this is a recipe for exponential growth, a la \(y'=ay\text{.}\)</p>
-<p id="p-102">There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
+<p id="p-110">There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
 <div class="displaymath">
 \begin{equation}
 \frac{1}{y} \dd{y}{t} = a - by, \qquad or \dd{y}{t} = ay - by^2 \text{.}\label{eq-logistic}\tag{1.9.1}
@@ -132,8 +133,8 @@ MathJax.Hub.Config({
 <p>This is the <dfn class="terminology">logistic equation</dfn>.</p></section><section class="subsection" id="fl-steady"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.1</span> <span class="title">Steady states</span>
 </h3>
-<a href="logistic-equation.html#fl-steady" class="permalink">¶</a><p id="p-103">The logistic equation is our first real look at a nonlinear ODE. We'll begin with the steady states. We have \(f(y)=y(a-by)\) with roots \(y=0\) and \(y=a/b\text{.}\) Since \(f'(y)=a-2by\text{,}\) we have that the former steady state is unstable and the latter is stable. The stable equilibrium value \(K=a/b\) is important and known as the <dfn class="terminology">carrying capacity</dfn> of the environment. We will find later that this value is the long-term fate of the system for any positive initial condition.</p>
-<p id="p-104">We can get creative and show that the halfway value \(y=K/2\) is also special. Still without knowing explicitly what \(y\) is, we can differentiate the ODE and use the chain rule to obtain</p>
+<a href="logistic-equation.html#fl-steady" class="permalink">¶</a><p id="p-111">The logistic equation is our first real look at a nonlinear ODE. We'll begin with the steady states. We have \(f(y)=y(a-by)\) with roots \(y=0\) and \(y=a/b\text{.}\) Since \(f'(y)=a-2by\text{,}\) we have that the former steady state is unstable and the latter is stable. The stable equilibrium value \(K=a/b\) is important and known as the <dfn class="terminology">carrying capacity</dfn> of the environment. We will find later that this value is the long-term fate of the system for any positive initial condition.</p>
+<p id="p-112">We can get creative and show that the halfway value \(y=K/2\) is also special. Still without knowing explicitly what \(y\) is, we can differentiate the ODE and use the chain rule to obtain</p>
 <div class="displaymath">
 \begin{equation*}
 y'' = ay'-2byy' = (a-2by)(ay-by^2)\text{.}
@@ -142,7 +143,7 @@ y'' = ay'-2byy' = (a-2by)(ay-by^2)\text{.}
 <p>This is zero for \(y=K/2=a/2b\text{,}\) suggesting that \(dy/dt\) has an extreme value there.</p></section><section class="subsection" id="fl-solution-easy"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">First solution method: Easy but lucky</span>
 </h3>
-<a href="logistic-equation.html#fl-solution-easy" class="permalink">¶</a><p id="p-105">When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of "lucky" solutions is the idea of variable substitution, and the logistic equation is a nice case study. Define \(z=1/y\text{.}\) From the chain rule we have \(z'=-y^{-2}y'=-y'z^2\text{.}\) The logistic equation converts to</p>
+<a href="logistic-equation.html#fl-solution-easy" class="permalink">¶</a><p id="p-113">When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of "lucky" solutions is the idea of variable substitution, and the logistic equation is a nice case study. Define \(z=1/y\text{.}\) From the chain rule we have \(z'=-y^{-2}y'=-y'z^2\text{.}\) The logistic equation converts to</p>
 <div class="displaymath">
 \begin{equation*}
 -\frac{z'}{z^2} = \frac{a}{z} - \frac{b}{z^2}\text{,}
@@ -179,17 +180,17 @@ set(gca,'ygrid','on',...
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_log_solutions.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-106">It's not easy to say "why" the variable substitution works out so well here. It's also not something you can expect to happen in most problems. The situation is very much like substitutions to solve integration problems: when they work, they're golden, and when they don't, you try something else.</p></section><section class="subsection" id="fl-solution-long"><h3 class="heading hide-type">
+<p id="p-114">It's not easy to say "why" the variable substitution works out so well here. It's also not something you can expect to happen in most problems. The situation is very much like substitutions to solve integration problems: when they work, they're golden, and when they don't, you try something else.</p></section><section class="subsection" id="fl-solution-long"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.3</span> <span class="title">Second solution method: Systematic but long</span>
 </h3>
-<a href="logistic-equation.html#fl-solution-long" class="permalink">¶</a><p id="p-107">The logistic equation, being of the particular form \(y'(t)=f(y)\text{,}\) is known as an <dfn class="terminology">autonomous</dfn> problem. The ODE (not the solution) has no explicit dependence on time. We have a process for solving autonomous equations known as <dfn class="terminology">separation of variables</dfn>. It's based on the rearrangement</p>
+<a href="logistic-equation.html#fl-solution-long" class="permalink">¶</a><p id="p-115">The logistic equation, being of the particular form \(y'(t)=f(y)\text{,}\) is known as an <dfn class="terminology">autonomous</dfn> problem. The ODE (not the solution) has no explicit dependence on time. We have a process for solving autonomous equations known as <dfn class="terminology">separation of variables</dfn>. It's based on the rearrangement</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dy}{dt} = f(y) \quad \Rightarrow \quad \frac{dy}{f(y)} = dt\text{.}
 \end{equation*}
 </div>
 <p>The right-hand side can be integrated to get \(t+C\text{.}\) If we can integrate the left-hand side, we get a solution formula.</p>
-<p id="p-108">In the logistic equation the separation strategy yields</p>
+<p id="p-116">In the logistic equation the separation strategy yields</p>
 <div class="displaymath">
 \begin{equation*}
 t +C = \int \frac{dy}{y(a-by)} = \frac{1}{b} \int \frac{dy}{y(K-y)} = \frac{1}{bK} \int \left( \frac{1}{y} + \frac{1}{K-y} \right)\,dy\text{.}
@@ -202,26 +203,57 @@ t +C = \int \frac{dy}{y(a-by)} = \frac{1}{b} \int \frac{dy}{y(K-y)} = \frac{1}{b
 \end{equation*}
 </div>
 <p>and determine \(A\) and \(B\) by clearing the denominators to get \(1=A(K-y)-By\text{.}\) This is an identity for all values of \(y\text{,}\) so we can match powers of \(y\) to get a linear system of two equations. Or we could judiciously plug in \(y=0\) to get \(A=1/K\) and \(y=K\) to get \(B=-1/K\text{.}\)</p>
-<p id="p-109">Any way you get them, the partial fractions are easily integrated to get logs, and the solution follows from there. The details are given in the text. Obviously we have to end up with <a knowl="./knowl/eq-logistic-solution.html" title="Equation 1.9.2">(1.9.2)</a> again. The success of the separation strategy in general rests on whether we can actually perform the \(y\) integration we set up. As you know, that's no small thing.</p></section><section class="subsection" id="fl-harvesting"><h3 class="heading hide-type">
+<p id="p-117">Any way you get them, the partial fractions are easily integrated to get logs, and the solution follows from there. The details are given in the text. Obviously we have to end up with <a knowl="./knowl/eq-logistic-solution.html" title="Equation 1.9.2">(1.9.2)</a> again. The success of the separation strategy in general rests on whether we can actually perform the \(y\) integration we set up. As you know, that's no small thing.</p></section><section class="subsection" id="fl-harvesting"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.4</span> <span class="title">Harvesting</span>
 </h3>
-<a href="logistic-equation.html#fl-harvesting" class="permalink">¶</a><p id="p-110">As a final wrinkle, suppose a population is being reduced at a constant rate due to harvesting. (That may not be realistic as the population dwindles, but we are going for simplicity here.) It's easiest to do the discussion with only one varying parameter, so let's modify the pure logisitc model \(y'=6y-y^2\) to get \(y'=6y-y^2-h\text{,}\) for a positive constant \(h\text{.}\)</p>
-<p id="p-111">We get steady states whenever \(f(y)=6y-y^2-h=0\text{.}\) Since this is a quadratic in \(y\text{,}\) we expect to see either two steady states (distinct real roots), one (double real root), or none (when there are complex roots). The changeover happens at the double root, when \(6^2-4h=0\text{,}\) or \(h=9\text{.}\)</p>
-<p id="p-112"><em class="emphasis">Underharvesting, \(h\lt 9\text{:}\)</em> For example, say \(h=8\text{.}\) The roots of \(f(y)\) are \((6\pm\sqrt{36-32})/2\text{,}\) or 4 and 2, so these are the steady states. It's possible to repeat the partial fractions computation above for this problem, but there's an easier path. Define the new variable \(v=y-2\text{.}\) Then \(v'=y'\text{,}\) and</p>
+<a href="logistic-equation.html#fl-harvesting" class="permalink">¶</a><p id="p-118"><em class="emphasis">Refer to section 1.7 of the text (pp 59-60).</em></p>
+<p id="p-119">As a final wrinkle, suppose a population is being reduced at a constant rate due to harvesting. (That may not be realistic as the population dwindles, but we are going for simplicity here.) It's easiest to do the discussion with only one varying parameter, so let's modify the pure logisitc model \(y'=6y-y^2\) to get \(y'=6y-y^2-h\text{,}\) for a positive constant \(h\text{.}\)</p>
+<p id="p-120">We get steady states whenever \(f(y)=6y-y^2-h=0\text{.}\) Since this is a quadratic in \(y\text{,}\) we expect to see either two steady states (distinct real roots), one (double real root), or none (when there are complex roots). The changeover happens at the double root, when \(6^2-4h=0\text{,}\) or \(h=9\text{.}\)</p>
+<p id="p-121"><em class="emphasis">Underharvesting, \(h\lt 9\text{:}\)</em> For example, say \(h=8\text{.}\) The roots of \(f(y)\) are \((6\pm\sqrt{36-32})/2\text{,}\) or 4 and 2, so these are the steady states. It's possible to repeat the partial fractions computation above for this problem, but there's an easier path. Define the new variable \(v=y-2\text{.}\) Then \(v'=y'\text{,}\) and</p>
 <div class="displaymath">
 \begin{equation*}
 v' = 6(v+2) -(v+2)^2 - 8 = 6v+12 -v^2 -4v - 4 - 8 = 2v -v^2\text{,}
 \end{equation*}
 </div>
 <p>which is a pure logistic equation with different parameters and steady states 0 and 2. The problem can be solved for \(v\) and then turned back into \(y\) by adding 2. So the population will have a logistic or sigmoidal solution between an unstable 2 and a stable 4.</p>
-<p id="p-113"><em class="emphasis">Critical harvesting, \(h= 9\text{:}\)</em> There is a double root at \(y=3\text{,}\) and now \(y'=6y-y^2-9=-(y-3)^2\text{.}\) If we change now to \(v=y-3\text{,}\) we get just \(v'=-v^2\text{,}\) which is a nonlinear equation very similar to the one in <a href="linearity.html" class="xref" title="Section 1.1: Introduction">Section 1.1</a>. It's autonomous and thus can be integrated by separation:</p>
+<article class="example-like" id="example-15"><a knowl="" class="id-ref" refid="hk-example-15"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.9.2</span>
+</h6></a></article><div id="hk-example-15" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">h = 8;
+dydt = @(t,y) 6*y - y^2 - h;
+tt = linspace(0,5,500);
+for y0 = 0.8:0.65:5
+    [t,y] = ode45(dydt,tt,y0);
+    plot(t,y), hold on
+end
+xlabel('t'), ylabel('y(t)')
+grid on, ylim([0 5])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lgs_underharvest.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article></div>
+<p id="p-122"><em class="emphasis">Critical harvesting, \(h= 9\text{:}\)</em> There is a double root at \(y=3\text{,}\) and now \(y'=6y-y^2-9=-(y-3)^2\text{.}\) If we change now to \(v=y-3\text{,}\) we get just \(v'=-v^2\text{,}\) which is a nonlinear equation very similar to the one in <a href="linearity.html" class="xref" title="Section 1.1: Introduction">Section 1.1</a>. It's autonomous and thus can be integrated by separation:</p>
 <div class="displaymath">
 \begin{equation*}
 t = \int -\frac{dv}{v^2} = \frac{1}{v} + C\text{,}
 \end{equation*}
 </div>
 <p>so that \(v=1/(t-C)\) for arbitrary \(C\text{.}\) From here we get \(v(t)=v(0)/(1+tv(0))\text{.}\) There are two possibilities. If \(v(0)\gt 0\text{,}\) then the denominator is never zero, and \(v\to 0\) (thus \(y \to 3\)) as \(t\to\infty\text{.}\) But if \(v(0)\lt 0\text{,}\) then \(v\to -\infty\) as \(t\to -1/v(0)\text{.}\) We interpret that as a population crash (our model would have to stop at \(v=-3\)). So a large enough initial population will tend toward a nonzero steady state, but if it ever dips below that value, it will die out. We might call this precarious situation "semistable".</p>
-<p id="p-114"><em class="emphasis">Overharvesting, \(h\gt 9\text{:}\)</em> The harvested logistic equation has no real steady states. For example, say \(y'=6y-y^2-13\text{.}\) We define \(v=y-3\) and get</p>
+<article class="example-like" id="example-16"><a knowl="" class="id-ref" refid="hk-example-16"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.9.3</span>
+</h6></a></article><div id="hk-example-16" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">h = 9;
+dydt = @(t,y) 6*y - y^2 - h;
+tt = linspace(0,5,500);
+for y0 = 0.8:0.65:5
+    [t,y] = ode45(dydt,tt,y0);
+    plot(t,y), hold on
+end
+xlabel('t'), ylabel('y(t)')
+grid on, ylim([0 5])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lgs_critharvest.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article></div>
+<p id="p-123"><em class="emphasis">Overharvesting, \(h\gt 9\text{:}\)</em> The harvested logistic equation has no real steady states. For example, say \(y'=6y-y^2-13\text{.}\) We define \(v=y-3\) and get</p>
 <div class="displaymath">
 \begin{equation*}
 v' = 6(v+3) - (v+3)^2 - 13 = -v^2 - 4\text{.}
@@ -239,7 +271,22 @@ t = -\frac{1}{2} \arctan \left(\frac{v}{2}\right) + C\text{,}
 v = -2\tan( 2t+C )
 \end{equation*}
 </div>
-<p>for a (different) arbitrary \(C\text{.}\) As \(2t+C\to \pi/2\) from the left, this will crash to \(v\to -\infty\text{.}\) Thus the population is doomed.</p></section></section></div></main>
+<p>for a (different) arbitrary \(C\text{.}\) As \(2t+C\to \pi/2\) from the left, this will crash to \(v\to -\infty\text{.}\) Thus the population is doomed.</p>
+<article class="example-like" id="example-17"><a knowl="" class="id-ref" refid="hk-example-17"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.9.4</span>
+</h6></a></article><div id="hk-example-17" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">h = 13;
+dydt = @(t,y) 6*y - y^2 - h;
+tt = linspace(0,5,500);
+for y0 = 0.8:0.65:5
+    [t,y] = ode45(dydt,tt,y0);
+    plot(t,y), hold on
+end
+xlabel('t'), ylabel('y(t)')
+grid on, ylim([0 5])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lgs_overharvest.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article></div></section></section></div></main>
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,8 +13,20 @@
 </head>
 <body>
 <article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.6.1</span>
+<span class="type">Example</span> <span class="codenumber">2.4.3</span>
 </h6>
-<p>The oscillator \(4y'' + y' + 36y\) from an earlier example has \(\omega_n=3\) and \(Z=1/\sqrt{16\cdot 36}=1/24\text{.}\) Accordingly, gain is maximized when \(\omega/\omega_n=1-\frac{1}{288}\approx 0.9965\text{,}\) so for practical purposes a resonance occurs at just slightly less than the natural, undamped frequency.</p></article><span class="incontext"><a href="so-applications.html#example-25">in-context</a></span>
+<p>The oscillator \(4y'' + y' + 36y\) has transfer function \(Y(s)=1/(4s^2+s+36)\text{.}\) At \(s=i\omega\) we get</p>
+<div class="displaymath">
+\begin{equation*}
+Y(i\omega) = \frac{1}{ -4\omega^2 +i\omega + 36}\text{.}
+\end{equation*}
+</div>
+<p>We can compute the gain using a complex conjugate.</p>
+<div class="displaymath">
+\begin{equation*}
+G^2 = |Y|^2 = \frac{1}{ 36-4\omega^2 +i\omega} \frac{1}{ 36-4\omega^2 - i\omega} = \frac{1}{(36-4\omega^2)^2+\omega^2}\text{.}
+\end{equation*}
+</div>
+<p>The gain is maximized when the denominator is minimized. This happens when \(2 (36-4\omega^2)(-8\omega)+2\omega = 0\text{,}\) or \(\omega^2=9-(1/32)\text{.}\) This is just slightly smaller than the natural undamped frequency \(\omega_n^2=36/4=9\text{.}\)</p></article><span class="incontext"><a href="so-forced-oscillators.html#example-25">in-context</a></span>
 </body>
 </html>

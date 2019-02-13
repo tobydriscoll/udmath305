@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p><em class="emphasis">Critical harvesting, \(h= 9\text{:}\)</em> There is a double root at \(y=3\text{,}\) and now \(y'=6y-y^2-9=-(y-3)^2\text{.}\) If we change now to \(v=y-3\text{,}\) we get just \(v'=-v^2\text{,}\) which is a nonlinear equation very similar to the one in <a href="linearity.html" class="xref" title="Section 1.1: Introduction">Section 1.1</a>. It's autonomous and thus can be integrated by separation:</p>
+<p>When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of "lucky" solutions is the idea of variable substitution, and the logistic equation is a nice case study. Define \(z=1/y\text{.}\) From the chain rule we have \(z'=-y^{-2}y'=-y'z^2\text{.}\) The logistic equation converts to</p>
 <div class="displaymath">
 \begin{equation*}
-t = \int -\frac{dv}{v^2} = \frac{1}{v} + C\text{,}
+-\frac{z'}{z^2} = \frac{a}{z} - \frac{b}{z^2}\text{,}
 \end{equation*}
 </div>
-<p>so that \(v=1/(t-C)\) for arbitrary \(C\text{.}\) From here we get \(v(t)=v(0)/(1+tv(0))\text{.}\) There are two possibilities. If \(v(0)\gt 0\text{,}\) then the denominator is never zero, and \(v\to 0\) (thus \(y \to 3\)) as \(t\to\infty\text{.}\) But if \(v(0)\lt 0\text{,}\) then \(v\to -\infty\) as \(t\to -1/v(0)\text{.}\) We interpret that as a population crash (our model would have to stop at \(v=-3\)). So a large enough initial population will tend toward a nonzero steady state, but if it ever dips below that value, it will die out. We might call this precarious situation "semistable".</p>
+<p>or \(z'=b-az\text{.}\) This is a linear equation! It even has constant coefficients. In terms of \(z\text{,}\) we jump right to the solution:</p>
+<div class="displaymath">
+\begin{equation*}
+z(t) = e^{-at}z(0) - \frac{b}{a} \left( e^{-at}-1 \right) = \frac{e^{-at}(Kz_0-1)+1)}{K}\text{.}
+\end{equation*}
+</div>
+<p>Finally, with \(y=1/z\) we get</p>
+<div class="displaymath">
+\begin{equation}
+y(t) = \frac{Ky_0}{e^{-at}(K-y_0)+y_0}\text{.}\tag{1.9.2}
+\end{equation}
+</div>
+<p>You can easily check that \(y(0)=y_0\text{.}\) Moreover, \(y\to K\) as \(t\to \infty\text{.}\) As Figure 1.9 of the text shows, the logistic curve is an S-shaped or <dfn class="terminology">sigmoidal</dfn> curve. You can think of it as a nice, smooth transition between two states (the two equilibria).</p>
 <span class="incontext"><a href="logistic-equation.html#p-113">in-context</a></span>
 </body>
 </html>

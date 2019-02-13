@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,20 +13,14 @@
 </head>
 <body>
 <article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.5.1</span>
+<span class="type">Example</span> <span class="codenumber">2.4.1</span>
 </h6>
-<p>The ODE \(y'''+2y''-y'-2y=4 e^{2t}\) has characteristic polynomial \(P(s)=s^2+2s^2-s-2\text{.}\) The roots of \(P\) are \(-2,-1,1\text{.}\) So the general null solution is</p>
-<div class="displaymath">
-\begin{equation*}
-y_n = c_1 e^{-2t} + c_2 e^{-t} + c_3 e^{2t}\text{.}
-\end{equation*}
-</div>
-<p>The transfer function is evaluated at \(r=2\) to get \(Y(2)=1/P(2)=1/12\text{.}\) So the complete solution is</p>
-<div class="displaymath">
-\begin{equation*}
-y = c_1 e^{-2t} + c_2 e^{-t} + c_3 e^{2t} + \frac{1}{3}e^{2t}\text{.}
-\end{equation*}
-</div>
-<p>We would need three initial conditions in order to specify the integration constants uniquely.</p></article><span class="incontext"><a href="so-higher-order.html#example-23">in-context</a></span>
+<p>Let's solve \(y''+5y'+6y=4 e^{-t}\text{,}\) with \(y(0)=0\text{,}\) \(y'(0)=1\text{.}\) In stages: </p>
+<ol class="decimal">
+<li><p><em class="emphasis">Null solution</em>. The characteristic equation of \(y''+5y'+6y=0\) is \(s^2+5s+6=0\text{,}\) which has roots \(s_1=-2\text{,}\) \(s_2=-3\text{.}\) Thus \(y_n=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p></li>
+<li><p><em class="emphasis">Particular solution</em>. The transfer function is \(Y(s)=1/(s^2+5s+6)\text{,}\) and \(Y(-1)=1/2\text{.}\) Hence \(y_p=\frac{1}{2}\cdot 4 e^{-t}=2e^{-t}\text{.}\)</p></li>
+<li><p><em class="emphasis">Complete solution</em>. \(y=y_n+y_p=c_1 e^{-2t}+c_2e^{-3t} + 2 e^{-t}\)</p></li>
+<li><p><em class="emphasis">Initial values</em>. We get \(0=y(0)=c_1+c_2+2\) and \(1=y'(0)=-2c_1-3c_2-2\text{.}\) This implies \(c_1=-3\text{,}\) \(c_2=1\text{.}\) Finally, \(y=-3 e^{-2t}+e^{-3t} + 2 e^{-t}\text{.}\)</p></li>
+</ol></article><span class="incontext"><a href="so-forced-oscillators.html#example-23">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:40-05:00    *-->
+<!--*    on 2019-02-13T16:20:07-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -116,11 +116,12 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="exponentials"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Exponentials</span>
 </h2>
-<a href="exponentials.html" class="permalink">¶</a><section class="introduction" id="introduction-1"><p id="p-15">The simplest nontrivial ODE of all is \(y'=ay\text{,}\) where \(a\) is a constant. It takes no effort at all to verify that \(y(t)=e^{at}\) is a solution, as we have seen a couple of times already. One way to view the role of \(a\) is to switch between growth (positive values),  decay (negative values), and stasis (zero). But you can also interpret it as a rescaling of the time measurement. For instance, if we change from measuring time in minutes to measuring it in seconds, it's equivalent to multiplying \(a\) by 60. One consequence is that exponential decay is just like running a movie of exponential growth in reverse.</p>
-<p id="p-16">From the perspective of someone who already knows \(e\) well from calculus, the exponential solution may seem obvious. But even if we didn't already know this "obvious" fact, we'd get to pretty much the same place by basic reasoning.</p></section><section class="subsection" id="subsection-1"><h3 class="heading hide-type">
+<a href="exponentials.html" class="permalink">¶</a><section class="introduction" id="introduction-1"><p id="p-15"><em class="emphasis">Refer to section 1.3 of the text.</em></p>
+<p id="p-16">The simplest nontrivial ODE of all is \(y'=ay\text{,}\) where \(a\) is a constant. It takes no effort at all to verify that \(y(t)=e^{at}\) is a solution, as we have seen a couple of times already. One way to view the role of \(a\) is to switch between growth (positive values),  decay (negative values), and stasis (zero). But you can also interpret it as a rescaling of the time measurement. For instance, if we change from measuring time in minutes to measuring it in seconds, it's equivalent to multiplying \(a\) by 60. One consequence is that exponential decay is just like running a movie of exponential growth in reverse.</p>
+<p id="p-17">From the perspective of someone who already knows \(e\) well from calculus, the exponential solution may seem obvious. But even if we didn't already know this "obvious" fact, we'd get to pretty much the same place by basic reasoning.</p></section><section class="subsection" id="subsection-1"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title">Exponentials from first principles</span>
 </h3>
-<p id="p-17">Suppose the ODE solution is expressed in terms of some infinite power series with unknown coefficients:</p>
+<p id="p-18">Suppose the ODE solution is expressed in terms of some infinite power series with unknown coefficients:</p>
 <div class="displaymath">
 \begin{equation*}
 y(t) = c_0 + c_1 t + c_2 t^2 + c_3 t^3 + c_4 t^4 + \cdots\text{.}
@@ -145,11 +146,11 @@ y(t) = c_0\left( 1 + a t + \frac{1}{2} a^2 t^2 + \frac{1}{6} a^3 t^3 +  \frac{1}
 \end{equation*}
 </div>
 <p>The undetermined constant \(c_0\) plays the role of the integration constant. In fact, since \(f(0)=1\text{,}\) we see that \(c_0=y(0)\text{,}\) so it's convenient to write the solution as \(y(t)=y(0)f(t)\text{,}\) with the understanding that \(y(0)\) is arbitrary.</p>
-<p id="p-18">Now, at this point we don't know much else about \(f(t)\text{.}\) But we can show next using the ODE that it has the key property of an exponential function: \(f(A+B)=f(A)f(B)\) for any values of \(A\) and \(B\text{.}\) To see this, start with \(y(A+B)=y(0)f(A+B)\text{.}\) Now imagine letting the ODE solution evolve from \(t=0\) to \(t=A\text{,}\) where we freeze time for a moment. We have that \(y(A)=y(0)f(A)\text{,}\) of course. Now suppose we let things continue to evolve by \(B\) additional time units. The solution becomes \(y(A)f(B)=y(0)f(A)f(B)\text{.}\) But this is the same as \(y(A+B)\text{,}\) and we are done.</p>
-<p id="p-19">From here it's just a matter of noting that because of the exponential property, \(f(t)=e^t\) for some base \(e=f(1)=1+\sum_{n=1}^\infty \frac{1}{n!}\text{.}\) The point here is that exponential functions don't just "happen to solve" \(y'=ay\text{;}\) if they didn't exist already, we would have had to invent them for the purpose.</p></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+<p id="p-19">Now, at this point we don't know much else about \(f(t)\text{.}\) But we can show next using the ODE that it has the key property of an exponential function: \(f(A+B)=f(A)f(B)\) for any values of \(A\) and \(B\text{.}\) To see this, start with \(y(A+B)=y(0)f(A+B)\text{.}\) Now imagine letting the ODE solution evolve from \(t=0\) to \(t=A\text{,}\) where we freeze time for a moment. We have that \(y(A)=y(0)f(A)\text{,}\) of course. Now suppose we let things continue to evolve by \(B\) additional time units. The solution becomes \(y(A)f(B)=y(0)f(A)f(B)\text{.}\) But this is the same as \(y(A+B)\text{,}\) and we are done.</p>
+<p id="p-20">From here it's just a matter of noting that because of the exponential property, \(f(t)=e^t\) for some base \(e=f(1)=1+\sum_{n=1}^\infty \frac{1}{n!}\text{.}\) The point here is that exponential functions don't just "happen to solve" \(y'=ay\text{;}\) if they didn't exist already, we would have had to invent them for the purpose.</p></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title">Complex exponents</span>
 </h3>
-<p id="p-20">We're going to get a little weird now and consider the case \(y'=iy\text{,}\) where \(i^2=-1\text{.}\) As we'll eventually see, this is out of much more than idle curiosity in the long run. In any event, we'll assume that the solution \(y(t)=e^{it}\) just takes on complex values at all times. So we could write it in real and imaginary parts as \(e^{it} = u(t) + iv(t)\text{.}\) But then applying the ODE, we must conclude</p>
+<p id="p-21">We're going to get a little weird now and consider the case \(y'=iy\text{,}\) where \(i^2=-1\text{.}\) As we'll eventually see, this is out of much more than idle curiosity in the long run. In any event, we'll assume that the solution \(y(t)=e^{it}\) just takes on complex values at all times. So we could write it in real and imaginary parts as \(e^{it} = u(t) + iv(t)\text{.}\) But then applying the ODE, we must conclude</p>
 <div class="displaymath">
 \begin{equation*}
 u'(t) + iv'(t) = i(u(t)+iv(t)) = -v(t) + iu(t)\text{,}
@@ -172,7 +173,7 @@ legend('Re part','Im part')
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/exp_complex.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-21">If we conceive of parametrically defining \(x(t)\) and \(y(t)\) as the real and imginary parts of the complex exponential, then this plot becomes the unit circle. We often write this set as \(|z|=1\) in the complex plane.</p>
+<p id="p-22">If we conceive of parametrically defining \(x(t)\) and \(y(t)\) as the real and imginary parts of the complex exponential, then this plot becomes the unit circle. We often write this set as \(|z|=1\) in the complex plane.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">c = @(t) real(exp(1i*t));
 s = @(t) imag(exp(1i*t));
@@ -183,8 +184,8 @@ title('Complex exponential = Unit circle')
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/exp_circle.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-22">Euler's identity also leads as a special case to one of the most popular choices of "favorite equation," \(e^{i\pi}=-1\text{,}\) which is an almost mystical combination of the four fundamental numbers \(1,i,\pi,e\text{.}\)</p>
-<p id="p-23">All that from a little ol' first-order linear ODE!</p></section></section></div></main>
+<p id="p-23">Euler's identity also leads as a special case to one of the most popular choices of "favorite equation," \(e^{i\pi}=-1\text{,}\) which is an almost mystical combination of the four fundamental numbers \(1,i,\pi,e\text{.}\)</p>
+<p id="p-24">All that from a little ol' first-order linear ODE!</p></section></section></div></main>
 </div>
 </body>
 </html>

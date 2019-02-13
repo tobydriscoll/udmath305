@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>With two roots for the characteristic equation, the general null solution is</p>
+<p>It's not hard to see that the sin forcing term can be solved by \(y_p=Y\sin(t)\) for a constant \(Y\text{.}\) We can put both forcing terms together with \(y_p=A\cos(t)+B\sin(t)\) and insert it into the equation to find</p>
 <div class="displaymath">
 \begin{equation*}
-y = c_1 e^{s_1t} + c_2 e^{s_2t}\text{.}
+(9-A)\cos(t)+(9-B)\sin(t) = \sin(t)-\cos(t),
 \end{equation*}
 </div>
-<p>There are two integration constants here, just what we need to satisfy two initial conditions. Except for that pesky asterisk!</p>
-<span class="incontext"><a href="so-constant-coefficients.html#p-145">in-context</a></span>
+<p>which is identically true if and only if \(9-A=-1\) and \(9-B=1\text{.}\) So</p>
+<div class="displaymath">
+\begin{equation*}
+y_p=10\cos(t)+8\sin(t)\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="so-simple-harmonic.html#p-145">in-context</a></span>
 </body>
 </html>

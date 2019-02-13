@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>There are two steps to finding the solution of a linear first-order ODE. First, you integrate the growth rate to get the growth factor. Then, you integrate the product of the growth factor with the forcing function.</p>
-<span class="incontext"><a href="variable-coeffs.html#p-76">in-context</a></span>
+<p>As for the details? The particular solution for \(Re^{i\omega t}\) is \(GR e^{i(\omega t - \alpha)}\text{,}\) as derived above. To recover the given forcing term we need only set \(\omega=1,R=2\) and take the imaginary part minus the real part:</p>
+<div class="displaymath">
+\begin{align*}
+y \amp = \text{Im} \left[ 2 Ge^{i(t - \alpha)} \right]  - \text{Re} \left[ 2 Ge^{i(t - \alpha)} \right]\\
+\amp =  \text{Im} \left[ \sqrt{2} e^{i(t - \pi/4)} \right]  - \text{Re} \left[ \sqrt{2} e^{i(t - \pi/4)}  \right] \\
+\amp = \sqrt{2} \bigl[\sin(t - \pi/4) - \cos(t - \pi/4)\bigr] \text{.}
+\end{align*}
+</div>
+<p>We could convert that into a single shifted cosine if required. In this case it happens to get a simpler answer, \(y=-2\cos(t)\text{.}\)</p>
+<span class="incontext"><a href="complex-exp.html#p-76">in-context</a></span>
 </body>
 </html>

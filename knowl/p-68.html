@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,25 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Time for some payoff. If we force the ODE \(y'=ay+q(t)\) using \(q(t)=Re^{i\omega t}\text{,}\) we can take the real part to get the result of cosine forcing, or the imaginary part to get of a sine forcing. Moreover, finding a particular solution with exponential forcing remains very easy. To make \(y=Ye^{i\omega t}\) a particular solution, we need only require that</p>
+<p>A common operation on complex numbers that has no real analog is taking <dfn class="terminology">conjugates</dfn>. We find the conjugate \(\overline{z}\) of \(z\) by replacing all instances of \(i\) with \(-i\text{.}\) In the two canonical forms we have</p>
 <div class="displaymath">
 \begin{equation*}
-i\omega Y e^{i\omega t} = a Ye^{i\omega t} + Re^{i\omega t} \quad \Rightarrow
-\quad Y = R  \cdot \frac{1}{i\omega - a}\text{.}
+\overline{x+iy} = x-iy, \qquad \overline{re^{i\theta}} = re^{-i\theta}\text{.}
 \end{equation*}
 </div>
-<p>That is, the particular solution is just \(\frac{1}{i\omega - a}\) times the input signal. Let's express this multiplicative factor in polar form:</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{1}{i\omega - a} = G e^{-i\alpha}\text{.}
-\end{equation*}
-</div>
-<p>Then the relationship between the forcing signal \(q(t)\) and the particular solution is</p>
-<div class="displaymath">
-\begin{equation*}
-y(t) = G e^{-i\alpha} q(t) = (GR) e^{i(\omega t - \alpha)}\text{.}
-\end{equation*}
-</div>
+<p>An important identity, easy to work out, is \(|z|^2=z\cdot \overline{z}\text{.}\)</p>
 <span class="incontext"><a href="complex-exp.html#p-68">in-context</a></span>
 </body>
 </html>

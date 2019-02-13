@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It's often useful to introduce a delay into the switch. To have the forcing turn on at time \(T\gt 0\text{,}\) we use \(H(t-T)\text{.}\) The response becomes</p>
+<p>To solve \(y'+3y=7\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
-y(t) = \frac{q}{a}H(t-T) \bigl[ e^{a(t-T)}-1 \bigr]\text{.}
+y(t) = e^{-3t}y(0) + 7 \int_0^t e^{-3(t-s)} \, ds = e^{-3t}y(0) + \frac{7}{3}( 1 - e^{-3t})\text{.}
 \end{equation*}
 </div>
-<p>The step remains in the solution because nothing happens until the switch is turned on.</p>
+<p>From here it's immediate to see that \(y\to 7/3\) as \(t\to\infty\text{.}\)</p>
 <span class="incontext"><a href="first-linear-const.html#p-39">in-context</a></span>
 </body>
 </html>

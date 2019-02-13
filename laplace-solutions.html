@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:40-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -116,7 +116,145 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="laplace-solutions"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.8</span> <span class="title">Laplace transform methods</span>
 </h2>
-<a href="laplace-solutions.html" class="permalink">¶</a><p id="p-204"></p></section></div></main>
+<a href="laplace-solutions.html" class="permalink">¶</a><section class="introduction" id="introduction-10"><p id="p-233">The correspondence between \(L[y]=Ay''+By'+Cy\) and \(P(s)=As^2+Bs+C\) is by now obvious. It came by way of assuming \(y(t)=Y(s)e^{st}\text{,}\) and we get \(Y(s)=1/P(s)\text{.}\) Factoring \(P\) tells us what we need to know. For example, if its roots are \(-2\) and \(-4\text{,}\) then we know that \(y(t)\) is a combination of \(e^{-2t}\) and \(e^{-4t}\text{.}\) If an exponential, polynomial, step, or impulse forcing term is present, it contributes to the solution in similarly predictable ways. The only mystery to work out is the coefficients.</p>
+<p id="p-234">There is a method of expressing all this knowledge called the <dfn class="terminology">Laplace transform</dfn>. Given (almost) any function \(f(t)\text{,}\) there is a doppelganger function \(F(s)\) defined by an integral,</p>
+<div class="displaymath">
+\begin{equation}
+F(s) = \int_0^\infty f(t) e^{-st}\, dt\text{.}\label{so-lap-lxform}\tag{2.8.1}
+\end{equation}
+</div>
+<p>In this business, time starts at \(t=0\text{,}\) and nothing before then matters. One thing to note right away is that the Laplace transform is a linear operator. It's often written using a script L, as in \(F(s)=\mathcal{L}[f(t)]\text{.}\) The usual convention is that a lowercase function of \(t\) transforms to its uppercase namesake as a function of \(s\text{.}\)</p></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.8.1</span> <span class="title">Derivatives</span>
+</h3>
+<p id="p-235">Applying integration by parts to the definition reveals the main reason Laplace transforms are useful in ODEs.</p>
+<div class="displaymath">
+\begin{align*}
+\mathcal{L}[y'(t)] \amp = \int_0^\infty y'(t) e^{-st}\, dt \\
+\amp = \left[ y(t)e^{-st}\right]_0^\infty - \int_0^\infty (-s) y(t) e^{-st}\, dt \\
+\amp = -y(0) + s Y(s)\text{.}
+\end{align*}
+</div>
+<p>Calculus (differentiation) is turned into algebra (multiplication). We can apply this rule repeatedly to transform higher derivatives:</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal{L}[y''(t)] = s \mathcal{L}[y'(t)] - y'(0) = s^2Y(s) - sy(0) - y'(0)\text{.}
+\end{equation*}
+</div>
+<p id="p-236">So here is the plan of attack. Given an ODE \(Ay''+By'+Cy=f\text{,}\) we transform everything in sight (using linearity!) to get</p>
+<div class="displaymath">
+\begin{equation*}
+A[s^2Y(s) - sy(0)-y'(0)] + B[sY(s)-y(0)] + CY(s) = F(s)\text{.}
+\end{equation*}
+</div>
+<p>Now solve for the transform of the solution:</p>
+<div class="displaymath">
+\begin{equation*}
+Y(s) = \frac{ F(s) + (As+B)y(0) - Ay'(0)}{As^2 + Bs + C}\text{.}
+\end{equation*}
+</div>
+<p>Note that if we want just a particular solution, we can use \(y(0)=y'(0)=0\text{.}\) In any case, "all" we have to do know is to compute the inverse transform, that is, find \(y(t)\) given \(Y(s)\text{.}\) This is less straightforward than computing the forward transform, unfortunately. But we can make it managable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns.</p></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.8.2</span> <span class="title">Canonical transforms</span>
+</h3>
+<ol id="p-237" class="decimal">
+<li id="li-15">
+<em class="emphasis">Exponential functions.</em> This is straightforward to calculate from definition. For any complex number \(z\text{,}\)<div class="displaymath">
+\begin{equation*}
+{\cal L}[e^{z t}] = \int_0^\infty e^{(z-s)t}\, dt = \left[ -\frac{1}{s-z} e^{(z-s)t} \right]_0^\infty = \frac{1}{s-z}\text{.}
+\end{equation*}
+</div>(To make this valid requires that \({\text Re}(z)\lt s\text{,}\) but we are going to ignore such technicalities.) An important special case is when \(z=0\text{:}\) \({\cal L}[1]=1/s\text{.}\)</li>
+<li id="li-16">
+<em class="emphasis">Cos and sin.</em> We can use an imaginary number in the exponential and take the real or imaginary part of the result.  Thus,<div class="displaymath">
+\begin{equation*}
+{\cal L}[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
+\end{equation*}
+</div>and<div class="displaymath">
+\begin{equation*}
+{\cal L}[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-17">
+<em class="emphasis">Resonant term.</em> We know that terms such as \(te^{zt}\) appear due to repeated roots and resonances. The clever way to get its transform is to think about differentiation <em class="emphasis">with respect to \(z\)</em>:<div class="displaymath">
+\begin{equation*}
+\mathcal{L} \left[ \frac{d}{dz} e^{zt} \right] = \frac{d}{dz}  \mathcal{L} \left[ e^{zt} \right] = \frac{d}{dz}\left[ \frac{1}{s-z} \right] \text{,}
+\end{equation*}
+</div>from which we conclude<div class="displaymath">
+\begin{equation*}
+\mathcal{L} \left[ t e^{zt} \right] = \frac{1}{(s-z)^2} \text{.}
+\end{equation*}
+</div>If we differentiate again we find<div class="displaymath">
+\begin{equation*}
+\mathcal{L} \left[ t^2 e^{zt} \right] = \frac{2}{(s-z)^3}\text{,}
+\end{equation*}
+</div>and in general<div class="displaymath">
+\begin{equation*}
+\mathcal{L} \left[ t^n e^{zt} \right] = \frac{n!}{(s-z)^{n+1}} \text{.}
+\end{equation*}
+</div>As a special case, taking \(z=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</li>
+</ol></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.8.3</span> <span class="title">The first-order case</span>
+</h3>
+<p id="p-238">Let's go back and revisit an old first-order linear friend, \(y'-ay=e^{ct}\text{.}\) Transforming both sides, we get</p>
+<div class="displaymath">
+\begin{equation*}
+[sY(s)-y(0)] - aY(s) =\frac{1}{s-c}\text{,}
+\end{equation*}
+</div>
+<p>and thus</p>
+<div class="displaymath">
+\begin{equation*}
+Y(s) = \frac{y(0)}{s-a} + \frac{1}{(s-c)(s-a)}\text{.}
+\end{equation*}
+</div>
+<p>The first part corresponds to \(y_n(t)=y(0)e^{at}\text{,}\) which is the null solution. To invert the transform of the second term, we need to express it using <dfn class="terminology">partial fractions</dfn>. The text has a clever way mnemonic for this:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}\text{.}
+\end{equation*}
+</div>
+<p>Thus we get a sum of two exponentials,</p>
+<div class="displaymath">
+\begin{equation*}
+y_v(t) =  \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
+\end{equation*}
+</div>
+<p>This is the "very particular" solution that has \(y_v(0)=0\text{.}\)</p>
+<p id="p-239">There's no new result here, though the process is quite streamlined. The values \(s=a\) and \(s=c\) that are roots of the denominator of \(Y(s)\) are called <dfn class="terminology">poles</dfn> of the transform. They signal clearly and quickly that every solution is a combination of the exponentials \(e^{at}\) and \(e^{ct}\text{.}\)</p></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.8.4</span> <span class="title">Second-order equations</span>
+</h3>
+<p id="p-240">Let's break down what happens in a fundamental case, \(y''-y=e^{rt}\text{.}\)  Transforming both sides gives \([s^2Y(s) - sy(0)-y'(0)] - Y(s) = 1/(s-r)\text{.}\) For reasons to be clarified later, let's skip to the "very particular" part with \(y_v(0)=y_v'(0)=0\text{,}\) for which</p>
+<div class="displaymath">
+\begin{equation*}
+Y(s) = \frac{1}{(s^2-1)(s-r)} = \frac{1}{(s+1)(s-1)(s-r)}\text{.}
+\end{equation*}
+</div>
+<p>This time there are three poles. Again the book's trick works well here:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} \text{.}
+\end{equation*}
+</div>
+<p>It should be apparent that this works only if \(r\neq -1\) and \(r \neq 1\) (i.e., no resonance). From here we get three exponentials:</p>
+<div class="displaymath">
+\begin{equation*}
+y_v(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}\text{.}
+\end{equation*}
+</div>
+<p id="p-241">From here we can write out a general solution. The characteristic roots are \(\pm 1\text{,}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = c_1 e^{-t} + c_2 e^{t} + y_v(t)\text{.}
+\end{equation*}
+</div>
+<p>If desired, it's easy to solve for the constants in this, because \(y_v\) contributes nothing:</p>
+<div class="displaymath">
+\begin{align*}
+y(0) \amp = c_1 + c_2  \\
+y'(0) \amp = -c_1 + c_2 \text{.}
+\end{align*}
+</div>
+<p>That's a lot less work than doing a separate PFD for the initial conditions as represented in the transform.</p>
+<p id="p-242">The main value in the Laplace transform method is in finding a particular solution. The poles \(Y(s)\) due to the homogeneous or null part are just the characteristic roots, and we know how to work with those anyway.</p></section></section></div></main>
 </div>
 </body>
 </html>

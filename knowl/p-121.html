@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Note that this problem is also linear, so it could be approached that way as well. Of course you must get the same solution in the end!</p>
-<span class="incontext"><a href="separable.html#p-121">in-context</a></span>
+<p><em class="emphasis">Underharvesting, \(h\lt 9\text{:}\)</em> For example, say \(h=8\text{.}\) The roots of \(f(y)\) are \((6\pm\sqrt{36-32})/2\text{,}\) or 4 and 2, so these are the steady states. It's possible to repeat the partial fractions computation above for this problem, but there's an easier path. Define the new variable \(v=y-2\text{.}\) Then \(v'=y'\text{,}\) and</p>
+<div class="displaymath">
+\begin{equation*}
+v' = 6(v+2) -(v+2)^2 - 8 = 6v+12 -v^2 -4v - 4 - 8 = 2v -v^2\text{,}
+\end{equation*}
+</div>
+<p>which is a pure logistic equation with different parameters and steady states 0 and 2. The problem can be solved for \(v\) and then turned back into \(y\) by adding 2. So the population will have a logistic or sigmoidal solution between an unstable 2 and a stable 4.</p>
+<span class="incontext"><a href="logistic-equation.html#p-121">in-context</a></span>
 </body>
 </html>

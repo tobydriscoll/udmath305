@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We call the real values \(G\) and \(\alpha\) the <dfn class="terminology">gain</dfn> and <dfn class="terminology">phase lag</dfn>, respectively. A plot of \(G\) as a function of \(\omega\) (for fixed rate \(a\)) is referred to by various names in different fields, such as a <dfn class="terminology">frequency response plot</dfn> or <dfn class="terminology">gain curve</dfn>.</p>
+<p>Here comes a trick we will be relying upon later. The the <dfn class="terminology">shifted cosine</dfn> function</p>
+<div class="displaymath">
+\begin{equation}
+f(t)=R\cos(\omega t - \phi)\tag{1.5.1}
+\end{equation}
+</div>
+<p>has <dfn class="terminology">amplitude</dfn> \(R\text{,}\) <dfn class="terminology">angular frequency</dfn> \(\omega\text{,}\) and <dfn class="terminology">phase shift</dfn> \(\phi\text{.}\) Using Euler's identity, we can think of \(f\) as the real part of a complex exponential \(Re^{i(\omega t-\phi)}\text{.}\) This can be manipulated into</p>
+<div class="displaymath">
+\begin{equation*}
+R e^{-i\phi} e^{i\omega t} = (R\cos \phi - i R \sin \phi) ( \cos \omega t + i \sin \omega t)\text{.}
+\end{equation*}
+</div>
+<p>Upon taking the real part of the product, we conclude</p>
+<div class="displaymath">
+\begin{equation*}
+f(t) = R\cos \phi \cos \omega t + R \sin \phi \sin \omega t\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="complex-exp.html#p-69">in-context</a></span>
 </body>
 </html>

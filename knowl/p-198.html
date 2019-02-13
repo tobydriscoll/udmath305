@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>When you have lots of different versions of the same root problem, with different symbols and units, you have three options. You can solve each new problem from scratch, you can derive custom formulas for each application, or you can try to find a minimal set of parameters and express each problem using those. Let's consider the last pathway here.</p>
-<span class="incontext"><a href="so-applications.html#p-198">in-context</a></span>
+<p>The ODE \(y'''+2y''-y'-2y=4 e^{2t}\) has characteristic polynomial \(P(s)=s^2+2s^2-s-2\text{.}\) The roots of \(P\) are \(-2,-1,1\text{.}\) So the general null solution is</p>
+<div class="displaymath">
+\begin{equation*}
+y_n = c_1 e^{-2t} + c_2 e^{-t} + c_3 e^{2t}\text{.}
+\end{equation*}
+</div>
+<p>The transfer function is evaluated at \(r=2\) to get \(Y(2)=1/P(2)=1/12\text{.}\) So the complete solution is</p>
+<div class="displaymath">
+\begin{equation*}
+y = c_1 e^{-2t} + c_2 e^{-t} + c_3 e^{2t} + \frac{1}{3}e^{2t}\text{.}
+\end{equation*}
+</div>
+<p>We would need three initial conditions in order to specify the integration constants uniquely.</p>
+<span class="incontext"><a href="so-higher-order.html#p-198">in-context</a></span>
 </body>
 </html>

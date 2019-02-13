@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We next come to a curious type of input called an <dfn class="terminology">impulse</dfn>. The idea is that the system is given an instantaneous jolt. To make this work, start by imagining a forcing of constant strength \(1/h\) that is turned on only for \(0\lt t \le h\text{:}\)</p>
+<p>It's often useful to introduce a delay into the switch. To have the forcing turn on at time \(T\gt 0\text{,}\) we use \(H(t-T)\text{.}\) The response becomes</p>
 <div class="displaymath">
 \begin{equation*}
-\delta_h(t) = \frac{H(t-h)-H(t)}{h}\text{.}
+y(t) = \frac{q}{a}H(t-T) \bigl[ e^{a(t-T)}-1 \bigr]\text{.}
 \end{equation*}
 </div>
-<p>The area under \(\delta_h\) is one for all \(h \gt 0\text{.}\)</p>
+<p>The step remains in the solution because nothing happens until the switch is turned on.</p>
 <span class="incontext"><a href="first-linear-const.html#p-42">in-context</a></span>
 </body>
 </html>

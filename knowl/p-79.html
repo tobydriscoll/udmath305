@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,28 +13,33 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider the problem \(ty' + 2y = 4t^2\text{,}\) with initial value \(y(1)=2\text{.}\) In order to identify this with the standard way we present a linear, first-order ODE, we have to isolate the \(y'\) term to get</p>
+<p>We now consider how to solve the most general first-order linear problem,</p>
 <div class="displaymath">
 \begin{equation*}
-y' = -\frac{2}{t}y + 4t\text{.}
+\dd{y}{t} = a(t)y(t) + q(t) \text{.}
 \end{equation*}
 </div>
-<p>Note that we probably ought to stay away from \(t=0\text{,}\) where the variable coefficient blows up. Fortunately, it's easy to use the growth factor formula starting from any value of \(t\text{.}\) The growth factor is, as usual,</p>
-<div class="displaymath">
-\begin{equation*}
-G(s,t) = \exp\left( \int_s^t -\frac{2}{r}\, dr \right)
-= \exp\left( -2 \log(t/s) \right) = \left(\frac{s}{t}\right)^2\text{.}
-\end{equation*}
-</div>
-<p>The solution is</p>
+<p>One approach is to upgrade the integrating factor \(M=e^{-at}\) we used in <a knowl="./knowl/eq-first-linear-const.html" title="Equation 1.4.1">(1.4.1)</a>. What made that work is that \(M'=-aM\text{.}\) For a nonconstant \(a(t)\text{,}\) the same thing is accomplished by \(M(t) = e^{-b(t)}\text{,}\) so long as \(b'=a\text{.}\) That is, we need \(b(t)\) to be any antiderivative of \(a(t)\text{.}\) With that, we can essentially repeat the same calculation as before:</p>
 <div class="displaymath">
 \begin{align*}
-y(t) \amp = G(t,1)y(1) + \int_1^t G(s,t) q(s)\, ds  \\
-\amp = 2t^{-2} + \int_1^t \left(\frac{s}{t}\right)^2 4s\, ds \\
-\amp = 2t^{-2} + t^{-2}\left[ t^4-1^4 \right] = t^2 + t^{-2} \text{.}
+M(t) y'(t) - a(t) M(t) y(t) \amp = M(t)q(t) \\
+\dd{}{t}\bigl[ M(t) y(t) \bigr] \amp = M(t) q(t) \\
+M(t) y(t) \amp = M(0) y(0)  +  \int_0^t M(s) q(s)\, ds\text{.}
 \end{align*}
 </div>
-<p>Indeed, we now see that trying to go backward to time zero would cause the solution to blow up. (That's in the math sense, not the chemical engineering sense, but still.)</p>
+<p>We now pick the antiderivative \(b(t)\) such that \(b(0)=0\text{.}\) That is, let</p>
+<div class="displaymath">
+\begin{equation*}
+M(t) = \exp\left( -\int_0^t a(r)\, dr \right)\text{,}
+\end{equation*}
+</div>
+<p>and \(M(0)=1\text{.}\) Now the solution above becomes</p>
+<div class="displaymath">
+\begin{equation*}
+y(t)  = \exp\left( \int_0^t a(r)\, dr \right) y(0)   +
+\int_0^t \exp\left( \int_0^t a(r)\, dr - \int_0^s a(r)\, dr \right)   q(s)\, ds\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="variable-coeffs.html#p-79">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Solutions of \(my''+ky=0\) are quite easy to get. Define \(\omega_n=\sqrt{k/m}\text{.}\) Then you can easily check that \(\cos(\omega_n t)\) is a solution. So are \(-\cos(\omega_n t)\) and \(7164\cos(\omega_n t)\text{,}\) for that matter; any constant multiplier is allowed. You can also check that \(A\sin(\omega_n t)\) is a solution for any constant multiplier. Finally, we can combine them as well, into</p>
+<p>Consider the <a knowl="./knowl/ex-variable-growth.html" title="Example 1.1.3: Variable growth rate">variable growth archetype 1.1.3</a> \(y'=2ty\text{.}\) We express \(y'\) as \(dy/dt\) and then isolate the variables:</p>
 <div class="displaymath">
 \begin{equation*}
-y = c_1 \cos(\omega_n t) + c_2 \sin(\omega_n t).
+\frac{dy}{y} = 2t\,dt\text{.}
 \end{equation*}
 </div>
-<p>It turns out that this expression captures all possible solutions. We have <dfn class="terminology">simple harmonic motion</dfn>.</p>
-<span class="incontext"><a href="so-simple-harmonic.html#p-126">in-context</a></span>
+<p>Integrating both sides leads to \(\log |y| = t^2 + C\text{,}\) or \(|y|=Ae^{t^2}\) for a positive constant \(A\) (since it is the exponential of a real constant). Taking the absolute value off of \(y\) means that \(A\) can be negative as well. Also, \(A=0\) clearly leads to a solution. Finally, then, \(y=Ce^{t^2}\) for arbitrary \(C\text{.}\)</p>
+<span class="incontext"><a href="separable.html#p-126">in-context</a></span>
 </body>
 </html>

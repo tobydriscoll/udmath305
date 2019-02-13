@@ -102,6 +102,9 @@
     <title>Exponentials</title>
 
     <introduction>
+
+      <p><em>Refer to section 1.3 of the text.</em></p>
+      
       <p>The simplest nontrivial ODE of all is <m>y'=ay</m>, where <m>a</m> is a constant. It takes no effort at all to verify that <m>y(t)=e^{at}</m> is a solution, as we have seen a couple of times already. One way to view the role of <m>a</m> is to switch between growth (positive values),  decay (negative values), and stasis (zero). But you can also interpret it as a rescaling of the time measurement. For instance, if we change from measuring time in minutes to measuring it in seconds, it's equivalent to multiplying <m>a</m> by 60. One consequence is that exponential decay is just like running a movie of exponential growth in reverse.</p>
 
       <p>From the perspective of someone who already knows <m>e</m> well from calculus, the exponential solution may seem obvious. But even if we didn't already know this "obvious" fact, we'd get to pretty much the same place by basic reasoning. </p>
@@ -186,6 +189,8 @@
   <section xml:id="first-linear-ode">
     <title>Linear ODEs</title>
 
+    <p><em>Refer to section 1.4 of the text (pp 17-18).</em></p> 
+
     <p>Linear ODEs are the most fundamental type. If you could only get one yes-or-no answer about a new ODE, your question should be, "Is it linear?" In the first-order case, all linear problems have the form
     <men xml:id="eq-first-linear">
       \dd{y}{t} = a(t)y(t) + q(t) 
@@ -237,6 +242,8 @@ title('Solution of a linear problem')
     <title>Linear, constant-coefficients</title>
 
     <introduction>
+      <p><em>Refer to section 1.4 of the text (pp. 19-26).</em></p>
+
       <p>For this section we will limit <xref ref="eq-first-linear"/> to the important special case when the growth/decay rate, is constant:
       <men xml:id="eq-first-linear-const">
 	\dd{y}{t} = ay(t) + q(t) 
@@ -415,6 +422,7 @@ title('Solution of a linear problem')
   <section xml:id="complex-exp">
     <title>Using complex numbers</title>
     <introduction>
+      <p><em>Refer to section 1.5 of the text.</em></p>
       <p>(For a really smart and entertaining introduction to complex numbers, I recommend <url href="https://youtu.be/T647CGsuOVU">this video series</url>.)</p>
 
       <p>We need to take a short but highly relevant detour to talk about complex numbers.</p> 
@@ -551,6 +559,8 @@ legend('forcing','solution')
 
   <section xml:id="variable-coeffs">
     <title>Linear, variable coefficient</title>
+
+    <p><em>Refer to section 1.6 of the text (pp. 40-42).</em></p>
     <p>We now consider how to solve the most general first-order linear problem,
     <me>
       \dd{y}{t} = a(t)y(t) + q(t) 
@@ -642,12 +652,13 @@ legend('forcing','solution')
 
       </example>
 
-   <p>As you know, many integrals are difficult or impossible to reduce to simple fomulas, so we have to temper our expectations. Actually it's a great situation for using a computer, which can apply the formulas blindly and yet do a much wider variety of integrals than we can. </p>
+   <p>As you know, many integrals are difficult or impossible to reduce to simple fomulas, so we have to temper our expectations. Actually it's a great situation for using a computer, which can apply the formulas blindly and yet do a much wider variety of integrals than we can, or do them numerically. </p>
   </section>
 
   <section xml:id="first-order-models">
     <title>Modeling with first-order ODEs</title>
 
+    <p><em>Refer to section 1.16 of the text (pp. 44-47).</em></p>
     <p>First-order ODEs are often used to model situations of growth and decay. The linear problem <m>y'=ay+q(t)</m> is a prototype for many important problems:
     <dl>
       <li><title>Population</title><p>A population <m>y(t)</m> of organisms has a constant net per capita birth (or death) rate.</p></li>
@@ -697,6 +708,7 @@ legend('forcing','solution')
   <section xml:id="steady-states">
     <title>Steady states</title>
 
+    <p><em>Refer to section 1.7 of the text (pp. 57-58).</em></p>
     <p>We're about to embark on some nonlinear ODEs. First consider a generic first-order problem in the form <m>y'=f(y)</m>. Even before attempting a full solution of the problem, we can see that a value <m>y_0</m> that satisfies <m>f(y_0)=0</m> is special, because then we get <m>y'=0</m> and the solution is constant. Such a value is called a <term>steady state</term> or <term>equilibrium</term>.</p>
 
     <p>A steady state is an idealization possible only in the world of mathematical models. Consider holding a broom with bristles pointed down using two fingers. This is ideally a pendulum with a steady state of the broom pointing straight down. You will find no difficulty holding the broom in approximately that position as long as you want.</p>
@@ -719,6 +731,7 @@ legend('forcing','solution')
   <section xml:id="logistic-equation">
     <title>Logistic equation</title>
     <introduction>
+    <p><em>Refer to section 1.7 of the text (pp. 53-57).</em></p>
     <p>Say <m>y(t)</m> represents a population of bacteria. (There is always a whole number of bacteria, of course, but we'll allow real values. For large numbers that shouldn't matter.) If we assume that each bacterium produces offspring and ages at a constant rate, the result is a constant <em>net per capita growth rate</em>:
     <me>\frac{1}{y} \dd{y}{t} = a</me>.
     If <m>a\gt 0</m>, then this is a recipe for exponential growth, a la <m>y'=ay</m>. 
@@ -795,6 +808,8 @@ legend('forcing','solution')
     <subsection xml:id="fl-harvesting">
       <title>Harvesting</title>
 
+      <p><em>Refer to section 1.7 of the text (pp 59-60).</em></p>
+
       <p>As a final wrinkle, suppose a population is being reduced at a constant rate due to harvesting. (That may not be realistic as the population dwindles, but we are going for simplicity here.) It's easiest to do the discussion with only one varying parameter, so let's modify the pure logisitc model <m>y'=6y-y^2</m> to get <m>y'=6y-y^2-h</m>, for a positive constant <m>h</m>.</p>
 
       <p>We get steady states whenever <m>f(y)=6y-y^2-h=0</m>. Since this is a quadratic in <m>y</m>, we expect to see either two steady states (distinct real roots), one (double real root), or none (when there are complex roots). The changeover happens at the double root, when <m>6^2-4h=0</m>, or <m>h=9</m>.</p>
@@ -803,9 +818,47 @@ legend('forcing','solution')
       <me>v' = 6(v+2) -(v+2)^2 - 8 = 6v+12 -v^2 -4v - 4 - 8 = 2v -v^2</me>,
       which is a pure logistic equation with different parameters and steady states 0 and 2. The problem can be solved for <m>v</m> and then turned back into <m>y</m> by adding 2. So the population will have a logistic or sigmoidal solution between an unstable 2 and a stable 4.</p>
 
+      <example>
+        <sidebyside>
+          <program language="matlab" permid="fo_lgs_underharvest">
+<input>
+h = 8;
+dydt = @(t,y) 6*y - y^2 - h;
+tt = linspace(0,5,500);
+for y0 = 0.8:0.65:5
+    [t,y] = ode45(dydt,tt,y0);
+    plot(t,y), hold on
+end
+xlabel('t'), ylabel('y(t)')
+grid on, ylim([0 5])
+</input>
+	        </program>
+	        <image source="matlab/fo_lgs_underharvest.svg"/>	  
+	      </sidebyside>
+      </example>
+
       <p><em>Critical harvesting, <m>h= 9</m>:</em> There is a double root at <m>y=3</m>, and now <m>y'=6y-y^2-9=-(y-3)^2</m>. If we change now to <m>v=y-3</m>, we get just <m>v'=-v^2</m>, which is a nonlinear equation very similar to the one in <xref ref="linearity"/>. It's autonomous and thus can be integrated by separation:
       <me>t = \int -\frac{dv}{v^2} = \frac{1}{v} + C</me>,
       so that <m>v=1/(t-C)</m> for arbitrary <m>C</m>. From here we get <m>v(t)=v(0)/(1+tv(0))</m>. There are two possibilities. If <m>v(0)\gt 0</m>, then the denominator is never zero, and <m>v\to 0</m> (thus <m>y \to 3</m>) as <m>t\to\infty</m>. But if <m>v(0)\lt 0</m>, then <m>v\to -\infty</m> as <m>t\to -1/v(0)</m>. We interpret that as a population crash (our model would have to stop at <m>v=-3</m>). So a large enough initial population will tend toward a nonzero steady state, but if it ever dips below that value, it will die out. We might call this precarious situation "semistable".</p>
+
+      <example>
+        <sidebyside>
+          <program language="matlab" permid="fo_lgs_critharvest">
+<input>
+h = 9;
+dydt = @(t,y) 6*y - y^2 - h;
+tt = linspace(0,5,500);
+for y0 = 0.8:0.65:5
+    [t,y] = ode45(dydt,tt,y0);
+    plot(t,y), hold on
+end
+xlabel('t'), ylabel('y(t)')
+grid on, ylim([0 5])
+</input>
+	        </program>
+	        <image source="matlab/fo_lgs_critharvest.svg"/>	  
+	      </sidebyside>
+      </example>
 
       <p><em>Overharvesting, <m>h\gt 9</m>:</em> The harvested logistic equation has no real steady states. For example, say <m>y'=6y-y^2-13</m>. We define <m>v=y-3</m> and get
       <me>v' = 6(v+3) - (v+3)^2 - 13 = -v^2 - 4</me>. This problem is also solvable by separation, leading to
@@ -813,6 +866,24 @@ legend('forcing','solution')
       or
       <me>v = -2\tan( 2t+C )</me>
       for a (different) arbitrary <m>C</m>. As <m>2t+C\to \pi/2</m> from the left, this will crash to <m>v\to -\infty</m>. Thus the population is doomed. </p>
+      <example>
+        <sidebyside>
+          <program language="matlab" permid="fo_lgs_overharvest">
+<input>
+h = 13;
+dydt = @(t,y) 6*y - y^2 - h;
+tt = linspace(0,5,500);
+for y0 = 0.8:0.65:5
+    [t,y] = ode45(dydt,tt,y0);
+    plot(t,y), hold on
+end
+xlabel('t'), ylabel('y(t)')
+grid on, ylim([0 5])
+</input>
+	        </program>
+	        <image source="matlab/fo_lgs_overharvest.svg"/>	  
+	      </sidebyside>
+      </example>
       
     </subsection>
     
@@ -820,6 +891,8 @@ legend('forcing','solution')
 
   <section xml:id="separable">
     <title>Separable equations</title>
+
+    <p><em>Refer to section 1.8 of the text (pp. 65-66).</em></p>
     <p>We saw in <xref ref="logistic-equation"/> that problems in the form <m>y'=f(y)</m> may be solvable by separating the variables. In fact the same trick works for problems of the more general form <m>y'=f(y)g(t)</m>. These are called <term>separable equations</term>. Rather than deriving a formula for them, we just repeat the process for each new problem.</p>
 
     <example>

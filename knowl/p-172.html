@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>You should be getting comfortable with the idea that exponential forcing includes sin and cos! We are simply interested in the transfer function for imaginary exponents, \(Y(i\omega)\) followed by the imaginary or real part of \(Ye^{i\omega t}\text{.}\) There is some complex-number algebra required here.</p>
-<span class="incontext"><a href="so-forced-oscillators.html#p-172">in-context</a></span>
+<p>Now suppose we want to solve \(g''=\sin(t)\text{.}\) We find</p>
+<div class="displaymath">
+\begin{equation*}
+y_p(t)=\int_0^t (t-s) \sin(s) \,ds = \bigl[ (s-t)\cos(s) - \sin(s) \bigr]_0^t = -\sin(t)-t\text{.}
+\end{equation*}
+</div>
+<p>This is not the same result we get by following the other methods of this section, which would suggest only \(-\sin(t)\text{.}\) The other \(-t\) coming from the integral formula is a part of the null solution, so both expressions are valid particular solutions.</p>
+<span class="incontext"><a href="so-constant-coefficients.html#p-172">in-context</a></span>
 </body>
 </html>

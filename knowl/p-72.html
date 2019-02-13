@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,15 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>As for the details? The particular solution for \(Re^{i\omega t}\) is \(GR e^{i(\omega t - \alpha)}\text{,}\) as derived above. To recover the given forcing term we need only set \(\omega=1,R=2\) and take the imaginary part minus the real part:</p>
+<p>Time for some payoff. If we force the ODE \(y'=ay+q(t)\) using \(q(t)=Re^{i\omega t}\text{,}\) we can take the real part to get the result of cosine forcing, or the imaginary part to get of a sine forcing. Moreover, finding a particular solution with exponential forcing remains very easy. To make \(y=Ye^{i\omega t}\) a particular solution, we need only require that</p>
 <div class="displaymath">
-\begin{align*}
-y \amp = \text{Im} \left[ 2 Ge^{i(t - \alpha)} \right]  - \text{Re} \left[ 2 Ge^{i(t - \alpha)} \right]\\
-\amp =  \text{Im} \left[ \sqrt{2} e^{i(t - \pi/4)} \right]  - \text{Re} \left[ \sqrt{2} e^{i(t - \pi/4)}  \right] \\
-\amp = \sqrt{2} \bigl[\sin(t - \pi/4) - \cos(t - \pi/4)\bigr] \text{.}
-\end{align*}
+\begin{equation*}
+i\omega Y e^{i\omega t} = a Ye^{i\omega t} + Re^{i\omega t} \quad \Rightarrow
+\quad Y = R  \cdot \frac{1}{i\omega - a}\text{.}
+\end{equation*}
 </div>
-<p>We could convert that into a single shifted cosine if required. In this case it happens to get a simpler answer, \(y=-2\cos(t)\text{.}\)</p>
+<p>That is, the particular solution is just \(\frac{1}{i\omega - a}\) times the input signal. Let's express this multiplicative factor in polar form:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{i\omega - a} = G e^{-i\alpha}\text{.}
+\end{equation*}
+</div>
+<p>Then the relationship between the forcing signal \(q(t)\) and the particular solution is</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = G e^{-i\alpha} q(t) = (GR) e^{i(\omega t - \alpha)}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="complex-exp.html#p-72">in-context</a></span>
 </body>
 </html>

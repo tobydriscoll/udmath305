@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This mess inspires the definition</p>
+<p>The forcing function is, as we now know, a shifted cosine. You can see that after a short initial stage, the solution is too, though with a different phase and amplitude. The polar complex form tells this story neatly, in the form of \(\alpha\) and \(G\) from above. To wit, for an input at frequency \(\omega\text{,}\)</p>
 <div class="displaymath">
-\begin{equation}
-G(s,t) = \exp\left( \int_s^t a(r)\, dr \right)\text{,}\tag{1.6.1}
-\end{equation}
+\begin{equation*}
+G e^{-i\alpha} = \frac{1}{i\omega  + 1}\text{.}
+\end{equation*}
 </div>
-<p>which we call the <dfn class="terminology">growth factor</dfn>. So we have the more manageable</p>
+<p>Here we have \(\omega=1\text{,}\) and thus</p>
 <div class="displaymath">
-\begin{equation}
-y(t) = G(0,t)y(0) + \int_0^t G(s,t) q(s)\, ds\text{.}\tag{1.6.2}
-\end{equation}
+\begin{equation*}
+G e^{-i\alpha} = \frac{1}{i  + 1} = \frac{1}{i + 1}\cdot \frac{-i+1}{-i + 1} = \frac{1-i}{2}\text{.}
+\end{equation*}
 </div>
-<p>This format takes us back to familiar territory. The total solution has one part (the null solution) that is evolution of the initial value and another (particular solution) that comes from evolution of an impulse of size \(q(s)\) at each time \(0 \le s \lt t\text{.}\) The only difference from the constant-coefficient case is how to express the growth factor.</p>
-<span class="incontext"><a href="variable-coeffs.html#p-75">in-context</a></span>
+<p>The cartesian point \((1/2,-1/2)\) is easy to put into polar form, and we find \(G=1/\sqrt{2}\) and \(\alpha=\pi/4\text{.}\) That is, the particular solution has 70% of the amplitude and lags the driving force by one-eighth of a cycle.</p>
+<span class="incontext"><a href="complex-exp.html#p-75">in-context</a></span>
 </body>
 </html>

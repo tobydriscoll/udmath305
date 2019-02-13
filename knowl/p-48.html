@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-08T14:49:41-05:00    *-->
+<!--*    on 2019-02-13T16:20:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose we solve \(y'+5y=3\delta(t-2)\text{,}\) with \(y(0)=1\text{.}\) Start with</p>
-<div class="displaymath">
-\begin{equation*}
-y(t) = e^{-5t} + 3 \int_0^t e^{-5(t-s)}\delta(s-2)\, ds\text{.}
-\end{equation*}
-</div>
-<p>If \(t \lt 2\text{,}\) the integration interval does not contain the impulse, so the solution is just \(e^{-5t}\text{.}\) But if \(t \gt 2\text{,}\) \(y(t) = e^{-5t} + 3 e^{-5(t-2)}\text{.}\)</p>
+<p>The solution to the linear ODE with an impulse forcing is called an <dfn class="terminology">impulse response</dfn>. Consider \(y'=at+\delta_h(t)\text{,}\) with \(y(0)=0\text{.}\) Integration of both sides over \([0,h]\) gives \(y(h)=ath + 1\text{.}\) In the limit, this suggests \(y(0^+)=1\text{,}\) where I have used the plus superscript to suggest "at some infinitesimally later moment." When the math is worked out nicely to avoid the seeming contradiction, the conclusion is that the impulse response is \(y(t)=e^{at}\text{,}\) which is the <em class="emphasis">same as if</em> \(y(0)=1\text{.}\) More generally we have the following.</p>
 <span class="incontext"><a href="first-linear-const.html#p-48">in-context</a></span>
 </body>
 </html>
