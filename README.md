@@ -33,7 +33,7 @@ anyway. 
 | Toby Driscoll                    | Jon Wilson                       |
 | driscoll@udel.edu                 | jonwils@udel.edu                  |
 | Ewing Hall 515                    |                                   |
-| *Office Hours: TBA*               | *Office Hours: TBA*               |
+| *Office Hours:* W 3-4:30, R 3-4:30       | *Office Hours: TBA*               |
 
  
 
