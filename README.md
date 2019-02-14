@@ -33,7 +33,7 @@ anyway. 
 | Toby Driscoll                    | Jon Wilson                       |
 | driscoll@udel.edu                 | jonwils@udel.edu                  |
 | Ewing Hall 515                    |                                   |
-| *Office Hours: TBA*               | *Office Hours: TBA*               |
+| *Office Hours:* W 3-4:30, R 3-4:30       | *Office Hours: TBA*               |
 
  
 
@@ -135,7 +135,7 @@ scores.)
 
 |Exam | Date | Location |
 |---|---|---|
-| Midterm 1              | March 22, 5:00-7:00 PM      | Smith 120|
+| Midterm 1              | March 15, 5:00-7:00 PM      | Smith 120|
 | Midterm 2              | April 26, 5:00-7:00 PM     | Smith 120 |
 | Final (comprehensive)  | TBA                         | TBA |
   
