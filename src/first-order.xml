@@ -198,20 +198,24 @@
 
     <p>All solutions to first-order linear problems share a basic structure. In fact there is a perfect (and rather deep) analogy to how one can specify a line using a direction parallel to the line, and one point on the line. For the line direction we could use a vector <m>\vec{v}</m>. Note that the set of all vectors <m>\{C\vec{v}: C\in\mathbb{R}\}</m> is a line through the origin. We can then translate this line by adding any constant vector <m>\vec{p}</m> representing a point on the line. Thus the set of all vectors representing points on the line is <m>C\vec{v}+\vec{p}</m>.</p>
 
-    <p>In the linear ODE case the role of <m>\vec{v}</m> is played by a solution of the <term>homogeneous</term> equation, which is <xref ref="eq-first-linear"/> with <m>q(t)\equiv 0</m>. With such a solution <m>y_h(t)</m>, we define the homogeneous or <term>null solution</term> <m>y_n(t)=Cy_h(t)</m>, where it is understood that <m>C</m> is an arbitrary constant. Note that (due to the linearity and homogeneity) the null solution is always a solution of the homogeneous ODE for any choice of the constant..</p>
+    <p>In the linear ODE case the role of <m>\vec{v}</m> is played by a solution of the <term>homogeneous</term> equation, which is <xref ref="eq-first-linear"/> with <m>q(t)\equiv 0</m>. With such a solution <m>y_h(t)</m>, we define the <term>null solution</term> <m>y_n(t)=Cy_h(t)</m>, where it is understood that <m>C</m> is an arbitrary constant. That is, the null solution is a solution of the homogeneous ODE for <em>any</em> choice of the constant.</p>
 
-    <p>Playing the role of a point on the line is a <term>particular solution</term> <m>y_p(t)</m>.  As the name implies, it is one, any one, solution of the original <xref ref="eq-first-linear"/>. For definiteness the text uses <m>y_p(0)=0</m> to specify the particular solution uniquely (the "very particular" solution).</p>
+    <p>Playing the role of a point on the line is a <term>particular solution</term> <m>y_p(t)</m>.  As the name implies, it is any one solution of the original ODE <xref ref="eq-first-linear"/>. In places the text uses <m>y_{vp}</m> to specify a special "very particular" solution that satisfies the constraint <m>y_{vp}(0)=0</m>.</p>
 
-    <p>With these two special solutions in hand, we can write the <term>general solution</term> of <xref ref="eq-first-linear"/> as <m>y=y_n+y_p</m>. Every solution of the ODE can be written in that form. This structure pertains only to linear problems. We don't always approach practically solving the problem this way, but we can always recognize the structure after the fact. It can be useful to know that the structure exists even when exact formulas can't be found for the null and particular solutions.</p>
+    <p>With a null solution and a particular solution in hand, we can write the <term>general solution</term> of <xref ref="eq-first-linear"/> as <m>y=y_n+y_p</m>. We don't always approach practically solving the problem this way, but every solution of the ODE can be written in that form. This structure pertains only to linear problems.</p>
 
-    <p>Before we go on to derive some exact solutions for important special cases, let's consider how to solve <xref ref="eq-first-linear"/> with <m>a(t)=\cos(2t)</m> and <m>q(t)=t</m> numerically (approximately but to high accuracy) using MATLAB. For an ODE in the general form <m>y'=f(t,y)</m>, we have to define a function for <m>f</m>.
+    <p>
+      The general solution is actually a family of solutions due to the arbitrary constant. We can get a unique solution if we specify one more thing about <m>y</m>. Typically this is in the form of an <term>initial condition</term>, or given value for <m>y(0)</m>. So if <m>y=Cy_h+y_p</m> is a general solution, we impose the initial condition to get <m>y(0)=Cy_h(0)+y_p(0)</m>, which can be solved for <m>C</m>. 
+    </p>
+
+    <p>Before we go on to derive some exact solutions for important cases for <m>q</m>, let's consider how to solve <xref ref="eq-first-linear"/> numerically (approximately but to high accuracy) using MATLAB. Suppose <m>a(t)=\cos(2t)</m> and <m>q(t)=t</m>  For an ODE in the general form <m>y'=f(t,y)</m>, we have to define a function for <m>f</m>.
     <cd>
 a = @(t) cos(2*t);
 q = @(t) t;
 
 f = @(t,y) a(t)*y + q(t);
     </cd>
-    (This could be done directly in one line, but we have stayed with the general linear form here for illustration.) Now we call the function <c>ode45</c> to solve the problem, designating times of interest and an initial value.
+    (This could be done directly in one line, but we have stayed with the general linear form here for illustration.) Now we call the function <c>ode45</c> to solve the problem, designating times of interest and an initial value (to pick a unique solution).
     <cd>
 t = linspace(0,5,500);
 [t,y] = ode45(f,t,1);
