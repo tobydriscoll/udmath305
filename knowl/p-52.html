@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T16:20:08-05:00    *-->
+<!--*    on 2019-02-13T20:43:43-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,14 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>There is one final easy forcing case for working with <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a>: \(q(t)=e^{ct}\) for constant \(c\text{.}\) Plugging this into <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a> yields</p>
+<p>Suppose we solve \(y'+5y=3\delta(t-2)\text{,}\) with \(y(0)=1\text{.}\) Start with</p>
 <div class="displaymath">
-\begin{align*}
-y(t) \amp = e^{at}y(0) + \frac{e^{at}}{c-a} \bigl( e^{t(c-a)}-1 \bigr)\\
-\amp = e^{at}y(0) + \frac{1}{c-a} \bigl( e^{ct}-e^{at} \bigr)\text{.}
-\end{align*}
+\begin{equation*}
+y(t) = e^{-5t} + 3 \int_0^t e^{-5(t-s)}\delta(s-2)\, ds\text{.}
+\end{equation*}
 </div>
-<p>Clearly this won't work, however, if \(c=a\) The text calls this case <dfn class="terminology">resonance</dfn>, though that's maybe a stretch of how that term is typically understood.</p>
+<p>If \(t \lt 2\text{,}\) the integration interval does not contain the impulse, so the solution is just \(e^{-5t}\text{.}\) But if \(t \gt 2\text{,}\) \(y(t) = e^{-5t} + 3 e^{-5(t-2)}\text{.}\)</p>
 <span class="incontext"><a href="first-linear-const.html#p-52">in-context</a></span>
 </body>
 </html>

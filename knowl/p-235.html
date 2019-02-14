@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T16:20:08-05:00    *-->
+<!--*    on 2019-02-13T20:43:44-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,20 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Applying integration by parts to the definition reveals the main reason Laplace transforms are useful in ODEs.</p>
+<p>There is a method of expressing all this knowledge called the <dfn class="terminology">Laplace transform</dfn>. Given (almost) any function \(f(t)\text{,}\) there is a doppelganger function \(F(s)\) defined by an integral,</p>
 <div class="displaymath">
-\begin{align*}
-\mathcal{L}[y'(t)] \amp = \int_0^\infty y'(t) e^{-st}\, dt \\
-\amp = \left[ y(t)e^{-st}\right]_0^\infty - \int_0^\infty (-s) y(t) e^{-st}\, dt \\
-\amp = -y(0) + s Y(s)\text{.}
-\end{align*}
+\begin{equation}
+F(s) = \int_0^\infty f(t) e^{-st}\, dt\text{.}\tag{2.8.1}
+\end{equation}
 </div>
-<p>Calculus (differentiation) is turned into algebra (multiplication). We can apply this rule repeatedly to transform higher derivatives:</p>
-<div class="displaymath">
-\begin{equation*}
-\mathcal{L}[y''(t)] = s \mathcal{L}[y'(t)] - y'(0) = s^2Y(s) - sy(0) - y'(0)\text{.}
-\end{equation*}
-</div>
+<p>In this business, time starts at \(t=0\text{,}\) and nothing before then matters. One thing to note right away is that the Laplace transform is a linear operator. It's often written using a script L, as in \(F(s)=\mathcal{L}[f(t)]\text{.}\) The usual convention is that a lowercase function of \(t\) transforms to its uppercase namesake as a function of \(s\text{.}\)</p>
 <span class="incontext"><a href="laplace-solutions.html#p-235">in-context</a></span>
 </body>
 </html>

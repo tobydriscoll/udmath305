@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T16:20:08-05:00    *-->
+<!--*    on 2019-02-13T20:43:43-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,21 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>By multiplying <a knowl="./knowl/eq-first-linear-const.html" title="Equation 1.4.1">(1.4.1)</a> through by the <dfn class="terminology">integrating factor</dfn> \(M(t)=e^{-at}\text{,}\) we can render it into a form easily solved by calculus:</p>
-<div class="displaymath">
-\begin{align*}
-e^{-at} y'(t) - (a e^{-at})y(t) \amp = e^{-at}q(t) \\
-\dd{}{t}\bigl[ e^{-at} y(t) \bigr] \amp = e^{-at}q(t) \\
-e^{-at} y(t) \amp = C + \int e^{-at}q(t)\, dt \\
-\amp = C  +  \int_0^t e^{-as}q(s)\, ds\text{.}
-\end{align*}
-</div>
-<p>In the last step above we changed from an indefinite integral to a definite one whose value is zero when \(t=0\text{.}\) (We could have chosen any starting time, but this is the most convenient one.) Then it is easy to see that the integration constant satisfies \(C=y(0)\text{,}\) which is a bit less abstract. Altogether,</p>
+<p>For this section we will limit <a knowl="./knowl/eq-first-linear.html" title="Equation 1.3.1">(1.3.1)</a> to the important special case when the growth/decay rate, is constant:</p>
 <div class="displaymath">
 \begin{equation}
-y(t) = e^{at}y(0) + \int_0^t e^{a(t-s)}q(s)\, ds\text{.}\tag{1.4.2}
+\dd{y}{t} = ay(t) + q(t) \text{.}\tag{1.4.1}
 \end{equation}
 </div>
+<p>The term \(q(t)\) is called a <dfn class="terminology">forcing function</dfn> or <dfn class="terminology">source function</dfn>.</p>
 <span class="incontext"><a href="first-linear-const.html#p-34">in-context</a></span>
 </body>
 </html>

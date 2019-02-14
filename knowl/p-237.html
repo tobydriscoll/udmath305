@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T16:20:08-05:00    *-->
+<!--*    on 2019-02-13T20:43:44-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,43 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="decimal">
-<li>
-<em class="emphasis">Exponential functions.</em> This is straightforward to calculate from definition. For any complex number \(z\text{,}\)<div class="displaymath">
+<p>So here is the plan of attack. Given an ODE \(Ay''+By'+Cy=f\text{,}\) we transform everything in sight (using linearity!) to get</p>
+<div class="displaymath">
 \begin{equation*}
-{\cal L}[e^{z t}] = \int_0^\infty e^{(z-s)t}\, dt = \left[ -\frac{1}{s-z} e^{(z-s)t} \right]_0^\infty = \frac{1}{s-z}\text{.}
-\end{equation*}
-</div>(To make this valid requires that \({\text Re}(z)\lt s\text{,}\) but we are going to ignore such technicalities.) An important special case is when \(z=0\text{:}\) \({\cal L}[1]=1/s\text{.}\)</li>
-<li>
-<em class="emphasis">Cos and sin.</em> We can use an imaginary number in the exponential and take the real or imaginary part of the result.  Thus,<div class="displaymath">
-\begin{equation*}
-{\cal L}[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
-\end{equation*}
-</div>and<div class="displaymath">
-\begin{equation*}
-{\cal L}[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
+A[s^2Y(s) - sy(0)-y'(0)] + B[sY(s)-y(0)] + CY(s) = F(s)\text{.}
 \end{equation*}
 </div>
-</li>
-<li>
-<em class="emphasis">Resonant term.</em> We know that terms such as \(te^{zt}\) appear due to repeated roots and resonances. The clever way to get its transform is to think about differentiation <em class="emphasis">with respect to \(z\)</em>:<div class="displaymath">
+<p>Now solve for the transform of the solution:</p>
+<div class="displaymath">
 \begin{equation*}
-\mathcal{L} \left[ \frac{d}{dz} e^{zt} \right] = \frac{d}{dz}  \mathcal{L} \left[ e^{zt} \right] = \frac{d}{dz}\left[ \frac{1}{s-z} \right] \text{,}
+Y(s) = \frac{ F(s) + (As+B)y(0) - Ay'(0)}{As^2 + Bs + C}\text{.}
 \end{equation*}
-</div>from which we conclude<div class="displaymath">
-\begin{equation*}
-\mathcal{L} \left[ t e^{zt} \right] = \frac{1}{(s-z)^2} \text{.}
-\end{equation*}
-</div>If we differentiate again we find<div class="displaymath">
-\begin{equation*}
-\mathcal{L} \left[ t^2 e^{zt} \right] = \frac{2}{(s-z)^3}\text{,}
-\end{equation*}
-</div>and in general<div class="displaymath">
-\begin{equation*}
-\mathcal{L} \left[ t^n e^{zt} \right] = \frac{n!}{(s-z)^{n+1}} \text{.}
-\end{equation*}
-</div>As a special case, taking \(z=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</li>
-</ol>
+</div>
+<p>Note that if we want just a particular solution, we can use \(y(0)=y'(0)=0\text{.}\) In any case, "all" we have to do know is to compute the inverse transform, that is, find \(y(t)\) given \(Y(s)\text{.}\) This is less straightforward than computing the forward transform, unfortunately. But we can make it managable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns.</p>
 <span class="incontext"><a href="laplace-solutions.html#p-237">in-context</a></span>
 </body>
 </html>

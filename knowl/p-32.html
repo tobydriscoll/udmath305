@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T16:20:08-05:00    *-->
+<!--*    on 2019-02-13T20:43:43-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,34 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p><em class="emphasis">Refer to section 1.4 of the text (pp. 19-26).</em></p>
-<span class="incontext"><a href="first-linear-const.html#p-32">in-context</a></span>
+<p>Before we go on to derive some exact solutions for important cases for \(q\text{,}\) let's consider how to solve <a knowl="./knowl/eq-first-linear.html" title="Equation 1.3.1">(1.3.1)</a> numerically (approximately but to high accuracy) using MATLAB. Suppose \(a(t)=\cos(2t)\) and \(q(t)=t\)  For an ODE in the general form \(y'=f(t,y)\text{,}\) we have to define a function for \(f\text{.}\)</p>
+<pre class="code-block tex2jax_ignore">
+a = @(t) cos(2*t);
+q = @(t) t;
+
+f = @(t,y) a(t)*y + q(t);
+    </pre>
+<p>(This could be done directly in one line, but we have stayed with the general linear form here for illustration.) Now we call the function <code class="code-inline tex2jax_ignore">ode45</code> to solve the problem, designating times of interest and an initial value (to pick a unique solution).</p>
+<pre class="code-block tex2jax_ignore">
+t = linspace(0,5,500);
+[t,y] = ode45(f,t,1);
+    </pre>
+<p>The outputs here are vectors of equal length, giving the times we selected and values of the solution at those times. For instance, to get values at the final time we use</p>
+<pre class="code-block tex2jax_ignore">
+format long
+[ t(end), y(end) ]
+    </pre>
+<p>and get the response</p>
+<pre class="code-block tex2jax_ignore">
+ans =
+   5.000000000000000  10.064799099008786
+    </pre>
+<p>The outputs are also in a form easy to plot.</p>
+<pre class="code-block tex2jax_ignore">
+plot(t,y)
+xlabel('t'), ylabel('y(t)')
+title('Solution of a linear problem')
+    </pre>
+<span class="incontext"><a href="first-linear-ode.html#p-32">in-context</a></span>
 </body>
 </html>

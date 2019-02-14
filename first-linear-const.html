@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T16:20:07-05:00    *-->
+<!--*    on 2019-02-13T20:43:42-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -116,15 +116,15 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="first-linear-const"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Linear, constant-coefficients</span>
 </h2>
-<a href="first-linear-const.html" class="permalink">¶</a><section class="introduction" id="introduction-2"><p id="p-32"><em class="emphasis">Refer to section 1.4 of the text (pp. 19-26).</em></p>
-<p id="p-33">For this section we will limit <a knowl="./knowl/eq-first-linear.html" title="Equation 1.3.1">(1.3.1)</a> to the important special case when the growth/decay rate, is constant:</p>
+<a href="first-linear-const.html" class="permalink">¶</a><section class="introduction" id="introduction-2"><p id="p-33"><em class="emphasis">Refer to section 1.4 of the text (pp. 19-26).</em></p>
+<p id="p-34">For this section we will limit <a knowl="./knowl/eq-first-linear.html" title="Equation 1.3.1">(1.3.1)</a> to the important special case when the growth/decay rate, is constant:</p>
 <div class="displaymath">
 \begin{equation}
 \dd{y}{t} = ay(t) + q(t) \text{.}\label{eq-first-linear-const}\tag{1.4.1}
 \end{equation}
 </div>
 <p>The term \(q(t)\) is called a <dfn class="terminology">forcing function</dfn> or <dfn class="terminology">source function</dfn>.</p>
-<p id="p-34">By multiplying <a knowl="./knowl/eq-first-linear-const.html" title="Equation 1.4.1">(1.4.1)</a> through by the <dfn class="terminology">integrating factor</dfn> \(M(t)=e^{-at}\text{,}\) we can render it into a form easily solved by calculus:</p>
+<p id="p-35">By multiplying <a knowl="./knowl/eq-first-linear-const.html" title="Equation 1.4.1">(1.4.1)</a> through by the <dfn class="terminology">integrating factor</dfn> \(M(t)=e^{-at}\text{,}\) we can render it into a form easily solved by calculus:</p>
 <div class="displaymath">
 \begin{align*}
 e^{-at} y'(t) - (a e^{-at})y(t) \amp = e^{-at}q(t) \\
@@ -139,21 +139,21 @@ e^{-at} y(t) \amp = C + \int e^{-at}q(t)\, dt \\
 y(t) = e^{at}y(0) + \int_0^t e^{a(t-s)}q(s)\, ds\text{.}\label{eq-flc-solution}\tag{1.4.2}
 \end{equation}
 </div>
-<p id="p-35">We can dissect this expression in some detail. The null solution \(e^{at}y(0)\) is by itself a solution to \(y'=ay\text{.}\) The particular solution represented by the integral is new. Think of the integral as a sum over all the moments \(s\lt t\text{.}\) At every such moment there is an input to \(y'\) of size \(q(s)\text{.}\) That little input evolves all on its own for the remaining time \(t-s\) according to \(e^{a(t-s)}q(s)\text{.}\) So it's equivalent to having started a problem with initial value \(q(s)\) at that moment.</p>
-<p id="p-36">Hence the complete solution combines the natural evolution of the true initial condition at time zero, plus the contributions of momentary "kicks" evolving from each instant up to the present. This idea proves to be quite fundamental to all linear problems, though the mathematical details will get more complicated.</p></section><section class="subsection" id="flcs-constant"><h3 class="heading hide-type">
+<p id="p-36">We can dissect this expression in some detail. The null solution \(e^{at}y(0)\) is by itself a solution to \(y'=ay\text{.}\) The particular solution represented by the integral is new. Think of the integral as a sum over all the moments \(s\lt t\text{.}\) At every such moment there is an input to \(y'\) of size \(q(s)\text{.}\) That little input evolves all on its own for the remaining time \(t-s\) according to \(e^{a(t-s)}q(s)\text{.}\) So it's equivalent to having started a problem with initial value \(q(s)\) at that moment.</p>
+<p id="p-37">Hence the complete solution combines the natural evolution of the true initial condition at time zero, plus the contributions of momentary "kicks" evolving from each instant up to the present. This idea proves to be quite fundamental to all linear problems, though the mathematical details will get more complicated.</p></section><section class="subsection" id="flcs-constant"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">Constant forcing</span>
 </h3>
-<a href="first-linear-const.html#flcs-constant" class="permalink">¶</a><p id="p-37">Suppose \(q(t)\equiv q\text{,}\) a constant. Applying the solution formula gives</p>
+<a href="first-linear-const.html#flcs-constant" class="permalink">¶</a><p id="p-38">Suppose \(q(t)\equiv q\text{,}\) a constant. Applying the solution formula gives</p>
 <div class="displaymath">
 \begin{equation*}
 y(t) = e^{at}y(0) + \frac{q}{a}\bigl( e^{at}-1 \bigr)\text{.}
 \end{equation*}
 </div>
 <p>This solution is of particular interest when \(a\lt 0\text{.}\) In that case \(e^{at}\to 0\) as \(t\to\infty\text{,}\) so \(y\to -q/a\text{,}\) a constant value, in the long term. In some contexts we might say that \(y\) "relaxes" to a <dfn class="terminology">steady state</dfn> value \(y_\infty=-q/a\text{.}\)</p>
-<p id="p-38">It might be simplest to ignore this formula and just apply <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a> as needed, since the integration involved is easy.</p>
+<p id="p-39">It might be simplest to ignore this formula and just apply <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a> as needed, since the integration involved is easy.</p>
 <article class="example-like" id="example-5"><a knowl="" class="id-ref" refid="hk-example-5"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">1.4.1</span>
-</h6></a></article><div id="hk-example-5" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-39">To solve \(y'+3y=7\text{,}\) we have</p>
+</h6></a></article><div id="hk-example-5" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-40">To solve \(y'+3y=7\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 y(t) = e^{-3t}y(0) + 7 \int_0^t e^{-3(t-s)} \, ds = e^{-3t}y(0) + \frac{7}{3}( 1 - e^{-3t})\text{.}
@@ -169,21 +169,21 @@ title('Constant forcing')
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_constant.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-40">Be careful! To use our formula, you may have to rewrite the given problem in our standard form first. E.g. \(3y+12y=12\text{,}\) should be expressed as \(y'=-4y+4\text{,}\) so that we find \(a=-4\text{,}\) etc.</p></section><section class="subsection" id="flcs-step"><h3 class="heading hide-type">
+<p id="p-41">Be careful! To use our formula, you may have to rewrite the given problem in our standard form first. E.g. \(3y+12y=12\text{,}\) should be expressed as \(y'=-4y+4\text{,}\) so that we find \(a=-4\text{,}\) etc.</p></section><section class="subsection" id="flcs-step"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">Step forcing</span>
 </h3>
-<a href="first-linear-const.html#flcs-step" class="permalink">¶</a><p id="p-41">The <dfn class="terminology">unit step function</dfn> or <dfn class="terminology">Heaviside function</dfn> \(H(t)\) is zero for \(t\le 0\) and one for \(t\gt 0\text{.}\) It represents throwing on a switch. The solution when \(q(t)=H(t)\) is called the <dfn class="terminology">step response</dfn> and follows from the formula as \(y(t) = \frac{q}{a}\bigl( e^{at}-1 \bigr)\text{.}\)</p>
-<p id="p-42">It's often useful to introduce a delay into the switch. To have the forcing turn on at time \(T\gt 0\text{,}\) we use \(H(t-T)\text{.}\) The response becomes</p>
+<a href="first-linear-const.html#flcs-step" class="permalink">¶</a><p id="p-42">The <dfn class="terminology">unit step function</dfn> or <dfn class="terminology">Heaviside function</dfn> \(H(t)\) is zero for \(t\le 0\) and one for \(t\gt 0\text{.}\) It represents throwing on a switch. The solution when \(q(t)=H(t)\) is called the <dfn class="terminology">step response</dfn> and follows from the formula as \(y(t) = \frac{q}{a}\bigl( e^{at}-1 \bigr)\text{.}\)</p>
+<p id="p-43">It's often useful to introduce a delay into the switch. To have the forcing turn on at time \(T\gt 0\text{,}\) we use \(H(t-T)\text{.}\) The response becomes</p>
 <div class="displaymath">
 \begin{equation*}
 y(t) = \frac{q}{a}H(t-T) \bigl[ e^{a(t-T)}-1 \bigr]\text{.}
 \end{equation*}
 </div>
 <p>The step remains in the solution because nothing happens until the switch is turned on.</p>
-<p id="p-43">It's worth mentioning here the related idea of a <dfn class="terminology">window</dfn> function, which turns on and then back off. To get a forcing that is one only between times \(S\) and \(T\text{,}\) for example, we can use \(q(t)=H(t-S)-H(t-T)\text{.}\) The formulas for the window solution become a bit messy, so we will skip them for now. Eventually we'll develop a system that handles the algebra systematically.</p>
+<p id="p-44">It's worth mentioning here the related idea of a <dfn class="terminology">window</dfn> function, which turns on and then back off. To get a forcing that is one only between times \(S\) and \(T\text{,}\) for example, we can use \(q(t)=H(t-S)-H(t-T)\text{.}\) The formulas for the window solution become a bit messy, so we will skip them for now. Eventually we'll develop a system that handles the algebra systematically.</p>
 <article class="example-like" id="example-6"><a knowl="" class="id-ref" refid="hk-example-6"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">1.4.2</span>
-</h6></a></article><div id="hk-example-6" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-44">Let's solve \(y'=y+f(t)\text{,}\) where \(f(t)\) is 5 for \(3 \lt t \le 6\) and zero elsewhere. Again, it's probably easiest to get comfortable with applying the general solution formula <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a>:</p>
+</h6></a></article><div id="hk-example-6" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-45">Let's solve \(y'=y+f(t)\text{,}\) where \(f(t)\) is 5 for \(3 \lt t \le 6\) and zero elsewhere. Again, it's probably easiest to get comfortable with applying the general solution formula <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a>:</p>
 <div class="displaymath">
 \begin{equation*}
 y(t) = e^{t}y(0) + \int_0^t e^{t-s}q(s)\, ds\text{.}
@@ -224,15 +224,15 @@ title('Window forcing (semi-log)')
 </div></div></article></div></section><section class="subsection" id="flcs-impulse"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.3</span> <span class="title">Impulse forcing</span>
 </h3>
-<a href="first-linear-const.html#flcs-impulse" class="permalink">¶</a><p id="p-45">We next come to a curious type of input called an <dfn class="terminology">impulse</dfn>. The idea is that the system is given an instantaneous jolt. To make this work, start by imagining a forcing of constant strength \(1/h\) that is turned on only for \(0\lt t \le h\text{:}\)</p>
+<a href="first-linear-const.html#flcs-impulse" class="permalink">¶</a><p id="p-46">We next come to a curious type of input called an <dfn class="terminology">impulse</dfn>. The idea is that the system is given an instantaneous jolt. To make this work, start by imagining a forcing of constant strength \(1/h\) that is turned on only for \(0\lt t \le h\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \delta_h(t) = \frac{H(t-h)-H(t)}{h}\text{.}
 \end{equation*}
 </div>
 <p>The area under \(\delta_h\) is one for all \(h \gt 0\text{.}\)</p>
-<p id="p-46">Now we idealize the situation by taking the limit as \(h\to 0\text{.}\) Effectively, we are taking the derivative of a step. The resulting "function", which we call \(\delta(t)\text{,}\) is zero at all points except \(t=0\text{,}\) yet should have unit area under its curve!</p>
-<p id="p-47">It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
+<p id="p-47">Now we idealize the situation by taking the limit as \(h\to 0\text{.}\) Effectively, we are taking the derivative of a step. The resulting "function", which we call \(\delta(t)\text{,}\) is zero at all points except \(t=0\text{,}\) yet should have unit area under its curve!</p>
+<p id="p-48">It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
 <div class="displaymath">
 \begin{equation*}
 \int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \delta_h(t) f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}\text{,}
@@ -251,14 +251,14 @@ title('Window forcing (semi-log)')
 \end{equation}
 </div>
 <p>where \(I\) is any interval containing \(T\text{.}\) This is the key identity for working with impulses.</p>
-<p id="p-48">The solution to the linear ODE with an impulse forcing is called an <dfn class="terminology">impulse response</dfn>. Consider \(y'=at+\delta_h(t)\text{,}\) with \(y(0)=0\text{.}\) Integration of both sides over \([0,h]\) gives \(y(h)=ath + 1\text{.}\) In the limit, this suggests \(y(0^+)=1\text{,}\) where I have used the plus superscript to suggest "at some infinitesimally later moment." When the math is worked out nicely to avoid the seeming contradiction, the conclusion is that the impulse response is \(y(t)=e^{at}\text{,}\) which is the <em class="emphasis">same as if</em> \(y(0)=1\text{.}\) More generally we have the following.</p>
+<p id="p-49">The solution to the linear ODE with an impulse forcing is called an <dfn class="terminology">impulse response</dfn>. Consider \(y'=at+\delta_h(t)\text{,}\) with \(y(0)=0\text{.}\) Integration of both sides over \([0,h]\) gives \(y(h)=ath + 1\text{.}\) In the limit, this suggests \(y(0^+)=1\text{,}\) where I have used the plus superscript to suggest "at some infinitesimally later moment." When the math is worked out nicely to avoid the seeming contradiction, the conclusion is that the impulse response is \(y(t)=e^{at}\text{,}\) which is the <em class="emphasis">same as if</em> \(y(0)=1\text{.}\) More generally we have the following.</p>
 <article class="theorem-like" id="fact-1"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">1.4.3</span> <span class="title">Impulse forcing (first order)</span>
 </h6>
-<p id="p-49">In a first-order linear ODE, an impulse forcing is equivalent to adding the impulse amplitude to the momentary solution value and then doing unforced evolution.</p></article><p id="p-50">The conclusion with a delayed impulse plays out as follows: solving \(y'=at+b\delta(t-T)\) leads to \(y(t)=e^{at}y(0)+ be^{a(t-T)}H(t-T)\text{.}\) (Note: equation (15) on page 24 of Strang is wrong.) But the beauty of working with deltas is that they turn integration into function evaluation, and working directly from <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a> continues to be straightforward.</p>
+<p id="p-50">In a first-order linear ODE, an impulse forcing is equivalent to adding the impulse amplitude to the momentary solution value and then doing unforced evolution.</p></article><p id="p-51">The conclusion with a delayed impulse plays out as follows: solving \(y'=at+b\delta(t-T)\) leads to \(y(t)=e^{at}y(0)+ be^{a(t-T)}H(t-T)\text{.}\) (Note: equation (15) on page 24 of Strang is wrong.) But the beauty of working with deltas is that they turn integration into function evaluation, and working directly from <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a> continues to be straightforward.</p>
 <article class="example-like" id="example-7"><a knowl="" class="id-ref" refid="hk-example-7"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">1.4.4</span>
-</h6></a></article><div id="hk-example-7" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-51">Suppose we solve \(y'+5y=3\delta(t-2)\text{,}\) with \(y(0)=1\text{.}\) Start with</p>
+</h6></a></article><div id="hk-example-7" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-52">Suppose we solve \(y'+5y=3\delta(t-2)\text{,}\) with \(y(0)=1\text{.}\) Start with</p>
 <div class="displaymath">
 \begin{equation*}
 y(t) = e^{-5t} + 3 \int_0^t e^{-5(t-s)}\delta(s-2)\, ds\text{.}
@@ -290,7 +290,7 @@ title('Impulse forcing (semi-log)')
 </div></div></article></div></section><section class="subsection" id="flcs-exp"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.4</span> <span class="title">Exponential forcing</span>
 </h3>
-<a href="first-linear-const.html#flcs-exp" class="permalink">¶</a><p id="p-52">There is one final easy forcing case for working with <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a>: \(q(t)=e^{ct}\) for constant \(c\text{.}\) Plugging this into <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a> yields</p>
+<a href="first-linear-const.html#flcs-exp" class="permalink">¶</a><p id="p-53">There is one final easy forcing case for working with <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a>: \(q(t)=e^{ct}\) for constant \(c\text{.}\) Plugging this into <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a> yields</p>
 <div class="displaymath">
 \begin{align*}
 y(t) \amp = e^{at}y(0) + \frac{e^{at}}{c-a} \bigl( e^{t(c-a)}-1 \bigr)\\
@@ -298,7 +298,7 @@ y(t) \amp = e^{at}y(0) + \frac{e^{at}}{c-a} \bigl( e^{t(c-a)}-1 \bigr)\\
 \end{align*}
 </div>
 <p>Clearly this won't work, however, if \(c=a\) The text calls this case <dfn class="terminology">resonance</dfn>, though that's maybe a stretch of how that term is typically understood.</p>
-<p id="p-53">In the resonant case, we can go back to <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a>, and we get \(y(t) = e^{at}y(0) + te^{at}\text{.}\) That extra factor of \(t\) is new, and the first time something genuinely non-exponential has arisen for the linear problem.</p></section></section></div></main>
+<p id="p-54">In the resonant case, we can go back to <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a>, and we get \(y(t) = e^{at}y(0) + te^{at}\text{.}\) That extra factor of \(t\) is new, and the first time something genuinely non-exponential has arisen for the linear problem.</p></section></section></div></main>
 </div>
 </body>
 </html>

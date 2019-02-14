@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T16:20:08-05:00    *-->
+<!--*    on 2019-02-13T20:43:43-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Be careful! To use our formula, you may have to rewrite the given problem in our standard form first. E.g. \(3y+12y=12\text{,}\) should be expressed as \(y'=-4y+4\text{,}\) so that we find \(a=-4\text{,}\) etc.</p>
+<p>To solve \(y'+3y=7\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = e^{-3t}y(0) + 7 \int_0^t e^{-3(t-s)} \, ds = e^{-3t}y(0) + \frac{7}{3}( 1 - e^{-3t})\text{.}
+\end{equation*}
+</div>
+<p>From here it's immediate to see that \(y\to 7/3\) as \(t\to\infty\text{.}\)</p>
 <span class="incontext"><a href="first-linear-const.html#p-40">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T16:20:07-05:00    *-->
+<!--*    on 2019-02-13T20:43:43-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -116,8 +116,8 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="variable-coeffs"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.6</span> <span class="title">Linear, variable coefficient</span>
 </h2>
-<a href="variable-coeffs.html" class="permalink">¶</a><p id="p-78"><em class="emphasis">Refer to section 1.6 of the text (pp. 40-42).</em></p>
-<p id="p-79">We now consider how to solve the most general first-order linear problem,</p>
+<a href="variable-coeffs.html" class="permalink">¶</a><p id="p-79"><em class="emphasis">Refer to section 1.6 of the text (pp. 40-42).</em></p>
+<p id="p-80">We now consider how to solve the most general first-order linear problem,</p>
 <div class="displaymath">
 \begin{equation*}
 \dd{y}{t} = a(t)y(t) + q(t) \text{.}
@@ -144,7 +144,7 @@ y(t)  = \exp\left( \int_0^t a(r)\, dr \right) y(0)   +
 \int_0^t \exp\left( \int_0^t a(r)\, dr - \int_0^s a(r)\, dr \right)   q(s)\, ds\text{.}
 \end{equation*}
 </div>
-<p id="p-80">This mess inspires the definition</p>
+<p id="p-81">This mess inspires the definition</p>
 <div class="displaymath">
 \begin{equation}
 G(s,t) = \exp\left( \int_s^t a(r)\, dr \right)\text{,}\label{eq-growth-factor}\tag{1.6.1}
@@ -157,10 +157,10 @@ y(t) = G(0,t)y(0) + \int_0^t G(s,t) q(s)\, ds\text{.}\label{eq-fl-solution}\tag{
 \end{equation}
 </div>
 <p>This format takes us back to familiar territory. The total solution has one part (the null solution) that is evolution of the initial value and another (particular solution) that comes from evolution of an impulse of size \(q(s)\) at each time \(0 \le s \lt t\text{.}\) The only difference from the constant-coefficient case is how to express the growth factor.</p>
-<p id="p-81">There are two steps to finding the solution of a linear first-order ODE. First, you integrate the growth rate to get the growth factor. Then, you integrate the product of the growth factor with the forcing function.</p>
+<p id="p-82">There are two steps to finding the solution of a linear first-order ODE. First, you integrate the growth rate to get the growth factor. Then, you integrate the product of the growth factor with the forcing function.</p>
 <article class="example-like" id="example-9"><a knowl="" class="id-ref" refid="hk-example-9"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">1.6.1</span>
-</h6></a></article><div id="hk-example-9" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-82">Let's solve \(y'=2y+1\text{,}\) with \(y(0)=6\text{.}\) We have \(a(t)=2\text{,}\) hence \(G(s,t)=\exp[2(t-s)]=e^{2(t-s)}\text{.}\) So the solution is</p>
+</h6></a></article><div id="hk-example-9" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-83">Let's solve \(y'=2y+1\text{,}\) with \(y(0)=6\text{.}\) We have \(a(t)=2\text{,}\) hence \(G(s,t)=\exp[2(t-s)]=e^{2(t-s)}\text{.}\) So the solution is</p>
 <div class="displaymath">
 \begin{equation*}
 e^{2t}\cdot 6 + \int_0^t e^{2(t-s)}\, ds
@@ -177,7 +177,7 @@ xlabel('t'), ylabel('y(t)')
 </div></div></article></div>
 <article class="example-like" id="example-10"><a knowl="" class="id-ref" refid="hk-example-10"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">1.6.2</span>
-</h6></a></article><div id="hk-example-10" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-83">To solve \(y'=2ty - t\) with \(y(0)=0\text{,}\) we identify \(a(t)=2t\text{.}\) Hence \(G(s,t)=\exp(t^2-s^2)\text{.}\) Then</p>
+</h6></a></article><div id="hk-example-10" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-84">To solve \(y'=2ty - t\) with \(y(0)=0\text{,}\) we identify \(a(t)=2t\text{.}\) Hence \(G(s,t)=\exp(t^2-s^2)\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 y(t) = \int_0^t (-s) e^{t^2-s^2}\, ds = \frac{1}{2} \left( 1 - e^{t^2} \right)\text{.}
@@ -193,7 +193,7 @@ xlabel('t'), ylabel('y(t)')
 </div></div></article></div>
 <article class="example-like" id="example-11"><a knowl="" class="id-ref" refid="hk-example-11"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">1.6.3</span>
-</h6></a></article><div id="hk-example-11" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-84">Consider the problem \(ty' + 2y = 4t^2\text{,}\) with initial value \(y(1)=2\text{.}\) In order to identify this with the standard way we present a linear, first-order ODE, we have to isolate the \(y'\) term to get</p>
+</h6></a></article><div id="hk-example-11" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-85">Consider the problem \(ty' + 2y = 4t^2\text{,}\) with initial value \(y(1)=2\text{.}\) In order to identify this with the standard way we present a linear, first-order ODE, we have to isolate the \(y'\) term to get</p>
 <div class="displaymath">
 \begin{equation*}
 y' = -\frac{2}{t}y + 4t\text{.}
@@ -223,7 +223,7 @@ xlabel('t'), ylabel('y(t)')
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lvc_sing.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-85">As you know, many integrals are difficult or impossible to reduce to simple fomulas, so we have to temper our expectations. Actually it's a great situation for using a computer, which can apply the formulas blindly and yet do a much wider variety of integrals than we can, or do them numerically.</p></section></div></main>
+<p id="p-86">As you know, many integrals are difficult or impossible to reduce to simple fomulas, so we have to temper our expectations. Actually it's a great situation for using a computer, which can apply the formulas blindly and yet do a much wider variety of integrals than we can, or do them numerically.</p></section></div></main>
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T16:20:08-05:00    *-->
+<!--*    on 2019-02-13T20:43:43-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The solution to the linear ODE with an impulse forcing is called an <dfn class="terminology">impulse response</dfn>. Consider \(y'=at+\delta_h(t)\text{,}\) with \(y(0)=0\text{.}\) Integration of both sides over \([0,h]\) gives \(y(h)=ath + 1\text{.}\) In the limit, this suggests \(y(0^+)=1\text{,}\) where I have used the plus superscript to suggest "at some infinitesimally later moment." When the math is worked out nicely to avoid the seeming contradiction, the conclusion is that the impulse response is \(y(t)=e^{at}\text{,}\) which is the <em class="emphasis">same as if</em> \(y(0)=1\text{.}\) More generally we have the following.</p>
+<p>It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \delta_h(t) f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}\text{,}
+\end{equation*}
+</div>
+<p>where \(\phi\) is an antiderivative of \(f\text{.}\) In the limit this suggests</p>
+<div class="displaymath">
+\begin{equation*}
+\int_I \delta(t)f(t)\, dt = f(0)\text{.}
+\end{equation*}
+</div>
+<p>As with the step, we often want to introduce a delay in the impulse by using \(\delta(t-T)\text{.}\) Then the math becomes</p>
+<div class="displaymath">
+\begin{equation}
+\int_I \delta(t-T)f(t)\, dt = f(T)\text{,}\tag{1.4.3}
+\end{equation}
+</div>
+<p>where \(I\) is any interval containing \(T\text{.}\) This is the key identity for working with impulses.</p>
 <span class="incontext"><a href="first-linear-const.html#p-48">in-context</a></span>
 </body>
 </html>

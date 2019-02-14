@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T16:20:08-05:00    *-->
+<!--*    on 2019-02-13T20:43:44-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,10 +13,11 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To solve \(y'=2ty - t\) with \(y(0)=0\text{,}\) we identify \(a(t)=2t\text{.}\) Hence \(G(s,t)=\exp(t^2-s^2)\text{.}\) Then</p>
+<p>Let's solve \(y'=2y+1\text{,}\) with \(y(0)=6\text{.}\) We have \(a(t)=2\text{,}\) hence \(G(s,t)=\exp[2(t-s)]=e^{2(t-s)}\text{.}\) So the solution is</p>
 <div class="displaymath">
 \begin{equation*}
-y(t) = \int_0^t (-s) e^{t^2-s^2}\, ds = \frac{1}{2} \left( 1 - e^{t^2} \right)\text{.}
+e^{2t}\cdot 6 + \int_0^t e^{2(t-s)}\, ds
+= 6e^{2t} - \frac{1}{2} \left[ 1 - e^{2t} \right] = - \frac{1}{2} + \frac{13}{2} e^{2t}\text{.}
 \end{equation*}
 </div>
 <span class="incontext"><a href="variable-coeffs.html#p-83">in-context</a></span>
