@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:44-05:00    *-->
+<!--*    on 2019-02-13T21:11:35-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,24 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's break down what happens in a fundamental case, \(y''-y=e^{rt}\text{.}\)  Transforming both sides gives \([s^2Y(s) - sy(0)-y'(0)] - Y(s) = 1/(s-r)\text{.}\) For reasons to be clarified later, let's skip to the "very particular" part with \(y_v(0)=y_v'(0)=0\text{,}\) for which</p>
-<div class="displaymath">
-\begin{equation*}
-Y(s) = \frac{1}{(s^2-1)(s-r)} = \frac{1}{(s+1)(s-1)(s-r)}\text{.}
-\end{equation*}
-</div>
-<p>This time there are three poles. Again the book's trick works well here:</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} \text{.}
-\end{equation*}
-</div>
-<p>It should be apparent that this works only if \(r\neq -1\) and \(r \neq 1\) (i.e., no resonance). From here we get three exponentials:</p>
-<div class="displaymath">
-\begin{equation*}
-y_v(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}\text{.}
-\end{equation*}
-</div>
+<p>There's no new result here, though the process is quite streamlined. The values \(s=a\) and \(s=c\) that are roots of the denominator of \(Y(s)\) are called <dfn class="terminology">poles</dfn> of the transform. They signal clearly and quickly that every solution is a combination of the exponentials \(e^{at}\) and \(e^{ct}\text{.}\)</p>
 <span class="incontext"><a href="laplace-solutions.html#p-241">in-context</a></span>
 </body>
 </html>

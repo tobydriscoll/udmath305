@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:44-05:00    *-->
+<!--*    on 2019-02-13T21:11:35-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Realistically we only care about this effect for harmonic forcing, \(f(t)=e^{i\omega t}\text{,}\) where we call it <dfn class="terminology">resonance</dfn>. Since the characteristic polynomial \(P(s)=as^2+bs+c\) has imaginary roots only if \(b=0\text{,}\) we only see resonance in an undamped oscillator. The resonant particular solution has an amplitude that is linearly growing in time. The derivation above shows that though the solution formula (and unboundedness) is singular at the resonant frequency, the actual behavior is a continuous limit of near-resonant behavior.</p>
+<p>Suppose we have a root \(s\) and that \(r\) is close to but not equal to \(s\text{.}\) Then \(y_p=e^{rt}/P(r)\) is a particular solution to the exponential forcing. We can add any null solution to this and it will remain a solution, thus</p>
+<div class="displaymath">
+\begin{equation*}
+y=\frac{e^{rt}-e^{st}}{P(r)}
+\end{equation*}
+</div>
+<p>is a valid particular solution as well. Since \(P(s)=0\) by assumption, we can also write</p>
+<div class="displaymath">
+\begin{equation*}
+y=\frac{e^{rt}-e^{st}}{P(r)-P(s)}\text{.}
+\end{equation*}
+</div>
+<p>Suddenly this becomes very interesting as \(r\to s\text{;}\) we get an indeterminate \(0/0\text{.}\) Using L'Hopital's rule (but with \(r\) as the variable, not \(t\)), we get the limit</p>
+<div class="displaymath">
+\begin{equation*}
+y_p = \frac{te^{st}}{P'(s)}\text{,}
+\end{equation*}
+</div>
+<p>which is a valid particular solution even when forcing exactly at exponent \(s\text{.}\)</p>
 <span class="incontext"><a href="so-forced-oscillators.html#p-190">in-context</a></span>
 </body>
 </html>

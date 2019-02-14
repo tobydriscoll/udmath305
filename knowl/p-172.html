@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:44-05:00    *-->
+<!--*    on 2019-02-13T21:11:35-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The solution of \(g''=\delta(t)\) is equivalent to \(g''=0\) with \(g(0)=0\text{,}\) \(g'(0)=1\text{.}\) We have \(g(t)=c_1+c_2t\) and then conclude that \(c_1=0\text{,}\) \(c_2=1\text{.}\) That is, \(g(t)=t\text{.}\)</p>
+<p>Consider an infinitesimally small time \(\epsilon\text{.}\) If we integrate \(ay''+by'+c=\delta(t)\) up to this time, then we can estimate</p>
+<div class="displaymath">
+\begin{equation*}
+a(g'(\epsilon)-g'(0)) + b(g(\epsilon)-g(0)) + c\int_0^\epsilon g(t)\,dt = 1 \text{.}
+\end{equation*}
+</div>
+<p>Assuming that \(g\) itself is continuous, as \(\epsilon\to 0\) we conclude that \(g'(\epsilon)-g'(0) = 1/a\text{,}\) which is the jump we seek. That is, we use \(g'(0)=1/a\) as the "cheater's way" to get the fundamental solution.</p>
 <span class="incontext"><a href="so-constant-coefficients.html#p-172">in-context</a></span>
 </body>
 </html>

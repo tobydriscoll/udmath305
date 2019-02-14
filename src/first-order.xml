@@ -305,10 +305,13 @@ title('Solution of a linear problem')
     <subsection xml:id="flcs-step">
       <title>Step forcing</title>
 
-      <p>The <term>unit step function</term> or <term>Heaviside function</term> <m>H(t)</m> is zero for <m>t\le 0</m> and one for <m>t\gt 0</m>. It represents throwing on a switch. The solution when <m>q(t)=H(t)</m> is called the <term>step response</term> and follows from the formula as <m>y(t) = \frac{q}{a}\bigl( e^{at}-1 \bigr)</m>. </p>
+      <p>The <term>unit step function</term> or <term>Heaviside function</term> <m>H(t)</m> is zero for <m>t\le 0</m> and one for <m>t\gt 0</m>. It represents throwing on a switch. Usually in this situation we assume <m>y(0)=0</m>, that is, the system is at rest until the switch is turned on.
+      </p>
+      <p>
+      The solution when <m>q(t)=kH(t)</m> is called the <term>step response</term> and follows from the solution formula as <m>y(t) = \frac{k}{a}\bigl( e^{at}-1 \bigr)</m>. This is exactly the same as the solution for constant forcing <m>q(t)\equiv k</m>, because what happened for <m>t\lt 0</m> is irrelevant to the future behavior.</p>
 
-      <p>It's often useful to introduce a delay into the switch. To have the forcing turn on at time <m>T\gt 0</m>, we use <m>H(t-T)</m>. The response becomes
-      <me>y(t) = \frac{q}{a}H(t-T) \bigl[ e^{a(t-T)}-1 \bigr]</me>.
+      <p>It's often useful to introduce a delay into the switch. To have the forcing turn on at time <m>T\gt 0</m>, we use <m>H(t-T)</m>. The response when <m>q(t)=kH(t-T)</m> becomes
+      <me>y(t) = \frac{k}{a}H(t-T) \bigl[ e^{a(t-T)}-1 \bigr]</me>.
       The step remains in the solution because nothing happens until the switch is turned on.</p>
       <p>It's worth mentioning here the related idea of a <term>window</term> function, which turns on and then back off. To get a forcing that is one only between times <m>S</m> and <m>T</m>, for example, we can use <m>q(t)=H(t-S)-H(t-T)</m>. The formulas for the window solution become a bit messy, so we will skip them for now. Eventually we'll develop a system that handles the algebra systematically.</p>
 

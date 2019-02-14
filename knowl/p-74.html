@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:43-05:00    *-->
+<!--*    on 2019-02-13T21:11:34-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We call the real values \(G\) and \(\alpha\) the <dfn class="terminology">gain</dfn> and <dfn class="terminology">phase lag</dfn>, respectively. A plot of \(G\) as a function of \(\omega\) (for fixed rate \(a\)) is referred to by various names in different fields, such as a <dfn class="terminology">frequency response plot</dfn> or <dfn class="terminology">gain curve</dfn>.</p>
+<p>Time for some payoff. If we force the ODE \(y'=ay+q(t)\) using \(q(t)=Re^{i\omega t}\text{,}\) we can take the real part to get the result of cosine forcing, or the imaginary part to get of a sine forcing. Moreover, finding a particular solution with exponential forcing remains very easy. To make \(y=Ye^{i\omega t}\) a particular solution, we need only require that</p>
+<div class="displaymath">
+\begin{equation*}
+i\omega Y e^{i\omega t} = a Ye^{i\omega t} + Re^{i\omega t} \quad \Rightarrow
+\quad Y = R  \cdot \frac{1}{i\omega - a}\text{.}
+\end{equation*}
+</div>
+<p>That is, the particular solution is just \(\frac{1}{i\omega - a}\) times the input signal. Let's express this multiplicative factor in polar form:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{i\omega - a} = G e^{-i\alpha}\text{.}
+\end{equation*}
+</div>
+<p>Then the relationship between the forcing signal \(q(t)\) and the particular solution is</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = G e^{-i\alpha} q(t) = (GR) e^{i(\omega t - \alpha)}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="complex-exp.html#p-74">in-context</a></span>
 </body>
 </html>

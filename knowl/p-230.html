@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:44-05:00    *-->
+<!--*    on 2019-02-13T21:11:35-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,26 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To summarize so far, we get a valid particular solution using two conditions,</p>
-<div class="displaymath">
-\begin{align*}
-c_1'y_1+c_2'y_2 \amp = 0 \\
-c_1'y_1' + c_2'y_2' \amp = f \text{.}
-\end{align*}
-</div>
-<p>Stare at this long enough and you'll realize that it's just two linear equations for \(c_1'\) and \(c_2'\text{.}\) You can do some elimination to solve them, and you wind up with</p>
+<p>Taking this odd assumption on faith, we compute</p>
 <div class="displaymath">
 \begin{equation*}
-c_1' = -\frac{y_2f}{W}, \qquad c_2' = \frac{y_1f}{W},
+y_p' = c_1'y_1+c_1y_1'+ c_2'y_2+c_2y_2'  \text{.}
 \end{equation*}
 </div>
-<p>with</p>
+<p>Before we go on, we're going to put a restriction on our mystery functions, namely \(c_1'y_1+c_2'y_2=0\text{.}\) That makes life a little easier. Continuing, we get</p>
 <div class="displaymath">
 \begin{equation*}
-W(t) = y_1y_2'-y_1'y_2\text{,}
+y_p'' = c_1'y_1'+ c_1y_1'' + c_2'y_2'+ c_2y_2''  \text{.}
 \end{equation*}
 </div>
-<p>known as the <dfn class="terminology">Wronskian</dfn> of \(y_1\) and \(y_2\text{.}\) Finally, "all" you have to do is integrate these expressions to get \(c_1\) and \(c_2\text{,}\) and from there you get \(y_p\text{.}\)</p>
+<p>When we put all this mess into \(y''+By'+Cy=f\text{,}\) something cool happens:</p>
+<div class="displaymath">
+\begin{equation*}
+c_1(y_1''+By_1'+Cy_1) + c_2(y_2''+By_2'+Cy_2) + c_1'y_1' + c_2'y_2' = f \text{.}
+\end{equation*}
+</div>
+<p>Thanks to the null property of \(y_1\) and \(y_2\text{,}\) this boils down to \(c_1'y_1' + c_2'y_2' = f\text{.}\)</p>
 <span class="incontext"><a href="so-general-forcing.html#p-230">in-context</a></span>
 </body>
 </html>

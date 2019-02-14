@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:44-05:00    *-->
+<!--*    on 2019-02-13T21:11:34-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>As you know, many integrals are difficult or impossible to reduce to simple fomulas, so we have to temper our expectations. Actually it's a great situation for using a computer, which can apply the formulas blindly and yet do a much wider variety of integrals than we can, or do them numerically.</p>
+<p>Consider the problem \(ty' + 2y = 4t^2\text{,}\) with initial value \(y(1)=2\text{.}\) In order to identify this with the standard way we present a linear, first-order ODE, we have to isolate the \(y'\) term to get</p>
+<div class="displaymath">
+\begin{equation*}
+y' = -\frac{2}{t}y + 4t\text{.}
+\end{equation*}
+</div>
+<p>Note that we probably ought to stay away from \(t=0\text{,}\) where the variable coefficient blows up. Fortunately, it's easy to use the growth factor formula starting from any value of \(t\text{.}\) The growth factor is, as usual,</p>
+<div class="displaymath">
+\begin{equation*}
+G(s,t) = \exp\left( \int_s^t -\frac{2}{r}\, dr \right)
+= \exp\left( -2 \log(t/s) \right) = \left(\frac{s}{t}\right)^2\text{.}
+\end{equation*}
+</div>
+<p>The solution is</p>
+<div class="displaymath">
+\begin{align*}
+y(t) \amp = G(t,1)y(1) + \int_1^t G(s,t) q(s)\, ds  \\
+\amp = 2t^{-2} + \int_1^t \left(\frac{s}{t}\right)^2 4s\, ds \\
+\amp = 2t^{-2} + t^{-2}\left[ t^4-1^4 \right] = t^2 + t^{-2} \text{.}
+\end{align*}
+</div>
+<p>Indeed, we now see that trying to go backward to time zero would cause the solution to blow up. (That's in the math sense, not the chemical engineering sense, but still.)</p>
 <span class="incontext"><a href="variable-coeffs.html#p-86">in-context</a></span>
 </body>
 </html>

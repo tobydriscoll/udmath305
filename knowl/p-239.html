@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:44-05:00    *-->
+<!--*    on 2019-02-13T21:11:35-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,31 +13,43 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's go back and revisit an old first-order linear friend, \(y'-ay=e^{ct}\text{.}\) Transforming both sides, we get</p>
-<div class="displaymath">
+<ol class="decimal">
+<li>
+<em class="emphasis">Exponential functions.</em> This is straightforward to calculate from definition. For any complex number \(z\text{,}\)<div class="displaymath">
 \begin{equation*}
-[sY(s)-y(0)] - aY(s) =\frac{1}{s-c}\text{,}
+{\cal L}[e^{z t}] = \int_0^\infty e^{(z-s)t}\, dt = \left[ -\frac{1}{s-z} e^{(z-s)t} \right]_0^\infty = \frac{1}{s-z}\text{.}
+\end{equation*}
+</div>(To make this valid requires that \({\text Re}(z)\lt s\text{,}\) but we are going to ignore such technicalities.) An important special case is when \(z=0\text{:}\) \({\cal L}[1]=1/s\text{.}\)</li>
+<li>
+<em class="emphasis">Cos and sin.</em> We can use an imaginary number in the exponential and take the real or imaginary part of the result.  Thus,<div class="displaymath">
+\begin{equation*}
+{\cal L}[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
+\end{equation*}
+</div>and<div class="displaymath">
+\begin{equation*}
+{\cal L}[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
 \end{equation*}
 </div>
-<p>and thus</p>
-<div class="displaymath">
+</li>
+<li>
+<em class="emphasis">Resonant term.</em> We know that terms such as \(te^{zt}\) appear due to repeated roots and resonances. The clever way to get its transform is to think about differentiation <em class="emphasis">with respect to \(z\)</em>:<div class="displaymath">
 \begin{equation*}
-Y(s) = \frac{y(0)}{s-a} + \frac{1}{(s-c)(s-a)}\text{.}
+\mathcal{L} \left[ \frac{d}{dz} e^{zt} \right] = \frac{d}{dz}  \mathcal{L} \left[ e^{zt} \right] = \frac{d}{dz}\left[ \frac{1}{s-z} \right] \text{,}
 \end{equation*}
-</div>
-<p>The first part corresponds to \(y_n(t)=y(0)e^{at}\text{,}\) which is the null solution. To invert the transform of the second term, we need to express it using <dfn class="terminology">partial fractions</dfn>. The text has a clever way mnemonic for this:</p>
-<div class="displaymath">
+</div>from which we conclude<div class="displaymath">
 \begin{equation*}
-\frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}\text{.}
+\mathcal{L} \left[ t e^{zt} \right] = \frac{1}{(s-z)^2} \text{.}
 \end{equation*}
-</div>
-<p>Thus we get a sum of two exponentials,</p>
-<div class="displaymath">
+</div>If we differentiate again we find<div class="displaymath">
 \begin{equation*}
-y_v(t) =  \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
+\mathcal{L} \left[ t^2 e^{zt} \right] = \frac{2}{(s-z)^3}\text{,}
 \end{equation*}
-</div>
-<p>This is the "very particular" solution that has \(y_v(0)=0\text{.}\)</p>
+</div>and in general<div class="displaymath">
+\begin{equation*}
+\mathcal{L} \left[ t^n e^{zt} \right] = \frac{n!}{(s-z)^{n+1}} \text{.}
+\end{equation*}
+</div>As a special case, taking \(z=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</li>
+</ol>
 <span class="incontext"><a href="laplace-solutions.html#p-239">in-context</a></span>
 </body>
 </html>

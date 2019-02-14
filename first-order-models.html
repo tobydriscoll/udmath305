@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:43-05:00    *-->
+<!--*    on 2019-02-13T21:11:33-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -116,24 +116,24 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="first-order-models"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.7</span> <span class="title">Modeling with first-order ODEs</span>
 </h2>
-<a href="first-order-models.html" class="permalink">¶</a><p id="p-87"><em class="emphasis">Refer to section 1.16 of the text (pp. 44-47).</em></p>
-<p id="p-88">First-order ODEs are often used to model situations of growth and decay. The linear problem \(y'=ay+q(t)\) is a prototype for many important problems: </p>
+<a href="first-order-models.html" class="permalink">¶</a><p id="p-88"><em class="emphasis">Refer to section 1.16 of the text (pp. 44-47).</em></p>
+<p id="p-89">First-order ODEs are often used to model situations of growth and decay. The linear problem \(y'=ay+q(t)\) is a prototype for many important problems: </p>
 <dl class="description-list">
 <dt id="li-1">Population</dt>
-<dd><p id="p-89">A population \(y(t)\) of organisms has a constant net per capita birth (or death) rate.</p></dd>
+<dd><p id="p-90">A population \(y(t)\) of organisms has a constant net per capita birth (or death) rate.</p></dd>
 <dt id="li-2">Interest</dt>
-<dd><p id="p-90">Here \(y(t)\) is an amount invested with fixed positive interest rate \(a\text{.}\)</p></dd>
+<dd><p id="p-91">Here \(y(t)\) is an amount invested with fixed positive interest rate \(a\text{.}\)</p></dd>
 <dt id="li-3">Radioactivity</dt>
-<dd><p id="p-91">\(y(t)\) is the mass of a radioactive isotope, and \(k
+<dd><p id="p-92">\(y(t)\) is the mass of a radioactive isotope, and \(k
 lt 0\text{.}\)</p></dd>
 <dt id="li-4">Pharmacokinetics</dt>
-<dd><p id="p-92">In first-order kinetics, \(y(t)\) is the amount of a drug being metabolized in the body.</p></dd>
+<dd><p id="p-93">In first-order kinetics, \(y(t)\) is the amount of a drug being metabolized in the body.</p></dd>
 <dt id="li-5">Cooling</dt>
-<dd><p id="p-93">If \(y(t)\) is the temperature of a body kept in an environment at fixed temperature \(E\text{,}\) let \(z(t)=y(t)-E\) be the "difference from environment." Then \(z'=a z\) for a cooling rate \(a \lt 0\text{;}\) temperature tends toward \(E\) exponentially. This is <dfn class="terminology">Newton's Law of Cooling</dfn>.</p></dd>
+<dd><p id="p-94">If \(y(t)\) is the temperature of a body kept in an environment at fixed temperature \(E\text{,}\) let \(z(t)=y(t)-E\) be the "difference from environment." Then \(z'=a z\) for a cooling rate \(a \lt 0\text{;}\) temperature tends toward \(E\) exponentially. This is <dfn class="terminology">Newton's Law of Cooling</dfn>.</p></dd>
 </dl>
 <p> To belabor the obvious, positive \(a\) represents growth and negative \(a\) leads to decay. In the simplest contexts, the rate \(a\) is constant, but in some models (like finance) a variable rate is more realistic.</p>
-<p id="p-94">(A note about interest: Rates in the real world may be quoted yearly, or quarterly, or according to any other finite time period. The rate in an ODE model is the "continuously compounded" rate. This is explained somewhat on page 45 of the text.)</p>
-<p id="p-95">The units of the derivative \(dy/dt\) are those of \(y\) divided by those of \(t\text{.}\) Let's write these as \(Y/T\text{.}\) Additive terms all need to have the same units, so both \(q(t)\) and \(a(t)y\) have those units as well. Consequently \(a\) has units \(1/T\text{,}\) or "per time," and has various interpretations when inverted: </p>
+<p id="p-95">(A note about interest: Rates in the real world may be quoted yearly, or quarterly, or according to any other finite time period. The rate in an ODE model is the "continuously compounded" rate. This is explained somewhat on page 45 of the text.)</p>
+<p id="p-96">The units of the derivative \(dy/dt\) are those of \(y\) divided by those of \(t\text{.}\) Let's write these as \(Y/T\text{.}\) Additive terms all need to have the same units, so both \(q(t)\) and \(a(t)y\) have those units as well. Consequently \(a\) has units \(1/T\text{,}\) or "per time," and has various interpretations when inverted: </p>
 <ul class="disc">
 <li id="li-6">When \(a \lt 0\text{,}\) the time \(\tau=-1/a\) is the <dfn class="terminology">relaxation time</dfn> or <dfn class="terminology">characteristic time</dfn>. If there is no forcing \(q\text{,}\) then \(y(\tau)= e^{-1} y(0) \approx 0.37 y(0)\text{.}\)</li>
 <li id="li-7">In radioactivity it's more common to use \(t_h=-\ln(2)/a\text{,}\) which is the <dfn class="terminology">half-life</dfn>. That's because \(\exp(at_h)=1/2\text{,}\) so half of the radioactive isotope is depleted in that much time.</li>
@@ -141,20 +141,20 @@ lt 0\text{.}\)</p></dd>
 </ul>
 <article class="example-like" id="example-12"><a knowl="" class="id-ref" refid="hk-example-12"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">1.7.1</span> <span class="title">First-order pharmacokinetics</span>
-</h6></a></article><div id="hk-example-12" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-96">According to <em class="emphasis">R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52</em>, caffeine in the bloodstream approximately satisfies first-order kinetics, though the half-life varies a great deal from one person to the next.</p>
-<p id="p-97">Suppose \(t_h=6\) hours. We can calculate \(a=-\ln(2)/t_h\approx 0.116\) per hour, and then the predicted effects of one cup of coffee are \(y(t) = e^{0.116t}y(0)\text{.}\) You can check that an equivalent, more direct expression is</p>
+</h6></a></article><div id="hk-example-12" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-97">According to <em class="emphasis">R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52</em>, caffeine in the bloodstream approximately satisfies first-order kinetics, though the half-life varies a great deal from one person to the next.</p>
+<p id="p-98">Suppose \(t_h=6\) hours. We can calculate \(a=-\ln(2)/t_h\approx 0.116\) per hour, and then the predicted effects of one cup of coffee are \(y(t) = e^{0.116t}y(0)\text{.}\) You can check that an equivalent, more direct expression is</p>
 <div class="displaymath">
 \begin{equation*}
 y(t) = 2^{-t/t_h} y(0)\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-98">A <dfn class="terminology">continuously stirred tank reactor</dfn> (CSTR) appears often in chemical engineering. One ideally assumes that the contents of the tank are mixed perfectly and instantaneously at all times. Then one writes an ODE that expresses mass balance.</p>
+<p id="p-99">A <dfn class="terminology">continuously stirred tank reactor</dfn> (CSTR) appears often in chemical engineering. One ideally assumes that the contents of the tank are mixed perfectly and instantaneously at all times. Then one writes an ODE that expresses mass balance.</p>
 <article class="exercise-like" id="exercise-1"><a knowl="" class="id-ref" refid="hk-exercise-1"><h6 class="heading">
 <span class="type">Checkpoint</span> <span class="codenumber">1.7.2</span>
-</h6></a></article><div id="hk-exercise-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-99">A 200 L tank contains 10 kg of dye. Pure water is added at a rate of 4 L per minute, while the mixture is drained at the same rate. How much dye is in the tank after 10 minutes?</p>
+</h6></a></article><div id="hk-exercise-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-100">A 200 L tank contains 10 kg of dye. Pure water is added at a rate of 4 L per minute, while the mixture is drained at the same rate. How much dye is in the tank after 10 minutes?</p>
 <div class="solutions">
 <a knowl="" class="id-ref" refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div id="hk-solution-1" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-100">Let \(y(t)\) be the mass of dye in the tank. The trick is to realize how rapidly it is being removed, and that depends on the time-varying concentration, \(y(t)/200\text{.}\) Specifically,</p>
+<p id="p-101">Let \(y(t)\) be the mass of dye in the tank. The trick is to realize how rapidly it is being removed, and that depends on the time-varying concentration, \(y(t)/200\text{.}\) Specifically,</p>
 <div class="displaymath">
 \begin{equation*}
 \dd{y}{t} = - \frac{4 \text{ L}}{\text{minute}} \cdot \frac{y \text{ kg}}{200 \text{ L}}
@@ -162,7 +162,7 @@ y(t) = 2^{-t/t_h} y(0)\text{.}
 \end{equation*}
 </div>
 <p>So \(y(t)=e^{-0.02 t}y(0)\) and \(y(10)=10 e^{-0.2}\) kg.</p>
-<p id="p-101">(These problems can also be solved by using concentration, not mass, as the dependent variable. But I find it easier to apply mass conservation in the form above.)</p>
+<p id="p-102">(These problems can also be solved by using concentration, not mass, as the dependent variable. But I find it easier to apply mass conservation in the form above.)</p>
 </div></div>
 </div></article></div></section></div></main>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:43-05:00    *-->
+<!--*    on 2019-02-13T21:11:33-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -119,37 +119,37 @@ MathJax.Hub.Config({
 <a href="so-simple-harmonic.html" class="permalink">¶</a><section class="subsection" id="so-sh-newton"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">Newton's law</span>
 </h3>
-<a href="so-simple-harmonic.html#so-sh-newton" class="permalink">¶</a><p id="p-133">The subtext of this chapter is, "F=ma is not just a good idea; it's the law." Newton's second law, to be exact. Since acceleration is the second derivative of position, this leads us to second-order ODEs of the form \(y''=F(t,y,y')\text{.}\) You can always think about this as a problem specifying a position-dependent force, though it's much more general than that.</p>
-<p id="p-134">Suppose you ask a question such as, "Where will my car be after 4 seconds of maximum acceleration?" You can't fully answer it unless you know two more pieces of data: the position and velocity of the car at the start. In general, we need to know \(y(0)\) and \(y'(0)\) (or values at some other time) in order to solve a second-order problem uniquely.</p>
-<p id="p-135">The grandpappy of all second-order ODEs is \(y''=-ay\text{,}\) for a positive constant \(a\text{.}\) In terms of Newton's second law, this arises with a force term defined as \(F=-ky\text{,}\) because then \(my''=-ky\text{.}\) Most springs behave like this to a good approximation, provided you don't stretch or compress them too far (an idea called Hooke's Law). Playground swings, molecular bonds, and electrical inductors are often well-approximated this way as well.</p>
-<p id="p-136">The negative sign in the force is crucial. It makes the force a "restoring" one: move to the right, and you are pushed to the left, and vice versa. Soon we will let additional external forces act, in which case the ODE becomes \(my''+ky=f(t)\text{.}\)</p></section><section class="subsection" id="so-sh-null"><h3 class="heading hide-type">
+<a href="so-simple-harmonic.html#so-sh-newton" class="permalink">¶</a><p id="p-134">The subtext of this chapter is, "F=ma is not just a good idea; it's the law." Newton's second law, to be exact. Since acceleration is the second derivative of position, this leads us to second-order ODEs of the form \(y''=F(t,y,y')\text{.}\) You can always think about this as a problem specifying a position-dependent force, though it's much more general than that.</p>
+<p id="p-135">Suppose you ask a question such as, "Where will my car be after 4 seconds of maximum acceleration?" You can't fully answer it unless you know two more pieces of data: the position and velocity of the car at the start. In general, we need to know \(y(0)\) and \(y'(0)\) (or values at some other time) in order to solve a second-order problem uniquely.</p>
+<p id="p-136">The grandpappy of all second-order ODEs is \(y''=-ay\text{,}\) for a positive constant \(a\text{.}\) In terms of Newton's second law, this arises with a force term defined as \(F=-ky\text{,}\) because then \(my''=-ky\text{.}\) Most springs behave like this to a good approximation, provided you don't stretch or compress them too far (an idea called Hooke's Law). Playground swings, molecular bonds, and electrical inductors are often well-approximated this way as well.</p>
+<p id="p-137">The negative sign in the force is crucial. It makes the force a "restoring" one: move to the right, and you are pushed to the left, and vice versa. Soon we will let additional external forces act, in which case the ODE becomes \(my''+ky=f(t)\text{.}\)</p></section><section class="subsection" id="so-sh-null"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.1.2</span> <span class="title">Unforced solution</span>
 </h3>
-<a href="so-simple-harmonic.html#so-sh-null" class="permalink">¶</a><p id="p-137">Solutions of \(my''+ky=0\) are quite easy to get. Define \(\omega_n=\sqrt{k/m}\text{.}\) Then you can easily check that \(\cos(\omega_n t)\) is a solution. So are \(-\cos(\omega_n t)\) and \(7164\cos(\omega_n t)\text{,}\) for that matter; any constant multiplier is allowed. You can also check that \(A\sin(\omega_n t)\) is a solution for any constant multiplier. Finally, we can combine them as well, into</p>
+<a href="so-simple-harmonic.html#so-sh-null" class="permalink">¶</a><p id="p-138">Solutions of \(my''+ky=0\) are quite easy to get. Define \(\omega_n=\sqrt{k/m}\text{.}\) Then you can easily check that \(\cos(\omega_n t)\) is a solution. So are \(-\cos(\omega_n t)\) and \(7164\cos(\omega_n t)\text{,}\) for that matter; any constant multiplier is allowed. You can also check that \(A\sin(\omega_n t)\) is a solution for any constant multiplier. Finally, we can combine them as well, into</p>
 <div class="displaymath">
 \begin{equation*}
 y = c_1 \cos(\omega_n t) + c_2 \sin(\omega_n t).
 \end{equation*}
 </div>
 <p>It turns out that this expression captures all possible solutions. We have <dfn class="terminology">simple harmonic motion</dfn>.</p>
-<p id="p-138">We started with a second derivative in the ODE and now we have two arbitrary "integration constants." That's no coincidence. It's also not a coincidence that we need two initial values to find a unique solution. For the record, we can easily find that</p>
+<p id="p-139">We started with a second derivative in the ODE and now we have two arbitrary "integration constants." That's no coincidence. It's also not a coincidence that we need two initial values to find a unique solution. For the record, we can easily find that</p>
 <div class="displaymath">
 \begin{equation*}
 y(t) = y(0) \cos(\omega_n t) + \frac{y'(0)}{\omega_n} \sin(\omega_n t).
 \end{equation*}
 </div>
-<p id="p-139">Recall from <a href="complex-exp.html#frc-shifted-cos" class="xref" title="Subsection 1.5.3: Shifted cosines">Subsection 1.5.3</a> that a combination of sin and cos at the same frequency is equivalent to a shifted cosine, so we can also write \(y=R\cos(\omega_n t - \alpha)\) for an amplitude \(R\) and a phase \(\alpha\text{,}\) and we get those values by expressing the cartesian point \((y(0),y'(0)/\omega_n)\) in polar form.</p>
+<p id="p-140">Recall from <a href="complex-exp.html#frc-shifted-cos" class="xref" title="Subsection 1.5.3: Shifted cosines">Subsection 1.5.3</a> that a combination of sin and cos at the same frequency is equivalent to a shifted cosine, so we can also write \(y=R\cos(\omega_n t - \alpha)\) for an amplitude \(R\) and a phase \(\alpha\text{,}\) and we get those values by expressing the cartesian point \((y(0),y'(0)/\omega_n)\) in polar form.</p>
 <article class="exercise-like" id="exercise-2"><a knowl="" class="id-ref" refid="hk-exercise-2"><h6 class="heading">
 <span class="type">Checkpoint</span> <span class="codenumber">2.1.1</span>
-</h6></a></article><div id="hk-exercise-2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-140">Find the solution in shifted cosine form of \(2y''+32y=0\) with \(y(0)=1\text{,}\) \(y'(0)=-8\text{.}\)</p>
+</h6></a></article><div id="hk-exercise-2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-141">Find the solution in shifted cosine form of \(2y''+32y=0\) with \(y(0)=1\text{,}\) \(y'(0)=-8\text{.}\)</p>
 <div class="solutions">
-<a knowl="" class="id-ref" refid="hk-solution-2" id="solution-2"><span class="type">Solution</span></a><div id="hk-solution-2" class="hidden-content tex2jax_ignore"><div class="solution"><p id="p-141">We have \(\omega_n=\sqrt{16}=4\text{,}\) so \(y = c_1 \cos(4 t) + c_2 \sin(4 t).\) We then derive \(1=y(0)=c_1\) and \(-8=y'(0)=4c_2\text{,}\) so \(y = \cos(4 t) -2 \sin(4 t).\) Converting \((1,-2)\) to polar form gives \(R=\sqrt{5}\) and \(\alpha = \tan^{-1}(-2)\text{.}\)</p></div></div>
+<a knowl="" class="id-ref" refid="hk-solution-2" id="solution-2"><span class="type">Solution</span></a><div id="hk-solution-2" class="hidden-content tex2jax_ignore"><div class="solution"><p id="p-142">We have \(\omega_n=\sqrt{16}=4\text{,}\) so \(y = c_1 \cos(4 t) + c_2 \sin(4 t).\) We then derive \(1=y(0)=c_1\) and \(-8=y'(0)=4c_2\text{,}\) so \(y = \cos(4 t) -2 \sin(4 t).\) Converting \((1,-2)\) to polar form gives \(R=\sqrt{5}\) and \(\alpha = \tan^{-1}(-2)\text{.}\)</p></div></div>
 </div></article></div>
-<p id="p-142">A quick word about words. In math we typically use the term frequency to mean an <dfn class="terminology">angular frequency</dfn>, as with the value \(\omega_n\) that multiplies \(t\) inside the trig functions. You can think of this value as meaning "radians per second." In engineering and physics one might be more comfortable using "cycles per second" (or Hertz), which leads to a different value of frequency, \(\omega_n/2\pi\text{.}\) We won't be using that, just to avoid confusion, but now you're aware that corresponding formulas in other sources might have extra factors of \(2\pi\) sprinkled about.</p></section><section class="subsection" id="subsection-17"><h3 class="heading hide-type">
+<p id="p-143">A quick word about words. In math we typically use the term frequency to mean an <dfn class="terminology">angular frequency</dfn>, as with the value \(\omega_n\) that multiplies \(t\) inside the trig functions. You can think of this value as meaning "radians per second." In engineering and physics one might be more comfortable using "cycles per second" (or Hertz), which leads to a different value of frequency, \(\omega_n/2\pi\text{.}\) We won't be using that, just to avoid confusion, but now you're aware that corresponding formulas in other sources might have extra factors of \(2\pi\) sprinkled about.</p></section><section class="subsection" id="subsection-17"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.1.3</span> <span class="title">Forced response</span>
 </h3>
-<p id="p-143">Let's consider the forced problem now, \(my''+ky=f(t)\text{.}\) The most natural type of forcing is also harmonic, but at a different frequency \(\omega\text{.}\) This is a linear problem, and just as in the first-order case, we get a solution consisting of the unforced part from above plus a particular solution \(y_p\) which we often call the <dfn class="terminology">response</dfn> to the forcing term.</p>
-<p id="p-144">The math remains incredibly simple for now. Suppose \(f(t)=\cos(\omega t)\text{,}\) and let \(y_p=Y\cos(\omega t)\text{.}\) (Why? Because it works.) Plug \(y_p\) into the equation and you find that it's valid if \(Y=1/(k-m\omega^2)\text{.}\) Let's write the complete solution using \(k=m\omega_n^2\text{:}\)</p>
+<p id="p-144">Let's consider the forced problem now, \(my''+ky=f(t)\text{.}\) The most natural type of forcing is also harmonic, but at a different frequency \(\omega\text{.}\) This is a linear problem, and just as in the first-order case, we get a solution consisting of the unforced part from above plus a particular solution \(y_p\) which we often call the <dfn class="terminology">response</dfn> to the forcing term.</p>
+<p id="p-145">The math remains incredibly simple for now. Suppose \(f(t)=\cos(\omega t)\text{,}\) and let \(y_p=Y\cos(\omega t)\text{.}\) (Why? Because it works.) Plug \(y_p\) into the equation and you find that it's valid if \(Y=1/(k-m\omega^2)\text{.}\) Let's write the complete solution using \(k=m\omega_n^2\text{:}\)</p>
 <div class="displaymath">
 \begin{equation}
 y(t) = R\cos(\omega_n t-\alpha) + \frac{1}{m(\omega_n^2-\omega^2)}\cos(\omega t).\label{eq-so-sh-response}\tag{2.1.1}
@@ -158,10 +158,10 @@ y(t) = R\cos(\omega_n t-\alpha) + \frac{1}{m(\omega_n^2-\omega^2)}\cos(\omega t)
 <p>It's clear that this formula breaks when \(\omega=\omega_n\text{,}\) which is the case of <dfn class="terminology">resonance</dfn>. We'll worry about that later on. Notice that otherwise the solution consists of one part at the natural frequency and another at the forcing (or driving) frequency. This is the "null plus particular" structure we have seen all along for linear equations.</p>
 <article class="exercise-like" id="exercise-3"><a knowl="" class="id-ref" refid="hk-exercise-3"><h6 class="heading">
 <span class="type">Checkpoint</span> <span class="codenumber">2.1.2</span>
-</h6></a></article><div id="hk-exercise-3" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-145">Find a particular solution of \(y''+9y = \sin(t)-\cos(t).\)</p>
+</h6></a></article><div id="hk-exercise-3" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-146">Find a particular solution of \(y''+9y = \sin(t)-\cos(t).\)</p>
 <div class="solutions">
 <a knowl="" class="id-ref" refid="hk-solution-3" id="solution-3"><span class="type">Solution</span></a><div id="hk-solution-3" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-146">It's not hard to see that the sin forcing term can be solved by \(y_p=Y\sin(t)\) for a constant \(Y\text{.}\) We can put both forcing terms together with \(y_p=A\cos(t)+B\sin(t)\) and insert it into the equation to find</p>
+<p id="p-147">It's not hard to see that the sin forcing term can be solved by \(y_p=Y\sin(t)\) for a constant \(Y\text{.}\) We can put both forcing terms together with \(y_p=A\cos(t)+B\sin(t)\) and insert it into the equation to find</p>
 <div class="displaymath">
 \begin{equation*}
 (9-A)\cos(t)+(9-B)\sin(t) = \sin(t)-\cos(t),
@@ -175,15 +175,15 @@ y_p=10\cos(t)+8\sin(t)\text{.}
 </div>
 </div></div>
 </div></article></div>
-<p id="p-147">The analogy goes even deeper. Recall in <a href="first-linear-const.html#flcs-impulse" class="xref" title="Subsection 1.4.3: Impulse forcing">Subsection 1.4.3</a> that the null solution was relatable to the impulse response, i.e., the particular solution when \(f(t)=\delta(t)\text{.}\) That happens here, too. In fact, the solution of \(my''+ky=\delta(t)\) with zero initial conditions is</p>
+<p id="p-148">The analogy goes even deeper. Recall in <a href="first-linear-const.html#flcs-impulse" class="xref" title="Subsection 1.4.3: Impulse forcing">Subsection 1.4.3</a> that the null solution was relatable to the impulse response, i.e., the particular solution when \(f(t)=\delta(t)\text{.}\) That happens here, too. In fact, the solution of \(my''+ky=\delta(t)\) with zero initial conditions is</p>
 <div class="displaymath">
 \begin{equation}
 g(t) = \frac{1}{m\omega_n} \sin(\omega_n t).\label{eq-so-sh-fundsol}\tag{2.1.2}
 \end{equation}
 </div>
 <p>This solution has \(g(0)=0\text{,}\) \(g'(0)=1/m\text{,}\) and solves \(my''+ky=0\) for \(t\gt 0\text{.}\)</p>
-<p id="p-148">(Sort-of justification: Since \(g(0)=0\text{,}\) we have \(mg''=\delta(t)\) there. Integrating once tells us that \(mg'\) is a step function, so \(g'=1/m\) immediately at time zero. Kinda.)</p>
-<p id="p-149">The kicker is that the impulse response can be used to solve <em class="emphasis">any</em> forcing problem, at least in principle. Given the forcing term \(f(t)\text{,}\) a particular solution is</p>
+<p id="p-149">(Sort-of justification: Since \(g(0)=0\text{,}\) we have \(mg''=\delta(t)\) there. Integrating once tells us that \(mg'\) is a step function, so \(g'=1/m\) immediately at time zero. Kinda.)</p>
+<p id="p-150">The kicker is that the impulse response can be used to solve <em class="emphasis">any</em> forcing problem, at least in principle. Given the forcing term \(f(t)\text{,}\) a particular solution is</p>
 <div class="displaymath">
 \begin{equation*}
 y_p(t) = \int_0^t g(t-s)f(s)\,ds.

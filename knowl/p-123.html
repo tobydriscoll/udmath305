@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:44-05:00    *-->
+<!--*    on 2019-02-13T21:11:34-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p><em class="emphasis">Critical harvesting, \(h= 9\text{:}\)</em> There is a double root at \(y=3\text{,}\) and now \(y'=6y-y^2-9=-(y-3)^2\text{.}\) If we change now to \(v=y-3\text{,}\) we get just \(v'=-v^2\text{,}\) which is a nonlinear equation very similar to the one in <a href="linearity.html" class="xref" title="Section 1.1: Introduction">Section 1.1</a>. It's autonomous and thus can be integrated by separation:</p>
+<p><em class="emphasis">Underharvesting, \(h\lt 9\text{:}\)</em> For example, say \(h=8\text{.}\) The roots of \(f(y)\) are \((6\pm\sqrt{36-32})/2\text{,}\) or 4 and 2, so these are the steady states. It's possible to repeat the partial fractions computation above for this problem, but there's an easier path. Define the new variable \(v=y-2\text{.}\) Then \(v'=y'\text{,}\) and</p>
 <div class="displaymath">
 \begin{equation*}
-t = \int -\frac{dv}{v^2} = \frac{1}{v} + C\text{,}
+v' = 6(v+2) -(v+2)^2 - 8 = 6v+12 -v^2 -4v - 4 - 8 = 2v -v^2\text{,}
 \end{equation*}
 </div>
-<p>so that \(v=1/(t-C)\) for arbitrary \(C\text{.}\) From here we get \(v(t)=v(0)/(1+tv(0))\text{.}\) There are two possibilities. If \(v(0)\gt 0\text{,}\) then the denominator is never zero, and \(v\to 0\) (thus \(y \to 3\)) as \(t\to\infty\text{.}\) But if \(v(0)\lt 0\text{,}\) then \(v\to -\infty\) as \(t\to -1/v(0)\text{.}\) We interpret that as a population crash (our model would have to stop at \(v=-3\)). So a large enough initial population will tend toward a nonzero steady state, but if it ever dips below that value, it will die out. We might call this precarious situation "semistable".</p>
+<p>which is a pure logistic equation with different parameters and steady states 0 and 2. The problem can be solved for \(v\) and then turned back into \(y\) by adding 2. So the population will have a logistic or sigmoidal solution between an unstable 2 and a stable 4.</p>
 <span class="incontext"><a href="logistic-equation.html#p-123">in-context</a></span>
 </body>
 </html>

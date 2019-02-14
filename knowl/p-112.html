@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:44-05:00    *-->
+<!--*    on 2019-02-13T21:11:34-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The logistic equation is our first real look at a nonlinear ODE. We'll begin with the steady states. We have \(f(y)=y(a-by)\) with roots \(y=0\) and \(y=a/b\text{.}\) Since \(f'(y)=a-2by\text{,}\) we have that the former steady state is unstable and the latter is stable. The stable equilibrium value \(K=a/b\) is important and known as the <dfn class="terminology">carrying capacity</dfn> of the environment. We will find later that this value is the long-term fate of the system for any positive initial condition.</p>
+<p>There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
+<div class="displaymath">
+\begin{equation}
+\frac{1}{y} \dd{y}{t} = a - by, \qquad or \dd{y}{t} = ay - by^2 \text{.}\tag{1.9.1}
+\end{equation}
+</div>
+<p>This is the <dfn class="terminology">logistic equation</dfn>.</p>
 <span class="incontext"><a href="logistic-equation.html#p-112">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:44-05:00    *-->
+<!--*    on 2019-02-13T21:11:35-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,25 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Taking this odd assumption on faith, we compute</p>
+<p>While UC relies on "educated guesswork" (actually rigid rules that are a bit complex to apply), <dfn class="terminology">variation of parameters</dfn> follows the same recipe every time. Given \(L[y]=f\text{,}\) suppose we have a general null solution in the form</p>
 <div class="displaymath">
 \begin{equation*}
-y_p' = c_1'y_1+c_1y_1'+ c_2'y_2+c_2y_2'  \text{.}
+y_n(t) = c_1 y_1(t) + c_2 y_2(t)\text{.}
 \end{equation*}
 </div>
-<p>Before we go on, we're going to put a restriction on our mystery functions, namely \(c_1'y_1+c_2'y_2=0\text{.}\) That makes life a little easier. Continuing, we get</p>
+<p>For problems with constant coefficients, \(y_1\) and \(y_2\) are exponentials (or sin/cos equivalents), possibly multiplied by \(t\text{.}\) In any case, the VP trick is to replace the integration constants with functions of time:</p>
 <div class="displaymath">
 \begin{equation*}
-y_p'' = c_1'y_1'+ c_1y_1'' + c_2'y_2'+ c_2y_2''  \text{.}
+y_p(t) = c_1(t) y_1(t) + c_2(t) y_2(t)\text{.}
 \end{equation*}
 </div>
-<p>When we put all this mess into \(y''+By'+Cy=f\text{,}\) something cool happens:</p>
-<div class="displaymath">
-\begin{equation*}
-c_1(y_1''+By_1'+Cy_1) + c_2(y_2''+By_2'+Cy_2) + c_1'y_1' + c_2'y_2' = f \text{.}
-\end{equation*}
-</div>
-<p>Thanks to the null property of \(y_1\) and \(y_2\text{,}\) this boils down to \(c_1'y_1' + c_2'y_2' = f\text{.}\)</p>
+<p>To keep notation simpler, we assume below that the coefficient of \(y''\) in the ODE is 1.</p>
 <span class="incontext"><a href="so-general-forcing.html#p-229">in-context</a></span>
 </body>
 </html>

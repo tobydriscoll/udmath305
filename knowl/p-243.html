@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T20:43:44-05:00    *-->
+<!--*    on 2019-02-13T21:11:35-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The main value in the Laplace transform method is in finding a particular solution. The poles \(Y(s)\) due to the homogeneous or null part are just the characteristic roots, and we know how to work with those anyway.</p>
+<p>From here we can write out a general solution. The characteristic roots are \(\pm 1\text{,}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = c_1 e^{-t} + c_2 e^{t} + y_v(t)\text{.}
+\end{equation*}
+</div>
+<p>If desired, it's easy to solve for the constants in this, because \(y_v\) contributes nothing:</p>
+<div class="displaymath">
+\begin{align*}
+y(0) \amp = c_1 + c_2  \\
+y'(0) \amp = -c_1 + c_2 \text{.}
+\end{align*}
+</div>
+<p>That's a lot less work than doing a separate PFD for the initial conditions as represented in the transform.</p>
 <span class="incontext"><a href="laplace-solutions.html#p-243">in-context</a></span>
 </body>
 </html>
