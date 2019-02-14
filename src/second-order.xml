@@ -161,24 +161,33 @@
 
 	  <p>Finally, as <m>b</m> increases more our roots again separate but stay on the negative real axis. The solutions are all decaying real exponentials, and we call the situation <term>overdamped</term>. (This is what you want for your airplane's wings!)</p>
 
-	  <p>The four types of oscillation can be predicted from the sign of <m>b^2-4ac</m>, or equivalently from the sign of <m>\omega_n-p</m>. Or you can use the dimensionless value <m>\zeta=p/\omega_n</m>, but enough already.</p>
+	  <p>The four types of oscillation can be predicted from the sign of <m>b^2-4ac</m>, or equivalently from the sign of <m>\omega_n-p</m>. Or you can use the dimensionless value <m>Z=p/\omega_n</m>, but enough already.</p>
 	</subsection>
 
 	<subsection xml:id="so-cc-impulse">
 	  <title>Impulse response</title>
 
-	  <p>Recall our claim that the fundamental solution <m>g(t)</m> of the impulse forcing problem <m>ay''+by'+c=\delta(t)</m> leads to the particular response to any input <m>f(t)</m> via <m>y_p(t)=\int_0^t g(t-s)f(s)\,ds</m>. Also recall that we can fudge finding <m>g</m> by having no forcing, <m>g(0)=0</m>, and <m>g'(0)</m> becoming instantly nonzero. Consider an infinitesimally small time <m>\epsilon</m>. If we integrate <m>ay''+by'+c=\delta(t)</m> up to this time, then we can estimate
+	  <p>Recall our claim that the fundamental solution <m>g(t)</m> of the impulse forcing problem <m>ay''+by'+c=\delta(t)</m> leads to the particular response to any input <m>f(t)</m> via <m>y_p(t)=\int_0^t g(t-s)f(s)\,ds</m>. Also recall that we can fudge finding <m>g</m> by having no forcing, <m>g(0)=0</m>, and <m>g'(0)</m> becoming instantly nonzero. </p>
+		
+		<p>
+			Consider an infinitesimally small time <m>\epsilon</m>. If we integrate <m>ay''+by'+c=\delta(t)</m> up to this time, then we can estimate
 	  <me>a(g'(\epsilon)-g'(0)) + b(g(\epsilon)-g(0)) + c\int_0^\epsilon g(t)\,dt = 1 </me>.
 	  Assuming that <m>g</m> itself is continuous, as <m>\epsilon\to 0</m> we conclude that <m>g'(\epsilon)-g'(0) = 1/a</m>, which is the jump we seek. That is, we use <m>g'(0)=1/a</m> as the "cheater's way" to get the fundamental solution.  </p>
 
 	  <example>
-	    <p>The solution of <m>g''=\delta(t)</m> is equivalent to <m>g''=0</m> with <m>g(0)=0</m>, <m>g'(0)=1</m>. We have <m>g(t)=c_1+c_2t</m> and then conclude that <m>c_1=0</m>, <m>c_2=1</m>. </p>
+	    <p>The solution of <m>g''=\delta(t)</m> is equivalent to <m>g''=0</m> with <m>g(0)=0</m>, <m>g'(0)=1</m>. We have <m>g(t)=c_1+c_2t</m> and then conclude that <m>c_1=0</m>, <m>c_2=1</m>. That is, <m>g(t)=t</m>.
+			</p>
+			<p>
+				Now suppose we want to solve <m>g''=\sin(t)</m>. We find
+				<me>y_p(t)=\int_0^t (t-s) \sin(s) \,ds = \bigl[ (s-t)\cos(s) - \sin(s) \bigr]_0^t = -\sin(t)-t</me>. 
+				This is not the same result we get by following the other methods of this section, which would suggest only <m>-\sin(t)</m>. The other <m>-t</m> coming from the integral formula is a part of the null solution, so both expressions are valid particular solutions. 
+			</p>
 	  </example>
 	</subsection>
 	  
-    </section>
+  </section>
 
-    <section xml:id="so-forced-oscillators">
+  <section xml:id="so-forced-oscillators">
 	<title>Exponentially forced oscillators</title>
 	<introduction>
 	  <p>We now consider problems in the form <m>ay''+by'+cy=f(t)</m>, where the coefficients are constant, <m>a</m> and <m>c</m> are positive (oscillation), and the driving force is exponential, <m>f(t)=e^{rt}</m> for constant <m>r</m>.</p>
@@ -274,7 +283,7 @@
 
 	</subsection>
   
-    </section>
+  </section>
 
   <section xml:id="so-higher-order">
 	<title>Higher-order ODEs</title>
@@ -335,6 +344,21 @@
 			 <me>L[y] = a_N D^N y + \cdots  + a_1 Dy + a_0 y</me>.   
 			This makes it much easier to write the ODE, as <m>L[y]=f</m>. Furthermore, it's easy to check that <m>L</m> satisfies the two rules above and thus is a linear operator as well. The linearity also makes certain kinds of reasoning very simple, such as <m>L[y_n+y_p] = L[y_n]+L[y_p] = 0+f=f</m>. 
 		 </p>
+
+		 <p>
+			 An interesting and seomtimes useful consequence of the defitions is that if <m>L</m> has constant coefficients and the characteristic polynomial factors as <m>P(s)=(s-s_1)\cdots(s-s_N)</m>, then <m>L=(D-s_1)\cdots (D-s_N)</m>. Here the juxtaposition means operator compositions.
+		 </p>
+
+		 <example>
+			 <p>
+				 The operator <m>L[y]=y'''+2y''+y'+2y</m> has characteristic roots <m>-2,\pm i</m>. Now note that for any function <m>y</m>,
+				 <md>
+					 <mrow> (D+2)(D-i)(D+i)y \amp = (D+2)(D-i)(y'+iy) </mrow>
+					 <mrow> \amp = (D+2)\Bigl((y''+iy')-i(y'+iy)\Bigr) </mrow>
+					 <mrow> \amp = (D+2)(y''+y) = y''' +y' +2y'' + 2y = L[y]</mrow>
+				 </md>. We can write the factors in any order, and even things like <m>L[y]=(D^2+1)(D-2)</m>.
+			 </p>
+		 </example>
 	</subsection>
 
   </section>
@@ -381,14 +405,17 @@
 			The mechanical oscillator <m>ay'' + by' + cy = f(t)</m> is more conveniently expressed as
 	  	<me> y'' + \frac{b}{a} y' + \frac{c}{a} y + \frac{c}{a} F(t)</me>.
 			One reason to prefer this form is that <m>y</m> must have the same units as the forcing <m>F</m>. Furthermore, we see the undamped natural frequency <m>\omega_n=\sqrt{c/a}</m>, and this has units of inverse time only. The same units apply to <m>b/a</m>, so we introduce the new dimensionless parameter
-			<me>\zeta = \frac{1}{2} \frac{b/a}{\omega_n} = \frac{b}{\sqrt{4ac}}</me>. 
+			<me>Z = \frac{1}{2} \frac{b/a}{\omega_n} = \frac{b}{\sqrt{4ac}}</me>. 
 			Now the ODE becomes 
-			<me> y'' + 2 \zeta \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)</me>.
+			<me> y'' + 2 Z \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)</me>.
 		</p>
 		<p>
-			The characteristic roots are now conveniently <m>-\zeta \omega_n \pm \omega_n \sqrt{\zeta^2-1}</m>. We see that the condition for being underdamped is simply <m>\zeta \lt 1</m>. In this case we express the roots as <m>-\zeta \omega_n \pm \omega_d</m>, using the damped frequency <m>\omega_d=\omega_n\sqrt{1-Z^2}</m>. The gain works out to be
+			The characteristic roots are now conveniently <m>-Z \omega_n \pm \omega_n \sqrt{Z^2-1}</m>. We see that the condition for being underdamped is simply <m>Z \lt 1</m>. In this case we express the roots as <m>-Z \omega_n \pm \omega_d</m>, using the damped frequency <m>\omega_d=\omega_n\sqrt{1-Z^2}</m>. 
+		</p>
+		<p>
+			Continuing the underdamped case, the gain works out to be
 	  	<me>G^2 = \frac{1}{(\omega_n^2-\omega^2)^2 + 4\omega_n^2Z^2\omega^2}  = \frac{\omega_n^4}{(1-\rho^2)^2 + 4Z^2\rho^2}</me>,
-			where <m>\rho=\omega/\omega_n</m> is a dimensionless frequency ratio. If <m>\zeta^2\lt 1/2</m>, the gain is maximized when <m>\rho=\sqrt{1-2\zeta^2} \lt 1</m>. The gain at that maximum is proportional to <m>1/\zeta</m>, so much growth in the response is possible near the natural frequency when damping is small in the sense of <m>\zeta\approx 0</m>. This can be considered a practical resonance for lightly damped systems. 
+			where <m>\rho=\omega/\omega_n</m> is a dimensionless frequency ratio. If also <m>Z^2\lt 1/2</m>, the gain is maximized when <m>\rho=\sqrt{1-2Z^2} \lt 1</m>. The gain at that maximum is proportional to <m>1/Z</m>, so much growth in the response is possible near the natural frequency when damping is small in the sense of <m>Z\approx 0</m>. This can be considered a practical resonance for lightly damped systems. 
 		</p>
 
 	  <example>
@@ -398,31 +425,274 @@
 
 	</subsection>
 	
-		<subsection>
-			<title>Step response</title>
-			<p>
-				Instead of using a generator, let's find the solution to a step input. 
-			</p>
-		</subsection>
-			</section>
+	</section>
 
-      <section xml:id="so-general-forcing">
+  <section xml:id="so-general-forcing">
 	<title>Other forcing functions</title>
-	<p>undetermined coefficients; variation of parameters</p>
-      </section>
+	<introduction>
+		<p>
+			Exponential forcing functions are very important, especially when allowing complex exponents. But they aren't the whole world. In this section we go over two other major techniques for trying to get particular solutions to linear, 2nd-order ODEs. Both assume that you have access to the complete null solution already. 
+		</p>
+	</introduction>
+	
+		<subsection xml:id="so-gf-muc">
+			<title>Undetermined coefficients</title>
+			<p>In the method of undetermined coefficients we assume that we already know everything about the particular solution except for some constants to be found using algebra. Best to start with examples.</p>
 
-      <section xml:id="laplace-solutions">
+			<example>
+				<p>Let's find a particular solution of <m>y'' +4y'+4y=8t^2</m>. We reason as follows. If we plug in some <m>Ct^2</m> for <m>y</m> with a constant <m>C</m>, then all the derivatives generate multiples of <m>t</m> and <m>1</m>. That is, both sides of the ODE will be quadratic polynomials. So we generalize just a bit to allow 
+				<me>y_p = A + Bt + Ct^2</me>. 
+				Plugging that into the ODE yields
+				<md>
+					<mrow>2C + 4(B+2Ct) + 4(A+Bt+Ct^2) \amp = 8t^2</mrow>
+					<mrow>4C t^2 + (8C+4B) + (2C+4B+4A) \apm = 8t^2</mrow>
+				</md>. This has to be an identity for all <m>t</m>>. Matching like powers, we can read off <m>C=2</m>, then <m>B=-4</m>, and finally <m>A=3</m>>. This provides us with <m>y_p=2t^2+4t+3</m>. (The complete solution would require us to use the characteristic equation to find the null solution as well.)
+				</p>
+			</example>
+
+			<p>
+				In general, if <m>f(t)</m> is a polynomial, then we let <m>y_p</m> be a polynomial of the same degree with unknown coefficients. Substitution into the ODE and matching powers gives equations to determine those. As in the example above, you must put <em>all</em> the polynomial terms into <m>y_p</m>, even if they are missing from <m>f(t)</m>.  
+			</p>
+
+			<p>The next example has a polynomial times an exponential.</p>
+
+			<example>
+				<p>Let's try for <m>y'' -2y'-3y=10te^{4t}</m>. For much the same reasons as in the last case, we try 
+				<me>y_p = (A + Bt)e^{4t}</me>. There's nothing to do now except grind out some derivatives. 
+				<md>
+					<mrow>8(2A+B+2Bt)e^{4t} - 2(4A+B+4Bt)e^{4t} -3 (A + Bt)e^{4t} \amp =10t e^{4t}</mrow>
+					<mrow> 8(2A+B) - 2(4A+B) -3A + t(16B-8B-3B) =  10t</mrow>
+				</md>. From this, by matching powers, we deduce <m>B=2</m> and then <m>5A+12=0</m>. So <m>y_p = (2 - (12/5)t)e^{4t}</m>.
+				</p>
+			</example>
+
+			<p>
+				So if <m>f(t)</m> is a polynomial times <m>e^{st}</m>, let <m>y_p</m> be the same exponential times a polynomial of the same degree with unknown coefficients. This technically applies too if the polynomial has degree zero; this was our mainstay in <xref ref="so-forced-oscillators"/>. It also applies for imaginary or even complex exponents.
+			</p>
+
+			<p>
+				There's a method devoted to forcing by sine or cosine, multiplied by a polynomial and/or exponential. As we have seen  in previous examples, any sin or cos in the forcing requires both to be allowed in <m>y_p</m>. I don't personally see much value in exploring these rules, as they are no easier to use, and may be even more ornate, than the exponentials we have been doing. 
+			</p>
+
+			<p>
+				There is one more situation to be aware of, another variation on a familiar theme. If your <m>y_p</m> is part of the null solution of the ODE, you have to "promote" it by powers of <m>t</m> until it no longer overlaps. 
+			</p>
+
+			<example>
+				<p>
+					Given <m>y'' -2y'-3y=4e^{-t}</m>, we are led to try <m>y_p=Ae^{-t}</m>: 
+					<md> 
+						<mrow>(Ae^{-t}) - 2(-Ae^{-t}) - 3Ae^{-t} \amp = 4e^{-t} </mrow>
+						<mrow> 0 \amp 4e^{-t} </mrow>
+					</md>. This is impossible to satisfy. What's happened is that the characteristic polynomial is <m>(s+1)(s-3)</m>, so <m>e^{-t}</m> is part of the null solution (as the above calculation already showed). Instead we have to use <m>y_p=Ate^{-t}</m>, which gives 
+					<md> 
+						<mrow> Ae^{-t}(t-2) - 2Ae^{-t}(1-t) - 3Ate^{-t} \amp = 4e^{-t} </mrow>
+						<mrow> -4Ae^{-t} \amp 4e^{-t} </mrow>
+					</md>, so <m>A=1</m> and <m>y_p</m> is valid.
+				</p>
+			</example>
+		
+		</subsection>
+
+		<subsection xml:id="so-gf-vp">
+		<title>Variation of parameters</title>
+		<p>
+			While UC relies on "educated guesswork" (actually rigid rules that are a bit complex to apply), <term>variation of parameters</term> follows the same recipe every time. Given <m>L[y]=f</m>, suppose we have a general null solution in the form 
+			<me>y_n(t) = c_1 y_1(t) + c_2 y_2(t)</me>.
+			For problems with constant coefficients, <m>y_1</m> and <m>y_2</m> are exponentials (or sin/cos equivalents), possibly multiplied by <m>t</m>. In any case, the VP trick is to replace the integration constants with functions of time:
+			<me>y_p(t) = c_1(t) y_1(t) + c_2(t) y_2(t)</me>. 
+			To keep notation simpler, we assume below that the coefficient of <m>y''</m> in the ODE is 1. 
+		</p>
+
+		<p>
+			Taking this odd assumption on faith, we compute 
+			<me> 
+				y_p' = c_1'y_1+c_1y_1'+ c_2'y_2+c_2y_2'  
+			</me>. 
+			Before we go on, we're going to put a restriction on our mystery functions, namely <m>c_1'y_1+c_2'y_2=0</m>. That makes life a little easier. Continuing, we get
+			<me>
+				y_p'' = c_1'y_1'+ c_1y_1'' + c_2'y_2'+ c_2y_2''  
+			</me>.
+			When we put all this mess into <m>y''+By'+Cy=f</m>, something cool happens: 
+			<me> 
+				c_1(y_1''+By_1'+Cy_1) + c_2(y_2''+By_2'+Cy_2) + c_1'y_1' + c_2'y_2' = f 
+			</me>. Thanks to the null property of <m>y_1</m> and <m>y_2</m>, this boils down to <m>c_1'y_1' + c_2'y_2' = f</m>. 
+		</p>
+
+		<p>
+			To summarize so far, we get a valid particular solution using two conditions, 
+			<md>
+				<mrow>c_1'y_1+c_2'y_2 \amp = 0 </mrow>
+				<mrow> c_1'y_1' + c_2'y_2' \amp = f </mrow>
+			</md>. Stare at this long enough and you'll realize that it's just two linear equations for <m>c_1'</m> and <m>c_2'</m>. You can do some elimination to solve them, and you wind up with 
+			<me>c_1' = -\frac{y_2f}{W}, \qquad c_2' = \frac{y_1f}{W},</me>
+			with 
+			<me>W(t) = y_1y_2'-y_1'y_2</me>,
+			known as the <term>Wronskian</term> of <m>y_1</m> and <m>y_2</m>. Finally, "all" you have to do is integrate these expressions to get <m>c_1</m> and <m>c_2</m>, and from there you get <m>y_p</m>. 
+		</p>
+
+		<p>If you immediately wondered "what if the Wronskian is zero?" when you saw the above formulas, you have earned a special place in my heart. This possibility can be ruled out for some rather general theortical reasons, but we can also just calculate away the issue for equations with constant coefficients. If we have distinct characteristic roots <m>s_1</m> and <m>s_2</m>, then 
+		<me>
+			W = (e^{s_1t})(s_2e^{s_2t}) - (s_1e^{s_1t})(e^{s_2t}) = (s_2-s_1)e^{(s_1+s_2)t}
+		</me>. 
+		Not zero, as promised. In the case of repeated root <m>s_1</m>, then
+		<me>
+			W = e^{s_1t}(s_1t +1)e^{s_1t} - (s_1 e^{s_1t})(t e^{s_1t}) = e^{2s_1t} 
+		</me>. 
+		And here you were all worried. 
+		</p>
+		</subsection>
+
+		<subsection>
+			<title>Fundamental solutions, again</title>
+			<p>
+				If we continue to push ahead with the VP formulas, interesting things start to happen. For distinct roots,
+				<me>
+					c_1' = -\frac{\exp(s_2t)}{(s_2-s_1)\exp((s_1+s_2)t)} f(t)  =  \frac{f(t)e^{-s_1t}}{s_1-s_2}
+				</me>,
+				and similarly <m>c_2'= f(t)e^{-s_2t}/(s_2-s_1) </m>. Then 
+				<md>
+					<mrow>
+					y_p \amp = e^{s_1 t} \int_0^t \frac{f(\tau)e^{-s_1\tau}}{s_1-s_2}\, d\tau + 
+					e^{s_2 t} \int_0^t \frac{f(\tau)e^{-s_2\tau}}{s_2-s_1}\, d\tau </mrow>
+					<mrow> \amp =  \int_0^t  f(\tau) \frac{  e^{s_1(t-\tau)} -  e^{s_2(t-\tau)}}{s_1-s_2}\, d\tau  </mrow>
+					<mrow> \amp =  \int_0^t  f(\tau) g(t-\tau) \, d\tau  </mrow>
+				</md>, with
+				<me>g(t) = \frac{ e^{s_1t} -  e^{s_2t} }{s_1-s_2} </me>. 
+				By definition the integral formula makes <m>g</m> an fundamental solution. Remember, <m>g</m> is also the impulse response, and the null solution with <m>g(0)=0</m>, <m>g'(0)=1/A=1</m>. But this derivation doesn't rely on any sketchy deltas.
+			</p>
+			<p>
+				For the case of a repeated root we can go though the VP formulas again, or just let <m>s_2\to s_1</m> and get
+				<me>g(t) = t e^{s_1t} </me>. 
+			</p>
+
+		</subsection>
+  </section>
+
+  <section xml:id="laplace-solutions">
 	<title>Laplace transform methods</title>
-	<p></p>
-      </section>
+	<introduction>
+	<p>
+		The correspondence between <m>L[y]=Ay''+By'+Cy</m> and <m>P(s)=As^2+Bs+C</m> is by now obvious. It came by way of assuming <m>y(t)=Y(s)e^{st}</m>, and we get <m>Y(s)=1/P(s)</m>. Factoring <m>P</m> tells us what we need to know. For example, if its roots are <m>-2</m> and <m>-4</m>, then we know that <m>y(t)</m> is a combination of <m>e^{-2t}</m> and <m>e^{-4t}</m>. If an exponential, polynomial, step, or impulse forcing term is present, it contributes to the solution in similarly predictable ways. The only mystery to work out is the coefficients. 
+	</p>
 
-      <section xml:id="laplace-properties">
+	<p>
+		There is a method of expressing all this knowledge called the <term>Laplace transform</term>. Given (almost) any function <m>f(t)</m>, there is a doppelganger function <m>F(s)</m> defined by an integral,
+		<men xml:id="so-lap-lxform">
+			F(s) = \int_0^\infty f(t) e^{-st}\, dt
+		</men>. 
+		In this business, time starts at <m>t=0</m>, and nothing before then matters. One thing to note right away is that the Laplace transform is a linear operator. It's often written using a script L, as in <m>F(s)=\mathcal{L}[f(t)]</m>. The usual convention is that a lowercase function of <m>t</m> transforms to its uppercase namesake as a function of <m>s</m>. 
+	</p>
+	</introduction>
+
+	<subsection>
+		<title>Derivatives</title>
+		<p>
+			Applying integration by parts to the definition reveals the main reason Laplace transforms are useful in ODEs.  
+			<md>
+				<mrow>\mathcal{L}[y'(t)] \amp = \int_0^\infty y'(t) e^{-st}\, dt </mrow>
+				<mrow>\amp = \left[ y(t)e^{-st}\right]_0^\infty - \int_0^\infty (-s) y(t) e^{-st}\, dt </mrow>
+				<mrow>\amp = -y(0) + s Y(s)</mrow>
+			</md>. 
+			Calculus (differentiation) is turned into algebra (multiplication). We can apply this rule repeatedly to transform higher derivatives:
+			<me>\mathcal{L}[y''(t)] = s \mathcal{L}[y'(t)] - y'(0) = s^2Y(s) - sy(0) - y'(0)</me>.
+		</p>
+
+		<p>
+			So here is the plan of attack. Given an ODE <m>Ay''+By'+Cy=f</m>, we transform everything in sight (using linearity!) to get 
+			<me>
+				A[s^2Y(s) - sy(0)-y'(0)] + B[sY(s)-y(0)] + CY(s) = F(s)
+			</me>. 
+			Now solve for the transform of the solution:
+			<me>
+				Y(s) = \frac{ F(s) + (As+B)y(0) - Ay'(0)}{As^2 + Bs + C}
+			</me>. Note that if we want just a particular solution, we can use <m>y(0)=y'(0)=0</m>. In any case, "all" we have to do know is to compute the inverse transform, that is, find <m>y(t)</m> given <m>Y(s)</m>. This is less straightforward than computing the forward transform, unfortunately. But we can make it managable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns. 
+		</p>
+	</subsection>
+
+	<subsection> 
+		<title>Canonical transforms</title>
+		<p>
+			<ol>
+				<li><em>Exponential functions.</em> This is straightforward to calculate from definition. For any complex number <m>z</m>,
+				<me>
+					{\cal L}[e^{z t}] = \int_0^\infty e^{(z-s)t}\, dt = \left[ -\frac{1}{s-z} e^{(z-s)t} \right]_0^\infty = \frac{1}{s-z}
+				</me>. 
+				(To make this valid requires that <m>{\text Re}(z)\lt s</m>, but we are going to ignore such technicalities.) An important special case is when <m>z=0</m>: <m>{\cal L}[1]=1/s</m>.
+				</li>
+				<li>
+					<em>Cos and sin.</em> We can use an imaginary number in the exponential and take the real or imaginary part of the result.  Thus,
+					<me>{\cal L}[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}</me>,
+					and 
+					<me>{\cal L}[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}</me>.
+				</li>
+				<li><em>Resonant term.</em> We know that terms such as <m>te^{zt}</m> appear due to repeated roots and resonances. The clever way to get its transform is to think about differentiation <em>with respect to <m>z</m></em>:
+				<me>\mathcal{L} \left[ \frac{d}{dz} e^{zt} \right] = \frac{d}{dz}  \mathcal{L} \left[ e^{zt} \right] = \frac{d}{dz}\left[ \frac{1}{s-z} \right] </me>,
+				from which we conclude 
+				<me>\mathcal{L} \left[ t e^{zt} \right] = \frac{1}{(s-z)^2} </me>.
+				If we differentiate again we find 
+				<me>\mathcal{L} \left[ t^2 e^{zt} \right] = \frac{2}{(s-z)^3}</me>, 
+				and in general
+				<me>\mathcal{L} \left[ t^n e^{zt} \right] = \frac{n!}{(s-z)^{n+1}} </me>.
+				As a special case, taking <m>z=0</m> allows us to transform any power of <m>t</m>, and therefore any polynomial. 
+				</li>
+			</ol>
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>The first-order case</title>
+		<p>
+			Let's go back and revisit an old first-order linear friend, <m>y'-ay=e^{ct}</m>. Transforming both sides, we get 
+			<me> [sY(s)-y(0)] - aY(s) =\frac{1}{s-c}</me>,
+			and thus 
+			<me> Y(s) = \frac{y(0)}{s-a} + \frac{1}{(s-c)(s-a)}</me>. 
+			The first part corresponds to <m>y_n(t)=y(0)e^{at}</m>, which is the null solution. To invert the transform of the second term, we need to express it using <term>partial fractions</term>. The text has a clever way mnemonic for this:
+			<me> \frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}</me>. Thus we get a sum of two exponentials,
+			<me>y_v(t) =  \frac{1}{c-a}\left( e^{ct}-e^{at} \right) </me>. 
+			This is the "very particular" solution that has <m>y_v(0)=0</m>. 
+		</p>
+		<p>
+			There's no new result here, though the process is quite streamlined. The values <m>s=a</m> and <m>s=c</m> that are roots of the denominator of <m>Y(s)</m> are called <term>poles</term> of the transform. They signal clearly and quickly that every solution is a combination of the exponentials <m>e^{at}</m> and <m>e^{ct}</m>.
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Second-order equations</title>
+		<p>
+			Let's break down what happens in a fundamental case, <m>y''-y=e^{rt}</m>.  Transforming both sides gives <m> [s^2Y(s) - sy(0)-y'(0)] - Y(s) = 1/(s-r)</m>. For reasons to be clarified later, let's skip to the "very particular" part with <m>y_v(0)=y_v'(0)=0</m>, for which
+			<me>Y(s) = \frac{1}{(s^2-1)(s-r)} = \frac{1}{(s+1)(s-1)(s-r)}</me>. 
+			This time there are three poles. Again the book's trick works well here:
+			<me> \frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} </me>. 
+			It should be apparent that this works only if <m>r\neq -1</m> and <m>r \neq 1</m> (i.e., no resonance). From here we get three exponentials:
+			<me>y_v(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}</me>. 
+		</p>
+		<p>
+			From here we can write out a general solution. The characteristic roots are <m>\pm 1</m>, so
+			<me>y(t) = c_1 e^{-t} + c_2 e^{t} + y_v(t)</me>. 
+			If desired, it's easy to solve for the constants in this, because <m>y_v</m> contributes nothing:
+		<md>
+			<mrow>y(0) \amp = c_1 + c_2  </mrow>
+			<mrow>y'(0) \amp = -c_1 + c_2 </mrow>
+		</md>. 
+		That's a lot less work than doing a separate PFD for the initial conditions as represented in the transform. 
+		</p>
+		<p>
+			The main value in the Laplace transform method is in finding a particular solution. The poles <m>Y(s)</m> due to the homogeneous or null part are just the characteristic roots, and we know how to work with those anyway. 
+		</p>
+	</subsection>
+
+	
+  </section>
+
+  <section xml:id="laplace-properties">
 	<title>Laplace transform properties</title>
 	<p>From section 8.5</p>
-      </section>
+  </section>
 
-      <section xml:id="convolutions">
+  <section xml:id="convolutions">
 	<title>Convolutions</title>
 	<p>From section 8.6</p>
-      </section>
-    </chapter>
+  </section>
+
+</chapter>
