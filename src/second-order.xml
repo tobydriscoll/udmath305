@@ -86,6 +86,8 @@
 
 	<p>The upshot is that in the function <m>e^{st}</m>, the real part of <m>s</m> determines exponential growth or decay, and the imaginary part of <m>s</m> determines frequency of oscillation. All real exponentials, and all harmonic sines and cosines, are just special cases.</p>
 
+
+
 	<p>Let's look back a moment at <m>my''+ky=0</m>. If we now try an exponential solution of the form <m>y_n=e^{st}</m>, then we arrive at <m>(ms^2+k)e^{st}=0</m>, which we can make true if <m>s^2=-k/m</m>. this has two roots, <m>s=\pm i \omega_n</m>, and we are led to
 	<me> y_n = c_1 e^{i\omega t} + c_2 e^{-i\omega t}</me>.
 	A little rearrangement should convince you that this is equivalent to the form we got in the last section, just using complex numbers.</p>
@@ -626,16 +628,6 @@
 					and 
 					<me>{\cal L}[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}</me>.
 				</li>
-				<li><em>Resonant term.</em> We know that terms such as <m>te^{zt}</m> appear due to repeated roots and resonances. The clever way to get its transform is to think about differentiation <em>with respect to <m>z</m></em>:
-				<me>\mathcal{L} \left[ \frac{d}{dz} e^{zt} \right] = \frac{d}{dz}  \mathcal{L} \left[ e^{zt} \right] = \frac{d}{dz}\left[ \frac{1}{s-z} \right] </me>,
-				from which we conclude 
-				<me>\mathcal{L} \left[ t e^{zt} \right] = \frac{1}{(s-z)^2} </me>.
-				If we differentiate again we find 
-				<me>\mathcal{L} \left[ t^2 e^{zt} \right] = \frac{2}{(s-z)^3}</me>, 
-				and in general
-				<me>\mathcal{L} \left[ t^n e^{zt} \right] = \frac{n!}{(s-z)^{n+1}} </me>.
-				As a special case, taking <m>z=0</m> allows us to transform any power of <m>t</m>, and therefore any polynomial. 
-				</li>
 			</ol>
 		</p>
 	</subsection>
@@ -647,7 +639,7 @@
 			<me> [sY(s)-y(0)] - aY(s) =\frac{1}{s-c}</me>,
 			and thus 
 			<me> Y(s) = \frac{y(0)}{s-a} + \frac{1}{(s-c)(s-a)}</me>. 
-			The first part corresponds to <m>y_n(t)=y(0)e^{at}</m>, which is the null solution. To invert the transform of the second term, we need to express it using <term>partial fractions</term>. The text has a clever way mnemonic for this:
+			The first part corresponds to <m>y_n(t)=y(0)e^{at}</m>, which is the null solution. To invert the transform of the second term, we need to express it using <term>partial fractions</term>. The text has a clever mnemonic for this:
 			<me> \frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}</me>. Thus we get a sum of two exponentials,
 			<me>y_v(t) =  \frac{1}{c-a}\left( e^{ct}-e^{at} \right) </me>. 
 			This is the "very particular" solution that has <m>y_v(0)=0</m>. 
@@ -677,12 +669,156 @@
 		</md>. 
 		That's a lot less work than doing a separate PFD for the initial conditions as represented in the transform. 
 		</p>
-		<p>
-			The main value in the Laplace transform method is in finding a particular solution. The poles <m>Y(s)</m> due to the homogeneous or null part are just the characteristic roots, and we know how to work with those anyway. 
-		</p>
 	</subsection>
 
 	
+  </section>
+
+  <section xml:id="laplace-complex">
+	<title>Complex and repeated poles</title>
+	<introduction>
+		<p>
+			In the previous section we saw that it's easy to turn a linear, constant-coefficient ODE into a Laplace transform <m>Y(s)</m> of a particular solution. The art comes from the inverse problem of recovering <m>y(t)</m> from there. With the real, simple poles we've seen so far, the algebra is quite modest, but things get dicier when the poles are complex or repeated. 
+		</p>
+	</introduction>
+	<subsection>
+		<title>Imaginary poles</title>
+		<p>
+			A transform having pure imaginary poles can be done easily if there are only two of them. As always, poles occur in conjugate pairs, so we first consider
+			<me>
+				Y(s) = \frac{A+Bs}{s^2+\omega^2}
+			</me>
+			for some real constants <m>A,B,\omega</m>. This inverts easily to <m>y(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)</m>, and there is little else to say. 
+		</p>
+		<p>
+			If <m>Y</m> has an additional real pole as well at <m>s=c</m>, then it can be written in the partial fraction form 
+			<me>
+				Y(s) = \frac{A+Bs}{s^2+\omega^2} + \frac{C}{s-c} 
+			</me>. 
+			This too is easy to invert once the constants are known. Finding them is tedious, but manageable. 
+		</p>
+		<example>
+			<p>
+				The undamped oscillator <m>y''+16y=40e^{-2t}</m> has a solution whose transform is 
+				<me>Y(s) = \frac{40}{(s+2)(s^2+16)</me>. 
+				Hence 
+				<me>
+					\frac{A+Bs}{s^2+16^2} + \frac{C}{s+2} = \frac{40}{(s+2)(s^2+16)
+				</me>. 
+				Clearing the denominators gives the identity
+				<me>
+					(A+Bs)(s+2) + C(s^2+16) = 40
+				</me>. 
+				We need three equations to determine the unknown coefficients. Setting <m>s=-2</m> quickly gives <m>20C=40</m>, so <m>C=2</m>. Then setting <m>s=\pm 4</m> gives the system
+				<md>
+					<mrow>(A+4B)(6) \amp = 40 - 64 = -24</mrow>
+					<mrow>(A-4B)(-2) \amp = -24</mrow>
+				</md>,
+				or <m>A+4B=-4</m> and <m>A-4B=12</m>. We can add and subtract these equations to get <m>2A=8</m>, <m>8B=-16</m>, so finally 
+				<me>
+					Y(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} 
+				</me>. 
+				Hence
+				<me>
+					y(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}
+				</me>.
+			</p>
+		</example>
+		<p>
+			Finally, consider the driven unforced oscillator <m>y''+\omega_n^2 y= \cos(\omega t)</m>. It leads to 
+			<me> 
+				Y(s) = \frac{s}{(s^2+\omega_n^2)(s^2+1)} = \frac{1}{\omega_n^2-\omega^2} \left( \frac{s}{s^2+\omega^2} - \frac{s}{s^2+\omega_n^2} \right)
+			</me>, 
+			which is easily inverted into a combination of <m>\cos(\omega t)</m> and <m>\cos(\omega_n t)</m>. However, at this point we should probably just be using the method of undetermined coefficients instead. 
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Repeated poles</title>
+		<p>
+			We know by now that repeated poles in <m>Y(s)</m> arise in two ways: from repeated characteristic roots (i.e. poles of the transfer function), or perfect resonance in the forcing function. We can anticipate the effect on the transform, because we know the answer in the time domain is something like <m>te^{rt}</m>. 
+			<!-- The fiendlishly clever approach is to notice that this function is a derivative of <m>e^{rt}</m> <em>with respect to <m>r</m></em>:
+			<me>
+				\mathcal{L} \left[ \frac{d}{dr} e^{rt} \right] = \frac{d}{dr}  \mathcal{L} \left[ e^{rt} \right] = \frac{d}{dr}\left[ \frac{1}{s-r} \right] 
+			</me>,
+			from which we conclude 
+			<me>
+				\mathcal{L} \left[ t e^{rt} \right] = \frac{1}{(s-r)^2} 
+			</me>.-->
+		</p>
+
+		<p>
+			In fact if we have any <m>f(t)</m> with transform <m>F(s)</m>, then from the transform definition we compute
+			<md>
+				<mrow>F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt</mrow>
+				<mrow>\amp = -\int_0^\infty t f(t) e^{-st}\, dt</mrow>
+				<mrow>\amp = - \mathcal{L}[ tf(t) ]</mrow>
+			</md>. 
+			Take a moment to appreciate this. Earlier we found that a derivative in <m>t</m> corresponds to multiplying by <m>s</m>. Up to a change in sign, a derivative in <m>s</m> corresponds to multiplying by <m>t</m>!
+		</p>
+		<example>
+			<p>
+				The undamped oscillator <m>y''+9y=\sin(3t)</m> has a perfect resonance. The transform suggests the particular solution 
+				<me>
+					Y(s) = \frac{3}{(s^2+9)^2}
+				</me>. 
+				This doesn't look like anything easy. However, note that
+				<me>
+					sY(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frad{d}{ds} \left[ \frac{1}{s^2+9} \right] 
+				</me>. 
+				Therefore, <m>sY(s)</m> is the transform of <m>\frac{1}{2} t \sin(3t)</m>. So this must be <m>y'(t)</m>. An integration by parts then recovers
+				<me>
+					y(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]
+				</me>.
+			</p>
+		</example>
+		<p>
+			If we keep differentiating in <m>s</m> we find 
+			<me> 
+				\frac{d^n}{ds^n} \mathcal{L}[ f(t) ] = (-1)^n \mathcal{L}[ t^n f(t) ]
+			</me>.
+			Of interest is the special case of an exponential function <m>e^{rt}</m>, whose transform is <m>1/s-r</m>: 
+			<me>
+				\mathcal{L} \left[ t^n e^{rt} \right] = \frac{n!}{(s-r)^{n+1}} 
+			</me>.
+			The even specialer case <m>r=0</m> allows us to transform any power of <m>t</m>, and therefore any polynomial. 
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Complex poles</title>
+		<p> 
+			Complex poles in the transform correspond to complex exponentials in the time donmain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have 
+			<me>
+				\frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} 
+			</me>, 
+			so the right-hand side above is the transform of  
+			<me>
+				e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)
+			</me>. 
+			In similar fashion we can show that <m>e^{at} \cos( b t)</m> transforms to <m>b/[(s-a)^2+b^2]</m>. In principle we can always find quadratic denominators like these for a partial fraction conversion.
+		</p>
+		<example>
+			<p>
+				Suppose <m>y''+2y'+10y=6</m>. The very particular solution has <m>Y(s)=6/(s^2+2s+10)</m>. We can use the trick of completing the square to write this as <m>Y(s)=6/[(s-1)^2+9]</m>, and thus <m>y(t) = 2e^{-t}\sin(3t)</m>. 
+			</p>
+			<p>
+				Things are much more complicated for a harmonically forced case such as <m>y''+2y'+10y=\cos(2t)</m>. Now 
+				<me>
+					Y(s) = \frac{s}{(s^2+4)(s^2+2s+10)}
+				</me>. 
+				It is true that we have a decomposition in the form 
+				<me> 
+					Y(s) = \frac{A+Bs}{s^2+4} + \frac{C+Es}{(s-1)^2+9}
+				</me>, 
+				which is eminently invertible. But finding the four coefficients is a pretty heavy lift to do by hand. 
+			</p>
+		</example>
+
+		<p> 
+			The problem with Laplace transforms as a one-stop solver for linear, constant-coefficient problems is that the particular solution we find is always the "very particular" one that includes some terms from the null solution. That is because the poles of <m>Y(s)</m> include those of the transfer function <em>and</em> the forcing function. It's extra algebra to find the coefficients of the null/transient parts, but that step can't be skipped. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases. 
+		</p>
+	</subsection>
   </section>
 
   <section xml:id="laplace-properties">
