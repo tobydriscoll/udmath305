@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T21:14:15-05:00    *-->
+<!--*    on 2019-02-19T09:03:05-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p></p>
-<span class="incontext"><a href="matrix-multiplication.html#p-252">in-context</a></span>
+<p>If we keep differentiating in \(s\) we find</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d^n}{ds^n} \mathcal{L}[ f(t) ] = (-1)^n \mathcal{L}[ t^n f(t) ]\text{.}
+\end{equation*}
+</div>
+<p>Of interest is the special case of an exponential function \(e^{rt}\text{,}\) whose transform is \(1/s-r\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal{L} \left[ t^n e^{rt} \right] = \frac{n!}{(s-r)^{n+1}} \text{.}
+\end{equation*}
+</div>
+<p>The even specialer case \(r=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p>
+<span class="incontext"><a href="laplace-complex.html#p-252">in-context</a></span>
 </body>
 </html>

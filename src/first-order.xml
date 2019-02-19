@@ -258,10 +258,9 @@ title('Solution of a linear problem')
       <md>
 	<mrow> e^{-at} y'(t) - (a e^{-at})y(t) \amp = e^{-at}q(t) </mrow>
 	<mrow>\dd{}{t}\bigl[ e^{-at} y(t) \bigr] \amp = e^{-at}q(t) </mrow>
-	<mrow>e^{-at} y(t) \amp = C + \int e^{-at}q(t)\, dt </mrow>
-	<mrow>        \amp = C  +  \int_0^t e^{-as}q(s)\, ds</mrow>		    
+	<mrow>e^{-at} y(t) \amp = C + \int_0^t e^{-as}q(s)\, ds </mrow>
 	</md>.
-	In the last step above we changed from an indefinite integral to a definite one whose value is zero when <m>t=0</m>. (We could have chosen any starting time, but this is the most convenient one.) Then it is easy to see that the integration constant satisfies <m>C=y(0)</m>, which is a bit less abstract. Altogether,
+	In the last step above we used a definite integral whose value is zero when <m>t=0</m>. (We could have chosen any starting time, but this is the most convenient one.) Then it is easy to see that the integration constant satisfies <m>C=y(0)</m>, which is a bit less abstract. Altogether,
 	<men xml:id="eq-flc-solution">
 	  y(t) = e^{at}y(0) + \int_0^t e^{a(t-s)}q(s)\, ds
       </men>.</p> 
@@ -310,10 +309,12 @@ title('Solution of a linear problem')
       <p>
       The solution when <m>q(t)=kH(t)</m> is called the <term>step response</term> and follows from the solution formula as <m>y(t) = \frac{k}{a}\bigl( e^{at}-1 \bigr)</m>. This is exactly the same as the solution for constant forcing <m>q(t)\equiv k</m>, because what happened for <m>t\lt 0</m> is irrelevant to the future behavior.</p>
 
-      <p>It's often useful to introduce a delay into the switch. To have the forcing turn on at time <m>T\gt 0</m>, we use <m>H(t-T)</m>. The response when <m>q(t)=kH(t-T)</m> becomes
-      <me>y(t) = \frac{k}{a}H(t-T) \bigl[ e^{a(t-T)}-1 \bigr]</me>.
-      The step remains in the solution because nothing happens until the switch is turned on.</p>
-      <p>It's worth mentioning here the related idea of a <term>window</term> function, which turns on and then back off. To get a forcing that is one only between times <m>S</m> and <m>T</m>, for example, we can use <m>q(t)=H(t-S)-H(t-T)</m>. The formulas for the window solution become a bit messy, so we will skip them for now. Eventually we'll develop a system that handles the algebra systematically.</p>
+      <p>
+        It's often useful to introduce a delay into the switch. To have the forcing turn on at time <m>T\gt 0</m>, we use <m>H(t-T)</m>. The response when <m>q(t)=kH(t-T)</m> becomes
+        <me>y(t) = \frac{k}{a}H(t-T) \bigl[ e^{a(t-T)}-1 \bigr]</me>.
+        The step function remains in the solution because nothing happens until the switch is turned on. However, the solution remains continuous, with <m>y(T)=0</m>. If you think about the ODE, <m>y'=ay+kH(t-T)</m>, the fact that <m>y</m> is continuous means that <m>y'</m> must have a jump of size <m>k</m> at <m>t=T</m>.
+      </p>
+      <p>It's worth mentioning here the related idea of a <term>window</term> function, which turns on and then back off. To get a forcing that is one only between times <m>S</m> and <m>T</m>, for example, we can use <m>q(t)=H(t-S)-H(t-T)</m>. The formulas for the window solution become a bit messy, so we will skip them for now. </p>
 
       <example>
 	<p>Let's solve <m>y'=y+f(t)</m>, where <m>f(t)</m> is 5 for <m>3 \lt t \le 6</m> and zero elsewhere. Again, it's probably easiest to get comfortable with applying the general solution formula <xref ref="eq-flc-solution"/>:
@@ -362,7 +363,8 @@ title('Solution of a linear problem')
       <p>Now we idealize the situation by taking the limit as <m>h\to 0</m>. Effectively, we are taking the derivative of a step. The resulting "function", which we call <m>\delta(t)</m>, is zero at all points except <m>t=0</m>, yet should have unit area under its curve!</p>
 
       <p>It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If <m>I</m> is any interval containing <m>[0,h]</m> and <m>f(t)</m> is any other function, then
-      <me>\int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \delta_h(t) f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}</me>, where <m>\phi</m> is an antiderivative of <m>f</m>. In the limit this suggests
+      <me>\int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \frac{1}{h} f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}</me>, 
+      where <m>\phi</m> is an antiderivative of <m>f</m>. In the limit this suggests
       <me>\int_I \delta(t)f(t)\, dt = f(0)</me>.
       As with the step, we often want to introduce a delay in the impulse by using <m>\delta(t-T)</m>. Then the math becomes
       <men xml:id="eq-delta-integrate">\int_I \delta(t-T)f(t)\, dt = f(T)</men>,

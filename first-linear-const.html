@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T21:14:13-05:00    *-->
+<!--*    on 2019-02-19T09:03:03-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -90,6 +90,7 @@ MathJax.Hub.Config({
 <li><a href="so-applications.html" data-scroll="so-applications">Applications of oscillators</a></li>
 <li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
 <li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
+<li><a href="laplace-complex.html" data-scroll="laplace-complex">Complex and repeated poles</a></li>
 <li><a href="laplace-properties.html" data-scroll="laplace-properties">Laplace transform properties</a></li>
 <li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
 </ul>
@@ -129,11 +130,10 @@ MathJax.Hub.Config({
 \begin{align*}
 e^{-at} y'(t) - (a e^{-at})y(t) \amp = e^{-at}q(t) \\
 \dd{}{t}\bigl[ e^{-at} y(t) \bigr] \amp = e^{-at}q(t) \\
-e^{-at} y(t) \amp = C + \int e^{-at}q(t)\, dt \\
-\amp = C  +  \int_0^t e^{-as}q(s)\, ds\text{.}
+e^{-at} y(t) \amp = C + \int_0^t e^{-as}q(s)\, ds \text{.}
 \end{align*}
 </div>
-<p>In the last step above we changed from an indefinite integral to a definite one whose value is zero when \(t=0\text{.}\) (We could have chosen any starting time, but this is the most convenient one.) Then it is easy to see that the integration constant satisfies \(C=y(0)\text{,}\) which is a bit less abstract. Altogether,</p>
+<p>In the last step above we used a definite integral whose value is zero when \(t=0\text{.}\) (We could have chosen any starting time, but this is the most convenient one.) Then it is easy to see that the integration constant satisfies \(C=y(0)\text{,}\) which is a bit less abstract. Altogether,</p>
 <div class="displaymath">
 \begin{equation}
 y(t) = e^{at}y(0) + \int_0^t e^{a(t-s)}q(s)\, ds\text{.}\label{eq-flc-solution}\tag{1.4.2}
@@ -180,8 +180,8 @@ title('Constant forcing')
 y(t) = \frac{k}{a}H(t-T) \bigl[ e^{a(t-T)}-1 \bigr]\text{.}
 \end{equation*}
 </div>
-<p>The step remains in the solution because nothing happens until the switch is turned on.</p>
-<p id="p-45">It's worth mentioning here the related idea of a <dfn class="terminology">window</dfn> function, which turns on and then back off. To get a forcing that is one only between times \(S\) and \(T\text{,}\) for example, we can use \(q(t)=H(t-S)-H(t-T)\text{.}\) The formulas for the window solution become a bit messy, so we will skip them for now. Eventually we'll develop a system that handles the algebra systematically.</p>
+<p>The step function remains in the solution because nothing happens until the switch is turned on. However, the solution remains continuous, with \(y(T)=0\text{.}\) If you think about the ODE, \(y'=ay+kH(t-T)\text{,}\) the fact that \(y\) is continuous means that \(y'\) must have a jump of size \(k\) at \(t=T\text{.}\)</p>
+<p id="p-45">It's worth mentioning here the related idea of a <dfn class="terminology">window</dfn> function, which turns on and then back off. To get a forcing that is one only between times \(S\) and \(T\text{,}\) for example, we can use \(q(t)=H(t-S)-H(t-T)\text{.}\) The formulas for the window solution become a bit messy, so we will skip them for now.</p>
 <article class="example-like" id="example-6"><a knowl="" class="id-ref" refid="hk-example-6"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">1.4.2</span>
 </h6></a></article><div id="hk-example-6" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-46">Let's solve \(y'=y+f(t)\text{,}\) where \(f(t)\) is 5 for \(3 \lt t \le 6\) and zero elsewhere. Again, it's probably easiest to get comfortable with applying the general solution formula <a knowl="./knowl/eq-flc-solution.html" title="Equation 1.4.2">(1.4.2)</a>:</p>
@@ -236,7 +236,7 @@ title('Window forcing (semi-log)')
 <p id="p-49">It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
 <div class="displaymath">
 \begin{equation*}
-\int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \delta_h(t) f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}\text{,}
+\int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \frac{1}{h} f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}\text{,}
 \end{equation*}
 </div>
 <p>where \(\phi\) is an antiderivative of \(f\text{.}\) In the limit this suggests</p>

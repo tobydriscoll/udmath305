@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T21:14:14-05:00    *-->
+<!--*    on 2019-02-19T09:03:04-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -57,11 +57,11 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="so-general-forcing.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="laplace-properties.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="so-general-forcing.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="laplace-complex.html" title="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="so-general-forcing.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="laplace-properties.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="so-general-forcing.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="laplace-complex.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -90,6 +90,7 @@ MathJax.Hub.Config({
 <li><a href="so-applications.html" data-scroll="so-applications">Applications of oscillators</a></li>
 <li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
 <li><a href="laplace-solutions.html" data-scroll="laplace-solutions" class="active">Laplace transform methods</a></li>
+<li><a href="laplace-complex.html" data-scroll="laplace-complex">Complex and repeated poles</a></li>
 <li><a href="laplace-properties.html" data-scroll="laplace-properties">Laplace transform properties</a></li>
 <li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
 </ul>
@@ -173,24 +174,6 @@ Y(s) = \frac{ F(s) + (As+B)y(0) - Ay'(0)}{As^2 + Bs + C}\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-17">
-<em class="emphasis">Resonant term.</em> We know that terms such as \(te^{zt}\) appear due to repeated roots and resonances. The clever way to get its transform is to think about differentiation <em class="emphasis">with respect to \(z\)</em>:<div class="displaymath">
-\begin{equation*}
-\mathcal{L} \left[ \frac{d}{dz} e^{zt} \right] = \frac{d}{dz}  \mathcal{L} \left[ e^{zt} \right] = \frac{d}{dz}\left[ \frac{1}{s-z} \right] \text{,}
-\end{equation*}
-</div>from which we conclude<div class="displaymath">
-\begin{equation*}
-\mathcal{L} \left[ t e^{zt} \right] = \frac{1}{(s-z)^2} \text{.}
-\end{equation*}
-</div>If we differentiate again we find<div class="displaymath">
-\begin{equation*}
-\mathcal{L} \left[ t^2 e^{zt} \right] = \frac{2}{(s-z)^3}\text{,}
-\end{equation*}
-</div>and in general<div class="displaymath">
-\begin{equation*}
-\mathcal{L} \left[ t^n e^{zt} \right] = \frac{n!}{(s-z)^{n+1}} \text{.}
-\end{equation*}
-</div>As a special case, taking \(z=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</li>
 </ol></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.8.3</span> <span class="title">The first-order case</span>
 </h3>
@@ -206,7 +189,7 @@ Y(s) = \frac{ F(s) + (As+B)y(0) - Ay'(0)}{As^2 + Bs + C}\text{.}
 Y(s) = \frac{y(0)}{s-a} + \frac{1}{(s-c)(s-a)}\text{.}
 \end{equation*}
 </div>
-<p>The first part corresponds to \(y_n(t)=y(0)e^{at}\text{,}\) which is the null solution. To invert the transform of the second term, we need to express it using <dfn class="terminology">partial fractions</dfn>. The text has a clever way mnemonic for this:</p>
+<p>The first part corresponds to \(y_n(t)=y(0)e^{at}\text{,}\) which is the null solution. To invert the transform of the second term, we need to express it using <dfn class="terminology">partial fractions</dfn>. The text has a clever mnemonic for this:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}\text{.}
@@ -253,8 +236,7 @@ y(0) \amp = c_1 + c_2  \\
 y'(0) \amp = -c_1 + c_2 \text{.}
 \end{align*}
 </div>
-<p>That's a lot less work than doing a separate PFD for the initial conditions as represented in the transform.</p>
-<p id="p-244">The main value in the Laplace transform method is in finding a particular solution. The poles \(Y(s)\) due to the homogeneous or null part are just the characteristic roots, and we know how to work with those anyway.</p></section></section></div></main>
+<p>That's a lot less work than doing a separate PFD for the initial conditions as represented in the transform.</p></section></section></div></main>
 </div>
 </body>
 </html>
