@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:05-05:00    *-->
+<!--*    on 2019-02-21T13:43:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,20 +13,12 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Applying integration by parts to the definition reveals the main reason Laplace transforms are useful in ODEs.</p>
-<div class="displaymath">
-\begin{align*}
-\mathcal{L}[y'(t)] \amp = \int_0^\infty y'(t) e^{-st}\, dt \\
-\amp = \left[ y(t)e^{-st}\right]_0^\infty - \int_0^\infty (-s) y(t) e^{-st}\, dt \\
-\amp = -y(0) + s Y(s)\text{.}
-\end{align*}
-</div>
-<p>Calculus (differentiation) is turned into algebra (multiplication). We can apply this rule repeatedly to transform higher derivatives:</p>
+<p>For the case of a repeated root we can go though the VP formulas again, or just let \(s_2\to s_1\) and get</p>
 <div class="displaymath">
 \begin{equation*}
-\mathcal{L}[y''(t)] = s \mathcal{L}[y'(t)] - y'(0) = s^2Y(s) - sy(0) - y'(0)\text{.}
+g(t) = t e^{s_1t} \text{.}
 \end{equation*}
 </div>
-<span class="incontext"><a href="laplace-solutions.html#p-237">in-context</a></span>
+<span class="incontext"><a href="so-general-forcing.html#p-237">in-context</a></span>
 </body>
 </html>

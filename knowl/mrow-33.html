@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:05-05:00    *-->
+<!--*    on 2019-02-21T13:43:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -14,12 +14,11 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-y_p \amp = e^{s_1 t} \int_0^t \frac{f(\tau)e^{-s_1\tau}}{s_1-s_2}\, d\tau + 
-e^{s_2 t} \int_0^t \frac{f(\tau)e^{-s_2\tau}}{s_2-s_1}\, d\tau \\
-\amp =  \int_0^t  f(\tau) \frac{  e^{s_1(t-\tau)} -  e^{s_2(t-\tau)}}{s_1-s_2}\, d\tau  \\
-\amp =  \int_0^t  f(\tau) g(t-\tau) \, d\tau  
+\mathcal{L}[y'(t)] \amp = \int_0^\infty y'(t) e^{-st}\, dt \\
+\amp = \left[ y(t)e^{-st}\right]_0^\infty - \int_0^\infty (-s) y(t) e^{-st}\, dt \\
+\amp = -y(0) + s Y(s)
 \end{align*}
 </div>
-<span class="incontext"><a href="so-general-forcing.html#mjx-eqn-mrow-33">in-context</a></span>
+<span class="incontext"><a href="laplace-solutions.html#mjx-eqn-mrow-33">in-context</a></span>
 </body>
 </html>

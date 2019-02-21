@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:04-05:00    *-->
+<!--*    on 2019-02-21T13:43:53-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose we are given the purely real problem \(y'+y = 2 \sin(t) - 2 \cos(t)\text{.}\) Formula (3) on page 31 gives a full solution to this problem. The tedious details hide the fact that the essence of the matter is quite simple. A plot of a solution tells the story.</p>
+<p>Now suppose we generalize a bit to \(q=A \cos(\omega t) + B\sin(\omega t)\text{.}\) We know that this is equivalent to \(q=R \cos(\omega t-\phi)\text{,}\) which is the real part of a complex exponential. Following the exact same trail as before, we still find that \(y_p(t) = G e^{-i\alpha} q(t)\) is a particular solution and want to take the real part. There are two ways to go here. </p>
+<ol class="decimal">
+<li>If \(q\) is used in shifted cosine form, then a real particular solution is \(y_p=GR \cos(\omega t-\phi-\alpha)\text{.}\)</li>
+<li>If \(q=A \cos(\omega t) + B\sin(\omega t)\) and you don't want to recast it into shifted cosine form, you get a messier equivalent result:<div class="displaymath">
+\begin{equation*}
+y_p = (G \cos \alpha)[ A \cos(\omega t) + B\sin(\omega t) ] + (G \sin \alpha)[ A \sin(\omega t) - B\cos (\omega t)]\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
 <span class="incontext"><a href="complex-exp.html#p-76">in-context</a></span>
 </body>
 </html>

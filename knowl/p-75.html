@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:04-05:00    *-->
+<!--*    on 2019-02-21T13:43:53-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We call the real values \(G\) and \(\alpha\) the <dfn class="terminology">gain</dfn> and <dfn class="terminology">phase lag</dfn>, respectively. A plot of \(G\) as a function of \(\omega\) (for fixed rate \(a\)) is referred to by various names in different fields, such as a <dfn class="terminology">frequency response plot</dfn> or <dfn class="terminology">gain curve</dfn>.</p>
+<p>However, a modified approach cuts down on the amount of algebra we need to do. We'll use the complex form to find a particular solution of the real problem, then add in the null solution to get a general solution. This is quite straightforward. To make \(y=Ye^{i\omega t}\) a particular solution with forcing \(q=e^{i\omega t}\text{,}\) we need only require that</p>
+<div class="displaymath">
+\begin{equation*}
+i\omega Y e^{i\omega t} = a Ye^{i\omega t} + e^{i\omega t} \quad \Rightarrow
+\quad Y = \frac{1}{i\omega - a}\text{.}
+\end{equation*}
+</div>
+<p>That is, the particular solution is just \(\frac{1}{i\omega - a}\) times the forcing signal. If we express \(Y\)&gt; in polar form, Let's express this multiplicative factor in polar form:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{i\omega - a} = G e^{-i\alpha}\text{,}
+\end{equation*}
+</div>
+<p>then a particular solution is</p>
+<div class="displaymath">
+\begin{equation*}
+y_p(t) = G e^{-i\alpha} q(t) = G e^{i(\omega t - \alpha)}\text{.}
+\end{equation*}
+</div>
+<p>On taking the real part of this, we obtain \(y_p=G \cos(\omega t - \alpha)\) as a particular solution when \(q=\cos(\omega t)\text{.}\) We call the real values \(G\) and \(\alpha\) the <dfn class="terminology">gain</dfn> and <dfn class="terminology">phase lag</dfn>, respectively.</p>
 <span class="incontext"><a href="complex-exp.html#p-75">in-context</a></span>
 </body>
 </html>

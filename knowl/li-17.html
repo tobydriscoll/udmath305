@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-13T21:14:15-05:00    *-->
+<!--*    on 2019-02-21T13:43:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,24 +13,12 @@
 </head>
 <body>
 <article class="listitem"><h6 class="heading">
-<span class="type">Item</span> <span class="codenumber">3</span>
+<span class="type">Item</span> <span class="codenumber">1</span>
 </h6>
-<em class="emphasis">Resonant term.</em> We know that terms such as \(te^{zt}\) appear due to repeated roots and resonances. The clever way to get its transform is to think about differentiation <em class="emphasis">with respect to \(z\)</em>:<div class="displaymath">
+<em class="emphasis">Exponential functions.</em> This is straightforward to calculate from definition. For any complex number \(z\text{,}\)<div class="displaymath">
 \begin{equation*}
-\mathcal{L} \left[ \frac{d}{dz} e^{zt} \right] = \frac{d}{dz}  \mathcal{L} \left[ e^{zt} \right] = \frac{d}{dz}\left[ \frac{1}{s-z} \right] \text{,}
+{\cal L}[e^{z t}] = \int_0^\infty e^{(z-s)t}\, dt = \left[ -\frac{1}{s-z} e^{(z-s)t} \right]_0^\infty = \frac{1}{s-z}\text{.}
 \end{equation*}
-</div>from which we conclude<div class="displaymath">
-\begin{equation*}
-\mathcal{L} \left[ t e^{zt} \right] = \frac{1}{(s-z)^2} \text{.}
-\end{equation*}
-</div>If we differentiate again we find<div class="displaymath">
-\begin{equation*}
-\mathcal{L} \left[ t^2 e^{zt} \right] = \frac{2}{(s-z)^3}\text{,}
-\end{equation*}
-</div>and in general<div class="displaymath">
-\begin{equation*}
-\mathcal{L} \left[ t^n e^{zt} \right] = \frac{n!}{(s-z)^{n+1}} \text{.}
-\end{equation*}
-</div>As a special case, taking \(z=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</article><span class="incontext"><a href="laplace-solutions.html#li-17">in-context</a></span>
+</div>(To make this valid requires that \({\text Re}(z)\lt s\text{,}\) but we are going to ignore such technicalities.) An important special case is when \(z=0\text{:}\) \({\cal L}[1]=1/s\text{.}\)</article><span class="incontext"><a href="laplace-solutions.html#li-17">in-context</a></span>
 </body>
 </html>

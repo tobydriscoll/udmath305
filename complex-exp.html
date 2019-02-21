@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:03-05:00    *-->
+<!--*    on 2019-02-21T13:43:52-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -91,7 +91,7 @@ MathJax.Hub.Config({
 <li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
 <li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
 <li><a href="laplace-complex.html" data-scroll="laplace-complex">Complex and repeated poles</a></li>
-<li><a href="laplace-properties.html" data-scroll="laplace-properties">Laplace transform properties</a></li>
+<li><a href="laplace-properties.html" data-scroll="laplace-properties">More Laplace transforms</a></li>
 <li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
 </ul>
 <h2 class="link"><a href="qualitative.html" data-scroll="qualitative"><span class="codenumber">3</span> <span class="title">Qualitative analysis</span></a></h2>
@@ -202,42 +202,56 @@ g(t) = A \cos \omega t + B \sin  \omega t\text{.}\label{eq-fo-sincos}\tag{1.5.2}
 <p id="p-73">The bottom line is that we can write a harmonic signal in either the amplitude/phase form <a knowl="./knowl/eq-fo-ampphase.html" title="Equation 1.5.1">(1.5.1)</a> or the sin/cos form <a knowl="./knowl/eq-fo-sincos.html" title="Equation 1.5.2">(1.5.2)</a>. They are completely equivalent, and we can use whichever one is more convenient at a particular moment.</p></section><section class="subsection" id="frc-forcing"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.5.4</span> <span class="title">Forcing with a complex exponential</span>
 </h3>
-<a href="complex-exp.html#frc-forcing" class="permalink">¶</a><p id="p-74">Time for some payoff. If we force the ODE \(y'=ay+q(t)\) using \(q(t)=Re^{i\omega t}\text{,}\) we can take the real part to get the result of cosine forcing, or the imaginary part to get of a sine forcing. Moreover, finding a particular solution with exponential forcing remains very easy. To make \(y=Ye^{i\omega t}\) a particular solution, we need only require that</p>
+<a href="complex-exp.html#frc-forcing" class="permalink">¶</a><p id="p-74">Let's say we want to solve \(y'=ay + \cos(\omega t)\text{.}\) We can recognize the forcing signal as the real part of \(e^{i\omega t}\text{.}\) Since we solved this problem with exponential forcing in the last section, we can apply the formula there and then take the real part to get the general solution of the original problem.</p>
+<p id="p-75">However, a modified approach cuts down on the amount of algebra we need to do. We'll use the complex form to find a particular solution of the real problem, then add in the null solution to get a general solution. This is quite straightforward. To make \(y=Ye^{i\omega t}\) a particular solution with forcing \(q=e^{i\omega t}\text{,}\) we need only require that</p>
 <div class="displaymath">
 \begin{equation*}
-i\omega Y e^{i\omega t} = a Ye^{i\omega t} + Re^{i\omega t} \quad \Rightarrow
-\quad Y = R  \cdot \frac{1}{i\omega - a}\text{.}
+i\omega Y e^{i\omega t} = a Ye^{i\omega t} + e^{i\omega t} \quad \Rightarrow
+\quad Y = \frac{1}{i\omega - a}\text{.}
 \end{equation*}
 </div>
-<p>That is, the particular solution is just \(\frac{1}{i\omega - a}\) times the input signal. Let's express this multiplicative factor in polar form:</p>
+<p>That is, the particular solution is just \(\frac{1}{i\omega - a}\) times the forcing signal. If we express \(Y\)&gt; in polar form, Let's express this multiplicative factor in polar form:</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{1}{i\omega - a} = G e^{-i\alpha}\text{.}
+\frac{1}{i\omega - a} = G e^{-i\alpha}\text{,}
 \end{equation*}
 </div>
-<p>Then the relationship between the forcing signal \(q(t)\) and the particular solution is</p>
+<p>then a particular solution is</p>
 <div class="displaymath">
 \begin{equation*}
-y(t) = G e^{-i\alpha} q(t) = (GR) e^{i(\omega t - \alpha)}\text{.}
+y_p(t) = G e^{-i\alpha} q(t) = G e^{i(\omega t - \alpha)}\text{.}
 \end{equation*}
 </div>
-<p id="p-75">We call the real values \(G\) and \(\alpha\) the <dfn class="terminology">gain</dfn> and <dfn class="terminology">phase lag</dfn>, respectively. A plot of \(G\) as a function of \(\omega\) (for fixed rate \(a\)) is referred to by various names in different fields, such as a <dfn class="terminology">frequency response plot</dfn> or <dfn class="terminology">gain curve</dfn>.</p>
+<p>On taking the real part of this, we obtain \(y_p=G \cos(\omega t - \alpha)\) as a particular solution when \(q=\cos(\omega t)\text{.}\) We call the real values \(G\) and \(\alpha\) the <dfn class="terminology">gain</dfn> and <dfn class="terminology">phase lag</dfn>, respectively.</p>
+<p id="p-76">Now suppose we generalize a bit to \(q=A \cos(\omega t) + B\sin(\omega t)\text{.}\) We know that this is equivalent to \(q=R \cos(\omega t-\phi)\text{,}\) which is the real part of a complex exponential. Following the exact same trail as before, we still find that \(y_p(t) = G e^{-i\alpha} q(t)\) is a particular solution and want to take the real part. There are two ways to go here. </p>
+<ol class="decimal">
+<li id="li-1">If \(q\) is used in shifted cosine form, then a real particular solution is \(y_p=GR \cos(\omega t-\phi-\alpha)\text{.}\)</li>
+<li id="li-2">If \(q=A \cos(\omega t) + B\sin(\omega t)\) and you don't want to recast it into shifted cosine form, you get a messier equivalent result:<div class="displaymath">
+\begin{equation*}
+y_p = (G \cos \alpha)[ A \cos(\omega t) + B\sin(\omega t) ] + (G \sin \alpha)[ A \sin(\omega t) - B\cos (\omega t)]\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
 <article class="example-like" id="ex-fl-complex"><a knowl="" class="id-ref" refid="hk-ex-fl-complex"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">1.5.1</span>
-</h6></a></article><div id="hk-ex-fl-complex" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-76">Suppose we are given the purely real problem \(y'+y = 2 \sin(t) - 2 \cos(t)\text{.}\) Formula (3) on page 31 gives a full solution to this problem. The tedious details hide the fact that the essence of the matter is quite simple. A plot of a solution tells the story.</p>
+</h6></a></article><div id="hk-ex-fl-complex" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-77">Suppose we are given the purely real problem \(y'+y = 2 \sin(t) - 2 \cos(t)\text{.}\) The tedious details of deriving the solution can hide the fact that the essence of the matter is quite simple. A plot of some solutions tells the story.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">f = @(t) 2*sin(t)-2*cos(t);
-dydt = @(t,y) -y + f(t);
-t = linspace(0,30,500);
-[t,y] = ode45(dydt,t,0);
-
-plot(t,[f(t),y]), grid on
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">q = @(t) 2*sin(t)-2*cos(t);
+fplot(q,[0 15],'k','linew',3)
+hold on
+dydt = @(t,y) -y + q(t);
+t = linspace(0,15,500);
+for y0 = -2:.5:2
+  [t,y] = ode45(dydt,t,y0);
+  plot(t,y)
+end
+grid on
 xlabel('t'), ylabel('y(t)')
-legend('forcing','solution')
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_cx_response.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-77">The forcing function is, as we now know, a shifted cosine. You can see that after a short initial stage, the solution is too, though with a different phase and amplitude. The polar complex form tells this story neatly, in the form of \(\alpha\) and \(G\) from above. To wit, for an input at frequency \(\omega\text{,}\)</p>
+<p id="p-78">The forcing function is, as we now know, a shifted cosine (the thick black curve). You can see that after a short initial stage, the solution always settles into a single shifted cosine at the same frequency but with a different phase and amplitude, as determined by the lag and gain. To wit, for an input at frequency \(\omega\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 G e^{-i\alpha} = \frac{1}{i\omega  + 1}\text{.}
@@ -249,17 +263,21 @@ G e^{-i\alpha} = \frac{1}{i\omega  + 1}\text{.}
 G e^{-i\alpha} = \frac{1}{i  + 1} = \frac{1}{i + 1}\cdot \frac{-i+1}{-i + 1} = \frac{1-i}{2}\text{.}
 \end{equation*}
 </div>
-<p>The cartesian point \((1/2,-1/2)\) is easy to put into polar form, and we find \(G=1/\sqrt{2}\) and \(\alpha=\pi/4\text{.}\) That is, the particular solution has 70% of the amplitude and lags the driving force by one-eighth of a cycle.</p>
-<p id="p-78">As for the details? The particular solution for \(Re^{i\omega t}\) is \(GR e^{i(\omega t - \alpha)}\text{,}\) as derived above. To recover the given forcing term we need only set \(\omega=1,R=2\) and take the imaginary part minus the real part:</p>
+<p>The cartesian point \((1/2,-1/2)\) is easy to put into polar form, and we find \(G=1/\sqrt{2}\) and \(\alpha=\pi/4\text{.}\) That is, the particular solution has 70% of the amplitude and lags the driving force by one-eighth of a cycle, as observed in the plot above.</p>
+<p id="p-79">As for the solution details? The elegant route is to note that the point \((-2,2)\) has polar coordinates \(R=2\sqrt{2}\) and \(-\phi=\pi/4\text{,}\) so that</p>
 <div class="displaymath">
-\begin{align*}
-y \amp = \text{Im} \left[ 2 Ge^{i(t - \alpha)} \right]  - \text{Re} \left[ 2 Ge^{i(t - \alpha)} \right]\\
-\amp =  \text{Im} \left[ \sqrt{2} e^{i(t - \pi/4)} \right]  - \text{Re} \left[ \sqrt{2} e^{i(t - \pi/4)}  \right] \\
-\amp = \sqrt{2} \bigl[\sin(t - \pi/4) - \cos(t - \pi/4)\bigr] \text{.}
-\end{align*}
+\begin{equation*}
+q(t) = 2\sqrt{2} \cos(t + \frac{\pi}{4} )\text{.}
+\end{equation*}
 </div>
-<p>We could convert that into a single shifted cosine if required. In this case it happens to get a simpler answer, \(y=-2\cos(t)\text{.}\)</p></article></div>
-<p id="p-79">The reason the numerical solution converged to the particular solution in the above example is that the null solution is \(e^{-t}y(0)\text{,}\) which decays. If this were exponentially growing, then a sinusoidal forcing term becomes irrelevant by comparion!</p></section></section></div></main>
+<p>Then a particular solution is</p>
+<div class="displaymath">
+\begin{equation*}
+y_p = (\frac{1}{\sqrt{2}})(2\sqrt{2}) \cos(t + \pi/4 - /pi/4) = 2\cos(t)\text{,}
+\end{equation*}
+</div>
+<p>and the general solution is \(y=C e^{-t} + 2\cos(t)\text{.}\) The initial condition determines \(C\text{,}\) but the solution always trends towards our \(y_p\text{.}\)</p></article></div>
+<p id="p-80">Naturally, if the null solution \(Ce^{at}\) has exponential growth because \(a \gt 0\text{,}\) the particular solution quickly becomes insignificant as \(t\) marches forward. In the case of decay, though, we always find that it's the initial value that becomes irrelevant, as in the example above, and the effect of the ODE is to change the amplitude and phase of the input.</p></section></section></div></main>
 </div>
 </body>
 </html>

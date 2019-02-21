@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:04-05:00    *-->
+<!--*    on 2019-02-21T13:43:53-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,15 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>As for the details? The particular solution for \(Re^{i\omega t}\) is \(GR e^{i(\omega t - \alpha)}\text{,}\) as derived above. To recover the given forcing term we need only set \(\omega=1,R=2\) and take the imaginary part minus the real part:</p>
+<p>The forcing function is, as we now know, a shifted cosine (the thick black curve). You can see that after a short initial stage, the solution always settles into a single shifted cosine at the same frequency but with a different phase and amplitude, as determined by the lag and gain. To wit, for an input at frequency \(\omega\text{,}\)</p>
 <div class="displaymath">
-\begin{align*}
-y \amp = \text{Im} \left[ 2 Ge^{i(t - \alpha)} \right]  - \text{Re} \left[ 2 Ge^{i(t - \alpha)} \right]\\
-\amp =  \text{Im} \left[ \sqrt{2} e^{i(t - \pi/4)} \right]  - \text{Re} \left[ \sqrt{2} e^{i(t - \pi/4)}  \right] \\
-\amp = \sqrt{2} \bigl[\sin(t - \pi/4) - \cos(t - \pi/4)\bigr] \text{.}
-\end{align*}
+\begin{equation*}
+G e^{-i\alpha} = \frac{1}{i\omega  + 1}\text{.}
+\end{equation*}
 </div>
-<p>We could convert that into a single shifted cosine if required. In this case it happens to get a simpler answer, \(y=-2\cos(t)\text{.}\)</p>
+<p>Here we have \(\omega=1\text{,}\) and thus</p>
+<div class="displaymath">
+\begin{equation*}
+G e^{-i\alpha} = \frac{1}{i  + 1} = \frac{1}{i + 1}\cdot \frac{-i+1}{-i + 1} = \frac{1-i}{2}\text{.}
+\end{equation*}
+</div>
+<p>The cartesian point \((1/2,-1/2)\) is easy to put into polar form, and we find \(G=1/\sqrt{2}\) and \(\alpha=\pi/4\text{.}\) That is, the particular solution has 70% of the amplitude and lags the driving force by one-eighth of a cycle, as observed in the plot above.</p>
 <span class="incontext"><a href="complex-exp.html#p-78">in-context</a></span>
 </body>
 </html>

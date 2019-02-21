@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:04-05:00    *-->
+<!--*    on 2019-02-21T13:43:53-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,25 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of "lucky" solutions is the idea of variable substitution, and the logistic equation is a nice case study. Define \(z=1/y\text{.}\) From the chain rule we have \(z'=-y^{-2}y'=-y'z^2\text{.}\) The logistic equation converts to</p>
-<div class="displaymath">
-\begin{equation*}
--\frac{z'}{z^2} = \frac{a}{z} - \frac{b}{z^2}\text{,}
-\end{equation*}
-</div>
-<p>or \(z'=b-az\text{.}\) This is a linear equation! It even has constant coefficients. In terms of \(z\text{,}\) we jump right to the solution:</p>
-<div class="displaymath">
-\begin{equation*}
-z(t) = e^{-at}z(0) - \frac{b}{a} \left( e^{-at}-1 \right) = \frac{e^{-at}(Kz_0-1)+1)}{K}\text{.}
-\end{equation*}
-</div>
-<p>Finally, with \(y=1/z\) we get</p>
+<p>There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
 <div class="displaymath">
 \begin{equation}
-y(t) = \frac{Ky_0}{e^{-at}(K-y_0)+y_0}\text{.}\tag{1.9.2}
+\frac{1}{y} \dd{y}{t} = a - by, \qquad or \dd{y}{t} = ay - by^2 \text{.}\tag{1.9.1}
 \end{equation}
 </div>
-<p>You can easily check that \(y(0)=y_0\text{.}\) Moreover, \(y\to K\) as \(t\to \infty\text{.}\) As Figure 1.9 of the text shows, the logistic curve is an S-shaped or <dfn class="terminology">sigmoidal</dfn> curve. You can think of it as a nice, smooth transition between two states (the two equilibria).</p>
+<p>This is the <dfn class="terminology">logistic equation</dfn>.</p>
 <span class="incontext"><a href="logistic-equation.html#p-115">in-context</a></span>
 </body>
 </html>

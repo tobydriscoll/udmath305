@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:05-05:00    *-->
+<!--*    on 2019-02-21T13:43:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,25 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="decimal">
-<li>
-<em class="emphasis">Exponential functions.</em> This is straightforward to calculate from definition. For any complex number \(z\text{,}\)<div class="displaymath">
-\begin{equation*}
-{\cal L}[e^{z t}] = \int_0^\infty e^{(z-s)t}\, dt = \left[ -\frac{1}{s-z} e^{(z-s)t} \right]_0^\infty = \frac{1}{s-z}\text{.}
-\end{equation*}
-</div>(To make this valid requires that \({\text Re}(z)\lt s\text{,}\) but we are going to ignore such technicalities.) An important special case is when \(z=0\text{:}\) \({\cal L}[1]=1/s\text{.}\)</li>
-<li>
-<em class="emphasis">Cos and sin.</em> We can use an imaginary number in the exponential and take the real or imaginary part of the result.  Thus,<div class="displaymath">
-\begin{equation*}
-{\cal L}[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
-\end{equation*}
-</div>and<div class="displaymath">
-\begin{equation*}
-{\cal L}[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
-\end{equation*}
+<p>There is a method of expressing all this knowledge called the <dfn class="terminology">Laplace transform</dfn>. Given (almost) any function \(f(t)\text{,}\) there is a doppelganger function \(F(s)\) defined by an integral,</p>
+<div class="displaymath">
+\begin{equation}
+F(s) = \int_0^\infty f(t) e^{-st}\, dt\text{.}\tag{2.8.1}
+\end{equation}
 </div>
-</li>
-</ol>
+<p>In this business, time starts at \(t=0\text{,}\) and nothing before then matters. One thing to note right away is that the Laplace transform is a linear operator. It's often written using a script L, as in \(F(s)=\mathcal{L}[f(t)]\text{.}\) The usual convention is that a lowercase function of \(t\) transforms to its uppercase namesake as a function of \(s\text{.}\)</p>
 <span class="incontext"><a href="laplace-solutions.html#p-239">in-context</a></span>
 </body>
 </html>

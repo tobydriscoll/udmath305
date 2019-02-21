@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:04-05:00    *-->
+<!--*    on 2019-02-21T13:43:53-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Laplace transform properties</title>
+<title>More Laplace transforms</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
@@ -91,7 +91,7 @@ MathJax.Hub.Config({
 <li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
 <li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
 <li><a href="laplace-complex.html" data-scroll="laplace-complex">Complex and repeated poles</a></li>
-<li><a href="laplace-properties.html" data-scroll="laplace-properties" class="active">Laplace transform properties</a></li>
+<li><a href="laplace-properties.html" data-scroll="laplace-properties" class="active">More Laplace transforms</a></li>
 <li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
 </ul>
 <h2 class="link"><a href="qualitative.html" data-scroll="qualitative"><span class="codenumber">3</span> <span class="title">Qualitative analysis</span></a></h2>
@@ -115,9 +115,64 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="laplace-properties"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.10</span> <span class="title">Laplace transform properties</span>
+<span class="type">Section</span> <span class="codenumber">2.10</span> <span class="title">More Laplace transforms</span>
 </h2>
-<a href="laplace-properties.html" class="permalink">¶</a><p id="p-257">From section 8.5</p></section></div></main>
+<a href="laplace-properties.html" class="permalink">¶</a><section class="introduction" id="introduction-12"><p id="p-260"><em class="emphasis">From section 8.5</em></p>
+<p id="p-261">We have some things left to learn about Laplace transforms.</p></section><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.10.1</span> <span class="title">Steps and impulses</span>
+</h3>
+<p id="p-262">It's straightforward to get the Laplace transform of a step function.</p>
+<div class="displaymath">
+\begin{align*}
+${\cal L}[H(t-T)] \amp = \int_0^\infty H(t-T) e^{-st}\, dt \\
+\amp = \int_T^\infty e^{-st}\, dt \\
+\amp = \left[ \frac{e^{-st}}{-s} \right]_c^\infty = e^{-ct}\frac{1}{s}\text{.}
+\end{align*}
+</div>
+<p>More generally, you can follow the same trail to get</p>
+<div class="displaymath">
+\begin{equation*}
+{\cal L}[H(t-T)f(t-T)] = e^{-sT} {\cal L}[f]\text{.}
+\end{equation*}
+</div>
+<article class="example-like" id="example-37"><a knowl="" class="id-ref" refid="hk-example-37"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.10.1</span>
+</h6></a></article><div id="hk-example-37" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-263">Let's transform the function</p>
+<div class="displaymath">
+\begin{equation*}
+f(t) = t + (1-t) H(t-2) + (e^{-2t}-1) H(t-3)\text{.}
+\end{equation*}
+</div>
+<p>The tricky bit is that to apply the transform formula for \(H(t-T)f(t-T)\text{,}\) we need the same shift to appear in both terms. We use a classic add-and-subtract trick:</p>
+<div class="displaymath">
+\begin{align*}
+f(t) \amp = t + (1-(t-2+2)) H(t-2) + (e^{-2[(t-3)+3]}-1) H(t-3)\\
+\amp = t + (-1-(t-2)) H(t-2) + (e^{-6}e^{-2(t-3)}-1) H(t-3)\\
+\amp = t - H(t-2) -(t-2) H(t-2) + e^{-6}e^{-2(t-3)}H(t-3) - H(t-3)\text{.}
+\end{align*}
+</div>
+<p>Now we're ready to read off the transform.</p>
+<div class="displaymath">
+\begin{equation*}
+F(s) = \frac{1}{s^2} - \frac{e^{-2s}}{s}  - \frac{e^{-2s}}{s^2} 
++ e^{-6}\frac{e^{-3s}}{s+2} - \frac{e^{-3s}}{s}\text{.}
+\end{equation*}
+</div></article></div>
+<p id="p-264">We have a new addition to the inversion library: exponentials in \(s\text{.}\)</p>
+<article class="example-like" id="example-38"><a knowl="" class="id-ref" refid="hk-example-38"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.10.2</span>
+</h6></a></article><div id="hk-example-38" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-265">Let's find the inverse of \(F(s) = \frac{6 e^{-5s}}{s^2+s-2}\text{.}\) We write it as \(F(s) = 6^{-5s} G(s)\text{,}\) where</p>
+<div class="displaymath">
+\begin{equation*}
+G(s) = \frac{1}{(s+2)(s-1)} = \frac{1}{(1+2)(s-1)} + \frac{1}{(s+2)(-2-1)}\text{.}
+\end{equation*}
+</div>
+<p>This inverts to give \(g(t) = e{t}/3 - e^{-2t}/3\text{.}\) Thus</p>
+<div class="displaymath">
+\begin{equation*}
+f(t) = 6 H(t-5)g(t-5) = 2 H(t-5) \left[ e^{t-5} - e^{-2t+10} \right] \text{.}
+\end{equation*}
+</div></article></div></section></section></div></main>
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:05-05:00    *-->
+<!--*    on 2019-02-21T13:43:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Complex poles in the transform correspond to complex exponentials in the time donmain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
+<p>In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
 <div class="displaymath">
-\begin{equation*}
-\frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} \text{,}
-\end{equation*}
+\begin{align*}
+F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
+\amp = -\int_0^\infty t f(t) e^{-st}\, dt\\
+\amp = - \mathcal{L}[ tf(t) ]\text{.}
+\end{align*}
 </div>
-<p>so the right-hand side above is the transform of</p>
-<div class="displaymath">
-\begin{equation*}
-e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{.}
-\end{equation*}
-</div>
-<p>In similar fashion we can show that \(e^{at} \cos( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion.</p>
+<p>Take a moment to appreciate this. Earlier we found that a derivative in \(t\) corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
 <span class="incontext"><a href="laplace-complex.html#p-253">in-context</a></span>
 </body>
 </html>

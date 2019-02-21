@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:04-05:00    *-->
+<!--*    on 2019-02-21T13:43:53-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -91,7 +91,7 @@ MathJax.Hub.Config({
 <li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
 <li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
 <li><a href="laplace-complex.html" data-scroll="laplace-complex">Complex and repeated poles</a></li>
-<li><a href="laplace-properties.html" data-scroll="laplace-properties">Laplace transform properties</a></li>
+<li><a href="laplace-properties.html" data-scroll="laplace-properties">More Laplace transforms</a></li>
 <li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
 </ul>
 <h2 class="link"><a href="qualitative.html" data-scroll="qualitative"><span class="codenumber">3</span> <span class="title">Qualitative analysis</span></a></h2>
@@ -117,17 +117,17 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="so-applications"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Applications of oscillators</span>
 </h2>
-<a href="so-applications.html" class="permalink">¶</a><section class="introduction" id="introduction-8"><p id="p-210">Oscillations appear all over science and engineering, and 2nd order linear equations are often used to model them. The best-known examples are mechanical and electrical, but there are chemical and biochemical ones as well.</p></section><section class="subsection" id="subsection-28"><h3 class="heading hide-type">
+<a href="so-applications.html" class="permalink">¶</a><section class="introduction" id="introduction-8"><p id="p-213">Oscillations appear all over science and engineering, and 2nd order linear equations are often used to model them. The best-known examples are mechanical and electrical, but there are chemical and biochemical ones as well.</p></section><section class="subsection" id="subsection-28"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Mechanical oscillators</span>
 </h3>
-<p id="p-211">As we have already seen, a mass hanging from a spring satisfies the ODE</p>
+<p id="p-214">As we have already seen, a mass hanging from a spring satisfies the ODE</p>
 <div class="displaymath">
 \begin{equation*}
 my'' + b y' + ky = f(t)\text{.}
 \end{equation*}
 </div>
 <p>(As is typical, all the named constants are nonnegative.) Here \(m\)&gt; is the mass, \(b\)&gt;is a coefficient of friction or other damping forces, and \(k\)&gt; is a characteristic constant of the spring. The term \(f(t)\) represents an external driving force. If we have initial conditions, they give values for \(y\) and \(y'\text{.}\)</p>
-<p id="p-212">The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
+<p id="p-215">The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
 <div class="displaymath">
 \begin{equation*}
 \theta'' + \gamma \theta + \frac{g}{L}\sin \theta = f(t)\text{,}
@@ -142,7 +142,7 @@ my'' + b y' + ky = f(t)\text{.}
 <p>which is a linear oscillator.</p></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">Electrical oscillators</span>
 </h3>
-<p id="p-213">An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is</p>
+<p id="p-216">An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is</p>
 <div class="displaymath">
 \begin{equation*}
 LI'' + RI' + CI = \mathcal{E}(t)\text{,}
@@ -151,8 +151,8 @@ LI'' + RI' + CI = \mathcal{E}(t)\text{,}
 <p>where \(L\) is inductance, \(R\) is resistance, \(C\) is capacitance, and \(I(t)\) is the current flowing through the circuit. The forcing term represents the generator (EMF). For alternating current this is modeled as a cosine (or complex exponential) forcing.  The transfer function is expressed a little differently, because often the target quantity is</p></section><section class="subsection" id="so-ap-notation"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.3</span> <span class="title">Unifying notation</span>
 </h3>
-<a href="so-applications.html#so-ap-notation" class="permalink">¶</a><p id="p-214">When you have lots of different versions of the same root problem, with different symbols and units, you have three options. You can solve each new problem from scratch, you can derive custom formulas for each application, or you can try to find a minimal set of parameters and express each problem using those. Let's consider the last pathway here.</p>
-<p id="p-215">The mechanical oscillator \(ay'' + by' + cy = f(t)\) is more conveniently expressed as</p>
+<a href="so-applications.html#so-ap-notation" class="permalink">¶</a><p id="p-217">When you have lots of different versions of the same root problem, with different symbols and units, you have three options. You can solve each new problem from scratch, you can derive custom formulas for each application, or you can try to find a minimal set of parameters and express each problem using those. Let's consider the last pathway here.</p>
+<p id="p-218">The mechanical oscillator \(ay'' + by' + cy = f(t)\) is more conveniently expressed as</p>
 <div class="displaymath">
 \begin{equation*}
 y'' + \frac{b}{a} y' + \frac{c}{a} y + \frac{c}{a} F(t)\text{.}
@@ -170,17 +170,17 @@ Z = \frac{1}{2} \frac{b/a}{\omega_n} = \frac{b}{\sqrt{4ac}}\text{.}
 y'' + 2 Z \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)\text{.}
 \end{equation*}
 </div>
-<p id="p-216">The characteristic roots are now conveniently \(-Z \omega_n \pm \omega_n \sqrt{Z^2-1}\text{.}\) We see that the condition for being underdamped is simply \(Z \lt 1\text{.}\) In this case we express the roots as \(-Z \omega_n \pm \omega_d\text{,}\) using the damped frequency \(\omega_d=\omega_n\sqrt{1-Z^2}\text{.}\)</p>
-<p id="p-217">Continuing the underdamped case, the gain works out to be</p>
+<p id="p-219">The characteristic roots are now conveniently \(-Z \omega_n \pm \omega_n \sqrt{Z^2-1}\text{.}\) We see that the condition for being underdamped is simply \(Z \lt 1\text{.}\) In this case we express the roots as \(-Z \omega_n \pm \omega_d\text{,}\) using the damped frequency \(\omega_d=\omega_n\sqrt{1-Z^2}\text{.}\)</p>
+<p id="p-220">Continuing the underdamped case, the gain works out to be</p>
 <div class="displaymath">
 \begin{equation*}
 G^2 = \frac{1}{(\omega_n^2-\omega^2)^2 + 4\omega_n^2Z^2\omega^2}  = \frac{\omega_n^4}{(1-\rho^2)^2 + 4Z^2\rho^2}\text{,}
 \end{equation*}
 </div>
 <p>where \(\rho=\omega/\omega_n\) is a dimensionless frequency ratio. If also \(Z^2\lt 1/2\text{,}\) the gain is maximized when \(\rho=\sqrt{1-2Z^2} \lt 1\text{.}\) The gain at that maximum is proportional to \(1/Z\text{,}\) so much growth in the response is possible near the natural frequency when damping is small in the sense of \(Z\approx 0\text{.}\) This can be considered a practical resonance for lightly damped systems.</p>
-<article class="example-like" id="example-29"><a knowl="" class="id-ref" refid="hk-example-29"><h6 class="heading">
+<article class="example-like" id="example-30"><a knowl="" class="id-ref" refid="hk-example-30"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.6.1</span>
-</h6></a></article><div id="hk-example-29" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-218">The oscillator \(4y'' + y' + 36y\) from an earlier example has \(\omega_n=3\) and \(Z=1/\sqrt{16\cdot 36}=1/24\text{.}\) Accordingly, gain is maximized when \(\omega/\omega_n=1-\frac{1}{288}\approx 0.9965\text{,}\) so for practical purposes a resonance occurs at just slightly less than the natural, undamped frequency.</p></article></div></section></section></div></main>
+</h6></a></article><div id="hk-example-30" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-221">The oscillator \(4y'' + y' + 36y\) from an earlier example has \(\omega_n=3\) and \(Z=1/\sqrt{16\cdot 36}=1/24\text{.}\) Accordingly, gain is maximized when \(\omega/\omega_n=1-\frac{1}{288}\approx 0.9965\text{,}\) so for practical purposes a resonance occurs at just slightly less than the natural, undamped frequency.</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:04-05:00    *-->
+<!--*    on 2019-02-21T13:43:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In the case \(b^2-4ac= 0\text{,}\) we have the double root \(s_1=-b/2a\text{,}\) and we reach the same conclusions about the sign of \(b\) (exponential decay beats linear growth). Finally, if \(b^2-4ac \gt 0\text{,}\) it's not hard to conclude that the same things happen. Physically, the ODE term \(by'\) represents <dfn class="terminology">damping</dfn>, but only if \(b\gt 0\text{.}\) Typically this represents loss of energy due to damping or thermodynamic effects. It's not impossible to have \(b\lt 0\text{,}\) meaning energy is being pumped into the system, but it is far more rare.</p>
+<p>There is exactly one more possibility for our characteristic roots: they are complex numbers. This happens if \(b^2\lt 4ac\text{.}\) In this case the roots must be conjugates of one another: \(s_1=\overline{s}_2\text{.}\) We'll find it convenient to write them in cartesian form, as \(r\pm i\omega\text{.}\) Then our null solution is</p>
+<div class="displaymath">
+\begin{equation*}
+y = c_1 e^{s_1t} + c_2 e^{s_2t} = e^{rt}\left( c_1 e^{i\omega t} + c_2 e^{-i \omega t} \right)\text{.}
+\end{equation*}
+</div>
+<p>This is a perfectly fine way to write the solution, but not the only way. If we use Euler's formula and rearrange, we get</p>
+<div class="displaymath">
+\begin{equation*}
+y = e^{rt}\left( C_1 \cos(\omega t) + C_2 \sin(\omega t) \right)\text{.}
+\end{equation*}
+</div>
+<p>These are still exponential solutions, but in disguise.</p>
 <span class="incontext"><a href="so-constant-coefficients.html#p-165">in-context</a></span>
 </body>
 </html>

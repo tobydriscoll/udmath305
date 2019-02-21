@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:04-05:00    *-->
+<!--*    on 2019-02-21T13:43:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's look back a moment at \(my''+ky=0\text{.}\) If we now try an exponential solution of the form \(y_n=e^{st}\text{,}\) then we arrive at \((ms^2+k)e^{st}=0\text{,}\) which we can make true if \(s^2=-k/m\text{.}\) this has two roots, \(s=\pm i \omega_n\text{,}\) and we are led to</p>
+<p>The kicker is that the impulse response can be used to solve <em class="emphasis">any</em> forcing problem, at least in principle. Given the forcing term \(f(t)\text{,}\) a particular solution is</p>
 <div class="displaymath">
 \begin{equation*}
-y_n = c_1 e^{i\omega t} + c_2 e^{-i\omega t}\text{.}
+y_p(t) = \int_0^t g(t-s)f(s)\,ds.
 \end{equation*}
 </div>
-<p>A little rearrangement should convince you that this is equivalent to the form we got in the last section, just using complex numbers.</p>
-<span class="incontext"><a href="so-complex-exponentials.html#p-153">in-context</a></span>
+<p>Again, in a linear problem we just need to add up the contributions of impulses at every moment. Because of this formula, the impulse response \(g\) is also called a <dfn class="terminology">fundamental solution</dfn>. We'll be using and coming at this formula a few different ways throughout the chapter.</p>
+<span class="incontext"><a href="so-simple-harmonic.html#p-153">in-context</a></span>
 </body>
 </html>

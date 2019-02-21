@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:04-05:00    *-->
+<!--*    on 2019-02-21T13:43:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>With forcing \(f(t)=e^{i\omega t}\) we get a solution \(y_p=Y(i\omega) e^{i\omega t}\text{.}\) If we write the transfer function in polar form, we can express this as \(y_p = (G e^{-i\alpha }) e^{i\omega t} = Ge^{i(\omega t - \alpha)}\) for positive amplitude \(G\text{,}\) which we call the <dfn class="terminology">gain</dfn>. It depends on the forcing frequency; in fact, \(G(\omega) = |Y(i\omega)|\text{.}\) The \(\alpha\) term is a <dfn class="terminology">phase lag</dfn> that shows how the response may lag behind the driving force. It's usually not as interesting as the gain.</p>
+<p>Suppose we have a root \(s\) and that \(r\) is close to but not equal to \(s\text{.}\) Then \(y_p=e^{rt}/P(r)\) is a particular solution to the exponential forcing. We can add any null solution to this and it will remain a solution, thus</p>
+<div class="displaymath">
+\begin{equation*}
+y=\frac{e^{rt}-e^{st}}{P(r)}
+\end{equation*}
+</div>
+<p>is a valid particular solution as well. Since \(P(s)=0\) by assumption, we can also write</p>
+<div class="displaymath">
+\begin{equation*}
+y=\frac{e^{rt}-e^{st}}{P(r)-P(s)}\text{.}
+\end{equation*}
+</div>
+<p>Suddenly this becomes very interesting as \(r\to s\text{;}\) we get an indeterminate \(0/0\text{.}\) Using L'Hopital's rule (but with \(r\) as the variable, not \(t\)), we get the limit</p>
+<div class="displaymath">
+\begin{equation*}
+y_p = \frac{te^{st}}{P'(s)}\text{,}
+\end{equation*}
+</div>
+<p>which is a valid particular solution even when forcing exactly at exponent \(s\text{.}\)</p>
 <span class="incontext"><a href="so-forced-oscillators.html#p-193">in-context</a></span>
 </body>
 </html>

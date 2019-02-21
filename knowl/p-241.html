@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:05-05:00    *-->
+<!--*    on 2019-02-21T13:43:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>There's no new result here, though the process is quite streamlined. The values \(s=a\) and \(s=c\) that are roots of the denominator of \(Y(s)\) are called <dfn class="terminology">poles</dfn> of the transform. They signal clearly and quickly that every solution is a combination of the exponentials \(e^{at}\) and \(e^{ct}\text{.}\)</p>
+<p>So here is the plan of attack. Given an ODE \(Ay''+By'+Cy=f\text{,}\) we transform everything in sight (using linearity!) to get</p>
+<div class="displaymath">
+\begin{equation*}
+A[s^2Y(s) - sy(0)-y'(0)] + B[sY(s)-y(0)] + CY(s) = F(s)\text{.}
+\end{equation*}
+</div>
+<p>Now solve for the transform of the solution:</p>
+<div class="displaymath">
+\begin{equation*}
+Y(s) = \frac{ F(s) + (As+B)y(0) - Ay'(0)}{As^2 + Bs + C}\text{.}
+\end{equation*}
+</div>
+<p>Note that if we want just a particular solution, we can use \(y(0)=y'(0)=0\text{.}\) In any case, "all" we have to do know is to compute the inverse transform, that is, find \(y(t)\) given \(Y(s)\text{.}\) This is less straightforward than computing the forward transform, unfortunately. But we can make it managable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns.</p>
 <span class="incontext"><a href="laplace-solutions.html#p-241">in-context</a></span>
 </body>
 </html>

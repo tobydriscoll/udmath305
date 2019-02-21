@@ -507,59 +507,85 @@ title('Solution of a linear problem')
 
     <subsection xml:id="frc-forcing">
       <title>Forcing with a complex exponential</title>
-      <p>Time for some payoff. If we force the ODE <m>y'=ay+q(t)</m> using <m>q(t)=Re^{i\omega t}</m>, we can take the real part to get the result of cosine forcing, or the imaginary part to get of a sine forcing. Moreover, finding a particular solution with exponential forcing remains very easy. To make <m>y=Ye^{i\omega t}</m> a particular solution, we need only require that
-      <me>i\omega Y e^{i\omega t} = a Ye^{i\omega t} + Re^{i\omega t} \quad \Rightarrow
-      \quad Y = R  \cdot \frac{1}{i\omega - a}</me>.
-      That is, the particular solution is just <m>\frac{1}{i\omega - a}</m> times the input signal. 
-      Let's express this multiplicative factor in polar form:
-      <me>\frac{1}{i\omega - a} = G e^{-i\alpha}</me>.
-      Then the relationship between the forcing signal <m>q(t)</m> and the particular solution is
-      <me> y(t) = G e^{-i\alpha} q(t) = (GR) e^{i(\omega t - \alpha)}</me>.    
+
+      <p>
+        Let's say we want to solve <m>y'=ay + \cos(\omega t)</m>. We can recognize the forcing signal as the real part of <m>e^{i\omega t}</m>. Since we solved this problem with exponential forcing in the last section, we can apply the formula there and then take the real part to get the general solution of the original problem.
+      </p>
+      <p>
+        However, a modified approach cuts down on the amount of algebra we need to do. We'll use the complex form to find a particular solution of the real problem, then add in the null solution to get a general solution. This is quite straightforward. To make <m>y=Ye^{i\omega t}</m> a particular solution with forcing <m>q=e^{i\omega t}</m>, we need only require that
+        <me>
+          i\omega Y e^{i\omega t} = a Ye^{i\omega t} + e^{i\omega t} \quad \Rightarrow
+          \quad Y = \frac{1}{i\omega - a}
+        </me>.
+        That is, the particular solution is just <m>\frac{1}{i\omega - a}</m> times the forcing signal. If we express <m>Y</m>> in polar form,
+        Let's express this multiplicative factor in polar form:
+        <me>
+         \frac{1}{i\omega - a} = G e^{-i\alpha}
+       </me>,
+        then a particular solution is
+        <me> 
+          y_p(t) = G e^{-i\alpha} q(t) = G e^{i(\omega t - \alpha)}
+        </me>.    
+        On taking the real part of this, we obtain <m>y_p=G \cos(\omega t - \alpha)</m> as a particular solution when <m>q=\cos(\omega t)</m>. We call the real values <m>G</m> and <m>\alpha</m> the <term>gain</term> and <term>phase lag</term>, respectively.
       </p>
 
-      <p>We call the real values <m>G</m> and <m>\alpha</m> the <term>gain</term> and <term>phase lag</term>, respectively. A plot of <m>G</m> as a function of <m>\omega</m> (for fixed rate <m>a</m>) is referred to by various names in different fields, such as a <term>frequency response plot</term> or <term>gain curve</term>. 
+      <p> 
+        Now suppose we generalize a bit to <m>q=A \cos(\omega t) + B\sin(\omega t)</m>. We know that this is equivalent to <m>q=R \cos(\omega t-\phi)</m>, which is the real part of a complex exponential. Following the exact same trail as before, we still find that <m>y_p(t) = G e^{-i\alpha} q(t)</m> is a particular solution and want to take the real part. There are two ways to go here. 
+        <ol>
+          <li>If <m>q</m> is used in shifted cosine form, then a real particular solution is <m>y_p=GR \cos(\omega t-\phi-\alpha)</m>.</li>
+          <li>If <m>q=A \cos(\omega t) + B\sin(\omega t)</m> and you don't want to recast it into shifted cosine form, you get a messier equivalent result:
+          <me>
+            y_p = (G \cos \alpha)[ A \cos(\omega t) + B\sin(\omega t) ] + (G \sin \alpha)[ A \sin(\omega t) - B\cos (\omega t)]
+          </me>.
+          </li>
+        </ol>
       </p>
 
       <example xml:id="ex-fl-complex">
 	    <p>
-        Suppose we are given the purely real problem <m>y'+y = 2 \sin(t) - 2 \cos(t)</m>. Formula (3) on page 31 gives a full solution to this problem. The tedious details hide the fact that the essence of the matter is quite simple. A plot of a solution tells the story.
+        Suppose we are given the purely real problem <m>y'+y = 2 \sin(t) - 2 \cos(t)</m>. The tedious details of deriving the solution can hide the fact that the essence of the matter is quite simple. A plot of some solutions tells the story.
       </p>
       <sidebyside>
         <program language="matlab" permid="fo_cx_response">
 	       <input>
-f = @(t) 2*sin(t)-2*cos(t);
-dydt = @(t,y) -y + f(t);
-t = linspace(0,30,500);
-[t,y] = ode45(dydt,t,0);
-
-plot(t,[f(t),y]), grid on
+q = @(t) 2*sin(t)-2*cos(t);
+fplot(q,[0 15],'k','linew',3)
+hold on
+dydt = @(t,y) -y + q(t);
+t = linspace(0,15,500);
+for y0 = -2:.5:2
+  [t,y] = ode45(dydt,t,y0);
+  plot(t,y)
+end
+grid on
 xlabel('t'), ylabel('y(t)')
-legend('forcing','solution')
           </input>
 	      </program>
 	      <image source="matlab/fo_cx_response.svg"/>	  
 	    </sidebyside>
     
       <p>
-        The forcing function is, as we now know, a shifted cosine. You can see that after a short initial stage, the solution is too, though with a different phase and amplitude. The polar complex form tells this story neatly, in the form of <m>\alpha</m> and <m>G</m> from above. To wit, for an input at frequency <m>\omega</m>,
+        The forcing function is, as we now know, a shifted cosine (the thick black curve). You can see that after a short initial stage, the solution always settles into a single shifted cosine at the same frequency but with a different phase and amplitude, as determined by the lag and gain. To wit, for an input at frequency <m>\omega</m>,
           <me>G e^{-i\alpha} = \frac{1}{i\omega  + 1}</me>. 
         Here we have <m>\omega=1</m>, and thus 
           <me>G e^{-i\alpha} = \frac{1}{i  + 1} = \frac{1}{i + 1}\cdot \frac{-i+1}{-i + 1} = \frac{1-i}{2}</me>. 
-        The cartesian point <m>(1/2,-1/2)</m> is easy to put into polar form, and we find <m>G=1/\sqrt{2}</m> and <m>\alpha=\pi/4</m>. That is, the particular solution has 70% of the amplitude and lags the driving force by one-eighth of a cycle. 
+        The cartesian point <m>(1/2,-1/2)</m> is easy to put into polar form, and we find <m>G=1/\sqrt{2}</m> and <m>\alpha=\pi/4</m>. That is, the particular solution has 70% of the amplitude and lags the driving force by one-eighth of a cycle, as observed in the plot above. 
       </p> 
 	    <p>
-        As for the details? The particular solution for <m>Re^{i\omega t}</m> is <m>GR e^{i(\omega t - \alpha)}</m>, as derived above. To recover the given forcing term we need only set <m>\omega=1,R=2</m> and take the imaginary part minus the real part:
-        <md>
-          <mrow>y \amp = \text{Im} \left[ 2 Ge^{i(t - \alpha)} \right]  - \text{Re} \left[ 2 Ge^{i(t - \alpha)} \right]</mrow>
-          <mrow>\amp =  \text{Im} \left[ \sqrt{2} e^{i(t - \pi/4)} \right]  - \text{Re} \left[ \sqrt{2} e^{i(t - \pi/4)}  \right] </mrow>
-          <mrow>\amp = \sqrt{2} \bigl[\sin(t - \pi/4) - \cos(t - \pi/4)\bigr] </mrow>
-        </md>. 
-        We could convert that into a single shifted cosine if required. In this case it happens to get a simpler answer, <m>y=-2\cos(t)</m>.
+        As for the solution details? The elegant route is to note that the point <m>(-2,2)</m> has polar coordinates <m>R=2\sqrt{2}</m> and <m>-\phi=\pi/4</m>, so that 
+        <me>
+          q(t) = 2\sqrt{2} \cos(t + \frac{\pi}{4} )
+        </me>. 
+        Then a particular solution is 
+        <me>
+          y_p = (\frac{1}{\sqrt{2}})(2\sqrt{2}) \cos(t + \pi/4 - /pi/4) = 2\cos(t)
+        </me>, 
+        and the general solution is <m>y=C e^{-t} + 2\cos(t)</m>. The initial condition determines <m>C</m>, but the solution always trends towards our <m>y_p</m>. 
         </p>
       </example>
 
       <p>
-        The reason the numerical solution converged to the particular solution in the above example is that the null solution is <m>e^{-t}y(0)</m>, which decays. If this were exponentially growing, then a sinusoidal forcing term becomes irrelevant by comparion! 
+        Naturally, if the null solution <m>Ce^{at}</m> has exponential growth because <m>a \gt 0</m>, the particular solution quickly becomes insignificant as <m>t</m> marches forward. In the case of decay, though, we always find that it's the initial value that becomes irrelevant, as in the example above, and the effect of the ODE is to change the amplitude and phase of the input. 
       </p>
       
     </subsection>
@@ -570,7 +596,7 @@ legend('forcing','solution')
     <title>Linear, variable coefficient</title>
 
     <p><em>Refer to section 1.6 of the text (pp. 40-42).</em></p>
-    <p>We now consider how to solve the most general first-order linear problem,
+    <p>We now consider how to solve a more general first-order linear problem,
     <me>
       \dd{y}{t} = a(t)y(t) + q(t) 
       </me>. One approach is to upgrade the integrating factor <m>M=e^{-at}</m> we used in <xref ref="eq-first-linear-const"/>. What made that work is that <m>M'=-aM</m>. For a nonconstant <m>a(t)</m>, the same thing is accomplished by <m>M(t) = e^{-b(t)}</m>, so long as <m>b'=a</m>. That is, we need <m>b(t)</m> to be any antiderivative of <m>a(t)</m>. With that, we can essentially repeat the same calculation as before:
@@ -594,10 +620,13 @@ legend('forcing','solution')
 	y(t) = G(0,t)y(0) + \int_0^t G(s,t) q(s)\, ds
     </men>. This format takes us back to familiar territory. The total solution has one part (the null solution) that is evolution of the initial value and another (particular solution) that comes from evolution of an impulse of size <m>q(s)</m> at each time <m> 0 \le s \lt t</m>. The only difference from the constant-coefficient case is how to express the growth factor.</p>
 
-    <p>There are two steps to finding the solution of a linear first-order ODE. First, you integrate the growth rate to get the growth factor. Then, you integrate the product of the growth factor with the forcing function.</p>
+    <p>
+      We can summarize finding the solution of a linear first-order ODE as two steps: 1. Integrate the growth rate to get the growth factor. 2. Integrate the product of the growth factor with the forcing function.
+    </p>
 
     <example>
-      <p>Let's solve <m>y'=2y+1</m>, with <m>y(0)=6</m>. We have <m>a(t)=2</m>, hence <m>G(s,t)=\exp[2(t-s)]=e^{2(t-s)}</m>. So the solution is
+      <p>
+        Let's solve <m>y'=2y+1</m>, with <m>y(0)=6</m>. We have <m>a(t)=2</m>, hence <m>G(s,t)=\exp[2(t-s)]=e^{2(t-s)}</m>. So the solution is
       <me>
 	e^{2t}\cdot 6 + \int_0^t e^{2(t-s)}\, ds
 	= 6e^{2t} - \frac{1}{2} \left[ 1 - e^{2t} \right] = - \frac{1}{2} + \frac{13}{2} e^{2t}
@@ -613,13 +642,16 @@ legend('forcing','solution')
 	</program>
 	<image source="matlab/fo_lvc_constant.svg"/>	  
 	</sidebyside>
-      </example>
+    <p>
+      This example is linear with constant coefficients, so the result is something we have seen before. The point is that the approach we have now is a true generalization, working for all those previous problems as well. 
+    </p>
+    </example>
 
     <example>
       <p>To solve <m>y'=2ty - t</m> with <m>y(0)=0</m>, we identify <m>a(t)=2t</m>. Hence <m>G(s,t)=\exp(t^2-s^2)</m>. Then
       <me>
-	y(t) = \int_0^t (-s) e^{t^2-s^2}\, ds = \frac{1}{2} \left( 1 - e^{t^2} \right)
-	</me>.
+	      y(t) = \int_0^t (-s) e^{t^2-s^2}\, ds = \frac{1}{2} \left( 1 - e^{t^2} \right)
+	    </me>.
       </p>
       <sidebyside>
 	  <program language="matlab" permid="fo_lvc_linear">
@@ -634,34 +666,37 @@ legend('forcing','solution')
 	</sidebyside>
     </example>
 
-          <example>
-	<p>Consider the problem <m>ty' + 2y = 4t^2</m>, with initial value <m>y(1)=2</m>. In order to identify this with the standard way we present a linear, first-order ODE, we have to isolate the <m>y'</m> term to get
-	<me>y' = -\frac{2}{t}y + 4t</me>.
-	Note that we probably ought to stay away from <m>t=0</m>, where the variable coefficient blows up. Fortunately, it's easy to use the growth factor formula starting from any value of <m>t</m>. The growth factor is, as usual, 
-	<me>G(s,t) = \exp\left( \int_s^t -\frac{2}{r}\, dr \right)
-	= \exp\left( -2 \log(t/s) \right) = \left(\frac{s}{t}\right)^2</me>.
-	The solution is
-	<md>
-	  <mrow>y(t) \amp = G(t,1)y(1) + \int_1^t G(s,t) q(s)\, ds  </mrow>
-	  <mrow>\amp = 2t^{-2} + \int_1^t \left(\frac{s}{t}\right)^2 4s\, ds </mrow>
-	  <mrow>\amp = 2t^{-2} + t^{-2}\left[ t^4-1^4 \right] = t^2 + t^{-2} </mrow>
-	</md>.
-	Indeed, we now see that trying to go backward to time zero would cause the solution to blow up. (That's in the math sense, not the chemical engineering sense, but still.)</p>
-	<sidebyside>
-	  <program language="matlab" permid="fo_lvc_sing">
-	    <input>
-	    dydt = @(t,y) (4*t^2 - 2*y)/t;
-	    [t,y] = ode45(dydt,[1,3],2);
-	    plot(t,y)
-	    xlabel('t'), ylabel('y(t)')
-	    </input>
-	</program>
-	<image source="matlab/fo_lvc_sing.svg"/>	  
-	</sidebyside>
+    <example>
+	    <p>
+        Consider the problem <m>ty' + 2y = 4t^2</m>, with initial value <m>y(1)=2</m>. In order to identify this with the standard way we present a linear, first-order ODE, we have to isolate the <m>y'</m> term to get
+	      <me>
+          y' = -\frac{2}{t}y + 4t
+        </me>.
+        Note that we may need to stay away from <m>t=0</m>, where the variable coefficient blows up. Fortunately, it's easy to use the growth factor formula starting from any value of <m>t</m>. The growth factor is, as usual, 
+        <me>G(s,t) = \exp\left( \int_s^t -\frac{2}{r}\, dr \right) = \exp\left( -2 \log(t/s) \right) = \left(\frac{s}{t}\right)^2</me>.
+        The solution is
+        <md>
+          <mrow>y(t) \amp = G(t,1)y(1) + \int_1^t G(s,t) q(s)\, ds  </mrow>
+          <mrow>\amp = 2t^{-2} + \int_1^t \left(\frac{s}{t}\right)^2 4s\, ds </mrow>
+          <mrow>\amp = 2t^{-2} + t^{-2}\left[ t^4-1^4 \right] = t^2 + t^{-2} </mrow>
+        </md>.
+        We now do see that trying to go backward to time zero would cause the solution to blow up. (That's in the math sense, not the chemical engineering sense, but still.)
+      </p>
+        <sidebyside>
+        <program language="matlab" permid="fo_lvc_sing">
+          <input>
+          dydt = @(t,y) (4*t^2 - 2*y)/t;
+          [t,y] = ode45(dydt,[1,3],2);
+          plot(t,y)
+          xlabel('t'), ylabel('y(t)')
+          </input>
+      </program>
+      <image source="matlab/fo_lvc_sing.svg"/>	  
+      </sidebyside>
 
-      </example>
+    </example>
 
-   <p>As you know, many integrals are difficult or impossible to reduce to simple fomulas, so we have to temper our expectations. Actually it's a great situation for using a computer, which can apply the formulas blindly and yet do a much wider variety of integrals than we can, or do them numerically. </p>
+   <p>As you know, many integrals are difficult or impossible to reduce to simple fomulas, so we have to temper our expectations. Actually it's a great situation for a computer, which can apply the formulas blindly and yet do a much wider variety of integrals than we can, or do them numerically if need be. </p>
   </section>
 
   <section xml:id="first-order-models">
@@ -711,7 +746,20 @@ legend('forcing','solution')
       </solution>
     </exercise>
 
-    <todo>(Cooling problem example.)</todo>
+    <example>
+      <title>Newton cooling</title>
+      <p>
+        Suppose a mug of coffee at 90 C is put in a room kept at 20 C. In terms of the notation above, we have 
+        <me>
+          \frac{dy}{dt} = a (y-20), \quad y(0)=90
+        </me>. 
+        We could also pose it for the temperature difference <m>z=y-20</m> as <m>z'=az</m>. Either way it's a linear problem with solution 
+        <me>
+          y(t) = Ce^{at} + 20
+        </me>. 
+        We determine <m>C</m> from the initial value: <m>C=70</m>. To get a value for <m>a</m>, we need the temperature at another time too. Say the coffee has cooled by <m>7</m> degrees in 10 minutes. Then <m>83 = 70e^{10a}+20</m>, or <m>a=0.1\ln(0.9) \approx -0.01054</m> per min. The coffee will reach 60 C when <m>40 = 70e^{at}</m>, or <m>t\approx 53.1</m> minutes. 
+      </p>
+    </example>
   </section>
 
   <section xml:id="steady-states">
@@ -733,7 +781,9 @@ legend('forcing','solution')
       </sidebyside>
     </example>
 
-    <p>The phase line diagram clarifies stability of equilibria. A more analytical test that you can easily see to be equivalent is that <m>y' \lt 0</m> at a stable equilbrium, and <m>y' \gt 0</m> at an unstable one.</p>
+    <p>
+      The phase line diagram clarifies stability of equilibria. An equivalent analytical test is that <m>y' \lt 0</m> at a stable equilbrium, and <m>y' \gt 0</m> at an unstable one.
+    </p>
     
   </section>
   

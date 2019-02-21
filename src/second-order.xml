@@ -822,8 +822,63 @@
   </section>
 
   <section xml:id="laplace-properties">
-	<title>Laplace transform properties</title>
-	<p>From section 8.5</p>
+	<title>More Laplace transforms</title>
+	<introduction>
+		<p><em>From section 8.5</em></p>	
+		<p>
+			We have some things left to learn about Laplace transforms.
+		</p>
+	</introduction>
+	<subsection>
+		<title>Steps and impulses</title>
+		<p>
+			It's straightforward to get the Laplace transform of a step function.
+			<md>
+				<mrow>${\cal L}[H(t-T)] \amp = \int_0^\infty H(t-T) e^{-st}\, dt </mrow>
+				<mrow>\amp = \int_T^\infty e^{-st}\, dt </mrow>
+				<mrow>\amp = \left[ \frac{e^{-st}}{-s} \right]_c^\infty = e^{-ct}\frac{1}{s}</mrow>
+			</md>. 
+			More generally, you can follow the same trail to get 
+			<me>
+				{\cal L}[H(t-T)f(t-T)] = e^{-sT} {\cal L}[f]
+			</me>.
+		</p>
+		<example>
+			<p>
+				Let's transform the function 
+				<me>
+					f(t) = t + (1-t) H(t-2) + (e^{-2t}-1) H(t-3)
+				</me>.
+				The tricky bit is that to apply the transform formula for <m>H(t-T)f(t-T)</m>, we need the same shift to appear in both terms. We use a classic add-and-subtract trick:
+				<md>
+					<mrow>f(t) \amp = t + (1-(t-2+2)) H(t-2) + (e^{-2[(t-3)+3]}-1) H(t-3)</mrow>
+					<mrow>\amp = t + (-1-(t-2)) H(t-2) + (e^{-6}e^{-2(t-3)}-1) H(t-3)</mrow>
+					<mrow>\amp = t - H(t-2) -(t-2) H(t-2) + e^{-6}e^{-2(t-3)}H(t-3) - H(t-3)</mrow>
+				</md>.
+				Now we're ready to read off the transform. 
+				<me>
+					F(s) = \frac{1}{s^2} - \frac{e^{-2s}}{s}  - \frac{e^{-2s}}{s^2} 
+						+ e^{-6}\frac{e^{-3s}}{s+2} - \frac{e^{-3s}}{s}
+				</me>.
+			</p>
+		</example>
+		<p>
+			We have a new addition to the inversion library: exponentials in <m>s</m>. 
+		</p>
+		<example>	
+			<p>
+				Let's find the inverse of <m>F(s) = \frac{6 e^{-5s}}{s^2+s-2}</m>. We write it as <m>F(s) = 6^{-5s} G(s)</m>, where 
+				<me>
+					G(s) = \frac{1}{(s+2)(s-1)} = \frac{1}{(1+2)(s-1)} + \frac{1}{(s+2)(-2-1)}
+				</me>. 
+				This inverts to give <m>g(t) = e{t}/3 - e^{-2t}/3</m>. Thus 
+				<me>
+					f(t) = 6 H(t-5)g(t-5) = 2 H(t-5) \left[ e^{t-5} - e^{-2t+10} \right] 
+				</me>.
+			</p>
+		</example>
+
+	</subsection>
   </section>
 
   <section xml:id="convolutions">

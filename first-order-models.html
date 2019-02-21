@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:03-05:00    *-->
+<!--*    on 2019-02-21T13:43:53-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -91,7 +91,7 @@ MathJax.Hub.Config({
 <li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
 <li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
 <li><a href="laplace-complex.html" data-scroll="laplace-complex">Complex and repeated poles</a></li>
-<li><a href="laplace-properties.html" data-scroll="laplace-properties">Laplace transform properties</a></li>
+<li><a href="laplace-properties.html" data-scroll="laplace-properties">More Laplace transforms</a></li>
 <li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
 </ul>
 <h2 class="link"><a href="qualitative.html" data-scroll="qualitative"><span class="codenumber">3</span> <span class="title">Qualitative analysis</span></a></h2>
@@ -117,45 +117,45 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="first-order-models"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.7</span> <span class="title">Modeling with first-order ODEs</span>
 </h2>
-<a href="first-order-models.html" class="permalink">¶</a><p id="p-88"><em class="emphasis">Refer to section 1.16 of the text (pp. 44-47).</em></p>
-<p id="p-89">First-order ODEs are often used to model situations of growth and decay. The linear problem \(y'=ay+q(t)\) is a prototype for many important problems: </p>
+<a href="first-order-models.html" class="permalink">¶</a><p id="p-90"><em class="emphasis">Refer to section 1.16 of the text (pp. 44-47).</em></p>
+<p id="p-91">First-order ODEs are often used to model situations of growth and decay. The linear problem \(y'=ay+q(t)\) is a prototype for many important problems: </p>
 <dl class="description-list">
-<dt id="li-1">Population</dt>
-<dd><p id="p-90">A population \(y(t)\) of organisms has a constant net per capita birth (or death) rate.</p></dd>
-<dt id="li-2">Interest</dt>
-<dd><p id="p-91">Here \(y(t)\) is an amount invested with fixed positive interest rate \(a\text{.}\)</p></dd>
-<dt id="li-3">Radioactivity</dt>
-<dd><p id="p-92">\(y(t)\) is the mass of a radioactive isotope, and \(k
+<dt id="li-3">Population</dt>
+<dd><p id="p-92">A population \(y(t)\) of organisms has a constant net per capita birth (or death) rate.</p></dd>
+<dt id="li-4">Interest</dt>
+<dd><p id="p-93">Here \(y(t)\) is an amount invested with fixed positive interest rate \(a\text{.}\)</p></dd>
+<dt id="li-5">Radioactivity</dt>
+<dd><p id="p-94">\(y(t)\) is the mass of a radioactive isotope, and \(k
 lt 0\text{.}\)</p></dd>
-<dt id="li-4">Pharmacokinetics</dt>
-<dd><p id="p-93">In first-order kinetics, \(y(t)\) is the amount of a drug being metabolized in the body.</p></dd>
-<dt id="li-5">Cooling</dt>
-<dd><p id="p-94">If \(y(t)\) is the temperature of a body kept in an environment at fixed temperature \(E\text{,}\) let \(z(t)=y(t)-E\) be the "difference from environment." Then \(z'=a z\) for a cooling rate \(a \lt 0\text{;}\) temperature tends toward \(E\) exponentially. This is <dfn class="terminology">Newton's Law of Cooling</dfn>.</p></dd>
+<dt id="li-6">Pharmacokinetics</dt>
+<dd><p id="p-95">In first-order kinetics, \(y(t)\) is the amount of a drug being metabolized in the body.</p></dd>
+<dt id="li-7">Cooling</dt>
+<dd><p id="p-96">If \(y(t)\) is the temperature of a body kept in an environment at fixed temperature \(E\text{,}\) let \(z(t)=y(t)-E\) be the "difference from environment." Then \(z'=a z\) for a cooling rate \(a \lt 0\text{;}\) temperature tends toward \(E\) exponentially. This is <dfn class="terminology">Newton's Law of Cooling</dfn>.</p></dd>
 </dl>
 <p> To belabor the obvious, positive \(a\) represents growth and negative \(a\) leads to decay. In the simplest contexts, the rate \(a\) is constant, but in some models (like finance) a variable rate is more realistic.</p>
-<p id="p-95">(A note about interest: Rates in the real world may be quoted yearly, or quarterly, or according to any other finite time period. The rate in an ODE model is the "continuously compounded" rate. This is explained somewhat on page 45 of the text.)</p>
-<p id="p-96">The units of the derivative \(dy/dt\) are those of \(y\) divided by those of \(t\text{.}\) Let's write these as \(Y/T\text{.}\) Additive terms all need to have the same units, so both \(q(t)\) and \(a(t)y\) have those units as well. Consequently \(a\) has units \(1/T\text{,}\) or "per time," and has various interpretations when inverted: </p>
+<p id="p-97">(A note about interest: Rates in the real world may be quoted yearly, or quarterly, or according to any other finite time period. The rate in an ODE model is the "continuously compounded" rate. This is explained somewhat on page 45 of the text.)</p>
+<p id="p-98">The units of the derivative \(dy/dt\) are those of \(y\) divided by those of \(t\text{.}\) Let's write these as \(Y/T\text{.}\) Additive terms all need to have the same units, so both \(q(t)\) and \(a(t)y\) have those units as well. Consequently \(a\) has units \(1/T\text{,}\) or "per time," and has various interpretations when inverted: </p>
 <ul class="disc">
-<li id="li-6">When \(a \lt 0\text{,}\) the time \(\tau=-1/a\) is the <dfn class="terminology">relaxation time</dfn> or <dfn class="terminology">characteristic time</dfn>. If there is no forcing \(q\text{,}\) then \(y(\tau)= e^{-1} y(0) \approx 0.37 y(0)\text{.}\)</li>
-<li id="li-7">In radioactivity it's more common to use \(t_h=-\ln(2)/a\text{,}\) which is the <dfn class="terminology">half-life</dfn>. That's because \(\exp(at_h)=1/2\text{,}\) so half of the radioactive isotope is depleted in that much time.</li>
-<li id="li-8">Similarly, in population or another growth situation with \(a \gt 0\text{,}\) the time \(t_D=\ln(2)/a\) is the <dfn class="terminology">doubling time</dfn>. Note that populations and interest don't grow arithmetically, like \(1,2,3,4,\ldots\text{,}\) but geometrically, like \(1,2,4,8,\ldots\text{.}\)</li>
+<li id="li-8">When \(a \lt 0\text{,}\) the time \(\tau=-1/a\) is the <dfn class="terminology">relaxation time</dfn> or <dfn class="terminology">characteristic time</dfn>. If there is no forcing \(q\text{,}\) then \(y(\tau)= e^{-1} y(0) \approx 0.37 y(0)\text{.}\)</li>
+<li id="li-9">In radioactivity it's more common to use \(t_h=-\ln(2)/a\text{,}\) which is the <dfn class="terminology">half-life</dfn>. That's because \(\exp(at_h)=1/2\text{,}\) so half of the radioactive isotope is depleted in that much time.</li>
+<li id="li-10">Similarly, in population or another growth situation with \(a \gt 0\text{,}\) the time \(t_D=\ln(2)/a\) is the <dfn class="terminology">doubling time</dfn>. Note that populations and interest don't grow arithmetically, like \(1,2,3,4,\ldots\text{,}\) but geometrically, like \(1,2,4,8,\ldots\text{.}\)</li>
 </ul>
 <article class="example-like" id="example-12"><a knowl="" class="id-ref" refid="hk-example-12"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">1.7.1</span> <span class="title">First-order pharmacokinetics</span>
-</h6></a></article><div id="hk-example-12" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-97">According to <em class="emphasis">R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52</em>, caffeine in the bloodstream approximately satisfies first-order kinetics, though the half-life varies a great deal from one person to the next.</p>
-<p id="p-98">Suppose \(t_h=6\) hours. We can calculate \(a=-\ln(2)/t_h\approx 0.116\) per hour, and then the predicted effects of one cup of coffee are \(y(t) = e^{0.116t}y(0)\text{.}\) You can check that an equivalent, more direct expression is</p>
+</h6></a></article><div id="hk-example-12" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-99">According to <em class="emphasis">R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52</em>, caffeine in the bloodstream approximately satisfies first-order kinetics, though the half-life varies a great deal from one person to the next.</p>
+<p id="p-100">Suppose \(t_h=6\) hours. We can calculate \(a=-\ln(2)/t_h\approx 0.116\) per hour, and then the predicted effects of one cup of coffee are \(y(t) = e^{0.116t}y(0)\text{.}\) You can check that an equivalent, more direct expression is</p>
 <div class="displaymath">
 \begin{equation*}
 y(t) = 2^{-t/t_h} y(0)\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-99">A <dfn class="terminology">continuously stirred tank reactor</dfn> (CSTR) appears often in chemical engineering. One ideally assumes that the contents of the tank are mixed perfectly and instantaneously at all times. Then one writes an ODE that expresses mass balance.</p>
+<p id="p-101">A <dfn class="terminology">continuously stirred tank reactor</dfn> (CSTR) appears often in chemical engineering. One ideally assumes that the contents of the tank are mixed perfectly and instantaneously at all times. Then one writes an ODE that expresses mass balance.</p>
 <article class="exercise-like" id="exercise-1"><a knowl="" class="id-ref" refid="hk-exercise-1"><h6 class="heading">
 <span class="type">Checkpoint</span> <span class="codenumber">1.7.2</span>
-</h6></a></article><div id="hk-exercise-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-100">A 200 L tank contains 10 kg of dye. Pure water is added at a rate of 4 L per minute, while the mixture is drained at the same rate. How much dye is in the tank after 10 minutes?</p>
+</h6></a></article><div id="hk-exercise-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-102">A 200 L tank contains 10 kg of dye. Pure water is added at a rate of 4 L per minute, while the mixture is drained at the same rate. How much dye is in the tank after 10 minutes?</p>
 <div class="solutions">
 <a knowl="" class="id-ref" refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div id="hk-solution-1" class="hidden-content tex2jax_ignore"><div class="solution">
-<p id="p-101">Let \(y(t)\) be the mass of dye in the tank. The trick is to realize how rapidly it is being removed, and that depends on the time-varying concentration, \(y(t)/200\text{.}\) Specifically,</p>
+<p id="p-103">Let \(y(t)\) be the mass of dye in the tank. The trick is to realize how rapidly it is being removed, and that depends on the time-varying concentration, \(y(t)/200\text{.}\) Specifically,</p>
 <div class="displaymath">
 \begin{equation*}
 \dd{y}{t} = - \frac{4 \text{ L}}{\text{minute}} \cdot \frac{y \text{ kg}}{200 \text{ L}}
@@ -163,9 +163,24 @@ y(t) = 2^{-t/t_h} y(0)\text{.}
 \end{equation*}
 </div>
 <p>So \(y(t)=e^{-0.02 t}y(0)\) and \(y(10)=10 e^{-0.2}\) kg.</p>
-<p id="p-102">(These problems can also be solved by using concentration, not mass, as the dependent variable. But I find it easier to apply mass conservation in the form above.)</p>
+<p id="p-104">(These problems can also be solved by using concentration, not mass, as the dependent variable. But I find it easier to apply mass conservation in the form above.)</p>
 </div></div>
-</div></article></div></section></div></main>
+</div></article></div>
+<article class="example-like" id="example-13"><a knowl="" class="id-ref" refid="hk-example-13"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.7.3</span> <span class="title">Newton cooling</span>
+</h6></a></article><div id="hk-example-13" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-105">Suppose a mug of coffee at 90 C is put in a room kept at 20 C. In terms of the notation above, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dy}{dt} = a (y-20), \quad y(0)=90\text{.}
+\end{equation*}
+</div>
+<p>We could also pose it for the temperature difference \(z=y-20\) as \(z'=az\text{.}\) Either way it's a linear problem with solution</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = Ce^{at} + 20\text{.}
+\end{equation*}
+</div>
+<p>We determine \(C\) from the initial value: \(C=70\text{.}\) To get a value for \(a\text{,}\) we need the temperature at another time too. Say the coffee has cooled by \(7\) degrees in 10 minutes. Then \(83 = 70e^{10a}+20\text{,}\) or \(a=0.1\ln(0.9) \approx -0.01054\) per min. The coffee will reach 60 C when \(40 = 70e^{at}\text{,}\) or \(t\approx 53.1\) minutes.</p></article></div></section></div></main>
 </div>
 </body>
 </html>

@@ -23,6 +23,10 @@ echo "...done extraction"
 #echo "...done codes"
 #mv matlab/*.svg ../matlab
 
+git add ../*.html 
+git add ../knowl/*
+git add ../matlab/*.svg 
+git add *.xml 
 
 #cp -r * ~/Sites/305/
 #open http://localhost/~driscoll/305/notes.html

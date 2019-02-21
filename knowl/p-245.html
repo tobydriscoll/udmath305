@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:05-05:00    *-->
+<!--*    on 2019-02-21T13:43:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>A transform having pure imaginary poles can be done easily if there are only two of them. As always, poles occur in conjugate pairs, so we first consider</p>
+<p>Let's break down what happens in a fundamental case, \(y''-y=e^{rt}\text{.}\)  Transforming both sides gives \([s^2Y(s) - sy(0)-y'(0)] - Y(s) = 1/(s-r)\text{.}\) For reasons to be clarified later, let's skip to the "very particular" part with \(y_v(0)=y_v'(0)=0\text{,}\) for which</p>
 <div class="displaymath">
 \begin{equation*}
-Y(s) = \frac{A+Bs}{s^2+\omega^2}
+Y(s) = \frac{1}{(s^2-1)(s-r)} = \frac{1}{(s+1)(s-1)(s-r)}\text{.}
 \end{equation*}
 </div>
-<p>for some real constants \(A,B,\omega\text{.}\) This inverts easily to \(y(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)\text{,}\) and there is little else to say.</p>
-<span class="incontext"><a href="laplace-complex.html#p-245">in-context</a></span>
+<p>This time there are three poles. Again the book's trick works well here:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} \text{.}
+\end{equation*}
+</div>
+<p>It should be apparent that this works only if \(r\neq -1\) and \(r \neq 1\) (i.e., no resonance). From here we get three exponentials:</p>
+<div class="displaymath">
+\begin{equation*}
+y_v(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="laplace-solutions.html#p-245">in-context</a></span>
 </body>
 </html>

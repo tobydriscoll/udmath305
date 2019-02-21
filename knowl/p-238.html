@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:05-05:00    *-->
+<!--*    on 2019-02-21T13:43:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>So here is the plan of attack. Given an ODE \(Ay''+By'+Cy=f\text{,}\) we transform everything in sight (using linearity!) to get</p>
-<div class="displaymath">
-\begin{equation*}
-A[s^2Y(s) - sy(0)-y'(0)] + B[sY(s)-y(0)] + CY(s) = F(s)\text{.}
-\end{equation*}
-</div>
-<p>Now solve for the transform of the solution:</p>
-<div class="displaymath">
-\begin{equation*}
-Y(s) = \frac{ F(s) + (As+B)y(0) - Ay'(0)}{As^2 + Bs + C}\text{.}
-\end{equation*}
-</div>
-<p>Note that if we want just a particular solution, we can use \(y(0)=y'(0)=0\text{.}\) In any case, "all" we have to do know is to compute the inverse transform, that is, find \(y(t)\) given \(Y(s)\text{.}\) This is less straightforward than computing the forward transform, unfortunately. But we can make it managable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns.</p>
+<p>The correspondence between \(L[y]=Ay''+By'+Cy\) and \(P(s)=As^2+Bs+C\) is by now obvious. It came by way of assuming \(y(t)=Y(s)e^{st}\text{,}\) and we get \(Y(s)=1/P(s)\text{.}\) Factoring \(P\) tells us what we need to know. For example, if its roots are \(-2\) and \(-4\text{,}\) then we know that \(y(t)\) is a combination of \(e^{-2t}\) and \(e^{-4t}\text{.}\) If an exponential, polynomial, step, or impulse forcing term is present, it contributes to the solution in similarly predictable ways. The only mystery to work out is the coefficients.</p>
 <span class="incontext"><a href="laplace-solutions.html#p-238">in-context</a></span>
 </body>
 </html>

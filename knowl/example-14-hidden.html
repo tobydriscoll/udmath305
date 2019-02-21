@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-19T09:03:04-05:00    *-->
+<!--*    on 2019-02-21T13:43:53-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,20 +11,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = 6; b = 2;
-K = a/b;
-
-f = @(t,y) a*y - b*y^2;
-t = linspace(0,2.5,300);
-for y0 = K*[0.02 0.15 0.4 0.8 1.2 1.5]
-    [t,y] = ode45(f,t,y0);
-    plot(t,y), hold on
-end
-xlabel('t'), ylabel('y(t)')
-set(gca,'ygrid','on',...
-  'ytick',K*(0:.25:1),'yticklabel',{'0','','0.5K','','K'})
-</pre></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_log_solutions.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></article></body>
+<body><article class="example-like"><p>Consider the ODE \(y'=y-y^3\text{.}\) The equilibrium solutions are \(y=0\) and \(y=\pm 1\text{.}\) Consider also that \(y'\lt 0\) if \(-1\lt y \lt 0\) or \(y\gt 1\text{;}\) otherwise, \(y' \gt 0\text{.}\) This allows us to make a <dfn class="terminology">phase line diagram</dfn> clarifying that the steady states at \(y=\pm 1\) are stable, while the one at \(y=0\) is unstable.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="matlab/fo_ss_phaseline.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article></body>
 </html>
