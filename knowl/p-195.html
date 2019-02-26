@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:54-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,25 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose we have a root \(s\) and that \(r\) is close to but not equal to \(s\text{.}\) Then \(y_p=e^{rt}/P(r)\) is a particular solution to the exponential forcing. We can add any null solution to this and it will remain a solution, thus</p>
-<div class="displaymath">
-\begin{equation*}
-y=\frac{e^{rt}-e^{st}}{P(r)}
-\end{equation*}
-</div>
-<p>is a valid particular solution as well. Since \(P(s)=0\) by assumption, we can also write</p>
-<div class="displaymath">
-\begin{equation*}
-y=\frac{e^{rt}-e^{st}}{P(r)-P(s)}\text{.}
-\end{equation*}
-</div>
-<p>Suddenly this becomes very interesting as \(r\to s\text{;}\) we get an indeterminate \(0/0\text{.}\) Using L'Hopital's rule (but with \(r\) as the variable, not \(t\)), we get the limit</p>
-<div class="displaymath">
-\begin{equation*}
-y_p = \frac{te^{st}}{P'(s)}\text{,}
-\end{equation*}
-</div>
-<p>which is a valid particular solution even when forcing exactly at exponent \(s\text{.}\)</p>
+<p>Let's solve \(y''+5y'+6y=4 e^{-t}\text{,}\) with \(y(0)=0\text{,}\) \(y'(0)=1\text{.}\) In stages: </p>
+<ol class="decimal">
+<li><p><em class="emphasis">Null solution</em>. The characteristic equation of \(y''+5y'+6y=0\) is \(s^2+5s+6=0\text{,}\) which has roots \(s_1=-2\text{,}\) \(s_2=-3\text{.}\) Thus \(y_n=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p></li>
+<li><p><em class="emphasis">Particular solution</em>. The transfer function is \(Y(s)=1/(s^2+5s+6)\text{,}\) and \(Y(-1)=1/2\text{.}\) Hence \(y_p=\frac{1}{2}\cdot 4 e^{-t}=2e^{-t}\text{.}\)</p></li>
+<li><p><em class="emphasis">Complete solution</em>. \(y=y_n+y_p=c_1 e^{-2t}+c_2e^{-3t} + 2 e^{-t}\)</p></li>
+<li><p><em class="emphasis">Initial values</em>. We get \(0=y(0)=c_1+c_2+2\) and \(1=y'(0)=-2c_1-3c_2-2\text{.}\) This implies \(c_1=-3\text{,}\) \(c_2=1\text{.}\) Finally, \(y=-3 e^{-2t}+e^{-3t} + 2 e^{-t}\text{.}\)</p></li>
+</ol>
 <span class="incontext"><a href="so-forced-oscillators.html#p-195">in-context</a></span>
 </body>
 </html>

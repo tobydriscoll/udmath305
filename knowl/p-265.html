@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:55-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,27 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's transform the function</p>
-<div class="displaymath">
-\begin{equation*}
-f(t) = t + (1-t) H(t-2) + (e^{-2t}-1) H(t-3)\text{.}
-\end{equation*}
-</div>
-<p>The tricky bit is that to apply the transform formula for \(H(t-T)f(t-T)\text{,}\) we need the same shift to appear in both terms. We use a classic add-and-subtract trick:</p>
-<div class="displaymath">
-\begin{align*}
-f(t) \amp = t + (1-(t-2+2)) H(t-2) + (e^{-2[(t-3)+3]}-1) H(t-3)\\
-\amp = t + (-1-(t-2)) H(t-2) + (e^{-6}e^{-2(t-3)}-1) H(t-3)\\
-\amp = t - H(t-2) -(t-2) H(t-2) + e^{-6}e^{-2(t-3)}H(t-3) - H(t-3)\text{.}
-\end{align*}
-</div>
-<p>Now we're ready to read off the transform.</p>
-<div class="displaymath">
-\begin{equation*}
-F(s) = \frac{1}{s^2} - \frac{e^{-2s}}{s}  - \frac{e^{-2s}}{s^2} 
-+ e^{-6}\frac{e^{-3s}}{s+2} - \frac{e^{-3s}}{s}\text{.}
-\end{equation*}
-</div>
-<span class="incontext"><a href="laplace-properties.html#p-265">in-context</a></span>
+<p>Suppose \(y''+2y'+10y=6\text{.}\) The very particular solution has \(Y(s)=6/(s^2+2s+10)\text{.}\) We can use the trick of completing the square to write this as \(Y(s)=6/[(s-1)^2+9]\text{,}\) and thus \(y(t) = 2e^{-t}\sin(3t)\text{.}\)</p>
+<span class="incontext"><a href="so-laplace-repeated.html#p-265">in-context</a></span>
 </body>
 </html>

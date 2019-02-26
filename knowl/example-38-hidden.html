@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:55-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,25 +11,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>Let's transform the function</p>
+<body><article class="example-like"><p>The undamped oscillator \(y''+9y=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
 <div class="displaymath">
 \begin{equation*}
-f(t) = t + (1-t) H(t-2) + (e^{-2t}-1) H(t-3)\text{.}
+Y(s) = \frac{3}{(s^2+9)^2}\text{.}
 \end{equation*}
 </div>
-<p>The tricky bit is that to apply the transform formula for \(H(t-T)f(t-T)\text{,}\) we need the same shift to appear in both terms. We use a classic add-and-subtract trick:</p>
-<div class="displaymath">
-\begin{align*}
-f(t) \amp = t + (1-(t-2+2)) H(t-2) + (e^{-2[(t-3)+3]}-1) H(t-3)\\
-\amp = t + (-1-(t-2)) H(t-2) + (e^{-6}e^{-2(t-3)}-1) H(t-3)\\
-\amp = t - H(t-2) -(t-2) H(t-2) + e^{-6}e^{-2(t-3)}H(t-3) - H(t-3)\text{.}
-\end{align*}
-</div>
-<p>Now we're ready to read off the transform.</p>
+<p>This doesn't look like anything easy. However, note that</p>
 <div class="displaymath">
 \begin{equation*}
-F(s) = \frac{1}{s^2} - \frac{e^{-2s}}{s}  - \frac{e^{-2s}}{s^2} 
-+ e^{-6}\frac{e^{-3s}}{s+2} - \frac{e^{-3s}}{s}\text{.}
+sY(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frad{d}{ds} \left[ \frac{1}{s^2+9} \right] \text{.}
+\end{equation*}
+</div>
+<p>Therefore, \(sY(s)\) is the transform of \(\frac{1}{2} t \sin(3t)\text{.}\) So this must be \(y'(t)\text{.}\) An integration by parts then recovers</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 \end{equation*}
 </div></article></body>
 </html>

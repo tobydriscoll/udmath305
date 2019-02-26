@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:55-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,18 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's find the inverse of \(F(s) = \frac{6 e^{-5s}}{s^2+s-2}\text{.}\) We write it as \(F(s) = 6^{-5s} G(s)\text{,}\) where</p>
-<div class="displaymath">
-\begin{equation*}
-G(s) = \frac{1}{(s+2)(s-1)} = \frac{1}{(1+2)(s-1)} + \frac{1}{(s+2)(-2-1)}\text{.}
-\end{equation*}
-</div>
-<p>This inverts to give \(g(t) = e{t}/3 - e^{-2t}/3\text{.}\) Thus</p>
-<div class="displaymath">
-\begin{equation*}
-f(t) = 6 H(t-5)g(t-5) = 2 H(t-5) \left[ e^{t-5} - e^{-2t+10} \right] \text{.}
-\end{equation*}
-</div>
-<span class="incontext"><a href="laplace-properties.html#p-267">in-context</a></span>
+<p>The problem with Laplace transforms as a one-stop solver is that the particular solution we find is always the "very particular" one that includes some terms from the null solution. Equivalently, the poles of \(Y(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. It's extra algebra to find the coefficients of the null/transient parts, but that step can't be skipped. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases.</p>
+<span class="incontext"><a href="so-laplace-repeated.html#p-267">in-context</a></span>
 </body>
 </html>

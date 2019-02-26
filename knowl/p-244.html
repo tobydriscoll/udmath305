@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:54-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,25 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="decimal">
-<li>
-<em class="emphasis">Exponential functions.</em> This is straightforward to calculate from definition. For any complex number \(z\text{,}\)<div class="displaymath">
+<p>While UC relies on "educated guesswork" (actually rigid rules that are a bit complex to apply), <dfn class="terminology">variation of parameters</dfn> follows the same recipe every time. Given \(L[y]=f\text{,}\) suppose we have a general null solution in the form</p>
+<div class="displaymath">
 \begin{equation*}
-{\cal L}[e^{z t}] = \int_0^\infty e^{(z-s)t}\, dt = \left[ -\frac{1}{s-z} e^{(z-s)t} \right]_0^\infty = \frac{1}{s-z}\text{.}
-\end{equation*}
-</div>(To make this valid requires that \({\text Re}(z)\lt s\text{,}\) but we are going to ignore such technicalities.) An important special case is when \(z=0\text{:}\) \({\cal L}[1]=1/s\text{.}\)</li>
-<li>
-<em class="emphasis">Cos and sin.</em> We can use an imaginary number in the exponential and take the real or imaginary part of the result.  Thus,<div class="displaymath">
-\begin{equation*}
-{\cal L}[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
-\end{equation*}
-</div>and<div class="displaymath">
-\begin{equation*}
-{\cal L}[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
+y_n(t) = c_1 y_1(t) + c_2 y_2(t)\text{.}
 \end{equation*}
 </div>
-</li>
-</ol>
-<span class="incontext"><a href="laplace-solutions.html#p-244">in-context</a></span>
+<p>For problems with constant coefficients, \(y_1\) and \(y_2\) are exponentials (or sin/cos equivalents), possibly multiplied by \(t\text{.}\) In any case, the VP trick is to replace the integration constants with functions of time:</p>
+<div class="displaymath">
+\begin{equation*}
+y_p(t) = c_1(t) y_1(t) + c_2(t) y_2(t)\text{.}
+\end{equation*}
+</div>
+<p>To keep notation simpler, we assume below that the coefficient of \(y''\) in the ODE is 1.</p>
+<span class="incontext"><a href="so-general-forcing.html#p-244">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:55-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,16 +11,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>Let's find the inverse of \(F(s) = \frac{6 e^{-5s}}{s^2+s-2}\text{.}\) We write it as \(F(s) = 6^{-5s} G(s)\text{,}\) where</p>
+<body><article class="example-like"><p>Suppose \(y''+2y'+10y=6\text{.}\) The very particular solution has \(Y(s)=6/(s^2+2s+10)\text{.}\) We can use the trick of completing the square to write this as \(Y(s)=6/[(s-1)^2+9]\text{,}\) and thus \(y(t) = 2e^{-t}\sin(3t)\text{.}\)</p>
+<p>Things are much more complicated for a harmonically forced case such as \(y''+2y'+10y=\cos(2t)\text{.}\) Now</p>
 <div class="displaymath">
 \begin{equation*}
-G(s) = \frac{1}{(s+2)(s-1)} = \frac{1}{(1+2)(s-1)} + \frac{1}{(s+2)(-2-1)}\text{.}
+Y(s) = \frac{s}{(s^2+4)(s^2+2s+10)}\text{.}
 \end{equation*}
 </div>
-<p>This inverts to give \(g(t) = e{t}/3 - e^{-2t}/3\text{.}\) Thus</p>
+<p>It is true that we have a decomposition in the form</p>
 <div class="displaymath">
 \begin{equation*}
-f(t) = 6 H(t-5)g(t-5) = 2 H(t-5) \left[ e^{t-5} - e^{-2t+10} \right] \text{.}
+Y(s) = \frac{A+Bs}{s^2+4} + \frac{C+Es}{(s-1)^2+9}\text{,}
 \end{equation*}
-</div></article></body>
+</div>
+<p>which is eminently invertible. But finding the four coefficients is a pretty heavy lift to do by hand.</p></article></body>
 </html>

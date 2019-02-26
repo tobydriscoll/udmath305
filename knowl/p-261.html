@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:55-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The problem with Laplace transforms as a one-stop solver for linear, constant-coefficient problems is that the particular solution we find is always the "very particular" one that includes some terms from the null solution. That is because the poles of \(Y(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. It's extra algebra to find the coefficients of the null/transient parts, but that step can't be skipped. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases.</p>
-<span class="incontext"><a href="laplace-complex.html#p-261">in-context</a></span>
+<p>In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
+<div class="displaymath">
+\begin{align*}
+F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
+\amp = -\int_0^\infty t f(t) e^{-st}\, dt\\
+\amp = - \mathcal{L}[ tf(t) ]\text{.}
+\end{align*}
+</div>
+<p>Take a moment to appreciate this. Earlier we found that a derivative in \(t\) corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
+<span class="incontext"><a href="so-laplace-repeated.html#p-261">in-context</a></span>
 </body>
 </html>

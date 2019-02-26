@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:54-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,10 +11,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>The characteristic polynomial of \(y''''-y=0\) is \(s^4-1\text{.}\) The roots are the "fourth roots of unity," given by \(s_j=\exp(2\pi i j/4)\) for \(j=0,1,2,3\text{.}\) These simplify to \(\pm 1, \pm i\text{.}\) In real form the null solution is</p>
+<body><article class="example-like"><p>The ODE \(y'''+2y''-y'-2y=4 e^{2t}\) has characteristic polynomial \(P(s)=s^2+2s^2-s-2\text{.}\) The roots of \(P\) are \(-2,-1,1\text{.}\) So the general null solution is</p>
 <div class="displaymath">
 \begin{equation*}
-y_n = c_1 e^{-t} + c_2 e^{t} + c_3 \cos(t) + c_4\sin(t)\text{.}
+y_n = c_1 e^{-2t} + c_2 e^{-t} + c_3 e^{2t}\text{.}
 \end{equation*}
-</div></article></body>
+</div>
+<p>The transfer function is evaluated at \(r=2\) to get \(Y(2)=1/P(2)=1/12\text{.}\) So the complete solution is</p>
+<div class="displaymath">
+\begin{equation*}
+y = c_1 e^{-2t} + c_2 e^{-t} + c_3 e^{2t} + \frac{1}{3}e^{2t}\text{.}
+\end{equation*}
+</div>
+<p>We would need three initial conditions in order to specify the integration constants uniquely.</p></article></body>
 </html>

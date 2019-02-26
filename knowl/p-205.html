@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:54-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The ODE \(y'''+2y''-y'-2y=4 e^{2t}\) has characteristic polynomial \(P(s)=s^2+2s^2-s-2\text{.}\) The roots of \(P\) are \(-2,-1,1\text{.}\) So the general null solution is</p>
+<p>Suppose we have a root \(s\) and that \(r\) is close to but not equal to \(s\text{.}\) Then \(y_p=e^{rt}/P(r)\) is a particular solution to the exponential forcing. We can add any null solution to this and it will remain a solution, thus</p>
 <div class="displaymath">
 \begin{equation*}
-y_n = c_1 e^{-2t} + c_2 e^{-t} + c_3 e^{2t}\text{.}
+y=\frac{e^{rt}-e^{st}}{P(r)}
 \end{equation*}
 </div>
-<p>The transfer function is evaluated at \(r=2\) to get \(Y(2)=1/P(2)=1/12\text{.}\) So the complete solution is</p>
+<p>is a valid particular solution as well. Since \(P(s)=0\) by assumption, we can also write</p>
 <div class="displaymath">
 \begin{equation*}
-y = c_1 e^{-2t} + c_2 e^{-t} + c_3 e^{2t} + \frac{1}{3}e^{2t}\text{.}
+y=\frac{e^{rt}-e^{st}}{P(r)-P(s)}\text{.}
 \end{equation*}
 </div>
-<p>We would need three initial conditions in order to specify the integration constants uniquely.</p>
-<span class="incontext"><a href="so-higher-order.html#p-205">in-context</a></span>
+<p>Suddenly this becomes very interesting as \(r\to s\text{;}\) we get an indeterminate \(0/0\text{.}\) Using L'Hopital's rule (but with \(r\) as the variable, not \(t\)), we get the limit</p>
+<div class="displaymath">
+\begin{equation*}
+y_p = \frac{te^{st}}{P'(s)}\text{,}
+\end{equation*}
+</div>
+<p>which is a valid particular solution even when forcing exactly at exponent \(s\text{.}\)</p>
+<span class="incontext"><a href="so-forced-oscillators.html#p-205">in-context</a></span>
 </body>
 </html>

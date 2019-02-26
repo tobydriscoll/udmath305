@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:54-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,31 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's go back and revisit an old first-order linear friend, \(y'-ay=e^{ct}\text{.}\) Transforming both sides, we get</p>
+<p>Taking this odd assumption on faith, we compute</p>
 <div class="displaymath">
 \begin{equation*}
-[sY(s)-y(0)] - aY(s) =\frac{1}{s-c}\text{,}
+y_p' = c_1'y_1+c_1y_1'+ c_2'y_2+c_2y_2'  \text{.}
 \end{equation*}
 </div>
-<p>and thus</p>
+<p>Before we go on, we're going to put a restriction on our mystery functions, namely \(c_1'y_1+c_2'y_2=0\text{.}\) That makes life a little easier. Continuing, we get</p>
 <div class="displaymath">
 \begin{equation*}
-Y(s) = \frac{y(0)}{s-a} + \frac{1}{(s-c)(s-a)}\text{.}
+y_p'' = c_1'y_1'+ c_1y_1'' + c_2'y_2'+ c_2y_2''  \text{.}
 \end{equation*}
 </div>
-<p>The first part corresponds to \(y_n(t)=y(0)e^{at}\text{,}\) which is the null solution. To invert the transform of the second term, we need to express it using <dfn class="terminology">partial fractions</dfn>. The text has a clever mnemonic for this:</p>
+<p>When we put all this mess into \(y''+By'+Cy=f\text{,}\) something cool happens:</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}\text{.}
+c_1(y_1''+By_1'+Cy_1) + c_2(y_2''+By_2'+Cy_2) + c_1'y_1' + c_2'y_2' = f \text{.}
 \end{equation*}
 </div>
-<p>Thus we get a sum of two exponentials,</p>
-<div class="displaymath">
-\begin{equation*}
-y_v(t) =  \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
-\end{equation*}
-</div>
-<p>This is the "very particular" solution that has \(y_v(0)=0\text{.}\)</p>
-<span class="incontext"><a href="laplace-solutions.html#p-245">in-context</a></span>
+<p>Thanks to the null property of \(y_1\) and \(y_2\text{,}\) this boils down to \(c_1'y_1' + c_2'y_2' = f\text{.}\)</p>
+<span class="incontext"><a href="so-general-forcing.html#p-245">in-context</a></span>
 </body>
 </html>

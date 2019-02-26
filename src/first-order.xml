@@ -975,5 +975,137 @@ grid on, ylim([0 5])
     
   </section>
 
+  <section xml:id="laplace-solutions">
+	<title>Laplace transform methods</title>
+	<introduction>
+	<p>
+		There is a shorthand method called the <term>Laplace transform</term> for deriving the solutions of linear, constant-coefficient equations that have forcing functions such as exponentials, steps, and impulses. Given (almost) any function <m>f(t)</m>, there is a doppelganger function <m>F(s)</m> defined by an integral,
+		<men xml:id="so-lap-lxform">
+			F(s) = \int_0^\infty f(t) e^{-st}\, dt
+		</men>. 
+		In this business, time starts at <m>t=0</m>, and any reference to <m>f(t)</m> for negative <m>t</m> is defined to be zero. The Laplace transform is often written using a script L, as in 
+    <me>
+      F(s)=\mathcal{L}[f(t)]
+    </me>. 
+    The usual convention is that a lowercase function of <m>t</m> transforms to its uppercase namesake as a function of <m>s</m>.  
+	</p>
+  <p>
+    It should be clear from the definition that we have two important properties,
+    <md>
+      <mrow>\mathcal{L}[ f(t) + g(t) ] = F(s) + G(s) </mrow>
+      <mrow>\mathcal{L}[ C f(t) ] = C F(s)</mrow>
+    </md>, 
+    where <m>C</m> is any constant. In short, we can say that the Laplace transform is a <em>linear</em> operation on functions, just like differentiation. 
+  </p>
+	</introduction>
+
+	<subsection>
+		<title>Derivatives</title>
+		<p>
+			Applying integration by parts to the definition reveals the main reason Laplace transforms are useful in ODEs.  
+			<md>
+				<mrow>\mathcal{L}[y'(t)] \amp = \int_0^\infty y'(t) e^{-st}\, dt </mrow>
+				<mrow>\amp = \left[ y(t)e^{-st}\right]_0^\infty - \int_0^\infty (-s) y(t) e^{-st}\, dt </mrow>
+				<mrow>\amp = -y(0) + s Y(s)</mrow>
+			</md>. 
+			Calculus (differentiation) is thereby turned into algebra (multiplication). So here is the plan of attack. Given an ODE <m>y'=ay+q(t)</m>, we transform everything in sight to get 
+			<me>
+				sY(s)-y(0) = a Y(s) + F(s)
+			</me>. 
+			Now solve for the transform of the solution:
+			<me>
+				Y(s) = \frac{ F(s) + y(0)}{s-a}
+			</me>. 
+      Now "all" we have to do know is to compute the inverse transform, that is, find <m>y(t)</m> given <m>Y(s)</m>. This is less straightforward than computing the forward transform, unfortunately. But we can make it managable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns. 
+		</p>
+	</subsection>
+
+	<subsection> 
+		<title>Exponentials</title>
+		<p>
+		  We can find the transform of an exponential function from the transform definition. For any complex number <m>c</m>,
+			<me>
+        {\cal L}[e^{c t}] = \int_0^\infty e^{(c-s)t}\, dt = \left[ -\frac{1}{s-c} e^{(c-s)t} \right]_0^\infty = \frac{1}{s-c}
+      </me>. 
+      (To make this valid requires that <m>{\text Re}(c)\lt s</m>, but we are going to ignore such technicalities.) An important special case is when <m>c=0</m>: <m>{\cal L}[1]=1/s</m>.
+		</p>
+
+    <p>
+      Let's consider <m>y'-ay=e^{ct}</m> in this light. Transforming both sides, we get 
+			<me> 
+        [sY(s)-y(0)] - aY(s) =\frac{1}{s-c}
+      </me>,
+			and thus 
+			<me> 
+        Y(s) = \frac{y(0)}{s-a} + \frac{1}{(s-c)(s-a)}
+      </me>. 
+      We can immediately recognize the first term as the transform of <m>e^{at}y(0)</m>. To invert the transform of the second term, we need to express it using <term>partial fractions</term>. There is a general procedure for this, but it's worth knowing a simple mnemonic for this particular form:
+			<me> 
+        \frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}
+      </me>. 
+      Thus the inverse transform of this fraction is a sum of two exponentials,
+			<me>
+        y_v(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) 
+      </me>. 
+			This is the "very particular" solution that has <m>y_v(0)=0</m>. The general solution is <m>e^{at}y(0) + y_v(t)</m>. As we noted before, the resonant case follows from the limit <m>c\to a</m>, so that <m>y_v=te^{at}</m>.
+    </p>
+
+    <p>
+      From here we could include sinusoidal forcing functions via the parts of <m>e^{i\omega t}</m>, but we'll put that off for the next chapter. 
+    </p>
+	</subsection>
+
+	<subsection>
+		<title>Impulses, steps, shifts</title>
+		<p>
+      Since integration against an impulse is just point evaluation, finding the transform of an impulse is easy. 
+      <md>
+        <mrow>{\cal L}[\delta(t)] \amp = 1 </mrow>
+        <mrow>{\cal L}[\delta(t-T)] \amp = e^{-sT}</mrow>
+      </md>. 
+      Finding the transform of a step is also pretty easy:
+      <md>
+        <mrow>{\cal L}[H(t-T)] \amp = \int_T^\infty e^{-st}\, dt </mrow>
+        <mrow>\amp = -\frac{1}{s} \Bigl[ e^{-st} \Bigr]_T^\infty = \frac{e^{-sT}}{s} </mrow>
+      </md>. 
+      A slight generalization of the calculation results in an important rule: 
+      <md>
+				<mrow>{\cal L}[H(t-T)f(t-T)] \amp = \int_T^\infty f(t-T) e^{-st}\, dt </mrow>
+				<mrow>\amp = \int_0^\infty f(u) e^{-s(u+T)}\, du </mrow>
+				<mrow>\amp = e^{-sT} \int_0^\infty f(u) e^{-su}\, du = e^{-sT} {\cal L}[f(t)]</mrow>
+			</md>. 
+      This is sometimes called the <term>shift theorem</term>. 
+	  </p>
+
+    <example>
+      <p>
+        Let's apply the new rules to solve <m>y'=ay + \delta(t-T)</m>, with <m>y(0)=0</m>. Transform to get 
+        <me> 
+         [sY(s)-y(0)] - aY(s) = e^{-sT}
+        </me>,
+		  	and thus 
+		  	<me> 
+          Y(s) = \frac{e^{-sT}}{s-a}
+        </me>. 
+       Notice that <m>Y(s) = e^{-sT} F(s)</m>, where <m>F(s)=1/(s-a)</m> is the transform of <m>f(t)=e^{at}</m>. By the shift theorem, it must be that 
+       <me>
+         y(t) = H(t-T)f(t-T) = H(t-T)e^{a(t-T)}
+       </me>.
+      </p>
+    </example>
+   </subsection>
+
+  <subsection>
+    <title>Transfer function</title>
+    <p>
+      Perhaps it's clear by now that <m>y'=ay+q(t)</m> always leads to <m>Y(s) = Q(s)/(s-a)</m> as a particular solution. The term <m>1/(s-a)</m> is called the <term>transfer function</term> of the ODE. Values of <m>s</m> that are roots of the denominator are known as <term>poles</term> of the transform. They point out exponential solutions. 
+    </p>
+    <p>
+      Recall that the impulse response is the case when <m>q(t)=\delta(t)</m>, so that <m>Q(s)=1</m>. This implies that the transfer function is the transform of the impulse response. We'll be encountering these ideas again in the next chapter.
+    </p>
+  </subsection>
+	
+  </section>
+
 
 </chapter>

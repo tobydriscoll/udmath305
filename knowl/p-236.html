@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:54-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,26 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To summarize so far, we get a valid particular solution using two conditions,</p>
+<p>Let's find a particular solution of \(y'' +4y'+4y=8t^2\text{.}\) We reason as follows. If we plug in some \(Ct^2\) for \(y\) with a constant \(C\text{,}\) then all the derivatives generate multiples of \(t\) and \(1\text{.}\) That is, both sides of the ODE will be quadratic polynomials. So we generalize just a bit to allow</p>
+<div class="displaymath">
+\begin{equation*}
+y_p = A + Bt + Ct^2\text{.}
+\end{equation*}
+</div>
+<p>Plugging that into the ODE yields</p>
 <div class="displaymath">
 \begin{align*}
-c_1'y_1+c_2'y_2 \amp = 0 \\
-c_1'y_1' + c_2'y_2' \amp = f \text{.}
+2C + 4(B+2Ct) + 4(A+Bt+Ct^2) \amp = 8t^2\\
+4C t^2 + (8C+4B) + (2C+4B+4A) \apm = 8t^2\text{.}
 \end{align*}
 </div>
-<p>Stare at this long enough and you'll realize that it's just two linear equations for \(c_1'\) and \(c_2'\text{.}\) You can do some elimination to solve them, and you wind up with</p>
-<div class="displaymath">
-\begin{equation*}
-c_1' = -\frac{y_2f}{W}, \qquad c_2' = \frac{y_1f}{W},
-\end{equation*}
-</div>
-<p>with</p>
-<div class="displaymath">
-\begin{equation*}
-W(t) = y_1y_2'-y_1'y_2\text{,}
-\end{equation*}
-</div>
-<p>known as the <dfn class="terminology">Wronskian</dfn> of \(y_1\) and \(y_2\text{.}\) Finally, "all" you have to do is integrate these expressions to get \(c_1\) and \(c_2\text{,}\) and from there you get \(y_p\text{.}\)</p>
+<p>This has to be an identity for all \(t\)&gt;. Matching like powers, we can read off \(C=2\text{,}\) then \(B=-4\text{,}\) and finally \(A=3\)&gt;. This provides us with \(y_p=2t^2+4t+3\text{.}\) (The complete solution would require us to use the characteristic equation to find the null solution as well.)</p>
 <span class="incontext"><a href="so-general-forcing.html#p-236">in-context</a></span>
 </body>
 </html>

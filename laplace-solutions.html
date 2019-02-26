@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:53-05:00    *-->
+<!--*    on 2019-02-26T16:20:17-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -57,11 +57,11 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="so-general-forcing.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="laplace-complex.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="separable.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="first-order-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="second-order-ode.html" title="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="so-general-forcing.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="laplace-complex.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="separable.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="first-order-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="second-order-ode.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -79,6 +79,7 @@ MathJax.Hub.Config({
 <li><a href="steady-states.html" data-scroll="steady-states">Steady states</a></li>
 <li><a href="logistic-equation.html" data-scroll="logistic-equation">Logistic equation</a></li>
 <li><a href="separable.html" data-scroll="separable">Separable equations</a></li>
+<li><a href="laplace-solutions.html" data-scroll="laplace-solutions" class="active">Laplace transform methods</a></li>
 </ul>
 <h2 class="link"><a href="second-order-ode.html" data-scroll="second-order-ode"><span class="codenumber">2</span> <span class="title">Second-order ODEs</span></a></h2>
 <ul>
@@ -89,9 +90,8 @@ MathJax.Hub.Config({
 <li><a href="so-higher-order.html" data-scroll="so-higher-order">Higher-order ODEs</a></li>
 <li><a href="so-applications.html" data-scroll="so-applications">Applications of oscillators</a></li>
 <li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
-<li><a href="laplace-solutions.html" data-scroll="laplace-solutions" class="active">Laplace transform methods</a></li>
-<li><a href="laplace-complex.html" data-scroll="laplace-complex">Complex and repeated poles</a></li>
-<li><a href="laplace-properties.html" data-scroll="laplace-properties">More Laplace transforms</a></li>
+<li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
+<li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
 <li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
 </ul>
 <h2 class="link"><a href="qualitative.html" data-scroll="qualitative"><span class="codenumber">3</span> <span class="title">Qualitative analysis</span></a></h2>
@@ -115,19 +115,32 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="laplace-solutions"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.8</span> <span class="title">Laplace transform methods</span>
+<span class="type">Section</span> <span class="codenumber">1.11</span> <span class="title">Laplace transform methods</span>
 </h2>
-<a href="laplace-solutions.html" class="permalink">¶</a><section class="introduction" id="introduction-10"><p id="p-240">The correspondence between \(L[y]=Ay''+By'+Cy\) and \(P(s)=As^2+Bs+C\) is by now obvious. It came by way of assuming \(y(t)=Y(s)e^{st}\text{,}\) and we get \(Y(s)=1/P(s)\text{.}\) Factoring \(P\) tells us what we need to know. For example, if its roots are \(-2\) and \(-4\text{,}\) then we know that \(y(t)\) is a combination of \(e^{-2t}\) and \(e^{-4t}\text{.}\) If an exponential, polynomial, step, or impulse forcing term is present, it contributes to the solution in similarly predictable ways. The only mystery to work out is the coefficients.</p>
-<p id="p-241">There is a method of expressing all this knowledge called the <dfn class="terminology">Laplace transform</dfn>. Given (almost) any function \(f(t)\text{,}\) there is a doppelganger function \(F(s)\) defined by an integral,</p>
+<a href="laplace-solutions.html" class="permalink">¶</a><section class="introduction" id="introduction-5"><p id="p-137">There is a shorthand method called the <dfn class="terminology">Laplace transform</dfn> for deriving the solutions of linear, constant-coefficient equations that have forcing functions such as exponentials, steps, and impulses. Given (almost) any function \(f(t)\text{,}\) there is a doppelganger function \(F(s)\) defined by an integral,</p>
 <div class="displaymath">
 \begin{equation}
-F(s) = \int_0^\infty f(t) e^{-st}\, dt\text{.}\label{so-lap-lxform}\tag{2.8.1}
+F(s) = \int_0^\infty f(t) e^{-st}\, dt\text{.}\label{so-lap-lxform}\tag{1.11.1}
 \end{equation}
 </div>
-<p>In this business, time starts at \(t=0\text{,}\) and nothing before then matters. One thing to note right away is that the Laplace transform is a linear operator. It's often written using a script L, as in \(F(s)=\mathcal{L}[f(t)]\text{.}\) The usual convention is that a lowercase function of \(t\) transforms to its uppercase namesake as a function of \(s\text{.}\)</p></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.8.1</span> <span class="title">Derivatives</span>
+<p>In this business, time starts at \(t=0\text{,}\) and any reference to \(f(t)\) for negative \(t\) is defined to be zero. The Laplace transform is often written using a script L, as in</p>
+<div class="displaymath">
+\begin{equation*}
+F(s)=\mathcal{L}[f(t)]\text{.}
+\end{equation*}
+</div>
+<p>The usual convention is that a lowercase function of \(t\) transforms to its uppercase namesake as a function of \(s\text{.}\)</p>
+<p id="p-138">It should be clear from the definition that we have two important properties,</p>
+<div class="displaymath">
+\begin{gather*}
+\mathcal{L}[ f(t) + g(t) ] = F(s) + G(s) \\
+\mathcal{L}[ C f(t) ] = C F(s)\text{,}
+\end{gather*}
+</div>
+<p>where \(C\) is any constant. In short, we can say that the Laplace transform is a <em class="emphasis">linear</em> operation on functions, just like differentiation.</p></section><section class="subsection" id="subsection-15"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.1</span> <span class="title">Derivatives</span>
 </h3>
-<p id="p-242">Applying integration by parts to the definition reveals the main reason Laplace transforms are useful in ODEs.</p>
+<p id="p-139">Applying integration by parts to the definition reveals the main reason Laplace transforms are useful in ODEs.</p>
 <div class="displaymath">
 \begin{align*}
 \mathcal{L}[y'(t)] \amp = \int_0^\infty y'(t) e^{-st}\, dt \\
@@ -135,49 +148,29 @@ F(s) = \int_0^\infty f(t) e^{-st}\, dt\text{.}\label{so-lap-lxform}\tag{2.8.1}
 \amp = -y(0) + s Y(s)\text{.}
 \end{align*}
 </div>
-<p>Calculus (differentiation) is turned into algebra (multiplication). We can apply this rule repeatedly to transform higher derivatives:</p>
+<p>Calculus (differentiation) is thereby turned into algebra (multiplication). So here is the plan of attack. Given an ODE \(y'=ay+q(t)\text{,}\) we transform everything in sight to get</p>
 <div class="displaymath">
 \begin{equation*}
-\mathcal{L}[y''(t)] = s \mathcal{L}[y'(t)] - y'(0) = s^2Y(s) - sy(0) - y'(0)\text{.}
-\end{equation*}
-</div>
-<p id="p-243">So here is the plan of attack. Given an ODE \(Ay''+By'+Cy=f\text{,}\) we transform everything in sight (using linearity!) to get</p>
-<div class="displaymath">
-\begin{equation*}
-A[s^2Y(s) - sy(0)-y'(0)] + B[sY(s)-y(0)] + CY(s) = F(s)\text{.}
+sY(s)-y(0) = a Y(s) + F(s)\text{.}
 \end{equation*}
 </div>
 <p>Now solve for the transform of the solution:</p>
 <div class="displaymath">
 \begin{equation*}
-Y(s) = \frac{ F(s) + (As+B)y(0) - Ay'(0)}{As^2 + Bs + C}\text{.}
+Y(s) = \frac{ F(s) + y(0)}{s-a}\text{.}
 \end{equation*}
 </div>
-<p>Note that if we want just a particular solution, we can use \(y(0)=y'(0)=0\text{.}\) In any case, "all" we have to do know is to compute the inverse transform, that is, find \(y(t)\) given \(Y(s)\text{.}\) This is less straightforward than computing the forward transform, unfortunately. But we can make it managable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns.</p></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.8.2</span> <span class="title">Canonical transforms</span>
+<p>Now "all" we have to do know is to compute the inverse transform, that is, find \(y(t)\) given \(Y(s)\text{.}\) This is less straightforward than computing the forward transform, unfortunately. But we can make it managable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns.</p></section><section class="subsection" id="subsection-16"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.2</span> <span class="title">Exponentials</span>
 </h3>
-<ol id="p-244" class="decimal">
-<li id="li-17">
-<em class="emphasis">Exponential functions.</em> This is straightforward to calculate from definition. For any complex number \(z\text{,}\)<div class="displaymath">
+<p id="p-140">We can find the transform of an exponential function from the transform definition. For any complex number \(c\text{,}\)</p>
+<div class="displaymath">
 \begin{equation*}
-{\cal L}[e^{z t}] = \int_0^\infty e^{(z-s)t}\, dt = \left[ -\frac{1}{s-z} e^{(z-s)t} \right]_0^\infty = \frac{1}{s-z}\text{.}
-\end{equation*}
-</div>(To make this valid requires that \({\text Re}(z)\lt s\text{,}\) but we are going to ignore such technicalities.) An important special case is when \(z=0\text{:}\) \({\cal L}[1]=1/s\text{.}\)</li>
-<li id="li-18">
-<em class="emphasis">Cos and sin.</em> We can use an imaginary number in the exponential and take the real or imaginary part of the result.  Thus,<div class="displaymath">
-\begin{equation*}
-{\cal L}[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
-\end{equation*}
-</div>and<div class="displaymath">
-\begin{equation*}
-{\cal L}[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
+{\cal L}[e^{c t}] = \int_0^\infty e^{(c-s)t}\, dt = \left[ -\frac{1}{s-c} e^{(c-s)t} \right]_0^\infty = \frac{1}{s-c}\text{.}
 \end{equation*}
 </div>
-</li>
-</ol></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.8.3</span> <span class="title">The first-order case</span>
-</h3>
-<p id="p-245">Let's go back and revisit an old first-order linear friend, \(y'-ay=e^{ct}\text{.}\) Transforming both sides, we get</p>
+<p>(To make this valid requires that \({\text Re}(c)\lt s\text{,}\) but we are going to ignore such technicalities.) An important special case is when \(c=0\text{:}\) \({\cal L}[1]=1/s\text{.}\)</p>
+<p id="p-141">Let's consider \(y'-ay=e^{ct}\) in this light. Transforming both sides, we get</p>
 <div class="displaymath">
 \begin{equation*}
 [sY(s)-y(0)] - aY(s) =\frac{1}{s-c}\text{,}
@@ -189,54 +182,69 @@ Y(s) = \frac{ F(s) + (As+B)y(0) - Ay'(0)}{As^2 + Bs + C}\text{.}
 Y(s) = \frac{y(0)}{s-a} + \frac{1}{(s-c)(s-a)}\text{.}
 \end{equation*}
 </div>
-<p>The first part corresponds to \(y_n(t)=y(0)e^{at}\text{,}\) which is the null solution. To invert the transform of the second term, we need to express it using <dfn class="terminology">partial fractions</dfn>. The text has a clever mnemonic for this:</p>
+<p>We can immediately recognize the first term as the transform of \(e^{at}y(0)\text{.}\) To invert the transform of the second term, we need to express it using <dfn class="terminology">partial fractions</dfn>. There is a general procedure for this, but it's worth knowing a simple mnemonic for this particular form:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}\text{.}
 \end{equation*}
 </div>
-<p>Thus we get a sum of two exponentials,</p>
+<p>Thus the inverse transform of this fraction is a sum of two exponentials,</p>
 <div class="displaymath">
 \begin{equation*}
-y_v(t) =  \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
+y_v(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
 \end{equation*}
 </div>
-<p>This is the "very particular" solution that has \(y_v(0)=0\text{.}\)</p>
-<p id="p-246">There's no new result here, though the process is quite streamlined. The values \(s=a\) and \(s=c\) that are roots of the denominator of \(Y(s)\) are called <dfn class="terminology">poles</dfn> of the transform. They signal clearly and quickly that every solution is a combination of the exponentials \(e^{at}\) and \(e^{ct}\text{.}\)</p></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.8.4</span> <span class="title">Second-order equations</span>
+<p>This is the "very particular" solution that has \(y_v(0)=0\text{.}\) The general solution is \(e^{at}y(0) + y_v(t)\text{.}\) As we noted before, the resonant case follows from the limit \(c\to a\text{,}\) so that \(y_v=te^{at}\text{.}\)</p>
+<p id="p-142">From here we could include sinusoidal forcing functions via the parts of \(e^{i\omega t}\text{,}\) but we'll put that off for the next chapter.</p></section><section class="subsection" id="subsection-17"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.3</span> <span class="title">Impulses, steps, shifts</span>
 </h3>
-<p id="p-247">Let's break down what happens in a fundamental case, \(y''-y=e^{rt}\text{.}\)  Transforming both sides gives \([s^2Y(s) - sy(0)-y'(0)] - Y(s) = 1/(s-r)\text{.}\) For reasons to be clarified later, let's skip to the "very particular" part with \(y_v(0)=y_v'(0)=0\text{,}\) for which</p>
-<div class="displaymath">
-\begin{equation*}
-Y(s) = \frac{1}{(s^2-1)(s-r)} = \frac{1}{(s+1)(s-1)(s-r)}\text{.}
-\end{equation*}
-</div>
-<p>This time there are three poles. Again the book's trick works well here:</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} \text{.}
-\end{equation*}
-</div>
-<p>It should be apparent that this works only if \(r\neq -1\) and \(r \neq 1\) (i.e., no resonance). From here we get three exponentials:</p>
-<div class="displaymath">
-\begin{equation*}
-y_v(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}\text{.}
-\end{equation*}
-</div>
-<p id="p-248">From here we can write out a general solution. The characteristic roots are \(\pm 1\text{,}\) so</p>
-<div class="displaymath">
-\begin{equation*}
-y(t) = c_1 e^{-t} + c_2 e^{t} + y_v(t)\text{.}
-\end{equation*}
-</div>
-<p>If desired, it's easy to solve for the constants in this, because \(y_v\) contributes nothing:</p>
+<p id="p-143">Since integration against an impulse is just point evaluation, finding the transform of an impulse is easy.</p>
 <div class="displaymath">
 \begin{align*}
-y(0) \amp = c_1 + c_2  \\
-y'(0) \amp = -c_1 + c_2 \text{.}
+{\cal L}[\delta(t)] \amp = 1 \\
+{\cal L}[\delta(t-T)] \amp = e^{-sT}\text{.}
 \end{align*}
 </div>
-<p>That's a lot less work than doing a separate PFD for the initial conditions as represented in the transform.</p></section></section></div></main>
+<p>Finding the transform of a step is also pretty easy:</p>
+<div class="displaymath">
+\begin{align*}
+{\cal L}[H(t-T)] \amp = \int_T^\infty e^{-st}\, dt \\
+\amp = -\frac{1}{s} \Bigl[ e^{-st} \Bigr]_T^\infty = \frac{e^{-sT}}{s} \text{.}
+\end{align*}
+</div>
+<p>A slight generalization of the calculation results in an important rule:</p>
+<div class="displaymath">
+\begin{align*}
+{\cal L}[H(t-T)f(t-T)] \amp = \int_T^\infty f(t-T) e^{-st}\, dt \\
+\amp = \int_0^\infty f(u) e^{-s(u+T)}\, du \\
+\amp = e^{-sT} \int_0^\infty f(u) e^{-su}\, du = e^{-sT} {\cal L}[f(t)]\text{.}
+\end{align*}
+</div>
+<p>This is sometimes called the <dfn class="terminology">shift theorem</dfn>.</p>
+<article class="example-like" id="example-22"><a knowl="" class="id-ref" refid="hk-example-22"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.11.1</span>
+</h6></a></article><div id="hk-example-22" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-144">Let's apply the new rules to solve \(y'=ay + \delta(t-T)\text{,}\) with \(y(0)=0\text{.}\) Transform to get</p>
+<div class="displaymath">
+\begin{equation*}
+[sY(s)-y(0)] - aY(s) = e^{-sT}\text{,}
+\end{equation*}
+</div>
+<p>and thus</p>
+<div class="displaymath">
+\begin{equation*}
+Y(s) = \frac{e^{-sT}}{s-a}\text{.}
+\end{equation*}
+</div>
+<p>Notice that \(Y(s) = e^{-sT} F(s)\text{,}\) where \(F(s)=1/(s-a)\) is the transform of \(f(t)=e^{at}\text{.}\) By the shift theorem, it must be that</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = H(t-T)f(t-T) = H(t-T)e^{a(t-T)}\text{.}
+\end{equation*}
+</div></article></div></section><section class="subsection" id="subsection-18"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.11.4</span> <span class="title">Transfer function</span>
+</h3>
+<p id="p-145">Perhaps it's clear by now that \(y'=ay+q(t)\) always leads to \(Y(s) = Q(s)/(s-a)\) as a particular solution. The term \(1/(s-a)\) is called the <dfn class="terminology">transfer function</dfn> of the ODE. Values of \(s\) that are roots of the denominator are known as <dfn class="terminology">poles</dfn> of the transform. They point out exponential solutions.</p>
+<p id="p-146">Recall that the impulse response is the case when \(q(t)=\delta(t)\text{,}\) so that \(Q(s)=1\text{.}\) This implies that the transfer function is the transform of the impulse response. We'll be encountering these ideas again in the next chapter.</p></section></section></div></main>
 </div>
 </body>
 </html>

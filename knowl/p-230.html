@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:54-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>So if \(f(t)\) is a polynomial times \(e^{st}\text{,}\) let \(y_p\) be the same exponential times a polynomial of the same degree with unknown coefficients. This technically applies too if the polynomial has degree zero; this was our mainstay in <a href="so-forced-oscillators.html" class="xref" title="Section 2.4: Exponentially forced oscillators">Section 2.4</a>. It also applies for imaginary or even complex exponents.</p>
-<span class="incontext"><a href="so-general-forcing.html#p-230">in-context</a></span>
+<p>The mechanical oscillator \(ay'' + by' + cy = f(t)\) is more conveniently expressed as</p>
+<div class="displaymath">
+\begin{equation*}
+y'' + \frac{b}{a} y' + \frac{c}{a} y + \frac{c}{a} F(t)\text{.}
+\end{equation*}
+</div>
+<p>One reason to prefer this form is that \(y\) must have the same units as the forcing \(F\text{.}\) Furthermore, we see the undamped natural frequency \(\omega_n=\sqrt{c/a}\text{,}\) and this has units of inverse time only. The same units apply to \(b/a\text{,}\) so we introduce the new dimensionless parameter</p>
+<div class="displaymath">
+\begin{equation*}
+Z = \frac{1}{2} \frac{b/a}{\omega_n} = \frac{b}{\sqrt{4ac}}\text{.}
+\end{equation*}
+</div>
+<p>Now the ODE becomes</p>
+<div class="displaymath">
+\begin{equation*}
+y'' + 2 Z \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="so-applications.html#p-230">in-context</a></span>
 </body>
 </html>

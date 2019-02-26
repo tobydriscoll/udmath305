@@ -676,139 +676,100 @@ set(gca,'dataaspect',[6,1,1])
 		</subsection>
   </section>
 
-  <section xml:id="laplace-solutions">
+  <section xml:id="so-laplace">
 	<title>Laplace transform methods</title>
 	<introduction>
 	<p>
-		The correspondence between <m>L[y]=Ay''+By'+Cy</m> and <m>P(s)=As^2+Bs+C</m> is by now obvious. It came by way of assuming <m>y(t)=Y(s)e^{st}</m>, and we get <m>Y(s)=1/P(s)</m>. Factoring <m>P</m> tells us what we need to know. For example, if its roots are <m>-2</m> and <m>-4</m>, then we know that <m>y(t)</m> is a combination of <m>e^{-2t}</m> and <m>e^{-4t}</m>. If an exponential, polynomial, step, or impulse forcing term is present, it contributes to the solution in similarly predictable ways. The only mystery to work out is the coefficients. 
+		The correspondence between <m>L[y]=Ay''+By'+Cy</m> and <m>P(s)=As^2+Bs+C</m> is by now familiar. It came by way of assuming <m>y(t)=Y(s)e^{st}</m>, from which we get <m>Y(s)=1/P(s)</m>. Factoring <m>P</m> tells us what we need to know. For example, if its roots are <m>-2</m> and <m>-4</m>, then we know that <m>y(t)</m> is a combination of <m>e^{-2t}</m> and <m>e^{-4t}</m>. The only mystery to work out is the coefficients. 
 	</p>
 
 	<p>
-		There is a method of expressing all this knowledge called the <term>Laplace transform</term>. Given (almost) any function <m>f(t)</m>, there is a doppelganger function <m>F(s)</m> defined by an integral,
-		<men xml:id="so-lap-lxform">
-			F(s) = \int_0^\infty f(t) e^{-st}\, dt
-		</men>. 
-		In this business, time starts at <m>t=0</m>, and nothing before then matters. One thing to note right away is that the Laplace transform is a linear operator. It's often written using a script L, as in <m>F(s)=\mathcal{L}[f(t)]</m>. The usual convention is that a lowercase function of <m>t</m> transforms to its uppercase namesake as a function of <m>s</m>. 
+		We can use the method of Laplace transforms to systematize the manipulations. As in first-order equations, these are useful mostly for linear, constant-coefficient problems. 
 	</p>
 	</introduction>
 
 	<subsection>
-		<title>Derivatives</title>
+		<title>Second derivatives</title>
 		<p>
-			Applying integration by parts to the definition reveals the main reason Laplace transforms are useful in ODEs.  
+			Recall that the transform of <m>y'(t)</m> is <m>sY(s)-y(0)</m>. Applying this formula a second time shows that 
+			<me>
+				\mathcal{L}[y''(t)] = s \mathcal{L}[y'(t)] - y'(0) = s^2Y(s) - sy(0) - y'(0)
+			</me>.
+		</p>
+		<p>
+			Let's break down what happens in a fundamental case, <m>y''-y=e^{rt}</m>.  Transforming both sides gives 
+			<me> 
+				[s^2Y(s) - sy(0)-y'(0)] - Y(s) = 1/(s-r)
+			</me>. 
+			For reasons to be clarified later, let's skip to the "very particular" part with zero initial conditions, for which
+			<me>
+				Y(s) = \frac{1}{(s^2-1)(s-r)} = \frac{1}{(s+1)(s-1)(s-r)}
+			</me>. 
+			This time there are three poles. Our mnemonic still works here,
+			<me> 
+				\frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} 
+			</me>. 
+			Note that this requires <m>r\neq -1</m> and <m>r \neq 1</m> (i.e., no resonance). From here we get three exponentials:
+			<me>
+				y_v(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}
+			</me>. 
+		</p>
+		<p>
+			Now we can write out a general solution. The characteristic roots are <m>\pm 1</m>, so
+			<me>y(t) = c_1 e^{-t} + c_2 e^{t} + y_v(t)</me>. 
+			If desired, it's easy to solve for the constants in this, because <m>y_v</m> contributes nothing:
 			<md>
-				<mrow>\mathcal{L}[y'(t)] \amp = \int_0^\infty y'(t) e^{-st}\, dt </mrow>
-				<mrow>\amp = \left[ y(t)e^{-st}\right]_0^\infty - \int_0^\infty (-s) y(t) e^{-st}\, dt </mrow>
-				<mrow>\amp = -y(0) + s Y(s)</mrow>
+				<mrow>y(0) \amp = c_1 + c_2  </mrow>
+				<mrow>y'(0) \amp = -c_1 + c_2 </mrow>
 			</md>. 
-			Calculus (differentiation) is turned into algebra (multiplication). We can apply this rule repeatedly to transform higher derivatives:
-			<me>\mathcal{L}[y''(t)] = s \mathcal{L}[y'(t)] - y'(0) = s^2Y(s) - sy(0) - y'(0)</me>.
+			That's a lot less work than doing a separate PFD needed when the initial conditions are kept in the transform.
 		</p>
 
-		<p>
-			So here is the plan of attack. Given an ODE <m>Ay''+By'+Cy=f</m>, we transform everything in sight (using linearity!) to get 
-			<me>
-				A[s^2Y(s) - sy(0)-y'(0)] + B[sY(s)-y(0)] + CY(s) = F(s)
-			</me>. 
-			Now solve for the transform of the solution:
-			<me>
-				Y(s) = \frac{ F(s) + (As+B)y(0) - Ay'(0)}{As^2 + Bs + C}
-			</me>. Note that if we want just a particular solution, we can use <m>y(0)=y'(0)=0</m>. In any case, "all" we have to do know is to compute the inverse transform, that is, find <m>y(t)</m> given <m>Y(s)</m>. This is less straightforward than computing the forward transform, unfortunately. But we can make it managable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns. 
-		</p>
+		
 	</subsection>
 
 	<subsection> 
-		<title>Canonical transforms</title>
-		<p>
-			<ol>
-				<li><em>Exponential functions.</em> This is straightforward to calculate from definition. For any complex number <m>z</m>,
-				<me>
-					{\cal L}[e^{z t}] = \int_0^\infty e^{(z-s)t}\, dt = \left[ -\frac{1}{s-z} e^{(z-s)t} \right]_0^\infty = \frac{1}{s-z}
-				</me>. 
-				(To make this valid requires that <m>{\text Re}(z)\lt s</m>, but we are going to ignore such technicalities.) An important special case is when <m>z=0</m>: <m>{\cal L}[1]=1/s</m>.
-				</li>
-				<li>
-					<em>Cos and sin.</em> We can use an imaginary number in the exponential and take the real or imaginary part of the result.  Thus,
-					<me>{\cal L}[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}</me>,
-					and 
-					<me>{\cal L}[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}</me>.
-				</li>
-			</ol>
-		</p>
-	</subsection>
-
-	<subsection>
-		<title>The first-order case</title>
-		<p>
-			Let's go back and revisit an old first-order linear friend, <m>y'-ay=e^{ct}</m>. Transforming both sides, we get 
-			<me> [sY(s)-y(0)] - aY(s) =\frac{1}{s-c}</me>,
-			and thus 
-			<me> Y(s) = \frac{y(0)}{s-a} + \frac{1}{(s-c)(s-a)}</me>. 
-			The first part corresponds to <m>y_n(t)=y(0)e^{at}</m>, which is the null solution. To invert the transform of the second term, we need to express it using <term>partial fractions</term>. The text has a clever mnemonic for this:
-			<me> \frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}</me>. Thus we get a sum of two exponentials,
-			<me>y_v(t) =  \frac{1}{c-a}\left( e^{ct}-e^{at} \right) </me>. 
-			This is the "very particular" solution that has <m>y_v(0)=0</m>. 
-		</p>
-		<p>
-			There's no new result here, though the process is quite streamlined. The values <m>s=a</m> and <m>s=c</m> that are roots of the denominator of <m>Y(s)</m> are called <term>poles</term> of the transform. They signal clearly and quickly that every solution is a combination of the exponentials <m>e^{at}</m> and <m>e^{ct}</m>.
-		</p>
-	</subsection>
-
-	<subsection>
-		<title>Second-order equations</title>
-		<p>
-			Let's break down what happens in a fundamental case, <m>y''-y=e^{rt}</m>.  Transforming both sides gives <m> [s^2Y(s) - sy(0)-y'(0)] - Y(s) = 1/(s-r)</m>. For reasons to be clarified later, let's skip to the "very particular" part with <m>y_v(0)=y_v'(0)=0</m>, for which
-			<me>Y(s) = \frac{1}{(s^2-1)(s-r)} = \frac{1}{(s+1)(s-1)(s-r)}</me>. 
-			This time there are three poles. Again the book's trick works well here:
-			<me> \frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} </me>. 
-			It should be apparent that this works only if <m>r\neq -1</m> and <m>r \neq 1</m> (i.e., no resonance). From here we get three exponentials:
-			<me>y_v(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}</me>. 
-		</p>
-		<p>
-			From here we can write out a general solution. The characteristic roots are <m>\pm 1</m>, so
-			<me>y(t) = c_1 e^{-t} + c_2 e^{t} + y_v(t)</me>. 
-			If desired, it's easy to solve for the constants in this, because <m>y_v</m> contributes nothing:
-		<md>
-			<mrow>y(0) \amp = c_1 + c_2  </mrow>
-			<mrow>y'(0) \amp = -c_1 + c_2 </mrow>
-		</md>. 
-		That's a lot less work than doing a separate PFD for the initial conditions as represented in the transform. 
-		</p>
-	</subsection>
-
-	
-  </section>
-
-  <section xml:id="laplace-complex">
-	<title>Complex and repeated poles</title>
-	<introduction>
-		<p>
-			In the previous section we saw that it's easy to turn a linear, constant-coefficient ODE into a Laplace transform <m>Y(s)</m> of a particular solution. The art comes from the inverse problem of recovering <m>y(t)</m> from there. With the real, simple poles we've seen so far, the algebra is quite modest, but things get dicier when the poles are complex or repeated. 
-		</p>
-	</introduction>
-	<subsection>
 		<title>Imaginary poles</title>
 		<p>
-			A transform having pure imaginary poles can be done easily if there are only two of them. As always, poles occur in conjugate pairs, so we first consider
+			If we transform <m>e^{i\omega t}</m>, we can take the real and imaginary parts to get some new formulas:
 			<me>
-				Y(s) = \frac{A+Bs}{s^2+\omega^2}
-			</me>
-			for some real constants <m>A,B,\omega</m>. This inverts easily to <m>y(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)</m>, and there is little else to say. 
-		</p>
-		<p>
-			If <m>Y</m> has an additional real pole as well at <m>s=c</m>, then it can be written in the partial fraction form 
+				{\cal L}[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}
+			</me>,
+			and 
 			<me>
-				Y(s) = \frac{A+Bs}{s^2+\omega^2} + \frac{C}{s-c} 
+				{\cal L}[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}
+			</me>.
+			Conversely, a transform <m>Y(s)</m> that has <m>s^2+\omega^2</m> as a factor in the denominator has poles at <m>\pm i\omega</m>. The simplest case is 
+			<me>
+				Y(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad y(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)
 			</me>. 
-			This too is easy to invert once the constants are known. Finding them is tedious, but manageable. 
+		</p>
+		<example>
+			<p>
+				Let's solve <m>y''+9y=\delta(t-2)</m>. A particular solution has transform
+				<me>
+					Y(s) = \frac{e^{-2s}}{s^2+9} = e^{-2s} F(s)
+				</me>,
+				where <m>F(s)</m> is the transform of <m>\sin(3t)/3</m>. So the shift theorem implies
+				<me>
+					y(t) = \frac{1}{3} H(t-2) \sin(3t-6)
+				</me>. 
+			</p>
+		</example>
+
+
+		<p>
+			Things are not too bad if there is an additional real pole: 
+			<me>
+				Y(s) = \frac{A+Bs}{s^2+\omega^2} + \frac{C}{s-c} \quad y(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t) + C e^{ct}
+			</me>. 
+			Usually there is some grunt work involved in finding the values of <m>A</m>, <m>B</m>, and <m>C</m>. 	
 		</p>
 		<example>
 			<p>
 				The undamped oscillator <m>y''+16y=40e^{-2t}</m> has a solution whose transform is 
-				<me>Y(s) = \frac{40}{(s+2)(s^2+16)</me>. 
-				Hence 
 				<me>
-					\frac{A+Bs}{s^2+16^2} + \frac{C}{s+2} = \frac{40}{(s+2)(s^2+16)
+					Y(s) = \frac{40}{(s+2)(s^2+16)} = \frac{A+Bs}{s^2+16^2} + \frac{C}{s+2}
 				</me>. 
 				Clearing the denominators gives the identity
 				<me>
@@ -829,17 +790,25 @@ set(gca,'dataaspect',[6,1,1])
 				</me>.
 			</p>
 		</example>
+
 		<p>
-			Finally, consider the driven unforced oscillator <m>y''+\omega_n^2 y= \cos(\omega t)</m>. It leads to 
+			Finally, consider the driven, undamped oscillator <m>y''+\omega_n^2 y= \cos(\omega t)</m>. It leads to 
 			<me> 
 				Y(s) = \frac{s}{(s^2+\omega_n^2)(s^2+1)} = \frac{1}{\omega_n^2-\omega^2} \left( \frac{s}{s^2+\omega^2} - \frac{s}{s^2+\omega_n^2} \right)
 			</me>, 
-			which is easily inverted into a combination of <m>\cos(\omega t)</m> and <m>\cos(\omega_n t)</m>. However, at this point we should probably just be using the method of undetermined coefficients instead. 
+			which is readily inverted into a combination of <m>\cos(\omega t)</m> and <m>\cos(\omega_n t)</m>. However, at this point we are probably better off just using the method of undetermined coefficients instead. 
 		</p>
+
+
 	</subsection>
+	
+  </section>
+
+  <section xml:id="so-laplace-repeated">
+	<title>Repeated and complex poles</title>
 
 	<subsection>
-		<title>Repeated poles</title>
+		<title>Repeated poles and resonance</title>
 		<p>
 			We know by now that repeated poles in <m>Y(s)</m> arise in two ways: from repeated characteristic roots (i.e. poles of the transfer function), or perfect resonance in the forcing function. We can anticipate the effect on the transform, because we know the answer in the time domain is something like <m>te^{rt}</m>. 
 			<!-- The fiendlishly clever approach is to notice that this function is a derivative of <m>e^{rt}</m> <em>with respect to <m>r</m></em>:
@@ -882,26 +851,30 @@ set(gca,'dataaspect',[6,1,1])
 			<me> 
 				\frac{d^n}{ds^n} \mathcal{L}[ f(t) ] = (-1)^n \mathcal{L}[ t^n f(t) ]
 			</me>.
-			Of interest is the special case of an exponential function <m>e^{rt}</m>, whose transform is <m>1/s-r</m>: 
+			Of interest is the special case of an exponential function <m>e^{ct}</m>, whose transform is <m>1/s-c</m>: 
 			<me>
-				\mathcal{L} \left[ t^n e^{rt} \right] = \frac{n!}{(s-r)^{n+1}} 
+				\mathcal{L} \left[ t^n e^{ct} \right] = \frac{n!}{(s-c)^{n+1}} 
 			</me>.
-			The even specialer case <m>r=0</m> allows us to transform any power of <m>t</m>, and therefore any polynomial. 
+			The even specialer case <m>c=0</m> allows us to transform any power of <m>t</m>, and therefore any polynomial. 
 		</p>
 	</subsection>
 
 	<subsection>
 		<title>Complex poles</title>
 		<p> 
-			Complex poles in the transform correspond to complex exponentials in the time donmain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have 
+			Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have 
 			<me>
 				\frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} 
-			</me>, 
-			so the right-hand side above is the transform of  
+			</me>. 
+			Since we also know that 
 			<me>
 				e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)
+			</me>,
+			the conclusion is 
+			<me>
+				\mathcal{L}[ e^{at} \cos( b t) ] = \frac{s-a}{(s-a)^2+b^2}
 			</me>. 
-			In similar fashion we can show that <m>e^{at} \cos( b t)</m> transforms to <m>b/[(s-a)^2+b^2]</m>. In principle we can always find quadratic denominators like these for a partial fraction conversion.
+			In similar fashion we can show that <m>e^{at} \sin( b t)</m> transforms to <m>b/[(s-a)^2+b^2]</m>. In principle we can always find quadratic denominators like these for a partial fraction conversion. However, the details can get pretty intense for hand calculation.
 		</p>
 		<example>
 			<p>
@@ -921,90 +894,8 @@ set(gca,'dataaspect',[6,1,1])
 		</example>
 
 		<p> 
-			The problem with Laplace transforms as a one-stop solver for linear, constant-coefficient problems is that the particular solution we find is always the "very particular" one that includes some terms from the null solution. That is because the poles of <m>Y(s)</m> include those of the transfer function <em>and</em> the forcing function. It's extra algebra to find the coefficients of the null/transient parts, but that step can't be skipped. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases. 
+			The problem with Laplace transforms as a one-stop solver is that the particular solution we find is always the "very particular" one that includes some terms from the null solution. Equivalently, the poles of <m>Y(s)</m> include those of the transfer function <em>and</em> the forcing function. It's extra algebra to find the coefficients of the null/transient parts, but that step can't be skipped. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases. 
 		</p>
-	</subsection>
-  </section>
-
-  <section xml:id="laplace-properties">
-	<title>More Laplace transforms</title>
-	<introduction>
-		<p><em>From section 8.5</em></p>	
-		<p>
-			We have some things left to learn about Laplace transforms.
-		</p>
-	</introduction>
-	<subsection>
-		<title>Shifts and steps</title>
-		<p>
-			If we know the transform of some <m>f(t)</m>, then we can easily get the transform of the shifted/delayed version <m>H(t-T)f(t-T)</m>:
-			<md>
-				<mrow>{\cal L}[H(t-T)f(t-T)] \amp = \int_T^\infty f(t-T) e^{-st}\, dt </mrow>
-				<mrow>\amp = \int_0^\infty f(u) e^{-s(u+T)}\, du </mrow>
-				<mrow>\amp = e^{-sT} \int_0^\infty f(u) e^{-su}\, du = e^{-sT} {\cal L}[f(t)]</mrow>
-			</md>. 
-			An important special case is when <m>f(t)\equiv 1</m>, and we get the transform of a step as 
-			<me>
-				{\cal L}[H(t-T)] = \frac{e^{-sT}}{s}
-			</me>. 
-		</p>
-		<example>
-			<p>
-				Let's transform the function 
-				<me>
-					f(t) = t + (1-t) H(t-2) + (e^{-2t}-1) H(t-3)
-				</me>.
-				The tricky bit is that to apply the transform formula for <m>H(t-T)f(t-T)</m>, we need the same shift to appear in both terms. We use a classic add-and-subtract trick:
-				<md>
-					<mrow>f(t) \amp = t + (1-(t-2+2)) H(t-2) + (e^{-2[(t-3)+3]}-1) H(t-3)</mrow>
-					<mrow>\amp = t + (-1-(t-2)) H(t-2) + (e^{-6}e^{-2(t-3)}-1) H(t-3)</mrow>
-					<mrow>\amp = t - H(t-2) -(t-2) H(t-2) + e^{-6}e^{-2(t-3)}H(t-3) - H(t-3)</mrow>
-				</md>.
-				Now we're ready to read off the transform. 
-				<me>
-					F(s) = \frac{1}{s^2} - \frac{e^{-2s}}{s}  - \frac{e^{-2s}}{s^2} 
-						+ e^{-6}\frac{e^{-3s}}{s+2} - \frac{e^{-3s}}{s}
-				</me>.
-			</p>
-		</example>
-		<p>
-			We have a new addition to the inversion toolkit: exponentials in <m>s</m>. 
-		</p>
-		<example>	
-			<p>
-				Let's find the inverse of <m>F(s) = \frac{6 e^{-5s}}{s^2+s-2}</m>. We write it as <m>F(s) = 6^{-5s} G(s)</m>, where 
-				<me>
-					G(s) = \frac{1}{(s+2)(s-1)} = \frac{1}{(1+2)(s-1)} + \frac{1}{(s+2)(-2-1)}
-				</me>. 
-				This inverts to give <m>g(t) = e{t}/3 - e^{-2t}/3</m>. Thus 
-				<me>
-					f(t) = 6 H(t-5)g(t-5) = 2 H(t-5) \left[ e^{t-5} - e^{-2t+10} \right] 
-				</me>.
-			</p>
-		</example>
-
-	</subsection>
-	<subsection>
-		<title>Impulses</title>
-		<p>
-			Since impulses cause evaluation, finding their transforms is easy. 
-			<md>
-				<mrow>{\cal L}[\delta(t)] \amp = 1 </mrow>
-				<mrow>{\cal L}[\delta(t-T)] \amp = e^{-sT}</mrow>
-			</md>. 
-		</p>
-		<example>
-			<p>
-				Let's solve <m>y''+9y=\delta(t-2)</m>. A particular solution has transform
-				<me>
-					Y(s) = \frac{e^{-2s}}{s^2+9} = e^{-2s} F(s)
-				</me>,
-				where <m>F(s)</m> is the transform of <m>\sin(3t)/3</m>. So the shift formula implies
-				<me>
-					y(t) = \frac{1}{3} H(t-2) \sin(3t-6)
-				</me>. 
-			</p>
-		</example>
 	</subsection>
   </section>
 

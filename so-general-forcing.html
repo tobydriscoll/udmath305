@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:53-05:00    *-->
+<!--*    on 2019-02-26T16:20:17-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -57,11 +57,11 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="so-applications.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="laplace-solutions.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="so-applications.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="so-laplace.html" title="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="so-applications.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="laplace-solutions.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="so-applications.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="second-order-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="so-laplace.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -79,6 +79,7 @@ MathJax.Hub.Config({
 <li><a href="steady-states.html" data-scroll="steady-states">Steady states</a></li>
 <li><a href="logistic-equation.html" data-scroll="logistic-equation">Logistic equation</a></li>
 <li><a href="separable.html" data-scroll="separable">Separable equations</a></li>
+<li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
 </ul>
 <h2 class="link"><a href="second-order-ode.html" data-scroll="second-order-ode"><span class="codenumber">2</span> <span class="title">Second-order ODEs</span></a></h2>
 <ul>
@@ -89,9 +90,8 @@ MathJax.Hub.Config({
 <li><a href="so-higher-order.html" data-scroll="so-higher-order">Higher-order ODEs</a></li>
 <li><a href="so-applications.html" data-scroll="so-applications">Applications of oscillators</a></li>
 <li><a href="so-general-forcing.html" data-scroll="so-general-forcing" class="active">Other forcing functions</a></li>
-<li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
-<li><a href="laplace-complex.html" data-scroll="laplace-complex">Complex and repeated poles</a></li>
-<li><a href="laplace-properties.html" data-scroll="laplace-properties">More Laplace transforms</a></li>
+<li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
+<li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
 <li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
 </ul>
 <h2 class="link"><a href="qualitative.html" data-scroll="qualitative"><span class="codenumber">3</span> <span class="title">Qualitative analysis</span></a></h2>
@@ -117,13 +117,13 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="so-general-forcing"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.7</span> <span class="title">Other forcing functions</span>
 </h2>
-<a href="so-general-forcing.html" class="permalink">¶</a><section class="introduction" id="introduction-9"><p id="p-224">Exponential forcing functions are very important, especially when allowing complex exponents. But they aren't the whole world. In this section we go over two other major techniques for trying to get particular solutions to linear, 2nd-order ODEs. Both assume that you have access to the complete null solution already.</p></section><section class="subsection" id="so-gf-muc"><h3 class="heading hide-type">
+<a href="so-general-forcing.html" class="permalink">¶</a><section class="introduction" id="introduction-10"><p id="p-234">Exponential forcing functions are very important, especially when allowing complex exponents. But they aren't the whole world. In this section we go over two other major techniques for trying to get particular solutions to linear, 2nd-order ODEs. Both assume that you have access to the complete null solution already.</p></section><section class="subsection" id="so-gf-muc"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.7.1</span> <span class="title">Undetermined coefficients</span>
 </h3>
-<a href="so-general-forcing.html#so-gf-muc" class="permalink">¶</a><p id="p-225">In the method of undetermined coefficients we assume that we already know everything about the particular solution except for some constants to be found using algebra. Best to start with examples.</p>
-<article class="example-like" id="example-32"><a knowl="" class="id-ref" refid="hk-example-32"><h6 class="heading">
+<a href="so-general-forcing.html#so-gf-muc" class="permalink">¶</a><p id="p-235">In the method of undetermined coefficients we assume that we already know everything about the particular solution except for some constants to be found using algebra. Best to start with examples.</p>
+<article class="example-like" id="example-33"><a knowl="" class="id-ref" refid="hk-example-33"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.7.1</span>
-</h6></a></article><div id="hk-example-32" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-226">Let's find a particular solution of \(y'' +4y'+4y=8t^2\text{.}\) We reason as follows. If we plug in some \(Ct^2\) for \(y\) with a constant \(C\text{,}\) then all the derivatives generate multiples of \(t\) and \(1\text{.}\) That is, both sides of the ODE will be quadratic polynomials. So we generalize just a bit to allow</p>
+</h6></a></article><div id="hk-example-33" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-236">Let's find a particular solution of \(y'' +4y'+4y=8t^2\text{.}\) We reason as follows. If we plug in some \(Ct^2\) for \(y\) with a constant \(C\text{,}\) then all the derivatives generate multiples of \(t\) and \(1\text{.}\) That is, both sides of the ODE will be quadratic polynomials. So we generalize just a bit to allow</p>
 <div class="displaymath">
 \begin{equation*}
 y_p = A + Bt + Ct^2\text{.}
@@ -137,11 +137,11 @@ y_p = A + Bt + Ct^2\text{.}
 \end{align*}
 </div>
 <p>This has to be an identity for all \(t\)&gt;. Matching like powers, we can read off \(C=2\text{,}\) then \(B=-4\text{,}\) and finally \(A=3\)&gt;. This provides us with \(y_p=2t^2+4t+3\text{.}\) (The complete solution would require us to use the characteristic equation to find the null solution as well.)</p></article></div>
-<p id="p-227">In general, if \(f(t)\) is a polynomial, then we let \(y_p\) be a polynomial of the same degree with unknown coefficients. Substitution into the ODE and matching powers gives equations to determine those. As in the example above, you must put <em class="emphasis">all</em> the polynomial terms into \(y_p\text{,}\) even if they are missing from \(f(t)\text{.}\)</p>
-<p id="p-228">The next example has a polynomial times an exponential.</p>
-<article class="example-like" id="example-33"><a knowl="" class="id-ref" refid="hk-example-33"><h6 class="heading">
+<p id="p-237">In general, if \(f(t)\) is a polynomial, then we let \(y_p\) be a polynomial of the same degree with unknown coefficients. Substitution into the ODE and matching powers gives equations to determine those. As in the example above, you must put <em class="emphasis">all</em> the polynomial terms into \(y_p\text{,}\) even if they are missing from \(f(t)\text{.}\)</p>
+<p id="p-238">The next example has a polynomial times an exponential.</p>
+<article class="example-like" id="example-34"><a knowl="" class="id-ref" refid="hk-example-34"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.7.2</span>
-</h6></a></article><div id="hk-example-33" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-229">Let's try for \(y'' -2y'-3y=10te^{4t}\text{.}\) For much the same reasons as in the last case, we try</p>
+</h6></a></article><div id="hk-example-34" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-239">Let's try for \(y'' -2y'-3y=10te^{4t}\text{.}\) For much the same reasons as in the last case, we try</p>
 <div class="displaymath">
 \begin{equation*}
 y_p = (A + Bt)e^{4t}\text{.}
@@ -155,12 +155,12 @@ y_p = (A + Bt)e^{4t}\text{.}
 \end{align*}
 </div>
 <p>From this, by matching powers, we deduce \(B=2\) and then \(5A+12=0\text{.}\) So \(y_p = (2 - (12/5)t)e^{4t}\text{.}\)</p></article></div>
-<p id="p-230">So if \(f(t)\) is a polynomial times \(e^{st}\text{,}\) let \(y_p\) be the same exponential times a polynomial of the same degree with unknown coefficients. This technically applies too if the polynomial has degree zero; this was our mainstay in <a href="so-forced-oscillators.html" class="xref" title="Section 2.4: Exponentially forced oscillators">Section 2.4</a>. It also applies for imaginary or even complex exponents.</p>
-<p id="p-231">There's a method devoted to forcing by sine or cosine, multiplied by a polynomial and/or exponential. As we have seen  in previous examples, any sin or cos in the forcing requires both to be allowed in \(y_p\text{.}\) I don't personally see much value in exploring these rules, as they are no easier to use, and may be even more ornate, than the exponentials we have been doing.</p>
-<p id="p-232">There is one more situation to be aware of, another variation on a familiar theme. If your \(y_p\) is part of the null solution of the ODE, you have to "promote" it by powers of \(t\) until it no longer overlaps.</p>
-<article class="example-like" id="example-34"><a knowl="" class="id-ref" refid="hk-example-34"><h6 class="heading">
+<p id="p-240">So if \(f(t)\) is a polynomial times \(e^{st}\text{,}\) let \(y_p\) be the same exponential times a polynomial of the same degree with unknown coefficients. This technically applies too if the polynomial has degree zero; this was our mainstay in <a href="so-forced-oscillators.html" class="xref" title="Section 2.4: Exponentially forced oscillators">Section 2.4</a>. It also applies for imaginary or even complex exponents.</p>
+<p id="p-241">There's a method devoted to forcing by sine or cosine, multiplied by a polynomial and/or exponential. As we have seen  in previous examples, any sin or cos in the forcing requires both to be allowed in \(y_p\text{.}\) I don't personally see much value in exploring these rules, as they are no easier to use, and may be even more ornate, than the exponentials we have been doing.</p>
+<p id="p-242">There is one more situation to be aware of, another variation on a familiar theme. If your \(y_p\) is part of the null solution of the ODE, you have to "promote" it by powers of \(t\) until it no longer overlaps.</p>
+<article class="example-like" id="example-35"><a knowl="" class="id-ref" refid="hk-example-35"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.7.3</span>
-</h6></a></article><div id="hk-example-34" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-233">Given \(y'' -2y'-3y=4e^{-t}\text{,}\) we are led to try \(y_p=Ae^{-t}\text{:}\)</p>
+</h6></a></article><div id="hk-example-35" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-243">Given \(y'' -2y'-3y=4e^{-t}\text{,}\) we are led to try \(y_p=Ae^{-t}\text{:}\)</p>
 <div class="displaymath">
 \begin{align*}
 (Ae^{-t}) - 2(-Ae^{-t}) - 3Ae^{-t} \amp = 4e^{-t} \\
@@ -177,7 +177,7 @@ Ae^{-t}(t-2) - 2Ae^{-t}(1-t) - 3Ate^{-t} \amp = 4e^{-t} \\
 <p>so \(A=1\) and \(y_p\) is valid.</p></article></div></section><section class="subsection" id="so-gf-vp"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.7.2</span> <span class="title">Variation of parameters</span>
 </h3>
-<a href="so-general-forcing.html#so-gf-vp" class="permalink">¶</a><p id="p-234">While UC relies on "educated guesswork" (actually rigid rules that are a bit complex to apply), <dfn class="terminology">variation of parameters</dfn> follows the same recipe every time. Given \(L[y]=f\text{,}\) suppose we have a general null solution in the form</p>
+<a href="so-general-forcing.html#so-gf-vp" class="permalink">¶</a><p id="p-244">While UC relies on "educated guesswork" (actually rigid rules that are a bit complex to apply), <dfn class="terminology">variation of parameters</dfn> follows the same recipe every time. Given \(L[y]=f\text{,}\) suppose we have a general null solution in the form</p>
 <div class="displaymath">
 \begin{equation*}
 y_n(t) = c_1 y_1(t) + c_2 y_2(t)\text{.}
@@ -190,7 +190,7 @@ y_p(t) = c_1(t) y_1(t) + c_2(t) y_2(t)\text{.}
 \end{equation*}
 </div>
 <p>To keep notation simpler, we assume below that the coefficient of \(y''\) in the ODE is 1.</p>
-<p id="p-235">Taking this odd assumption on faith, we compute</p>
+<p id="p-245">Taking this odd assumption on faith, we compute</p>
 <div class="displaymath">
 \begin{equation*}
 y_p' = c_1'y_1+c_1y_1'+ c_2'y_2+c_2y_2'  \text{.}
@@ -209,7 +209,7 @@ c_1(y_1''+By_1'+Cy_1) + c_2(y_2''+By_2'+Cy_2) + c_1'y_1' + c_2'y_2' = f \text{.}
 \end{equation*}
 </div>
 <p>Thanks to the null property of \(y_1\) and \(y_2\text{,}\) this boils down to \(c_1'y_1' + c_2'y_2' = f\text{.}\)</p>
-<p id="p-236">To summarize so far, we get a valid particular solution using two conditions,</p>
+<p id="p-246">To summarize so far, we get a valid particular solution using two conditions,</p>
 <div class="displaymath">
 \begin{align*}
 c_1'y_1+c_2'y_2 \amp = 0 \\
@@ -229,7 +229,7 @@ W(t) = y_1y_2'-y_1'y_2\text{,}
 \end{equation*}
 </div>
 <p>known as the <dfn class="terminology">Wronskian</dfn> of \(y_1\) and \(y_2\text{.}\) Finally, "all" you have to do is integrate these expressions to get \(c_1\) and \(c_2\text{,}\) and from there you get \(y_p\text{.}\)</p>
-<p id="p-237">If you immediately wondered "what if the Wronskian is zero?" when you saw the above formulas, you have earned a special place in my heart. This possibility can be ruled out for some rather general theortical reasons, but we can also just calculate away the issue for equations with constant coefficients. If we have distinct characteristic roots \(s_1\) and \(s_2\text{,}\) then</p>
+<p id="p-247">If you immediately wondered "what if the Wronskian is zero?" when you saw the above formulas, you have earned a special place in my heart. This possibility can be ruled out for some rather general theortical reasons, but we can also just calculate away the issue for equations with constant coefficients. If we have distinct characteristic roots \(s_1\) and \(s_2\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 W = (e^{s_1t})(s_2e^{s_2t}) - (s_1e^{s_1t})(e^{s_2t}) = (s_2-s_1)e^{(s_1+s_2)t}\text{.}
@@ -241,10 +241,10 @@ W = (e^{s_1t})(s_2e^{s_2t}) - (s_1e^{s_1t})(e^{s_2t}) = (s_2-s_1)e^{(s_1+s_2)t}\
 W = e^{s_1t}(s_1t +1)e^{s_1t} - (s_1 e^{s_1t})(t e^{s_1t}) = e^{2s_1t} \text{.}
 \end{equation*}
 </div>
-<p>And here you were all worried.</p></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
+<p>And here you were all worried.</p></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.7.3</span> <span class="title">Fundamental solutions, again</span>
 </h3>
-<p id="p-238">If we continue to push ahead with the VP formulas, interesting things start to happen. For distinct roots,</p>
+<p id="p-248">If we continue to push ahead with the VP formulas, interesting things start to happen. For distinct roots,</p>
 <div class="displaymath">
 \begin{equation*}
 c_1' = -\frac{\exp(s_2t)}{(s_2-s_1)\exp((s_1+s_2)t)} f(t)  =  \frac{f(t)e^{-s_1t}}{s_1-s_2}\text{,}
@@ -266,7 +266,7 @@ g(t) = \frac{ e^{s_1t} -  e^{s_2t} }{s_1-s_2} \text{.}
 \end{equation*}
 </div>
 <p>By definition the integral formula makes \(g\) an fundamental solution. Remember, \(g\) is also the impulse response, and the null solution with \(g(0)=0\text{,}\) \(g'(0)=1/A=1\text{.}\) But this derivation doesn't rely on any sketchy deltas.</p>
-<p id="p-239">For the case of a repeated root we can go though the VP formulas again, or just let \(s_2\to s_1\) and get</p>
+<p id="p-249">For the case of a repeated root we can go though the VP formulas again, or just let \(s_2\to s_1\) and get</p>
 <div class="displaymath">
 \begin{equation*}
 g(t) = t e^{s_1t} \text{.}

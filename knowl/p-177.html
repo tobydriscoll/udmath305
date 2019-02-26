@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-24T21:28:54-05:00    *-->
+<!--*    on 2019-02-26T16:20:18-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider an infinitesimally small time \(\epsilon\text{.}\) If we integrate \(Ay''+By'+Cy=\delta(t)\) up to this time, then we can estimate</p>
+<p>There is exactly one more possibility for our characteristic roots: they are complex numbers. This happens if \(B^2\lt 4AC\text{.}\) In this case the roots must be conjugates of one another: \(s_1=\overline{s}_2\text{.}\) We'll find it convenient to write them in cartesian form, as \(r\pm i\omega\text{.}\) Then our null solution is</p>
 <div class="displaymath">
 \begin{equation*}
-A(g'(\epsilon)-g'(0)) + B(g(\epsilon)-g(0)) + C\int_0^\epsilon g(t)\,dt = 1 \text{.}
+y = c_1 e^{s_1t} + c_2 e^{s_2t} = e^{rt}\left( c_1 e^{i\omega t} + c_2 e^{-i \omega t} \right)\text{.}
 \end{equation*}
 </div>
-<p>Assuming that \(g\) itself is continuous, as \(\epsilon\to 0\) we conclude that \(g'(\epsilon)-g'(0) = 1/A\text{,}\) which is the jump we seek. That is, we use \(g'(0)=1/A\) as the "cheater's way" to get the fundamental solution.</p>
+<p>This is a perfectly fine way to write the solution, but not the only way. If we use Euler's formula and rearrange, we get</p>
+<div class="displaymath">
+\begin{equation*}
+y = e^{rt}\left( C_1 \cos(\omega t) + C_2 \sin(\omega t) \right)\text{.}
+\end{equation*}
+</div>
+<p>These are still exponential solutions, but in disguise.</p>
 <span class="incontext"><a href="so-constant-coefficients.html#p-177">in-context</a></span>
 </body>
 </html>
