@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,26 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To summarize so far, we get a valid particular solution using two conditions,</p>
-<div class="displaymath">
-\begin{align*}
-c_1'y_1+c_2'y_2 \amp = 0 \\
-c_1'y_1' + c_2'y_2' \amp = f \text{.}
-\end{align*}
-</div>
-<p>Stare at this long enough and you'll realize that it's just two linear equations for \(c_1'\) and \(c_2'\text{.}\) You can do some elimination to solve them, and you wind up with</p>
+<p>While UC relies on "educated guesswork" (actually rigid rules that are a bit complex to apply), <dfn class="terminology">variation of parameters</dfn> follows the same recipe every time. Given \(L[y]=f\text{,}\) suppose we have a general null solution in the form</p>
 <div class="displaymath">
 \begin{equation*}
-c_1' = -\frac{y_2f}{W}, \qquad c_2' = \frac{y_1f}{W},
+y_n(t) = c_1 y_1(t) + c_2 y_2(t)\text{.}
 \end{equation*}
 </div>
-<p>with</p>
+<p>For problems with constant coefficients, \(y_1\) and \(y_2\) are exponentials (or sin/cos equivalents), possibly multiplied by \(t\text{.}\) In any case, the VP trick is to replace the integration constants with functions of time:</p>
 <div class="displaymath">
 \begin{equation*}
-W(t) = y_1y_2'-y_1'y_2\text{,}
+y_p(t) = c_1(t) y_1(t) + c_2(t) y_2(t)\text{.}
 \end{equation*}
 </div>
-<p>known as the <dfn class="terminology">Wronskian</dfn> of \(y_1\) and \(y_2\text{.}\) Finally, "all" you have to do is integrate these expressions to get \(c_1\) and \(c_2\text{,}\) and from there you get \(y_p\text{.}\)</p>
+<p>To keep notation simpler, we assume below that the coefficient of \(y''\) in the ODE is 1.</p>
 <span class="incontext"><a href="so-general-forcing.html#p-234">in-context</a></span>
 </body>
 </html>

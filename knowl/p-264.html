@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:55-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We have a new addition to the inversion library: exponentials in \(s\text{.}\)</p>
+<p>If we know the transform of some \(f(t)\text{,}\) then we can easily get the transform of the shifted/delayed version \(H(t-T)f(t-T)\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+{\cal L}[H(t-T)f(t-T)] \amp = \int_T^\infty f(t-T) e^{-st}\, dt \\
+\amp = \int_0^\infty f(u) e^{-s(u+T)}\, du \\
+\amp = e^{-sT} \int_0^\infty f(u) e^{-su}\, du = e^{-sT} {\cal L}[f(t)]\text{.}
+\end{align*}
+</div>
+<p>An important special case is when \(f(t)\equiv 1\text{,}\) and we get the transform of a step as</p>
+<div class="displaymath">
+\begin{equation*}
+{\cal L}[H(t-T)] = \frac{e^{-sT}}{s}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="laplace-properties.html#p-264">in-context</a></span>
 </body>
 </html>

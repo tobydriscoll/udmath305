@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,15 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The operator \(L[y]=y'''+2y''+y'+2y\) has characteristic roots \(-2,\pm i\text{.}\) Now note that for any function \(y\text{,}\)</p>
+<p>Given a linear ODE of order \(N\) as above, we can define</p>
 <div class="displaymath">
-\begin{align*}
-(D+2)(D-i)(D+i)y \amp = (D+2)(D-i)(y'+iy) \\
-\amp = (D+2)\Bigl((y''+iy')-i(y'+iy)\Bigr) \\
-\amp = (D+2)(y''+y) = y''' +y' +2y'' + 2y = L[y]\text{.}
-\end{align*}
+\begin{equation*}
+L[y] = a_N D^N y + \cdots  + a_1 Dy + a_0 y\text{.}
+\end{equation*}
 </div>
-<p>We can write the factors in any order, and even things like \(L[y]=(D^2+1)(D-2)\text{.}\)</p>
+<p>This makes it much easier to write the ODE, as \(L[y]=f\text{.}\) Furthermore, it's easy to check that \(L\) satisfies the two rules above and thus is a linear operator as well. The linearity also makes certain kinds of reasoning very simple, such as \(L[y_n+y_p] = L[y_n]+L[y_p] = 0+f=f\text{.}\)</p>
 <span class="incontext"><a href="so-higher-order.html#p-212">in-context</a></span>
 </body>
 </html>

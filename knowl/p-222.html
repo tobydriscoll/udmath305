@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Exponential forcing functions are very important, especially when allowing complex exponents. But they aren't the whole world. In this section we go over two other major techniques for trying to get particular solutions to linear, 2nd-order ODEs. Both assume that you have access to the complete null solution already.</p>
-<span class="incontext"><a href="so-general-forcing.html#p-222">in-context</a></span>
+<p>Continuing the underdamped case, the gain works out to be</p>
+<div class="displaymath">
+\begin{equation*}
+G^2 = \frac{1}{(\omega_n^2-\omega^2)^2 + 4\omega_n^2Z^2\omega^2}  = \frac{\omega_n^4}{(1-\rho^2)^2 + 4Z^2\rho^2}\text{,}
+\end{equation*}
+</div>
+<p>where \(\rho=\omega/\omega_n\) is a dimensionless frequency ratio. If also \(Z^2\lt 1/2\text{,}\) the gain is maximized when \(\rho=\sqrt{1-2Z^2} \lt 1\text{.}\) The gain at that maximum is proportional to \(1/Z\text{,}\) so much growth in the response is possible near the natural frequency when damping is small in the sense of \(Z\approx 0\text{.}\) This can be considered a practical resonance for lightly damped systems.</p>
+<span class="incontext"><a href="so-applications.html#p-222">in-context</a></span>
 </body>
 </html>

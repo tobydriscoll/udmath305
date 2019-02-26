@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,8 +13,67 @@
 </head>
 <body>
 <article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.3.1</span>
+<span class="type">Example</span> <span class="codenumber">2.2.1</span>
 </h6>
-<p>Consider \(y''-y'-2y=0\text{.}\) The characteristic equation \(s^2-s-2=0\) has roots \(s_1=-1\text{,}\) \(s_2=2\text{.}\) This gives the solution \(y=c_1 e^{-t} + c_2 e^{2t}\text{.}\)</p></article><span class="incontext"><a href="so-constant-coefficients.html#example-22">in-context</a></span>
+<p>Here are some looks at the function \(e^{st}\) for different complex values of \(s\text{.}\) First, when \(s\) is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of the function give cosine and sine, respectively.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = 0;  om = 1;
+t = linspace(0, 25, 500);
+f = exp((a+1i*om)*t);
+
+plot3(t, real(f), imag(f), 'LineWidth',2)
+hold on
+plot3(t,real(f), 0*t-1.5)
+plot3(t, 0*t+2, imag(f))
+plot3(0*t+30,real(f),imag(f),'k')
+axis([0 30 -2  2 -1.5 1.5])
+title(sprintf('a = %.2f, omega = %.1f',a,om))
+grid on, xlabel('Time')
+ylabel('Real Axis')
+zlabel('Imag Axis')	
+set(gca,'dataaspect',[6,1,1])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_neutral.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>If \(\text{Re} s \gt 0\text{,}\) the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of \(s\) controls the frequency or "tightness" of the spiral.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = 0.01;  om = 2;
+t = linspace(0, 25, 500);
+f = exp((a+1i*om)*t);
+
+plot3(t, real(f), imag(f), 'LineWidth',2)
+hold on
+plot3(t,real(f), 0*t-1.5)
+plot3(t, 0*t+2, imag(f))
+plot3(0*t+30,real(f),imag(f),'k')
+axis([0 30 -2  2 -1.5 1.5])
+title(sprintf('a = %.2f, omega = %.1f',a,om))
+grid on, xlabel('Time')
+ylabel('Real Axis')
+zlabel('Imag Axis')	  
+set(gca,'dataaspect',[6,1,1])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_grow.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>Finally, if \(\text{Re} s \lt 0\text{,}\) the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = -0.1;  om = 0.8;
+t = linspace(0, 25, 500);
+f = exp((a+1i*om)*t);
+
+plot3(t, real(f), imag(f), 'LineWidth',2)
+hold on
+plot3(t,real(f), 0*t-1.5)
+plot3(t, 0*t+2, imag(f))
+plot3(0*t+30,real(f),imag(f),'k')
+axis([0 30 -2  2 -1.5 1.5])
+title(sprintf('a = %.2f, omega = %.1f',a,om))
+grid on, xlabel('Time')
+ylabel('Real Axis')
+zlabel('Imag Axis')	 
+set(gca,'dataaspect',[6,1,1])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_decay.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article><span class="incontext"><a href="so-complex-exponentials.html#example-22">in-context</a></span>
 </body>
 </html>

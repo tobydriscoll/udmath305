@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:53-05:00    *-->
+<!--*    on 2019-02-24T21:28:52-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -121,18 +121,17 @@ MathJax.Hub.Config({
 <p id="p-91">First-order ODEs are often used to model situations of growth and decay. The linear problem \(y'=ay+q(t)\) is a prototype for many important problems: </p>
 <dl class="description-list">
 <dt id="li-3">Population</dt>
-<dd><p id="p-92">A population \(y(t)\) of organisms has a constant net per capita birth (or death) rate.</p></dd>
+<dd><p id="p-92">Population \(y(t)\) of organisms has a constant net per capita birth (or death) rate</p></dd>
 <dt id="li-4">Interest</dt>
-<dd><p id="p-93">Here \(y(t)\) is an amount invested with fixed positive interest rate \(a\text{.}\)</p></dd>
+<dd><p id="p-93">Money amount \(y(t)\) grows at fixed positive interest rate \(a\)</p></dd>
 <dt id="li-5">Radioactivity</dt>
-<dd><p id="p-94">\(y(t)\) is the mass of a radioactive isotope, and \(k
-lt 0\text{.}\)</p></dd>
+<dd><p id="p-94">\(y(t)\) is the mass of a radioactive isotope, and \(a \lt 0\)</p></dd>
 <dt id="li-6">Pharmacokinetics</dt>
-<dd><p id="p-95">In first-order kinetics, \(y(t)\) is the amount of a drug being metabolized in the body.</p></dd>
-<dt id="li-7">Cooling</dt>
-<dd><p id="p-96">If \(y(t)\) is the temperature of a body kept in an environment at fixed temperature \(E\text{,}\) let \(z(t)=y(t)-E\) be the "difference from environment." Then \(z'=a z\) for a cooling rate \(a \lt 0\text{;}\) temperature tends toward \(E\) exponentially. This is <dfn class="terminology">Newton's Law of Cooling</dfn>.</p></dd>
+<dd><p id="p-95">\(y(t)\) is the amount of a drug being metabolized in the body</p></dd>
+<dt id="li-7">Newtonian cooling</dt>
+<dd><p id="p-96">If \(y(t)\) is the temperature of a body kept in an environment at fixed temperature \(E\text{,}\) then the difference \(z(t)=y(t)-E\) satisfies \(z'=a z\) for a cooling rate \(a \lt 0\)</p></dd>
 </dl>
-<p> To belabor the obvious, positive \(a\) represents growth and negative \(a\) leads to decay. In the simplest contexts, the rate \(a\) is constant, but in some models (like finance) a variable rate is more realistic.</p>
+<p> To belabor the obvious, positive \(a\) represents growth and negative \(a\) leads to decay. In the simplest contexts, the rate \(a\) is constant, but in most models a variable rate is more realistic.</p>
 <p id="p-97">(A note about interest: Rates in the real world may be quoted yearly, or quarterly, or according to any other finite time period. The rate in an ODE model is the "continuously compounded" rate. This is explained somewhat on page 45 of the text.)</p>
 <p id="p-98">The units of the derivative \(dy/dt\) are those of \(y\) divided by those of \(t\text{.}\) Let's write these as \(Y/T\text{.}\) Additive terms all need to have the same units, so both \(q(t)\) and \(a(t)y\) have those units as well. Consequently \(a\) has units \(1/T\text{,}\) or "per time," and has various interpretations when inverted: </p>
 <ul class="disc">

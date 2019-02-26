@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Complex poles in the transform correspond to complex exponentials in the time donmain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
+<p>The undamped oscillator \(y''+9y=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} \text{,}
+Y(s) = \frac{3}{(s^2+9)^2}\text{.}
 \end{equation*}
 </div>
-<p>so the right-hand side above is the transform of</p>
+<p>This doesn't look like anything easy. However, note that</p>
 <div class="displaymath">
 \begin{equation*}
-e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{.}
+sY(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frad{d}{ds} \left[ \frac{1}{s^2+9} \right] \text{.}
 \end{equation*}
 </div>
-<p>In similar fashion we can show that \(e^{at} \cos( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion.</p>
+<p>Therefore, \(sY(s)\) is the transform of \(\frac{1}{2} t \sin(3t)\text{.}\) So this must be \(y'(t)\text{.}\) An integration by parts then recovers</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="laplace-complex.html#p-256">in-context</a></span>
 </body>
 </html>

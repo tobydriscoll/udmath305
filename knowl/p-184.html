@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p><em class="emphasis">Null solution</em>. The characteristic equation of \(y''+5y'+6y=0\) is \(s^2+5s+6=0\text{,}\) which has roots \(s_1=-2\text{,}\) \(s_2=-3\text{.}\) Thus \(y_n=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p>
+<p>For \(f(t)=e^{rt}\) we let \(y_p=Y e^{rt}\) and plug into the ODE:</p>
+<div class="displaymath">
+\begin{equation*}
+(ar^2 + br + c)Ye^{rt} = e^{rt}\text{.}
+\end{equation*}
+</div>
+<p>This is identically satisfied if we choose</p>
+<div class="displaymath">
+\begin{equation*}
+Y = \frac{1}{ar^2 + br + c}\text{.}
+\end{equation*}
+</div>
+<p>In various contexts we call this the <dfn class="terminology">exponential response function</dfn> or the <dfn class="terminology">transfer function</dfn>. It's constant in time, but a function of the forcing exponent \(r\) (which is usually called \(s\) in transfer functions).</p>
 <span class="incontext"><a href="so-forced-oscillators.html#p-184">in-context</a></span>
 </body>
 </html>

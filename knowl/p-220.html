@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Continuing the underdamped case, the gain works out to be</p>
+<p>The mechanical oscillator \(ay'' + by' + cy = f(t)\) is more conveniently expressed as</p>
 <div class="displaymath">
 \begin{equation*}
-G^2 = \frac{1}{(\omega_n^2-\omega^2)^2 + 4\omega_n^2Z^2\omega^2}  = \frac{\omega_n^4}{(1-\rho^2)^2 + 4Z^2\rho^2}\text{,}
+y'' + \frac{b}{a} y' + \frac{c}{a} y + \frac{c}{a} F(t)\text{.}
 \end{equation*}
 </div>
-<p>where \(\rho=\omega/\omega_n\) is a dimensionless frequency ratio. If also \(Z^2\lt 1/2\text{,}\) the gain is maximized when \(\rho=\sqrt{1-2Z^2} \lt 1\text{.}\) The gain at that maximum is proportional to \(1/Z\text{,}\) so much growth in the response is possible near the natural frequency when damping is small in the sense of \(Z\approx 0\text{.}\) This can be considered a practical resonance for lightly damped systems.</p>
+<p>One reason to prefer this form is that \(y\) must have the same units as the forcing \(F\text{.}\) Furthermore, we see the undamped natural frequency \(\omega_n=\sqrt{c/a}\text{,}\) and this has units of inverse time only. The same units apply to \(b/a\text{,}\) so we introduce the new dimensionless parameter</p>
+<div class="displaymath">
+\begin{equation*}
+Z = \frac{1}{2} \frac{b/a}{\omega_n} = \frac{b}{\sqrt{4ac}}\text{.}
+\end{equation*}
+</div>
+<p>Now the ODE becomes</p>
+<div class="displaymath">
+\begin{equation*}
+y'' + 2 Z \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-applications.html#p-220">in-context</a></span>
 </body>
 </html>

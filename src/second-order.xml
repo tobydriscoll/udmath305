@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <chapter xml:id="second-order-ode" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Second-order ODEs</title>
+	<title>Second-order ODEs</title>
  
 	<section xml:id="so-simple-harmonic">
 	<title>Simple harmonic motion</title>
 
 	<subsection xml:id="so-sh-newton">
 	  <title>Newton's law</title>
-	<p>The subtext of this chapter is, "F=ma is not just a good idea; it's the law." Newton's second law, to be exact. Since acceleration is the second derivative of position, this leads us to second-order ODEs of the form <m>y''=F(t,y,y')</m>. You can always think about this as a problem specifying a position-dependent force, though it's much more general than that.</p>
+		<p>The subtext of this chapter is, "<m>F=ma</m> is not just a good idea; it's the law." Newton's second law, to be exact. Since acceleration is the second derivative of position, this leads us to second-order ODEs of the form <m>y''=F(t,y,y')</m>. You can always think about this as a problem specifying a position-dependent force, though it's much more general than that.</p>
 
-	<p>Suppose you ask a question such as, "Where will my car be after 4 seconds of maximum acceleration?" You can't fully answer it unless you know two more pieces of data: the position and velocity of the car at the start. In general, we need to know <m>y(0)</m> and <m>y'(0)</m> (or values at some other time) in order to solve a second-order problem uniquely.</p>
+		<p>Suppose you ask a question such as, "Where will my car be after 4 seconds of maximum acceleration?" You can't fully answer it unless you know two more pieces of data: the position and velocity of the car at the start. In general, we need to know <m>y(0)</m> and <m>y'(0)</m> (or values at some other time) in order to solve a second-order problem uniquely.</p>
 
-	<p>The grandpappy of all second-order ODEs is <m>y''=-ay</m>, for a positive constant <m>a</m>. In terms of Newton's second law, this arises with a force term defined as <m>F=-ky</m>, because then <m>my''=-ky</m>. Most springs behave like this to a good approximation, provided you don't stretch or compress them too far (an idea called Hooke's Law). Playground swings, molecular bonds, and electrical inductors are often well-approximated this way as well. </p>
+		<p>The grandpappy of all second-order ODEs is <m>y''=-ay</m>, for a positive constant <m>a</m>. In terms of Newton's second law, this arises with a force term defined as <m>F=-ky</m>, because then <m>my''=-ky</m>. Most springs behave like this to a good approximation, provided you don't stretch or compress them too far (an idea called Hooke's Law). Playground swings, molecular bonds, and electrical inductors are often well represented this way as well. </p>
 
-	<p>The negative sign in the force is crucial. It makes the force a "restoring" one: move to the right, and you are pushed to the left, and vice versa. Soon we will let additional external forces act, in which case the ODE becomes <m>my''+ky=f(t)</m>.</p>
+		<p>The negative sign in the force is crucial. It makes the force a "restoring" one: move to the right, and you are pushed to the left, and vice versa. Soon we will let additional external forces act, in which case the ODE becomes <m>my''+ky=f(t)</m>.</p>
 	</subsection>
 
 	<subsection xml:id="so-sh-null">
-	  <title>Unforced solution</title>
-	<p>Solutions of <m>my''+ky=0</m> are quite easy to get. Define <m>\omega_n=\sqrt{k/m}</m>. Then you can easily check that <m>\cos(\omega_n t)</m> is a solution. So are <m>-\cos(\omega_n t)</m> and <m>7164\cos(\omega_n t)</m>, for that matter; any constant multiplier is allowed. You can also check that <m>A\sin(\omega_n t)</m> is a solution for any constant multiplier. Finally, we can combine them as well, into
-	<me>y = c_1 \cos(\omega_n t) + c_2 \sin(\omega_n t).</me>
-	It turns out that this expression captures all possible solutions. We have <term>simple harmonic motion</term>.	</p>
+		<title>Unforced solution</title>
+		<p>Solutions of <m>my''+ky=0</m> are quite easy to get. Define <m>\omega_n=\sqrt{k/m}</m>. Then you can easily check that <m>\cos(\omega_n t)</m> is a solution. So are <m>-\cos(\omega_n t)</m> and <m>7164\cos(\omega_n t)</m>, for that matter; any constant multiplier is allowed. You can also check that <m>A\sin(\omega_n t)</m> is a solution for any constant multiplier. Finally, we can combine them as well, into
+		<me>y = c_1 \cos(\omega_n t) + c_2 \sin(\omega_n t).</me>
+		It turns out that this expression captures all possible solutions. We have <term>simple harmonic motion</term>.	</p>
 
-	<p>We started with a second derivative in the ODE and now we have two arbitrary "integration constants." That's no coincidence. It's also not a coincidence that we need two initial values to find a unique solution. For the record, we can easily find that
-	<me>y(t) = y(0) \cos(\omega_n t) + \frac{y'(0)}{\omega_n} \sin(\omega_n t).</me></p>
+		<p>We started with a second derivative in the ODE and now we have two arbitrary "integration constants." That's no coincidence. It's also not a coincidence that we need two initial values to find a unique solution. For the record, we can easily find that
+		<me>y(t) = y(0) \cos(\omega_n t) + \frac{y'(0)}{\omega_n} \sin(\omega_n t).</me></p>
 
-	<p>Recall from <xref ref="frc-shifted-cos"/> that a combination of sin and cos at the same frequency is equivalent to a shifted cosine, so we can also write <m>y=R\cos(\omega_n t - \alpha)</m> for an amplitude <m>R</m> and a phase <m>\alpha</m>, and we get those values by expressing the cartesian point <m>(y(0),y'(0)/\omega_n)</m> in polar form. </p>
+		<p>Recall from <xref ref="frc-shifted-cos"/> that a combination of sin and cos at the same frequency is equivalent to a shifted cosine, so we can also write <m>y=R\cos(\omega_n t - \alpha)</m> for an amplitude <m>R</m> and a phase <m>\alpha</m>, and we get those values by expressing the cartesian point <m>(y(0),y'(0)/\omega_n)</m> in polar form. </p>
 
-	<exercise>
-	  <statement><p>Find the solution in shifted cosine form of <m>2y''+32y=0</m> with <m>y(0)=1</m>, <m>y'(0)=-8</m>.</p>
-	  </statement>
-	  <solution>
-	    <p>We have <m>\omega_n=\sqrt{16}=4</m>, so <m>y = c_1 \cos(4 t) + c_2 \sin(4 t).</m> We then derive <m>1=y(0)=c_1</m> and <m>-8=y'(0)=4c_2</m>, so <m>y = \cos(4 t) -2 \sin(4 t).</m> Converting <m>(1,-2)</m> to polar form gives <m>R=\sqrt{5}</m> and <m>\alpha = \tan^{-1}(-2)</m>. </p>
-	  </solution>
-	</exercise>
+		<exercise>
+		  <statement><p>Find the solution in shifted cosine form of <m>2y''+32y=0</m> with <m>y(0)=1</m>, <m>y'(0)=-8</m>.</p>
+		  </statement>
+		  <solution>
+		    <p>We have <m>\omega_n=\sqrt{16}=4</m>, so <m>y = c_1 \cos(4 t) + c_2 \sin(4 t).</m> We then derive <m>1=y(0)=c_1</m> and <m>-8=y'(0)=4c_2</m>, so <m>y = \cos(4 t) -2 \sin(4 t).</m> Converting <m>(1,-2)</m> to polar form gives <m>R=\sqrt{5}</m> and <m>\alpha = \tan^{-1}(-2)</m>. </p>
+		  </solution>
+		</exercise>
 	    
 
-	<p>A quick word about words. In math we typically use the term frequency to mean an <term>angular frequency</term>, as with the value <m>\omega_n</m> that multiplies <m>t</m> inside the trig functions. You can think of this value as meaning "radians per second." In engineering and physics one might be more comfortable using "cycles per second" (or Hertz), which leads to a different value of frequency, <m>\omega_n/2\pi</m>. We won't be using that, just to avoid confusion, but now you're aware that corresponding formulas in other sources might have extra factors of <m>2\pi</m> sprinkled about.</p>
+		<p>A quick word about words. In math we typically use the term frequency to mean an <term>angular frequency</term>, as with the value <m>\omega_n</m> that multiplies <m>t</m> inside the trig functions. You can think of this value as meaning "radians per second." In engineering and physics one might be more comfortable using "cycles per second" (or Hertz), which leads to a different value of frequency, <m>\omega_n/2\pi</m>. We won't be using that, just to avoid confusion, but now you're aware that corresponding formulas in other sources might have extra factors of <m>2\pi</m> sprinkled about.</p>
 	
 	</subsection>
 
@@ -60,68 +60,172 @@
 	      <me>y_p=10\cos(t)+8\sin(t)</me>.</p>
 	    </solution>
 	  </exercise>
-	  
-	  <p>The analogy goes even deeper. Recall in <xref ref="flcs-impulse"/> that the null solution was relatable to the impulse response, i.e., the particular solution when <m>f(t)=\delta(t)</m>. That happens here, too. In fact, the solution of <m>my''+ky=\delta(t)</m> with zero initial conditions is
-	  <men xml:id="eq-so-sh-fundsol">g(t) = \frac{1}{m\omega_n} \sin(\omega_n t).</men>
-	  This solution has <m>g(0)=0</m>, <m>g'(0)=1/m</m>, and solves <m>my''+ky=0</m> for <m>t\gt 0</m>.</p>
+	</subsection>
 
-	  <p>(Sort-of justification: Since <m>g(0)=0</m>, we have <m>mg''=\delta(t)</m> there. Integrating once tells us that <m>mg'</m> is a step function, so <m>g'=1/m</m> immediately at time zero. Kinda.)</p>
+	<subsection>
+		<title>Impulse response</title>
+		  
+	  	<p>
+			Recall in <xref ref="flcs-impulse"/> that in first-order problems, the particular solution when <m>f(t)=\delta(t)</m> is called the impulse response. The solution of <m>my''+ky=\delta(t)</m> with zero initial conditions is
+	  		<men xml:id="eq-so-sh-fundsol">
+				  g(t) = \frac{1}{m\omega_n} \sin(\omega_n t)
+			</men>.
+	  		Also like the first-order case, the impulse response is also the solution to a certain homogeneous problem: <m>g(0)=0</m>, <m>g'(0)=1/m</m>, and solves <m>mg''+kg=0</m> for <m>t\gt 0</m>.
+		</p>
 
-	  <p>The kicker is that the impulse response can be used to solve <em>any</em> forcing problem, at least in principle. Given the forcing term <m>f(t)</m>, a particular solution is
-	  <me>y_p(t) = \int_0^t g(t-s)f(s)\,ds.</me>
-	  Again, in a linear problem we just need to add up the contributions of impulses at every moment. Because of this formula, the impulse response <m>g</m> is also called a <term>fundamental solution</term>. We'll be using and coming at this formula a few different ways throughout the chapter. </p>
+	 	 <p>
+		  	(Sort-of justification: Since <m>g(0)=0</m>, we have <m>mg''=\delta(t)</m> there. Integrating once tells us that <m>mg'</m> is a step function, so <m>g'=1/m</m> immediately at time zero. Kinda. We will have a better derivation much later on.) 
+		</p>
+
+	  	<p>
+			The kicker is that the impulse response can be used to solve <em>any</em> forcing problem, at least in principle. Given the forcing term <m>f(t)</m>, a particular solution is
+	  		<me>
+				  y_p(t) = \int_0^t g(t-s)f(s)\,ds
+			</me>.
+	  		Again, in a linear problem we just need to add up the contributions of impulses at every moment. Because of this formula, the impulse response <m>g</m> is also called a <term>fundamental solution</term>. We'll be using and coming at this formula a few different ways throughout the chapter.
+		</p>
 	</subsection>
 
 	</section>
 
-  <section xml:id="so-complex-exponentials">
-	<title>Complex exponentials</title>
-	<p>For second-order equations the complex plane becomes indispensible. Recall again the polar form of a complex number,
-	<me>re^{i\theta} = (r\cos \theta)+i(r\sin \theta)</me>.
-	This gives us a way of looking at the exponential of any complex number as
-	<me>e^{x+iy} = e^x e^{iy} = (e^x\cos y)+i(e^x\sin y)</me>.
-	More importantly, we can look at exponential functions of time more generally as
-	<men xml:id="eq-so-exp-exp">e^{(a+i \omega)t} =  e^{at} (\cos \omega t + i \sin \omega t)</men>.
-	Reading from right to left, we have the product of <m>e^{i\omega t}</m>, which goes around and around the unit circle at constant speed, and <m>e^{at}</m>, which is an amplitude that exponentially grows or decays (or stays fixed if <m>a=0</m>).  </p>
+  	<section xml:id="so-complex-exponentials">
+		<title>Complex exponentials</title>
+		<p>For second-order equations the complex plane becomes indispensible. Recall again the polar form of a complex number,
+		<me>re^{i\theta} = (r\cos \theta)+i(r\sin \theta)</me>.
+		This gives us a way of looking at the exponential of any complex number as
+		<me>e^{x+iy} = e^x e^{iy} = (e^x\cos y)+i(e^x\sin y)</me>.
+		More importantly, we can look at exponential functions of time more generally as
+		<men xml:id="eq-so-exp-exp">e^{(a+i \omega)t} =  e^{at} (\cos \omega t + i \sin \omega t)</men>.
+		Reading from right to left, we have the product of <m>e^{i\omega t}</m>, which goes around and around the unit circle at constant speed, and <m>e^{at}</m>, which is an amplitude that exponentially grows or decays (or stays fixed if <m>a=0</m>).  </p>
 
-	<p>The upshot is that in the function <m>e^{st}</m>, the real part of <m>s</m> determines exponential growth or decay, and the imaginary part of <m>s</m> determines frequency of oscillation. All real exponentials, and all harmonic sines and cosines, are just special cases.</p>
+		<example>
+			<p> 
+				Here are some looks at the function <m>e^{st}</m> for different complex values of <m>s</m>. First, when <m>s</m> is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of the function give cosine and sine, respectively. 
+			</p>
+			<sidebyside>
+	 			<program language="matlab" permid="so_cexp_neutral">
+	    			<input>
+a = 0;  om = 1;
+t = linspace(0, 25, 500);
+f = exp((a+1i*om)*t);
 
+plot3(t, real(f), imag(f), 'LineWidth',2)
+hold on
+plot3(t,real(f), 0*t-1.5)
+plot3(t, 0*t+2, imag(f))
+plot3(0*t+30,real(f),imag(f),'k')
+axis([0 30 -2  2 -1.5 1.5])
+title(sprintf('a = %.2f, omega = %.1f',a,om))
+grid on, xlabel('Time')
+ylabel('Real Axis')
+zlabel('Imag Axis')	
+set(gca,'dataaspect',[6,1,1])    			
+					</input>
+				</program>
+				<image source="matlab/so_cexp_neutral.svg"/>	  
+			</sidebyside>
+			<p>
+				If <m>\text{Re} s \gt 0</m>, the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of <m>s</m> controls the frequency or "tightness" of the spiral. 
+			</p>
+			<sidebyside>
+	 			<program language="matlab" permid="so_cexp_grow">
+	    			<input>
+a = 0.01;  om = 2;
+t = linspace(0, 25, 500);
+f = exp((a+1i*om)*t);
 
+plot3(t, real(f), imag(f), 'LineWidth',2)
+hold on
+plot3(t,real(f), 0*t-1.5)
+plot3(t, 0*t+2, imag(f))
+plot3(0*t+30,real(f),imag(f),'k')
+axis([0 30 -2  2 -1.5 1.5])
+title(sprintf('a = %.2f, omega = %.1f',a,om))
+grid on, xlabel('Time')
+ylabel('Real Axis')
+zlabel('Imag Axis')	  
+set(gca,'dataaspect',[6,1,1])  			
+					</input>
+				</program>
+				<image source="matlab/so_cexp_grow.svg"/>	  
+			</sidebyside>
+			<p>
+				Finally, if <m>\text{Re} s \lt 0</m>, the spiral is a decaying one. The real and imaginary parts are attenuated oscillations. 
+			</p>
+			<sidebyside>
+	 			<program language="matlab" permid="so_cexp_decay">
+	    			<input>
+a = -0.1;  om = 0.8;
+t = linspace(0, 25, 500);
+f = exp((a+1i*om)*t);
 
-	<p>Let's look back a moment at <m>my''+ky=0</m>. If we now try an exponential solution of the form <m>y_n=e^{st}</m>, then we arrive at <m>(ms^2+k)e^{st}=0</m>, which we can make true if <m>s^2=-k/m</m>. this has two roots, <m>s=\pm i \omega_n</m>, and we are led to
-	<me> y_n = c_1 e^{i\omega t} + c_2 e^{-i\omega t}</me>.
-	A little rearrangement should convince you that this is equivalent to the form we got in the last section, just using complex numbers.</p>
+plot3(t, real(f), imag(f), 'LineWidth',2)
+hold on
+plot3(t,real(f), 0*t-1.5)
+plot3(t, 0*t+2, imag(f))
+plot3(0*t+30,real(f),imag(f),'k')
+axis([0 30 -2  2 -1.5 1.5])
+title(sprintf('a = %.2f, omega = %.1f',a,om))
+grid on, xlabel('Time')
+ylabel('Real Axis')
+zlabel('Imag Axis')	 
+set(gca,'dataaspect',[6,1,1])   			
+					</input>
+				</program>
+				<image source="matlab/so_cexp_decay.svg"/>	  
+			</sidebyside>
 
-	<p>Similarly, for the forced problem <m>my''+ky=e^{i\omega t}</m>, we can get a particular solution <m>y_p=Y e^{i\omega t}</m> if we let <m>Y=1/(k-m\omega^2)</m>. This works for both cosine and sine forcing upon taking real and imaginary parts, and we go right back to the formulas from before.</p>
+      </example>
 
+	<p>
+		The upshot is that in the function <m>e^{st}</m>, the real part of <m>s</m> determines exponential growth or decay, and the imaginary part of <m>s</m> determines frequency of oscillation. All real exponentials, and all harmonic sines and cosines, are just special cases.
+	</p>
+
+	<p>
+		Let's look back a moment at <m>my''+ky=0</m>. If we now try an exponential solution of the form <m>y_n=e^{st}</m>, then we arrive at <m>(ms^2+k)e^{st}=0</m>, which we can make true if <m>s^2=-k/m</m>. This has two roots, <m>s=\pm i \omega_n</m>, and we are led to
+		<me> y_n = c_1 e^{i\omega_n t} + c_2 e^{-i\omega_n t}</me>.
+		A little rearrangement should convince you that this is equivalent to the form we got in the last section, just using complex numbers.
+	</p>
+
+	<p>
+		Similarly, for the forced problem <m>my''+ky=e^{i\omega t}</m>, we can get a particular solution <m>y_p=Y e^{i\omega t}</m> if we let <m>Y=1/(k-m\omega^2)</m>. This works for both cosine and sine forcing upon taking real and imaginary parts, and we go right back to the formulas from before. Rather than exploring the details here, we will next do it all for a more general problem that includes a <m>y'</m> term in the ODE.
+	</p>
   </section>
 
 	<section xml:id="so-constant-coefficients">
-	<title>Constant coefficients</title>
+		<title>Constant coefficients</title>
 		<introduction>
-	  <p>We're now set to tackle the linear, 2nd order ODE <m>a \frac{d^2y}{dt^2}+b\frac{dy}{dt}+cy=0</m> for constants <m>a,b,c</m>. (This is the only second-order problem we will solve. In fact, there aren't many more second-order problems that even can be solved with relatively little effort.) In order to cut down on the options in our explanations, we'll assume these constants are all real, and that <m>a\gt 0</m>. </p>
+	  		<p>
+		 		 We're now set to tackle the linear, 2nd order ODE <m>A \frac{d^2y}{dt^2}+B\frac{dy}{dt}+Cy=0</m> for constants <m>A,B,C</m>. (This is the only second-order problem we will solve. In fact,there aren't many more second-order problems that even can be solved with relatively little effort.) In order to cut down on the options in our explanations, we'll assume these constants are all real, and that <m>A\gt 0</m>. 
+			</p>
 
-	  <p>It's going to be easy to lose track of the most basic fact of this equation: <em>the solutions are exponentials</em>. (Well, with an asterisk.) In fact plugging in <m>y=e^{st}</m> takes us to <m>(as^2+bs+c)e^{st}=0</m>, which is obviously true if we can solve the <term>characteristic equation</term>
-	<men xml:id="eq-so-char">as^2+bs+c = 0</men>.
-	As you know, there are two (counting multiplicity) and only two solutions for <m>s</m> in this equation. Let's call them <m>s_1</m> and <m>s_2</m>. I won't insult you by writing out the quadratic formula here.</p>
+			<p>
+				It's going to be easy to lose track of the most basic fact of this equation: <em>the solutions are exponentials</em>. (Well, with an asterisk.) In fact plugging in <m>y=e^{st}</m> takes us to <m>(as^2+bs+c)e^{st}=0</m>, which is obviously true if we can solve the <term>characteristic equation</term>
+				<men xml:id="eq-so-char">
+					as^2+bs+c = 0
+				</men>.
+				As you know, there are two (counting multiplicity) and only two solutions for <m>s</m> in this equation. Let's call them <m>s_1</m> and <m>s_2</m>. I won't insult you by writing out the quadratic formula here.
+			</p>
 
-	<p>With two roots for the characteristic equation, the general null solution is
-	<me> y = c_1 e^{s_1t} + c_2 e^{s_2t}</me>.
-	There are two integration constants here, just what we need to satisfy two initial conditions. Except for that pesky asterisk!</p>
-	</introduction>
+			<p>
+				With two roots for the characteristic equation, the general null solution is
+					<me> y = c_1 e^{s_1t} + c_2 e^{s_2t}</me>.
+				There are two integration constants here, just what we need to satisfy two initial conditions. That is, unless <m>s_1=s_2</m>... 
+			</p>
+		</introduction>
 
 	<subsection xml:id="so-cc-double">
-	  <title>Double root</title>
-	  <p>Suppose <m>s_1=s_2</m> is a double root of <xref ref="eq-so-char"/>. This happens when <m>b^2=4ac</m>, and <m>s_1=-b/(2a)</m>. In that case our candidate for the general solution is inadequate, because we can add the two terms together. Having <m>c_1+c_2</m> is no more general than having a single integration constant. Somehow we have to come up with a genuinely different second solution. It turns out that the job is done by <m>te^{s_1t}</m>. The proof is just a bunch of algebra: plug it in and show that it works.</p>
-
-	  <p>So in the double-root case our null solution is 
-	  <me> y = c_1 e^{s_1t} + c_2 t e^{s_1t}</me>.
-	  Honestly, this is the only odd thing that happens in this entire section. Everything else is just exploring the consequences of the solutions, and naming things that we find out.</p>
+		<title>Double root</title>
+	  	<p>
+			  Suppose <m>s_1=s_2</m> is a double root of <xref ref="eq-so-char"/>. This happens when <m>B^2=4AC</m>, and <m>s_1=-B/(2A)</m>. In this case our candidate for the general solution is inadequate, because we can add the two terms together and having <m>c_1+c_2</m> is no more general than having a single integration constant. Somehow we have to come up with a genuinely different second solution. It turns out that the job is done by <m>te^{s_1t}</m>. The proof is just a bunch of algebra: plug it in and show that it works. So in the double-root case our null solution is 
+	 	 	<me> y = c_1 e^{s_1t} + c_2 t e^{s_1t}</me>.
+	  		Honestly, this is the only unusual thing that happens in this entire section. Everything else is just exploring the consequences of the solutions, and naming the things that we find out.
+		</p>
 	</subsection>
 
 	<subsection xml:id="so-cc-real">
 	  <title>Distinct real roots</title>
-	  <p>Our two roots of the characterstic equation <xref ref="eq-so-char"/> might be distinct real numbers. This happens when <m>b^2\gt 4ac</m>. There isn't a whole lot else to say. The null solution is, as already stated,
+	  <p>Our two roots of the characterstic equation <xref ref="eq-so-char"/> might be distinct real numbers. This happens when <m>B^2\gt 4AC</m>. There isn't a whole lot else to say. The null solution is, as already stated,
 	  <me> y = c_1 e^{s_1t} + c_2 e^{s_2t}</me>.
 	  </p>
 
@@ -136,7 +240,7 @@
 
 	<subsection xml:id="so-cc-complex">
 	  <title>Complex roots</title>
-	  <p>There is exactly one more possibility for our characteristic roots: they are complex numbers. This happens if <m>b^2\lt 4ac</m>. In this case the roots must be conjugates of one another: <m>s_1=\overline{s}_2</m>. We'll find it convenient to write them in cartesian form, as <m>r\pm i\omega</m>. Then our null solution is
+	  <p>There is exactly one more possibility for our characteristic roots: they are complex numbers. This happens if <m>B^2\lt 4AC</m>. In this case the roots must be conjugates of one another: <m>s_1=\overline{s}_2</m>. We'll find it convenient to write them in cartesian form, as <m>r\pm i\omega</m>. Then our null solution is
 	  <me> y = c_1 e^{s_1t} + c_2 e^{s_2t} = e^{rt}\left( c_1 e^{i\omega t} + c_2 e^{-i \omega t} \right)</me>.
 	  This is a perfectly fine way to write the solution, but not the only way. If we use Euler's formula and rearrange, we get
 	  <me> y = e^{rt}\left( C_1 \cos(\omega t) + C_2 \sin(\omega t) \right)</me>.
@@ -145,48 +249,49 @@
 
 	<subsection xml:id="so-cc-oscillators">
 	  <title>Unforced oscillators</title>
-	  <p>We're going to narrow things a bit here and require both <m>a\gt 0</m> and <m>c\gt 0</m>. Remember, this arises from Newton's law to describe a restorative force. </p>
+	  <p>We're going to narrow things a bit here and require both <m>A\gt 0</m> and <m>C\gt 0</m>. Remember, this arises from Newton's Law to describe a restorative force. </p>
 
-	  <p>What shall we make of the <m>by'</m> term here? We didn't have it with simple harmonic motion. Let's look at that quadratic formula after all:
-	  <me> s_{1,2} = \frac{ -b \pm \sqrt{b^2-4ac} }{ 2a }</me>.
-	  Recall our three cases, depending on the sign of <m>b^2-4ac</m> (aka the discriminant). If this is negative, then the roots are complex with real part equal to <m>r=-b/2a</m>. The amplitude of the complex exponential solutions is <m>e^{rt}</m>. So these decay to zero if <m>b \gt 0</m> and grow unboundedly if <m>b\lt 0</m>.</p>
+	  <p>What shall we make of the <m>By'</m> term here? We didn't have it with simple harmonic motion. Now is the time to look at that quadratic formula:
+	  <me> s_{1,2} = \frac{ -B \pm \sqrt{B^2-4AC} }{ 2A }</me>.
+	  Recall our three cases, depending on the sign of <m>B^2-4AC</m> (aka the discriminant). If this is negative, then the roots are complex with real part equal to <m>r=-B/2A</m>. The amplitude of the complex exponential solutions is <m>e^{rt}</m>. So these decay to zero if <m>B \gt 0</m> and grow unboundedly if <m>B\lt 0</m>.</p>
 
-	  <p>In the case <m>b^2-4ac= 0</m>, we have the double root <m>s_1=-b/2a</m>, and we reach the same conclusions about the sign of <m>b</m> (exponential decay beats linear growth). Finally, if <m>b^2-4ac \gt 0</m>, it's not hard to conclude that the same things happen. Physically, the ODE term <m>by'</m> represents <term>damping</term>, but only if <m>b\gt 0</m>. Typically this represents loss of energy due to damping or thermodynamic effects. It's not impossible to have <m>b\lt 0</m>, meaning energy is being pumped into the system, but it is far more rare.</p>
+	  <p>In the case <m>B^2-4AC= 0</m>, we have the double root <m>s_1=-B/2A</m>, and we reach the same conclusions about the sign of <m>b</m> (exponential decay beats linear growth). Finally, if <m>B^2-4AC \gt 0</m>, it's not hard to conclude that the same things happen. Physically, the ODE term <m>By'</m> represents <term>damping</term> or dissipative loss of energy, but only if <m>B\gt 0</m>. It's not impossible to have <m>B\lt 0</m>, meaning energy is being pumped into the system, but it is much more rare.</p>
 
-	  <p>It's instructive to do a thought experiment in which we increase <m>b</m> from zero while everything else is fixed. First, at <m>b=0</m>, we have the idealized situation of an <term>undamped oscillator</term>. This is back to simple harmonic motion, with perfectly sinusoidal results. The characteristic roots in this case are imaginary, <m>s_{1,2}=\pm i \omega_n=\pm i \sqrt{c/a}</m>, corresponding to purely oscillating complex exponentials.</p>
+	  <p>It's instructive to do a thought experiment in which we increase <m>B</m> from zero while everything else is fixed. First, at <m>B=0</m>, we have the idealized situation of an <term>undamped oscillator</term>. This is back to simple harmonic motion, with perfectly sinusoidal results. The characteristic roots in this case are imaginary, <m>s_{1,2}=\pm i \omega_n=\pm i \sqrt{C/A}</m>, corresponding to purely oscillating complex exponentials.</p>
 
-	  <p>If we increase <m>b</m> slightly, the roots will behave continuously. They go into the complex plane as conjugates with negative real part <m>-b/2a</m>. At this point it's convenient to shift notation by renaming our constants:
-	  <me>\frac{-b}{ 2a } \pm i \frac{ \sqrt{4ac-b^2} }{ 2a } = -p \pm i\omega_d</me>,
-	  where <m>p=b/2a</m>, and <m>\omega_d^2 = \omega_n^2-p^2</m> defines a <term>damped frequency</term> that's a bit lower than the natural undamped frequency. The solutions oscillate at <m>\omega_d</m> and decay with exponential rate <m>-p</m>. This is called <term>underdamped oscillation</term>. </p>
+	  <p>If we increase <m>B</m> slightly, the roots will behave continuously. They go into the complex plane as conjugates with negative real part <m>-B/2A</m>. At this point it's handy to shift notation by renaming our constants:
+	  <me>\frac{-B}{ 2A } \pm i \frac{ \sqrt{4AC-B^2} }{ 2A } = -p \pm i\omega_d</me>,
+	  where <m>p=B/2A</m>, and <m>\omega_d^2 = \omega_n^2-p^2</m> defines a <term>damped frequency</term> that's a bit lower than the natural undamped frequency. The solutions oscillate at <m>\omega_d</m> and decay with exponential rate <m>-p</m>. This is called <term>underdamped oscillation</term>. </p>
 
-	  <p>As <m>b</m> continues to increase, eventually our complex roots coalesce into the double real root <m>-b/2a</m>. Even though the mathematical expression for the solution changes here, the behavior is continuous; we continue to see exponential decay, but the oscillatory component has gone from very slow to nonexistent. This is called <term>critical damping</term>.</p>
+	  <p>As <m>B</m> continues to increase, eventually our complex roots coalesce into the double real root <m>-B/2A</m>. Even though the mathematical expression for the solution changes here, the behavior is continuous; we continue to see exponential decay, but the oscillatory component has gone from very slow to nonexistent. This is called <term>critical damping</term>.</p>
 
-	  <p>Finally, as <m>b</m> increases more our roots again separate but stay on the negative real axis. The solutions are all decaying real exponentials, and we call the situation <term>overdamped</term>. (This is what you want for your airplane's wings!)</p>
+	  <p>Finally, as <m>B</m> increases more our roots again separate but stay on the negative real axis. The solutions are all decaying real exponentials, and we call the situation <term>overdamped</term>. (This is what you want for your airplane's wings!)</p>
 
-	  <p>The four types of oscillation can be predicted from the sign of <m>b^2-4ac</m>, or equivalently from the sign of <m>\omega_n-p</m>. Or you can use the dimensionless value <m>Z=p/\omega_n</m>, but enough already.</p>
+	  <p>The four types of oscillation can be predicted from the sign of <m>B^2-4AC</m>, or equivalently from the sign of <m>\omega_n-p</m>.</p>
 	</subsection>
 
 	<subsection xml:id="so-cc-impulse">
-	  <title>Impulse response</title>
+	  	<title>Impulse response</title>
 
-	  <p>Recall our claim that the fundamental solution <m>g(t)</m> of the impulse forcing problem <m>ay''+by'+c=\delta(t)</m> leads to the particular response to any input <m>f(t)</m> via <m>y_p(t)=\int_0^t g(t-s)f(s)\,ds</m>. Also recall that we can fudge finding <m>g</m> by having no forcing, <m>g(0)=0</m>, and <m>g'(0)</m> becoming instantly nonzero. </p>
+	 	<p>Recall our claim that the fundamental solution <m>g(t)</m> of the impulse forcing problem <m>Ay''+By'+C=\delta(t)</m> leads to the particular response to any input <m>f(t)</m> via <m>y_p(t)=\int_0^t g(t-s)f(s)\,ds</m>. Also recall that we can fudge finding <m>g</m> by having no forcing, <m>g(0)=0</m>, and <m>g'(0)</m> becoming instantly nonzero. </p>
 		
 		<p>
-			Consider an infinitesimally small time <m>\epsilon</m>. If we integrate <m>ay''+by'+c=\delta(t)</m> up to this time, then we can estimate
-	  <me>a(g'(\epsilon)-g'(0)) + b(g(\epsilon)-g(0)) + c\int_0^\epsilon g(t)\,dt = 1 </me>.
-	  Assuming that <m>g</m> itself is continuous, as <m>\epsilon\to 0</m> we conclude that <m>g'(\epsilon)-g'(0) = 1/a</m>, which is the jump we seek. That is, we use <m>g'(0)=1/a</m> as the "cheater's way" to get the fundamental solution.  </p>
+			Consider an infinitesimally small time <m>\epsilon</m>. If we integrate <m>Ay''+By'+Cy=\delta(t)</m> up to this time, then we can estimate
+	  		<me>A(g'(\epsilon)-g'(0)) + B(g(\epsilon)-g(0)) + C\int_0^\epsilon g(t)\,dt = 1 </me>.
+	  		Assuming that <m>g</m> itself is continuous, as <m>\epsilon\to 0</m> we conclude that <m>g'(\epsilon)-g'(0) = 1/A</m>, which is the jump we seek. That is, we use <m>g'(0)=1/A</m> as the "cheater's way" to get the fundamental solution.  
+		</p>
 
-	  <example>
-	    <p>The solution of <m>g''=\delta(t)</m> is equivalent to <m>g''=0</m> with <m>g(0)=0</m>, <m>g'(0)=1</m>. We have <m>g(t)=c_1+c_2t</m> and then conclude that <m>c_1=0</m>, <m>c_2=1</m>. That is, <m>g(t)=t</m>.
+	  	<example>
+			<p>
+				The solution of <m>g''=\delta(t)</m> is equivalent to <m>g''=0</m> with <m>g(0)=0</m>, <m>g'(0)=1</m>. We have <m>g(t)=c_1+c_2t</m> and then conclude that <m>c_1=0</m>, <m>c_2=1</m>. That is, <m>g(t)=t</m>.
 			</p>
 			<p>
 				Now suppose we want to solve <m>g''=\sin(t)</m>. We find
 				<me>y_p(t)=\int_0^t (t-s) \sin(s) \,ds = \bigl[ (s-t)\cos(s) - \sin(s) \bigr]_0^t = -\sin(t)-t</me>. 
 				This is not the same result we get by following the other methods of this section, which would suggest only <m>-\sin(t)</m>. The other <m>-t</m> coming from the integral formula is a part of the null solution, so both expressions are valid particular solutions. 
 			</p>
-	  </example>
+	 	</example>
 	</subsection>
-	  
   </section>
 
   <section xml:id="so-forced-oscillators">
@@ -830,18 +935,18 @@
 		</p>
 	</introduction>
 	<subsection>
-		<title>Steps and impulses</title>
+		<title>Shifts and steps</title>
 		<p>
-			It's straightforward to get the Laplace transform of a step function.
+			If we know the transform of some <m>f(t)</m>, then we can easily get the transform of the shifted/delayed version <m>H(t-T)f(t-T)</m>:
 			<md>
-				<mrow>${\cal L}[H(t-T)] \amp = \int_0^\infty H(t-T) e^{-st}\, dt </mrow>
-				<mrow>\amp = \int_T^\infty e^{-st}\, dt </mrow>
-				<mrow>\amp = \left[ \frac{e^{-st}}{-s} \right]_c^\infty = e^{-ct}\frac{1}{s}</mrow>
+				<mrow>{\cal L}[H(t-T)f(t-T)] \amp = \int_T^\infty f(t-T) e^{-st}\, dt </mrow>
+				<mrow>\amp = \int_0^\infty f(u) e^{-s(u+T)}\, du </mrow>
+				<mrow>\amp = e^{-sT} \int_0^\infty f(u) e^{-su}\, du = e^{-sT} {\cal L}[f(t)]</mrow>
 			</md>. 
-			More generally, you can follow the same trail to get 
+			An important special case is when <m>f(t)\equiv 1</m>, and we get the transform of a step as 
 			<me>
-				{\cal L}[H(t-T)f(t-T)] = e^{-sT} {\cal L}[f]
-			</me>.
+				{\cal L}[H(t-T)] = \frac{e^{-sT}}{s}
+			</me>. 
 		</p>
 		<example>
 			<p>
@@ -863,7 +968,7 @@
 			</p>
 		</example>
 		<p>
-			We have a new addition to the inversion library: exponentials in <m>s</m>. 
+			We have a new addition to the inversion toolkit: exponentials in <m>s</m>. 
 		</p>
 		<example>	
 			<p>
@@ -879,11 +984,161 @@
 		</example>
 
 	</subsection>
+	<subsection>
+		<title>Impulses</title>
+		<p>
+			Since impulses cause evaluation, finding their transforms is easy. 
+			<md>
+				<mrow>{\cal L}[\delta(t)] \amp = 1 </mrow>
+				<mrow>{\cal L}[\delta(t-T)] \amp = e^{-sT}</mrow>
+			</md>. 
+		</p>
+		<example>
+			<p>
+				Let's solve <m>y''+9y=\delta(t-2)</m>. A particular solution has transform
+				<me>
+					Y(s) = \frac{e^{-2s}}{s^2+9} = e^{-2s} F(s)
+				</me>,
+				where <m>F(s)</m> is the transform of <m>\sin(3t)/3</m>. So the shift formula implies
+				<me>
+					y(t) = \frac{1}{3} H(t-2) \sin(3t-6)
+				</me>. 
+			</p>
+		</example>
+	</subsection>
   </section>
 
   <section xml:id="convolutions">
 	<title>Convolutions</title>
-	<p>From section 8.6</p>
+	<introduction>
+		<p><em>From section 8.6, pp. 479–483 (skip Fourier and matrix material)</em></p>
+	</introduction>
+	
+	<subsection>
+		<title>Moving averages</title>
+		<p>
+			The following grabs and plots the closing price of Bitcoin for the last 31 days.
+		</p>
+			<sidebyside>
+	 			<program language="matlab" permid="so_conv_bitcoin1">
+	    			<input>
+bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
+data = jsondecode(bc);
+v = struct2cell(data.bpi);
+v = cat(1,v{:});
+plot(v,'-o')
+					</input>
+				</program>
+				<image source="matlab/so_conv_bitcoin1.svg"/>	  
+			</sidebyside>
+
+			<p>
+				It's a noisy curve. We can smooth that out by taking 4-day moving averages, for example. I don't claim that this is the best way, but we can do this by:
+			</p>
+			<sidebyside>
+	 			<program language="matlab" permid="so_conv_bitcoin2">
+	    			<input>
+bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
+data = jsondecode(bc);
+v = struct2cell(data.bpi);
+v = cat(1,v{:});
+plot(v,'-ko')
+for i = 4:31
+    z(i) = (v(i) + v(i-1) + v(i-2) + v(i-3)) / 4;
+end
+z(1:3) = NaN;  % not a number
+hold on, plot(z,'-o')
+					</input>
+				</program>
+				<image source="matlab/so_conv_bitcoin2.svg"/>	  
+			</sidebyside>
+
+			<p>
+				We might decide, however, to weight the most recent values more heavily. Here's how this might look.
+			</p>
+			<sidebyside>
+	 			<program language="matlab" permid="so_conv_bitcoin3">
+	    			<input>
+bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
+data = jsondecode(bc);
+v = struct2cell(data.bpi);
+v = cat(1,v{:});
+plot(v,'-ko')
+w = [4 3 2 1];
+for i = 4:31
+    z(i) = (w(1)*v(i) + w(2)*v(i-1) + w(3)*v(i-2) + w(4)*v(i-3)) / sum(w);
+end
+z(1:3) = NaN;  % not a number
+hold on, plot(z,'-o')
+					</input>
+				</program>
+				<image source="matlab/so_conv_bitcoin3.svg"/>	  
+			</sidebyside>
+			<p>
+				Note that each new value <m>z_i</m> is a linear combination of the elements of <m>v</m>, weighted by the values in <m>w</m>. And we always go forward 1,2,3,4 in <m>w</m>, while on <m>v</m> we have a sliding group going backward: <m>i,i-1,i-2,i-3</m>. Put concisely, the indices add up to the constant value <m>i+1</m>. 
+			</p>
+	</subsection>
+
+	<subsection>
+		<title>Convolution integral</title>
+		<p>
+			The moving average above gave us a certain way to multiply together vectors <m>v</m> and <m>w</m> to get a new vector <m>z</m>: 
+			<me>
+				z_i =  \sum_{j} w_j v_{i-j} 
+			</me>
+			(although I reindexed the output vector from <m>i+1</m> to <m>i</m> compared to the computer code). This is analogous to a different way to multiply two <em>functions</em>, by the <term>convolution integral</term>
+			<me> 
+				[f*g](t) = \int_0^t f(t-\tau)g(\tau)\, d\tau
+			</me>. 
+			This too is like a weighted average, with the values of <m>g(\tau)</m> being multiplied against different windows of the function <m>f</m> such that the arguments sum to <m>t</m>. 
+		</p>
+		<p> 
+			An interesting fact is that while I interpreted <m>f*g</m> as <m>g</m> acting on <m>f</m>, in fact the operation is symmetric:
+			<md>
+				<mrow>[g*f](t) \amp = \int_0^t f(t-\tau)g(\tau)\, d\tau</mrow>
+				<mrow>\amp = \int_t^0 f(u)g(t-u)\, (-du)  </mrow>
+				<mrow>\amp = \int_0^t g(t-u)f(u)\, du = [f*g](t)</mrow>
+			</md>. 
+			We can also easily prove some more properties we really like to have:
+			<md>
+				<mrow>f * ( g * h ) = ( f * g) * h </mrow>
+				<mrow>f * (g+h)=(f * g)+(f*h)</mrow> 
+				<mrow>f * 0=0</mrow>
+			</md>. 
+			It is <em>not</em> true, however, that <m>f*1=f</m>, unless <m>f</m> is the zero function. Instead, the right formula is <m> f * \delta=f</m>: 
+			<me> 
+				[f*\delta](t) = \int_0^t f(t-\tau) \delta(\tau)\, d\tau = f(t)
+			</me>. 
+		</p>
+	</subsection>
+
+	<subsection>
+		<title>Convolution theorem</title>
+		<p>
+			Here is what makes convolution a pretty big deal. 
+		</p>
+		<theorem>
+			<p>
+				Suppose <m>{\cal L}[f] = F(s)</m>, <m>{\cal L}[g] = G(s)</m>, <m>h=f*g</m>, and <m>{\cal L}[h] = H(s)</m>. Then <m>H(s)=F(s)G(s)</m>.
+			</p>
+		</theorem> 
+		<p> 
+			Why does this matter? Consider finding a particular solution of <m>Ay''+By'+Cy=f(t)</m>. After taking transforms we get  
+			<me> 
+				Y(s) = \frac{1}{As^2+Bs+C} F(s) = G(s) F(s)
+			</me>, 
+			where <m>G(s)</m> is our old friend the transfer function. Right away then, we know that <m>y(t)=f(t)*g(t)</m>. 
+		</p>
+		<p>
+			Wait, there's more! Consider the problem of the impulse response, <m>Ay''+By'+Cy=\delta(t)</m>, with zero initial conditions. The solution of this problem has <m>Y(s)=G(s)</m>. That is, 
+		</p>
+		<fact>
+			<p>The impulse response of a linear constant-coefficient equation is the inverse Laplace transform of the transfer function.</p>
+		</fact>
+		<p> 
+			Put it all together and you see that the solution to any forced problem is a convolution of the forcing with the impulse response/fundamental solution, whose transform is the transfer function. Which is the reciprocal of the characteristic polynomial! Evaluating convolution integrals for specific functions is rarely easy, so the most important implications here are theoretical. 
+		</p>
+	</subsection>
   </section>
 
 </chapter>

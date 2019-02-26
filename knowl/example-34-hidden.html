@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,41 +11,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>The undamped oscillator \(y''+16y=40e^{-2t}\) has a solution whose transform is</p>
-<div class="displaymath">
-\begin{equation*}
-Y(s) = \frac{40}{(s+2)(s^2+16)\text{.}
-\end{equation*}
-</div>
-<p>Hence</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{A+Bs}{s^2+16^2} + \frac{C}{s+2} = \frac{40}{(s+2)(s^2+16)\text{.}
-\end{equation*}
-</div>
-<p>Clearing the denominators gives the identity</p>
-<div class="displaymath">
-\begin{equation*}
-(A+Bs)(s+2) + C(s^2+16) = 40\text{.}
-\end{equation*}
-</div>
-<p>We need three equations to determine the unknown coefficients. Setting \(s=-2\) quickly gives \(20C=40\text{,}\) so \(C=2\text{.}\) Then setting \(s=\pm 4\) gives the system</p>
+<body><article class="example-like"><p>Given \(y'' -2y'-3y=4e^{-t}\text{,}\) we are led to try \(y_p=Ae^{-t}\text{:}\)</p>
 <div class="displaymath">
 \begin{align*}
-(A+4B)(6) \amp = 40 - 64 = -24\\
-(A-4B)(-2) \amp = -24\text{,}
+(Ae^{-t}) - 2(-Ae^{-t}) - 3Ae^{-t} \amp = 4e^{-t} \\
+0 \amp 4e^{-t} \text{.}
 \end{align*}
 </div>
-<p>or \(A+4B=-4\) and \(A-4B=12\text{.}\) We can add and subtract these equations to get \(2A=8\text{,}\) \(8B=-16\text{,}\) so finally</p>
+<p>This is impossible to satisfy. What's happened is that the characteristic polynomial is \((s+1)(s-3)\text{,}\) so \(e^{-t}\) is part of the null solution (as the above calculation already showed). Instead we have to use \(y_p=Ate^{-t}\text{,}\) which gives</p>
 <div class="displaymath">
-\begin{equation*}
-Y(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} \text{.}
-\end{equation*}
+\begin{align*}
+Ae^{-t}(t-2) - 2Ae^{-t}(1-t) - 3Ate^{-t} \amp = 4e^{-t} \\
+-4Ae^{-t} \amp 4e^{-t} \text{,}
+\end{align*}
 </div>
-<p>Hence</p>
-<div class="displaymath">
-\begin{equation*}
-y(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
-\end{equation*}
-</div></article></body>
+<p>so \(A=1\) and \(y_p\) is valid.</p></article></body>
 </html>

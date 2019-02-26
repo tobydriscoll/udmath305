@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The correspondence between \(L[y]=Ay''+By'+Cy\) and \(P(s)=As^2+Bs+C\) is by now obvious. It came by way of assuming \(y(t)=Y(s)e^{st}\text{,}\) and we get \(Y(s)=1/P(s)\text{.}\) Factoring \(P\) tells us what we need to know. For example, if its roots are \(-2\) and \(-4\text{,}\) then we know that \(y(t)\) is a combination of \(e^{-2t}\) and \(e^{-4t}\text{.}\) If an exponential, polynomial, step, or impulse forcing term is present, it contributes to the solution in similarly predictable ways. The only mystery to work out is the coefficients.</p>
-<span class="incontext"><a href="laplace-solutions.html#p-238">in-context</a></span>
+<p>If we continue to push ahead with the VP formulas, interesting things start to happen. For distinct roots,</p>
+<div class="displaymath">
+\begin{equation*}
+c_1' = -\frac{\exp(s_2t)}{(s_2-s_1)\exp((s_1+s_2)t)} f(t)  =  \frac{f(t)e^{-s_1t}}{s_1-s_2}\text{,}
+\end{equation*}
+</div>
+<p>and similarly \(c_2'= f(t)e^{-s_2t}/(s_2-s_1) \text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+y_p \amp = e^{s_1 t} \int_0^t \frac{f(\tau)e^{-s_1\tau}}{s_1-s_2}\, d\tau + 
+e^{s_2 t} \int_0^t \frac{f(\tau)e^{-s_2\tau}}{s_2-s_1}\, d\tau \\
+\amp =  \int_0^t  f(\tau) \frac{  e^{s_1(t-\tau)} -  e^{s_2(t-\tau)}}{s_1-s_2}\, d\tau  \\
+\amp =  \int_0^t  f(\tau) g(t-\tau) \, d\tau  \text{,}
+\end{align*}
+</div>
+<p>with</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = \frac{ e^{s_1t} -  e^{s_2t} }{s_1-s_2} \text{.}
+\end{equation*}
+</div>
+<p>By definition the integral formula makes \(g\) an fundamental solution. Remember, \(g\) is also the impulse response, and the null solution with \(g(0)=0\text{,}\) \(g'(0)=1/A=1\text{.}\) But this derivation doesn't rely on any sketchy deltas.</p>
+<span class="incontext"><a href="so-general-forcing.html#p-238">in-context</a></span>
 </body>
 </html>

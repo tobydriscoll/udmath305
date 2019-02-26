@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:53-05:00    *-->
+<!--*    on 2019-02-24T21:28:53-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -117,27 +117,27 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="laplace-properties"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.10</span> <span class="title">More Laplace transforms</span>
 </h2>
-<a href="laplace-properties.html" class="permalink">¶</a><section class="introduction" id="introduction-12"><p id="p-260"><em class="emphasis">From section 8.5</em></p>
-<p id="p-261">We have some things left to learn about Laplace transforms.</p></section><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.10.1</span> <span class="title">Steps and impulses</span>
+<a href="laplace-properties.html" class="permalink">¶</a><section class="introduction" id="introduction-12"><p id="p-262"><em class="emphasis">From section 8.5</em></p>
+<p id="p-263">We have some things left to learn about Laplace transforms.</p></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.10.1</span> <span class="title">Shifts and steps</span>
 </h3>
-<p id="p-262">It's straightforward to get the Laplace transform of a step function.</p>
+<p id="p-264">If we know the transform of some \(f(t)\text{,}\) then we can easily get the transform of the shifted/delayed version \(H(t-T)f(t-T)\text{:}\)</p>
 <div class="displaymath">
 \begin{align*}
-${\cal L}[H(t-T)] \amp = \int_0^\infty H(t-T) e^{-st}\, dt \\
-\amp = \int_T^\infty e^{-st}\, dt \\
-\amp = \left[ \frac{e^{-st}}{-s} \right]_c^\infty = e^{-ct}\frac{1}{s}\text{.}
+{\cal L}[H(t-T)f(t-T)] \amp = \int_T^\infty f(t-T) e^{-st}\, dt \\
+\amp = \int_0^\infty f(u) e^{-s(u+T)}\, du \\
+\amp = e^{-sT} \int_0^\infty f(u) e^{-su}\, du = e^{-sT} {\cal L}[f(t)]\text{.}
 \end{align*}
 </div>
-<p>More generally, you can follow the same trail to get</p>
+<p>An important special case is when \(f(t)\equiv 1\text{,}\) and we get the transform of a step as</p>
 <div class="displaymath">
 \begin{equation*}
-{\cal L}[H(t-T)f(t-T)] = e^{-sT} {\cal L}[f]\text{.}
+{\cal L}[H(t-T)] = \frac{e^{-sT}}{s}\text{.}
 \end{equation*}
 </div>
-<article class="example-like" id="example-37"><a knowl="" class="id-ref" refid="hk-example-37"><h6 class="heading">
+<article class="example-like" id="example-38"><a knowl="" class="id-ref" refid="hk-example-38"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.10.1</span>
-</h6></a></article><div id="hk-example-37" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-263">Let's transform the function</p>
+</h6></a></article><div id="hk-example-38" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-265">Let's transform the function</p>
 <div class="displaymath">
 \begin{equation*}
 f(t) = t + (1-t) H(t-2) + (e^{-2t}-1) H(t-3)\text{.}
@@ -158,10 +158,10 @@ F(s) = \frac{1}{s^2} - \frac{e^{-2s}}{s}  - \frac{e^{-2s}}{s^2}
 + e^{-6}\frac{e^{-3s}}{s+2} - \frac{e^{-3s}}{s}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-264">We have a new addition to the inversion library: exponentials in \(s\text{.}\)</p>
-<article class="example-like" id="example-38"><a knowl="" class="id-ref" refid="hk-example-38"><h6 class="heading">
+<p id="p-266">We have a new addition to the inversion toolkit: exponentials in \(s\text{.}\)</p>
+<article class="example-like" id="example-39"><a knowl="" class="id-ref" refid="hk-example-39"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.10.2</span>
-</h6></a></article><div id="hk-example-38" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-265">Let's find the inverse of \(F(s) = \frac{6 e^{-5s}}{s^2+s-2}\text{.}\) We write it as \(F(s) = 6^{-5s} G(s)\text{,}\) where</p>
+</h6></a></article><div id="hk-example-39" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-267">Let's find the inverse of \(F(s) = \frac{6 e^{-5s}}{s^2+s-2}\text{.}\) We write it as \(F(s) = 6^{-5s} G(s)\text{,}\) where</p>
 <div class="displaymath">
 \begin{equation*}
 G(s) = \frac{1}{(s+2)(s-1)} = \frac{1}{(1+2)(s-1)} + \frac{1}{(s+2)(-2-1)}\text{.}
@@ -171,6 +171,29 @@ G(s) = \frac{1}{(s+2)(s-1)} = \frac{1}{(1+2)(s-1)} + \frac{1}{(s+2)(-2-1)}\text{
 <div class="displaymath">
 \begin{equation*}
 f(t) = 6 H(t-5)g(t-5) = 2 H(t-5) \left[ e^{t-5} - e^{-2t+10} \right] \text{.}
+\end{equation*}
+</div></article></div></section><section class="subsection" id="subsection-43"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.10.2</span> <span class="title">Impulses</span>
+</h3>
+<p id="p-268">Since impulses cause evaluation, finding their transforms is easy.</p>
+<div class="displaymath">
+\begin{align*}
+{\cal L}[\delta(t)] \amp = 1 \\
+{\cal L}[\delta(t-T)] \amp = e^{-sT}\text{.}
+\end{align*}
+</div>
+<article class="example-like" id="example-40"><a knowl="" class="id-ref" refid="hk-example-40"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.10.3</span>
+</h6></a></article><div id="hk-example-40" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-269">Let's solve \(y''+9y=\delta(t-2)\text{.}\) A particular solution has transform</p>
+<div class="displaymath">
+\begin{equation*}
+Y(s) = \frac{e^{-2s}}{s^2+9} = e^{-2s} F(s)\text{,}
+\end{equation*}
+</div>
+<p>where \(F(s)\) is the transform of \(\sin(3t)/3\text{.}\) So the shift formula implies</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = \frac{1}{3} H(t-2) \sin(3t-6)\text{.}
 \end{equation*}
 </div></article></div></section></section></div></main>
 </div>

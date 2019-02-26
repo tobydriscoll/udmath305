@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:53-05:00    *-->
+<!--*    on 2019-02-24T21:28:53-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -117,26 +117,26 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="laplace-complex"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.9</span> <span class="title">Complex and repeated poles</span>
 </h2>
-<a href="laplace-complex.html" class="permalink">¶</a><section class="introduction" id="introduction-11"><p id="p-247">In the previous section we saw that it's easy to turn a linear, constant-coefficient ODE into a Laplace transform \(Y(s)\) of a particular solution. The art comes from the inverse problem of recovering \(y(t)\) from there. With the real, simple poles we've seen so far, the algebra is quite modest, but things get dicier when the poles are complex or repeated.</p></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
+<a href="laplace-complex.html" class="permalink">¶</a><section class="introduction" id="introduction-11"><p id="p-249">In the previous section we saw that it's easy to turn a linear, constant-coefficient ODE into a Laplace transform \(Y(s)\) of a particular solution. The art comes from the inverse problem of recovering \(y(t)\) from there. With the real, simple poles we've seen so far, the algebra is quite modest, but things get dicier when the poles are complex or repeated.</p></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.9.1</span> <span class="title">Imaginary poles</span>
 </h3>
-<p id="p-248">A transform having pure imaginary poles can be done easily if there are only two of them. As always, poles occur in conjugate pairs, so we first consider</p>
+<p id="p-250">A transform having pure imaginary poles can be done easily if there are only two of them. As always, poles occur in conjugate pairs, so we first consider</p>
 <div class="displaymath">
 \begin{equation*}
 Y(s) = \frac{A+Bs}{s^2+\omega^2}
 \end{equation*}
 </div>
 <p>for some real constants \(A,B,\omega\text{.}\) This inverts easily to \(y(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)\text{,}\) and there is little else to say.</p>
-<p id="p-249">If \(Y\) has an additional real pole as well at \(s=c\text{,}\) then it can be written in the partial fraction form</p>
+<p id="p-251">If \(Y\) has an additional real pole as well at \(s=c\text{,}\) then it can be written in the partial fraction form</p>
 <div class="displaymath">
 \begin{equation*}
 Y(s) = \frac{A+Bs}{s^2+\omega^2} + \frac{C}{s-c} \text{.}
 \end{equation*}
 </div>
 <p>This too is easy to invert once the constants are known. Finding them is tedious, but manageable.</p>
-<article class="example-like" id="example-34"><a knowl="" class="id-ref" refid="hk-example-34"><h6 class="heading">
+<article class="example-like" id="example-35"><a knowl="" class="id-ref" refid="hk-example-35"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.9.1</span>
-</h6></a></article><div id="hk-example-34" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-250">The undamped oscillator \(y''+16y=40e^{-2t}\) has a solution whose transform is</p>
+</h6></a></article><div id="hk-example-35" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-252">The undamped oscillator \(y''+16y=40e^{-2t}\) has a solution whose transform is</p>
 <div class="displaymath">
 \begin{equation*}
 Y(s) = \frac{40}{(s+2)(s^2+16)\text{.}
@@ -173,17 +173,17 @@ Y(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} \text{.}
 y(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-251">Finally, consider the driven unforced oscillator \(y''+\omega_n^2 y= \cos(\omega t)\text{.}\) It leads to</p>
+<p id="p-253">Finally, consider the driven unforced oscillator \(y''+\omega_n^2 y= \cos(\omega t)\text{.}\) It leads to</p>
 <div class="displaymath">
 \begin{equation*}
 Y(s) = \frac{s}{(s^2+\omega_n^2)(s^2+1)} = \frac{1}{\omega_n^2-\omega^2} \left( \frac{s}{s^2+\omega^2} - \frac{s}{s^2+\omega_n^2} \right)\text{,}
 \end{equation*}
 </div>
-<p>which is easily inverted into a combination of \(\cos(\omega t)\) and \(\cos(\omega_n t)\text{.}\) However, at this point we should probably just be using the method of undetermined coefficients instead.</p></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
+<p>which is easily inverted into a combination of \(\cos(\omega t)\) and \(\cos(\omega_n t)\text{.}\) However, at this point we should probably just be using the method of undetermined coefficients instead.</p></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.9.2</span> <span class="title">Repeated poles</span>
 </h3>
-<p id="p-252">We know by now that repeated poles in \(Y(s)\) arise in two ways: from repeated characteristic roots (i.e. poles of the transfer function), or perfect resonance in the forcing function. We can anticipate the effect on the transform, because we know the answer in the time domain is something like \(te^{rt}\text{.}\) </p>
-<p id="p-253">In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
+<p id="p-254">We know by now that repeated poles in \(Y(s)\) arise in two ways: from repeated characteristic roots (i.e. poles of the transfer function), or perfect resonance in the forcing function. We can anticipate the effect on the transform, because we know the answer in the time domain is something like \(te^{rt}\text{.}\) </p>
+<p id="p-255">In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
 <div class="displaymath">
 \begin{align*}
 F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
@@ -192,9 +192,9 @@ F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
 \end{align*}
 </div>
 <p>Take a moment to appreciate this. Earlier we found that a derivative in \(t\) corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
-<article class="example-like" id="example-35"><a knowl="" class="id-ref" refid="hk-example-35"><h6 class="heading">
+<article class="example-like" id="example-36"><a knowl="" class="id-ref" refid="hk-example-36"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.9.2</span>
-</h6></a></article><div id="hk-example-35" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-254">The undamped oscillator \(y''+9y=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
+</h6></a></article><div id="hk-example-36" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-256">The undamped oscillator \(y''+9y=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
 <div class="displaymath">
 \begin{equation*}
 Y(s) = \frac{3}{(s^2+9)^2}\text{.}
@@ -212,7 +212,7 @@ sY(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frad{d}{ds} \left[ \frac{1}{s^2+9} 
 y(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-255">If we keep differentiating in \(s\) we find</p>
+<p id="p-257">If we keep differentiating in \(s\) we find</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{d^n}{ds^n} \mathcal{L}[ f(t) ] = (-1)^n \mathcal{L}[ t^n f(t) ]\text{.}
@@ -224,10 +224,10 @@ y(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 \mathcal{L} \left[ t^n e^{rt} \right] = \frac{n!}{(s-r)^{n+1}} \text{.}
 \end{equation*}
 </div>
-<p>The even specialer case \(r=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
+<p>The even specialer case \(r=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p></section><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.9.3</span> <span class="title">Complex poles</span>
 </h3>
-<p id="p-256">Complex poles in the transform correspond to complex exponentials in the time donmain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
+<p id="p-258">Complex poles in the transform correspond to complex exponentials in the time donmain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} \text{,}
@@ -240,10 +240,10 @@ e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{.}
 \end{equation*}
 </div>
 <p>In similar fashion we can show that \(e^{at} \cos( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion.</p>
-<article class="example-like" id="example-36"><a knowl="" class="id-ref" refid="hk-example-36"><h6 class="heading">
+<article class="example-like" id="example-37"><a knowl="" class="id-ref" refid="hk-example-37"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.9.3</span>
-</h6></a></article><div id="hk-example-36" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-257">Suppose \(y''+2y'+10y=6\text{.}\) The very particular solution has \(Y(s)=6/(s^2+2s+10)\text{.}\) We can use the trick of completing the square to write this as \(Y(s)=6/[(s-1)^2+9]\text{,}\) and thus \(y(t) = 2e^{-t}\sin(3t)\text{.}\)</p>
-<p id="p-258">Things are much more complicated for a harmonically forced case such as \(y''+2y'+10y=\cos(2t)\text{.}\) Now</p>
+</h6></a></article><div id="hk-example-37" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-259">Suppose \(y''+2y'+10y=6\text{.}\) The very particular solution has \(Y(s)=6/(s^2+2s+10)\text{.}\) We can use the trick of completing the square to write this as \(Y(s)=6/[(s-1)^2+9]\text{,}\) and thus \(y(t) = 2e^{-t}\sin(3t)\text{.}\)</p>
+<p id="p-260">Things are much more complicated for a harmonically forced case such as \(y''+2y'+10y=\cos(2t)\text{.}\) Now</p>
 <div class="displaymath">
 \begin{equation*}
 Y(s) = \frac{s}{(s^2+4)(s^2+2s+10)}\text{.}
@@ -256,7 +256,7 @@ Y(s) = \frac{A+Bs}{s^2+4} + \frac{C+Es}{(s-1)^2+9}\text{,}
 \end{equation*}
 </div>
 <p>which is eminently invertible. But finding the four coefficients is a pretty heavy lift to do by hand.</p></article></div>
-<p id="p-259">The problem with Laplace transforms as a one-stop solver for linear, constant-coefficient problems is that the particular solution we find is always the "very particular" one that includes some terms from the null solution. That is because the poles of \(Y(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. It's extra algebra to find the coefficients of the null/transient parts, but that step can't be skipped. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases.</p></section></section></div></main>
+<p id="p-261">The problem with Laplace transforms as a one-stop solver for linear, constant-coefficient problems is that the particular solution we find is always the "very particular" one that includes some terms from the null solution. That is because the poles of \(Y(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. It's extra algebra to find the coefficients of the null/transient parts, but that step can't be skipped. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases.</p></section></section></div></main>
 </div>
 </body>
 </html>

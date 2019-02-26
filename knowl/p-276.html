@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:55-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p></p>
-<span class="incontext"><a href="matrix-exponential.html#p-276">in-context</a></span>
+<p>An interesting fact is that while I interpreted \(f*g\) as \(g\) acting on \(f\text{,}\) in fact the operation is symmetric:</p>
+<div class="displaymath">
+\begin{align*}
+[g*f](t) \amp = \int_0^t f(t-\tau)g(\tau)\, d\tau\\
+\amp = \int_t^0 f(u)g(t-u)\, (-du)  \\
+\amp = \int_0^t g(t-u)f(u)\, du = [f*g](t)\text{.}
+\end{align*}
+</div>
+<p>We can also easily prove some more properties we really like to have:</p>
+<div class="displaymath">
+\begin{gather*}
+f * ( g * h ) = ( f * g) * h \\
+f * (g+h)=(f * g)+(f*h)\\
+f * 0=0\text{.}
+\end{gather*}
+</div>
+<p>It is <em class="emphasis">not</em> true, however, that \(f*1=f\text{,}\) unless \(f\) is the zero function. Instead, the right formula is \(f * \delta=f\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+[f*\delta](t) = \int_0^t f(t-\tau) \delta(\tau)\, d\tau = f(t)\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="convolutions.html#p-276">in-context</a></span>
 </body>
 </html>

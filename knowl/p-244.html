@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>There's no new result here, though the process is quite streamlined. The values \(s=a\) and \(s=c\) that are roots of the denominator of \(Y(s)\) are called <dfn class="terminology">poles</dfn> of the transform. They signal clearly and quickly that every solution is a combination of the exponentials \(e^{at}\) and \(e^{ct}\text{.}\)</p>
+<ol class="decimal">
+<li>
+<em class="emphasis">Exponential functions.</em> This is straightforward to calculate from definition. For any complex number \(z\text{,}\)<div class="displaymath">
+\begin{equation*}
+{\cal L}[e^{z t}] = \int_0^\infty e^{(z-s)t}\, dt = \left[ -\frac{1}{s-z} e^{(z-s)t} \right]_0^\infty = \frac{1}{s-z}\text{.}
+\end{equation*}
+</div>(To make this valid requires that \({\text Re}(z)\lt s\text{,}\) but we are going to ignore such technicalities.) An important special case is when \(z=0\text{:}\) \({\cal L}[1]=1/s\text{.}\)</li>
+<li>
+<em class="emphasis">Cos and sin.</em> We can use an imaginary number in the exponential and take the real or imaginary part of the result.  Thus,<div class="displaymath">
+\begin{equation*}
+{\cal L}[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
+\end{equation*}
+</div>and<div class="displaymath">
+\begin{equation*}
+{\cal L}[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
 <span class="incontext"><a href="laplace-solutions.html#p-244">in-context</a></span>
 </body>
 </html>

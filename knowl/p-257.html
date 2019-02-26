@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:55-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose \(y''+2y'+10y=6\text{.}\) The very particular solution has \(Y(s)=6/(s^2+2s+10)\text{.}\) We can use the trick of completing the square to write this as \(Y(s)=6/[(s-1)^2+9]\text{,}\) and thus \(y(t) = 2e^{-t}\sin(3t)\text{.}\)</p>
+<p>If we keep differentiating in \(s\) we find</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d^n}{ds^n} \mathcal{L}[ f(t) ] = (-1)^n \mathcal{L}[ t^n f(t) ]\text{.}
+\end{equation*}
+</div>
+<p>Of interest is the special case of an exponential function \(e^{rt}\text{,}\) whose transform is \(1/s-r\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal{L} \left[ t^n e^{rt} \right] = \frac{n!}{(s-r)^{n+1}} \text{.}
+\end{equation*}
+</div>
+<p>The even specialer case \(r=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p>
 <span class="incontext"><a href="laplace-complex.html#p-257">in-context</a></span>
 </body>
 </html>

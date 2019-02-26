@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-21T13:43:54-05:00    *-->
+<!--*    on 2019-02-24T21:28:54-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If you immediately wondered "what if the Wronskian is zero?" when you saw the above formulas, you have earned a special place in my heart. This possibility can be ruled out for some rather general theortical reasons, but we can also just calculate away the issue for equations with constant coefficients. If we have distinct characteristic roots \(s_1\) and \(s_2\text{,}\) then</p>
+<p>Taking this odd assumption on faith, we compute</p>
 <div class="displaymath">
 \begin{equation*}
-W = (e^{s_1t})(s_2e^{s_2t}) - (s_1e^{s_1t})(e^{s_2t}) = (s_2-s_1)e^{(s_1+s_2)t}\text{.}
+y_p' = c_1'y_1+c_1y_1'+ c_2'y_2+c_2y_2'  \text{.}
 \end{equation*}
 </div>
-<p>Not zero, as promised. In the case of repeated root \(s_1\text{,}\) then</p>
+<p>Before we go on, we're going to put a restriction on our mystery functions, namely \(c_1'y_1+c_2'y_2=0\text{.}\) That makes life a little easier. Continuing, we get</p>
 <div class="displaymath">
 \begin{equation*}
-W = e^{s_1t}(s_1t +1)e^{s_1t} - (s_1 e^{s_1t})(t e^{s_1t}) = e^{2s_1t} \text{.}
+y_p'' = c_1'y_1'+ c_1y_1'' + c_2'y_2'+ c_2y_2''  \text{.}
 \end{equation*}
 </div>
-<p>And here you were all worried.</p>
+<p>When we put all this mess into \(y''+By'+Cy=f\text{,}\) something cool happens:</p>
+<div class="displaymath">
+\begin{equation*}
+c_1(y_1''+By_1'+Cy_1) + c_2(y_2''+By_2'+Cy_2) + c_1'y_1' + c_2'y_2' = f \text{.}
+\end{equation*}
+</div>
+<p>Thanks to the null property of \(y_1\) and \(y_2\text{,}\) this boils down to \(c_1'y_1' + c_2'y_2' = f\text{.}\)</p>
 <span class="incontext"><a href="so-general-forcing.html#p-235">in-context</a></span>
 </body>
 </html>
