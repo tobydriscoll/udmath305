@@ -90,6 +90,7 @@
 
   	<section xml:id="so-complex-exponentials">
 		<title>Complex exponentials</title>
+		<p><em>From 2.2 in the text, but some of this was covered by me in the last chapter. You can skip "<m>s^n=1</m>".</em></p>
 		<p>For second-order equations the complex plane becomes indispensible. Recall again the polar form of a complex number,
 		<me>re^{i\theta} = (r\cos \theta)+i(r\sin \theta)</me>.
 		This gives us a way of looking at the exponential of any complex number as
@@ -195,6 +196,7 @@ set(gca,'dataaspect',[6,1,1])
 	<section xml:id="so-constant-coefficients">
 		<title>Constant coefficients</title>
 		<introduction>
+		<p><em>From 2.3 in the text, skipping "higher order equations", "shift invariance", and "damping ratio" for now.</em></p>
 	  		<p>
 		 		 We're now set to tackle the linear, 2nd order ODE <m>A \frac{d^2y}{dt^2}+B\frac{dy}{dt}+Cy=0</m> for constants <m>A,B,C</m>. (This is the only second-order problem we will solve. In fact,there aren't many more second-order problems that even can be solved with relatively little effort.) In order to cut down on the options in our explanations, we'll assume these constants are all real, and that <m>A\gt 0</m>. 
 			</p>
@@ -297,6 +299,7 @@ set(gca,'dataaspect',[6,1,1])
   <section xml:id="so-forced-oscillators">
 	<title>Exponentially forced oscillators</title>
 	<introduction>
+	<p><em>This and the next section cover 2.4 in the text.</em></p>
 	  <p>We now consider problems in the form <m>ay''+by'+cy=f(t)</m>, where the coefficients are constant, <m>a</m> and <m>c</m> are positive (oscillation), and the driving force is exponential, <m>f(t)=e^{rt}</m> for constant <m>r</m>.</p>
 
 	  <p> There are plently of details to sift through, but the essence is quite simple. The general solution of this problem has two contributions, <m>y=y_n+y_p</m>. The first, <m>y_n</m>, is the null solution to the associated <term>homogeneous</term> equation <m>ay''+by'+cy=0</m>, and the second, <m>y_p</m>, is any particular solution of the original problem. To see how this works, plug in:
@@ -395,12 +398,14 @@ set(gca,'dataaspect',[6,1,1])
   <section xml:id="so-higher-order">
 	<title>Higher-order ODEs</title>
 	<introduction>
+	<p><em>From 2.4 in the text.</em></p>
+
 	<p>First-order and second-order ODEs dominate the landscape when it comes to scientific applications. But once in a while we go to higher order. For linear problems with constant coefficients, this looks a lot like the second-order case.</p>
 	</introduction>
 
 	<subsection>
 		<title>Solving linear high-order ODEs</title>
-		<p>
+	<p>
 		Any solution of the linear ODE
 		<me>a_N \frac{d^Ny}{dt^N} + \cdots + a_2 \frac{d^2y}{dt^2} + a_1 \frac{dy}{dt}  + a_0y = f(t)</me>,
 		where the <m>a_N,\ldots,a_0</m> are all constants, can be expressed as <m>y=y_n+y_p</m>, the sum of a null part <m>y_n</m> that solves the problem when <m>f(t)\equiv 0</m> and a particular solution <m>y_p</m>. 
@@ -473,6 +478,8 @@ set(gca,'dataaspect',[6,1,1])
   <section xml:id="so-applications">
 	<title>Applications of oscillators</title>
 	<introduction>
+		<p><em>From 2.5 in the text, but very little on the electrical side.</em></p>
+
 		<p>Oscillations appear all over science and engineering, and 2nd order linear equations are often used to model them. The best-known examples are mechanical and electrical, but there are chemical and biochemical ones as well.</p>
 	</introduction>
 	
@@ -537,6 +544,8 @@ set(gca,'dataaspect',[6,1,1])
   <section xml:id="so-general-forcing">
 	<title>Other forcing functions</title>
 	<introduction>
+		<p><em>From 2.6 in the text.</em></p>
+
 		<p>
 			Exponential forcing functions are very important, especially when allowing complex exponents. But they aren't the whole world. In this section we go over two other major techniques for trying to get particular solutions to linear, 2nd-order ODEs. Both assume that you have access to the complete null solution already. 
 		</p>
@@ -679,6 +688,8 @@ set(gca,'dataaspect',[6,1,1])
   <section xml:id="so-laplace">
 	<title>Laplace transform methods</title>
 	<introduction>
+	<p><em>This and the next section are from 2.7 in the text, but much of that is stuff we did in the previous chapter.</em></p>
+
 	<p>
 		The correspondence between <m>L[y]=Ay''+By'+Cy</m> and <m>P(s)=As^2+Bs+C</m> is by now familiar. It came by way of assuming <m>y(t)=Y(s)e^{st}</m>, from which we get <m>Y(s)=1/P(s)</m>. Factoring <m>P</m> tells us what we need to know. For example, if its roots are <m>-2</m> and <m>-4</m>, then we know that <m>y(t)</m> is a combination of <m>e^{-2t}</m> and <m>e^{-4t}</m>. The only mystery to work out is the coefficients. 
 	</p>
@@ -838,7 +849,7 @@ set(gca,'dataaspect',[6,1,1])
 				</me>. 
 				This doesn't look like anything easy. However, note that
 				<me>
-					sY(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frad{d}{ds} \left[ \frac{1}{s^2+9} \right] 
+					sY(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frac{d}{ds} \left[ \frac{1}{s^2+9} \right] 
 				</me>. 
 				Therefore, <m>sY(s)</m> is the transform of <m>\frac{1}{2} t \sin(3t)</m>. So this must be <m>y'(t)</m>. An integration by parts then recovers
 				<me>
@@ -851,7 +862,7 @@ set(gca,'dataaspect',[6,1,1])
 			<me> 
 				\frac{d^n}{ds^n} \mathcal{L}[ f(t) ] = (-1)^n \mathcal{L}[ t^n f(t) ]
 			</me>.
-			Of interest is the special case of an exponential function <m>e^{ct}</m>, whose transform is <m>1/s-c</m>: 
+			Of interest is the special case of an exponential function <m>e^{ct}</m>, whose transform is <m>1/(s-c)</m>: 
 			<me>
 				\mathcal{L} \left[ t^n e^{ct} \right] = \frac{n!}{(s-c)^{n+1}} 
 			</me>.
@@ -899,7 +910,7 @@ set(gca,'dataaspect',[6,1,1])
 	</subsection>
   </section>
 
-  <section xml:id="convolutions">
+  <section xml:id="so-convolutions">
 	<title>Convolutions</title>
 	<introduction>
 		<p><em>From section 8.6, pp. 479–483 (skip Fourier and matrix material)</em></p>

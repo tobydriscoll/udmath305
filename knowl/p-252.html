@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-26T16:20:18-05:00    *-->
+<!--*    on 2019-03-07T13:55:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,12 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Recall that the transform of \(y'(t)\) is \(sY(s)-y(0)\text{.}\) Applying this formula a second time shows that</p>
+<p>To summarize so far, we get a valid particular solution using two conditions,</p>
+<div class="displaymath">
+\begin{align*}
+c_1'y_1+c_2'y_2 \amp = 0 \\
+c_1'y_1' + c_2'y_2' \amp = f \text{.}
+\end{align*}
+</div>
+<p>Stare at this long enough and you'll realize that it's just two linear equations for \(c_1'\) and \(c_2'\text{.}\) You can do some elimination to solve them, and you wind up with</p>
 <div class="displaymath">
 \begin{equation*}
-\mathcal{L}[y''(t)] = s \mathcal{L}[y'(t)] - y'(0) = s^2Y(s) - sy(0) - y'(0)\text{.}
+c_1' = -\frac{y_2f}{W}, \qquad c_2' = \frac{y_1f}{W},
 \end{equation*}
 </div>
-<span class="incontext"><a href="so-laplace.html#p-252">in-context</a></span>
+<p>with</p>
+<div class="displaymath">
+\begin{equation*}
+W(t) = y_1y_2'-y_1'y_2\text{,}
+\end{equation*}
+</div>
+<p>known as the <dfn class="terminology">Wronskian</dfn> of \(y_1\) and \(y_2\text{.}\) Finally, "all" you have to do is integrate these expressions to get \(c_1\) and \(c_2\text{,}\) and from there you get \(y_p\text{.}\)</p>
+<span class="incontext"><a href="so-general-forcing.html#p-252">in-context</a></span>
 </body>
 </html>

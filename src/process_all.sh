@@ -14,18 +14,20 @@ echo "...done html"
 mv *.html ..
 mv knowl/* ../knowl
 
-echo "Extraction of matlab codes..."
-xsltproc --xinclude ~/Dropbox/books/mathbook/xsl/extract-matlab.xsl notes305.xml
-echo "...done extraction"
-
-#echo "Running matlab codes..."
-#matlab -nodisplay -r process_matlab
-#echo "...done codes"
-#mv matlab/*.svg ../matlab
+if [ "$1" == "-m" ] 
+then
+    echo "Extracting matlab codes..."
+    xsltproc --xinclude ~/Dropbox/books/mathbook/xsl/extract-matlab.xsl notes305.xml
+    echo "...done extraction"
+    echo "Running matlab codes..."
+    matlab -nodisplay -r process_matlab
+    echo "...done codes"
+    mv matlab/*.svg ../matlab
+    git add ../matlab/*.svg 
+fi
 
 git add ../*.html 
 git add ../knowl/*
-git add ../matlab/*.svg 
 git add *.xml 
 
 #cp -r * ~/Sites/305/

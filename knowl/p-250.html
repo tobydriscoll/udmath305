@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-26T16:20:18-05:00    *-->
+<!--*    on 2019-03-07T13:55:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The correspondence between \(L[y]=Ay''+By'+Cy\) and \(P(s)=As^2+Bs+C\) is by now familiar. It came by way of assuming \(y(t)=Y(s)e^{st}\text{,}\) from which we get \(Y(s)=1/P(s)\text{.}\) Factoring \(P\) tells us what we need to know. For example, if its roots are \(-2\) and \(-4\text{,}\) then we know that \(y(t)\) is a combination of \(e^{-2t}\) and \(e^{-4t}\text{.}\) The only mystery to work out is the coefficients.</p>
-<span class="incontext"><a href="so-laplace.html#p-250">in-context</a></span>
+<p>While UC relies on "educated guesswork" (actually rigid rules that are a bit complex to apply), <dfn class="terminology">variation of parameters</dfn> follows the same recipe every time. Given \(L[y]=f\text{,}\) suppose we have a general null solution in the form</p>
+<div class="displaymath">
+\begin{equation*}
+y_n(t) = c_1 y_1(t) + c_2 y_2(t)\text{.}
+\end{equation*}
+</div>
+<p>For problems with constant coefficients, \(y_1\) and \(y_2\) are exponentials (or sin/cos equivalents), possibly multiplied by \(t\text{.}\) In any case, the VP trick is to replace the integration constants with functions of time:</p>
+<div class="displaymath">
+\begin{equation*}
+y_p(t) = c_1(t) y_1(t) + c_2(t) y_2(t)\text{.}
+\end{equation*}
+</div>
+<p>To keep notation simpler, we assume below that the coefficient of \(y''\) in the ODE is 1.</p>
+<span class="incontext"><a href="so-general-forcing.html#p-250">in-context</a></span>
 </body>
 </html>

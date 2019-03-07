@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-26T16:20:18-05:00    *-->
+<!--*    on 2019-03-07T13:55:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,25 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Taking this odd assumption on faith, we compute</p>
+<p>Let's try for \(y'' -2y'-3y=10te^{4t}\text{.}\) For much the same reasons as in the last case, we try</p>
 <div class="displaymath">
 \begin{equation*}
-y_p' = c_1'y_1+c_1y_1'+ c_2'y_2+c_2y_2'  \text{.}
+y_p = (A + Bt)e^{4t}\text{.}
 \end{equation*}
 </div>
-<p>Before we go on, we're going to put a restriction on our mystery functions, namely \(c_1'y_1+c_2'y_2=0\text{.}\) That makes life a little easier. Continuing, we get</p>
+<p>There's nothing to do now except grind out some derivatives.</p>
 <div class="displaymath">
-\begin{equation*}
-y_p'' = c_1'y_1'+ c_1y_1'' + c_2'y_2'+ c_2y_2''  \text{.}
-\end{equation*}
+\begin{align*}
+8(2A+B+2Bt)e^{4t} - 2(4A+B+4Bt)e^{4t} -3 (A + Bt)e^{4t} \amp =10t e^{4t}\\
+8(2A+B) - 2(4A+B) -3A + t(16B-8B-3B) =  10t\text{.}
+\end{align*}
 </div>
-<p>When we put all this mess into \(y''+By'+Cy=f\text{,}\) something cool happens:</p>
-<div class="displaymath">
-\begin{equation*}
-c_1(y_1''+By_1'+Cy_1) + c_2(y_2''+By_2'+Cy_2) + c_1'y_1' + c_2'y_2' = f \text{.}
-\end{equation*}
-</div>
-<p>Thanks to the null property of \(y_1\) and \(y_2\text{,}\) this boils down to \(c_1'y_1' + c_2'y_2' = f\text{.}\)</p>
+<p>From this, by matching powers, we deduce \(B=2\) and then \(5A+12=0\text{.}\) So \(y_p = (2 - (12/5)t)e^{4t}\text{.}\)</p>
 <span class="incontext"><a href="so-general-forcing.html#p-245">in-context</a></span>
 </body>
 </html>

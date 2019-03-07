@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-26T16:20:17-05:00    *-->
+<!--*    on 2019-03-07T13:55:07-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -92,7 +92,7 @@ MathJax.Hub.Config({
 <li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
 <li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
 <li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
-<li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
+<li><a href="so-convolutions.html" data-scroll="so-convolutions">Convolutions</a></li>
 </ul>
 <h2 class="link"><a href="qualitative.html" data-scroll="qualitative"><span class="codenumber">3</span> <span class="title">Qualitative analysis</span></a></h2>
 <ul>
@@ -117,8 +117,9 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="so-forced-oscillators"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Exponentially forced oscillators</span>
 </h2>
-<a href="so-forced-oscillators.html" class="permalink">¶</a><section class="introduction" id="introduction-7"><p id="p-190">We now consider problems in the form \(ay''+by'+cy=f(t)\text{,}\) where the coefficients are constant, \(a\) and \(c\) are positive (oscillation), and the driving force is exponential, \(f(t)=e^{rt}\) for constant \(r\text{.}\)</p>
-<p id="p-191">There are plently of details to sift through, but the essence is quite simple. The general solution of this problem has two contributions, \(y=y_n+y_p\text{.}\) The first, \(y_n\text{,}\) is the null solution to the associated <dfn class="terminology">homogeneous</dfn> equation \(ay''+by'+cy=0\text{,}\) and the second, \(y_p\text{,}\) is any particular solution of the original problem. To see how this works, plug in:</p>
+<a href="so-forced-oscillators.html" class="permalink">¶</a><section class="introduction" id="introduction-7"><p id="p-192"><em class="emphasis">This and the next section cover 2.4 in the text.</em></p>
+<p id="p-193">We now consider problems in the form \(ay''+by'+cy=f(t)\text{,}\) where the coefficients are constant, \(a\) and \(c\) are positive (oscillation), and the driving force is exponential, \(f(t)=e^{rt}\) for constant \(r\text{.}\)</p>
+<p id="p-194">There are plently of details to sift through, but the essence is quite simple. The general solution of this problem has two contributions, \(y=y_n+y_p\text{.}\) The first, \(y_n\text{,}\) is the null solution to the associated <dfn class="terminology">homogeneous</dfn> equation \(ay''+by'+cy=0\text{,}\) and the second, \(y_p\text{,}\) is any particular solution of the original problem. To see how this works, plug in:</p>
 <div class="displaymath">
 \begin{align*}
 ay''+by'+cy \amp = a(y_n+y_p)''+b(y_n+y_p)'+c(y_n+y_p) \\
@@ -127,11 +128,11 @@ ay''+by'+cy \amp = a(y_n+y_p)''+b(y_n+y_p)'+c(y_n+y_p) \\
 \end{align*}
 </div>
 <p>The null solution contains two arbitary constants that are used to soak up the initial conditions. We add that the particular solution is not unique, so the complete representation is not either. However, all such expressions are equivalent in the end, and the solution is always expressible in this form.</p>
-<p id="p-192">In the context of underdamped oscillators, \(y_n\) is also called the <dfn class="terminology">transient solution</dfn>, because it decays to zero as time increases. What remains might be called the <dfn class="terminology">steady response</dfn>. It depends only on the oscillator parameters and the forcing function; all dependence on initial conditions vanishes with the transient solution.</p>
-<p id="p-193">We covered finding the null solution in detail in <a href="so-constant-coefficients.html" class="xref" title="Section 2.3: Constant coefficients">Section 2.3</a>. So the particular solution is our first item of business.</p></section><section class="subsection" id="so-fo-expresponse"><h3 class="heading hide-type">
+<p id="p-195">In the context of underdamped oscillators, \(y_n\) is also called the <dfn class="terminology">transient solution</dfn>, because it decays to zero as time increases. What remains might be called the <dfn class="terminology">steady response</dfn>. It depends only on the oscillator parameters and the forcing function; all dependence on initial conditions vanishes with the transient solution.</p>
+<p id="p-196">We covered finding the null solution in detail in <a href="so-constant-coefficients.html" class="xref" title="Section 2.3: Constant coefficients">Section 2.3</a>. So the particular solution is our first item of business.</p></section><section class="subsection" id="so-fo-expresponse"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Exponential response</span>
 </h3>
-<a href="so-forced-oscillators.html#so-fo-expresponse" class="permalink">¶</a><p id="p-194">For \(f(t)=e^{rt}\) we let \(y_p=Y e^{rt}\) and plug into the ODE:</p>
+<a href="so-forced-oscillators.html#so-fo-expresponse" class="permalink">¶</a><p id="p-197">For \(f(t)=e^{rt}\) we let \(y_p=Y e^{rt}\) and plug into the ODE:</p>
 <div class="displaymath">
 \begin{equation*}
 (ar^2 + br + c)Ye^{rt} = e^{rt}\text{.}
@@ -146,18 +147,18 @@ Y = \frac{1}{ar^2 + br + c}\text{.}
 <p>In various contexts we call this the <dfn class="terminology">exponential response function</dfn> or the <dfn class="terminology">transfer function</dfn>. It's constant in time, but a function of the forcing exponent \(r\) (which is usually called \(s\) in transfer functions).</p>
 <article class="example-like" id="example-26"><a knowl="" class="id-ref" refid="hk-example-26"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.4.1</span>
-</h6></a></article><div id="hk-example-26" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-195">Let's solve \(y''+5y'+6y=4 e^{-t}\text{,}\) with \(y(0)=0\text{,}\) \(y'(0)=1\text{.}\) In stages: </p>
+</h6></a></article><div id="hk-example-26" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-198">Let's solve \(y''+5y'+6y=4 e^{-t}\text{,}\) with \(y(0)=0\text{,}\) \(y'(0)=1\text{.}\) In stages: </p>
 <ol class="decimal">
-<li id="li-11"><p id="p-196"><em class="emphasis">Null solution</em>. The characteristic equation of \(y''+5y'+6y=0\) is \(s^2+5s+6=0\text{,}\) which has roots \(s_1=-2\text{,}\) \(s_2=-3\text{.}\) Thus \(y_n=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p></li>
-<li id="li-12"><p id="p-197"><em class="emphasis">Particular solution</em>. The transfer function is \(Y(s)=1/(s^2+5s+6)\text{,}\) and \(Y(-1)=1/2\text{.}\) Hence \(y_p=\frac{1}{2}\cdot 4 e^{-t}=2e^{-t}\text{.}\)</p></li>
-<li id="li-13"><p id="p-198"><em class="emphasis">Complete solution</em>. \(y=y_n+y_p=c_1 e^{-2t}+c_2e^{-3t} + 2 e^{-t}\)</p></li>
-<li id="li-14"><p id="p-199"><em class="emphasis">Initial values</em>. We get \(0=y(0)=c_1+c_2+2\) and \(1=y'(0)=-2c_1-3c_2-2\text{.}\) This implies \(c_1=-3\text{,}\) \(c_2=1\text{.}\) Finally, \(y=-3 e^{-2t}+e^{-3t} + 2 e^{-t}\text{.}\)</p></li>
+<li id="li-11"><p id="p-199"><em class="emphasis">Null solution</em>. The characteristic equation of \(y''+5y'+6y=0\) is \(s^2+5s+6=0\text{,}\) which has roots \(s_1=-2\text{,}\) \(s_2=-3\text{.}\) Thus \(y_n=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p></li>
+<li id="li-12"><p id="p-200"><em class="emphasis">Particular solution</em>. The transfer function is \(Y(s)=1/(s^2+5s+6)\text{,}\) and \(Y(-1)=1/2\text{.}\) Hence \(y_p=\frac{1}{2}\cdot 4 e^{-t}=2e^{-t}\text{.}\)</p></li>
+<li id="li-13"><p id="p-201"><em class="emphasis">Complete solution</em>. \(y=y_n+y_p=c_1 e^{-2t}+c_2e^{-3t} + 2 e^{-t}\)</p></li>
+<li id="li-14"><p id="p-202"><em class="emphasis">Initial values</em>. We get \(0=y(0)=c_1+c_2+2\) and \(1=y'(0)=-2c_1-3c_2-2\text{.}\) This implies \(c_1=-3\text{,}\) \(c_2=1\text{.}\) Finally, \(y=-3 e^{-2t}+e^{-3t} + 2 e^{-t}\text{.}\)</p></li>
 </ol></article></div>
-<p id="p-200">You may have noticed that the denominator of the transfer function is simply the characteristic polynomial of the homogeneous problem. That is always the case. The textbook uses \(Y(s)=1/P(s)\) in many spots to emphasize the connection.</p>
-<p id="p-201">You should be getting comfortable with the idea that exponential forcing includes sin and cos! We are simply interested in the transfer function for imaginary exponents, \(Y(i\omega)\) followed by the imaginary or real part of \(Ye^{i\omega t}\text{.}\) There is some complex-number algebra required here.</p>
+<p id="p-203">You may have noticed that the denominator of the transfer function is simply the characteristic polynomial of the homogeneous problem. That is always the case. The textbook uses \(Y(s)=1/P(s)\) in many spots to emphasize the connection.</p>
+<p id="p-204">You should be getting comfortable with the idea that exponential forcing includes sin and cos! We are simply interested in the transfer function for imaginary exponents, \(Y(i\omega)\) followed by the imaginary or real part of \(Ye^{i\omega t}\text{.}\) There is some complex-number algebra required here.</p>
 <article class="example-like" id="example-27"><a knowl="" class="id-ref" refid="hk-example-27"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.4.2</span>
-</h6></a></article><div id="hk-example-27" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-202">Consider \(y''+y'=\sin(2t)\text{.}\) Since the forcing term is the imaginary part of \(e^{2it}\text{,}\) we use</p>
+</h6></a></article><div id="hk-example-27" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-205">Consider \(y''+y'=\sin(2t)\text{.}\) Since the forcing term is the imaginary part of \(e^{2it}\text{,}\) we use</p>
 <div class="displaymath">
 \begin{equation*}
 Y(2i) = \frac{1}{(2i)^2+2i} = \frac{1}{2i-4}\text{.}
@@ -177,11 +178,11 @@ Y(2i)e^{2it} \amp = \left(\frac{1}{5} + i\frac{1}{10}\right) \bigl( \cos(2t) + i
 \end{align*}
 </div>
 <p>(We don't need the real part, inside the first set of brackets.) Thus \(y_p = [2\sin(2t)+\cos(2t)]/10\text{.}\)</p>
-<p id="p-203">In retrospect we might have come at this problem from an entirely real standpoint. We could posit \(y_p=A\cos(2t) + B\sin(2t)\) and then plug in to get some algebraic conditions to determine \(A\) and \(B\text{.}\) There's still a fair amount of algebra and plenty of chances to make silly errors (see the derivation of formula (23) in section 2.4 of the textbook). I recommend that you give the complex method a fair try before retreating to the familiarity of the real-only method.</p></article></div></section><section class="subsection" id="so-fo-resonance"><h3 class="heading hide-type">
+<p id="p-206">In retrospect we might have come at this problem from an entirely real standpoint. We could posit \(y_p=A\cos(2t) + B\sin(2t)\) and then plug in to get some algebraic conditions to determine \(A\) and \(B\text{.}\) There's still a fair amount of algebra and plenty of chances to make silly errors (see the derivation of formula (23) in section 2.4 of the textbook). I recommend that you give the complex method a fair try before retreating to the familiarity of the real-only method.</p></article></div></section><section class="subsection" id="so-fo-resonance"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.2</span> <span class="title">Resonance</span>
 </h3>
-<a href="so-forced-oscillators.html#so-fo-resonance" class="permalink">¶</a><p id="p-204">Time for some deja vu. When we solved \(y'-at=e^{ct}\) in <a href="first-linear-const.html#flcs-exp" class="xref" title="Subsection 1.4.4: Exponential forcing">Subsection 1.4.4</a>, we found that we got different formulas in the case \(c=a\text{.}\) We also needed a special formula for \(y_n\) when we got a double root in <a href="so-constant-coefficients.html#so-cc-double" class="xref" title="Subsection 2.3.1: Double root">Subsection 2.3.1</a> The same sort of thing happens to \(y_p\) if we force an oscillator at one of the characteristic exponents. The reason is simple: if we try \(y_p=Ye^{rt}\) and \(r\) is a characteristic root, then we get \(0=f(t)\text{,}\) which can't be solved. Equivalently, the transfer function \(Y\) requires taking \(1/0\text{.}\)</p>
-<p id="p-205">Suppose we have a root \(s\) and that \(r\) is close to but not equal to \(s\text{.}\) Then \(y_p=e^{rt}/P(r)\) is a particular solution to the exponential forcing. We can add any null solution to this and it will remain a solution, thus</p>
+<a href="so-forced-oscillators.html#so-fo-resonance" class="permalink">¶</a><p id="p-207">Time for some deja vu. When we solved \(y'-at=e^{ct}\) in <a href="first-linear-const.html#flcs-exp" class="xref" title="Subsection 1.4.4: Exponential forcing">Subsection 1.4.4</a>, we found that we got different formulas in the case \(c=a\text{.}\) We also needed a special formula for \(y_n\) when we got a double root in <a href="so-constant-coefficients.html#so-cc-double" class="xref" title="Subsection 2.3.1: Double root">Subsection 2.3.1</a> The same sort of thing happens to \(y_p\) if we force an oscillator at one of the characteristic exponents. The reason is simple: if we try \(y_p=Ye^{rt}\) and \(r\) is a characteristic root, then we get \(0=f(t)\text{,}\) which can't be solved. Equivalently, the transfer function \(Y\) requires taking \(1/0\text{.}\)</p>
+<p id="p-208">Suppose we have a root \(s\) and that \(r\) is close to but not equal to \(s\text{.}\) Then \(y_p=e^{rt}/P(r)\) is a particular solution to the exponential forcing. We can add any null solution to this and it will remain a solution, thus</p>
 <div class="displaymath">
 \begin{equation*}
 y=\frac{e^{rt}-e^{st}}{P(r)}
@@ -200,14 +201,14 @@ y_p = \frac{te^{st}}{P'(s)}\text{,}
 \end{equation*}
 </div>
 <p>which is a valid particular solution even when forcing exactly at exponent \(s\text{.}\)</p>
-<p id="p-206">Realistically we only care about this effect for harmonic forcing, \(f(t)=e^{i\omega t}\text{,}\) where we call it <dfn class="terminology">resonance</dfn>. Since the characteristic polynomial \(P(s)=as^2+bs+c\) has imaginary roots only if \(b=0\text{,}\) we only see resonance in an undamped oscillator. The resonant particular solution has an amplitude that is linearly growing in time. The derivation above shows that though the solution formula (and unboundedness) is singular at the resonant frequency, the actual behavior is a continuous limit of near-resonant behavior.</p></section><section class="subsection" id="so-fo-gain-lag"><h3 class="heading hide-type">
+<p id="p-209">Realistically we only care about this effect for harmonic forcing, \(f(t)=e^{i\omega t}\text{,}\) where we call it <dfn class="terminology">resonance</dfn>. Since the characteristic polynomial \(P(s)=as^2+bs+c\) has imaginary roots only if \(b=0\text{,}\) we only see resonance in an undamped oscillator. The resonant particular solution has an amplitude that is linearly growing in time. The derivation above shows that though the solution formula (and unboundedness) is singular at the resonant frequency, the actual behavior is a continuous limit of near-resonant behavior.</p></section><section class="subsection" id="so-fo-gain-lag"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.3</span> <span class="title">Gain and lag</span>
 </h3>
-<a href="so-forced-oscillators.html#so-fo-gain-lag" class="permalink">¶</a><p id="p-207">By now we have seen multiple times that forcing with \(\cos(\omega t)\) or \(\sin(\omega t)\) leads to solutions with a combination of both terms. We also know that such a result is equivalent to a shifted cosine in amplitude/phase form, and we turn our attention to this interpretation next.</p>
-<p id="p-208">With forcing \(f(t)=e^{i\omega t}\) we get a solution \(y_p=Y(i\omega) e^{i\omega t}\text{.}\) If we write the transfer function in polar form, we can express this as \(y_p = (G e^{-i\alpha }) e^{i\omega t} = Ge^{i(\omega t - \alpha)}\) for positive amplitude \(G\text{,}\) which we call the <dfn class="terminology">gain</dfn>. It depends on the forcing frequency; in fact, \(G(\omega) = |Y(i\omega)|\text{.}\) The \(\alpha\) term is a <dfn class="terminology">phase lag</dfn> that shows how the response may lag behind the driving force. It's usually not as interesting as the gain.</p>
+<a href="so-forced-oscillators.html#so-fo-gain-lag" class="permalink">¶</a><p id="p-210">By now we have seen multiple times that forcing with \(\cos(\omega t)\) or \(\sin(\omega t)\) leads to solutions with a combination of both terms. We also know that such a result is equivalent to a shifted cosine in amplitude/phase form, and we turn our attention to this interpretation next.</p>
+<p id="p-211">With forcing \(f(t)=e^{i\omega t}\) we get a solution \(y_p=Y(i\omega) e^{i\omega t}\text{.}\) If we write the transfer function in polar form, we can express this as \(y_p = (G e^{-i\alpha }) e^{i\omega t} = Ge^{i(\omega t - \alpha)}\) for positive amplitude \(G\text{,}\) which we call the <dfn class="terminology">gain</dfn>. It depends on the forcing frequency; in fact, \(G(\omega) = |Y(i\omega)|\text{.}\) The \(\alpha\) term is a <dfn class="terminology">phase lag</dfn> that shows how the response may lag behind the driving force. It's usually not as interesting as the gain.</p>
 <article class="example-like" id="example-28"><a knowl="" class="id-ref" refid="hk-example-28"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.4.3</span>
-</h6></a></article><div id="hk-example-28" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-209">The oscillator \(4y'' + y' + 36y\) has transfer function \(Y(s)=1/(4s^2+s+36)\text{.}\) At \(s=i\omega\) we get</p>
+</h6></a></article><div id="hk-example-28" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-212">The oscillator \(4y'' + y' + 36y\) has transfer function \(Y(s)=1/(4s^2+s+36)\text{.}\) At \(s=i\omega\) we get</p>
 <div class="displaymath">
 \begin{equation*}
 Y(i\omega) = \frac{1}{ -4\omega^2 +i\omega + 36}\text{.}
@@ -220,7 +221,7 @@ G^2 = |Y|^2 = \frac{1}{ 36-4\omega^2 +i\omega} \frac{1}{ 36-4\omega^2 - i\omega}
 \end{equation*}
 </div>
 <p>The gain is maximized when the denominator is minimized. This happens when \(2 (36-4\omega^2)(-8\omega)+2\omega = 0\text{,}\) or \(\omega^2=9-(1/32)\text{.}\) This is just slightly smaller than the natural undamped frequency \(\omega_n^2=36/4=9\text{.}\)</p></article></div>
-<p id="p-210">In the undamped limit, resonance produces an infinite gain. Damping reduces the peak and the maximal frequency, at first gradually and then dramatically.</p></section></section></div></main>
+<p id="p-213">In the undamped limit, resonance produces an infinite gain. Damping reduces the peak and the maximal frequency, at first gradually and then dramatically.</p></section></section></div></main>
 </div>
 </body>
 </html>

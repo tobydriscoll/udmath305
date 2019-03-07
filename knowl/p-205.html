@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-26T16:20:18-05:00    *-->
+<!--*    on 2019-03-07T13:55:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,25 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose we have a root \(s\) and that \(r\) is close to but not equal to \(s\text{.}\) Then \(y_p=e^{rt}/P(r)\) is a particular solution to the exponential forcing. We can add any null solution to this and it will remain a solution, thus</p>
+<p>Consider \(y''+y'=\sin(2t)\text{.}\) Since the forcing term is the imaginary part of \(e^{2it}\text{,}\) we use</p>
 <div class="displaymath">
 \begin{equation*}
-y=\frac{e^{rt}-e^{st}}{P(r)}
+Y(2i) = \frac{1}{(2i)^2+2i} = \frac{1}{2i-4}\text{.}
 \end{equation*}
 </div>
-<p>is a valid particular solution as well. Since \(P(s)=0\) by assumption, we can also write</p>
+<p>We need to take the imaginary part of \(Y(2i)e^{2it}\) to get the particular solution we seek. The course of least resistance is to make the denominator of \(Y\) real by using a complex conjugate:</p>
 <div class="displaymath">
 \begin{equation*}
-y=\frac{e^{rt}-e^{st}}{P(r)-P(s)}\text{.}
+Y(2i) = \frac{1}{2i-4}\cdot \frac{2i+4}{2i+4} = \frac{2i+4}{4+16} = \frac{i+2}{10} = \frac{1}{5} + i\frac{1}{10}\text{.}
 \end{equation*}
 </div>
-<p>Suddenly this becomes very interesting as \(r\to s\text{;}\) we get an indeterminate \(0/0\text{.}\) Using L'Hopital's rule (but with \(r\) as the variable, not \(t\)), we get the limit</p>
+<p>There are <em class="emphasis">two</em> contributions to each of the real and imaginary parts of the product:</p>
 <div class="displaymath">
-\begin{equation*}
-y_p = \frac{te^{st}}{P'(s)}\text{,}
-\end{equation*}
+\begin{align*}
+Y(2i)e^{2it} \amp = \left(\frac{1}{5} + i\frac{1}{10}\right) \bigl( \cos(2t) + i \sin(2t) \bigr)\\
+\amp = \Bigl[ \cdots \Bigr] + i \Bigl[ \frac{1}{5}\sin(2t) + \frac{1}{10}\cos(2t) \Bigr]\text{.}
+\end{align*}
 </div>
-<p>which is a valid particular solution even when forcing exactly at exponent \(s\text{.}\)</p>
+<p>(We don't need the real part, inside the first set of brackets.) Thus \(y_p = [2\sin(2t)+\cos(2t)]/10\text{.}\)</p>
 <span class="incontext"><a href="so-forced-oscillators.html#p-205">in-context</a></span>
 </body>
 </html>

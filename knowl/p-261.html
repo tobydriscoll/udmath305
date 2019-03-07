@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-26T16:20:18-05:00    *-->
+<!--*    on 2019-03-07T13:55:09-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,15 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
+<p>Now we can write out a general solution. The characteristic roots are \(\pm 1\text{,}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = c_1 e^{-t} + c_2 e^{t} + y_v(t)\text{.}
+\end{equation*}
+</div>
+<p>If desired, it's easy to solve for the constants in this, because \(y_v\) contributes nothing:</p>
 <div class="displaymath">
 \begin{align*}
-F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
-\amp = -\int_0^\infty t f(t) e^{-st}\, dt\\
-\amp = - \mathcal{L}[ tf(t) ]\text{.}
+y(0) \amp = c_1 + c_2  \\
+y'(0) \amp = -c_1 + c_2 \text{.}
 \end{align*}
 </div>
-<p>Take a moment to appreciate this. Earlier we found that a derivative in \(t\) corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
-<span class="incontext"><a href="so-laplace-repeated.html#p-261">in-context</a></span>
+<p>That's a lot less work than doing a separate PFD needed when the initial conditions are kept in the transform.</p>
+<span class="incontext"><a href="so-laplace.html#p-261">in-context</a></span>
 </body>
 </html>

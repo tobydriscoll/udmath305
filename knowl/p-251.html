@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-26T16:20:18-05:00    *-->
+<!--*    on 2019-03-07T13:55:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We can use the method of Laplace transforms to systematize the manipulations. As in first-order equations, these are useful mostly for linear, constant-coefficient problems.</p>
-<span class="incontext"><a href="so-laplace.html#p-251">in-context</a></span>
+<p>Taking this odd assumption on faith, we compute</p>
+<div class="displaymath">
+\begin{equation*}
+y_p' = c_1'y_1+c_1y_1'+ c_2'y_2+c_2y_2'  \text{.}
+\end{equation*}
+</div>
+<p>Before we go on, we're going to put a restriction on our mystery functions, namely \(c_1'y_1+c_2'y_2=0\text{.}\) That makes life a little easier. Continuing, we get</p>
+<div class="displaymath">
+\begin{equation*}
+y_p'' = c_1'y_1'+ c_1y_1'' + c_2'y_2'+ c_2y_2''  \text{.}
+\end{equation*}
+</div>
+<p>When we put all this mess into \(y''+By'+Cy=f\text{,}\) something cool happens:</p>
+<div class="displaymath">
+\begin{equation*}
+c_1(y_1''+By_1'+Cy_1) + c_2(y_2''+By_2'+Cy_2) + c_1'y_1' + c_2'y_2' = f \text{.}
+\end{equation*}
+</div>
+<p>Thanks to the null property of \(y_1\) and \(y_2\text{,}\) this boils down to \(c_1'y_1' + c_2'y_2' = f\text{.}\)</p>
+<span class="incontext"><a href="so-general-forcing.html#p-251">in-context</a></span>
 </body>
 </html>

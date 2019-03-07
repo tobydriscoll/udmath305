@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-26T16:20:17-05:00    *-->
+<!--*    on 2019-03-07T13:55:07-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -92,7 +92,7 @@ MathJax.Hub.Config({
 <li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
 <li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
 <li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
-<li><a href="convolutions.html" data-scroll="convolutions">Convolutions</a></li>
+<li><a href="so-convolutions.html" data-scroll="so-convolutions">Convolutions</a></li>
 </ul>
 <h2 class="link"><a href="qualitative.html" data-scroll="qualitative"><span class="codenumber">3</span> <span class="title">Qualitative analysis</span></a></h2>
 <ul>
@@ -117,15 +117,16 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="so-constant-coefficients"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Constant coefficients</span>
 </h2>
-<a href="so-constant-coefficients.html" class="permalink">¶</a><section class="introduction" id="introduction-6"><p id="p-171">We're now set to tackle the linear, 2nd order ODE \(A \frac{d^2y}{dt^2}+B\frac{dy}{dt}+Cy=0\) for constants \(A,B,C\text{.}\) (This is the only second-order problem we will solve. In fact,there aren't many more second-order problems that even can be solved with relatively little effort.) In order to cut down on the options in our explanations, we'll assume these constants are all real, and that \(A\gt 0\text{.}\)</p>
-<p id="p-172">It's going to be easy to lose track of the most basic fact of this equation: <em class="emphasis">the solutions are exponentials</em>. (Well, with an asterisk.) In fact plugging in \(y=e^{st}\) takes us to \((as^2+bs+c)e^{st}=0\text{,}\) which is obviously true if we can solve the <dfn class="terminology">characteristic equation</dfn></p>
+<a href="so-constant-coefficients.html" class="permalink">¶</a><section class="introduction" id="introduction-6"><p id="p-172"><em class="emphasis">From 2.3 in the text, skipping "higher order equations", "shift invariance", and "damping ratio" for now.</em></p>
+<p id="p-173">We're now set to tackle the linear, 2nd order ODE \(A \frac{d^2y}{dt^2}+B\frac{dy}{dt}+Cy=0\) for constants \(A,B,C\text{.}\) (This is the only second-order problem we will solve. In fact,there aren't many more second-order problems that even can be solved with relatively little effort.) In order to cut down on the options in our explanations, we'll assume these constants are all real, and that \(A\gt 0\text{.}\)</p>
+<p id="p-174">It's going to be easy to lose track of the most basic fact of this equation: <em class="emphasis">the solutions are exponentials</em>. (Well, with an asterisk.) In fact plugging in \(y=e^{st}\) takes us to \((as^2+bs+c)e^{st}=0\text{,}\) which is obviously true if we can solve the <dfn class="terminology">characteristic equation</dfn></p>
 <div class="displaymath">
 \begin{equation}
 as^2+bs+c = 0\text{.}\label{eq-so-char}\tag{2.3.1}
 \end{equation}
 </div>
 <p>As you know, there are two (counting multiplicity) and only two solutions for \(s\) in this equation. Let's call them \(s_1\) and \(s_2\text{.}\) I won't insult you by writing out the quadratic formula here.</p>
-<p id="p-173">With two roots for the characteristic equation, the general null solution is</p>
+<p id="p-175">With two roots for the characteristic equation, the general null solution is</p>
 <div class="displaymath">
 \begin{equation*}
 y = c_1 e^{s_1t} + c_2 e^{s_2t}\text{.}
@@ -134,7 +135,7 @@ y = c_1 e^{s_1t} + c_2 e^{s_2t}\text{.}
 <p>There are two integration constants here, just what we need to satisfy two initial conditions. That is, unless \(s_1=s_2\text{...}\)</p></section><section class="subsection" id="so-cc-double"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">Double root</span>
 </h3>
-<a href="so-constant-coefficients.html#so-cc-double" class="permalink">¶</a><p id="p-174">Suppose \(s_1=s_2\) is a double root of <a knowl="./knowl/eq-so-char.html" title="Equation 2.3.1">(2.3.1)</a>. This happens when \(B^2=4AC\text{,}\) and \(s_1=-B/(2A)\text{.}\) In this case our candidate for the general solution is inadequate, because we can add the two terms together and having \(c_1+c_2\) is no more general than having a single integration constant. Somehow we have to come up with a genuinely different second solution. It turns out that the job is done by \(te^{s_1t}\text{.}\) The proof is just a bunch of algebra: plug it in and show that it works. So in the double-root case our null solution is</p>
+<a href="so-constant-coefficients.html#so-cc-double" class="permalink">¶</a><p id="p-176">Suppose \(s_1=s_2\) is a double root of <a knowl="./knowl/eq-so-char.html" title="Equation 2.3.1">(2.3.1)</a>. This happens when \(B^2=4AC\text{,}\) and \(s_1=-B/(2A)\text{.}\) In this case our candidate for the general solution is inadequate, because we can add the two terms together and having \(c_1+c_2\) is no more general than having a single integration constant. Somehow we have to come up with a genuinely different second solution. It turns out that the job is done by \(te^{s_1t}\text{.}\) The proof is just a bunch of algebra: plug it in and show that it works. So in the double-root case our null solution is</p>
 <div class="displaymath">
 \begin{equation*}
 y = c_1 e^{s_1t} + c_2 t e^{s_1t}\text{.}
@@ -143,7 +144,7 @@ y = c_1 e^{s_1t} + c_2 t e^{s_1t}\text{.}
 <p>Honestly, this is the only unusual thing that happens in this entire section. Everything else is just exploring the consequences of the solutions, and naming the things that we find out.</p></section><section class="subsection" id="so-cc-real"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">Distinct real roots</span>
 </h3>
-<a href="so-constant-coefficients.html#so-cc-real" class="permalink">¶</a><p id="p-175">Our two roots of the characterstic equation <a knowl="./knowl/eq-so-char.html" title="Equation 2.3.1">(2.3.1)</a> might be distinct real numbers. This happens when \(B^2\gt 4AC\text{.}\) There isn't a whole lot else to say. The null solution is, as already stated,</p>
+<a href="so-constant-coefficients.html#so-cc-real" class="permalink">¶</a><p id="p-177">Our two roots of the characterstic equation <a knowl="./knowl/eq-so-char.html" title="Equation 2.3.1">(2.3.1)</a> might be distinct real numbers. This happens when \(B^2\gt 4AC\text{.}\) There isn't a whole lot else to say. The null solution is, as already stated,</p>
 <div class="displaymath">
 \begin{equation*}
 y = c_1 e^{s_1t} + c_2 e^{s_2t}\text{.}
@@ -151,10 +152,10 @@ y = c_1 e^{s_1t} + c_2 e^{s_2t}\text{.}
 </div>
 <article class="example-like" id="example-24"><a knowl="" class="id-ref" refid="hk-example-24"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.3.1</span>
-</h6></a></article><div id="hk-example-24" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-176">Consider \(y''-y'-2y=0\text{.}\) The characteristic equation \(s^2-s-2=0\) has roots \(s_1=-1\text{,}\) \(s_2=2\text{.}\) This gives the solution \(y=c_1 e^{-t} + c_2 e^{2t}\text{.}\)</p></article></div></section><section class="subsection" id="so-cc-complex"><h3 class="heading hide-type">
+</h6></a></article><div id="hk-example-24" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-178">Consider \(y''-y'-2y=0\text{.}\) The characteristic equation \(s^2-s-2=0\) has roots \(s_1=-1\text{,}\) \(s_2=2\text{.}\) This gives the solution \(y=c_1 e^{-t} + c_2 e^{2t}\text{.}\)</p></article></div></section><section class="subsection" id="so-cc-complex"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">Complex roots</span>
 </h3>
-<a href="so-constant-coefficients.html#so-cc-complex" class="permalink">¶</a><p id="p-177">There is exactly one more possibility for our characteristic roots: they are complex numbers. This happens if \(B^2\lt 4AC\text{.}\) In this case the roots must be conjugates of one another: \(s_1=\overline{s}_2\text{.}\) We'll find it convenient to write them in cartesian form, as \(r\pm i\omega\text{.}\) Then our null solution is</p>
+<a href="so-constant-coefficients.html#so-cc-complex" class="permalink">¶</a><p id="p-179">There is exactly one more possibility for our characteristic roots: they are complex numbers. This happens if \(B^2\lt 4AC\text{.}\) In this case the roots must be conjugates of one another: \(s_1=\overline{s}_2\text{.}\) We'll find it convenient to write them in cartesian form, as \(r\pm i\omega\text{.}\) Then our null solution is</p>
 <div class="displaymath">
 \begin{equation*}
 y = c_1 e^{s_1t} + c_2 e^{s_2t} = e^{rt}\left( c_1 e^{i\omega t} + c_2 e^{-i \omega t} \right)\text{.}
@@ -169,30 +170,30 @@ y = e^{rt}\left( C_1 \cos(\omega t) + C_2 \sin(\omega t) \right)\text{.}
 <p>These are still exponential solutions, but in disguise.</p></section><section class="subsection" id="so-cc-oscillators"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.4</span> <span class="title">Unforced oscillators</span>
 </h3>
-<a href="so-constant-coefficients.html#so-cc-oscillators" class="permalink">¶</a><p id="p-178">We're going to narrow things a bit here and require both \(A\gt 0\) and \(C\gt 0\text{.}\) Remember, this arises from Newton's Law to describe a restorative force.</p>
-<p id="p-179">What shall we make of the \(By'\) term here? We didn't have it with simple harmonic motion. Now is the time to look at that quadratic formula:</p>
+<a href="so-constant-coefficients.html#so-cc-oscillators" class="permalink">¶</a><p id="p-180">We're going to narrow things a bit here and require both \(A\gt 0\) and \(C\gt 0\text{.}\) Remember, this arises from Newton's Law to describe a restorative force.</p>
+<p id="p-181">What shall we make of the \(By'\) term here? We didn't have it with simple harmonic motion. Now is the time to look at that quadratic formula:</p>
 <div class="displaymath">
 \begin{equation*}
 s_{1,2} = \frac{ -B \pm \sqrt{B^2-4AC} }{ 2A }\text{.}
 \end{equation*}
 </div>
 <p>Recall our three cases, depending on the sign of \(B^2-4AC\) (aka the discriminant). If this is negative, then the roots are complex with real part equal to \(r=-B/2A\text{.}\) The amplitude of the complex exponential solutions is \(e^{rt}\text{.}\) So these decay to zero if \(B \gt 0\) and grow unboundedly if \(B\lt 0\text{.}\)</p>
-<p id="p-180">In the case \(B^2-4AC= 0\text{,}\) we have the double root \(s_1=-B/2A\text{,}\) and we reach the same conclusions about the sign of \(b\) (exponential decay beats linear growth). Finally, if \(B^2-4AC \gt 0\text{,}\) it's not hard to conclude that the same things happen. Physically, the ODE term \(By'\) represents <dfn class="terminology">damping</dfn> or dissipative loss of energy, but only if \(B\gt 0\text{.}\) It's not impossible to have \(B\lt 0\text{,}\) meaning energy is being pumped into the system, but it is much more rare.</p>
-<p id="p-181">It's instructive to do a thought experiment in which we increase \(B\) from zero while everything else is fixed. First, at \(B=0\text{,}\) we have the idealized situation of an <dfn class="terminology">undamped oscillator</dfn>. This is back to simple harmonic motion, with perfectly sinusoidal results. The characteristic roots in this case are imaginary, \(s_{1,2}=\pm i \omega_n=\pm i \sqrt{C/A}\text{,}\) corresponding to purely oscillating complex exponentials.</p>
-<p id="p-182">If we increase \(B\) slightly, the roots will behave continuously. They go into the complex plane as conjugates with negative real part \(-B/2A\text{.}\) At this point it's handy to shift notation by renaming our constants:</p>
+<p id="p-182">In the case \(B^2-4AC= 0\text{,}\) we have the double root \(s_1=-B/2A\text{,}\) and we reach the same conclusions about the sign of \(b\) (exponential decay beats linear growth). Finally, if \(B^2-4AC \gt 0\text{,}\) it's not hard to conclude that the same things happen. Physically, the ODE term \(By'\) represents <dfn class="terminology">damping</dfn> or dissipative loss of energy, but only if \(B\gt 0\text{.}\) It's not impossible to have \(B\lt 0\text{,}\) meaning energy is being pumped into the system, but it is much more rare.</p>
+<p id="p-183">It's instructive to do a thought experiment in which we increase \(B\) from zero while everything else is fixed. First, at \(B=0\text{,}\) we have the idealized situation of an <dfn class="terminology">undamped oscillator</dfn>. This is back to simple harmonic motion, with perfectly sinusoidal results. The characteristic roots in this case are imaginary, \(s_{1,2}=\pm i \omega_n=\pm i \sqrt{C/A}\text{,}\) corresponding to purely oscillating complex exponentials.</p>
+<p id="p-184">If we increase \(B\) slightly, the roots will behave continuously. They go into the complex plane as conjugates with negative real part \(-B/2A\text{.}\) At this point it's handy to shift notation by renaming our constants:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{-B}{ 2A } \pm i \frac{ \sqrt{4AC-B^2} }{ 2A } = -p \pm i\omega_d\text{,}
 \end{equation*}
 </div>
 <p>where \(p=B/2A\text{,}\) and \(\omega_d^2 = \omega_n^2-p^2\) defines a <dfn class="terminology">damped frequency</dfn> that's a bit lower than the natural undamped frequency. The solutions oscillate at \(\omega_d\) and decay with exponential rate \(-p\text{.}\) This is called <dfn class="terminology">underdamped oscillation</dfn>.</p>
-<p id="p-183">As \(B\) continues to increase, eventually our complex roots coalesce into the double real root \(-B/2A\text{.}\) Even though the mathematical expression for the solution changes here, the behavior is continuous; we continue to see exponential decay, but the oscillatory component has gone from very slow to nonexistent. This is called <dfn class="terminology">critical damping</dfn>.</p>
-<p id="p-184">Finally, as \(B\) increases more our roots again separate but stay on the negative real axis. The solutions are all decaying real exponentials, and we call the situation <dfn class="terminology">overdamped</dfn>. (This is what you want for your airplane's wings!)</p>
-<p id="p-185">The four types of oscillation can be predicted from the sign of \(B^2-4AC\text{,}\) or equivalently from the sign of \(\omega_n-p\text{.}\)</p></section><section class="subsection" id="so-cc-impulse"><h3 class="heading hide-type">
+<p id="p-185">As \(B\) continues to increase, eventually our complex roots coalesce into the double real root \(-B/2A\text{.}\) Even though the mathematical expression for the solution changes here, the behavior is continuous; we continue to see exponential decay, but the oscillatory component has gone from very slow to nonexistent. This is called <dfn class="terminology">critical damping</dfn>.</p>
+<p id="p-186">Finally, as \(B\) increases more our roots again separate but stay on the negative real axis. The solutions are all decaying real exponentials, and we call the situation <dfn class="terminology">overdamped</dfn>. (This is what you want for your airplane's wings!)</p>
+<p id="p-187">The four types of oscillation can be predicted from the sign of \(B^2-4AC\text{,}\) or equivalently from the sign of \(\omega_n-p\text{.}\)</p></section><section class="subsection" id="so-cc-impulse"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.5</span> <span class="title">Impulse response</span>
 </h3>
-<a href="so-constant-coefficients.html#so-cc-impulse" class="permalink">¶</a><p id="p-186">Recall our claim that the fundamental solution \(g(t)\) of the impulse forcing problem \(Ay''+By'+C=\delta(t)\) leads to the particular response to any input \(f(t)\) via \(y_p(t)=\int_0^t g(t-s)f(s)\,ds\text{.}\) Also recall that we can fudge finding \(g\) by having no forcing, \(g(0)=0\text{,}\) and \(g'(0)\) becoming instantly nonzero.</p>
-<p id="p-187">Consider an infinitesimally small time \(\epsilon\text{.}\) If we integrate \(Ay''+By'+Cy=\delta(t)\) up to this time, then we can estimate</p>
+<a href="so-constant-coefficients.html#so-cc-impulse" class="permalink">¶</a><p id="p-188">Recall our claim that the fundamental solution \(g(t)\) of the impulse forcing problem \(Ay''+By'+C=\delta(t)\) leads to the particular response to any input \(f(t)\) via \(y_p(t)=\int_0^t g(t-s)f(s)\,ds\text{.}\) Also recall that we can fudge finding \(g\) by having no forcing, \(g(0)=0\text{,}\) and \(g'(0)\) becoming instantly nonzero.</p>
+<p id="p-189">Consider an infinitesimally small time \(\epsilon\text{.}\) If we integrate \(Ay''+By'+Cy=\delta(t)\) up to this time, then we can estimate</p>
 <div class="displaymath">
 \begin{equation*}
 A(g'(\epsilon)-g'(0)) + B(g(\epsilon)-g(0)) + C\int_0^\epsilon g(t)\,dt = 1 \text{.}
@@ -201,8 +202,8 @@ A(g'(\epsilon)-g'(0)) + B(g(\epsilon)-g(0)) + C\int_0^\epsilon g(t)\,dt = 1 \tex
 <p>Assuming that \(g\) itself is continuous, as \(\epsilon\to 0\) we conclude that \(g'(\epsilon)-g'(0) = 1/A\text{,}\) which is the jump we seek. That is, we use \(g'(0)=1/A\) as the "cheater's way" to get the fundamental solution.</p>
 <article class="example-like" id="example-25"><a knowl="" class="id-ref" refid="hk-example-25"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.3.2</span>
-</h6></a></article><div id="hk-example-25" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-188">The solution of \(g''=\delta(t)\) is equivalent to \(g''=0\) with \(g(0)=0\text{,}\) \(g'(0)=1\text{.}\) We have \(g(t)=c_1+c_2t\) and then conclude that \(c_1=0\text{,}\) \(c_2=1\text{.}\) That is, \(g(t)=t\text{.}\)</p>
-<p id="p-189">Now suppose we want to solve \(g''=\sin(t)\text{.}\) We find</p>
+</h6></a></article><div id="hk-example-25" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-190">The solution of \(g''=\delta(t)\) is equivalent to \(g''=0\) with \(g(0)=0\text{,}\) \(g'(0)=1\text{.}\) We have \(g(t)=c_1+c_2t\) and then conclude that \(c_1=0\text{,}\) \(c_2=1\text{.}\) That is, \(g(t)=t\text{.}\)</p>
+<p id="p-191">Now suppose we want to solve \(g''=\sin(t)\text{.}\) We find</p>
 <div class="displaymath">
 \begin{equation*}
 y_p(t)=\int_0^t (t-s) \sin(s) \,ds = \bigl[ (s-t)\cos(s) - \sin(s) \bigr]_0^t = -\sin(t)-t\text{.}

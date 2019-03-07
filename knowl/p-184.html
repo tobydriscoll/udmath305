@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-26T16:20:18-05:00    *-->
+<!--*    on 2019-03-07T13:55:08-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Finally, as \(B\) increases more our roots again separate but stay on the negative real axis. The solutions are all decaying real exponentials, and we call the situation <dfn class="terminology">overdamped</dfn>. (This is what you want for your airplane's wings!)</p>
+<p>If we increase \(B\) slightly, the roots will behave continuously. They go into the complex plane as conjugates with negative real part \(-B/2A\text{.}\) At this point it's handy to shift notation by renaming our constants:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{-B}{ 2A } \pm i \frac{ \sqrt{4AC-B^2} }{ 2A } = -p \pm i\omega_d\text{,}
+\end{equation*}
+</div>
+<p>where \(p=B/2A\text{,}\) and \(\omega_d^2 = \omega_n^2-p^2\) defines a <dfn class="terminology">damped frequency</dfn> that's a bit lower than the natural undamped frequency. The solutions oscillate at \(\omega_d\) and decay with exponential rate \(-p\text{.}\) This is called <dfn class="terminology">underdamped oscillation</dfn>.</p>
 <span class="incontext"><a href="so-constant-coefficients.html#p-184">in-context</a></span>
 </body>
 </html>
