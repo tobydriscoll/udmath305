@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-07T13:55:07-05:00    *-->
+<!--*    on 2019-03-07T14:36:30-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -118,12 +118,12 @@ MathJax.Hub.Config({
 <span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Exponentially forced oscillators</span>
 </h2>
 <a href="so-forced-oscillators.html" class="permalink">¶</a><section class="introduction" id="introduction-7"><p id="p-192"><em class="emphasis">This and the next section cover 2.4 in the text.</em></p>
-<p id="p-193">We now consider problems in the form \(ay''+by'+cy=f(t)\text{,}\) where the coefficients are constant, \(a\) and \(c\) are positive (oscillation), and the driving force is exponential, \(f(t)=e^{rt}\) for constant \(r\text{.}\)</p>
-<p id="p-194">There are plently of details to sift through, but the essence is quite simple. The general solution of this problem has two contributions, \(y=y_n+y_p\text{.}\) The first, \(y_n\text{,}\) is the null solution to the associated <dfn class="terminology">homogeneous</dfn> equation \(ay''+by'+cy=0\text{,}\) and the second, \(y_p\text{,}\) is any particular solution of the original problem. To see how this works, plug in:</p>
+<p id="p-193">We now consider problems in the form \(Ay''+By'+Cy=f(t)\text{,}\) where the coefficients are constant, \(A\) and \(C\) are positive (oscillation), and the driving force is exponential, \(f(t)=e^{rt}\) for constant \(r\text{.}\)</p>
+<p id="p-194">There are plently of details to sift through, but the essence is quite simple. The general solution of this problem has two contributions, \(y=y_n+y_p\text{.}\) The first, \(y_n\text{,}\) is the null solution to the associated <dfn class="terminology">homogeneous</dfn> equation \(Ay''+By'+Cy=0\text{,}\) and the second, \(y_p\text{,}\) is any particular solution of the original problem. To see how this works, plug in:</p>
 <div class="displaymath">
 \begin{align*}
-ay''+by'+cy \amp = a(y_n+y_p)''+b(y_n+y_p)'+c(y_n+y_p) \\
-\amp = (ay_n''+by_n'+cy_n) + (ay_p''+by_p'+cy_p) \\
+Ay''\+By'\+Cy \amp = A(y_n+y_p)''+B(y_n+y_p)'+C(y_n+y_p) \\
+\amp = (Ay_n''+By_n'+Cy_n) + (Ay_p''+By_p'+Cy_p) \\
 \amp = 0 + f = f\text{.}
 \end{align*}
 </div>
@@ -135,16 +135,16 @@ ay''+by'+cy \amp = a(y_n+y_p)''+b(y_n+y_p)'+c(y_n+y_p) \\
 <a href="so-forced-oscillators.html#so-fo-expresponse" class="permalink">¶</a><p id="p-197">For \(f(t)=e^{rt}\) we let \(y_p=Y e^{rt}\) and plug into the ODE:</p>
 <div class="displaymath">
 \begin{equation*}
-(ar^2 + br + c)Ye^{rt} = e^{rt}\text{.}
+(Ar^2 + Br + C)Ye^{rt} = e^{rt}\text{.}
 \end{equation*}
 </div>
 <p>This is identically satisfied if we choose</p>
 <div class="displaymath">
 \begin{equation*}
-Y = \frac{1}{ar^2 + br + c}\text{.}
+Y = \frac{1}{Ar^2 + Br + C}\text{.}
 \end{equation*}
 </div>
-<p>In various contexts we call this the <dfn class="terminology">exponential response function</dfn> or the <dfn class="terminology">transfer function</dfn>. It's constant in time, but a function of the forcing exponent \(r\) (which is usually called \(s\) in transfer functions).</p>
+<p>This is called the <dfn class="terminology">transfer function</dfn>. It's constant in time, but a function of the forcing exponent \(r\text{.}\) In fact we'll switch to using  \(s\) in the transfer function (as we will see, it's all relatable to Laplace transforms).</p>
 <article class="example-like" id="example-26"><a knowl="" class="id-ref" refid="hk-example-26"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.4.1</span>
 </h6></a></article><div id="hk-example-26" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-198">Let's solve \(y''+5y'+6y=4 e^{-t}\text{,}\) with \(y(0)=0\text{,}\) \(y'(0)=1\text{.}\) In stages: </p>
@@ -155,7 +155,7 @@ Y = \frac{1}{ar^2 + br + c}\text{.}
 <li id="li-14"><p id="p-202"><em class="emphasis">Initial values</em>. We get \(0=y(0)=c_1+c_2+2\) and \(1=y'(0)=-2c_1-3c_2-2\text{.}\) This implies \(c_1=-3\text{,}\) \(c_2=1\text{.}\) Finally, \(y=-3 e^{-2t}+e^{-3t} + 2 e^{-t}\text{.}\)</p></li>
 </ol></article></div>
 <p id="p-203">You may have noticed that the denominator of the transfer function is simply the characteristic polynomial of the homogeneous problem. That is always the case. The textbook uses \(Y(s)=1/P(s)\) in many spots to emphasize the connection.</p>
-<p id="p-204">You should be getting comfortable with the idea that exponential forcing includes sin and cos! We are simply interested in the transfer function for imaginary exponents, \(Y(i\omega)\) followed by the imaginary or real part of \(Ye^{i\omega t}\text{.}\) There is some complex-number algebra required here.</p>
+<p id="p-204">You should be getting comfortable with the idea that exponential forcing includes sin and cos! We are simply interested in the transfer function for imaginary exponents, \(Y(i\omega)\) followed by the imaginary or real part of \(Ye^{i\omega t}\text{.}\) There is some complex-number-fu required here.</p>
 <article class="example-like" id="example-27"><a knowl="" class="id-ref" refid="hk-example-27"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.4.2</span>
 </h6></a></article><div id="hk-example-27" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-205">Consider \(y''+y'=\sin(2t)\text{.}\) Since the forcing term is the imaginary part of \(e^{2it}\text{,}\) we use</p>

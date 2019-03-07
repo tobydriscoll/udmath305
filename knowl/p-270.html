@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-07T13:55:09-05:00    *-->
+<!--*    on 2019-03-07T14:36:31-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If we keep differentiating in \(s\) we find</p>
+<p>The undamped oscillator \(y''+9y=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{d^n}{ds^n} \mathcal{L}[ f(t) ] = (-1)^n \mathcal{L}[ t^n f(t) ]\text{.}
+Y(s) = \frac{3}{(s^2+9)^2}\text{.}
 \end{equation*}
 </div>
-<p>Of interest is the special case of an exponential function \(e^{ct}\text{,}\) whose transform is \(1/(s-c)\text{:}\)</p>
+<p>This doesn't look like anything easy. However, note that</p>
 <div class="displaymath">
 \begin{equation*}
-\mathcal{L} \left[ t^n e^{ct} \right] = \frac{n!}{(s-c)^{n+1}} \text{.}
+sY(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frac{d}{ds} \left[ \frac{1}{s^2+9} \right] \text{.}
 \end{equation*}
 </div>
-<p>The even specialer case \(c=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p>
+<p>Therefore, \(sY(s)\) is the transform of \(\frac{1}{2} t \sin(3t)\text{.}\) So this must be \(y'(t)\text{.}\) An integration by parts then recovers</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-laplace-repeated.html#p-270">in-context</a></span>
 </body>
 </html>

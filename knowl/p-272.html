@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-07T13:55:09-05:00    *-->
+<!--*    on 2019-03-07T14:36:31-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose \(y''+2y'+10y=6\text{.}\) The very particular solution has \(Y(s)=6/(s^2+2s+10)\text{.}\) We can use the trick of completing the square to write this as \(Y(s)=6/[(s-1)^2+9]\text{,}\) and thus \(y(t) = 2e^{-t}\sin(3t)\text{.}\)</p>
+<p>Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} \text{.}
+\end{equation*}
+</div>
+<p>Since we also know that</p>
+<div class="displaymath">
+\begin{equation*}
+e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{,}
+\end{equation*}
+</div>
+<p>the conclusion is</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal{L}[ e^{at} \cos( b t) ] = \frac{s-a}{(s-a)^2+b^2}\text{.}
+\end{equation*}
+</div>
+<p>In similar fashion we can show that \(e^{at} \sin( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion. However, the details can get pretty intense for hand calculation.</p>
 <span class="incontext"><a href="so-laplace-repeated.html#p-272">in-context</a></span>
 </body>
 </html>

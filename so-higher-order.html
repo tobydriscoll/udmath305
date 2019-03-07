@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-07T13:55:07-05:00    *-->
+<!--*    on 2019-03-07T14:36:30-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -181,8 +181,13 @@ y_n = c_1 e^{-t} + c_2 e^{t} + c_3 \cos(t) + c_4\sin(t)\text{.}
 L[y] = a_N D^N y + \cdots  + a_1 Dy + a_0 y\text{.}
 \end{equation*}
 </div>
-<p>This makes it much easier to write the ODE, as \(L[y]=f\text{.}\) Furthermore, it's easy to check that \(L\) satisfies the two rules above and thus is a linear operator as well. The linearity also makes certain kinds of reasoning very simple, such as \(L[y_n+y_p] = L[y_n]+L[y_p] = 0+f=f\text{.}\)</p>
-<p id="p-227">An interesting and seomtimes useful consequence of the defitions is that if \(L\) has constant coefficients and the characteristic polynomial factors as \(P(s)=(s-s_1)\cdots(s-s_N)\text{,}\) then \(L=(D-s_1)\cdots (D-s_N)\text{.}\) Here the juxtaposition means operator compositions.</p>
+<p>This makes it much easier to write the ODE, as \(L[y]=f\text{.}\) Furthermore, it's easy to check that \(L\) satisfies the two rules above and thus is a linear operator as well. The linearity also makes certain kinds of reasoning very simple, such as our most basic pattern for general solutions:</p>
+<div class="displaymath">
+\begin{equation*}
+L[y_n+y_p] = L[y_n]+L[y_p] = 0+f=f\text{.}
+\end{equation*}
+</div>
+<p id="p-227">An interesting and sometimes useful consequence of the defitions is that if \(L\) has constant coefficients and the characteristic polynomial factors as \(P(s)=(s-s_1)\cdots(s-s_N)\text{,}\) then \(L=(D-s_1)\cdots (D-s_N)\text{.}\) Here the juxtaposition means operator compositions.</p>
 <article class="example-like" id="example-31"><a knowl="" class="id-ref" refid="hk-example-31"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.5.3</span>
 </h6></a></article><div id="hk-example-31" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-228">The operator \(L[y]=y'''+2y''+y'+2y\) has characteristic roots \(-2,\pm i\text{.}\) Now note that for any function \(y\text{,}\)</p>

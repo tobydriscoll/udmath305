@@ -191,7 +191,7 @@ set(gca,'dataaspect',[6,1,1])
 	<p>
 		Similarly, for the forced problem <m>my''+ky=e^{i\omega t}</m>, we can get a particular solution <m>y_p=Y e^{i\omega t}</m> if we let <m>Y=1/(k-m\omega^2)</m>. This works for both cosine and sine forcing upon taking real and imaginary parts, and we go right back to the formulas from before. Rather than exploring the details here, we will next do it all for a more general problem that includes a <m>y'</m> term in the ODE.
 	</p>
-  </section>
+  	</section>
 
 	<section xml:id="so-constant-coefficients">
 		<title>Constant coefficients</title>
@@ -202,9 +202,9 @@ set(gca,'dataaspect',[6,1,1])
 			</p>
 
 			<p>
-				It's going to be easy to lose track of the most basic fact of this equation: <em>the solutions are exponentials</em>. (Well, with an asterisk.) In fact plugging in <m>y=e^{st}</m> takes us to <m>(as^2+bs+c)e^{st}=0</m>, which is obviously true if we can solve the <term>characteristic equation</term>
+				It's going to be easy to lose track of the most basic fact of this equation: <em>the solutions are exponentials</em>. (Well, with an asterisk.) In fact plugging in <m>y=e^{st}</m> takes us to <m>(As^2+Bs+C)e^{st}=0</m>, which is obviously true if we can solve the <term>characteristic equation</term>
 				<men xml:id="eq-so-char">
-					as^2+bs+c = 0
+					As^2+Bs+C = 0
 				</men>.
 				As you know, there are two (counting multiplicity) and only two solutions for <m>s</m> in this equation. Let's call them <m>s_1</m> and <m>s_2</m>. I won't insult you by writing out the quadratic formula here.
 			</p>
@@ -300,11 +300,11 @@ set(gca,'dataaspect',[6,1,1])
 	<title>Exponentially forced oscillators</title>
 	<introduction>
 	<p><em>This and the next section cover 2.4 in the text.</em></p>
-	  <p>We now consider problems in the form <m>ay''+by'+cy=f(t)</m>, where the coefficients are constant, <m>a</m> and <m>c</m> are positive (oscillation), and the driving force is exponential, <m>f(t)=e^{rt}</m> for constant <m>r</m>.</p>
+	  <p>We now consider problems in the form <m>Ay''+By'+Cy=f(t)</m>, where the coefficients are constant, <m>A</m> and <m>C</m> are positive (oscillation), and the driving force is exponential, <m>f(t)=e^{rt}</m> for constant <m>r</m>.</p>
 
-	  <p> There are plently of details to sift through, but the essence is quite simple. The general solution of this problem has two contributions, <m>y=y_n+y_p</m>. The first, <m>y_n</m>, is the null solution to the associated <term>homogeneous</term> equation <m>ay''+by'+cy=0</m>, and the second, <m>y_p</m>, is any particular solution of the original problem. To see how this works, plug in:
-	  <md><mrow>ay''+by'+cy \amp = a(y_n+y_p)''+b(y_n+y_p)'+c(y_n+y_p) </mrow>
-	  <mrow> \amp = (ay_n''+by_n'+cy_n) + (ay_p''+by_p'+cy_p) </mrow>
+	  <p> There are plently of details to sift through, but the essence is quite simple. The general solution of this problem has two contributions, <m>y=y_n+y_p</m>. The first, <m>y_n</m>, is the null solution to the associated <term>homogeneous</term> equation <m>Ay''+By'+Cy=0</m>, and the second, <m>y_p</m>, is any particular solution of the original problem. To see how this works, plug in:
+	  <md><mrow>Ay''\+By'\+Cy \amp = A(y_n+y_p)''+B(y_n+y_p)'+C(y_n+y_p) </mrow>
+	  <mrow> \amp = (Ay_n''+By_n'+Cy_n) + (Ay_p''+By_p'+Cy_p) </mrow>
 	  <mrow> \amp = 0 + f = f</mrow>
 	  </md>.
 	  The null solution contains two arbitary constants that are used to soak up the initial conditions. We add that the particular solution is not unique, so the complete representation is not either. However, all such expressions are equivalent in the end, and the solution is always expressible in this form.</p>
@@ -317,10 +317,10 @@ set(gca,'dataaspect',[6,1,1])
 	<subsection xml:id="so-fo-expresponse">
 	  <title>Exponential response</title>
 	  <p>For <m>f(t)=e^{rt}</m> we let <m>y_p=Y e^{rt}</m> and plug into the ODE:
-	  <me>(ar^2 + br + c)Ye^{rt} = e^{rt}</me>.
+	  <me>(Ar^2 + Br + C)Ye^{rt} = e^{rt}</me>.
 	  This is identically satisfied if we choose
-	  <me>Y = \frac{1}{ar^2 + br + c}</me>.
-	  In various contexts we call this the <term>exponential response function</term> or the <term>transfer function</term>. It's constant in time, but a function of the forcing exponent <m>r</m> (which is usually called <m>s</m> in transfer functions).</p>
+	  <me>Y = \frac{1}{Ar^2 + Br + C}</me>.
+	  This is called the <term>transfer function</term>. It's constant in time, but a function of the forcing exponent <m>r</m>. In fact we'll switch to using  <m>s</m> in the transfer function (as we will see, it's all relatable to Laplace transforms). </p>
 
 	  <example>
 	    <p>Let's solve <m>y''+5y'+6y=4 e^{-t}</m>, with <m>y(0)=0</m>, <m>y'(0)=1</m>. In stages:
@@ -342,7 +342,7 @@ set(gca,'dataaspect',[6,1,1])
 
 	  <p>You may have noticed that the denominator of the transfer function is simply the characteristic polynomial of the homogeneous problem. That is always the case. The textbook uses <m>Y(s)=1/P(s)</m> in many spots to emphasize the connection.</p>
 
-	  <p>You should be getting comfortable with the idea that exponential forcing includes sin and cos! We are simply interested in the transfer function for imaginary exponents, <m>Y(i\omega)</m> followed by the imaginary or real part of <m>Ye^{i\omega t}</m>. There is some complex-number algebra required here. </p>
+	  <p>You should be getting comfortable with the idea that exponential forcing includes sin and cos! We are simply interested in the transfer function for imaginary exponents, <m>Y(i\omega)</m> followed by the imaginary or real part of <m>Ye^{i\omega t}</m>. There is some complex-number-fu required here. </p>
 
 	  <example>
 	    <p>Consider <m>y''+y'=\sin(2t)</m>. Since the forcing term is the imaginary part of <m>e^{2it}</m>, we use
@@ -454,11 +454,14 @@ set(gca,'dataaspect',[6,1,1])
 			<p>
 			 Given a linear ODE of order <m>N</m> as above, we can define 
 			 <me>L[y] = a_N D^N y + \cdots  + a_1 Dy + a_0 y</me>.   
-			This makes it much easier to write the ODE, as <m>L[y]=f</m>. Furthermore, it's easy to check that <m>L</m> satisfies the two rules above and thus is a linear operator as well. The linearity also makes certain kinds of reasoning very simple, such as <m>L[y_n+y_p] = L[y_n]+L[y_p] = 0+f=f</m>. 
+			This makes it much easier to write the ODE, as <m>L[y]=f</m>. Furthermore, it's easy to check that <m>L</m> satisfies the two rules above and thus is a linear operator as well. The linearity also makes certain kinds of reasoning very simple, such as our most basic pattern for general solutions:  
+			<me>
+				L[y_n+y_p] = L[y_n]+L[y_p] = 0+f=f
+			</me>. 
 		 </p>
 
 		 <p>
-			 An interesting and seomtimes useful consequence of the defitions is that if <m>L</m> has constant coefficients and the characteristic polynomial factors as <m>P(s)=(s-s_1)\cdots(s-s_N)</m>, then <m>L=(D-s_1)\cdots (D-s_N)</m>. Here the juxtaposition means operator compositions.
+			 An interesting and sometimes useful consequence of the defitions is that if <m>L</m> has constant coefficients and the characteristic polynomial factors as <m>P(s)=(s-s_1)\cdots(s-s_N)</m>, then <m>L=(D-s_1)\cdots (D-s_N)</m>. Here the juxtaposition means operator compositions.
 		 </p>
 
 		 <example>
@@ -478,7 +481,7 @@ set(gca,'dataaspect',[6,1,1])
   <section xml:id="so-applications">
 	<title>Applications of oscillators</title>
 	<introduction>
-		<p><em>From 2.5 in the text, but very little on the electrical side.</em></p>
+		<p><em>From 2.5 in the text, but very little from the electrical side. Also go back to "better notation" from 2.4.</em></p>
 
 		<p>Oscillations appear all over science and engineering, and 2nd order linear equations are often used to model them. The best-known examples are mechanical and electrical, but there are chemical and biochemical ones as well.</p>
 	</introduction>
@@ -505,8 +508,11 @@ set(gca,'dataaspect',[6,1,1])
 			<title>Electrical oscillators</title>
 			<p>
 				An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is
-				<me>LI'' + RI' + CI = \mathcal{E}(t)</me>,
-				where <m>L</m> is inductance, <m>R</m> is resistance, <m>C</m> is capacitance, and <m>I(t)</m> is the current flowing through the circuit. The forcing term represents the generator (EMF). For alternating current this is modeled as a cosine (or complex exponential) forcing.  The transfer function is expressed a little differently, because often the target quantity is 
+				<me>LI'' + RI' + CI = \mathcal{E}'(t)</me>,
+				where <m>L</m> is inductance, <m>R</m> is resistance, <m>C</m> is capacitance, and <m>I(t)</m> is the current flowing through the circuit. The forcing term represents the generator whose voltage (EMF) is <m>\mathcal{E}(t)</m>. For alternating current this is modeled as a cosine (or complex exponential) function.  
+			</p>
+			<p>
+				In DC circuits we have Ohm's Law, <m>I=V/R</m>, for a resistance <m>R</m>. In the AC case, if <m>\mathcal{E}(t)=Ve^{i\omega t}</m>, then <m>e^{i\omega t}</m> appears in the current as well, and it still makes sense to talk about <m>V/I</m> as a kind of resistance, now called <term>impedance</term>, written as <m>Z</m>, and dependent on the frequency <m>\omega</m>. The impedance is very closely related to the transfer function for <m>s=i\omega</m>. 
 			</p>
 		</subsection>
       
@@ -516,19 +522,19 @@ set(gca,'dataaspect',[6,1,1])
 	  <p>When you have lots of different versions of the same root problem, with different symbols and units, you have three options. You can solve each new problem from scratch, you can derive custom formulas for each application, or you can try to find a minimal set of parameters and express each problem using those. Let's consider the last pathway here.</p>
 
 	  <p>
-			The mechanical oscillator <m>ay'' + by' + cy = f(t)</m> is more conveniently expressed as
-	  	<me> y'' + \frac{b}{a} y' + \frac{c}{a} y + \frac{c}{a} F(t)</me>.
+			The mechanical oscillator <m>Ay'' + By' + Cy = f(t)</m> is more conveniently expressed as
+	  	<me> y'' + \frac{B}{A} y' + \frac{C}{A} y + \frac{C}{A} F(t)</me>.
 			One reason to prefer this form is that <m>y</m> must have the same units as the forcing <m>F</m>. Furthermore, we see the undamped natural frequency <m>\omega_n=\sqrt{c/a}</m>, and this has units of inverse time only. The same units apply to <m>b/a</m>, so we introduce the new dimensionless parameter
-			<me>Z = \frac{1}{2} \frac{b/a}{\omega_n} = \frac{b}{\sqrt{4ac}}</me>. 
+			<me>Z = \frac{1}{2} \frac{B/A}{\omega_n} = \frac{B}{\sqrt{4AC}}</me>. 
 			Now the ODE becomes 
 			<me> y'' + 2 Z \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)</me>.
 		</p>
 		<p>
-			The characteristic roots are now conveniently <m>-Z \omega_n \pm \omega_n \sqrt{Z^2-1}</m>. We see that the condition for being underdamped is simply <m>Z \lt 1</m>. In this case we express the roots as <m>-Z \omega_n \pm \omega_d</m>, using the damped frequency <m>\omega_d=\omega_n\sqrt{1-Z^2}</m>. 
+			The characteristic roots are now a little bit more transparent: <m>-Z \omega_n \pm \omega_n \sqrt{Z^2-1}</m>. We see that the condition for being underdamped is simply <m>Z \lt 1</m>. In this case we express the roots as <m>-Z \omega_n \pm i \omega_d</m>, using the damped frequency <m>\omega_d=\omega_n\sqrt{1-Z^2}</m>. 
 		</p>
 		<p>
 			Continuing the underdamped case, the gain works out to be
-	  	<me>G^2 = \frac{1}{(\omega_n^2-\omega^2)^2 + 4\omega_n^2Z^2\omega^2}  = \frac{\omega_n^4}{(1-\rho^2)^2 + 4Z^2\rho^2}</me>,
+	  	<me>G^2 = \frac{1}{(\omega_n^2-\omega^2)^2 + 4\omega_n^2Z^2\omega^2}  = \frac{\omega_n^{-4}}{(1-\rho^2)^2 + 4Z^2\rho^2}</me>,
 			where <m>\rho=\omega/\omega_n</m> is a dimensionless frequency ratio. If also <m>Z^2\lt 1/2</m>, the gain is maximized when <m>\rho=\sqrt{1-2Z^2} \lt 1</m>. The gain at that maximum is proportional to <m>1/Z</m>, so much growth in the response is possible near the natural frequency when damping is small in the sense of <m>Z\approx 0</m>. This can be considered a practical resonance for lightly damped systems. 
 		</p>
 
@@ -561,8 +567,8 @@ set(gca,'dataaspect',[6,1,1])
 				Plugging that into the ODE yields
 				<md>
 					<mrow>2C + 4(B+2Ct) + 4(A+Bt+Ct^2) \amp = 8t^2</mrow>
-					<mrow>4C t^2 + (8C+4B) + (2C+4B+4A) \apm = 8t^2</mrow>
-				</md>. This has to be an identity for all <m>t</m>>. Matching like powers, we can read off <m>C=2</m>, then <m>B=-4</m>, and finally <m>A=3</m>>. This provides us with <m>y_p=2t^2+4t+3</m>. (The complete solution would require us to use the characteristic equation to find the null solution as well.)
+					<mrow>4C t^2 + (8C+4B) + (2C+4B+4A) \amp = 8t^2</mrow>
+				</md>. This has to be an identity for all <m>t</m>. Matching like powers, we can read off <m>C=2</m>, then <m>B=-4</m>, and finally <m>A=3</m>. This provides us with <m>y_p=2t^2+4t+3</m>. (The complete solution would require us to use the characteristic equation to find the null solution as well.)
 				</p>
 			</example>
 
@@ -733,7 +739,7 @@ set(gca,'dataaspect',[6,1,1])
 				<mrow>y(0) \amp = c_1 + c_2  </mrow>
 				<mrow>y'(0) \amp = -c_1 + c_2 </mrow>
 			</md>. 
-			That's a lot less work than doing a separate PFD needed when the initial conditions are kept in the transform.
+			That's a lot less work than doing a separate PFD needed when the initial conditions are kept in the transform. That's why it often pays to just ignore those parts when using the transform method, putting them back in at the very end. 
 		</p>
 
 		
@@ -807,7 +813,7 @@ set(gca,'dataaspect',[6,1,1])
 			<me> 
 				Y(s) = \frac{s}{(s^2+\omega_n^2)(s^2+1)} = \frac{1}{\omega_n^2-\omega^2} \left( \frac{s}{s^2+\omega^2} - \frac{s}{s^2+\omega_n^2} \right)
 			</me>, 
-			which is readily inverted into a combination of <m>\cos(\omega t)</m> and <m>\cos(\omega_n t)</m>. However, at this point we are probably better off just using the method of undetermined coefficients instead. 
+			which is readily inverted into a combination of <m>\cos(\omega t)</m> and <m>\cos(\omega_n t)</m>. However, at this point we are probably better off using the method of undetermined coefficients instead. 
 		</p>
 
 
