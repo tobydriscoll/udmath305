@@ -1,4 +1,5 @@
 d = dir('matlab/*.m');
+addpath /Users/driscoll/305/19S/udmath305/matlab
 cd matlab
 
 for f = 1:length(d)

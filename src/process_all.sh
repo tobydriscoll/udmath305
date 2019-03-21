@@ -20,7 +20,7 @@ then
     xsltproc --xinclude ~/Dropbox/books/mathbook/xsl/extract-matlab.xsl notes305.xml
     echo "...done extraction"
     echo "Running matlab codes..."
-    matlab -nodisplay -r process_matlab
+    matlab -nodisplay < process_cmd.m
     echo "...done codes"
     mv matlab/*.svg ../matlab
     git add ../matlab/*.svg 
