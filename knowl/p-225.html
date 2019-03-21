@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-07T14:36:31-05:00    *-->
+<!--*    on 2019-03-20T17:31:09-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>\(D[u+v] = D[u]+D[v]\) if \(u,v\) are any functions.</p>
+<p>Given a linear ODE of order \(N\) as above, we can define</p>
+<div class="displaymath">
+\begin{equation*}
+L[y] = a_N D^N y + \cdots  + a_1 Dy + a_0 y\text{.}
+\end{equation*}
+</div>
+<p>This makes it much easier to write the ODE, as \(L[y]=f\text{.}\) Furthermore, it's easy to check that \(L\) satisfies the two rules above and thus is a linear operator as well. The linearity also makes certain kinds of reasoning very simple, such as our most basic pattern for general solutions:</p>
+<div class="displaymath">
+\begin{equation*}
+L[y_n+y_p] = L[y_n]+L[y_p] = 0+f=f\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-higher-order.html#p-225">in-context</a></span>
 </body>
 </html>

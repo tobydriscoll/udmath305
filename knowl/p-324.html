@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>So the phase portraits are a graphical tool for stability. What about analytical tools? The key here turns out to be the <dfn class="terminology">eigenvalues</dfn> of the matrix \(\bA\text{.}\)  We're not ready to discuss those in generality yet, but the 2-by-2 case is simple to describe (and hauntingly familiar). The eigenvalues are the two roots of the <dfn class="terminology">characteristic polynomial</dfn></p>
+<div class="displaymath">
+\begin{equation*}
+p(\lambda) = \lambda^2 - T\lambda + D\text{,}
+\end{equation*}
+</div>
+<p>where \(T=a_{11}+a_{22}\) is the <dfn class="terminology">trace</dfn> and \(D=a_{11}a_{22}-a_{12}a_{21}\) is the <dfn class="terminology">determinant</dfn> of the matrix. Each eigenvalue \(\lambda_k\) implies a solution with time dependence \(\exp(\lambda_k t)\) (unless the eigenvalues coincide, in which case \(t\exp(\lambda_k t)\) can emerge). Hence stability is determined by the real parts of the eigenvalues: </p>
+<ol class="decimal">
+<li>If \(\Re\lambda_k \gt 0\) for either value of \(k\text{,}\) the origin is unstable.</li>
+<li>If \(\Re\lambda_k \leq 0\) for both \(k\text{,}\) and \(\lambda_1\neq \lambda_2\text{,}\) the origin is stable.</li>
+<li>If \(\lambda_1 = \lambda_2\text{,}\) the origin is unstable.</li>
+</ol>
+<p> Furthermore, in the first two cases, point is a node if the imaginary parts of the eigenvalues are zero, and a spiral or center if they are nonzero.</p>
+<span class="incontext"><a href="twod-fixed-points.html#p-324">in-context</a></span>
+</body>
+</html>

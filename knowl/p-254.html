@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-07T14:36:31-05:00    *-->
+<!--*    on 2019-03-20T17:31:09-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If you immediately wondered "what if the Wronskian is zero?" when you saw the above formulas, you have earned a special place in my heart. This possibility can be ruled out for some rather general theortical reasons, but we can also just calculate away the issue for equations with constant coefficients. If we have distinct characteristic roots \(s_1\) and \(s_2\text{,}\) then</p>
+<p>If we continue to push ahead with the VP formulas, interesting things start to happen. For distinct roots,</p>
 <div class="displaymath">
 \begin{equation*}
-W = (e^{s_1t})(s_2e^{s_2t}) - (s_1e^{s_1t})(e^{s_2t}) = (s_2-s_1)e^{(s_1+s_2)t}\text{.}
+c_1' = -\frac{\exp(s_2t)}{(s_2-s_1)\exp((s_1+s_2)t)} f(t)  =  \frac{f(t)e^{-s_1t}}{s_1-s_2}\text{,}
 \end{equation*}
 </div>
-<p>Not zero, as promised. In the case of repeated root \(s_1\text{,}\) then</p>
+<p>and similarly \(c_2'= f(t)e^{-s_2t}/(s_2-s_1) \text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+y_p \amp = e^{s_1 t} \int_0^t \frac{f(\tau)e^{-s_1\tau}}{s_1-s_2}\, d\tau + 
+e^{s_2 t} \int_0^t \frac{f(\tau)e^{-s_2\tau}}{s_2-s_1}\, d\tau \\
+\amp =  \int_0^t  f(\tau) \frac{  e^{s_1(t-\tau)} -  e^{s_2(t-\tau)}}{s_1-s_2}\, d\tau  \\
+\amp =  \int_0^t  f(\tau) g(t-\tau) \, d\tau  \text{,}
+\end{align*}
+</div>
+<p>with</p>
 <div class="displaymath">
 \begin{equation*}
-W = e^{s_1t}(s_1t +1)e^{s_1t} - (s_1 e^{s_1t})(t e^{s_1t}) = e^{2s_1t} \text{.}
+g(t) = \frac{ e^{s_1t} -  e^{s_2t} }{s_1-s_2} \text{.}
 \end{equation*}
 </div>
-<p>And here you were all worried.</p>
+<p>By definition the integral formula makes \(g\) an fundamental solution. Remember, \(g\) is also the impulse response, and the null solution with \(g(0)=0\text{,}\) \(g'(0)=1/A=1\text{.}\) But this derivation doesn't rely on any sketchy deltas.</p>
 <span class="incontext"><a href="so-general-forcing.html#p-254">in-context</a></span>
 </body>
 </html>

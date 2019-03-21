@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-07T14:36:31-05:00    *-->
+<!--*    on 2019-03-20T17:31:09-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>When you have lots of different versions of the same root problem, with different symbols and units, you have three options. You can solve each new problem from scratch, you can derive custom formulas for each application, or you can try to find a minimal set of parameters and express each problem using those. Let's consider the last pathway here.</p>
+<p>The mechanical oscillator \(Ay'' + By' + Cy = f(t)\) is more conveniently expressed as</p>
+<div class="displaymath">
+\begin{equation*}
+y'' + \frac{B}{A} y' + \frac{C}{A} y + \frac{C}{A} F(t)\text{.}
+\end{equation*}
+</div>
+<p>One reason to prefer this form is that \(y\) must have the same units as the forcing \(F\text{.}\) Furthermore, we see the undamped natural frequency \(\omega_n=\sqrt{C/A}\text{,}\) and this has units of inverse time only. The same units apply to \(B/A\text{,}\) so we introduce the new dimensionless parameter</p>
+<div class="displaymath">
+\begin{equation*}
+Z = \frac{1}{2} \frac{B/A}{\omega_n} = \frac{B}{\sqrt{4AC}}\text{.}
+\end{equation*}
+</div>
+<p>Now the ODE becomes</p>
+<div class="displaymath">
+\begin{equation*}
+y'' + 2 Z \omega_n y' + \omega_n^2 y = \omega_n^2 F(t)\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-applications.html#p-235">in-context</a></span>
 </body>
 </html>

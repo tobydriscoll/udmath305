@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>Here are slope fields drawn by MATLAB (see main site for code).</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{y}{t} = y
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">slopefield(@(t,y) y,[0 3],[-1 1])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope1.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>You clearly see the instability of \(y=0\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{y}{t} = -y
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">slopefield(@(t,y) -y,[0 3],[-1 1])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope2.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>Now \(y=0\) is stable.</p>
+<p>(Logistic)</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{y}{t} = 4y-y^2
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">slopefield(@(t,y) 4*y-y.^2,[0 4],[0 5])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope3.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>The arrows strongly suggest the S-shaped solutions familiar for the logistic equation.</p>
+<p>(Time-varying)</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{y}{t} = t^2-y
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">slopefield(@(t,y) t.^2-y,[0 2],[-4 4])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope4.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>There are no longer fixed points/steady states.</p></article></body>
+</html>

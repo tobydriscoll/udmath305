@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-03-20T17:31:08-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear 2D systems</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="mathbook-delaware.css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\Span}[1]{\langle#1\rangle}
+\newcommand{\spr}[1]{^{(#1)}}
+\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ddd}[2]{\frac{d^2 #1}{d #2^2}}
+\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\twovec}[2]{\ensuremath{\begin{bmatrix}#1\\#2\end{bmatrix}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
+<p class="byline">Toby Driscoll</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="twod-slope-fields.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="two-dimensional-systems.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="twod-linearization.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="twod-slope-fields.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="two-dimensional-systems.html" title="Up">Up</a><a class="next-button button toolbar-item" href="twod-linearization.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></h2>
+<ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+<h2 class="link"><a href="first-order-ode.html" data-scroll="first-order-ode"><span class="codenumber">1</span> <span class="title">First-order ODEs</span></a></h2>
+<ul>
+<li><a href="linearity.html" data-scroll="linearity">Introduction</a></li>
+<li><a href="exponentials.html" data-scroll="exponentials">Exponentials</a></li>
+<li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
+<li><a href="first-linear-const.html" data-scroll="first-linear-const">Linear, constant-coefficients</a></li>
+<li><a href="complex-exp.html" data-scroll="complex-exp">Using complex numbers</a></li>
+<li><a href="variable-coeffs.html" data-scroll="variable-coeffs">Linear, variable coefficient</a></li>
+<li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
+<li><a href="steady-states.html" data-scroll="steady-states">Steady states</a></li>
+<li><a href="logistic-equation.html" data-scroll="logistic-equation">Logistic equation</a></li>
+<li><a href="separable.html" data-scroll="separable">Separable equations</a></li>
+<li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
+</ul>
+<h2 class="link"><a href="second-order-ode.html" data-scroll="second-order-ode"><span class="codenumber">2</span> <span class="title">Second-order ODEs</span></a></h2>
+<ul>
+<li><a href="so-simple-harmonic.html" data-scroll="so-simple-harmonic">Simple harmonic motion</a></li>
+<li><a href="so-complex-exponentials.html" data-scroll="so-complex-exponentials">Complex exponentials</a></li>
+<li><a href="so-constant-coefficients.html" data-scroll="so-constant-coefficients">Constant coefficients</a></li>
+<li><a href="so-forced-oscillators.html" data-scroll="so-forced-oscillators">Exponentially forced oscillators</a></li>
+<li><a href="so-higher-order.html" data-scroll="so-higher-order">Higher-order ODEs</a></li>
+<li><a href="so-applications.html" data-scroll="so-applications">Applications of oscillators</a></li>
+<li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
+<li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
+<li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
+<li><a href="so-convolutions.html" data-scroll="so-convolutions">Convolutions</a></li>
+</ul>
+<h2 class="link"><a href="two-dimensional-systems.html" data-scroll="two-dimensional-systems"><span class="codenumber">3</span> <span class="title">2D systems</span></a></h2>
+<ul>
+<li><a href="twod-slope-fields.html" data-scroll="twod-slope-fields">Slope fields</a></li>
+<li><a href="twod-fixed-points.html" data-scroll="twod-fixed-points" class="active">Linear 2D systems</a></li>
+<li><a href="twod-linearization.html" data-scroll="twod-linearization">Linearization</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="twod-fixed-points"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Linear 2D systems</span>
+</h2>
+<a href="twod-fixed-points.html" class="permalink">¶</a><section class="introduction" id="introduction-13"><p id="p-305"><em class="emphasis">From section 3.2.</em></p></section><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">State space and phase portraits</span>
+</h3>
+<p id="p-306">For second-order ODEs, we saw that fully specifying a unique solution required giving initial values for \(y\) and \(y'\text{.}\) We say that \((y(t),y'(t))\) together constitute the <dfn class="terminology">state</dfn> of the system at a certain time. Knowing only part of the state isn't specific enough. The two-dimensional space of all possible values of the state is called <dfn class="terminology">state space</dfn>, or in the 2D case only, the <dfn class="terminology">phase plane</dfn>. A plot of many solutions of an ODE in the phase plane is called a <dfn class="terminology">phase portrait</dfn> of the system.</p>
+<article class="example-like" id="ex-phase-node"><a knowl="" class="id-ref" refid="hk-ex-phase-node"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.2.1</span> <span class="title">Phase portrait of a node</span>
+</h6></a></article><div id="hk-ex-phase-node" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-307">Here we give a phase portrait for the equation \(y''+8y'+4y=0\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = 1;  B = 8;  C = 4;
+s = roots([A B C]);
+
+plot(0,0,'r.','markersize',18)
+    
+% Plot trajectories
+hold on
+colr = get(gca,'colororder');
+t = linspace(0,10,300);
+for theta = 2*pi*(0:23)/24
+    c = [1 1;s(1) s(2)] \ [ cos(theta); sin(theta) ];
+    y = c(1)*exp(s(1)*t) + c(2)*exp(s(2)*t);
+    dydt = s(1)*c(1)*exp(s(1)*t) + s(2)*c(2)*exp(s(2)*t);
+    plot(y,dydt,'linew',1.5,'color',colr(1,:))
+end
+
+axis([-1.1 1.1 -1.1 1.1]), axis square
+title(['node'])
+xlabel('y')
+ylabel('y''')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_phase_node.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-308">The characteristic roots are negative and real, so all solutions are of the form \(y=c_1 e^{s_1t} + c_2 e^{s_2 t}\text{,}\) where \(s_2\lt s_1 \lt 0\text{.}\) As time advances, \(e^{s_2 t}\) decays more rapidly than the other exponential, so \(y\approx c_1 e^{s_1 t}\) and \(y'\approx c_1 s_1 e^{s_1 t}\text{.}\) That is, solutions in the phase plane asymptotically approach the origin parallel to the vector \((1,s_1)\text{.}\) In this situation we say that the origin is a <dfn class="terminology">node</dfn> of the ODE.</p></article></div>
+<p id="p-309">More specifically in <a knowl="./knowl/ex-phase-node.html" title="Example 3.2.1: Phase portrait of a node">Example 3.2.1</a> we call the origin a <dfn class="terminology">nodal sink</dfn>, because all trajectories are sucked into the origin. If the characteristic equation had two positive roots the picture would be the same, but all traversal directions reversed, and the point would be a <dfn class="terminology">nodal source</dfn>.</p>
+<article class="example-like" id="example-43"><a knowl="" class="id-ref" refid="hk-example-43"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.2.2</span> <span class="title">Phase portrait of a saddle</span>
+</h6></a></article><div id="hk-example-43" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-310">Here we give a phase portrait for the equation \(y''+6y'-3y=0\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = 1;  B = 6;  C = -3;
+s = sort(roots([A B C]),'descend');
+
+plot(0,0,'r.','markersize',18)
+    
+% Plot trajectories
+hold on
+colr = get(gca,'colororder');
+t = linspace(0,15,300)';
+for theta = 2*pi*(0:23)/24
+    c = [1 1;s(1) s(2)] \ [ cos(theta); sin(theta) ];
+    y = c(1)*exp(s(1)*t) + c(2)*exp(s(2)*t);
+    dydt = s(1)*c(1)*exp(s(1)*t) + s(2)*c(2)*exp(s(2)*t);
+    plot(y,dydt,'linew',1.5,'color',colr(1,:))
+end
+y = 2*exp(s(2)*t); dydt = 2*s(2)*exp(s(2)*t);
+plot([y -y],[dydt -dydt],'k','linew',1.5)
+y = 2*exp(-s(1)*t); dydt = 2*s(1)*exp(-s(1)*t);
+plot([y -y],[dydt -dydt],'k','linew',1.5)
+
+axis([-1.5 1.5 -1.5 1.5]), axis square
+title('saddle')
+xlabel('y')
+ylabel('y''')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_phase_saddle.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-311">In this case all solutions are of the form \(y=c_1 e^{s_1t} + c_2 e^{s_2 t}\) where \(s_2\lt 0 \lt s_1\text{.}\) As time advances, \(e^{s_2 t}\) decays to zero while the other exponential grows, so again \(y\approx c_1 e^{s_1 t}\) and \(y'\approx c_1 s_1 e^{s_1 t}\text{.}\) That is, solutions in the phase plane asymptotically move away from the origin parallel to the vector \((1,s_1)\text{.}\) The only exception is if \(c_1=0\text{,}\) in which case solutions go straight toward the origin forever. (Solutions with \(c_2=0\) go toward the origin in "backward time.") In this situation we say that the origin is a <dfn class="terminology">saddle</dfn>.</p></article></div>
+<p id="p-312">A saddle has both sink and source behaviors simultaneously. But the source nature wins out unless you approach the origin <em class="emphasis">just</em> so.</p>
+<article class="example-like" id="ex-phase-center"><a knowl="" class="id-ref" refid="hk-ex-phase-center"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.2.3</span> <span class="title">Phase portrait of a center</span>
+</h6></a></article><div id="hk-ex-phase-center" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-313">Here is a phase portrait for the equation \(y''+2y=0\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = 1;  B = 0;  C = 2;
+s = roots([A B C]);
+
+plot(0,0,'r.','markersize',18)
+    
+% Plot trajectories
+hold on
+colr = get(gca,'colororder');
+t = linspace(0,15,1000)';
+for R = .2:.2:1
+    y = R*real(exp(s(1)*t));
+    dydt = R*real(s(1)*exp(s(1)*t));
+    plot(y,dydt,'linew',1.5,'color',colr(1,:)), hold on
+end
+axis([-1.5 1.5 -1.5 1.5]), axis square
+title('center')
+xlabel('y')
+ylabel('y''')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_phase_center.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-314">The characteristic roots are imaginary and the solutions are, in shifted cosine form, \(y=R\cos(\omega_n t-\phi)\text{.}\) Solution curves in the phase plane lie on the ellipses \(y^2+(y'/\omega_n)^2=R^2\text{,}\) going around and around the origin, which we call a  <dfn class="terminology">center</dfn> of the ODE. If \(\omega_n=1\text{,}\) the ellipses are circles.</p></article></div>
+<article class="example-like" id="ex-phase-spiral"><a knowl="" class="id-ref" refid="hk-ex-phase-spiral"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.2.4</span> <span class="title">Phase portrait of a spiral</span>
+</h6></a></article><div id="hk-ex-phase-spiral" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-315">Here is a phase portrait for the equation \(y''+0.6y'+3y=0\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = 1;  B = .6;  C = 3;
+s = roots([A B C]);
+
+plot(0,0,'r.','markersize',18)
+    
+% Plot trajectories
+hold on
+colr = get(gca,'colororder');
+t = linspace(0,12,1000)';
+for phi = 2*pi*(0:5)/6
+    y = real(exp(s(1)*t-1i*phi));
+    dydt = real(s(1)*exp(s(1)*t-1i*phi));
+    plot(y,dydt,'linew',1.5,'color',colr(1,:)), hold on
+end
+axis([-1.5 1.5 -1.5 1.5]), axis square
+title('spiral')
+xlabel('y')
+ylabel('y''')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_phase_spiral.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-316">The characteristic roots are complex conjugates with negative real part (underdamped). Solutions decay exponentially while they oscillate, and we say that the origin is a <dfn class="terminology">spiral point</dfn> of the ODE.</p></article></div>
+<p id="p-317">As with nodes, spiral points can be either sinks or sources, which is just a matter of reversing the direction of travel along solution curves.</p></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.2</span> <span class="title">Second-order equations as first-order systems</span>
+</h3>
+<p id="p-318">Above we drew some phase portraits for instances of the second-order problem \(Ay''+By'+Cy=0\text{.}\) Here is another way of looking at them. Let's define a time-varying vector with components \(u_1=y\) and \(u_2=y'\text{.}\)  We can call \(\mathbf{u}(t)\) the <dfn class="terminology">state vector</dfn> of the ODE. From the definitions we find</p>
+<div class="displaymath">
+\begin{align*}
+\dd{u_1}{t} \amp = u_2 \\
+\dd{u_2}{t} \amp = \frac{1}{A}(-Cu_1 -Bu_2) \text{,}
+\end{align*}
+</div>
+<p>which is in the form \(\mathbf{u}'=\mathbf{f}(\mathbf{u})\text{.}\) All the phase portraits above are unchanged if we simply label the axes as \(u_1,u_2\text{.}\)</p>
+<p id="p-319">We can generalize the systems under study a bit to</p>
+<div class="displaymath">
+\begin{align*}
+\dd{u_1}{t} \amp = a_{11} u_1 + a_{12} u_2 \\
+\dd{u_2}{t} \amp = a_{21} u_1 + a_{22} u_2 \text{,}
+\end{align*}
+</div>
+<p>where the \(a_{ij}\) are all constants. This is a first-order, two-dimensional, linear, constant-coefficient, homogeneous system that we abbreviate as</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{\mathbf{u}}{t} = \mathbf{A} \mathbf{u}\text{,}
+\end{equation*}
+</div>
+<p>where \(\mathbf{A}\) is the <dfn class="terminology">matrix</dfn></p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{A} = \begin{bmatrix} a_{11} \amp a_{12} \\ a_{21} \amp a_{22} \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>As the text says, the matrices we get from problems \(Ay''+By'+Cy=0\) are called <dfn class="terminology">companion matrices</dfn>.</p>
+<p id="p-320">It's fair to ask what kinds of phase portraits we can get for this type of problem. The answer is: same as the above. The extra generality in the first row of the matrix can change the details, but there are no new major kinds of behavior beyond node, saddle, and spiral. We are now going to shift away from talking about the second-order problem to the more general \(\mathbf{u}' = \mathbf{A} \mathbf{u}\text{.}\)</p></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.3</span> <span class="title">Stability</span>
+</h3>
+<p id="p-321">For first-order autonomous problems \(y'=f(y)\text{,}\) we paid special attention to the steady states and their stability. What is the analog for</p>
+<div class="displaymath">
+\begin{align*}
+\dd{u_1}{t} \amp = a_{11} u_1 + a_{12} u_2 \\
+\dd{u_2}{t} \amp = a_{21} u_1 + a_{22} u_2 \text{,}
+\end{align*}
+</div>
+<p>or more simply, \(\mathbf{u}' = \mathbf{A} \mathbf{u}\text{?}\)</p>
+<p id="p-322">Right away it's clear that we have a steady state at \(\bu=\mathbf{0}\text{.}\) We'll have others, if there are nonzero solutions to the system \(\bA\bu=\mathbf{0}\text{.}\) That's a question we'll take up much later, so we'll ignore these for now.</p>
+<p id="p-323">The phase portraits we have done are all in the vicinity of the fixed point at the origin, and they tell the story of stability. Sinks (node or spiral) are stable points, while sources (node or spiral) and saddles are unstable. The case of a center is on the cusp, what we might call "neutrally stable" or weakly stable.</p>
+<p id="p-324">So the phase portraits are a graphical tool for stability. What about analytical tools? The key here turns out to be the <dfn class="terminology">eigenvalues</dfn> of the matrix \(\bA\text{.}\)  We're not ready to discuss those in generality yet, but the 2-by-2 case is simple to describe (and hauntingly familiar). The eigenvalues are the two roots of the <dfn class="terminology">characteristic polynomial</dfn></p>
+<div class="displaymath">
+\begin{equation*}
+p(\lambda) = \lambda^2 - T\lambda + D\text{,}
+\end{equation*}
+</div>
+<p>where \(T=a_{11}+a_{22}\) is the <dfn class="terminology">trace</dfn> and \(D=a_{11}a_{22}-a_{12}a_{21}\) is the <dfn class="terminology">determinant</dfn> of the matrix. Each eigenvalue \(\lambda_k\) implies a solution with time dependence \(\exp(\lambda_k t)\) (unless the eigenvalues coincide, in which case \(t\exp(\lambda_k t)\) can emerge). Hence stability is determined by the real parts of the eigenvalues: </p>
+<ol class="decimal">
+<li id="li-17">If \(\Re\lambda_k \gt 0\) for either value of \(k\text{,}\) the origin is unstable.</li>
+<li id="li-18">If \(\Re\lambda_k \leq 0\) for both \(k\text{,}\) and \(\lambda_1\neq \lambda_2\text{,}\) the origin is stable.</li>
+<li id="li-19">If \(\lambda_1 = \lambda_2\text{,}\) the origin is unstable.</li>
+</ol>
+<p> Furthermore, in the first two cases, point is a node if the imaginary parts of the eigenvalues are zero, and a spiral or center if they are nonzero.</p>
+<p id="p-325">We don't even have to compute the eigenvalues to figure out the stability. If you add the roots of the quadratic formula, you can confirm that</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda_1 + \lambda_2 = T\text{.}
+\end{equation*}
+</div>
+<p>If you multiply them, you find</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda_1 \lambda_2 = D\text{.}
+\end{equation*}
+</div>
+<p>Suppose the eigenvalues are real. The only way to keep them both negative is if \(T\lt 0\) and \(D \gt 0\text{;}\) if one is zero and the other negative, then \(T \lt 0\text{,}\) \(D=0\text{.}\) Now suppose the eigenvalues are \(\alpha \pm i\beta\)  with nonzero \(\beta\text{.}\) We find that \(D\gt 0\text{,}\) and that \(\alpha \leq 0\) if and only if \(T \leq 0\text{.}\)</p>
+<figure class="figure-like" id="table-1"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b2 r0 l0 t0 lines">\(T\lt 0​\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(T=0​\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(T\gt 0\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(D\lt 0\)</td>
+<td class="c m b2 r2 l0 t0 lines">unstable, saddle</td>
+<td class="c m b2 r2 l0 t0 lines">unstable, saddle</td>
+<td class="c m b2 r2 l0 t0 lines">unstable, saddle</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(D=0\)</td>
+<td class="c m b2 r2 l0 t0 lines">stable</td>
+<td class="c m b2 r2 l0 t0 lines">?</td>
+<td class="c m b2 r2 l0 t0 lines">unstable</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(D\gt 0\)</td>
+<td class="c m b2 r2 l0 t0 lines">stable, sink</td>
+<td class="c m b2 r2 l0 t0 lines">stable, center</td>
+<td class="c m b2 r2 l0 t0 lines">unstable, source</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span> <span class="codenumber">3.2.5</span> Origin character based on trace and determinant</figcaption></figure></section></section></div></main>
+</div>
+</body>
+</html>

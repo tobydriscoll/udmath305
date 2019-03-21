@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-03-20T17:31:08-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Slope fields</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="mathbook-delaware.css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\Span}[1]{\langle#1\rangle}
+\newcommand{\spr}[1]{^{(#1)}}
+\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ddd}[2]{\frac{d^2 #1}{d #2^2}}
+\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\twovec}[2]{\ensuremath{\begin{bmatrix}#1\\#2\end{bmatrix}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
+<p class="byline">Toby Driscoll</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="two-dimensional-systems.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="two-dimensional-systems.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="twod-fixed-points.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="two-dimensional-systems.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="two-dimensional-systems.html" title="Up">Up</a><a class="next-button button toolbar-item" href="twod-fixed-points.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></h2>
+<ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+<h2 class="link"><a href="first-order-ode.html" data-scroll="first-order-ode"><span class="codenumber">1</span> <span class="title">First-order ODEs</span></a></h2>
+<ul>
+<li><a href="linearity.html" data-scroll="linearity">Introduction</a></li>
+<li><a href="exponentials.html" data-scroll="exponentials">Exponentials</a></li>
+<li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
+<li><a href="first-linear-const.html" data-scroll="first-linear-const">Linear, constant-coefficients</a></li>
+<li><a href="complex-exp.html" data-scroll="complex-exp">Using complex numbers</a></li>
+<li><a href="variable-coeffs.html" data-scroll="variable-coeffs">Linear, variable coefficient</a></li>
+<li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
+<li><a href="steady-states.html" data-scroll="steady-states">Steady states</a></li>
+<li><a href="logistic-equation.html" data-scroll="logistic-equation">Logistic equation</a></li>
+<li><a href="separable.html" data-scroll="separable">Separable equations</a></li>
+<li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
+</ul>
+<h2 class="link"><a href="second-order-ode.html" data-scroll="second-order-ode"><span class="codenumber">2</span> <span class="title">Second-order ODEs</span></a></h2>
+<ul>
+<li><a href="so-simple-harmonic.html" data-scroll="so-simple-harmonic">Simple harmonic motion</a></li>
+<li><a href="so-complex-exponentials.html" data-scroll="so-complex-exponentials">Complex exponentials</a></li>
+<li><a href="so-constant-coefficients.html" data-scroll="so-constant-coefficients">Constant coefficients</a></li>
+<li><a href="so-forced-oscillators.html" data-scroll="so-forced-oscillators">Exponentially forced oscillators</a></li>
+<li><a href="so-higher-order.html" data-scroll="so-higher-order">Higher-order ODEs</a></li>
+<li><a href="so-applications.html" data-scroll="so-applications">Applications of oscillators</a></li>
+<li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
+<li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
+<li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
+<li><a href="so-convolutions.html" data-scroll="so-convolutions">Convolutions</a></li>
+</ul>
+<h2 class="link"><a href="two-dimensional-systems.html" data-scroll="two-dimensional-systems"><span class="codenumber">3</span> <span class="title">2D systems</span></a></h2>
+<ul>
+<li><a href="twod-slope-fields.html" data-scroll="twod-slope-fields" class="active">Slope fields</a></li>
+<li><a href="twod-fixed-points.html" data-scroll="twod-fixed-points">Linear 2D systems</a></li>
+<li><a href="twod-linearization.html" data-scroll="twod-linearization">Linearization</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="twod-slope-fields"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Slope fields</span>
+</h2>
+<a href="twod-slope-fields.html" class="permalink">¶</a><p id="p-288"><em class="emphasis">From section 3.1.</em></p>
+<p id="p-289">In nonlinear problems of the form \(y'=f(y)\text{,}\) we used the idea of a phase-line diagram to get some insight to the behavior of the solution, in particular with regards to the stability of fixed points where \(f(y)=0\text{.}\) For a more general (nonautonomous) equation of the form \(y'=f(t,y)\text{,}\) we can use a two-dimensional form of this picture called a <dfn class="terminology">slope field</dfn> or <dfn class="terminology">direction field</dfn>.</p>
+<p id="p-290">The idea is to choose a section of the \((t,y)\) plane and evaluate \(f(t,y)\) at a grid of points there. At each such point we thus have the value of \(y'\text{,}\) i.e., the slope of the solution. The value is indicated using an arrow or hash mark whose slope shows the direction and whose length shows the magnitude of \(y'\text{.}\)</p>
+<article class="example-like" id="twod-ex-slope-fields"><a knowl="" class="id-ref" refid="hk-twod-ex-slope-fields"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.1.1</span> <span class="title">Slope fields for single equations</span>
+</h6></a></article><div id="hk-twod-ex-slope-fields" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-291">Here are slope fields drawn by MATLAB (see main site for code).</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{y}{t} = y
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">slopefield(@(t,y) y,[0 3],[-1 1])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope1.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-292">You clearly see the instability of \(y=0\text{.}\)</p>
+<div class="displaymath" id="p-293">
+\begin{equation*}
+\dd{y}{t} = -y
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">slopefield(@(t,y) -y,[0 3],[-1 1])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope2.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-294">Now \(y=0\) is stable.</p>
+<p id="p-295">(Logistic)</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{y}{t} = 4y-y^2
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">slopefield(@(t,y) 4*y-y.^2,[0 4],[0 5])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope3.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-296">The arrows strongly suggest the S-shaped solutions familiar for the logistic equation.</p>
+<p id="p-297">(Time-varying)</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{y}{t} = t^2-y
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">slopefield(@(t,y) t.^2-y,[0 2],[-4 4])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope4.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-298">There are no longer fixed points/steady states.</p></article></div>
+<p id="p-299">A related type of picture emerges from looking at <dfn class="terminology">isoclines</dfn>. An isocline is a curve in the \((t,y)\) plane where \(f(t,y)\) is constant. That is, they are level curves of \(f\text{.}\) Along an isocline, all solution curves have the same slope. The particular case of \(f(t,y)=0\) is a <dfn class="terminology">nullcline</dfn>.</p>
+<p id="p-300">The isoclines in the autonomous case \(y'=f(y)\) are, quite boringly, all horizontal lines.</p>
+<p id="p-301">Let's now make a rather strange-looking shift in how we look at \(dy/dt=f(t,y)\text{.}\) We introduce a new variable \(x(t)\) such that simply \(x(t)=t\text{.}\) This lets us write the pair of equations</p>
+<div class="displaymath">
+\begin{align*}
+\dd{y}{t} \amp = f(x,y)\\
+\dd{x}{t} \amp = 1\text{.}
+\end{align*}
+</div>
+<p>It now becomes interesting to see this as a special case of an autonomous <em class="emphasis">system</em> of two ODEs for two dependent variables:</p>
+<div class="displaymath">
+\begin{align*}
+\dd{x}{t} \amp = F(x,y)\\
+\dd{y}{t} \amp = G(x,y)\text{.}
+\end{align*}
+</div>
+<p>Here we can regard solutions \((x(t),y(t))\) as trajectories or curves in the \((x,y)\) plane, with \(t\) as a parameter rather than an axis in the plot. At any point on one of these curves, the tangent vector is given by</p>
+<div class="displaymath">
+\begin{equation*}
+\left[ \dd{x}{t},\dd{y}{t} \right] = \bigl[ F(x,y),G(x,y) \bigr]\text{.}
+\end{equation*}
+</div>
+<p>This observation allows us to draw a slope field in the \((x,y)\) plane, even without knowing solutions. A slope field does not give much precise information, but it can give important hints about what to expect.</p>
+<article class="example-like" id="twod-ex-slope-field-system"><a knowl="" class="id-ref" refid="hk-twod-ex-slope-field-system"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.1.2</span> <span class="title">Slope fields for a system of two equations</span>
+</h6></a></article><div id="hk-twod-ex-slope-field-system" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-302">Here is a slope field for the linear ODE system</p>
+<div class="displaymath">
+\begin{align*}
+\dd{x}{t} \amp = -y\\
+\dd{y}{t} \amp = x\text{.}
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">F = @(x,y) -y;   G = @(x,y) x;
+
+slopefieldxy(F,G,[-2 2],[-2 2])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope_2D_1.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-303">Here is a slope field in the first quadrant for the nonlinear system</p>
+<div class="displaymath">
+\begin{align*}
+\dd{x}{t} \amp = 3x - \frac{1}{2}xy\\
+\dd{y}{t} \amp = \frac{1}{4}xy - y\text{.}
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">F = @(x,y) 3.*x-x.*y/2;
+G = @(x,y) -y + x.*y/4;
+
+slopefieldxy(F,G,[0 10],[0 12])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope_2D_2.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article></div>
+<p id="p-304">There is another way to look at the two-equation system \(x'=F(x,y)\text{,}\) \(y'=G(x,y)\text{.}\) If we define a vector-valued function \(\mathbf{u}(t)\) by \(u_1=x,\, u_2=y,\) and we define the vector field \(\mathbf{f}(\mathbf{u})\) with components</p>
+<div class="displaymath">
+\begin{align*}
+f_1(\mathbf{u}) \amp = F(u_1,u_2)\\
+f_2(\mathbf{u}) \amp = G(u_1,u_2)\text{,}
+\end{align*}
+</div>
+<p>then we can express the system as one equation, \(\mathbf{u}'=\mathbf{f}(\mathbf{u})\text{,}\) whose solution is vector-valued in two dimensions. Writing things in this form serves two major purposes: it allows us to generalize quite easily from two dimensions to any number, and it's the form expected by most software for solving ODE systems numerically.</p></section></div></main>
+</div>
+</body>
+</html>

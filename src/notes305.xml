@@ -7,6 +7,21 @@
       \newcommand{\dd}[2]{\frac{d #1}{d #2}}
       \renewcommand{\Re}{\text{Re}}
       \renewcommand{\Im}{\text{Im}}
+      \newcommand{\Span}[1]{\langle#1\rangle}
+      \newcommand{\spr}[1]{^{(#1)}}
+      \newcommand{\dd}[2]{\frac{d #1}{d #2}}
+      \newcommand{\ddd}[2]{\frac{d^2 #1}{d #2^2}}
+      \newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+      \newcommand{\norm}[1]{\left\| #1 \right\|}
+      \newcommand{\bu}{\mathbf{u}}
+      \newcommand{\bA}{\mathbf{A}}
+      \newcommand{\bff}{\mathbf{f}}
+      \newcommand{\bx}{\mathbf{x}}
+      \newcommand{\by}{\mathbf{y}}
+      \newcommand{\bb}{\mathbf{b}}
+      \newcommand{\bc}{\mathbf{c}}
+      \newcommand{\bz}{\mathbf{z}}
+      \newcommand{\twovec}[2]{\ensuremath{\begin{bmatrix}#1\\#2\end{bmatrix}}}
     </macros>
   </docinfo>
   
@@ -39,8 +54,10 @@
     <xi:include href="first-order.xml" />
 
     <xi:include href="second-order.xml" />
+
+    <xi:include href="two-dimensions.xml" />
  
-    <chapter xml:id="qualitative">
+    <!--chapter xml:id="two-dimensions">
       <title>Qualitative analysis</title>
 
       <section xml:id="direction-fields">
@@ -77,10 +94,10 @@
 	<p></p>
       </section>
 
-      <!--section xml:id="matrix-inverses">
+      <section xml:id="matrix-inverses">
 	<title>Matrix inverses</title>
 	<p></p>
-      </section-->
+      </section>
     </chapter>
 
     <chapter xml:id="linear-ode-systems">
@@ -107,7 +124,7 @@
 	<title>The matrix exponential</title>
 	<p></p>
       </section>
-    </chapter>
+    </chapter-->
 
   </book>
   

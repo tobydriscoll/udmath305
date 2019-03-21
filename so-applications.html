@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-07T14:36:30-05:00    *-->
+<!--*    on 2019-03-20T17:31:08-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,6 +45,21 @@ MathJax.Hub.Config({
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\dd}[2]{\frac{d #1}{d #2}}
 \renewcommand{\Re}{\text{Re}}
 \renewcommand{\Im}{\text{Im}}
+\newcommand{\Span}[1]{\langle#1\rangle}
+\newcommand{\spr}[1]{^{(#1)}}
+\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ddd}[2]{\frac{d^2 #1}{d #2^2}}
+\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\twovec}[2]{\ensuremath{\begin{bmatrix}#1\\#2\end{bmatrix}}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -94,41 +109,28 @@ MathJax.Hub.Config({
 <li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
 <li><a href="so-convolutions.html" data-scroll="so-convolutions">Convolutions</a></li>
 </ul>
-<h2 class="link"><a href="qualitative.html" data-scroll="qualitative"><span class="codenumber">3</span> <span class="title">Qualitative analysis</span></a></h2>
+<h2 class="link"><a href="two-dimensional-systems.html" data-scroll="two-dimensional-systems"><span class="codenumber">3</span> <span class="title">2D systems</span></a></h2>
 <ul>
-<li><a href="direction-fields.html" data-scroll="direction-fields">Direction fields</a></li>
-<li><a href="planar-stability.html" data-scroll="planar-stability">Planar stability</a></li>
-<li><a href="equilibria-linearization.html" data-scroll="equilibria-linearization">Equilibria and linearization</a></li>
-</ul>
-<h2 class="link"><a href="matrix-algebra.html" data-scroll="matrix-algebra"><span class="codenumber">4</span> <span class="title">Matrix algebra</span></a></h2>
-<ul>
-<li><a href="linear-equations.html" data-scroll="linear-equations">Linear equations</a></li>
-<li><a href="elimination.html" data-scroll="elimination">Solution by elimination</a></li>
-<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix multiplication</a></li>
-</ul>
-<h2 class="link"><a href="linear-ode-systems.html" data-scroll="linear-ode-systems"><span class="codenumber">5</span> <span class="title">Linear ODE systems</span></a></h2>
-<ul>
-<li><a href="eigenvalues.html" data-scroll="eigenvalues">Eigenvalues and eigenvectors</a></li>
-<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
-<li><a href="linear-system-solutions.html" data-scroll="linear-system-solutions">Solutions of linear ODEs</a></li>
-<li><a href="matrix-exponential.html" data-scroll="matrix-exponential">The matrix exponential</a></li>
+<li><a href="twod-slope-fields.html" data-scroll="twod-slope-fields">Slope fields</a></li>
+<li><a href="twod-fixed-points.html" data-scroll="twod-fixed-points">Linear 2D systems</a></li>
+<li><a href="twod-linearization.html" data-scroll="twod-linearization">Linearization</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="so-applications"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Applications of oscillators</span>
 </h2>
-<a href="so-applications.html" class="permalink">¶</a><section class="introduction" id="introduction-9"><p id="p-229"><em class="emphasis">From 2.5 in the text, but very little from the electrical side. Also go back to "better notation" from 2.4.</em></p>
-<p id="p-230">Oscillations appear all over science and engineering, and 2nd order linear equations are often used to model them. The best-known examples are mechanical and electrical, but there are chemical and biochemical ones as well.</p></section><section class="subsection" id="subsection-33"><h3 class="heading hide-type">
+<a href="so-applications.html" class="permalink">¶</a><section class="introduction" id="introduction-9"><p id="p-228"><em class="emphasis">From 2.5 in the text, but very little from the electrical side. Also go back to "better notation" from 2.4.</em></p>
+<p id="p-229">Oscillations appear all over science and engineering, and 2nd order linear equations are often used to model them. The best-known examples are mechanical and electrical, but there are chemical and biochemical ones as well.</p></section><section class="subsection" id="subsection-33"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Mechanical oscillators</span>
 </h3>
-<p id="p-231">As we have already seen, a mass hanging from a spring satisfies the ODE</p>
+<p id="p-230">As we have already seen, a mass hanging from a spring satisfies the ODE</p>
 <div class="displaymath">
 \begin{equation*}
 my'' + b y' + ky = f(t)\text{.}
 \end{equation*}
 </div>
 <p>(As is typical, all the named constants are nonnegative.) Here \(m\)&gt; is the mass, \(b\)&gt;is a coefficient of friction or other damping forces, and \(k\)&gt; is a characteristic constant of the spring. The term \(f(t)\) represents an external driving force. If we have initial conditions, they give values for \(y\) and \(y'\text{.}\)</p>
-<p id="p-232">The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
+<p id="p-231">The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
 <div class="displaymath">
 \begin{equation*}
 \theta'' + \gamma \theta + \frac{g}{L}\sin \theta = f(t)\text{,}
@@ -143,24 +145,24 @@ my'' + b y' + ky = f(t)\text{.}
 <p>which is a linear oscillator.</p></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">Electrical oscillators</span>
 </h3>
-<p id="p-233">An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is</p>
+<p id="p-232">An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is</p>
 <div class="displaymath">
 \begin{equation*}
 LI'' + RI' + CI = \mathcal{E}'(t)\text{,}
 \end{equation*}
 </div>
 <p>where \(L\) is inductance, \(R\) is resistance, \(C\) is capacitance, and \(I(t)\) is the current flowing through the circuit. The forcing term represents the generator whose voltage (EMF) is \(\mathcal{E}(t)\text{.}\) For alternating current this is modeled as a cosine (or complex exponential) function.</p>
-<p id="p-234">In DC circuits we have Ohm's Law, \(I=V/R\text{,}\) for a resistance \(R\text{.}\) In the AC case, if \(\mathcal{E}(t)=Ve^{i\omega t}\text{,}\) then \(e^{i\omega t}\) appears in the current as well, and it still makes sense to talk about \(V/I\) as a kind of resistance, now called <dfn class="terminology">impedance</dfn>, written as \(Z\text{,}\) and dependent on the frequency \(\omega\text{.}\) The impedance is very closely related to the transfer function for \(s=i\omega\text{.}\)</p></section><section class="subsection" id="so-ap-notation"><h3 class="heading hide-type">
+<p id="p-233">In DC circuits we have Ohm's Law, \(I=V/R\text{,}\) for a resistance \(R\text{.}\) In the AC case, if \(\mathcal{E}(t)=Ve^{i\omega t}\text{,}\) then \(e^{i\omega t}\) appears in the current as well, and it still makes sense to talk about \(V/I\) as a kind of resistance, now called <dfn class="terminology">impedance</dfn>, written as \(Z\text{,}\) and dependent on the frequency \(\omega\text{.}\) The impedance is very closely related to the transfer function for \(s=i\omega\text{.}\)</p></section><section class="subsection" id="so-ap-notation"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.3</span> <span class="title">Unifying notation</span>
 </h3>
-<a href="so-applications.html#so-ap-notation" class="permalink">¶</a><p id="p-235">When you have lots of different versions of the same root problem, with different symbols and units, you have three options. You can solve each new problem from scratch, you can derive custom formulas for each application, or you can try to find a minimal set of parameters and express each problem using those. Let's consider the last pathway here.</p>
-<p id="p-236">The mechanical oscillator \(Ay'' + By' + Cy = f(t)\) is more conveniently expressed as</p>
+<a href="so-applications.html#so-ap-notation" class="permalink">¶</a><p id="p-234">When you have lots of different versions of the same root problem, with different symbols and units, you have three options. You can solve each new problem from scratch, you can derive custom formulas for each application, or you can try to find a minimal set of parameters and express each problem using those. Let's consider the last pathway here.</p>
+<p id="p-235">The mechanical oscillator \(Ay'' + By' + Cy = f(t)\) is more conveniently expressed as</p>
 <div class="displaymath">
 \begin{equation*}
 y'' + \frac{B}{A} y' + \frac{C}{A} y + \frac{C}{A} F(t)\text{.}
 \end{equation*}
 </div>
-<p>One reason to prefer this form is that \(y\) must have the same units as the forcing \(F\text{.}\) Furthermore, we see the undamped natural frequency \(\omega_n=\sqrt{c/a}\text{,}\) and this has units of inverse time only. The same units apply to \(b/a\text{,}\) so we introduce the new dimensionless parameter</p>
+<p>One reason to prefer this form is that \(y\) must have the same units as the forcing \(F\text{.}\) Furthermore, we see the undamped natural frequency \(\omega_n=\sqrt{C/A}\text{,}\) and this has units of inverse time only. The same units apply to \(B/A\text{,}\) so we introduce the new dimensionless parameter</p>
 <div class="displaymath">
 \begin{equation*}
 Z = \frac{1}{2} \frac{B/A}{\omega_n} = \frac{B}{\sqrt{4AC}}\text{.}
@@ -169,11 +171,11 @@ Z = \frac{1}{2} \frac{B/A}{\omega_n} = \frac{B}{\sqrt{4AC}}\text{.}
 <p>Now the ODE becomes</p>
 <div class="displaymath">
 \begin{equation*}
-y'' + 2 Z \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)\text{.}
+y'' + 2 Z \omega_n y' + \omega_n^2 y = \omega_n^2 F(t)\text{.}
 \end{equation*}
 </div>
-<p id="p-237">The characteristic roots are now a little bit more transparent: \(-Z \omega_n \pm \omega_n \sqrt{Z^2-1}\text{.}\) We see that the condition for being underdamped is simply \(Z \lt 1\text{.}\) In this case we express the roots as \(-Z \omega_n \pm i \omega_d\text{,}\) using the damped frequency \(\omega_d=\omega_n\sqrt{1-Z^2}\text{.}\)</p>
-<p id="p-238">Continuing the underdamped case, the gain works out to be</p>
+<p id="p-236">The characteristic roots are now a bit more transparent: \(-Z \omega_n \pm \omega_n \sqrt{Z^2-1}\text{.}\) We see that the condition for being underdamped is simply \(Z \lt 1\text{.}\) In this case we express the roots as \(-Z \omega_n \pm i \omega_d\text{,}\) using the damped frequency \(\omega_d=\omega_n\sqrt{1-Z^2}\text{.}\)</p>
+<p id="p-237">Continuing the underdamped case, the gain works out to be</p>
 <div class="displaymath">
 \begin{equation*}
 G^2 = \frac{1}{(\omega_n^2-\omega^2)^2 + 4\omega_n^2Z^2\omega^2}  = \frac{\omega_n^{-4}}{(1-\rho^2)^2 + 4Z^2\rho^2}\text{,}
@@ -182,7 +184,7 @@ G^2 = \frac{1}{(\omega_n^2-\omega^2)^2 + 4\omega_n^2Z^2\omega^2}  = \frac{\omega
 <p>where \(\rho=\omega/\omega_n\) is a dimensionless frequency ratio. If also \(Z^2\lt 1/2\text{,}\) the gain is maximized when \(\rho=\sqrt{1-2Z^2} \lt 1\text{.}\) The gain at that maximum is proportional to \(1/Z\text{,}\) so much growth in the response is possible near the natural frequency when damping is small in the sense of \(Z\approx 0\text{.}\) This can be considered a practical resonance for lightly damped systems.</p>
 <article class="example-like" id="example-32"><a knowl="" class="id-ref" refid="hk-example-32"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.6.1</span>
-</h6></a></article><div id="hk-example-32" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-239">The oscillator \(4y'' + y' + 36y\) from an earlier example has \(\omega_n=3\) and \(Z=1/\sqrt{16\cdot 36}=1/24\text{.}\) Accordingly, gain is maximized when \(\omega/\omega_n=1-\frac{1}{288}\approx 0.9965\text{,}\) so for practical purposes a resonance occurs at just slightly less than the natural, undamped frequency.</p></article></div></section></section></div></main>
+</h6></a></article><div id="hk-example-32" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-238">The oscillator \(4y'' + y' + 36y\) from an earlier example has \(\omega_n=3\) and \(Z=1/\sqrt{16\cdot 36}=1/24\text{.}\) Accordingly, gain is maximized when \(\omega/\omega_n=1-\frac{1}{288}\approx 0.9965\text{,}\) so for practical purposes a resonance occurs at just slightly less than the natural, undamped frequency.</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

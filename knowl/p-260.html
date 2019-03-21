@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-07T14:36:31-05:00    *-->
+<!--*    on 2019-03-20T17:31:09-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,10 +13,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Recall that the transform of \(y'(t)\) is \(sY(s)-y(0)\text{.}\) Applying this formula a second time shows that</p>
+<p>Let's break down what happens in a fundamental case, \(y''-y=e^{rt}\text{.}\)  Transforming both sides gives</p>
 <div class="displaymath">
 \begin{equation*}
-\mathcal{L}[y''(t)] = s \mathcal{L}[y'(t)] - y'(0) = s^2Y(s) - sy(0) - y'(0)\text{.}
+[s^2Y(s) - sy(0)-y'(0)] - Y(s) = 1/(s-r)\text{.}
+\end{equation*}
+</div>
+<p>For reasons to be clarified later, let's skip to the "very particular" part with zero initial conditions, for which</p>
+<div class="displaymath">
+\begin{equation*}
+Y(s) = \frac{1}{(s^2-1)(s-r)} = \frac{1}{(s+1)(s-1)(s-r)}\text{.}
+\end{equation*}
+</div>
+<p>This time there are three poles. Our mnemonic still works here,</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} \text{.}
+\end{equation*}
+</div>
+<p>Note that this requires \(r\neq -1\) and \(r \neq 1\) (i.e., no resonance). From here we get three exponentials:</p>
+<div class="displaymath">
+\begin{equation*}
+y_v(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}\text{.}
 \end{equation*}
 </div>
 <span class="incontext"><a href="so-laplace.html#p-260">in-context</a></span>

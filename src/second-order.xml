@@ -302,14 +302,14 @@ set(gca,'dataaspect',[6,1,1])
 	<p><em>This and the next section cover 2.4 in the text.</em></p>
 	  <p>We now consider problems in the form <m>Ay''+By'+Cy=f(t)</m>, where the coefficients are constant, <m>A</m> and <m>C</m> are positive (oscillation), and the driving force is exponential, <m>f(t)=e^{rt}</m> for constant <m>r</m>.</p>
 
-	  <p> There are plently of details to sift through, but the essence is quite simple. The general solution of this problem has two contributions, <m>y=y_n+y_p</m>. The first, <m>y_n</m>, is the null solution to the associated <term>homogeneous</term> equation <m>Ay''+By'+Cy=0</m>, and the second, <m>y_p</m>, is any particular solution of the original problem. To see how this works, plug in:
-	  <md><mrow>Ay''\+By'\+Cy \amp = A(y_n+y_p)''+B(y_n+y_p)'+C(y_n+y_p) </mrow>
+	  <p> There are plenty of details to sift through, but the essence is quite simple. The general solution of this problem has two contributions, <m>y=y_n+y_p</m>. The first, <m>y_n</m>, is the null solution to the associated <term>homogeneous</term> equation <m>Ay''+By'+Cy=0</m>, and the second, <m>y_p</m>, is any particular solution of the original problem. To see how this works, plug in:
+	  <md><mrow>Ay'' + By' + Cy \amp = A(y_n+y_p)'' + B(y_n+y_p)' + C(y_n+y_p) </mrow>
 	  <mrow> \amp = (Ay_n''+By_n'+Cy_n) + (Ay_p''+By_p'+Cy_p) </mrow>
 	  <mrow> \amp = 0 + f = f</mrow>
 	  </md>.
-	  The null solution contains two arbitary constants that are used to soak up the initial conditions. We add that the particular solution is not unique, so the complete representation is not either. However, all such expressions are equivalent in the end, and the solution is always expressible in this form.</p>
+	  The null solution contains two arbitrary constants that are used to soak up the initial conditions. We add that the particular solution is not unique, so the complete representation is not either. However, all such expressions are equivalent in the end, and the solution is always expressible in this form.</p>
 
-	  <p>In the context of underdamped oscillators, <m>y_n</m> is also called the <term>transient solution</term>, because it decays to zero as time increases. What remains might be called the <term>steady response</term>. It depends only on the oscillator parameters and the forcing function; all dependence on initial conditions vanishes with the transient solution. </p>
+	  <!--p>In the context of underdamped oscillators, <m>y_n</m> is also called the <term>transient solution</term>, because it decays to zero as time increases. What remains might be called the <term>steady response</term>. It depends only on the oscillator parameters and the forcing function; all dependence on initial conditions vanishes with the transient solution. </p-->
 
 	  <p>We covered finding the null solution in detail in <xref ref="so-constant-coefficients"/>. So the particular solution is our first item of business.</p>
 	</introduction>
@@ -524,13 +524,13 @@ set(gca,'dataaspect',[6,1,1])
 	  <p>
 			The mechanical oscillator <m>Ay'' + By' + Cy = f(t)</m> is more conveniently expressed as
 	  	<me> y'' + \frac{B}{A} y' + \frac{C}{A} y + \frac{C}{A} F(t)</me>.
-			One reason to prefer this form is that <m>y</m> must have the same units as the forcing <m>F</m>. Furthermore, we see the undamped natural frequency <m>\omega_n=\sqrt{c/a}</m>, and this has units of inverse time only. The same units apply to <m>b/a</m>, so we introduce the new dimensionless parameter
+			One reason to prefer this form is that <m>y</m> must have the same units as the forcing <m>F</m>. Furthermore, we see the undamped natural frequency <m>\omega_n=\sqrt{C/A}</m>, and this has units of inverse time only. The same units apply to <m>B/A</m>, so we introduce the new dimensionless parameter
 			<me>Z = \frac{1}{2} \frac{B/A}{\omega_n} = \frac{B}{\sqrt{4AC}}</me>. 
 			Now the ODE becomes 
-			<me> y'' + 2 Z \omega_n y' + \omega_n^2 y + \omega_n^2 F(t)</me>.
+			<me> y'' + 2 Z \omega_n y' + \omega_n^2 y = \omega_n^2 F(t)</me>.
 		</p>
 		<p>
-			The characteristic roots are now a little bit more transparent: <m>-Z \omega_n \pm \omega_n \sqrt{Z^2-1}</m>. We see that the condition for being underdamped is simply <m>Z \lt 1</m>. In this case we express the roots as <m>-Z \omega_n \pm i \omega_d</m>, using the damped frequency <m>\omega_d=\omega_n\sqrt{1-Z^2}</m>. 
+			The characteristic roots are now a bit more transparent: <m>-Z \omega_n \pm \omega_n \sqrt{Z^2-1}</m>. We see that the condition for being underdamped is simply <m>Z \lt 1</m>. In this case we express the roots as <m>-Z \omega_n \pm i \omega_d</m>, using the damped frequency <m>\omega_d=\omega_n\sqrt{1-Z^2}</m>. 
 		</p>
 		<p>
 			Continuing the underdamped case, the gain works out to be
@@ -930,8 +930,9 @@ set(gca,'dataaspect',[6,1,1])
 			<sidebyside>
 	 			<program language="matlab" permid="so_conv_bitcoin1">
 	    			<input>
-bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
-data = jsondecode(bc);
+%bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
+%data = jsondecode(bc);
+load bitcoindata
 v = struct2cell(data.bpi);
 v = cat(1,v{:});
 plot(v,'-o')
@@ -946,8 +947,9 @@ plot(v,'-o')
 			<sidebyside>
 	 			<program language="matlab" permid="so_conv_bitcoin2">
 	    			<input>
-bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
-data = jsondecode(bc);
+%bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
+%data = jsondecode(bc);
+load bitcoindata
 v = struct2cell(data.bpi);
 v = cat(1,v{:});
 plot(v,'-ko')
@@ -967,8 +969,9 @@ hold on, plot(z,'-o')
 			<sidebyside>
 	 			<program language="matlab" permid="so_conv_bitcoin3">
 	    			<input>
-bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
-data = jsondecode(bc);
+%bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
+%data = jsondecode(bc);
+load bitcoindata
 v = struct2cell(data.bpi);
 v = cat(1,v{:});
 plot(v,'-ko')
