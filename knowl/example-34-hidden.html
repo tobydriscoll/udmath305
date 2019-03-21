@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,18 +11,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>Let's try for \(y'' -2y'-3y=10te^{4t}\text{.}\) For much the same reasons as in the last case, we try</p>
+<body><article class="example-like"><p>Consider \(y''+y'=\sin(2t)\text{.}\) Derivatives of \(sin(2t)\) procuce only itself and \(cos(2t)\text{,}\) and we are justified in choosing</p>
 <div class="displaymath">
 \begin{equation*}
-y_p = (A + Bt)e^{4t}\text{.}
+y_p = a\cos(2t) + b\sin(2t)\text{.}
 \end{equation*}
 </div>
-<p>There's nothing to do now except grind out some derivatives.</p>
+<p>Inserting this into the ODE leads to</p>
 <div class="displaymath">
-\begin{align*}
-8(2A+B+2Bt)e^{4t} - 2(4A+B+4Bt)e^{4t} -3 (A + Bt)e^{4t} \amp =10t e^{4t}\\
-8(2A+B) - 2(4A+B) -3A + t(16B-8B-3B) =  10t\text{.}
-\end{align*}
+\begin{equation*}
+[-4a\cos(2t) - 4b\sin(2t)] + [-2a\sin(2t) + 2b\cos(2t)] = \sin(2t)\text{.}
+\end{equation*}
 </div>
-<p>From this, by matching powers, we deduce \(B=2\) and then \(5A+12=0\text{.}\) So \(y_p = (2 - (12/5)t)e^{4t}\text{.}\)</p></article></body>
+<p>This is true for all time if and only if we match the coefficients of the trig functions,</p>
+<div class="displaymath">
+\begin{equation*}
+-4a + 2b = 0, \qquad -4b-2a = 1 \text{.}
+\end{equation*}
+</div>
+<p>The solution of these equations is \(a=-1/10\text{,}\) \(b=-1/5\text{.}\) So \(-[\cos(2t)+2\sin(2t)]/10\) is a particular solution.</p></article></body>
 </html>

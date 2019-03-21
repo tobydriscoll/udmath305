@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,33 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>While UC relies on "educated guesswork" (actually rigid rules that are a bit complex to apply), <dfn class="terminology">variation of parameters</dfn> follows the same recipe every time. Given \(L[y]=f\text{,}\) suppose we have a general null solution in the form</p>
+<p>If we continue to push ahead with the VP formulas, interesting things start to happen. For distinct roots,</p>
 <div class="displaymath">
 \begin{equation*}
-y_n(t) = c_1 y_1(t) + c_2 y_2(t)\text{.}
+c_1' = -\frac{\exp(s_2t)}{(s_2-s_1)\exp((s_1+s_2)t)} f(t)  =  \frac{f(t)e^{-s_1t}}{s_1-s_2}\text{,}
 \end{equation*}
 </div>
-<p>For problems with constant coefficients, \(y_1\) and \(y_2\) are exponentials (or sin/cos equivalents), possibly multiplied by \(t\text{.}\) In any case, the VP trick is to replace the integration constants with functions of time:</p>
+<p>and similarly \(c_2'= f(t)e^{-s_2t}/(s_2-s_1) \text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+y_p(t) \amp = e^{s_1 t} \int_0^t \frac{f(\tau)e^{-s_1\tau}}{s_1-s_2}\, d\tau + 
+e^{s_2 t} \int_0^t \frac{f(\tau)e^{-s_2\tau}}{s_2-s_1}\, d\tau \\
+\amp =  \int_0^t  f(\tau) \frac{  e^{s_1(t-\tau)} -  e^{s_2(t-\tau)}}{s_1-s_2}\, d\tau  \\
+\amp =  \int_0^t  f(\tau) g(t-\tau) \, d\tau  \text{,}
+\end{align*}
+</div>
+<p>with</p>
 <div class="displaymath">
 \begin{equation*}
-y_p(t) = c_1(t) y_1(t) + c_2(t) y_2(t)\text{.}
+g(t) = \frac{ e^{s_1t} -  e^{s_2t} }{s_1-s_2} \text{.}
 \end{equation*}
 </div>
-<p>To keep notation simpler, we assume below that the coefficient of \(y''\) in the ODE is 1.</p>
+<p>For the case of a repeated root we can go though the VP formulas again, or just let \(s_2\to s_1\) and get</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = t e^{s_1t} \text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-general-forcing.html#p-250">in-context</a></span>
 </body>
 </html>

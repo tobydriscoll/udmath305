@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In the method of undetermined coefficients we assume that we already know everything about the particular solution except for some constants to be found using algebra. Best to start with examples.</p>
+<p>Consider \(y''+y'=\sin(2t)\text{.}\) Derivatives of \(sin(2t)\) procuce only itself and \(cos(2t)\text{,}\) and we are justified in choosing</p>
+<div class="displaymath">
+\begin{equation*}
+y_p = a\cos(2t) + b\sin(2t)\text{.}
+\end{equation*}
+</div>
+<p>Inserting this into the ODE leads to</p>
+<div class="displaymath">
+\begin{equation*}
+[-4a\cos(2t) - 4b\sin(2t)] + [-2a\sin(2t) + 2b\cos(2t)] = \sin(2t)\text{.}
+\end{equation*}
+</div>
+<p>This is true for all time if and only if we match the coefficients of the trig functions,</p>
+<div class="displaymath">
+\begin{equation*}
+-4a + 2b = 0, \qquad -4b-2a = 1 \text{.}
+\end{equation*}
+</div>
+<p>The solution of these equations is \(a=-1/10\text{,}\) \(b=-1/5\text{.}\) So \(-[\cos(2t)+2\sin(2t)]/10\) is a particular solution.</p>
 <span class="incontext"><a href="so-general-forcing.html#p-241">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,39 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>There is one more situation to be aware of, another variation on a familiar theme. If your \(y_p\) is part of the null solution of the ODE, you have to "promote" it by powers of \(t\) until it no longer overlaps.</p>
+<p>Let's apply VP to \(y''-y=1\text{.}\) The null solutions are \(y_1=e^{-t}\) and \(y_2=e^t\text{,}\) which implies \(W=1+1=2\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+c_1' = -\frac{y_2f}{W} = -\frac{1}{2}e^t, \qquad 
+c_2' = \frac{y_1f}{W} = \frac{1}{2}e^{-t}\text{.}
+\end{equation*}
+</div>
+<p>Now we integrate.</p>
+<div class="displaymath">
+\begin{equation*}
+c_1(t) = -\frac{1}{2} \int_0^t e^s \, ds = \frac{1}{2}(1-e^{t}), \qquad 
+c_2(t) = \frac{1}{2} \int_0^t e^{-s} \, ds = \frac{1}{2}(1-e^{-t})\text{.}
+\end{equation*}
+</div>
+<p>In fact these are determined only up to integration constants (because particular solutions aren't unique), so we can drop the extra constants and get</p>
+<div class="displaymath">
+\begin{equation*}
+y_p = -\frac{1}{2}e^t \cdot e^{-t} - \frac{1}{2} e^{-t} \cdot e^t = -1\text{.}
+\end{equation*}
+</div>
+<p>This was a lot more difficult than UC on the same problem. However, now consider solving \(y''-y=H(t-T)\) for a step time \(T \gt 0\text{.}\) The VP equations are now \(c_1' = -\frac{1}{2}e^tH(t-T)\text{,}\) \(c_2'=\frac{1}{2}e^{-t}H(t-T)\text{.}\) From here we get</p>
+<div class="displaymath">
+\begin{equation*}
+c_1(t) = \int_0^T -\frac{1}{2}e^s H(s-T)\, ds = -\frac{1}{2} H(t-T) \int_T^t e^s\, ds = \frac{1}{2} H(t-T) [e^T - e^t]
+\end{equation*}
+</div>
+<p>and, similarly, \(c_2(t) = \frac{1}{2} H(t-T) [e^{-T}-e^{-t}]\text{.}\)  This leads to</p>
+<div class="displaymath">
+\begin{equation*}
+y_p = \frac{1}{2} H(t-T) \left[ e^{T-t} - 1 + e^{t-T} - 1 \right]\text{,}
+\end{equation*}
+</div>
+<p>which is a lot less obvious in the UC method.</p>
 <span class="incontext"><a href="so-general-forcing.html#p-248">in-context</a></span>
 </body>
 </html>

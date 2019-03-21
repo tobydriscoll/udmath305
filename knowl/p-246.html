@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>So if \(f(t)\) is a polynomial times \(e^{st}\text{,}\) let \(y_p\) be the same exponential times a polynomial of the same degree with unknown coefficients. This technically applies too if the polynomial has degree zero; this was our mainstay in <a href="so-forced-oscillators.html" class="xref" title="Section 2.4: Exponentially forced oscillators">Section 2.4</a>. It also applies for imaginary or even complex exponents.</p>
+<p>Taking this odd assumption on faith for now, we compute</p>
+<div class="displaymath">
+\begin{equation*}
+y_p' = c_1'y_1+c_1y_1'+ c_2'y_2+c_2y_2'  \text{.}
+\end{equation*}
+</div>
+<p>Before we go on, we're going to put a restriction on our mystery functions, namely \(c_1'y_1+c_2'y_2=0\text{.}\) That makes life a little easier. Continuing, we get</p>
+<div class="displaymath">
+\begin{equation*}
+y_p'' = c_1'y_1'+ c_1y_1'' + c_2'y_2'+ c_2y_2''  \text{.}
+\end{equation*}
+</div>
+<p>When we put all this mess into \(y''+By'+Cy=f\text{,}\) something cool happens:</p>
+<div class="displaymath">
+\begin{equation*}
+c_1(y_1''+By_1'+Cy_1) + c_2(y_2''+By_2'+Cy_2) + c_1'y_1' + c_2'y_2' = f \text{.}
+\end{equation*}
+</div>
+<p>Thanks to the null property of \(y_1\) and \(y_2\text{,}\) this boils down to \(c_1'y_1' + c_2'y_2' = f\text{.}\)</p>
 <span class="incontext"><a href="so-general-forcing.html#p-246">in-context</a></span>
 </body>
 </html>

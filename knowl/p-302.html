@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Here is a slope field for the linear ODE system</p>
+<p>There is another way to look at the two-equation system \(x'=F(x,y)\text{,}\) \(y'=G(x,y)\text{.}\) If we define a vector-valued function \(\mathbf{u}(t)\) by \(u_1=x,\, u_2=y,\) and we define the vector field \(\mathbf{f}(\mathbf{u})\) with components</p>
 <div class="displaymath">
 \begin{align*}
-\dd{x}{t} \amp = -y\\
-\dd{y}{t} \amp = x\text{.}
+f_1(\mathbf{u}) \amp = F(u_1,u_2)\\
+f_2(\mathbf{u}) \amp = G(u_1,u_2)\text{,}
 \end{align*}
 </div>
+<p>then we can express the system as one equation, \(\mathbf{u}'=\mathbf{f}(\mathbf{u})\text{,}\) whose solution is vector-valued in two dimensions. Writing things in this form serves two major purposes: it allows us to generalize quite easily from two dimensions to any number, and it's the form expected by most software for solving ODE systems numerically.</p>
 <span class="incontext"><a href="twod-slope-fields.html#p-302">in-context</a></span>
 </body>
 </html>

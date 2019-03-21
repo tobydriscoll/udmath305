@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:08-04:00    *-->
+<!--*    on 2019-03-21T12:07:36-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -119,13 +119,13 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="twod-fixed-points"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Linear 2D systems</span>
 </h2>
-<a href="twod-fixed-points.html" class="permalink">¶</a><section class="introduction" id="introduction-13"><p id="p-305"><em class="emphasis">From section 3.2.</em></p></section><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
+<a href="twod-fixed-points.html" class="permalink">¶</a><section class="introduction" id="introduction-13"><p id="p-303"><em class="emphasis">From section 3.2.</em></p></section><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">State space and phase portraits</span>
 </h3>
-<p id="p-306">For second-order ODEs, we saw that fully specifying a unique solution required giving initial values for \(y\) and \(y'\text{.}\) We say that \((y(t),y'(t))\) together constitute the <dfn class="terminology">state</dfn> of the system at a certain time. Knowing only part of the state isn't specific enough. The two-dimensional space of all possible values of the state is called <dfn class="terminology">state space</dfn>, or in the 2D case only, the <dfn class="terminology">phase plane</dfn>. A plot of many solutions of an ODE in the phase plane is called a <dfn class="terminology">phase portrait</dfn> of the system.</p>
+<p id="p-304">For second-order ODEs, we saw that fully specifying a unique solution required giving initial values for \(y\) and \(y'\text{.}\) We say that \((y(t),y'(t))\) together constitute the <dfn class="terminology">state</dfn> of the system at a certain time. Knowing only part of the state isn't specific enough. The two-dimensional space of all possible values of the state is called <dfn class="terminology">state space</dfn>, or in the 2D case only, the <dfn class="terminology">phase plane</dfn>. A plot of many solutions of an ODE in the phase plane is called a <dfn class="terminology">phase portrait</dfn> of the system.</p>
 <article class="example-like" id="ex-phase-node"><a knowl="" class="id-ref" refid="hk-ex-phase-node"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.2.1</span> <span class="title">Phase portrait of a node</span>
-</h6></a></article><div id="hk-ex-phase-node" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-307">Here we give a phase portrait for the equation \(y''+8y'+4y=0\text{.}\)</p>
+</h6></a></article><div id="hk-ex-phase-node" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-305">Here we give a phase portrait for the equation \(y''+8y'+4y=0\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = 1;  B = 8;  C = 4;
 s = roots([A B C]);
@@ -150,11 +150,11 @@ ylabel('y''')
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_phase_node.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-308">The characteristic roots are negative and real, so all solutions are of the form \(y=c_1 e^{s_1t} + c_2 e^{s_2 t}\text{,}\) where \(s_2\lt s_1 \lt 0\text{.}\) As time advances, \(e^{s_2 t}\) decays more rapidly than the other exponential, so \(y\approx c_1 e^{s_1 t}\) and \(y'\approx c_1 s_1 e^{s_1 t}\text{.}\) That is, solutions in the phase plane asymptotically approach the origin parallel to the vector \((1,s_1)\text{.}\) In this situation we say that the origin is a <dfn class="terminology">node</dfn> of the ODE.</p></article></div>
-<p id="p-309">More specifically in <a knowl="./knowl/ex-phase-node.html" title="Example 3.2.1: Phase portrait of a node">Example 3.2.1</a> we call the origin a <dfn class="terminology">nodal sink</dfn>, because all trajectories are sucked into the origin. If the characteristic equation had two positive roots the picture would be the same, but all traversal directions reversed, and the point would be a <dfn class="terminology">nodal source</dfn>.</p>
-<article class="example-like" id="example-43"><a knowl="" class="id-ref" refid="hk-example-43"><h6 class="heading">
+<p id="p-306">The characteristic roots are negative and real, so all solutions are of the form \(y=c_1 e^{s_1t} + c_2 e^{s_2 t}\text{,}\) where \(s_2\lt s_1 \lt 0\text{.}\) As time advances, \(e^{s_2 t}\) decays more rapidly than the other exponential, so \(y\approx c_1 e^{s_1 t}\) and \(y'\approx c_1 s_1 e^{s_1 t}\text{.}\) That is, solutions in the phase plane asymptotically approach the origin parallel to the vector \((1,s_1)\text{.}\) In this situation we say that the origin is a <dfn class="terminology">node</dfn> of the ODE.</p></article></div>
+<p id="p-307">More specifically in <a knowl="./knowl/ex-phase-node.html" title="Example 3.2.1: Phase portrait of a node">Example 3.2.1</a> we call the origin a <dfn class="terminology">nodal sink</dfn>, because all trajectories are sucked into the origin. If the characteristic equation had two positive roots the picture would be the same, but all traversal directions reversed, and the point would be a <dfn class="terminology">nodal source</dfn>.</p>
+<article class="example-like" id="example-44"><a knowl="" class="id-ref" refid="hk-example-44"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.2.2</span> <span class="title">Phase portrait of a saddle</span>
-</h6></a></article><div id="hk-example-43" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-310">Here we give a phase portrait for the equation \(y''+6y'-3y=0\text{.}\)</p>
+</h6></a></article><div id="hk-example-44" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-308">Here we give a phase portrait for the equation \(y''+6y'-3y=0\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = 1;  B = 6;  C = -3;
 s = sort(roots([A B C]),'descend');
@@ -183,11 +183,11 @@ ylabel('y''')
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_phase_saddle.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-311">In this case all solutions are of the form \(y=c_1 e^{s_1t} + c_2 e^{s_2 t}\) where \(s_2\lt 0 \lt s_1\text{.}\) As time advances, \(e^{s_2 t}\) decays to zero while the other exponential grows, so again \(y\approx c_1 e^{s_1 t}\) and \(y'\approx c_1 s_1 e^{s_1 t}\text{.}\) That is, solutions in the phase plane asymptotically move away from the origin parallel to the vector \((1,s_1)\text{.}\) The only exception is if \(c_1=0\text{,}\) in which case solutions go straight toward the origin forever. (Solutions with \(c_2=0\) go toward the origin in "backward time.") In this situation we say that the origin is a <dfn class="terminology">saddle</dfn>.</p></article></div>
-<p id="p-312">A saddle has both sink and source behaviors simultaneously. But the source nature wins out unless you approach the origin <em class="emphasis">just</em> so.</p>
+<p id="p-309">In this case all solutions are of the form \(y=c_1 e^{s_1t} + c_2 e^{s_2 t}\) where \(s_2\lt 0 \lt s_1\text{.}\) As time advances, \(e^{s_2 t}\) decays to zero while the other exponential grows, so again \(y\approx c_1 e^{s_1 t}\) and \(y'\approx c_1 s_1 e^{s_1 t}\text{.}\) That is, solutions in the phase plane asymptotically move away from the origin parallel to the vector \((1,s_1)\text{.}\) The only exception is if \(c_1=0\text{,}\) in which case solutions go straight toward the origin forever. (Solutions with \(c_2=0\) go toward the origin in "backward time.") In this situation we say that the origin is a <dfn class="terminology">saddle</dfn>.</p></article></div>
+<p id="p-310">A saddle has both sink and source behaviors simultaneously. But the source nature wins out unless you approach the origin <em class="emphasis">just</em> so.</p>
 <article class="example-like" id="ex-phase-center"><a knowl="" class="id-ref" refid="hk-ex-phase-center"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.2.3</span> <span class="title">Phase portrait of a center</span>
-</h6></a></article><div id="hk-ex-phase-center" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-313">Here is a phase portrait for the equation \(y''+2y=0\text{.}\)</p>
+</h6></a></article><div id="hk-ex-phase-center" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-311">Here is a phase portrait for the equation \(y''+2y=0\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = 1;  B = 0;  C = 2;
 s = roots([A B C]);
@@ -210,10 +210,10 @@ ylabel('y''')
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_phase_center.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-314">The characteristic roots are imaginary and the solutions are, in shifted cosine form, \(y=R\cos(\omega_n t-\phi)\text{.}\) Solution curves in the phase plane lie on the ellipses \(y^2+(y'/\omega_n)^2=R^2\text{,}\) going around and around the origin, which we call a  <dfn class="terminology">center</dfn> of the ODE. If \(\omega_n=1\text{,}\) the ellipses are circles.</p></article></div>
+<p id="p-312">The characteristic roots are imaginary and the solutions are, in shifted cosine form, \(y=R\cos(\omega_n t-\phi)\text{.}\) Solution curves in the phase plane lie on the ellipses \(y^2+(y'/\omega_n)^2=R^2\text{,}\) going around and around the origin, which we call a  <dfn class="terminology">center</dfn> of the ODE. If \(\omega_n=1\text{,}\) the ellipses are circles.</p></article></div>
 <article class="example-like" id="ex-phase-spiral"><a knowl="" class="id-ref" refid="hk-ex-phase-spiral"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.2.4</span> <span class="title">Phase portrait of a spiral</span>
-</h6></a></article><div id="hk-ex-phase-spiral" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-315">Here is a phase portrait for the equation \(y''+0.6y'+3y=0\text{.}\)</p>
+</h6></a></article><div id="hk-ex-phase-spiral" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-313">Here is a phase portrait for the equation \(y''+0.6y'+3y=0\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = 1;  B = .6;  C = 3;
 s = roots([A B C]);
@@ -236,11 +236,11 @@ ylabel('y''')
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_phase_spiral.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-316">The characteristic roots are complex conjugates with negative real part (underdamped). Solutions decay exponentially while they oscillate, and we say that the origin is a <dfn class="terminology">spiral point</dfn> of the ODE.</p></article></div>
-<p id="p-317">As with nodes, spiral points can be either sinks or sources, which is just a matter of reversing the direction of travel along solution curves.</p></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
+<p id="p-314">The characteristic roots are complex conjugates with negative real part (underdamped). Solutions decay exponentially while they oscillate, and we say that the origin is a <dfn class="terminology">spiral point</dfn> of the ODE.</p></article></div>
+<p id="p-315">As with nodes, spiral points can be either sinks or sources, which is just a matter of reversing the direction of travel along solution curves.</p></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.2</span> <span class="title">Second-order equations as first-order systems</span>
 </h3>
-<p id="p-318">Above we drew some phase portraits for instances of the second-order problem \(Ay''+By'+Cy=0\text{.}\) Here is another way of looking at them. Let's define a time-varying vector with components \(u_1=y\) and \(u_2=y'\text{.}\)  We can call \(\mathbf{u}(t)\) the <dfn class="terminology">state vector</dfn> of the ODE. From the definitions we find</p>
+<p id="p-316">Above we drew some phase portraits for instances of the second-order problem \(Ay''+By'+Cy=0\text{.}\) Here is another way of looking at them. Let's define a time-varying vector with components \(u_1=y\) and \(u_2=y'\text{.}\)  We can call \(\mathbf{u}(t)\) the <dfn class="terminology">state vector</dfn> of the ODE. From the definitions we find</p>
 <div class="displaymath">
 \begin{align*}
 \dd{u_1}{t} \amp = u_2 \\
@@ -248,7 +248,7 @@ ylabel('y''')
 \end{align*}
 </div>
 <p>which is in the form \(\mathbf{u}'=\mathbf{f}(\mathbf{u})\text{.}\) All the phase portraits above are unchanged if we simply label the axes as \(u_1,u_2\text{.}\)</p>
-<p id="p-319">We can generalize the systems under study a bit to</p>
+<p id="p-317">We can generalize the systems under study a bit to</p>
 <div class="displaymath">
 \begin{align*}
 \dd{u_1}{t} \amp = a_{11} u_1 + a_{12} u_2 \\
@@ -268,10 +268,10 @@ ylabel('y''')
 \end{equation*}
 </div>
 <p>As the text says, the matrices we get from problems \(Ay''+By'+Cy=0\) are called <dfn class="terminology">companion matrices</dfn>.</p>
-<p id="p-320">It's fair to ask what kinds of phase portraits we can get for this type of problem. The answer is: same as the above. The extra generality in the first row of the matrix can change the details, but there are no new major kinds of behavior beyond node, saddle, and spiral. We are now going to shift away from talking about the second-order problem to the more general \(\mathbf{u}' = \mathbf{A} \mathbf{u}\text{.}\)</p></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
+<p id="p-318">It's fair to ask what kinds of phase portraits we can get for this type of problem. The answer is: same as the above. The extra generality in the first row of the matrix can change the details, but there are no new major kinds of behavior beyond node, saddle, and spiral. We are now going to shift away from talking about the second-order problem to the more general \(\mathbf{u}' = \mathbf{A} \mathbf{u}\text{.}\)</p></section><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.2.3</span> <span class="title">Stability</span>
 </h3>
-<p id="p-321">For first-order autonomous problems \(y'=f(y)\text{,}\) we paid special attention to the steady states and their stability. What is the analog for</p>
+<p id="p-319">For first-order autonomous problems \(y'=f(y)\text{,}\) we paid special attention to the steady states and their stability. What is the analog for</p>
 <div class="displaymath">
 \begin{align*}
 \dd{u_1}{t} \amp = a_{11} u_1 + a_{12} u_2 \\
@@ -279,9 +279,9 @@ ylabel('y''')
 \end{align*}
 </div>
 <p>or more simply, \(\mathbf{u}' = \mathbf{A} \mathbf{u}\text{?}\)</p>
-<p id="p-322">Right away it's clear that we have a steady state at \(\bu=\mathbf{0}\text{.}\) We'll have others, if there are nonzero solutions to the system \(\bA\bu=\mathbf{0}\text{.}\) That's a question we'll take up much later, so we'll ignore these for now.</p>
-<p id="p-323">The phase portraits we have done are all in the vicinity of the fixed point at the origin, and they tell the story of stability. Sinks (node or spiral) are stable points, while sources (node or spiral) and saddles are unstable. The case of a center is on the cusp, what we might call "neutrally stable" or weakly stable.</p>
-<p id="p-324">So the phase portraits are a graphical tool for stability. What about analytical tools? The key here turns out to be the <dfn class="terminology">eigenvalues</dfn> of the matrix \(\bA\text{.}\)  We're not ready to discuss those in generality yet, but the 2-by-2 case is simple to describe (and hauntingly familiar). The eigenvalues are the two roots of the <dfn class="terminology">characteristic polynomial</dfn></p>
+<p id="p-320">Right away it's clear that we have a steady state at \(\bu=\mathbf{0}\text{.}\) We'll have others, if there are nonzero solutions to the system \(\bA\bu=\mathbf{0}\text{.}\) That's a question we'll take up much later, so we'll ignore these for now.</p>
+<p id="p-321">The phase portraits we have done are all in the vicinity of the fixed point at the origin, and they tell the story of stability. Sinks (node or spiral) are stable points, while sources (node or spiral) and saddles are unstable. The case of a center is on the cusp, what we might call "neutrally stable" or weakly stable.</p>
+<p id="p-322">So the phase portraits are a graphical tool for stability. What about analytical tools? The key here turns out to be the <dfn class="terminology">eigenvalues</dfn> of the matrix \(\bA\text{.}\)  We're not ready to discuss those in generality yet, but the 2-by-2 case is simple to describe (and hauntingly familiar). The eigenvalues are the two roots of the <dfn class="terminology">characteristic polynomial</dfn></p>
 <div class="displaymath">
 \begin{equation*}
 p(\lambda) = \lambda^2 - T\lambda + D\text{,}
@@ -294,7 +294,7 @@ p(\lambda) = \lambda^2 - T\lambda + D\text{,}
 <li id="li-19">If \(\lambda_1 = \lambda_2\text{,}\) the origin is unstable.</li>
 </ol>
 <p> Furthermore, in the first two cases, point is a node if the imaginary parts of the eigenvalues are zero, and a spiral or center if they are nonzero.</p>
-<p id="p-325">We don't even have to compute the eigenvalues to figure out the stability. If you add the roots of the quadratic formula, you can confirm that</p>
+<p id="p-323">We don't even have to compute the eigenvalues to figure out the stability. If you add the roots of the quadratic formula, you can confirm that</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda_1 + \lambda_2 = T\text{.}

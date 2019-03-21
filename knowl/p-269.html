@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,24 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The undamped oscillator \(y''+9y=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
+<p>Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
 <div class="displaymath">
 \begin{equation*}
-Y(s) = \frac{3}{(s^2+9)^2}\text{.}
+\frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} \text{.}
 \end{equation*}
 </div>
-<p>This doesn't look like anything easy. However, note that</p>
+<p>Since we also know that</p>
 <div class="displaymath">
 \begin{equation*}
-sY(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frac{d}{ds} \left[ \frac{1}{s^2+9} \right] \text{.}
+e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{,}
 \end{equation*}
 </div>
-<p>Therefore, \(sY(s)\) is the transform of \(\frac{1}{2} t \sin(3t)\text{.}\) So this must be \(y'(t)\text{.}\) An integration by parts then recovers</p>
+<p>the conclusion is</p>
 <div class="displaymath">
 \begin{equation*}
-y(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
+\mathcal{L}[ e^{at} \cos( b t) ] = \frac{s-a}{(s-a)^2+b^2}\text{.}
 \end{equation*}
 </div>
+<p>In similar fashion we can show that \(e^{at} \sin( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion. However, the details can get pretty intense for hand calculation.</p>
 <span class="incontext"><a href="so-laplace-repeated.html#p-269">in-context</a></span>
 </body>
 </html>

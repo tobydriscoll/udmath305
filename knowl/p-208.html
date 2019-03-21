@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Realistically we only care about this effect for harmonic forcing, \(f(t)=e^{i\omega t}\text{,}\) where we call it <dfn class="terminology">resonance</dfn>. Since the characteristic polynomial \(P(s)=as^2+bs+c\) has imaginary roots only if \(b=0\text{,}\) we only see resonance in an undamped oscillator. The resonant particular solution has an amplitude that is linearly growing in time. The derivation above shows that though the solution formula (and unboundedness) is singular at the resonant frequency, the actual behavior is a continuous limit of near-resonant behavior.</p>
-<span class="incontext"><a href="so-forced-oscillators.html#p-208">in-context</a></span>
+<p>Any solution of the linear ODE</p>
+<div class="displaymath">
+\begin{equation*}
+a_N \frac{d^Ny}{dt^N} + \cdots + a_2 \frac{d^2y}{dt^2} + a_1 \frac{dy}{dt}  + a_0y = f(t)\text{,}
+\end{equation*}
+</div>
+<p>where the \(a_N,\ldots,a_0\) are all constants, can be expressed as \(y=y_n+y_p\text{,}\) the sum of a null part \(y_n\) that solves the problem when \(f(t)\equiv 0\) and a particular solution \(y_p\text{.}\)</p>
+<span class="incontext"><a href="so-higher-order.html#p-208">in-context</a></span>
 </body>
 </html>

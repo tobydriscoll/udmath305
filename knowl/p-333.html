@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:04:35-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,15 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The other steady state is at \((\pi,0)\text{.}\) Now the Jacobian is</p>
+<p>First note that we can recast the nonlinear problem as a first-order system in two variables. Define \(x=\theta\) and \(y=\theta'\text{.}\) Then</p>
 <div class="displaymath">
-\begin{equation*}
-\begin{bmatrix} 
-0 \amp 1 \\ g/L \amp -\gamma
-\end{bmatrix}\text{,}
-\end{equation*}
+\begin{align*}
+\dd{x}{t} \amp = y \\
+\dd{y}{t} \amp = -\frac{g}{L}\sin(x)\text{.}
+\end{align*}
 </div>
-<p>with \(T=-\gamma\) and \(D=-g/L\text{.}\) This implies a saddle point, so the "inverted pendulum" is indeed unstable.</p>
+<p>This trick works for any nonlinear second-order equation \(\theta''=g(t,\theta,\theta')\text{.}\) Thus we can focus on problems in the general form</p>
+<div class="displaymath">
+\begin{align*}
+\dd{x}{t} \amp = F(x,y) \\
+\dd{y}{t} \amp = G(x,y)\text{,}
+\end{align*}
+</div>
+<p>or \(\bu' = \bff(\bu)\) for 2-vector \(\bu(t)\text{.}\) Note that (as we saw before), the vector \(\bu\) represents the state of the system.</p>
 <span class="incontext"><a href="twod-linearization.html#p-333">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:08-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's solve \(y''+5y'+6y=4 e^{-t}\text{,}\) with \(y(0)=0\text{,}\) \(y'(0)=1\text{.}\) In stages: </p>
-<ol class="decimal">
-<li><p><em class="emphasis">Null solution</em>. The characteristic equation of \(y''+5y'+6y=0\) is \(s^2+5s+6=0\text{,}\) which has roots \(s_1=-2\text{,}\) \(s_2=-3\text{.}\) Thus \(y_n=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p></li>
-<li><p><em class="emphasis">Particular solution</em>. The transfer function is \(Y(s)=1/(s^2+5s+6)\text{,}\) and \(Y(-1)=1/2\text{.}\) Hence \(y_p=\frac{1}{2}\cdot 4 e^{-t}=2e^{-t}\text{.}\)</p></li>
-<li><p><em class="emphasis">Complete solution</em>. \(y=y_n+y_p=c_1 e^{-2t}+c_2e^{-3t} + 2 e^{-t}\)</p></li>
-<li><p><em class="emphasis">Initial values</em>. We get \(0=y(0)=c_1+c_2+2\) and \(1=y'(0)=-2c_1-3c_2-2\text{.}\) This implies \(c_1=-3\text{,}\) \(c_2=1\text{.}\) Finally, \(y=-3 e^{-2t}+e^{-3t} + 2 e^{-t}\text{.}\)</p></li>
-</ol>
+<p>Consider \(y''+y'=\sin(2t)\text{.}\) Since the forcing term is the imaginary part of \(e^{2it}\text{,}\) we use</p>
+<div class="displaymath">
+\begin{equation*}
+Y(2i) = \frac{1}{(2i)^2+2i} = \frac{1}{2i-4}\text{.}
+\end{equation*}
+</div>
+<p>We need to take the imaginary part of \(Y(2i)e^{2it}\) to get the particular solution we seek. The course of least resistance is to make the denominator of \(Y\) real by using a complex conjugate:</p>
+<div class="displaymath">
+\begin{equation*}
+Y(2i) = \frac{1}{2i-4}\cdot \frac{2i+4}{2i+4} = \frac{2i+4}{4+16} = \frac{i+2}{10} = \frac{1}{5} + i\frac{1}{10}\text{.}
+\end{equation*}
+</div>
+<p>There are <em class="emphasis">two</em> contributions to each of the real and imaginary parts of the product:</p>
+<div class="displaymath">
+\begin{align*}
+Y(2i)e^{2it} \amp = \left(\frac{1}{5} + i\frac{1}{10}\right) \bigl( \cos(2t) + i \sin(2t) \bigr)\\
+\amp = \Bigl[ \cdots \Bigr] + i \Bigl[ \frac{1}{5}\sin(2t) + \frac{1}{10}\cos(2t) \Bigr]\text{.}
+\end{align*}
+</div>
+<p>(We don't need the real part, inside the first set of brackets.) Thus \(y_p = [2\sin(2t)+\cos(2t)]/10\text{.}\)</p>
 <span class="incontext"><a href="so-forced-oscillators.html#p-197">in-context</a></span>
 </body>
 </html>

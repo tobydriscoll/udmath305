@@ -62,7 +62,7 @@
 	  </exercise>
 	</subsection>
 
-	<subsection>
+	<!--subsection>
 		<title>Impulse response</title>
 		  
 	  	<p>
@@ -84,7 +84,7 @@
 			</me>.
 	  		Again, in a linear problem we just need to add up the contributions of impulses at every moment. Because of this formula, the impulse response <m>g</m> is also called a <term>fundamental solution</term>. We'll be using and coming at this formula a few different ways throughout the chapter.
 		</p>
-	</subsection>
+	</subsection-->
 
 	</section>
 
@@ -272,7 +272,7 @@ set(gca,'dataaspect',[6,1,1])
 	  <p>The four types of oscillation can be predicted from the sign of <m>B^2-4AC</m>, or equivalently from the sign of <m>\omega_n-p</m>.</p>
 	</subsection>
 
-	<subsection xml:id="so-cc-impulse">
+	<!--subsection xml:id="so-cc-impulse">
 	  	<title>Impulse response</title>
 
 	 	<p>Recall our claim that the fundamental solution <m>g(t)</m> of the impulse forcing problem <m>Ay''+By'+C=\delta(t)</m> leads to the particular response to any input <m>f(t)</m> via <m>y_p(t)=\int_0^t g(t-s)f(s)\,ds</m>. Also recall that we can fudge finding <m>g</m> by having no forcing, <m>g(0)=0</m>, and <m>g'(0)</m> becoming instantly nonzero. </p>
@@ -293,7 +293,7 @@ set(gca,'dataaspect',[6,1,1])
 				This is not the same result we get by following the other methods of this section, which would suggest only <m>-\sin(t)</m>. The other <m>-t</m> coming from the integral formula is a part of the null solution, so both expressions are valid particular solutions. 
 			</p>
 	 	</example>
-	</subsection>
+	</subsection-->
   </section>
 
   <section xml:id="so-forced-oscillators">
@@ -344,7 +344,7 @@ set(gca,'dataaspect',[6,1,1])
 
 	  <p>You should be getting comfortable with the idea that exponential forcing includes sin and cos! We are simply interested in the transfer function for imaginary exponents, <m>Y(i\omega)</m> followed by the imaginary or real part of <m>Ye^{i\omega t}</m>. There is some complex-number-fu required here. </p>
 
-	  <example>
+	  <example xml:id="ex-second-sin-forcing">
 	    <p>Consider <m>y''+y'=\sin(2t)</m>. Since the forcing term is the imaginary part of <m>e^{2it}</m>, we use
 	    <me>Y(2i) = \frac{1}{(2i)^2+2i} = \frac{1}{2i-4}</me>.
 	    We need to take the imaginary part of <m>Y(2i)e^{2it}</m> to get the particular solution we seek. The course of least resistance is to make the denominator of <m>Y</m> real by using a complex conjugate:
@@ -584,20 +584,40 @@ set(gca,'dataaspect',[6,1,1])
 				<md>
 					<mrow>8(2A+B+2Bt)e^{4t} - 2(4A+B+4Bt)e^{4t} -3 (A + Bt)e^{4t} \amp =10t e^{4t}</mrow>
 					<mrow> 8(2A+B) - 2(4A+B) -3A + t(16B-8B-3B) =  10t</mrow>
-				</md>. From this, by matching powers, we deduce <m>B=2</m> and then <m>5A+12=0</m>. So <m>y_p = (2 - (12/5)t)e^{4t}</m>.
+				</md>. From this, by matching powers, we deduce <m>B=2</m> and then <m>5A+12=0</m>. So <m>y_p = [2t - (12/5)]e^{4t}</m>.
 				</p>
 			</example>
 
 			<p>
-				So if <m>f(t)</m> is a polynomial times <m>e^{st}</m>, let <m>y_p</m> be the same exponential times a polynomial of the same degree with unknown coefficients. This technically applies too if the polynomial has degree zero; this was our mainstay in <xref ref="so-forced-oscillators"/>. It also applies for imaginary or even complex exponents.
+				So if <m>f(t)</m> is a polynomial times <m>e^{st}</m>, let <m>y_p</m> be the same exponential times a polynomial of the same degree with unknown coefficients. This technically applies too if the polynomial has degree zero, which was our mainstay in <xref ref="so-forced-oscillators"/>. It also applies for imaginary or complex exponents.
 			</p>
 
 			<p>
-				There's a method devoted to forcing by sine or cosine, multiplied by a polynomial and/or exponential. As we have seen  in previous examples, any sin or cos in the forcing requires both to be allowed in <m>y_p</m>. I don't personally see much value in exploring these rules, as they are no easier to use, and may be even more ornate, than the exponentials we have been doing. 
+				The third major type of forcing amenable to UC is sin or cos. We did this type of forcing in <xref ref="ex-second-sin-forcing"/> by converting the forcing to a complex exponential. Here is how it plays out with UC instead.
 			</p>
 
+			<example>
+				<p>
+					Consider <m>y''+y'=\sin(2t)</m>. Derivatives of <m>sin(2t)</m> procuce only itself and <m>cos(2t)</m>, and we are justified in choosing
+					<me>
+						y_p = a\cos(2t) + b\sin(2t)
+					</me>. 
+					Inserting this into the ODE leads to 
+					<me>
+						[-4a\cos(2t) - 4b\sin(2t)] + [-2a\sin(2t) + 2b\cos(2t)] = \sin(2t)
+					</me>. 
+					This is true for all time if and only if we match the coefficients of the trig functions,
+					<me>
+						-4a + 2b = 0, \qquad -4b-2a = 1 
+					</me>. 
+					The solution of these equations is <m>a=-1/10</m>, <m>b=-1/5</m>. So <m>-[\cos(2t)+2\sin(2t)]/10</m> is a particular solution.
+				</p>
+			</example>
 			<p>
-				There is one more situation to be aware of, another variation on a familiar theme. If your <m>y_p</m> is part of the null solution of the ODE, you have to "promote" it by powers of <m>t</m> until it no longer overlaps. 
+				The method can be described when combining all of the above: forcing by sine or cosine, multiplied by a polynomial and/or exponential. I believe a term like <m>e^{\alpha t}\cos(\beta t)</m> is more easily treated as a complex exponential, and the whole process is usually best left to a computer if more than two unknown coefficients are needed.  
+			</p>
+			<p>
+				There is one more important situation to be aware of, another variation on a familiar theme. If your <m>y_p</m> is part of the null solution of the ODE, you have to "promote" it by powers of <m>t</m> until it no longer overlaps. 
 			</p>
 
 			<example>
@@ -606,7 +626,7 @@ set(gca,'dataaspect',[6,1,1])
 					<md> 
 						<mrow>(Ae^{-t}) - 2(-Ae^{-t}) - 3Ae^{-t} \amp = 4e^{-t} </mrow>
 						<mrow> 0 \amp 4e^{-t} </mrow>
-					</md>. This is impossible to satisfy. What's happened is that the characteristic polynomial is <m>(s+1)(s-3)</m>, so <m>e^{-t}</m> is part of the null solution (as the above calculation already showed). Instead we have to use <m>y_p=Ate^{-t}</m>, which gives 
+					</md>. This is impossible to satisfy. What's happened is that the characteristic polynomial is <m>(s+1)(s-3)</m>, so <m>e^{-t}</m> is part of the null solution (as the above calculation verified). Instead we have to use <m>y_p=Ate^{-t}</m>, which gives 
 					<md> 
 						<mrow> Ae^{-t}(t-2) - 2Ae^{-t}(1-t) - 3Ate^{-t} \amp = 4e^{-t} </mrow>
 						<mrow> -4Ae^{-t} \amp 4e^{-t} </mrow>
@@ -619,7 +639,7 @@ set(gca,'dataaspect',[6,1,1])
 		<subsection xml:id="so-gf-vp">
 		<title>Variation of parameters</title>
 		<p>
-			While UC relies on "educated guesswork" (actually rigid rules that are a bit complex to apply), <term>variation of parameters</term> follows the same recipe every time. Given <m>L[y]=f</m>, suppose we have a general null solution in the form 
+			While UC relies on "educated guesswork" followed by derivatives and algebra, <term>variation of parameters</term> follows a simpler recipe but requires integration. Given <m>L[y]=f</m>, suppose we have a general null solution in the form 
 			<me>y_n(t) = c_1 y_1(t) + c_2 y_2(t)</me>.
 			For problems with constant coefficients, <m>y_1</m> and <m>y_2</m> are exponentials (or sin/cos equivalents), possibly multiplied by <m>t</m>. In any case, the VP trick is to replace the integration constants with functions of time:
 			<me>y_p(t) = c_1(t) y_1(t) + c_2(t) y_2(t)</me>. 
@@ -627,7 +647,7 @@ set(gca,'dataaspect',[6,1,1])
 		</p>
 
 		<p>
-			Taking this odd assumption on faith, we compute 
+			Taking this odd assumption on faith for now, we compute 
 			<me> 
 				y_p' = c_1'y_1+c_1y_1'+ c_2'y_2+c_2y_2'  
 			</me>. 
@@ -646,22 +666,57 @@ set(gca,'dataaspect',[6,1,1])
 			<md>
 				<mrow>c_1'y_1+c_2'y_2 \amp = 0 </mrow>
 				<mrow> c_1'y_1' + c_2'y_2' \amp = f </mrow>
-			</md>. Stare at this long enough and you'll realize that it's just two linear equations for <m>c_1'</m> and <m>c_2'</m>. You can do some elimination to solve them, and you wind up with 
+			</md>. 
+			Stare at this long enough and you'll realize that it's just two linear equations for <m>c_1'</m> and <m>c_2'</m>. You can do some elimination to solve them (more on this in future chapters), and you wind up with 
 			<me>c_1' = -\frac{y_2f}{W}, \qquad c_2' = \frac{y_1f}{W},</me>
 			with 
 			<me>W(t) = y_1y_2'-y_1'y_2</me>,
-			known as the <term>Wronskian</term> of <m>y_1</m> and <m>y_2</m>. Finally, "all" you have to do is integrate these expressions to get <m>c_1</m> and <m>c_2</m>, and from there you get <m>y_p</m>. 
+			known as the <term>Wronskian</term> of <m>y_1</m> and <m>y_2</m>. It's easiest to remember as a determinant:
+			<me>
+				W = \begin{vmatrix} 
+				y_1 \amp y_2 \\ y_1' \amp y_2' 
+				\end{vmatrix}
+			</me>.
+			Finally, "all" you have to do is integrate these expressions to get <m>c_1</m> and <m>c_2</m>, and from there you get <m>y_p</m>. 
 		</p>
 
-		<p>If you immediately wondered "what if the Wronskian is zero?" when you saw the above formulas, you have earned a special place in my heart. This possibility can be ruled out for some rather general theortical reasons, but we can also just calculate away the issue for equations with constant coefficients. If we have distinct characteristic roots <m>s_1</m> and <m>s_2</m>, then 
-		<me>
-			W = (e^{s_1t})(s_2e^{s_2t}) - (s_1e^{s_1t})(e^{s_2t}) = (s_2-s_1)e^{(s_1+s_2)t}
-		</me>. 
-		Not zero, as promised. In the case of repeated root <m>s_1</m>, then
-		<me>
-			W = e^{s_1t}(s_1t +1)e^{s_1t} - (s_1 e^{s_1t})(t e^{s_1t}) = e^{2s_1t} 
-		</me>. 
-		And here you were all worried. 
+		<example>
+			<p>
+				Let's apply VP to <m>y''-y=1</m>. The null solutions are <m>y_1=e^{-t}</m> and <m>y_2=e^t</m>, which implies <m>W=1+1=2</m>. Then 
+				<me> 
+					c_1' = -\frac{y_2f}{W} = -\frac{1}{2}e^t, \qquad 
+					c_2' = \frac{y_1f}{W} = \frac{1}{2}e^{-t}
+				</me>. 
+				Now we integrate.
+				<me> 
+					c_1(t) = -\frac{1}{2} \int_0^t e^s \, ds = \frac{1}{2}(1-e^{t}), \qquad 
+					c_2(t) = \frac{1}{2} \int_0^t e^{-s} \, ds = \frac{1}{2}(1-e^{-t})
+				</me>. 
+				In fact these are determined only up to integration constants (because particular solutions aren't unique), so we can drop the extra constants and get 
+				<me> 
+					y_p = -\frac{1}{2}e^t \cdot e^{-t} - \frac{1}{2} e^{-t} \cdot e^t = -1
+				</me>. 
+				This was a lot more difficult than UC on the same problem. However, now consider solving <m>y''-y=H(t-T)</m> for a step time <m>T \gt 0</m>. The VP equations are now <m>c_1' = -\frac{1}{2}e^tH(t-T)</m>, <m>c_2'=\frac{1}{2}e^{-t}H(t-T)</m>. From here we get 
+				<me> 
+					c_1(t) = \int_0^T -\frac{1}{2}e^s H(s-T)\, ds = -\frac{1}{2} H(t-T) \int_T^t e^s\, ds = \frac{1}{2} H(t-T) [e^T - e^t]
+				</me>
+				and, similarly, <m>c_2(t) = \frac{1}{2} H(t-T) [e^{-T}-e^{-t}]</m>.  This leads to 
+				<me> 
+					y_p = \frac{1}{2} H(t-T) \left[ e^{T-t} - 1 + e^{t-T} - 1 \right]
+				</me>, 
+				which is a lot less obvious in the UC method. 
+			</p>
+		</example>
+		<p>
+			If you immediately wondered "what if the Wronskian is zero?" when you saw the VP formulas above, you have earned a special place in my heart. This possibility can be ruled out for some rather general theortical reasons, but we can also just calculate away the issue for equations with constant coefficients. If we have distinct characteristic roots <m>s_1</m> and <m>s_2</m>, then 
+			<me>
+				W = (e^{s_1t})(s_2e^{s_2t}) - (s_1e^{s_1t})(e^{s_2t}) = (s_2-s_1)e^{(s_1+s_2)t}
+			</me>. 
+			Never zero, as promised. In the case of repeated root <m>s_1</m>, then
+			<me>
+				W = e^{s_1t}(s_1t +1)e^{s_1t} - (s_1 e^{s_1t})(t e^{s_1t}) = e^{2s_1t} 
+			</me>. 
+			And here you were all worried. 
 		</p>
 		</subsection>
 
@@ -675,17 +730,23 @@ set(gca,'dataaspect',[6,1,1])
 				and similarly <m>c_2'= f(t)e^{-s_2t}/(s_2-s_1) </m>. Then 
 				<md>
 					<mrow>
-					y_p \amp = e^{s_1 t} \int_0^t \frac{f(\tau)e^{-s_1\tau}}{s_1-s_2}\, d\tau + 
+					y_p(t) \amp = e^{s_1 t} \int_0^t \frac{f(\tau)e^{-s_1\tau}}{s_1-s_2}\, d\tau + 
 					e^{s_2 t} \int_0^t \frac{f(\tau)e^{-s_2\tau}}{s_2-s_1}\, d\tau </mrow>
 					<mrow> \amp =  \int_0^t  f(\tau) \frac{  e^{s_1(t-\tau)} -  e^{s_2(t-\tau)}}{s_1-s_2}\, d\tau  </mrow>
 					<mrow> \amp =  \int_0^t  f(\tau) g(t-\tau) \, d\tau  </mrow>
 				</md>, with
 				<me>g(t) = \frac{ e^{s_1t} -  e^{s_2t} }{s_1-s_2} </me>. 
-				By definition the integral formula makes <m>g</m> an fundamental solution. Remember, <m>g</m> is also the impulse response, and the null solution with <m>g(0)=0</m>, <m>g'(0)=1/A=1</m>. But this derivation doesn't rely on any sketchy deltas.
-			</p>
-			<p>
 				For the case of a repeated root we can go though the VP formulas again, or just let <m>s_2\to s_1</m> and get
 				<me>g(t) = t e^{s_1t} </me>. 
+			</p>
+			<p> 
+				The formula <m>\int_0^t  f(\tau) g(t-\tau) \, d\tau</m> is reminiscent of the growth factor formula we got in first-order equations, which had <m>\int_0^t G(s,t)f(s)\, ds</m>, with <m>G(s,t)=\exp[a(t-s)]</m> for constant coefficients. Since we are no longer concerned only with growth processes, we now refer to such a <m>G</m> or <m>g</m> as a <term>fundamental solution</term> or <term>Green function</term>. 			
+			</p>
+			<p>
+				If we use an impulse forcing function <m>f(t)=\delta(t)</m> in the integral formula for <m>y_p</m>, then we get simply <m>y_p(t)=g(t)</m>. So the fundamental solution is also the impulse response. It's easy to see from the formula for <m>g</m> that <m>g(0)=0</m> and <m>g'(0)=1</m>; that is, the impulse forcing is equivalent to an instantaneous jump in <m>y'</m>. 
+			</p>
+			<p>
+				
 			</p>
 
 		</subsection>

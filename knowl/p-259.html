@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,12 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Recall that the transform of \(y'(t)\) is \(sY(s)-y(0)\text{.}\) Applying this formula a second time shows that</p>
+<p>Now we can write out a general solution. The characteristic roots are \(\pm 1\text{,}\) so</p>
 <div class="displaymath">
 \begin{equation*}
-\mathcal{L}[y''(t)] = s \mathcal{L}[y'(t)] - y'(0) = s^2Y(s) - sy(0) - y'(0)\text{.}
+y(t) = c_1 e^{-t} + c_2 e^{t} + y_v(t)\text{.}
 \end{equation*}
 </div>
+<p>If desired, it's easy to solve for the constants in this, because \(y_v\) contributes nothing:</p>
+<div class="displaymath">
+\begin{align*}
+y(0) \amp = c_1 + c_2  \\
+y'(0) \amp = -c_1 + c_2 \text{.}
+\end{align*}
+</div>
+<p>That's a lot less work than doing a separate PFD needed when the initial conditions are kept in the transform. That's why it often pays to just ignore those parts when using the transform method, putting them back in at the very end.</p>
 <span class="incontext"><a href="so-laplace.html#p-259">in-context</a></span>
 </body>
 </html>

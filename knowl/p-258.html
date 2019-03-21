@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We can use the method of Laplace transforms to systematize the manipulations. As in first-order equations, these are useful mostly for linear, constant-coefficient problems.</p>
+<p>Let's break down what happens in a fundamental case, \(y''-y=e^{rt}\text{.}\)  Transforming both sides gives</p>
+<div class="displaymath">
+\begin{equation*}
+[s^2Y(s) - sy(0)-y'(0)] - Y(s) = 1/(s-r)\text{.}
+\end{equation*}
+</div>
+<p>For reasons to be clarified later, let's skip to the "very particular" part with zero initial conditions, for which</p>
+<div class="displaymath">
+\begin{equation*}
+Y(s) = \frac{1}{(s^2-1)(s-r)} = \frac{1}{(s+1)(s-1)(s-r)}\text{.}
+\end{equation*}
+</div>
+<p>This time there are three poles. Our mnemonic still works here,</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} \text{.}
+\end{equation*}
+</div>
+<p>Note that this requires \(r\neq -1\) and \(r \neq 1\) (i.e., no resonance). From here we get three exponentials:</p>
+<div class="displaymath">
+\begin{equation*}
+y_v(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-laplace.html#p-258">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,12 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The characteristic polynomial of \(y''''-y=0\) is \(s^4-1\text{.}\) The roots are the "fourth roots of unity," given by \(s_j=\exp(2\pi i j/4)\) for \(j=0,1,2,3\text{.}\) These simplify to \(\pm 1, \pm i\text{.}\) In real form the null solution is</p>
+<p>The operator \(L[y]=y'''+2y''+y'+2y\) has characteristic roots \(-2,\pm i\text{.}\) Now note that for any function \(y\text{,}\)</p>
 <div class="displaymath">
-\begin{equation*}
-y_n = c_1 e^{-t} + c_2 e^{t} + c_3 \cos(t) + c_4\sin(t)\text{.}
-\end{equation*}
+\begin{align*}
+(D+2)(D-i)(D+i)y \amp = (D+2)(D-i)(y'+iy) \\
+\amp = (D+2)\Bigl((y''+iy')-i(y'+iy)\Bigr) \\
+\amp = (D+2)(y''+y) = y''' +y' +2y'' + 2y = L[y]\text{.}
+\end{align*}
 </div>
+<p>We can write the factors in any order, and even things like \(L[y]=(D^2+1)(D-2)\text{.}\)</p>
 <span class="incontext"><a href="so-higher-order.html#p-220">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:38-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,21 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>First note that we can recast the nonlinear problem as a first-order system in two variables. Define \(x=\theta\) and \(y=\theta'\text{.}\) Then</p>
+<p>We are interested in the stability of fixed points, that is, the dynamics close to them. We will use linear approximations of the functions \(F\) and \(G\) near a fixed point:</p>
 <div class="displaymath">
 \begin{align*}
-\dd{x}{t} \amp = y \\
-\dd{y}{t} \amp = -\frac{g}{L}\sin(x)\text{.}
+F(x,y) \amp \approx F(x_p,y_p) + \pp{F}{x} (x-x_p) + \pp{F}{y} (y-y_p)\\
+G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)\text{,}
 \end{align*}
 </div>
-<p>This trick works for any nonlinear second-order equation \(\theta''=g(t,\theta,\theta')\text{.}\) Thus we can focus on problems in the general form</p>
+<p>where it is understood that the partial derivatives are all evaluated at \((x_p,y_p)\text{.}\) Given that \((x_p,y_p)\) is a fixed point, two terms above are zero. Finally, define \(u_1(t)=x(t)-x_p\text{,}\) \(u_2(t)=y(t)-y_p\) to arrive at</p>
 <div class="displaymath">
 \begin{align*}
-\dd{x}{t} \amp = F(x,y) \\
-\dd{y}{t} \amp = G(x,y)\text{,}
+\dd{u_1}{t} \amp \approx \pp{F}{x} u_1 + \pp{F}{y} u_2 = a_{11} u_1 + a_{12}u_2\\
+\dd{u_2}{t} \amp \approx \pp{G}{x} u_1 + \pp{G}{y} u_2 = a_{21} u_1 + a_{22} u_2\text{.}
 \end{align*}
 </div>
-<p>or \(\bu' = \bff(\bu)\) for 2-vector \(\bu(t)\text{.}\) Note that (as we saw before), the vector \(\bu\) represents the state of the system.</p>
+<p>We are back at the linear, constant-coefficient system \(\bu'=\bA \bu\text{!}\)  The matrix \(\bA\) is called the <dfn class="terminology">Jacobian matrix</dfn> at the fixed point. So it's the eigenvalues of the Jacobian matrix that determine the stability of a steady state.</p>
 <span class="incontext"><a href="twod-linearization.html#p-328">in-context</a></span>
 </body>
 </html>

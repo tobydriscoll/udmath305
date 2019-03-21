@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Finally, consider the driven, undamped oscillator \(y''+\omega_n^2 y= \cos(\omega t)\text{.}\) It leads to</p>
+<p>In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
 <div class="displaymath">
-\begin{equation*}
-Y(s) = \frac{s}{(s^2+\omega_n^2)(s^2+1)} = \frac{1}{\omega_n^2-\omega^2} \left( \frac{s}{s^2+\omega^2} - \frac{s}{s^2+\omega_n^2} \right)\text{,}
-\end{equation*}
+\begin{align*}
+F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
+\amp = -\int_0^\infty t f(t) e^{-st}\, dt\\
+\amp = - \mathcal{L}[ tf(t) ]\text{.}
+\end{align*}
 </div>
-<p>which is readily inverted into a combination of \(\cos(\omega t)\) and \(\cos(\omega_n t)\text{.}\) However, at this point we are probably better off using the method of undetermined coefficients instead.</p>
-<span class="incontext"><a href="so-laplace.html#p-266">in-context</a></span>
+<p>Take a moment to appreciate this. Earlier we found that a derivative in \(t\) corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
+<span class="incontext"><a href="so-laplace-repeated.html#p-266">in-context</a></span>
 </body>
 </html>

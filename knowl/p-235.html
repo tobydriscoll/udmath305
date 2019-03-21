@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,24 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The mechanical oscillator \(Ay'' + By' + Cy = f(t)\) is more conveniently expressed as</p>
+<p>Let's find a particular solution of \(y'' +4y'+4y=8t^2\text{.}\) We reason as follows. If we plug in some \(Ct^2\) for \(y\) with a constant \(C\text{,}\) then all the derivatives generate multiples of \(t\) and \(1\text{.}\) That is, both sides of the ODE will be quadratic polynomials. So we generalize just a bit to allow</p>
 <div class="displaymath">
 \begin{equation*}
-y'' + \frac{B}{A} y' + \frac{C}{A} y + \frac{C}{A} F(t)\text{.}
+y_p = A + Bt + Ct^2\text{.}
 \end{equation*}
 </div>
-<p>One reason to prefer this form is that \(y\) must have the same units as the forcing \(F\text{.}\) Furthermore, we see the undamped natural frequency \(\omega_n=\sqrt{C/A}\text{,}\) and this has units of inverse time only. The same units apply to \(B/A\text{,}\) so we introduce the new dimensionless parameter</p>
+<p>Plugging that into the ODE yields</p>
 <div class="displaymath">
-\begin{equation*}
-Z = \frac{1}{2} \frac{B/A}{\omega_n} = \frac{B}{\sqrt{4AC}}\text{.}
-\end{equation*}
+\begin{align*}
+2C + 4(B+2Ct) + 4(A+Bt+Ct^2) \amp = 8t^2\\
+4C t^2 + (8C+4B) + (2C+4B+4A) \amp = 8t^2\text{.}
+\end{align*}
 </div>
-<p>Now the ODE becomes</p>
-<div class="displaymath">
-\begin{equation*}
-y'' + 2 Z \omega_n y' + \omega_n^2 y = \omega_n^2 F(t)\text{.}
-\end{equation*}
-</div>
-<span class="incontext"><a href="so-applications.html#p-235">in-context</a></span>
+<p>This has to be an identity for all \(t\text{.}\) Matching like powers, we can read off \(C=2\text{,}\) then \(B=-4\text{,}\) and finally \(A=3\text{.}\) This provides us with \(y_p=2t^2+4t+3\text{.}\) (The complete solution would require us to use the characteristic equation to find the null solution as well.)</p>
+<span class="incontext"><a href="so-general-forcing.html#p-235">in-context</a></span>
 </body>
 </html>

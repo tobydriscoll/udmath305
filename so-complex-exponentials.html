@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:08-04:00    *-->
+<!--*    on 2019-03-21T12:07:36-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -119,8 +119,8 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="so-complex-exponentials"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Complex exponentials</span>
 </h2>
-<a href="so-complex-exponentials.html" class="permalink">¶</a><p id="p-164"><em class="emphasis">From 2.2 in the text, but some of this was covered by me in the last chapter. You can skip "\(s^n=1\)".</em></p>
-<p id="p-165">For second-order equations the complex plane becomes indispensible. Recall again the polar form of a complex number,</p>
+<a href="so-complex-exponentials.html" class="permalink">¶</a><p id="p-161"><em class="emphasis">From 2.2 in the text, but some of this was covered by me in the last chapter. You can skip "\(s^n=1\)".</em></p>
+<p id="p-162">For second-order equations the complex plane becomes indispensible. Recall again the polar form of a complex number,</p>
 <div class="displaymath">
 \begin{equation*}
 re^{i\theta} = (r\cos \theta)+i(r\sin \theta)\text{.}
@@ -141,7 +141,7 @@ e^{(a+i \omega)t} =  e^{at} (\cos \omega t + i \sin \omega t)\text{.}\label{eq-s
 <p>Reading from right to left, we have the product of \(e^{i\omega t}\text{,}\) which goes around and around the unit circle at constant speed, and \(e^{at}\text{,}\) which is an amplitude that exponentially grows or decays (or stays fixed if \(a=0\)).</p>
 <article class="example-like" id="example-23"><a knowl="" class="id-ref" refid="hk-example-23"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.2.1</span>
-</h6></a></article><div id="hk-example-23" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-166">Here are some looks at the function \(e^{st}\) for different complex values of \(s\text{.}\) First, when \(s\) is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of the function give cosine and sine, respectively.</p>
+</h6></a></article><div id="hk-example-23" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-163">Here are some looks at the function \(e^{st}\) for different complex values of \(s\text{.}\) First, when \(s\) is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of the function give cosine and sine, respectively.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = 0;  om = 1;
 t = linspace(0, 25, 500);
@@ -161,7 +161,7 @@ set(gca,'dataaspect',[6,1,1])
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_neutral.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-167">If \(\text{Re} s \gt 0\text{,}\) the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of \(s\) controls the frequency or "tightness" of the spiral.</p>
+<p id="p-164">If \(\text{Re} s \gt 0\text{,}\) the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of \(s\) controls the frequency or "tightness" of the spiral.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = 0.01;  om = 2;
 t = linspace(0, 25, 500);
@@ -181,7 +181,7 @@ set(gca,'dataaspect',[6,1,1])
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_grow.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-168">Finally, if \(\text{Re} s \lt 0\text{,}\) the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
+<p id="p-165">Finally, if \(\text{Re} s \lt 0\text{,}\) the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = -0.1;  om = 0.8;
 t = linspace(0, 25, 500);
@@ -201,15 +201,15 @@ set(gca,'dataaspect',[6,1,1])
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_decay.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-169">The upshot is that in the function \(e^{st}\text{,}\) the real part of \(s\) determines exponential growth or decay, and the imaginary part of \(s\) determines frequency of oscillation. All real exponentials, and all harmonic sines and cosines, are just special cases.</p>
-<p id="p-170">Let's look back a moment at \(my''+ky=0\text{.}\) If we now try an exponential solution of the form \(y_n=e^{st}\text{,}\) then we arrive at \((ms^2+k)e^{st}=0\text{,}\) which we can make true if \(s^2=-k/m\text{.}\) This has two roots, \(s=\pm i \omega_n\text{,}\) and we are led to</p>
+<p id="p-166">The upshot is that in the function \(e^{st}\text{,}\) the real part of \(s\) determines exponential growth or decay, and the imaginary part of \(s\) determines frequency of oscillation. All real exponentials, and all harmonic sines and cosines, are just special cases.</p>
+<p id="p-167">Let's look back a moment at \(my''+ky=0\text{.}\) If we now try an exponential solution of the form \(y_n=e^{st}\text{,}\) then we arrive at \((ms^2+k)e^{st}=0\text{,}\) which we can make true if \(s^2=-k/m\text{.}\) This has two roots, \(s=\pm i \omega_n\text{,}\) and we are led to</p>
 <div class="displaymath">
 \begin{equation*}
 y_n = c_1 e^{i\omega_n t} + c_2 e^{-i\omega_n t}\text{.}
 \end{equation*}
 </div>
 <p>A little rearrangement should convince you that this is equivalent to the form we got in the last section, just using complex numbers.</p>
-<p id="p-171">Similarly, for the forced problem \(my''+ky=e^{i\omega t}\text{,}\) we can get a particular solution \(y_p=Y e^{i\omega t}\) if we let \(Y=1/(k-m\omega^2)\text{.}\) This works for both cosine and sine forcing upon taking real and imaginary parts, and we go right back to the formulas from before. Rather than exploring the details here, we will next do it all for a more general problem that includes a \(y'\) term in the ODE.</p></section></div></main>
+<p id="p-168">Similarly, for the forced problem \(my''+ky=e^{i\omega t}\text{,}\) we can get a particular solution \(y_p=Y e^{i\omega t}\) if we let \(Y=1/(k-m\omega^2)\text{.}\) This works for both cosine and sine forcing upon taking real and imaginary parts, and we go right back to the formulas from before. Rather than exploring the details here, we will next do it all for a more general problem that includes a \(y'\) term in the ODE.</p></section></div></main>
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-20T17:31:09-04:00    *-->
+<!--*    on 2019-03-21T12:07:37-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,27 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>A related type of picture emerges from looking at <dfn class="terminology">isoclines</dfn>. An isocline is a curve in the \((t,y)\) plane where \(f(t,y)\) is constant. That is, they are level curves of \(f\text{.}\) Along an isocline, all solution curves have the same slope. The particular case of \(f(t,y)=0\) is a <dfn class="terminology">nullcline</dfn>.</p>
+<p>Let's now make a rather strange-looking shift in how we look at \(dy/dt=f(t,y)\text{.}\) We introduce a new variable \(x(t)\) such that simply \(x(t)=t\text{.}\) This lets us write the pair of equations</p>
+<div class="displaymath">
+\begin{align*}
+\dd{y}{t} \amp = f(x,y)\\
+\dd{x}{t} \amp = 1\text{.}
+\end{align*}
+</div>
+<p>It now becomes interesting to see this as a special case of an autonomous <em class="emphasis">system</em> of two ODEs for two dependent variables:</p>
+<div class="displaymath">
+\begin{align*}
+\dd{x}{t} \amp = F(x,y)\\
+\dd{y}{t} \amp = G(x,y)\text{.}
+\end{align*}
+</div>
+<p>Here we can regard solutions \((x(t),y(t))\) as trajectories or curves in the \((x,y)\) plane, with \(t\) as a parameter rather than an axis in the plot. At any point on one of these curves, the tangent vector is given by</p>
+<div class="displaymath">
+\begin{equation*}
+\left[ \dd{x}{t},\dd{y}{t} \right] = \bigl[ F(x,y),G(x,y) \bigr]\text{.}
+\end{equation*}
+</div>
+<p>This observation allows us to draw a slope field in the \((x,y)\) plane, even without knowing solutions. A slope field does not give much precise information, but it can give important hints about what to expect.</p>
 <span class="incontext"><a href="twod-slope-fields.html#p-299">in-context</a></span>
 </body>
 </html>
