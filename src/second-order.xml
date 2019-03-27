@@ -956,7 +956,7 @@ set(gca,'dataaspect',[6,1,1])
 		</p>
 		<example>
 			<p>
-				Suppose <m>y''+2y'+10y=6</m>. The very particular solution has <m>Y(s)=6/(s^2+2s+10)</m>. We can use the trick of completing the square to write this as <m>Y(s)=6/[(s-1)^2+9]</m>, and thus <m>y(t) = 2e^{-t}\sin(3t)</m>. 
+				Suppose <m>y''+2y'+10y=6</m>. The very particular solution has <m>Y(s)=6/(s^2+2s+10)</m>. We can use the trick of completing the square to write this as <m>Y(s)=6/[(s+1)^2+9]</m>, and thus <m>y(t) = 2e^{-t}\sin(3t)</m>. 
 			</p>
 			<p>
 				Things are much more complicated for a harmonically forced case such as <m>y''+2y'+10y=\cos(2t)</m>. Now 
@@ -965,14 +965,14 @@ set(gca,'dataaspect',[6,1,1])
 				</me>. 
 				It is true that we have a decomposition in the form 
 				<me> 
-					Y(s) = \frac{A+Bs}{s^2+4} + \frac{C+Es}{(s-1)^2+9}
+					Y(s) = \frac{A+Bs}{s^2+4} + \frac{C+Es}{(s+1)^2+9}
 				</me>, 
-				which is eminently invertible. But finding the four coefficients is a pretty heavy lift to do by hand. 
+				which is eminently invertible. But finding the four coefficients is a messy slog by hand. 
 			</p>
 		</example>
 
 		<p> 
-			The problem with Laplace transforms as a one-stop solver is that the particular solution we find is always the "very particular" one that includes some terms from the null solution. Equivalently, the poles of <m>Y(s)</m> include those of the transfer function <em>and</em> the forcing function. It's extra algebra to find the coefficients of the null/transient parts, but that step can't be skipped. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases. 
+			The drawback to Laplace transforms as a one-stop solver is that either we include the initial conditions from the start, which forces us to do more partial fraction decompositions, or else the particular solution we find is always the "very particular" one that includes some terms from the null solution. Mathematically, the poles of <m>Y(s)</m> include those of the transfer function <em>and</em> the forcing function. It's extra algebra to find the coefficients of the null parts, but they affect the coefficients we are interested in. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in many cases. 
 		</p>
 	</subsection>
   </section>
