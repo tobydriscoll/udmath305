@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-27T09:41:22-04:00    *-->
+<!--*    on 2019-03-28T08:44:15-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -59,7 +59,7 @@ MathJax.Hub.Config({
 \newcommand{\bb}{\mathbf{b}}
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bz}{\mathbf{z}}
-\newcommand{\twovec}[2]{\ensuremath{\begin{bmatrix}#1\\#2\end{bmatrix}}}
+\newcommand{\twovec}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -114,17 +114,19 @@ MathJax.Hub.Config({
 <li><a href="twod-slope-fields.html" data-scroll="twod-slope-fields" class="active">Slope fields</a></li>
 <li><a href="twod-fixed-points.html" data-scroll="twod-fixed-points">Linear 2D systems</a></li>
 <li><a href="twod-linearization.html" data-scroll="twod-linearization">Linearization</a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul>
+<h2 class="link"><a href="matrix-algebra.html" data-scroll="matrix-algebra"><span class="codenumber">4</span> <span class="title">Matrix algebra</span></a></h2>
+<ul><li><a href="ma-rows-columns.html" data-scroll="ma-rows-columns">Rows and columns</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="twod-slope-fields"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Slope fields</span>
 </h2>
-<a href="twod-slope-fields.html" class="permalink">¶</a><p id="p-286"><em class="emphasis">From section 3.1.</em></p>
-<p id="p-287">In nonlinear problems of the form \(y'=f(y)\text{,}\) we used the idea of a phase-line diagram to get some insight to the behavior of the solution, in particular with regards to the stability of fixed points where \(f(y)=0\text{.}\) For a more general (nonautonomous) equation of the form \(y'=f(t,y)\text{,}\) we can use a two-dimensional form of this picture called a <dfn class="terminology">slope field</dfn> or <dfn class="terminology">direction field</dfn>.</p>
-<p id="p-288">The idea is to choose a section of the \((t,y)\) plane and evaluate \(f(t,y)\) at a grid of points there. At each such point we thus have the value of \(y'\text{,}\) i.e., the slope of the solution. The value is indicated using an arrow or hash mark whose slope shows the direction and whose length shows the magnitude of \(y'\text{.}\)</p>
+<a href="twod-slope-fields.html" class="permalink">¶</a><p id="p-287"><em class="emphasis">From section 3.1.</em></p>
+<p id="p-288">In nonlinear problems of the form \(y'=f(y)\text{,}\) we used the idea of a phase-line diagram to get some insight to the behavior of the solution, in particular with regards to the stability of fixed points where \(f(y)=0\text{.}\) For a more general (nonautonomous) equation of the form \(y'=f(t,y)\text{,}\) we can use a two-dimensional form of this picture called a <dfn class="terminology">slope field</dfn> or <dfn class="terminology">direction field</dfn>.</p>
+<p id="p-289">The idea is to choose a section of the \((t,y)\) plane and evaluate \(f(t,y)\) at a grid of points there. At each such point we thus have the value of \(y'\text{,}\) i.e., the slope of the solution. The value is indicated using an arrow or hash mark whose slope shows the direction and whose length shows the magnitude of \(y'\text{.}\)</p>
 <article class="example-like" id="twod-ex-slope-fields"><a knowl="" class="id-ref" refid="hk-twod-ex-slope-fields"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.1.1</span> <span class="title">Slope fields for single equations</span>
-</h6></a></article><div id="hk-twod-ex-slope-fields" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-289">Here are slope fields drawn by MATLAB (see main site for code).</p>
+</h6></a></article><div id="hk-twod-ex-slope-fields" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-290">Here are slope fields drawn by MATLAB (see main site for code).</p>
 <div class="displaymath">
 \begin{equation*}
 \dd{y}{t} = y
@@ -135,8 +137,8 @@ MathJax.Hub.Config({
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope1.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-290">You clearly see the instability of \(y=0\text{.}\)</p>
-<div class="displaymath" id="p-291">
+<p id="p-291">You clearly see the instability of \(y=0\text{.}\)</p>
+<div class="displaymath" id="p-292">
 \begin{equation*}
 \dd{y}{t} = -y
 \end{equation*}
@@ -146,8 +148,8 @@ MathJax.Hub.Config({
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope2.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-292">Now \(y=0\) is stable.</p>
-<p id="p-293">(Logistic)</p>
+<p id="p-293">Now \(y=0\) is stable.</p>
+<p id="p-294">(Logistic)</p>
 <div class="displaymath">
 \begin{equation*}
 \dd{y}{t} = 4y-y^2
@@ -158,8 +160,8 @@ MathJax.Hub.Config({
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope3.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-294">The arrows strongly suggest the S-shaped solutions familiar for the logistic equation.</p>
-<p id="p-295">(Time-varying)</p>
+<p id="p-295">The arrows strongly suggest the S-shaped solutions familiar for the logistic equation.</p>
+<p id="p-296">(Time-varying)</p>
 <div class="displaymath">
 \begin{equation*}
 \dd{y}{t} = t^2-y
@@ -170,10 +172,10 @@ MathJax.Hub.Config({
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope4.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-296">There are no longer fixed points/steady states.</p></article></div>
-<p id="p-297">A related type of picture emerges from looking at <dfn class="terminology">isoclines</dfn>. An isocline is a curve in the \((t,y)\) plane where \(f(t,y)\) is constant. That is, they are level curves of \(f\text{.}\) Along an isocline, all solution curves have the same slope. The particular case of \(f(t,y)=0\) is a <dfn class="terminology">nullcline</dfn>.</p>
-<p id="p-298">The isoclines in the autonomous case \(y'=f(y)\) are, quite boringly, all horizontal lines.</p>
-<p id="p-299">Let's now make a rather strange-looking shift in how we look at \(dy/dt=f(t,y)\text{.}\) We introduce a new variable \(x(t)\) such that simply \(x(t)=t\text{.}\) This lets us write the pair of equations</p>
+<p id="p-297">There are no longer fixed points/steady states.</p></article></div>
+<p id="p-298">A related type of picture emerges from looking at <dfn class="terminology">isoclines</dfn>. An isocline is a curve in the \((t,y)\) plane where \(f(t,y)\) is constant. That is, they are level curves of \(f\text{.}\) Along an isocline, all solution curves have the same slope. The particular case of \(f(t,y)=0\) is a <dfn class="terminology">nullcline</dfn>.</p>
+<p id="p-299">The isoclines in the autonomous case \(y'=f(y)\) are, quite boringly, all horizontal lines.</p>
+<p id="p-300">Let's now make a rather strange-looking shift in how we look at \(dy/dt=f(t,y)\text{.}\) We introduce a new variable \(x(t)\) such that simply \(x(t)=t\text{.}\) This lets us write the pair of equations</p>
 <div class="displaymath">
 \begin{align*}
 \dd{y}{t} \amp = f(x,y)\\
@@ -196,7 +198,7 @@ MathJax.Hub.Config({
 <p>This observation allows us to draw a slope field in the \((x,y)\) plane, even without knowing solutions. A slope field does not give much precise information, but it can give important hints about what to expect.</p>
 <article class="example-like" id="twod-ex-slope-field-system"><a knowl="" class="id-ref" refid="hk-twod-ex-slope-field-system"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">3.1.2</span> <span class="title">Slope fields for a system of two equations</span>
-</h6></a></article><div id="hk-twod-ex-slope-field-system" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-300">Here is a slope field for the linear ODE system</p>
+</h6></a></article><div id="hk-twod-ex-slope-field-system" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-301">Here is a slope field for the linear ODE system</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = -y\\
@@ -210,7 +212,7 @@ slopefieldxy(F,G,[-2 2],[-2 2])
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope_2D_1.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-301">Here is a slope field in the first quadrant for the nonlinear system</p>
+<p id="p-302">Here is a slope field in the first quadrant for the nonlinear system</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = 3x - \frac{1}{2}xy\\
@@ -225,7 +227,7 @@ slopefieldxy(F,G,[0 10],[0 12])
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_slope_2D_2.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-302">There is another way to look at the two-equation system \(x'=F(x,y)\text{,}\) \(y'=G(x,y)\text{.}\) If we define a vector-valued function \(\mathbf{u}(t)\) by \(u_1=x,\, u_2=y,\) and we define the vector field \(\mathbf{f}(\mathbf{u})\) with components</p>
+<p id="p-303">There is another way to look at the two-equation system \(x'=F(x,y)\text{,}\) \(y'=G(x,y)\text{.}\) If we define a vector-valued function \(\mathbf{u}(t)\) by \(u_1=x,\, u_2=y,\) and we define the vector field \(\mathbf{f}(\mathbf{u})\) with components</p>
 <div class="displaymath">
 \begin{align*}
 f_1(\mathbf{u}) \amp = F(u_1,u_2)\\

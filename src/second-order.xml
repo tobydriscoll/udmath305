@@ -956,18 +956,44 @@ set(gca,'dataaspect',[6,1,1])
 		</p>
 		<example>
 			<p>
-				Suppose <m>y''+2y'+10y=6</m>. The very particular solution has <m>Y(s)=6/(s^2+2s+10)</m>. We can use the trick of completing the square to write this as <m>Y(s)=6/[(s+1)^2+9]</m>, and thus <m>y(t) = 2e^{-t}\sin(3t)</m>. 
+				Suppose <m>y''+2y'+10y=6\delta(t-1)</m>. The very particular solution has 
+				<me>
+					Y(s) = \frac{6e^{-s}}{s^2+2s+10}
+				</me>.
+				We can use the trick of completing the square to write this as 
+				<me>
+					Y(s) = e^{-s} \frac{6}{(s+1)^2+9} = e^{-s} F(s)
+				</me>, 
+				where we can now see that <m>f(t) = 2e^{-t}\sin(3t)</m>. By the shift theorem, <m>y(t)=H(t-1)f(t-1)</m>. 
 			</p>
 			<p>
-				Things are much more complicated for a harmonically forced case such as <m>y''+2y'+10y=\cos(2t)</m>. Now 
+				Now consider <m>y''+2y'+10y=40</m>. We get 
+				<me>
+					Y(s) = \frac{40}{s(s^2+2s+10)} = \frac{40}{s[(s+1)^2+9]}
+				</me>. 
+				We decompose into 
+				<me>
+					Y(s) = \frac{A}{s} + \frac{3B+C(s+1)}{(s+1)^2+9}
+				</me>. 
+				Once we find the constants, we know that the inverse of this is <m>y(t) = A + Be^{-t}\sin(3t) + C e^{-t}\cos(3t)</m>.  To find the constants we clear denominators and get 
+				<me> 
+					40 = A[(s+1)^2+9] + (3B+Cs+C) s
+				</me>.  
+				With <m>s=0</m> we conclude that <m>A=4</m>. From this we find that <m>40 = Cs^2+(3B+C)s + 4s^2 +8s + 40</m>, which tells us <m>C=-4</m> and <m>B=-4/3</m>. Hence
+				<me>
+					y(t) = 4 - \frac{4}{3} e^{-t} \sin(3t) - 4 e^{-t} \cos(3t)
+				</me>.
+			</p>
+			<p>
+				For a harmonically forced case such as <m>y''+2y'+10y=\cos(2t)</m>, we have 
 				<me>
 					Y(s) = \frac{s}{(s^2+4)(s^2+2s+10)}
 				</me>. 
-				It is true that we have a decomposition in the form 
+				We could find a decomposition in the form 
 				<me> 
-					Y(s) = \frac{A+Bs}{s^2+4} + \frac{C+Es}{(s+1)^2+9}
+					Y(s) = \frac{2A+Bs}{s^2+4} + \frac{3C+E(s+1)}{(s+1)^2+9}
 				</me>, 
-				which is eminently invertible. But finding the four coefficients is a messy slog by hand. 
+				which is eminently invertible. The details are left to the proverbial reader.
 			</p>
 		</example>
 

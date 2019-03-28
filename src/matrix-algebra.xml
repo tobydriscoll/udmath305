@@ -6,11 +6,25 @@
 
 <section xml:id="ma-rows-columns">
     <title>Rows and columns</title>
+    <introduction>
+        <p>
+            Our bread and butter in this chapter is a linear system of <m>n</m> linear equations in <m>n</m> variables, 
+            <md>
+                <mrow>a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n \amp = b_1 </mrow>
+                <mrow>a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n \amp = b_2 </mrow>
+                <mrow>\amp \vdots </mrow>
+                <mrow>a_{n1} x_1 + a_{n2} x_2 + \cdots + a_{nn} x_n \amp = b_n </mrow>
+            </md>, 
+            which we can summarize with an <m>n\times n</m> matrix <m>\bA</m> and an <m>n\times 1</m> vector <m>\bb</m>. Let's start slowly, with some examples in <m>n=2</m> dimensions.
+        </p>
+    </introduction>
+    <subsection>
+    <title>Nonparallel lines</title>
     <p>
         We can set the stage for matrices using a simple set of two linear equations in two variables, such as 
         <md>
-            <mrow>3x \amp + \amp y  \amp = 7</mrow>
-            <mrow>-x \amp + 3y \amp = 1</mrow>
+            <mrow>3\amp x  + \amp y   = \amp 7</mrow>
+            <mrow>-\amp x  + \amp 3y  = \amp 1</mrow>
         </md>. 
         This system happens to have the unique solution <m>x=2</m>, <m>y=1</m>. We can summarize it in terms of a coefficient matrix
         <me>
@@ -49,6 +63,9 @@ xlabel('x'), ylabel('y')
         </program>
         <image source="matlab/ma_rc_rows.svg"/>	  
     </sidebyside>
+    <p>
+        It's clear that if we were to choose a different vector <m>\bb</m>, the lines in the picture would keep their same slopes and just move up and down. Thus we expect one unique solution (intersection) for any given <m>\bb</m>.
+    </p>
 
     <p> 
         The column viewpoint is less familiar. We interpret the system as an equivalent statement about plane vectors:
@@ -81,12 +98,18 @@ xlabel('b_1'), ylabel('b_2')
         </program>
         <image source="matlab/ma_rc_cols.svg"/>	  
     </sidebyside>
+    <p>
+        We might think of solving the system in this picture as expressing <m>\bb</m> in a different coordinate system defined by the columns of <m>\bA</m>. In fact, it's just a rotation and scaling of the default Cartesian system, so again from this perspective we expect a unique result for each <m>\bb</m>.
+    </p>
 
+    </subsection>
+    <subsection>
+    <title>Parallel lines</title>
     <p> 
         Another instructive case is the system 
         <md>
-            <mrow>x \amp + \amp 2 y  \amp = 1</mrow>
-            <mrow>-2 x \amp  - 4 y \amp = -1</mrow>
+            <mrow>\amp x  \amp+  2  y   = \amp 1</mrow>
+            <mrow>\amp -2  x   \amp- 4  y  = \amp -1</mrow>
         </md>.  
     </p>
     <sidebyside>
@@ -113,13 +136,25 @@ xlabel('x'), ylabel('y')
         The row picture makes it clear that we are seeking the intersection of two distinct parallel lines, an enterprise that is bound to disappoint us. Likewise, the column picture (not given) is about finding combinations of the column vectors <m>\twovec{1}{-2}</m> and <m>\twovec{2}{-4}</m>. These too are parallel, so all of their linear combinations lie on a single line through the origin. The given vector <m>\bb=\twovec{1}{1}</m> is not on this line, so no solution exists. 
     </p>
     <p> 
-        Of course, a different vector on the right-hand side such as <m>\bb=\twovec{-3}{6}</m> does lie on this line, and we can solve the system in this case. In fact, there are infinitely many ways to do it:
-        <me>
-            \twovec{-3}{6} = -3 \twovec{1}{-2} = \twovec{1}{-2} - 2\twovec{2}{-4} = \cdots.
-        </me>
-        In this situation, the corresponding row picture still has two parallel lines, but they conincide, indicating the infinite set of solutions.
+        Of course, a different vector on the right-hand side such as <m>\bb=\twovec{-3}{6}</m> does lie on this line, and we <em>can</em> solve the system in this case. In fact, there are infinitely many ways to do it:
+        <md>
+            <mrow>(1+2c) \twovec{1}{-2} - (2+c)\twovec{2}{-4} \amp = \left( \twovec{1}{-2} - 2 \twovec{2}{-4}  \right) + c \left( 2\twovec{1}{-2} - \twovec{2}{-4}  \right) </mrow>
+            <mrow>\amp = \twovec{-3}{6} + c\cdot \textbf{0}</mrow>   
+        </md>.
+        In this situation, the corresponding row picture still has two parallel lines, but they conincide, also indicating the infinite set of solutions. For parallel lines, you can have zero or infinitely many solutions; there is nothing in between. 
     </p>
 
+    </subsection>
+    <subsection>
+    <title>Singular matrices</title>
+    <p>
+        Although we have only examined two two-dimensional cases, they contain most of what we will see in general. A system of <m>n</m> linear equations in <m>n</m> variables with a particular matrix <m>\bA</m> will either have a unique solution for every choice of <m>\bb</m>, or it will have the possibility of no solution or infinitely many solutions depending on <m>\bb</m>. In the latter case we say the matrix <m>\bA</m> is <term> singular</term>, and in the former case we say it is <term>nonsingular</term>. (The term "invertible" is a synonym of nonsingular.) 
+    </p>
+    <p>
+        Furthermore, the singular case has a familiar pattern to it. If there is a linear combination of the columns of <m>\bA</m> that gives a zero vector--that is, if the linear system has a null solution--then any multiple of that null solution can be added to a particular solution in order to get another particular solution. 
+    </p>
+ 
+    </subsection>
  </section>
 
 </chapter>

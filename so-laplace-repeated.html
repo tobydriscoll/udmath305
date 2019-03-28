@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-03-27T09:41:22-04:00    *-->
+<!--*    on 2019-03-28T08:44:15-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -59,7 +59,7 @@ MathJax.Hub.Config({
 \newcommand{\bb}{\mathbf{b}}
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bz}{\mathbf{z}}
-\newcommand{\twovec}[2]{\ensuremath{\begin{bmatrix}#1\\#2\end{bmatrix}}}
+\newcommand{\twovec}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -114,7 +114,9 @@ MathJax.Hub.Config({
 <li><a href="twod-slope-fields.html" data-scroll="twod-slope-fields">Slope fields</a></li>
 <li><a href="twod-fixed-points.html" data-scroll="twod-fixed-points">Linear 2D systems</a></li>
 <li><a href="twod-linearization.html" data-scroll="twod-linearization">Linearization</a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul>
+<h2 class="link"><a href="matrix-algebra.html" data-scroll="matrix-algebra"><span class="codenumber">4</span> <span class="title">Matrix algebra</span></a></h2>
+<ul><li><a href="ma-rows-columns.html" data-scroll="ma-rows-columns">Rows and columns</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="so-laplace-repeated"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.9</span> <span class="title">Repeated and complex poles</span>
@@ -188,21 +190,57 @@ e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{,}
 <p>In similar fashion we can show that \(e^{at} \sin( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion. However, the details can get pretty intense for hand calculation.</p>
 <article class="example-like" id="example-40"><a knowl="" class="id-ref" refid="hk-example-40"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.9.2</span>
-</h6></a></article><div id="hk-example-40" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-270">Suppose \(y''+2y'+10y=6\text{.}\) The very particular solution has \(Y(s)=6/(s^2+2s+10)\text{.}\) We can use the trick of completing the square to write this as \(Y(s)=6/[(s+1)^2+9]\text{,}\) and thus \(y(t) = 2e^{-t}\sin(3t)\text{.}\)</p>
-<p id="p-271">Things are much more complicated for a harmonically forced case such as \(y''+2y'+10y=\cos(2t)\text{.}\) Now</p>
+</h6></a></article><div id="hk-example-40" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-270">Suppose \(y''+2y'+10y=6\delta(t-1)\text{.}\) The very particular solution has</p>
+<div class="displaymath">
+\begin{equation*}
+Y(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
+\end{equation*}
+</div>
+<p>We can use the trick of completing the square to write this as</p>
+<div class="displaymath">
+\begin{equation*}
+Y(s) = e^{-s} \frac{6}{(s+1)^2+9} = e^{-s} F(s)\text{,}
+\end{equation*}
+</div>
+<p>where we can now see that \(f(t) = 2e^{-t}\sin(3t)\text{.}\) By the shift theorem, \(y(t)=H(t-1)f(t-1)\text{.}\)</p>
+<p id="p-271">Now consider \(y''+2y'+10y=40\text{.}\) We get</p>
+<div class="displaymath">
+\begin{equation*}
+Y(s) = \frac{40}{s(s^2+2s+10)} = \frac{40}{s[(s+1)^2+9]}\text{.}
+\end{equation*}
+</div>
+<p>We decompose into</p>
+<div class="displaymath">
+\begin{equation*}
+Y(s) = \frac{A}{s} + \frac{3B+C(s+1)}{(s+1)^2+9}\text{.}
+\end{equation*}
+</div>
+<p>Once we find the constants, we know that the inverse of this is \(y(t) = A + Be^{-t}\sin(3t) + C e^{-t}\cos(3t)\text{.}\)  To find the constants we clear denominators and get</p>
+<div class="displaymath">
+\begin{equation*}
+40 = A[(s+1)^2+9] + (3B+Cs+C) s\text{.}
+\end{equation*}
+</div>
+<p>With \(s=0\) we conclude that \(A=4\text{.}\) From this we find that \(40 = Cs^2+(3B+C)s + 4s^2 +8s + 40\text{,}\) which tells us \(C=-4\) and \(B=-4/3\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = 4 - \frac{4}{3} e^{-t} \sin(3t) - 4 e^{-t} \cos(3t)\text{.}
+\end{equation*}
+</div>
+<p id="p-272">For a harmonically forced case such as \(y''+2y'+10y=\cos(2t)\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 Y(s) = \frac{s}{(s^2+4)(s^2+2s+10)}\text{.}
 \end{equation*}
 </div>
-<p>It is true that we have a decomposition in the form</p>
+<p>We could find a decomposition in the form</p>
 <div class="displaymath">
 \begin{equation*}
-Y(s) = \frac{A+Bs}{s^2+4} + \frac{C+Es}{(s+1)^2+9}\text{,}
+Y(s) = \frac{2A+Bs}{s^2+4} + \frac{3C+E(s+1)}{(s+1)^2+9}\text{,}
 \end{equation*}
 </div>
-<p>which is eminently invertible. But finding the four coefficients is a messy slog by hand.</p></article></div>
-<p id="p-272">The drawback to Laplace transforms as a one-stop solver is that either we include the initial conditions from the start, which forces us to do more partial fraction decompositions, or else the particular solution we find is always the "very particular" one that includes some terms from the null solution. Mathematically, the poles of \(Y(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. It's extra algebra to find the coefficients of the null parts, but they affect the coefficients we are interested in. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in many cases.</p></section></section></div></main>
+<p>which is eminently invertible. The details are left to the proverbial reader.</p></article></div>
+<p id="p-273">The drawback to Laplace transforms as a one-stop solver is that either we include the initial conditions from the start, which forces us to do more partial fraction decompositions, or else the particular solution we find is always the "very particular" one that includes some terms from the null solution. Mathematically, the poles of \(Y(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. It's extra algebra to find the coefficients of the null parts, but they affect the coefficients we are interested in. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in many cases.</p></section></section></div></main>
 </div>
 </body>
 </html>
