@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-04-03T10:48:49-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear ODE systems</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="mathbook-delaware.css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(  \newcommand{\dd}[2]{\frac{d #1}{d #2}}
+  \renewcommand{\Re}{\text{Re}}
+  \renewcommand{\Im}{\text{Im}}
+  \newcommand{\Span}[1]{\langle#1\rangle}
+  \newcommand{\spr}[1]{^{(#1)}}
+  \newcommand{\dd}[2]{\frac{d #1}{d #2}}
+  \newcommand{\ddd}[2]{\frac{d^2 #1}{d #2^2}}
+  \newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+  \newcommand{\norm}[1]{\left\| #1 \right\|}
+  \newcommand{\det}{\operatorname{det}}
+  \newcommand{\bzero}{\boldsymbol{0}}
+  \newcommand{\bu}{\mathbf{u}}
+  \newcommand{\bA}{\mathbf{A}}
+  \newcommand{\bB}{\mathbf{B}}
+  \newcommand{\bC}{\mathbf{C}}
+ \newcommand{\bD}{\mathbf{D}}
+  \newcommand{\bI}{\mathbf{I}}
+  \newcommand{\bV}{\mathbf{V}}
+\newcommand{\bff}{\mathbf{f}}
+  \newcommand{\bx}{\mathbf{x}}
+  \newcommand{\by}{\mathbf{y}}
+  \newcommand{\bb}{\mathbf{b}}
+  \newcommand{\bu}{\mathbf{u}}
+  \newcommand{\bv}{\mathbf{v}}
+  \newcommand{\bw}{\mathbf{w}}
+  \newcommand{\bc}{\mathbf{c}}
+  \newcommand{\bz}{\mathbf{z}}
+  \newcommand{\twovec}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
+  \newcommand{\twodet}[4]{\begin{vmatrix}#1 \amp #2\\#3 \amp #4\end{vmatrix}}
+  \newcommand{\twomat}[4]{\begin{bmatrix}#1 \amp #2\\#3 \amp #4\end{bmatrix}}
+  \newcommand{\twodiag}[2]{\begin{bmatrix} #1 \amp 0 \\ 0 \amp #2 \end{bmatrix}}
+  \newcommand{\fourdiag}[3]{\begin{bmatrix} #1 \amp  \amp \amp  \\                    \amp #2 \amp  \amp  \\  \amp \amp \ddots \amp \\  \amp  \amp  \amp #3 \end{bmatrix}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
+<p class="byline">Toby Driscoll</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-30.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="matrix-algebra.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-32.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-30.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="matrix-algebra.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-32.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></h2>
+<ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+<h2 class="link"><a href="first-order-ode.html" data-scroll="first-order-ode"><span class="codenumber">1</span> <span class="title">First-order ODEs</span></a></h2>
+<ul>
+<li><a href="linearity.html" data-scroll="linearity">Introduction</a></li>
+<li><a href="exponentials.html" data-scroll="exponentials">Exponentials</a></li>
+<li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
+<li><a href="first-linear-const.html" data-scroll="first-linear-const">Linear, constant-coefficients</a></li>
+<li><a href="complex-exp.html" data-scroll="complex-exp">Using complex numbers</a></li>
+<li><a href="variable-coeffs.html" data-scroll="variable-coeffs">Linear, variable coefficient</a></li>
+<li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
+<li><a href="steady-states.html" data-scroll="steady-states">Steady states</a></li>
+<li><a href="logistic-equation.html" data-scroll="logistic-equation">Logistic equation</a></li>
+<li><a href="separable.html" data-scroll="separable">Separable equations</a></li>
+<li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
+</ul>
+<h2 class="link"><a href="second-order-ode.html" data-scroll="second-order-ode"><span class="codenumber">2</span> <span class="title">Second-order ODEs</span></a></h2>
+<ul>
+<li><a href="so-simple-harmonic.html" data-scroll="so-simple-harmonic">Simple harmonic motion</a></li>
+<li><a href="so-complex-exponentials.html" data-scroll="so-complex-exponentials">Complex exponentials</a></li>
+<li><a href="so-constant-coefficients.html" data-scroll="so-constant-coefficients">Constant coefficients</a></li>
+<li><a href="so-forced-oscillators.html" data-scroll="so-forced-oscillators">Exponentially forced oscillators</a></li>
+<li><a href="so-higher-order.html" data-scroll="so-higher-order">Higher-order ODEs</a></li>
+<li><a href="so-applications.html" data-scroll="so-applications">Applications of oscillators</a></li>
+<li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
+<li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
+<li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
+<li><a href="so-convolutions.html" data-scroll="so-convolutions">Convolutions</a></li>
+</ul>
+<h2 class="link"><a href="two-dimensional-systems.html" data-scroll="two-dimensional-systems"><span class="codenumber">3</span> <span class="title">2D systems</span></a></h2>
+<ul>
+<li><a href="twod-slope-fields.html" data-scroll="twod-slope-fields">Slope fields</a></li>
+<li><a href="twod-fixed-points.html" data-scroll="twod-fixed-points">Linear 2D systems</a></li>
+<li><a href="twod-linearization.html" data-scroll="twod-linearization">Linearization</a></li>
+</ul>
+<h2 class="link"><a href="matrix-algebra.html" data-scroll="matrix-algebra"><span class="codenumber">4</span> <span class="title">Matrix algebra</span></a></h2>
+<ul>
+<li><a href="ma-rows-columns.html" data-scroll="ma-rows-columns">Rows and columns</a></li>
+<li><a href="ma-elimination.html" data-scroll="ma-elimination">Elimination for linear systems</a></li>
+<li><a href="ma-multiplication.html" data-scroll="ma-multiplication">Multiplying matrices and vectors</a></li>
+<li><a href="ma-inverses.html" data-scroll="ma-inverses">Matrix inverses</a></li>
+<li><a href="section-29.html" data-scroll="section-29">Eigenvalues</a></li>
+<li><a href="section-30.html" data-scroll="section-30">Diagonalization</a></li>
+<li><a href="section-31.html" data-scroll="section-31" class="active">Linear ODE systems</a></li>
+<li><a href="section-32.html" data-scroll="section-32">Matrix exponential</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-31"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.7</span> <span class="title">Linear ODE systems</span>
+</h2>
+<section class="introduction" id="introduction-20"><p id="p-416"><em class="emphasis">From section 6.3.</em></p>
+<p id="p-417">Now we are ready to take on \(\by'=\bA\by\text{,}\) at least in the diagonalizable and defective \(2\times 2\) cases.</p>
+<p id="p-418">In the previous section I argued that if \(\bA=\bV\bD\bV^{-1}\text{,}\) then we can define \(\bu=\bV^{-1}\by\) and get the diagonal system \(\bu'=\bD\bu\text{.}\) This diagonal system is trivial to solve,</p>
+<div class="displaymath">
+\begin{equation*}
+\bu(t) = \begin{bmatrix} 
+e^{\lambda_1 t} u_1(0) \\ 
+e^{\lambda_2 t} u_2(0) \\ 
+\vdots \\
+e^{\lambda_n t} u_n(0)  
+\end{bmatrix} \text{.}
+\end{equation*}
+</div>
+<p>In terms of the original variable \(\by=\bV\bu\text{,}\) this solution is</p>
+<div class="displaymath">
+\begin{equation*}
+\by(t) = \bV \begin{bmatrix} 
+e^{\lambda_1 t} c_1 \\ 
+e^{\lambda_2 t} c_2 \\ 
+\vdots \\
+e^{\lambda_n t} c_n  
+\end{bmatrix}
+= c_1 e^{\lambda_1 t} \bv_1 + \cdots + c_n e^{\lambda_n t} \bv_n\text{,}
+\end{equation*}
+</div>
+<p>where we defined \(c_i=u_i(0)\) for all \(i\text{.}\) This is one form of the general solution.</p>
+<article class="example-like" id="example-53"><a knowl="" class="id-ref" refid="hk-example-53"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.7.1</span>
+</h6></a></article><div id="hk-example-53" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-419">In an earlier section we found the eigenstuff for</p>
+<div class="displaymath">
+\begin{equation*}
+\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
+\end{equation*}
+</div>
+<p>as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This means the general solution of \(\by'=\bA\by\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\by(t) = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
+= \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
+\end{equation*}
+</div></article></div></section><section class="subsection" id="subsection-66"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Complex eigenvalues</span>
+</h3>
+<p id="p-420">Nothing new happens for complex eigenvalues. You just need to use complex arithmetic.</p>
+<article class="example-like" id="example-54"><a knowl="" class="id-ref" refid="hk-example-54"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.7.2</span>
+</h6></a></article><div id="hk-example-54" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-421">Let's look at the solution of</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{y}' = \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix} \mathbf{y}\text{.}
+\end{equation*}
+</div>
+<p>The eigenvalues are \(1\pm i\text{,}\) with eigenvectors \(\twovec{1}{2\mp i}\text{.}\) So one form of the general solution is</p>
+<div class="displaymath">
+\begin{equation*}
+c_1 e^{t} e^{it} \twovec{1}{2-i} + c_2 e^{t} e^{-it} \twovec{1}{2+i}\text{.}
+\end{equation*}
+</div>
+<p>With some work, we could convert this to a purely real form. Or, suppose we also have the initial condition \(\by(0)=\twovec{1}{-2}\text{.}\) This gives</p>
+<div class="displaymath">
+\begin{align*}
+c_1 \twovec{1}{2-i} + c_2 \twovec{1}{2+i} \amp = \twovec{1}{-2}\\
+\twomat{1}{1}{2-i}{2+i} \twovec{c_1}{c_2} \amp = \twovec{1}{-2}\text{.}
+\end{align*}
+</div>
+<p>Using Cramer's rule, we get</p>
+<div class="displaymath">
+\begin{align*}
+c_1 \amp = \frac{ \twodet{1}{1}{-2}{2+i} }{ \twodet{1}{1}{2-i}{2+i} } = \frac{4+i}{2i}=\frac{-1-4i}{2}\\
+y \amp = \frac{ \twodet{1}{1}{2-i}{-2} }{ \twodet{1}{1}{2-i}{2+i} } = \frac{-4+i}{2i}=\frac{-1+4i}{2}\text{.}
+\end{align*}
+</div></article></div></section><section class="subsection" id="subsection-67"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.2</span> <span class="title">Defective \(2\times 2\)</span>
+</h3>
+<p id="p-422">In the case \(n=2\text{,}\) \(\lambda_1=\lambda_2=\lambda\text{,}\) and \(\bA\) is not diagonal, there is no diagonalization possible. Every eigenvalue does have at least one eigenvector, so there is a \(\bv\) with \(\bA\bv = \lambda \bv\text{,}\) and \(c_1 e^{\lambda t}\bv\) is still a null solution.</p>
+<p id="p-423">Based on our experiences to date, we try an ODE solution of the form \(te^{\lambda t} \mathbf{w}\) for an unknown \(\bw\text{.}\) We plug this into the ODE and get</p>
+<div class="displaymath">
+\begin{equation*}
+(\lambda t e^{\lambda t} + e^{\lambda t}) \mathbf{w} = t e^{\lambda t} \mathbf{A} \mathbf{w}\text{.}
+\end{equation*}
+</div>
+<p>We don't have enough terms to balance both the \(t^0\) and \(t^1\) groups. A better guess is</p>
+<div class="displaymath">
+\begin{equation*}
+te^{\lambda t} \mathbf{v} + e^{\lambda t} \mathbf{w}\text{.}
+\end{equation*}
+</div>
+<p>Then</p>
+<div class="displaymath">
+\begin{equation*}
+(\lambda t e^{\lambda t} + e^{\lambda t}) \mathbf{v} + \lambda e^{\lambda t} \mathbf{w} = t e^{\lambda t} \mathbf{A} \mathbf{v} + e^{\lambda t} \mathbf{A} \mathbf{w}\text{.}
+\end{equation*}
+</div>
+<p>Grouping together like terms, we have</p>
+<div class="displaymath">
+\begin{equation*}
+t( \mathbf{A} \mathbf{v} - \lambda \mathbf{v} ) + (  \mathbf{A} \mathbf{w} - \lambda \mathbf{w} ) = \mathbf{v}.
+\end{equation*}
+</div>
+<p>The term multiplying \(t\) is zero, by the eigenvector property. So we need only requiire</p>
+<div class="displaymath">
+\begin{equation*}
+(  \mathbf{A} - \lambda \mathbf{I} )  \mathbf{w} = \mathbf{v} \text{,}
+\end{equation*}
+</div>
+<p>which can be interpreted as a definition of a <dfn class="terminology">generalized eigenvector</dfn> \(\bw\text{.}\) Even though the matrix here is singular, a solution for \(\bw\) is always possible.</p>
+<article class="example-like" id="example-55"><a knowl="" class="id-ref" refid="hk-example-55"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.7.3</span>
+</h6></a></article><div id="hk-example-55" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-424">Let us find the general solution of</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{y}' = \begin{bmatrix} -1 \amp 1 \\ 0 \amp -1 \end{bmatrix} \mathbf{y}.
+\end{equation*}
+</div>
+<p>You can easily check that \(\lambda=-1\) is a double eigenvalue, and that \([1,0]\) is an eigenvector. The system for the generalized eigenvector is</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix} \mathbf{w} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>The first row of this system tells us \(w_2=1\text{.}\) The second row makes no restrictions. We may as well let \(w_1=0\text{,}\) since it's not forbidden.</p>
+<p id="p-425">The general solution is therefore</p>
+<div class="displaymath">
+\begin{equation*}
+c_1 e^{-t} \mathbf{v} + c_2 e^{-t}(t\mathbf{v}+\mathbf{w})
+= c_1 e^{-t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} t \\ 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div></article></div></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.3</span> <span class="title">Second-order equations</span>
+</h3>
+<p id="p-426">Time to tie up one small loose end. What does the eigenvalue approach tell us about our beloved second-order equation, \(ay''+by'+cy=0\text{?}\) Remember, we define \(x_1=y\text{,}\) \(x_2=y'\) to get the companion matrix \(\twomat{0}{1}{-c/a}{-b/a}\text{.}\) The characteristic polynomial of this matrix is</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda^2 + \frac{b}{a}\lambda + \frac{c}{a}\text{,}
+\end{equation*}
+</div>
+<p>which is just \(1/a\) times what we called the characteristic polynomial of the original problem. So, what we called characteristic roots back then were really eigenvalues, and we wrote out the solutions using only the first component \(x_1\text{.}\)</p></section></section></div></main>
+</div>
+</body>
+</html>

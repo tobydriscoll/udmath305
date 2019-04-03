@@ -157,4 +157,862 @@ xlabel('x'), ylabel('y')
     </subsection>
  </section>
 
+ <section xml:id="ma-elimination">
+    <title>Elimination for linear systems</title>
+
+    <introduction>
+       <p><em>From Section 4.2.</em></p>
+        <p>
+          Whenever we are faced with a linear system of <m>n</m> equations in <m>n</m> variables, we can solve it by transforming it step by step into an equivalent system that is easier to solve. This process is most transparent for the two-dimensional case, so we start there.           
+        </p>
+    </introduction>
+
+    <subsection>
+    <title>Two variables</title>
+    <p>
+        Consider the system
+        <md>
+            <mrow>-x + 3y \amp = 1 </mrow>
+            <mrow>3x + y \amp = 7</mrow>
+        </md>.  
+        We can use the first equation to eliminate <m>x</m> from the second. Specifically, we multiply the first equation by <m>3</m> and add it to the second to get the system
+        <md>
+            <mrow>-x + 3y \amp = 1 </mrow>
+            <mrow> 10 y \amp = 10</mrow>
+        </md>.  
+        It's now trivial to solve the second equation for <m>y=1</m>. With that known, the first equation can be solved to find <m>x=-(1-3)=2</m>.  
+    </p>
+    <p>
+        The key to making the elimination work was the zero we forced into the second row of matrix representing the second system:
+        <me>
+            \begin{bmatrix} 
+            -1 \amp 3 \\ 0 \amp 10
+            \end{bmatrix}
+        </me>. 
+        This matrix has what we call and <term>upper triangular</term> structure. That structure is our goal, because then we can sort of unzip the solution by starting at the bottom and working our way up. 
+    </p>
+     </subsection>
+
+     <subsection>
+         <title>More variables</title>
+         <p>
+             Here's a system of four equations:
+             <md>
+                 <mrow>2x_1 + 0x_2 + 4x_3 + 3x_4 \amp = 4</mrow>
+                 <mrow>-2x_1 + 0x_2 + 2x_3 - 13x_4 \amp = 40</mrow>
+                 <mrow>x_1 + 15x_2 + 2x_3 - 4.5x_4 \amp = 29</mrow>
+                 <mrow>-4x_1 + 5x_2 - 7x_3 - 10x_4 \amp = 9</mrow>
+             </md>. 
+             To begin with, all we really care about are the numbers (coefficients) in these equations. Everything else always remains the same. Let us define
+            <me>
+                \bA = 
+                \begin{bmatrix}
+                2 \amp 0 \amp 4 \amp 3 \\
+                -2 \amp 0 \amp 2 \amp -13 \\
+                1 \amp 15 \amp 2 \amp -4.5 \\
+                -4 \amp 5 \amp -7 \amp -10   
+                \end{bmatrix},
+                \qquad \bb = 
+                \begin{bmatrix} 4\\ 40\\ 29 \\9 \end{bmatrix}
+            </me>. 
+            Now we show how elimination proceeds on this matrix, but <url href="elimination.html">using matlab to handle the arithmetic</url> for us. 
+         </p>
+         <p>
+             To summarize, we proceed through the rows <m>1,2,\ldots,n-1</m>. For row <m>i</m> we seek to put zeros below the <term>pivot element</term> in the <m>(i,i)</m> position. To do that we choose a multiplier for each <m>k>i</m> and add that multiple of row <m>i</m> to row <m>k</m>. The one thing that can stop us is if the pivot element is zero, because we can't find multipliers. In that event we swap row <m>i</m> with a lower row. After the eliminations are done, the system is in upper triangular form and can be solved by backward substitution.  
+         </p>
+     </subsection>
+
+     <subsection>
+         <title>Breakdown <m>=</m> singularity</title>
+         <p>
+             We have left one logical possibility unaddressed. What if we not only have a zero pivot, but all the candidate pivots below it are zero too? As a practical matter, this form of "breakdown" is benign; there is no need to eliminate the current variable because it is already eliminated! We can move down to the next row in the elimination process. To put it another way, we will end up with an upper triangular matrix with a zero in some <m>(i,i)</m> position (on the <term>diagonal</term> of the matrix). 
+         </p>
+         <p>
+             But there is a crucial theoretical implication too.            
+         </p>
+         <theorem>
+             <title>Elimination breakdown equals singularity</title>
+             <p>
+                 The elimination process is unable to find a nonzero pivot at some point in the algorithm if and only if the original system matrix is singular. 
+             </p> 
+         </theorem>
+        <p>
+            This behavior is manifested once we move on to the backward substitution phase. If some <m>(i,i)</m> element is zero in the triangular matrix, then we will be unable to solve for <m>x_i</m> when its turn comes. At that point, either the system holds true regardless of the value of <m>x_i</m> (which makes it a "free" variable), or the system is inconsistent and has no solution. 
+        </p>
+     </subsection>
+     <subsection>
+     <title>Cramer's rule</title>
+     <p>
+         There is a shortcut to avoid the effort of elimination for small systems. It's easiest to show and use in the case of two variables, such as 
+        <md>
+            <mrow>-x + 3y \amp = 1 </mrow>
+            <mrow>3x + y \amp = 7</mrow>
+        </md>.  
+        Cramer's rule says
+        <md>
+            <mrow>x \amp = \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10}</mrow>
+           <mrow>y \amp = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10}</mrow>            
+        </md>.
+     </p>
+     </subsection>
+ </section>
+
+<section xml:id="ma-multiplication">
+    <title>Multiplying matrices and vectors</title>
+    <introduction>
+        <p>From section 4.3 (skip "Elimination matrices"), with a little from 4.1 also.</p>
+    <p>
+        It's time to go all-in on matrices.
+    </p>
+    <p>
+        An <m>m\times n</m> matrix <m>\bA</m> is a rectangular <m>m</m>-by-<m>n</m> array of numbers called <term>elements</term> or <term>entries</term>.  The numbers <m>m</m> and <m>n</m> are called the <term>row dimension</term> and the <term>column dimension</term>, respectively; collectively they describe the <term>size</term> of <m>\bA</m>. We say <m>\bA</m> belongs to <m>\mathbb{R}^{m\times n}</m> if its entries are real or <m>\mathbb{C}^{m\times n}</m> if they are complex-valued.
+    </p> 
+    <p>
+        A <term>square</term> matrix has equal row and column dimensions. A <term>row vector</term> has dimension <m>1\times n</m>, while a <term>column vector</term> has dimension <m>m \times 1</m>. By default, a vector is understood to be a column vector, and we use <m>\mathbb{R}^n</m> or <m>\mathbb{C}^n</m> to denote spaces of vectors.  An ordinary number may be called a <term>scalar</term>.
+    </p>
+    <p>
+        We will mainly be dealing with scalars, vectors and square matrices. Please keep in mind that "scalar/vector" and "constant/function" are separate attributes. All four combinations of them are possible.
+
+        I use capital letters in bold to refer to matrices, and lowercase bold letters for vectors. The bold symbol <m>\boldsymbol{0}</m> may refer to a vector of all zeros or to a zero matrix, depending on context.
+    </p>
+    <p>
+        To refer to a specific element of a matrix, I use the uppercase name of the matrix <em>without</em> boldface, as in <m>A_{24}</m> to mean the <m>(2,4)</m> element of <m>\bA</m>. (This is not universal practice, but it is most like MATLAB.) To refer to an element of a vector, I use just one subscript, as in <m>x_3</m>. If you see a boldface character with one or more subscripts, then you know that it is a matrix or vector that belongs to a numbered collection.
+
+        We sometimes find it useful to refer to the individual columns of a matrix as vectors. My convention is to use a lowercase bold version of the matrix name, with a subscript to represent the column number. Thus, <m>\bA_1,\bA_2,\ldots,\bA_n</m> are the columns of the <m>m\times n</m> matrix <m>\bA</m>.
+    </p>
+    <p>
+        Adding and subtracting matrices and vectors is dead simple: if two things are the same size, you add/subtract them elementwise; otherwise, the operation is not permitted. (Caution: MATLAB <em>does</em> let you do that sometimes, and it's a great source of confusing, subtle bugs.) 
+    </p>
+    <p>
+        However, multiplication and "division" are far more complicated for matrices than they are for scalars. 
+    </p>
+    </introduction>
+    <subsection>
+    <title>Vectors: Dot products</title>
+    <p>
+        Suppose <m>\bu</m> and <m>\bv</m> are real column vectors of length <m>n</m>. Then their <term>dot product</term> (or <term>inner product</term>, or <term>scalar product</term> is 
+        <me>
+            \bu \cdot \bv = u_1 v_1 + u_2 v_2 + \cdots u_n v_n = \sum_i u_i v_i
+        </me>.  
+        This is equivalent to what you were used to doing in two and three dimensions in vector calculus. In fact, a well-known formula there holds here too:
+        <me>
+            \bu \cdot \bv = \| \bu \| \, \| \bv \| \, \cos(\theta)
+        </me>,
+        where <m>\|</m> is used to indicate Euclidean length (or <term>norm</term>) and <m>\theta</m> is the angle between the vectors. This is most important to us when the angle is a right angle, i.e., <m>\bu\cdot\bv = 0</m>, in which case we say the vectors are <term>orthogonal</term> (meaning perpendicular). 
+    </p>
+    </subsection>
+
+    <subsection>
+    <title>Matrix times vector</title>
+    <p>
+        Suppose <m>\bA</m> is <m>m\times n</m> and <m>\bx</m> is <m>n\times 1</m>, a column vector. The column dimension of <m>\bA</m> has to be the same as the row dimension in <m>\bb</m>. We can define the product <m>\bA\bx</m> two equivalent ways. Each interpretation has its uses.
+    </p>
+    <p> 
+        First we think about <em><m>\bA</m> acting on <m>\bx</m></em>.  The product <m>\by=\bA\bx</m> is an <m>m\times 1</m> vector whose <m>i</m>th element is the dot product of <m>\bx</m> with the <m>i</m>th row of <m>\bA</m>. More symbolically,
+        <me>
+            y_i = \sum_{k=1}^n A_{ik} x_k, \qquad i=1,\ldots,m
+        </me>. 
+    </p>
+    <p>
+        We can also interpret the product as <em><m>\bx</m> acting on <m>\bA</m>.</em> Specifically, 
+        <md>
+            <mrow>
+            \bA \mathbf{x} =
+            \begin{bmatrix}
+            \displaystyle \sum_k A_{1k}x_k \\[2mm]
+            \displaystyle \sum_k A_{2k}x_k \\
+            \vdots\\
+            \displaystyle \sum_k A_{mk}x_k
+            \end{bmatrix}
+            \amp = x_1
+            \begin{bmatrix}
+            A_{11}\\A_{21}\\\vdots\\A_{m1}
+            \end{bmatrix} +
+            x_2
+            \begin{bmatrix}
+            A_{12}\\A_{22}\\\vdots\\A_{m2}
+            \end{bmatrix} +
+            \cdots + x_n
+            \begin{bmatrix}
+            A_{1n}\\A_{2n}\\\vdots\\A_{mn}
+            \end{bmatrix} 
+            </mrow>
+            <mrow>\amp = x_1 \bA_1 + x_2 \bA_2 + \cdots + x_n \bA_n</mrow>
+        </md>. 
+        In words, we say that <m>\bA\bx</m> is a linear combination of the columns of <m>\bA</m>, with the combination coefficients coming from <m>\bx</m>. 
+    </p>
+    <p>
+        This is a critical tie-in to linear systems. We previously observed that a linear system of equations could be interpreted as being about linear combinations of the columns of the coefficient matrix. 
+    </p>
+    <fact>
+        <p>The linear system with matrix <m>\bA</m> and vector <m>\bb</m> is about solving <m>\bA\bx=\bb</m> for <m>\bx</m>.</p>    
+    </fact>
+    </subsection>
+
+    <subsection>
+        <title>Matrix times matrix</title>
+        <p>
+            The last and most general case for us to consider is the product <m>\bA\bB</m>. As in the matrix-vector case, there is a constraint on the sizes: the number of columns of <m>\bA</m> has to be the same as the number of rows in <m>\bB</m>. So if <m>\bA</m> is <m>m\times n</m> and <m>\bB</m> is <m>n\times p</m>, we can define the product <m>\bC = \bA\bB</m> as the <m>m\times p</m> matrix with entries defined by
+            <me>
+                C_{ij} = \sum_{k=1}^n A_{ij}B_{jk}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p
+            </me>. 
+        </p>
+        <example>
+            <p>
+                Let
+                <me>
+                    \bA = \begin{bmatrix}
+                        1 \amp -1 \\ 0 \amp 2 \\ -3 \amp 1
+                        \end{bmatrix}, \qquad
+                        \mathbf{B} = \begin{bmatrix}
+                        2 \amp -1 \amp 0 \amp 4 \\ 1 \amp 1 \amp 3 \amp 2
+                        \end{bmatrix}
+                </me>.  
+                Then 
+                <md>
+                    <mrow>\bA\mathbf{B} \amp= \begin{bmatrix} 
+                        (1)(2) + (-1)(1) \amp (1)(-1) + (-1)(1) \amp (1)(0) + (-1)(3) \amp (1)(4) + (-1)(2) \\
+                        (0)(2) + (2)(1) \amp (0)(-1) + (2)(1) \amp (0)(0) + (2)(3) \amp (0)(4) + (2)(2) \\
+                        (-3)(2) + (1)(1) \amp (-3)(-1) + (1)(1) \amp (-3)(0) + (1)(3) \amp (-3)(4) + (1)(2)
+                        \end{bmatrix} </mrow>
+                    <mrow>\amp = \begin{bmatrix}
+                                1 \amp -2 \amp -3 \amp 2 \\ 2 \amp 2 \amp 6 \amp 4 \\ -5 \amp 4 \amp 3 \amp -10
+                            \end{bmatrix}</mrow>
+                </md>.
+            </p>
+        </example>
+        <p>
+            One way to think about the definition of matrix multiplication is as a generalization of the matrix-vector product. It turns out that
+            <me>
+                \bA\mathbf{B} =
+                    \bA \begin{bmatrix}
+                    \mathbf{b}_1 \amp \mathbf{b}_2 \amp \cdots \amp \mathbf{b}_n
+                    \end{bmatrix}
+                    = \begin{bmatrix}
+                    \bA\mathbf{b}_1 \amp \bA\mathbf{b}_2 \amp \cdots \amp \bA\mathbf{b}_n
+                    \end{bmatrix}
+            </me>.
+            In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix. 
+        </p>
+        <example>
+            <p>
+               Returning to the previous example, note that 
+                <me>
+                    \bA \begin{bmatrix} 2 \\ 1 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ 0 \\ -3
+                        \end{bmatrix} + 1 \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
+                        = \begin{bmatrix} 1 \\ 2 \\ -5 \end{bmatrix}
+                </me>, 
+                and so on. 
+            </p>
+         </example>
+    </subsection>
+
+    <subsection>
+        <title>Properties</title>
+        <p>
+            First, the bad news. In the previous subsection we computed the product <m>\bA\bB</m>, where the matrices are <m>3\times 2</m> and <m>2\times 4</m>, to get a result that is <m>3\times 4</m>. However, the product <m>\bB\bA</m> isn't even defined, because <m>4\neq 3</m>. Moreover, even when both <m>\bA\bB</m> and <m>\bB\bA</m> <em>are</em> defined, we cannot expect them to be equal. 
+        </p>
+        <fact>
+            <p>Matrix multiplication is not commutative. That is, the order of terms in a product affects the result.</p>
+        </fact>
+        <p>
+            In a product of matrices (and vectors), position matters. You cannot change the ordering (without justification)! You may have to unlearn some old habits.
+        </p>
+        <p>
+            Fortunately, other familiar properties of scalar multiplication do come along for the ride:
+            <ol>
+                <li><m>(\bA\bB)\bC=\bA(\bB\bC)</m></li>
+                <li><m>\bA(\bB+\bC) = \bA\bB + \bA\bC</m></li>
+                <li><m>(\bA+\bB)\bC = \bA\bC + \bB\bC</m></li>
+                <li><m>\alpha(\bB+\bC) = \alpha\bB + \alpha\bC</m></li>
+            </ol> 
+            The associative law is especially valuable; many algorithms and results in computational linear algebra rely on it. 
+        </p>
+    </subsection>
+</section>
+
+<section xml:id="ma-inverses">
+    <title>Matrix inverses</title>
+    <introduction>
+    <p>From section 4.4.</p>
+    <p>
+        From now on, we're going to focus on square, <m>n\times n</m> matrices. 
+    </p>
+    <p>
+        It's pretty immediate that for any square matrix <m>\bA</m>, <m>\bA\boldsymbol{0}=\boldsymbol{0}\bA=\boldsymbol{0}</m> for the all-zero square matrix <m>\boldsymbol{0}</m>. So we have a multiplicative zero matrix. But the situation is a bit less obvious when it comes to a multiplicative unit element. Some reflection on matrix multiplication properties reveals that if we define an <term>identity matrix</term> as the <m>n\times n</m> matrix
+        <me>
+            \bI = \begin{bmatrix} 
+            1 \amp 0 \amp 0 \amp \cdots \amp 0 \\
+            0 \amp 1 \amp 0 \amp \cdots \amp 0 \\
+             \amp  \amp \ddots \amp  \amp 0 \\
+             0 \amp \cdots \amp 0 \amp 1 \amp 0 \\
+             0 \amp \cdots \amp 0 \amp 0 \amp 1
+             \end{bmatrix}
+        </me>, 
+        then <m>\bI\bA=\bA</m> and <m>\bA\bI=\bA</m>. Actually, we don't need to restrict <m>\bA</m> to be square here, and it's also true that <m>\bI\bx=\bx</m> for all <m>n\times 1</m> vectors <m>\bx</m>.
+    </p> 
+    </introduction>
+    <subsection>
+    <title>Inverse matrix</title>
+    <p>
+        With the multiplicative identity in hand, the next order of business is to look for multiplicative inverses. To wit, if we have a square matrix <m>\bA</m>, can we find another square matrix <m>\bC</m> such that <m> \bA\bC = \bC\bA = \bI </m>? 
+        If such a matrix exists, we call it the <term>inverse</term> of <m>\bA</m> and write <m>\bA^{-1}=\bC</m>. Interestingly, while we formally need to specify two multiplications to define an inverse (because of the lack of commutativity), it turns out that one can prove (not so easily) that one of these properties automatically implies the other; that is, a "left-inverse" is also a "right-inverse",and vice versa. 
+    </p>
+    <p>
+        Because the zero matrix gives zero for every multiplicative partner, it cannot have an inverse. That's completely in line with what we know about the scalar zero. However, unlike scalars, there are nonzero matrices that do not have any inverse. The simplest is 
+        <me>
+            \bA = \begin{bmatrix}  0 \amp 1 \\ 0 \amp 0 \end{bmatrix}
+        </me>. 
+        (Proof: The second column of <m>\bC\bA</m> is zero for any square <m>\bC</m>.) We call such a matrix <term>singular</term>, or noninvertible. 
+    </p>
+    <p>
+        This notion of singularity is the same one we encountered with 2-by-2 linear systems. For, if <m>\bA</m> is not singular, then it has an inverse (by definition), and the linear system <m>\bA\bx=\bb</m> is equivalent to 
+        <me>
+            \bA^{-1} \bb = \bA^{-1} (\bA \bx) = \bigl(  \bA^{-1} \bA \bigr) \bx = \bI \bx = \bx
+        </me>. 
+         That is, if <m>\bA</m> is nonsingular, the linear system has the unique solution <m>\bA^{-1} \bb</m>.  That the converse is also true (unique solution implies nonsingularity) is part of what's usually called the Fundamental Theorem of Linear Algebra, which is a little beyond our scope here.
+    </p>
+    </subsection>
+    <subsection>
+    <title><m>2\times 2</m> inverses</title>
+    <p>
+        Unfortunately, it's one thing to say "the inverse exists" and quite another to say "here it is." There is an algorithm for computing one based on elimination for <m>n</m> simultaneous linear systems. It's not rocket science, but it's also not the sort of thing you want to do a lot of by hand. (And since it's essentially <m>n</m>-fold elimination, it's a dumb way to solve linear systems in practice.) 
+    </p>
+    <p>
+        One consolation is that inverses of <m>2\times 2</m> matrices are easy to do with a memorable formula:
+        <me>
+            \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}^{-1} = 
+            \frac{1}{ad-bc} \begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}
+        </me>.  
+        It's even simpler if you recall that <m>ad-bc</m> is just the determinant of the matrix. 
+    </p>
+    </subsection>
+    <subsection>
+    <title>Determinants</title>
+    <p>
+        We're going to rely on a key fact (from the FTLA that I alluded to above).
+    </p>
+    <fact>
+        <p>A square matrix <m>\bA</m> is singular if and only if its determinant is zero.</p>
+    </fact>
+    <p>
+        Of course this result requires us to say what a determinant <em>is</em> beyond the 2-by-2 case. One way to compute a determinant is as the product of pivots in the elimination process, provided you flip the sign for each row swap. This makes the connection to singularity clear, and it's the best way for a computer to find the determinant, but most humans prefer a recursive method called <term>cofactor expansion</term>:
+        <me>
+            \det(\bA) = \sum (-1)^{i+j} A_{ij} \det( \mathbf{M}_{ij} )
+        </me>,
+        where the sum is taken over any row or column of <m>\bA</m>, and <m>\mathbf{M}_{ij}</m> is the matrix that results from deleting row <m>i</m> and column <m>j</m> from <m>\bA</m>. (You may have learned vector cross products as a 3-by-3 determinant using these cofactors across the top row.) 
+    </p>
+    </subsection>
+</section>
+
+<section>
+    <title>Eigenvalues</title>
+<introduction>
+    <p><em>From section 6.1.</em></p>
+    <p>
+        Given a square matrix <m>\bA</m>, a solution of
+        <me>
+            \bA \bv = \lambda \bv
+        </me>
+        for a scalar <m>\lambda</m> and a nonzero vector <m> \bv</m>  means that <m>\lambda</m> is called an <term>eigenvalue</term> and <m>\bv</m> is an associated <term>eigenvector</term>. The first thing to note is that <m>c\bv</m> is then an eigenvector for <m>\lambda</m> for any nonzero <m>c</m>; that is, eigenvectors are determined only up to (at most) a multiplicative scalar. 
+    </p>
+    <p>
+        Before going on to more generalities about eigenvalues, consider the implications for a linear ODE system <m>\by'=\bA\by</m>. We can insert the trial solution <m>\by(t)=g(t) \bv</m> for unknown time dependence and get 
+        <me>
+            g'(t) \bv  =  g(t) \bA \bv = g(t) \lambda \bv
+        </me>. 
+        This can be satisfied by requiring <m>g'=\lambda g</m>. So we conclude that <m>\by(t)=e^{\lambda t}\bv</m> solves the original linear system. Geometrically, the eigenvector condition means "<m>\bA\bv</m> is parallel to <m>\bv</m>." In a linear ODE, this makes <m>\by'</m> parallel to <m>\by</m>, so the direction never changes and the problem is essentially one-dimensional. 
+    </p>
+
+</introduction>
+
+<subsection>
+<title>Characteristic polynomial</title>
+
+<p>
+    The defining eigenpair condition is equivalent to <m> \bA \bv = \lambda \mathbf{I} \bv, </m> or 
+    <me>
+        (\bA-\lambda \mathbf{I})  \bv = \boldsymbol{0}
+    </me>. 
+     Now suppose <m>\lambda</m> is a number such that <m>(\bA-\lambda \mathbf{I})</m> is a nonsingular matrix. It follows that the linear system above has a unique solution, namely <m>\bv = \boldsymbol{0}</m>. So, we can find no eigenvector at that value of <m>\lambda</m>. In other words,
+</p>
+<theorem>
+    <p><m>\lambda</m> is an eigenvalue if and only if <m>\bA-\lambda \mathbf{I}</m> is a singular matrix.</p>
+</theorem>
+<p>
+    This connection gives the most common way to compute eigenvalues by hand. Recall that a matrix is singular if and only if its determinant is zero. Thus an alternative algebraic condition for an eigenvalue is <m>\det(\bA-\lambda \mathbf{I})=0</m>.
+</p>
+<p>
+    Let's chase this down for a <m>2\times 2</m> situation.
+    <md>
+        <mrow>0 \amp = \det( \bA -\lambda \mathbf{I} ) </mrow>
+        <mrow>\amp = \det\left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} - \lambda \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)</mrow>
+        <mrow>\amp = \begin{vmatrix} a-\lambda \amp b \\ c \amp d-\lambda \end{vmatrix} = (a-\lambda)(d-\lambda)-bc</mrow>
+    </md>. 
+    This condition is equivalent to finding the roots of a quadratic polynomial. In fact, it is <m>\lambda^2 - T \lambda +D</m>, as we stated when analyzing the stability of a 2-by-2 linear ODE system. 
+</p>
+<example>
+    <p>
+        Let's find the eigenvalues and eigenvectors of
+        <me>
+            \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
+        </me>. 
+        The associated polynomial is <m>\lambda^2-2\lambda-3</m>, which has roots  <m>\lambda_1=3</m> and <m>\lambda_2=-1</m>. These are the eigenvalues. 
+    </p>
+    <p>
+        Next, the linear system <m>( \bA -3 \mathbf{I}) \bv = \boldsymbol{0} </m> looks like
+        <me>  
+            \begin{bmatrix} -2 \amp 1 \\ 4 \amp -2 \end{bmatrix} 
+        \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+        </me>.  
+        By design, this is a singular system, and since zero is a solution, we expect infinitely many solutions. The singularity means that the last row is redundant, so we can focus on solving only <m>-2v_1+v_2=0</m>. I.e., any nonzero vector with <m>v_2=2v_1</m> is an eigenvector. These are all vectors of the form <m>[c,2c]^T=c[1,2]^T</m> for a nonzero scalar <m>c</m>.
+    </p>
+    <p>
+        The reasoning can be repeated for <m>\lambda=\lambda_2=-1</m> to get the equation  <m>2v_1+v_2=0</m>, or <m>v_2=-2v_1</m>, hence any vector in the form <m>c[1,-2]^T</m> will do.
+    </p>
+</example>
+<p>
+    In the <m>n\times n</m> case, <m>\det(\bA-\lambda\bI)</m> is a polynomial of degree <m>n</m>, called the <term>characteristic polynomial</term> of <m>\bA</m>. Thus there are <m>n</m> eigenvalues, if we count multiplicities, i.e.,
+    <me>
+        \det(\bA-\lambda\bI) = (\lambda-\lambda_1)^{m_1} (\lambda-\lambda_2)^{m_2} \cdots 
+        (\lambda-\lambda_k)^{m_k}  
+    </me>,
+    where <m>k\le n</m> and the positive integers <m>m_i</m>, called the <term>algebraic multiplicities</term> of the eigenvalues, sum to <m>n</m>. 
+</p>
+</subsection>
+<subsection>
+<title>Complex eigenvalues</title>
+<p>
+    The connection to polynomials means that if <m>\bA</m> is a real matrix, it might have eigenvalues that occur in complex conjugate pairs. This makes the eigenvectors have the same structure. 
+</p>
+<example>
+    <p>
+        We find the eigenvalues and eigenvectors of
+        <me>
+            \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}
+        </me>.  
+        The characteristic polynomial is <m>\lambda^2 +2 \lambda +2</m>, with roots  <m>\lambda_{1,2} = -1 \pm 1i.</m>
+    </p>
+    <p>
+        To find an eigenvector for <m>\lambda_1</m>, we use the first row of <m> \bA - \lambda_1 \mathbf{I} </m> to conclude <m>(2-i)v_1 -v_2 = 0</m>, so <m>v_2=(2-i)v_1</m>. Any multiple of the vector <m>[1,2-i]^T</m> will do.
+    </p>
+    <p>
+        We get a benefit from the complex eigenvalues: the second eigenvector, like the second eigenvalue, is just the conjugate of the first. So we have <m>[1,2+i]^T</m> (and all its multiples) to go with <m>\lambda_2</m>. 
+    </p>
+</example>
+</subsection>
+<subsection>
+<title>Some tips</title>
+<p>
+    Here are a couple of things to know: the eigenvalues of <m>\bA+\bB</m> are <em>not</em>  the eigenvalues of <m>\bA</m> plus the eigenvalues of <m>\bB</m>, and the eigenvalues of <m>\bA\bB</m> are <em>not</em>  the eigenvalues of <m>\bA</m> times the eigenvalues of <m>\bB</m>. The main exception to this latter observation is for powers of a matrix,
+    <me>
+        \bA \bv = \lambda \bv \quad \Rightarrow \quad \bA^k \bv = \lambda^k \bv
+    </me>,
+    for any positive integer power <m>k</m>.  Actually, this holds for inverses too,
+    <me>
+        \bA \bv = \lambda \bv \quad \Rightarrow \quad \bA^{-1} \bv = \lambda^{-1} \bv
+    </me>.  
+    (Note that if zero is an eigenvalue, then <m>\bA-0\bI</m> is singular, so <m>\bA</m> is singular.) 
+</p>
+<p>
+    Two handy facts that hold for matrices of all sizes: the sum of the eigenvalues of <m>\bA</m> is the <term>trace</term> of <m>\bA</m> (sum of the diagonal entries), and the product of the eigenvalues is the determinant. 
+</p>
+</subsection>
+</section>
+
+<section>
+<title>Diagonalization</title>
+<introduction>
+    <p><em>From section 6.2.</em></p>
+    <p>
+        Say <m>\bA</m> is <m>n\times n</m>, and that we write 
+        <me>
+            \bA \bv_1 = \lambda_1 \bv_1, \;
+            \bA \bv_2 = \lambda_2 \bv_2,\; \dots, \;
+            \bA \bv_n = \lambda_n \bv_n
+        </me>,
+        where <m>\lambda_1,\lambda_2,\dots,\lambda_n</m> are its eigenvalues. For now, <term>assume the eigenvalues are all distinct (no repeats)</term>.  Through some linear algebra magic, we can express this collection of equations more succintly: 
+        <md>
+            <mrow>
+                 \begin{bmatrix} 
+                    \bA \bv_1 \amp \bA \bv_2 \amp \cdots \amp \bA \bv_n 
+                \end{bmatrix} 
+                \amp = 
+                \begin{bmatrix} 
+                    \lambda_1\bv_1 \amp \lambda_2\bv_2 \amp \cdots \amp \lambda_n\bv_n 
+                \end{bmatrix}
+            </mrow>
+            <mrow>\bA \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}            \amp = 
+                \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix} 
+                \begin{bmatrix} \lambda_1 \amp 0 \amp \cdots \amp 0 \\
+                             0 \amp \lambda_2 \amp \cdots \amp 0 \\
+                             \amp \amp \ddots \amp \\
+                             0 \amp \cdots \amp 0 \amp \lambda_n
+                \end{bmatrix}</mrow>
+            <mrow>\bA \bV \amp = \bV \bD </mrow>           
+        </md>, 
+        where <m>\bD</m> is a <term>diagonal</term> matrix. 
+    </p>
+    <p>
+        It turns out that one can prove <m>\bV</m> is nonsingular, and therefore we can write 
+        <me>
+            \bA = \bV \bD \bV^{-1}
+        </me>, 
+        which is called a <term>diagonalization</term> of <m>\bA</m>. Diagonalization is not unique; after all, we can take the eigenvalues in any order, and the eigenvectors themselves are not unique. 
+    </p>
+    <example>
+        <title>A 2-by-2 diagonalization</title>
+        <p>
+            Let's find a diagonalization of 
+            <me>
+                \mathbf{A} =  \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
+            </me>. 
+            We found the eigenvalues and eigenvectors of this guy in the previous section. We got <m>\lambda_1=3</m> with <m>\bv_1 = [1,2]</m>, and <m>\lambda_2=-1</m> with <m>\bv_2 = [1,-2]</m>. So we paint by numbers to get
+            <me>
+                \mathbf{D} = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}, \qquad \bV = \begin{bmatrix} 1 \amp 1 \\ 2 \amp -2 \end{bmatrix}
+            </me>. 
+            We "just" need to invert <m>\bV</m>; fortunately we're only at <m>2\times 2</m>.
+            <me> 
+                \bV^{-1} = \frac{1}{-4} \begin{bmatrix} -2 \amp -1 \\ -2 \amp 1 \end{bmatrix} = \begin{bmatrix} 1/2 \amp 1/4 \\ 1/2 \amp -1/4 \end{bmatrix}
+            </me>.  
+            Hence
+            <me> 
+                \mathbf{A} = \bV \mathbf{D} \bV^{-1} = 
+                \begin{bmatrix} 1 \amp 1 \\ 2 \amp -2 \end{bmatrix} 
+                \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix} 
+                \begin{bmatrix} 1/2 \amp 1/4 \\ 1/2 \amp -1/4 \end{bmatrix}
+            </me>. 
+        </p>
+    </example>
+</introduction>
+<subsection>
+<title>Diagonalization of a linear ODE</title>
+<p>
+    Suppose <m>\mathbf{y}'=\mathbf{A} \mathbf{y}</m>. Given a diagonalization of <m>\bA</m>, we compute
+    <md>
+        <mrow> \mathbf{y}'\amp =\mathbf{V} \mathbf{D} \mathbf{V}^{-1} \mathbf{y}</mrow>
+        <mrow>\mathbf{V}^{-1} \mathbf{y}' \amp=\mathbf{D} \mathbf{V}^{-1} \mathbf{y}</mrow>
+        <mrow>(\mathbf{V}^{-1} \mathbf{y})' \amp=\mathbf{D} (\mathbf{V}^{-1} \mathbf{y})</mrow>
+    </md>. 
+    This suggests a change of variable, <m>\mathbf{u} = \mathbf{V}^{-1} \mathbf{y}.</m> Then
+    <me> 
+        \mathbf{u}' = \mathbf{D} \mathbf{u} 
+        = \begin{bmatrix} \lambda_1 u_1 \\ \lambda_2 u_2 \\ \vdots \\ \lambda_n u_n \end{bmatrix}
+    </me>. 
+    In terms of the new variable, the ODE system is <m>u_1'=\lambda_1 u_1,\, \dots,\, u_n'=\lambda_n u_n</m>, which are completely decoupled–that is, they evolve independently. 
+</p>
+<p>
+    How are we to interpret <m>\mathbf{u} = \mathbf{V}^{-1} \mathbf{y}</m>? Suppose we write it as <m>\bV \bu = \by</m>, which has the form of a linear system. One of our interpretations of this system is to find an expression of the vector <m>\by</m> in terms of coordinates based on combining the columns of <m>\bV</m>. Thus, if we change an ODE to eigenvector coordinates, the resulting ODE for the coordinate values is diagonal. 
+</p>
+</subsection>
+
+<subsection>
+<title>Repeated eigenvalues</title>
+<p>
+    As we have seen time and again, repeated roots complicate our conclusions. The same is true for eigenvalues.
+</p>
+<p>
+    As stated above, when the eigenvalues are all distinct, a diagonalization is always possible. When there are repeated eigenvalues, though, that may or may not be the case. As a trivial example, an identity matrix has all eigenvalues equal to one, and it is already diagonal. But consider the matrix 
+    <me>
+        \bA = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}
+    </me>. 
+    It has trace 2 and determinant 1, so its eigenvalues are <m>\lambda_1=\lambda_2=1</m>. The system <m>(\bA-1\bI)\bv=\boldsymbol{0}</m> implies <m>v_2=0</m>. Thus all eigenvectors are of the form <m>[c,0]</m>. If we try to build a matrix <m>\bV</m> having these as columns, it would be 
+    <me>
+        \bV = \begin{bmatrix} c_1 \amp c_2 \\ 0 \amp 0 \end{bmatrix}
+    </me>, 
+    which is necessarily singular (determinant is zero). Therefore no diagonalization is possible, and we say <m>\bA</m> is <term>defective</term>. Another way of saying this is that the matrix does not have a "complete independent set of eigenvectors."
+</p>
+<p>
+    A fully general description of defectiveness is beyond our scope. For the <m>2\times 2</m> case, it's straightforward: a matrix with repeated eigenvalues is either a multiple of the identity, in which case it has a diagonalization with <m>\bV=\bI</m>, or it's defective (has no diagonalization). 
+</p>
+</subsection>
+</section>
+
+<section>
+<title>Linear ODE systems</title>
+<introduction>
+    <p><em>From section 6.3.</em></p>
+    <p>
+        Now we are ready to take on <m>\by'=\bA\by</m>, at least in the diagonalizable and defective <m>2\times 2</m> cases. 
+    </p>
+    <p>
+        In the previous section I argued that if <m>\bA=\bV\bD\bV^{-1}</m>, then we can define <m>\bu=\bV^{-1}\by</m> and get the diagonal system <m>\bu'=\bD\bu</m>. This diagonal system is trivial to solve,
+        <me>
+            \bu(t) = \begin{bmatrix} 
+            e^{\lambda_1 t} u_1(0) \\ 
+            e^{\lambda_2 t} u_2(0) \\ 
+            \vdots \\
+            e^{\lambda_n t} u_n(0)  
+            \end{bmatrix} 
+        </me>. 
+        In terms of the original variable <m>\by=\bV\bu</m>, this solution is 
+        <me>
+            \by(t) = \bV \begin{bmatrix} 
+            e^{\lambda_1 t} c_1 \\ 
+            e^{\lambda_2 t} c_2 \\ 
+            \vdots \\
+            e^{\lambda_n t} c_n  
+            \end{bmatrix}
+            = c_1 e^{\lambda_1 t} \bv_1 + \cdots + c_n e^{\lambda_n t} \bv_n
+        </me>, 
+        where we defined <m>c_i=u_i(0)</m> for all <m>i</m>. This is one form of the general solution.
+     </p>
+<example>
+    <p>
+        In an earlier section we found the eigenstuff for 
+        <me>
+            \bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
+        </me> 
+        as <m>\lambda_1=3</m>, <m>\bv_1 = \twovec{1}{2}</m>, and <m>\lambda_2=-1</m>, <m>\bv_2=\twovec{1}{-2}</m>. This means the general solution of <m>\by'=\bA\by</m> is 
+        <me>
+            \by(t) = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
+            = \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}
+        </me>.
+    </p>
+</example>
+</introduction>
+
+<subsection>
+<title>Complex eigenvalues</title>
+<p>
+    Nothing new happens for complex eigenvalues. You just need to use complex arithmetic.
+</p>
+<example>
+    <p>
+        Let's look at the solution of 
+        <me>
+            \mathbf{y}' = \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix} \mathbf{y}
+        </me>. 
+        The eigenvalues are <m>1\pm i</m>, with eigenvectors <m>\twovec{1}{2\mp i}</m>. So one form of the general solution is 
+        <me>
+            c_1 e^{t} e^{it} \twovec{1}{2-i} + c_2 e^{t} e^{-it} \twovec{1}{2+i}
+        </me>. 
+        With some work, we could convert this to a purely real form. Or, suppose we also have the initial condition <m>\by(0)=\twovec{1}{-2}</m>. This gives 
+        <md> 
+            <mrow>c_1 \twovec{1}{2-i} + c_2 \twovec{1}{2+i} \amp = \twovec{1}{-2}</mrow>
+            <mrow>\twomat{1}{1}{2-i}{2+i} \twovec{c_1}{c_2} \amp = \twovec{1}{-2}</mrow>
+        </md>. 
+        Using Cramer's rule, we get 
+        <md>
+            <mrow>c_1 \amp = \frac{ \twodet{1}{1}{-2}{2+i} }{ \twodet{1}{1}{2-i}{2+i} } = \frac{4+i}{2i}=\frac{-1-4i}{2}</mrow>
+            <mrow>y \amp = \frac{ \twodet{1}{1}{2-i}{-2} }{ \twodet{1}{1}{2-i}{2+i} } = \frac{-4+i}{2i}=\frac{-1+4i}{2}</mrow>            
+        </md>.
+    </p>
+</example>
+</subsection>
+
+<subsection>
+<title>Defective <m>2\times 2</m></title>
+<p>
+    In the case <m>n=2</m>, <m>\lambda_1=\lambda_2=\lambda</m>, and <m>\bA</m> is not diagonal, there is no diagonalization possible. Every eigenvalue does have at least one eigenvector, so there is a <m>\bv</m> with <m>\bA\bv = \lambda \bv</m>, and <m>c_1 e^{\lambda t}\bv</m> is still a null solution. 
+</p> 
+<p>
+    Based on our experiences to date, we try an ODE solution of the form 
+    <m>
+        te^{\lambda t} \mathbf{w}
+    </m>
+    for an unknown <m>\bw</m>. We plug this into the ODE and get 
+    <me>
+        (\lambda t e^{\lambda t} + e^{\lambda t}) \mathbf{w} = t e^{\lambda t} \mathbf{A} \mathbf{w}
+    </me>. 
+    We don't have enough terms to balance both the <m>t^0</m> and <m>t^1</m> groups. A better guess is 
+    <me> 
+        te^{\lambda t} \mathbf{v} + e^{\lambda t} \mathbf{w}
+    </me>. Then
+    <me>
+        (\lambda t e^{\lambda t} + e^{\lambda t}) \mathbf{v} + \lambda e^{\lambda t} \mathbf{w} = t e^{\lambda t} \mathbf{A} \mathbf{v} + e^{\lambda t} \mathbf{A} \mathbf{w}
+    </me>.
+    Grouping together like terms, we have
+    <me>
+         t( \mathbf{A} \mathbf{v} - \lambda \mathbf{v} ) + (  \mathbf{A} \mathbf{w} - \lambda \mathbf{w} ) = \mathbf{v}.
+    </me>
+    The term multiplying <m>t</m> is zero, by the eigenvector property. So we need only requiire
+    <me>
+        (  \mathbf{A} - \lambda \mathbf{I} )  \mathbf{w} = \mathbf{v} 
+    </me>,
+    which can be interpreted as a definition of a <term>generalized eigenvector</term> <m>\bw</m>. Even though the matrix here is singular, a solution for <m>\bw</m> is always possible. 
+</p>
+<example>
+    <p>
+        Let us find the general solution of
+        <me>
+            \mathbf{y}' = \begin{bmatrix} -1 \amp 1 \\ 0 \amp -1 \end{bmatrix} \mathbf{y}.
+        </me>
+        You can easily check that <m>\lambda=-1</m> is a double eigenvalue, and that <m>[1,0]</m> is an eigenvector. The system for the generalized eigenvector is 
+        <me>
+            \begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix} \mathbf{w} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+        </me>. 
+        The first row of this system tells us <m>w_2=1</m>. The second row makes no restrictions. We may as well let <m>w_1=0</m>, since it's not forbidden.
+        </p>
+        <p>
+        The general solution is therefore
+        <me>
+            c_1 e^{-t} \mathbf{v} + c_2 e^{-t}(t\mathbf{v}+\mathbf{w})
+            = c_1 e^{-t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} t \\ 1 \end{bmatrix}
+        </me>.
+    </p>
+</example>
+</subsection>
+<subsection>
+<title>Second-order equations</title>
+<p>
+    Time to tie up one small loose end. What does the eigenvalue approach tell us about our beloved second-order equation, <m>ay''+by'+cy=0</m>? Remember, we define <m>x_1=y</m>, <m>x_2=y'</m> to get the companion matrix <m>\twomat{0}{1}{-c/a}{-b/a}</m>. The characteristic polynomial of this matrix is 
+    <me>
+        \lambda^2 + \frac{b}{a}\lambda + \frac{c}{a}
+    </me>,
+    which is just <m>1/a</m> times what we called the characteristic polynomial of the original problem. So, what we called characteristic roots back then were really eigenvalues, and we wrote out the solutions using only the first component <m>x_1</m>. 
+</p>
+</subsection>
+</section>
+
+<section>
+    <title>Matrix exponential</title>
+    <introduction>
+    <p><em>From section 6.4.</em></p>
+    <p>
+        Let's take another look at <m>\by'=\bA\by</m> in the diagonalizable case with <m>\bA=\bV\bD\bV^{-1}</m>. Again we define <m>\bu=\bV^{-1}\by</m> and get the diagonal system <m>\bu'=\bD\bu</m>, with solution 
+        <me>
+            \bu(t) = \begin{bmatrix} 
+            e^{\lambda_1 t} u_1(0) \\ 
+            e^{\lambda_2 t} u_2(0) \\ 
+            \vdots \\
+            e^{\lambda_n t} u_n(0)  
+            \end{bmatrix} 
+            = \begin{bmatrix} e^{\lambda_1 t} \amp  \amp \amp  \\
+                              \amp e^{\lambda_2 t} \amp  \amp  \\
+                             \amp \amp \ddots \amp \\
+                             \amp  \amp  \amp e^{\lambda_n t}
+                \end{bmatrix} \bu(0)
+        </me>. 
+        Diagonal matrices are a snap to multiply:
+        <me>
+            \bD^k = \fourdiag{\lambda_1^k}{\lambda_2^k}{\lambda_n^k}, \qquad k=1,2,3,\ldots
+        </me>. 
+        From here we can make a remarkable leap to a matrix power series,
+        <me> 
+            \bI + \bD + \frac{1}{2!}\bD^2 + \frac{1}{3!}\bD^3 + \cdots = 
+             \fourdiag{e^\lambda_1}{e^\lambda_2}{e^\lambda_n}
+        </me>.
+        It's irresistable to conclude that we have found the exponential of the diagonal matrix <m>\bD</m>:
+        <me> 
+            e^\bD = \fourdiag{e^\lambda_1}{e^\lambda_2}{e^\lambda_n}
+        </me>.
+        What's more, we can now write simply,
+        <me>
+            \bu(t) = e^{t\bD} \bu(0)
+        </me>. 
+    </p>
+    <p>
+       Returning to the original ODE variable <m>\by=\bV\bu</m> leads to
+        <me> 
+            \by(t) = \bV e^{t\bD} \bV^{-1} \by(0) 
+        </me>.    
+        Could it be, then, that
+        <me>
+            e^{t\bA} = \bV e^{t\bD} \bV^{-1}
+        </me>? 
+        Let's consult the power series:
+        <md>
+            <mrow>e^{t\bA} \amp = \bI + t\bA + \frac{1}{2!}t^2\bA^2 + \frac{1}{3!}t^3\bA^3 + \cdots</mrow>
+            <mrow>\amp = \bV\bV^{-1} + t(\bV\bD\bV^{-1}) + \frac{1}{2!}t^2 (\bV\bD\bV^{-1})(\bV\bD\bV^{-1}) +  \frac{1}{3!}t^3 (\bV\bD\bV^{-1})(\bV\bD\bV^{-1})(\bV\bD\bV^{-1}) + \cdots </mrow>
+            <mrow>\amp = \bV \bigl( \bI + t\bD + \frac{1}{2!}t^2\bD^2 + \frac{1}{3!}t^3\bD^3 + \cdots \bigr) \bV^{-1}</mrow>
+        </md>, 
+        and we have arrived. Therefore, 
+        <me>
+            \by(t) = e^{t\bA} \by(0)
+        </me>
+        is the solution of <m>\by'=\bA\by</m>.  
+    </p>
+    <example>
+    <p>
+        We look again at an example fron the previous section, 
+        <me>
+            \bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
+        </me>, 
+        in which <m>\lambda_1=3</m>, <m>\bv_1 = \twovec{1}{2}</m>, and <m>\lambda_2=-1</m>, <m>\bv_2=\twovec{1}{-2}</m> are eigenpairs. We define 
+        <me>
+            \bV = \twomat{1}{1}{2}{-2}
+        </me>
+        and compute
+        <me>
+            \bV^{-1} = \frac{1}{4}\twomat{2}{1}{2}{-1}
+        </me>. 
+        Hence 
+        <me> 
+            \by(t) = \frac{1}{4} \twomat{1}{1}{2}{-2} \twodiag{e^{3t}}{e^{-t}} \twomat{2}{1}{2}{-1} \by(0)
+        </me>. 
+    </p>
+    </example>
+    </introduction>
+    <subsection>
+    <title>Properties</title>
+    <p>
+        Many of the things you know about scalar exponential functions hold true for matrices as well.
+        <ul>
+            <li><m>e^\bzero = \bI</m></li>
+            <li><m>\bigl(e^{t\bA}\bigr)^{-1} = e^{-t\bA}</m></li>
+            <li><m>\dd{}{t} e^{t\bA} = \bA e^{t\bA} = e^{t\bA} \bA</m></li>
+        </ul> 
+        However, there is one property we have to let go of, at least partly:
+        <me>
+            e^{\bA+\bB} \neq e^{\bA} e^{\bB} \quad \text{ unless }\quad  \bA\bB=\bB\bA
+        </me>. 
+        This has some far-reaching consequences that we won't get a chance to explore. 
+    </p>
+    </subsection>
+    <subsection>
+    <title>Complex and defective cases</title>
+    <example>
+        <p>
+            It's routine to show that 
+            <me>
+                \bA = \twomat{0}{1}{-1}{0} = \twomat{1}{1}{i}{-i} \twodiag{i}{-i} \frac{1}{2} \twomat{1}{-i}{1}{i}
+            </me>. 
+            From here we find that 
+            <md>
+                <mrow>e^{t\bA} \amp = \twomat{1}{1}{i}{-i} \twodiag{e^{it}}{e^{-it}} \frac{1}{2} \twomat{1}{-i}{1}{i}</mrow>
+                <mrow>\amp = \frac{1}{2} \twomat{e^{it}}{e^{-it}}{ie^{it}}{-ie^{-it}} \twomat{1}{-i}{1}{i} </mrow>
+                <mrow>\amp = \frac{1}{2} \twomat{2\cos(t)}{-i[2i\sin(t)]}{i[2i\sin(t)]}{2\cos(t)}</mrow>
+                <mrow>\amp = \twomat{\cos(t)}{\sin(t)}{-\sin(t)}{\cos(t)}</mrow>
+            </md>. 
+            This matrix applies a rotation of an angle <m>t</m> about the origin to all vectors in the plane. Thus, the phase portrait consists of concentric circles and the origin is a center. 
+        </p>
+    </example>
+    <example>
+        <p>
+        The problem <m>\mathbf{y}' = \begin{bmatrix} -1 \amp 1 \\ 0 \amp -1 \end{bmatrix} \mathbf{y}</m> has a defective matrix, so we cannot use a diagonalization to compute the matrix exponential. However, we are still free to compute a power series! This works out well because we get a simple pattern:
+        <md>
+            <mrow>\bA^2 \amp = \twomat{-1}{1}{0}{-1} \twomat{-1}{1}{0}{-1}  = \twomat{1}{-2}{0}{1} </mrow>
+            <mrow>\bA^3 \amp = \twomat{1}{-2}{0}{1} \twomat{-1}{1}{0}{-1}  = \twomat{-1}{3}{0}{-1}</mrow> 
+        </md>,  
+        and so on. We put this together and get 
+        <md>
+            <mrow>e^{t\bA} \amp = 
+                \twomat{1 -t + \frac{1}{2!}t^2 - \frac{1}{3!}t^3 + \cdots}{t - \frac{2}{2!}t^2 + \frac{3}{3!}t^3 - \cdots}{0}{1 -t + \frac{1}{2!}t^2 - \frac{1}{3!}t^3 + \cdots}
+            </mrow>
+            <mrow>\amp = \twomat{e^{-t}}{te^{-t}}{0}{e^{-t}}</mrow>
+        </md>. 
+        </p>
+    </example>
+    </subsection>
+    <subsection>
+    <title>Equation with forcing term</title>
+    <p>
+        Suppose we now have <m>\by'=\bA\by + \bff(t)</m> for a constant matrix <m>\bA</m>. We can solve this problem using our old friend, the integrating factor. Define <m>\mathbf{M}(t) = e^{-t \bA}</m>, and multiply through by it. Then 
+        <md>
+            <mrow>\dd{}{t} \bigl[ e^{-t \bA} \by(t) \bigr] \amp = e^{-t \bA} \bff(t)</mrow>
+        </md>,
+        and we solve to get 
+        <me>
+            \by(t) = e^{t \bA}\by(0) + \int_0^t e^{(t-s) \bA} \bff(s)\, ds
+        </me>, 
+        which is a lot like our growth-factor formula for first-order scalar equations. 
+    </p>
+    <p>
+        This seems like a good place to stop with the matrices.
+    </p>
+    </subsection>
+</section>
 </chapter>
+
+
