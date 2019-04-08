@@ -9,7 +9,7 @@ plot(0,0,'r.','markersize',18)
 % Plot trajectories
 hold on
 colr = get(gca,'colororder');
-t = linspace(0,15,1000)';
+t = linspace(0,12,1000)';
 for phi = 2*pi*(0:5)/6
     y = real(exp(s(1)*t-1i*phi));
     dydt = real(s(1)*exp(s(1)*t-1i*phi));

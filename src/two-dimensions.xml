@@ -118,7 +118,7 @@
             <input>
             F = @(x,y) -y;   G = @(x,y) x;
 
-            slopefieldxy(F,G,[-2 2],[-2 2])
+            slopefield(F,G,[-2 2],[-2 2])
 	        </input>
 	        </program>
 	        <image source="matlab/twoD_slope_2D_1.svg"/>
@@ -136,7 +136,7 @@
             F = @(x,y) 3.*x-x.*y/2;
             G = @(x,y) -y + x.*y/4;
 
-            slopefieldxy(F,G,[0 10],[0 12])
+            slopefield(F,G,[0 10],[0 12])
 	        </input>
 	        </program>
 	        <image source="matlab/twoD_slope_2D_2.svg"/>
