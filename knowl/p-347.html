@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:19-04:00    *-->
+<!--*    on 2019-04-10T11:21:41-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Whenever we are faced with a linear system of \(n\) equations in \(n\) variables, we can solve it by transforming it step by step into an equivalent system that is easier to solve. This process is most transparent for the two-dimensional case, so we start there.</p>
-<span class="incontext"><a href="ma-elimination.html#p-347">in-context</a></span>
+<p>Of course, a different vector on the right-hand side such as \(\bb=\twovec{-3}{6}\) does lie on this line, and we <em class="emphasis">can</em> solve the system in this case. In fact, there are infinitely many ways to do it:</p>
+<div class="displaymath">
+\begin{align*}
+(1+2c) \twovec{1}{-2} - (2+c)\twovec{2}{-4} \amp = \left( \twovec{1}{-2} - 2 \twovec{2}{-4}  \right) + c \left( 2\twovec{1}{-2} - \twovec{2}{-4}  \right) \\
+\amp = \twovec{-3}{6} + c\cdot \textbf{0}\text{.}
+\end{align*}
+</div>
+<p>In this situation, the corresponding row picture still has two parallel lines, but they conincide, also indicating the infinite set of solutions. For parallel lines, you can have zero or infinitely many solutions; there is nothing in between.</p>
+<span class="incontext"><a href="ma-rows-columns.html#p-347">in-context</a></span>
 </body>
 </html>

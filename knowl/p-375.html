@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:19-04:00    *-->
+<!--*    on 2019-04-10T11:21:41-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,12 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>First, the bad news. In the previous subsection we computed the product \(\bA\bB\text{,}\) where the matrices are \(3\times 2\) and \(2\times 4\text{,}\) to get a result that is \(3\times 4\text{.}\) However, the product \(\bB\bA\) isn't even defined, because \(4\neq 3\text{.}\) Moreover, even when both \(\bA\bB\) and \(\bB\bA\) <em class="emphasis">are</em> defined, we cannot expect them to be equal.</p>
+<p>The last and most general case for us to consider is the product \(\bA\bB\text{.}\) As in the matrix-vector case, there is a constraint on the sizes: the number of columns of \(\bA\) has to be the same as the number of rows in \(\bB\text{.}\) So if \(\bA\) is \(m\times n\) and \(\bB\) is \(n\times p\text{,}\) we can define the product \(\bC = \bA\bB\) as the \(m\times p\) matrix with entries defined by</p>
+<div class="displaymath">
+\begin{equation*}
+C_{ij} = \sum_{k=1}^n A_{ij}B_{jk}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="ma-multiplication.html#p-375">in-context</a></span>
 </body>
 </html>

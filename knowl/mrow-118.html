@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:19-04:00    *-->
+<!--*    on 2019-04-10T11:21:41-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -14,9 +14,21 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-\mathbf{y}'\amp =\mathbf{V} \mathbf{D} \mathbf{V}^{-1} \mathbf{y}\\
-\mathbf{V}^{-1} \mathbf{y}' \amp=\mathbf{D} \mathbf{V}^{-1} \mathbf{y}\\
-(\mathbf{V}^{-1} \mathbf{y})' \amp=\mathbf{D} (\mathbf{V}^{-1} \mathbf{y})
+\begin{bmatrix} 
+\bA \bv_1 \amp \bA \bv_2 \amp \cdots \amp \bA \bv_n 
+\end{bmatrix} 
+\amp = 
+\begin{bmatrix} 
+\lambda_1\bv_1 \amp \lambda_2\bv_2 \amp \cdots \amp \lambda_n\bv_n 
+\end{bmatrix}\\
+\bA \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}            \amp = 
+\begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix} 
+\begin{bmatrix} \lambda_1 \amp 0 \amp \cdots \amp 0 \\
+0 \amp \lambda_2 \amp \cdots \amp 0 \\
+\amp \amp \ddots \amp \\
+0 \amp \cdots \amp 0 \amp \lambda_n
+\end{bmatrix}\\
+\bA \bV \amp = \bV \bD 
 \end{align*}
 </div>
 <span class="incontext"><a href="section-30.html#mjx-eqn-mrow-118">in-context</a></span>

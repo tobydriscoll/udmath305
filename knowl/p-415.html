@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:19-04:00    *-->
+<!--*    on 2019-04-10T11:21:42-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>A fully general description of defectiveness is beyond our scope. For the \(2\times 2\) case, it's straightforward: a matrix with repeated eigenvalues is either a multiple of the identity, in which case it has a diagonalization with \(\bV=\bI\text{,}\) or it's defective (has no diagonalization).</p>
+<p>Suppose \(\mathbf{y}'=\mathbf{A} \mathbf{y}\text{.}\) Given a diagonalization of \(\bA\text{,}\) we compute</p>
+<div class="displaymath">
+\begin{align*}
+\mathbf{y}'\amp =\mathbf{V} \mathbf{D} \mathbf{V}^{-1} \mathbf{y}\\
+\mathbf{V}^{-1} \mathbf{y}' \amp=\mathbf{D} \mathbf{V}^{-1} \mathbf{y}\\
+(\mathbf{V}^{-1} \mathbf{y})' \amp=\mathbf{D} (\mathbf{V}^{-1} \mathbf{y})\text{.}
+\end{align*}
+</div>
+<p>This suggests a change of variable, \(\mathbf{u} = \mathbf{V}^{-1} \mathbf{y}.\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{u}' = \mathbf{D} \mathbf{u} 
+= \begin{bmatrix} \lambda_1 u_1 \\ \lambda_2 u_2 \\ \vdots \\ \lambda_n u_n \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>In terms of the new variable, the ODE system is \(u_1'=\lambda_1 u_1,\, \dots,\, u_n'=\lambda_n u_n\text{,}\) which are completely decoupled–that is, they evolve independently.</p>
 <span class="incontext"><a href="section-30.html#p-415">in-context</a></span>
 </body>
 </html>

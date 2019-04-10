@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:19-04:00    *-->
+<!--*    on 2019-04-10T11:21:41-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The defining eigenpair condition is equivalent to \(\bA \bv = \lambda \mathbf{I} \bv, \) or</p>
+<p>Of course this result requires us to say what a determinant <em class="emphasis">is</em> beyond the 2-by-2 case. One way to compute a determinant is as the product of pivots in the elimination process, provided you flip the sign for each row swap. This makes the connection to singularity clear, and it's the best way for a computer to find the determinant, but most humans prefer a recursive method called <dfn class="terminology">cofactor expansion</dfn>:</p>
 <div class="displaymath">
 \begin{equation*}
-(\bA-\lambda \mathbf{I})  \bv = \boldsymbol{0}\text{.}
+\det(\bA) = \sum (-1)^{i+j} A_{ij} \det( \mathbf{M}_{ij} )\text{,}
 \end{equation*}
 </div>
-<p>Now suppose \(\lambda\) is a number such that \((\bA-\lambda \mathbf{I})\) is a nonsingular matrix. It follows that the linear system above has a unique solution, namely \(\bv = \boldsymbol{0}\text{.}\) So, we can find no eigenvector at that value of \(\lambda\text{.}\) In other words,</p>
-<span class="incontext"><a href="section-29.html#p-393">in-context</a></span>
+<p>where the sum is taken over any row or column of \(\bA\text{,}\) and \(\mathbf{M}_{ij}\) is the matrix that results from deleting row \(i\) and column \(j\) from \(\bA\text{.}\) (You may have learned vector cross products as a 3-by-3 determinant using these cofactors across the top row.)</p>
+<span class="incontext"><a href="ma-inverses.html#p-393">in-context</a></span>
 </body>
 </html>

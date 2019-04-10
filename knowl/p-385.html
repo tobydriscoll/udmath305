@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:19-04:00    *-->
+<!--*    on 2019-04-10T11:21:41-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Unfortunately, it's one thing to say "the inverse exists" and quite another to say "here it is." There is an algorithm for computing one based on elimination for \(n\) simultaneous linear systems. It's not rocket science, but it's also not the sort of thing you want to do a lot of by hand. (And since it's essentially \(n\)-fold elimination, it's a dumb way to solve linear systems in practice.)</p>
+<p>It's pretty immediate that for any square matrix \(\bA\text{,}\) \(\bA\boldsymbol{0}=\boldsymbol{0}\bA=\boldsymbol{0}\) for the all-zero square matrix \(\boldsymbol{0}\text{.}\) So we have a multiplicative zero matrix. But the situation is a bit less obvious when it comes to a multiplicative unit element. Some reflection on matrix multiplication properties reveals that if we define an <dfn class="terminology">identity matrix</dfn> as the \(n\times n\) matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\bI = \begin{bmatrix} 
+1 \amp 0 \amp 0 \amp \cdots \amp 0 \\
+0 \amp 1 \amp 0 \amp \cdots \amp 0 \\
+\amp  \amp \ddots \amp  \amp 0 \\
+0 \amp \cdots \amp 0 \amp 1 \amp 0 \\
+0 \amp \cdots \amp 0 \amp 0 \amp 1
+\end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<p>then \(\bI\bA=\bA\) and \(\bA\bI=\bA\text{.}\) Actually, we don't need to restrict \(\bA\) to be square here, and it's also true that \(\bI\bx=\bx\) for all \(n\times 1\) vectors \(\bx\text{.}\)</p>
 <span class="incontext"><a href="ma-inverses.html#p-385">in-context</a></span>
 </body>
 </html>

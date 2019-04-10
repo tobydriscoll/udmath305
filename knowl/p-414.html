@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:19-04:00    *-->
+<!--*    on 2019-04-10T11:21:42-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,33 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>As stated above, when the eigenvalues are all distinct, a diagonalization is always possible. When there are repeated eigenvalues, though, that may or may not be the case. As a trivial example, an identity matrix has all eigenvalues equal to one, and it is already diagonal. But consider the matrix</p>
+<p>Let's find a diagonalization of</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}\text{.}
+\mathbf{A} =  \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>It has trace 2 and determinant 1, so its eigenvalues are \(\lambda_1=\lambda_2=1\text{.}\) The system \((\bA-1\bI)\bv=\boldsymbol{0}\) implies \(v_2=0\text{.}\) Thus all eigenvectors are of the form \([c,0]\text{.}\) If we try to build a matrix \(\bV\) having these as columns, it would be</p>
+<p>We found the eigenvalues and eigenvectors of this guy in the previous section. We got \(\lambda_1=3\) with \(\bv_1 = [1,2]\text{,}\) and \(\lambda_2=-1\) with \(\bv_2 = [1,-2]\text{.}\) So we paint by numbers to get</p>
 <div class="displaymath">
 \begin{equation*}
-\bV = \begin{bmatrix} c_1 \amp c_2 \\ 0 \amp 0 \end{bmatrix}\text{,}
+\mathbf{D} = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}, \qquad \bV = \begin{bmatrix} 1 \amp 1 \\ 2 \amp -2 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>which is necessarily singular (determinant is zero). Therefore no diagonalization is possible, and we say \(\bA\) is <dfn class="terminology">defective</dfn>. Another way of saying this is that the matrix does not have a "complete independent set of eigenvectors."</p>
+<p>We "just" need to invert \(\bV\text{;}\) fortunately we're only at \(2\times 2\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bV^{-1} = \frac{1}{-4} \begin{bmatrix} -2 \amp -1 \\ -2 \amp 1 \end{bmatrix} = \begin{bmatrix} 1/2 \amp 1/4 \\ 1/2 \amp -1/4 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>Hence</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{A} = \bV \mathbf{D} \bV^{-1} = 
+\begin{bmatrix} 1 \amp 1 \\ 2 \amp -2 \end{bmatrix} 
+\begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix} 
+\begin{bmatrix} 1/2 \amp 1/4 \\ 1/2 \amp -1/4 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="section-30.html#p-414">in-context</a></span>
 </body>
 </html>

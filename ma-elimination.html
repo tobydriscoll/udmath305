@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:17-04:00    *-->
+<!--*    on 2019-04-10T11:21:40-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -144,11 +144,11 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="ma-elimination"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Elimination for linear systems</span>
 </h2>
-<a href="ma-elimination.html" class="permalink">¶</a><section class="introduction" id="introduction-15"><p id="p-346"><em class="emphasis">From Section 4.2.</em></p>
-<p id="p-347">Whenever we are faced with a linear system of \(n\) equations in \(n\) variables, we can solve it by transforming it step by step into an equivalent system that is easier to solve. This process is most transparent for the two-dimensional case, so we start there.</p></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
+<a href="ma-elimination.html" class="permalink">¶</a><section class="introduction" id="introduction-15"><p id="p-350"><em class="emphasis">From Section 4.2.</em></p>
+<p id="p-351">Whenever we are faced with a linear system of \(n\) equations in \(n\) variables, we can solve it by transforming it step by step into an equivalent system that is easier to solve. This process is most transparent for the two-dimensional case, so we start there.</p></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Two variables</span>
 </h3>
-<p id="p-348">Consider the system</p>
+<p id="p-352">Consider the system</p>
 <div class="displaymath">
 \begin{align*}
 -x + 3y \amp = 1 \\
@@ -163,7 +163,7 @@ MathJax.Hub.Config({
 \end{align*}
 </div>
 <p>It's now trivial to solve the second equation for \(y=1\text{.}\) With that known, the first equation can be solved to find \(x=-(1-3)=2\text{.}\)</p>
-<p id="p-349">The key to making the elimination work was the zero we forced into the second row of matrix representing the second system:</p>
+<p id="p-353">The key to making the elimination work was the zero we forced into the second row of matrix representing the second system:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 
@@ -174,7 +174,7 @@ MathJax.Hub.Config({
 <p>This matrix has what we call and <dfn class="terminology">upper triangular</dfn> structure. That structure is our goal, because then we can sort of unzip the solution by starting at the bottom and working our way up.</p></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.2</span> <span class="title">More variables</span>
 </h3>
-<p id="p-350">Here's a system of four equations:</p>
+<p id="p-354">Here's a system of four equations:</p>
 <div class="displaymath">
 \begin{align*}
 2x_1 + 0x_2 + 4x_3 + 3x_4 \amp = 4\\
@@ -198,18 +198,18 @@ x_1 + 15x_2 + 2x_3 - 4.5x_4 \amp = 29\\
 \end{equation*}
 </div>
 <p>Now we show how elimination proceeds on this matrix, but <a class="url" href="elimination.html" target="_blank">using matlab to handle the arithmetic</a> for us.</p>
-<p id="p-351">To summarize, we proceed through the rows \(1,2,\ldots,n-1\text{.}\) For row \(i\) we seek to put zeros below the <dfn class="terminology">pivot element</dfn> in the \((i,i)\) position. To do that we choose a multiplier for each \(k&gt;i\) and add that multiple of row \(i\) to row \(k\text{.}\) The one thing that can stop us is if the pivot element is zero, because we can't find multipliers. In that event we swap row \(i\) with a lower row. After the eliminations are done, the system is in upper triangular form and can be solved by backward substitution.</p></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
+<p id="p-355">To summarize, we proceed through the rows \(1,2,\ldots,n-1\text{.}\) For row \(i\) we seek to put zeros below the <dfn class="terminology">pivot element</dfn> in the \((i,i)\) position. To do that we choose a multiplier for each \(k&gt;i\) and add that multiple of row \(i\) to row \(k\text{.}\) The one thing that can stop us is if the pivot element is zero, because we can't find multipliers. In that event we swap row \(i\) with a lower row. After the eliminations are done, the system is in upper triangular form and can be solved by backward substitution.</p></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.3</span> <span class="title">Breakdown \(=\) singularity</span>
 </h3>
-<p id="p-352">We have left one logical possibility unaddressed. What if we not only have a zero pivot, but all the candidate pivots below it are zero too? As a practical matter, this form of "breakdown" is benign; there is no need to eliminate the current variable because it is already eliminated! We can move down to the next row in the elimination process. To put it another way, we will end up with an upper triangular matrix with a zero in some \((i,i)\) position (on the <dfn class="terminology">diagonal</dfn> of the matrix).</p>
-<p id="p-353">But there is a crucial theoretical implication too.</p>
+<p id="p-356">We have left one logical possibility unaddressed. What if we not only have a zero pivot, but all the candidate pivots below it are zero too? As a practical matter, this form of "breakdown" is benign; there is no need to eliminate the current variable because it is already eliminated! We can move down to the next row in the elimination process. To put it another way, we will end up with an upper triangular matrix with a zero in some \((i,i)\) position (on the <dfn class="terminology">diagonal</dfn> of the matrix).</p>
+<p id="p-357">But there is a crucial theoretical implication too.</p>
 <article class="theorem-like" id="theorem-2"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">4.2.1</span> <span class="title">Elimination breakdown equals singularity</span>
 </h6>
-<p id="p-354">The elimination process is unable to find a nonzero pivot at some point in the algorithm if and only if the original system matrix is singular.</p></article><p id="p-355">This behavior is manifested once we move on to the backward substitution phase. If some \((i,i)\) element is zero in the triangular matrix, then we will be unable to solve for \(x_i\) when its turn comes. At that point, either the system holds true regardless of the value of \(x_i\) (which makes it a "free" variable), or the system is inconsistent and has no solution.</p></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
+<p id="p-358">The elimination process is unable to find a nonzero pivot at some point in the algorithm if and only if the original system matrix is singular.</p></article><p id="p-359">This behavior is manifested once we move on to the backward substitution phase. If some \((i,i)\) element is zero in the triangular matrix, then we will be unable to solve for \(x_i\) when its turn comes. At that point, either the system holds true regardless of the value of \(x_i\) (which makes it a "free" variable), or the system is inconsistent and has no solution.</p></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.4</span> <span class="title">Cramer's rule</span>
 </h3>
-<p id="p-356">There is a shortcut to avoid the effort of elimination for small systems. It's easiest to show and use in the case of two variables, such as</p>
+<p id="p-360">There is a shortcut to avoid the effort of elimination for small systems. It's easiest to show and use in the case of two variables, such as</p>
 <div class="displaymath">
 \begin{align*}
 -x + 3y \amp = 1 \\

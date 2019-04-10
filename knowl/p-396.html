@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:19-04:00    *-->
+<!--*    on 2019-04-10T11:21:41-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,15 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's chase this down for a \(2\times 2\) situation.</p>
+<p>Before going on to more generalities about eigenvalues, consider the implications for a linear ODE system \(\by'=\bA\by\text{.}\) We can insert the trial solution \(\by(t)=g(t) \bv\) for unknown time dependence and get</p>
 <div class="displaymath">
-\begin{align*}
-0 \amp = \det( \bA -\lambda \mathbf{I} ) \\
-\amp = \det\left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} - \lambda \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)\\
-\amp = \begin{vmatrix} a-\lambda \amp b \\ c \amp d-\lambda \end{vmatrix} = (a-\lambda)(d-\lambda)-bc\text{.}
-\end{align*}
+\begin{equation*}
+g'(t) \bv  =  g(t) \bA \bv = g(t) \lambda \bv\text{.}
+\end{equation*}
 </div>
-<p>This condition is equivalent to finding the roots of a quadratic polynomial. In fact, it is \(\lambda^2 - T \lambda +D\text{,}\) as we stated when analyzing the stability of a 2-by-2 linear ODE system.</p>
+<p>This can be satisfied by requiring \(g'=\lambda g\text{.}\) So we conclude that \(\by(t)=e^{\lambda t}\bv\) solves the original linear system. Geometrically, the eigenvector condition means "\(\bA\bv\) is parallel to \(\bv\text{.}\)" In a linear ODE, this makes \(\by'\) parallel to \(\by\text{,}\) so the direction never changes and the problem is essentially one-dimensional.</p>
 <span class="incontext"><a href="section-29.html#p-396">in-context</a></span>
 </body>
 </html>

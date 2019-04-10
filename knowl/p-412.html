@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:19-04:00    *-->
+<!--*    on 2019-04-10T11:21:41-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,35 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>How are we to interpret \(\mathbf{u} = \mathbf{V}^{-1} \mathbf{y}\text{?}\) Suppose we write it as \(\bV \bu = \by\text{,}\) which has the form of a linear system. One of our interpretations of this system is to find an expression of the vector \(\by\) in terms of coordinates based on combining the columns of \(\bV\text{.}\) Thus, if we change an ODE to eigenvector coordinates, the resulting ODE for the coordinate values is diagonal.</p>
+<p>Say \(\bA\) is \(n\times n\text{,}\) and that we write</p>
+<div class="displaymath">
+\begin{equation*}
+\bA \bv_1 = \lambda_1 \bv_1, \;
+\bA \bv_2 = \lambda_2 \bv_2,\; \dots, \;
+\bA \bv_n = \lambda_n \bv_n\text{,}
+\end{equation*}
+</div>
+<p>where \(\lambda_1,\lambda_2,\dots,\lambda_n\) are its eigenvalues. For now, <dfn class="terminology">assume the eigenvalues are all distinct (no repeats)</dfn>.  Through some linear algebra magic, we can express this collection of equations more succintly:</p>
+<div class="displaymath">
+\begin{align*}
+\begin{bmatrix} 
+\bA \bv_1 \amp \bA \bv_2 \amp \cdots \amp \bA \bv_n 
+\end{bmatrix} 
+\amp = 
+\begin{bmatrix} 
+\lambda_1\bv_1 \amp \lambda_2\bv_2 \amp \cdots \amp \lambda_n\bv_n 
+\end{bmatrix}\\
+\bA \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}            \amp = 
+\begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix} 
+\begin{bmatrix} \lambda_1 \amp 0 \amp \cdots \amp 0 \\
+0 \amp \lambda_2 \amp \cdots \amp 0 \\
+\amp \amp \ddots \amp \\
+0 \amp \cdots \amp 0 \amp \lambda_n
+\end{bmatrix}\\
+\bA \bV \amp = \bV \bD \text{,}
+\end{align*}
+</div>
+<p>where \(\bD\) is a <dfn class="terminology">diagonal</dfn> matrix.</p>
 <span class="incontext"><a href="section-30.html#p-412">in-context</a></span>
 </body>
 </html>

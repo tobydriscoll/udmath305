@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:19-04:00    *-->
+<!--*    on 2019-04-10T11:21:41-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In a product of matrices (and vectors), position matters. You cannot change the ordering (without justification)! You may have to unlearn some old habits.</p>
+<p>One way to think about the definition of matrix multiplication is as a generalization of the matrix-vector product. It turns out that</p>
+<div class="displaymath">
+\begin{equation*}
+\bA\mathbf{B} =
+\bA \begin{bmatrix}
+\mathbf{b}_1 \amp \mathbf{b}_2 \amp \cdots \amp \mathbf{b}_n
+\end{bmatrix}
+= \begin{bmatrix}
+\bA\mathbf{b}_1 \amp \bA\mathbf{b}_2 \amp \cdots \amp \bA\mathbf{b}_n
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix.</p>
 <span class="incontext"><a href="ma-multiplication.html#p-377">in-context</a></span>
 </body>
 </html>

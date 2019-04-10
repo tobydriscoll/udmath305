@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:17-04:00    *-->
+<!--*    on 2019-04-10T11:21:40-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -229,7 +229,40 @@ G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)\text{,}
 \end{equation*}
 </div>
 <p>with \(T=-\gamma\) and \(D=-g/L\text{.}\) This implies a saddle point, so the "inverted pendulum" is indeed unstable.</p></article></div>
-<p id="p-333">This is just the tip of a huge iceberg: <em class="emphasis">near a steady state, dynamics are mostly linear</em>. It applies in any number of dimensions through a natural extension of the definition of the Jacobian matrix. Rather than pursuing this line of thought now deeper into different nonlinear examples, we will instead get serious about understanding eigenvalues, which means first getting serious about understanding matrices.</p></section></div></main>
+<article class="example-like" id="example-48"><a knowl="" class="id-ref" refid="hk-example-48"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.3.2</span> <span class="title">Predator-prey systems</span>
+</h6></a></article><div id="hk-example-48" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-333">The system</p>
+<div class="displaymath">
+\begin{align*}
+\frac{dx}{dt} \amp= 3x-\frac{xy}{2}\\
+\frac{dy}{dt} \amp= -y+\frac{xy}{4}
+\end{align*}
+</div>
+<p>is called a <dfn class="terminology">predator–prey</dfn> equation. If species \(y\) is set to zero, species \(x\) would grow exponentially on its own (the prey). Similarly, species \(y\) would die off on its own (predator). We assume that encounters between the species are jointly proportional to the population of each, and they subtract from the prey and add to the predators.</p>
+<p id="p-334">We find fixed points when \(3x-(xy/2)=(xy/4)-y=0\text{,}\) which has two solutions, \((0,0)\) and \((4,6)\text{.}\) The Jacobian matrix of the system is</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{A}(x,y) = \begin{bmatrix} F_x \amp F_y  \\ G_x \amp G_y \end{bmatrix} = \begin{bmatrix} 3-y/2 \amp -x/2 \\ y/4 \amp -1+x/4 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>At the origin, the Jacobian becomes</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{A}(0,0) = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>The eigenvalues of a diagonal matrix (in fact, a triangular matrix) are the diagonal entries. Hence the origin is a saddle point.</p>
+<p id="p-335">At the other steady state we have</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{A}(4,6) = \twomat{0}{-2}{3/2}{0}\text{.}
+\end{equation*}
+</div>
+<p>The characteristic polynomial is \(\lambda^2 - 0\lambda + 3\text{,}\) so the eigenvalues are \(\pm i\sqrt{3}\text{.}\) Hence this fixed point is a center. Close to the point, the orbits look very much like those of the linearized system:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="linearized_center1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-336">However, as we zoom out, the nonlinearity of the system makes its influence felt:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="linearized_center2.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<p id="p-337">This is just the tip of a huge iceberg: <em class="emphasis">near a steady state, dynamics are mostly linear</em>. It applies in any number of dimensions through a natural extension of the definition of the Jacobian matrix. Rather than pursuing this line of thought now deeper into different nonlinear examples, we will instead get serious about understanding eigenvalues, which means first getting serious about understanding matrices.</p></section></div></main>
 </div>
 </body>
 </html>

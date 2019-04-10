@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-08T16:45:19-04:00    *-->
+<!--*    on 2019-04-10T11:21:41-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We have left one logical possibility unaddressed. What if we not only have a zero pivot, but all the candidate pivots below it are zero too? As a practical matter, this form of "breakdown" is benign; there is no need to eliminate the current variable because it is already eliminated! We can move down to the next row in the elimination process. To put it another way, we will end up with an upper triangular matrix with a zero in some \((i,i)\) position (on the <dfn class="terminology">diagonal</dfn> of the matrix).</p>
+<p>Consider the system</p>
+<div class="displaymath">
+\begin{align*}
+-x + 3y \amp = 1 \\
+3x + y \amp = 7\text{.}
+\end{align*}
+</div>
+<p>We can use the first equation to eliminate \(x\) from the second. Specifically, we multiply the first equation by \(3\) and add it to the second to get the system</p>
+<div class="displaymath">
+\begin{align*}
+-x + 3y \amp = 1 \\
+10 y \amp = 10\text{.}
+\end{align*}
+</div>
+<p>It's now trivial to solve the second equation for \(y=1\text{.}\) With that known, the first equation can be solved to find \(x=-(1-3)=2\text{.}\)</p>
 <span class="incontext"><a href="ma-elimination.html#p-352">in-context</a></span>
 </body>
 </html>
