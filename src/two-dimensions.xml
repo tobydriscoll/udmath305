@@ -379,11 +379,11 @@ ylabel('y''')
             </me>,
             where <m>T=a_{11}+a_{22}</m> is the <term>trace</term> and <m>D=a_{11}a_{22}-a_{12}a_{21}</m> is the <term>determinant</term> of the matrix. Each eigenvalue <m>\lambda_k</m> implies a solution with time dependence <m>\exp(\lambda_k t)</m> (unless the eigenvalues coincide, in which case <m>t\exp(\lambda_k t)</m> can emerge). Hence stability is determined by the real parts of the eigenvalues:
             <ol>
-                <li>If <m>\Re\lambda_k \gt 0</m> for either value of <m>k</m>, the origin is unstable.</li>
-                <li>If <m>\Re\lambda_k \leq 0</m> for both <m>k</m>, and <m>\lambda_1\neq \lambda_2</m>, the origin is stable.</li>
-                <li>If <m>\lambda_1 = \lambda_2</m>, the origin is unstable.</li>
+                <li>If <m>\Re\lambda_k \gt 0</m> for either value of <m>k</m>, then the origin is unstable.</li>
+                <li>Otherwise, if <m>\Re\lambda_k \lt 0</m> for both <m>k</m>, then the origin is stable.</li>
+                <li>Otherwise (so <m>\Re\lambda_k \leq 0</m> for both <m>k</m> with equality in at least one case), either <m>\lambda_1 \neq \lambda_2</m> and the origin is stable, or <m>\lambda_1 = \lambda_2=0</m> and the origin is (weakly) unstable. 
             </ol>
-            Furthermore, in the first two cases, point is a node if the imaginary parts of the eigenvalues are zero, and a spiral or center if they are nonzero. 
+            Furthermore, in the first two cases, the origin is a node if the imaginary parts of the eigenvalues are zero, and a spiral if they are nonzero. 
         </p>
         <p>
             We don't even have to compute the eigenvalues to figure out the stability. If you add the roots of the quadratic formula, you can confirm that 
