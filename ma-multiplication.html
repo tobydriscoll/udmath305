@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-11T09:05:35-04:00    *-->
+<!--*    on 2019-04-15T11:26:21-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Multiplying matrices and vectors</title>
+<title>Multiplying matrices</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
@@ -133,7 +133,7 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="ma-rows-columns.html" data-scroll="ma-rows-columns">Rows and columns</a></li>
 <li><a href="ma-elimination.html" data-scroll="ma-elimination">Elimination for linear systems</a></li>
-<li><a href="ma-multiplication.html" data-scroll="ma-multiplication" class="active">Multiplying matrices and vectors</a></li>
+<li><a href="ma-multiplication.html" data-scroll="ma-multiplication" class="active">Multiplying matrices</a></li>
 <li><a href="ma-inverses.html" data-scroll="ma-inverses">Matrix inverses</a></li>
 <li><a href="section-29.html" data-scroll="section-29">Eigenvalues</a></li>
 <li><a href="section-30.html" data-scroll="section-30">Diagonalization</a></li>
@@ -142,19 +142,18 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="ma-multiplication"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Multiplying matrices and vectors</span>
+<span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Multiplying matrices</span>
 </h2>
-<a href="ma-multiplication.html" class="permalink">¶</a><section class="introduction" id="introduction-16"><p id="p-361">From section 4.3 (skip "Elimination matrices"), with a little from 4.1 also.</p>
-<p id="p-362">It's time to go all-in on matrices.</p>
-<p id="p-363">An \(m\times n\) matrix \(\bA\) is a rectangular \(m\)-by-\(n\) array of numbers called <dfn class="terminology">elements</dfn> or <dfn class="terminology">entries</dfn>.  The numbers \(m\) and \(n\) are called the <dfn class="terminology">row dimension</dfn> and the <dfn class="terminology">column dimension</dfn>, respectively; collectively they describe the <dfn class="terminology">size</dfn> of \(\bA\text{.}\) We say \(\bA\) belongs to \(\mathbb{R}^{m\times n}\) if its entries are real or \(\mathbb{C}^{m\times n}\) if they are complex-valued.</p>
-<p id="p-364">A <dfn class="terminology">square</dfn> matrix has equal row and column dimensions. A <dfn class="terminology">row vector</dfn> has dimension \(1\times n\text{,}\) while a <dfn class="terminology">column vector</dfn> has dimension \(m \times 1\text{.}\) By default, a vector is understood to be a column vector, and we use \(\mathbb{R}^n\) or \(\mathbb{C}^n\) to denote spaces of vectors.  An ordinary number may be called a <dfn class="terminology">scalar</dfn>.</p>
-<p id="p-365">We will mainly be dealing with scalars, vectors and square matrices. Please keep in mind that "scalar/vector" and "constant/function" are separate attributes. All four combinations of them are possible. I use capital letters in bold to refer to matrices, and lowercase bold letters for vectors. The bold symbol \(\boldsymbol{0}\) may refer to a vector of all zeros or to a zero matrix, depending on context.</p>
-<p id="p-366">To refer to a specific element of a matrix, I use the uppercase name of the matrix <em class="emphasis">without</em> boldface, as in \(A_{24}\) to mean the \((2,4)\) element of \(\bA\text{.}\) (This is not universal practice, but it is most like MATLAB.) To refer to an element of a vector, I use just one subscript, as in \(x_3\text{.}\) If you see a boldface character with one or more subscripts, then you know that it is a matrix or vector that belongs to a numbered collection. We sometimes find it useful to refer to the individual columns of a matrix as vectors. My convention is to use a lowercase bold version of the matrix name, with a subscript to represent the column number. Thus, \(\bA_1,\bA_2,\ldots,\bA_n\) are the columns of the \(m\times n\) matrix \(\bA\text{.}\)</p>
-<p id="p-367">Adding and subtracting matrices and vectors is dead simple: if two things are the same size, you add/subtract them elementwise; otherwise, the operation is not permitted. (Caution: MATLAB <em class="emphasis">does</em> let you do that sometimes, and it's a great source of confusing, subtle bugs.)</p>
-<p id="p-368">However, multiplication and "division" are far more complicated for matrices than they are for scalars.</p></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<a href="ma-multiplication.html" class="permalink">¶</a><section class="introduction" id="introduction-16"><p id="p-365">From section 4.3 (skip "Elimination matrices"), with a little from 4.1 also.</p>
+<p id="p-366">An \(m\times n\) matrix \(\bA\) is a rectangular \(m\)-by-\(n\) array of numbers called <dfn class="terminology">elements</dfn> or <dfn class="terminology">entries</dfn>.  The numbers \(m\) and \(n\) are called the <dfn class="terminology">row dimension</dfn> and the <dfn class="terminology">column dimension</dfn>, respectively; collectively they describe the <dfn class="terminology">size</dfn> of \(\bA\text{.}\) We say \(\bA\) belongs to \(\mathbb{R}^{m\times n}\) if its entries are real or \(\mathbb{C}^{m\times n}\) if they are complex-valued.</p>
+<p id="p-367">A <dfn class="terminology">square</dfn> matrix has equal row and column dimensions. A <dfn class="terminology">row vector</dfn> has dimension \(1\times n\text{,}\) while a <dfn class="terminology">column vector</dfn> has dimension \(m \times 1\text{.}\) By default, a vector is understood to be a column vector, and we use \(\mathbb{R}^n\) or \(\mathbb{C}^n\) to denote spaces of vectors.  An ordinary number may be called a <dfn class="terminology">scalar</dfn>.</p>
+<p id="p-368">We will mainly be dealing with scalars, vectors and square matrices. Please keep in mind that "scalar/vector" and "constant/variable" are separate attributes. All four combinations of them are possible. (And then there's "real/complex" as well.) I use capital letters in bold to refer to matrices, and lowercase bold letters for vectors. The bold symbol \(\boldsymbol{0}\) may refer to a vector of all zeros or to a zero matrix, depending on context.</p>
+<p id="p-369">To refer to a specific entry of a matrix, I do not use boldface. If you see a boldface character with one or more subscripts, then you know that it is a matrix or vector that belongs to a numbered collection.</p>
+<p id="p-370">Adding and subtracting matrices and vectors is dead simple: if two things are the same size, you add/subtract them elementwise; otherwise, the operation is not permitted. (Caution: MATLAB <em class="emphasis">does</em> let you do that sometimes, and it's a great source of confusing, subtle bugs.)</p>
+<p id="p-371">However, multiplication and "division" are far more complicated for matrices than they are for scalars.</p></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.1</span> <span class="title">Vectors: Dot products</span>
 </h3>
-<p id="p-369">Suppose \(\bu\) and \(\bv\) are real column vectors of length \(n\text{.}\) Then their <dfn class="terminology">dot product</dfn> (or <dfn class="terminology">inner product</dfn>, or <dfn class="terminology">scalar product</dfn> is</p>
+<p id="p-372">Suppose \(\bu\) and \(\bv\) are real column vectors of length \(n\text{.}\) Then their <dfn class="terminology">dot product</dfn> (or <dfn class="terminology">inner product</dfn>, or <dfn class="terminology">scalar product</dfn> is</p>
 <div class="displaymath">
 \begin{equation*}
 \bu \cdot \bv = u_1 v_1 + u_2 v_2 + \cdots u_n v_n = \sum_i u_i v_i\text{.}
@@ -166,58 +165,25 @@ MathJax.Hub.Config({
 \bu \cdot \bv = \| \bu \| \, \| \bv \| \, \cos(\theta)\text{,}
 \end{equation*}
 </div>
-<p>where \(\|\) is used to indicate Euclidean length (or <dfn class="terminology">norm</dfn>) and \(\theta\) is the angle between the vectors. This is most important to us when the angle is a right angle, i.e., \(\bu\cdot\bv = 0\text{,}\) in which case we say the vectors are <dfn class="terminology">orthogonal</dfn> (meaning perpendicular).</p></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.3.2</span> <span class="title">Matrix times vector</span>
-</h3>
-<p id="p-370">Suppose \(\bA\) is \(m\times n\) and \(\bx\) is \(n\times 1\text{,}\) a column vector. The column dimension of \(\bA\) has to be the same as the row dimension in \(\bb\text{.}\) We can define the product \(\bA\bx\) two equivalent ways. Each interpretation has its uses.</p>
-<p id="p-371">First we think about <em class="emphasis">\(\bA\) acting on \(\bx\)</em>.  The product \(\by=\bA\bx\) is an \(m\times 1\) vector whose \(i\)th element is the dot product of \(\bx\) with the \(i\)th row of \(\bA\text{.}\) More symbolically,</p>
+<p>where \(\|\) is used to indicate Euclidean length (or <dfn class="terminology">norm</dfn>) and \(\theta\) is the angle between the vectors. This is most important to us when the angle is a right angle, i.e., \(\bu\cdot\bv = 0\text{,}\) in which case we say the vectors are <dfn class="terminology">orthogonal</dfn> (meaning perpendicular).</p>
+<p id="p-373">The dot product gives us a new way to describe the matrix-vector product \(\bA\bx\text{.}\) The product \(\by=\bA\bx\) is an \(m\times 1\) vector whose \(i\)th element is the dot product of \(\bx\) with the \(i\)th row of \(\bA\text{.}\) More symbolically,</p>
 <div class="displaymath">
 \begin{equation*}
 y_i = \sum_{k=1}^n A_{ik} x_k, \qquad i=1,\ldots,m\text{.}
 \end{equation*}
 </div>
-<p id="p-372">We can also interpret the product as <em class="emphasis">\(\bx\) acting on \(\bA\text{.}\)</em> Specifically,</p>
-<div class="displaymath">
-\begin{align*}
-\bA \mathbf{x} =
-\begin{bmatrix}
-\displaystyle \sum_k A_{1k}x_k \\[2mm]
-\displaystyle \sum_k A_{2k}x_k \\
-\vdots\\
-\displaystyle \sum_k A_{mk}x_k
-\end{bmatrix}
-\amp = x_1
-\begin{bmatrix}
-A_{11}\\A_{21}\\\vdots\\A_{m1}
-\end{bmatrix} +
-x_2
-\begin{bmatrix}
-A_{12}\\A_{22}\\\vdots\\A_{m2}
-\end{bmatrix} +
-\cdots + x_n
-\begin{bmatrix}
-A_{1n}\\A_{2n}\\\vdots\\A_{mn}
-\end{bmatrix} \\
-\amp = x_1 \bA_1 + x_2 \bA_2 + \cdots + x_n \bA_n\text{.}
-\end{align*}
-</div>
-<p>In words, we say that \(\bA\bx\) is a linear combination of the columns of \(\bA\text{,}\) with the combination coefficients coming from \(\bx\text{.}\)</p>
-<p id="p-373">This is a critical tie-in to linear systems. We previously observed that a linear system of equations could be interpreted as being about linear combinations of the columns of the coefficient matrix.</p>
-<article class="theorem-like" id="fact-3"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">4.3.1</span>
-</h6>
-<p id="p-374">The linear system with matrix \(\bA\) and vector \(\bb\) is about solving \(\bA\bx=\bb\) for \(\bx\text{.}\)</p></article></section><section class="subsection" id="subsection-56"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.3.3</span> <span class="title">Matrix times matrix</span>
+<p>This is, naturally, equivalent to the earlier definition of \(\by\) as a linear combination of the columns of \(\bA\text{,}\) with the combination coefficients coming from \(\bx\text{.}\)</p></section><section class="subsection" id="subsection-56"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.3.2</span> <span class="title">Matrix times matrix</span>
 </h3>
-<p id="p-375">The last and most general case for us to consider is the product \(\bA\bB\text{.}\) As in the matrix-vector case, there is a constraint on the sizes: the number of columns of \(\bA\) has to be the same as the number of rows in \(\bB\text{.}\) So if \(\bA\) is \(m\times n\) and \(\bB\) is \(n\times p\text{,}\) we can define the product \(\bC = \bA\bB\) as the \(m\times p\) matrix with entries defined by</p>
+<p id="p-374">The last and most general case for us to consider is the product \(\bA\bB\text{.}\) As in the matrix-vector case, there is a constraint on the sizes: the number of columns of \(\bA\) has to be the same as the number of rows in \(\bB\text{.}\) So if \(\bA\) is \(m\times n\) and \(\bB\) is \(n\times p\text{,}\) we can define the product \(\bC = \bA\bB\) as the \(m\times p\) matrix with entries defined by</p>
 <div class="displaymath">
 \begin{equation*}
 C_{ij} = \sum_{k=1}^n A_{ij}B_{jk}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text{.}
 \end{equation*}
 </div>
-<article class="example-like" id="example-49"><a knowl="" class="id-ref" refid="hk-example-49"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.3.2</span>
-</h6></a></article><div id="hk-example-49" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-376">Let</p>
+<article class="example-like" id="example-51"><a knowl="" class="id-ref" refid="hk-example-51"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.3.1</span>
+</h6></a></article><div id="hk-example-51" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-375">Let</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix}
@@ -241,7 +207,7 @@ C_{ij} = \sum_{k=1}^n A_{ij}B_{jk}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text
 \end{bmatrix}\text{.}
 \end{align*}
 </div></article></div>
-<p id="p-377">One way to think about the definition of matrix multiplication is as a generalization of the matrix-vector product. It turns out that</p>
+<p id="p-376">One way to think about the definition of matrix multiplication is as a generalization of the matrix-vector product. It turns out that</p>
 <div class="displaymath">
 \begin{equation*}
 \bA\mathbf{B} =
@@ -254,9 +220,9 @@ C_{ij} = \sum_{k=1}^n A_{ij}B_{jk}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text
 \end{equation*}
 </div>
 <p>In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix.</p>
-<article class="example-like" id="example-50"><a knowl="" class="id-ref" refid="hk-example-50"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.3.3</span>
-</h6></a></article><div id="hk-example-50" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-378">Returning to the previous example, note that</p>
+<article class="example-like" id="example-52"><a knowl="" class="id-ref" refid="hk-example-52"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.3.2</span>
+</h6></a></article><div id="hk-example-52" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-377">Returning to the previous example, note that</p>
 <div class="displaymath">
 \begin{equation*}
 \bA \begin{bmatrix} 2 \\ 1 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ 0 \\ -3
@@ -265,19 +231,19 @@ C_{ij} = \sum_{k=1}^n A_{ij}B_{jk}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text
 \end{equation*}
 </div>
 <p>and so on.</p></article></div></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.3.4</span> <span class="title">Properties</span>
+<span class="type">Subsection</span> <span class="codenumber">4.3.3</span> <span class="title">Properties</span>
 </h3>
-<p id="p-379">First, the bad news. In the previous subsection we computed the product \(\bA\bB\text{,}\) where the matrices are \(3\times 2\) and \(2\times 4\text{,}\) to get a result that is \(3\times 4\text{.}\) However, the product \(\bB\bA\) isn't even defined, because \(4\neq 3\text{.}\) Moreover, even when both \(\bA\bB\) and \(\bB\bA\) <em class="emphasis">are</em> defined, we cannot expect them to be equal.</p>
+<p id="p-378">First, the bad news. In the previous subsection we computed the product \(\bA\bB\text{,}\) where the matrices are \(3\times 2\) and \(2\times 4\text{,}\) to get a result that is \(3\times 4\text{.}\) However, the product \(\bB\bA\) isn't even defined, because \(4\neq 3\text{.}\) Moreover, even when both \(\bA\bB\) and \(\bB\bA\) <em class="emphasis">are</em> defined, we cannot expect them to be equal.</p>
 <article class="theorem-like" id="fact-4"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">4.3.4</span>
+<span class="type">Fact</span> <span class="codenumber">4.3.3</span>
 </h6>
-<p id="p-380">Matrix multiplication is not commutative. That is, the order of terms in a product affects the result.</p></article><p id="p-381">In a product of matrices (and vectors), position matters. You cannot change the ordering (without justification)! You may have to unlearn some old habits.</p>
-<p id="p-382">Fortunately, other familiar properties of scalar multiplication do come along for the ride: </p>
+<p id="p-379">Matrix multiplication is not commutative. That is, the order of terms in a product affects the result.</p></article><p id="p-380">In a product of matrices (and vectors), position matters. You cannot change the ordering (without justification)! You may have to unlearn some old habits.</p>
+<p id="p-381">Fortunately, other familiar properties of scalar multiplication do come along for the ride: </p>
 <ol class="decimal">
-<li id="li-20">\((\bA\bB)\bC=\bA(\bB\bC)\)</li>
-<li id="li-21">\(\bA(\bB+\bC) = \bA\bB + \bA\bC\)</li>
-<li id="li-22">\((\bA+\bB)\bC = \bA\bC + \bB\bC\)</li>
-<li id="li-23">\(\alpha(\bB+\bC) = \alpha\bB + \alpha\bC\)</li>
+<li id="li-22">\((\bA\bB)\bC=\bA(\bB\bC)\)</li>
+<li id="li-23">\(\bA(\bB+\bC) = \bA\bB + \bA\bC\)</li>
+<li id="li-24">\((\bA+\bB)\bC = \bA\bC + \bB\bC\)</li>
+<li id="li-25">\(\alpha(\bB+\bC) = \alpha\bB + \alpha\bC\)</li>
 </ol>
 <p> The associative law is especially valuable; many algorithms and results in computational linear algebra rely on it.</p></section></section></div></main>
 </div>

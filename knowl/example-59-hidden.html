@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-11T09:05:38-04:00    *-->
+<!--*    on 2019-04-15T11:26:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,19 +11,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>The problem \(\mathbf{y}' = \begin{bmatrix} -1 \amp 1 \\ 0 \amp -1 \end{bmatrix} \mathbf{y}\) has a defective matrix, so we cannot use a diagonalization to compute the matrix exponential. However, we are still free to compute a power series! This works out well because we get a simple pattern:</p>
+<body><article class="example-like"><p>We look again at an example fron the previous section,</p>
 <div class="displaymath">
-\begin{align*}
-\bA^2 \amp = \twomat{-1}{1}{0}{-1} \twomat{-1}{1}{0}{-1}  = \twomat{1}{-2}{0}{1} \\
-\bA^3 \amp = \twomat{1}{-2}{0}{1} \twomat{-1}{1}{0}{-1}  = \twomat{-1}{3}{0}{-1}\text{,}
-\end{align*}
+\begin{equation*}
+\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}\text{,}
+\end{equation*}
 </div>
-<p>and so on. We put this together and get</p>
+<p>in which \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\) are eigenpairs. We define</p>
 <div class="displaymath">
-\begin{align*}
-e^{t\bA} \amp = 
-\twomat{1 -t + \frac{1}{2!}t^2 - \frac{1}{3!}t^3 + \cdots}{t - \frac{2}{2!}t^2 + \frac{3}{3!}t^3 - \cdots}{0}{1 -t + \frac{1}{2!}t^2 - \frac{1}{3!}t^3 + \cdots}\\
-\amp = \twomat{e^{-t}}{te^{-t}}{0}{e^{-t}}\text{.}
-\end{align*}
+\begin{equation*}
+\bV = \twomat{1}{1}{2}{-2}
+\end{equation*}
+</div>
+<p>and compute</p>
+<div class="displaymath">
+\begin{equation*}
+\bV^{-1} = \frac{1}{4}\twomat{2}{1}{2}{-1}\text{.}
+\end{equation*}
+</div>
+<p>Hence</p>
+<div class="displaymath">
+\begin{equation*}
+\by(t) = \frac{1}{4} \twomat{1}{1}{2}{-2} \twodiag{e^{3t}}{e^{-t}} \twomat{2}{1}{2}{-1} \by(0)\text{.}
+\end{equation*}
 </div></article></body>
 </html>

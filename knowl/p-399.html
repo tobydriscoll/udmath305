@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-11T09:05:38-04:00    *-->
+<!--*    on 2019-04-15T11:26:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This connection gives the most common way to compute eigenvalues by hand. Recall that a matrix is singular if and only if its determinant is zero. Thus an alternative algebraic condition for an eigenvalue is \(\det(\bA-\lambda \mathbf{I})=0\text{.}\)</p>
+<p>Let's chase this down for a \(2\times 2\) situation.</p>
+<div class="displaymath">
+\begin{align*}
+0 \amp = \det( \bA -\lambda \mathbf{I} ) \\
+\amp = \det\left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} - \lambda \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)\\
+\amp = \begin{vmatrix} a-\lambda \amp b \\ c \amp d-\lambda \end{vmatrix} = (a-\lambda)(d-\lambda)-bc\text{.}
+\end{align*}
+</div>
+<p>This condition is equivalent to finding the roots of a quadratic polynomial. In fact, it is \(\lambda^2 - T \lambda +D\text{,}\) as we stated when analyzing the stability of a 2-by-2 linear ODE system.</p>
 <span class="incontext"><a href="section-29.html#p-399">in-context</a></span>
 </body>
 </html>

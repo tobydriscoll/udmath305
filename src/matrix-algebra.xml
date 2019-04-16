@@ -8,14 +8,21 @@
     <title>Rows and columns</title>
     <introduction>
         <p>
-            Our bread and butter in this chapter is a linear system of <m>n</m> linear equations in <m>n</m> variables, 
+            Suppose we have a system of <m>n</m> linear ODEs, 
+            <md>
+                <mrow>\dd{x_1}{t} \amp = a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n - b_1 </mrow>
+                <mrow>\dd{x_2}{t} \amp = a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n - b_2 </mrow>
+                <mrow>\amp \vdots </mrow>
+                <mrow>\dd{x_n}{t} \amp = a_{n1} x_1 + a_{n2} x_2 + \cdots + a_{nn} x_n - b_n </mrow>
+            </md>. 
+            A steady state of this system occurs when 
             <md>
                 <mrow>a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n \amp = b_1 </mrow>
                 <mrow>a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n \amp = b_2 </mrow>
                 <mrow>\amp \vdots </mrow>
                 <mrow>a_{n1} x_1 + a_{n2} x_2 + \cdots + a_{nn} x_n \amp = b_n </mrow>
             </md>, 
-            which we can summarize with an <m>n\times n</m> matrix <m>\bA</m> and an <m>n\times 1</m> vector <m>\bb</m>. Let's start slowly, with some examples in <m>n=2</m> dimensions.
+            which is a linear algebraic system of equations. We can summarize the system with an <m>n\times n</m> matrix <m>\bA</m> and an <m>n\times 1</m> vector <m>\bb</m>. Let's start slowly, with some examples in <m>n=2</m> dimensions.
         </p>
     </introduction>
     <subsection>
@@ -36,9 +43,7 @@
         <me>
             \bb = \twovec{7}{1}
         </me>. 
-    </p>
-    <p>       
-        We can interpret the system two different ways, depending on whether we organize by rows (associated with equations) or columns (associated with variables). 
+        We can interpret the system in two different ways, depending on whether we organize by rows (associated with equations) or columns (associated with variables). 
     </p>
     <p>
         Each row of the system is an equation describing a line in the <m>(x,y)</m> plane. The intersection of the lines is the point representing the solution of the system. 
@@ -64,7 +69,7 @@ xlabel('x'), ylabel('y')
         <image source="matlab/ma_rc_rows.svg"/>	  
     </sidebyside>
     <p>
-        It's clear that if we were to choose a different vector <m>\bb</m>, the lines in the picture would keep their same slopes and just move up and down. Thus we expect one unique solution (intersection) for any given <m>\bb</m>.
+        If we were to choose a different vector <m>\bb</m>, the lines in the picture would keep their same slopes and just move up and down. Thus we expect one unique solution (intersection) for any given <m>\bb</m>.
     </p>
 
     <p> 
@@ -101,6 +106,50 @@ xlabel('b_1'), ylabel('b_2')
     <p>
         We might think of solving the system in this picture as expressing <m>\bb</m> in a different coordinate system defined by the columns of <m>\bA</m>. In fact, it's just a rotation and scaling of the default Cartesian system, so again from this perspective we expect a unique result for each <m>\bb</m>.
     </p>
+    </subsection>
+    <subsection>
+        <title>Matrix times vector</title>
+        <p>
+            The column-oriented interpretation above is the foundation for our first algebraic operation with matrices. If <m>\bA</m> is an <m>n\times n</m> matrix and <m>\bx</m> is an <m>n\times 1</m> vector, then we define 
+            <me>
+                \bA\bx = x_1 \begin{bmatrix} a_{11}\\a_{21}\\\vdots\\a_{n1} \end{bmatrix} 
+                + x_2 \begin{bmatrix} a_{12}\\a_{22}\\\vdots\\a_{n2} \end{bmatrix} 
+                + \cdots + x_n \begin{bmatrix} a_{1n}\\a_{2n}\\\vdots\\a_{nn} \end{bmatrix} 
+            </me>. 
+            That is, <em>a matrix times a vector is a linear combination of the columns of the matrix</em>. 
+        </p>
+        <example>
+            <p>
+                We can compute
+                <me>
+                    \begin{bmatrix} 1 \amp 0 \amp -3 \\ 2 \amp -2 \amp 1 \\ 0 \amp 4 \amp 1 \end{bmatrix}
+                    \begin{bmatrix} 2 \\ 1 \\ -2 \end{bmatrix} 
+                    = 2 \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix} + 1 \begin{bmatrix} 0 \\ -2 \\ 4 \end{bmatrix} 
+                    - 2 \begin{bmatrix} -3 \\ 1 \\ 1 \end{bmatrix} 
+                    = \begin{bmatrix} 8 \\ 0 \\ 2 \end{bmatrix} 
+                </me>. 
+                Usually this sort of computation is not written out as a linear combination. Instead you just kind of zip together each row of <m>\bA</m> with the given vector:
+                 <me>
+                    \begin{bmatrix} 1 \amp 0 \amp -3 \\ 2 \amp -2 \amp 1 \\ 0 \amp 4 \amp 1 \end{bmatrix}
+                    \begin{bmatrix} 2 \\ 1 \\ -2 \end{bmatrix} 
+                    = \begin{bmatrix} (1)(2) + (0)(1) + (-3)(-2) \\ (2)(2) + (-2)(1) + (1)(-2) \\ (0)(2) + (4)(1) + (1)(-2) \end{bmatrix}
+                </me>.  
+            </p> 
+        </example>
+        <p>
+            This definition of matrix times vector justifies writing the linear system of equations at the top of this section as 
+            <me>
+                \dd{\bx}{t} = \bA \bx - \bb
+            </me>
+            for the ODEs, and 
+            <me>
+                \bA \bx = \bb
+            </me>
+            for the linear algebraic system determining the steady state. 
+        </p>
+        <fact>
+            <p>The linear system with coefficient matrix <m>\bA</m> and right-side vector <m>\bb</m> is about solving <m>\bA\bx=\bb</m> for <m>\bx</m>.</p>    
+        </fact>
 
     </subsection>
     <subsection>
@@ -136,7 +185,7 @@ xlabel('x'), ylabel('y')
         The row picture makes it clear that we are seeking the intersection of two distinct parallel lines, an enterprise that is bound to disappoint us. Likewise, the column picture (not given) is about finding combinations of the column vectors <m>\twovec{1}{-2}</m> and <m>\twovec{2}{-4}</m>. These too are parallel, so all of their linear combinations lie on a single line through the origin. The given vector <m>\bb=\twovec{1}{1}</m> is not on this line, so no solution exists. 
     </p>
     <p> 
-        Of course, a different vector on the right-hand side such as <m>\bb=\twovec{-3}{6}</m> does lie on this line, and we <em>can</em> solve the system in this case. In fact, there are infinitely many ways to do it:
+        However, a different vector on the right-hand side such as <m>\bb=\twovec{-3}{6}</m> does lie on this line, and we <em>can</em> solve the system in this case. In fact, there are infinitely many ways to do it:
         <md>
             <mrow>(1+2c) \twovec{1}{-2} - (2+c)\twovec{2}{-4} \amp = \left( \twovec{1}{-2} - 2 \twovec{2}{-4}  \right) + c \left( 2\twovec{1}{-2} - \twovec{2}{-4}  \right) </mrow>
             <mrow>\amp = \twovec{-3}{6} + c\cdot \textbf{0}</mrow>   
@@ -148,10 +197,15 @@ xlabel('x'), ylabel('y')
     <subsection>
     <title>Singular matrices</title>
     <p>
-        Although we have only examined two two-dimensional cases, they contain most of what we will see in general. A system of <m>n</m> linear equations in <m>n</m> variables with a particular matrix <m>\bA</m> will either have a unique solution for every choice of <m>\bb</m>, or it will have the possibility of no solution or infinitely many solutions depending on <m>\bb</m>. In the latter case we say the matrix <m>\bA</m> is <term> singular</term>, and in the former case we say it is <term>nonsingular</term>. (The term "invertible" is a synonym of nonsingular.) 
+        Although we have only examined two two-dimensional cases, they contain most of what we will see in general. A system of <m>n</m> linear equations in <m>n</m> variables with a particular matrix <m>\bA</m> will be one of two basic types: 
+        <ol>
+            <li>There is a unique solution for any choice of <m>\bb</m>, or</li>
+            <li>Depending on <m>\bb</m>, there is no solution or infinitely many solutions.</li>
+        </ol>
+        In the second case we say the matrix <m>\bA</m> is <term> singular</term>, and in the first case we say it is <term>nonsingular</term> (or "invertible"). 
     </p>
     <p>
-        Furthermore, the singular case has a familiar pattern to it. If there is a linear combination of the columns of <m>\bA</m> that gives a zero vector--that is, if the linear system has a null solution--then any multiple of that null solution can be added to a particular solution in order to get another particular solution. 
+        The singular case has a familiar pattern to it. If there is a linear combination of the columns of <m>\bA</m> that gives a zero vector--that is, if the linear system has a null solution--then any multiple of that null solution can be added to a particular solution in order to get another particular solution. 
     </p>
  
     </subsection>
@@ -239,6 +293,36 @@ xlabel('x'), ylabel('y')
         <p>
             This behavior is manifested once we move on to the backward substitution phase. If some <m>(i,i)</m> element is zero in the triangular matrix, then we will be unable to solve for <m>x_i</m> when its turn comes. At that point, either the system holds true regardless of the value of <m>x_i</m> (which makes it a "free" variable), or the system is inconsistent and has no solution. 
         </p>
+        <example>
+            <title>Singular system of equations</title>
+            <p> 
+            Elimination for the singular system 
+            <md>
+                <mrow>\amp x  \amp+  2  y   = \amp 1</mrow>
+                <mrow>\amp {-2}  x   \amp- 4  y  = \amp {-1}</mrow>
+            </md>
+            leads in one step to 
+            <md>
+                <mrow>\amp x  \amp+  2  y   = \amp 1</mrow>
+                <mrow>\amp 0  x \amp + 0 y  = \amp 1</mrow>
+            </md>. 
+            The second equation is impossible to satisfy, hence there are no solutions. On the other hand, if we started with 
+            <md>
+                <mrow>\amp x  \amp+  2  y   = \amp {-3}</mrow>
+                <mrow>\amp {-2}  x   \amp- 4  y  = \amp 6</mrow>
+            </md>
+            then we get 
+            <md>
+                <mrow>\amp x  \amp+  2  y   = \amp {-3}</mrow>
+                <mrow>\amp 0  x \amp + 0 y  = \amp 0</mrow>
+            </md>. 
+            The second equation is satisfied no matter what we do. So we are "free" to choose <m>y</m>, and then the first equation tells us that <m>x=-3-2y</m>. In vector form, the system is solved by
+            <me>
+                \twovec{-3}{0} + y \twovec{-2}{1}
+            </me>
+            for any choice of <m>y</m>. We may interpret this as "particular plus null," because <m>\bA \twovec{-2}{1}=\boldsymbol{0}</m>. 
+            </p>
+        </example>
      </subsection>
      <subsection>
      <title>Cramer's rule</title>
@@ -250,20 +334,18 @@ xlabel('x'), ylabel('y')
         </md>.  
         Cramer's rule says
         <md>
-            <mrow>x \amp = \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10}</mrow>
-           <mrow>y \amp = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10}</mrow>            
+            <mrow>x \amp = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} </mrow>
+           <mrow>y \amp = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10}</mrow>            
         </md>.
+        This does generalize to larger systems: to get the <m>i</m>th variable, the numerator replaces column <m>i</m> of the matrix with <m>\bb</m> before taking the determinant. 
      </p>
      </subsection>
  </section>
 
 <section xml:id="ma-multiplication">
-    <title>Multiplying matrices and vectors</title>
+    <title>Multiplying matrices</title>
     <introduction>
         <p>From section 4.3 (skip "Elimination matrices"), with a little from 4.1 also.</p>
-    <p>
-        It's time to go all-in on matrices.
-    </p>
     <p>
         An <m>m\times n</m> matrix <m>\bA</m> is a rectangular <m>m</m>-by-<m>n</m> array of numbers called <term>elements</term> or <term>entries</term>.  The numbers <m>m</m> and <m>n</m> are called the <term>row dimension</term> and the <term>column dimension</term>, respectively; collectively they describe the <term>size</term> of <m>\bA</m>. We say <m>\bA</m> belongs to <m>\mathbb{R}^{m\times n}</m> if its entries are real or <m>\mathbb{C}^{m\times n}</m> if they are complex-valued.
     </p> 
@@ -271,14 +353,12 @@ xlabel('x'), ylabel('y')
         A <term>square</term> matrix has equal row and column dimensions. A <term>row vector</term> has dimension <m>1\times n</m>, while a <term>column vector</term> has dimension <m>m \times 1</m>. By default, a vector is understood to be a column vector, and we use <m>\mathbb{R}^n</m> or <m>\mathbb{C}^n</m> to denote spaces of vectors.  An ordinary number may be called a <term>scalar</term>.
     </p>
     <p>
-        We will mainly be dealing with scalars, vectors and square matrices. Please keep in mind that "scalar/vector" and "constant/function" are separate attributes. All four combinations of them are possible.
+        We will mainly be dealing with scalars, vectors and square matrices. Please keep in mind that "scalar/vector" and "constant/variable" are separate attributes. All four combinations of them are possible. (And then there's "real/complex" as well.) 
 
         I use capital letters in bold to refer to matrices, and lowercase bold letters for vectors. The bold symbol <m>\boldsymbol{0}</m> may refer to a vector of all zeros or to a zero matrix, depending on context.
     </p>
     <p>
-        To refer to a specific element of a matrix, I use the uppercase name of the matrix <em>without</em> boldface, as in <m>A_{24}</m> to mean the <m>(2,4)</m> element of <m>\bA</m>. (This is not universal practice, but it is most like MATLAB.) To refer to an element of a vector, I use just one subscript, as in <m>x_3</m>. If you see a boldface character with one or more subscripts, then you know that it is a matrix or vector that belongs to a numbered collection.
-
-        We sometimes find it useful to refer to the individual columns of a matrix as vectors. My convention is to use a lowercase bold version of the matrix name, with a subscript to represent the column number. Thus, <m>\bA_1,\bA_2,\ldots,\bA_n</m> are the columns of the <m>m\times n</m> matrix <m>\bA</m>.
+        To refer to a specific entry of a matrix, I do not use boldface. If you see a boldface character with one or more subscripts, then you know that it is a matrix or vector that belongs to a numbered collection.
     </p>
     <p>
         Adding and subtracting matrices and vectors is dead simple: if two things are the same size, you add/subtract them elementwise; otherwise, the operation is not permitted. (Caution: MATLAB <em>does</em> let you do that sometimes, and it's a great source of confusing, subtle bugs.) 
@@ -288,7 +368,7 @@ xlabel('x'), ylabel('y')
     </p>
     </introduction>
     <subsection>
-    <title>Vectors: Dot products</title>
+    <title>Dot products</title>
     <p>
         Suppose <m>\bu</m> and <m>\bv</m> are real column vectors of length <m>n</m>. Then their <term>dot product</term> (or <term>inner product</term>, or <term>scalar product</term> is 
         <me>
@@ -300,53 +380,13 @@ xlabel('x'), ylabel('y')
         </me>,
         where <m>\|</m> is used to indicate Euclidean length (or <term>norm</term>) and <m>\theta</m> is the angle between the vectors. This is most important to us when the angle is a right angle, i.e., <m>\bu\cdot\bv = 0</m>, in which case we say the vectors are <term>orthogonal</term> (meaning perpendicular). 
     </p>
-    </subsection>
-
-    <subsection>
-    <title>Matrix times vector</title>
     <p>
-        Suppose <m>\bA</m> is <m>m\times n</m> and <m>\bx</m> is <m>n\times 1</m>, a column vector. The column dimension of <m>\bA</m> has to be the same as the row dimension in <m>\bb</m>. We can define the product <m>\bA\bx</m> two equivalent ways. Each interpretation has its uses.
-    </p>
-    <p> 
-        First we think about <em><m>\bA</m> acting on <m>\bx</m></em>.  The product <m>\by=\bA\bx</m> is an <m>m\times 1</m> vector whose <m>i</m>th element is the dot product of <m>\bx</m> with the <m>i</m>th row of <m>\bA</m>. More symbolically,
+        The dot product gives us a new way to describe the matrix-vector product <m>\bA\bx</m>. The product <m>\by=\bA\bx</m> is an <m>m\times 1</m> vector whose <m>i</m>th element is the dot product of <m>\bx</m> with the <m>i</m>th row of <m>\bA</m>. More symbolically,
         <me>
             y_i = \sum_{k=1}^n A_{ik} x_k, \qquad i=1,\ldots,m
         </me>. 
+        This is, naturally, equivalent to the earlier definition of <m>\by</m> as a linear combination of the columns of <m>\bA</m>, with the combination coefficients coming from <m>\bx</m>.
     </p>
-    <p>
-        We can also interpret the product as <em><m>\bx</m> acting on <m>\bA</m>.</em> Specifically, 
-        <md>
-            <mrow>
-            \bA \mathbf{x} =
-            \begin{bmatrix}
-            \displaystyle \sum_k A_{1k}x_k \\[2mm]
-            \displaystyle \sum_k A_{2k}x_k \\
-            \vdots\\
-            \displaystyle \sum_k A_{mk}x_k
-            \end{bmatrix}
-            \amp = x_1
-            \begin{bmatrix}
-            A_{11}\\A_{21}\\\vdots\\A_{m1}
-            \end{bmatrix} +
-            x_2
-            \begin{bmatrix}
-            A_{12}\\A_{22}\\\vdots\\A_{m2}
-            \end{bmatrix} +
-            \cdots + x_n
-            \begin{bmatrix}
-            A_{1n}\\A_{2n}\\\vdots\\A_{mn}
-            \end{bmatrix} 
-            </mrow>
-            <mrow>\amp = x_1 \bA_1 + x_2 \bA_2 + \cdots + x_n \bA_n</mrow>
-        </md>. 
-        In words, we say that <m>\bA\bx</m> is a linear combination of the columns of <m>\bA</m>, with the combination coefficients coming from <m>\bx</m>. 
-    </p>
-    <p>
-        This is a critical tie-in to linear systems. We previously observed that a linear system of equations could be interpreted as being about linear combinations of the columns of the coefficient matrix. 
-    </p>
-    <fact>
-        <p>The linear system with matrix <m>\bA</m> and vector <m>\bb</m> is about solving <m>\bA\bx=\bb</m> for <m>\bx</m>.</p>    
-    </fact>
     </subsection>
 
     <subsection>
@@ -419,7 +459,7 @@ xlabel('x'), ylabel('y')
             In a product of matrices (and vectors), position matters. You cannot change the ordering (without justification)! You may have to unlearn some old habits.
         </p>
         <p>
-            Fortunately, other familiar properties of scalar multiplication do come along for the ride:
+            Fortunately, other familiar properties of multiplication do come along for the ride:
             <ol>
                 <li><m>(\bA\bB)\bC=\bA(\bB\bC)</m></li>
                 <li><m>\bA(\bB+\bC) = \bA\bB + \bA\bC</m></li>

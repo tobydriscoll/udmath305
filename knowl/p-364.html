@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-11T09:05:38-04:00    *-->
+<!--*    on 2019-04-15T11:26:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>A <dfn class="terminology">square</dfn> matrix has equal row and column dimensions. A <dfn class="terminology">row vector</dfn> has dimension \(1\times n\text{,}\) while a <dfn class="terminology">column vector</dfn> has dimension \(m \times 1\text{.}\) By default, a vector is understood to be a column vector, and we use \(\mathbb{R}^n\) or \(\mathbb{C}^n\) to denote spaces of vectors.  An ordinary number may be called a <dfn class="terminology">scalar</dfn>.</p>
-<span class="incontext"><a href="ma-multiplication.html#p-364">in-context</a></span>
+<p>There is a shortcut to avoid the effort of elimination for small systems. It's easiest to show and use in the case of two variables, such as</p>
+<div class="displaymath">
+\begin{align*}
+-x + 3y \amp = 1 \\
+3x + y \amp = 7\text{.}
+\end{align*}
+</div>
+<p>Cramer's rule says</p>
+<div class="displaymath">
+\begin{align*}
+x \amp = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} \\
+y \amp = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10}\text{.}
+\end{align*}
+</div>
+<p>This does generalize to larger systems: to get the \(i\)th variable, the numerator replaces column \(i\) of the matrix with \(\bb\) before taking the determinant.</p>
+<span class="incontext"><a href="ma-elimination.html#p-364">in-context</a></span>
 </body>
 </html>

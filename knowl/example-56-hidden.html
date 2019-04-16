@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-11T09:05:38-04:00    *-->
+<!--*    on 2019-04-15T11:26:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,24 +11,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>Let us find the general solution of</p>
+<body><article class="example-like"><p>In an earlier section we found the eigenstuff for</p>
 <div class="displaymath">
 \begin{equation*}
-\mathbf{y}' = \begin{bmatrix} -1 \amp 1 \\ 0 \amp -1 \end{bmatrix} \mathbf{y}.
+\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
 \end{equation*}
 </div>
-<p>You can easily check that \(\lambda=-1\) is a double eigenvalue, and that \([1,0]\) is an eigenvector. The system for the generalized eigenvector is</p>
+<p>as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This means the general solution of \(\by'=\bA\by\) is</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix} \mathbf{w} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p>The first row of this system tells us \(w_2=1\text{.}\) The second row makes no restrictions. We may as well let \(w_1=0\text{,}\) since it's not forbidden.</p>
-<p>The general solution is therefore</p>
-<div class="displaymath">
-\begin{equation*}
-c_1 e^{-t} \mathbf{v} + c_2 e^{-t}(t\mathbf{v}+\mathbf{w})
-= c_1 e^{-t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} t \\ 1 \end{bmatrix}\text{.}
+\by(t) = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
+= \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
 \end{equation*}
 </div></article></body>
 </html>
