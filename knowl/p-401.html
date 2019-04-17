@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-15T11:26:23-04:00    *-->
+<!--*    on 2019-04-17T13:42:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,14 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Next, the linear system \(( \bA -3 \mathbf{I}) \bv = \boldsymbol{0} \) looks like</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix} -2 \amp 1 \\ 4 \amp -2 \end{bmatrix} 
-\begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p>By design, this is a singular system, and since zero is a solution, we expect infinitely many solutions. The singularity means that the last row is redundant, so we can focus on solving only \(-2v_1+v_2=0\text{.}\) I.e., any nonzero vector with \(v_2=2v_1\) is an eigenvector. These are all vectors of the form \([c,2c]^T=c[1,2]^T\) for a nonzero scalar \(c\text{.}\)</p>
-<span class="incontext"><a href="section-29.html#p-401">in-context</a></span>
+<p>Once the matrix has been transformed to REF, you can divide the components of the solution \(\bx\) into two groups: the <dfn class="terminology">pivot variables</dfn> are those whose columns have a leading one somewhere, and the <dfn class="terminology">free variables</dfn> are the rest. The number of free variables is the dimension of the nullspace (also called the nullity of \(\bA\)). You can then find a representation of the nullspace by setting each of the free variables to one in turn (making the others zero) and solving for the resulting pivot variables. The nullspace is the set of linear combinations of those vectors.</p>
+<span class="incontext"><a href="ma-nullspace.html#p-401">in-context</a></span>
 </body>
 </html>

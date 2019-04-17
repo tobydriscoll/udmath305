@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-15T11:26:21-04:00    *-->
+<!--*    on 2019-04-17T13:42:21-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -135,10 +135,11 @@ MathJax.Hub.Config({
 <li><a href="ma-elimination.html" data-scroll="ma-elimination">Elimination for linear systems</a></li>
 <li><a href="ma-multiplication.html" data-scroll="ma-multiplication" class="active">Multiplying matrices</a></li>
 <li><a href="ma-inverses.html" data-scroll="ma-inverses">Matrix inverses</a></li>
-<li><a href="section-29.html" data-scroll="section-29">Eigenvalues</a></li>
-<li><a href="section-30.html" data-scroll="section-30">Diagonalization</a></li>
-<li><a href="section-31.html" data-scroll="section-31">Linear ODE systems</a></li>
-<li><a href="section-32.html" data-scroll="section-32">Matrix exponential</a></li>
+<li><a href="ma-nullspace.html" data-scroll="ma-nullspace">Nullspaces</a></li>
+<li><a href="section-30.html" data-scroll="section-30">Eigenvalues</a></li>
+<li><a href="section-31.html" data-scroll="section-31">Diagonalization</a></li>
+<li><a href="section-32.html" data-scroll="section-32">Linear ODE systems</a></li>
+<li><a href="section-33.html" data-scroll="section-33">Matrix exponential</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="ma-multiplication"><h2 class="heading hide-type">
@@ -151,7 +152,7 @@ MathJax.Hub.Config({
 <p id="p-369">To refer to a specific entry of a matrix, I do not use boldface. If you see a boldface character with one or more subscripts, then you know that it is a matrix or vector that belongs to a numbered collection.</p>
 <p id="p-370">Adding and subtracting matrices and vectors is dead simple: if two things are the same size, you add/subtract them elementwise; otherwise, the operation is not permitted. (Caution: MATLAB <em class="emphasis">does</em> let you do that sometimes, and it's a great source of confusing, subtle bugs.)</p>
 <p id="p-371">However, multiplication and "division" are far more complicated for matrices than they are for scalars.</p></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.3.1</span> <span class="title">Vectors: Dot products</span>
+<span class="type">Subsection</span> <span class="codenumber">4.3.1</span> <span class="title">Dot products</span>
 </h3>
 <p id="p-372">Suppose \(\bu\) and \(\bv\) are real column vectors of length \(n\text{.}\) Then their <dfn class="terminology">dot product</dfn> (or <dfn class="terminology">inner product</dfn>, or <dfn class="terminology">scalar product</dfn> is</p>
 <div class="displaymath">
@@ -238,7 +239,7 @@ C_{ij} = \sum_{k=1}^n A_{ij}B_{jk}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text
 <span class="type">Fact</span> <span class="codenumber">4.3.3</span>
 </h6>
 <p id="p-379">Matrix multiplication is not commutative. That is, the order of terms in a product affects the result.</p></article><p id="p-380">In a product of matrices (and vectors), position matters. You cannot change the ordering (without justification)! You may have to unlearn some old habits.</p>
-<p id="p-381">Fortunately, other familiar properties of scalar multiplication do come along for the ride: </p>
+<p id="p-381">Fortunately, other familiar properties of multiplication do come along for the ride: </p>
 <ol class="decimal">
 <li id="li-22">\((\bA\bB)\bC=\bA(\bB\bC)\)</li>
 <li id="li-23">\(\bA(\bB+\bC) = \bA\bB + \bA\bC\)</li>

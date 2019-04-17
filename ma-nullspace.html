@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-04-17T13:42:21-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Nullspaces</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="mathbook-delaware.css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(  \newcommand{\dd}[2]{\frac{d #1}{d #2}}
+  \renewcommand{\Re}{\text{Re}}
+  \renewcommand{\Im}{\text{Im}}
+  \newcommand{\Span}[1]{\langle#1\rangle}
+  \newcommand{\spr}[1]{^{(#1)}}
+  \newcommand{\dd}[2]{\frac{d #1}{d #2}}
+  \newcommand{\ddd}[2]{\frac{d^2 #1}{d #2^2}}
+  \newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+  \newcommand{\norm}[1]{\left\| #1 \right\|}
+  \newcommand{\det}{\operatorname{det}}
+  \newcommand{\bzero}{\boldsymbol{0}}
+  \newcommand{\bu}{\mathbf{u}}
+  \newcommand{\bA}{\mathbf{A}}
+  \newcommand{\bB}{\mathbf{B}}
+  \newcommand{\bC}{\mathbf{C}}
+ \newcommand{\bD}{\mathbf{D}}
+  \newcommand{\bI}{\mathbf{I}}
+  \newcommand{\bV}{\mathbf{V}}
+\newcommand{\bff}{\mathbf{f}}
+  \newcommand{\bx}{\mathbf{x}}
+  \newcommand{\by}{\mathbf{y}}
+  \newcommand{\bb}{\mathbf{b}}
+  \newcommand{\bu}{\mathbf{u}}
+  \newcommand{\bv}{\mathbf{v}}
+  \newcommand{\bw}{\mathbf{w}}
+  \newcommand{\bc}{\mathbf{c}}
+  \newcommand{\bz}{\mathbf{z}}
+  \newcommand{\twovec}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
+  \newcommand{\twodet}[4]{\begin{vmatrix}#1 \amp #2\\#3 \amp #4\end{vmatrix}}
+  \newcommand{\twomat}[4]{\begin{bmatrix}#1 \amp #2\\#3 \amp #4\end{bmatrix}}
+  \newcommand{\twodiag}[2]{\begin{bmatrix} #1 \amp 0 \\ 0 \amp #2 \end{bmatrix}}
+  \newcommand{\fourdiag}[3]{\begin{bmatrix} #1 \amp  \amp \amp  \\                    \amp #2 \amp  \amp  \\  \amp \amp \ddots \amp \\  \amp  \amp  \amp #3 \end{bmatrix}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
+<p class="byline">Toby Driscoll</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ma-inverses.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="matrix-algebra.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-30.html" title="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ma-inverses.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="matrix-algebra.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-30.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></h2>
+<ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+<h2 class="link"><a href="first-order-ode.html" data-scroll="first-order-ode"><span class="codenumber">1</span> <span class="title">First-order ODEs</span></a></h2>
+<ul>
+<li><a href="linearity.html" data-scroll="linearity">Introduction</a></li>
+<li><a href="exponentials.html" data-scroll="exponentials">Exponentials</a></li>
+<li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
+<li><a href="first-linear-const.html" data-scroll="first-linear-const">Linear, constant-coefficients</a></li>
+<li><a href="complex-exp.html" data-scroll="complex-exp">Using complex numbers</a></li>
+<li><a href="variable-coeffs.html" data-scroll="variable-coeffs">Linear, variable coefficient</a></li>
+<li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
+<li><a href="steady-states.html" data-scroll="steady-states">Steady states</a></li>
+<li><a href="logistic-equation.html" data-scroll="logistic-equation">Logistic equation</a></li>
+<li><a href="separable.html" data-scroll="separable">Separable equations</a></li>
+<li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
+</ul>
+<h2 class="link"><a href="second-order-ode.html" data-scroll="second-order-ode"><span class="codenumber">2</span> <span class="title">Second-order ODEs</span></a></h2>
+<ul>
+<li><a href="so-simple-harmonic.html" data-scroll="so-simple-harmonic">Simple harmonic motion</a></li>
+<li><a href="so-complex-exponentials.html" data-scroll="so-complex-exponentials">Complex exponentials</a></li>
+<li><a href="so-constant-coefficients.html" data-scroll="so-constant-coefficients">Constant coefficients</a></li>
+<li><a href="so-forced-oscillators.html" data-scroll="so-forced-oscillators">Exponentially forced oscillators</a></li>
+<li><a href="so-higher-order.html" data-scroll="so-higher-order">Higher-order ODEs</a></li>
+<li><a href="so-applications.html" data-scroll="so-applications">Applications of oscillators</a></li>
+<li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
+<li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
+<li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
+<li><a href="so-convolutions.html" data-scroll="so-convolutions">Convolutions</a></li>
+</ul>
+<h2 class="link"><a href="two-dimensional-systems.html" data-scroll="two-dimensional-systems"><span class="codenumber">3</span> <span class="title">2D systems</span></a></h2>
+<ul>
+<li><a href="twod-slope-fields.html" data-scroll="twod-slope-fields">Slope fields</a></li>
+<li><a href="twod-fixed-points.html" data-scroll="twod-fixed-points">Linear 2D systems</a></li>
+<li><a href="twod-linearization.html" data-scroll="twod-linearization">Linearization</a></li>
+</ul>
+<h2 class="link"><a href="matrix-algebra.html" data-scroll="matrix-algebra"><span class="codenumber">4</span> <span class="title">Matrix algebra</span></a></h2>
+<ul>
+<li><a href="ma-rows-columns.html" data-scroll="ma-rows-columns">Rows and columns</a></li>
+<li><a href="ma-elimination.html" data-scroll="ma-elimination">Elimination for linear systems</a></li>
+<li><a href="ma-multiplication.html" data-scroll="ma-multiplication">Multiplying matrices</a></li>
+<li><a href="ma-inverses.html" data-scroll="ma-inverses">Matrix inverses</a></li>
+<li><a href="ma-nullspace.html" data-scroll="ma-nullspace" class="active">Nullspaces</a></li>
+<li><a href="section-30.html" data-scroll="section-30">Eigenvalues</a></li>
+<li><a href="section-31.html" data-scroll="section-31">Diagonalization</a></li>
+<li><a href="section-32.html" data-scroll="section-32">Linear ODE systems</a></li>
+<li><a href="section-33.html" data-scroll="section-33">Matrix exponential</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="ma-nullspace"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Nullspaces</span>
+</h2>
+<a href="ma-nullspace.html" class="permalink">¶</a><section class="introduction" id="introduction-18"><p id="p-393"><em class="emphasis">From section 5.2</em></p>
+<p id="p-394">A little jargon we won't dwell on is a <dfn class="terminology">vector space</dfn>. It's a set of vectors having a particular property: any linear combination of vectors in the set is also in the set (aka "closure" under addition and scalar multiplication). The space we will be interested in is called a <dfn class="terminology">nullspace</dfn> of an \(n\times n\) matrix \(\bA\text{,}\) defined as</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal{N}(\bA) = \{ \text{all $n$-vectors $\bv$ such that $\bA\bv=\bzero$} \}\text{.}
+\end{equation*}
+</div>
+<p>To see that this has the required closure property, suppose \(\bv_1,\dots,\bv_n\) are in \(\mathcal{N}(\bA)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\bA( c_1 \bv_1 + \dots + c_n\bv_n ) = c_1 \bA\bv_1 + \cdots + c_n \bA \bv_n = \bzero\text{,}
+\end{equation*}
+</div>
+<p>so the linear combination is in \(\mathcal{N}(\bA)\text{,}\) too.</p></section><section class="subsection" id="subsection-61"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Nullspaces from elimination</span>
+</h3>
+<p id="p-395">We can use regular elimination to find a nullspace. Since \(\bb=\bzero\) by definition, all the row operations leave it unchanged, and we can ignore it until the back substitution stage.</p>
+<article class="example-like" id="example-53"><a knowl="" class="id-ref" refid="hk-example-53"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.5.1</span>
+</h6></a></article><div id="hk-example-53" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="displaymath" id="p-396">
+\begin{equation*}
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \\
+2 \amp 2 \amp 1 \\
+-1 \amp -1 \amp 4   
+\end{bmatrix} \mapsto 
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \\
+0 \amp 0 \amp 3 \\
+0 \amp 0 \amp 3   
+\end{bmatrix} \mapsto 
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \\
+0 \amp 0 \amp 3 \\
+0 \amp 0 \amp 0   
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>The last row just says \(0=0\text{,}\) so we ignore it. The second row implies \(x_3=0\text{,}\) and then the first row implies \(x_1+x_2=0\text{.}\) We can regard \(x_2\) as a free variable; say \(x_2=\alpha\text{.}\) Then \(x_1=-\alpha\text{,}\) and the solution takes the form</p>
+<div class="displaymath">
+\begin{equation*}
+\bx = \begin{bmatrix} -\alpha \\ \alpha \\ 0 \end{bmatrix} = \alpha \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>Thus the nullspace consists of all multiples of the constant vector \(\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\text{.}\) This representation isn't unique; any nonzero member of the space would serve as well.</p></article></div>
+<article class="example-like" id="example-54"><a knowl="" class="id-ref" refid="hk-example-54"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.5.2</span>
+</h6></a></article><div id="hk-example-54" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-397">Suppose elimination ends with the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \\
+0 \amp 1 \amp 1 \\
+0 \amp 0 \amp 4   
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>Now back substitution implies \(x_3=0\text{,}\) then \(x_2=0\text{,}\) then \(x_1=0\text{.}\) So \(\mathcal{N}(\bA) = \{\bzero\}\text{.}\)</p></article></div>
+<article class="example-like" id="example-55"><a knowl="" class="id-ref" refid="hk-example-55"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.5.3</span>
+</h6></a></article><div id="hk-example-55" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="displaymath" id="p-398">
+\begin{equation*}
+\begin{bmatrix} 
+0 \amp 2 \amp -3 \\
+0 \amp 4 \amp -6 \\
+0 \amp -2 \amp 3   
+\end{bmatrix} \mapsto 
+\begin{bmatrix} 
+0 \amp 2 \amp -3 \\
+0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0   
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>The only condition here is \(2x_2-3x_3=0\text{.}\) Say \(x_3=\alpha\) and \(x_1=\beta\text{.}\) Then solutions take the form</p>
+<div class="displaymath">
+\begin{equation*}
+\bx = \begin{bmatrix} \beta \\ 3\alpha/2 \\ \alpha \end{bmatrix} = \alpha \begin{bmatrix} 0 \\ 3/2 \\ 1 \end{bmatrix} + \beta \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>The nullspace consists of all linear combinations of the two constant vectors shown above.  Because two such vectors are needed, we say the nullspace is "two-dimensional."</p></article></div></section><section class="subsection" id="subsection-62"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.2</span> <span class="title">Row echelon form</span>
+</h3>
+<p id="p-399">The target of row elimination in the case of a nullspace can be described by three rules: </p>
+<ol class="decimal">
+<li id="li-26">The leftmost nonzero in any row is a 1 (called a <dfn class="terminology">leading one</dfn>).</li>
+<li id="li-27">The leading one in any row is to the right of any leading ones in higher rows.</li>
+<li id="li-28">Any all-zero rows are at the bottom of the matrix.</li>
+</ol>
+<p> We have not been following rule 1 up to now, but it's easy to satisfy; we just divide each row by its leading nonzero value. Such a matrix is said to be in <dfn class="terminology">row-echelon form</dfn> (REF).</p>
+<article class="example-like" id="example-56"><a knowl="" class="id-ref" refid="hk-example-56"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.5.4</span>
+</h6></a></article><div id="hk-example-56" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-400">REFs for the examples in the last subsection are</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \\
+0 \amp 0 \amp 1 \\
+0 \amp 0 \amp 0   
+\end{bmatrix}, 
+\quad
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \\
+0 \amp 1 \amp 1 \\
+0 \amp 0 \amp 1   
+\end{bmatrix},
+\quad 
+\begin{bmatrix} 
+0 \amp 1 \amp -3/2 \\
+0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0   
+\end{bmatrix}\text{.}
+\end{equation*}
+</div></article></div>
+<p id="p-401">Once the matrix has been transformed to REF, you can divide the components of the solution \(\bx\) into two groups: the <dfn class="terminology">pivot variables</dfn> are those whose columns have a leading one somewhere, and the <dfn class="terminology">free variables</dfn> are the rest. The number of free variables is the dimension of the nullspace (also called the nullity of \(\bA\)). You can then find a representation of the nullspace by setting each of the free variables to one in turn (making the others zero) and solving for the resulting pivot variables. The nullspace is the set of linear combinations of those vectors.</p>
+<article class="example-like" id="example-57"><a knowl="" class="id-ref" refid="hk-example-57"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.5.5</span>
+</h6></a></article><div id="hk-example-57" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-402">Given the REF</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \\
+0 \amp 0 \amp 1 \\
+0 \amp 0 \amp 0   
+\end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<p>we see that \(x_2\) is the only free variable. When we set \(x_2=1\) during back substitution, we find that \(x_3=0\) and \(x_1=-1\text{.}\) Thus \(\mathcal{N}(\bA)\) consists of all linear combinations of \(\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\text{,}\) i.e., all multiples of that vector. With the REF</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \\
+0 \amp 1 \amp 1 \\
+0 \amp 0 \amp 1   
+\end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<p>there are no free variables. The nullspace has dimension zero; i.e., it is the single point \(\bzero\text{.}\) Finally, with the REF</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} 
+0 \amp 1 \amp -3/2 \\
+0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0   
+\end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<p>the free variables are \(x_1\)  and \(x_3\text{.}\) When \(x_1=1\) and \(x_3=0\text{,}\) we get \(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\text{,}\) and when vice versa we get \(\begin{bmatrix} 0 \\ 3/2 \\ 1 \end{bmatrix}\text{.}\)</p></article></div></section></section></div></main>
+</div>
+</body>
+</html>

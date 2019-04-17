@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-15T11:26:23-04:00    *-->
+<!--*    on 2019-04-17T13:42:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Given a square matrix \(\bA\text{,}\) a solution of</p>
+<p>A little jargon we won't dwell on is a <dfn class="terminology">vector space</dfn>. It's a set of vectors having a particular property: any linear combination of vectors in the set is also in the set (aka "closure" under addition and scalar multiplication). The space we will be interested in is called a <dfn class="terminology">nullspace</dfn> of an \(n\times n\) matrix \(\bA\text{,}\) defined as</p>
 <div class="displaymath">
 \begin{equation*}
-\bA \bv = \lambda \bv
+\mathcal{N}(\bA) = \{ \text{all $n$-vectors $\bv$ such that $\bA\bv=\bzero$} \}\text{.}
 \end{equation*}
 </div>
-<p>for a scalar \(\lambda\) and a nonzero vector \(\bv\)  means that \(\lambda\) is called an <dfn class="terminology">eigenvalue</dfn> and \(\bv\) is an associated <dfn class="terminology">eigenvector</dfn>. The first thing to note is that \(c\bv\) is then an eigenvector for \(\lambda\) for any nonzero \(c\text{;}\) that is, eigenvectors are determined only up to (at most) a multiplicative scalar.</p>
-<span class="incontext"><a href="section-29.html#p-394">in-context</a></span>
+<p>To see that this has the required closure property, suppose \(\bv_1,\dots,\bv_n\) are in \(\mathcal{N}(\bA)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\bA( c_1 \bv_1 + \dots + c_n\bv_n ) = c_1 \bA\bv_1 + \cdots + c_n \bA \bv_n = \bzero\text{,}
+\end{equation*}
+</div>
+<p>so the linear combination is in \(\mathcal{N}(\bA)\text{,}\) too.</p>
+<span class="incontext"><a href="ma-nullspace.html#p-394">in-context</a></span>
 </body>
 </html>

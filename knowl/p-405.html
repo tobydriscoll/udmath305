@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-15T11:26:23-04:00    *-->
+<!--*    on 2019-04-17T13:42:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We find the eigenvalues and eigenvectors of</p>
+<p>Before going on to more generalities about eigenvalues, consider the implications for a linear ODE system \(\by'=\bA\by\text{.}\) We can insert the trial solution \(\by(t)=g(t) \bv\) for unknown time dependence and get</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}\text{.}
+g'(t) \bv  =  g(t) \bA \bv = g(t) \lambda \bv\text{.}
 \end{equation*}
 </div>
-<p>The characteristic polynomial is \(\lambda^2 +2 \lambda +2\text{,}\) with roots  \(\lambda_{1,2} = -1 \pm 1i.\)</p>
-<span class="incontext"><a href="section-29.html#p-405">in-context</a></span>
+<p>This can be satisfied by requiring \(g'=\lambda g\text{.}\) So we conclude that \(\by(t)=e^{\lambda t}\bv\) solves the original linear system. Geometrically, the eigenvector condition means "\(\bA\bv\) is parallel to \(\bv\text{.}\)" In a linear ODE, this makes \(\by'\) parallel to \(\by\text{,}\) so the direction never changes and the problem is essentially one-dimensional.</p>
+<span class="incontext"><a href="section-30.html#p-405">in-context</a></span>
 </body>
 </html>

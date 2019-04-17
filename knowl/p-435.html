@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-15T11:26:23-04:00    *-->
+<!--*    on 2019-04-17T13:42:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,22 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It's routine to show that</p>
-<div class="displaymath">
-\begin{equation*}
-\bA = \twomat{0}{1}{-1}{0} = \twomat{1}{1}{i}{-i} \twodiag{i}{-i} \frac{1}{2} \twomat{1}{-i}{1}{i}\text{.}
-\end{equation*}
-</div>
-<p>From here we find that</p>
-<div class="displaymath">
-\begin{align*}
-e^{t\bA} \amp = \twomat{1}{1}{i}{-i} \twodiag{e^{it}}{e^{-it}} \frac{1}{2} \twomat{1}{-i}{1}{i}\\
-\amp = \frac{1}{2} \twomat{e^{it}}{e^{-it}}{ie^{it}}{-ie^{-it}} \twomat{1}{-i}{1}{i} \\
-\amp = \frac{1}{2} \twomat{2\cos(t)}{-i[2i\sin(t)]}{i[2i\sin(t)]}{2\cos(t)}\\
-\amp = \twomat{\cos(t)}{\sin(t)}{-\sin(t)}{\cos(t)}\text{.}
-\end{align*}
-</div>
-<p>This matrix applies a rotation of an angle \(t\) about the origin to all vectors in the plane. Thus, the phase portrait consists of concentric circles and the origin is a center.</p>
-<span class="incontext"><a href="section-32.html#p-435">in-context</a></span>
+<p>How are we to interpret \(\mathbf{u} = \mathbf{V}^{-1} \mathbf{y}\text{?}\) Suppose we write it as \(\bV \bu = \by\text{,}\) which has the form of a linear system. One of our interpretations of this system is to find an expression of the vector \(\by\) in terms of coordinates based on combining the columns of \(\bV\text{.}\) Thus, if we change an ODE to eigenvector coordinates, the resulting ODE for the coordinate values is diagonal.</p>
+<span class="incontext"><a href="section-31.html#p-435">in-context</a></span>
 </body>
 </html>

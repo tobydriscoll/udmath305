@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-15T11:26:23-04:00    *-->
+<!--*    on 2019-04-17T13:42:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,30 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In the previous section I argued that if \(\bA=\bV\bD\bV^{-1}\text{,}\) then we can define \(\bu=\bV^{-1}\by\) and get the diagonal system \(\bu'=\bD\bu\text{.}\) This diagonal system is trivial to solve,</p>
-<div class="displaymath">
-\begin{equation*}
-\bu(t) = \begin{bmatrix} 
-e^{\lambda_1 t} u_1(0) \\ 
-e^{\lambda_2 t} u_2(0) \\ 
-\vdots \\
-e^{\lambda_n t} u_n(0)  
-\end{bmatrix} \text{.}
-\end{equation*}
-</div>
-<p>In terms of the original variable \(\by=\bV\bu\text{,}\) this solution is</p>
-<div class="displaymath">
-\begin{equation*}
-\by(t) = \bV \begin{bmatrix} 
-e^{\lambda_1 t} c_1 \\ 
-e^{\lambda_2 t} c_2 \\ 
-\vdots \\
-e^{\lambda_n t} c_n  
-\end{bmatrix}
-= c_1 e^{\lambda_1 t} \bv_1 + \cdots + c_n e^{\lambda_n t} \bv_n\text{,}
-\end{equation*}
-</div>
-<p>where we defined \(c_i=u_i(0)\) for all \(i\text{.}\) This is one form of the general solution.</p>
-<span class="incontext"><a href="section-31.html#p-421">in-context</a></span>
+<p>To find an eigenvector for \(\lambda_1\text{,}\) we use the first row of \(\bA - \lambda_1 \mathbf{I} \) to conclude \((2-i)v_1 -v_2 = 0\text{.}\) Thus any nonzero multiple of \(\bv_1=\twovec{1}{2-i}\) will do.</p>
+<span class="incontext"><a href="section-30.html#p-421">in-context</a></span>
 </body>
 </html>

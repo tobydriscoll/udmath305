@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-15T11:26:23-04:00    *-->
+<!--*    on 2019-04-17T13:42:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,23 +13,16 @@
 </head>
 <body>
 <article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.8.2</span>
+<span class="type">Example</span> <span class="codenumber">4.6.5</span>
 </h6>
-<p>It's routine to show that</p>
+<p>We find the eigenvalues and eigenvectors of</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \twomat{0}{1}{-1}{0} = \twomat{1}{1}{i}{-i} \twodiag{i}{-i} \frac{1}{2} \twomat{1}{-i}{1}{i}\text{.}
+\begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>From here we find that</p>
-<div class="displaymath">
-\begin{align*}
-e^{t\bA} \amp = \twomat{1}{1}{i}{-i} \twodiag{e^{it}}{e^{-it}} \frac{1}{2} \twomat{1}{-i}{1}{i}\\
-\amp = \frac{1}{2} \twomat{e^{it}}{e^{-it}}{ie^{it}}{-ie^{-it}} \twomat{1}{-i}{1}{i} \\
-\amp = \frac{1}{2} \twomat{2\cos(t)}{-i[2i\sin(t)]}{i[2i\sin(t)]}{2\cos(t)}\\
-\amp = \twomat{\cos(t)}{\sin(t)}{-\sin(t)}{\cos(t)}\text{.}
-\end{align*}
-</div>
-<p>This matrix applies a rotation of an angle \(t\) about the origin to all vectors in the plane. Thus, the phase portrait consists of concentric circles and the origin is a center.</p></article><span class="incontext"><a href="section-32.html#example-60">in-context</a></span>
+<p>The characteristic polynomial is \(\lambda^2 +2 \lambda +2\text{,}\) with roots  \(\lambda_{1,2} = -1 \pm 1i.\)</p>
+<p>To find an eigenvector for \(\lambda_1\text{,}\) we use the first row of \(\bA - \lambda_1 \mathbf{I} \) to conclude \((2-i)v_1 -v_2 = 0\text{.}\) Thus any nonzero multiple of \(\bv_1=\twovec{1}{2-i}\) will do.</p>
+<p>We get a benefit here from the complex eigenvalues: the conjugate of an eigenvector will be an eigenvector for the conjugated eigenvalue. So we have \(\bv_2=\twovec{1}{2+i}\) to go with \(\lambda_2\text{.}\)</p></article><span class="incontext"><a href="section-30.html#example-60">in-context</a></span>
 </body>
 </html>

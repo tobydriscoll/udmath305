@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-15T11:26:23-04:00    *-->
+<!--*    on 2019-04-17T13:42:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,31 +13,14 @@
 </head>
 <body>
 <article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.8.1</span>
+<span class="type">Example</span> <span class="codenumber">4.6.4</span>
 </h6>
-<p>We look again at an example fron the previous section,</p>
+<p>Consider \(\bA=\twomat{4}{0}{1}{4}\text{.}\) This matrix is (lower) triangular, so we immediately know \(\lambda_1=\lambda_2=4\text{.}\) Now,</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}\text{,}
+\bA - 4\bI = \twomat{0}{0}{1}{0}\text{.}
 \end{equation*}
 </div>
-<p>in which \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\) are eigenpairs. We define</p>
-<div class="displaymath">
-\begin{equation*}
-\bV = \twomat{1}{1}{2}{-2}
-\end{equation*}
-</div>
-<p>and compute</p>
-<div class="displaymath">
-\begin{equation*}
-\bV^{-1} = \frac{1}{4}\twomat{2}{1}{2}{-1}\text{.}
-\end{equation*}
-</div>
-<p>Hence</p>
-<div class="displaymath">
-\begin{equation*}
-\by(t) = \frac{1}{4} \twomat{1}{1}{2}{-2} \twodiag{e^{3t}}{e^{-t}} \twomat{2}{1}{2}{-1} \by(0)\text{.}
-\end{equation*}
-</div></article><span class="incontext"><a href="section-32.html#example-59">in-context</a></span>
+<p>If we swap the rows, the matrix is in RE form. Hence \(v_2\) is free and \(v_1=0\text{.}\) The eigenspace is one-dimensional, fully represented by \(\twovec{0}{1}\text{.}\)</p></article><span class="incontext"><a href="section-30.html#example-59">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-15T11:26:21-04:00    *-->
+<!--*    on 2019-04-17T13:42:21-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Linear ODE systems</title>
+<title>Diagonalization</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
@@ -135,152 +135,117 @@ MathJax.Hub.Config({
 <li><a href="ma-elimination.html" data-scroll="ma-elimination">Elimination for linear systems</a></li>
 <li><a href="ma-multiplication.html" data-scroll="ma-multiplication">Multiplying matrices</a></li>
 <li><a href="ma-inverses.html" data-scroll="ma-inverses">Matrix inverses</a></li>
-<li><a href="section-29.html" data-scroll="section-29">Eigenvalues</a></li>
-<li><a href="section-30.html" data-scroll="section-30">Diagonalization</a></li>
-<li><a href="section-31.html" data-scroll="section-31" class="active">Linear ODE systems</a></li>
-<li><a href="section-32.html" data-scroll="section-32">Matrix exponential</a></li>
+<li><a href="ma-nullspace.html" data-scroll="ma-nullspace">Nullspaces</a></li>
+<li><a href="section-30.html" data-scroll="section-30">Eigenvalues</a></li>
+<li><a href="section-31.html" data-scroll="section-31" class="active">Diagonalization</a></li>
+<li><a href="section-32.html" data-scroll="section-32">Linear ODE systems</a></li>
+<li><a href="section-33.html" data-scroll="section-33">Matrix exponential</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-31"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.7</span> <span class="title">Linear ODE systems</span>
+<span class="type">Section</span> <span class="codenumber">4.7</span> <span class="title">Diagonalization</span>
 </h2>
-<section class="introduction" id="introduction-20"><p id="p-419"><em class="emphasis">From section 6.3.</em></p>
-<p id="p-420">Now we are ready to take on \(\by'=\bA\by\text{,}\) at least in the diagonalizable and defective \(2\times 2\) cases.</p>
-<p id="p-421">In the previous section I argued that if \(\bA=\bV\bD\bV^{-1}\text{,}\) then we can define \(\bu=\bV^{-1}\by\) and get the diagonal system \(\bu'=\bD\bu\text{.}\) This diagonal system is trivial to solve,</p>
+<section class="introduction" id="introduction-20"><p id="p-427"><em class="emphasis">From section 6.2.</em></p>
+<p id="p-428">Say \(\bA\) is \(n\times n\text{,}\) and that we write</p>
 <div class="displaymath">
 \begin{equation*}
-\bu(t) = \begin{bmatrix} 
-e^{\lambda_1 t} u_1(0) \\ 
-e^{\lambda_2 t} u_2(0) \\ 
-\vdots \\
-e^{\lambda_n t} u_n(0)  
-\end{bmatrix} \text{.}
+\bA \bv_1 = \lambda_1 \bv_1, \;
+\bA \bv_2 = \lambda_2 \bv_2,\; \dots, \;
+\bA \bv_n = \lambda_n \bv_n\text{,}
 \end{equation*}
 </div>
-<p>In terms of the original variable \(\by=\bV\bu\text{,}\) this solution is</p>
-<div class="displaymath">
-\begin{equation*}
-\by(t) = \bV \begin{bmatrix} 
-e^{\lambda_1 t} c_1 \\ 
-e^{\lambda_2 t} c_2 \\ 
-\vdots \\
-e^{\lambda_n t} c_n  
-\end{bmatrix}
-= c_1 e^{\lambda_1 t} \bv_1 + \cdots + c_n e^{\lambda_n t} \bv_n\text{,}
-\end{equation*}
-</div>
-<p>where we defined \(c_i=u_i(0)\) for all \(i\text{.}\) This is one form of the general solution.</p>
-<article class="example-like" id="example-56"><a knowl="" class="id-ref" refid="hk-example-56"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.7.1</span>
-</h6></a></article><div id="hk-example-56" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-422">In an earlier section we found the eigenstuff for</p>
-<div class="displaymath">
-\begin{equation*}
-\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
-\end{equation*}
-</div>
-<p>as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This means the general solution of \(\by'=\bA\by\) is</p>
-<div class="displaymath">
-\begin{equation*}
-\by(t) = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
-= \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
-\end{equation*}
-</div></article></div></section><section class="subsection" id="subsection-66"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Complex eigenvalues</span>
-</h3>
-<p id="p-423">Nothing new happens for complex eigenvalues. You just need to use complex arithmetic.</p>
-<article class="example-like" id="example-57"><a knowl="" class="id-ref" refid="hk-example-57"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.7.2</span>
-</h6></a></article><div id="hk-example-57" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-424">Let's look at the solution of</p>
-<div class="displaymath">
-\begin{equation*}
-\mathbf{y}' = \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix} \mathbf{y}\text{.}
-\end{equation*}
-</div>
-<p>The eigenvalues are \(1\pm i\text{,}\) with eigenvectors \(\twovec{1}{2\mp i}\text{.}\) So one form of the general solution is</p>
-<div class="displaymath">
-\begin{equation*}
-c_1 e^{t} e^{it} \twovec{1}{2-i} + c_2 e^{t} e^{-it} \twovec{1}{2+i}\text{.}
-\end{equation*}
-</div>
-<p>With some work, we could convert this to a purely real form. Or, suppose we also have the initial condition \(\by(0)=\twovec{1}{-2}\text{.}\) This gives</p>
+<p>where \(\lambda_1,\lambda_2,\dots,\lambda_n\) are its eigenvalues. Through some linear algebra magic, we can express this collection of equations more succinctly:</p>
 <div class="displaymath">
 \begin{align*}
-c_1 \twovec{1}{2-i} + c_2 \twovec{1}{2+i} \amp = \twovec{1}{-2}\\
-\twomat{1}{1}{2-i}{2+i} \twovec{c_1}{c_2} \amp = \twovec{1}{-2}\text{.}
+\begin{bmatrix} 
+\bA \bv_1 \amp \bA \bv_2 \amp \cdots \amp \bA \bv_n 
+\end{bmatrix} 
+\amp = 
+\begin{bmatrix} 
+\lambda_1\bv_1 \amp \lambda_2\bv_2 \amp \cdots \amp \lambda_n\bv_n 
+\end{bmatrix}\\
+\bA \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}            \amp = 
+\begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix} 
+\begin{bmatrix} \lambda_1 \amp 0 \amp \cdots \amp 0 \\
+0 \amp \lambda_2 \amp \cdots \amp 0 \\
+\amp \amp \ddots \amp \\
+0 \amp \cdots \amp 0 \amp \lambda_n
+\end{bmatrix}\\
+\bA \bV \amp = \bV \bD \text{,}
 \end{align*}
 </div>
-<p>Using Cramer's rule, we get</p>
+<p>where \(\bD\) is a <dfn class="terminology">diagonal</dfn> matrix.</p>
+<p id="p-429">If \(\bV\) is nonsingular, we therefore can write</p>
+<div class="displaymath">
+\begin{equation*}
+\bA = \bV \bD \bV^{-1}\text{,}
+\end{equation*}
+</div>
+<p>which is called a <dfn class="terminology">diagonalization</dfn> of \(\bA\text{.}\) A diagonalization is not unique; after all, we can take the eigenvalues in any order, and the eigenvectors themselves are not unique.</p>
+<article class="example-like" id="example-61"><a knowl="" class="id-ref" refid="hk-example-61"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.7.1</span> <span class="title">A 2-by-2 diagonalization</span>
+</h6></a></article><div id="hk-example-61" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-430">Let's find a diagonalization of</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{A} =  \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>We found the eigenvalues and eigenvectors of this guy in the previous section. We got \(\lambda_1=3\) with \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\) with \(\bv_2 =\twovec{1}{-2}\text{.}\) So we paint by numbers to get</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{D} = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}, \qquad \bV = \begin{bmatrix} 1 \amp 1 \\ 2 \amp -2 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>We "just" need to invert \(\bV\text{;}\) fortunately, we're only at \(2\times 2\text{,}\) so this is a snap.</p>
+<div class="displaymath">
+\begin{equation*}
+\bV^{-1} = \frac{1}{-4} \begin{bmatrix} -2 \amp -1 \\ -2 \amp 1 \end{bmatrix} = \begin{bmatrix} 1/2 \amp 1/4 \\ 1/2 \amp -1/4 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>Hence</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{A} = \bV \mathbf{D} \bV^{-1} = 
+\begin{bmatrix} 1 \amp 1 \\ 2 \amp -2 \end{bmatrix} 
+\begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix} 
+\begin{bmatrix} 1/2 \amp 1/4 \\ 1/2 \amp -1/4 \end{bmatrix}\text{.}
+\end{equation*}
+</div></article></div>
+<p id="p-431">Every eigenvalue has an eigenspace of dimension at least one. If the \(n\) eigenvalues are distinct, the dimensions add up to \(n\text{,}\) and it can be proved that the matrix \(\bV\) is invertible.</p>
+<article class="theorem-like" id="theorem-5"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">4.7.2</span>
+</h6>
+<p id="p-432">If the eigenvalues of a matrix are all distinct, the matrix is diagonalizable.</p></article><p id="p-433">The "only if" version of this theorem is <em class="emphasis">not</em> true. For example, the identity matrix is trivially diagonalizable with \(\bV=\bI\text{,}\) but the eigenvalues are both equal to one.</p></section><section class="subsection" id="subsection-67"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Diagonalization of a linear ODE</span>
+</h3>
+<p id="p-434">Suppose \(\mathbf{y}'=\mathbf{A} \mathbf{y}\text{.}\) Given a diagonalization of \(\bA\text{,}\) we compute</p>
 <div class="displaymath">
 \begin{align*}
-c_1 \amp = \frac{ \twodet{1}{1}{-2}{2+i} }{ \twodet{1}{1}{2-i}{2+i} } = \frac{4+i}{2i}=\frac{-1-4i}{2}\\
-y \amp = \frac{ \twodet{1}{1}{2-i}{-2} }{ \twodet{1}{1}{2-i}{2+i} } = \frac{-4+i}{2i}=\frac{-1+4i}{2}\text{.}
+\mathbf{y}'\amp =\mathbf{V} \mathbf{D} \mathbf{V}^{-1} \mathbf{y}\\
+\mathbf{V}^{-1} \mathbf{y}' \amp=\mathbf{D} \mathbf{V}^{-1} \mathbf{y}\\
+(\mathbf{V}^{-1} \mathbf{y})' \amp=\mathbf{D} (\mathbf{V}^{-1} \mathbf{y})\text{.}
 \end{align*}
-</div></article></div></section><section class="subsection" id="subsection-67"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.7.2</span> <span class="title">Defective \(2\times 2\)</span>
+</div>
+<p>This suggests a change of variable, \(\mathbf{u} = \mathbf{V}^{-1} \mathbf{y}.\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{u}' = \mathbf{D} \mathbf{u} 
+= \begin{bmatrix} \lambda_1 u_1 \\ \lambda_2 u_2 \\ \vdots \\ \lambda_n u_n \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>In terms of the new variable, the ODE system is \(u_1'=\lambda_1 u_1,\, \dots,\, u_n'=\lambda_n u_n\text{,}\) which are completely decoupled–that is, they evolve independently.</p>
+<p id="p-435">How are we to interpret \(\mathbf{u} = \mathbf{V}^{-1} \mathbf{y}\text{?}\) Suppose we write it as \(\bV \bu = \by\text{,}\) which has the form of a linear system. One of our interpretations of this system is to find an expression of the vector \(\by\) in terms of coordinates based on combining the columns of \(\bV\text{.}\) Thus, if we change an ODE to eigenvector coordinates, the resulting ODE for the coordinate values is diagonal.</p></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.2</span> <span class="title">Repeated eigenvalues</span>
 </h3>
-<p id="p-425">In the case \(n=2\text{,}\) \(\lambda_1=\lambda_2=\lambda\text{,}\) and \(\bA\) is not diagonal, there is no diagonalization possible. Every eigenvalue does have at least one eigenvector, so there is a \(\bv\) with \(\bA\bv = \lambda \bv\text{,}\) and \(c_1 e^{\lambda t}\bv\) is still a null solution.</p>
-<p id="p-426">Based on our experiences to date, we try an ODE solution of the form \(te^{\lambda t} \mathbf{w}\) for an unknown \(\bw\text{.}\) We plug this into the ODE and get</p>
+<p id="p-436">As we have seen time and again, repeated roots complicate our conclusions. The same is true for eigenvalues.</p>
+<p id="p-437">As stated above, when the eigenvalues are all distinct, a diagonalization is always possible. When there are repeated eigenvalues, though, that may or may not be the case. We saw above that an identity matrix is diagonalizable. However, the matrix \(\bA=\twomat{4}{0}{1}{4}\) shown in an example above is impossible to diagonalize. The only candidates for the columns of \(\bV\) are eigenvectors, and those are all nonzero multiples of \(\twovec{0}{1}\text{.}\) Hence</p>
 <div class="displaymath">
 \begin{equation*}
-(\lambda t e^{\lambda t} + e^{\lambda t}) \mathbf{w} = t e^{\lambda t} \mathbf{A} \mathbf{w}\text{.}
+\bV = \begin{bmatrix} 0 \amp 0 \\ \alpha \amp \beta \end{bmatrix}\text{,}
 \end{equation*}
 </div>
-<p>We don't have enough terms to balance both the \(t^0\) and \(t^1\) groups. A better guess is</p>
-<div class="displaymath">
-\begin{equation*}
-te^{\lambda t} \mathbf{v} + e^{\lambda t} \mathbf{w}\text{.}
-\end{equation*}
-</div>
-<p>Then</p>
-<div class="displaymath">
-\begin{equation*}
-(\lambda t e^{\lambda t} + e^{\lambda t}) \mathbf{v} + \lambda e^{\lambda t} \mathbf{w} = t e^{\lambda t} \mathbf{A} \mathbf{v} + e^{\lambda t} \mathbf{A} \mathbf{w}\text{.}
-\end{equation*}
-</div>
-<p>Grouping together like terms, we have</p>
-<div class="displaymath">
-\begin{equation*}
-t( \mathbf{A} \mathbf{v} - \lambda \mathbf{v} ) + (  \mathbf{A} \mathbf{w} - \lambda \mathbf{w} ) = \mathbf{v}.
-\end{equation*}
-</div>
-<p>The term multiplying \(t\) is zero, by the eigenvector property. So we need only requiire</p>
-<div class="displaymath">
-\begin{equation*}
-(  \mathbf{A} - \lambda \mathbf{I} )  \mathbf{w} = \mathbf{v} \text{,}
-\end{equation*}
-</div>
-<p>which can be interpreted as a definition of a <dfn class="terminology">generalized eigenvector</dfn> \(\bw\text{.}\) Even though the matrix here is singular, a solution for \(\bw\) is always possible.</p>
-<article class="example-like" id="example-58"><a knowl="" class="id-ref" refid="hk-example-58"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.7.3</span>
-</h6></a></article><div id="hk-example-58" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-427">Let us find the general solution of</p>
-<div class="displaymath">
-\begin{equation*}
-\mathbf{y}' = \begin{bmatrix} -1 \amp 1 \\ 0 \amp -1 \end{bmatrix} \mathbf{y}.
-\end{equation*}
-</div>
-<p>You can easily check that \(\lambda=-1\) is a double eigenvalue, and that \([1,0]\) is an eigenvector. The system for the generalized eigenvector is</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix} 0 \amp 1 \\ 0 \amp 0 \end{bmatrix} \mathbf{w} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p>The first row of this system tells us \(w_2=1\text{.}\) The second row makes no restrictions. We may as well let \(w_1=0\text{,}\) since it's not forbidden.</p>
-<p id="p-428">The general solution is therefore</p>
-<div class="displaymath">
-\begin{equation*}
-c_1 e^{-t} \mathbf{v} + c_2 e^{-t}(t\mathbf{v}+\mathbf{w})
-= c_1 e^{-t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + c_2 e^{-t} \begin{bmatrix} t \\ 1 \end{bmatrix}\text{.}
-\end{equation*}
-</div></article></div></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.7.3</span> <span class="title">Second-order equations</span>
-</h3>
-<p id="p-429">Time to tie up one small loose end. What does the eigenvalue approach tell us about our beloved second-order equation, \(ay''+by'+cy=0\text{?}\) Remember, we define \(x_1=y\text{,}\) \(x_2=y'\) to get the companion matrix \(\twomat{0}{1}{-c/a}{-b/a}\text{.}\) The characteristic polynomial of this matrix is</p>
-<div class="displaymath">
-\begin{equation*}
-\lambda^2 + \frac{b}{a}\lambda + \frac{c}{a}\text{,}
-\end{equation*}
-</div>
-<p>which is just \(1/a\) times what we called the characteristic polynomial of the original problem. So, what we called characteristic roots back then were really eigenvalues, and we wrote out the solutions using only the first component \(x_1\text{.}\)</p></section></section></div></main>
+<p>which is necessarily singular (determinant is zero). Therefore no diagonalization is possible, and we say \(\bA\) is <dfn class="terminology">defective</dfn>. Another way of saying this is that the dimensions of the eigenspaces add up to less than \(n\text{,}\) or that the matrix does not have a "complete independent set of eigenvectors."</p>
+<p id="p-438">A full description of defectiveness is beyond our scope. For the \(2\times 2\) case, we've essentially seen all the possibilities already: a matrix with repeated eigenvalues is either a multiple of the identity, in which case it has a diagonalization with \(\bV=\bI\text{,}\) or it's defective.</p></section></section></div></main>
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-15T11:26:23-04:00    *-->
+<!--*    on 2019-04-17T13:42:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,33 +13,38 @@
 </head>
 <body>
 <article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.7.2</span>
+<span class="type">Example</span> <span class="codenumber">4.5.5</span>
 </h6>
-<p>Let's look at the solution of</p>
+<p>Given the REF</p>
 <div class="displaymath">
 \begin{equation*}
-\mathbf{y}' = \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix} \mathbf{y}\text{.}
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \\
+0 \amp 0 \amp 1 \\
+0 \amp 0 \amp 0   
+\end{bmatrix}\text{,}
 \end{equation*}
 </div>
-<p>The eigenvalues are \(1\pm i\text{,}\) with eigenvectors \(\twovec{1}{2\mp i}\text{.}\) So one form of the general solution is</p>
+<p>we see that \(x_2\) is the only free variable. When we set \(x_2=1\) during back substitution, we find that \(x_3=0\) and \(x_1=-1\text{.}\) Thus \(\mathcal{N}(\bA)\) consists of all linear combinations of \(\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\text{,}\) i.e., all multiples of that vector. With the REF</p>
 <div class="displaymath">
 \begin{equation*}
-c_1 e^{t} e^{it} \twovec{1}{2-i} + c_2 e^{t} e^{-it} \twovec{1}{2+i}\text{.}
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \\
+0 \amp 1 \amp 1 \\
+0 \amp 0 \amp 1   
+\end{bmatrix}\text{,}
 \end{equation*}
 </div>
-<p>With some work, we could convert this to a purely real form. Or, suppose we also have the initial condition \(\by(0)=\twovec{1}{-2}\text{.}\) This gives</p>
+<p>there are no free variables. The nullspace has dimension zero; i.e., it is the single point \(\bzero\text{.}\) Finally, with the REF</p>
 <div class="displaymath">
-\begin{align*}
-c_1 \twovec{1}{2-i} + c_2 \twovec{1}{2+i} \amp = \twovec{1}{-2}\\
-\twomat{1}{1}{2-i}{2+i} \twovec{c_1}{c_2} \amp = \twovec{1}{-2}\text{.}
-\end{align*}
+\begin{equation*}
+\begin{bmatrix} 
+0 \amp 1 \amp -3/2 \\
+0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0   
+\end{bmatrix}\text{,}
+\end{equation*}
 </div>
-<p>Using Cramer's rule, we get</p>
-<div class="displaymath">
-\begin{align*}
-c_1 \amp = \frac{ \twodet{1}{1}{-2}{2+i} }{ \twodet{1}{1}{2-i}{2+i} } = \frac{4+i}{2i}=\frac{-1-4i}{2}\\
-y \amp = \frac{ \twodet{1}{1}{2-i}{-2} }{ \twodet{1}{1}{2-i}{2+i} } = \frac{-4+i}{2i}=\frac{-1+4i}{2}\text{.}
-\end{align*}
-</div></article><span class="incontext"><a href="section-31.html#example-57">in-context</a></span>
+<p>the free variables are \(x_1\)  and \(x_3\text{.}\) When \(x_1=1\) and \(x_3=0\text{,}\) we get \(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\text{,}\) and when vice versa we get \(\begin{bmatrix} 0 \\ 3/2 \\ 1 \end{bmatrix}\text{.}\)</p></article><span class="incontext"><a href="ma-nullspace.html#example-57">in-context</a></span>
 </body>
 </html>

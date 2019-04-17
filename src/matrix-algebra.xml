@@ -545,6 +545,160 @@ xlabel('x'), ylabel('y')
     </subsection>
 </section>
 
+<section xml:id="ma-nullspace">
+    <title>Nullspaces</title>
+    <introduction>
+    <p><em>From section 5.2</em></p>
+    <p>
+        A little jargon we won't dwell on is a <term>vector space</term>. It's a set of vectors having a particular property: any linear combination of vectors in the set is also in the set (aka "closure" under addition and scalar multiplication). The space we will be interested in is called a <term>nullspace</term> of an <m>n\times n</m> matrix <m>\bA</m>, defined as 
+        <me>
+            \mathcal{N}(\bA) = \{ \text{all $n$-vectors $\bv$ such that $\bA\bv=\bzero$} \}
+        </me>.
+        To see that this has the required closure property, suppose <m>\bv_1,\dots,\bv_n</m> are in <m>\mathcal{N}(\bA)</m>. Then 
+        <me>
+            \bA( c_1 \bv_1 + \dots + c_n\bv_n ) = c_1 \bA\bv_1 + \cdots + c_n \bA \bv_n = \bzero
+        </me>,
+        so the linear combination is in <m>\mathcal{N}(\bA)</m>, too. 
+    </p>
+    </introduction>
+
+    <subsection>
+    <title>Nullspaces from elimination</title>
+    <p>
+        We can use regular elimination to find a nullspace. Since <m>\bb=\bzero</m> by definition, all the row operations leave it unchanged, and we can ignore it until the back substitution stage.
+    </p>
+    <example>
+        <p>
+        <me>
+            \begin{bmatrix} 
+            1 \amp 1 \amp -1 \\
+            2 \amp 2 \amp 1 \\
+            -1 \amp -1 \amp 4   
+            \end{bmatrix} \mapsto 
+            \begin{bmatrix} 
+            1 \amp 1 \amp -1 \\
+            0 \amp 0 \amp 3 \\
+            0 \amp 0 \amp 3   
+            \end{bmatrix} \mapsto 
+            \begin{bmatrix} 
+            1 \amp 1 \amp -1 \\
+            0 \amp 0 \amp 3 \\
+            0 \amp 0 \amp 0   
+            \end{bmatrix}
+        </me>. 
+        The last row just says <m>0=0</m>, so we ignore it. The second row implies <m>x_3=0</m>, and then the first row implies <m>x_1+x_2=0</m>. We can regard <m>x_2</m> as a free variable; say <m>x_2=\alpha</m>. Then <m>x_1=-\alpha</m>, and the solution takes the form 
+        <me>
+            \bx = \begin{bmatrix} -\alpha \\ \alpha \\ 0 \end{bmatrix} = \alpha \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}
+        </me>.
+        Thus the nullspace consists of all multiples of the constant vector <m>\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}</m>. This representation isn't unique; any nonzero member of the space would serve as well. 
+        </p>
+    </example>   
+    <example>
+        <p>
+            Suppose elimination ends with the matrix
+            <me>
+            \begin{bmatrix} 
+            1 \amp 1 \amp -1 \\
+            0 \amp 1 \amp 1 \\
+            0 \amp 0 \amp 4   
+            \end{bmatrix}
+            </me>. 
+            Now back substitution implies <m>x_3=0</m>, then <m>x_2=0</m>, then <m>x_1=0</m>. So <m>\mathcal{N}(\bA) = \{\bzero\}</m>.
+        </p>
+    </example> 
+     <example>
+        <p>
+        <me>
+            \begin{bmatrix} 
+            0 \amp 2 \amp -3 \\
+            0 \amp 4 \amp -6 \\
+            0 \amp -2 \amp 3   
+            \end{bmatrix} \mapsto 
+            \begin{bmatrix} 
+            0 \amp 2 \amp -3 \\
+            0 \amp 0 \amp 0 \\
+            0 \amp 0 \amp 0   
+            \end{bmatrix}
+        </me>. 
+        The only condition here is <m>2x_2-3x_3=0</m>. Say <m>x_3=\alpha</m> and <m>x_1=\beta</m>. Then solutions take the form 
+        <me>
+            \bx = \begin{bmatrix} \beta \\ 3\alpha/2 \\ \alpha \end{bmatrix} = \alpha \begin{bmatrix} 0 \\ 3/2 \\ 1 \end{bmatrix} + \beta \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+        </me>. 
+        The nullspace consists of all linear combinations of the two constant vectors shown above.  Because two such vectors are needed, we say the nullspace is "two-dimensional."
+        </p>
+    </example>   
+    </subsection>
+    <subsection>
+    <title>Row echelon form</title>
+    <p>
+        The target of row elimination in the case of a nullspace can be described by three rules:  
+        <ol>
+            <li>The leftmost nonzero in any row is a 1 (called a <term>leading one</term>).</li>
+            <li>The leading one in any row is to the right of any leading ones in higher rows.</li> 
+            <li>Any all-zero rows are at the bottom of the matrix.</li>
+        </ol>
+        We have not been following rule 1 up to now, but it's easy to satisfy; we just divide each row by its leading nonzero value. Such a matrix is said to be in <term>row-echelon form</term> (REF). 
+    </p>
+    <example>
+        <p>
+            REFs for the examples in the last subsection are 
+            <me>
+            \begin{bmatrix} 
+            1 \amp 1 \amp -1 \\
+            0 \amp 0 \amp 1 \\
+            0 \amp 0 \amp 0   
+            \end{bmatrix}, 
+            \quad
+            \begin{bmatrix} 
+            1 \amp 1 \amp -1 \\
+            0 \amp 1 \amp 1 \\
+            0 \amp 0 \amp 1   
+            \end{bmatrix},
+            \quad 
+            \begin{bmatrix} 
+            0 \amp 1 \amp -3/2 \\
+            0 \amp 0 \amp 0 \\
+            0 \amp 0 \amp 0   
+            \end{bmatrix}
+            </me>. 
+        </p>
+    </example> 
+    <p>
+        Once the matrix has been transformed to REF, you can divide the components of the solution <m>\bx</m> into two groups: the <term>pivot variables</term> are those whose columns have a leading one somewhere, and the <term>free variables</term> are the rest. The number of free variables is the dimension of the nullspace (also called the nullity of <m>\bA</m>). You can then find a representation of the nullspace by setting each of the free variables to one in turn (making the others zero) and solving for the resulting pivot variables. The nullspace is the set of linear combinations of those vectors. 
+    </p>
+        <example>
+        <p>
+            Given the REF 
+            <me>
+            \begin{bmatrix} 
+            1 \amp 1 \amp -1 \\
+            0 \amp 0 \amp 1 \\
+            0 \amp 0 \amp 0   
+            \end{bmatrix}
+            </me>,
+            we see that <m>x_2</m> is the only free variable. When we set <m>x_2=1</m> during back substitution, we find that <m>x_3=0</m> and <m>x_1=-1</m>. Thus <m>\mathcal{N}(\bA)</m> consists of all linear combinations of <m>\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}</m>, i.e., all multiples of that vector. 
+            With the REF 
+            <me>
+            \begin{bmatrix} 
+            1 \amp 1 \amp -1 \\
+            0 \amp 1 \amp 1 \\
+            0 \amp 0 \amp 1   
+            \end{bmatrix}
+            </me>,
+            there are no free variables. The nullspace has dimension zero; i.e., it is the single point <m>\bzero</m>. Finally, with the REF
+            <me>
+            \begin{bmatrix} 
+            0 \amp 1 \amp -3/2 \\
+            0 \amp 0 \amp 0 \\
+            0 \amp 0 \amp 0   
+            \end{bmatrix}
+            </me>,
+            the free variables are <m>x_1</m>  and <m>x_3</m>. When <m>x_1=1</m> and <m>x_3=0</m>, we get <m>\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}</m>, and when vice versa we get <m>\begin{bmatrix} 0 \\ 3/2 \\ 1 \end{bmatrix}</m>. 
+        </p>
+    </example> 
+    </subsection>
+</section>
+
 <section>
     <title>Eigenvalues</title>
 <introduction>
@@ -577,19 +731,43 @@ xlabel('x'), ylabel('y')
      Now suppose <m>\lambda</m> is a number such that <m>(\bA-\lambda \mathbf{I})</m> is a nonsingular matrix. It follows that the linear system above has a unique solution, namely <m>\bv = \boldsymbol{0}</m>. So, we can find no eigenvector at that value of <m>\lambda</m>. In other words,
 </p>
 <theorem>
-    <p><m>\lambda</m> is an eigenvalue if and only if <m>\bA-\lambda \mathbf{I}</m> is a singular matrix.</p>
+    <p><m>\lambda</m> is an eigenvalue if and only if <m>\bA-\lambda \mathbf{I}</m> is a singular matrix. All nonzero members of the nullspace of <m>\bA-\lambda \mathbf{I}</m> are eigenvectors associated with <m>\lambda</m>.</p>
 </theorem>
 <p>
-    This connection gives the most common way to compute eigenvalues by hand. Recall that a matrix is singular if and only if its determinant is zero. Thus an alternative algebraic condition for an eigenvalue is <m>\det(\bA-\lambda \mathbf{I})=0</m>.
+    This connection gives the most common way to compute eigenvalues by hand. Recall that a matrix is singular if and only if its determinant is zero. Thus an alternative algebraic condition for an eigenvalue is <m>\det(\bA-\lambda \mathbf{I})=0</m>. The eigenvectors associated with <m>\lambda</m> are the nonzero members of the nullspace of <m>\bA-\lambda\bI</m>. For an eigenvalue this space is at least one-dimensional. 
 </p>
 <p>
-    Let's chase this down for a <m>2\times 2</m> situation.
+    In the <m>n\times n</m> case, <m>\det(\bA-\lambda\bI)</m> is a polynomial of degree <m>n</m> called the <term>characteristic polynomial</term> of <m>\bA</m>. Thus there are <m>n</m> eigenvalues, if we count multiplicities, i.e.,
+    <me>
+        \det(\bA-\lambda\bI) = (\lambda-\lambda_1)^{m_1} (\lambda-\lambda_2)^{m_2} \cdots 
+        (\lambda-\lambda_k)^{m_k}  
+    </me>,
+    where <m>k\le n</m> and the positive integers <m>m_i</m>, called the <term>algebraic multiplicities</term> of the eigenvalues, sum to <m>n</m>. 
+</p>
+<p>
+    Thanks to cofactor expansion of the determinant, there is one type of matrix for which finding the eigenvalues is trivial.
+</p>
+<theorem>
+    <p>
+        The eigenvalues of a triangular matrix are the diagonal entries of the matrix.
+    </p>
+</theorem>
+<p>
+    Diagonal matrices are included in the theorem. 
+</p>
+</subsection>
+<subsection>
+<title>Eigensystems in the <m>2\times 2</m> case</title>
+<p>
+    The characteristic polynomial in the <m>2\times 2</m> situation will return us to familiar territory.
     <md>
-        <mrow>0 \amp = \det( \bA -\lambda \mathbf{I} ) </mrow>
-        <mrow>\amp = \det\left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} - \lambda \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)</mrow>
-        <mrow>\amp = \begin{vmatrix} a-\lambda \amp b \\ c \amp d-\lambda \end{vmatrix} = (a-\lambda)(d-\lambda)-bc</mrow>
-    </md>. 
-    This condition is equivalent to finding the roots of a quadratic polynomial. In fact, it is <m>\lambda^2 - T \lambda +D</m>, as we stated when analyzing the stability of a 2-by-2 linear ODE system. 
+        <mrow>\det( \bA -\lambda \mathbf{I} ) \amp = \det\left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} - \lambda \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)</mrow>
+        <mrow>\amp = \begin{vmatrix} a-\lambda \amp b \\ c \amp d-\lambda \end{vmatrix} = (a-\lambda)(d-\lambda)-bc=\lambda^2 - T \lambda +D</mrow>
+    </md>,
+    where <m>T</m> and <m>D</m> are the trace and determinant of <m>\bA</m>. This is what I stated when we were analyzing the stability of a 2-by-2 linear ODE system. 
+</p>
+<p>
+    Since an eigenvalue makes <m>\bA-\lambda\bI</m> singular, one step of elimination on that matrix will make the second row all zeros. Thus we only need to pay attention to the condition imposed by the first row, <m>(a-\lambda)v_1 + b v_2 =0</m>. One solution of this equation is <m>\bv=\twovec{b}{\lambda-a}</m>, which will be a representation of <m>\mathcal{N}(\bA)</m>. The only exception is if <m>\lambda-a=b=0</m>, in which case we need to swap rows before the elimination step. 
 </p>
 <example>
     <p>
@@ -600,25 +778,22 @@ xlabel('x'), ylabel('y')
         The associated polynomial is <m>\lambda^2-2\lambda-3</m>, which has roots  <m>\lambda_1=3</m> and <m>\lambda_2=-1</m>. These are the eigenvalues. 
     </p>
     <p>
-        Next, the linear system <m>( \bA -3 \mathbf{I}) \bv = \boldsymbol{0} </m> looks like
-        <me>  
-            \begin{bmatrix} -2 \amp 1 \\ 4 \amp -2 \end{bmatrix} 
-        \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
-        </me>.  
-        By design, this is a singular system, and since zero is a solution, we expect infinitely many solutions. The singularity means that the last row is redundant, so we can focus on solving only <m>-2v_1+v_2=0</m>. I.e., any nonzero vector with <m>v_2=2v_1</m> is an eigenvector. These are all vectors of the form <m>[c,2c]^T=c[1,2]^T</m> for a nonzero scalar <m>c</m>.
-    </p>
-    <p>
-        The reasoning can be repeated for <m>\lambda=\lambda_2=-1</m> to get the equation  <m>2v_1+v_2=0</m>, or <m>v_2=-2v_1</m>, hence any vector in the form <m>c[1,-2]^T</m> will do.
+        Next, the first row of the linear system <m>( \bA -3 \mathbf{I}) \bv = \boldsymbol{0} </m> is <m>-2v_1 + 1v_2=0</m>, which has nonzero solution <m>\bv_1=\twovec{1}{2}</m>. This eigenvector represents the entire eigenspace for <m>\lambda_1</m>. Similarly, for <m>\lambda_2=-1</m> the first row of the null system is <m>2v_1+v_2=0</m>, so <m>\bv_2 = \twovec{1}{-2}</m> represents that eigenspace.
     </p>
 </example>
 <p>
-    In the <m>n\times n</m> case, <m>\det(\bA-\lambda\bI)</m> is a polynomial of degree <m>n</m>, called the <term>characteristic polynomial</term> of <m>\bA</m>. Thus there are <m>n</m> eigenvalues, if we count multiplicities, i.e.,
-    <me>
-        \det(\bA-\lambda\bI) = (\lambda-\lambda_1)^{m_1} (\lambda-\lambda_2)^{m_2} \cdots 
-        (\lambda-\lambda_k)^{m_k}  
-    </me>,
-    where <m>k\le n</m> and the positive integers <m>m_i</m>, called the <term>algebraic multiplicities</term> of the eigenvalues, sum to <m>n</m>. 
+    Quick note: We often speak of "finding the eigenvalues and eigenvectors" of a matrix. The eigenvalues are unique, but eigenvectors are not. What's really meant is to find minimal representations of the eigenspaces, which are uniquely determined, but that's just considered understood.
 </p>
+<example>
+    <p>
+        Consider <m>\bA=\twomat{4}{0}{1}{4}</m>. This matrix is (lower) triangular, so we immediately know <m>\lambda_1=\lambda_2=4</m>. Now, 
+        <me>
+            \bA - 4\bI = \twomat{0}{0}{1}{0}
+        </me>. 
+        If we swap the rows, the matrix is in RE form. Hence <m>v_2</m> is free and <m>v_1=0</m>. The eigenspace is one-dimensional, fully represented by <m>\twovec{0}{1}</m>. 
+    </p>
+</example>
+
 </subsection>
 <subsection>
 <title>Complex eigenvalues</title>
@@ -634,10 +809,10 @@ xlabel('x'), ylabel('y')
         The characteristic polynomial is <m>\lambda^2 +2 \lambda +2</m>, with roots  <m>\lambda_{1,2} = -1 \pm 1i.</m>
     </p>
     <p>
-        To find an eigenvector for <m>\lambda_1</m>, we use the first row of <m> \bA - \lambda_1 \mathbf{I} </m> to conclude <m>(2-i)v_1 -v_2 = 0</m>, so <m>v_2=(2-i)v_1</m>. Any multiple of the vector <m>[1,2-i]^T</m> will do.
+        To find an eigenvector for <m>\lambda_1</m>, we use the first row of <m> \bA - \lambda_1 \mathbf{I} </m> to conclude <m>(2-i)v_1 -v_2 = 0</m>. Thus any nonzero multiple of <m>\bv_1=\twovec{1}{2-i}</m> will do.
     </p>
     <p>
-        We get a benefit from the complex eigenvalues: the second eigenvector, like the second eigenvalue, is just the conjugate of the first. So we have <m>[1,2+i]^T</m> (and all its multiples) to go with <m>\lambda_2</m>. 
+        We get a benefit here from the complex eigenvalues: the conjugate of an eigenvector will be an eigenvector for the conjugated eigenvalue. So we have <m>\bv_2=\twovec{1}{2+i}</m> to go with <m>\lambda_2</m>. 
     </p>
 </example>
 </subsection>
@@ -655,8 +830,15 @@ xlabel('x'), ylabel('y')
     (Note that if zero is an eigenvalue, then <m>\bA-0\bI</m> is singular, so <m>\bA</m> is singular.) 
 </p>
 <p>
-    Two handy facts that hold for matrices of all sizes: the sum of the eigenvalues of <m>\bA</m> is the <term>trace</term> of <m>\bA</m> (sum of the diagonal entries), and the product of the eigenvalues is the determinant. 
+    Two other handy facts hold for matrices of all sizes.
 </p>
+<fact>
+    <p>The sum of the eigenvalues of <m>\bA</m> is the <term>trace</term> of <m>\bA</m> (sum of the diagonal entries).</p>
+</fact>
+<fact>
+    <p>The product of the eigenvalues is the determinant.</p>
+</fact>
+
 </subsection>
 </section>
 
@@ -671,7 +853,7 @@ xlabel('x'), ylabel('y')
             \bA \bv_2 = \lambda_2 \bv_2,\; \dots, \;
             \bA \bv_n = \lambda_n \bv_n
         </me>,
-        where <m>\lambda_1,\lambda_2,\dots,\lambda_n</m> are its eigenvalues. For now, <term>assume the eigenvalues are all distinct (no repeats)</term>.  Through some linear algebra magic, we can express this collection of equations more succintly: 
+        where <m>\lambda_1,\lambda_2,\dots,\lambda_n</m> are its eigenvalues. Through some linear algebra magic, we can express this collection of equations more succinctly: 
         <md>
             <mrow>
                  \begin{bmatrix} 
@@ -694,11 +876,11 @@ xlabel('x'), ylabel('y')
         where <m>\bD</m> is a <term>diagonal</term> matrix. 
     </p>
     <p>
-        It turns out that one can prove <m>\bV</m> is nonsingular, and therefore we can write 
+        If <m>\bV</m> is nonsingular, we therefore can write 
         <me>
             \bA = \bV \bD \bV^{-1}
         </me>, 
-        which is called a <term>diagonalization</term> of <m>\bA</m>. Diagonalization is not unique; after all, we can take the eigenvalues in any order, and the eigenvectors themselves are not unique. 
+        which is called a <term>diagonalization</term> of <m>\bA</m>. A diagonalization is not unique; after all, we can take the eigenvalues in any order, and the eigenvectors themselves are not unique. 
     </p>
     <example>
         <title>A 2-by-2 diagonalization</title>
@@ -707,11 +889,11 @@ xlabel('x'), ylabel('y')
             <me>
                 \mathbf{A} =  \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
             </me>. 
-            We found the eigenvalues and eigenvectors of this guy in the previous section. We got <m>\lambda_1=3</m> with <m>\bv_1 = [1,2]</m>, and <m>\lambda_2=-1</m> with <m>\bv_2 = [1,-2]</m>. So we paint by numbers to get
+            We found the eigenvalues and eigenvectors of this guy in the previous section. We got <m>\lambda_1=3</m> with <m>\bv_1 = \twovec{1}{2}</m>, and <m>\lambda_2=-1</m> with <m>\bv_2 =\twovec{1}{-2}</m>. So we paint by numbers to get
             <me>
                 \mathbf{D} = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}, \qquad \bV = \begin{bmatrix} 1 \amp 1 \\ 2 \amp -2 \end{bmatrix}
             </me>. 
-            We "just" need to invert <m>\bV</m>; fortunately we're only at <m>2\times 2</m>.
+            We "just" need to invert <m>\bV</m>; fortunately, we're only at <m>2\times 2</m>, so this is a snap.
             <me> 
                 \bV^{-1} = \frac{1}{-4} \begin{bmatrix} -2 \amp -1 \\ -2 \amp 1 \end{bmatrix} = \begin{bmatrix} 1/2 \amp 1/4 \\ 1/2 \amp -1/4 \end{bmatrix}
             </me>.  
@@ -724,6 +906,17 @@ xlabel('x'), ylabel('y')
             </me>. 
         </p>
     </example>
+    <p>
+        Every eigenvalue has an eigenspace of dimension at least one. If the <m>n</m> eigenvalues are distinct, the dimensions add up to <m>n</m>, and it can be proved that the matrix <m>\bV</m> is invertible.
+    </p>
+    <theorem>
+        <p>
+            If the eigenvalues of a matrix are all distinct, the matrix is diagonalizable.
+        </p> 
+    </theorem>
+    <p>
+        The "only if" version of this theorem is <em>not</em> true. For example, the identity matrix is trivially diagonalizable with <m>\bV=\bI</m>, but the eigenvalues are both equal to one. 
+    </p>
 </introduction>
 <subsection>
 <title>Diagonalization of a linear ODE</title>
@@ -752,18 +945,14 @@ xlabel('x'), ylabel('y')
     As we have seen time and again, repeated roots complicate our conclusions. The same is true for eigenvalues.
 </p>
 <p>
-    As stated above, when the eigenvalues are all distinct, a diagonalization is always possible. When there are repeated eigenvalues, though, that may or may not be the case. As a trivial example, an identity matrix has all eigenvalues equal to one, and it is already diagonal. But consider the matrix 
-    <me>
-        \bA = \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}
-    </me>. 
-    It has trace 2 and determinant 1, so its eigenvalues are <m>\lambda_1=\lambda_2=1</m>. The system <m>(\bA-1\bI)\bv=\boldsymbol{0}</m> implies <m>v_2=0</m>. Thus all eigenvectors are of the form <m>[c,0]</m>. If we try to build a matrix <m>\bV</m> having these as columns, it would be 
-    <me>
-        \bV = \begin{bmatrix} c_1 \amp c_2 \\ 0 \amp 0 \end{bmatrix}
+    As stated above, when the eigenvalues are all distinct, a diagonalization is always possible. When there are repeated eigenvalues, though, that may or may not be the case. We saw above that an identity matrix is diagonalizable. However, the matrix <m>\bA=\twomat{4}{0}{1}{4}</m> shown in an example above is impossible to diagonalize. The only candidates for the columns of <m>\bV</m> are eigenvectors, and those are all nonzero multiples of <m>\twovec{0}{1}</m>. Hence 
+     <me>
+        \bV = \begin{bmatrix} 0 \amp 0 \\ \alpha \amp \beta \end{bmatrix}
     </me>, 
-    which is necessarily singular (determinant is zero). Therefore no diagonalization is possible, and we say <m>\bA</m> is <term>defective</term>. Another way of saying this is that the matrix does not have a "complete independent set of eigenvectors."
+    which is necessarily singular (determinant is zero). Therefore no diagonalization is possible, and we say <m>\bA</m> is <term>defective</term>. Another way of saying this is that the dimensions of the eigenspaces add up to less than <m>n</m>, or that the matrix does not have a "complete independent set of eigenvectors."
 </p>
 <p>
-    A fully general description of defectiveness is beyond our scope. For the <m>2\times 2</m> case, it's straightforward: a matrix with repeated eigenvalues is either a multiple of the identity, in which case it has a diagonalization with <m>\bV=\bI</m>, or it's defective (has no diagonalization). 
+    A full description of defectiveness is beyond our scope. For the <m>2\times 2</m> case, we've essentially seen all the possibilities already: a matrix with repeated eigenvalues is either a multiple of the identity, in which case it has a diagonalization with <m>\bV=\bI</m>, or it's defective. 
 </p>
 </subsection>
 </section>

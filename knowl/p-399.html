@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-15T11:26:23-04:00    *-->
+<!--*    on 2019-04-17T13:42:23-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,15 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's chase this down for a \(2\times 2\) situation.</p>
-<div class="displaymath">
-\begin{align*}
-0 \amp = \det( \bA -\lambda \mathbf{I} ) \\
-\amp = \det\left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} - \lambda \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)\\
-\amp = \begin{vmatrix} a-\lambda \amp b \\ c \amp d-\lambda \end{vmatrix} = (a-\lambda)(d-\lambda)-bc\text{.}
-\end{align*}
-</div>
-<p>This condition is equivalent to finding the roots of a quadratic polynomial. In fact, it is \(\lambda^2 - T \lambda +D\text{,}\) as we stated when analyzing the stability of a 2-by-2 linear ODE system.</p>
-<span class="incontext"><a href="section-29.html#p-399">in-context</a></span>
+<p>The target of row elimination in the case of a nullspace can be described by three rules: </p>
+<ol class="decimal">
+<li>The leftmost nonzero in any row is a 1 (called a <dfn class="terminology">leading one</dfn>).</li>
+<li>The leading one in any row is to the right of any leading ones in higher rows.</li>
+<li>Any all-zero rows are at the bottom of the matrix.</li>
+</ol>
+<p> We have not been following rule 1 up to now, but it's easy to satisfy; we just divide each row by its leading nonzero value. Such a matrix is said to be in <dfn class="terminology">row-echelon form</dfn> (REF).</p>
+<span class="incontext"><a href="ma-nullspace.html#p-399">in-context</a></span>
 </body>
 </html>

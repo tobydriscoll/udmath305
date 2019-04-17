@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-04-17T13:42:23-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.9.3</span>
+</h6>
+<p>The problem \(\mathbf{y}' = \begin{bmatrix} -1 \amp 1 \\ 0 \amp -1 \end{bmatrix} \mathbf{y}\) has a defective matrix, so we cannot use a diagonalization to compute the matrix exponential. However, we are still free to compute a power series! This works out well because we get a simple pattern:</p>
+<div class="displaymath">
+\begin{align*}
+\bA^2 \amp = \twomat{-1}{1}{0}{-1} \twomat{-1}{1}{0}{-1}  = \twomat{1}{-2}{0}{1} \\
+\bA^3 \amp = \twomat{1}{-2}{0}{1} \twomat{-1}{1}{0}{-1}  = \twomat{-1}{3}{0}{-1}\text{,}
+\end{align*}
+</div>
+<p>and so on. We put this together and get</p>
+<div class="displaymath">
+\begin{align*}
+e^{t\bA} \amp = 
+\twomat{1 -t + \frac{1}{2!}t^2 - \frac{1}{3!}t^3 + \cdots}{t - \frac{2}{2!}t^2 + \frac{3}{3!}t^3 - \cdots}{0}{1 -t + \frac{1}{2!}t^2 - \frac{1}{3!}t^3 + \cdots}\\
+\amp = \twomat{e^{-t}}{te^{-t}}{0}{e^{-t}}\text{.}
+\end{align*}
+</div></article><span class="incontext"><a href="section-33.html#example-67">in-context</a></span>
+</body>
+</html>
