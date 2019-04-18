@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-17T13:42:23-04:00    *-->
+<!--*    on 2019-04-18T09:01:45-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,12 +11,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>Let's find the eigenvalues and eigenvectors of</p>
+<body><article class="example-like"><p>Consider \(\bA=\twomat{4}{0}{1}{4}\text{.}\) This matrix is (lower) triangular, so we immediately know \(\lambda_1=\lambda_2=4\text{.}\) Now,</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}\text{.}
+\bA - 4\bI = \twomat{0}{0}{1}{0}\text{.}
 \end{equation*}
 </div>
-<p>The associated polynomial is \(\lambda^2-2\lambda-3\text{,}\) which has roots  \(\lambda_1=3\) and \(\lambda_2=-1\text{.}\) These are the eigenvalues.</p>
-<p>Next, the first row of the linear system \(( \bA -3 \mathbf{I}) \bv = \boldsymbol{0} \) is \(-2v_1 + 1v_2=0\text{,}\) which has nonzero solution \(\bv_1=\twovec{1}{2}\text{.}\) This eigenvector represents the entire eigenspace for \(\lambda_1\text{.}\) Similarly, for \(\lambda_2=-1\) the first row of the null system is \(2v_1+v_2=0\text{,}\) so \(\bv_2 = \twovec{1}{-2}\) represents that eigenspace.</p></article></body>
+<p>If we swap the rows, the matrix is in RE form. Hence \(v_2\) is free and \(v_1=0\text{.}\) The eigenspace is one-dimensional, fully represented by \(\twovec{0}{1}\text{.}\)</p></article></body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-17T13:42:21-04:00    *-->
+<!--*    on 2019-04-18T09:01:41-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -162,9 +162,9 @@ MathJax.Hub.Config({
 <span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Nullspaces from elimination</span>
 </h3>
 <p id="p-395">We can use regular elimination to find a nullspace. Since \(\bb=\bzero\) by definition, all the row operations leave it unchanged, and we can ignore it until the back substitution stage.</p>
-<article class="example-like" id="example-53"><a knowl="" class="id-ref" refid="hk-example-53"><h6 class="heading">
+<article class="example-like" id="example-52"><a knowl="" class="id-ref" refid="hk-example-52"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.5.1</span>
-</h6></a></article><div id="hk-example-53" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="displaymath" id="p-396">
+</h6></a></article><div id="hk-example-52" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="displaymath" id="p-396">
 \begin{equation*}
 \begin{bmatrix} 
 1 \amp 1 \amp -1 \\
@@ -190,9 +190,9 @@ MathJax.Hub.Config({
 \end{equation*}
 </div>
 <p>Thus the nullspace consists of all multiples of the constant vector \(\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\text{.}\) This representation isn't unique; any nonzero member of the space would serve as well.</p></article></div>
-<article class="example-like" id="example-54"><a knowl="" class="id-ref" refid="hk-example-54"><h6 class="heading">
+<article class="example-like" id="example-53"><a knowl="" class="id-ref" refid="hk-example-53"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.5.2</span>
-</h6></a></article><div id="hk-example-54" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-397">Suppose elimination ends with the matrix</p>
+</h6></a></article><div id="hk-example-53" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-397">Suppose elimination ends with the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 
@@ -203,9 +203,9 @@ MathJax.Hub.Config({
 \end{equation*}
 </div>
 <p>Now back substitution implies \(x_3=0\text{,}\) then \(x_2=0\text{,}\) then \(x_1=0\text{.}\) So \(\mathcal{N}(\bA) = \{\bzero\}\text{.}\)</p></article></div>
-<article class="example-like" id="example-55"><a knowl="" class="id-ref" refid="hk-example-55"><h6 class="heading">
+<article class="example-like" id="example-54"><a knowl="" class="id-ref" refid="hk-example-54"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.5.3</span>
-</h6></a></article><div id="hk-example-55" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="displaymath" id="p-398">
+</h6></a></article><div id="hk-example-54" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="displaymath" id="p-398">
 \begin{equation*}
 \begin{bmatrix} 
 0 \amp 2 \amp -3 \\
@@ -235,9 +235,9 @@ MathJax.Hub.Config({
 <li id="li-28">Any all-zero rows are at the bottom of the matrix.</li>
 </ol>
 <p> We have not been following rule 1 up to now, but it's easy to satisfy; we just divide each row by its leading nonzero value. Such a matrix is said to be in <dfn class="terminology">row-echelon form</dfn> (REF).</p>
-<article class="example-like" id="example-56"><a knowl="" class="id-ref" refid="hk-example-56"><h6 class="heading">
+<article class="example-like" id="example-55"><a knowl="" class="id-ref" refid="hk-example-55"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.5.4</span>
-</h6></a></article><div id="hk-example-56" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-400">REFs for the examples in the last subsection are</p>
+</h6></a></article><div id="hk-example-55" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-400">REFs for the examples in the last subsection are</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 
@@ -260,9 +260,9 @@ MathJax.Hub.Config({
 \end{equation*}
 </div></article></div>
 <p id="p-401">Once the matrix has been transformed to REF, you can divide the components of the solution \(\bx\) into two groups: the <dfn class="terminology">pivot variables</dfn> are those whose columns have a leading one somewhere, and the <dfn class="terminology">free variables</dfn> are the rest. The number of free variables is the dimension of the nullspace (also called the nullity of \(\bA\)). You can then find a representation of the nullspace by setting each of the free variables to one in turn (making the others zero) and solving for the resulting pivot variables. The nullspace is the set of linear combinations of those vectors.</p>
-<article class="example-like" id="example-57"><a knowl="" class="id-ref" refid="hk-example-57"><h6 class="heading">
+<article class="example-like" id="example-56"><a knowl="" class="id-ref" refid="hk-example-56"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.5.5</span>
-</h6></a></article><div id="hk-example-57" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-402">Given the REF</p>
+</h6></a></article><div id="hk-example-56" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-402">Given the REF</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 

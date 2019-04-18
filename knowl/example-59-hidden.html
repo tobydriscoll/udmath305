@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-17T13:42:23-04:00    *-->
+<!--*    on 2019-04-18T09:01:45-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,11 +11,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>Consider \(\bA=\twomat{4}{0}{1}{4}\text{.}\) This matrix is (lower) triangular, so we immediately know \(\lambda_1=\lambda_2=4\text{.}\) Now,</p>
+<body><article class="example-like"><p>We find the eigenvalues and eigenvectors of</p>
 <div class="displaymath">
 \begin{equation*}
-\bA - 4\bI = \twomat{0}{0}{1}{0}\text{.}
+\begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>If we swap the rows, the matrix is in RE form. Hence \(v_2\) is free and \(v_1=0\text{.}\) The eigenspace is one-dimensional, fully represented by \(\twovec{0}{1}\text{.}\)</p></article></body>
+<p>The characteristic polynomial is \(\lambda^2 +2 \lambda +2\text{,}\) with roots  \(\lambda_{1,2} = -1 \pm 1i.\)</p>
+<p>To find an eigenvector for \(\lambda_1\text{,}\) we use the first row of \(\bA - \lambda_1 \mathbf{I} \) to conclude \((2-i)v_1 -v_2 = 0\text{.}\) Thus any nonzero multiple of \(\bv_1=\twovec{1}{2-i}\) will do.</p>
+<p>We get a benefit here from the complex eigenvalues: the conjugate of an eigenvector will be an eigenvector for the conjugated eigenvalue. So we have \(\bv_2=\twovec{1}{2+i}\) to go with \(\lambda_2\text{.}\)</p></article></body>
 </html>

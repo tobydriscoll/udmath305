@@ -392,7 +392,20 @@ xlabel('x'), ylabel('y')
     <subsection>
         <title>Matrix times matrix</title>
         <p>
-            The last and most general case for us to consider is the product <m>\bA\bB</m>. As in the matrix-vector case, there is a constraint on the sizes: the number of columns of <m>\bA</m> has to be the same as the number of rows in <m>\bB</m>. So if <m>\bA</m> is <m>m\times n</m> and <m>\bB</m> is <m>n\times p</m>, we can define the product <m>\bC = \bA\bB</m> as the <m>m\times p</m> matrix with entries defined by
+            In order to define the product <m>\bA\bB</m>, we require that the number of columns in <m>\bA</m> is the same as the number of rows in <m>\bB</m>. Otherwise, no product is defined. So let <m>\bA</m> be <m>m\times n</m> and <m>\bB</m> be <m>n\times p</m>.  One way to describe  <m>\bA\bB</m> is as a  generalization of the matrix-vector product:
+            <me>
+                \bA\mathbf{B} =
+                    \bA \begin{bmatrix}
+                    \mathbf{b}_1 \amp \mathbf{b}_2 \amp \cdots \amp \mathbf{b}_p
+                    \end{bmatrix}
+                    = \begin{bmatrix}
+                    \bA\mathbf{b}_1 \amp \bA\mathbf{b}_2 \amp \cdots \amp \bA\mathbf{b}_p
+                    \end{bmatrix}
+            </me>.
+            In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix. Note that when we multiply <m>m\times n</m> by <m>n\times p</m>, the result is <m>m\times p</m>. 
+        </p>
+        <p>
+            When we compute a matrix product by hand, we usually don't write out the above. Instead we use a more compact definition for the individual entries of <m>\bC = \bA\bB</m>,
             <me>
                 C_{ij} = \sum_{k=1}^n A_{ij}B_{jk}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p
             </me>. 
@@ -420,23 +433,8 @@ xlabel('x'), ylabel('y')
                             \end{bmatrix}</mrow>
                 </md>.
             </p>
-        </example>
-        <p>
-            One way to think about the definition of matrix multiplication is as a generalization of the matrix-vector product. It turns out that
-            <me>
-                \bA\mathbf{B} =
-                    \bA \begin{bmatrix}
-                    \mathbf{b}_1 \amp \mathbf{b}_2 \amp \cdots \amp \mathbf{b}_n
-                    \end{bmatrix}
-                    = \begin{bmatrix}
-                    \bA\mathbf{b}_1 \amp \bA\mathbf{b}_2 \amp \cdots \amp \bA\mathbf{b}_n
-                    \end{bmatrix}
-            </me>.
-            In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix. 
-        </p>
-        <example>
             <p>
-               Returning to the previous example, note that 
+               Observe that 
                 <me>
                     \bA \begin{bmatrix} 2 \\ 1 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ 0 \\ -3
                         \end{bmatrix} + 1 \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-17T13:42:21-04:00    *-->
+<!--*    on 2019-04-18T09:01:41-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -176,7 +176,20 @@ y_i = \sum_{k=1}^n A_{ik} x_k, \qquad i=1,\ldots,m\text{.}
 <p>This is, naturally, equivalent to the earlier definition of \(\by\) as a linear combination of the columns of \(\bA\text{,}\) with the combination coefficients coming from \(\bx\text{.}\)</p></section><section class="subsection" id="subsection-56"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.2</span> <span class="title">Matrix times matrix</span>
 </h3>
-<p id="p-374">The last and most general case for us to consider is the product \(\bA\bB\text{.}\) As in the matrix-vector case, there is a constraint on the sizes: the number of columns of \(\bA\) has to be the same as the number of rows in \(\bB\text{.}\) So if \(\bA\) is \(m\times n\) and \(\bB\) is \(n\times p\text{,}\) we can define the product \(\bC = \bA\bB\) as the \(m\times p\) matrix with entries defined by</p>
+<p id="p-374">In order to define the product \(\bA\bB\text{,}\) we require that the number of columns in \(\bA\) is the same as the number of rows in \(\bB\text{.}\) Otherwise, no product is defined. So let \(\bA\) be \(m\times n\) and \(\bB\) be \(n\times p\text{.}\)  One way to describe  \(\bA\bB\) is as a  generalization of the matrix-vector product:</p>
+<div class="displaymath">
+\begin{equation*}
+\bA\mathbf{B} =
+\bA \begin{bmatrix}
+\mathbf{b}_1 \amp \mathbf{b}_2 \amp \cdots \amp \mathbf{b}_p
+\end{bmatrix}
+= \begin{bmatrix}
+\bA\mathbf{b}_1 \amp \bA\mathbf{b}_2 \amp \cdots \amp \bA\mathbf{b}_p
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix. Note that when we multiply \(m\times n\) by \(n\times p\text{,}\) the result is \(m\times p\text{.}\)</p>
+<p id="p-375">When we compute a matrix product by hand, we usually don't write out the above. Instead we use a more compact definition for the individual entries of \(\bC = \bA\bB\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 C_{ij} = \sum_{k=1}^n A_{ij}B_{jk}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text{.}
@@ -184,7 +197,7 @@ C_{ij} = \sum_{k=1}^n A_{ij}B_{jk}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text
 </div>
 <article class="example-like" id="example-51"><a knowl="" class="id-ref" refid="hk-example-51"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.3.1</span>
-</h6></a></article><div id="hk-example-51" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-375">Let</p>
+</h6></a></article><div id="hk-example-51" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-376">Let</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix}
@@ -207,23 +220,8 @@ C_{ij} = \sum_{k=1}^n A_{ij}B_{jk}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text
 1 \amp -2 \amp -3 \amp 2 \\ 2 \amp 2 \amp 6 \amp 4 \\ -5 \amp 4 \amp 3 \amp -10
 \end{bmatrix}\text{.}
 \end{align*}
-</div></article></div>
-<p id="p-376">One way to think about the definition of matrix multiplication is as a generalization of the matrix-vector product. It turns out that</p>
-<div class="displaymath">
-\begin{equation*}
-\bA\mathbf{B} =
-\bA \begin{bmatrix}
-\mathbf{b}_1 \amp \mathbf{b}_2 \amp \cdots \amp \mathbf{b}_n
-\end{bmatrix}
-= \begin{bmatrix}
-\bA\mathbf{b}_1 \amp \bA\mathbf{b}_2 \amp \cdots \amp \bA\mathbf{b}_n
-\end{bmatrix}\text{.}
-\end{equation*}
 </div>
-<p>In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix.</p>
-<article class="example-like" id="example-52"><a knowl="" class="id-ref" refid="hk-example-52"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.3.2</span>
-</h6></a></article><div id="hk-example-52" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-377">Returning to the previous example, note that</p>
+<p id="p-377">Observe that</p>
 <div class="displaymath">
 \begin{equation*}
 \bA \begin{bmatrix} 2 \\ 1 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ 0 \\ -3
@@ -236,7 +234,7 @@ C_{ij} = \sum_{k=1}^n A_{ij}B_{jk}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text
 </h3>
 <p id="p-378">First, the bad news. In the previous subsection we computed the product \(\bA\bB\text{,}\) where the matrices are \(3\times 2\) and \(2\times 4\text{,}\) to get a result that is \(3\times 4\text{.}\) However, the product \(\bB\bA\) isn't even defined, because \(4\neq 3\text{.}\) Moreover, even when both \(\bA\bB\) and \(\bB\bA\) <em class="emphasis">are</em> defined, we cannot expect them to be equal.</p>
 <article class="theorem-like" id="fact-4"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">4.3.3</span>
+<span class="type">Fact</span> <span class="codenumber">4.3.2</span>
 </h6>
 <p id="p-379">Matrix multiplication is not commutative. That is, the order of terms in a product affects the result.</p></article><p id="p-380">In a product of matrices (and vectors), position matters. You cannot change the ordering (without justification)! You may have to unlearn some old habits.</p>
 <p id="p-381">Fortunately, other familiar properties of multiplication do come along for the ride: </p>
