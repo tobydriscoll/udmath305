@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T09:01:42-04:00    *-->
+<!--*    on 2019-04-18T09:17:54-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -145,8 +145,8 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-31"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.7</span> <span class="title">Diagonalization</span>
 </h2>
-<section class="introduction" id="introduction-20"><p id="p-427"><em class="emphasis">From section 6.2.</em></p>
-<p id="p-428">Say \(\bA\) is \(n\times n\text{,}\) and that we write</p>
+<section class="introduction" id="introduction-20"><p id="p-428"><em class="emphasis">From section 6.2.</em></p>
+<p id="p-429">Say \(\bA\) is \(n\times n\text{,}\) and that we write</p>
 <div class="displaymath">
 \begin{equation*}
 \bA \bv_1 = \lambda_1 \bv_1, \;
@@ -175,7 +175,7 @@ MathJax.Hub.Config({
 \end{align*}
 </div>
 <p>where \(\bD\) is a <dfn class="terminology">diagonal</dfn> matrix.</p>
-<p id="p-429">If \(\bV\) is nonsingular, we therefore can write</p>
+<p id="p-430">If \(\bV\) is nonsingular, we therefore can write</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \bV \bD \bV^{-1}\text{,}
@@ -184,7 +184,7 @@ MathJax.Hub.Config({
 <p>which is called a <dfn class="terminology">diagonalization</dfn> of \(\bA\text{.}\) A diagonalization is not unique; after all, we can take the eigenvalues in any order, and the eigenvectors themselves are not unique.</p>
 <article class="example-like" id="example-60"><a knowl="" class="id-ref" refid="hk-example-60"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.7.1</span> <span class="title">A 2-by-2 diagonalization</span>
-</h6></a></article><div id="hk-example-60" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-430">Let's find a diagonalization of</p>
+</h6></a></article><div id="hk-example-60" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-431">Let's find a diagonalization of</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf{A} =  \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}\text{.}
@@ -211,14 +211,14 @@ MathJax.Hub.Config({
 \begin{bmatrix} 1/2 \amp 1/4 \\ 1/2 \amp -1/4 \end{bmatrix}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-431">Every eigenvalue has an eigenspace of dimension at least one. If the \(n\) eigenvalues are distinct, the dimensions add up to \(n\text{,}\) and it can be proved that the matrix \(\bV\) is invertible.</p>
+<p id="p-432">Every eigenvalue has an eigenspace of dimension at least one. If the \(n\) eigenvalues are distinct, the dimensions add up to \(n\text{,}\) and it can be proved that the matrix \(\bV\) is invertible.</p>
 <article class="theorem-like" id="theorem-5"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">4.7.2</span>
 </h6>
-<p id="p-432">If the eigenvalues of a matrix are all distinct, the matrix is diagonalizable.</p></article><p id="p-433">The "only if" version of this theorem is <em class="emphasis">not</em> true. For example, the identity matrix is trivially diagonalizable with \(\bV=\bI\text{,}\) but the eigenvalues are both equal to one.</p></section><section class="subsection" id="subsection-67"><h3 class="heading hide-type">
+<p id="p-433">If the eigenvalues of a matrix are all distinct, the matrix is diagonalizable.</p></article><p id="p-434">The "only if" version of this theorem is <em class="emphasis">not</em> true. For example, the identity matrix is trivially diagonalizable with \(\bV=\bI\text{,}\) but the eigenvalues are both equal to one.</p></section><section class="subsection" id="subsection-67"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Diagonalization of a linear ODE</span>
 </h3>
-<p id="p-434">Suppose \(\mathbf{y}'=\mathbf{A} \mathbf{y}\text{.}\) Given a diagonalization of \(\bA\text{,}\) we compute</p>
+<p id="p-435">Suppose \(\mathbf{y}'=\mathbf{A} \mathbf{y}\text{.}\) Given a diagonalization of \(\bA\text{,}\) we compute</p>
 <div class="displaymath">
 \begin{align*}
 \mathbf{y}'\amp =\mathbf{V} \mathbf{D} \mathbf{V}^{-1} \mathbf{y}\\
@@ -234,18 +234,18 @@ MathJax.Hub.Config({
 \end{equation*}
 </div>
 <p>In terms of the new variable, the ODE system is \(u_1'=\lambda_1 u_1,\, \dots,\, u_n'=\lambda_n u_n\text{,}\) which are completely decoupled–that is, they evolve independently.</p>
-<p id="p-435">How are we to interpret \(\mathbf{u} = \mathbf{V}^{-1} \mathbf{y}\text{?}\) Suppose we write it as \(\bV \bu = \by\text{,}\) which has the form of a linear system. One of our interpretations of this system is to find an expression of the vector \(\by\) in terms of coordinates based on combining the columns of \(\bV\text{.}\) Thus, if we change an ODE to eigenvector coordinates, the resulting ODE for the coordinate values is diagonal.</p></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
+<p id="p-436">How are we to interpret \(\mathbf{u} = \mathbf{V}^{-1} \mathbf{y}\text{?}\) Suppose we write it as \(\bV \bu = \by\text{,}\) which has the form of a linear system. One of our interpretations of this system is to find an expression of the vector \(\by\) in terms of coordinates based on combining the columns of \(\bV\text{.}\) Thus, if we change an ODE to eigenvector coordinates, the resulting ODE for the coordinate values is diagonal.</p></section><section class="subsection" id="subsection-68"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.2</span> <span class="title">Repeated eigenvalues</span>
 </h3>
-<p id="p-436">As we have seen time and again, repeated roots complicate our conclusions. The same is true for eigenvalues.</p>
-<p id="p-437">As stated above, when the eigenvalues are all distinct, a diagonalization is always possible. When there are repeated eigenvalues, though, that may or may not be the case. We saw above that an identity matrix is diagonalizable. However, the matrix \(\bA=\twomat{4}{0}{1}{4}\) shown in an example above is impossible to diagonalize. The only candidates for the columns of \(\bV\) are eigenvectors, and those are all nonzero multiples of \(\twovec{0}{1}\text{.}\) Hence</p>
+<p id="p-437">As we have seen time and again, repeated roots complicate our conclusions. The same is true for eigenvalues.</p>
+<p id="p-438">As stated above, when the eigenvalues are all distinct, a diagonalization is always possible. When there are repeated eigenvalues, though, that may or may not be the case. We saw above that an identity matrix is diagonalizable. However, the matrix \(\bA=\twomat{4}{0}{1}{4}\) shown in an example above is impossible to diagonalize. The only candidates for the columns of \(\bV\) are eigenvectors, and those are all nonzero multiples of \(\twovec{0}{1}\text{.}\) Hence</p>
 <div class="displaymath">
 \begin{equation*}
 \bV = \begin{bmatrix} 0 \amp 0 \\ \alpha \amp \beta \end{bmatrix}\text{,}
 \end{equation*}
 </div>
 <p>which is necessarily singular (determinant is zero). Therefore no diagonalization is possible, and we say \(\bA\) is <dfn class="terminology">defective</dfn>. Another way of saying this is that the dimensions of the eigenspaces add up to less than \(n\text{,}\) or that the matrix does not have a "complete independent set of eigenvectors."</p>
-<p id="p-438">A full description of defectiveness is beyond our scope. For the \(2\times 2\) case, we've essentially seen all the possibilities already: a matrix with repeated eigenvalues is either a multiple of the identity, in which case it has a diagonalization with \(\bV=\bI\text{,}\) or it's defective.</p></section></section></div></main>
+<p id="p-439">A full description of defectiveness is beyond our scope. For the \(2\times 2\) case, we've essentially seen all the possibilities already: a matrix with repeated eigenvalues is either a multiple of the identity, in which case it has a diagonalization with \(\bV=\bI\text{,}\) or it's defective.</p></section></section></div></main>
 </div>
 </body>
 </html>

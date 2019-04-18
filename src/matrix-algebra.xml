@@ -392,7 +392,7 @@ xlabel('x'), ylabel('y')
     <subsection>
         <title>Matrix times matrix</title>
         <p>
-            In order to define the product <m>\bA\bB</m>, we require that the number of columns in <m>\bA</m> is the same as the number of rows in <m>\bB</m>. Otherwise, no product is defined. So let <m>\bA</m> be <m>m\times n</m> and <m>\bB</m> be <m>n\times p</m>.  One way to describe  <m>\bA\bB</m> is as a  generalization of the matrix-vector product:
+            In order to define the product <m>\bA\bB</m>, we require that the number of columns in <m>\bA</m> is the same as the number of rows in <m>\bB</m>. Otherwise, the product is considered undefined. So let <m>\bA</m> be <m>m\times n</m> and <m>\bB</m> be <m>n\times p</m>.  One way to describe  <m>\bA\bB</m> is as a  generalization of the matrix-vector product:
             <me>
                 \bA\mathbf{B} =
                     \bA \begin{bmatrix}
@@ -482,7 +482,7 @@ xlabel('x'), ylabel('y')
             \bI = \begin{bmatrix} 
             1 \amp 0 \amp 0 \amp \cdots \amp 0 \\
             0 \amp 1 \amp 0 \amp \cdots \amp 0 \\
-             \amp  \amp \ddots \amp  \amp 0 \\
+             \vdots \amp  \amp \ddots \amp  \amp \vdots\\
              0 \amp \cdots \amp 0 \amp 1 \amp 0 \\
              0 \amp \cdots \amp 0 \amp 0 \amp 1
              \end{bmatrix}
@@ -494,14 +494,17 @@ xlabel('x'), ylabel('y')
     <title>Inverse matrix</title>
     <p>
         With the multiplicative identity in hand, the next order of business is to look for multiplicative inverses. To wit, if we have a square matrix <m>\bA</m>, can we find another square matrix <m>\bC</m> such that <m> \bA\bC = \bC\bA = \bI </m>? 
-        If such a matrix exists, we call it the <term>inverse</term> of <m>\bA</m> and write <m>\bA^{-1}=\bC</m>. Interestingly, while we formally need to specify two multiplications to define an inverse (because of the lack of commutativity), it turns out that one can prove (not so easily) that one of these properties automatically implies the other; that is, a "left-inverse" is also a "right-inverse",and vice versa. 
+        If such a matrix exists, we call it the <term>inverse</term> of <m>\bA</m> and write <m>\bA^{-1}=\bC</m>.  
+    </p>
+    <p>
+        (Interestingly, while the lack of commutativity means we formally need to specify two products to define an inverse, it turns out that one can prove [not so easily!] that one of these products automatically implies the other; that is, a "left-inverse" is also a "right-inverse", and vice versa.)
     </p>
     <p>
         Because the zero matrix gives zero for every multiplicative partner, it cannot have an inverse. That's completely in line with what we know about the scalar zero. However, unlike scalars, there are nonzero matrices that do not have any inverse. The simplest is 
         <me>
             \bA = \begin{bmatrix}  0 \amp 1 \\ 0 \amp 0 \end{bmatrix}
         </me>. 
-        (Proof: The second column of <m>\bC\bA</m> is zero for any square <m>\bC</m>.) We call such a matrix <term>singular</term>, or noninvertible. 
+        (Proof: The second column of <m>\bC\bA</m> is zero for any square <m>\bC</m>.) We call such a matrix <term>singular</term>. A matrix in the opposite situation (having an inverse)is said to be <term>invertible</term>, or <term>nonsingular</term>. 
     </p>
     <p>
         This notion of singularity is the same one we encountered with 2-by-2 linear systems. For, if <m>\bA</m> is not singular, then it has an inverse (by definition), and the linear system <m>\bA\bx=\bb</m> is equivalent to 

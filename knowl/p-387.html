@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T09:01:45-04:00    *-->
+<!--*    on 2019-04-18T09:17:57-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This notion of singularity is the same one we encountered with 2-by-2 linear systems. For, if \(\bA\) is not singular, then it has an inverse (by definition), and the linear system \(\bA\bx=\bb\) is equivalent to</p>
+<p>Because the zero matrix gives zero for every multiplicative partner, it cannot have an inverse. That's completely in line with what we know about the scalar zero. However, unlike scalars, there are nonzero matrices that do not have any inverse. The simplest is</p>
 <div class="displaymath">
 \begin{equation*}
-\bA^{-1} \bb = \bA^{-1} (\bA \bx) = \bigl(  \bA^{-1} \bA \bigr) \bx = \bI \bx = \bx\text{.}
+\bA = \begin{bmatrix}  0 \amp 1 \\ 0 \amp 0 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>That is, if \(\bA\) is nonsingular, the linear system has the unique solution \(\bA^{-1} \bb\text{.}\)  That the converse is also true (unique solution implies nonsingularity) is part of what's usually called the Fundamental Theorem of Linear Algebra, which is a little beyond our scope here.</p>
+<p>(Proof: The second column of \(\bC\bA\) is zero for any square \(\bC\text{.}\)) We call such a matrix <dfn class="terminology">singular</dfn>. A matrix in the opposite situation (having an inverse)is said to be <dfn class="terminology">invertible</dfn>, or <dfn class="terminology">nonsingular</dfn>.</p>
 <span class="incontext"><a href="ma-inverses.html#p-387">in-context</a></span>
 </body>
 </html>

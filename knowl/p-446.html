@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T09:01:45-04:00    *-->
+<!--*    on 2019-04-18T09:17:57-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,37 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Based on our experiences to date, we try an ODE solution of the form \(te^{\lambda t} \mathbf{w}\) for an unknown \(\bw\text{.}\) We plug this into the ODE and get</p>
-<div class="displaymath">
-\begin{equation*}
-(\lambda t e^{\lambda t} + e^{\lambda t}) \mathbf{w} = t e^{\lambda t} \mathbf{A} \mathbf{w}\text{.}
-\end{equation*}
-</div>
-<p>We don't have enough terms to balance both the \(t^0\) and \(t^1\) groups. A better guess is</p>
-<div class="displaymath">
-\begin{equation*}
-te^{\lambda t} \mathbf{v} + e^{\lambda t} \mathbf{w}\text{.}
-\end{equation*}
-</div>
-<p>Then</p>
-<div class="displaymath">
-\begin{equation*}
-(\lambda t e^{\lambda t} + e^{\lambda t}) \mathbf{v} + \lambda e^{\lambda t} \mathbf{w} = t e^{\lambda t} \mathbf{A} \mathbf{v} + e^{\lambda t} \mathbf{A} \mathbf{w}\text{.}
-\end{equation*}
-</div>
-<p>Grouping together like terms, we have</p>
-<div class="displaymath">
-\begin{equation*}
-t( \mathbf{A} \mathbf{v} - \lambda \mathbf{v} ) + (  \mathbf{A} \mathbf{w} - \lambda \mathbf{w} ) = \mathbf{v}.
-\end{equation*}
-</div>
-<p>The term multiplying \(t\) is zero, by the eigenvector property. So we need only requiire</p>
-<div class="displaymath">
-\begin{equation*}
-(  \mathbf{A} - \lambda \mathbf{I} )  \mathbf{w} = \mathbf{v} \text{,}
-\end{equation*}
-</div>
-<p>which can be interpreted as a definition of a <dfn class="terminology">generalized eigenvector</dfn> \(\bw\text{.}\) Even though the matrix here is singular, a solution for \(\bw\) is always possible.</p>
+<p>In the case \(n=2\text{,}\) \(\lambda_1=\lambda_2=\lambda\text{,}\) and \(\bA\) is not diagonal, there is no diagonalization possible. Every eigenvalue does have at least one eigenvector, so there is a \(\bv\) with \(\bA\bv = \lambda \bv\text{,}\) and \(c_1 e^{\lambda t}\bv\) is still a null solution.</p>
 <span class="incontext"><a href="section-32.html#p-446">in-context</a></span>
 </body>
 </html>
