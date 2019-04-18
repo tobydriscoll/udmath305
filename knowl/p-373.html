@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T09:17:57-04:00    *-->
+<!--*    on 2019-04-18T15:11:38-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The dot product gives us a new way to describe the matrix-vector product \(\bA\bx\text{.}\) The product \(\by=\bA\bx\) is an \(m\times 1\) vector whose \(i\)th element is the dot product of \(\bx\) with the \(i\)th row of \(\bA\text{.}\) More symbolically,</p>
+<p>In order to define the product \(\bA\bB\text{,}\) we require that the number of columns in \(\bA\) is the same as the number of rows in \(\bB\text{.}\) Otherwise, the product is considered undefined. So let \(\bA\) be \(m\times n\) and \(\bB\) be \(n\times p\text{.}\)  One way to describe  \(\bA\bB\) is as a  generalization of the matrix-vector product:</p>
 <div class="displaymath">
 \begin{equation*}
-y_i = \sum_{k=1}^n A_{ik} x_k, \qquad i=1,\ldots,m\text{.}
+\bA\mathbf{B} =
+\bA \begin{bmatrix}
+\mathbf{b}_1 \amp \mathbf{b}_2 \amp \cdots \amp \mathbf{b}_p
+\end{bmatrix}
+= \begin{bmatrix}
+\bA\mathbf{b}_1 \amp \bA\mathbf{b}_2 \amp \cdots \amp \bA\mathbf{b}_p
+\end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>This is, naturally, equivalent to the earlier definition of \(\by\) as a linear combination of the columns of \(\bA\text{,}\) with the combination coefficients coming from \(\bx\text{.}\)</p>
+<p>In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix. Note that when we multiply \(m\times n\) by \(n\times p\text{,}\) the result is \(m\times p\text{.}\)</p>
 <span class="incontext"><a href="ma-multiplication.html#p-373">in-context</a></span>
 </body>
 </html>

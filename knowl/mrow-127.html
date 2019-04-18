@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T09:17:57-04:00    *-->
+<!--*    on 2019-04-18T15:11:38-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -14,23 +14,10 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-\begin{bmatrix} 
-\bA \bv_1 \amp \bA \bv_2 \amp \cdots \amp \bA \bv_n 
-\end{bmatrix} 
-\amp = 
-\begin{bmatrix} 
-\lambda_1\bv_1 \amp \lambda_2\bv_2 \amp \cdots \amp \lambda_n\bv_n 
-\end{bmatrix}\\
-\bA \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}            \amp = 
-\begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix} 
-\begin{bmatrix} \lambda_1 \amp 0 \amp \cdots \amp 0 \\
-0 \amp \lambda_2 \amp \cdots \amp 0 \\
-\amp \amp \ddots \amp \\
-0 \amp \cdots \amp 0 \amp \lambda_n
-\end{bmatrix}\\
-\bA \bV \amp = \bV \bD 
+\det( \bA -\lambda \mathbf{I} ) \amp = \det\left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} - \lambda \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)\\
+\amp = \begin{vmatrix} a-\lambda \amp b \\ c \amp d-\lambda \end{vmatrix} = (a-\lambda)(d-\lambda)-bc=\lambda^2 - T \lambda +D
 \end{align*}
 </div>
-<span class="incontext"><a href="section-31.html#mjx-eqn-mrow-127">in-context</a></span>
+<span class="incontext"><a href="ma-eigenvalues.html#mjx-eqn-mrow-127">in-context</a></span>
 </body>
 </html>

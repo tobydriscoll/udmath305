@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T09:17:57-04:00    *-->
+<!--*    on 2019-04-18T15:11:38-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -14,12 +14,11 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-e^{t\bA} \amp = \twomat{1}{1}{i}{-i} \twodiag{e^{it}}{e^{-it}} \frac{1}{2} \twomat{1}{-i}{1}{i}\\
-\amp = \frac{1}{2} \twomat{e^{it}}{e^{-it}}{ie^{it}}{-ie^{-it}} \twomat{1}{-i}{1}{i} \\
-\amp = \frac{1}{2} \twomat{2\cos(t)}{-i[2i\sin(t)]}{i[2i\sin(t)]}{2\cos(t)}\\
-\amp = \twomat{\cos(t)}{\sin(t)}{-\sin(t)}{\cos(t)}
+e^{t\bA} \amp = \bI + t\bA + \frac{1}{2!}t^2\bA^2 + \frac{1}{3!}t^3\bA^3 + \cdots\\
+\amp = \bV\bV^{-1} + t(\bV\bD\bV^{-1}) + \frac{1}{2!}t^2 (\bV\bD\bV^{-1})(\bV\bD\bV^{-1}) +  \frac{1}{3!}t^3 (\bV\bD\bV^{-1})(\bV\bD\bV^{-1})(\bV\bD\bV^{-1}) + \cdots \\
+\amp = \bV \bigl( \bI + t\bD + \frac{1}{2!}t^2\bD^2 + \frac{1}{3!}t^3\bD^3 + \cdots \bigr) \bV^{-1}
 \end{align*}
 </div>
-<span class="incontext"><a href="section-33.html#mjx-eqn-mrow-140">in-context</a></span>
+<span class="incontext"><a href="ma-exponential.html#mjx-eqn-mrow-140">in-context</a></span>
 </body>
 </html>

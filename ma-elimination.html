@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T09:17:53-04:00    *-->
+<!--*    on 2019-04-18T15:11:36-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -136,10 +136,10 @@ MathJax.Hub.Config({
 <li><a href="ma-multiplication.html" data-scroll="ma-multiplication">Multiplying matrices</a></li>
 <li><a href="ma-inverses.html" data-scroll="ma-inverses">Matrix inverses</a></li>
 <li><a href="ma-nullspace.html" data-scroll="ma-nullspace">Nullspaces</a></li>
-<li><a href="section-30.html" data-scroll="section-30">Eigenvalues</a></li>
-<li><a href="section-31.html" data-scroll="section-31">Diagonalization</a></li>
-<li><a href="section-32.html" data-scroll="section-32">Linear ODE systems</a></li>
-<li><a href="section-33.html" data-scroll="section-33">Matrix exponential</a></li>
+<li><a href="ma-eigenvalues.html" data-scroll="ma-eigenvalues">Eigenvalues</a></li>
+<li><a href="ma-diagonalization.html" data-scroll="ma-diagonalization">Diagonalization</a></li>
+<li><a href="ma-linearODE.html" data-scroll="ma-linearODE">Linear ODE systems</a></li>
+<li><a href="ma-exponential.html" data-scroll="ma-exponential">Matrix exponential</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="ma-elimination"><h2 class="heading hide-type">
@@ -244,24 +244,7 @@ x_1 + 15x_2 + 2x_3 - 4.5x_4 \amp = 29\\
 \twovec{-3}{0} + y \twovec{-2}{1}
 \end{equation*}
 </div>
-<p>for any choice of \(y\text{.}\) We may interpret this as "particular plus null," because \(\bA \twovec{-2}{1}=\boldsymbol{0}\text{.}\)</p></article></div></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.2.4</span> <span class="title">Cramer's rule</span>
-</h3>
-<p id="p-364">There is a shortcut to avoid the effort of elimination for small systems. It's easiest to show and use in the case of two variables, such as</p>
-<div class="displaymath">
-\begin{align*}
--x + 3y \amp = 1 \\
-3x + y \amp = 7\text{.}
-\end{align*}
-</div>
-<p>Cramer's rule says</p>
-<div class="displaymath">
-\begin{align*}
-x \amp = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} \\
-y \amp = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10}\text{.}
-\end{align*}
-</div>
-<p>This does generalize to larger systems: to get the \(i\)th variable, the numerator replaces column \(i\) of the matrix with \(\bb\) before taking the determinant.</p></section></section></div></main>
+<p>for any choice of \(y\text{.}\) We may interpret this as "particular plus null," because \(\bA \twovec{-2}{1}=\boldsymbol{0}\text{.}\)</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

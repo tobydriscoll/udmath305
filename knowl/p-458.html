@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T09:17:57-04:00    *-->
+<!--*    on 2019-04-18T15:11:38-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose we now have \(\by'=\bA\by + \bff(t)\) for a constant matrix \(\bA\text{.}\) We can solve this problem using our old friend, the integrating factor. Define \(\mathbf{M}(t) = e^{-t \bA}\text{,}\) and multiply through by it. Then</p>
+<p>The problem \(\mathbf{y}' = \begin{bmatrix} -1 \amp 1 \\ 0 \amp -1 \end{bmatrix} \mathbf{y}\) has a defective matrix, so we cannot use a diagonalization to compute the matrix exponential. However, we are still free to compute a power series! This works out well because we get a simple pattern:</p>
 <div class="displaymath">
 \begin{align*}
-\dd{}{t} \bigl[ e^{-t \bA} \by(t) \bigr] \amp = e^{-t \bA} \bff(t)\text{,}
+\bA^2 \amp = \twomat{-1}{1}{0}{-1} \twomat{-1}{1}{0}{-1}  = \twomat{1}{-2}{0}{1} \\
+\bA^3 \amp = \twomat{1}{-2}{0}{1} \twomat{-1}{1}{0}{-1}  = \twomat{-1}{3}{0}{-1}\text{,}
 \end{align*}
 </div>
-<p>and we solve to get</p>
+<p>and so on. We put this together and get</p>
 <div class="displaymath">
-\begin{equation*}
-\by(t) = e^{t \bA}\by(0) + \int_0^t e^{(t-s) \bA} \bff(s)\, ds\text{,}
-\end{equation*}
+\begin{align*}
+e^{t\bA} \amp = 
+\twomat{1 -t + \frac{1}{2!}t^2 - \frac{1}{3!}t^3 + \cdots}{t - \frac{2}{2!}t^2 + \frac{3}{3!}t^3 - \cdots}{0}{1 -t + \frac{1}{2!}t^2 - \frac{1}{3!}t^3 + \cdots}\\
+\amp = \twomat{e^{-t}}{te^{-t}}{0}{e^{-t}}\text{.}
+\end{align*}
 </div>
-<p>which is a lot like our growth-factor formula for first-order scalar equations.</p>
-<span class="incontext"><a href="section-33.html#p-458">in-context</a></span>
+<span class="incontext"><a href="ma-exponential.html#p-458">in-context</a></span>
 </body>
 </html>

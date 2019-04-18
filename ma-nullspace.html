@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T09:17:53-04:00    *-->
+<!--*    on 2019-04-18T15:11:36-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -86,11 +86,11 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ma-inverses.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="matrix-algebra.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-30.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ma-inverses.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="matrix-algebra.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ma-eigenvalues.html" title="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ma-inverses.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="matrix-algebra.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-30.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ma-inverses.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="matrix-algebra.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ma-eigenvalues.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -136,35 +136,35 @@ MathJax.Hub.Config({
 <li><a href="ma-multiplication.html" data-scroll="ma-multiplication">Multiplying matrices</a></li>
 <li><a href="ma-inverses.html" data-scroll="ma-inverses">Matrix inverses</a></li>
 <li><a href="ma-nullspace.html" data-scroll="ma-nullspace" class="active">Nullspaces</a></li>
-<li><a href="section-30.html" data-scroll="section-30">Eigenvalues</a></li>
-<li><a href="section-31.html" data-scroll="section-31">Diagonalization</a></li>
-<li><a href="section-32.html" data-scroll="section-32">Linear ODE systems</a></li>
-<li><a href="section-33.html" data-scroll="section-33">Matrix exponential</a></li>
+<li><a href="ma-eigenvalues.html" data-scroll="ma-eigenvalues">Eigenvalues</a></li>
+<li><a href="ma-diagonalization.html" data-scroll="ma-diagonalization">Diagonalization</a></li>
+<li><a href="ma-linearODE.html" data-scroll="ma-linearODE">Linear ODE systems</a></li>
+<li><a href="ma-exponential.html" data-scroll="ma-exponential">Matrix exponential</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="ma-nullspace"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Nullspaces</span>
 </h2>
-<a href="ma-nullspace.html" class="permalink">¶</a><section class="introduction" id="introduction-18"><p id="p-394"><em class="emphasis">From section 5.2</em></p>
-<p id="p-395">A little jargon we won't dwell on is a <dfn class="terminology">vector space</dfn>. It's a set of vectors having a particular property: any linear combination of vectors in the set is also in the set (aka "closure" under addition and scalar multiplication). The space we will be interested in is called a <dfn class="terminology">nullspace</dfn> of an \(n\times n\) matrix \(\bA\text{,}\) defined as</p>
+<a href="ma-nullspace.html" class="permalink">¶</a><section class="introduction" id="introduction-18"><p id="p-395"><em class="emphasis">From section 5.2</em></p>
+<p id="p-396">A little jargon we won't dwell on is a <dfn class="terminology">vector space</dfn>. It's a set of vectors having a particular property: any linear combination of vectors in the set is also in the set (aka "closure" under addition and scalar multiplication). The space we will be interested in is called a <dfn class="terminology">nullspace</dfn> of an \(n\times n\) matrix \(\bA\text{,}\) defined as</p>
 <div class="displaymath">
 \begin{equation*}
 \mathcal{N}(\bA) = \{ \text{all $n$-vectors $\bv$ such that $\bA\bv=\bzero$} \}\text{.}
 \end{equation*}
 </div>
-<p>To see that this has the required closure property, suppose \(\bv_1,\dots,\bv_n\) are in \(\mathcal{N}(\bA)\text{.}\) Then</p>
+<p>To see that this has the required closure property, suppose \(\bv_1,\dots,\bv_k\) are in \(\mathcal{N}(\bA)\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
-\bA( c_1 \bv_1 + \dots + c_n\bv_n ) = c_1 \bA\bv_1 + \cdots + c_n \bA \bv_n = \bzero\text{,}
+\bA( c_1 \bv_1 + \dots + c_k\bv_k ) = c_1 \bA\bv_1 + \cdots + c_k \bA \bv_k = \bzero\text{,}
 \end{equation*}
 </div>
-<p>so the linear combination is in \(\mathcal{N}(\bA)\text{,}\) too.</p></section><section class="subsection" id="subsection-61"><h3 class="heading hide-type">
+<p>so the linear combination is in \(\mathcal{N}(\bA)\text{,}\) too.</p></section><section class="subsection" id="subsection-60"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Nullspaces from elimination</span>
 </h3>
-<p id="p-396">We can use regular elimination to find a nullspace. Since \(\bb=\bzero\) by definition, all the row operations leave it unchanged, and we can ignore it until the back substitution stage.</p>
-<article class="example-like" id="example-52"><a knowl="" class="id-ref" refid="hk-example-52"><h6 class="heading">
+<p id="p-397">We can use regular elimination to find a nullspace. Since \(\bb=\bzero\) by definition, all the row operations leave it unchanged, and we can ignore it until the back substitution stage.</p>
+<article class="example-like" id="example-53"><a knowl="" class="id-ref" refid="hk-example-53"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.5.1</span>
-</h6></a></article><div id="hk-example-52" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="displaymath" id="p-397">
+</h6></a></article><div id="hk-example-53" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="displaymath" id="p-398">
 \begin{equation*}
 \begin{bmatrix} 
 1 \amp 1 \amp -1 \\
@@ -190,9 +190,9 @@ MathJax.Hub.Config({
 \end{equation*}
 </div>
 <p>Thus the nullspace consists of all multiples of the constant vector \(\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\text{.}\) This representation isn't unique; any nonzero member of the space would serve as well.</p></article></div>
-<article class="example-like" id="example-53"><a knowl="" class="id-ref" refid="hk-example-53"><h6 class="heading">
+<article class="example-like" id="example-54"><a knowl="" class="id-ref" refid="hk-example-54"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.5.2</span>
-</h6></a></article><div id="hk-example-53" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-398">Suppose elimination ends with the matrix</p>
+</h6></a></article><div id="hk-example-54" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-399">Suppose elimination ends with the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 
@@ -203,9 +203,9 @@ MathJax.Hub.Config({
 \end{equation*}
 </div>
 <p>Now back substitution implies \(x_3=0\text{,}\) then \(x_2=0\text{,}\) then \(x_1=0\text{.}\) So \(\mathcal{N}(\bA) = \{\bzero\}\text{.}\)</p></article></div>
-<article class="example-like" id="example-54"><a knowl="" class="id-ref" refid="hk-example-54"><h6 class="heading">
+<article class="example-like" id="example-55"><a knowl="" class="id-ref" refid="hk-example-55"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.5.3</span>
-</h6></a></article><div id="hk-example-54" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="displaymath" id="p-399">
+</h6></a></article><div id="hk-example-55" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="displaymath" id="p-400">
 \begin{equation*}
 \begin{bmatrix} 
 0 \amp 2 \amp -3 \\
@@ -225,19 +225,19 @@ MathJax.Hub.Config({
 \bx = \begin{bmatrix} \beta \\ 3\alpha/2 \\ \alpha \end{bmatrix} = \alpha \begin{bmatrix} 0 \\ 3/2 \\ 1 \end{bmatrix} + \beta \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>The nullspace consists of all linear combinations of the two constant vectors shown above.  Because two such vectors are needed, we say the nullspace is "two-dimensional."</p></article></div></section><section class="subsection" id="subsection-62"><h3 class="heading hide-type">
+<p>The nullspace consists of all linear combinations of the two constant vectors shown above.  Because two such vectors are needed, we say the nullspace is "two-dimensional."</p></article></div></section><section class="subsection" id="subsection-61"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.2</span> <span class="title">Row echelon form</span>
 </h3>
-<p id="p-400">The target of row elimination in the case of a nullspace can be described by three rules: </p>
+<p id="p-401">The target of row elimination in the case of a nullspace can be described by three rules: </p>
 <ol class="decimal">
-<li id="li-26">The leftmost nonzero in any row is a 1 (called a <dfn class="terminology">leading one</dfn>).</li>
-<li id="li-27">The leading one in any row is to the right of any leading ones in higher rows.</li>
-<li id="li-28">Any all-zero rows are at the bottom of the matrix.</li>
+<li id="li-25">The leftmost nonzero in any row is a 1 (called a <dfn class="terminology">leading one</dfn>).</li>
+<li id="li-26">The leading one in any row is to the right of any leading ones in higher rows.</li>
+<li id="li-27">Any all-zero rows are at the bottom of the matrix.</li>
 </ol>
 <p> We have not been following rule 1 up to now, but it's easy to satisfy; we just divide each row by its leading nonzero value. Such a matrix is said to be in <dfn class="terminology">row-echelon form</dfn> (REF).</p>
-<article class="example-like" id="example-55"><a knowl="" class="id-ref" refid="hk-example-55"><h6 class="heading">
+<article class="example-like" id="example-56"><a knowl="" class="id-ref" refid="hk-example-56"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.5.4</span>
-</h6></a></article><div id="hk-example-55" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-401">REFs for the examples in the last subsection are</p>
+</h6></a></article><div id="hk-example-56" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-402">REFs for the examples in the last subsection are</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 
@@ -259,10 +259,10 @@ MathJax.Hub.Config({
 \end{bmatrix}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-402">Once the matrix has been transformed to REF, you can divide the components of the solution \(\bx\) into two groups: the <dfn class="terminology">pivot variables</dfn> are those whose columns have a leading one somewhere, and the <dfn class="terminology">free variables</dfn> are the rest. The number of free variables is the dimension of the nullspace (also called the nullity of \(\bA\)). You can then find a representation of the nullspace by setting each of the free variables to one in turn (making the others zero) and solving for the resulting pivot variables. The nullspace is the set of linear combinations of those vectors.</p>
-<article class="example-like" id="example-56"><a knowl="" class="id-ref" refid="hk-example-56"><h6 class="heading">
+<p id="p-403">Once the matrix has been transformed to REF, you can divide the components of the solution \(\bx\) into two groups: the <dfn class="terminology">pivot variables</dfn> are those whose columns have a leading one somewhere, and the <dfn class="terminology">free variables</dfn> are the rest. The number of free variables is the dimension of the nullspace (also called the nullity of \(\bA\)). You can then find a representation of the nullspace by setting each of the free variables to one in turn (making the others zero) and solving for the resulting pivot variables. The nullspace is the set of linear combinations of those vectors.</p>
+<article class="example-like" id="example-57"><a knowl="" class="id-ref" refid="hk-example-57"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.5.5</span>
-</h6></a></article><div id="hk-example-56" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-403">Given the REF</p>
+</h6></a></article><div id="hk-example-57" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-404">Given the REF</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 

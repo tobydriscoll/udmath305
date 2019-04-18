@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T09:17:53-04:00    *-->
+<!--*    on 2019-04-18T13:35:31-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -159,7 +159,7 @@ MathJax.Hub.Config({
 g'(t) \bv  =  g(t) \bA \bv = g(t) \lambda \bv\text{.}
 \end{equation*}
 </div>
-<p>This can be satisfied by requiring \(g'=\lambda g\text{.}\) So we conclude that \(\by(t)=e^{\lambda t}\bv\) solves the original linear system. Geometrically, the eigenvector condition means "\(\bA\bv\) is parallel to \(\bv\text{.}\)" In a linear ODE, this makes \(\by'\) parallel to \(\by\text{,}\) so the direction never changes and the problem is essentially one-dimensional.</p></section><section class="subsection" id="subsection-63"><h3 class="heading hide-type">
+<p>This can be satisfied by requiring \(g'=\lambda g\text{.}\) So we conclude that \(\by(t)=e^{\lambda t}\bv\) solves the original linear system. Geometrically, the eigenvector condition means "\(\bA\bv\) is parallel to \(\bv\text{.}\)" In a linear ODE, this makes \(\by'\) parallel to \(\by\text{,}\) so the direction never changes and the problem is essentially one-dimensional.</p></section><section class="subsection" id="subsection-62"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.1</span> <span class="title">Characteristic polynomial</span>
 </h3>
 <p id="p-407">The defining eigenpair condition is equivalent to \(\bA \bv = \lambda \mathbf{I} \bv, \) or</p>
@@ -185,7 +185,7 @@ g'(t) \bv  =  g(t) \bA \bv = g(t) \lambda \bv\text{.}
 <article class="theorem-like" id="theorem-4"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">4.6.2</span>
 </h6>
-<p id="p-412">The eigenvalues of a triangular matrix are the diagonal entries of the matrix.</p></article><p id="p-413">Diagonal matrices are included in the theorem.</p></section><section class="subsection" id="subsection-64"><h3 class="heading hide-type">
+<p id="p-412">The eigenvalues of a triangular matrix are the diagonal entries of the matrix.</p></article><p id="p-413">Diagonal matrices are included in the theorem.</p></section><section class="subsection" id="subsection-63"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.2</span> <span class="title">Eigensystems in the \(2\times 2\) case</span>
 </h3>
 <p id="p-414">The characteristic polynomial in the \(2\times 2\) situation will return us to familiar territory.</p>
@@ -197,9 +197,9 @@ g'(t) \bv  =  g(t) \bA \bv = g(t) \lambda \bv\text{.}
 </div>
 <p>where \(T\) and \(D\) are the trace and determinant of \(\bA\text{.}\) This is what I stated when we were analyzing the stability of a 2-by-2 linear ODE system.</p>
 <p id="p-415">Since an eigenvalue makes \(\bA-\lambda\bI\) singular, one step of elimination on that matrix will make the second row all zeros. Thus we only need to pay attention to the condition imposed by the first row, \((a-\lambda)v_1 + b v_2 =0\text{.}\) One solution of this equation is \(\bv=\twovec{b}{\lambda-a}\text{,}\) which will be a representation of \(\mathcal{N}(\bA)\text{.}\) The only exception is if \(\lambda-a=b=0\text{,}\) in which case we need to swap rows before the elimination step.</p>
-<article class="example-like" id="example-57"><a knowl="" class="id-ref" refid="hk-example-57"><h6 class="heading">
+<article class="example-like" id="example-58"><a knowl="" class="id-ref" refid="hk-example-58"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.6.3</span>
-</h6></a></article><div id="hk-example-57" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-416">Let's find the eigenvalues and eigenvectors of</p>
+</h6></a></article><div id="hk-example-58" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-416">Let's find the eigenvalues and eigenvectors of</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}\text{.}
@@ -208,21 +208,21 @@ g'(t) \bv  =  g(t) \bA \bv = g(t) \lambda \bv\text{.}
 <p>The associated polynomial is \(\lambda^2-2\lambda-3\text{,}\) which has roots  \(\lambda_1=3\) and \(\lambda_2=-1\text{.}\) These are the eigenvalues.</p>
 <p id="p-417">Next, the first row of the linear system \(( \bA -3 \mathbf{I}) \bv = \boldsymbol{0} \) is \(-2v_1 + 1v_2=0\text{,}\) which has nonzero solution \(\bv_1=\twovec{1}{2}\text{.}\) This eigenvector represents the entire eigenspace for \(\lambda_1\text{.}\) Similarly, for \(\lambda_2=-1\) the first row of the null system is \(2v_1+v_2=0\text{,}\) so \(\bv_2 = \twovec{1}{-2}\) represents that eigenspace.</p></article></div>
 <p id="p-418">Quick note: We often speak of "finding the eigenvalues and eigenvectors" of a matrix. The eigenvalues are unique, but eigenvectors are not. What's really meant is to find minimal representations of the eigenspaces, which are uniquely determined, but that's just considered understood.</p>
-<article class="example-like" id="example-58"><a knowl="" class="id-ref" refid="hk-example-58"><h6 class="heading">
+<article class="example-like" id="example-59"><a knowl="" class="id-ref" refid="hk-example-59"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.6.4</span>
-</h6></a></article><div id="hk-example-58" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-419">Consider \(\bA=\twomat{4}{0}{1}{4}\text{.}\) This matrix is (lower) triangular, so we immediately know \(\lambda_1=\lambda_2=4\text{.}\) Now,</p>
+</h6></a></article><div id="hk-example-59" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-419">Consider \(\bA=\twomat{4}{0}{1}{4}\text{.}\) This matrix is (lower) triangular, so we immediately know \(\lambda_1=\lambda_2=4\text{.}\) Now,</p>
 <div class="displaymath">
 \begin{equation*}
 \bA - 4\bI = \twomat{0}{0}{1}{0}\text{.}
 \end{equation*}
 </div>
-<p>If we swap the rows, the matrix is in RE form. Hence \(v_2\) is free and \(v_1=0\text{.}\) The eigenspace is one-dimensional, fully represented by \(\twovec{0}{1}\text{.}\)</p></article></div></section><section class="subsection" id="subsection-65"><h3 class="heading hide-type">
+<p>If we swap the rows, the matrix is in RE form. Hence \(v_2\) is free and \(v_1=0\text{.}\) The eigenspace is one-dimensional, fully represented by \(\twovec{0}{1}\text{.}\)</p></article></div></section><section class="subsection" id="subsection-64"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.3</span> <span class="title">Complex eigenvalues</span>
 </h3>
 <p id="p-420">The connection to polynomials means that if \(\bA\) is a real matrix, it might have eigenvalues that occur in complex conjugate pairs. This makes the eigenvectors have the same structure.</p>
-<article class="example-like" id="example-59"><a knowl="" class="id-ref" refid="hk-example-59"><h6 class="heading">
+<article class="example-like" id="example-60"><a knowl="" class="id-ref" refid="hk-example-60"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">4.6.5</span>
-</h6></a></article><div id="hk-example-59" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-421">We find the eigenvalues and eigenvectors of</p>
+</h6></a></article><div id="hk-example-60" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-421">We find the eigenvalues and eigenvectors of</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}\text{.}
@@ -230,7 +230,7 @@ g'(t) \bv  =  g(t) \bA \bv = g(t) \lambda \bv\text{.}
 </div>
 <p>The characteristic polynomial is \(\lambda^2 +2 \lambda +2\text{,}\) with roots  \(\lambda_{1,2} = -1 \pm 1i.\)</p>
 <p id="p-422">To find an eigenvector for \(\lambda_1\text{,}\) we use the first row of \(\bA - \lambda_1 \mathbf{I} \) to conclude \((2-i)v_1 -v_2 = 0\text{.}\) Thus any nonzero multiple of \(\bv_1=\twovec{1}{2-i}\) will do.</p>
-<p id="p-423">We get a benefit here from the complex eigenvalues: the conjugate of an eigenvector will be an eigenvector for the conjugated eigenvalue. So we have \(\bv_2=\twovec{1}{2+i}\) to go with \(\lambda_2\text{.}\)</p></article></div></section><section class="subsection" id="subsection-66"><h3 class="heading hide-type">
+<p id="p-423">We get a benefit here from the complex eigenvalues: the conjugate of an eigenvector will be an eigenvector for the conjugated eigenvalue. So we have \(\bv_2=\twovec{1}{2+i}\) to go with \(\lambda_2\text{.}\)</p></article></div></section><section class="subsection" id="subsection-65"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.4</span> <span class="title">Some tips</span>
 </h3>
 <p id="p-424">Here are a couple of things to know: the eigenvalues of \(\bA+\bB\) are <em class="emphasis">not</em>  the eigenvalues of \(\bA\) plus the eigenvalues of \(\bB\text{,}\) and the eigenvalues of \(\bA\bB\) are <em class="emphasis">not</em>  the eigenvalues of \(\bA\) times the eigenvalues of \(\bB\text{.}\) The main exception to this latter observation is for powers of a matrix,</p>

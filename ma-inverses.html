@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T09:17:53-04:00    *-->
+<!--*    on 2019-04-18T15:11:36-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -136,18 +136,18 @@ MathJax.Hub.Config({
 <li><a href="ma-multiplication.html" data-scroll="ma-multiplication">Multiplying matrices</a></li>
 <li><a href="ma-inverses.html" data-scroll="ma-inverses" class="active">Matrix inverses</a></li>
 <li><a href="ma-nullspace.html" data-scroll="ma-nullspace">Nullspaces</a></li>
-<li><a href="section-30.html" data-scroll="section-30">Eigenvalues</a></li>
-<li><a href="section-31.html" data-scroll="section-31">Diagonalization</a></li>
-<li><a href="section-32.html" data-scroll="section-32">Linear ODE systems</a></li>
-<li><a href="section-33.html" data-scroll="section-33">Matrix exponential</a></li>
+<li><a href="ma-eigenvalues.html" data-scroll="ma-eigenvalues">Eigenvalues</a></li>
+<li><a href="ma-diagonalization.html" data-scroll="ma-diagonalization">Diagonalization</a></li>
+<li><a href="ma-linearODE.html" data-scroll="ma-linearODE">Linear ODE systems</a></li>
+<li><a href="ma-exponential.html" data-scroll="ma-exponential">Matrix exponential</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="ma-inverses"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.4</span> <span class="title">Matrix inverses</span>
 </h2>
-<a href="ma-inverses.html" class="permalink">¶</a><section class="introduction" id="introduction-17"><p id="p-382">From section 4.4.</p>
-<p id="p-383">From now on, we're going to focus on square, \(n\times n\) matrices.</p>
-<p id="p-384">It's pretty immediate that for any square matrix \(\bA\text{,}\) \(\bA\boldsymbol{0}=\boldsymbol{0}\bA=\boldsymbol{0}\) for the all-zero square matrix \(\boldsymbol{0}\text{.}\) So we have a multiplicative zero matrix. But the situation is a bit less obvious when it comes to a multiplicative unit element. Some reflection on matrix multiplication properties reveals that if we define an <dfn class="terminology">identity matrix</dfn> as the \(n\times n\) matrix</p>
+<a href="ma-inverses.html" class="permalink">¶</a><section class="introduction" id="introduction-17"><p id="p-381">From section 4.4.</p>
+<p id="p-382">From now on, we're going to focus on square, \(n\times n\) matrices.</p>
+<p id="p-383">It's pretty immediate that for any square matrix \(\bA\text{,}\) \(\bA\boldsymbol{0}=\boldsymbol{0}\bA=\boldsymbol{0}\) for the all-zero square matrix \(\boldsymbol{0}\text{.}\) So we have a multiplicative zero matrix. But the situation is a bit less obvious when it comes to a multiplicative unit element. Some reflection on matrix multiplication properties reveals that if we define an <dfn class="terminology">identity matrix</dfn> as the \(n\times n\) matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \bI = \begin{bmatrix} 
@@ -159,43 +159,66 @@ MathJax.Hub.Config({
 \end{bmatrix}\text{,}
 \end{equation*}
 </div>
-<p>then \(\bI\bA=\bA\) and \(\bA\bI=\bA\text{.}\) Actually, we don't need to restrict \(\bA\) to be square here, and it's also true that \(\bI\bx=\bx\) for all \(n\times 1\) vectors \(\bx\text{.}\)</p></section><section class="subsection" id="subsection-58"><h3 class="heading hide-type">
+<p>then \(\bI\bA=\bA\) and \(\bA\bI=\bA\text{.}\) Actually, we don't need to restrict \(\bA\) to be square here, and it's also true that \(\bI\bx=\bx\) for all \(n\times 1\) vectors \(\bx\text{.}\)</p></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.4.1</span> <span class="title">Inverse matrix</span>
 </h3>
-<p id="p-385">With the multiplicative identity in hand, the next order of business is to look for multiplicative inverses. To wit, if we have a square matrix \(\bA\text{,}\) can we find another square matrix \(\bC\) such that \(\bA\bC = \bC\bA = \bI \text{?}\) If such a matrix exists, we call it the <dfn class="terminology">inverse</dfn> of \(\bA\) and write \(\bA^{-1}=\bC\text{.}\)</p>
-<p id="p-386">(Interestingly, while the lack of commutativity means we formally need to specify two products to define an inverse, it turns out that one can prove [not so easily!] that one of these products automatically implies the other; that is, a "left-inverse" is also a "right-inverse", and vice versa.)</p>
-<p id="p-387">Because the zero matrix gives zero for every multiplicative partner, it cannot have an inverse. That's completely in line with what we know about the scalar zero. However, unlike scalars, there are nonzero matrices that do not have any inverse. The simplest is</p>
+<p id="p-384">With the multiplicative identity in hand, the next order of business is to look for multiplicative inverses. To wit, if we have a square matrix \(\bA\text{,}\) can we find another square matrix \(\bC\) such that \(\bA\bC = \bC\bA = \bI \text{?}\) If such a matrix exists, we call it the <dfn class="terminology">inverse</dfn> of \(\bA\) and write \(\bA^{-1}=\bC\text{.}\)</p>
+<p id="p-385">(Interestingly, while the lack of commutativity means we formally need to specify two products to define an inverse, it turns out that one can prove [not so easily!] that one of these products automatically implies the other; that is, a "left-inverse" is also a "right-inverse", and vice versa.)</p>
+<p id="p-386">Because the zero matrix gives zero for every multiplicative partner, it cannot have an inverse. That's completely in line with what we know about the scalar zero. However, unlike scalars, there are nonzero matrices that do not have any inverse. The simplest is</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix}  0 \amp 1 \\ 0 \amp 0 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
 <p>(Proof: The second column of \(\bC\bA\) is zero for any square \(\bC\text{.}\)) We call such a matrix <dfn class="terminology">singular</dfn>. A matrix in the opposite situation (having an inverse)is said to be <dfn class="terminology">invertible</dfn>, or <dfn class="terminology">nonsingular</dfn>.</p>
-<p id="p-388">This notion of singularity is the same one we encountered with 2-by-2 linear systems. For, if \(\bA\) is not singular, then it has an inverse (by definition), and the linear system \(\bA\bx=\bb\) is equivalent to</p>
+<p id="p-387">This notion of singularity is the same one we encountered with 2-by-2 linear systems. For, if \(\bA\) is not singular, then it has an inverse (by definition), and the linear system \(\bA\bx=\bb\) is equivalent to</p>
 <div class="displaymath">
 \begin{equation*}
 \bA^{-1} \bb = \bA^{-1} (\bA \bx) = \bigl(  \bA^{-1} \bA \bigr) \bx = \bI \bx = \bx\text{.}
 \end{equation*}
 </div>
-<p>That is, if \(\bA\) is nonsingular, the linear system has the unique solution \(\bA^{-1} \bb\text{.}\)  That the converse is also true (unique solution implies nonsingularity) is part of what's usually called the Fundamental Theorem of Linear Algebra, which is a little beyond our scope here.</p></section><section class="subsection" id="subsection-59"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.4.2</span> <span class="title">\(2\times 2\) inverses</span>
+<p>That is, if \(\bA\) is nonsingular, the linear system has the unique solution \(\bA^{-1} \bb\text{.}\)  That the converse is also true (unique solution implies nonsingularity) is part of what's usually called the Fundamental Theorem of Linear Algebra, which is a little beyond our scope here.</p>
+<p id="p-388">It's one thing to say "the inverse exists," and quite another to say "here it is." Finding the inverse of a given matrix is in principle a matter of solving \(n\) linear systems. That's because if we let \(\mathbf{e}_j\) be the \(j\)th column of \(\bI\text{,}\) then according to the columnwise interpretation of \(\bA\bA^{-1}\text{,}\) the solution of \(\bA \bx = \mathbf{e}_j\) is the \(j\)th column of \(\bA^{-1}\text{.}\) There is a well-known algorithm for solving all those systems simultaneously. However, it's beside the point. If our goal is to solve a linear system \(\bA\bx=\bb\text{,}\) then there is little reason to solve \(n\) other systems first to get the inverse! The inverse tends to be much more important theoretically than for practical computation.</p></section><section class="subsection" id="subsection-58"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.4.2</span> <span class="title">\(2\times 2\) inverses and systems</span>
 </h3>
-<p id="p-389">Unfortunately, it's one thing to say "the inverse exists" and quite another to say "here it is." There is an algorithm for computing one based on elimination for \(n\) simultaneous linear systems. It's not rocket science, but it's also not the sort of thing you want to do a lot of by hand. (And since it's essentially \(n\)-fold elimination, it's a dumb way to solve linear systems in practice.)</p>
-<p id="p-390">One consolation is that inverses of \(2\times 2\) matrices are easy to do with a memorable formula:</p>
+<p id="p-389">One of the few circumstances in which it's easy to get our hands on a matrix inverse is in the \(2\times 2\) case:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}^{-1} = 
 \frac{1}{ad-bc} \begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>It's even simpler if you recall that \(ad-bc\) is just the determinant of the matrix.</p></section><section class="subsection" id="subsection-60"><h3 class="heading hide-type">
+<p>It's even simpler to remember this if you note that \(ad-bc\) is the determinant of the matrix.</p>
+<p id="p-390">Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system. There is an even faster equivalent shortcut known as <dfn class="terminology">Cramer's Rule</dfn>:</p>
+<div class="displaymath">
+\begin{align*}
+x_1 \amp = \frac{ \twodet{b_1}{A_{12}}{b_2}{A_{22}} }{ \det(\bA) }\\
+x_2 \amp = \frac{ \twodet{A_{11}}{b_1}{A_{21}}{b_2} }{ \det(\bA) }\text{.}
+\end{align*}
+</div>
+<article class="example-like" id="example-52"><a knowl="" class="id-ref" refid="hk-example-52"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.4.1</span>
+</h6></a></article><div id="hk-example-52" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-391">For</p>
+<div class="displaymath">
+\begin{align*}
+-x + 3y \amp = 1 \\
+3x + y \amp = 7\text{,}
+\end{align*}
+</div>
+<p>Cramer's Rule says</p>
+<div class="displaymath">
+\begin{align*}
+x \amp = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} \\
+y \amp = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10}\text{.}
+\end{align*}
+</div></article></div></section><section class="subsection" id="subsection-59"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.4.3</span> <span class="title">Determinants</span>
 </h3>
-<p id="p-391">We're going to rely on a key fact (from the FTLA that I alluded to above).</p>
+<p id="p-392">We're going to rely on a key fact (from the FTLA that I alluded to above).</p>
 <article class="theorem-like" id="fact-5"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">4.4.1</span>
+<span class="type">Fact</span> <span class="codenumber">4.4.2</span>
 </h6>
-<p id="p-392">A square matrix \(\bA\) is singular if and only if its determinant is zero.</p></article><p id="p-393">Of course this result requires us to say what a determinant <em class="emphasis">is</em> beyond the 2-by-2 case. One way to compute a determinant is as the product of pivots in the elimination process, provided you flip the sign for each row swap. This makes the connection to singularity clear, and it's the best way for a computer to find the determinant, but most humans prefer a recursive method called <dfn class="terminology">cofactor expansion</dfn>:</p>
+<p id="p-393">A square matrix \(\bA\) is singular if and only if its determinant is zero.</p></article><p id="p-394">Of course this result requires us to say what a determinant <em class="emphasis">is</em> beyond the 2-by-2 case. One way to compute a determinant is as the product of pivots in the elimination process, provided you flip the sign for each row swap. This makes the connection to singularity clear, and it's the best way for a computer to find the determinant, but most humans prefer a recursive method called <dfn class="terminology">cofactor expansion</dfn>, in which</p>
 <div class="displaymath">
 \begin{equation*}
 \det(\bA) = \sum (-1)^{i+j} A_{ij} \det( \mathbf{M}_{ij} )\text{,}

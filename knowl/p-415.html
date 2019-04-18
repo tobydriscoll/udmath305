@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T09:17:57-04:00    *-->
+<!--*    on 2019-04-18T15:11:38-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Since an eigenvalue makes \(\bA-\lambda\bI\) singular, one step of elimination on that matrix will make the second row all zeros. Thus we only need to pay attention to the condition imposed by the first row, \((a-\lambda)v_1 + b v_2 =0\text{.}\) One solution of this equation is \(\bv=\twovec{b}{\lambda-a}\text{,}\) which will be a representation of \(\mathcal{N}(\bA)\text{.}\) The only exception is if \(\lambda-a=b=0\text{,}\) in which case we need to swap rows before the elimination step.</p>
-<span class="incontext"><a href="section-30.html#p-415">in-context</a></span>
+<p>The characteristic polynomial in the \(2\times 2\) situation will return us to familiar territory.</p>
+<div class="displaymath">
+\begin{align*}
+\det( \bA -\lambda \mathbf{I} ) \amp = \det\left( \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} - \lambda \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} \right)\\
+\amp = \begin{vmatrix} a-\lambda \amp b \\ c \amp d-\lambda \end{vmatrix} = (a-\lambda)(d-\lambda)-bc=\lambda^2 - T \lambda +D\text{,}
+\end{align*}
+</div>
+<p>where \(T\) and \(D\) are the trace and determinant of \(\bA\text{.}\) This is what I stated when we were analyzing the stability of a 2-by-2 linear ODE system.</p>
+<span class="incontext"><a href="ma-eigenvalues.html#p-415">in-context</a></span>
 </body>
 </html>
