@@ -1010,7 +1010,7 @@ xlabel('x'), ylabel('y')
 <subsection>
 <title>Complex eigenvalues</title>
 <p>
-    Nothing new happens for complex eigenvalues. You just need to use complex arithmetic.
+    Nothing startling happens for complex eigenvalues. You just need to use complex arithmetic.
 </p>
 <example>
     <p>
@@ -1215,18 +1215,33 @@ xlabel('x'), ylabel('y')
     </example>
     <example>
         <p>
-        The problem <m>\mathbf{y}' = \begin{bmatrix} -1 \amp 1 \\ 0 \amp -1 \end{bmatrix} \mathbf{y}</m> has a defective matrix, so we cannot use a diagonalization to compute the matrix exponential. However, we are still free to compute a power series! This works out well because we get a simple pattern:
-        <md>
-            <mrow>\bA^2 \amp = \twomat{-1}{1}{0}{-1} \twomat{-1}{1}{0}{-1}  = \twomat{1}{-2}{0}{1} </mrow>
-            <mrow>\bA^3 \amp = \twomat{1}{-2}{0}{1} \twomat{-1}{1}{0}{-1}  = \twomat{-1}{3}{0}{-1}</mrow> 
-        </md>,  
-        and so on. We put this together and get 
-        <md>
-            <mrow>e^{t\bA} \amp = 
-                \twomat{1 -t + \frac{1}{2!}t^2 - \frac{1}{3!}t^3 + \cdots}{t - \frac{2}{2!}t^2 + \frac{3}{3!}t^3 - \cdots}{0}{1 -t + \frac{1}{2!}t^2 - \frac{1}{3!}t^3 + \cdots}
-            </mrow>
-            <mrow>\amp = \twomat{e^{-t}}{te^{-t}}{0}{e^{-t}}</mrow>
-        </md>. 
+        The problem <m>\mathbf{y}' = \begin{bmatrix} -1 \amp 1 \\ 0 \amp -1 \end{bmatrix} \mathbf{y}</m> has a defective matrix, so we cannot use a diagonalization to compute the matrix exponential. Surprisingly, though, the result can be even easier to find!  
+        </p>
+        <p>
+            We will use the fact that 
+            <me>
+                \exp(\bA t+\bI t) = \exp(\bA t) \exp(\bI t) = e^{t} e^{\bA t}
+            </me>. 
+            Again, we cannot do the first step above for <em>general</em> matrices, but it is clearly true that <m>(\bA t)(\bI t)=(\bI t)(\bA t)</m>, so it's okay here. The second step above just uses <m>e^{t\bI} = e^t \bI</m>.
+        </p>
+        <p>
+            Now for the fun part. By the power series definition,
+            <me>
+                \exp(\bA t+\bI t) = \bI + t (\bA+\bI) + \frac{1}{2}t^2 (\bA+\bI)^2 + \cdots
+            </me>. 
+            But note that 
+            <me> 
+                (\bA+\bI)^2 = \twomat{0}{1}{0}{0} \twomat{0}{1}{0}{0} = \bzero
+            </me>. 
+            So all the higher matrix powers vanish too, and
+            <me>
+                \exp(\bA t+\bI t) = \bI + t (\bA+\bI)  = \twomat{1}{t}{0}{1}
+            </me>. 
+            Finally, then,
+            <me>
+              e^{t\bA} = e^{-t} e^{t\bA+t\bI} = e^{-t} \twomat{1}{t}{0}{1}
+            </me>. 
+            We had a double eigenvalue at <m>-1</m> and, to nobody's surprise, <m>te^{-t}</m> came out to play. 
         </p>
     </example>
     </subsection>

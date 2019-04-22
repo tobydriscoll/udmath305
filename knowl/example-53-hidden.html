@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T15:11:38-04:00    *-->
+<!--*    on 2019-04-22T10:55:27-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,30 +11,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><div class="displaymath">
+<body><article class="example-like"><p>Suppose elimination ends with the matrix</p>
+<div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 
 1 \amp 1 \amp -1 \\
-2 \amp 2 \amp 1 \\
--1 \amp -1 \amp 4   
-\end{bmatrix} \mapsto 
-\begin{bmatrix} 
-1 \amp 1 \amp -1 \\
-0 \amp 0 \amp 3 \\
-0 \amp 0 \amp 3   
-\end{bmatrix} \mapsto 
-\begin{bmatrix} 
-1 \amp 1 \amp -1 \\
-0 \amp 0 \amp 3 \\
-0 \amp 0 \amp 0   
+0 \amp 1 \amp 1 \\
+0 \amp 0 \amp 4   
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>The last row just says \(0=0\text{,}\) so we ignore it. The second row implies \(x_3=0\text{,}\) and then the first row implies \(x_1+x_2=0\text{.}\) We can regard \(x_2\) as a free variable; say \(x_2=\alpha\text{.}\) Then \(x_1=-\alpha\text{,}\) and the solution takes the form</p>
-<div class="displaymath">
-\begin{equation*}
-\bx = \begin{bmatrix} -\alpha \\ \alpha \\ 0 \end{bmatrix} = \alpha \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p>Thus the nullspace consists of all multiples of the constant vector \(\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\text{.}\) This representation isn't unique; any nonzero member of the space would serve as well.</p></article></body>
+<p>Now back substitution implies \(x_3=0\text{,}\) then \(x_2=0\text{,}\) then \(x_1=0\text{.}\) So \(\mathcal{N}(\bA) = \{\bzero\}\text{.}\)</p></article></body>
 </html>

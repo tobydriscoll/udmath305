@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T15:11:38-04:00    *-->
+<!--*    on 2019-04-22T10:55:27-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,20 +11,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>It's routine to show that</p>
+<body><article class="example-like"><p>The problem \(\mathbf{y}' = \begin{bmatrix} -1 \amp 1 \\ 0 \amp -1 \end{bmatrix} \mathbf{y}\) has a defective matrix, so we cannot use a diagonalization to compute the matrix exponential. Surprisingly, though, the result can be even easier to find!</p>
+<p>We will use the fact that</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \twomat{0}{1}{-1}{0} = \twomat{1}{1}{i}{-i} \twodiag{i}{-i} \frac{1}{2} \twomat{1}{-i}{1}{i}\text{.}
+\exp(\bA t+\bI t) = \exp(\bA t) \exp(\bI t) = e^{t} e^{\bA t}\text{.}
 \end{equation*}
 </div>
-<p>From here we find that</p>
+<p>Again, we cannot do the first step above for <em class="emphasis">general</em> matrices, but it is clearly true that \((\bA t)(\bI t)=(\bI t)(\bA t)\text{,}\) so it's okay here. The second step above just uses \(e^{t\bI} = e^t \bI\text{.}\)</p>
+<p>Now for the fun part. By the power series definition,</p>
 <div class="displaymath">
-\begin{align*}
-e^{t\bA} \amp = \twomat{1}{1}{i}{-i} \twodiag{e^{it}}{e^{-it}} \frac{1}{2} \twomat{1}{-i}{1}{i}\\
-\amp = \frac{1}{2} \twomat{e^{it}}{e^{-it}}{ie^{it}}{-ie^{-it}} \twomat{1}{-i}{1}{i} \\
-\amp = \frac{1}{2} \twomat{2\cos(t)}{-i[2i\sin(t)]}{i[2i\sin(t)]}{2\cos(t)}\\
-\amp = \twomat{\cos(t)}{\sin(t)}{-\sin(t)}{\cos(t)}\text{.}
-\end{align*}
+\begin{equation*}
+\exp(\bA t+\bI t) = \bI + t (\bA+\bI) + \frac{1}{2}t^2 (\bA+\bI)^2 + \cdots\text{.}
+\end{equation*}
 </div>
-<p>This matrix applies a rotation of an angle \(t\) about the origin to all vectors in the plane. Thus, the phase portrait consists of concentric circles and the origin is a center.</p></article></body>
+<p>But note that</p>
+<div class="displaymath">
+\begin{equation*}
+(\bA+\bI)^2 = \twomat{0}{1}{0}{0} \twomat{0}{1}{0}{0} = \bzero\text{.}
+\end{equation*}
+</div>
+<p>So all the higher matrix powers vanish too, and</p>
+<div class="displaymath">
+\begin{equation*}
+\exp(\bA t+\bI t) = \bI + t (\bA+\bI)  = \twomat{1}{t}{0}{1}\text{.}
+\end{equation*}
+</div>
+<p>Finally, then,</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bA} = e^{-t} e^{t\bA+t\bI} = e^{-t} \twomat{1}{t}{0}{1}\text{.}
+\end{equation*}
+</div>
+<p>We had a double eigenvalue at \(-1\) and, to nobody's surprise, \(te^{-t}\) came out to play.</p></article></body>
 </html>

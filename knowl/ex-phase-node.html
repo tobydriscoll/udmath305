@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T15:11:38-04:00    *-->
+<!--*    on 2019-04-22T10:55:26-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,7 @@
 </head>
 <body>
 <article class="example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.2.1</span> <span class="title">Phase portrait of a node</span>
+<span class="type">Example</span> <span class="codenumber">3.2.1</span> <span class="title">Phase portraits of sinks and sources</span>
 </h6>
 <p>Here we give a phase portrait for the equation \(y''+8y'+4y=0\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
@@ -40,6 +40,30 @@ ylabel('y''')
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_phase_node.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p>The characteristic roots are negative and real, so all solutions are of the form \(y=c_1 e^{s_1t} + c_2 e^{s_2 t}\text{,}\) where \(s_2\lt s_1 \lt 0\text{.}\) As time advances, \(e^{s_2 t}\) decays more rapidly than the other exponential, so \(y\approx c_1 e^{s_1 t}\) and \(y'\approx c_1 s_1 e^{s_1 t}\text{.}\) That is, solutions in the phase plane asymptotically approach the origin parallel to the vector \((1,s_1)\text{.}\) In this situation we say that the origin is a <dfn class="terminology">node</dfn> of the ODE.</p></article><span class="incontext"><a href="twod-fixed-points.html#ex-phase-node">in-context</a></span>
+<p>The characteristic roots are negative and real, so all solutions are of the form \(y=c_1 e^{s_1t} + c_2 e^{s_2 t}\text{,}\) where \(s_2\lt s_1 \lt 0\text{.}\) As time advances, \(e^{s_2 t}\) decays more rapidly than the other exponential, so \(y\approx c_1 e^{s_1 t}\) and \(y'\approx c_1 s_1 e^{s_1 t}\text{.}\) That is, solutions in the phase plane asymptotically approach the origin parallel to the vector \((1,s_1)\text{.}\) (You can see direction of travel by using a <a class="url" href="https://www.wolframalpha.com/input/?i=streamplot+v,+-4u-8v" target="_blank">Wolfram Alpha query</a>.</p>
+<p>Here is a phase portrait for the equation \(y''+0.6y'+3y=0\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = 1;  B = .6;  C = 3;
+s = roots([A B C]);
+
+plot(0,0,'r.','markersize',18)
+    
+% Plot trajectories
+hold on
+colr = get(gca,'colororder');
+t = linspace(0,12,1000)';
+for phi = 2*pi*(0:5)/6
+    y = real(exp(s(1)*t-1i*phi));
+    dydt = real(s(1)*exp(s(1)*t-1i*phi));
+    plot(y,dydt,'linew',1.5,'color',colr(1,:)), hold on
+end
+axis([-1.5 1.5 -1.5 1.5]), axis square
+title('spiral')
+xlabel('y')
+ylabel('y''')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/twoD_phase_spiral.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>The characteristic roots are complex conjugates with negative real part (underdamped). Solutions decay exponentially while they oscillate, and the resulting trajectories spiral into the origin. (For arrows, run <a class="url" href="https://www.wolframalpha.com/input/?i=streamplot+v,+-3u-.6v" target="_blank">this query</a>.)</p></article><span class="incontext"><a href="twod-fixed-points.html#ex-phase-node">in-context</a></span>
 </body>
 </html>

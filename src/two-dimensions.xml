@@ -164,7 +164,7 @@
             For second-order ODEs, we saw that fully specifying a unique solution required giving initial values for <m>y</m> and <m>y'</m>. We say that <m>(y(t),y'(t))</m> together constitute the <term>state</term> of the system at a certain time. Knowing only part of the state isn't specific enough. The two-dimensional space of all possible values of the state is called <term>state space</term>, or in the 2D case only, the <term>phase plane</term>. A plot of many solutions of an ODE in the phase plane is called a <term>phase portrait</term> of the system. 
         </p>
         <example xml:id="ex-phase-node">
-            <title>Phase portrait of a node</title>
+            <title>Phase portraits of sinks and sources</title>
             <p>
                 Here we give a phase portrait for the equation <m>y''+8y'+4y=0</m>. 
             </p>
@@ -196,13 +196,45 @@ ylabel('y''')
 	        <image source="matlab/twoD_phase_node.svg"/>
             </sidebyside>
             <p>
-                The characteristic roots are negative and real, so all solutions are of the form <m>y=c_1 e^{s_1t} + c_2 e^{s_2 t}</m>, where <m>s_2\lt s_1 \lt 0</m>. As time advances, <m>e^{s_2 t}</m> decays more rapidly than the other exponential, so <m>y\approx c_1 e^{s_1 t}</m> and <m>y'\approx c_1 s_1 e^{s_1 t}</m>. That is, solutions in the phase plane asymptotically approach the origin parallel to the vector <m>(1,s_1)</m>. In this situation we say that the origin is a <term>node</term> of the ODE. 
+                The characteristic roots are negative and real, so all solutions are of the form <m>y=c_1 e^{s_1t} + c_2 e^{s_2 t}</m>, where <m>s_2\lt s_1 \lt 0</m>. As time advances, <m>e^{s_2 t}</m> decays more rapidly than the other exponential, so <m>y\approx c_1 e^{s_1 t}</m> and <m>y'\approx c_1 s_1 e^{s_1 t}</m>. That is, solutions in the phase plane asymptotically approach the origin parallel to the vector <m>(1,s_1)</m>. (You can see direction of travel by using a <url href="https://www.wolframalpha.com/input/?i=streamplot+v,+-4u-8v">Wolfram Alpha query</url>.
             </p>
-        </example>
+             <p>
+                Here is a phase portrait for the equation <m>y''+0.6y'+3y=0</m>. 
+            </p>
+            <sidebyside>
+	        <program language="matlab" permid="twoD_phase_spiral">
+            <input>
+A = 1;  B = .6;  C = 3;
+s = roots([A B C]);
+
+plot(0,0,'r.','markersize',18)
+    
+% Plot trajectories
+hold on
+colr = get(gca,'colororder');
+t = linspace(0,12,1000)';
+for phi = 2*pi*(0:5)/6
+    y = real(exp(s(1)*t-1i*phi));
+    dydt = real(s(1)*exp(s(1)*t-1i*phi));
+    plot(y,dydt,'linew',1.5,'color',colr(1,:)), hold on
+end
+axis([-1.5 1.5 -1.5 1.5]), axis square
+title('spiral')
+xlabel('y')
+ylabel('y''')
+	        </input>
+	        </program>
+	        <image source="matlab/twoD_phase_spiral.svg"/>
+            </sidebyside>
+            <p>
+                The characteristic roots are complex conjugates with negative real part (underdamped). Solutions decay exponentially while they oscillate, and the resulting trajectories spiral into the origin. (For arrows, run <url href="https://www.wolframalpha.com/input/?i=streamplot+v,+-3u-.6v">this query</url>.) 
+            </p>
+       </example>
 
         <p>
-            More specifically in <xref ref="ex-phase-node"/> we call the origin a <term>nodal sink</term>, because all trajectories are sucked into the origin. If the characteristic equation had two positive roots the picture would be the same, but all traversal directions reversed, and the point would be a <term>nodal source</term>.
+            In the two examples above, we call the origin a <term>sink</term>. This happens whenever both characteristic values have negative real parts. When both characteristic values have positive real parts, the origin is a <term>source</term>. The phase portraits of sources look exactly like those of sinks, but with all the arrows (direction of travel) reversed. 
         </p>
+
 
         <example>
             <title>Phase portrait of a saddle</title>
@@ -241,12 +273,11 @@ ylabel('y''')
 	        <image source="matlab/twoD_phase_saddle.svg"/>
             </sidebyside>
             <p>
-                In this case all solutions are of the form <m>y=c_1 e^{s_1t} + c_2 e^{s_2 t}</m> where <m>s_2\lt 0 \lt s_1</m>. As time advances, <m>e^{s_2 t}</m> decays to zero while the other exponential grows, so again <m>y\approx c_1 e^{s_1 t}</m> and <m>y'\approx c_1 s_1 e^{s_1 t}</m>. That is, solutions in the phase plane asymptotically move away from the origin parallel to the vector <m>(1,s_1)</m>. The only exception is if <m>c_1=0</m>, in which case solutions go straight toward the origin forever. (Solutions with <m>c_2=0</m> go toward the origin in "backward time.") In this situation we say that the origin is a <term>saddle</term>. 
+                In this case all solutions are of the form <m>y=c_1 e^{s_1t} + c_2 e^{s_2 t}</m> where <m>s_2\lt 0 \lt s_1</m>. As time advances, <m>e^{s_2 t}</m> decays to zero while the other exponential grows, so again <m>y\approx c_1 e^{s_1 t}</m> and <m>y'\approx c_1 s_1 e^{s_1 t}</m>. That is, solutions in the phase plane asymptotically move away from the origin parallel to the vector <m>(1,s_1)</m>. The only exception is if <m>c_1=0</m>, in which case solutions go straight toward the origin forever. Refer to <url href="https://www.wolframalpha.com/input/?i=streamplot+v,+3u-6v">this query</url> for arrows.
             </p>
         </example>
-   
         <p>
-            A saddle has both sink and source behaviors simultaneously. But the source nature wins out unless you approach the origin <em>just</em> so. 
+            When the characteristic values are real and of opposite signs, we say that the origin is a <term>saddle</term> point. A saddle has both sink and source behaviors simultaneously. But the source nature wins out unless you approach the origin <em>just</em> so. 
         </p>
 
         <example xml:id="ex-phase-center">
@@ -280,47 +311,12 @@ ylabel('y''')
 	        <image source="matlab/twoD_phase_center.svg"/>
             </sidebyside>
             <p>
-                The characteristic roots are imaginary and the solutions are, in shifted cosine form, <m>y=R\cos(\omega_n t-\phi)</m>. Solution curves in the phase plane lie on the ellipses <m>y^2+(y'/\omega_n)^2=R^2</m>, going around and around the origin, which we call a  <term>center</term> of the ODE. If <m>\omega_n=1</m>, the ellipses are circles. 
-            </p>
-        </example>
-
-        <example xml:id="ex-phase-spiral">
-            <title>Phase portrait of a spiral</title>
-            <p>
-                Here is a phase portrait for the equation <m>y''+0.6y'+3y=0</m>. 
-            </p>
-            <sidebyside>
-	        <program language="matlab" permid="twoD_phase_spiral">
-            <input>
-A = 1;  B = .6;  C = 3;
-s = roots([A B C]);
-
-plot(0,0,'r.','markersize',18)
-    
-% Plot trajectories
-hold on
-colr = get(gca,'colororder');
-t = linspace(0,12,1000)';
-for phi = 2*pi*(0:5)/6
-    y = real(exp(s(1)*t-1i*phi));
-    dydt = real(s(1)*exp(s(1)*t-1i*phi));
-    plot(y,dydt,'linew',1.5,'color',colr(1,:)), hold on
-end
-axis([-1.5 1.5 -1.5 1.5]), axis square
-title('spiral')
-xlabel('y')
-ylabel('y''')
-	        </input>
-	        </program>
-	        <image source="matlab/twoD_phase_spiral.svg"/>
-            </sidebyside>
-            <p>
-                The characteristic roots are complex conjugates with negative real part (underdamped). Solutions decay exponentially while they oscillate, and we say that the origin is a <term>spiral point</term> of the ODE. 
+                The characteristic roots are imaginary and the solutions are, in shifted cosine form, <m>y=R\cos(\omega_n t-\phi)</m>. Solution curves in the phase plane lie on the ellipses <m>y^2+(y'/\omega_n)^2=R^2</m>, going around and around the origin. 
             </p>
         </example>
 
         <p>
-            As with nodes, spiral points can be either sinks or sources, which is just a matter of reversing the direction of travel along solution curves. 
+            When the characteristic values are purely imaginary (i.e., simple harmonic motion), we call the origin a  <term>center</term> of the ODE. If also <m>\omega_n=1</m>, the ellipses of the phase orbits are circles.
         </p>
 
     </subsection>
@@ -352,7 +348,7 @@ ylabel('y''')
             As the text says, the matrices we get from problems <m>Ay''+By'+Cy=0</m> are called <term>companion matrices</term>.  
        </p>
        <p>
-            It's fair to ask what kinds of phase portraits we can get for this type of problem. The answer is: same as the above. The extra generality in the first row of the matrix can change the details, but there are no new major kinds of behavior beyond node, saddle, and spiral. We are now going to shift away from talking about the second-order problem to the more general <m>\mathbf{u}' = \mathbf{A} \mathbf{u}</m>. 
+            We are now going to shift away from talking about the second-order problem to the more general <m>\mathbf{u}' = \mathbf{A} \mathbf{u}</m>. It's fair to ask what kinds of phase portraits we can get for this type of problem. The answer is: same as the above. The extra generality in the first row of the matrix can change the details, but there are no new major kinds of behavior beyond sink, source, saddle, and center. 
        </p>
     </subsection>
     
@@ -367,10 +363,10 @@ ylabel('y''')
             or more simply, <m>\mathbf{u}' = \mathbf{A} \mathbf{u}</m>? 
         </p>
         <p>
-            Right away it's clear that we have a steady state at <m>\bu=\mathbf{0}</m>. We'll have others, if there are nonzero solutions to the system <m>\bA\bu=\mathbf{0}</m>. That's a question we'll take up much later, so we'll ignore these for now. 
+            Right away it's clear that we have a steady state at <m>\bu=\mathbf{0}</m>. We'll have others as well, if there are nonzero solutions to the system <m>\bA\bu=\mathbf{0}</m>. That's a question we'll take up later, so we'll ignore these for now. 
         </p>
         <p>
-            The phase portraits we have done are all in the vicinity of the fixed point at the origin, and they tell the story of stability. Sinks (node or spiral) are stable points, while sources (node or spiral) and saddles are unstable. The case of a center is on the cusp, what we might call "neutrally stable" or weakly stable. 
+            The phase portraits we have done are all in the vicinity of the fixed point at the origin, and they tell the story of stability. Sinks are stable points, while sources and saddles are unstable. The case of a center is on the cusp, what we might call "neutrally stable" or weakly stable. (Many authors use "stable" to mean this type of stability, and "asymptotically stable" to mean the stronger type exhibited by a sink.) 
         </p>
         <p>
             So the phase portraits are a graphical tool for stability. What about analytical tools? The key here turns out to be the <term>eigenvalues</term> of the matrix <m>\bA</m>.  We're not ready to discuss those in generality yet, but the 2-by-2 case is simple to describe (and hauntingly familiar). The eigenvalues are the two roots of the <term>characteristic polynomial</term>
@@ -414,13 +410,13 @@ ylabel('y''')
             <row>
             <cell right="medium">   <m>D=0</m></cell>
             <cell halign="center" right="medium" bottom="medium">stable</cell>
-            <cell halign="center" right="medium" bottom="medium">?</cell>
+            <cell halign="center" right="medium" bottom="medium">(varies)</cell>
             <cell halign="center" right="medium" bottom="medium">unstable</cell>
             </row>
             <row>
             <cell right="medium"><m>D\gt 0</m></cell>
             <cell halign="center" right="medium" bottom="medium">stable, sink</cell>
-            <cell halign="center" right="medium" bottom="medium">stable, center</cell>
+            <cell halign="center" right="medium" bottom="medium">neutrally stable, center</cell>
             <cell halign="center" right="medium" bottom="medium">unstable, source</cell>
             </row>
         </tabular>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T15:11:38-04:00    *-->
+<!--*    on 2019-04-22T10:55:27-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,28 +11,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>We look again at an example fron the previous section,</p>
+<body><article class="example-like"><p>It's routine to show that</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}\text{,}
+\bA = \twomat{0}{1}{-1}{0} = \twomat{1}{1}{i}{-i} \twodiag{i}{-i} \frac{1}{2} \twomat{1}{-i}{1}{i}\text{.}
 \end{equation*}
 </div>
-<p>in which \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\) are eigenpairs. We define</p>
+<p>From here we find that</p>
 <div class="displaymath">
-\begin{equation*}
-\bV = \twomat{1}{1}{2}{-2}
-\end{equation*}
+\begin{align*}
+e^{t\bA} \amp = \twomat{1}{1}{i}{-i} \twodiag{e^{it}}{e^{-it}} \frac{1}{2} \twomat{1}{-i}{1}{i}\\
+\amp = \frac{1}{2} \twomat{e^{it}}{e^{-it}}{ie^{it}}{-ie^{-it}} \twomat{1}{-i}{1}{i} \\
+\amp = \frac{1}{2} \twomat{2\cos(t)}{-i[2i\sin(t)]}{i[2i\sin(t)]}{2\cos(t)}\\
+\amp = \twomat{\cos(t)}{\sin(t)}{-\sin(t)}{\cos(t)}\text{.}
+\end{align*}
 </div>
-<p>and compute</p>
-<div class="displaymath">
-\begin{equation*}
-\bV^{-1} = \frac{1}{4}\twomat{2}{1}{2}{-1}\text{.}
-\end{equation*}
-</div>
-<p>Hence</p>
-<div class="displaymath">
-\begin{equation*}
-\by(t) = \frac{1}{4} \twomat{1}{1}{2}{-2} \twodiag{e^{3t}}{e^{-t}} \twomat{2}{1}{2}{-1} \by(0)\text{.}
-\end{equation*}
-</div></article></body>
+<p>This matrix applies a rotation of an angle \(t\) about the origin to all vectors in the plane. Thus, the phase portrait consists of concentric circles and the origin is a center.</p></article></body>
 </html>

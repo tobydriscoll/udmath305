@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-18T15:11:38-04:00    *-->
+<!--*    on 2019-04-22T10:55:27-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,17 +11,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>In an earlier section we found the eigenstuff for</p>
+<body><article class="example-like"><p>Let's look at the solution of</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
+\mathbf{y}' = \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix} \mathbf{y}\text{.}
 \end{equation*}
 </div>
-<p>as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This means the general solution of \(\by'=\bA\by\) is</p>
+<p>The eigenvalues are \(1\pm i\text{,}\) with eigenvectors \(\twovec{1}{2\mp i}\text{.}\) So one form of the general solution is</p>
 <div class="displaymath">
 \begin{equation*}
-\by(t) = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
-= \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
+c_1 e^{t} e^{it} \twovec{1}{2-i} + c_2 e^{t} e^{-it} \twovec{1}{2+i}\text{.}
 \end{equation*}
+</div>
+<p>With some work, we could convert this to a purely real form. Or, suppose we also have the initial condition \(\by(0)=\twovec{1}{-2}\text{.}\) This gives</p>
+<div class="displaymath">
+\begin{align*}
+c_1 \twovec{1}{2-i} + c_2 \twovec{1}{2+i} \amp = \twovec{1}{-2}\\
+\twomat{1}{1}{2-i}{2+i} \twovec{c_1}{c_2} \amp = \twovec{1}{-2}\text{.}
+\end{align*}
+</div>
+<p>Using Cramer's rule, we get</p>
+<div class="displaymath">
+\begin{align*}
+c_1 \amp = \frac{ \twodet{1}{1}{-2}{2+i} }{ \twodet{1}{1}{2-i}{2+i} } = \frac{4+i}{2i}=\frac{-1-4i}{2}\\
+y \amp = \frac{ \twodet{1}{1}{2-i}{-2} }{ \twodet{1}{1}{2-i}{2+i} } = \frac{-4+i}{2i}=\frac{-1+4i}{2}\text{.}
+\end{align*}
 </div></article></body>
 </html>
