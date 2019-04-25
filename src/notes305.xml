@@ -31,6 +31,7 @@
       \newcommand{\bw}{\mathbf{w}}
       \newcommand{\bc}{\mathbf{c}}
       \newcommand{\bz}{\mathbf{z}}
+      \newcommand{\inprod}[2]{\langle #1, #2 \rangle}
       \newcommand{\twovec}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
       \newcommand{\twodet}[4]{\begin{vmatrix}#1 \amp #2\\#3 \amp #4\end{vmatrix}}
       \newcommand{\twomat}[4]{\begin{bmatrix}#1 \amp #2\\#3 \amp #4\end{bmatrix}}
@@ -73,55 +74,9 @@
  
     <xi:include href="matrix-algebra.xml" />
 
-    <!--chapter xml:id="matrix-algebra">
-      <title>Matrix algebra</title>
+    <xi:include href="fourier-series.xml" />
 
-      <section xml:id="linear-equations">
-	<title>Linear equations</title>
-	<p></p>
-      </section>
-
-      <section xml:id="elimination">
-	<title>Solution by elimination</title>
-	<p></p>
-      </section>
-
-      <section xml:id="matrix-multiplication">
-	<title>Matrix multiplication</title>
-	<p></p>
-      </section>
-
-      <section xml:id="matrix-inverses">
-	<title>Matrix inverses</title>
-	<p></p>
-      </section>
-    </chapter>
-
-    <chapter xml:id="linear-ode-systems">
-      <title>Linear ODE systems</title>
-
-      <section xml:id="eigenvalues">
-	<title>Eigenvalues and eigenvectors</title>
-	<p></p>
-      </section>
-
-      <section xml:id="diagonalization">
-	<title>Diagonalization</title>
-	<p></p>
-      </section>
-
-
-      <section xml:id="linear-system-solutions">
-	<title>Solutions of linear ODEs</title>
-	<p></p>
-      </section>
-
-
-      <section xml:id="matrix-exponential">
-	<title>The matrix exponential</title>
-	<p></p>
-      </section>
-    </chapter-->
+   <xi:include href="bvp.xml" />
 
   </book>
   

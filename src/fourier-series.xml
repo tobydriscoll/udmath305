@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="fourier-series" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Fourier series</title>
+
+<section xml:id="fs-orthgonality">
+	<title>Main idea</title>
+	<introduction>
+	<p>
+		In vector calc you learned about the dot product between two vectors. This generalizes into <m>n</m> dimensions. Suppose <m>\bu</m> and <m>\bv</m> are real column vectors of length <m>n</m>. Then their <term>dot product</term>, or what we will call the <term>inner product</term>, is 
+        <me>
+            \langle \bu, \bv \rangle = \bu \cdot \bv = \overline{u_1} v_1 + \overline{u_2} v_2 + \cdots \overline{u_n} v_n = \sum_k \overline{u_k} v_k
+        </me>.  
+		Notice that we introduced complex conjugates onto the <m>u_k</m> terms. One motivation is that it makes the inner product of a vector with itself guaranteed to be a nonnegative real number:
+		<me>
+            \langle \bu, \bu \rangle =  \sum_k \overline{u_k} u_k =  \sum_k |u_k|^2 \ge 0
+        </me>.  
+		In fact we define a function called a <term>norm</term> by <m>\| \bu \| = \sqrt{ \langle \bu, \bu \rangle}</m>. This generalizes familiar Euclidean distance into <m>n</m> dimensions and complex-valued vectors. 
+	</p>
+	</introduction>
+	<subsection>
+	<title>Orthogonal vectors</title>
+	<p>
+		One of the most useful facts about the inner product in three dimensions is the geometric formula
+        <me>
+            \inprod{\bu}{\bv} = \| \bu \| \, \| \bv \| \, \cos(\theta)
+        </me>,
+        where <m>\theta</m> is the angle between the vectors. We can take this to mean the <em>definition</em> of angle in higher/complex dimensions. This is most important to us when the angle is a right angle, i.e., <m>\inprod{\bu}{\bv}  = 0</m>, in which case we say the vectors are <term>orthogonal</term> (generalizing "perpendicular"). 
+	</p>
+	<p>
+		Orthogonal vectors are convenient for many reasons. One of those is that it's easy to express any vector as a linear combination of them. Suppose the vectors <m>\bv_1,\ldots,\bv_n</m> are pairwise orthogonal in <m>n</m>-dimensional space, and <m>\bx</m> is any other vector in <m>\mathbb{C}^n</m>. If it's possible to write 
+		<me>
+			\mathbf{x} = c_1 \bv_1 + c_2 \bv_2 + \cdots c_n \bv_n
+		</me>,
+		then we can find relatively simple expressions for these constants, because 
+		<me>
+			\inprod{\bv_k}{\bx} = c_1 \inprod{\bv_1}{\bx} + \cdots + c_n \inprod{\bv_n}{\bx} = c_k \inprod{\bv_k}{\bv_k}
+		</me>,
+		where the last step follows from the orthgonality. Hence
+		<me>
+			c_k = \frac{\inprod{\bv_k}{\mathbf{x}}}{\|\bv_k\|^2}, \quad k=1,\ldots,n
+		</me>. 
+		This formula expresses the geometric fact that the inner product can be used to find the projections of a vector onto orthogonal directions. 
+	</p>
+		<!--me>
+			\mathbf{x} =    \frac{\inprod{\bv_1}{\mathbf{x}}}{\|\bv_1\|^2} \bv_1 + \cdots + \frac{\inprod{\bv_n}{\mathbf{x}}}{\|\bv_n\|^2} \bv_n
+		</me-->  
+	<example>
+		<p>
+			You can verify quickly that <m>\twovec{2}{-1}</m> and <m>\twovec{1}{2}</m> are orthogonal in 2-D. Then we can verify, for instance, 
+			<me>
+				\twovec{3}{5} = \frac{6-5}{2^2+(-1)^2} \twovec{2}{-1} + \frac{3+10}{2^2+1^2} \twovec{1}{2} = \frac{1}{5} \twovec{2+13}{-1+26}
+			</me>.  
+		</p>
+	</example>
+	<p>
+		(Not addressed above is the question of whether every <m>\bx</m> can be expressed that way. By our standard interpretation of linear combinations, the answer must be yes if the matrix <m>\bigl[ \bv_1 \, \cdots \, \bv_n \bigr]</m> is nonsingular. It's actually not hard to produce the inverse explicitly in the orthogonal case, but I won't go into the details here. In a fuller linear algebra course there would be other ways to establish this fact as well.) 
+	</p>
+	<p>
+		We can ease the formulas a little if we define 
+		<me>
+			\bu_k = \frac{\bv_k}{\|\bv_k\|}, \quad k=1,\dots,n
+		</me>, 
+		that is, we <term>normalize</term> the original orthogonal set of vectors. Then
+		<me>
+			\bx = \inprod{\bu_1}{\bx} \bu_1 + \cdots + \inprod{\bu_n}{\bx} \bu_n
+		</me>.  
+		So far this might not look like a compelling idea. But we're about to do the exact same representation with <em>functions</em>.
+	</p>
+	<p>
+		
+	</p>
+	</subsection>
+	<subsection>
+	<title>Orthogonal functions</title>
+	<p>
+		It's remarkable that we can generalize the inner product from finite vectors to functions. As usual, summation turns into integration. Let's restrict attention for now to functions on the domain <m>[-\pi,\pi]</m>. Then we define the inner product of two functions <m>u(x),v(x)</m> as 
+		<me>
+			\inprod{u}{v} = \int_{-\pi}^\pi \overline{u(x)} v(x)\, dx
+		</me>. 
+		This definition turns immediately into strange-sounding but mathematically meaningful notions of the "length" (norm) of a function and the angle between two functions. 
+	</p>
+	<p>
+		Things really heat up when we discover that it's easy to find a simple set of functions that are mutually orthogonal under the functional definition of inner product. If <m>j</m> and <m>k</m> are distinct integers, then 
+		<md>
+			<mrow>\inprod{e^{ijx}}{e^{ikx}} \amp = \int_{-\pi}^\pi e^{-ijx}\cdot e^{ikx}\, dx</mrow>
+			<mrow>\amp = \int_{-\pi}^\pi e^{i(k-j)x} \, dx </mrow>
+			<mrow>\amp = \frac{1}{i(k-j)} \left[e^{i(k-j)x}\right]_{-\pi}^\pi </mrow>
+			<mrow>\amp = 0</mrow>
+		</md>,
+		since for any integer <m>m</m> and real <m>x</m>, <m>e^{im(x+2\pi)}=e^{imx}e^{2\pi i}=e^{imx}</m>. This orthogonality is the best argument yet for the specialness of complex exponentials. 
+	</p>
+	</subsection>
+	<subsection>
+	<title>Fourier series</title>	
+	<p>		
+		In order to normalize the orthogonal complex exponential functions, we need to calculate the inner product in the case of <m>j=k</m>:
+		<md>
+			<mrow>\inprod{e^{ijx}}{e^{ijx}} \amp = \int_{-\pi}^\pi e^{-ijx}\cdot e^{ijx}\, dx</mrow>
+			<mrow>\amp = 2\pi</mrow>
+		</md>
+		So we define 
+		<me>
+			u_k(x) = \frac{1}{\sqrt{2\pi}} e^{ikx}, \quad k=0,\pm 1,\pm 2,\dots
+		</me>.
+		(Does it bother you that this set has infinitely many members? Sorry, but functions are naturally infinite-dimensional.) Then this suggests the formulas
+		<me>
+			f(x) = \sum_{k=-\infty}^\infty c_k u_k(x),\quad c_k = \int_{-\pi}^\pi \overline{u_k}(x) f(x)\, dx
+		</me>. 
+		This is our first encounter with what is called a <term>Fourier series</term> for <m>f</m>. We do have to be cautious when we approach infinite sums. While this formula isn't straightforwardly true for <em>every</em> function you could think of, it's true enough to be one of the most monumental developments in the history of the analysis of functions. 
+	</p>
+	</subsection>
+</section>
+
+<section xml:id="fs-realimag">
+	<title>Special forms</title>
+	<introduction>
+	<p>
+		Let's repeat the formulas defining our Fourier series:
+		<me>
+			u_k(x) = \frac{1}{\sqrt{2\pi}} e^{ikx}, \quad k=0,\pm 1,\pm 2,\dots
+		</me>,
+		<me>
+			f(x) = \sum_{k=-\infty}^\infty c_k u_k(x),\quad c_k = \int_{-\pi}^\pi \overline{u_k}(x) f(x)\, dx
+		</me>. 
+		These were derived for a function <m>f</m> that is defined on <m>[-\pi,\pi]</m>. If we instead have a function defined on <m>\tilde{x}\in [a,b]</m>, then we can define the change of variables
+		<me>
+			\tilde{x} = 2\pi \frac{x-a}{b-a} - \pi, \qquad \tilde{f}(\tilde{x}) = f(x)
+		</me>, 
+		and then apply the standard formulas to <m>\tilde{f}(\tilde{x})</m>.
+	</p>
+	<example>
+		<p>
+			A common choice of domain is <m>\tilde{x}\in [-L,L]</m>, in which case
+			<me>
+				\tilde{x} = \frac{\pi x}{L}
+			</me>. 
+			Hence
+			<md>
+				<mrow>c_k \amp = \int_{-\pi}^\pi \overline{u_k}(\tilde{x}) \tilde{f}(\tilde{x})\, d\tilde{x}</mrow>
+				<mrow>\amp = \sqrt{\frac{\pi}{2L}} \int_{-L}^L e^{-ik\pi x/L} f(x)\, dx </mrow>
+			</md>, 
+			and the series is 
+			<me>
+				f(x) = \tilde{f}(\tilde{x}) = \sum_{k=-\infty}^\infty c_k u_k(\tilde{x}) = \frac{1}{\sqrt{2\pi}} \sum_{k=-\infty}^\infty c_k e^{ik\pi x/L}
+			</me>.
+		</p>
+	</example>
+	</introduction>
+	<subsection>
+	<title>Real Fourier series</title>
+	<p>
+		The elegance of the complex Fourier series can't be beat. Still, some people will always be hating on complex numbers, so we ought to see how it looks in purely real terms. First, if <m>f</m> is a real function, then it's easy to decompose <m>c_k</m>:
+		<md>
+			<mrow>c_k \amp = \frac{1}{\sqrt{2\pi}} \int_{-\pi}^\pi \cos(kx) f(x)\, dx - i \cdot \frac{1}{\sqrt{2\pi}} \int_{-\pi}^\pi \sin(kx) f(x)\, dx</mrow>
+			<mrow>\amp = \alpha_k - i \beta_k</mrow>			
+		</md>. 
+		Then we decompose the Fourier series itself:
+		<md>
+			<mrow>f(x) \amp = \frac{1}{\sqrt{2\pi}} \sum_{k=-\infty}^\infty (\alpha_k - i \beta_k) \bigl[ \cos(kx) + i\sin(kx) \bigr] </mrow>
+			<mrow>\amp = \frac{1}{\sqrt{2\pi}} \sum_{k=-\infty}^\infty  \bigl[ \alpha_k \cos(kx) + \beta_k \sin(kx) \bigr] + i \bigl[\cdots \bigr]  </mrow>			
+		</md>,
+		where we already know the missing part must work out to be zero, as it's the imaginary part of <m>f</m>.  We'll also use the fact that the cosines and sines are even and odd functions,
+		<me>
+			\cos(-kx)=\cos(kx), \quad \sin(-kx) = -\sin(kx)
+		</me>, 
+		to break up the sum. The result is 
+		<md>
+			<mrow>f(x) \amp = \frac{1}{\sqrt{2\pi}} \left[  \alpha_0 +  \sum_{k=1}^\infty  (\alpha_k+\alpha_{-k}) \cos(kx) + (\beta_k-\beta_{-k}) \sin(kx)  \right] </mrow>
+			<mrow>  \amp = \frac{1}{2} a_0 +  \sum_{k=1}^\infty  a_k \cos(kx) + b_k \sin(kx) </mrow>			
+		</md>,
+		<!--To finish the definitions we note the identities
+		<me>
+			e^{ikx} + e^{-ikx} = 2\cos(kx), \qquad e^{ikx} - e^{-ikx} = 2i \sin(kx)
+		</me>. -->
+		where the definitions imply
+		<md>
+			<mrow>a_0 \amp = \frac{2}{\sqrt{2\pi}} \alpha_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x)\, dx</mrow>
+			<mrow>a_k \amp =  \frac{1}{\sqrt{2\pi}} (\alpha_k + \alpha_{-k}) =  \frac{1}{\pi}  \int_{-\pi}^{\pi} \cos(kx) f(x)\, dx, \quad k=1,2,\ldots,  </mrow>
+			<mrow>b_k \amp =  \frac{1}{\sqrt{2\pi}} (\beta_k - \beta_{-k}) =  \frac{1}{\pi}  \int_{-\pi}^{\pi} \sin(kx) f(x)\, dx, \quad k=1,2,\ldots  </mrow>			
+		</md>.
+		This is the Fourier series in real form.
+	</p>
+	</subsection>
+	<subsection> 
+	<title>Sine and cosine series</title>
+	<p>
+		There are some cases where the series simplifies a good deal. One of those is when the underlying function <m>f</m> is both real and odd, i.e., <m>f(-x)=-f(x)</m>. It becomes clear that <m>a_k=0</m> for all <m>k</m>, and that 
+		<me>
+			b_k = \frac{1}{\pi} \int_{-\pi}^{\pi} \sin(kx) f(x)\, dx = \frac{2}{\pi} \int_{0}^{\pi} \sin(kx) f(x)\, dx \qquad \text{if f is odd,} 
+		</me>
+		because the product of odd functions is even. Similarly, if <m>f</m> is even, then <m>b_k\equiv 0</m> and 
+		<me>
+			a_k = \frac{1}{\pi} \int_{-\pi}^{\pi} \cos(kx) f(x)\, dx = \frac{2}{\pi} \int_{0}^{\pi} \cos(kx) f(x)\, dx \qquad \text{if f is even} 
+		</me>.  
+	</p> 
+	<p>
+		In light of the above, one way to interpret the full Fourier series in real form is that <m>f</m> is expressed as the sum of an odd function and an even one. (This is less deep than it might seem, since for any function
+		<me>
+			f(x) = \frac{1}{2} [ f(x) - f(-x) ] + \frac{1}{2} [ f(x) + f(-x) ]
+		</me>,
+		which is more or less the same odd/even decomposition.)
+	</p>
+	</subsection>
+	<subsection>
+	<title>Odd and even extensions</title>
+	<p>
+		A curious aspect of the formulas for the pure sine and pure cosine series is that even though we started with a function defined on <m>[-\pi,\pi]</m>, the formulas only access the values on <m>[0,\pi]</m>, because we assumed a symmetry. But we can apply the formulas to any function that is given only on <m>[0,\pi]</m>. For instance, we compute 
+		<me>
+			a_k = \frac{2}{\pi} \int_{0}^{\pi} \cos(kx) f(x)\, dx
+		</me>,
+		and then 
+		<me>
+			\frac{1}{2} a_0 +  \sum_{k=1}^\infty  a_k \cos(kx) 
+		</me>
+		should represent <m>f</m> on <m>[0,\pi]</m> <em>and</em> also be an even function. That is, it extends the definition of <m>f</m> to <m>[-\pi,0]</m> by means of <m>f(-x)=f(x)</m> there. (This is a big part of the JPEG image compression algorithm.) We can similarly make an odd extension of <m>f</m> using the definitions of a sine series.
+	</p>
+	<p>
+		The odd case in particular brings up an interesting question. By definition, a true odd function has to satisfy <m>f(0)=0</m>. But suppose we start with an <m>f</m> that is nonzero at the origin and then compute its sine series? What should we expect to happen? Answering this kind of question means that we must look more carefully into how all of these series converge. 
+	</p>
+	</subsection>
+</section>
+<section xml:id="fs-convergence">
+	<title>Convergence</title>
+	<introduction>
+	<p>
+		We rather breezily derived the formulas
+		<me>
+			u_k(x) = \frac{1}{\sqrt{2\pi}} e^{ikx}, \quad k=0,\pm 1,\pm 2,\dots
+		</me>,
+		<me>
+			f(x) = \sum_{k=-\infty}^\infty c_k u_k(x),\quad c_k = \int_{-\pi}^\pi \overline{u_k}(x) f(x)\, dx
+		</me>,
+		without regard to whether the infinite series implied here converges to the values of <m>f</m>, or indeed at all. Fortunately, only a reasonable assumption on <m>f</m> is needed. In particular, we will assume that <m>f</m> is continuous on each of a finite collection of closed intervals that combine to make <m>[-\pi,\pi]</m>. That is, the function is allowed to have a finite number of jump discontinuities. We call such a function <term>piecewise continuous</term>.
+	</p>
+	<theorem>
+		<title>Convergence of Fourier series</title>
+		<p>
+			Suppose <m>f</m> is a piecewise continuous function on <m>[-\pi,\pi]</m>. Then the Fourier series above converges (1) to <m>f(x)</m> at all <m>x\in(-\pi,\pi)</m> at which <m>f</m> is continuous, (2) to 
+			<me>
+				\frac{1}{2} [ f(x^-) + f(x^+) ] 
+			</me>
+			at all <m>x\in(-\pi,\pi)</m>, where <m>f(x^\pm)</m> are the one-sided limits of <m>f</m> at <m>x</m>, and (3) to 
+			<me>
+				\frac{1}{2} [ f(\pi^-) + f(-\pi^+) ] 
+			</me>
+			at <m>x=\pm\pi</m>. 
+		</p>
+	</theorem>
+	<p>
+		Each partial (i.e., truncated) sum of the Fourier series is a continuous function that is periodic over <m>[-\pi,\pi]</m>, and its limit has the same property. It does the best we could hope for, getting the correct value at every point of continuity and "splitting the difference" at the jumps. These jumps include a lack of periodicity in the original <m>f</m>. It might help to think of a Fourier series as being defined on a circle with angle <m>\theta \in [-\pi,pi]</m>, rather than a regular interval. No point on the circle is truly distinguished; we just choose to cut it somewhere in order to unroll it onto a line. 
+	</p>
+	<example>
+		<p>
+			We look at the partial sums that result from restricting to <m>|k|\le N</m>, for a few values of <m>N</m>.  
+		</p>
+		<sidebyside>
+	        <program language="matlab" permid="fs_converge_smooth">
+            <input>
+f = @(x) exp(sin(3*x)+cos(4*x)); 
+
+nu = 1/sqrt(2*pi);
+c0 = nu*integral(f,-pi,pi);
+for k = 1:30
+    cplus(k) = nu*integral( @(x) f(x).*exp(-1i*k*x),-pi,pi);
+    cminus(k) = nu*integral( @(x) f(x).*exp(1i*k*x),-pi,pi);
+end    
+
+x = linspace(-pi,pi,1001)';
+s = nu*c0;
+N = 4:4:12;
+fplot(f,[-pi pi],'k','linewid',2), hold on
+for k = 1:30
+   s = s + nu*cplus(k)*exp(1i*k*x) + nu*cminus(k)*exp(-1i*k*x);
+   if any(k==N)
+       plot(x,s)
+   end
+end
+    	        </input>
+	        </program>
+	        <image source="matlab/fs_converge_smooth.svg"/>
+        </sidebyside>
+	<p>
+		If we were to let <m>N</m> continue to grow, the curve would very soon become indistinguishable from the original function, to plotting accuracy. 
+	</p>
+	</example>
+	</introduction>
+	<subsection>
+	<title>The Gibbs phenomenon</title>
+	<p>
+		Consider the innocent-looking <m>f(x)=x</m>. We can compute the coefficients of the sine series over <m>[0,\pi]</m> exactly,
+		<md>
+			<mrow>b_k = \frac{2}{\pi} \int_{0}^{\pi} x \sin(kx) \, dx \amp = \frac{2}{\pi k^2} \left[ \sin(kx)-kx\cos(kx) \right]_0^\pi </mrow>
+			<mrow>\amp = (-1)^{k+1} \cdot \frac{2}{k}</mrow>
+		</md>.
+		The partial sums are interesting. 
+	</p>
+	<sidebyside>
+	        <program language="matlab" permid="fs_sawtooth">
+            <input>
+x = linspace(-2*pi,2*pi,1001)';
+s = 0;
+N = 5:5:15;
+clf
+plot(x,x,'k','linewid',2), hold on
+for k = 1:30
+   s = s + (-1)^(k+1)*(2/k)*sin(k*x);
+   if any(k==N)
+       plot(x,s)
+   end
+end
+    	        </input>
+	        </program>
+	        <image source="matlab/fs_sawtooth.svg"/>
+    </sidebyside>
+	<p>
+		The partial sums are <m>2\pi</m> periodic, so they are approximating not <m>f</m> everywhere but a "sawtooth" variation: first <m>f</m> is extended oddly to <m>[-\pi,0]</m>, then the result is repeated periodically over and over to make the sawtooth. Note also that the partial sums are zero at <m>x=\pm \pi</m>, because that is the average of the values of (extended) <m>f</m> at those two points. In effect, <m>f</m> is "supposed to be" periodic, and the Fourier series can't adjust for the fact that it is not. 
+	</p>
+	<p>
+		But the most dramatic feature of the picture above is that the errors are visibly much larger than in our first example. Let's zoom in toward <m>x=\pi</m>.
+	</p>
+	<sidebyside>
+	        <program language="matlab" permid="fs_sawtooth_zoom">
+            <input>
+x = linspace(0.8*pi,pi,1001)';
+s = 0;
+N = 5:5:30;
+clf
+plot(x,x,'k','linewid',2), hold on
+for k = 1:30
+   s = s + (-1)^(k+1)*(2/k)*sin(k*x);
+   if any(k==N)
+       plot(x,s)
+   end
+end
+ylim([2 3.8])
+    	        </input>
+	        </program>
+	        <image source="matlab/fs_sawtooth_zoom.svg"/>
+    </sidebyside>
+	<p>
+		The convergence theorem tells us that if we look at one particular value of <m>x</m>, then the sums converge to the original line. That's true. But each partial sum keeps shooting past the target back and forth, by an amount that does not decrease as <m>N\to\infty</m>.  
+	</p>
+	<p>
+		This overshooting behavior is called the <term>Gibbs phenomenon</term>. It's manifested for any function with a jump discontinuity, including (as in this case) at the point of periodicity. The pointwise convergence rate as a function of <m>N</m> is rather slow, and every finite approximation has the overshoot/ringing behavior. You can consider it the price that must be paid when using infinitely differentiable functions (sines and cosines) to approximate one with a discontinuity. 
+	</p>
+	</subsection>
+</section>
+
+
+</chapter>
