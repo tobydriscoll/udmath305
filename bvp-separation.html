@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-04-29T11:34:29-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Separation of variables</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.1/pretext.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on2.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="mathbook-delaware.css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(  \newcommand{\dd}[2]{\frac{d #1}{d #2}}
+  \renewcommand{\Re}{\text{Re}}
+  \renewcommand{\Im}{\text{Im}}
+  \newcommand{\Span}[1]{\langle#1\rangle}
+  \newcommand{\spr}[1]{^{(#1)}}
+  \newcommand{\dd}[2]{\frac{d #1}{d #2}}
+  \newcommand{\ddd}[2]{\frac{d^2 #1}{d #2^2}}
+  \newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+  \newcommand{\ppp}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+  \newcommand{\norm}[1]{\left\| #1 \right\|}
+  \newcommand{\det}{\operatorname{det}}
+  \newcommand{\bzero}{\boldsymbol{0}}
+  \newcommand{\bu}{\mathbf{u}}
+  \newcommand{\bA}{\mathbf{A}}
+  \newcommand{\bB}{\mathbf{B}}
+  \newcommand{\bC}{\mathbf{C}}
+ \newcommand{\bD}{\mathbf{D}}
+  \newcommand{\bI}{\mathbf{I}}
+  \newcommand{\bV}{\mathbf{V}}
+\newcommand{\bff}{\mathbf{f}}
+  \newcommand{\bx}{\mathbf{x}}
+  \newcommand{\by}{\mathbf{y}}
+  \newcommand{\bb}{\mathbf{b}}
+  \newcommand{\bu}{\mathbf{u}}
+  \newcommand{\bv}{\mathbf{v}}
+  \newcommand{\bw}{\mathbf{w}}
+  \newcommand{\bc}{\mathbf{c}}
+  \newcommand{\bz}{\mathbf{z}}
+  \newcommand{\inprod}[2]{\langle #1, #2 \rangle}
+  \newcommand{\twovec}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
+  \newcommand{\twodet}[4]{\begin{vmatrix}#1 \amp #2\\#3 \amp #4\end{vmatrix}}
+  \newcommand{\twomat}[4]{\begin{bmatrix}#1 \amp #2\\#3 \amp #4\end{bmatrix}}
+  \newcommand{\twodiag}[2]{\begin{bmatrix} #1 \amp 0 \\ 0 \amp #2 \end{bmatrix}}
+  \newcommand{\fourdiag}[3]{\begin{bmatrix} #1 \amp  \amp \amp  \\                    \amp #2 \amp  \amp  \\  \amp \amp \ddots \amp \\  \amp  \amp  \amp #3 \end{bmatrix}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
+<p class="byline">Toby Driscoll</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="bvp-diffusion.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="fourier-series.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="bvp-diffusion.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="fourier-series.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html" data-scroll="index"><span class="title">Front Matter</span></a></h2>
+<ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+<h2 class="link"><a href="first-order-ode.html" data-scroll="first-order-ode"><span class="codenumber">1</span> <span class="title">First-order ODEs</span></a></h2>
+<ul>
+<li><a href="linearity.html" data-scroll="linearity">Introduction</a></li>
+<li><a href="exponentials.html" data-scroll="exponentials">Exponentials</a></li>
+<li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
+<li><a href="first-linear-const.html" data-scroll="first-linear-const">Linear, constant-coefficients</a></li>
+<li><a href="complex-exp.html" data-scroll="complex-exp">Using complex numbers</a></li>
+<li><a href="variable-coeffs.html" data-scroll="variable-coeffs">Linear, variable coefficient</a></li>
+<li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
+<li><a href="steady-states.html" data-scroll="steady-states">Steady states</a></li>
+<li><a href="logistic-equation.html" data-scroll="logistic-equation">Logistic equation</a></li>
+<li><a href="separable.html" data-scroll="separable">Separable equations</a></li>
+<li><a href="laplace-solutions.html" data-scroll="laplace-solutions">Laplace transform methods</a></li>
+</ul>
+<h2 class="link"><a href="second-order-ode.html" data-scroll="second-order-ode"><span class="codenumber">2</span> <span class="title">Second-order ODEs</span></a></h2>
+<ul>
+<li><a href="so-simple-harmonic.html" data-scroll="so-simple-harmonic">Simple harmonic motion</a></li>
+<li><a href="so-complex-exponentials.html" data-scroll="so-complex-exponentials">Complex exponentials</a></li>
+<li><a href="so-constant-coefficients.html" data-scroll="so-constant-coefficients">Constant coefficients</a></li>
+<li><a href="so-forced-oscillators.html" data-scroll="so-forced-oscillators">Exponentially forced oscillators</a></li>
+<li><a href="so-higher-order.html" data-scroll="so-higher-order">Higher-order ODEs</a></li>
+<li><a href="so-applications.html" data-scroll="so-applications">Applications of oscillators</a></li>
+<li><a href="so-general-forcing.html" data-scroll="so-general-forcing">Other forcing functions</a></li>
+<li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
+<li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
+<li><a href="so-convolutions.html" data-scroll="so-convolutions">Convolutions</a></li>
+</ul>
+<h2 class="link"><a href="two-dimensional-systems.html" data-scroll="two-dimensional-systems"><span class="codenumber">3</span> <span class="title">2D systems</span></a></h2>
+<ul>
+<li><a href="twod-slope-fields.html" data-scroll="twod-slope-fields">Slope fields</a></li>
+<li><a href="twod-fixed-points.html" data-scroll="twod-fixed-points">Linear 2D systems</a></li>
+<li><a href="twod-linearization.html" data-scroll="twod-linearization">Linearization</a></li>
+</ul>
+<h2 class="link"><a href="matrix-algebra.html" data-scroll="matrix-algebra"><span class="codenumber">4</span> <span class="title">Matrix algebra</span></a></h2>
+<ul>
+<li><a href="ma-rows-columns.html" data-scroll="ma-rows-columns">Rows and columns</a></li>
+<li><a href="ma-elimination.html" data-scroll="ma-elimination">Elimination for linear systems</a></li>
+<li><a href="ma-multiplication.html" data-scroll="ma-multiplication">Multiplying matrices</a></li>
+<li><a href="ma-inverses.html" data-scroll="ma-inverses">Matrix inverses</a></li>
+<li><a href="ma-nullspace.html" data-scroll="ma-nullspace">Nullspaces</a></li>
+<li><a href="ma-eigenvalues.html" data-scroll="ma-eigenvalues">Eigenvalues</a></li>
+<li><a href="ma-diagonalization.html" data-scroll="ma-diagonalization">Diagonalization</a></li>
+<li><a href="ma-linearODE.html" data-scroll="ma-linearODE">Linear ODE systems</a></li>
+<li><a href="ma-exponential.html" data-scroll="ma-exponential">Matrix exponential</a></li>
+</ul>
+<h2 class="link"><a href="fourier-series.html" data-scroll="fourier-series"><span class="codenumber">5</span> <span class="title">Fourier series</span></a></h2>
+<ul>
+<li><a href="fs-orthgonality.html" data-scroll="fs-orthgonality">Main idea</a></li>
+<li><a href="fs-realimag.html" data-scroll="fs-realimag">Special forms</a></li>
+<li><a href="fs-convergence.html" data-scroll="fs-convergence">Convergence</a></li>
+</ul>
+<h2 class="link"><a href="fourier-series.html" data-scroll="fourier-series"><span class="codenumber">6</span> <span class="title">Boundary-value problems</span></a></h2>
+<ul>
+<li><a href="bvp-boundaries.html" data-scroll="bvp-boundaries">Boundaries</a></li>
+<li><a href="bvp-eigenfunctions.html" data-scroll="bvp-eigenfunctions">Eigenfunctions</a></li>
+<li><a href="bvp-diffusion.html" data-scroll="bvp-diffusion">Diffusion equation</a></li>
+<li><a href="bvp-separation.html" data-scroll="bvp-separation" class="active">Separation of variables</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="mathbook-content"><section class="section" id="bvp-separation"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.4</span> <span class="title">Separation of variables</span>
+</h2>
+<a href="bvp-separation.html" class="permalink">¶</a><section class="introduction" id="introduction-26"><p id="p-505">Most methods for solving PDEs aim to transform them into ODEs that we know how to handle. One of the most accessible of these is called <dfn class="terminology">separation of variables</dfn>. To solve the diffusion equation</p>
+<div class="displaymath">
+\begin{equation*}
+\pp{u}{t} = \alpha^2 \ppp{u}{x}
+\end{equation*}
+</div>
+<p>by separation, we look for a solution with a special functional form: \(u(t,x)=T(t)X(x)\text{.}\) In principle the actual solution might not have this form, but we run with it for now. When we put it into the PDE we get</p>
+<div class="displaymath">
+\begin{equation*}
+T'X = \alpha^2 TX''\text{.}
+\end{equation*}
+</div>
+<p>If we disallow a zero value for now, then</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha^{-2} \frac{T'}{T} =  \frac{X''}{X}\text{.}
+\end{equation*}
+</div>
+<p id="p-506">OK, prepare for some magic. One side of the equation above depends <em class="emphasis">only</em> on \(t\text{,}\) and the other depends <em class="emphasis">only</em> on \(x\text{.}\) That implies that both must be constant! So we set</p>
+<div class="displaymath">
+\begin{equation*}
+\alpha^{-2} \frac{T'}{T} =  \frac{X''}{X} = -\lambda
+\end{equation*}
+</div>
+<p>for an undetermined constant \(\lambda\text{.}\)</p>
+<p id="p-507">We look first at the spatial side,</p>
+<div class="displaymath">
+\begin{equation*}
+X''+\lambda X = 0\text{.}
+\end{equation*}
+</div>
+<p>All kinds of alarm bells should go off now, because this is our eigenvalue problem from the first section. We know that to continue the discussion, we need to bring in the boundary values. In the Dirichlet case we have</p>
+<div class="displaymath">
+\begin{equation*}
+T(t)X(0) = T(t)X(\pi) = 0\text{,}
+\end{equation*}
+</div>
+<p>which is guaranteed if \(X(0)=X(\pi)=0\text{.}\) So we have eigenvalues \(\lambda_n=n^2\text{,}\) \(n=1,2,\ldots\text{,}\) and the eigenfunctions \(X_n(x)=\sin(n\pi x)\) are the only nonzero solutions.</p>
+<p id="p-508">What's going on with time? Well, we have \(T'=-\alpha^2\lambda T\text{.}\) So to each eigenfunction corresponds the time dependence</p>
+<div class="displaymath">
+\begin{equation*}
+T_n(t) = e^{-\alpha^2\lambda_n t}T_n(0) = e^{-\alpha^2 n^2 t}T_n(0)\text{.}
+\end{equation*}
+</div>
+<p id="p-509">This is a linear PDE, and we expect that we a linear combination of all the possible solutions is also a solution:</p>
+<div class="displaymath">
+\begin{equation*}
+u(t,x) = \sum_{n=1}^\infty c_n T_n(t)X_n(x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)\text{.}
+\end{equation*}
+</div>
+<p>(We absorbed the initial \(T\) values into the coefficients.) The final piece of the puzzle is the initial condition. I hope you're sitting down for this, because</p>
+<div class="displaymath">
+\begin{equation*}
+f(x) = u(0,x) = \sum_{n=1}^\infty c_n \sin(n\pi x)\text{.}
+\end{equation*}
+</div>
+<p>We have a forking Fourier sine series here, people!</p>
+<p id="p-510">So much snaps into place now. Starting from the initial \(f\text{,}\) which is part of the problem spec, we compute the sine series coefficients and call them \(c_n\text{.}\) If \(f\) is piecewise continuous, we know this works. And then we can find the solution at other times via</p>
+<div class="displaymath">
+\begin{equation*}
+u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)\text{.}
+\end{equation*}
+</div>
+<p>At a fixed time, this too is a sine series, with coefficients \(b_n= e^{-\alpha^2 n^2 t}c_n\text{.}\)</p></section><section class="subsection" id="subsection-81"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.4.1</span> <span class="title">Using the solution</span>
+</h3>
+<p id="p-511">Here again is our solution to the diffusion equation with Dirichlet boundary conditions:</p>
+<div class="displaymath">
+\begin{equation*}
+u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)\text{,}
+\end{equation*}
+</div>
+<p>with the coefficients determined from the Fourier sine series for the initial condition. How useful is this solution? It's certainly not as straightforward as something like \(y(t)=e{at}\) was.</p>
+<article class="example-like" id="example-73"><a knowl="" class="id-ref" refid="hk-example-73"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">6.4.1</span>
+</h6></a></article><div id="hk-example-73" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-512">Suppose \(f(x)=x(\pi-x)\text{.}\) Some integration by parts will lead to</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^\pi x(\pi-x) \sin(n x)\, dx = \left[ \frac{\left(n^2 x (x-\pi )-2\right) \cos (n x)+n (\pi -2 x) \sin (n x)}{n^3} \right]_0^\pi \text{.}
+\end{equation*}
+</div>
+<p>For even values of \(n\) this is zero, and for odd \(n\) it is \(4/n^3\text{.}\) So the solution is</p>
+<div class="displaymath">
+\begin{equation*}
+u(t,x) = \frac{8}{\pi}\left[ e^{-\alpha^2 t} \sin(\pi x) + \frac{1}{27} e^{-9 \alpha^2 t} \sin(3\pi x) + \frac{1}{125} e^{-25 \alpha^2 t} \sin(5\pi x) + \cdots \right]\text{.}
+\end{equation*}
+</div>
+<p>It doesn't exactly roll off the tongue, does it?</p></article></div>
+<p id="p-513">If you're looking for short, tidy formulas, you're headed for disappointment in this business. But we're not without some good tools here.</p>
+<p id="p-514">First, consider what happens at a fixed value of \(x\) as \(t\to\infty\text{.}\) Every term in the series decays at an exponential rate. So the eventual fate of the solution is to go to zero everywhere. Or we could look at a fixed time, using the interpretation</p>
+<div class="displaymath">
+\begin{equation*}
+u(t,x) = \sum_{n=1}^\infty b_n(t) \sin(n\pi x)\text{,}
+\end{equation*}
+</div>
+<p>which is always a Fourier sine series. Each \(b_n(t)\) is either zero or decaying at the rate \(e^{-\alpha^2 n^2 t}\text{.}\) These decay much more rapidly as \(n\) increases, so the lowest frequency terms in the sine series will dominate. As time evolves, the solution will look more and more like just one hump of a sine function with decaying amplitude.</p>
+<p id="p-515">Even without neat closed expressions, the formulas are very amenable to numerical computation. We can even use the numerics to compute the Fourier coefficients of the initial condition, not bothering with the analytical integration.</p></section><section class="subsection" id="subsection-82"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.4.2</span> <span class="title">Neumann boundaries</span>
+</h3>
+<p id="p-516">How do the results change if we use Neumann boundary conditions? We still get \(X''+\lambda X =0\text{,}\) but now with \(X'(0)=X'(\pi)=0\text{.}\) Let's explore three cases for \(\lambda\text{:}\) positive, negative, and zero.</p>
+<p id="p-517">If \(\lambda=0\text{,}\) then \(X'' =0\text{,}\) so \(X(x)=c_1 x + c_2\text{.}\) The conditions \(X'(0)=X'(\pi)=0\) require only that \(c_1=0\text{.}\) So \(\lambda=0\) is an eigenvalue, with constant eigenfunctions.</p>
+<p id="p-518">If \(\lambda \lt 0\text{,}\) say \(\lambda=-\mu^2\text{.}\) Then \(X(x)=c_1e^{\mu x} + c_2 e^{-\mu x}\text{,}\) and the boundary conditions imply</p>
+<div class="displaymath">
+\begin{equation*}
+\twovec{0}{0} = \twomat{\mu}{-\mu}{\mu e^{\mu \pi}}{-\mu e^{-\mu\pi}} \twovec{c_1}{c_2}\text{.}
+\end{equation*}
+</div>
+<p>The determinant here is \(\mu^2(e^{\pi\mu}-e^{-\pi\mu})\text{,}\) which is nonzero for nonzero \(\mu\text{.}\) So there are only zero solutions, and hence no negative eigenvalues are possible.</p>
+<p id="p-519">Finally, suppose that \(\lambda=\nu^2\text{.}\) Then \(X=c_1\cos(\nu x)+c_2\sin(\nu x)\text{,}\) and the boundary conditions imply</p>
+<div class="displaymath">
+\begin{align*}
+0 \amp = c_2\nu\\
+0 \amp = c_1\nu\sin(\mu\pi) + c_2\nu \cos(\nu\pi)\text{.}
+\end{align*}
+</div>
+<p>We have \(c_2=0\text{,}\) and in order to avoid \(c_1=0\) as well we need \(\sin(\nu \pi)=0\text{.}\) This occurs for all integer values of \(\nu\text{.}\) So the eigenvalues are the squares of these, and the eigenfunctions are \(X=C \cos(\nu x)\text{.}\)</p>
+<p id="p-520">In total, we have \(\lambda_0=0\) with eigenfunction \(X_0(x)=1\text{,}\) and \(\lambda_n=n^2\) with \(X_n=\cos(nx)\) for \(n=1,2,\dots\text{.}\) The time part of the solution unfolds much as before, giving the linear combination</p>
+<div class="displaymath">
+\begin{equation*}
+u(t,x) = \sum_{n=0}^\infty c_n T_n(t)X_n(x) = c_0 + \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \cos(nx) \text{.}
+\end{equation*}
+</div>
+<p>See where this is headed? Using the initial condition of the PDE, we get</p>
+<div class="displaymath">
+\begin{equation*}
+f(x) = u(0,x) = c_0 + \sum_{n=1}^\infty c_n \cos(n\pi x)\text{,}
+\end{equation*}
+</div>
+<p>which is exactly a Fourier cosine series.</p></section></section></div></main>
+</div>
+</body>
+</html>

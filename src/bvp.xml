@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="fourier-series" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Boundary-value problems</title>
+
+<section xml:id="bvp-boundaries"> 
+	<title>Boundaries</title>
+	<p>
+		Let's return to the world of the second-order oscillator, <m>y''+y=f(t)</m>. We know the general solution to this problem has two arbitrary constants in it, 
+		<me>
+			y(t) = c_1 \cos(t) + c_2 \sin(t) + y_p(t)
+		</me>. 
+		In some examples we found specific values for <m>c_1</m> and <m>c_2</m> as determined by the additional requirements <m>y(0)=\alpha</m> and <m>y'(0)=\beta</m>. We never stopped to ask whether this was always feasible. But note that 
+		<md>
+			<mrow>\alpha \amp = y(0) = c_1 + y_p(0)</mrow>
+			<mrow>\beta \amp = y'(0) = c_2 + y_p'(0)</mrow>
+		</md>,
+		so there is no difficulty. In most linear problems (those without a repeated root) we would have the general solution <m>c_1 e^{s_1 t} + c_2 e^{s_2 t} + y_p(t)</m>, and then the initial conditions imply
+		<md>
+			<mrow>\alpha \amp = y(0) = c_1 + c_2 + y_p(0)</mrow>
+			<mrow>\beta \amp = y'(0) = s_1 c_1 + s_2 c_2 + y_p'(0)</mrow>
+		</md>,
+		which is a linear system with coefficient matrix <m>\twomat{1}{1}{s_1}{s_2}</m>. This matrix is nonsingular as long as <m>s_1\neq s_2</m>, so again we know there will be unique choices for <m>c_1</m> and <m>c_2</m>. (For a repeated root the general solution changes, but we end up at the same conclusion. In fact, this is exactly why having a nonzero Wronskian was important a while ago.) 
+	</p>
+	<p>
+		In a physical oscillator such as a pendulum, the mathematics backs up our intuition. If you start a pendulum at a certain angle and angular velocity, only one outcome is possible, forever. 
+	</p>
+	<p>
+		But physical reasoning also suggests that this conclusion may not completely generalize to using <em>any</em> two values to determine <m>c_1</m> and <m>c_2</m>. For instance, forget the initial conditions and instead consider using <m>y(0)=y(7)=0</m>. One obvious possibility is that the pendulum never moves. But you know that you can also tap the bob <em>just</em> so, so that it turns around at 3.5 seconds and then comes back to the lowest position at 7 seconds, thereby satisfying both side conditions. If you tap it a bit harder <em>just</em> so, it will go left, right, and then left again to reach the bottom spot again at 7 seconds, providing yet another solution. You see that we can generate infinitely many solutions to this problem! 
+	</p>
+	<p>
+		A differential equation 
+		<me>
+			ay''(x) + by'(x) + cy(x) = f(x)
+		</me>, 
+		meant to hold over the interval <m>[a,b]</m>, together with the conditions <m>y(a)=\alpha</m>, <m>y(b)=\beta</m>, is called a <term>two-point boundary value problem</term> (TPBVP). You'll note that I changed the independent variable from <m>t</m> to <m>x</m>, which is just cosmetic. But it symbolizes the fact that many TPBVPs arise when a quantity varies over space, rather than time. 
+	</p>
+	<p>
+		All our earned knowledge about the ODE itself will still apply here. But as the thought experiment above points out, some of our conclusions about the solutions will change, primarily the notion of uniqueness. 
+	</p>
+</section>
+
+<section xml:id="bvp-eigenfunctions">
+	<title>Eigenfunctions</title>
+	<p>
+		A few examples get us pointed in the right direction. 
+	</p>
+	<example>
+		<p>
+			Our first TPBVP is the rather sedate-looking <m>y''+y=0</m>, <m>y(0)=y(1)=0</m>. (Note that the domain for <m>x</m> is implied by the locations of the boundaries.) The general solution is <m>y=c_1\cos(x) + c_2\sin(x)</m>, and then the boundary conditions imply 
+			<md>
+				<mrow>0 \amp = y(0) = c_1</mrow>
+				<mrow>0 \amp = y(1) = c_1\cos(1) + c_2\sin(1)</mrow>
+			</md>.
+			The coefficient matrix of the linear system here has determinant <m>\sin(1)\neq 0</m>, so the unique solution of the linear system is <m>c_1=c_2=0</m>. So the only solution of the TPBVP is <m>y(x)\equiv 0</m>. 
+		</p>		
+	</example>
+	<example>
+		<p>
+			Now let's consider <m>y''+y=0</m>, <m>y(0)=y(\pi)=0</m>. The general solution is still <m>y=c_1\cos(x) + c_2\sin(x)</m>, and the boundary conditions imply 
+			<md>
+				<mrow>0 \amp = y(0) = c_1</mrow>
+				<mrow>0 \amp = y(1) = c_1\cos(\pi) + c_2\sin(\pi) = -c_1</mrow>
+			</md>.
+			We can require only <m>c_1=0</m> , and <m>c_2</m> remains free. So <m>y(x)=C \sin(x)</m> is a solution for arbitrary <m>C</m>. 
+		</p>		
+	</example>
+	<example>
+		<p>
+			Here's a third go at almost the same problem, but this time we allow a parameter: <m>y''+\mu^2 y=0</m>, <m>y(0)=y(\pi)=0</m>, where <m>\mu^2</m> is an unspecified nonnegative constant (hence we require only that <m>\mu</m> is real). The general solution here is <m>y(x)=c_1\cos(\mu x) + c_2\sin(\mu x)</m>. The linear system arising from the initial conditions is now
+			<me>
+				\twomat{1}{0}{\cos(\mu \pi)}{\sin(\mu \pi)} \twovec{c_1}{c_2} = \bzero
+			</me>. 
+			The matrix is singular if and only if <m>\sin(\mu\pi)=0</m>, or 
+			<m>\mu = 0,\pm1,\pm2,\dots</m>. At each of these values of <m>\mu</m>, every multiple of <m>\sin(\mu x)</m> is a solution. The zero function is the only solution at any other choice of <m>\mu</m>. In fact we ought to rule out <m>\mu=0</m> as well, because then the solution is again identically zero. 
+		</p>
+	</example>
+	<p>
+		The last example above implied that the TPBVP <m>y''+\lambda y=0</m>, <m>y(0)=y(\pi)=0</m> is special when <m>\lambda=\mu^2=1^2,2^2,3^2,\ldots</m>. We call these the <term>eigenvalues</term> of the BVP, and the associated nonzero solutions are called <term>eigenfunctions</term>. The analogy with matrices here is very close. An eigenfunction is a nonzero member of the "nullspace" of the BVP, and these nullspaces are nontrivial only for certain discrete values of <m>\lambda</m>. One difference here is that the BVP has infinitely many eigenvalues, which turns out to be typical. 
+	</p> 
+	<p>
+		In the above we did not allow the possibility of negative eigenvalues. So let us try for <m>y''-\mu^2 y=0</m>, <m>y(0)=y(\pi)=0</m>, where <m>\mu</m> is real and nonzero. Now the general solution is <m>y(x)=c_1e^{-\mu x} + c_2 e^{\mu x}</m>, and the system for the boundary conditions is 
+		<me>
+			\twomat{1}{1}{e^{-\mu \pi}}{e^{\mu \pi}} \twovec{c_1}{c_2} = \bzero
+		</me>.
+		Singularity now requires <m>e^{\mu \pi}-{e^{\mu \pi}=0</m>, or <m>e^{2\mu \pi}=1</m>, or <m>\mu=0</m>. So we can't find any negative eigenvalues.
+	</p>
+	<p>
+		Let's close this section with a broadening observation. If we consider just <m>y''+\lambda y=0</m> alone without any boundaries at all, then the solutions are combinations of <m>\exp(i\sqrt{\lambda} x)</m> and <m>\exp(-i\sqrt{\lambda} x)</m>. Potentially every number is an eigenvalue! But it's when we start adding conditions that the possibilities get narrowed. For instance, if we want the eigenfunctions to be bounded as <m>x\to\pm\infty</m>, then we must demand that <m>\lambda \gt 0</m>, so that the exponents are pure imaginary. Thus the eigenfunctions are <m>e^{\pm i\omega x}</m> for real <m>\omega</m>. If we also want them to be <m>2\pi</m>-periodic, then we must also require that <m>\omega=k</m>, a positive integer. Then the eigenfunctions are our orthogonal friends, <m>e^{\pm i k x}</m>. Finally, if we want to force them to be zero at two specific points, the "two-dimensional" combination possibilities collapse down to only <m>e^{ikx}-e^{-ikx}</m>, or <m>\sin(kx)</m>. The differential operator <m>L[y]=y''</m> suggests a universe of possible eigenfunctions, but the extra conditions from the boundaries cut down the options. 
+	</p>
+
+</section>
+
+<section xml:id="bvp-diffusion">
+	<title>Diffusion equation</title>
+	<p>
+		Imagine a long, narrow subway car. All the seats are taken, and some people are standing in the aisle. Then at a stop, a lot of new people come into the car through several door locations. Immediately the areas near the doors become packed with people. The people at the fringes of these knots move away from them and into less densely packed space, and the people behind them follow suit. Ideally, eventually the aisle ends up more or less uniformly dense everywhere.  
+	</p>
+	<p>
+		How could we model this situation? First, imagine that there are lots of passengers–billions–so that we can use a continuous variable to describe them. Namely, we use the density of passengers per unit length, which we call <m>\rho</m>. This quantity depends on both space <m>x</m> and time <m>t</m>. Now let us choose a particular position and time and look at a small segment of the aisle of length <m>\Delta x</m>. If we assume that passengers are neither created nor destroyed, then 
+		<me>
+			\pp{}{t} (\rho(t,x) \Delta x) \approx Q(t,x) - Q(t,x+\Delta x),
+		</me>
+		where <m>Q</m> is the <term>flux</term>, or net rate of movement of passengers. In the limit this becomes
+		<me>
+			\pp{\rho}{t} + \pp{Q}{x} = 0,
+		</me>  
+		which is the statement of a <term>conservation law</term>. To complete the model we need a law relating <m>Q</m> back to the density <m>\rho</m>. A fundamentally important choice is <term>Fick's Law</term>, which says
+		<me>
+			Q = -\kappa \pp{\rho}{x}
+		</me>
+		for a <term>diffusivity</term> <m>\kappa>0</m>. The law posits that people move in the direction of less density, and at a speed proportional to the density gradient. Altogether we get 
+		<me>
+			\pp{\rho}{t} = \kappa \ppp{\rho}{x},
+		</me> 
+		which is known as the <term>diffusion equation</term> or the <term>heat equation</term>. It has many applications, being the archetype of all diffusive phenomena: cream in coffee, animals in a habitat, rumors on a social network, and heat in a rod. 
+	</p>
+	<p>
+		This is our first <term>partial differential equation</term>. There are two independent variables now, <m>x</m> and <m>t</m>. Like our earlier ODEs in time, it allows an initial condition,
+		<me>
+			\rho(0,x) = f(x)
+		</me>,
+		and like our ODEs in space, two boundary conditions,
+		<me>
+			\rho(t,0) = \rho(t,\pi) = 0
+		</me>. 
+		(Aren't all subway cars exactly <m>\pi</m> long?) Conditions like these on the value of the dependent variable at the boundary are called <term>Dirichlet</term> conditions. Conditions that are instead on the first spatial derivative,
+		<me>
+			\pp{\rho}{x}(t,0) = \pp{\rho}{x}(t,\pi) = 0
+		</me>,
+		are called <term>Neumann</term> conditions. They are restrictions on the flux (which is much more realistic for our original subway car example). 
+	</p>
+</section>
+
+<section xml:id="bvp-separation">
+	<title>Separation of variables</title>
+	<introduction>
+		<p>
+		Most methods for solving PDEs aim to transform them into ODEs that we know how to handle. One of the most accessible of these is called <term>separation of variables</term>. To solve the diffusion equation
+		<me>
+			\pp{u}{t} = \alpha^2 \ppp{u}{x}
+		</me>
+		by separation, we look for a solution with a special functional form: <m>u(t,x)=T(t)X(x)</m>. In principle the actual solution might not have this form, but we run with it for now. When we put it into the PDE we get 
+		<me>
+			T'X = \alpha^2 TX''
+		</me>. 
+		If we disallow a zero value for now, then 
+		<me>
+			\alpha^{-2} \frac{T'}{T} =  \frac{X''}{X}
+		</me>. 
+	</p>
+	<p>
+		OK, prepare for some magic. One side of the equation above depends <em>only</em> on <m>t</m>, and the other depends <em>only</em> on <m>x</m>. That implies that both must be constant! So we set 
+		<me>
+			\alpha^{-2} \frac{T'}{T} =  \frac{X''}{X} = -\lambda
+		</me>
+		for an undetermined constant <m>\lambda</m>. 
+	</p>
+	<p>
+		We look first at the spatial side, <me>X''+\lambda X = 0</me>. All kinds of alarm bells should go off now, because this is our eigenvalue problem from the first section. We know that to continue the discussion, we need to bring in the boundary values. In the Dirichlet case we have 
+		<me>
+			T(t)X(0) = T(t)X(\pi) = 0
+		</me>,
+		which is guaranteed if <m>X(0)=X(\pi)=0</m>. So we have eigenvalues <m>\lambda_n=n^2</m>, <m>n=1,2,\ldots</m>, and the eigenfunctions <m>X_n(x)=\sin(n\pi x)</m> are the only nonzero solutions. 
+	</p>
+	<p>
+		What's going on with time? Well, we have <m>T'=-\alpha^2\lambda T</m>. So to each eigenfunction corresponds the time dependence
+		<me>
+			T_n(t) = e^{-\alpha^2\lambda_n t}T_n(0) = e^{-\alpha^2 n^2 t}T_n(0)
+		</me>. 
+	</p>
+	<p>
+		This is a linear PDE, and we expect that we a linear combination of all the possible solutions is also a solution:
+		<me>
+			u(t,x) = \sum_{n=1}^\infty c_n T_n(t)X_n(x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)
+		</me>. 
+		(We absorbed the initial <m>T</m> values into the coefficients.) The final piece of the puzzle is the initial condition. I hope you're sitting down for this, because 
+		<me>
+			f(x) = u(0,x) = \sum_{n=1}^\infty c_n \sin(n\pi x)
+		</me>. 
+		We have a forking Fourier sine series here, people!
+	</p>
+	<p>
+		So much snaps into place now. Starting from the initial <m>f</m>, which is part of the problem spec, we compute the sine series coefficients and call them <m>c_n</m>. If <m>f</m> is piecewise continuous, we know this works. And then we can find the solution at other times via  
+		<me>
+			u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)
+		</me>. 
+		At a fixed time, this too is a sine series, with coefficients <m>b_n= e^{-\alpha^2 n^2 t}c_n</m>.
+	</p>
+	</introduction>
+	<subsection>
+	<title>Using the solution</title>
+	<p>
+		Here again is our solution to the diffusion equation with Dirichlet boundary conditions:
+		<me>
+			u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)
+		</me>,
+		with the coefficients determined from the Fourier sine series for the initial condition. How useful is this solution? It's certainly not as straightforward as something like <m>y(t)=e^{at}</m> was. 
+	</p>
+	<example>
+		<p>
+			Suppose <m>f(x)=x(\pi-x)</m>. Some integration by parts will lead to
+			<me>
+				\int_0^\pi x(\pi-x) \sin(n x)\, dx = \left[ \frac{\left(n^2 x (x-\pi )-2\right) \cos (n x)+n (\pi -2 x) \sin (n x)}{n^3} \right]_0^\pi 
+			</me>. 
+			For even values of <m>n</m> this is zero, and for odd <m>n</m> it is <m>4/n^3</m>. So the solution is 
+			<me>
+				u(t,x) = \frac{8}{\pi}\left[ e^{-\alpha^2 t} \sin(\pi x) + \frac{1}{27} e^{-9 \alpha^2 t} \sin(3\pi x) + \frac{1}{125} e^{-25 \alpha^2 t} \sin(5\pi x) + \cdots \right]
+			</me>. 
+			It doesn't exactly roll off the tongue, does it? 
+		</p>	
+	</example>
+	<p>
+		If you're looking for short, tidy formulas, you're headed for disappointment in this business. But we're not without some good tools here.
+	</p>
+	<p>
+		First, consider what happens at a fixed value of <m>x</m> as <m>t\to\infty</m>. Every term in the series decays at an exponential rate. So the eventual fate of the solution is to go to zero everywhere. Or we could look at a fixed time, using the interpretation
+		<me>
+			u(t,x) = \sum_{n=1}^\infty b_n(t) \sin(n\pi x)
+		</me>,
+		which is always a Fourier sine series. Each <m>b_n(t)</m> is either zero or decaying at the rate <m>e^{-\alpha^2 n^2 t}</m>. These decay much more rapidly as <m>n</m> increases, so the lowest frequency terms in the sine series will dominate to an extent that increases with time. As time evolves, therefore, the solution will look more and more like just one hump of a sine function with decaying amplitude.
+	</p>
+	<p>
+		Even without neat closed expressions, the formulas are very amenable to numerical computation. We can even use the numerics to compute the Fourier coefficients of the initial condition, not bothering with the analytical integration. 
+	</p>
+	</subsection>
+	<subsection>
+	<title>Neumann boundaries</title>
+		<p>
+			How do the results change if we use Neumann boundary conditions? We still get <m>X''+\lambda X =0</m>, but now with <m>X'(0)=X'(\pi)=0</m>. Let's explore three cases for <m>\lambda</m>: positive, negative, and zero.
+		</p>
+ 		<p>
+			If <m>\lambda=0</m>, then <m>X'' =0</m>, so <m>X(x)=c_1 x + c_2</m>. The conditions <m>X'(0)=X'(\pi)=0</m> require only that <m>c_1=0</m>. So <m>\lambda=0</m> is an eigenvalue, with constant eigenfunctions. 
+		</p>
+		<p>
+			If <m>\lambda \lt 0</m>, say <m>\lambda=-\mu^2</m>. Then <m>X(x)=c_1e^{\mu x} + c_2 e^{-\mu x}</m>, and the boundary conditions imply
+			<me>
+				\twovec{0}{0} = \twomat{\mu}{-\mu}{\mu e^{\mu \pi}}{-\mu e^{-\mu\pi}} \twovec{c_1}{c_2}
+			</me>.
+			The determinant here is <m>\mu^2(e^{\pi\mu}-e^{-\pi\mu})</m>, which is nonzero for nonzero <m>\mu</m>. So there are only zero solutions, and hence no negative eigenvalues are possible. 
+		</p>
+		<p>
+			Finally, suppose that <m>\lambda=\nu^2</m>. Then <m>X=c_1\cos(\nu x)+c_2\sin(\nu x)</m>, and the boundary conditions imply
+			<md>
+				<mrow>0 \amp = c_2\nu</mrow>
+				<mrow>0 \amp = c_1\nu\sin(\mu\pi) + c_2\nu \cos(\nu\pi)</mrow>
+			</md>.
+			We have <m>c_2=0</m>, and in order to avoid <m>c_1=0</m> as well we need <m>\sin(\nu \pi)=0</m>. This occurs for all integer values of <m>\nu</m>. So the eigenvalues are the squares of these, and the eigenfunctions are <m>X=C \cos(\nu x)</m>.
+		</p>
+		<p>
+			In total, we have <m>\lambda_0=0</m> with eigenfunction <m>X_0(x)=1</m>, and <m>\lambda_n=n^2</m> with <m>X_n=\cos(nx)</m> for <m>n=1,2,\dots</m>. The time part of the solution unfolds much as before, giving the linear combination
+			<me>
+				u(t,x) = \sum_{n=0}^\infty c_n T_n(t)X_n(x) = c_0 + \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \cos(nx) 
+			</me>. 
+			See where this is headed? Using the initial condition of the PDE, we get 
+			<me>
+				f(x) = u(0,x) = c_0 + \sum_{n=1}^\infty c_n \cos(n\pi x)
+			</me>,
+			which is exactly a Fourier cosine series. 
+		</p>
+	</subsection>
+</section>
+
+</chapter>
