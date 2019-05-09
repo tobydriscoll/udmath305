@@ -83,7 +83,7 @@
 		<me>
 			\twomat{1}{1}{e^{-\mu \pi}}{e^{\mu \pi}} \twovec{c_1}{c_2} = \bzero
 		</me>.
-		Singularity now requires <m>e^{\mu \pi}-{e^{\mu \pi}=0</m>, or <m>e^{2\mu \pi}=1</m>, or <m>\mu=0</m>. So we can't find any negative eigenvalues.
+		Singularity now requires <m>e^{\mu \pi}-e^{-\mu \pi}=0</m>, or <m>e^{2\mu \pi}=1</m>, or <m>\mu=0</m>. So we can't find any negative eigenvalues.
 	</p>
 	<p>
 		Let's close this section with a broadening observation. If we consider just <m>y''+\lambda y=0</m> alone without any boundaries at all, then the solutions are combinations of <m>\exp(i\sqrt{\lambda} x)</m> and <m>\exp(-i\sqrt{\lambda} x)</m>. Potentially every number is an eigenvalue! But it's when we start adding conditions that the possibilities get narrowed. For instance, if we want the eigenfunctions to be bounded as <m>x\to\pm\infty</m>, then we must demand that <m>\lambda \gt 0</m>, so that the exponents are pure imaginary. Thus the eigenfunctions are <m>e^{\pm i\omega x}</m> for real <m>\omega</m>. If we also want them to be <m>2\pi</m>-periodic, then we must also require that <m>\omega=k</m>, a positive integer. Then the eigenfunctions are our orthogonal friends, <m>e^{\pm i k x}</m>. Finally, if we want to force them to be zero at two specific points, the "two-dimensional" combination possibilities collapse down to only <m>e^{ikx}-e^{-ikx}</m>, or <m>\sin(kx)</m>. The differential operator <m>L[y]=y''</m> suggests a universe of possible eigenfunctions, but the extra conditions from the boundaries cut down the options. 
@@ -259,6 +259,117 @@
 			which is exactly a Fourier cosine series. 
 		</p>
 	</subsection>
+</section>
+
+<section xml:id="bvp-nondim">
+<title>Nondimensionalization</title>
+<introduction>
+<p>
+	Engineering problems come with lots of physical units: mass, length, reaction rate, diffusivity, etc. Some of these may be known imprecisely, or are available to tune the behavior of the system. It's important to get them all right, of course. But sometimes they can clutter the scene and obscure fundamental results. Also, it's difficult to explore high-dimensional parameter spaces efficiently when optimizing for some goal, so reducing the number of independent parameters can be useful.
+</p>
+<p>
+	The technique of <term>nondimensionalization</term> replaces the original variables, which have SI or (shudder) American units associated with them, by variables that are "pure numbers", without units of measurement. This is done by scaling them by reference amounts that make the parameters of the resulting problem as simple as we can make them.
+</p>	
+</introduction>
+<subsection>
+<title>First-order ODEs</title>
+<p>
+	Our first example is the linear ODE <m>ay'+by=f(t)</m>. We define new variables via
+	<me>
+		t = \tau T, \quad y = \eta Y,
+	</me>
+	for dimensional constants <m>\tau</m> and <m>\eta</m> to be determined later. The chain rule implies 
+	<me>
+		\dd{}{t} = \frac{1}{\tau} \dd{}{T}.
+	</me>
+	Hence 
+	<me>
+		\frac{a\eta}{\tau} \dd{Y}{T} + b \eta Y = f 
+	</me>, or
+	<me>
+		\dd{Y}{T} + \frac{b\tau}{a} Y = \frac{\tau}{a\eta} f
+	</me>. 
+	The idea is to make our lives as easy as possible. So we define 
+	<me>
+		\tau = \frac{a}{b}, \quad \eta = \frac{\tau}{a} = \frac{1}{b}
+	</me>. 
+	Then 
+	<me>
+		\dd{Y}{T} + Y = F(T) 
+	</me>,
+	where <m>F(T)=f(t)=f(T/b)</m>. We can reason all we want about this simpler equation and always translate the results back to physical units by applying the unit definitions we made. Note that the time scale we chose is the inverse of the exponential decay rate of the original problem; in fact, it is proportional to the half-life of the system. 
+</p>
+</subsection>
+<subsection>
+<title>Second-order ODE</title>
+<p>
+	Next consider a driven oscillator,  
+	<me>
+		m \ddd{y}{t} + b \dd{y}{t} + k y = A \cos(\omega t)
+	</me>. 
+	We again use new variables defined by 
+	<me>
+		t = \tau T, \quad y = \eta Y,
+	</me>
+	with dimensionless <m>T</m> and <m>Y</m>. Then
+	<me>
+		\frac{m\eta}{\tau^2} \ddd{Y}{T} + \frac{b\eta}{\tau} \dd{Y}{T} + k \eta Y = A \cos(\omega \tau T)
+	</me>, 
+	thus 
+	<me>
+		\ddd{Y}{T} + \frac{b\tau}{m} \dd{Y}{T} + \frac{k\tau^2}{m} Y = \frac{A\tau^2}{m\eta} \cos(\omega \tau T)
+	</me>. 
+	With only <m>\tau</m> and <m>\eta</m> at our disposal, we can't simplify both the first-order and zeroth-order coefficients. We choose 
+	<me>
+		\frac{k\tau^2}{m} = 1 \quad \Rightarrow \quad \tau = \sqrt{\frac{m}{k}} = \frac{1}{\omega_0}
+	</me>, 
+	using our old definition of natural frequency. We also use 
+	<me>
+		\frac{A\tau^2}{m\eta} = 1 \quad \Rightarrow \quad \eta = \frac{A\tau^2}{m} = \frac{A}{k}
+	</me>. 	
+	So now 
+	<me>
+		\ddd{Y}{T} + \frac{b}{k\tau} \dd{Y}{T} + Y =  \cos(\omega T/\omega_0)
+	</me>. 
+	We might as well simplify a bit more via 
+	<me> 
+		2\zeta = \frac{b}{k\tau} = \frac{b}{\sqrt{mk}} 
+	</me>. 
+	That way, the characteristic equation is just <m>s^2+2\zeta s + 1</m>, with roots <m>-\zeta\pm\sqrt{\zeta^2-1}</m>. Instead of having to describe what happens in terms of the original <m>k,m,b</m> trio, we only need worry about whether <m>\zeta</m> is less than, equal to, or greater than one. 
+</p>
+</subsection>
+<subsection>
+<title>Diffusion equation</title>
+<p>
+	Let's close with the diffusion equation, also with a "forcing term" (e.g., a source of heat),
+	<me>
+		\pp{u}{t} = \alpha^2 \ppp{u}{x} + A f(x,t), \quad 0 \le x \le L
+	</me>. 
+	We introduce 
+	<me>
+		t = \tau T, \quad x = \xi X, \quad u = \nu U
+	</me>, 
+	so that 
+	<me> 
+		\frac{\nu}{\tau} \pp{U}{T} = \frac{\alpha^2\nu }{\xi^2} \ppp{U}{X} + A f(\xi X,\tau T), \quad 0 \lt \xi X \lt L
+	</me> 
+	Then 
+	<me> 
+		\pp{U}{T} = \frac{\alpha^2\tau }{\xi^2} \ppp{U}{X} + \frac{A\tau}{\nu} F(X,T), \quad 0 \lt \xi X  \lt L
+	</me>  
+	We have two quantities to set equal to one, but three scales at our disposal. We'll use the space scale to get rid of the size of the domain: <m>\xi=L</m>, so that <m>0\lt X \lt 1</m>. Plus, 
+	<me>
+		\frac{\alpha^2\tau }{\xi^2} = 1 \quad \Rightarrow \quad \tau = \frac{L^2}{\alpha^2}, 
+	</me>
+	<me> 
+		\frac{A\tau}{\nu} = 1 \quad \Rightarrow \quad \nu = \frac{AL^2}{\alpha^2}
+	</me>. 
+	This makes everything boil down nicely to 
+	<me> 
+		\pp{U}{T} = \ppp{U}{X} + F(X,T), \quad 0 \lt \xi X  \lt 1
+	</me>.  
+</p>
+</subsection>
 </section>
 
 </chapter>

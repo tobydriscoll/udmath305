@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-29T11:34:29-04:00    *-->
+<!--*    on 2019-05-08T21:20:35-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -88,11 +88,11 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="bvp-diffusion.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="fourier-series.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="bvp-diffusion.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="fourier-series.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="bvp-nondim.html" title="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="bvp-diffusion.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="fourier-series.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="bvp-diffusion.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="fourier-series.html" title="Up">Up</a><a class="next-button button toolbar-item" href="bvp-nondim.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -155,6 +155,7 @@ MathJax.Hub.Config({
 <li><a href="bvp-eigenfunctions.html" data-scroll="bvp-eigenfunctions">Eigenfunctions</a></li>
 <li><a href="bvp-diffusion.html" data-scroll="bvp-diffusion">Diffusion equation</a></li>
 <li><a href="bvp-separation.html" data-scroll="bvp-separation" class="active">Separation of variables</a></li>
+<li><a href="bvp-nondim.html" data-scroll="bvp-nondim">Nondimensionalization</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="bvp-separation"><h2 class="heading hide-type">
@@ -232,7 +233,7 @@ u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)\text{.}
 u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)\text{,}
 \end{equation*}
 </div>
-<p>with the coefficients determined from the Fourier sine series for the initial condition. How useful is this solution? It's certainly not as straightforward as something like \(y(t)=e{at}\) was.</p>
+<p>with the coefficients determined from the Fourier sine series for the initial condition. How useful is this solution? It's certainly not as straightforward as something like \(y(t)=e^{at}\) was.</p>
 <article class="example-like" id="example-73"><a knowl="" class="id-ref" refid="hk-example-73"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">6.4.1</span>
 </h6></a></article><div id="hk-example-73" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-512">Suppose \(f(x)=x(\pi-x)\text{.}\) Some integration by parts will lead to</p>
@@ -255,7 +256,7 @@ u(t,x) = \frac{8}{\pi}\left[ e^{-\alpha^2 t} \sin(\pi x) + \frac{1}{27} e^{-9 \a
 u(t,x) = \sum_{n=1}^\infty b_n(t) \sin(n\pi x)\text{,}
 \end{equation*}
 </div>
-<p>which is always a Fourier sine series. Each \(b_n(t)\) is either zero or decaying at the rate \(e^{-\alpha^2 n^2 t}\text{.}\) These decay much more rapidly as \(n\) increases, so the lowest frequency terms in the sine series will dominate. As time evolves, the solution will look more and more like just one hump of a sine function with decaying amplitude.</p>
+<p>which is always a Fourier sine series. Each \(b_n(t)\) is either zero or decaying at the rate \(e^{-\alpha^2 n^2 t}\text{.}\) These decay much more rapidly as \(n\) increases, so the lowest frequency terms in the sine series will dominate to an extent that increases with time. As time evolves, therefore, the solution will look more and more like just one hump of a sine function with decaying amplitude.</p>
 <p id="p-515">Even without neat closed expressions, the formulas are very amenable to numerical computation. We can even use the numerics to compute the Fourier coefficients of the initial condition, not bothering with the analytical integration.</p></section><section class="subsection" id="subsection-82"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.4.2</span> <span class="title">Neumann boundaries</span>
 </h3>

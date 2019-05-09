@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-08T21:20:39-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Our first example is the linear ODE \(ay'+by=f(t)\text{.}\) We define new variables via</p>
+<div class="displaymath">
+\begin{equation*}
+t = \tau T, \quad y = \eta Y,
+\end{equation*}
+</div>
+<p>for dimensional constants \(\tau\) and \(\eta\) to be determined later. The chain rule implies</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{}{t} = \frac{1}{\tau} \dd{}{T}.
+\end{equation*}
+</div>
+<p>Hence</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{a\eta}{\tau} \dd{Y}{T} + b \eta Y = f \text{,}
+\end{equation*}
+</div>
+<p>or</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{Y}{T} + \frac{b\tau}{a} Y = \frac{\tau}{a\eta} f\text{.}
+\end{equation*}
+</div>
+<p>The idea is to make our lives as easy as possible. So we define</p>
+<div class="displaymath">
+\begin{equation*}
+\tau = \frac{a}{b}, \quad \eta = \frac{\tau}{a} = \frac{1}{b}\text{.}
+\end{equation*}
+</div>
+<p>Then</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{Y}{T} + Y = F(T) \text{,}
+\end{equation*}
+</div>
+<p>where \(F(T)=f(t)=f(T/b)\text{.}\) We can reason all we want about this simpler equation and always translate the results back to physical units by applying the unit definitions we made. Note that the time scale we chose is the inverse of the exponential decay rate of the original problem; in fact, it is proportional to the half-life of the system.</p>
+<span class="incontext"><a href="bvp-nondim.html#p-523">in-context</a></span>
+</body>
+</html>
