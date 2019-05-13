@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-08T21:20:36-04:00    *-->
+<!--*    on 2019-05-13T12:56:50-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -161,11 +161,11 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="mathbook-content"><section class="section" id="bvp-nondim"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.5</span> <span class="title">Nondimensionalization</span>
 </h2>
-<a href="bvp-nondim.html" class="permalink">¶</a><section class="introduction" id="introduction-27"><p id="p-521">Engineering problems come with lots of physical units: mass, length, reaction rate, diffusivity, etc. Some of these may be known imprecisely, or are available to tune the behavior of the system. It's important to get them all right, of course. But sometimes they can clutter the scene and obscure fundamental results. Also, it's difficult to explore high-dimensional parameter spaces efficiently when optimizing for some goal, so reducing the number of independent parameters can be useful.</p>
-<p id="p-522">The technique of <dfn class="terminology">nondimensionalization</dfn> replaces the original variables, which have SI or (shudder) American units associated with them, by variables that are "pure numbers", without units of measurement. This is done by scaling them by reference amounts that make the parameters of the resulting problem as simple as we can make them.</p></section><section class="subsection" id="subsection-83"><h3 class="heading hide-type">
+<a href="bvp-nondim.html" class="permalink">¶</a><section class="introduction" id="introduction-27"><p id="p-524">Engineering problems come with lots of physical units: mass, length, reaction rate, diffusivity, etc. Some of these may be known imprecisely, or are available to tune the behavior of the system. It's important to get them all right, of course. But sometimes they can clutter the scene and obscure fundamental results. Also, it's difficult to explore high-dimensional parameter spaces efficiently when optimizing for some goal, so reducing the number of independent parameters can be useful.</p>
+<p id="p-525">The technique of <dfn class="terminology">nondimensionalization</dfn> replaces the original variables, which have SI or (shudder) American units associated with them, by variables that are "pure numbers" with no units attached. This is done by scaling them by reference amounts, typically intrinsic scales, that make the parameters of the resulting problem as simple as we can make them.</p></section><section class="subsection" id="subsection-84"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.5.1</span> <span class="title">First-order ODEs</span>
 </h3>
-<p id="p-523">Our first example is the linear ODE \(ay'+by=f(t)\text{.}\) We define new variables via</p>
+<p id="p-526">Our first example is the linear ODE \(ay'+by=f(t)\text{.}\) We define new variables via</p>
 <div class="displaymath">
 \begin{equation*}
 t = \tau T, \quad y = \eta Y,
@@ -201,10 +201,10 @@ t = \tau T, \quad y = \eta Y,
 \dd{Y}{T} + Y = F(T) \text{,}
 \end{equation*}
 </div>
-<p>where \(F(T)=f(t)=f(T/b)\text{.}\) We can reason all we want about this simpler equation and always translate the results back to physical units by applying the unit definitions we made. Note that the time scale we chose is the inverse of the exponential decay rate of the original problem; in fact, it is proportional to the half-life of the system.</p></section><section class="subsection" id="subsection-84"><h3 class="heading hide-type">
+<p>where \(F(T)=f(t)=f(T/b)\text{.}\) We can reason all we want about this simpler equation and always translate the results back to physical units by applying the unit definitions we made. Note that the time scale we chose is the inverse of the exponential decay rate of the original problem; in fact, it is proportional to the half-life of the system.</p></section><section class="subsection" id="subsection-85"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.5.2</span> <span class="title">Second-order ODE</span>
 </h3>
-<p id="p-524">Next consider a driven oscillator,</p>
+<p id="p-527">Next consider a driven oscillator,</p>
 <div class="displaymath">
 \begin{equation*}
 m \ddd{y}{t} + b \dd{y}{t} + k y = A \cos(\omega t)\text{.}
@@ -246,16 +246,16 @@ t = \tau T, \quad y = \eta Y,
 \ddd{Y}{T} + \frac{b}{k\tau} \dd{Y}{T} + Y =  \cos(\omega T/\omega_0)\text{.}
 \end{equation*}
 </div>
-<p>We might as well simplify a bit more via</p>
+<p>The coefficient of the first-order term is dimensionless. We might as well simplify a bit more via</p>
 <div class="displaymath">
 \begin{equation*}
 2\zeta = \frac{b}{k\tau} = \frac{b}{\sqrt{mk}} \text{.}
 \end{equation*}
 </div>
-<p>That way, the characteristic equation is just \(s^2+2\zeta s + 1\text{,}\) with roots \(-\zeta\pm\sqrt{\zeta^2-1}\text{.}\) Instead of having to describe what happens in terms of the original \(k,m,b\) trio, we only need worry about whether \(\zeta\) is less than, equal to, or greater than one.</p></section><section class="subsection" id="subsection-85"><h3 class="heading hide-type">
+<p>That way, the characteristic equation is just \(s^2+2\zeta s + 1\text{,}\) with roots \(-\zeta\pm\sqrt{\zeta^2-1}\text{.}\) Instead of having to describe what happens in terms of the original \(k,m,b\) trio, we only need worry about whether \(\zeta\) is less than, equal to, or greater than one.</p></section><section class="subsection" id="subsection-86"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.5.3</span> <span class="title">Diffusion equation</span>
 </h3>
-<p id="p-525">Let's close with the diffusion equation, also with a "forcing term" (e.g., a source of heat),</p>
+<p id="p-528">Let's close with the diffusion equation, also with a "forcing term" (e.g., a source of heat),</p>
 <div class="displaymath">
 \begin{equation*}
 \pp{u}{t} = \alpha^2 \ppp{u}{x} + A f(x,t), \quad 0 \le x \le L\text{.}

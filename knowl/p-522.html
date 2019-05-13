@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-08T21:20:39-04:00    *-->
+<!--*    on 2019-05-13T12:56:52-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The technique of <dfn class="terminology">nondimensionalization</dfn> replaces the original variables, which have SI or (shudder) American units associated with them, by variables that are "pure numbers", without units of measurement. This is done by scaling them by reference amounts that make the parameters of the resulting problem as simple as we can make them.</p>
-<span class="incontext"><a href="bvp-nondim.html#p-522">in-context</a></span>
+<p>Finally, suppose that \(\lambda=\nu^2\text{.}\) Then \(X=c_1\cos(\nu x)+c_2\sin(\nu x)\text{,}\) and the boundary conditions imply</p>
+<div class="displaymath">
+\begin{align*}
+0 \amp = c_2\nu\\
+0 \amp = c_1\nu\sin(\mu\pi) + c_2\nu \cos(\nu\pi)\text{.}
+\end{align*}
+</div>
+<p>We have \(c_2=0\text{,}\) and in order to avoid \(c_1=0\) as well we need \(\sin(\nu \pi)=0\text{.}\) This occurs for all integer values of \(\nu\text{.}\) So the eigenvalues are the squares of these, and the eigenfunctions are \(X=C \cos(\nu x)\text{.}\)</p>
+<span class="incontext"><a href="bvp-separation.html#p-522">in-context</a></span>
 </body>
 </html>

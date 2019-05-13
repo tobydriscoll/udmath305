@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-08T21:20:39-04:00    *-->
+<!--*    on 2019-05-13T12:56:52-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>First, consider what happens at a fixed value of \(x\) as \(t\to\infty\text{.}\) Every term in the series decays at an exponential rate. So the eventual fate of the solution is to go to zero everywhere. Or we could look at a fixed time, using the interpretation</p>
+<p>Here again is our solution to the diffusion equation with Dirichlet boundary conditions:</p>
 <div class="displaymath">
 \begin{equation*}
-u(t,x) = \sum_{n=1}^\infty b_n(t) \sin(n\pi x)\text{,}
+u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n x)\text{,}
 \end{equation*}
 </div>
-<p>which is always a Fourier sine series. Each \(b_n(t)\) is either zero or decaying at the rate \(e^{-\alpha^2 n^2 t}\text{.}\) These decay much more rapidly as \(n\) increases, so the lowest frequency terms in the sine series will dominate to an extent that increases with time. As time evolves, therefore, the solution will look more and more like just one hump of a sine function with decaying amplitude.</p>
+<p>with the coefficients determined from the Fourier sine series for the initial condition. How useful is this solution? It's certainly not as straightforward as something like \(y(t)=e^{at}\) was.</p>
 <span class="incontext"><a href="bvp-separation.html#p-514">in-context</a></span>
 </body>
 </html>

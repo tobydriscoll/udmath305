@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-08T21:20:39-04:00    *-->
+<!--*    on 2019-05-13T12:56:52-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>So much snaps into place now. Starting from the initial \(f\text{,}\) which is part of the problem spec, we compute the sine series coefficients and call them \(c_n\text{.}\) If \(f\) is piecewise continuous, we know this works. And then we can find the solution at other times via</p>
+<p>This is a linear PDE, and thus we expect that we a linear combination of all the possible solutions is also a solution:</p>
 <div class="displaymath">
 \begin{equation*}
-u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)\text{.}
+u(t,x) = \sum_{n=1}^\infty c_n T_n(t)X_n(x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n x)\text{.}
 \end{equation*}
 </div>
-<p>At a fixed time, this too is a sine series, with coefficients \(b_n= e^{-\alpha^2 n^2 t}c_n\text{.}\)</p>
+<p>(We absorbed the initial \(T\) values into the coefficients.)</p>
 <span class="incontext"><a href="bvp-separation.html#p-510">in-context</a></span>
 </body>
 </html>

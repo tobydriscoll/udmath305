@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-08T21:20:39-04:00    *-->
+<!--*    on 2019-05-13T12:56:52-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Engineering problems come with lots of physical units: mass, length, reaction rate, diffusivity, etc. Some of these may be known imprecisely, or are available to tune the behavior of the system. It's important to get them all right, of course. But sometimes they can clutter the scene and obscure fundamental results. Also, it's difficult to explore high-dimensional parameter spaces efficiently when optimizing for some goal, so reducing the number of independent parameters can be useful.</p>
-<span class="incontext"><a href="bvp-nondim.html#p-521">in-context</a></span>
+<p>If \(\lambda \lt 0\text{,}\) say \(\lambda=-\mu^2\text{.}\) Then \(X(x)=c_1e^{\mu x} + c_2 e^{-\mu x}\text{,}\) and the boundary conditions imply</p>
+<div class="displaymath">
+\begin{equation*}
+\twovec{0}{0} = \twomat{\mu}{-\mu}{\mu e^{\mu \pi}}{-\mu e^{-\mu\pi}} \twovec{c_1}{c_2}\text{.}
+\end{equation*}
+</div>
+<p>The determinant here is \(\mu^2(e^{\pi\mu}-e^{-\pi\mu})\text{,}\) which is nonzero for nonzero \(\mu\text{.}\) So there are only zero solutions, and hence no negative eigenvalues are possible.</p>
+<span class="incontext"><a href="bvp-separation.html#p-521">in-context</a></span>
 </body>
 </html>

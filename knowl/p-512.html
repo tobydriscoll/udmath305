@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-08T21:20:39-04:00    *-->
+<!--*    on 2019-05-13T12:56:52-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose \(f(x)=x(\pi-x)\text{.}\) Some integration by parts will lead to</p>
+<p>So much snaps into place now. Starting from the initial \(f\text{,}\) which is part of the problem spec, we compute the sine series coefficients and call them \(c_n\text{.}\) If \(f\) is piecewise continuous, we know this works. And then we can find the solution at other times via</p>
 <div class="displaymath">
 \begin{equation*}
-\int_0^\pi x(\pi-x) \sin(n x)\, dx = \left[ \frac{\left(n^2 x (x-\pi )-2\right) \cos (n x)+n (\pi -2 x) \sin (n x)}{n^3} \right]_0^\pi \text{.}
+u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n x)\text{.}
 \end{equation*}
 </div>
-<p>For even values of \(n\) this is zero, and for odd \(n\) it is \(4/n^3\text{.}\) So the solution is</p>
-<div class="displaymath">
-\begin{equation*}
-u(t,x) = \frac{8}{\pi}\left[ e^{-\alpha^2 t} \sin(\pi x) + \frac{1}{27} e^{-9 \alpha^2 t} \sin(3\pi x) + \frac{1}{125} e^{-25 \alpha^2 t} \sin(5\pi x) + \cdots \right]\text{.}
-\end{equation*}
-</div>
-<p>It doesn't exactly roll off the tongue, does it?</p>
+<p>At a fixed time, this too is a sine series, with coefficients \(b_n= e^{-\alpha^2 n^2 t}c_n\text{.}\)</p>
 <span class="incontext"><a href="bvp-separation.html#p-512">in-context</a></span>
 </body>
 </html>

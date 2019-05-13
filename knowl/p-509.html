@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-08T21:20:39-04:00    *-->
+<!--*    on 2019-05-13T12:56:52-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,12 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This is a linear PDE, and we expect that we a linear combination of all the possible solutions is also a solution:</p>
+<p>What's going on with time? Well, we have \(T'=-\alpha^2\lambda T\text{.}\) So to each eigenfunction corresponds the time dependence</p>
 <div class="displaymath">
 \begin{equation*}
-u(t,x) = \sum_{n=1}^\infty c_n T_n(t)X_n(x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)\text{.}
+T_n(t) = e^{-\alpha^2\lambda_n t}T_n(0) = e^{-\alpha^2 n^2 t}T_n(0)\text{.}
 \end{equation*}
 </div>
-<p>(We absorbed the initial \(T\) values into the coefficients.) The final piece of the puzzle is the initial condition. I hope you're sitting down for this, because</p>
-<div class="displaymath">
-\begin{equation*}
-f(x) = u(0,x) = \sum_{n=1}^\infty c_n \sin(n\pi x)\text{.}
-\end{equation*}
-</div>
-<p>We have a forking Fourier sine series here, people!</p>
 <span class="incontext"><a href="bvp-separation.html#p-509">in-context</a></span>
 </body>
 </html>

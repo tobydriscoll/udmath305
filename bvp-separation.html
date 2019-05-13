@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-08T21:20:35-04:00    *-->
+<!--*    on 2019-05-13T12:56:50-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -192,51 +192,56 @@ T'X = \alpha^2 TX''\text{.}
 X''+\lambda X = 0\text{.}
 \end{equation*}
 </div>
-<p>All kinds of alarm bells should go off now, because this is our eigenvalue problem from the first section. We know that to continue the discussion, we need to bring in the boundary values. In the Dirichlet case we have</p>
+<p>All kinds of alarm bells should go off now, because this is our eigenvalue problem from the first section. We know that to continue the discussion, we need to bring in the boundary values.</p></section><section class="subsection" id="subsection-81"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.4.1</span> <span class="title">Dirichlet boundary conditions</span>
+</h3>
+<p id="p-508">In the Dirichlet case we require \(u(t,0)=u(t,\pi)=0\text{.}\) Hence</p>
 <div class="displaymath">
 \begin{equation*}
 T(t)X(0) = T(t)X(\pi) = 0\text{,}
 \end{equation*}
 </div>
-<p>which is guaranteed if \(X(0)=X(\pi)=0\text{.}\) So we have eigenvalues \(\lambda_n=n^2\text{,}\) \(n=1,2,\ldots\text{,}\) and the eigenfunctions \(X_n(x)=\sin(n\pi x)\) are the only nonzero solutions.</p>
-<p id="p-508">What's going on with time? Well, we have \(T'=-\alpha^2\lambda T\text{.}\) So to each eigenfunction corresponds the time dependence</p>
+<p>which is guaranteed if \(X(0)=X(\pi)=0\text{.}\) So we have a BVP with eigenvalues \(\lambda_n=n^2\text{,}\) \(n=1,2,\ldots\text{,}\) and the eigenfunctions \(X_n(x)=\sin(n x)\) are the only nonzero solutions.</p>
+<p id="p-509">What's going on with time? Well, we have \(T'=-\alpha^2\lambda T\text{.}\) So to each eigenfunction corresponds the time dependence</p>
 <div class="displaymath">
 \begin{equation*}
 T_n(t) = e^{-\alpha^2\lambda_n t}T_n(0) = e^{-\alpha^2 n^2 t}T_n(0)\text{.}
 \end{equation*}
 </div>
-<p id="p-509">This is a linear PDE, and we expect that we a linear combination of all the possible solutions is also a solution:</p>
+<p id="p-510">This is a linear PDE, and thus we expect that we a linear combination of all the possible solutions is also a solution:</p>
 <div class="displaymath">
 \begin{equation*}
-u(t,x) = \sum_{n=1}^\infty c_n T_n(t)X_n(x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)\text{.}
+u(t,x) = \sum_{n=1}^\infty c_n T_n(t)X_n(x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n x)\text{.}
 \end{equation*}
 </div>
-<p>(We absorbed the initial \(T\) values into the coefficients.) The final piece of the puzzle is the initial condition. I hope you're sitting down for this, because</p>
+<p>(We absorbed the initial \(T\) values into the coefficients.)</p>
+<p id="p-511">The final piece of the puzzle is the initial condition. I hope you're sitting down for this, because</p>
 <div class="displaymath">
 \begin{equation*}
-f(x) = u(0,x) = \sum_{n=1}^\infty c_n \sin(n\pi x)\text{.}
+f(x) = u(0,x) = \sum_{n=1}^\infty c_n \sin(n x)\text{.}
 \end{equation*}
 </div>
 <p>We have a forking Fourier sine series here, people!</p>
-<p id="p-510">So much snaps into place now. Starting from the initial \(f\text{,}\) which is part of the problem spec, we compute the sine series coefficients and call them \(c_n\text{.}\) If \(f\) is piecewise continuous, we know this works. And then we can find the solution at other times via</p>
+<p id="p-512">So much snaps into place now. Starting from the initial \(f\text{,}\) which is part of the problem spec, we compute the sine series coefficients and call them \(c_n\text{.}\) If \(f\) is piecewise continuous, we know this works. And then we can find the solution at other times via</p>
 <div class="displaymath">
 \begin{equation*}
-u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)\text{.}
+u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n x)\text{.}
 \end{equation*}
 </div>
-<p>At a fixed time, this too is a sine series, with coefficients \(b_n= e^{-\alpha^2 n^2 t}c_n\text{.}\)</p></section><section class="subsection" id="subsection-81"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.4.1</span> <span class="title">Using the solution</span>
+<p>At a fixed time, this too is a sine series, with coefficients \(b_n= e^{-\alpha^2 n^2 t}c_n\text{.}\)</p>
+<p id="p-513">If we want to solve the PDE on some other interval such as \([0,L]\text{,}\) then we just have to rescale the space variable to be \(\pi x/L\) (with a similar rescaling on the integrals for the Fourier coefficients). If we have a more general interval such as \([a,b]\text{,}\) it's a shift-and-scale as we did with Fourier series. It's messier to write out, but not hard.</p></section><section class="subsection" id="subsection-82"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.4.2</span> <span class="title">Using the solution</span>
 </h3>
-<p id="p-511">Here again is our solution to the diffusion equation with Dirichlet boundary conditions:</p>
+<p id="p-514">Here again is our solution to the diffusion equation with Dirichlet boundary conditions:</p>
 <div class="displaymath">
 \begin{equation*}
-u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)\text{,}
+u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n x)\text{,}
 \end{equation*}
 </div>
 <p>with the coefficients determined from the Fourier sine series for the initial condition. How useful is this solution? It's certainly not as straightforward as something like \(y(t)=e^{at}\) was.</p>
 <article class="example-like" id="example-73"><a knowl="" class="id-ref" refid="hk-example-73"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">6.4.1</span>
-</h6></a></article><div id="hk-example-73" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-512">Suppose \(f(x)=x(\pi-x)\text{.}\) Some integration by parts will lead to</p>
+</h6></a></article><div id="hk-example-73" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-515">Suppose \(f(x)=x(\pi-x)\text{.}\) Some integration by parts will lead to</p>
 <div class="displaymath">
 \begin{equation*}
 \int_0^\pi x(\pi-x) \sin(n x)\, dx = \left[ \frac{\left(n^2 x (x-\pi )-2\right) \cos (n x)+n (\pi -2 x) \sin (n x)}{n^3} \right]_0^\pi \text{.}
@@ -245,31 +250,31 @@ u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)\text{,}
 <p>For even values of \(n\) this is zero, and for odd \(n\) it is \(4/n^3\text{.}\) So the solution is</p>
 <div class="displaymath">
 \begin{equation*}
-u(t,x) = \frac{8}{\pi}\left[ e^{-\alpha^2 t} \sin(\pi x) + \frac{1}{27} e^{-9 \alpha^2 t} \sin(3\pi x) + \frac{1}{125} e^{-25 \alpha^2 t} \sin(5\pi x) + \cdots \right]\text{.}
+u(t,x) = \frac{8}{\pi}\left[ e^{-\alpha^2 t} \sin(x) + \frac{1}{27} e^{-9 \alpha^2 t} \sin(3x) + \frac{1}{125} e^{-25 \alpha^2 t} \sin(5x) + \cdots \right]\text{.}
 \end{equation*}
 </div>
 <p>It doesn't exactly roll off the tongue, does it?</p></article></div>
-<p id="p-513">If you're looking for short, tidy formulas, you're headed for disappointment in this business. But we're not without some good tools here.</p>
-<p id="p-514">First, consider what happens at a fixed value of \(x\) as \(t\to\infty\text{.}\) Every term in the series decays at an exponential rate. So the eventual fate of the solution is to go to zero everywhere. Or we could look at a fixed time, using the interpretation</p>
+<p id="p-516">If you're looking for short, tidy formulas, you're headed for disappointment in this business. But we're not without some good tools here.</p>
+<p id="p-517">First, consider what happens at a fixed value of \(x\) as \(t\to\infty\text{.}\) Every term in the series decays at an exponential rate. So the eventual fate of the solution is to go to zero everywhere. Or we could look at a fixed time, using the interpretation</p>
 <div class="displaymath">
 \begin{equation*}
-u(t,x) = \sum_{n=1}^\infty b_n(t) \sin(n\pi x)\text{,}
+u(t,x) = \sum_{n=1}^\infty b_n(t) \sin(n x)\text{,}
 \end{equation*}
 </div>
 <p>which is always a Fourier sine series. Each \(b_n(t)\) is either zero or decaying at the rate \(e^{-\alpha^2 n^2 t}\text{.}\) These decay much more rapidly as \(n\) increases, so the lowest frequency terms in the sine series will dominate to an extent that increases with time. As time evolves, therefore, the solution will look more and more like just one hump of a sine function with decaying amplitude.</p>
-<p id="p-515">Even without neat closed expressions, the formulas are very amenable to numerical computation. We can even use the numerics to compute the Fourier coefficients of the initial condition, not bothering with the analytical integration.</p></section><section class="subsection" id="subsection-82"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.4.2</span> <span class="title">Neumann boundaries</span>
+<p id="p-518">Even without neat closed expressions, the formulas are very amenable to numerical computation. We can even use the numerics to compute the Fourier coefficients of the initial condition, not bothering with the analytical integration.</p></section><section class="subsection" id="subsection-83"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.4.3</span> <span class="title">Neumann boundaries</span>
 </h3>
-<p id="p-516">How do the results change if we use Neumann boundary conditions? We still get \(X''+\lambda X =0\text{,}\) but now with \(X'(0)=X'(\pi)=0\text{.}\) Let's explore three cases for \(\lambda\text{:}\) positive, negative, and zero.</p>
-<p id="p-517">If \(\lambda=0\text{,}\) then \(X'' =0\text{,}\) so \(X(x)=c_1 x + c_2\text{.}\) The conditions \(X'(0)=X'(\pi)=0\) require only that \(c_1=0\text{.}\) So \(\lambda=0\) is an eigenvalue, with constant eigenfunctions.</p>
-<p id="p-518">If \(\lambda \lt 0\text{,}\) say \(\lambda=-\mu^2\text{.}\) Then \(X(x)=c_1e^{\mu x} + c_2 e^{-\mu x}\text{,}\) and the boundary conditions imply</p>
+<p id="p-519">How do the results change if we use Neumann boundary conditions? We still get an ODE \(X''+\lambda X =0\text{,}\) but now the conditions \(\pp{u}{x}(t,0)=\pp{u}{x}(t,\pi)=0\) imply \(X'(0)=X'(\pi)=0\text{.}\) Let's explore three cases for \(\lambda\text{:}\) positive, negative, and zero.</p>
+<p id="p-520">If \(\lambda=0\text{,}\) then \(X'' =0\text{,}\) so \(X(x)=c_1 x + c_2\text{.}\) The conditions \(X'(0)=X'(\pi)=0\) require only that \(c_1=0\text{.}\) So \(\lambda=0\) is an eigenvalue, with constant eigenfunctions.</p>
+<p id="p-521">If \(\lambda \lt 0\text{,}\) say \(\lambda=-\mu^2\text{.}\) Then \(X(x)=c_1e^{\mu x} + c_2 e^{-\mu x}\text{,}\) and the boundary conditions imply</p>
 <div class="displaymath">
 \begin{equation*}
 \twovec{0}{0} = \twomat{\mu}{-\mu}{\mu e^{\mu \pi}}{-\mu e^{-\mu\pi}} \twovec{c_1}{c_2}\text{.}
 \end{equation*}
 </div>
 <p>The determinant here is \(\mu^2(e^{\pi\mu}-e^{-\pi\mu})\text{,}\) which is nonzero for nonzero \(\mu\text{.}\) So there are only zero solutions, and hence no negative eigenvalues are possible.</p>
-<p id="p-519">Finally, suppose that \(\lambda=\nu^2\text{.}\) Then \(X=c_1\cos(\nu x)+c_2\sin(\nu x)\text{,}\) and the boundary conditions imply</p>
+<p id="p-522">Finally, suppose that \(\lambda=\nu^2\text{.}\) Then \(X=c_1\cos(\nu x)+c_2\sin(\nu x)\text{,}\) and the boundary conditions imply</p>
 <div class="displaymath">
 \begin{align*}
 0 \amp = c_2\nu\\
@@ -277,7 +282,7 @@ u(t,x) = \sum_{n=1}^\infty b_n(t) \sin(n\pi x)\text{,}
 \end{align*}
 </div>
 <p>We have \(c_2=0\text{,}\) and in order to avoid \(c_1=0\) as well we need \(\sin(\nu \pi)=0\text{.}\) This occurs for all integer values of \(\nu\text{.}\) So the eigenvalues are the squares of these, and the eigenfunctions are \(X=C \cos(\nu x)\text{.}\)</p>
-<p id="p-520">In total, we have \(\lambda_0=0\) with eigenfunction \(X_0(x)=1\text{,}\) and \(\lambda_n=n^2\) with \(X_n=\cos(nx)\) for \(n=1,2,\dots\text{.}\) The time part of the solution unfolds much as before, giving the linear combination</p>
+<p id="p-523">In total, we have \(\lambda_0=0\) with eigenfunction \(X_0(x)=1\text{,}\) and \(\lambda_n=n^2\) with \(X_n=\cos(nx)\) for \(n=1,2,\dots\text{.}\) The time part of the solution unfolds much as before, giving the linear combination</p>
 <div class="displaymath">
 \begin{equation*}
 u(t,x) = \sum_{n=0}^\infty c_n T_n(t)X_n(x) = c_0 + \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \cos(nx) \text{.}
@@ -286,10 +291,10 @@ u(t,x) = \sum_{n=0}^\infty c_n T_n(t)X_n(x) = c_0 + \sum_{n=1}^\infty c_n e^{-\a
 <p>See where this is headed? Using the initial condition of the PDE, we get</p>
 <div class="displaymath">
 \begin{equation*}
-f(x) = u(0,x) = c_0 + \sum_{n=1}^\infty c_n \cos(n\pi x)\text{,}
+f(x) = u(0,x) = c_0 + \sum_{n=1}^\infty c_n \cos(n x)\text{,}
 \end{equation*}
 </div>
-<p>which is exactly a Fourier cosine series.</p></section></section></div></main>
+<p>which is exactly a Fourier cosine series. 😎</p></section></section></div></main>
 </div>
 </body>
 </html>

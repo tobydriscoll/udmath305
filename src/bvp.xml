@@ -157,43 +157,55 @@
 		for an undetermined constant <m>\lambda</m>. 
 	</p>
 	<p>
-		We look first at the spatial side, <me>X''+\lambda X = 0</me>. All kinds of alarm bells should go off now, because this is our eigenvalue problem from the first section. We know that to continue the discussion, we need to bring in the boundary values. In the Dirichlet case we have 
+		We look first at the spatial side, <me>X''+\lambda X = 0</me>. All kinds of alarm bells should go off now, because this is our eigenvalue problem from the first section. We know that to continue the discussion, we need to bring in the boundary values.
+	</p> 
+	</introduction>
+	<subsection>
+		<title>Dirichlet boundary conditions</title>
+		<p>
+		In the Dirichlet case we require <m>u(t,0)=u(t,\pi)=0</m>. Hence 
 		<me>
 			T(t)X(0) = T(t)X(\pi) = 0
 		</me>,
-		which is guaranteed if <m>X(0)=X(\pi)=0</m>. So we have eigenvalues <m>\lambda_n=n^2</m>, <m>n=1,2,\ldots</m>, and the eigenfunctions <m>X_n(x)=\sin(n\pi x)</m> are the only nonzero solutions. 
-	</p>
-	<p>
+		which is guaranteed if <m>X(0)=X(\pi)=0</m>. So we have a BVP with eigenvalues <m>\lambda_n=n^2</m>, <m>n=1,2,\ldots</m>, and the eigenfunctions <m>X_n(x)=\sin(n x)</m> are the only nonzero solutions. 
+		</p>
+		<p>
 		What's going on with time? Well, we have <m>T'=-\alpha^2\lambda T</m>. So to each eigenfunction corresponds the time dependence
 		<me>
 			T_n(t) = e^{-\alpha^2\lambda_n t}T_n(0) = e^{-\alpha^2 n^2 t}T_n(0)
 		</me>. 
+		</p>
+		<p>
+		This is a linear PDE, and thus we expect that we a linear combination of all the possible solutions is also a solution:
+		<me>
+			u(t,x) = \sum_{n=1}^\infty c_n T_n(t)X_n(x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n x)
+		</me>. 
+		(We absorbed the initial <m>T</m> values into the coefficients.) 
 	</p>
 	<p>
-		This is a linear PDE, and we expect that we a linear combination of all the possible solutions is also a solution:
+		The final piece of the puzzle is the initial condition. I hope you're sitting down for this, because 
 		<me>
-			u(t,x) = \sum_{n=1}^\infty c_n T_n(t)X_n(x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)
-		</me>. 
-		(We absorbed the initial <m>T</m> values into the coefficients.) The final piece of the puzzle is the initial condition. I hope you're sitting down for this, because 
-		<me>
-			f(x) = u(0,x) = \sum_{n=1}^\infty c_n \sin(n\pi x)
+			f(x) = u(0,x) = \sum_{n=1}^\infty c_n \sin(n x)
 		</me>. 
 		We have a forking Fourier sine series here, people!
 	</p>
 	<p>
 		So much snaps into place now. Starting from the initial <m>f</m>, which is part of the problem spec, we compute the sine series coefficients and call them <m>c_n</m>. If <m>f</m> is piecewise continuous, we know this works. And then we can find the solution at other times via  
 		<me>
-			u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)
+			u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n x)
 		</me>. 
 		At a fixed time, this too is a sine series, with coefficients <m>b_n= e^{-\alpha^2 n^2 t}c_n</m>.
 	</p>
-	</introduction>
+	<p>
+		If we want to solve the PDE on some other interval such as <m>[0,L]</m>, then we just have to rescale the space variable to be <m>\pi x/L</m> (with a similar rescaling on the integrals for the Fourier coefficients). If we have a more general interval such as <m>[a,b]</m>, it's a shift-and-scale as we did with Fourier series. It's messier to write out, but not hard. 
+	</p>
+	</subsection>
 	<subsection>
 	<title>Using the solution</title>
 	<p>
 		Here again is our solution to the diffusion equation with Dirichlet boundary conditions:
 		<me>
-			u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n\pi x)
+			u(t,x) = \sum_{n=1}^\infty c_n e^{-\alpha^2 n^2 t} \sin(n x)
 		</me>,
 		with the coefficients determined from the Fourier sine series for the initial condition. How useful is this solution? It's certainly not as straightforward as something like <m>y(t)=e^{at}</m> was. 
 	</p>
@@ -205,7 +217,7 @@
 			</me>. 
 			For even values of <m>n</m> this is zero, and for odd <m>n</m> it is <m>4/n^3</m>. So the solution is 
 			<me>
-				u(t,x) = \frac{8}{\pi}\left[ e^{-\alpha^2 t} \sin(\pi x) + \frac{1}{27} e^{-9 \alpha^2 t} \sin(3\pi x) + \frac{1}{125} e^{-25 \alpha^2 t} \sin(5\pi x) + \cdots \right]
+				u(t,x) = \frac{8}{\pi}\left[ e^{-\alpha^2 t} \sin(x) + \frac{1}{27} e^{-9 \alpha^2 t} \sin(3x) + \frac{1}{125} e^{-25 \alpha^2 t} \sin(5x) + \cdots \right]
 			</me>. 
 			It doesn't exactly roll off the tongue, does it? 
 		</p>	
@@ -216,7 +228,7 @@
 	<p>
 		First, consider what happens at a fixed value of <m>x</m> as <m>t\to\infty</m>. Every term in the series decays at an exponential rate. So the eventual fate of the solution is to go to zero everywhere. Or we could look at a fixed time, using the interpretation
 		<me>
-			u(t,x) = \sum_{n=1}^\infty b_n(t) \sin(n\pi x)
+			u(t,x) = \sum_{n=1}^\infty b_n(t) \sin(n x)
 		</me>,
 		which is always a Fourier sine series. Each <m>b_n(t)</m> is either zero or decaying at the rate <m>e^{-\alpha^2 n^2 t}</m>. These decay much more rapidly as <m>n</m> increases, so the lowest frequency terms in the sine series will dominate to an extent that increases with time. As time evolves, therefore, the solution will look more and more like just one hump of a sine function with decaying amplitude.
 	</p>
@@ -227,7 +239,7 @@
 	<subsection>
 	<title>Neumann boundaries</title>
 		<p>
-			How do the results change if we use Neumann boundary conditions? We still get <m>X''+\lambda X =0</m>, but now with <m>X'(0)=X'(\pi)=0</m>. Let's explore three cases for <m>\lambda</m>: positive, negative, and zero.
+			How do the results change if we use Neumann boundary conditions? We still get an ODE <m>X''+\lambda X =0</m>, but now the conditions <m>\pp{u}{x}(t,0)=\pp{u}{x}(t,\pi)=0</m> imply <m>X'(0)=X'(\pi)=0</m>. Let's explore three cases for <m>\lambda</m>: positive, negative, and zero.
 		</p>
  		<p>
 			If <m>\lambda=0</m>, then <m>X'' =0</m>, so <m>X(x)=c_1 x + c_2</m>. The conditions <m>X'(0)=X'(\pi)=0</m> require only that <m>c_1=0</m>. So <m>\lambda=0</m> is an eigenvalue, with constant eigenfunctions. 
@@ -254,9 +266,9 @@
 			</me>. 
 			See where this is headed? Using the initial condition of the PDE, we get 
 			<me>
-				f(x) = u(0,x) = c_0 + \sum_{n=1}^\infty c_n \cos(n\pi x)
+				f(x) = u(0,x) = c_0 + \sum_{n=1}^\infty c_n \cos(n x)
 			</me>,
-			which is exactly a Fourier cosine series. 
+			which is exactly a Fourier cosine series. 😎
 		</p>
 	</subsection>
 </section>
@@ -268,7 +280,7 @@
 	Engineering problems come with lots of physical units: mass, length, reaction rate, diffusivity, etc. Some of these may be known imprecisely, or are available to tune the behavior of the system. It's important to get them all right, of course. But sometimes they can clutter the scene and obscure fundamental results. Also, it's difficult to explore high-dimensional parameter spaces efficiently when optimizing for some goal, so reducing the number of independent parameters can be useful.
 </p>
 <p>
-	The technique of <term>nondimensionalization</term> replaces the original variables, which have SI or (shudder) American units associated with them, by variables that are "pure numbers", without units of measurement. This is done by scaling them by reference amounts that make the parameters of the resulting problem as simple as we can make them.
+	The technique of <term>nondimensionalization</term> replaces the original variables, which have SI or (shudder) American units associated with them, by variables that are "pure numbers" with no units attached. This is done by scaling them by reference amounts, typically intrinsic scales, that make the parameters of the resulting problem as simple as we can make them.
 </p>	
 </introduction>
 <subsection>
@@ -331,7 +343,7 @@
 	<me>
 		\ddd{Y}{T} + \frac{b}{k\tau} \dd{Y}{T} + Y =  \cos(\omega T/\omega_0)
 	</me>. 
-	We might as well simplify a bit more via 
+	The coefficient of the first-order term is dimensionless. We might as well simplify a bit more via 
 	<me> 
 		2\zeta = \frac{b}{k\tau} = \frac{b}{\sqrt{mk}} 
 	</me>. 
