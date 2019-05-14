@@ -1,5 +1,6 @@
 % Define your matrix here.
-A = [ -1 1;-2 -1 ];
+%A = [ -1 1;-2 -1 ];
+A = [0 1;0 0];
 
 clf
 
@@ -12,7 +13,7 @@ alpha = max(real(lam));
 plot(0,0,'r.','markersize',18)
 
 if abs(alpha) < 1e-12
-    R = 0.75:.5:3.25;
+    R = 0.25:.25:3.25;
     theta = 0.123 + zeros(size(R));
 elseif alpha > 0
     theta = 0.123 + 2*pi*(0:15-1)/15;

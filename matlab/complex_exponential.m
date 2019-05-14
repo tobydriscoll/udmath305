@@ -1,7 +1,7 @@
 clf
 
 t = linspace(0, 25, 500);
-a = -0.1;  om = 0.8;
+a = -0.05;  om = 2;
 f = exp((a+1i*om)*t);
 
 plot3(t, real(f), imag(f), 'LineWidth',2)
