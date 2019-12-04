@@ -9,9 +9,11 @@ xsltproc --xinclude ~/Dropbox/books/mathbook/schema/pretext-schematron.xsl notes
 echo "...done schematron"
 
 echo "Conversion to html..."
-xsltproc --xinclude --stringparam html.css.extra "mathbook-delaware.css" ~/Dropbox/books/mathbook/xsl/mathbook-html.xsl notes305.xml
+xsltproc --xinclude --stringparam html.css.colorfile "colors_delaware.css" ~/Dropbox/books/mathbook/xsl/mathbook-html.xsl notes305.xml
 echo "...done html"
+sed -i 's+https://pretextbook.org/css/0.31/colors_delaware+colors_delaware+' *.html
 mv *.html ..
+cp colors_delaware.css ..
 mv knowl/* ../knowl
 
 if [ "$1" == "-m" ] 
