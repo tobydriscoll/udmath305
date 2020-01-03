@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-02T19:51:16-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>Above we found that the general solution of \(x'=4x+8t\) is \(x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}\) If we also have that \(x(0)=3/2\text{,}\) then we can conclude \(c_1=2\text{.}\)</p>
+<p>Now let us start over instead with <a data-knowl="./knowl/fl-eq-varparivp.html" title="Equation 2.5.1">(2.5.1)</a>, with \(a(t)=4\) and \(f(t)=8t\text{.}\) First,</p>
+<div class="displaymath">
+\begin{equation*}
+G(s,t) = \exp\left[ \int_s^t 4\,du \right] = \exp(4t-4s) = e^{4(t-s)}\text{.}
+\end{equation*}
+</div>
+<p>Then</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds = \frac{3}{2} e^{4t} +  \int_{0}^t 8se^{4(t-s)} \, ds = \frac{3}{2} e^{4t} + \frac{1}{2} (e^{4 t} - 1-4t) \text{,}
+\end{equation*}
+</div>
+<p>which is identical to the first answer.</p></article></body>
+</html>

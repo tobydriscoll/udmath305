@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-02T19:51:17-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>The matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\bA = \twomat{-1}{1}{0}{-1}
+\end{equation*}
+</div>
+<p>has a double eigenvalue of \(\lambda=-1\) and is defective. Now consider</p>
+<div class="displaymath">
+\begin{equation*}
+\bB = \bA - \lambda \bI = \twomat{0}{1}{0}{0}\text{.}
+\end{equation*}
+</div>
+<p>This matrix has the property that \(\bB^2=\bzero\text{.}\) That means the exponential series for it is just</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bB} = \bI + t\bB = \twomat{1}{t}{0}{1}\text{.}
+\end{equation*}
+</div>
+<p>Finally, we can use <a data-knowl="./knowl/fs-thm-matrixexp.html" title="Theorem 3.7.1: Matrix exponential">Theorem 3.7.1</a> to calculate</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bA} = e^{t\lambda\bI}e^{t(\bA-\lambda\bI)} = e^{-t}\twomat{1}{t}{0}{1}\text{.}
+\end{equation*}
+</div></article></body>
+</html>

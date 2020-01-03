@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-02T19:51:17-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.6.4</span>.</h6>
+<p>Here is a phase plane plot for \(\bA=\twomat{1}{-2}{4}{-3}\text{,}\) which has eigenvalues \(-1\pm 2i\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = [1 -2; 4 -3];
+[V,D] = eig(A);
+lam = diag(D);
+
+clf
+plot(0,0,'r.','markersize',18)
+hold on
+
+% plot directions
+[x1,x2] = meshgrid(-1:.2:1);
+v = A*[x1(:)';x2(:)'];
+sz = size(x1);
+quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
+
+% plot trajectories
+colr = get(gca,'colororder');
+t = linspace(0,7,300);
+for theta = 2*pi*(0:6)/7
+	for j = 1:length(t)
+		X = expm(t(j)*A);
+		c = exp(lam(1)*t(j)-1i*theta);
+		x(:,j) = X*[ cos(theta); sin(theta) ];
+	end
+	plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
+end
+
+axis([-1.2 1.2 -1.2 1.2]), axis square
+title('stable spiral')
+xlabel('x_1')
+ylabel('x_2')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fs_pp_spiral.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>The eigenvectors are complex and don't show up on the plot; there are no purely linear trajectories.</p></article><span class="incontext"><a href="fs-phaseplane.html#example-46">in-context</a></span>
+</body>
+</html>

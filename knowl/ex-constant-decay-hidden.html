@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-02T19:51:16-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><div class="displaymath">
+\begin{equation*}
+\dd{x}{t} = -y
+\end{equation*}
+</div>
+<p>Now the model states that the rate of change is negative when \(x\) is positive (and vice versa). So a positive starting value will decrease, but the rate of decrease will then lessen, etc. From this qualitative description alone it's impossible to tell whether the solution ever reaches zero--at which point its rate of change would be zero.</p>
+<p>But we can end the suspense by easily verifying that \(x=e^{-t}\) is a solution. This function asymptotically approaches zero as \(t\to\infty\text{,}\) which we call <dfn class="terminology">exponential decay</dfn>. In other, related problems we will find that solutions can decay (or "relax") to any value, not just zero.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">x = @(t) exp(-t);
+fplot(x,[0,4]), set(gca,'yscale','log')
+xlabel('t'), ylabel('x(t)')
+title('Exponential decay')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_intro_const_decay.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article></body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-02T19:51:16-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.1.5</span>. <span class="title">Nonlinear growth.</span>
+</h6>
+<div class="displaymath">
+\begin{equation*}
+\dd{y}{t} = y^2
+\end{equation*}
+</div>
+<p>This is our first example featuring a nonlinear term in the variable \(x\text{.}\) As a rule, nonlinear ODEs are much harder to solve and have less predictable mathematical structure than linear problems. This particular example isn't so tough, though; you can check that \(x=1/(1-t)\) is a solution. Note that the growth is even faster--literally off the charts as \(t\to 1\text{.}\)</p>
+<p>(You might wonder about the validity of any mathematical model that leads to an infinite result in finite time. But in fact this ODE describes, for instance, the evolution of the slope of the line of sight to an airplane flying straight over you. When the airplane is directly overhead, the slope is infinite. So while the model becomes mathematically invalid at that moment, it does describe a true physical situation.)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">x = @(t) 1./(1-t);
+fplot(x,[0,1]), set(gca,'yscale','log')
+xlabel('t'), ylabel('x(t)')
+title('Nonlinear growth')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_intro_nonlin_growth.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article><span class="incontext"><a href="linearity.html#ex-nonlinear-growth">in-context</a></span>
+</body>
+</html>

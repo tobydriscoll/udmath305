@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-02T19:51:16-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.1.4</span>. <span class="title">Variable growth rate.</span>
+</h6>
+<div class="displaymath">
+\begin{equation*}
+\dd{x}{t} = 2tx
+\end{equation*}
+</div>
+<p>In this case we are back to a positive growth rate for positive solution values. In fact, the growth rate increases with time as well as with the solution itself. You can verify that \(x=e^{t^2}\) is a solution, and indeed this grows at a "super-exponential" rate.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">x = @(t) exp(t.^2);
+fplot(x,[0,4]), set(gca,'yscale','log')
+xlabel('t'), ylabel('x(t)')
+title('Variable growth')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_intro_var_growth.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article><span class="incontext"><a href="linearity.html#ex-variable-growth">in-context</a></span>
+</body>
+</html>

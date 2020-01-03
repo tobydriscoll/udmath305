@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-02T19:51:17-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.5.2</span>.</h6>
+<p>Here are some looks at the function \(e^{\lambda t}\) for different complex values of \(\lambda\text{.}\) First, when \(\lambda\) is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of the function give cosine and sine, respectively.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = 0;  om = 1;
+t = linspace(0, 25, 500);
+f = exp((a+1i*om)*t);
+
+plot3(t, real(f), imag(f), 'LineWidth',2)
+hold on
+plot3(t,real(f), 0*t-1.5)
+plot3(t, 0*t+2, imag(f))
+plot3(0*t+30,real(f),imag(f),'k')
+axis([0 30 -2  2 -1.5 1.5])
+title(sprintf('a = %.2f, omega = %.1f',a,om))
+grid on, xlabel('Time')
+ylabel('Real Axis')
+zlabel('Imag Axis')	
+set(gca,'dataaspect',[6,1,1])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_neutral.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>If \(\Re(\lambda) \gt 0\text{,}\) the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of \(\lambda\) controls the frequency or "tightness" of the spiral.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = 0.01;  om = 2;
+t = linspace(0, 25, 500);
+f = exp((a+1i*om)*t);
+
+plot3(t, real(f), imag(f), 'LineWidth',2)
+hold on
+plot3(t,real(f), 0*t-1.5)
+plot3(t, 0*t+2, imag(f))
+plot3(0*t+30,real(f),imag(f),'k')
+axis([0 30 -2  2 -1.5 1.5])
+title(sprintf('a = %.2f, omega = %.1f',a,om))
+grid on, xlabel('Time')
+ylabel('Real Axis')
+zlabel('Imag Axis')	  
+set(gca,'dataaspect',[6,1,1])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_grow.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>Finally, if \(\Re(\lambda) \lt 0\text{,}\) the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = -0.1;  om = 0.8;
+t = linspace(0, 25, 500);
+f = exp((a+1i*om)*t);
+
+plot3(t, real(f), imag(f), 'LineWidth',2)
+hold on
+plot3(t,real(f), 0*t-1.5)
+plot3(t, 0*t+2, imag(f))
+plot3(0*t+30,real(f),imag(f),'k')
+axis([0 30 -2  2 -1.5 1.5])
+title(sprintf('a = %.2f, omega = %.1f',a,om))
+grid on, xlabel('Time')
+ylabel('Real Axis')
+zlabel('Imag Axis')	 
+set(gca,'dataaspect',[6,1,1])
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_decay.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article><span class="incontext"><a href="fs-complex-eigenvalues.html#example-43">in-context</a></span>
+</body>
+</html>

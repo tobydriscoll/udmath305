@@ -11,7 +11,11 @@ echo "...done schematron"
 echo "Conversion to html..."
 xsltproc --xinclude --stringparam html.css.colorfile "colors_delaware.css" ~/Dropbox/books/mathbook/xsl/mathbook-html.xsl notes305.xml
 echo "...done html"
-sed -i 's+https://pretextbook.org/css/0.31/colors_delaware+colors_delaware+' *.html
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    sed -i 's+https://pretextbook.org/css/0.31/colors_delaware+colors_delaware+' *.html
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    sed -i '' 's+https://pretextbook.org/css/0.31/colors_delaware+colors_delaware+' *.html
+fi
 mv *.html ..
 cp colors_delaware.css ..
 mv knowl/* ../knowl

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-04T15:41:06-05:00    *-->
+<!--*    on 2020-01-02T19:51:10-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,7 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -79,12 +79,16 @@ var js_version = 0.12;
 \newcommand{\Rmn}[2]{\mathbb{R}^{#1\times #2}}
 \newcommand{\Cmn}[2]{\mathbb{C}^{#1\times #2}}
 \newcommand{\bu}{\mathbf{u}}
+\newcommand{\opA}{\mathcal{A}}
+\newcommand{\lx}{\mathcal{L}}
 \newcommand{\bA}{\mathbf{A}}
 \newcommand{\bB}{\mathbf{B}}
 \newcommand{\bC}{\mathbf{C}}
 \newcommand{\bD}{\mathbf{D}}
 \newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
 \newcommand{\bV}{\mathbf{V}}
+\newcommand{\bX}{\mathbf{X}}
 \newcommand{\bff}{\mathbf{f}}
 \newcommand{\ba}{\mathbf{a}}
 \newcommand{\bx}{\mathbf{x}}
@@ -114,7 +118,9 @@ var js_version = 0.12;
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="linear-algebra.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="linear-algebra.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="la-vector-algebra.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="linear-algebra.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="linear-algebra.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="la-vector-algebra.html" title="Next">Next</a></span>
+</div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="linear-algebra.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="linear-algebra.html" title="Up">Up</a><a class="next-button button toolbar-item" href="la-vector-algebra.html" title="Next">Next</a>
@@ -137,9 +143,56 @@ var js_version = 0.12;
 <li><a href="la-equivalent.html" data-scroll="la-equivalent">Equivalent conditions</a></li>
 <li><a href="la-complex.html" data-scroll="la-complex">Complex numbers</a></li>
 <li><a href="la-eigen.html" data-scroll="la-eigen">Eigenvalues</a></li>
-<li><a href="ma-diagonalization.html" data-scroll="ma-diagonalization">Diagonalization</a></li>
+<li><a href="la-diagonalization.html" data-scroll="la-diagonalization">Diagonalization</a></li>
 </ul>
 </li>
+<li class="link">
+<a href="first-order-linear.html" data-scroll="first-order-linear"><span class="codenumber">2</span> <span class="title">First-order linear ODEs</span></a><ul>
+<li><a href="linearity.html" data-scroll="linearity">Introduction</a></li>
+<li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
+<li><a href="fl-homogeneous.html" data-scroll="fl-homogeneous">Homogeneous solutions</a></li>
+<li><a href="fl-ivp.html" data-scroll="fl-ivp">Initial value problems</a></li>
+<li><a href="fl-varparam.html" data-scroll="fl-varparam">Variation of parameters</a></li>
+<li><a href="fl-undeter.html" data-scroll="fl-undeter">Undetermined coefficients</a></li>
+<li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
+<li><a href="fl-impulse.html" data-scroll="fl-impulse">Steps and impulses</a></li>
+<li><a href="fl-laplace.html" data-scroll="fl-laplace">Laplace transform methods</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="first-systems.html" data-scroll="first-systems"><span class="codenumber">3</span> <span class="title">First-order linear systems</span></a><ul>
+<li><a href="fs-structure.html" data-scroll="fs-structure">Structure of linear ODE systems</a></li>
+<li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
+<li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
+<li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
+<li><a href="fs-complex-eigenvalues.html" data-scroll="fs-complex-eigenvalues">Complex solutions</a></li>
+<li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
+<li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
+<li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="first-order-linear.html" data-scroll="first-order-linear"><span class="codenumber">4</span> <span class="title">Second-order ODEs</span></a><ul>
+<li><a href="so-convert.html" data-scroll="so-convert">Order equals dimension</a></li>
+<li><a href="so-homogeneous.html" data-scroll="so-homogeneous">Homogeneous problem</a></li>
+<li><a href="so-oscillators.html" data-scroll="so-oscillators">Oscillators</a></li>
+<li><a href="so-expforcing.html" data-scroll="so-expforcing">Driven oscillator</a></li>
+<li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
+<li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
+<li><a href="so-convolutions.html" data-scroll="so-convolutions">Convolutions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="nonlinear-systems.html" data-scroll="nonlinear-systems"><span class="codenumber">5</span> <span class="title">Nonlinear ODEs</span></a><ul>
+<li><a href="nl-autonomous.html" data-scroll="nl-autonomous">Autonomous scalar problems</a></li>
+<li><a href="nl-separable.html" data-scroll="nl-separable">Separable equations</a></li>
+<li><a href="nl-logistic.html" data-scroll="nl-logistic">Case study: Logistic equation</a></li>
+<li><a href="nl-directionfields.html" data-scroll="nl-directionfields">Direction fields</a></li>
+<li><a href="nl-linearization.html" data-scroll="nl-linearization">Linearization</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="la-linear-systems"><h2 class="heading hide-type">
@@ -166,7 +219,7 @@ ax = b
 </ol>
 </li>
 </ol>
-<p>To summarize, for nonzero \(a\) there is exactly one solution, and otherwise there are infinitely many or zero solutions (depending on \(b\)). A linear system with no solutions is called <dfn class="terminology">inconsistent</dfn>, with the opposite being <em class="emphasis">consistent</em>.</p>
+<p>To summarize, for nonzero \(a\) there is exactly one solution, and otherwise there are infinitely many or zero solutions (depending on \(b\)). A linear system with no solutions is called <dfn class="terminology">inconsistent</dfn> , with the opposite being <em class="emphasis">consistent</em>.</p>
 <p id="p-6">Our goal is to understand equations that depend linearly on <em class="emphasis">multiple</em> variables. But before even writing out what that means, let me give away the punch line: <em class="emphasis">the only possibilities are exactly the same three outcomes described above</em>. The sole difference is that the condition "\(a=0\)" is generalized to something a little different.</p>
 <p id="p-7">Going one more baby step to two equations in two variables, we want to solve</p>
 <div class="displaymath">
@@ -217,7 +270,7 @@ a_{m1} \amp \cdots  \amp a_{m,n-1} \amp a_{mn}
 \end{bmatrix}\text{.}\label{la-eq-mbynmatrix}\tag{1.1.1}
 \end{equation}
 </div>
-<p>This is our first look at a <dfn class="terminology">matrix</dfn>. We say it has size (or shape) \(m\) by \(n\text{.}\) I will use bold capital letters for matrices. While we are at it we should collect the other indexed items into single objects, too:</p>
+<p>This is our first look at a  <dfn class="terminology">matrix</dfn>. We say it has size (or shape) \(m\) by \(n\text{.}\) I will use bold capital letters for matrices. While we are at it we should collect the other indexed items into single objects, too:</p>
 <div class="displaymath">
 \begin{equation*}
 \bx = \begin{bmatrix}
@@ -275,7 +328,7 @@ x_2 \amp = -3 \amp \amp \\
 \end{align*}
 </div>
 <p>Obviously, the (unique) solution is \(x_1=1\text{,}\) \(x_2=-3\text{,}\) \(x_3=2\text{.}\)</p></article></div>
-<p id="p-17">That was a mouthful. We can make it a little easier if we just manipulate the numbers without carrying around extra notation. We start with the <dfn class="terminology">augmented matrix</dfn> \([\bA,\,\bb]\text{.}\)</p>
+<p id="p-17">That was a mouthful. We can make it a little easier if we just manipulate the numbers without carrying around extra notation. We start with the  <dfn class="terminology">augmented matrix</dfn> \([\bA,\,\bb]\text{.}\)</p>
 <article class="example example-like" id="example-2"><a data-knowl="" class="id-ref" data-refid="hk-example-2"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">1.1.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-18">We repeat the previous example but just with the relevant constants. The key is to use zeros as coefficients where there are “silent” variables. The starting augmented matrix is</p>
 <div class="displaymath">
@@ -393,17 +446,17 @@ x_1 = 5 + s \text{.}
 \end{equation*}
 </div>
 <p>So \([5+s,-1-3s,s]\) is a solution for every \(s\text{,}\) and we have infinitely many solutions.</p></article></div>
-<p id="p-21">The process demonstrated in the previous two examples is best known as <dfn class="terminology">Gauss-Jordan elimination</dfn>, though I prefer to call it <dfn class="terminology">row elimination</dfn> (seeing how the basic idea was known at least in China thousands of years before those dudes were born). As seen in the examples, row elimination consists of two phases, one downward and one upward. The goal is to put the augmented matrix into a special form. In the following definition of that form, we use the term <dfn class="terminology">leading nonzero</dfn> to mean the first (leftmost) entry of a row that is not zero. </p>
+<p id="p-21">The process demonstrated in the previous two examples is best known as  <dfn class="terminology">Gauss-Jordan elimination</dfn>, though I prefer to call it <dfn class="terminology">row elimination</dfn> (seeing how the basic idea was known at least in China thousands of years before those dudes were born). As seen in the examples, row elimination consists of two phases, one downward and one upward. The goal is to put the augmented matrix into a special form. In the following definition of that form, we use the term  <dfn class="terminology">leading nonzero</dfn> to mean the first (leftmost) entry of a row that is not zero. </p>
 <article class="definition definition-like" id="definition-1"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.1.4</span>. <span class="title">RREF.</span>
 </h6>
-<p id="p-22">A matrix is in <dfn class="terminology">RREF</dfn> (reduced row echelon form) if it meets these requirements:</p>
+<p id="p-22">A matrix is in  <dfn class="terminology">RREF</dfn> (reduced row echelon form) if it meets these requirements:</p>
 <ol class="decimal">
 <li id="li-13">Any rows of all zeros appear below all nonzero rows.</li>
 <li id="li-14">The leading nonzero of any row is a one.</li>
 <li id="li-15">Every leading one is the only nonzero in its column.</li>
 </ol>
-<p>The columns that have leading ones are called <dfn class="terminology">pivot columns</dfn>. The other columns are called <dfn class="terminology">free columns</dfn>.</p></article><p id="p-23">As seen in the examples above, an augmented matrix in RREF represents a linear system that we can solve by inspection:</p>
+<p>The columns that have leading ones are called  <dfn class="terminology">pivot columns</dfn>. The other columns are called  <dfn class="terminology">free columns</dfn>.</p></article><p id="p-23">As seen in the examples above, an augmented matrix in RREF represents a linear system that we can solve by inspection:</p>
 <ul class="disc">
 <li id="li-16">The zero rows are ignored.</li>
 <li id="li-17">If a leading one occurs in the last column, the system is inconsistent.</li>

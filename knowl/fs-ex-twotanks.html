@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-02T19:51:17-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.1.1</span>.</h6>
+<p>Consider two connected tanks holding brine. Tank 1 holds 100 L, has an input of 4 L/hr of brine of concentration 3 kg/L, and an output of 6 L/hr. Tank 2 holds 200 L, has an input of 7 L/hr of brine of concentration 5 kg/L, and an output of 5 L/hr. Tank 1 pumps 1 L/hr into tank 2, and tank 2 pumps 3 L/hr into tank 1.</p>
+<p>Let \(x_i(t)\) be the mass of salt in tank \(i\text{.}\) The statements above imply</p>
+<div class="displaymath">
+\begin{align*}
+\dd{x_1}{t} \amp = 4\cdot 3 - 6\cdot \frac{x_1}{100} - 1\cdot \frac{x_1}{100} + 3 \cdot \frac{x_2}{200}  \\
+\dd{x_2}{t} \amp = 7\cdot 5 - 5\cdot \frac{x_2}{200} - 3\cdot \frac{x_2}{200} +  1\cdot \frac{x_1}{100}\text{.}
+\end{align*}
+</div>
+<p>This is neatly expressed using linear algebra:</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{}{t} \twovec{x_1}{x_2} = \frac{1}{200}\twomat{-14}{3}{2}{-8} \twovec{x_1}{x_2} + \twovec{12}{35} \text{.}
+\end{equation*}
+</div>
+<p>Here we have naturally extended the derivative of a vector to mean the derivative of each component.</p></article><span class="incontext"><a href="fs-structure.html#fs-ex-twotanks">in-context</a></span>
+</body>
+</html>

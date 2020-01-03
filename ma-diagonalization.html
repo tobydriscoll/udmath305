@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-04T15:41:06-05:00    *-->
+<!--*    on 2019-12-16T20:28:58-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,7 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -79,6 +79,8 @@ var js_version = 0.12;
 \newcommand{\Rmn}[2]{\mathbb{R}^{#1\times #2}}
 \newcommand{\Cmn}[2]{\mathbb{C}^{#1\times #2}}
 \newcommand{\bu}{\mathbf{u}}
+\newcommand{\opA}{\mathcal{A}}
+\newcommand{\lx}{\mathcal{L}}
 \newcommand{\bA}{\mathbf{A}}
 \newcommand{\bB}{\mathbf{B}}
 \newcommand{\bC}{\mathbf{C}}
@@ -114,10 +116,12 @@ var js_version = 0.12;
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="la-eigen.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="linear-algebra.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="la-eigen.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="linear-algebra.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="first-order-ode.html" title="Next">Next</a></span>
+</div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="la-eigen.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="linear-algebra.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="la-eigen.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="linear-algebra.html" title="Up">Up</a><a class="next-button button toolbar-item" href="first-order-ode.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -140,6 +144,28 @@ var js_version = 0.12;
 <li><a href="ma-diagonalization.html" data-scroll="ma-diagonalization" class="active">Diagonalization</a></li>
 </ul>
 </li>
+<li class="link">
+<a href="first-order-ode.html" data-scroll="first-order-ode"><span class="codenumber">2</span> <span class="title">First-order ODEs</span></a><ul>
+<li><a href="linearity.html" data-scroll="linearity">Introduction</a></li>
+<li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
+<li><a href="fo-homogeneous.html" data-scroll="fo-homogeneous">Homogeneous solutions</a></li>
+<li><a href="fo-ivp.html" data-scroll="fo-ivp">Initial value problems</a></li>
+<li><a href="fo-varparam.html" data-scroll="fo-varparam">Variation of parameters</a></li>
+<li><a href="fo-undeter.html" data-scroll="fo-undeter">Undetermined coefficients</a></li>
+<li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
+<li><a href="fo-impulse.html" data-scroll="fo-impulse">Steps and impulses</a></li>
+<li><a href="fo-laplace.html" data-scroll="fo-laplace">Laplace transform methods</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="first-order-nonlinear.html" data-scroll="first-order-nonlinear"><span class="codenumber">3</span> <span class="title">First-order nonlinear ODEs</span></a><ul>
+<li><a href="fn-qual.html" data-scroll="fn-qual">Qualitative analysis</a></li>
+<li><a href="fn-separable.html" data-scroll="fn-separable">Separable equations</a></li>
+<li><a href="fn-logistic.html" data-scroll="fn-logistic">Logistic equation</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="ma-diagonalization"><h2 class="heading hide-type">

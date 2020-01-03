@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-02T19:51:17-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>Let's solve \(x'-x=f(t)\text{,}\) where \(f(t)\) is 5 for \(3 \lt t \le 6\) and zero elsewhere. We have \(a=1\text{.}\) The particular solution due to the first step is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{1} 5 H(t-3) \bigl[e^{(3-t)}-1\bigr]\text{,}
+\end{equation*}
+</div>
+<p>and from the second step it's</p>
+<div class="displaymath">
+\begin{equation*}
+-\frac{1}{1} 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]\text{.}
+\end{equation*}
+</div>
+<p>Put these together with the homogeneous solution and we get</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = e^{t}x_0 + 5 H(t-3) \bigl[e^{(3-t)}-1\bigr] - 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]\text{.}
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">step = @(t) double(t&gt;0);
+dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
+[t,y] = ode45(dydt,[0,8],1);
+plot(t,y)
+xlabel('t'), ylabel('y(t)')
+title('Window forcing')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_window.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">step = @(t) double(t&gt;0);
+dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
+[t,y] = ode45(dydt,[0,8],1);
+semilogy(t,y)
+xlabel('t'), ylabel('y(t)')
+title('Window forcing (semi-log)')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_window_2.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article></body>
+</html>
