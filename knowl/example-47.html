@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:17-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,28 +13,44 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.7.3</span>.</h6>
-<p>Let's find the exponential of</p>
-<div class="displaymath">
-\begin{equation*}
-\bA = \twomat{1}{1}{4}{1}\text{,}
-\end{equation*}
-</div>
-<p>given \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This lets us define</p>
-<div class="displaymath">
-\begin{equation*}
-\bV = \twomat{1}{1}{2}{-2}, \qquad \bD = \twomat{3}{0}{0}{-1}\text{.}
-\end{equation*}
-</div>
-<p>Then</p>
-<div class="displaymath">
-\begin{align*}
-e^{t\bA} \amp = \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{1}{1}{2}{-2}^{-1} \\
-\amp = -\frac{1}{4} \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{-2}{-1}{-2}{1} \\
-\amp = -\frac{1}{4} \twomat{e^{3t}}{e^{-t}}{2e^{3t}}{-2e^{-t}} \twomat{-2}{-1}{-2}{1} \\
-\amp = \frac{1}{4} \twomat{2e^{3t}+2e^{-t}}{e^{3t}-e^{-t}}{4e^{3t}-4e^{-t}}{2e^{3t}+2e^{-t}} \text{.}
-\end{align*}
-</div>
-<p>Not exactly a walk in the park, but doable.</p></article><span class="incontext"><a href="fs-matrix-exp.html#example-47">in-context</a></span>
+<span class="type">Example</span> <span class="codenumber">3.6.2</span>.</h6>
+<p>Here is a phase plane plot for \(\bA=\twomat{-4}{-1}{-2}{-5}\text{,}\) which has eigenvalues \(-3\) and \(-6\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = [-4 -1; -2 -5];
+[V,D] = eig(A);
+lam = diag(D);
+
+clf
+plot(0,0,'r.','markersize',18)
+hold on
+
+% plot directions
+[x1,x2] = meshgrid(-1:.2:1);
+v = A*[x1(:)';x2(:)'];
+sz = size(x1);
+quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
+
+% plot eigenvectors
+plot(5*[-V(1,:);V(1,:)],5*[-V(2,:);V(2,:)],'k','linew',2)
+
+% plot trajectories
+colr = get(gca,'colororder');
+t = linspace(0,10,300);
+for theta = 2*pi*(0:23)/24
+	for j = 1:length(t)
+		X = expm(t(j)*A);
+		x(:,j) = X*[ cos(theta); sin(theta) ];
+	end
+	plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
+end
+
+axis([-1.1 1.1 -1.1 1.1]), axis square
+title('stable node')
+xlabel('x_1')
+ylabel('x_2')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fs_pp_nodestable.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>The black lines show the directions of the eigenvectors. An initial state on one of those lines stays on it forever. Other initial conditions follow a path tending to become parallel to eigenvector \(\bv_1\text{,}\) since the other component decays out more quickly. The plot for \(-\bA\) would just reverse all of the arrows and show an unstable fixed point.</p></article><span class="incontext"><a href="fs-phaseplane.html#example-47">in-context</a></span>
 </body>
 </html>

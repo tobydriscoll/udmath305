@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:15-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,9 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If \(\bA\in\Rmn{n}{n}\text{,}\) then</p>
-<div class="displaymath">
-\begin{equation*}
-\det(\bA) = \sum (-1)^{i+j} a_{ij} \det( \mathbf{M}_{ij} )\text{,}
-\end{equation*}
-</div>
-<p>where the sum is taken over any row or column of \(\bA\text{,}\) and \(\mathbf{M}_{ij}\) is the matrix that results from deleting row \(i\) and column \(j\) from \(\bA\text{.}\)</p>
-<span class="incontext"><a href="la-determinant.html#p-79">in-context</a></span>
+<p>MATLAB has a <code class="code-inline tex2jax_ignore">null</code> command that produces a basis of the nullspace. <pre class="prettyprint lang-matlab">A = [ 1 1 -1; 2 2 1; -1 -1 4 ]
+null(A)
+</pre> This is equivalent to the answer we gave above, just with a different normalization of the vector.</p>
+<span class="incontext"><a href="la-basis.html#p-79">in-context</a></span>
 </body>
 </html>

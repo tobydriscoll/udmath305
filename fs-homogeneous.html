@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:13-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,14 +208,14 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-homogeneous"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Homogeneous systems</span>
 </h2>
-<a href="fs-homogeneous.html" class="permalink">¶</a><p id="p-267">Given</p>
+<a href="fs-homogeneous.html" class="permalink">¶</a><p id="p-277">Given</p>
 <div class="displaymath">
 \begin{equation*}
 \bx' = \bA(t)\bx, 
 \end{equation*}
 </div>
 <p>where \(\bx\in\Rn{n}\) and \(\bA\in\Rmn{n}{n}\text{,}\) we can easily show in the usual way that any linear combination of solutions is also a solution. Thus our real task is to find a basis for the solution space.</p>
-<aside class="aside aside-like" id="aside-12"><p id="p-268">You need to read and write carefully when in vector-land. In particular, note that \(\bx_1\) refers to the first vector of a collection, while \(x_1\) means the first component of a vector \(\bx\text{.}\)</p></aside><p id="p-269">Suppose \(\bx_1,\ldots,\bx_m\) are homogeneous solutions of the ODE, and we use a linear combination of them to satisfy an initial condition \(\bx(t_0)=\bx_0\text{:}\)</p>
+<aside class="aside aside-like" id="aside-14"><p id="p-278">You need to read and write carefully when in vector-land. In particular, note that \(\bx_1\) refers to the first vector of a collection, while \(x_1\) means the first component of a vector \(\bx\text{.}\)</p></aside><p id="p-279">Suppose \(\bx_1,\ldots,\bx_m\) are homogeneous solutions of the ODE, and we use a linear combination of them to satisfy an initial condition \(\bx(t_0)=\bx_0\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 c_1 \bx_1 + \cdots + c_m \bx_m = \bx_0\text{.}
@@ -227,20 +237,20 @@ c_1 \bx_1 + \cdots + c_m \bx_m = \bx_0\text{.}
 <article class="definition definition-like" id="fs-df-fundamental"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.2.1</span>. <span class="title">Fundamental matrix.</span>
 </h6>
-<p id="p-270">The \(n\times n\) matrix \(\bX(t)\) is a <dfn class="terminology">fundamental matrix</dfn> of the homogeneous system \(\bx' = \bA(t)\bx\) if its columns satisfy \(\bx_j'=\bA\bx_j\) at all times and they form a basis at time \(t=t_0\text{.}\)</p></article><p id="p-271">Because the nonsingularity of a fundamental matrix is one of its key properties, its determinant plays an important role.</p>
+<p id="p-280">The \(n\times n\) matrix \(\bX(t)\) is a <dfn class="terminology">fundamental matrix</dfn> of the homogeneous system \(\bx' = \bA(t)\bx\) if its columns satisfy \(\bx_j'=\bA\bx_j\) at all times and they form a basis at time \(t=t_0\text{.}\)</p></article><p id="p-281">Because the nonsingularity of a fundamental matrix is one of its key properties, its determinant plays an important role.</p>
 <article class="definition definition-like" id="ls-df-wronskian"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">3.2.2</span>. <span class="title">Wronskian.</span>
 </h6>
-<p id="p-272">The <dfn class="terminology">Wronskian</dfn> of a collection of homogeneous solutions \(\bx_1,\ldots,\bx_n\) is</p>
+<p id="p-282">The <dfn class="terminology">Wronskian</dfn> of a collection of homogeneous solutions \(\bx_1,\ldots,\bx_n\) is</p>
 <div class="displaymath">
 \begin{equation*}
 W(t) = \det\Bigl( \bigl| \bx_1(t) \: \cdots \: \bx_n(t)  \bigr| \Bigr)\text{.}
 \end{equation*}
-</div></article><p id="p-273">Thus, solutions with a nonzero Wronskian are the columns of a fundamental matrix. There is a remarkable result known as <em class="emphasis">Abel's formula</em> that greatly simplifies this issue.</p>
+</div></article><p id="p-283">Thus, solutions with a nonzero Wronskian are the columns of a fundamental matrix. There is a remarkable result known as <em class="emphasis">Abel's formula</em> that greatly simplifies this issue.</p>
 <article class="theorem theorem-like" id="fs-thm-abel"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.2.3</span>. <span class="title">Homogeneous solution independence.</span>
 </h6>
-<p id="p-274">Suppose that \(\bA(t)\) is continuous on an open interval \(I\text{,}\) and let \(\bx_1,\ldots,\bx_n\) be solutions of \(\bx'=\bA\bx\) whose Wronskian is \(W(t)\text{.}\) Then if \(W\) is nonzero at any time in \(I\text{,}\) it is nonzero at all times in \(I\text{.}\)</p></article></section></div></main>
+<p id="p-284">Suppose that \(\bA(t)\) is continuous on an open interval \(I\text{,}\) and let \(\bx_1,\ldots,\bx_n\) be solutions of \(\bx'=\bA\bx\) whose Wronskian is \(W(t)\text{.}\) Then if \(W\) is nonzero at any time in \(I\text{,}\) it is nonzero at all times in \(I\text{.}\)</p></article></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

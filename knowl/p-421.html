@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:18-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We are interested in the stability of fixed points, that is, the dynamics close to them. We will use linear approximations of the functions \(F\) and \(G\) near a fixed point:</p>
+<p>The logistic equation is separable:</p>
 <div class="displaymath">
-\begin{align*}
-F(x,y) \amp \approx F(x_p,y_p) + \pp{F}{x} (x-x_p) + \pp{F}{y} (y-y_p)\\
-G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)\text{,}
-\end{align*}
+\begin{equation*}
+\frac{dx}{x(a-bx)} = dt\text{.}
+\end{equation*}
 </div>
-<p>where it is understood for brevity that the partial derivatives are all evaluated at \((x_p,y_p)\text{.}\) Given that \((x_p,y_p)\) is a fixed point, two terms above are zero. Finally, define \(u_1(t)=x(t)-x_p\text{,}\) \(u_2(t)=y(t)-y_p\) to arrive at</p>
+<p>Hence</p>
 <div class="displaymath">
-\begin{align*}
-\dd{u_1}{t} \amp \approx \pp{F}{x} u_1 + \pp{F}{y} u_2, \\
-\dd{u_2}{t} \amp \approx \pp{G}{x} u_1 + \pp{G}{y} u_2. 
-\end{align*}
+\begin{equation*}
+t + C = \int \frac{dx}{x(a-bx)} = \frac{1}{b} \int \frac{dx}{x(K-x)} = \frac{1}{bK} \int \left( \frac{1}{x} + \frac{1}{K-x} \right)\,dx\text{.}
+\end{equation*}
 </div>
-<p>This inspires the following definition.</p>
-<span class="incontext"><a href="nl-linearization.html#p-421">in-context</a></span>
+<p>The last step above required converting the single fraction into partial fractions. These are now easily integrated to get logs, and the solution follows from there. Obviously we have to end up with <a data-knowl="./knowl/eq-logistic-solution.html" title="Equation 5.3.2">(5.3.2)</a> again.</p>
+<span class="incontext"><a href="nl-logistic.html#p-421">in-context</a></span>
 </body>
 </html>

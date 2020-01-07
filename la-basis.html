@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:11-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,28 +208,28 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="la-basis"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Basis and dimension</span>
 </h2>
-<a href="la-basis.html" class="permalink">¶</a><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
+<a href="la-basis.html" class="permalink">¶</a><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.5.1</span> <span class="title">Span and independence</span>
 </h3>
-<p id="p-64">In the last section we saw that solutions of \(\bA\bx=\bzero\) play an important role in all linear systems.</p>
+<p id="p-68">In the last section we saw that solutions of \(\bA\bx=\bzero\) play an important role in all linear systems.</p>
 <article class="definition definition-like" id="la-df-nullspace"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.5.1</span>. <span class="title">Nullspace.</span>
 </h6>
-<p id="p-65">The <dfn class="terminology">nullspace</dfn> of a matrix \(\bA\in\Rmn{m}{n}\) is</p>
+<p id="p-69">The <dfn class="terminology">nullspace</dfn> of a matrix \(\bA\in\Rmn{m}{n}\) is</p>
 <div class="displaymath">
 \begin{equation}
 \null(\bA) = \{ \bx\in\Rn{n} : \bA\bx=\bzero \} \text{.}\label{la-eq-nullspace}\tag{1.5.1}
 \end{equation}
-</div></article><p id="p-66">We also saw that every element of \(\null(\bA)\) can be expressed as a linear combination, \(c_1\bx_1+\cdots+c_k\bx_k\text{.}\)</p>
+</div></article><p id="p-70">We also saw that every element of \(\null(\bA)\) can be expressed as a linear combination, \(c_1\bx_1+\cdots+c_k\bx_k\text{.}\)</p>
 <article class="definition definition-like" id="la-df-span"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.5.2</span>. <span class="title">Span.</span>
 </h6>
-<p id="p-67">The <dfn class="terminology">span</dfn> of vectors \(\bx_1,\ldots,\bx_k\) is</p>
+<p id="p-71">The <dfn class="terminology">span</dfn> of vectors \(\bx_1,\ldots,\bx_k\) is</p>
 <div class="displaymath">
 \begin{equation}
 \span(\bx_1,\ldots,\bx_k) = \{ c_1\bx_1+\cdots+c_k\bx_k : c_1,\ldots,c_k \in \mathbb{R} \}\text{.}\label{la-eq-span}\tag{1.5.2}
 \end{equation}
-</div></article><p id="p-68">The notion of span gives us a shorthand for expressing the nullspace (equivalently, the general homogeneous solution). For reasons we won't get into, every span is referred to as a space. However, it's important to know that there are infinitely many different ways to express the same space. For instance,</p>
+</div></article><p id="p-72">The notion of span gives us a shorthand for expressing the nullspace (equivalently, the general homogeneous solution). For reasons we won't get into, every span is referred to as a space. However, it's important to know that there are infinitely many different ways to express the same space. For instance,</p>
 <div class="displaymath">
 \begin{equation*}
 \span\left(\bx_1\right) = \span\left(\bx_1,\bx_1,\bx_1\right)\text{.}
@@ -235,13 +245,13 @@ var js_version = 0.12;
 <article class="definition definition-like" id="la-df-independence"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.5.3</span>. <span class="title">Linear independence.</span>
 </h6>
-<p id="p-69">The vectors \(\bx_1,\dots,\bx_k\) are <dfn class="terminology">linearly dependent</dfn> if there are scalars \(c_1,\ldots,c_k\text{,}\) not all zero, such that</p>
+<p id="p-73">The vectors \(\bx_1,\dots,\bx_k\) are <dfn class="terminology">linearly dependent</dfn> if there are scalars \(c_1,\ldots,c_k\text{,}\) not all zero, such that</p>
 <div class="displaymath">
 \begin{equation*}
 c_1\bx_1+\cdots+c_k\bx_k = \bzero\text{.}
 \end{equation*}
 </div>
-<p>Otherwise the vectors are <dfn class="terminology">linearly independent</dfn>.</p></article><p id="p-70">Why is this the right concept? Well, if the vectors are dependent, then by definition we can write</p>
+<p>Otherwise the vectors are <dfn class="terminology">linearly independent</dfn>.</p></article><p id="p-74">Why is this the right concept? Well, if the vectors are dependent, then by definition we can write</p>
 <div class="displaymath">
 \begin{equation*}
 c_j \bx_j = - \sum_{i\neq j} c_i \bx_i\text{,}
@@ -250,13 +260,13 @@ c_j \bx_j = - \sum_{i\neq j} c_i \bx_i\text{,}
 <p>where \(c_j\neq 0\text{.}\) If we divide this through by \(c_j\text{,}\) then we have shown that \(\bx_j\) lies within the span of all the other vectors, and therefore including it with linear combinations is redundant.</p></section><section class="subsection" id="la-ba-basis"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.5.2</span> <span class="title">Basis</span>
 </h3>
-<a href="la-basis.html#la-ba-basis" class="permalink">¶</a><p id="p-71">Put span and independence together and you get something good.</p>
+<a href="la-basis.html#la-ba-basis" class="permalink">¶</a><p id="p-75">Put span and independence together and you get something good.</p>
 <article class="definition definition-like" id="la-df-basis"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.5.4</span>. <span class="title">Basis.</span>
 </h6>
-<p id="p-72">If \(\bx_1,\dots,\bx_k\) are independent, then they form a <dfn class="terminology">basis</dfn> of \(\span(\bx_1,\dots,\bx_k)\text{.}\)</p></article><p id="p-73">It turns out that every basis of a given space has the same number of vectors in it. This number is called the <dfn class="terminology">dimension</dfn> of the space.</p>
-<article class="example example-like" id="example-8"><a data-knowl="" class="id-ref" data-refid="hk-example-8"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.5.5</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-8"><article class="example example-like"><p id="p-74">We find the RREF of a \(3\times 3\) matrix:</p>
+<p id="p-76">If \(\bx_1,\dots,\bx_k\) are independent, then they form a <dfn class="terminology">basis</dfn> of \(\span(\bx_1,\dots,\bx_k)\text{.}\)</p></article><p id="p-77">It turns out that every basis of a given space has the same number of vectors in it. This number is called the <dfn class="terminology">dimension</dfn> of the space.</p>
+<article class="example example-like" id="example-9"><a data-knowl="" class="id-ref" data-refid="hk-example-9"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.5.5</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-9"><article class="example example-like"><p id="p-78">We find the RREF of a \(3\times 3\) matrix:</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix} 
@@ -288,9 +298,12 @@ c_j \bx_j = - \sum_{i\neq j} c_i \bx_i\text{,}
 \null(\bA) = \span\left(\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\right)\text{,}
 \end{equation*}
 </div>
-<p>and in fact \([-1,1,0]\)  is a basis of the nullspace, which is therefore one-dimensional.</p></article></div>
-<article class="example example-like" id="example-9"><a data-knowl="" class="id-ref" data-refid="hk-example-9"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.5.6</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-9"><article class="example example-like"><p id="p-75">Suppose the RREF of a matrix ends with</p>
+<p>and in fact \([-1,1,0]\)  is a basis of the nullspace, which is therefore one-dimensional.</p>
+<p id="p-79">MATLAB has a <code class="code-inline tex2jax_ignore">null</code> command that produces a basis of the nullspace. <pre class="prettyprint lang-matlab">A = [ 1 1 -1; 2 2 1; -1 -1 4 ]
+null(A)
+</pre> This is equivalent to the answer we gave above, just with a different normalization of the vector.</p></article></div>
+<article class="example example-like" id="example-10"><a data-knowl="" class="id-ref" data-refid="hk-example-10"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.5.6</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-10"><article class="example example-like"><p id="p-80">Suppose the RREF of a matrix ends with</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 
@@ -300,8 +313,8 @@ c_j \bx_j = - \sum_{i\neq j} c_i \bx_i\text{,}
 \end{bmatrix}
 \end{equation*}
 </div>
-<p>(i.e., an identity matrix). There are no free variables, and the only solution is \(\bx=[0,0,0]\text{.}\) Hence \(\null(\bA) = \{\bzero\}\text{.}\) This singleton set does not have a basis and is considered to have dimension zero.</p></article></div>
-<p id="p-76">I emphasize that <em class="emphasis">we have done no new math here</em>. It's still just about linear systems and RREF matrices, with different and more precise terminology.</p></section></section></div></main>
+<p>(i.e., an identity matrix). There are no free variables, and the only solution is \(\bx=[0,0,0]\text{.}\) Hence \(\null(\bA) = \{\bzero\}\text{.}\) This singleton set does not have a basis and is considered to have dimension zero. (Try this example in MATLAB!)</p></article></div>
+<p id="p-81">I emphasize that <em class="emphasis">we have done no new math here</em>. It's still just about linear systems and RREF matrices, with different and more precise terminology.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:15-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,59 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The process demonstrated in the previous two examples is best known as  <dfn class="terminology">Gauss-Jordan elimination</dfn>, though I prefer to call it <dfn class="terminology">row elimination</dfn> (seeing how the basic idea was known at least in China thousands of years before those dudes were born). As seen in the examples, row elimination consists of two phases, one downward and one upward. The goal is to put the augmented matrix into a special form. In the following definition of that form, we use the term  <dfn class="terminology">leading nonzero</dfn> to mean the first (leftmost) entry of a row that is not zero. </p>
+<p>Let's solve the system having augmented matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 1 \amp -1 \amp 4 \\
+1 \amp 2 \amp 2 \amp 3 \\
+2 \amp 1 \amp -5 \amp 9
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>Use multiples of the first row to eliminate below it.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 1 \amp -1 \amp 4 \\
+0 \amp 1 \amp 3 \amp -1 \\ 
+0 \amp -1 \amp -3 \amp 1 
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>Use a multiple of the second row to eliminate below that.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 1 \amp -1 \amp 4 \\
+0 \amp 1 \amp 3 \amp -1 \\ 
+0 \amp 0 \amp 0 \amp 0 
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>We have reached the last row, and it's time to turn around and eliminate upwards. But we can't, because the last row is entirely zero. So skip that and move up to the next row, eliminating upwards again in the second column:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 0 \amp -1 \amp 5 \\
+0 \amp 1 \amp 3 \amp -1 \\ 
+0 \amp 0 \amp 0 \amp 0 
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>This is as simple as we can get things. The last row is telling us the astounding fact that \(0=0\text{,}\) i.e., nothing at all. The fact that there was nothing there to determine \(x_3\) means that we can set it to be anything we like, say \(x_3=s\) for arbitrary \(s\text{.}\) Now the second row says</p>
+<div class="displaymath">
+\begin{equation*}
+x_2 = -1 - 3s\text{,}
+\end{equation*}
+</div>
+<p>which is as specific as we can get. Finally, the first row says</p>
+<div class="displaymath">
+\begin{equation*}
+x_1 = 5 + s \text{.}
+\end{equation*}
+</div>
+<p>So \([5+s,-1-3s,s]\) is a solution for every \(s\text{,}\) and we have infinitely many solutions.</p>
 <span class="incontext"><a href="la-linear-systems.html#p-21">in-context</a></span>
 </body>
 </html>

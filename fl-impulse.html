@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:12-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,8 +208,8 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fl-impulse"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.8</span> <span class="title">Steps and impulses</span>
 </h2>
-<a href="fl-impulse.html" class="permalink">¶</a><p id="p-233">The <dfn class="terminology">unit step function</dfn> or <dfn class="terminology">Heaviside function</dfn> \(H(t)\) is defined to be zero for \(t\le 0\) and one for \(t\gt 0\text{.}\) It represents throwing on a switch. To have the forcing turn on at some other time \(T\text{,}\) we use \(H(t-T)\text{.}\)</p>
-<p id="p-234">It's relatively straightforward to incorporate step forcing into variation of parameters, if we use the definite integral form <a data-knowl="./knowl/fl-eq-varparivp.html" title="Equation 2.5.1">(2.5.1)</a>. The usual situation is that the initial condition is given at \(t_0=0\text{,}\) so we start with</p>
+<a href="fl-impulse.html" class="permalink">¶</a><p id="p-243">The <dfn class="terminology">unit step function</dfn> or <dfn class="terminology">Heaviside function</dfn> \(H(t)\) is defined to be zero for \(t\le 0\) and one for \(t\gt 0\text{.}\) It represents throwing on a switch. To have the forcing turn on at some other time \(T\text{,}\) we use \(H(t-T)\text{.}\)</p>
+<p id="p-244">It's relatively straightforward to incorporate step forcing into variation of parameters, if we use the definite integral form <a data-knowl="./knowl/fl-eq-varparivp.html" title="Equation 2.5.1">(2.5.1)</a>. The usual situation is that the initial condition is given at \(t_0=0\text{,}\) so we start with</p>
 <div class="displaymath">
 \begin{equation*}
 x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds\text{.}
@@ -226,9 +236,9 @@ x(t) = G(0,t)x_0 + H(t-T) \int_{T}^t G(s,t)\, ds\text{.}
 x(t) = e^{at} x_0 + H(t-T) \int_{T}^t e^{a(t-s)}\, ds = e^{at} x_0 + \frac{1}{a} H(t-T) \bigl[e^{a(T-t)}-1\bigr]\text{.}
 \end{equation*}
 </div>
-<p id="p-235">It's worth mentioning here the related idea of a <dfn class="terminology">window</dfn> function, which turns on and then back off. To get a forcing that is one only between times \(S\) and \(T\text{,}\) for example, we can use \(f(t)=H(t-S)-H(t-T)\text{.}\) The formulas for the window solution become a bit messy, so it's best to just work out results from each step separately.</p>
-<article class="example example-like" id="example-36"><a data-knowl="" class="id-ref" data-refid="hk-example-36"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.8.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-36"><article class="example example-like"><p id="p-236">Let's solve \(x'-x=f(t)\text{,}\) where \(f(t)\) is 5 for \(3 \lt t \le 6\) and zero elsewhere. We have \(a=1\text{.}\) The particular solution due to the first step is</p>
+<p id="p-245">It's worth mentioning here the related idea of a <dfn class="terminology">window</dfn> function, which turns on and then back off. To get a forcing that is one only between times \(S\) and \(T\text{,}\) for example, we can use \(f(t)=H(t-S)-H(t-T)\text{.}\) The formulas for the window solution become a bit messy, so it's best to just work out results from each step separately.</p>
+<article class="example example-like" id="example-39"><a data-knowl="" class="id-ref" data-refid="hk-example-39"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.8.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-39"><article class="example example-like"><p id="p-246">Let's solve \(x'-x=f(t)\text{,}\) where \(f(t)\) is 5 for \(3 \lt t \le 6\) and zero elsewhere. We have \(a=1\text{.}\) The particular solution due to the first step is</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{1} 5 H(t-3) \bigl[e^{(3-t)}-1\bigr]\text{,}
@@ -266,15 +276,15 @@ title('Window forcing (semi-log)')
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_window_2.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-237">We next come to a curious type of forcing called an <dfn class="terminology">impulse</dfn>. The idea is that the system is given an instantaneous jolt. To make this work, start by imagining a forcing of constant strength \(1/h\) that is turned on only for \(0\lt t \le h\text{:}\)</p>
+<p id="p-247">We next come to a curious type of forcing called an <dfn class="terminology">impulse</dfn>. The idea is that the system is given an instantaneous jolt. To make this work, start by imagining a forcing of constant strength \(1/h\) that is turned on only for \(0\lt t \le h\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \delta_h(t) = \frac{H(t-h)-H(t)}{h}\text{.}
 \end{equation*}
 </div>
 <p>The area under \(\delta_h\) is one for all \(h \gt 0\text{.}\)</p>
-<p id="p-238">Now we idealize the situation by taking the limit as \(h\to 0\text{.}\) Effectively, we are taking the derivative of a step. The resulting “function”, which we call \(\delta(t)\text{,}\) is zero at all points except \(t=0\text{,}\) yet should have unit area under its curve!</p>
-<p id="p-239">It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple of decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
+<p id="p-248">Now we idealize the situation by taking the limit as \(h\to 0\text{.}\) Effectively, we are taking the derivative of a step. The resulting “function”, which we call \(\delta(t)\text{,}\) is zero at all points except \(t=0\text{,}\) yet should have unit area under its curve!</p>
+<p id="p-249">It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple of decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
 <div class="displaymath">
 \begin{equation*}
 \int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \frac{1}{h} f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}\text{,}
@@ -293,7 +303,7 @@ title('Window forcing (semi-log)')
 \end{equation}
 </div>
 <p>where \(I\) is any interval containing \(T\text{.}\) This is the key identity for working with impulses.</p>
-<p id="p-240">The solution to the linear ODE with an impulse forcing is called an <dfn class="terminology">impulse response</dfn>. Thanks to the main impulse identity, this is easier to deal with than step forcing. Again we start with</p>
+<p id="p-250">The solution to the linear ODE with an impulse forcing is called an <dfn class="terminology">impulse response</dfn>. Thanks to the main impulse identity, this is easier to deal with than step forcing. Again we start with</p>
 <div class="displaymath">
 \begin{equation*}
 x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds\text{.}
@@ -321,8 +331,8 @@ x(t) = e^{at} x_0 + H(t-T) e^{a(t-T)}\text{.}
 \end{equation*}
 </div>
 <p>One way to read this formula is that at the impulse time, the state is instantaneously increased by one, with the usual evolution following.</p>
-<article class="example example-like" id="example-37"><a data-knowl="" class="id-ref" data-refid="hk-example-37"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.8.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-37"><article class="example example-like"><p id="p-241">Suppose we solve \(x'+5y=3\delta(t-2)\text{,}\) with \(x(0)=1\text{.}\) Start with</p>
+<article class="example example-like" id="example-40"><a data-knowl="" class="id-ref" data-refid="hk-example-40"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.8.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-40"><article class="example example-like"><p id="p-251">Suppose we solve \(x'+5y=3\delta(t-2)\text{,}\) with \(x(0)=1\text{.}\) Start with</p>
 <div class="displaymath">
 \begin{equation*}
 x(t) = e^{-5t} + 3 \int_0^t e^{-5(t-s)}\delta(s-2)\, ds\text{.}

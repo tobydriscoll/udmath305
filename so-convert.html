@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:13-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,14 +208,14 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-convert"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Order equals dimension</span>
 </h2>
-<a href="so-convert.html" class="permalink">¶</a><p id="p-323">We now turn our attention to second-order ODEs of the form</p>
+<a href="so-convert.html" class="permalink">¶</a><p id="p-333">We now turn our attention to second-order ODEs of the form</p>
 <div class="displaymath">
 \begin{equation*}
 x''=f(t,x,x')\text{.}
 \end{equation*}
 </div>
 <p>Most of what we develop extends easily to vector-valued \(x\)  and equations of order higher than two, but we focus on this problem to keep notation simple.</p>
-<p id="p-324">Our first observation is that this problem can always be converted to a first-order problem in two dimensions. Define a vector \(\bu\) by \(u_1=x\text{,}\) \(u_2=x'\text{.}\) By definition, \(u_1'=u_2\text{.}\) Since \(u_2'=x''=f(t,x,x')\text{,}\) we can get the system</p>
+<p id="p-334">Our first observation is that this problem can always be converted to a first-order problem in two dimensions. Define a vector \(\bu\) by \(u_1=x\text{,}\) \(u_2=x'\text{.}\) By definition, \(u_1'=u_2\text{.}\) Since \(u_2'=x''=f(t,x,x')\text{,}\) we can get the system</p>
 <div class="displaymath">
 \begin{align}
 u_1' \amp =  u_2\tag{4.1.1}\\
@@ -213,15 +223,15 @@ u_2' \amp =  f(t,u_1,u_2).\tag{4.1.2}
 \end{align}
 </div>
 <p>This is a first-order system \(\bu'=\mathbf{g}(t,\bu)\) of two scalar equations for the two components.</p>
-<article class="example example-like" id="example-50"><a data-knowl="" class="id-ref" data-refid="hk-example-50"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.1.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-50"><article class="example example-like"><p id="p-325">A pendulum is governed by the nonlinear equation \(\theta''+ b\theta' + \frac{g}{L}\sin(\theta)=0\text{.}\) Define \(u_1=\theta\text{,}\) \(u_2=\theta'\text{.}\) Then</p>
+<article class="example example-like" id="example-53"><a data-knowl="" class="id-ref" data-refid="hk-example-53"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">4.1.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-53"><article class="example example-like"><p id="p-335">A pendulum is governed by the nonlinear equation \(\theta''+ b\theta' + \frac{g}{L}\sin(\theta)=0\text{.}\) Define \(u_1=\theta\text{,}\) \(u_2=\theta'\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 \twovec{u_1'}{u_2'} = \twovec{u_2}{-bu_2 - \frac{g}{L}\sin(u_1)}
 \end{equation*}
 </div>
 <p>is an equivalent system.</p></article></div>
-<p id="p-326">Our main item of business is the linear, constant-coefficient model problem</p>
+<p id="p-336">Our main item of business is the linear, constant-coefficient model problem</p>
 <div class="displaymath">
 \begin{equation}
 x'' + bx' + cx = f(t)\text{,}\label{so-eq-linearmodel}\tag{4.1.3}

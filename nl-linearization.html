@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:14-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,7 +208,7 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="nl-linearization"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.5</span> <span class="title">Linearization</span>
 </h2>
-<a href="nl-linearization.html" class="permalink">¶</a><p id="p-418">A pendulum with length \(L\) and angle of deflection \(\theta(t)\) from the vertical is governed by the nonlinear second-order equation</p>
+<a href="nl-linearization.html" class="permalink">¶</a><p id="p-428">A pendulum with length \(L\) and angle of deflection \(\theta(t)\) from the vertical is governed by the nonlinear second-order equation</p>
 <div class="displaymath">
 \begin{equation*}
 \ddd{\theta}{t} + \frac{g}{L} \sin(\theta) = 0\text{,}
@@ -211,7 +221,7 @@ var js_version = 0.12;
 \end{equation*}
 </div>
 <p>because \(\sin \theta \approx \theta\text{.}\)  We want to get more systematic with this process.</p>
-<p id="p-419">First note that we can recast the nonlinear problem as a first-order system in two variables. Define \(x=\theta\) and \(y=\theta'\text{.}\) Then</p>
+<p id="p-429">First note that we can recast the nonlinear problem as a first-order system in two variables. Define \(x=\theta\) and \(y=\theta'\text{.}\) Then</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = y \\
@@ -226,8 +236,8 @@ var js_version = 0.12;
 \end{align*}
 </div>
 <p>or \(\bu' = \bff(\bu)\) for 2-vector \(\bu(t)\text{.}\) Note that (as we saw before), the vector \(\bu\) represents the state of the system.</p>
-<p id="p-420">As we did with single scalar equations, we will pay close attention to <dfn class="terminology">steady states</dfn> or <dfn class="terminology">fixed points</dfn> of these systems. Here this means constants \((x_p,y_p)\) such that \(F(x_p,y_p)=G(x_p,y_p)=0\text{.}\) For the nonlinear pendulum, both \((0,0)\) and \((\pi,0)\) are steady states.</p>
-<p id="p-421">We are interested in the stability of fixed points, that is, the dynamics close to them. We will use linear approximations of the functions \(F\) and \(G\) near a fixed point:</p>
+<p id="p-430">As we did with single scalar equations, we will pay close attention to <dfn class="terminology">steady states</dfn> or <dfn class="terminology">fixed points</dfn> of these systems. Here this means constants \((x_p,y_p)\) such that \(F(x_p,y_p)=G(x_p,y_p)=0\text{.}\) For the nonlinear pendulum, both \((0,0)\) and \((\pi,0)\) are steady states.</p>
+<p id="p-431">We are interested in the stability of fixed points, that is, the dynamics close to them. We will use linear approximations of the functions \(F\) and \(G\) near a fixed point:</p>
 <div class="displaymath">
 \begin{align*}
 F(x,y) \amp \approx F(x_p,y_p) + \pp{F}{x} (x-x_p) + \pp{F}{y} (y-y_p)\\
@@ -245,18 +255,18 @@ G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)\text{,}
 <article class="definition definition-like" id="nl-def-jacobian"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">5.5.1</span>. <span class="title">Jacobian matrix.</span>
 </h6>
-<p id="p-422">The <dfn class="terminology">Jacobian matrix</dfn> of the system \(x'=F(x,y),\, y'=G(x,y)\) is</p>
+<p id="p-432">The <dfn class="terminology">Jacobian matrix</dfn> of the system \(x'=F(x,y),\, y'=G(x,y)\) is</p>
 <div class="displaymath">
 \begin{equation}
 \bJ(x,y) = \twomat{\pp{F}{x}}{\pp{F}{y}}{\pp{G}{x}}{\pp{G}{y}}\label{nl-eq-jacobian}\tag{5.5.1}
 \end{equation}
-</div></article><p id="p-423">Let's summarize. In the neighborhood of a fixed point \((x_p,y_p)\text{,}\) we can define the “deviation from equilibrium” as the variables \(u_1(t)=x(t)-x_p\text{,}\) \(u_2(t)=y(t)-y_p\text{.}\) These variables approximately satisfy \(\bu'=\bJ(x_p,y_p)\bu\text{,}\) which is a linear, constant-coefficient system in two dimensions. This is a huge revelation: <em class="emphasis">near a steady state, dynamics are mostly linear</em>.</p>
-<p id="p-424">We are now right back into the situation of <a href="fs-phaseplane.html" class="internal" title="Section 3.6: Phase plane">Section 3.6</a>. In particular:</p>
+</div></article><p id="p-433">Let's summarize. In the neighborhood of a fixed point \((x_p,y_p)\text{,}\) we can define the “deviation from equilibrium” as the variables \(u_1(t)=x(t)-x_p\text{,}\) \(u_2(t)=y(t)-y_p\text{.}\) These variables approximately satisfy \(\bu'=\bJ(x_p,y_p)\bu\text{,}\) which is a linear, constant-coefficient system in two dimensions. This is a huge revelation: <em class="emphasis">near a steady state, dynamics are mostly linear</em>.</p>
+<p id="p-434">We are now right back into the situation of <a href="fs-phaseplane.html" class="internal" title="Section 3.6: Phase plane">Section 3.6</a>. In particular:</p>
 <article class="fact theorem-like" id="fact-20"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">5.5.2</span>.</h6>
-<p id="p-425">The stability of a steady state is (usually) determined by the eigenvalues of the Jacobian matrix at the steady state.</p></article><article class="example example-like" id="example-63"><a data-knowl="" class="id-ref" data-refid="hk-example-63"><h6 class="heading">
+<p id="p-435">The stability of a steady state is (usually) determined by the eigenvalues of the Jacobian matrix at the steady state.</p></article><article class="example example-like" id="example-66"><a data-knowl="" class="id-ref" data-refid="hk-example-66"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.5.3</span>. <span class="title">Linearization of the pendulum.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-63"><article class="example example-like"><p id="p-426">Let's examine the steady states of a pendulum with damping,</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-66"><article class="example example-like"><p id="p-436">Let's examine the steady states of a pendulum with damping,</p>
 <div class="displaymath">
 \begin{equation*}
 \ddd{\theta}{t} + \gamma \theta' + \frac{g}{L} \sin(\theta) = 0\text{,}
@@ -276,7 +286,7 @@ G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)\text{,}
 \pp{G}{x} = - \frac{g}{L}\cos(x) \amp \qquad \pp{G}{y} = -\gamma\text{.}
 \end{align*}
 </div>
-<p id="p-427">The first steady state we consider is at the origin. Here the Jacobian matrix is</p>
+<p id="p-437">The first steady state we consider is at the origin. Here the Jacobian matrix is</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 
@@ -285,7 +295,7 @@ G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)\text{,}
 \end{equation*}
 </div>
 <p>We get \(T=-\gamma \lt 0\) and \(D=g/L \gt 0\text{,}\) which is a stable sink. That comports with our experience with a pendulum hanging straight down!</p>
-<p id="p-428">The other steady state is at \((\pi,0)\text{.}\) Now the Jacobian is</p>
+<p id="p-438">The other steady state is at \((\pi,0)\text{.}\) Now the Jacobian is</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 
@@ -294,10 +304,10 @@ G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)\text{,}
 \end{equation*}
 </div>
 <p>with \(T=-\gamma\) and \(D=-g/L\text{.}\) This implies a saddle point, so the "inverted pendulum" is indeed unstable.</p></article></div>
-<p id="p-429">The caveat on using eigenvalues for stability is when they both have zero real part, which is neutrally or weakly stable in the linear sense. In such cases the details of the nonlinear terms of the system can swing the stability either way.</p>
-<article class="example example-like" id="example-64"><a data-knowl="" class="id-ref" data-refid="hk-example-64"><h6 class="heading">
+<p id="p-439">The caveat on using eigenvalues for stability is when they both have zero real part, which is neutrally or weakly stable in the linear sense. In such cases the details of the nonlinear terms of the system can swing the stability either way.</p>
+<article class="example example-like" id="example-67"><a data-knowl="" class="id-ref" data-refid="hk-example-67"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.5.4</span>. <span class="title">Linearization of predator-prey.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-64"><article class="example example-like"><p id="p-430">The system</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-67"><article class="example example-like"><p id="p-440">The system</p>
 <div class="displaymath">
 \begin{align*}
 \frac{dx}{dt} \amp= 3x-\frac{xy}{2}\\
@@ -305,7 +315,7 @@ G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)\text{,}
 \end{align*}
 </div>
 <p>is called a <dfn class="terminology">predator–prey</dfn> equation. If species \(y\) is set to zero, species \(x\) would grow exponentially on its own (the prey). Similarly, species \(y\) would die off on its own (predator). We assume that encounters between the species are jointly proportional to the population of each, and they subtract from the prey and add to the predators.</p>
-<p id="p-431">We find fixed points when \(3x-(xy/2)=(xy/4)-y=0\text{,}\) which has two solutions, \((0,0)\) and \((4,6)\text{.}\) The Jacobian matrix of the system is</p>
+<p id="p-441">We find fixed points when \(3x-(xy/2)=(xy/4)-y=0\text{,}\) which has two solutions, \((0,0)\) and \((4,6)\text{.}\) The Jacobian matrix of the system is</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf{A}(x,y) = \begin{bmatrix} F_x \amp F_y  \\ G_x \amp G_y \end{bmatrix} = \begin{bmatrix} 3-y/2 \amp -x/2 \\ y/4 \amp -1+x/4 \end{bmatrix}\text{.}
@@ -318,7 +328,7 @@ G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)\text{,}
 \end{equation*}
 </div>
 <p>The eigenvalues of a diagonal matrix (in fact, a triangular matrix) are the diagonal entries. Hence the origin is a saddle point.</p>
-<p id="p-432">At the other steady state we have</p>
+<p id="p-442">At the other steady state we have</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf{A}(4,6) = \twomat{0}{-2}{3/2}{0}\text{.}
@@ -326,7 +336,7 @@ G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)\text{,}
 </div>
 <p>The characteristic polynomial is \(\lambda^2 - 0\lambda + 3\text{,}\) so the eigenvalues are \(\pm i\sqrt{3}\text{.}\) Hence this fixed point is a center. Close to the point, the orbits are impossible to tell apart from those of a linear center:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="linearized_center1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<p id="p-433">However, as we zoom out, the nonlinearity of the system makes its influence felt:</p>
+<p id="p-443">However, as we zoom out, the nonlinearity of the system makes its influence felt:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="linearized_center2.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article></div></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>

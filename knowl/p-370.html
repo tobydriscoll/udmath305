@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:18-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution has</p>
+<p>If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
+\lx[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
 \end{equation*}
 </div>
-<p>We can use the trick of completing the square to write this as</p>
+<p>and</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = e^{-s} \frac{6}{(s+1)^2+9} = e^{-s} F(s)\text{,}
+\lx[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
 \end{equation*}
 </div>
-<p>where we can now see that \(f(t) = 2e^{-t}\sin(3t)\text{.}\) By the shift theorem, \(x_p(t)=H(t-1)f(t-1)\text{.}\)</p>
-<span class="incontext"><a href="so-laplace-repeated.html#p-370">in-context</a></span>
+<p>Conversely, a transform \(X(s)\) that has \(s^2+\omega^2\) as a factor in the denominator has poles at \(\pm i\omega\text{.}\) The simplest case is</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="so-laplace.html#p-370">in-context</a></span>
 </body>
 </html>

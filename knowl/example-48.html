@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:17-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,38 +13,44 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.7.4</span>.</h6>
-<p>Suppose</p>
-<div class="displaymath">
-\begin{equation*}
-\bA = \twomat{1}{-2}{5}{-3}\text{,}
-\end{equation*}
-</div>
-<p>and we find that</p>
-<div class="displaymath">
-\begin{equation*}
-\bD = \twomat{-1+i}{0}{0}{-1-i}, \qquad \bV = \twomat{1}{1}{2-i}{2+i}\text{.}
-\end{equation*}
-</div>
-<p>Then</p>
-<div class="displaymath">
-\begin{equation*}
-\bV^{-1} = \frac{1}{2+i-2+i} \twomat{2+i}{-1}{-2+i}{1} = \frac{i}{2} \twomat{-2-i}{1}{2-i}{-1}\text{,}
-\end{equation*}
-</div>
-<p>and then</p>
-<div class="displaymath">
-\begin{align*}
-e^{t \bA} \amp = \bV e^{t \bD}  \bV^{-1} = e^{-t}\frac{i}{2}\twomat{1}{1}{2-i}{2+i} \twomat{e^{it}}{0}{0}{e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
-\amp = e^{-t}\frac{i}{2}\twomat{e^{it}}{e^{-it}}{(2-i)e^{it}}{(2+i)e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
-\amp = e^{-t}\frac{i}{2} \twomat{-(2+i)e^{it}+(2-i) e^{-it}}{e^{it}-e^{-it}}{-(2-i)(2+i)e^{it}+(2+i)(2-i) e^{-it}}{(2-i)e^{it}-(2+i) e^{-it}} \text{.}
-\end{align*}
-</div>
-<p>Each entry is written in the form of a complex number minus its conjugate, which gives \(2i\) times the imaginary part. This helps a lot.</p>
-<div class="displaymath">
-\begin{equation*}
-e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\sin(t)}\text{.}
-\end{equation*}
-</div></article><span class="incontext"><a href="fs-matrix-exp.html#example-48">in-context</a></span>
+<span class="type">Example</span> <span class="codenumber">3.6.3</span>.</h6>
+<p>Here is a phase plane plot for \(\bA=\twomat{-2}{-3}{-6}{-5}\text{,}\) which has eigenvalues \(1\) and \(-8\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = [-2 -3; -6 -5];
+[V,D] = eig(A);
+lam = diag(D);
+
+clf
+plot(0,0,'r.','markersize',18)
+hold on
+
+% plot directions
+[x1,x2] = meshgrid(-1:.2:1);
+v = A*[x1(:)';x2(:)'];
+sz = size(x1);
+quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
+
+% plot eigenvectors
+plot(5*[-V(1,:);V(1,:)],5*[-V(2,:);V(2,:)],'k','linew',2)
+
+% plot trajectories
+colr = get(gca,'colororder');
+t = linspace(0,10,300);
+for theta = 2*pi*(0:23)/24
+	for j = 1:length(t)
+		X = expm(t(j)*A);
+		x(:,j) = X*[ cos(theta); sin(theta) ];
+	end
+	plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
+end
+
+axis([-1.1 1.1 -1.1 1.1]), axis square
+title('saddle')
+xlabel('x_1')
+ylabel('x_2')
+</pre></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fs_pp_saddle.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>An initial condition exactly on the stable black line (eigenvector) will approach the origin, but anything else ends up shooting away more or less in the direction of the unstable eigenvector.</p></article><span class="incontext"><a href="fs-phaseplane.html#example-48">in-context</a></span>
 </body>
 </html>

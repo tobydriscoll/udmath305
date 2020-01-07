@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:13-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,7 +208,7 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-homogeneous"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Homogeneous problem</span>
 </h2>
-<a href="so-homogeneous.html" class="permalink">¶</a><p id="p-327">The general solution of \(x'' + bx' + cx = f(t)\) consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem. For the homogeneous part the relevant matrix is from <a data-knowl="./knowl/so-eq-matrixmodel.html" title="Equation 4.1.4">(4.1.4)</a>:</p>
+<a href="so-homogeneous.html" class="permalink">¶</a><p id="p-337">The general solution of \(x'' + bx' + cx = f(t)\) consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem. For the homogeneous part the relevant matrix is from <a data-knowl="./knowl/so-eq-matrixmodel.html" title="Equation 4.1.4">(4.1.4)</a>:</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \twomat{0}{1}{-c}{-b}\text{.}
@@ -211,7 +221,7 @@ var js_version = 0.12;
 \end{equation*}
 </div>
 <p>(This is easily remembered in terms of the original ODE \(x'' + bx' + cx=0\text{.}\)) The eigenvalues can therefore be found from the quadratic formula.</p>
-<p id="p-328">To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
+<p id="p-338">To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
 <div class="displaymath">
 \begin{equation*}
 \bu_h(t) = c_1 e^{\lambda_1 t} \twovec{1}{\lambda_1} + c_2 e^{\lambda_2 t} \twovec{1}{\lambda_2}\text{.}
@@ -223,7 +233,7 @@ var js_version = 0.12;
 x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \qquad \text{if } \lambda_1\neq\lambda_2\text{.}
 \end{equation*}
 </div>
-<p id="p-329">We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) We recall the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.7.2: Defective matrix">Subsection 3.7.2</a> and define</p>
+<p id="p-339">We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) We recall the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.7.2: Defective matrix">Subsection 3.7.2</a> and define</p>
 <div class="displaymath">
 \begin{equation*}
 \bB = \bA + \frac{b}{2}\bI = \twomat{b/2}{1}{-c}{-b/2} = \twomat{b/2}{1}{-b^2/4}{-b/2}\text{.}

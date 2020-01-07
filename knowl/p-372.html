@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:18-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For a harmonically forced case such as \(x''+2x'+10x=\cos(2t)\text{,}\) we have</p>
+<p>Things are not too bad if there is an additional real pole:</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{s}{(s^2+4)(s^2+2s+10)}\text{.}
+X_p(s) = \frac{A+Bs}{s^2+\omega^2} + \frac{C}{s-c} \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t) + C e^{ct}\text{.}
 \end{equation*}
 </div>
-<p>We could find a decomposition in the form</p>
-<div class="displaymath">
-\begin{equation*}
-X_p(s) = \frac{2A+Bs}{s^2+4} + \frac{3C+E(s+1)}{(s+1)^2+9}\text{,}
-\end{equation*}
-</div>
-<p>which is eminently invertible. The details are left to the proverbial reader.</p>
-<span class="incontext"><a href="so-laplace-repeated.html#p-372">in-context</a></span>
+<p>Usually there is some grunt (or computer) work involved in finding the values of \(A\text{,}\) \(B\text{,}\) and \(C\text{.}\)</p>
+<span class="incontext"><a href="so-laplace.html#p-372">in-context</a></span>
 </body>
 </html>

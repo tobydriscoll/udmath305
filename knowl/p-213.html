@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:16-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,42 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's solve \(x'=3x+50\cos(4t)\text{.}\) We have \(x_h=c_1e^{3t}\) and choose</p>
+<p>For \((2+t) x'= x - 1\text{,}\) we rewrite as</p>
 <div class="displaymath">
 \begin{equation*}
-x_p = A \cos(4t) + B\sin(4t)\text{.}
+x' - \frac{1}{2+t} x = -\frac{1}{2+t}\text{.}
 \end{equation*}
 </div>
-<p>Put this into the ODE to get</p>
+<p>Then</p>
 <div class="displaymath">
 \begin{equation*}
-[-4A\sin(4t) + 4B\cos(4t)] - 3[A \cos(4t) + B\sin(4t)] = 50\cos(4t)\text{.}
+g(t) = \exp\left[ \int \frac{1}{2+t}\, dt \right] = \exp[ \ln(2+t) ] = 2+t\text{.}
 \end{equation*}
 </div>
-<p>Matching the coefficients of cosine and sine leads to</p>
+<p>Next,</p>
 <div class="displaymath">
 \begin{equation*}
-4B-3A = 50, \quad -4A-3B = 0\text{.}
+k(t) = \int \frac{-1}{2+t} (2+t)^{-1} \, dt = - (2+t)^{-1}\text{,}
 \end{equation*}
 </div>
-<p>This is the linear system</p>
+<p>so that</p>
 <div class="displaymath">
 \begin{equation*}
-\twomat{-3}{4}{-4}{-3} \twovec{A}{B} = \twovec{50}{0}\text{.}
+x(t) = c_1 (2+t) - (2+t)^{-1} (2+t) = c_1(2+t)-1\text{.}
 \end{equation*}
 </div>
-<p>We apply Cramer's Rule to get</p>
-<div class="displaymath">
-\begin{equation*}
-A = \frac{ \twodet{50}{4}{0}{-3} }{9+16} = -6, \quad B = \frac{ \twodet{-3}{50}{-4}{0} }{9+16} = 8\text{.}
-\end{equation*}
-</div>
-<p>Thus finally</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = c_1e^{3t} + 8\cos(4t) - 6 \sin(4t) \text{.}
-\end{equation*}
-</div>
-<span class="incontext"><a href="fl-undeter.html#p-213">in-context</a></span>
+<span class="incontext"><a href="fl-varparam.html#p-213">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:11-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,7 +208,7 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="la-diagonalization"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.11</span> <span class="title">Diagonalization</span>
 </h2>
-<a href="la-diagonalization.html" class="permalink">¶</a><section class="introduction" id="introduction-4"><p id="p-151">Say \(\bA\) is \(n\times n\text{,}\) and that we write</p>
+<a href="la-diagonalization.html" class="permalink">¶</a><section class="introduction" id="introduction-5"><p id="p-160">Say \(\bA\) is \(n\times n\text{,}\) and that we write</p>
 <div class="displaymath">
 \begin{equation*}
 \bA \bv_1 = \lambda_1 \bv_1, \;
@@ -227,16 +237,16 @@ var js_version = 0.12;
 \end{align*}
 </div>
 <p>where \(\bD\) is a <dfn class="terminology">diagonal</dfn> matrix.</p>
-<p id="p-152">If \(\bV\) is nonsingular, we therefore can write</p>
+<p id="p-161">If \(\bV\) is nonsingular, we therefore can write</p>
 <div class="displaymath">
 \begin{equation}
 \bA = \bV \bD \bV^{-1}\text{,}\label{la-eq-diagonalization}\tag{1.11.1}
 \end{equation}
 </div>
 <p>which is called a <dfn class="terminology">diagonalization</dfn> of \(\bA\text{.}\) A diagonalization is not unique; after all, we can take the eigenvalues in any order, and the eigenvectors themselves are not unique.</p>
-<article class="example example-like" id="example-17"><a data-knowl="" class="id-ref" data-refid="hk-example-17"><h6 class="heading">
+<aside class="aside aside-like" id="aside-10"><p id="p-162">When a matrix has a diagonalization, the two-output form of the <code class="code-inline tex2jax_ignore">eig</code> MATLAB command gives the matrices <code class="code-inline tex2jax_ignore">V</code> and <code class="code-inline tex2jax_ignore">D</code> for one.</p></aside><article class="example example-like" id="example-20"><a data-knowl="" class="id-ref" data-refid="hk-example-20"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">1.11.1</span>. <span class="title">A 2-by-2 diagonalization.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-17"><article class="example example-like"><p id="p-153">Let's find a diagonalization of</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-20"><article class="example example-like"><p id="p-163">Let's find a diagonalization of</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf{A} =  \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}\text{.}
@@ -263,18 +273,18 @@ var js_version = 0.12;
 \begin{bmatrix} 1/2 \amp 1/4 \\ 1/2 \amp -1/4 \end{bmatrix}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-154">Not every matrix has a diagonalization. The essential issue is whether \(\bV\) is invertible. We already have the condition needed to ensure this.</p>
+<p id="p-164">Not every matrix has a diagonalization. The essential issue is whether \(\bV\) is invertible. We already have the condition needed to ensure this.</p>
 <article class="theorem theorem-like" id="la-thm-diagonalizable"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.11.2</span>. <span class="title">Diagonalizability.</span>
 </h6>
-<p id="p-155">A matrix is diagonalizable if and only if it has no defective eigenvalues.</p></article><p id="p-156">If we put that together with <a data-knowl="./knowl/la-thm-distincteigs.html" title="Theorem 1.10.15: Distinct eigenvalues">Theorem 1.10.15</a>, then we can also conclude that <em class="alert">a matrix whose eigenvalues are all simple (multiplicity one) is diagonalizable</em>. Any repeated eigenvalues might or might not be defective, and investigation of the eigenspace is required in order to determine which. In the \(2\times 2\) case, though, we can make a simpler determination.</p>
+<p id="p-165">A matrix is diagonalizable if and only if it has no defective eigenvalues.</p></article><p id="p-166">If we put that together with <a data-knowl="./knowl/la-thm-distincteigs.html" title="Theorem 1.10.16: Distinct eigenvalues imply nondefectiveness">Theorem 1.10.16</a>, then we can also conclude that <em class="alert">a matrix whose eigenvalues are all simple (multiplicity one) is diagonalizable</em>. Any repeated eigenvalues might or might not be defective, and investigation of the eigenspace is required in order to determine which. In the \(2\times 2\) case, though, we can make a simpler determination.</p>
 <article class="fact theorem-like" id="fact-6"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">1.11.3</span>.</h6>
-<p id="p-157">A \(2\times 2\) matrix with repeated eigenvalue is either a multiple of the identity, in which case it is already diagonal, or it is defective.</p></article></section><section class="subsection" id="la-di-basis"><h3 class="heading hide-type">
+<p id="p-167">A \(2\times 2\) matrix with repeated eigenvalue is either a multiple of the identity, in which case it is already diagonal, or it is defective.</p></article></section><section class="subsection" id="la-di-basis"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.11.1</span> <span class="title">Eigenvector basis (optional)</span>
 </h3>
-<a href="la-diagonalization.html#la-di-basis" class="permalink">¶</a><p id="p-158">Equation <a data-knowl="./knowl/la-eq-diagonalization.html" title="Equation 1.11.1">(1.11.1)</a> probably looks quite strange. It was derived by writing out all of the eigenpair equations simulataneously, and we will see that it has some uses later on. But what is it about?</p>
-<p id="p-159">Focus first on the inner diagonal matrix \(\bD\text{.}\) Diagonal matrices are about as simple as matrices get: for any vector \(\bu\text{,}\)</p>
+<a href="la-diagonalization.html#la-di-basis" class="permalink">¶</a><p id="p-168">Equation <a data-knowl="./knowl/la-eq-diagonalization.html" title="Equation 1.11.1">(1.11.1)</a> probably looks quite strange. It was derived by writing out all of the eigenpair equations simulataneously, and we will see that it has some uses later on. But what is it about?</p>
+<p id="p-169">Focus first on the inner diagonal matrix \(\bD\text{.}\) Diagonal matrices are about as simple as matrices get: for any vector \(\bu\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} \lambda_1 \amp \amp \amp \\ \amp \lambda_2 \amp \amp \\ \amp \amp \ddots \amp \\ \amp \amp \amp \lambda_n \end{bmatrix} 
@@ -288,7 +298,7 @@ var js_version = 0.12;
 \end{equation*}
 </div>
 <p>In words, the entries of \(\bu\) are the coefficients for expressing \(\bx\) as a linear combination of eigenvectors. We call these the <dfn class="terminology">coordinates</dfn> of \(\bx\) in an  <dfn class="terminology">eigenvector basis</dfn> (consider <a data-knowl="./knowl/la-thm-FTLA.html" title="Theorem 1.8.1: Fundamental Theorem of Linear Algebra">Theorem 1.8.1</a>).</p>
-<p id="p-160">Let's put all this together:</p>
+<p id="p-170">Let's put all this together:</p>
 <div class="displaymath">
 \begin{equation*}
 \bA \bx = (\bV \bD \bV^{-1})\bx = \bV \bD (\bV^{-1}\bx) \text{,}

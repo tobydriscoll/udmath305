@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:16-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,11 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To find an eigenvector for \(\lambda_1\text{,}\) we note that the first row of \(\bA - \lambda_1 \mathbf{I} \) is \([(2-i),-1]\text{.}\) Thus a basis for this eigenspace is the single eigenvector \(\twovec{1}{2-i}\text{.}\)</p>
+<p>MATLAB computes eigenvalues and eigenvectors (through an entirely different process) with the <code class="code-inline tex2jax_ignore">eig</code> command. <pre class="prettyprint lang-matlab">A = [ 1 1; 4 1 ];
+lambda = eig(A)
+
+[V,D] = eig(A)
+</pre> In the second format (two outputs), the eigenvalues are on the diagonal of <code class="code-inline tex2jax_ignore">D</code>. The corresponding columns of <code class="code-inline tex2jax_ignore">V</code> are basis vectors for their eigenspaces, provided those are one-dimensional.</p>
 <span class="incontext"><a href="la-eigen.html#p-138">in-context</a></span>
 </body>
 </html>

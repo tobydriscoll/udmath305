@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:11-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,9 +208,9 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="linearity"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Introduction</span>
 </h2>
-<a href="linearity.html" class="permalink">¶</a><p id="p-161">A <dfn class="terminology">differential equation</dfn> is an equation that has some derivatives in it. (Duh.) The variable whose derivative is taken is called the <dfn class="terminology">dependent variable</dfn> and is considered the "unknown" of the differential equation. We'll be concerned with the case where there is only one <dfn class="terminology">independent variable</dfn>  (a "with respect to" variable in the denominator of a derivative), so there are no partial derivatives and we say the equation is  an <dfn class="terminology">ordinary differential equation</dfn>, or ODE. For discussions and theory we will stick to \(x\) and \(t\) as the dependent and independent variables, but in general these are determined by what is being modeled by the ODE.</p>
-<p id="p-162">If only first derivatives appear (that is, no \(x''\text{,}\) \(x'''\text{,}\) etc.), it's a <dfn class="terminology">first-order</dfn> ODE. We're going to stick to this kind of ODE for a while.</p>
-<p id="p-163">The easiest ODE in the world is</p>
+<a href="linearity.html" class="permalink">¶</a><p id="p-171">A <dfn class="terminology">differential equation</dfn> is an equation that has some derivatives in it. (Duh.) The variable whose derivative is taken is called the <dfn class="terminology">dependent variable</dfn> and is considered the "unknown" of the differential equation. We'll be concerned with the case where there is only one <dfn class="terminology">independent variable</dfn>  (a "with respect to" variable in the denominator of a derivative), so there are no partial derivatives and we say the equation is  an <dfn class="terminology">ordinary differential equation</dfn>, or ODE. For discussions and theory we will stick to \(x\) and \(t\) as the dependent and independent variables, but in general these are determined by what is being modeled by the ODE.</p>
+<p id="p-172">If only first derivatives appear (that is, no \(x''\text{,}\) \(x'''\text{,}\) etc.), it's a <dfn class="terminology">first-order</dfn> ODE. We're going to stick to this kind of ODE for a while.</p>
+<p id="p-173">The easiest ODE in the world is</p>
 <div class="displaymath">
 \begin{equation*}
 \dd{x}{t} = 0\text{.}
@@ -209,11 +219,11 @@ var js_version = 0.12;
 <p>A <dfn class="terminology">solution</dfn> of this ODE is a function \(x(t)\) that satisfies the ODE. Perhaps you can work out that the solution here is \(x(t)=C\) for an arbitrary constant \(C\text{.}\) As dumb as this example is, it points out something important right away.</p>
 <article class="fact theorem-like" id="fact-7"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">2.1.1</span>.</h6>
-<p id="p-164">Solutions to ODEs are not unique.</p></article><p id="p-165">More general, but not really any more new to you, is the ODE \(\dd{x}{t}=f(t)\text{.}\) Both sides can be integrated to give \(x(t) = \int f(t)\,dt + C\text{.}\)</p>
-<p id="p-166">Things get interesting only when both \(x\) and \(x'\) appear in the equation. We'll use four examples or archetypes to begin the discussion.</p>
+<p id="p-174">Solutions to ODEs are not unique.</p></article><p id="p-175">More general, but not really any more new to you, is the ODE \(\dd{x}{t}=f(t)\text{.}\) Both sides can be integrated to give \(x(t) = \int f(t)\,dt + C\text{.}\)</p>
+<p id="p-176">Things get interesting only when both \(x\) and \(x'\) appear in the equation. We'll use four examples or archetypes to begin the discussion.</p>
 <article class="example example-like" id="ex-constant-growth"><a data-knowl="" class="id-ref" data-refid="hk-ex-constant-growth"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.1.2</span>. <span class="title">Constant growth rate.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-constant-growth"><article class="example example-like"><div class="displaymath" id="p-167">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-constant-growth"><article class="example example-like"><div class="displaymath" id="p-177">
 \begin{equation*}
 \dd{x}{t} = x
 \end{equation*}
@@ -229,13 +239,13 @@ title('Exponential growth')
 </div></div></article></div>
 <article class="example example-like" id="ex-constant-decay"><a data-knowl="" class="id-ref" data-refid="hk-ex-constant-decay"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.1.3</span>. <span class="title">Constant decay rate.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-constant-decay"><article class="example example-like"><div class="displaymath" id="p-168">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-constant-decay"><article class="example example-like"><div class="displaymath" id="p-178">
 \begin{equation*}
 \dd{x}{t} = -y
 \end{equation*}
 </div>
 <p>Now the model states that the rate of change is negative when \(x\) is positive (and vice versa). So a positive starting value will decrease, but the rate of decrease will then lessen, etc. From this qualitative description alone it's impossible to tell whether the solution ever reaches zero--at which point its rate of change would be zero.</p>
-<p id="p-169">But we can end the suspense by easily verifying that \(x=e^{-t}\) is a solution. This function asymptotically approaches zero as \(t\to\infty\text{,}\) which we call <dfn class="terminology">exponential decay</dfn>. In other, related problems we will find that solutions can decay (or "relax") to any value, not just zero.</p>
+<p id="p-179">But we can end the suspense by easily verifying that \(x=e^{-t}\) is a solution. This function asymptotically approaches zero as \(t\to\infty\text{,}\) which we call <dfn class="terminology">exponential decay</dfn>. In other, related problems we will find that solutions can decay (or "relax") to any value, not just zero.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">x = @(t) exp(-t);
 fplot(x,[0,4]), set(gca,'yscale','log')
@@ -246,7 +256,7 @@ title('Exponential decay')
 </div></div></article></div>
 <article class="example example-like" id="ex-variable-growth"><a data-knowl="" class="id-ref" data-refid="hk-ex-variable-growth"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.1.4</span>. <span class="title">Variable growth rate.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-variable-growth"><article class="example example-like"><div class="displaymath" id="p-170">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-variable-growth"><article class="example example-like"><div class="displaymath" id="p-180">
 \begin{equation*}
 \dd{x}{t} = 2tx
 \end{equation*}
@@ -262,13 +272,13 @@ title('Variable growth')
 </div></div></article></div>
 <article class="example example-like" id="ex-nonlinear-growth"><a data-knowl="" class="id-ref" data-refid="hk-ex-nonlinear-growth"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.1.5</span>. <span class="title">Nonlinear growth.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-nonlinear-growth"><article class="example example-like"><div class="displaymath" id="p-171">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-nonlinear-growth"><article class="example example-like"><div class="displaymath" id="p-181">
 \begin{equation*}
 \dd{y}{t} = y^2
 \end{equation*}
 </div>
 <p>This is our first example featuring a nonlinear term in the variable \(x\text{.}\) As a rule, nonlinear ODEs are much harder to solve and have less predictable mathematical structure than linear problems. This particular example isn't so tough, though; you can check that \(x=1/(1-t)\) is a solution. Note that the growth is even faster--literally off the charts as \(t\to 1\text{.}\)</p>
-<p id="p-172">(You might wonder about the validity of any mathematical model that leads to an infinite result in finite time. But in fact this ODE describes, for instance, the evolution of the slope of the line of sight to an airplane flying straight over you. When the airplane is directly overhead, the slope is infinite. So while the model becomes mathematically invalid at that moment, it does describe a true physical situation.)</p>
+<p id="p-182">(You might wonder about the validity of any mathematical model that leads to an infinite result in finite time. But in fact this ODE describes, for instance, the evolution of the slope of the line of sight to an airplane flying straight over you. When the airplane is directly overhead, the slope is infinite. So while the model becomes mathematically invalid at that moment, it does describe a true physical situation.)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">x = @(t) 1./(1-t);
 fplot(x,[0,1]), set(gca,'yscale','log')

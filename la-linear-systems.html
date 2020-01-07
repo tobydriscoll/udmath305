@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:10-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,10 +208,7 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="la-linear-systems"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Linear systems of equations</span>
 </h2>
-<a href="la-linear-systems.html" class="permalink">¶</a><section class="subsection" id="la-ls-notation"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.1.1</span> <span class="title">Some terminology</span>
-</h3>
-<a href="la-linear-systems.html#la-ls-notation" class="permalink">¶</a><p id="p-3">When you first learned algebra, there was a lot of focus on solving equations. It's very likely that you started with linear equations, because these are the easiest ones.</p>
+<a href="la-linear-systems.html" class="permalink">¶</a><section class="introduction" id="la-ls-notation"><p id="p-3">When you first learned algebra, there was a lot of focus on solving equations. It's very likely that you started with linear equations, because these are the easiest ones.</p>
 <p id="p-4">It might feel silly, but let's review what it means to solve the linear equation</p>
 <div class="displaymath">
 \begin{equation*}
@@ -283,7 +290,7 @@ b_1 \\ b_2 \\ \vdots \\ b_m
 </div>
 <p>These are <dfn class="terminology">vectors</dfn>. I use bold lowercase letters for vectors.</p>
 <aside class="aside aside-like" id="aside-1"><p id="p-11">We often think of a vector as a matrix with one column (or one row, if we use that shape). That is how MATLAB does things. Other languages, such as Python, are different, however.</p></aside><p id="p-12">We will soon be writing a linear system of equations as simply \(\bA\bx=\bb\text{.}\) And just as above, there is a property of \(\bA\) that determines whether or not there is a unique solution. If not, then it depends on both \(\bA\) and \(\bb\) whether there are infinitely many solutions, or none. Those are the only possibilities.</p></section><section class="subsection" id="la-ls-elimination"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.1.2</span> <span class="title">Row elimination</span>
+<span class="type">Subsection</span> <span class="codenumber">1.1.1</span> <span class="title">Row elimination</span>
 </h3>
 <a href="la-linear-systems.html#la-ls-elimination" class="permalink">¶</a><p id="p-13">You've probably solved small systems of equations by substitution. Essentially, all we need to do in the general case is systematize that process. The goal is to transform the system to an equivalent one whose solution(s) we can just read off.</p>
 <article class="example example-like" id="example-1"><a data-knowl="" class="id-ref" data-refid="hk-example-1"><h6 class="heading">
@@ -334,8 +341,8 @@ x_2 \amp = -3 \amp \amp \\
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
-1 \amp 1 \amp -1 \amp 2 \\
--3 \amp -2 \amp 0 \amp 9 \\
+1 \amp -1 \amp -1 \amp 2 \\
+3 \amp -2 \amp 0 \amp 9 \\
 1 \amp -2 \amp -1 \amp 5
 \end{bmatrix}\text{.}
 \end{equation*}
@@ -344,7 +351,7 @@ x_2 \amp = -3 \amp \amp \\
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
-1 \amp 1 \amp -1 \amp 2 \\
+1 \amp -1 \amp -1 \amp 2 \\
 0 \amp 1 \amp 3 \amp 3 \\
 0 \amp -1 \amp 0 \amp 3
 \end{bmatrix}\text{.}
@@ -354,7 +361,7 @@ x_2 \amp = -3 \amp \amp \\
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
-1 \amp 1 \amp -1 \amp 2 \\
+1 \amp -1 \amp -1 \amp 2 \\
 0 \amp 1 \amp 3 \amp 3 \\
 0 \amp 0 \amp 3 \amp 6
 \end{bmatrix}\text{.}
@@ -390,10 +397,24 @@ x_2 \amp = -3 \amp \amp \\
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>The last column is now the solution.</p></article></div>
-<p id="p-19">Before we generalize, let's look at an example that works out differently.</p>
+<p>The last column is now the solution.</p>
+<p id="p-19">The following code performs these operations in MATLAB. Note the square brackets used to define matrices and vectors, and the notation used to access a row or part of a row. <pre class="prettyprint lang-matlab">A = [ 1 -1 -1; 3 -2 0; 1 -2 -1 ]
+b = [ 2; 9; 5 ]
+AA = [ A b ]
+
+AA(2,1:end) = AA(2,1:end) - 3*AA(1,1:end)
+AA(3,1:end) = AA(3,1:end) - AA(1,1:end)
+
+AA(3,2:end) = AA(3,2:end) + AA(2,2:end)
+
+AA(2,3:end) = AA(2,3:end) - AA(3,3:end)
+AA(1,3:end) = AA(1,3:end) + (1/3)*AA(3,3:end)
+
+AA(1,2:end) = AA(1,2:end) + AA(2,2:end)
+</pre></p></article></div>
+<p id="p-20">Before we generalize, let's look at an example that works out differently.</p>
 <article class="example example-like" id="example-3"><a data-knowl="" class="id-ref" data-refid="hk-example-3"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.1.3</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-3"><article class="example example-like"><p id="p-20">Let's solve the system having augmented matrix</p>
+<span class="type">Example</span> <span class="codenumber">1.1.3</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-3"><article class="example example-like"><p id="p-21">Let's solve the system having augmented matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -446,31 +467,31 @@ x_1 = 5 + s \text{.}
 \end{equation*}
 </div>
 <p>So \([5+s,-1-3s,s]\) is a solution for every \(s\text{,}\) and we have infinitely many solutions.</p></article></div>
-<p id="p-21">The process demonstrated in the previous two examples is best known as  <dfn class="terminology">Gauss-Jordan elimination</dfn>, though I prefer to call it <dfn class="terminology">row elimination</dfn> (seeing how the basic idea was known at least in China thousands of years before those dudes were born). As seen in the examples, row elimination consists of two phases, one downward and one upward. The goal is to put the augmented matrix into a special form. In the following definition of that form, we use the term  <dfn class="terminology">leading nonzero</dfn> to mean the first (leftmost) entry of a row that is not zero. </p>
+<p id="p-22">The process demonstrated in the previous two examples is best known as  <dfn class="terminology">Gauss-Jordan elimination</dfn>, though I prefer to call it <dfn class="terminology">row elimination</dfn> (seeing how the basic idea was known at least in China thousands of years before those dudes were born). As seen in the examples, row elimination consists of two phases, one downward and one upward. The goal is to put the augmented matrix into a special form. In the following definition of that form, we use the term  <dfn class="terminology">leading nonzero</dfn> to mean the first (leftmost) entry of a row that is not zero. </p>
 <article class="definition definition-like" id="definition-1"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.1.4</span>. <span class="title">RREF.</span>
 </h6>
-<p id="p-22">A matrix is in  <dfn class="terminology">RREF</dfn> (reduced row echelon form) if it meets these requirements:</p>
+<p id="p-23">A matrix is in  <dfn class="terminology">RREF</dfn> (reduced row echelon form) if it meets these requirements:</p>
 <ol class="decimal">
 <li id="li-13">Any rows of all zeros appear below all nonzero rows.</li>
 <li id="li-14">The leading nonzero of any row is a one.</li>
 <li id="li-15">Every leading one is the only nonzero in its column.</li>
 </ol>
-<p>The columns that have leading ones are called  <dfn class="terminology">pivot columns</dfn>. The other columns are called  <dfn class="terminology">free columns</dfn>.</p></article><p id="p-23">As seen in the examples above, an augmented matrix in RREF represents a linear system that we can solve by inspection:</p>
+<p>The columns that have leading ones are called  <dfn class="terminology">pivot columns</dfn>. The other columns are called  <dfn class="terminology">free columns</dfn>.</p></article><p id="p-24">As seen in the examples above, an augmented matrix in RREF represents a linear system that we can solve by inspection:</p>
 <ul class="disc">
 <li id="li-16">The zero rows are ignored.</li>
 <li id="li-17">If a leading one occurs in the last column, the system is inconsistent.</li>
 <li id="li-18">Otherwise, each variable associated with a free column is considered a free parameter (e.g., \(s\text{,}\) \(t\text{,}\) etc.).</li>
 <li id="li-19">The remaining pivot columns are used to solve for their corresponding variables in terms of the free parameters.</li>
 </ul>
-<p id="p-24">Finally, there are three “moves” or row operations that are allowed in row elimination:</p>
+<p id="p-25">Finally, there are three “moves” or row operations that are allowed in row elimination:</p>
 <ol class="decimal">
 <li id="li-20">Swap any two rows.</li>
 <li id="li-21">Multiply a row by a <em class="emphasis">nonzero</em> constant.</li>
 <li id="li-22">Add a multiple of one row into another.</li>
 </ol>
 <p>These are sufficient to transform any matrix into RREF.</p>
-<aside class="aside aside-like" id="aside-3"><p id="p-25">MATLAB has a command <code class="code-inline tex2jax_ignore">rref</code> to put a matrix in RREF. However, it's not ideal, because MATLAB uses floating point and cannot always produce exact zeros. You can also <a class="external" href="https://www.wolframalpha.com/input/?i=rref%20%7B%7B1%2C2%2C3%7D%2C%7B4%2C5%2C6%7D%2C%7B7%2C8%2C9%7D%7D" target="_blank">try Wolfram Alpha</a> for this.</p></aside></section></section></div></main>
+<aside class="aside aside-like" id="aside-3"><p id="p-26">MATLAB has a command <code class="code-inline tex2jax_ignore">rref</code> to put a matrix in RREF. However, it's not ideal, because MATLAB uses floating point and cannot always produce exact zeros. You can also <a class="external" href="https://www.wolframalpha.com/input/?i=rref%20%7B%7B1%2C2%2C3%7D%2C%7B4%2C5%2C6%7D%2C%7B7%2C8%2C9%7D%7D" target="_blank">try Wolfram Alpha</a> for this.</p></aside></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

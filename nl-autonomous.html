@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:14-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,14 +208,14 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="nl-autonomous"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Autonomous scalar problems</span>
 </h2>
-<a href="nl-autonomous.html" class="permalink">¶</a><p id="p-390">Our general form for a first-order scalar ODE is \(x'=f(t,x)\text{.}\) In the special case where \(f\) does not depend explicitly on time, i.e., when \(x'=f(x)\text{,}\) we say the equation is <dfn class="terminology">autonomous</dfn>. These equations are the simplest place to start.</p>
-<p id="p-391">First consider a . Even before attempting a full solution of the problem, we can see that a value \(x_0\) that satisfies \(f(x_0)=0\) is special, because then it's clear that the constant function \(x(t)\equiv x_0\) is a solution. Such a value is called a <dfn class="terminology">steady state</dfn>,  <dfn class="terminology">equilibrium solution</dfn>, or <dfn class="terminology">fixed point</dfn>.</p>
-<p id="p-392">Imagine holding a broom with bristles pointed down using two fingers. This is ideally a pendulum with a steady state of the broom pointing straight down. You will have no difficulty holding the broom in approximately that position as long as you want.</p>
-<p id="p-393">Now imagine trying to hold the broom using the same two fingers, but with the bristles pointing upward. This is an <em class="emphasis">inverted pendulum</em>, and ideally there is a steady state with the broom pointing straight up. Yet you will find it very difficult to hold the broom in that position for more than a few seconds.</p>
-<p id="p-394">The distinction between these steady states is the property of <dfn class="terminology">stability</dfn>. It's impossible to place the broom in <em class="emphasis">exactly</em> the equilibrium position with no motion whatsoever of your hand. In the real world, a steady state is constantly undergoing small perturbations. If the effects of those perturbations die out with time, the steady state is called stable, but if they grow, it is unstable.</p>
-<p id="p-395">One tool for discriminating between stable and unstable equilibria is a <dfn class="terminology">phase line diagram</dfn>. (To be continued.) An equivalent analytical test is that \(x' \lt 0\) at a stable equilbrium, and \(x' \gt 0\) at an unstable one.</p>
-<article class="example example-like" id="example-56"><a data-knowl="" class="id-ref" data-refid="hk-example-56"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">5.1.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-56"><article class="example example-like"><p id="p-396">Consider the ODE \(x'=x-x^3\text{.}\) The equilibrium solutions are \(x=0\) and \(x=\pm 1\text{.}\) Consider also that \(x'\lt 0\) if \(-1\lt x \lt 0\) or \(x\gt 1\text{;}\) otherwise, \(x' \gt 0\text{.}\) The phase line diagram clarifies that the steady states at \(x=\pm 1\) are stable, while the one at \(x=0\) is unstable.</p>
+<a href="nl-autonomous.html" class="permalink">¶</a><p id="p-400">Our general form for a first-order scalar ODE is \(x'=f(t,x)\text{.}\) In the special case where \(f\) does not depend explicitly on time, i.e., when \(x'=f(x)\text{,}\) we say the equation is <dfn class="terminology">autonomous</dfn>. These equations are the simplest place to start.</p>
+<p id="p-401">First consider a . Even before attempting a full solution of the problem, we can see that a value \(x_0\) that satisfies \(f(x_0)=0\) is special, because then it's clear that the constant function \(x(t)\equiv x_0\) is a solution. Such a value is called a <dfn class="terminology">steady state</dfn>,  <dfn class="terminology">equilibrium solution</dfn>, or <dfn class="terminology">fixed point</dfn>.</p>
+<p id="p-402">Imagine holding a broom with bristles pointed down using two fingers. This is ideally a pendulum with a steady state of the broom pointing straight down. You will have no difficulty holding the broom in approximately that position as long as you want.</p>
+<p id="p-403">Now imagine trying to hold the broom using the same two fingers, but with the bristles pointing upward. This is an <em class="emphasis">inverted pendulum</em>, and ideally there is a steady state with the broom pointing straight up. Yet you will find it very difficult to hold the broom in that position for more than a few seconds.</p>
+<p id="p-404">The distinction between these steady states is the property of <dfn class="terminology">stability</dfn>. It's impossible to place the broom in <em class="emphasis">exactly</em> the equilibrium position with no motion whatsoever of your hand. In the real world, a steady state is constantly undergoing small perturbations. If the effects of those perturbations die out with time, the steady state is called stable, but if they grow, it is unstable.</p>
+<p id="p-405">One tool for discriminating between stable and unstable equilibria is a <dfn class="terminology">phase line diagram</dfn>. (To be continued.) An equivalent analytical test is that \(x' \lt 0\) at a stable equilbrium, and \(x' \gt 0\) at an unstable one.</p>
+<article class="example example-like" id="example-59"><a data-knowl="" class="id-ref" data-refid="hk-example-59"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.1.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-59"><article class="example example-like"><p id="p-406">Consider the ODE \(x'=x-x^3\text{.}\) The equilibrium solutions are \(x=0\) and \(x=\pm 1\text{.}\) Consider also that \(x'\lt 0\) if \(-1\lt x \lt 0\) or \(x\gt 1\text{;}\) otherwise, \(x' \gt 0\text{.}\) The phase line diagram clarifies that the steady states at \(x=\pm 1\) are stable, while the one at \(x=0\) is unstable.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="matlab/fo_ss_phaseline.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article></div></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>

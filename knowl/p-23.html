@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:15-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>As seen in the examples above, an augmented matrix in RREF represents a linear system that we can solve by inspection:</p>
-<ul class="disc">
-<li>The zero rows are ignored.</li>
-<li>If a leading one occurs in the last column, the system is inconsistent.</li>
-<li>Otherwise, each variable associated with a free column is considered a free parameter (e.g., \(s\text{,}\) \(t\text{,}\) etc.).</li>
-<li>The remaining pivot columns are used to solve for their corresponding variables in terms of the free parameters.</li>
-</ul>
+<p>A matrix is in  <dfn class="terminology">RREF</dfn> (reduced row echelon form) if it meets these requirements:</p>
+<ol class="decimal">
+<li>Any rows of all zeros appear below all nonzero rows.</li>
+<li>The leading nonzero of any row is a one.</li>
+<li>Every leading one is the only nonzero in its column.</li>
+</ol>
+<p>The columns that have leading ones are called  <dfn class="terminology">pivot columns</dfn>. The other columns are called  <dfn class="terminology">free columns</dfn>.</p>
 <span class="incontext"><a href="la-linear-systems.html#p-23">in-context</a></span>
 </body>
 </html>

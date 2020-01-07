@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:16-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,22 +11,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>To solve \(x'+x=-te^t\text{,}\) first note that \(x_h(t)=c_1e^{-t}\text{.}\) For \(x_p\) we use the educated guess</p>
+<body><article class="example example-like"><p>For \((2+t) x'= x - 1\text{,}\) we rewrite as</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = (B_1 t + B_0)e^t\text{.}
+x' - \frac{1}{2+t} x = -\frac{1}{2+t}\text{.}
 \end{equation*}
 </div>
-<p>Substituting that into the ODE yields</p>
+<p>Then</p>
 <div class="displaymath">
 \begin{equation*}
-B_1e^t + (B_1 t + B_0)e^t = -te^t\text{.}
+g(t) = \exp\left[ \int \frac{1}{2+t}\, dt \right] = \exp[ \ln(2+t) ] = 2+t\text{.}
 \end{equation*}
 </div>
-<p>On cancelling the exponentials and matching like powers of \(t\text{,}\) we get the equations \(B_1=-1\) and \(B_1+B_0=0\text{.}\) Hence \(B_1=-1\) and \(B_0=1\text{.}\) So the general solution is</p>
+<p>Next,</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = c_1 e^{-t} + e^t(1-t)\text{.}
+k(t) = \int \frac{-1}{2+t} (2+t)^{-1} \, dt = - (2+t)^{-1}\text{,}
+\end{equation*}
+</div>
+<p>so that</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 (2+t) - (2+t)^{-1} (2+t) = c_1(2+t)-1\text{.}
 \end{equation*}
 </div></article></body>
 </html>

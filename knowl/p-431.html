@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:18-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We find fixed points when \(3x-(xy/2)=(xy/4)-y=0\text{,}\) which has two solutions, \((0,0)\) and \((4,6)\text{.}\) The Jacobian matrix of the system is</p>
+<p>We are interested in the stability of fixed points, that is, the dynamics close to them. We will use linear approximations of the functions \(F\) and \(G\) near a fixed point:</p>
 <div class="displaymath">
-\begin{equation*}
-\mathbf{A}(x,y) = \begin{bmatrix} F_x \amp F_y  \\ G_x \amp G_y \end{bmatrix} = \begin{bmatrix} 3-y/2 \amp -x/2 \\ y/4 \amp -1+x/4 \end{bmatrix}\text{.}
-\end{equation*}
+\begin{align*}
+F(x,y) \amp \approx F(x_p,y_p) + \pp{F}{x} (x-x_p) + \pp{F}{y} (y-y_p)\\
+G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)\text{,}
+\end{align*}
 </div>
-<p>At the origin, the Jacobian becomes</p>
+<p>where it is understood for brevity that the partial derivatives are all evaluated at \((x_p,y_p)\text{.}\) Given that \((x_p,y_p)\) is a fixed point, two terms above are zero. Finally, define \(u_1(t)=x(t)-x_p\text{,}\) \(u_2(t)=y(t)-y_p\) to arrive at</p>
 <div class="displaymath">
-\begin{equation*}
-\mathbf{A}(0,0) = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}\text{.}
-\end{equation*}
+\begin{align*}
+\dd{u_1}{t} \amp \approx \pp{F}{x} u_1 + \pp{F}{y} u_2, \\
+\dd{u_2}{t} \amp \approx \pp{G}{x} u_1 + \pp{G}{y} u_2. 
+\end{align*}
 </div>
-<p>The eigenvalues of a diagonal matrix (in fact, a triangular matrix) are the diagonal entries. Hence the origin is a saddle point.</p>
+<p>This inspires the following definition.</p>
 <span class="incontext"><a href="nl-linearization.html#p-431">in-context</a></span>
 </body>
 </html>

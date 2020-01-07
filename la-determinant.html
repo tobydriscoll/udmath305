@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:11-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,33 +208,33 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="la-determinant"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.6</span> <span class="title">Determinants</span>
 </h2>
-<a href="la-determinant.html" class="permalink">¶</a><p id="p-77">You should have seen some \(2\times 2\) and \(3\times 3\) determinants before now, in vector calculus. The \(2\times 2\) case is easy to describe:</p>
+<a href="la-determinant.html" class="permalink">¶</a><p id="p-82">You should have seen some \(2\times 2\) and \(3\times 3\) determinants before now, in vector calculus. The \(2\times 2\) case is easy to describe:</p>
 <div class="displaymath">
 \begin{equation*}
 \det\left( \twomat{a}{b}{c}{d} \right) = \twodet{a}{b}{c}{d} = ad-bc\text{.}
 \end{equation*}
 </div>
 <p>This can be extended to create a real-valued function for square matrices of any size. The formalities can be complicated, but we are going to use a practical definition.</p>
-<aside class="aside aside-like" id="aside-5"><p id="p-78">Here and for the rest of this chapter, we are going to deal with square matrices only.</p></aside><article class="definition definition-like" id="la-df-det"><h6 class="heading">
+<aside class="aside aside-like" id="aside-5"><p id="p-83">Here and for the rest of this chapter, we are going to deal with square matrices only.</p></aside><article class="definition definition-like" id="la-df-det"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.6.1</span>. <span class="title">Determinant.</span>
 </h6>
-<p id="p-79">If \(\bA\in\Rmn{n}{n}\text{,}\) then</p>
+<p id="p-84">If \(\bA\in\Rmn{n}{n}\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \det(\bA) = \sum (-1)^{i+j} a_{ij} \det( \mathbf{M}_{ij} )\text{,}
 \end{equation*}
 </div>
-<p>where the sum is taken over any row or column of \(\bA\text{,}\) and \(\mathbf{M}_{ij}\) is the matrix that results from deleting row \(i\) and column \(j\) from \(\bA\text{.}\)</p></article><p id="p-80">The definition, which is called <dfn class="terminology">cofactor expansion</dfn>, is recursive: the \(n\times n\) case is defined in terms of the \((n-1)\times (n-1)\) case, and so on all the way back down to \(2\times 2\text{.}\)</p>
-<p id="p-81">There are a few facts about determinants that are good to know.</p>
+<p>where the sum is taken over any row or column of \(\bA\text{,}\) and \(\mathbf{M}_{ij}\) is the matrix that results from deleting row \(i\) and column \(j\) from \(\bA\text{.}\)</p></article><p id="p-85">The definition, which is called <dfn class="terminology">cofactor expansion</dfn>, is recursive: the \(n\times n\) case is defined in terms of the \((n-1)\times (n-1)\) case, and so on all the way back down to \(2\times 2\text{.}\)</p>
+<p id="p-86">There are a few facts about determinants that are good to know.</p>
 <article class="fact theorem-like" id="fact-2"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">1.6.2</span>.</h6>
-<p id="p-82">Let \(\bA\) and \(\bB\) be \(n\times n\text{,}\) and let \(c\) be a scalar. Then</p>
+<p id="p-87">Let \(\bA\) and \(\bB\) be \(n\times n\text{,}\) and let \(c\) be a scalar. Then</p>
 <ol class="decimal">
 <li id="li-26">\(\det(c\bA) = c^n \det(\bA)\text{,}\)</li>
 <li id="li-27">\(\det(\bA\bB) = \det(\bA)\det(\bB)\text{,}\)</li>
 <li id="li-28">\(\det(\bA)=0\) if and only if \(\bA\) is singular, and</li>
 <li id="li-29">If \(\bA\) is nonsingular, \(\det(\bA^{-1})=1/\det(\bA)\text{.}\)</li>
-</ol></article><p id="p-83">The determinant condition is often the easiest way to check for singularity of a small matrix by hand.</p></section></div></main>
+</ol></article><p id="p-88">The determinant condition is often the easiest way to check for singularity of a small matrix by hand.</p></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

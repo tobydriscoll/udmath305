@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:14-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,7 +208,7 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="nl-directionfields"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">Direction fields</span>
 </h2>
-<a href="nl-directionfields.html" class="permalink">¶</a><p id="p-412">An autonomous system in two dimensions has the particular form</p>
+<a href="nl-directionfields.html" class="permalink">¶</a><p id="p-422">An autonomous system in two dimensions has the particular form</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x_1}{t} \amp = f_1(x_1,x_2), \\
@@ -208,7 +218,7 @@ var js_version = 0.12;
 <p>For such a system we can use a simple visualization to suggest solution behavior.</p>
 <article class="example example-like" id="nl-ex-direction-field-system"><a data-knowl="" class="id-ref" data-refid="hk-nl-ex-direction-field-system"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.4.1</span>. <span class="title">Direction field for a system of two equations.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-nl-ex-direction-field-system"><article class="example example-like"><p id="p-413">Here is a direction field for the linear ODE system</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-nl-ex-direction-field-system"><article class="example example-like"><p id="p-423">Here is a direction field for the linear ODE system</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = -y\\
@@ -222,7 +232,7 @@ slopefield(F,G,[-2 2],[-2 2])
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/nl_dirfield_1.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-414">Here is a slope field in the first quadrant for the nonlinear system</p>
+<p id="p-424">Here is a slope field in the first quadrant for the nonlinear system</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = 3x - \frac{1}{2}xy\\
@@ -237,7 +247,7 @@ slopefield(F,G,[0 10],[0 12])
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/nl_dirfield_2.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-415">We can use a simple trick to create direction fields for the nonautonomous scalar problem \(x'=f(t,x)\) as well. Introducing the variables \(u_1=t\) and \(u_2=x\text{,}\) we have</p>
+<p id="p-425">We can use a simple trick to create direction fields for the nonautonomous scalar problem \(x'=f(t,x)\) as well. Introducing the variables \(u_1=t\) and \(u_2=x\text{,}\) we have</p>
 <div class="displaymath">
 \begin{align*}
 \dd{u_1}{t} \amp = 1, \\
@@ -245,9 +255,9 @@ slopefield(F,G,[0 10],[0 12])
 \end{align*}
 </div>
 <p>which has the form of a two-dimensional autonomous system.</p>
-<aside class="aside aside-like" id="aside-14"><p id="p-416">Both higher-order and nonautonomous problems can be converted to an autonomous, first-order system of the form \(\bx'=\bff(\bx)\) in a higher dimension. Hence those are as general a type as we need to study.</p></aside><article class="example example-like" id="example-62"><a data-knowl="" class="id-ref" data-refid="hk-example-62"><h6 class="heading">
+<aside class="aside aside-like" id="aside-16"><p id="p-426">Both higher-order and nonautonomous problems can be converted to an autonomous, first-order system of the form \(\bx'=\bff(\bx)\) in a higher dimension. Hence those are as general a type as we need to study.</p></aside><article class="example example-like" id="example-65"><a data-knowl="" class="id-ref" data-refid="hk-example-65"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.4.2</span>. <span class="title">Direction field for a scalar problem.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-62"><article class="example example-like"><p id="p-417">Here is a direction field for \(x'=t-x^2\text{.}\) Note that the arrows are horizontal along the sideways parabola \(t=x^2\text{.}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-65"><article class="example example-like"><p id="p-427">Here is a direction field for \(x'=t-x^2\text{.}\) Note that the arrows are horizontal along the sideways parabola \(t=x^2\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">f = @(t,x) t-x^2;
 slopefield(f,[-2 2],[-2 2])

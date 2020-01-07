@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:18-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
+<p>The matrix</p>
 <div class="displaymath">
 \begin{equation*}
-\bu_h(t) = c_1 e^{\lambda_1 t} \twovec{1}{\lambda_1} + c_2 e^{\lambda_2 t} \twovec{1}{\lambda_2}\text{.}
+\bA = \twomat{-1}{1}{0}{-1}
 \end{equation*}
 </div>
-<p>In terms of the original variable \(x=u_1\text{,}\) this is simply</p>
+<p>has a double eigenvalue of \(\lambda=-1\) and is defective. Now consider</p>
 <div class="displaymath">
 \begin{equation*}
-x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \qquad \text{if } \lambda_1\neq\lambda_2\text{.}
+\bB = \bA - \lambda \bI = \twomat{0}{1}{0}{0}\text{.}
 \end{equation*}
 </div>
-<span class="incontext"><a href="so-homogeneous.html#p-328">in-context</a></span>
+<p>This matrix has the property that \(\bB^2=\bzero\text{.}\) That means the exponential series for it is just</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bB} = \bI + t\bB = \twomat{1}{t}{0}{1}\text{.}
+\end{equation*}
+</div>
+<p>Finally, we can use <a data-knowl="./knowl/fs-thm-matrixexp.html" title="Theorem 3.7.1: Matrix exponential">Theorem 3.7.1</a> to calculate</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bA} = e^{t\lambda\bI}e^{t(\bA-\lambda\bI)} = e^{-t}\twomat{1}{t}{0}{1}\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="fs-matrix-exp.html#p-328">in-context</a></span>
 </body>
 </html>

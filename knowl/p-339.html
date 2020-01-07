@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:18-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The first case for <a data-knowl="./knowl/so-eq-unified.html" title="Equation 4.3.1">(4.3.1)</a> is \(Z=0\text{,}\) which is the idealization of no mechanical damping or friction (or resistance, in a circuit). The homogeneous equation is \(x''+\omega_0^2x=0\text{,}\) which has eigenvalues \(\pm i\omega_0\) and general solution</p>
+<p>We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) We recall the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.7.2: Defective matrix">Subsection 3.7.2</a> and define</p>
 <div class="displaymath">
 \begin{equation*}
-x_h(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} = a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t)\text{.}
+\bB = \bA + \frac{b}{2}\bI = \twomat{b/2}{1}{-c}{-b/2} = \twomat{b/2}{1}{-b^2/4}{-b/2}\text{.}
 \end{equation*}
 </div>
-<p>Thus the undamped case results in pure oscillation at frequency \(\omega_0\text{.}\)</p>
-<span class="incontext"><a href="so-oscillators.html#p-339">in-context</a></span>
+<p>You can easily check that \(\bB^2=\bzero\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bA} = e^{-(bt/2)\bI} e^{t\bB} = e^{-bt/2}(\bI + t\bB) \text{.}
+\end{equation*}
+</div>
+<p>The general solution is \(e^{t\bA}\bc\text{,}\) but again we need only the first row to get the original \(x=u_1\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+x_h(t) = e^{-bt/2} \left[ c_1 + t\left(c_2 + c_1\frac{b}{2}\right) \right] = e^{-bt/2} \left( c_1 + C_2 t\right)\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="so-homogeneous.html#p-339">in-context</a></span>
 </body>
 </html>

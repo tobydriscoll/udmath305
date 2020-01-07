@@ -5,8 +5,7 @@
 
   <section xml:id="la-linear-systems">
 	<title>Linear systems of equations</title>
-	<subsection xml:id="la-ls-notation">
-	  <title>Some terminology</title>
+	<introduction xml:id="la-ls-notation">
 	  <p>
 	  When you first learned algebra, there was a lot of focus on solving equations. It's very likely that you started with linear equations, because these are the easiest ones.
 	  </p>
@@ -91,9 +90,9 @@
 		<p>
 		We will soon be writing a linear system of equations as simply <m>\bA\bx=\bb</m>. And just as above, there is a property of <m>\bA</m> that determines whether or not there is a unique solution. If not, then it depends on both <m>\bA</m> and <m>\bb</m> whether there are infinitely many solutions, or none. Those are the only possibilities. 
 		</p>
-	</subsection>
+	</introduction>
 	<subsection xml:id="la-ls-elimination">
-	<title>Row elimination</title>
+		<title>Row elimination</title>
 		<p>You've probably solved small systems of equations by substitution. Essentially, all we need to do in the general case is systematize that process. The goal is to transform the system to an equivalent one whose solution(s) we can just read off.</p>
 		<example>
 		<p>
@@ -141,15 +140,15 @@
 			We repeat the previous example but just with the relevant constants. The key is to use zeros as coefficients where there are <q>silent</q> variables. The starting augmented matrix is 
 			<me>              
 				\begin{bmatrix}
-				 1 \amp 1 \amp -1 \amp 2 \\
-				 -3 \amp -2 \amp 0 \amp 9 \\
+				 1 \amp -1 \amp -1 \amp 2 \\
+				 3 \amp -2 \amp 0 \amp 9 \\
 				 1 \amp -2 \amp -1 \amp 5
 				\end{bmatrix}
 			</me>. 
 			First elimination step uses the first row to eliminate below it: 
 			<me>              
 					\begin{bmatrix}
-					 1 \amp 1 \amp -1 \amp 2 \\
+					 1 \amp -1 \amp -1 \amp 2 \\
 					 0 \amp 1 \amp 3 \amp 3 \\
 					 0 \amp -1 \amp 0 \amp 3
 					\end{bmatrix}
@@ -157,7 +156,7 @@
 			Next we use the second row to eliminate below it: 
 			<me>              
 				\begin{bmatrix}
-					1 \amp 1 \amp -1 \amp 2 \\
+					1 \amp -1 \amp -1 \amp 2 \\
 					0 \amp 1 \amp 3 \amp 3 \\
 					0 \amp 0 \amp 3 \amp 6
 				\end{bmatrix}
@@ -187,7 +186,27 @@
 					\end{bmatrix}
 			</me>. 
 			The last column is now the solution. 
-			</p>   
+			</p> 
+			<p>
+				The following code performs these operations in MATLAB. Note the square brackets used to define matrices and vectors, and the notation used to access a row or part of a row. 
+				<program language="matlab">
+					<input>
+						A = [ 1 -1 -1; 3 -2 0; 1 -2 -1 ]
+						b = [ 2; 9; 5 ]
+						AA = [ A b ]
+						
+						AA(2,1:end) = AA(2,1:end) - 3*AA(1,1:end)
+						AA(3,1:end) = AA(3,1:end) - AA(1,1:end)
+						
+						AA(3,2:end) = AA(3,2:end) + AA(2,2:end)
+						
+						AA(2,3:end) = AA(2,3:end) - AA(3,3:end)
+						AA(1,3:end) = AA(1,3:end) + (1/3)*AA(3,3:end)
+						
+						AA(1,2:end) = AA(1,2:end) + AA(2,2:end)
+					</input>
+				</program>
+			</p>  
 		</example>
 		<p>
 			Before we generalize, let's look at an example that works out differently. 
@@ -335,8 +354,17 @@
 	  <me>
 		\ba_1 - 3 \ba_2 + 2\ba_3 = \bb
 	  </me>,
-	  where we gave names to the columns. 
-	  </p></example>
+	  where we gave names to the columns. In MATLAB syntax,
+	  <program language="matlab">
+		  <input>
+			A = [ 1 -1 -1; 3 -2 0; 1 -2 -1 ]
+			b = [ 2; 9; 5 ]
+			x = [1; -3; 2 ]
+			x(1)*A(:,1) + x(2)*A(:,2) + x(3)*A(:,3)
+		  </input>
+	  </program>
+	</p>
+	</example>
 	  </subsection>
 	  <subsection>
 	  <title>Matrix times vector</title>
@@ -429,6 +457,19 @@
 			</me>, 
 			and so on. 
 		</p>
+		<p>
+			MATLAB interprets the <c>*</c> operator to mean multiplication in the sense of matrices and vectors. 
+			<program language="matlab">
+				<input>
+					A = [ 1 -1; 0 2; -3 1 ]
+					B = [ 2 -1 0 4; 1 1 3 2 ]
+					
+					A*B
+					
+					A(3,:)*B(:,1)
+				</input>
+			</program>
+		</p>
 	 </example>
 	 </subsection>
 	 <subsection>
@@ -449,6 +490,37 @@
 			<!--li><m>\alpha(\bB+\bC) = \alpha\bB + \alpha\bC</m></li-->
 		</ol>  
 		</p>
+		<example>
+			<p>
+				These properties are easy to demonstrate (not prove!) in MATLAB. Any undefined matrix operation throws an error. 
+				<program language="matlab">
+					<input>
+						A = [ 1 -1; 0 2; -3 1 ]
+						B = [ 2 -1 0 4; 1 1 3 2 ]
+						
+						A*B
+						B*A
+						A-B
+						
+						size(B)
+						size(A)
+						
+						C = [ 1 -1 2; 2 2 0; 5 -2 -3; 4 -1 -1 ]
+						size(C)
+						
+						(A*B)*C - A*(B*C)
+						
+						A = round(10*rand(4,4))
+						B = round(10*rand(4,4))
+						C = round(10*rand(4,4))
+						
+						( A*(B+C) ) - ( A*B + A*C )
+						
+						( (A+B)*C ) - ( A*C + B*C )	
+					</input>
+				</program>
+			</p>
+		</example>
 	</subsection>
 	<subsection>
 	<title>Identity matrix</title>
@@ -474,6 +546,9 @@
 		<p>
 		The definition of the identity is such that <m>\bA\bI=\bA</m> for all <m>\bA\in\Rmn{m}{n}</m> and <m>\bI\bB=\bB</m> for all <m>\bB\in\Rmn{n}{p}</m>. This includes vectors, i.e., <m>\bI\bx=\bx</m> for all <m>\bx \in \Rn{n}</m>.
 		</p> 
+		<p>
+			The MATLAB command to create an identity matrix is <c>eye</c>.
+		</p>
 </subsection>
 </section>  
 
@@ -565,7 +640,7 @@
 		</p>
 		<example>
 			<p>
-				We continue with the matrix <m>\bA</m> from <xref ref="la-ex-33homog"/>, now with <m>\bb=[-8,4,12]</m>. The RREF of the augmented matrix is now 
+				We continue with the matrix <m>\bA</m> from <xref ref="la-ex-33homog"/>, now with <m>\bb=[-8,4,12]</m>. The RREF of the augmented matrix works out to be
 				<me> 
 					\begin{bmatrix}
 					0 \amp 1 \amp -2 \amp 4 \\ 0 \amp 0 \amp -0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0
@@ -667,6 +742,16 @@
 				<me>\null(\bA) = \span\left(\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\right)</me>,
 				and in fact <m>[-1,1,0]</m>  is a basis of the nullspace, which is therefore one-dimensional. 
 				</p>
+				<p>
+					MATLAB has a <c>null</c> command that produces a basis of the nullspace. 
+					<program language="matlab">
+						<input>
+							A = [ 1 1 -1; 2 2 1; -1 -1 4 ]
+							null(A)
+						</input>
+					</program>
+					This is equivalent to the answer we gave above, just with a different normalization of the vector. 
+				</p>
 		  </example>   
 		  <example>
 				<p>
@@ -678,7 +763,7 @@
 					 0 \amp 0 \amp 1   
 					 \end{bmatrix}
 					 </me>
-					 (i.e., an identity matrix). There are no free variables, and the only solution is <m>\bx=[0,0,0]</m>. Hence <m>\null(\bA) = \{\bzero\}</m>. This singleton set does not have a basis and is considered to have dimension zero. 
+					 (i.e., an identity matrix). There are no free variables, and the only solution is <m>\bx=[0,0,0]</m>. Hence <m>\null(\bA) = \{\bzero\}</m>. This singleton set does not have a basis and is considered to have dimension zero. (Try this example in MATLAB!) 
 				</p>
 		  </example> 
 		  <p>
@@ -773,6 +858,21 @@
 			<p>
 				Row elimination can be used to solve those systems simultaneously. However, it's all beside the point. If our goal is to solve a linear system <m>\bA\bx=\bb</m>, then there is little reason to solve <m>n</m> other systems first to get the inverse! The inverse tends to be much more important theoretically than for practical computation. 
 			</p>
+			<example>	
+				<p>
+					MATLAB does have an <c>inv</c> command to find an inverse. However, it's not considered the best way to solve a linear system (it will be much slower for large matrices). 
+					<program language="matlab">
+						<input>
+							A = magic(3) 
+							b = [ 1; 6; -2 ]
+
+							x = A\b
+							b - A*x
+						</input>
+					</program>
+					MATLAB works with 16-digit approximations of real numbers, so things that are truly equal in exact arithmetic may only agree to many significant digits. Usually it's best to take the difference of two things to test near-equality. 
+				</p>
+			</example>
 		</subsection>
 		<subsection>
 			<title><m>2\times 2</m> inverses and systems</title>
@@ -916,6 +1016,11 @@
 				</p>
 			</statement>
 		</fact>
+		<example>
+			<p>
+				MATLAB uses complex numbers without a fuss. Use <c>1i</c> to get the imaginary unit. The functions <c>abs</c> and <c>conj</c> do modulus and conjugate, respectively. 
+			</p>
+		</example>
 	</subsection>
 	<subsection xml:id="la-cx-matrices">
 		<title>Complex-valued matrices</title>
@@ -1001,6 +1106,23 @@
 				</me>, 
 				leading to the eigenspace <m>\span\left(\twovec{-1/2}{1}\right)</m>. 
 			</p>
+			<p>
+				MATLAB computes eigenvalues and eigenvectors (through an entirely different process) with the <c>eig</c> command. 
+				<program language="matlab">
+					<input>
+						A = [ 1 1; 4 1 ];
+						lambda = eig(A)
+
+						[V,D] = eig(A) 
+					</input>
+				</program>
+				In the second format (two outputs), the eigenvalues are on the diagonal of <c>D</c>. The corresponding columns of <c>V</c> are basis vectors for their eigenspaces, provided those are one-dimensional. 
+			</p>
+			<aside>
+				<p>
+					By hand you usually find eigenvalues by finding the roots of a low-degree polynomial. It turns out that when the size is greater than <m>2\times 2</m>, other linear algebra methods for eigenvalues are much easier than finding the polynomial roots. In fact, MATLAB uses eigenvalues to find polynomial roots, rather than the other way around! 
+				</p>
+			</aside>
 		</example>
 		<aside>
 		<p>
@@ -1087,9 +1209,12 @@
 					The geometric multiplicity of an eigenvalue is less than or equal to its algebraic multiplicity. 
 				</p>
 			</fact>
-			<p>
-				If the geometric multiplicity of <m>\lambda</m> is strictly less than its algebraic multiplicity, we say that <m>\lambda</m> is <term>defective</term>. 
-			</p>
+			<definition xml:id="la-df-defective">
+				<title>Defective eigenvalue</title>
+				<statement><p>
+					An eigenvalue <m>\lambda</m> whose geometric multiplicity is strictly less than its algebraic multiplicity is said to be <idx>defective eigenvalue</idx><term>defective</term>.
+				</p></statement>
+			</definition>
 			<example>
 				<p>
 					The <m>n\times n</m> identity matrix has characteristic polynomial <m>p(z)=(z-1)^n</m> (by recursive cofactor expansion). Thus its only eigenvalue is <m>\lambda=1</m>, with algebraic multiplicity <m>n</m>. All nonzero vectors are eigenvectors, so the dimension of the eigenspace is also <m>n</m>. Hence <m>\lambda=1</m> is nondefective. 
@@ -1104,13 +1229,13 @@
 				Since multiplicities are always at least one, there is one simple but common case in which we are certain that there are no defective eigenvalues. 
 			</p>
 			<theorem xml:id="la-thm-distincteigs">
-				<title>Distinct eigenvalues</title>
+				<title>Distinct eigenvalues imply nondefectiveness</title>
 				<statement><p>
 					If <m>\bA\in\Cmn{n}{n}</m> has <m>n</m> distinct eigenvalues, then <m>\bA</m> has no defective eigenvalues. 
 				</p></statement>
 			</theorem>
 			<p>
-				This is definitely not also an <q>only if</q> statement, though, as demonstrated by the identity matrix. 
+				This is <em>not</em> also an <q>only if</q> statement, though, as demonstrated by the identity matrix. 
 			</p>
 	</subsection>
 </section>  
@@ -1152,8 +1277,11 @@
 			<men xml:id="la-eq-diagonalization">
 				\bA = \bV \bD \bV^{-1}
 			</men>, 
-			which is called a <term>diagonalization</term> of <m>\bA</m>. A diagonalization is not unique; after all, we can take the eigenvalues in any order, and the eigenvectors themselves are not unique. 
+			which is called a <idx>diagonalization of a matrix</idx><term>diagonalization</term> of <m>\bA</m>. A diagonalization is not unique; after all, we can take the eigenvalues in any order, and the eigenvectors themselves are not unique. 
 		</p>
+		<aside>
+			<p>When a matrix has a diagonalization, the two-output form of the <c>eig</c> MATLAB command gives the matrices <c>V</c> and <c>D</c> for one.</p>
+		</aside>
 		<example>
 			<title>A 2-by-2 diagonalization</title>
 			<p>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:18-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>What is the meaning if \(\omega = \omega_0\text{?}\) This is exactly when \(i\omega\) is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients needs to be modified from the above derivation. But there is a sneaky shortcut. For a certain choice of \(c_1\) and \(c_2\text{,}\) we get a different particular solution</p>
+<p>For \(0\lt Z \lt 1\) the eigenvalues of <a data-knowl="./knowl/so-eq-unified.html" title="Equation 4.3.1">(4.3.1)</a> are complex:</p>
 <div class="displaymath">
 \begin{equation*}
-\hat{x}_p(t) = \frac{\omega_0^2}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)\text{,}
+\lambda_{1,2} = -Z \omega_0 \pm i \omega_0 \sqrt{1-Z^2}\text{.}
 \end{equation*}
 </div>
-<p>which has an indeterminate form in the limit \(\omega \to \omega_0\text{,}\) allowing us to use L'Hopital's Rule:</p>
+<p>Defining \(\omega_d=\omega_0 \sqrt{1-Z^2}\text{,}\) the general homogeneous solution is therefore</p>
 <div class="displaymath">
 \begin{equation*}
-\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0} \omega_0^2 \frac{it e^{i\omega t}}{-2\omega} = -\frac{i\omega_0^2}{2} t e^{i\omega_0 t}\text{.}
+x_h(t) = e^{-Z\omega_0 t} \left( c_1 e^{i\omega_d t} + c_2 e^{-i\omega_d t} \right)\text{,}
 \end{equation*}
 </div>
-<p>(It's a little tricky, because the derivatives here are with respect to the limited variable \(\omega\) and not \(t\text{.}\)) This leads to the general solution</p>
-<span class="incontext"><a href="so-expforcing.html#p-350">in-context</a></span>
+<p>or the equivalent real form with cos and sin. This solution is pseudoperiodic, combining oscillation at frequency \(\omega_d \lt \omega_0\) inside an exponential decay envelope. This situation is called an <dfn class="terminology">underdamped oscillator</dfn>.</p>
+<span class="incontext"><a href="so-oscillators.html#p-350">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:11-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -115,6 +124,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -198,71 +208,71 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="la-complex"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.9</span> <span class="title">Complex numbers</span>
 </h2>
-<a href="la-complex.html" class="permalink">¶</a><section class="introduction" id="introduction-2"><p id="p-99">(For a really smart and entertaining introduction to complex numbers, I recommend <a class="external" href="https://youtu.be/T647CGsuOVU" target="_blank">this video series</a>.)</p>
-<p id="p-100">We need to take a short but highly relevant detour to talk about complex numbers.</p>
-<p id="p-101">There's often a lot of uneasiness about complex numbers. Terminology is part of the reason. Using "real" and "imaginary" to label numbers is the residue of a value judgment that ruled mathematics for centuries. But complex numbers are actually just as "real" as so-called real numbers. If anything, they are actually <em class="emphasis">more</em> fundamental to the universe.</p>
-<p id="p-102">As a practical matter, you can pretty much always replace a complex value with two real ones, and vice versa. But sometimes the manipulations are a lot easier in the complex form. In particular, you may be able to replace trigonometry with algebra.</p></section><section class="subsection" id="subsection-15"><h3 class="heading hide-type">
+<a href="la-complex.html" class="permalink">¶</a><section class="introduction" id="introduction-3"><p id="p-105">(For a really smart and entertaining introduction to complex numbers, I recommend <a class="external" href="https://youtu.be/T647CGsuOVU" target="_blank">this video series</a>.)</p>
+<p id="p-106">We need to take a short but highly relevant detour to talk about complex numbers.</p>
+<p id="p-107">There's often a lot of uneasiness about complex numbers. Terminology is part of the reason. Using "real" and "imaginary" to label numbers is the residue of a value judgment that ruled mathematics for centuries. But complex numbers are actually just as "real" as so-called real numbers. If anything, they are actually <em class="emphasis">more</em> fundamental to the universe.</p>
+<p id="p-108">As a practical matter, you can pretty much always replace a complex value with two real ones, and vice versa. But sometimes the manipulations are a lot easier in the complex form. In particular, you may be able to replace trigonometry with algebra.</p></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.1</span> <span class="title">The reality of imaginary numbers (optional)</span>
 </h3>
-<p id="p-103">Let's rewind a bit. We can probably take for granted the positive integers 1, 2, 3, and so on, and we'll throw in zero too (though this too was controversial for centuries). It's not long before we want to solve a problem like \(x+1=0\text{.}\) Annoyingly, we can pose the problem using just nonnegative integers, but we can't solve it. So we accept the existence of the negative integers.</p>
-<p id="p-104">I can imagine quite a bit of skepticism about this historically. ("Sure, Wei. Ever seen a negative goat?") But if you've ever taken out a loan, you know that negative numbers can have very real consequences.</p>
-<p id="p-105">Eventually, the negative integers seem "obvious" and perfectly natural. But then we run into a problem like</p>
+<p id="p-109">Let's rewind a bit. We can probably take for granted the positive integers 1, 2, 3, and so on, and we'll throw in zero too (though this too was controversial for centuries). It's not long before we want to solve a problem like \(x+1=0\text{.}\) Annoyingly, we can pose the problem using just nonnegative integers, but we can't solve it. So we accept the existence of the negative integers.</p>
+<p id="p-110">I can imagine quite a bit of skepticism about this historically. ("Sure, Wei. Ever seen a negative goat?") But if you've ever taken out a loan, you know that negative numbers can have very real consequences.</p>
+<p id="p-111">Eventually, the negative integers seem "obvious" and perfectly natural. But then we run into a problem like</p>
 <div class="displaymath">
 \begin{equation*}
 2x - 1 = 0\text{.}
 \end{equation*}
 </div>
 <p>We can pose this problem with integers, but we can't solve it. So we get used to accepting rational numbers, too.</p>
-<p id="p-106">Rational numbers are pretty weird. Between any pair of them, you have infinitely more rational numbers! Yet it turns out they have (huge) gaps as well. You can't solve</p>
+<p id="p-112">Rational numbers are pretty weird. Between any pair of them, you have infinitely more rational numbers! Yet it turns out they have (huge) gaps as well. You can't solve</p>
 <div class="displaymath">
 \begin{equation*}
 x^2 - 2 = 0
 \end{equation*}
 </div>
 <p>using only rational numbers. So, you're willing to take on irrational numbers too. Talk about weird--every one of them has an infinite, non-repeating decimal expansion.</p>
-<p id="p-107">So much for the "real" numbers. At least we have filled in the so-called number line. But then you get to</p>
+<p id="p-113">So much for the "real" numbers. At least we have filled in the so-called number line. But then you get to</p>
 <div class="displaymath">
 \begin{equation*}
 x^2 + 1 = 0\text{,}
 \end{equation*}
 </div>
 <p>which is purely "real" but insolvable. Solutions to this equation were widely resisted for a very long time (say, the 18th century), to the point they were called "imaginary" (thanks, Descartes).</p>
-<p id="p-108">Yet something amazing happens if you do accept imaginary numbers, and their expansion to the complex numbers. Namely, <em class="emphasis">The Fundamental Theorem of Algebra</em>, which states that if you write down a polynomial using complex numbers, it will have only complex numbers as solutions. So there's no infinite ladder of hypercomplex numbers that we have to ascend--just one rung past the "real" ones.</p></section><section class="subsection" id="la-cx-basic"><h3 class="heading hide-type">
+<p id="p-114">Yet something amazing happens if you do accept imaginary numbers, and their expansion to the complex numbers. Namely, <em class="emphasis">The Fundamental Theorem of Algebra</em>, which states that if you write down a polynomial using complex numbers, it will have only complex numbers as solutions. So there's no infinite ladder of hypercomplex numbers that we have to ascend--just one rung past the "real" ones.</p></section><section class="subsection" id="la-cx-basic"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.2</span> <span class="title">Basic arithmetic</span>
 </h3>
-<a href="la-complex.html#la-cx-basic" class="permalink">¶</a><p id="p-109">We can write a complex number \(z\in \mathbb{C}\) as \(z=x+iy\text{,}\) where \(i^2=-1\) and \(x\) and \(y\) are real numbers known as the <dfn class="terminology">real</dfn> and <dfn class="terminology">imaginary</dfn> parts of \(z\text{,}\)</p>
+<a href="la-complex.html#la-cx-basic" class="permalink">¶</a><p id="p-115">We can write a complex number \(z\in \mathbb{C}\) as \(z=x+iy\text{,}\) where \(i^2=-1\) and \(x\) and \(y\) are real numbers known as the <dfn class="terminology">real</dfn> and <dfn class="terminology">imaginary</dfn> parts of \(z\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 z = x+iy \quad \Leftrightarrow \quad x = \Re(z), \quad y = \Im(z)\text{.}
 \end{equation*}
 </div>
 <p>Writing a complex number this way is equivalent to using rectangular or Cartesian coordinates in the plane to specify a point \((x,y)\text{.}\) Thus complex numbers are on a “number plane” rather than a number line.</p>
-<p id="p-110">There is a generalization of absolute value to complex numbers known as the <dfn class="terminology">modulus</dfn>, a real nonnegative quantity easily computed via</p>
+<p id="p-116">There is a generalization of absolute value to complex numbers known as the <dfn class="terminology">modulus</dfn>, a real nonnegative quantity easily computed via</p>
 <div class="displaymath">
 \begin{equation*}
 |z|^2 = [\text{Re}(z)]^2 + [\text{Im}(z)]^2\text{.}
 \end{equation*}
 </div>
 <p>Like the absolute value, \(|z|\) is the distance from \(z\) to the origin, and \(|w-z|\) is the distance between two complex numbers. Here, though, the distances are in the plane rather than on a line.</p>
-<p id="p-111">An important operation on complex numbers that has no real counterpart is the <dfn class="terminology">conjugate</dfn>,</p>
+<p id="p-117">An important operation on complex numbers that has no real counterpart is the <dfn class="terminology">conjugate</dfn>,</p>
 <div class="displaymath">
 \begin{equation*}
 \bar{z} =\text{Re}(z) - i \,\text{Im}(z)\text{.}
 \end{equation*}
 </div>
 <p>Geometrically this is a reflection across the real axis of the plane. No matter how complicated an expression is, you just replace \(i\) by \(-i\) everywhere to get the conjugate.</p>
-<p id="p-112">You add, subtract, and multiply complex numbers by applying the usual algebraic rules, applying \(i^2=-1\) as needed. They should give little trouble. Division can be a little trickier, even though the rules are always the same. One trick is to give a complex ratio a purely real denominator:</p>
+<p id="p-118">You add, subtract, and multiply complex numbers by applying the usual algebraic rules, applying \(i^2=-1\) as needed. They should give little trouble. Division can be a little trickier, even though the rules are always the same. One trick is to give a complex ratio a purely real denominator:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{w}{z} = \frac{w \bar{z}}{z \bar{z}} = \frac{w \bar{z}}{|z|^2}\text{.}
 \end{equation*}
 </div>
 <p>This is a lot like rationalizing a denominator with square roots. Memorize the special case \(1/i = -i\text{.}\)</p>
-<p id="p-113">Here are some more simple rules to know:</p>
+<p id="p-119">Here are some more simple rules to know:</p>
 <article class="fact theorem-like" id="fact-3"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">1.9.1</span>. <span class="title">Complex arithmetic.</span>
 </h6>
-<p id="p-114">For complex numbers \(w\) and \(z\text{,}\)</p>
+<p id="p-120">For complex numbers \(w\) and \(z\text{,}\)</p>
 <ol class="decimal">
 <li id="li-38">\(\displaystyle |\bar{z}| = |z|\)</li>
 <li id="li-39">\(\displaystyle |wz| = |w|\cdot |z|\)</li>
@@ -272,11 +282,12 @@ z = x+iy \quad \Leftrightarrow \quad x = \Re(z), \quad y = \Im(z)\text{.}
 <li id="li-43">\(\displaystyle \overline{w+z}=\bar{w}+\bar{z}\)</li>
 <li id="li-44">\(\displaystyle \overline{\left(\frac{1}{z} \right)} = \frac{1}{\bar{z}}\)</li>
 <li id="li-45">\(\displaystyle |z|^2 = z\cdot \bar{z}\)</li>
-</ol></article></section><section class="subsection" id="la-cx-matrices"><h3 class="heading hide-type">
+</ol></article><article class="example example-like" id="example-13"><a data-knowl="" class="id-ref" data-refid="hk-example-13"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">1.9.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-13"><article class="example example-like"><p id="p-121">MATLAB uses complex numbers without a fuss. Use <code class="code-inline tex2jax_ignore">1i</code> to get the imaginary unit. The functions <code class="code-inline tex2jax_ignore">abs</code> and <code class="code-inline tex2jax_ignore">conj</code> do modulus and conjugate, respectively.</p></article></div></section><section class="subsection" id="la-cx-matrices"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.9.3</span> <span class="title">Complex-valued matrices</span>
 </h3>
-<a href="la-complex.html#la-cx-matrices" class="permalink">¶</a><p id="p-115">Up to now we have dealt entirely with vectors and matrices whose entries are real numbers. What changes if we consider ones with complex entries?</p>
-<p id="p-116">For us, almost nothing. When we consider the definitions of span and nullspace, we have to allow complex coefficients in linear combinations and complex vectors in the nullspace, and a determinant can be complex-valued. But the rules of matrix algebra, and the solution of linear systems, are unaffected. TBH, the only reason we started with real matrices instead of complex ones is that complex numbers tend to freak people out a little.</p></section></section></div></main>
+<a href="la-complex.html#la-cx-matrices" class="permalink">¶</a><p id="p-122">Up to now we have dealt entirely with vectors and matrices whose entries are real numbers. What changes if we consider ones with complex entries?</p>
+<p id="p-123">For us, almost nothing. When we consider the definitions of span and nullspace, we have to allow complex coefficients in linear combinations and complex vectors in the nullspace, and a determinant can be complex-valued. But the rules of matrix algebra, and the solution of linear systems, are unaffected. TBH, the only reason we started with real matrices instead of complex ones is that complex numbers tend to freak people out a little.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:15-05:00    *-->
+<!--*    on 2020-01-07T15:08:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,20 +13,17 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.7.2</span>.</h6>
-<p>For</p>
+<span class="type">Example</span> <span class="codenumber">1.5.6</span>.</h6>
+<p>Suppose the RREF of a matrix ends with</p>
 <div class="displaymath">
-\begin{align*}
--x + 3y \amp = 1 \\
-3x + y \amp = 7\text{,}
-\end{align*}
+\begin{equation*}
+\begin{bmatrix} 
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1   
+\end{bmatrix}
+\end{equation*}
 </div>
-<p>Cramer's Rule says</p>
-<div class="displaymath">
-\begin{align*}
-x \amp = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} = 2 \\
-y \amp = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10} = 1\text{.}
-\end{align*}
-</div></article><span class="incontext"><a href="la-inverse.html#example-10">in-context</a></span>
+<p>(i.e., an identity matrix). There are no free variables, and the only solution is \(\bx=[0,0,0]\text{.}\) Hence \(\null(\bA) = \{\bzero\}\text{.}\) This singleton set does not have a basis and is considered to have dimension zero. (Try this example in MATLAB!)</p></article><span class="incontext"><a href="la-basis.html#example-10">in-context</a></span>
 </body>
 </html>

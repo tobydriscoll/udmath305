@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:16-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,5 +11,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Let \(\bI\) be an identity matrix. Then \(\bI\bx=\bx\) for any vector \(\bx\text{,}\) so every nonzero vector is an eigenvector!</p></article></body>
+<body><article class="example example-like"><p>MATLAB does have an <code class="code-inline tex2jax_ignore">inv</code> command to find an inverse. However, it's not considered the best way to solve a linear system (it will be much slower for large matrices). <pre class="prettyprint lang-matlab">A = magic(3) 
+b = [ 1; 6; -2 ]
+
+x = A\b
+b - A*x
+</pre> MATLAB works with 16-digit approximations of real numbers, so things that are truly equal in exact arithmetic may only agree to many significant digits. Usually it's best to take the difference of two things to test near-equality.</p></article></body>
 </html>

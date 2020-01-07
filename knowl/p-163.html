@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-02T19:51:16-05:00    *-->
+<!--*    on 2020-01-07T15:08:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,33 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The easiest ODE in the world is</p>
+<p>Let's find a diagonalization of</p>
 <div class="displaymath">
 \begin{equation*}
-\dd{x}{t} = 0\text{.}
+\mathbf{A} =  \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>A <dfn class="terminology">solution</dfn> of this ODE is a function \(x(t)\) that satisfies the ODE. Perhaps you can work out that the solution here is \(x(t)=C\) for an arbitrary constant \(C\text{.}\) As dumb as this example is, it points out something important right away.</p>
-<span class="incontext"><a href="linearity.html#p-163">in-context</a></span>
+<p>We found the eigenvalues and eigenvectors of this guy in the previous section. We got \(\lambda_1=3\) with \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\) with \(\bv_2 =\twovec{1}{-2}\text{.}\) So we paint by numbers to get</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{D} = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}, \qquad \bV = \begin{bmatrix} 1 \amp 1 \\ 2 \amp -2 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>We "just" need to invert \(\bV\text{;}\) fortunately, we're only at \(2\times 2\text{,}\) so this is a snap.</p>
+<div class="displaymath">
+\begin{equation*}
+\bV^{-1} = \frac{1}{-4} \begin{bmatrix} -2 \amp -1 \\ -2 \amp 1 \end{bmatrix} = \begin{bmatrix} 1/2 \amp 1/4 \\ 1/2 \amp -1/4 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>Hence</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{A} = \bV \mathbf{D} \bV^{-1} = 
+\begin{bmatrix} 1 \amp 1 \\ 2 \amp -2 \end{bmatrix} 
+\begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix} 
+\begin{bmatrix} 1/2 \amp 1/4 \\ 1/2 \amp -1/4 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="la-diagonalization.html#p-163">in-context</a></span>
 </body>
 </html>
