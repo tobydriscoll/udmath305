@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,42 +11,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Let's solve \(x'-x=f(t)\text{,}\) where \(f(t)\) is 5 for \(3 \lt t \le 6\) and zero elsewhere. We have \(a=1\text{.}\) The particular solution due to the first step is</p>
+<body><article class="example example-like"><p>Suppose we solve \(x'+5y=3\delta(t-2)\text{,}\) with \(x(0)=1\text{.}\) Start with</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{1}{1} 5 H(t-3) \bigl[e^{(3-t)}-1\bigr]\text{,}
+x(t) = e^{-5t} + 3 \int_0^t e^{-5(t-s)}\delta(s-2)\, ds\text{.}
 \end{equation*}
 </div>
-<p>and from the second step it's</p>
-<div class="displaymath">
-\begin{equation*}
--\frac{1}{1} 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]\text{.}
-\end{equation*}
-</div>
-<p>Put these together with the homogeneous solution and we get</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = e^{t}x_0 + 5 H(t-3) \bigl[e^{(3-t)}-1\bigr] - 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]\text{.}
-\end{equation*}
-</div>
+<p>If \(t \lt 2\text{,}\) the integration interval does not contain the impulse, so the solution is just \(e^{-5t}\text{.}\) But if \(t \gt 2\text{,}\) \(x(t) = e^{-5t} + 3 e^{-5(t-2)}\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">step = @(t) double(t&gt;0);
-dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
-[t,y] = ode45(dydt,[0,8],1);
-plot(t,y)
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">dydt = @(t,y) -5*y;
+[t1,y1] = ode45(dydt,[0,2],1);
+[t2,y2] = ode45(dydt,[2,6],3+y1(end));
+plot([t1;t2],[y1;y2])
 xlabel('t'), ylabel('y(t)')
-title('Window forcing')
+title('Impulse forcing')
+semilogy([t1;t2],[y1;y2])
+xlabel('t'), ylabel('y(t)')
+title('Impulse forcing')
 </pre></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_window.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_impulse.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">step = @(t) double(t&gt;0);
-dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
-[t,y] = ode45(dydt,[0,8],1);
-semilogy(t,y)
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">dydt = @(t,y) -5*y;
+[t1,y1] = ode45(dydt,[0,2],1);
+[t2,y2] = ode45(dydt,[2,6],3+y1(end));
+semilogy([t1;t2],[y1;y2])
 xlabel('t'), ylabel('y(t)')
-title('Window forcing (semi-log)')
+title('Impulse forcing (semi-log)')
 </pre></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_window_2.svg" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_impulse_2.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></body>
 </html>

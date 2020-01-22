@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>\(x(t)\) is the mass of a radioactive isotope, and \(a \lt 0\)</p>
+<p>Suppose a mug of coffee at 90 C is put in a room kept at 20 C. In terms of the notation above, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dx}{dt} = a (x-20), \quad x(0)=90\text{.}
+\end{equation*}
+</div>
+<p>We could also pose it for the temperature difference \(z=x-20\) as \(z'=az\text{.}\) Either way it's a linear problem with solution</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = Ce^{at} + 20\text{.}
+\end{equation*}
+</div>
+<p>We determine \(C\) from the initial value: \(C=70\text{.}\) To get a value for \(a\text{,}\) we need the temperature at another time too. Say the coffee has cooled by \(7\) degrees in 10 minutes. Then \(83 = 70e^{10a}+20\text{,}\) or \(a=0.1\ln(0.9) \approx -0.01054\) per min. The coffee will reach 60 C when \(40 = 70e^{at}\text{,}\) or \(t\approx 53.1\) minutes.</p>
 <span class="incontext"><a href="first-order-models.html#p-241">in-context</a></span>
 </body>
 </html>

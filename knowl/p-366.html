@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It's often useful to rewrite the complex factor \(A(i\omega)\) from <a data-knowl="./knowl/so-eq-coeff.html" title="Equation 4.4.2">(4.4.2)</a> in polar form:</p>
+<p>What is the meaning if \(\omega = \omega_0\text{?}\) This is exactly when \(i\omega\) is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients needs to be modified from the above derivation. But there is a sneaky shortcut. For a certain choice of \(c_1\) and \(c_2\text{,}\) we get a different particular solution</p>
 <div class="displaymath">
 \begin{equation*}
-A(i\omega) = \frac{\omega_0^2}{\omega_0^2-\omega^2  + 2 Z i \omega_0 \omega } = g(\omega) e^{-i\phi(\omega)}\text{,}
+\hat{x}_p(t) = \frac{\omega_0^2}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)\text{,}
 \end{equation*}
 </div>
-<p>where \(g=|A|\) is the <dfn class="terminology">gain</dfn> and \(\phi\) is the <dfn class="terminology">phase lag</dfn>. Note that the particular solution is</p>
+<p>which has an indeterminate form in the limit \(\omega \to \omega_0\text{,}\) allowing us to use L'Hopital's Rule:</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = g(\omega) e^{-i\phi(\omega)} e^{i\omega t} = g e^{i(\omega t-\phi)}\text{.}
+\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0} \omega_0^2 \frac{it e^{i\omega t}}{-2\omega} = -\frac{i\omega_0^2}{2} t e^{i\omega_0 t}\text{.}
 \end{equation*}
 </div>
-<p>This means that as we pass from the input forcing to the output solution, \(g\) is the scaling of the amplitude and \(\phi\) changes the phase of our trip around the complex unit circle.</p>
+<p>(It's a little tricky, because the derivatives here are with respect to the limited variable \(\omega\) and not \(t\text{.}\)) This leads to the general solution</p>
 <span class="incontext"><a href="so-expforcing.html#p-366">in-context</a></span>
 </body>
 </html>

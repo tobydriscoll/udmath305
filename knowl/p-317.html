@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It's useful to discuss more specifically what can happen with the homogeneous equation \(\bx'=\bA\bx\) in the two-dimensional, constant-matrix case. Not only is this the simplest possible non-scalar case, but it's easily visualized using the <dfn class="terminology">phase plane</dfn>, which is a plot of trajectories and directions in the \((x_1,x_2)\) plane.</p>
-<span class="incontext"><a href="fs-phaseplane.html#p-317">in-context</a></span>
+<p>A solution of \(x'=ax\) for constant \(a\) is \(x=e^{at}\text{.}\) We know the Taylor series</p>
+<div class="displaymath">
+\begin{equation*}
+e^{at} = 1 + at + \frac{1}{2!}(at)^2 + \frac{1}{3!} (at)^3 + \cdots\text{.}
+\end{equation*}
+</div>
+<p>This series is something we could generalize to a square matrix \(\bA\text{,}\) for which integer powers are possible:</p>
+<div class="displaymath">
+\begin{equation}
+e^{t\bA} = \bI + t\bA + \frac{1}{2!}t^2 \bA^2 + \frac{1}{3!} t^3 \bA^3 + \cdots\text{.}\tag{3.7.1}
+\end{equation}
+</div>
+<p>Let's not worry too much about whether this converges (it does). What are its properties?</p>
+<span class="incontext"><a href="fs-matrix-exp.html#p-317">in-context</a></span>
 </body>
 </html>

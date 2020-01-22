@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,36 +13,31 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.8.2</span>.</h6>
-<p>Suppose we solve \(x'+5y=3\delta(t-2)\text{,}\) with \(x(0)=1\text{.}\) Start with</p>
+<span class="type">Example</span> <span class="codenumber">2.9.7</span>.</h6>
+<p>Let's consider \(x'-ax=e^{ct}\text{,}\) where \(a,c\) are different constants. Transforming both sides, we get</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = e^{-5t} + 3 \int_0^t e^{-5(t-s)}\delta(s-2)\, ds\text{.}
+[sX(s)-x(0)] - aX(s) =\frac{1}{s-c}\text{,}
 \end{equation*}
 </div>
-<p>If \(t \lt 2\text{,}\) the integration interval does not contain the impulse, so the solution is just \(e^{-5t}\text{.}\) But if \(t \gt 2\text{,}\) \(x(t) = e^{-5t} + 3 e^{-5(t-2)}\text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">dydt = @(t,y) -5*y;
-[t1,y1] = ode45(dydt,[0,2],1);
-[t2,y2] = ode45(dydt,[2,6],3+y1(end));
-plot([t1;t2],[y1;y2])
-xlabel('t'), ylabel('y(t)')
-title('Impulse forcing')
-semilogy([t1;t2],[y1;y2])
-xlabel('t'), ylabel('y(t)')
-title('Impulse forcing')
-</pre></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_impulse.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">dydt = @(t,y) -5*y;
-[t1,y1] = ode45(dydt,[0,2],1);
-[t2,y2] = ode45(dydt,[2,6],3+y1(end));
-semilogy([t1;t2],[y1;y2])
-xlabel('t'), ylabel('y(t)')
-title('Impulse forcing (semi-log)')
-</pre></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_impulse_2.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></article><span class="incontext"><a href="fl-impulse.html#example-43">in-context</a></span>
+<p>and thus</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = \frac{x(0)}{s-a} + \frac{1}{(s-c)(s-a)}\text{.}
+\end{equation*}
+</div>
+<p>We can immediately recognize the first term as the transform of \(e^{at}x(0)\text{.}\) To invert the transform of the second term, we need to express it using partial fractions. There is a general procedure for this, but it's worth knowing a simple mnemonic for this particular form:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}\text{.}
+\end{equation*}
+</div>
+<p>Thus the inverse transform of this fraction is a sum of two exponentials,</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
+\end{equation*}
+</div>
+<p>This is a particular solution that has \(x_p(0)=0\text{.}\) The general solution is \(e^{at}x(0) + x_p(t)\text{.}\)</p></article><span class="incontext"><a href="fl-laplace.html#example-43">in-context</a></span>
 </body>
 </html>

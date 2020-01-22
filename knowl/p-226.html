@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Above we found that the general solution of \(x'=4x+8t\) is \(x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}\) If we also have that \(x(0)=3/2\text{,}\) then we can conclude \(c_1=2\text{.}\)</p>
-<span class="incontext"><a href="fl-varparam.html#p-226">in-context</a></span>
+<p>We solve \(x'-ax=e^{at}\) by the variation of parameters formula</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 g(t) + g(t) \int g(t)^{-1} e^{at} \, dt \text{,}
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = \exp \left( \int a\, dt \right) = e^{at}\text{.}
+\end{equation*}
+</div>
+<p>Hence</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 e^{at} + e^{at} \int e^{-at} e^{at} \, dt = c_1 e^{at} + t e^{at}\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="fl-undeter.html#p-226">in-context</a></span>
 </body>
 </html>

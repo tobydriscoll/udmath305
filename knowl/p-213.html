@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We found earlier that the general solution of \(x'=\sin(t) x\) is</p>
+<p>After being thoroughly trained to always include integration constants, you might wonder why we are being so cavalier about them here. Let's walk through what would happen to them in the last example above. First,</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = c_1 \exp[ -\cos(t) ]\text{.}
+g(t) = \exp\left[  \ln(2+t) + C_1 \right] = A_1(2 + t)\text{,}
 \end{equation*}
 </div>
-<p>If we are also given the initial condition \(x(0)=1\text{,}\) then we substitute to determine</p>
+<p>where we renamed \(A_1=e^{C_1}\gt 0\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
-1 = x(0) = c_1 e^{-\cos(0)} = \frac{c_1}{e}\text{,}
+k(t) = A_1^{-1} \int \frac{-1}{2+t} (2+t)^{-1} \, dt = A_1^{-1} [-(2+t)^{-1}+C_2] = -A_1^{-1}(2+t)^{-1} + A_2\text{.}
 \end{equation*}
 </div>
-<p>so that \(c_1=e\text{.}\) We then write</p>
+<p>Finally,</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = e \exp[ -\cos(t) ] = \exp[1-\cos(t)]\text{,}
+x = x_h + kg = c_1 A_1(2 + t) + \bigl[-A_1^{-1}(2+t)^{-1} + A_2\bigr ]A_1(2 + t) = (c_1A_1+A_1A_2)(2+t) - 1\text{.}
 \end{equation*}
 </div>
-<p>which has no arbitrary constants left.</p>
-<span class="incontext"><a href="fl-ivp.html#p-213">in-context</a></span>
+<p>This is exactly the same family of solutions as \(c_1(2+t)-1\text{.}\) Essentially, all the integration constants end up lumped into that \(c_1\text{,}\) which is always the case.</p>
+<span class="incontext"><a href="fl-varparam.html#p-213">in-context</a></span>
 </body>
 </html>

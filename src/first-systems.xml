@@ -644,21 +644,71 @@ set(gca,'dataaspect',[6,1,1])
 	<subsection xml:id="fs-me-diagonal">
 		<title>Diagonalizable matrix</title>
 		<p>
-			Recall from <xref ref="la-diagonalization"/> that if <m>\bA</m> has no defective eigenvalues, then it has a diagonalization 
+			Say <m>\bA</m> is <m>n\times n</m>, and that we write
 			<me>
+				\bA \bv_1 = \lambda_1 \bv_1, \;
+				\bA \bv_2 = \lambda_2 \bv_2,\; \dots, \;
+				\bA \bv_n = \lambda_n \bv_n
+			</me>,
+			where <m>\lambda_1,\lambda_2,\dots,\lambda_n</m> are its eigenvalues (including multiplicities). Through some linear algebra magic, we can express this collection of equations more succinctly:
+			<md>
+				<mrow>
+						\begin{bmatrix}
+							\bA \bv_1 \amp \bA \bv_2 \amp \cdots \amp \bA \bv_n
+						\end{bmatrix}
+						\amp =
+						\begin{bmatrix}
+							\lambda_1\bv_1 \amp \lambda_2\bv_2 \amp \cdots \amp \lambda_n\bv_n
+						\end{bmatrix}
+				</mrow>
+				<mrow>\bA \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}            \amp =
+						\begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}
+						\begin{bmatrix} \lambda_1 \amp 0 \amp \cdots \amp 0 \\
+										0 \amp \lambda_2 \amp \cdots \amp 0 \\
+										\amp \amp \ddots \amp \\
+										0 \amp \cdots \amp 0 \amp \lambda_n
+						\end{bmatrix}</mrow>
+				<mrow>\bA \bV \amp = \bV \bD </mrow>
+			</md>,
+			where <m>\bD</m> is a <term>diagonal</term> matrix.
+		</p>
+		<p>
+			If <m>\bV</m> is nonsingular, we therefore can write
+			<men xml:id="la-eq-diagonalization">
 				\bA = \bV \bD \bV^{-1}
-			</me>, 
-			where <m>\bV</m> is a matrix of eigenvectors and <m>\bD</m> is a diagonal matrix of eigenvalues. A diagonalization is useful in matrix powers: 
+			</men>,
+			which is called a <idx>diagonalization of a matrix</idx><term>diagonalization</term> of <m>\bA</m>. 
+		</p>
+		<aside>
+			<p>When a matrix has a diagonalization, the two-output form of the <c>eig</c> MATLAB command gives the matrices <c>V</c> and <c>D</c> for one.</p>
+		</aside>
+		<p>
+			Not every matrix has a diagonalization. The essential issue is whether the eigenvector matrix <m>\bV</m> is invertible. We already have the condition needed to ensure this.
+		</p>
+		<theorem xml:id="la-thm-diagonalizable">
+			<title>Diagonalizability</title>
+			<statement><p>
+				A matrix is diagonalizable if and only if it has no defective eigenvalues.
+			</p></statement>
+		</theorem>
+		<p>
+			If we put that together with <xref ref="la-thm-distincteigs"/>, then we can also conclude that <alert>a matrix whose eigenvalues are all simple (multiplicity one) is diagonalizable</alert>. Any repeated eigenvalues might or might not be defective, and investigation of the eigenspace is required in order to determine which. In the <m>2\times 2</m> case, though, we can make a simpler determination.
+		</p>
+		<fact>
+			<p>A <m>2\times 2</m> matrix with repeated eigenvalue is either a multiple of the identity, in which case it is already diagonal, or it is defective.</p>
+		</fact>
+		<p>
+			A diagonalization is useful in matrix powers: 
 			<md>
 				<mrow> \bA^2 \amp = (\bV \bD \bV^{-1})(\bV \bD \bV^{-1}) = \bV \bD (\bV^{-1}\bV) \bD \bV^{-1} = \bV \bD^2 \bV^{-1} </mrow>
-				<mrow> \bA^3 \amp = (\bV \bD \bV^{-1})((\bV \bD^2 \bV^{-1}) = \bV \bD (\bV^{-1}\bV) \bD^2 \bV^{-1} = \bV \bD^3 \bV^{-1} </mrow>
+				<mrow> \bA^3 \amp = (\bV \bD \bV^{-1})(\bV \bD^2 \bV^{-1}) = \bV \bD (\bV^{-1}\bV) \bD^2 \bV^{-1} = \bV \bD^3 \bV^{-1} </mrow>
 			</md>,
 			etc. When we these matrix powers into the series definition <xref ref="fs-eq-matrixexp"/>, we can factor out <m>\bV</m> on the left and <m>\bV^{-1}</m> on the right: 
 			<mdn xml:id="fs-eq-matrixexpdiag">
 				<mrow> e^{t\bA} \amp = \bV\left( \bI + t\bD + \frac{1}{2!}t^2 \bD^2 + \cdots \right) \bV^{-1} </mrow>
 				<mrow>  \amp = \bV e^{t\bD} \bV^{-1} </mrow>
 			</mdn>.
-			Finally, applying the series definition to the diagonal matrix <m>\bD</m> gives something very simple: 
+			Finally, because powers of diagonal matrices are diagonal, applying the series definition to the diagonal matrix <m>\bD</m> gives something very simple: 
 			<me>
 				e^{t\bD}  = \begin{bmatrix} 
 				e^{t\lambda_1} \amp \amp \amp \\ 
@@ -726,7 +776,7 @@ set(gca,'dataaspect',[6,1,1])
 	<subsection xml:id="fs-me-defective">
 		<title>Defective matrix</title>	
 		<p>
-			By definition, a defective matrix does not have a diagonalization. Recall that in the 2-by-2 case, this occurs when there is a double eigenvalue and <m>\bA</m> is not diagonal. Fortunately, we have another path for the <m>2\times 2</m> situation. 
+			A defective matrix does not allow any diagonalization.In the 2-by-2 case, this occurs when there is a double eigenvalue and <m>\bA</m> is not diagonal. Fortunately, we have another path for the <m>2\times 2</m> situation. 
 		</p>
 		<example>
 			<p>

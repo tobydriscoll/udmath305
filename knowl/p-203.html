@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This is just as easy as the last fact:</p>
+<p>Another option is to rewrite some formulas for the IVP case. Consider again the integrating factor,</p>
 <div class="displaymath">
 \begin{equation*}
-\opA[x_h+x_p] = \opA[x_h] + \opA[x_p]=0+f=f\text{.}
+g(t) = \exp\left[ \int a(t)\, dt \right]\text{.}
 \end{equation*}
 </div>
-<p>As with linear systems, then, we can boil the general solution of the complete problem to finding the most general solution of the homogeneous problem, plus a particular solution of the original problem.</p>
-<span class="incontext"><a href="first-linear-ode.html#p-203">in-context</a></span>
+<p>It is not uniquely defined thanks to the integration constant. For an ODE alone this is natural, as the solution itself is not unique. But for the IVP we can define</p>
+<div class="displaymath">
+\begin{equation}
+G(s,t) = \exp\left[ \int_{s}^t a(u)\, du \right]\text{,}\tag{2.4.1}
+\end{equation}
+</div>
+<p>which we call the <dfn class="terminology">growth factor</dfn>. It has some interesting and useful properties.</p>
+<span class="incontext"><a href="fl-ivp.html#p-203">in-context</a></span>
 </body>
 </html>

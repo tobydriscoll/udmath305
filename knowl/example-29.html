@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,19 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.4.2</span>.</h6>
-<p>We found earlier that the general solution of \(x'=\sin(t) x\) is</p>
+<span class="type">Example</span> <span class="codenumber">2.4.4</span>.</h6>
+<p>Reconsider the previous IVP \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) First we find</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = c_1 \exp[ -\cos(t) ]\text{.}
+G(s,t) = \exp \left[ \int_{s}^t \sin(u)\, du \right] = \exp[-\cos(t)+\cos(s)] \text{.}
 \end{equation*}
 </div>
-<p>If we are also given the initial condition \(x(0)=1\text{,}\) then we substitute to determine</p>
+<p>The solution of the IVP is therefore</p>
 <div class="displaymath">
 \begin{equation*}
-1 = x(0) = c_1 e^{-\cos(0)} = \frac{c_1}{e}\text{,}
+x(t) = G(0,t)\cdot 1 = \exp[1-\cos(t)]\text{,}
 \end{equation*}
 </div>
-<p>so that \(c_1=e\text{.}\) We then write</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = e \exp[ -\cos(t) ] = \exp[1-\cos(t)]\text{,}
-\end{equation*}
-</div>
-<p>which has no arbitrary constants left.</p></article><span class="incontext"><a href="fl-ivp.html#example-29">in-context</a></span>
+<p>which is what we found before.</p></article><span class="incontext"><a href="fl-ivp.html#example-29">in-context</a></span>
 </body>
 </html>

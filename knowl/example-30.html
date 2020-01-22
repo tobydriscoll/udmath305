@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,32 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.4.4</span>.</h6>
-<p>Reconsider the previous IVP \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) First we find</p>
-<div class="displaymath">
-\begin{equation*}
-G(s,t) = \exp \left[ \int_{s}^t \sin(u)\, du \right] = \exp[-\cos(t)+\cos(s)] \text{.}
-\end{equation*}
-</div>
-<p>The solution of the IVP is therefore</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = G(0,t)\cdot 1 = \exp[1-\cos(t)]\text{,}
-\end{equation*}
-</div>
-<p>which is what we found before.</p></article><span class="incontext"><a href="fl-ivp.html#example-30">in-context</a></span>
+<span class="type">Example</span> <span class="codenumber">2.4.5</span>.</h6>
+<p>We look again at \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) Most numerical routines, like those in MATLAB, are coded to solve an ODE given in the general form \(x'=F(t,x)\text{.}\) Therefore we have to define a function for \(F\text{.}\)</p>
+<pre class="code-block tex2jax_ignore">
+F = @(t,x) sin(t)*x;
+		</pre>
+<p>Now we call the function <code class="code-inline tex2jax_ignore">ode45</code> to solve the problem, designating times of interest and the initial value.</p>
+<pre class="code-block tex2jax_ignore">
+t = linspace(0,5,500);
+[t,x] = ode45(F,t,1);
+		</pre>
+<p>The outputs here are vectors of equal length, giving the times we selected and values of the solution at those times. For instance, to get values at the final time we use</p>
+<pre class="code-block tex2jax_ignore">
+format long
+[ t(end), x(end) ]
+		</pre>
+<p>and get the response</p>
+<pre class="code-block tex2jax_ignore">
+ans =
+5.000000000000000   2.046942183624863
+		</pre>
+<p>The outputs are also in a form easy to plot.</p>
+<pre class="code-block tex2jax_ignore">
+plot(t,x)
+xlabel('t'), ylabel('x(t)')
+title('Solution of a linear problem')
+		</pre>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="matlab/fo_linear_first_ivp.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article><span class="incontext"><a href="fl-ivp.html#example-30">in-context</a></span>
 </body>
 </html>

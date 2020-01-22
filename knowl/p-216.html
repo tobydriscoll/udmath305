@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Reconsider the previous IVP \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) First we find</p>
+<p>Now let us start over instead with <a data-knowl="./knowl/fl-eq-varparivp.html" title="Equation 2.5.1">(2.5.1)</a>, with \(a(t)=4\) and \(f(t)=8t\text{.}\) First,</p>
 <div class="displaymath">
 \begin{equation*}
-G(s,t) = \exp \left[ \int_{s}^t \sin(u)\, du \right] = \exp[-\cos(t)+\cos(s)] \text{.}
+G(s,t) = \exp\left[ \int_s^t 4\,du \right] = \exp(4t-4s) = e^{4(t-s)}\text{.}
 \end{equation*}
 </div>
-<p>The solution of the IVP is therefore</p>
+<p>Then</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = G(0,t)\cdot 1 = \exp[1-\cos(t)]\text{,}
+x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds = \frac{3}{2} e^{4t} +  \int_{0}^t 8se^{4(t-s)} \, ds = \frac{3}{2} e^{4t} + \frac{1}{2} (e^{4 t} - 1-4t) \text{,}
 \end{equation*}
 </div>
-<p>which is what we found before.</p>
-<span class="incontext"><a href="fl-ivp.html#p-216">in-context</a></span>
+<p>which is identical to the first answer.</p>
+<span class="incontext"><a href="fl-varparam.html#p-216">in-context</a></span>
 </body>
 </html>

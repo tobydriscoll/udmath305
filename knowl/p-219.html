@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We look again at \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) Most numerical routines, like those in MATLAB, are coded to solve an ODE given in the general form \(x'=F(t,x)\text{.}\) Therefore we have to define a function for \(F\text{.}\)</p>
-<pre class="code-block tex2jax_ignore">
-F = @(t,x) sin(t)*x;
-		</pre>
-<p>Now we call the function <code class="code-inline tex2jax_ignore">ode45</code> to solve the problem, designating times of interest and the initial value.</p>
-<pre class="code-block tex2jax_ignore">
-t = linspace(0,5,500);
-[t,x] = ode45(F,t,1);
-		</pre>
-<p>The outputs here are vectors of equal length, giving the times we selected and values of the solution at those times. For instance, to get values at the final time we use</p>
-<pre class="code-block tex2jax_ignore">
-format long
-[ t(end), x(end) ]
-		</pre>
-<p>and get the response</p>
-<pre class="code-block tex2jax_ignore">
-ans =
-5.000000000000000   2.046942183624863
-		</pre>
-<p>The outputs are also in a form easy to plot.</p>
-<pre class="code-block tex2jax_ignore">
-plot(t,x)
-xlabel('t'), ylabel('x(t)')
-title('Solution of a linear problem')
-		</pre>
-<span class="incontext"><a href="fl-ivp.html#p-219">in-context</a></span>
+<p>To solve \(x'+3x=6t\text{,}\) first note that \(x_h(t)=c_1e^{-3t}\text{.}\) For \(x_p\) we use the educated guess</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = B_1 t + B_0\text{.}
+\end{equation*}
+</div>
+<p>Substituting that into the ODE yields</p>
+<div class="displaymath">
+\begin{equation*}
+(B_1)+3(B_1 t + B_0) = 6t\text{.}
+\end{equation*}
+</div>
+<p>On matching like powers of \(t\) we get the equations \(3B_1=6\) and \(B_1+B_0=0\text{.}\) This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that \(B_1=2\) and \(B_0=-2\text{.}\) So the general solution is</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 e^{-3t} + 2t - 2\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="fl-undeter.html#p-219">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:11-05:00    *-->
+<!--*    on 2020-01-22T16:29:37-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -154,7 +154,6 @@ var js_version = 0.12;
 <li><a href="la-equivalent.html" data-scroll="la-equivalent">Equivalent conditions</a></li>
 <li><a href="la-complex.html" data-scroll="la-complex">Complex numbers</a></li>
 <li><a href="la-eigen.html" data-scroll="la-eigen">Eigenvalues</a></li>
-<li><a href="la-diagonalization.html" data-scroll="la-diagonalization">Diagonalization</a></li>
 </ul>
 </li>
 <li class="link">
@@ -209,15 +208,15 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-constcoeff"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Constant-coefficient systems</span>
 </h2>
-<a href="fs-constcoeff.html" class="permalink">¶</a><p id="p-295">The solutions of \(\bx'=\bA(t)\bx\) largely boil down to finding a fundamental matrix, which satisfies</p>
+<a href="fs-constcoeff.html" class="permalink">¶</a><p id="p-284">The solutions of \(\bx'=\bA(t)\bx\) largely boil down to finding a fundamental matrix, which satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 \bX' = \bigl[ \bx_1' \: \bx_2' \: \cdots \: \bx_n'  \bigr] = \bigl[ \bA\bx_1 \: \bA\bx_2 \: \cdots \: \bA\bx_n  \bigr] = \bA \bX\text{.}
 \end{equation*}
 </div>
 <p>With such a matrix in hand, the general solution is \(\bx(t)=\bX(t)\bc\) for an arbitrary “integration constant” \(\bc\text{.}\)</p>
-<p id="p-296">The good news for the general case pretty much ends there; in most problems we cannot get a reasonably simple expression for \(\bX\text{.}\) But there is a very important special case in which we can say a lot: when \(\bA(t)\) is a constant matrix.</p>
-<p id="p-297">We begin the journey with an eigenpair of \(\bA\text{,}\)</p>
+<p id="p-285">The good news for the general case pretty much ends there; in most problems we cannot get a reasonably simple expression for \(\bX\text{.}\) But there is a very important special case in which we can say a lot: when \(\bA(t)\) is a constant matrix.</p>
+<p id="p-286">We begin the journey with an eigenpair of \(\bA\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \bA \bv = \lambda \bv\text{.}
@@ -230,7 +229,7 @@ g'\bv = \bA(g\bv) = g(\bA\bv) = g\lambda \bv\text{,}
 \end{equation*}
 </div>
 <p>which can be satisfied if \(g'=\lambda g\text{,}\) or \(g(t)=ce^{\lambda t}\text{.}\) That is, each eigenpair gives us a homogeneous solution! (Yes, this the moment all the eigenstuff was preparing us for.)</p>
-<p id="p-298">Counting algebraic multiplicities, we know that \(\bA\) has eigenvalues \(\lambda_1,\ldots,\lambda_n\text{.}\) Say that we have eigenvectors \(\bv_1,\ldots,\bv_n\) to go with them. Then we have \(n\) homogeneous solutions</p>
+<p id="p-287">Counting algebraic multiplicities, we know that \(\bA\) has eigenvalues \(\lambda_1,\ldots,\lambda_n\text{.}\) Say that we have eigenvectors \(\bv_1,\ldots,\bv_n\) to go with them. Then we have \(n\) homogeneous solutions</p>
 <div class="displaymath">
 \begin{equation*}
 \bx_j(t) = e^{\lambda_j t} \bv_j, \quad j=1,\ldots,n\text{.}
@@ -240,7 +239,7 @@ g'\bv = \bA(g\bv) = g(\bA\bv) = g\lambda \bv\text{,}
 <article class="theorem theorem-like" id="fs-thm-eigensolution"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.3.1</span>. <span class="title">Solution by eigenvectors.</span>
 </h6>
-<p id="p-299">Let \(\bA\) have eigenvalues \(\lambda_1,\ldots,\lambda_n\) and corresponding eigenvectors \(\bv_1,\ldots,\bv_n\text{.}\) If the eigenvectors are independent (that is, they form a basis), then</p>
+<p id="p-288">Let \(\bA\) have eigenvalues \(\lambda_1,\ldots,\lambda_n\) and corresponding eigenvectors \(\bv_1,\ldots,\bv_n\text{.}\) If the eigenvectors are independent (that is, they form a basis), then</p>
 <div class="displaymath">
 \begin{equation}
 \bX(t) = \begin{bmatrix} 
@@ -248,9 +247,9 @@ e^{\lambda_1 t} \bv_1 \amp \cdots \amp e^{\lambda_n t} \bv_n
 \end{bmatrix}\label{fs-eq-eigensolution}\tag{3.3.1}
 \end{equation}
 </div>
-<p>is a fundamental matrix for \(\bx'=\bA\bx\text{.}\)</p></article><p id="p-300">This situation occurs when \(\bA\) has no defective eigenvalues, i.e., it is a diagonalizable matrix (<a href="la-diagonalization.html" class="internal" title="Section 1.12: Diagonalization">Section 1.12</a>). One important case when that is guaranteed is when the eigenvalues are all distinct (<a data-knowl="./knowl/la-thm-distincteigs.html" title="Theorem 1.11.16: Distinct eigenvalues imply nondefectiveness">Theorem 1.11.16</a>).</p>
-<article class="example example-like" id="example-47"><a data-knowl="" class="id-ref" data-refid="hk-example-47"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.3.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-47"><article class="example example-like"><p id="p-301">We can find the eigenstuff of</p>
+<p>is a fundamental matrix for \(\bx'=\bA\bx\text{.}\)</p></article><p id="p-289">This situation occurs when \(\bA\) has no defective eigenvalues, i.e., it is a diagonalizable matrix (<span>(((Unresolved xref, reference "la-diagonalization"; check spelling or use "provisional" attribute)))</span><a href="" class="internal" title=""> </a>). One important case when that is guaranteed is when the eigenvalues are all distinct (<a data-knowl="./knowl/la-thm-distincteigs.html" title="Theorem 1.11.16: Distinct eigenvalues imply nondefectiveness">Theorem 1.11.16</a>).</p>
+<article class="example example-like" id="example-46"><a data-knowl="" class="id-ref" data-refid="hk-example-46"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.3.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-46"><article class="example example-like"><p id="p-290">We can find the eigenstuff of</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
@@ -269,7 +268,7 @@ e^{\lambda_1 t} \bv_1 \amp \cdots \amp e^{\lambda_n t} \bv_n
 = \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-302">Matrices with real, distinct eigenvalues will always look like that example. Things get trickier with complex eigenvalues and defective eigenvalues, and we need to spend some time with each.</p></section></div></main>
+<p id="p-291">Matrices with real, distinct eigenvalues will always look like that example. Things get trickier with complex eigenvalues and defective eigenvalues, and we need to spend some time with each.</p></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

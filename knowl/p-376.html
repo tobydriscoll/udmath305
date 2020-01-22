@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We return to our linear, second-order, constant-coefficient problem in the simpler notation</p>
+<p>If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
 <div class="displaymath">
 \begin{equation*}
-x'' + bx' + cx = f(t)\text{.}
+\lx[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
 \end{equation*}
 </div>
-<p>We cast this problem as a first-order system in two dimensions, found that the eigenvalues are the roots of \(\lambda^2+b\lambda + c\text{,}\) and then constructed exponential solutions for the homogeneous part (except for the double eigenvalue case). We also found a particular solution for the case of an exponential \(f(t)\text{.}\) There is an alternative way to derive the same results using the method of Laplace transforms to systematize the manipulations.</p>
+<p>and</p>
+<div class="displaymath">
+\begin{equation*}
+\lx[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
+\end{equation*}
+</div>
+<p>Conversely, a transform \(X(s)\) that has \(s^2+\omega^2\) as a factor in the denominator has poles at \(\pm i\omega\text{.}\) The simplest case is</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-laplace.html#p-376">in-context</a></span>
 </body>
 </html>

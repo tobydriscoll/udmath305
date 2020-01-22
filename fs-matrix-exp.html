@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:11-05:00    *-->
+<!--*    on 2020-01-22T16:29:37-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -154,7 +154,6 @@ var js_version = 0.12;
 <li><a href="la-equivalent.html" data-scroll="la-equivalent">Equivalent conditions</a></li>
 <li><a href="la-complex.html" data-scroll="la-complex">Complex numbers</a></li>
 <li><a href="la-eigen.html" data-scroll="la-eigen">Eigenvalues</a></li>
-<li><a href="la-diagonalization.html" data-scroll="la-diagonalization">Diagonalization</a></li>
 </ul>
 </li>
 <li class="link">
@@ -209,7 +208,7 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-matrix-exp"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.7</span> <span class="title">Matrix exponential</span>
 </h2>
-<a href="fs-matrix-exp.html" class="permalink">¶</a><section class="introduction" id="introduction-12"><p id="p-328">A solution of \(x'=ax\) for constant \(a\) is \(x=e^{at}\text{.}\) We know the Taylor series</p>
+<a href="fs-matrix-exp.html" class="permalink">¶</a><section class="introduction" id="introduction-11"><p id="p-317">A solution of \(x'=ax\) for constant \(a\) is \(x=e^{at}\text{.}\) We know the Taylor series</p>
 <div class="displaymath">
 \begin{equation*}
 e^{at} = 1 + at + \frac{1}{2!}(at)^2 + \frac{1}{3!} (at)^3 + \cdots\text{.}
@@ -225,42 +224,79 @@ e^{t\bA} = \bI + t\bA + \frac{1}{2!}t^2 \bA^2 + \frac{1}{3!} t^3 \bA^3 + \cdots\
 <article class="theorem theorem-like" id="fs-thm-matrixexp"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.7.1</span>. <span class="title">Matrix exponential.</span>
 </h6>
-<p id="p-329">Let \(\bA,\bB\) be \(n\times n\) matrices. Then</p>
+<p id="p-318">Let \(\bA,\bB\) be \(n\times n\) matrices. Then</p>
 <ol class="decimal">
-<li id="li-66">\(e^{t\bA}=\bI\) if \(t=0\text{,}\)</li>
-<li id="li-67">\(\dd{}{t}e^{t\bA} = A e^{t\bA} = e^{t\bA}A\text{,}\)</li>
-<li id="li-68">\([e^{t\bA}]^{-1} = e^{-t\bA}\text{,}\) and</li>
-<li id="li-69">If \(\bA\bB=\bB\bA\text{,}\) then \(e^{\bA+\bB} = e^{t\bA}e^{t\bB} = e^{t\bB}e^{t\bA}\text{.}\)</li>
-</ol></article><p id="p-330">The first two conclusions of the theorem follow quickly from the series definition <a data-knowl="./knowl/fs-eq-matrixexp.html" title="Equation 3.7.1">(3.7.1)</a>. (The third is a deeper fact that is important below as well as in other areas such as theoretical physics.) They establish some important facts.</p>
-<article class="fact theorem-like" id="fact-15"><h6 class="heading">
+<li id="li-65">\(e^{t\bA}=\bI\) if \(t=0\text{,}\)</li>
+<li id="li-66">\(\dd{}{t}e^{t\bA} = A e^{t\bA} = e^{t\bA}A\text{,}\)</li>
+<li id="li-67">\([e^{t\bA}]^{-1} = e^{-t\bA}\text{,}\) and</li>
+<li id="li-68">If \(\bA\bB=\bB\bA\text{,}\) then \(e^{\bA+\bB} = e^{t\bA}e^{t\bB} = e^{t\bB}e^{t\bA}\text{.}\)</li>
+</ol></article><p id="p-319">The first two conclusions of the theorem follow quickly from the series definition <a data-knowl="./knowl/fs-eq-matrixexp.html" title="Equation 3.7.1">(3.7.1)</a>. (The third is a deeper fact that is important below as well as in other areas such as theoretical physics.) They establish some important facts.</p>
+<article class="fact theorem-like" id="fact-14"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">3.7.2</span>.</h6>
-<ol id="p-331" class="decimal">
-<li id="li-70">For any constant vector \(\bc\text{,}\) \(\bx(t)=e^{t\bA}\bc\) is a solution of \(\bx'=\bA\bx\text{.}\)</li>
-<li id="li-71">\(\bX(t)=e^{t\bA}\) is a fundamental matrix for \(\bx'=\bA\bx\) with \(\bX(0)=\bI\text{.}\)</li>
-</ol></article><p id="p-332">Obviously, summing an infinite series doesn't seem like a great prospect. But we have two ways around that.</p></section><section class="subsection" id="fs-me-diagonal"><h3 class="heading hide-type">
+<ol id="p-320" class="decimal">
+<li id="li-69">For any constant vector \(\bc\text{,}\) \(\bx(t)=e^{t\bA}\bc\) is a solution of \(\bx'=\bA\bx\text{.}\)</li>
+<li id="li-70">\(\bX(t)=e^{t\bA}\) is a fundamental matrix for \(\bx'=\bA\bx\) with \(\bX(0)=\bI\text{.}\)</li>
+</ol></article><p id="p-321">Obviously, summing an infinite series doesn't seem like a great prospect. But we have two ways around that.</p></section><section class="subsection" id="fs-me-diagonal"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.7.1</span> <span class="title">Diagonalizable matrix</span>
 </h3>
-<a href="fs-matrix-exp.html#fs-me-diagonal" class="permalink">¶</a><p id="p-333">Recall from <a href="la-diagonalization.html" class="internal" title="Section 1.12: Diagonalization">Section 1.12</a> that if \(\bA\) has no defective eigenvalues, then it has a diagonalization</p>
+<a href="fs-matrix-exp.html#fs-me-diagonal" class="permalink">¶</a><p id="p-322">Say \(\bA\) is \(n\times n\text{,}\) and that we write</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \bV \bD \bV^{-1}\text{,}
+\bA \bv_1 = \lambda_1 \bv_1, \;
+\bA \bv_2 = \lambda_2 \bv_2,\; \dots, \;
+\bA \bv_n = \lambda_n \bv_n\text{,}
 \end{equation*}
 </div>
-<p>where \(\bV\) is a matrix of eigenvectors and \(\bD\) is a diagonal matrix of eigenvalues. A diagonalization is useful in matrix powers:</p>
+<p>where \(\lambda_1,\lambda_2,\dots,\lambda_n\) are its eigenvalues (including multiplicities). Through some linear algebra magic, we can express this collection of equations more succinctly:</p>
+<div class="displaymath">
+\begin{align*}
+\begin{bmatrix}
+\bA \bv_1 \amp \bA \bv_2 \amp \cdots \amp \bA \bv_n
+\end{bmatrix}
+\amp =
+\begin{bmatrix}
+\lambda_1\bv_1 \amp \lambda_2\bv_2 \amp \cdots \amp \lambda_n\bv_n
+\end{bmatrix}\\
+\bA \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}            \amp =
+\begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}
+\begin{bmatrix} \lambda_1 \amp 0 \amp \cdots \amp 0 \\
+0 \amp \lambda_2 \amp \cdots \amp 0 \\
+\amp \amp \ddots \amp \\
+0 \amp \cdots \amp 0 \amp \lambda_n
+\end{bmatrix}\\
+\bA \bV \amp = \bV \bD \text{,}
+\end{align*}
+</div>
+<p>where \(\bD\) is a <dfn class="terminology">diagonal</dfn> matrix.</p>
+<p id="p-323">If \(\bV\) is nonsingular, we therefore can write</p>
+<div class="displaymath">
+\begin{equation}
+\bA = \bV \bD \bV^{-1}\text{,}\label{la-eq-diagonalization}\tag{3.7.2}
+\end{equation}
+</div>
+<p>which is called a <dfn class="terminology">diagonalization</dfn> of \(\bA\text{.}\)</p>
+<aside class="aside aside-like" id="aside-15"><p id="p-324">When a matrix has a diagonalization, the two-output form of the <code class="code-inline tex2jax_ignore">eig</code> MATLAB command gives the matrices <code class="code-inline tex2jax_ignore">V</code> and <code class="code-inline tex2jax_ignore">D</code> for one.</p></aside><p id="p-325">Not every matrix has a diagonalization. The essential issue is whether the eigenvector matrix \(\bV\) is invertible. We already have the condition needed to ensure this.</p>
+<article class="theorem theorem-like" id="la-thm-diagonalizable"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">3.7.3</span>. <span class="title">Diagonalizability.</span>
+</h6>
+<p id="p-326">A matrix is diagonalizable if and only if it has no defective eigenvalues.</p></article><p id="p-327">If we put that together with <a data-knowl="./knowl/la-thm-distincteigs.html" title="Theorem 1.11.16: Distinct eigenvalues imply nondefectiveness">Theorem 1.11.16</a>, then we can also conclude that <em class="alert">a matrix whose eigenvalues are all simple (multiplicity one) is diagonalizable</em>. Any repeated eigenvalues might or might not be defective, and investigation of the eigenspace is required in order to determine which. In the \(2\times 2\) case, though, we can make a simpler determination.</p>
+<article class="fact theorem-like" id="fact-15"><h6 class="heading">
+<span class="type">Fact</span> <span class="codenumber">3.7.4</span>.</h6>
+<p id="p-328">A \(2\times 2\) matrix with repeated eigenvalue is either a multiple of the identity, in which case it is already diagonal, or it is defective.</p></article><p id="p-329">A diagonalization is useful in matrix powers:</p>
 <div class="displaymath">
 \begin{align*}
 \bA^2 \amp = (\bV \bD \bV^{-1})(\bV \bD \bV^{-1}) = \bV \bD (\bV^{-1}\bV) \bD \bV^{-1} = \bV \bD^2 \bV^{-1} \\
-\bA^3 \amp = (\bV \bD \bV^{-1})((\bV \bD^2 \bV^{-1}) = \bV \bD (\bV^{-1}\bV) \bD^2 \bV^{-1} = \bV \bD^3 \bV^{-1} \text{,}
+\bA^3 \amp = (\bV \bD \bV^{-1})(\bV \bD^2 \bV^{-1}) = \bV \bD (\bV^{-1}\bV) \bD^2 \bV^{-1} = \bV \bD^3 \bV^{-1} \text{,}
 \end{align*}
 </div>
 <p>etc. When we these matrix powers into the series definition <a data-knowl="./knowl/fs-eq-matrixexp.html" title="Equation 3.7.1">(3.7.1)</a>, we can factor out \(\bV\) on the left and \(\bV^{-1}\) on the right:</p>
 <div class="displaymath">
 \begin{align}
-e^{t\bA} \amp = \bV\left( \bI + t\bD + \frac{1}{2!}t^2 \bD^2 + \cdots \right) \bV^{-1} \tag{3.7.2}\\
-\amp = \bV e^{t\bD} \bV^{-1} \text{.}\tag{3.7.3}
+e^{t\bA} \amp = \bV\left( \bI + t\bD + \frac{1}{2!}t^2 \bD^2 + \cdots \right) \bV^{-1} \tag{3.7.3}\\
+\amp = \bV e^{t\bD} \bV^{-1} \text{.}\tag{3.7.4}
 \end{align}
 </div>
-<p>Finally, applying the series definition to the diagonal matrix \(\bD\) gives something very simple:</p>
+<p>Finally, because powers of diagonal matrices are diagonal, applying the series definition to the diagonal matrix \(\bD\) gives something very simple:</p>
 <div class="displaymath">
 \begin{equation*}
 e^{t\bD}  = \begin{bmatrix} 
@@ -272,8 +308,8 @@ e^{t\lambda_1} \amp \amp \amp \\
 \end{equation*}
 </div>
 <p>This gives us a viable path for computing the exponential of a diagonalizable matrix.</p>
-<article class="example example-like" id="example-53"><a data-knowl="" class="id-ref" data-refid="hk-example-53"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.7.3</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-53"><article class="example example-like"><p id="p-334">Let's find the exponential of</p>
+<article class="example example-like" id="example-52"><a data-knowl="" class="id-ref" data-refid="hk-example-52"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.7.5</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-52"><article class="example example-like"><p id="p-330">Let's find the exponential of</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \twomat{1}{1}{4}{1}\text{,}
@@ -295,15 +331,15 @@ e^{t\bA} \amp = \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{1}{1}
 \end{align*}
 </div>
 <p>Not exactly a walk in the park, but doable.</p></article></div>
-<p id="p-335">The general solution to \(\bx'=\bA\bx\) is \(e^{t\bA}\bc\text{.}\) This is actually more work than we needed to find it in <a href="fs-constcoeff.html" class="internal" title="Section 3.3: Constant-coefficient systems">Section 3.3</a>. But this formula can be handy with an IVP, because</p>
+<p id="p-331">The general solution to \(\bx'=\bA\bx\) is \(e^{t\bA}\bc\text{.}\) This is actually more work than we needed to find it in <a href="fs-constcoeff.html" class="internal" title="Section 3.3: Constant-coefficient systems">Section 3.3</a>. But this formula can be handy with an IVP, because</p>
 <div class="displaymath">
 \begin{equation*}
 \bx_0 = \bx(0) = e^{0\bA}\bc = \bc\text{.}
 \end{equation*}
 </div>
 <p>It's also important to have a fundamental matrix in the extension of variation of parameters to come later.</p>
-<article class="example example-like" id="example-54"><a data-knowl="" class="id-ref" data-refid="hk-example-54"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.7.4</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-54"><article class="example example-like"><p id="p-336">Suppose</p>
+<article class="example example-like" id="example-53"><a data-knowl="" class="id-ref" data-refid="hk-example-53"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.7.6</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-53"><article class="example example-like"><p id="p-332">Suppose</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \twomat{1}{-2}{5}{-3}\text{,}
@@ -337,9 +373,9 @@ e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\si
 </div></article></div></section><section class="subsection" id="fs-me-defective"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.7.2</span> <span class="title">Defective matrix</span>
 </h3>
-<a href="fs-matrix-exp.html#fs-me-defective" class="permalink">¶</a><p id="p-337">By definition, a defective matrix does not have a diagonalization. Recall that in the 2-by-2 case, this occurs when there is a double eigenvalue and \(\bA\) is not diagonal. Fortunately, we have another path for the \(2\times 2\) situation.</p>
-<article class="example example-like" id="example-55"><a data-knowl="" class="id-ref" data-refid="hk-example-55"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.7.5</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-55"><article class="example example-like"><p id="p-338">The matrix</p>
+<a href="fs-matrix-exp.html#fs-me-defective" class="permalink">¶</a><p id="p-333">A defective matrix does not allow any diagonalization.In the 2-by-2 case, this occurs when there is a double eigenvalue and \(\bA\) is not diagonal. Fortunately, we have another path for the \(2\times 2\) situation.</p>
+<article class="example example-like" id="example-54"><a data-knowl="" class="id-ref" data-refid="hk-example-54"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">3.7.7</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-54"><article class="example example-like"><p id="p-334">The matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \twomat{-1}{1}{0}{-1}
@@ -363,7 +399,7 @@ e^{t\bB} = \bI + t\bB = \twomat{1}{t}{0}{1}\text{.}
 e^{t\bA} = e^{t\lambda\bI}e^{t(\bA-\lambda\bI)} = e^{-t}\twomat{1}{t}{0}{1}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-339">Matters are not nearly so simple for larger matrices, but we won't be going there.</p></section></section></div></main>
+<p id="p-335">Matters are not nearly so simple for larger matrices, but we won't be going there.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

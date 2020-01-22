@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-14T14:00:12-05:00    *-->
+<!--*    on 2020-01-22T16:29:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Solving an IVP typically involves first finding the general solution of the ODE, then applying the initial condition to determine a specific value for the integration constant.</p>
-<span class="incontext"><a href="fl-ivp.html#p-212">in-context</a></span>
+<p>For \((2+t) x'= x - 1\text{,}\) we rewrite as</p>
+<div class="displaymath">
+\begin{equation*}
+x' - \frac{1}{2+t} x = -\frac{1}{2+t}\text{.}
+\end{equation*}
+</div>
+<p>Then</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = \exp\left[ \int \frac{1}{2+t}\, dt \right] = \exp[ \ln(2+t) ] = 2+t\text{.}
+\end{equation*}
+</div>
+<p>Next,</p>
+<div class="displaymath">
+\begin{equation*}
+k(t) = \int \frac{-1}{2+t} (2+t)^{-1} \, dt = - (2+t)^{-1}\text{,}
+\end{equation*}
+</div>
+<p>so that</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 (2+t) - (2+t)^{-1} (2+t) = c_1(2+t)-1\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="fl-varparam.html#p-212">in-context</a></span>
 </body>
 </html>
