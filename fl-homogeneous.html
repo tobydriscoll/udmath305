@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:51-05:00    *-->
+<!--*    on 2020-01-14T14:00:11-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -144,6 +144,7 @@ var js_version = 0.12;
 <li class="link">
 <a href="linear-algebra.html" data-scroll="linear-algebra"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a><ul>
 <li><a href="la-linear-systems.html" data-scroll="la-linear-systems">Linear systems of equations</a></li>
+<li><a href="la-elimination.html" data-scroll="la-elimination">Row elimination</a></li>
 <li><a href="la-vector-algebra.html" data-scroll="la-vector-algebra">Vector algebra</a></li>
 <li><a href="la-matrix-algebra.html" data-scroll="la-matrix-algebra">Matrix algebra</a></li>
 <li><a href="la-general-solution.html" data-scroll="la-general-solution">General and particular solutions</a></li>
@@ -208,8 +209,8 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fl-homogeneous"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Homogeneous solutions</span>
 </h2>
-<a href="fl-homogeneous.html" class="permalink">¶</a><p id="p-195">Our first job is to figure out how to express all possible solutions of the homogeneous problem \(\opA[x]=0\text{,}\) or \(x'-a(t)x=0\text{.}\) As with linear systems, the goal is to find a basis, so that the general \(x_h\) is a linear combination of the basis functions. However, there is no analog of the RREF of a matrix to exploit here.</p>
-<p id="p-196">Fortunately we can just use some calculus. Define an <dfn class="terminology">integrating factor</dfn> as</p>
+<a href="fl-homogeneous.html" class="permalink">¶</a><p id="p-205">Our first job is to figure out how to express all possible solutions of the homogeneous problem \(\opA[x]=0\text{,}\) or \(x'-a(t)x=0\text{.}\) As with linear systems, the goal is to find a basis, so that the general \(x_h\) is a linear combination of the basis functions. However, there is no analog of the RREF of a matrix to exploit here.</p>
+<p id="p-206">Fortunately we can just use some calculus. Define an <dfn class="terminology">integrating factor</dfn> as</p>
 <div class="displaymath">
 \begin{equation*}
 g(t) = \exp[ q(t) ]\text{,}
@@ -228,8 +229,8 @@ g(t) = \exp\left( \int a(t)\,dt \right)\text{.}\label{fl-eq-intfactor}\tag{2.3.1
 \end{equation}
 </div>
 <p>Thus, \(x_h=c_1g(t)\) is a homogeneous solution for any constant \(c_1\text{.}\) It's not an elementary fact that this is the <em class="emphasis">general</em> homogeneous solution.</p>
-<aside class="aside aside-like" id="aside-11"><p id="p-197">The integrating factor \(g(t)\) is not uniquely defined, because it contains an indefinite integral. But adding \(C\)&gt;to the integral is the same as multiplying \(g(t)\) by \(e^C\text{,}\) and the general homogeneous solution is not affected. This is the usual situation of scalar nonuniqueness for expressing the basis of a nullspace.</p></aside><article class="example example-like" id="example-25"><a data-knowl="" class="id-ref" data-refid="hk-example-25"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.3.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-25"><article class="example example-like"><p id="p-198">To solve \(x'=\sin(t) x\text{,}\) we integrate to get \(-\cos(t)\) and then exponentiate, so that</p>
+<aside class="aside aside-like" id="aside-12"><p id="p-207">The integrating factor \(g(t)\) is not uniquely defined, because it contains an indefinite integral. But adding \(C\) to the integral is the same as multiplying \(g(t)\) by \(e^C\text{,}\) and the general homogeneous solution is not affected. This is the usual situation of scalar nonuniqueness for expressing the basis of a nullspace.</p></aside><article class="example example-like" id="example-28"><a data-knowl="" class="id-ref" data-refid="hk-example-28"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.3.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-28"><article class="example example-like"><p id="p-208">To solve \(x'=\sin(t) x\text{,}\) we integrate to get \(-\cos(t)\) and then exponentiate, so that</p>
 <div class="displaymath">
 \begin{equation*}
 x_h(t) = c_1 \exp[ -\cos(t) ]\text{.}

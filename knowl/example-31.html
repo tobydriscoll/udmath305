@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,20 +13,32 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.5.3</span>.</h6>
-<p>Above we found that the general solution of \(x'=4x+8t\) is \(x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}\) If we also have that \(x(0)=3/2\text{,}\) then we can conclude \(c_1=2\text{.}\)</p>
-<p>Now let us start over instead with <a data-knowl="./knowl/fl-eq-varparivp.html" title="Equation 2.5.1">(2.5.1)</a>, with \(a(t)=4\) and \(f(t)=8t\text{.}\) First,</p>
-<div class="displaymath">
-\begin{equation*}
-G(s,t) = \exp\left[ \int_s^t 4\,du \right] = \exp(4t-4s) = e^{4(t-s)}\text{.}
-\end{equation*}
-</div>
-<p>Then</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds = \frac{3}{2} e^{4t} +  \int_{0}^t 8se^{4(t-s)} \, ds = \frac{3}{2} e^{4t} + \frac{1}{2} (e^{4 t} - 1-4t) \text{,}
-\end{equation*}
-</div>
-<p>which is identical to the first answer.</p></article><span class="incontext"><a href="fl-varparam.html#example-31">in-context</a></span>
+<span class="type">Example</span> <span class="codenumber">2.4.5</span>.</h6>
+<p>We look again at \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) Most numerical routines, like those in MATLAB, are coded to solve an ODE given in the general form \(x'=F(t,x)\text{.}\) Therefore we have to define a function for \(F\text{.}\)</p>
+<pre class="code-block tex2jax_ignore">
+F = @(t,x) sin(t)*x;
+		</pre>
+<p>Now we call the function <code class="code-inline tex2jax_ignore">ode45</code> to solve the problem, designating times of interest and the initial value.</p>
+<pre class="code-block tex2jax_ignore">
+t = linspace(0,5,500);
+[t,x] = ode45(F,t,1);
+		</pre>
+<p>The outputs here are vectors of equal length, giving the times we selected and values of the solution at those times. For instance, to get values at the final time we use</p>
+<pre class="code-block tex2jax_ignore">
+format long
+[ t(end), x(end) ]
+		</pre>
+<p>and get the response</p>
+<pre class="code-block tex2jax_ignore">
+ans =
+5.000000000000000   2.046942183624863
+		</pre>
+<p>The outputs are also in a form easy to plot.</p>
+<pre class="code-block tex2jax_ignore">
+plot(t,x)
+xlabel('t'), ylabel('x(t)')
+title('Solution of a linear problem')
+		</pre>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="matlab/fo_linear_first_ivp.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article><span class="incontext"><a href="fl-ivp.html#example-31">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:51-05:00    *-->
+<!--*    on 2020-01-14T14:00:11-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -144,6 +144,7 @@ var js_version = 0.12;
 <li class="link">
 <a href="linear-algebra.html" data-scroll="linear-algebra"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a><ul>
 <li><a href="la-linear-systems.html" data-scroll="la-linear-systems">Linear systems of equations</a></li>
+<li><a href="la-elimination.html" data-scroll="la-elimination">Row elimination</a></li>
 <li><a href="la-vector-algebra.html" data-scroll="la-vector-algebra">Vector algebra</a></li>
 <li><a href="la-matrix-algebra.html" data-scroll="la-matrix-algebra">Matrix algebra</a></li>
 <li><a href="la-general-solution.html" data-scroll="la-general-solution">General and particular solutions</a></li>
@@ -206,24 +207,24 @@ var js_version = 0.12;
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="la-equivalent"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.8</span> <span class="title">Equivalent conditions</span>
+<span class="type">Section</span> <span class="codenumber">1.9</span> <span class="title">Equivalent conditions</span>
 </h2>
-<a href="la-equivalent.html" class="permalink">¶</a><p id="p-101">You might have noticed by now that much of what we have covered is the same thing over and over with different notations and terminology. Here is where we pull all of that together.</p>
+<a href="la-equivalent.html" class="permalink">¶</a><p id="p-109">You might have noticed by now that much of what we have covered is the same thing over and over with different notations and terminology. Here is where we pull all of that together.</p>
 <article class="theorem theorem-like" id="la-thm-FTLA"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">1.8.1</span>. <span class="title">Fundamental Theorem of Linear Algebra.</span>
+<span class="type">Theorem</span> <span class="codenumber">1.9.1</span>. <span class="title">Fundamental Theorem of Linear Algebra.</span>
 </h6>
-<p id="p-102">Suppose \(\bA\bx=\bb\) is a linear system with an \(n\times n\) matrix \(\bA\text{.}\) Each of the following statements is equivalent to all of the others:</p>
+<p id="p-110">Suppose \(\bA\bx=\bb\) is a linear system with an \(n\times n\) matrix \(\bA\text{.}\) Each of the following statements is equivalent to all of the others:</p>
 <ol class="decimal">
-<li id="li-30">\(\bA\bx=\bb\) has a unique solution,</li>
-<li id="li-31">the linear system has no free variables,</li>
-<li id="li-32">the RREF of \(\bA\) is the \(n\times n\) identity matrix,</li>
-<li id="li-33">\(\bA\) is invertible,</li>
-<li id="li-34">the columns of \(\bA\) are a basis of \(\Rn{n}\text{,}\)</li>
-<li id="li-35">the dimension of \(\null(\bA)\) is zero,</li>
-<li id="li-36">\(\det(\bA)\neq 0\text{,}\) and</li>
-<li id="li-37">\(\bA\) does not have a zero eigenvalue.</li>
-</ol></article><p id="p-103">The last equivalent statement is a placeholder in anticipation of <a href="la-eigen.html" class="internal" title="Section 1.10: Eigenvalues">Section 1.10</a>.</p>
-<p id="p-104">There are related statements that can be made regarding nonsquare matrices, but we aren't going to get into them. It is worth knowing, though, that the square case is the only one in which a unique solution is a possibility. If the matrix is singular, then that is ruled out, and there may be zero or an infinity of solutions, depending on both \(\bA\) and \(\bb\text{.}\)</p></section></div></main>
+<li id="li-35">\(\bA\bx=\bb\) has a unique solution,</li>
+<li id="li-36">the linear system has no free variables,</li>
+<li id="li-37">the RREF of \(\bA\) is the \(n\times n\) identity matrix,</li>
+<li id="li-38">\(\bA\) is invertible,</li>
+<li id="li-39">the columns of \(\bA\) are a basis of \(\Rn{n}\text{,}\)</li>
+<li id="li-40">the dimension of \(\null(\bA)\) is zero,</li>
+<li id="li-41">\(\det(\bA)\neq 0\text{,}\) and</li>
+<li id="li-42">\(\bA\) does not have a zero eigenvalue.</li>
+</ol></article><p id="p-111">The last equivalent statement is a placeholder in anticipation of <a href="la-eigen.html" class="internal" title="Section 1.11: Eigenvalues">Section 1.11</a>.</p>
+<p id="p-112">There are related statements that can be made regarding nonsquare matrices, but we aren't going to get into them. It is worth knowing, though, that the square case is the only one in which a unique solution is a possibility. If the matrix is singular, then that is ruled out, and there may be zero or an infinity of solutions, depending on both \(\bA\) and \(\bb\text{.}\)</p></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

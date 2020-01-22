@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,28 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>An interesting fact is that while I interpreted \(f*g\) as \(g\) acting on \(f\text{,}\) in fact the operation is symmetric:</p>
-<div class="displaymath">
-\begin{align*}
-[g*f](t) \amp = \int_0^t f(t-\tau)g(\tau)\, d\tau\\
-\amp = \int_t^0 f(u)g(t-u)\, (-du)  \\
-\amp = \int_0^t g(t-u)f(u)\, du = [f*g](t)\text{.}
-\end{align*}
-</div>
-<p>We can also easily prove some more properties we really like to have:</p>
-<div class="displaymath">
-\begin{gather*}
-f * ( g * h ) = ( f * g) * h \\
-f * (g+h)=(f * g)+(f*h)\\
-f * 0=0\text{.}
-\end{gather*}
-</div>
-<p>It is <em class="emphasis">not</em> true, however, that \(f*1=f\text{,}\) unless \(f\) is the zero function. Instead, the right formula is \(f * \delta=f\text{:}\)</p>
+<p>Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution has</p>
 <div class="displaymath">
 \begin{equation*}
-[f*\delta](t) = \int_0^t f(t-\tau) \delta(\tau)\, d\tau = f(t)\text{.}
+X_p(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
 \end{equation*}
 </div>
-<span class="incontext"><a href="so-convolutions.html#p-390">in-context</a></span>
+<p>We can use the trick of completing the square to write this as</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = e^{-s} \frac{6}{(s+1)^2+9} = e^{-s} F(s)\text{,}
+\end{equation*}
+</div>
+<p>where we can now see that \(f(t) = 2e^{-t}\sin(3t)\text{.}\) By the shift theorem, \(x_p(t)=H(t-1)f(t-1)\text{.}\)</p>
+<span class="incontext"><a href="so-laplace-repeated.html#p-390">in-context</a></span>
 </body>
 </html>

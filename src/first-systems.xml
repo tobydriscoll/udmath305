@@ -297,8 +297,9 @@
 		<p>
 			There is more to the story. A purely real problem, with real initial conditions, will lead to a solution that is real at all times. In that case it works out that <m>c_2=\overline{c_1}</m>. But an alternative way to express the solution is to take the real and imaginary parts of 
 			<md>
-				<mrow>e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [cos(t)+i\sin(t)] \left( \twovec{1}{2} + i\twovec{0}{-1} \right)</mrow>
-				<mrow>\amp = e^{-t} \left( cos(t)\twovec{1}{2} - \sin(t) \twovec{0}{-1} \right) + i e^{-t} \left( cos(t)\twovec{0}{-1} + \sin(t) \twovec{1}{2} \right) </mrow>
+				<mrow>e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [\cos(t)+i\sin(t)] \left( \twovec{1}{2} + i\twovec{0}{-1} \right)</mrow>
+				<mrow>\amp = e^{-t} \left( \cos(t)\twovec{1}{2} - \sin(t) \twovec{0}{-1} \right)</mrow>
+				<mrow> \amp \qquad + i e^{-t} \left( \cos(t)\twovec{0}{-1} + \sin(t) \twovec{1}{2} \right) </mrow>
 			</md>. 
 			That is, the general solution can also be written as 
 			<me>
@@ -763,15 +764,15 @@ set(gca,'dataaspect',[6,1,1])
 		<statement><p>
 			Let <m>\bX(t)</m> be a fundamental matrix of the homogeneous problem <m>\bx'=\bA(t)\bx</m>. Then the general solution of <m>\bx'=\bA(t)\bx+\bf(t)</m> is 
 			<men xml:id="fs-eq-varparam1">
-				\bx(t) = \bx_h(t) + \bx_p(t) = \bX(t)\bc + \bX(t) \int \bX(t)^{-1} \bf(t) \, dt
+				\bx(t) = \bx_h(t) + \bx_p(t) = \bX(t)\bc + \bX(t) \int \bX(t)^{-1} \bff(t) \, dt
 			</men>. 
 			The solution with initial condition <m>\bx(0)=\bx_0</m> is 
 			<men xml:id="fs-eq-varparam2">
-				\bx(t) = \bX(t)\bX(0)^{-1}\bx_0 + \bX(t) \int_0^t \bX(s)^{-1}\bf(s) \, ds
+				\bx(t) = \bX(t)\bX(0)^{-1}\bx_0 + \bX(t) \int_0^t \bX(s)^{-1}\bff(s) \, ds
 			</men>.	
 			In the case of a constant matrix <m>\bA</m>, one option is <m>\bX(t)=e^{t\bA}, and</m>
 			<men xml:id="fs-eq-varparam3">
-				\bx(t) = e^{t\bA}\bx_0 + \int_0^t e^{(t-s)\bA} \bf(s) \, ds
+				\bx(t) = e^{t\bA}\bx_0 + \int_0^t e^{(t-s)\bA} \bff(s) \, ds
 			</men>.
 		</p></statement>
 	</theorem>

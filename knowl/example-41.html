@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,20 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.9.7</span>.</h6>
-<p>Let's consider \(x'-ax=e^{ct}\text{,}\) where \(a,c\) are different constants. Transforming both sides, we get</p>
+<span class="type">Example</span> <span class="codenumber">2.7.3</span>. <span class="title">Newton cooling.</span>
+</h6>
+<p>Suppose a mug of coffee at 90 C is put in a room kept at 20 C. In terms of the notation above, we have</p>
 <div class="displaymath">
 \begin{equation*}
-[sX(s)-x(0)] - aX(s) =\frac{1}{s-c}\text{,}
+\frac{dx}{dt} = a (x-20), \quad x(0)=90\text{.}
 \end{equation*}
 </div>
-<p>and thus</p>
+<p>We could also pose it for the temperature difference \(z=x-20\) as \(z'=az\text{.}\) Either way it's a linear problem with solution</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{x(0)}{s-a} + \frac{1}{(s-c)(s-a)}\text{.}
+x(t) = Ce^{at} + 20\text{.}
 \end{equation*}
 </div>
-<p>We can immediately recognize the first term as the transform of \(e^{at}x(0)\text{.}\) To invert the transform of the second term, we need to express it using partial fractions. There is a general procedure for this, but it's worth knowing a simple mnemonic for this particular form:</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}\text{.}
-\end{equation*}
-</div>
-<p>Thus the inverse transform of this fraction is a sum of two exponentials,</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
-\end{equation*}
-</div>
-<p>This is a particular solution that has \(x_p(0)=0\text{.}\) The general solution is \(e^{at}x(0) + x_p(t)\text{.}\)</p></article><span class="incontext"><a href="fl-laplace.html#example-41">in-context</a></span>
+<p>We determine \(C\) from the initial value: \(C=70\text{.}\) To get a value for \(a\text{,}\) we need the temperature at another time too. Say the coffee has cooled by \(7\) degrees in 10 minutes. Then \(83 = 70e^{10a}+20\text{,}\) or \(a=0.1\ln(0.9) \approx -0.01054\) per min. The coffee will reach 60 C when \(40 = 70e^{at}\text{,}\) or \(t\approx 53.1\) minutes.</p></article><span class="incontext"><a href="first-order-models.html#example-41">in-context</a></span>
 </body>
 </html>

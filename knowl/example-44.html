@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,31 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.3.2</span>.</h6>
-<p>We can find the eigenstuff of</p>
+<span class="type">Example</span> <span class="codenumber">2.9.7</span>.</h6>
+<p>Let's consider \(x'-ax=e^{ct}\text{,}\) where \(a,c\) are different constants. Transforming both sides, we get</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
+[sX(s)-x(0)] - aX(s) =\frac{1}{s-c}\text{,}
 \end{equation*}
 </div>
-<p>as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This gives us solutions of \(\bx'=\bA\bx\text{:}\)</p>
+<p>and thus</p>
 <div class="displaymath">
 \begin{equation*}
-\bx_1(t) = e^{3t} \twovec{1}{2},\quad \bx_2(t) = e^{-t} \twovec{1}{-2} \text{.}
+X(s) = \frac{x(0)}{s-a} + \frac{1}{(s-c)(s-a)}\text{.}
 \end{equation*}
 </div>
-<p>Because the eigenvalues are distinct, we know that these are independent solutions. The general homogeneous solution is</p>
+<p>We can immediately recognize the first term as the transform of \(e^{at}x(0)\text{.}\) To invert the transform of the second term, we need to express it using partial fractions. There is a general procedure for this, but it's worth knowing a simple mnemonic for this particular form:</p>
 <div class="displaymath">
 \begin{equation*}
-\bx(t) = \bX(t)\bc = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
-= \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
+\frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}\text{.}
 \end{equation*}
-</div></article><span class="incontext"><a href="fs-constcoeff.html#example-44">in-context</a></span>
+</div>
+<p>Thus the inverse transform of this fraction is a sum of two exponentials,</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
+\end{equation*}
+</div>
+<p>This is a particular solution that has \(x_p(0)=0\text{.}\) The general solution is \(e^{at}x(0) + x_p(t)\text{.}\)</p></article><span class="incontext"><a href="fl-laplace.html#example-44">in-context</a></span>
 </body>
 </html>

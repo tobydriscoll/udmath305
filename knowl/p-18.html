@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:51-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,67 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We repeat the previous example but just with the relevant constants. The key is to use zeros as coefficients where there are “silent” variables. The starting augmented matrix is</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-1 \amp -1 \amp -1 \amp 2 \\
-3 \amp -2 \amp 0 \amp 9 \\
-1 \amp -2 \amp -1 \amp 5
-\end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p>First elimination step uses the first row to eliminate below it:</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-1 \amp -1 \amp -1 \amp 2 \\
-0 \amp 1 \amp 3 \amp 3 \\
-0 \amp -1 \amp 0 \amp 3
-\end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p>Next we use the second row to eliminate below it:</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-1 \amp -1 \amp -1 \amp 2 \\
-0 \amp 1 \amp 3 \amp 3 \\
-0 \amp 0 \amp 3 \amp 6
-\end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p>Having reached the last row, we turn around and eliminate above it.</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-1 \amp -1 \amp 0 \amp 4 \\
-0 \amp 1 \amp 0 \amp -3 \\
-0 \amp 0 \amp 3 \amp 6
-\end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p>We move up to the second row and eliminate above that:</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-1 \amp 0 \amp 0 \amp 1 \\
-0 \amp 1 \amp 0 \amp -3 \\
-0 \amp 0 \amp 3 \amp 6
-\end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p>Finally, to be super pedantic, we normalize each row:</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-1 \amp 0 \amp 0 \amp 1 \\
-0 \amp 1 \amp 0 \amp -3 \\
-0 \amp 0 \amp 1 \amp 2
-\end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p>The last column is now the solution.</p>
-<span class="incontext"><a href="la-linear-systems.html#p-18">in-context</a></span>
+<p>The process in <a data-knowl="./knowl/la-ex-gausselim.html" title="Example 1.2.1">Example 1.2.1</a> is most commonly known as <dfn class="terminology">Gaussian elimination</dfn>. (It's a misnomer, as the process was known in China thousands of years before Gauss, but never mind.) We <em class="emphasis">could</em> solve the system at the end of the example by starting with the last equation to deduce that \(x_3=2\text{.}\) We then put that value into the second equation and can solve that for \(x_2\text{,}\) etc.</p>
+<span class="incontext"><a href="la-elimination.html#p-18">in-context</a></span>
 </body>
 </html>

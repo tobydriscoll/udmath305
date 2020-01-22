@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For this section we will limit <a data-knowl="./knowl/fl-eq-linear.html" title="Equation 2.2.1">(2.2.1)</a> to the important special case when (1) the growth/decay rate coefficient \(a(t)\) is constant, and (2) the forcing function is a polynomial, exponential, sin, or cos, or a combination of these. In this situation, the form of \(x_p\) can be written down immediately with some unknown or <dfn class="terminology">undetermined coefficients</dfn>, which are then found by substitution into the ODE. The correct form of \(x_p\) for various \(f\) are given in <a data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.6.1: Particular solutions for undetermined coefficients">Table 2.6.1</a>.</p>
-<span class="incontext"><a href="fl-undeter.html#p-219">in-context</a></span>
+<p>We look again at \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) Most numerical routines, like those in MATLAB, are coded to solve an ODE given in the general form \(x'=F(t,x)\text{.}\) Therefore we have to define a function for \(F\text{.}\)</p>
+<pre class="code-block tex2jax_ignore">
+F = @(t,x) sin(t)*x;
+		</pre>
+<p>Now we call the function <code class="code-inline tex2jax_ignore">ode45</code> to solve the problem, designating times of interest and the initial value.</p>
+<pre class="code-block tex2jax_ignore">
+t = linspace(0,5,500);
+[t,x] = ode45(F,t,1);
+		</pre>
+<p>The outputs here are vectors of equal length, giving the times we selected and values of the solution at those times. For instance, to get values at the final time we use</p>
+<pre class="code-block tex2jax_ignore">
+format long
+[ t(end), x(end) ]
+		</pre>
+<p>and get the response</p>
+<pre class="code-block tex2jax_ignore">
+ans =
+5.000000000000000   2.046942183624863
+		</pre>
+<p>The outputs are also in a form easy to plot.</p>
+<pre class="code-block tex2jax_ignore">
+plot(t,x)
+xlabel('t'), ylabel('x(t)')
+title('Solution of a linear problem')
+		</pre>
+<span class="incontext"><a href="fl-ivp.html#p-219">in-context</a></span>
 </body>
 </html>

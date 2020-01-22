@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,42 +13,20 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.6.4</span>.</h6>
-<p>Let's solve \(x'=3x+50\cos(4t)\text{.}\) We have \(x_h=c_1e^{3t}\) and choose</p>
+<span class="type">Example</span> <span class="codenumber">2.5.3</span>.</h6>
+<p>Above we found that the general solution of \(x'=4x+8t\) is \(x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}\) If we also have that \(x(0)=3/2\text{,}\) then we can conclude \(c_1=2\text{.}\)</p>
+<p>Now let us start over instead with <a data-knowl="./knowl/fl-eq-varparivp.html" title="Equation 2.5.1">(2.5.1)</a>, with \(a(t)=4\) and \(f(t)=8t\text{.}\) First,</p>
 <div class="displaymath">
 \begin{equation*}
-x_p = A \cos(4t) + B\sin(4t)\text{.}
+G(s,t) = \exp\left[ \int_s^t 4\,du \right] = \exp(4t-4s) = e^{4(t-s)}\text{.}
 \end{equation*}
 </div>
-<p>Put this into the ODE to get</p>
+<p>Then</p>
 <div class="displaymath">
 \begin{equation*}
-[-4A\sin(4t) + 4B\cos(4t)] - 3[A \cos(4t) + B\sin(4t)] = 50\cos(4t)\text{.}
+x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds = \frac{3}{2} e^{4t} +  \int_{0}^t 8se^{4(t-s)} \, ds = \frac{3}{2} e^{4t} + \frac{1}{2} (e^{4 t} - 1-4t) \text{,}
 \end{equation*}
 </div>
-<p>Matching the coefficients of cosine and sine leads to</p>
-<div class="displaymath">
-\begin{equation*}
-4B-3A = 50, \quad -4A-3B = 0\text{.}
-\end{equation*}
-</div>
-<p>This is the linear system</p>
-<div class="displaymath">
-\begin{equation*}
-\twomat{-3}{4}{-4}{-3} \twovec{A}{B} = \twovec{50}{0}\text{.}
-\end{equation*}
-</div>
-<p>We apply Cramer's Rule to get</p>
-<div class="displaymath">
-\begin{equation*}
-A = \frac{ \twodet{50}{4}{0}{-3} }{9+16} = -6, \quad B = \frac{ \twodet{-3}{50}{-4}{0} }{9+16} = 8\text{.}
-\end{equation*}
-</div>
-<p>Thus finally</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = c_1e^{3t} + 8\cos(4t) - 6 \sin(4t) \text{.}
-\end{equation*}
-</div></article><span class="incontext"><a href="fl-undeter.html#example-34">in-context</a></span>
+<p>which is identical to the first answer.</p></article><span class="incontext"><a href="fl-varparam.html#example-34">in-context</a></span>
 </body>
 </html>

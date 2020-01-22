@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The moving average above gave us a certain way to multiply together vectors \(v\) and \(w\) to get a new vector \(z\text{:}\)</p>
+<p>Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
 <div class="displaymath">
 \begin{equation*}
-z_i =  \sum_{j} w_j v_{i-j} 
+\frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} \text{.}
 \end{equation*}
 </div>
-<p>(although I reindexed the output vector from \(i+1\) to \(i\) compared to the computer code). This is analogous to a different way to multiply two <em class="emphasis">functions</em>, by the <dfn class="terminology">convolution integral</dfn></p>
+<p>Since we also know that</p>
 <div class="displaymath">
 \begin{equation*}
-[f*g](t) = \int_0^t f(t-\tau)g(\tau)\, d\tau\text{.}
+e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{,}
 \end{equation*}
 </div>
-<p>This too is like a weighted average, with the values of \(g(\tau)\) being multiplied against different windows of the function \(f\) such that the arguments sum to \(t\text{.}\)</p>
-<span class="incontext"><a href="so-convolutions.html#p-389">in-context</a></span>
+<p>the conclusion is</p>
+<div class="displaymath">
+\begin{equation*}
+\lx[ e^{at} \cos( b t) ] = \frac{s-a}{(s-a)^2+b^2}\text{.}
+\end{equation*}
+</div>
+<p>In similar fashion we can show that \(e^{at} \sin( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion. However, the details can get pretty intense for hand calculation.</p>
+<span class="incontext"><a href="so-laplace-repeated.html#p-389">in-context</a></span>
 </body>
 </html>

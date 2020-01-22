@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:51-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,27 +11,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>These properties are easy to demonstrate (not prove!) in MATLAB. Any undefined matrix operation throws an error. <pre class="prettyprint lang-matlab">A = [ 1 -1; 0 2; -3 1 ]
-B = [ 2 -1 0 4; 1 1 3 2 ]
-
-A*B
-B*A
-A-B
-
-size(B)
-size(A)
-
-C = [ 1 -1 2; 2 2 0; 5 -2 -3; 4 -1 -1 ]
-size(C)
-
-(A*B)*C - A*(B*C)
-
-A = round(10*rand(4,4))
-B = round(10*rand(4,4))
-C = round(10*rand(4,4))
-
-( A*(B+C) ) - ( A*B + A*C )
-
-( (A+B)*C ) - ( A*C + B*C )
+<body><article class="example example-like"><p>Consider the system</p>
+<div class="displaymath">
+\begin{align*}
+x_1 - x_2  - x_3 \amp = 2 \\
+3x_1 - 2x_2 \amp = 9 \\
+x_1 - 2x_2 - x_3 \amp = 5 \text{.}
+\end{align*}
+</div>
+<p>Interpreting vector equalities elementwise, this is equivalent to</p>
+<div class="displaymath">
+\begin{equation*}
+x_1 \threevec{1}{3}{1} + x_2 \threevec{-1}{-2}{-2} + x_3 \threevec{-1}{0}{-1} =
+\threevec{2}{9}{5}\text{.}
+\end{equation*}
+</div>
+<p>We can identify the three vectors on the left side as the columns of the coefficient matrix \(\bA\text{,}\) and the one on the right is \(\bb\text{.}\) In an earlier example, we found the solution \(\bx=[1,-3,2]\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+\ba_1 - 3 \ba_2 + 2\ba_3 = \bb\text{,}
+\end{equation*}
+</div>
+<p>where we gave names to the columns. In MATLAB syntax, <pre class="prettyprint lang-matlab">A = [ 1 -1 -1; 3 -2 0; 1 -2 -1 ]
+b = [ 2; 9; 5 ]
+x = [1; -3; 2 ]
+x(1)*A(:,1) + x(2)*A(:,2) + x(3)*A(:,3)
 </pre></p></article></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To solve \(x'+x=-te^t\text{,}\) first note that \(x_h(t)=c_1e^{-t}\text{.}\) For \(x_p\) we use the educated guess</p>
+<p>We begin with the homogeneous solution</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = (B_1 t + B_0)e^t\text{.}
+x_h(t) = c_1 g(t) = c_1 \exp\left[\int a(t)\, dt\right]\text{,}
 \end{equation*}
 </div>
-<p>Substituting that into the ODE yields</p>
+<p>where \(g(t)\) is the growth factor from <a data-knowl="./knowl/fl-eq-growthfactor.html" title="Equation 2.4.1">(2.4.1)</a>. The idea of <dfn class="terminology">variation of parameters</dfn> is to posit that the particular solution can be written by replacing the constant with a function,</p>
 <div class="displaymath">
 \begin{equation*}
-B_1e^t + (B_1 t + B_0)e^t = -te^t\text{.}
+x_p(t) = k(t) g(t)\text{,}
 \end{equation*}
 </div>
-<p>On cancelling the exponentials and matching like powers of \(t\text{,}\) we get the equations \(B_1=-1\) and \(B_1+B_0=0\text{.}\) Hence \(B_1=-1\) and \(B_0=1\text{.}\) So the general solution is</p>
+<p>and then choose \(k(t)\) to make it so:</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = c_1 e^{-t} + e^t(1-t)\text{.}
+f(t) = x_p' - a(t) x_p = [k'g+kg'] - a k g = k'g + k[g'-ag]\text{,}
 \end{equation*}
 </div>
-<span class="incontext"><a href="fl-undeter.html#p-221">in-context</a></span>
+<p>which, because \(g\) is a homogeneous solution, is simply \(f(t)=k'(t)g(t)\text{.}\) Hence we get a proper particular solution provided</p>
+<div class="displaymath">
+\begin{equation*}
+k(t) = \int \frac{f(t)}{g(t)}\, dt \text{.}
+\end{equation*}
+</div>
+<p>Observe that we have to integrate once to get \(g\text{,}\) then again to get \(k\) and thus \(x_p\text{.}\)</p>
+<span class="incontext"><a href="fl-varparam.html#p-221">in-context</a></span>
 </body>
 </html>

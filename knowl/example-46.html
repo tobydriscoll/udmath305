@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T13:32:07-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,66 +13,25 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.5.2</span>.</h6>
-<p>Here are some looks at the function \(e^{\lambda t}\) for different complex values of \(\lambda\text{.}\) First, when \(\lambda\) is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of the function give cosine and sine, respectively.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = 0;  om = 1;
-t = linspace(0, 25, 500);
-f = exp((a+1i*om)*t);
-
-plot3(t, real(f), imag(f), 'LineWidth',2)
-hold on
-plot3(t,real(f), 0*t-1.5)
-plot3(t, 0*t+2, imag(f))
-plot3(0*t+30,real(f),imag(f),'k')
-axis([0 30 -2  2 -1.5 1.5])
-title(sprintf('a = %.2f, omega = %.1f',a,om))
-grid on, xlabel('Time')
-ylabel('Real Axis')
-zlabel('Imag Axis')	
-set(gca,'dataaspect',[6,1,1])
-</pre></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_neutral.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<p>If \(\Re(\lambda) \gt 0\text{,}\) the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of \(\lambda\) controls the frequency or "tightness" of the spiral.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = 0.01;  om = 2;
-t = linspace(0, 25, 500);
-f = exp((a+1i*om)*t);
-
-plot3(t, real(f), imag(f), 'LineWidth',2)
-hold on
-plot3(t,real(f), 0*t-1.5)
-plot3(t, 0*t+2, imag(f))
-plot3(0*t+30,real(f),imag(f),'k')
-axis([0 30 -2  2 -1.5 1.5])
-title(sprintf('a = %.2f, omega = %.1f',a,om))
-grid on, xlabel('Time')
-ylabel('Real Axis')
-zlabel('Imag Axis')	  
-set(gca,'dataaspect',[6,1,1])
-</pre></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_grow.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<p>Finally, if \(\Re(\lambda) \lt 0\text{,}\) the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = -0.1;  om = 0.8;
-t = linspace(0, 25, 500);
-f = exp((a+1i*om)*t);
-
-plot3(t, real(f), imag(f), 'LineWidth',2)
-hold on
-plot3(t,real(f), 0*t-1.5)
-plot3(t, 0*t+2, imag(f))
-plot3(0*t+30,real(f),imag(f),'k')
-axis([0 30 -2  2 -1.5 1.5])
-title(sprintf('a = %.2f, omega = %.1f',a,om))
-grid on, xlabel('Time')
-ylabel('Real Axis')
-zlabel('Imag Axis')	 
-set(gca,'dataaspect',[6,1,1])
-</pre></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_decay.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></article><span class="incontext"><a href="fs-complex-eigenvalues.html#example-46">in-context</a></span>
+<span class="type">Example</span> <span class="codenumber">3.3.2</span>.</h6>
+<p>We can find the eigenstuff of</p>
+<div class="displaymath">
+\begin{equation*}
+\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
+\end{equation*}
+</div>
+<p>as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This gives us solutions of \(\bx'=\bA\bx\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bx_1(t) = e^{3t} \twovec{1}{2},\quad \bx_2(t) = e^{-t} \twovec{1}{-2} \text{.}
+\end{equation*}
+</div>
+<p>Because the eigenvalues are distinct, we know that these are independent solutions. The general homogeneous solution is</p>
+<div class="displaymath">
+\begin{equation*}
+\bx(t) = \bX(t)\bc = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
+= \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="fs-constcoeff.html#example-46">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:51-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,17 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose the RREF of a matrix ends with</p>
+<p>Why is this the right concept? Well, if the vectors are dependent, then by definition we can write</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{bmatrix} 
-1 \amp 0 \amp 0 \\
-0 \amp 1 \amp 0 \\
-0 \amp 0 \amp 1   
-\end{bmatrix}
+c_j \bx_j = - \sum_{i\neq j} c_i \bx_i\text{,}
 \end{equation*}
 </div>
-<p>(i.e., an identity matrix). There are no free variables, and the only solution is \(\bx=[0,0,0]\text{.}\) Hence \(\null(\bA) = \{\bzero\}\text{.}\) This singleton set does not have a basis and is considered to have dimension zero. (Try this example in MATLAB!)</p>
+<p>where \(c_j\neq 0\text{.}\) If we divide this through by \(c_j\text{,}\) then we have shown that \(\bx_j\) lies within the span of all the other vectors, and therefore including it with linear combinations is redundant.</p>
 <span class="incontext"><a href="la-basis.html#p-80">in-context</a></span>
 </body>
 </html>

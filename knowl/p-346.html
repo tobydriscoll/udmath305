@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The mechanical oscillator \(mx'' + bx' + kx = F(t)\) is more conveniently expressed as</p>
-<div class="displaymath">
-\begin{equation*}
-x'' + \frac{b}{m} x' + \frac{k}{m} x = \frac{1}{m} F(t)\text{.}
-\end{equation*}
-</div>
-<p>One reason to prefer this form is dimensional analysis: \(x\) must have the same units as  \(F/m\text{,}\) and both \(b/m\) and \(\sqrt{k/m}\) have units of inverse time. We introduce new parameters</p>
-<div class="displaymath">
-\begin{equation*}
-\omega_0 = \sqrt{\frac{k}{m}} \gt 0, \quad Z = \frac{1}{2} \frac{b/m}{\omega_0} = \frac{b}{\sqrt{4km}}\ge 0\text{.}
-\end{equation*}
-</div>
-<p>\(\omega_0\) is known as the <dfn class="terminology">natural frequency</dfn>, with units of inverse time, and \(Z\) is a dimensionless number describing the intensity of the damping. Now the ODE becomes</p>
+<p>Our main item of business is the linear, constant-coefficient model problem</p>
 <div class="displaymath">
 \begin{equation}
-x'' + 2 Z \omega_0 x' + \omega_0^2 x = \omega_0^2 F(t)\text{.}\tag{4.3.1}
+x'' + bx' + cx = f(t)\text{,}\tag{4.1.3}
 \end{equation}
 </div>
-<p>A similar derivation can be done starting from the electrical circuit equation.</p>
-<span class="incontext"><a href="so-oscillators.html#p-346">in-context</a></span>
+<p>for which the conversion process with \(u_1=x\text{,}\) \(u_2=x'\) yields</p>
+<div class="displaymath">
+\begin{equation}
+\twovec{u_1'}{u_2'} = \twovec{u_2}{f(t)-cx_1-bx_2} = \twomat{0}{1}{-c}{-b} \bu + \twovec{0}{f(t)}\text{,}\tag{4.1.4}
+\end{equation}
+</div>
+<p>which has the form \(\bu'=\bA\bu+\bff(t)\text{.}\) Thus everything from the last chapter is again in play.</p>
+<span class="incontext"><a href="so-convert.html#p-346">in-context</a></span>
 </body>
 </html>

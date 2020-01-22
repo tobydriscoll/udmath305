@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,10 @@
 </head>
 <body>
 <div class="displaymath">
-\begin{align*}
-e^{t \bA} \amp = \bV e^{t \bD}  \bV^{-1} = e^{-t}\frac{i}{2}\twomat{1}{1}{2-i}{2+i} \twomat{e^{it}}{0}{0}{e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
-\amp = e^{-t}\frac{i}{2}\twomat{e^{it}}{e^{-it}}{(2-i)e^{it}}{(2+i)e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
-\amp = e^{-t}\frac{i}{2} \twomat{-(2+i)e^{it}+(2-i) e^{-it}}{e^{it}-e^{-it}}{-(2-i)(2+i)e^{it}+(2+i)(2-i) e^{-it}}{(2-i)e^{it}-(2+i) e^{-it}} 
-\end{align*}
+\begin{align}
+e^{t\bA} \amp = \bV\left( \bI + t\bD + \frac{1}{2!}t^2 \bD^2 + \cdots \right) \bV^{-1} \tag{3.7.2}\\
+\amp = \bV e^{t\bD} \bV^{-1} \tag{3.7.3}
+\end{align}
 </div>
 <span class="incontext"><a href="fs-matrix-exp.html#mjx-eqn-mrow-60">in-context</a></span>
 </body>

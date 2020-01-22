@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:51-05:00    *-->
+<!--*    on 2020-01-14T14:00:11-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -144,6 +144,7 @@ var js_version = 0.12;
 <li class="link">
 <a href="linear-algebra.html" data-scroll="linear-algebra"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a><ul>
 <li><a href="la-linear-systems.html" data-scroll="la-linear-systems">Linear systems of equations</a></li>
+<li><a href="la-elimination.html" data-scroll="la-elimination">Row elimination</a></li>
 <li><a href="la-vector-algebra.html" data-scroll="la-vector-algebra">Vector algebra</a></li>
 <li><a href="la-matrix-algebra.html" data-scroll="la-matrix-algebra">Matrix algebra</a></li>
 <li><a href="la-general-solution.html" data-scroll="la-general-solution">General and particular solutions</a></li>
@@ -208,28 +209,28 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-varparam"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.8</span> <span class="title">Variation of parameters</span>
 </h2>
-<a href="fs-varparam.html" class="permalink">¶</a><p id="p-330">We return to the forced problem \(\bx'=\bA\bx+\bf\text{.}\) We can use the same technique of variation of parameters as in <a href="fl-varparam.html" class="internal" title="Section 2.5: Variation of parameters">Section 2.5</a> and get very similar formulas.</p>
+<a href="fs-varparam.html" class="permalink">¶</a><p id="p-340">We return to the forced problem \(\bx'=\bA\bx+\bf\text{.}\) We can use the same technique of variation of parameters as in <a href="fl-varparam.html" class="internal" title="Section 2.5: Variation of parameters">Section 2.5</a> and get very similar formulas.</p>
 <article class="theorem theorem-like" id="fs-thm-varparam"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">3.8.1</span>. <span class="title">Variation of parameters.</span>
 </h6>
-<p id="p-331">Let \(\bX(t)\) be a fundamental matrix of the homogeneous problem \(\bx'=\bA(t)\bx\text{.}\) Then the general solution of \(\bx'=\bA(t)\bx+\bf(t)\) is</p>
+<p id="p-341">Let \(\bX(t)\) be a fundamental matrix of the homogeneous problem \(\bx'=\bA(t)\bx\text{.}\) Then the general solution of \(\bx'=\bA(t)\bx+\bf(t)\) is</p>
 <div class="displaymath">
 \begin{equation}
-\bx(t) = \bx_h(t) + \bx_p(t) = \bX(t)\bc + \bX(t) \int \bX(t)^{-1} \bf(t) \, dt\text{.}\label{fs-eq-varparam1}\tag{3.8.1}
+\bx(t) = \bx_h(t) + \bx_p(t) = \bX(t)\bc + \bX(t) \int \bX(t)^{-1} \bff(t) \, dt\text{.}\label{fs-eq-varparam1}\tag{3.8.1}
 \end{equation}
 </div>
 <p>The solution with initial condition \(\bx(0)=\bx_0\) is</p>
 <div class="displaymath">
 \begin{equation}
-\bx(t) = \bX(t)\bX(0)^{-1}\bx_0 + \bX(t) \int_0^t \bX(s)^{-1}\bf(s) \, ds\text{.}\label{fs-eq-varparam2}\tag{3.8.2}
+\bx(t) = \bX(t)\bX(0)^{-1}\bx_0 + \bX(t) \int_0^t \bX(s)^{-1}\bff(s) \, ds\text{.}\label{fs-eq-varparam2}\tag{3.8.2}
 \end{equation}
 </div>
 <p>In the case of a constant matrix \(\bA\text{,}\) one option is \(\bX(t)=e^{t\bA}, and\)</p>
 <div class="displaymath">
 \begin{equation}
-\bx(t) = e^{t\bA}\bx_0 + \int_0^t e^{(t-s)\bA} \bf(s) \, ds\text{.}\label{fs-eq-varparam3}\tag{3.8.3}
+\bx(t) = e^{t\bA}\bx_0 + \int_0^t e^{(t-s)\bA} \bff(s) \, ds\text{.}\label{fs-eq-varparam3}\tag{3.8.3}
 \end{equation}
-</div></article><p id="p-332">Given how tedious it is to calculate even a small fundamental matrix by hand, it's no mean feat to apply these formulas to a specific example. We're going to save that for when we really need it later.</p></section></div></main>
+</div></article><p id="p-342">Given how tedious it is to calculate even a small fundamental matrix by hand, it's no mean feat to apply these formulas to a specific example. We're going to save that for when we really need it later.</p></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

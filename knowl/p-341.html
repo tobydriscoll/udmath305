@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>As we have already seen, a mass hanging from a spring satisfies the ODE</p>
+<p>Let \(\bX(t)\) be a fundamental matrix of the homogeneous problem \(\bx'=\bA(t)\bx\text{.}\) Then the general solution of \(\bx'=\bA(t)\bx+\bf(t)\) is</p>
 <div class="displaymath">
-\begin{equation*}
-mx'' + b x' + kx = F(t)\text{.}
-\end{equation*}
+\begin{equation}
+\bx(t) = \bx_h(t) + \bx_p(t) = \bX(t)\bc + \bX(t) \int \bX(t)^{-1} \bff(t) \, dt\text{.}\tag{3.8.1}
+\end{equation}
 </div>
-<p>(As is typical, all the named constants are nonnegative.) Here \(m\)&gt; is the mass, \(b\)&gt;is a coefficient of friction or other damping forces, and \(k\)&gt; is a characteristic constant of the spring. The term \(F(t)\) represents an external driving force. If we have initial conditions, they give values for \(x\) and \(x'\text{.}\)</p>
-<span class="incontext"><a href="so-oscillators.html#p-341">in-context</a></span>
+<p>The solution with initial condition \(\bx(0)=\bx_0\) is</p>
+<div class="displaymath">
+\begin{equation}
+\bx(t) = \bX(t)\bX(0)^{-1}\bx_0 + \bX(t) \int_0^t \bX(s)^{-1}\bff(s) \, ds\text{.}\tag{3.8.2}
+\end{equation}
+</div>
+<p>In the case of a constant matrix \(\bA\text{,}\) one option is \(\bX(t)=e^{t\bA}, and\)</p>
+<div class="displaymath">
+\begin{equation}
+\bx(t) = e^{t\bA}\bx_0 + \int_0^t e^{(t-s)\bA} \bff(s) \, ds\text{.}\tag{3.8.3}
+\end{equation}
+</div>
+<span class="incontext"><a href="fs-varparam.html#p-341">in-context</a></span>
 </body>
 </html>

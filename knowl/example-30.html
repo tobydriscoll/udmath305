@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,30 +13,19 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">2.5.2</span>.</h6>
-<p>For \((2+t) x'= x - 1\text{,}\) we rewrite as</p>
+<span class="type">Example</span> <span class="codenumber">2.4.4</span>.</h6>
+<p>Reconsider the previous IVP \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) First we find</p>
 <div class="displaymath">
 \begin{equation*}
-x' - \frac{1}{2+t} x = -\frac{1}{2+t}\text{.}
+G(s,t) = \exp \left[ \int_{s}^t \sin(u)\, du \right] = \exp[-\cos(t)+\cos(s)] \text{.}
 \end{equation*}
 </div>
-<p>Then</p>
+<p>The solution of the IVP is therefore</p>
 <div class="displaymath">
 \begin{equation*}
-g(t) = \exp\left[ \int \frac{1}{2+t}\, dt \right] = \exp[ \ln(2+t) ] = 2+t\text{.}
+x(t) = G(0,t)\cdot 1 = \exp[1-\cos(t)]\text{,}
 \end{equation*}
 </div>
-<p>Next,</p>
-<div class="displaymath">
-\begin{equation*}
-k(t) = \int \frac{-1}{2+t} (2+t)^{-1} \, dt = - (2+t)^{-1}\text{,}
-\end{equation*}
-</div>
-<p>so that</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = c_1 (2+t) - (2+t)^{-1} (2+t) = c_1(2+t)-1\text{.}
-\end{equation*}
-</div></article><span class="incontext"><a href="fl-varparam.html#example-30">in-context</a></span>
+<p>which is what we found before.</p></article><span class="incontext"><a href="fl-ivp.html#example-30">in-context</a></span>
 </body>
 </html>

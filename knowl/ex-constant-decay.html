@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -17,11 +17,12 @@
 </h6>
 <div class="displaymath">
 \begin{equation*}
-\dd{x}{t} = -y
+\dd{x}{t} = -x
 \end{equation*}
 </div>
 <p>Now the model states that the rate of change is negative when \(x\) is positive (and vice versa). So a positive starting value will decrease, but the rate of decrease will then lessen, etc. From this qualitative description alone it's impossible to tell whether the solution ever reaches zero--at which point its rate of change would be zero.</p>
 <p>But we can end the suspense by easily verifying that \(x=e^{-t}\) is a solution. This function asymptotically approaches zero as \(t\to\infty\text{,}\) which we call <dfn class="terminology">exponential decay</dfn>. In other, related problems we will find that solutions can decay (or "relax") to any value, not just zero.</p>
+<p>Exponential decay is most naturally plotted on a log-linear graph, in which case the solution is a straight line with negative slope.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">x = @(t) exp(-t);
 fplot(x,[0,4]), set(gca,'yscale','log')

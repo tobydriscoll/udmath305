@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,42 +11,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Here is a phase plane plot for \(\bA=\twomat{-2}{-3}{-6}{-5}\text{,}\) which has eigenvalues \(1\) and \(-8\text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = [-2 -3; -6 -5];
-[V,D] = eig(A);
-lam = diag(D);
-
-clf
-plot(0,0,'r.','markersize',18)
-hold on
-
-% plot directions
-[x1,x2] = meshgrid(-1:.2:1);
-v = A*[x1(:)';x2(:)'];
-sz = size(x1);
-quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
-
-% plot eigenvectors
-plot(5*[-V(1,:);V(1,:)],5*[-V(2,:);V(2,:)],'k','linew',2)
-
-% plot trajectories
-colr = get(gca,'colororder');
-t = linspace(0,10,300);
-for theta = 2*pi*(0:23)/24
-	for j = 1:length(t)
-		X = expm(t(j)*A);
-		x(:,j) = X*[ cos(theta); sin(theta) ];
-	end
-	plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
-end
-
-axis([-1.1 1.1 -1.1 1.1]), axis square
-title('saddle')
-xlabel('x_1')
-ylabel('x_2')
-</pre></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fs_pp_saddle.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<p>An initial condition exactly on the stable black line (eigenvector) will approach the origin, but anything else ends up shooting away more or less in the direction of the unstable eigenvector.</p></article></body>
+<body><article class="example example-like"><p>We eariler found the eigenvalues and eigenvectors of</p>
+<div class="displaymath">
+\begin{equation*}
+\bA = \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>The result is</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda_{1,2} = -1 \pm 1i, \qquad \bv_{1,2} = \twovec{1}{2\mp i}\text{.}
+\end{equation*}
+</div>
+<p>This gives a general solution in the form</p>
+<div class="displaymath">
+\begin{equation*}
+\bx(t) = c_1 e^{(-1+i)t} \twovec{1}{2- i} + c_2 e^{(-1-i)t} \twovec{1}{2+i}\text{.}
+\end{equation*}
+</div>
+<p>It's implied that \(c_{1,2}\) are complex constants.</p>
+<p>There is more to the story. A purely real problem, with real initial conditions, will lead to a solution that is real at all times. In that case it works out that \(c_2=\overline{c_1}\text{.}\) But an alternative way to express the solution is to take the real and imaginary parts of</p>
+<div class="displaymath">
+\begin{align*}
+e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [\cos(t)+i\sin(t)] \left( \twovec{1}{2} + i\twovec{0}{-1} \right)\\
+\amp = e^{-t} \left( \cos(t)\twovec{1}{2} - \sin(t) \twovec{0}{-1} \right)\\
+\amp \qquad + i e^{-t} \left( \cos(t)\twovec{0}{-1} + \sin(t) \twovec{1}{2} \right) \text{.}
+\end{align*}
+</div>
+<p>That is, the general solution can also be written as</p>
+<div class="displaymath">
+\begin{equation*}
+\bx(t) = b_1 e^{-t} \twovec{\cos(t)}{2\cos(t)+\sin(t)} + b_2 e^{-t}\twovec{\sin(t)}{2\sin(t)-\cos(t)} \text{,}
+\end{equation*}
+</div>
+<p>where here \(b_1\) and \(b_2\) are real.</p></article></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,39 +13,24 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.5.1</span>.</h6>
-<p>We eariler found the eigenvalues and eigenvectors of</p>
+<span class="type">Example</span> <span class="codenumber">2.9.8</span>.</h6>
+<p>Let's consider \(x'=ax + \delta(t-T)\text{,}\) with \(x(0)=0\text{.}\) Transform to get</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}\text{.}
+[sX(s)-x(0)] - aX(s) = e^{-sT}\text{,}
 \end{equation*}
 </div>
-<p>The result is</p>
+<p>and thus</p>
 <div class="displaymath">
 \begin{equation*}
-\lambda_{1,2} = -1 \pm 1i, \qquad \bv_{1,2} = \twovec{1}{2\mp i}\text{.}
+X(s) = \frac{e^{-sT}}{s-a}\text{.}
 \end{equation*}
 </div>
-<p>This gives a general solution in the form</p>
+<p>Notice that \(X(s) = e^{-sT} Y(s)\text{,}\) where \(Y(s)=1/(s-a)\) is the transform of \(y(t)=e^{at}\text{.}\) By the shift theorem, it must be that</p>
 <div class="displaymath">
 \begin{equation*}
-\bx(t) = c_1 e^{(-1+i)t} \twovec{1}{2- i} + c_2 e^{(-1-i)t} \twovec{1}{2+i}\text{.}
+x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}\text{.}
 \end{equation*}
-</div>
-<p>It's implied that \(c_{1,2}\) are complex constants.</p>
-<p>There is more to the story. A purely real problem, with real initial conditions, will lead to a solution that is real at all times. In that case it works out that \(c_2=\overline{c_1}\text{.}\) But an alternative way to express the solution is to take the real and imaginary parts of</p>
-<div class="displaymath">
-\begin{align*}
-e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [cos(t)+i\sin(t)] \left( \twovec{1}{2} + i\twovec{0}{-1} \right)\\
-\amp = e^{-t} \left( cos(t)\twovec{1}{2} - \sin(t) \twovec{0}{-1} \right) + i e^{-t} \left( cos(t)\twovec{0}{-1} + \sin(t) \twovec{1}{2} \right) \text{.}
-\end{align*}
-</div>
-<p>That is, the general solution can also be written as</p>
-<div class="displaymath">
-\begin{equation*}
-\bx(t) = b_1 e^{-t} \twovec{\cos(t)}{2\cos(t)+\sin(t)} + b_2 e^{-t}\twovec{\sin(t)}{2\sin(t)-\cos(t)} \text{,}
-\end{equation*}
-</div>
-<p>where here \(b_1\) and \(b_2\) are real.</p></article><span class="incontext"><a href="fs-complex-eigenvalues.html#example-45">in-context</a></span>
+</div></article><span class="incontext"><a href="fl-laplace.html#example-45">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,37 +13,38 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.5.1</span>.</h6>
-<p>Let's observe what happens in a fundamental case, \(x''-x=e^{rt}\text{.}\)  Transforming both sides gives</p>
+<span class="type">Example</span> <span class="codenumber">3.7.4</span>.</h6>
+<p>Suppose</p>
 <div class="displaymath">
 \begin{equation*}
-[s^2X(s) - sx(0)-x'(0)] - X(s) = \frac{1}{s-r}\text{.}
+\bA = \twomat{1}{-2}{5}{-3}\text{,}
 \end{equation*}
 </div>
-<p>We easily solve for \(X\text{:}\)</p>
+<p>and we find that</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = x'(0)\frac{1}{(s^2-1)} + x(0)\frac{s}{(s^2-1)} + \frac{1}{(s^2-1)(s-r)} \text{.}
+\bD = \twomat{-1+i}{0}{0}{-1-i}, \qquad \bV = \twomat{1}{1}{2-i}{2+i}\text{.}
 \end{equation*}
 </div>
-<p>This is doable, but we are going to lighten the load a bit. Even before we took the transform, we knew how to find the general homogeneous solution, \(c_1e^t+c_2e^{-t}\text{.}\) So let's use the transform to find any particular solution of the nonhomogeneous problem. Based on the expression above, we're best off with finding the particular solution with \(x(0)=x'(0)=0\text{,}\) leaving us with</p>
+<p>Then</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{1}{(s+1)(s-1)(s-r)} \text{.}
+\bV^{-1} = \frac{1}{2+i-2+i} \twomat{2+i}{-1}{-2+i}{1} = \frac{i}{2} \twomat{-2-i}{1}{2-i}{-1}\text{,}
 \end{equation*}
 </div>
-<p>The partial fraction mneomic gives us</p>
+<p>and then</p>
+<div class="displaymath">
+\begin{align*}
+e^{t \bA} \amp = \bV e^{t \bD}  \bV^{-1} = e^{-t}\frac{i}{2}\twomat{1}{1}{2-i}{2+i} \twomat{e^{it}}{0}{0}{e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
+\amp = e^{-t}\frac{i}{2}\twomat{e^{it}}{e^{-it}}{(2-i)e^{it}}{(2+i)e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
+\amp = e^{-t}\frac{i}{2} \twomat{-(2+i)e^{it}+(2-i) e^{-it}}{e^{it}-e^{-it}}{-(2-i)(2+i)e^{it}+(2+i)(2-i) e^{-it}}{(2-i)e^{it}-(2+i) e^{-it}} \text{.}
+\end{align*}
+</div>
+<p>Each entry is written in the form of a complex number minus its conjugate, which gives \(2i\) times the imaginary part. This helps a lot.</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} \text{.}
+e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\sin(t)}\text{.}
 \end{equation*}
-</div>
-<p>Note that this requires \(r\neq -1\) and \(r \neq 1\) (i.e., no resonance). From here we get</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}\text{.}
-\end{equation*}
-</div>
-<p>With this we can construct a general solution \(x_n+x_p\text{,}\) and then apply initial conditions to solve for the constants, if those are given.</p></article><span class="incontext"><a href="so-laplace.html#example-54">in-context</a></span>
+</div></article><span class="incontext"><a href="fs-matrix-exp.html#example-54">in-context</a></span>
 </body>
 </html>

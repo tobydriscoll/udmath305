@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:51-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,59 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Finally, there are three “moves” or row operations that are allowed in row elimination:</p>
-<ol class="decimal">
-<li>Swap any two rows.</li>
-<li>Multiply a row by a <em class="emphasis">nonzero</em> constant.</li>
-<li>Add a multiple of one row into another.</li>
-</ol>
-<p>These are sufficient to transform any matrix into RREF.</p>
-<span class="incontext"><a href="la-linear-systems.html#p-25">in-context</a></span>
+<p>Let's solve the system having augmented matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 1 \amp -1 \amp 4 \\
+1 \amp 2 \amp 2 \amp 3 \\
+2 \amp 1 \amp -5 \amp 9
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>Use multiples of the first row to eliminate below it.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 1 \amp -1 \amp 4 \\
+0 \amp 1 \amp 3 \amp -1 \\
+0 \amp -1 \amp -3 \amp 1
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>Use a multiple of the second row to eliminate below that.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 1 \amp -1 \amp 4 \\
+0 \amp 1 \amp 3 \amp -1 \\
+0 \amp 0 \amp 0 \amp 0
+\end{bmatrix}
+\end{equation*}
+</div>
+<p>We have reached the last row, and it's time to turn around and eliminate upwards. But we can't, because the last row is entirely zero. So skip that and move up to the next row, eliminating upwards again in the second column:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 0 \amp -1 \amp 5 \\
+0 \amp 1 \amp 3 \amp -1 \\
+0 \amp 0 \amp 0 \amp 0
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p>This is as simple as we can get things. The last row is telling us the astounding fact that \(0=0\text{,}\) i.e., nothing at all. The fact that there was nothing there to determine \(x_3\) means that we can set it to be anything we like, say \(x_3=s\) for arbitrary \(s\text{.}\) Now the second row says</p>
+<div class="displaymath">
+\begin{equation*}
+x_2 = -1 - 3s\text{,}
+\end{equation*}
+</div>
+<p>which is as specific as we can get. Finally, the first row says</p>
+<div class="displaymath">
+\begin{equation*}
+x_1 = 5 + s\text{.}
+\end{equation*}
+</div>
+<p>So \([5+s,-1-3s,s]\) is a solution for every \(s\text{,}\) and we have infinitely many solutions.</p>
+<span class="incontext"><a href="la-elimination.html#p-25">in-context</a></span>
 </body>
 </html>

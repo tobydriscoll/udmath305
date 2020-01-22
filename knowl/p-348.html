@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The eigenvalues of the homogeneous form of this equation are</p>
+<p>To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
 <div class="displaymath">
 \begin{equation*}
-\lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1}\text{.}
+\bu_h(t) = c_1 e^{\lambda_1 t} \twovec{1}{\lambda_1} + c_2 e^{\lambda_2 t} \twovec{1}{\lambda_2}\text{.}
 \end{equation*}
 </div>
-<p>The discussion now splits into four cases marked by increasing values of \(Z\text{.}\)</p>
-<span class="incontext"><a href="so-oscillators.html#p-348">in-context</a></span>
+<p>In terms of the original variable \(x=u_1\text{,}\) this is simply</p>
+<div class="displaymath">
+\begin{equation*}
+x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \qquad \text{if } \lambda_1\neq\lambda_2\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="so-homogeneous.html#p-348">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:52-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,17 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose \(\bA\bx=\bb\) is a linear system with an \(n\times n\) matrix \(\bA\text{.}\) Each of the following statements is equivalent to all of the others:</p>
-<ol class="decimal">
-<li>\(\bA\bx=\bb\) has a unique solution,</li>
-<li>the linear system has no free variables,</li>
-<li>the RREF of \(\bA\) is the \(n\times n\) identity matrix,</li>
-<li>\(\bA\) is invertible,</li>
-<li>the columns of \(\bA\) are a basis of \(\Rn{n}\text{,}\)</li>
-<li>the dimension of \(\null(\bA)\) is zero,</li>
-<li>\(\det(\bA)\neq 0\text{,}\) and</li>
-<li>\(\bA\) does not have a zero eigenvalue.</li>
-</ol>
-<span class="incontext"><a href="la-equivalent.html#p-102">in-context</a></span>
+<p>If \(\bA\in\Rmn{n}{n}\) is invertible, then we can use its inverse to solve a linear system \(\bA\bx=\bb\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bA^{-1} \bb = \bA^{-1} (\bA \bx) = \bigl(  \bA^{-1} \bA \bigr) \bx = \bI \bx = \bx\text{.}
+\end{equation*}
+</div>
+<p>The uniqueness of the inverse means that this solution is unique as well. We will see later on that the converse is also true: unique solution implies invertibility.</p>
+<span class="incontext"><a href="la-inverse.html#p-102">in-context</a></span>
 </body>
 </html>

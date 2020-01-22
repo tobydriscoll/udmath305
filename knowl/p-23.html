@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:51-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>A matrix is in  <dfn class="terminology">RREF</dfn> (reduced row echelon form) if it meets these requirements:</p>
-<ol class="decimal">
-<li>Any rows of all zeros appear below all nonzero rows.</li>
-<li>The leading nonzero of any row is a one.</li>
-<li>Every leading one is the only nonzero in its column.</li>
-</ol>
-<p>The columns that have leading ones are called  <dfn class="terminology">pivot columns</dfn>. The other columns are called  <dfn class="terminology">free columns</dfn>.</p>
-<span class="incontext"><a href="la-linear-systems.html#p-23">in-context</a></span>
+<p>The following code performs these operations in MATLAB. Note the square brackets used to define matrices and vectors, and the notation used to access a row or part of a row. <pre class="prettyprint lang-matlab">A = [ 1 -1 -1; 3 -2 0; 1 -2 -1 ]
+b = [ 2; 9; 5 ]
+AA = [ A b ]
+
+AA(2,1:end) = AA(2,1:end) - 3*AA(1,1:end)
+AA(3,1:end) = AA(3,1:end) - AA(1,1:end)
+
+AA(3,2:end) = AA(3,2:end) + AA(2,2:end)
+
+AA(2,3:end) = AA(2,3:end) - AA(3,3:end)
+AA(1,3:end) = AA(1,3:end) + (1/3)*AA(3,3:end)
+
+AA(1,2:end) = AA(1,2:end) + AA(2,2:end)
+</pre></p>
+<span class="incontext"><a href="la-elimination.html#p-23">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-02T15:27:51-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,8 +13,19 @@
 </head>
 <body>
 <article class="definition definition-like"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.4.1</span>. <span class="title">Inverse matrix.</span>
+<span class="type">Definition</span> <span class="codenumber">1.4.1</span>. <span class="title">Matrix times matrix.</span>
 </h6>
-<p>The <dfn class="terminology">inverse</dfn> of an \(n\times n\) matrix \(\bA\) is a matrix \(\bC\in\Rmn{n}{n}\) such that \(\bA\bC = \bC\bA = \bI \text{.}\) If such a \(\bC\) exists, we write \(\bA^{-1}=\bC\) and say that \(\bA\) is <dfn class="terminology">invertible</dfn>; otherwise, it is <dfn class="terminology">singular</dfn>.</p></article><span class="incontext"><a href="la-inverse.html#definition-6">in-context</a></span>
+<p>If \(\bA\) is \(m\times n\) and \(\bB\) is \(n\times p\text{,}\) then the product \(\bA\bB\) is defined as</p>
+<div class="displaymath">
+\begin{equation}
+\bA\mathbf{B} =
+\bA \begin{bmatrix}
+\mathbf{b}_1 \amp \mathbf{b}_2 \amp \cdots \amp \mathbf{b}_p
+\end{bmatrix}
+= \begin{bmatrix}
+\bA\mathbf{b}_1 \amp \bA\mathbf{b}_2 \amp \cdots \amp \bA\mathbf{b}_p
+\end{bmatrix}\text{.}\tag{1.4.1}
+\end{equation}
+</div></article><span class="incontext"><a href="la-matrix-algebra.html#definition-6">in-context</a></span>
 </body>
 </html>

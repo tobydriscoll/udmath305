@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-07T15:08:51-05:00    *-->
+<!--*    on 2020-01-14T14:00:12-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It's pretty immediate that for any square matrix \(\bA\text{,}\) \(\bA\boldsymbol{0}=\boldsymbol{0}\bA=\boldsymbol{0}\) for the all-zero square matrix \(\boldsymbol{0}\) of approrpiate size. So we have a multiplicative zero. But the situation is a bit less obvious when it comes to a multiplicative unit element (the counterpart of the scalar 1).</p>
+<p>MATLAB interprets the <code class="code-inline tex2jax_ignore">*</code> operator to mean multiplication in the sense of matrices and vectors. <pre class="prettyprint lang-matlab">A = [ 1 -1; 0 2; -3 1 ]
+B = [ 2 -1 0 4; 1 1 3 2 ]
+
+A*B
+
+A(3,:)*B(:,1)
+</pre></p>
 <span class="incontext"><a href="la-matrix-algebra.html#p-49">in-context</a></span>
 </body>
 </html>
