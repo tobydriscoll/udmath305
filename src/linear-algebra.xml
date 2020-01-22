@@ -772,8 +772,7 @@
 			<me>
 				\sum_{j=1}^k c_j \bx_j = c_1\bx_1+\cdots+c_k\bx_k = \begin{bmatrix} \bx_1 \amp \cdots \amp \bx_k \end{bmatrix} \begin{bmatrix} c_1 \\ \vdots \\ c_k \end{bmatrix} = \bX \bc. 
 			</me>
-			Hence the question <q>Are <m>\bx_1,\dots,\bx_k</m> indedendent?</q> is equivalent to <q>Does <m>\bX\bc=\bzero</m> have any nonzero solutions?</q> Because zero is always a homogeneous solution,
-			the question is also equivalent to <q>Does <m>\bX\bc=\bzero</m> have infinitely many solutions?</q>
+			Hence the question <q>Are <m>\bx_1,\dots,\bx_k</m> indedendent?</q> is equivalent to <q>Does <m>\bX\bc=\bzero</m> have any nonzero solutions?</q> Because homogeneous problems always have at least one solution (the zero vector), this question is also equivalent to <q>Does <m>\bX\bc=\bzero</m> have infinitely many solutions?</q>
 		</p>
 		<example>
 			<p>
@@ -917,7 +916,7 @@
 			<li><m>\det(c\bA) = c^n \det(\bA)</m>,</li>
 			<li><m>\det(\bA\bB) = \det(\bA)\det(\bB)</m>,</li>
 			<li><m>\det(\bA)=0</m> if and only if <m>\bA</m> is singular, and</li>
-			<li>If <m>\bA</m> is nonsingular, <m>\det(\bA^{-1})=1/\det(\bA)</m>.</li>
+			<!--li>If <m>\bA</m> is nonsingular, <m>\det(\bA^{-1})=1/\det(\bA)</m>.</li-->
 		</ol>
 		</p>
 	</fact>
