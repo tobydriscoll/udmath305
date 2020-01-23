@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-22T16:29:38-05:00    *-->
+<!--*    on 2020-01-23T15:10:17-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If we put that together with <a data-knowl="./knowl/la-thm-distincteigs.html" title="Theorem 1.11.16: Distinct eigenvalues imply nondefectiveness">Theorem 1.11.16</a>, then we can also conclude that <em class="alert">a matrix whose eigenvalues are all simple (multiplicity one) is diagonalizable</em>. Any repeated eigenvalues might or might not be defective, and investigation of the eigenspace is required in order to determine which. In the \(2\times 2\) case, though, we can make a simpler determination.</p>
+<p>Because the matrix exponential is a fundamental matrix, the general solution to \(\bx'=\bA\bx\) can always be written in the form \(e^{t\bA}\bc\text{.}\) This isn't the easiest way to get a general solution, because the \(\bX(t)\) above requires less work. But this form is handy with an IVP, because</p>
+<div class="displaymath">
+\begin{equation*}
+\bx_0 = \bx(0) = e^{0\bA}\bc = \bc\text{.}
+\end{equation*}
+</div>
+<p>That is, \(e^{t\bA}\bx_0\) solves the IVP.</p>
 <span class="incontext"><a href="fs-matrix-exp.html#p-327">in-context</a></span>
 </body>
 </html>

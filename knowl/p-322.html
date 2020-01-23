@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-22T16:29:38-05:00    *-->
+<!--*    on 2020-01-23T15:10:17-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,35 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Say \(\bA\) is \(n\times n\text{,}\) and that we write</p>
-<div class="displaymath">
-\begin{equation*}
-\bA \bv_1 = \lambda_1 \bv_1, \;
-\bA \bv_2 = \lambda_2 \bv_2,\; \dots, \;
-\bA \bv_n = \lambda_n \bv_n\text{,}
-\end{equation*}
-</div>
-<p>where \(\lambda_1,\lambda_2,\dots,\lambda_n\) are its eigenvalues (including multiplicities). Through some linear algebra magic, we can express this collection of equations more succinctly:</p>
-<div class="displaymath">
-\begin{align*}
-\begin{bmatrix}
-\bA \bv_1 \amp \bA \bv_2 \amp \cdots \amp \bA \bv_n
-\end{bmatrix}
-\amp =
-\begin{bmatrix}
-\lambda_1\bv_1 \amp \lambda_2\bv_2 \amp \cdots \amp \lambda_n\bv_n
-\end{bmatrix}\\
-\bA \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}            \amp =
-\begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}
-\begin{bmatrix} \lambda_1 \amp 0 \amp \cdots \amp 0 \\
-0 \amp \lambda_2 \amp \cdots \amp 0 \\
-\amp \amp \ddots \amp \\
-0 \amp \cdots \amp 0 \amp \lambda_n
-\end{bmatrix}\\
-\bA \bV \amp = \bV \bD \text{,}
-\end{align*}
-</div>
-<p>where \(\bD\) is a <dfn class="terminology">diagonal</dfn> matrix.</p>
+<p>In section <a href="la-eigen.html#la-ei-multiplicity" class="internal" title="Subsection 1.11.2: Multiplicity">Subsection 1.11.2</a> we saw the definition of a defective eigenvalue. A matrix with any defective eigenvalues is also called defective. One characterization of a defective \(n\times n\) matrix is that it has less than \(n\) independent eigenvectors. (That is, the sum of the eigenspace dimensions is less than \(n\text{.}\)) It's easy to spot when \(n=2\text{:}\)</p>
 <span class="incontext"><a href="fs-matrix-exp.html#p-322">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-22T16:29:38-05:00    *-->
+<!--*    on 2020-01-23T15:10:17-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This formula is a bit easier to parse in terms of the frequency ratio \(\rho=\omega/\omega_0\text{:}\)</p>
+<p>This example is the template for our use of Laplace transforms. In the general case we get</p>
 <div class="displaymath">
 \begin{equation*}
-g(\rho) =  \frac{1}{[(1-\rho^2)^2  + 4 Z^2 \rho^2]^{1/2} }\text{.}
+[s^2X(s) - sx(0)-x'(0)] + b[sX(s)-x(0)] + cX(s) = F(s)\text{.}
 \end{equation*}
 </div>
-<p>Basic calculus shows that the denominator is minimized, and thus the gain is maximized, when</p>
+<p>We choose to find a particular solution with zero initial conditions, so that</p>
 <div class="displaymath">
 \begin{equation*}
-\rho_\text{max} = \sqrt{1-2Z^2}, \quad  \text{ if } Z^2 \le \frac{1}{2}\text{,}
+X_p(s) = \frac{F(s)}{s^2+bs+c}\text{.}
 \end{equation*}
 </div>
-<p>and \(\rho=0\) if \(\frac{1}{2} \lt Z^2 \lt 1\text{.}\) Since \(\rho_\text{max} \lt 1\text{,}\) the “most resonant” frequency is lower than the natural frequency. For \(Z^2 \le \frac{1}{2}\) the maximum gain is</p>
-<div class="displaymath">
-\begin{equation*}
-g(\rho_\text{max}) = \frac{1}{2Z\sqrt{1-Z^2}}\text{,}
-\end{equation*}
-</div>
-<p>which is finite but large for \(Z\approx 0\text{.}\)</p>
-<span class="incontext"><a href="so-expforcing.html#p-371">in-context</a></span>
+<p>The real effort comes in finding the inverse transform of the right-hand side. Note that the denominator has roots at the eigenvalues of the homogeneous problem. These are called <dfn class="terminology">poles</dfn> of the transform \(X_p\text{.}\) Typically \(F(s)\) will contribute one or more of its own poles. Each pole at \(s=r\) corresponds to an exponential solution \(e^{rt}\) in time, but the exact expression depends on a partial fraction decomposition and perhaps other manipulations.</p>
+<span class="incontext"><a href="so-laplace.html#p-371">in-context</a></span>
 </body>
 </html>

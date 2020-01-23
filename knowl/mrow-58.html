@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-22T16:29:38-05:00    *-->
+<!--*    on 2020-01-23T15:10:17-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,8 +14,9 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-\bA^2 \amp = (\bV \bD \bV^{-1})(\bV \bD \bV^{-1}) = \bV \bD (\bV^{-1}\bV) \bD \bV^{-1} = \bV \bD^2 \bV^{-1} \\
-\bA^3 \amp = (\bV \bD \bV^{-1})(\bV \bD^2 \bV^{-1}) = \bV \bD (\bV^{-1}\bV) \bD^2 \bV^{-1} = \bV \bD^3 \bV^{-1} 
+e^{t \bA} \amp = e^{-t}\frac{i}{2}\twomat{1}{1}{2-i}{2+i} \twomat{e^{it}}{0}{0}{e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
+\amp = e^{-t}\frac{i}{2}\twomat{e^{it}}{e^{-it}}{(2-i)e^{it}}{(2+i)e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
+\amp = e^{-t}\frac{i}{2} \twomat{-(2+i)e^{it}+(2-i) e^{-it}}{e^{it}-e^{-it}}{-(2-i)(2+i)e^{it}+(2+i)(2-i) e^{-it}}{(2-i)e^{it}-(2+i) e^{-it}} 
 \end{align*}
 </div>
 <span class="incontext"><a href="fs-matrix-exp.html#mjx-eqn-mrow-58">in-context</a></span>

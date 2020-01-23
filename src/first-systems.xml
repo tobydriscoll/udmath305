@@ -627,7 +627,7 @@ set(gca,'dataaspect',[6,1,1])
 			</p></statement>
 		</theorem>
 		<p>
-			The first two conclusions of the theorem follow quickly from the series definition <xref ref="fs-eq-matrixexp"/>. (The third is a deeper fact that is important below as well as in other areas such as theoretical physics.) They establish some important facts.  
+			The first three conclusions of the theorem follow quickly from the series definition <xref ref="fs-eq-matrixexp"/>. (The last is a deeper fact that is important below as well as in other areas such as theoretical physics.) They establish some important facts.  
 		</p>
 		<fact>
 			<p>
@@ -638,86 +638,53 @@ set(gca,'dataaspect',[6,1,1])
 			</p>
 		</fact>
 		<p>
-			Obviously, summing an infinite series doesn't seem like a great prospect. But we have two ways around that.
+			Obviously, summing an infinite series of matrices doesn't seem like a great prospect. But we have two ways around that.
 		</p>
 	</introduction>
 	<subsection xml:id="fs-me-diagonal">
-		<title>Diagonalizable matrix</title>
+		<title>Nondefective matrix</title>
 		<p>
-			Say <m>\bA</m> is <m>n\times n</m>, and that we write
+			In section <xref ref="la-ei-multiplicity"/> we saw the definition of a defective eigenvalue. A matrix with any defective eigenvalues is also called defective. One characterization of a defective <m>n\times n</m> matrix is that it has less than <m>n</m> independent eigenvectors. (That is, the sum of the eigenspace dimensions is less than <m>n</m>.) It's easy to spot when <m>n=2</m>:
+		</p>
+		<fact>
+			<p>A <m>2\times 2</m> matrix with repeated eigenvalue is either diagonal or defective.</p>
+		</fact>
+		<p>
+			For a nondefective <m>\bA</m>, <xref ref="fs-thm-eigensolution"/> guarantees that 
+			<me>
+				\bX(t) = \begin{bmatrix} e^{t\lambda_1}\bv_1 \amp e^{t\lambda_2}\bv_2 \amp \cdots \amp e^{t\lambda_n}\bv_n \end{bmatrix}  
+			</me>
+			is a fundamental matrix for the ODE <m>\bx'=\bA\bx</m>, where the <m>(\lambda_j,\bv_j)</m> are eigenpairs. If we now define 
+			<me>
+				\bY(t) = \bX(t) \bX(0)^{-1}
+			</me>, 
+			then 
+			<me>
+				\bY'(t) = \bX'(t) \bX(0)^{-1} = \bA \bX(t) \bX(0)^{-1} = \bA \bY(t)
+			</me>,
+			so <m>\bY(t)</m> is a fundamental matrix as well. But also <m>\bY(0)=\bX(0)\bX(0)^{-1}=\bI</m>, so in fact <m>\bY(t)</m> is the matrix exponential. 
+		</p>
+		<p>
+			When this argument is fully unraveled, it can be summarized as follows. Given a complete set of eigenvectors, i.e.,
 			<me>
 				\bA \bv_1 = \lambda_1 \bv_1, \;
 				\bA \bv_2 = \lambda_2 \bv_2,\; \dots, \;
 				\bA \bv_n = \lambda_n \bv_n
 			</me>,
-			where <m>\lambda_1,\lambda_2,\dots,\lambda_n</m> are its eigenvalues (including multiplicities). Through some linear algebra magic, we can express this collection of equations more succinctly:
-			<md>
-				<mrow>
-						\begin{bmatrix}
-							\bA \bv_1 \amp \bA \bv_2 \amp \cdots \amp \bA \bv_n
-						\end{bmatrix}
-						\amp =
-						\begin{bmatrix}
-							\lambda_1\bv_1 \amp \lambda_2\bv_2 \amp \cdots \amp \lambda_n\bv_n
-						\end{bmatrix}
-				</mrow>
-				<mrow>\bA \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}            \amp =
-						\begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}
-						\begin{bmatrix} \lambda_1 \amp 0 \amp \cdots \amp 0 \\
-										0 \amp \lambda_2 \amp \cdots \amp 0 \\
-										\amp \amp \ddots \amp \\
-										0 \amp \cdots \amp 0 \amp \lambda_n
-						\end{bmatrix}</mrow>
-				<mrow>\bA \bV \amp = \bV \bD </mrow>
-			</md>,
-			where <m>\bD</m> is a <term>diagonal</term> matrix.
-		</p>
-		<p>
-			If <m>\bV</m> is nonsingular, we therefore can write
-			<men xml:id="la-eq-diagonalization">
-				\bA = \bV \bD \bV^{-1}
-			</men>,
-			which is called a <idx>diagonalization of a matrix</idx><term>diagonalization</term> of <m>\bA</m>. 
-		</p>
-		<aside>
-			<p>When a matrix has a diagonalization, the two-output form of the <c>eig</c> MATLAB command gives the matrices <c>V</c> and <c>D</c> for one.</p>
-		</aside>
-		<p>
-			Not every matrix has a diagonalization. The essential issue is whether the eigenvector matrix <m>\bV</m> is invertible. We already have the condition needed to ensure this.
-		</p>
-		<theorem xml:id="la-thm-diagonalizable">
-			<title>Diagonalizability</title>
-			<statement><p>
-				A matrix is diagonalizable if and only if it has no defective eigenvalues.
-			</p></statement>
-		</theorem>
-		<p>
-			If we put that together with <xref ref="la-thm-distincteigs"/>, then we can also conclude that <alert>a matrix whose eigenvalues are all simple (multiplicity one) is diagonalizable</alert>. Any repeated eigenvalues might or might not be defective, and investigation of the eigenspace is required in order to determine which. In the <m>2\times 2</m> case, though, we can make a simpler determination.
-		</p>
-		<fact>
-			<p>A <m>2\times 2</m> matrix with repeated eigenvalue is either a multiple of the identity, in which case it is already diagonal, or it is defective.</p>
-		</fact>
-		<p>
-			A diagonalization is useful in matrix powers: 
-			<md>
-				<mrow> \bA^2 \amp = (\bV \bD \bV^{-1})(\bV \bD \bV^{-1}) = \bV \bD (\bV^{-1}\bV) \bD \bV^{-1} = \bV \bD^2 \bV^{-1} </mrow>
-				<mrow> \bA^3 \amp = (\bV \bD \bV^{-1})(\bV \bD^2 \bV^{-1}) = \bV \bD (\bV^{-1}\bV) \bD^2 \bV^{-1} = \bV \bD^3 \bV^{-1} </mrow>
-			</md>,
-			etc. When we these matrix powers into the series definition <xref ref="fs-eq-matrixexp"/>, we can factor out <m>\bV</m> on the left and <m>\bV^{-1}</m> on the right: 
-			<mdn xml:id="fs-eq-matrixexpdiag">
-				<mrow> e^{t\bA} \amp = \bV\left( \bI + t\bD + \frac{1}{2!}t^2 \bD^2 + \cdots \right) \bV^{-1} </mrow>
-				<mrow>  \amp = \bV e^{t\bD} \bV^{-1} </mrow>
-			</mdn>.
-			Finally, because powers of diagonal matrices are diagonal, applying the series definition to the diagonal matrix <m>\bD</m> gives something very simple: 
+			define 
 			<me>
-				e^{t\bD}  = \begin{bmatrix} 
+				\bV = \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}.
+			</me>
+			(In the notation above, this is <m>\bX(0)</m>.) Then 
+			<men xml:id="fs-matrixexp">
+				e^{t\bA} = \bV \begin{bmatrix} 
 				e^{t\lambda_1} \amp \amp \amp \\ 
 				\amp e^{t\lambda_2} \amp \amp \\ 
 				\amp \amp \ddots \amp \\ 
 				\amp \amp \amp e^{t\lambda_n} 
-				\end{bmatrix}
-			</me>. 
-			This gives us a viable path for computing the exponential of a diagonalizable matrix. 
+				\end{bmatrix}  \bV^{-1}
+			</men>.
+			This is one of those cases in which you're probably better off working from the formula than going each time through the process we used to get it. 
 		</p>
 		<example>
 			<p>
@@ -725,11 +692,11 @@ set(gca,'dataaspect',[6,1,1])
 			<me>
 				\bA = \twomat{1}{1}{4}{1}
 			</me>,
-			given <m>\lambda_1=3</m>, <m>\bv_1 = \twovec{1}{2}</m>, and <m>\lambda_2=-1</m>, <m>\bv_2=\twovec{1}{-2}</m>. This lets us define 
+			given <m>\lambda_1=3</m>, <m>\bv_1 = \twovec{1}{2}</m>, and <m>\lambda_2=-1</m>, <m>\bv_2=\twovec{1}{-2}</m>. We identify  
 			<me>
-				\bV = \twomat{1}{1}{2}{-2}, \qquad \bD = \twomat{3}{0}{0}{-1}
-			</me>. 
-			Then 
+				\bV = \twomat{1}{1}{2}{-2}
+			</me>
+			and compute 
 			<md>
 				<mrow> e^{t\bA} \amp = \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{1}{1}{2}{-2}^{-1} </mrow>
 				<mrow>  \amp = -\frac{1}{4} \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{-2}{-1}{-2}{1} </mrow>
@@ -740,11 +707,11 @@ set(gca,'dataaspect',[6,1,1])
 		</p>
 		</example>
 		<p>
-			The general solution to <m>\bx'=\bA\bx</m> is <m>e^{t\bA}\bc</m>. This is actually more work than we needed to find it in <xref ref="fs-constcoeff"/>. But this formula can be handy with an IVP, because 
+			Because the matrix exponential is a fundamental matrix, the general solution to <m>\bx'=\bA\bx</m> can always be written in the form <m>e^{t\bA}\bc</m>. This isn't the easiest way to get a general solution, because the <m>\bX(t)</m> above requires less work. But this form is handy with an IVP, because 
 			<me>
 				\bx_0 = \bx(0) = e^{0\bA}\bc = \bc
 			</me>. 
-			It's also important to have a fundamental matrix in the extension of variation of parameters to come later. 
+			That is, <m>e^{t\bA}\bx_0</m> solves the IVP.  
 		</p>
 		<example>
 			<p>
@@ -752,9 +719,9 @@ set(gca,'dataaspect',[6,1,1])
 				<me>
 					\bA = \twomat{1}{-2}{5}{-3}
 				</me>, 
-				and we find that 
+				and we are given or work out that 
 				<me>
-					\bD = \twomat{-1+i}{0}{0}{-1-i}, \qquad \bV = \twomat{1}{1}{2-i}{2+i}
+					\lambda_1 = -1+i, \; \lambda_2 = -1-i, \qquad \bV = \twomat{1}{1}{2-i}{2+i}
 				</me>.
 				Then 
 				<me>
@@ -762,7 +729,7 @@ set(gca,'dataaspect',[6,1,1])
 				</me>,
 				and then 
 				<md>
-					<mrow> e^{t \bA} \amp = \bV e^{t \bD}  \bV^{-1} = e^{-t}\frac{i}{2}\twomat{1}{1}{2-i}{2+i} \twomat{e^{it}}{0}{0}{e^{-it}} \twomat{-2-i}{1}{2-i}{-1} </mrow>
+					<mrow> e^{t \bA} \amp = e^{-t}\frac{i}{2}\twomat{1}{1}{2-i}{2+i} \twomat{e^{it}}{0}{0}{e^{-it}} \twomat{-2-i}{1}{2-i}{-1} </mrow>
 					<mrow>  \amp = e^{-t}\frac{i}{2}\twomat{e^{it}}{e^{-it}}{(2-i)e^{it}}{(2+i)e^{-it}} \twomat{-2-i}{1}{2-i}{-1} </mrow>
 					<mrow>  \amp = e^{-t}\frac{i}{2} \twomat{-(2+i)e^{it}+(2-i) e^{-it}}{e^{it}-e^{-it}}{-(2-i)(2+i)e^{it}+(2+i)(2-i) e^{-it}}{(2-i)e^{it}-(2+i) e^{-it}} </mrow>
 				</md>. 
@@ -776,7 +743,7 @@ set(gca,'dataaspect',[6,1,1])
 	<subsection xml:id="fs-me-defective">
 		<title>Defective matrix</title>	
 		<p>
-			A defective matrix does not allow any diagonalization.In the 2-by-2 case, this occurs when there is a double eigenvalue and <m>\bA</m> is not diagonal. Fortunately, we have another path for the <m>2\times 2</m> situation. 
+			In the 2-by-2 case, a defective matrix has a double eigenvalue but is not diagonal. In this case we have no clear way to construct the fundamental <m>\bX(t)</m> that gave us the matrix exponential above. Fortunately, we have another reasonable path for the <m>2\times 2</m> situation. 
 		</p>
 		<example>
 			<p>
@@ -799,7 +766,7 @@ set(gca,'dataaspect',[6,1,1])
 			</p>
 		</example>
 		<p>
-			Matters are not nearly so simple for larger matrices, but we won't be going there. 
+			Matters are not so simple for larger matrices, but we won't be going there. 
 		</p>
 	</subsection>
 </section>

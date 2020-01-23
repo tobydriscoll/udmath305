@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-22T16:29:38-05:00    *-->
+<!--*    on 2020-01-23T15:10:18-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,37 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The undamped oscillator \(x''+16x=40e^{-2t}\) has a particular solution whose transform is</p>
+<p>The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{40}{(s+2)(s^2+16)} = \frac{A+Bs}{s^2+16^2} + \frac{C}{s+2}\text{.}
+X_p(s) = \frac{3}{(s^2+9)^2}\text{.}
 \end{equation*}
 </div>
-<p>Clearing the denominators gives the identity</p>
+<p>This doesn't look like anything easy. However, note that</p>
 <div class="displaymath">
 \begin{equation*}
-(A+Bs)(s+2) + C(s^2+16) = 40\text{.}
+sX_p(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frac{d}{ds} \left[ \frac{1}{s^2+9} \right] \text{.}
 \end{equation*}
 </div>
-<p>We need three equations to determine the unknown coefficients. Setting \(s=-2\) quickly gives \(20C=40\text{,}\) so \(C=2\text{.}\) Then setting \(s=\pm 4\) gives the system</p>
-<div class="displaymath">
-\begin{align*}
-(A+4B)(6) \amp = 40 - 64 = -24\\
-(A-4B)(-2) \amp = -24\text{,}
-\end{align*}
-</div>
-<p>or \(A+4B=-4\) and \(A-4B=12\text{.}\) We can add and subtract these equations to get \(2A=8\text{,}\) \(8B=-16\text{,}\) so finally</p>
+<p>Therefore, \(sX_p(s)\) is the transform of \(\frac{1}{2} t \sin(3t)\text{.}\) So this must be \(x_p'(t)\text{.}\) An integration by parts then recovers</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} \text{.}
+x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 \end{equation*}
 </div>
-<p>Hence</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
-\end{equation*}
-</div>
-<span class="incontext"><a href="so-laplace.html#p-379">in-context</a></span>
+<span class="incontext"><a href="so-laplace-repeated.html#p-379">in-context</a></span>
 </body>
 </html>

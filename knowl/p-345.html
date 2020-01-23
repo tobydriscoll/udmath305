@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-22T16:29:38-05:00    *-->
+<!--*    on 2020-01-23T15:10:17-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) We recall the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.7.2: Defective matrix">Subsection 3.7.2</a> and define</p>
+<p>An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is</p>
 <div class="displaymath">
 \begin{equation*}
-\bB = \bA + \frac{b}{2}\bI = \twomat{b/2}{1}{-c}{-b/2} = \twomat{b/2}{1}{-b^2/4}{-b/2}\text{.}
+LI'' + RI' + CI = \mathcal{E}'(t)\text{,}
 \end{equation*}
 </div>
-<p>You can easily check that \(\bB^2=\bzero\text{.}\) Hence</p>
-<div class="displaymath">
-\begin{equation*}
-e^{t\bA} = e^{-(bt/2)\bI} e^{t\bB} = e^{-bt/2}(\bI + t\bB) \text{.}
-\end{equation*}
-</div>
-<p>The general solution is \(e^{t\bA}\bc\text{,}\) but again we need only the first row to get the original \(x=u_1\text{:}\)</p>
-<div class="displaymath">
-\begin{equation*}
-x_h(t) = e^{-bt/2} \left[ c_1 + t\left(c_2 + c_1\frac{b}{2}\right) \right] = e^{-bt/2} \left( c_1 + C_2 t\right)\text{.}
-\end{equation*}
-</div>
-<span class="incontext"><a href="so-homogeneous.html#p-345">in-context</a></span>
+<p>where \(L\) is inductance, \(R\) is resistance, \(C\) is capacitance, and \(I(t)\) is the current flowing through the circuit. The forcing term represents the generator whose voltage (EMF) is \(\mathcal{E}(t)\text{.}\) For alternating current this is modeled as a cosine (or complex exponential) function.</p>
+<span class="incontext"><a href="so-oscillators.html#p-345">in-context</a></span>
 </body>
 </html>

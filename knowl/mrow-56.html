@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-22T16:29:38-05:00    *-->
+<!--*    on 2020-01-23T15:10:17-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,21 +14,10 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-\begin{bmatrix}
-\bA \bv_1 \amp \bA \bv_2 \amp \cdots \amp \bA \bv_n
-\end{bmatrix}
-\amp =
-\begin{bmatrix}
-\lambda_1\bv_1 \amp \lambda_2\bv_2 \amp \cdots \amp \lambda_n\bv_n
-\end{bmatrix}\\
-\bA \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}            \amp =
-\begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}
-\begin{bmatrix} \lambda_1 \amp 0 \amp \cdots \amp 0 \\
-0 \amp \lambda_2 \amp \cdots \amp 0 \\
-\amp \amp \ddots \amp \\
-0 \amp \cdots \amp 0 \amp \lambda_n
-\end{bmatrix}\\
-\bA \bV \amp = \bV \bD 
+e^{t\bA} \amp = \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{1}{1}{2}{-2}^{-1} \\
+\amp = -\frac{1}{4} \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{-2}{-1}{-2}{1} \\
+\amp = -\frac{1}{4} \twomat{e^{3t}}{e^{-t}}{2e^{3t}}{-2e^{-t}} \twomat{-2}{-1}{-2}{1} \\
+\amp = \frac{1}{4} \twomat{2e^{3t}+2e^{-t}}{e^{3t}-e^{-t}}{4e^{3t}-4e^{-t}}{2e^{3t}+2e^{-t}} 
 \end{align*}
 </div>
 <span class="incontext"><a href="fs-matrix-exp.html#mjx-eqn-mrow-56">in-context</a></span>

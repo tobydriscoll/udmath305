@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-22T16:29:38-05:00    *-->
+<!--*    on 2020-01-23T15:10:17-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,28 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's find the exponential of</p>
+<p>The matrix</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \twomat{1}{1}{4}{1}\text{,}
+\bA = \twomat{-1}{1}{0}{-1}
 \end{equation*}
 </div>
-<p>given \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This lets us define</p>
+<p>has a double eigenvalue of \(\lambda=-1\) and is defective. Now consider</p>
 <div class="displaymath">
 \begin{equation*}
-\bV = \twomat{1}{1}{2}{-2}, \qquad \bD = \twomat{3}{0}{0}{-1}\text{.}
+\bB = \bA - \lambda \bI = \twomat{0}{1}{0}{0}\text{.}
 \end{equation*}
 </div>
-<p>Then</p>
+<p>This matrix has the property that \(\bB^2=\bzero\text{.}\) That means the exponential series for it is just</p>
 <div class="displaymath">
-\begin{align*}
-e^{t\bA} \amp = \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{1}{1}{2}{-2}^{-1} \\
-\amp = -\frac{1}{4} \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{-2}{-1}{-2}{1} \\
-\amp = -\frac{1}{4} \twomat{e^{3t}}{e^{-t}}{2e^{3t}}{-2e^{-t}} \twomat{-2}{-1}{-2}{1} \\
-\amp = \frac{1}{4} \twomat{2e^{3t}+2e^{-t}}{e^{3t}-e^{-t}}{4e^{3t}-4e^{-t}}{2e^{3t}+2e^{-t}} \text{.}
-\end{align*}
+\begin{equation*}
+e^{t\bB} = \bI + t\bB = \twomat{1}{t}{0}{1}\text{.}
+\end{equation*}
 </div>
-<p>Not exactly a walk in the park, but doable.</p>
+<p>Finally, we can use <a data-knowl="./knowl/fs-thm-matrixexp.html" title="Theorem 3.7.1: Matrix exponential">Theorem 3.7.1</a> to calculate</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bA} = e^{t\lambda\bI}e^{t(\bA-\lambda\bI)} = e^{-t}\twomat{1}{t}{0}{1}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="fs-matrix-exp.html#p-330">in-context</a></span>
 </body>
 </html>
