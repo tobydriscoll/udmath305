@@ -49,7 +49,7 @@
         Each row of the system is an equation describing a line in the <m>(x,y)</m> plane. The intersection of the lines is the point representing the solution of the system. 
     </p>
     <sidebyside>
-        <program language="matlab" permid="ma_rc_rows">
+        <program language="matlab" xml:id="ma_rc_rows">
         <input>
 A = [ 3 1; -1 3 ];
 b = [7 ; 1];
@@ -81,7 +81,7 @@ xlabel('x'), ylabel('y')
         Vectors are equal only if all their components are equal, so the meaning is unchanged. But it invites a different picture, interpreting <m>x</m> and <m>y</m> as coefficients and making <m>\bb</m> the target.
     </p>
     <sidebyside>
-        <program language="matlab" permid="ma_rc_cols">
+        <program language="matlab" xml:id="ma_rc_cols">
         <input>
 A = [ 3 1; -1 3 ];
 b = [7 ; 1];
@@ -162,7 +162,7 @@ xlabel('b_1'), ylabel('b_2')
         </md>.  
     </p>
     <sidebyside>
-        <program language="matlab" permid="ma_rc_parallel">
+        <program language="matlab" xml:id="ma_rc_parallel">
         <input>
 A = [ 1 2; -2 -4 ];
 b = [1 ; 1];

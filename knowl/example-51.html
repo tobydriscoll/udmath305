@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,10 +13,10 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.6.4</span>.</h6>
+<span class="type">Example</span> <span class="codenumber">3.5.6</span>.</h6>
 <p>Here is a phase plane plot for \(\bA=\twomat{1}{-2}{4}{-3}\text{,}\) which has eigenvalues \(-1\pm 2i\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">A = [1 -2; 4 -3];
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">A = [1 -2; 4 -3];
 [V,D] = eig(A);
 lam = diag(D);
 
@@ -46,7 +46,8 @@ axis([-1.2 1.2 -1.2 1.2]), axis square
 title('stable spiral')
 xlabel('x_1')
 ylabel('x_2')
-</pre></div>
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">3.5.7.</span> </figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fs_pp_spiral.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
 <p>The eigenvectors are complex and don't show up on the plot; there are no purely linear trajectories.</p></article><span class="incontext"><a href="fs-phaseplane.html#example-51">in-context</a></span>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We next want to examine <a data-knowl="./knowl/so-eq-unified.html" title="Equation 4.3.1">(4.3.1)</a> when the forcing function is an exponential:</p>
+<p>We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) We recall the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.6.2: Defective matrix">Subsection 3.6.2</a> and define</p>
 <div class="displaymath">
-\begin{equation}
-x'' + 2 Z \omega_0 x' + \omega_0^2 x = \omega_0^2 e^{rt}\text{.}\tag{4.4.1}
-\end{equation}
+\begin{equation*}
+\bB = \bA + \frac{b}{2}\bI = \twomat{b/2}{1}{-c}{-b/2} = \twomat{b/2}{1}{-b^2/4}{-b/2}\text{.}
+\end{equation*}
 </div>
-<p>We're interested in the undamped and underdamped cases, \(0\le Z \lt 1\text{.}\)</p>
-<span class="incontext"><a href="so-expforcing.html#p-355">in-context</a></span>
+<p>You can easily check that \(\bB^2=\bzero\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bA} = e^{-(bt/2)\bI} e^{t\bB} = e^{-bt/2}(\bI + t\bB) \text{.}
+\end{equation*}
+</div>
+<p>The general solution is \(e^{t\bA}\bc\text{,}\) but again we need only the first row to get the original \(x=u_1\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+x_h(t) = e^{-bt/2} \left[ c_1 + t\left(c_2 + c_1\frac{b}{2}\right) \right] = e^{-bt/2} \left( c_1 + C_2 t\right)\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="so-homogeneous.html#p-355">in-context</a></span>
 </body>
 </html>

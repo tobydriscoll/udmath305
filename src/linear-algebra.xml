@@ -213,6 +213,9 @@
 		</p>
 		<p>
 			The following code performs these operations in MATLAB. Note the square brackets used to define matrices and vectors, and the notation used to access a row or part of a row.
+		</p>
+		<listing xml:id="la_rowops">
+			<caption>Row operations in MATLAB</caption>
 			<program language="matlab">
 				<input>
 					A = [ 1 -1 -1; 3 -2 0; 1 -2 -1 ]
@@ -230,7 +233,7 @@
 					AA(1,2:end) = AA(1,2:end) + AA(2,2:end)
 				</input>
 			</program>
-		</p>
+		</listing>
 	</example>
 	<p>
 		Before we generalize, let's look at an example that works out differently.
@@ -305,6 +308,7 @@
 	<definition xml:id="la-def-phase1">
 		<title>Row elimination Phase 1 (Gaussian elimination)</title>
 		<statement>
+		<p>
 		<ol>
 			<li>Set <m>i=1</m>.</li>
 			<li>Find the leftmost leading nonzero in rows <m>i</m> and below. The column of this leading nonzero is known as the <term>pivot column</term>. If no such column exists, stop.</li>
@@ -312,6 +316,7 @@
 			<li>Add muliples of row <m>i</m> to the rows below it in order to put zeros into the pivot column.</li>
 			<li>Increment <m>i</m> and return to step 2.</li>
 		</ol>
+		</p>
 		</statement>
 	</definition>
 	<p>
@@ -334,11 +339,13 @@
 	<definition xml:id="la-def-phase2">
 		<title>Row elimination Phase 2</title>
 		<statement>
+		<p>
 		<ol>
 			<li>Set <m>i=m</m> (the number of equations).</li>
 			<li>Use multiples of row <m>i</m> to put zeros above the leading 1 in that row.</li>
 			<li>Decrement <m>i</m>. If <m>i\gt 1</m>, return to step 2.</li>
 		</ol>
+		</p>
 		</statement>
 	</definition>
 	<p>
@@ -394,39 +401,41 @@
 		where the <m>x_j</m> are scalars known as <term>coefficients</term> (or <term>weights</term>).
 		</p></statement>
 	  </definition>
-	  <p>
-	  One motivation for this definition is to express linear systems.
-	</p>
-	  <example>
-	  <p>
-	  Consider the system
-	  <md>
-		<mrow>  x_1 - x_2  - x_3 \amp = 2 </mrow>
-		<mrow> 3x_1 - 2x_2 \amp = 9 </mrow>
-		<mrow> x_1 - 2x_2 - x_3 \amp = 5 </mrow>
-	  </md>.
-	  Interpreting vector equalities elementwise, this is equivalent to
-	  <me>
-		x_1 \threevec{1}{3}{1} + x_2 \threevec{-1}{-2}{-2} + x_3 \threevec{-1}{0}{-1} =
-		\threevec{2}{9}{5}
-	  </me>.
-	  We can identify the three vectors on the left side as the columns of the coefficient matrix <m>\bA</m>, and the one on the right is <m>\bb</m>. In an earlier example, we found the solution <m>\bx=[1,-3,2]</m>. Hence
-	  <me>
-		\ba_1 - 3 \ba_2 + 2\ba_3 = \bb
-	  </me>,
-	  where we gave names to the columns. In MATLAB syntax,
-	  <program language="matlab">
-		  <input>
-			A = [ 1 -1 -1; 3 -2 0; 1 -2 -1 ]
-			b = [ 2; 9; 5 ]
-			x = [1; -3; 2 ]
-			x(1)*A(:,1) + x(2)*A(:,2) + x(3)*A(:,3)
-		  </input>
-	  </program>
-	</p>
+		<p>
+	  		One motivation for this definition is to express linear systems.
+		</p>
+	<example>
+		<p>
+			Consider the system
+			<md>
+				<mrow>  x_1 - x_2  - x_3 \amp = 2 </mrow>
+				<mrow> 3x_1 - 2x_2 \amp = 9 </mrow>
+				<mrow> x_1 - 2x_2 - x_3 \amp = 5 </mrow>
+			</md>.
+			Interpreting vector equalities elementwise, this is equivalent to
+			<me>
+				x_1 \threevec{1}{3}{1} + x_2 \threevec{-1}{-2}{-2} + x_3 \threevec{-1}{0}{-1} = \threevec{2}{9}{5}
+			</me>.
+			We can identify the three vectors on the left side as the columns of the coefficient matrix <m>\bA</m>, and the one on the right is <m>\bb</m>. In an earlier example, we found the solution <m>\bx=[1,-3,2]</m>. Hence
+			<me>
+				\ba_1 - 3 \ba_2 + 2\ba_3 = \bb
+			</me>,
+			where we gave names to the columns. In MATLAB syntax,
+		</p>
+		<listing xml:id="la_lincombination">
+			<caption>Linear combination of columns in MATLAB.</caption>
+			<program language="matlab">
+			<input>
+				A = [ 1 -1 -1; 3 -2 0; 1 -2 -1 ]
+				b = [ 2; 9; 5 ]
+				x = [1; -3; 2 ]
+				x(1)*A(:,1) + x(2)*A(:,2) + x(3)*A(:,3)
+			</input>
+			</program>
+		</listing>
 	</example>
-	  </subsection>
-	  <subsection>
+	</subsection>
+	<subsection>
 	  <title>Matrix times vector</title>
 	  <p>
 		The linear combination definition <xref ref="la-va-lincomb"/> actually serves as the foundation of multiplication between a matrix and a vector. We use <m>\Rmn{m}{n}</m> to mean the set of all matrices with <m>m</m> rows and <m>n</m> columns.
@@ -519,6 +528,9 @@
 		</p>
 		<p>
 			MATLAB interprets the <c>*</c> operator to mean multiplication in the sense of matrices and vectors.
+		</p>
+		<listing xml:id="la_matrixmult">
+			<caption>Matrix multiplication in MATLAB.</caption>
 			<program language="matlab">
 				<input>
 					A = [ 1 -1; 0 2; -3 1 ]
@@ -529,7 +541,7 @@
 					A(3,:)*B(:,1)
 				</input>
 			</program>
-		</p>
+		</listing>
 	 </example>
 	 </subsection>
 	 <subsection>
@@ -553,14 +565,15 @@
 		<example>
 			<p>
 				These properties are easy to demonstrate (not prove!) in MATLAB. Any undefined matrix operation throws an error.
+			</p>
+			<listing xml:id="la_algprops">
 				<program language="matlab">
 					<input>
 						A = [ 1 -1; 0 2; -3 1 ]
 						B = [ 2 -1 0 4; 1 1 3 2 ]
 
 						A*B
-						B*A
-						A-B
+						%B*A  % causes an error
 
 						size(B)
 						size(A)
@@ -579,7 +592,7 @@
 						( (A+B)*C ) - ( A*C + B*C )
 					</input>
 				</program>
-			</p>
+			</listing>
 		</example>
 	</subsection>
 	<subsection>
@@ -849,12 +862,16 @@
 				</p>
 				<p>
 					MATLAB has a <c>null</c> command that produces a basis of the nullspace.
+				</p>
+				<listing xml:id="la_nullspace">
 					<program language="matlab">
 						<input>
 							A = [ 1 1 -1; 2 2 1; -1 -1 4 ]
 							null(A)
 						</input>
 					</program>
+				</listing>
+				<p>
 					This is equivalent to the answer we gave above, just with a different normalization of the vector.
 				</p>
 		  </example>
@@ -966,6 +983,8 @@
 			<example>
 				<p>
 					MATLAB does have an <c>inv</c> command to find an inverse. However, it's not considered the best way to solve a linear system (it will be much slower for large matrices).
+				</p>
+				<listing xml:id="la_linsolve">
 					<program language="matlab">
 						<input>
 							A = magic(3)
@@ -975,6 +994,8 @@
 							b - A*x
 						</input>
 					</program>
+				</listing>
+				<p>
 					MATLAB works with 16-digit approximations of real numbers, so things that are truly equal in exact arithmetic may only agree to many significant digits. Usually it's best to take the difference of two things to test near-equality.
 				</p>
 			</example>
@@ -1213,6 +1234,8 @@
 			</p>
 			<p>
 				MATLAB computes eigenvalues and eigenvectors (through an entirely different process) with the <c>eig</c> command.
+			</p>
+			<listing xml:id="la_eig">
 				<program language="matlab">
 					<input>
 						A = [ 1 1; 4 1 ];
@@ -1221,6 +1244,8 @@
 						[V,D] = eig(A)
 					</input>
 				</program>
+			</listing>
+			<p>
 				In the second format (two outputs), the eigenvalues are on the diagonal of <c>D</c>. The corresponding columns of <c>V</c> are basis vectors for their eigenspaces, provided those are one-dimensional.
 			</p>
 			<aside>

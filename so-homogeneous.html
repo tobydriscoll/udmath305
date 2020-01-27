@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -176,7 +176,6 @@ var js_version = 0.12;
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
 <li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
-<li><a href="fs-complex-eigenvalues.html" data-scroll="fs-complex-eigenvalues">Complex solutions</a></li>
 <li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
@@ -209,7 +208,7 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-homogeneous"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Homogeneous problem</span>
 </h2>
-<a href="so-homogeneous.html" class="permalink">¶</a><p id="p-339">The general solution of \(x'' + bx' + cx = f(t)\) consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem. For the homogeneous part the relevant matrix is from <a data-knowl="./knowl/so-eq-matrixmodel.html" title="Equation 4.1.4">(4.1.4)</a>:</p>
+<a href="so-homogeneous.html" class="permalink">¶</a><p id="p-353">The general solution of \(x'' + bx' + cx = f(t)\) consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem. For the homogeneous part the relevant matrix is from <a data-knowl="./knowl/so-eq-matrixmodel.html" title="Equation 4.1.4">(4.1.4)</a>:</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \twomat{0}{1}{-c}{-b}\text{.}
@@ -222,7 +221,7 @@ var js_version = 0.12;
 \end{equation*}
 </div>
 <p>(This is easily remembered in terms of the original ODE \(x'' + bx' + cx=0\text{.}\)) The eigenvalues can therefore be found from the quadratic formula.</p>
-<p id="p-340">To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
+<p id="p-354">To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
 <div class="displaymath">
 \begin{equation*}
 \bu_h(t) = c_1 e^{\lambda_1 t} \twovec{1}{\lambda_1} + c_2 e^{\lambda_2 t} \twovec{1}{\lambda_2}\text{.}
@@ -234,7 +233,7 @@ var js_version = 0.12;
 x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \qquad \text{if } \lambda_1\neq\lambda_2\text{.}
 \end{equation*}
 </div>
-<p id="p-341">We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) We recall the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.7.2: Defective matrix">Subsection 3.7.2</a> and define</p>
+<p id="p-355">We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) We recall the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.6.2: Defective matrix">Subsection 3.6.2</a> and define</p>
 <div class="displaymath">
 \begin{equation*}
 \bB = \bA + \frac{b}{2}\bI = \twomat{b/2}{1}{-c}{-b/2} = \twomat{b/2}{1}{-b^2/4}{-b/2}\text{.}

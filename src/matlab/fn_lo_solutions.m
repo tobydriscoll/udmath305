@@ -13,7 +13,7 @@
 			xlabel('t'), ylabel('x(t)')
 			set(gca,'ygrid','on',...
 			'ytick',K*(0:.25:1),'yticklabel',{'0','','0.5K','','K'})
-		
+			
       if length(get(0,'children')) > 0
         set(gcf,'paperpos',[0 0 5 2.75])
         print -dsvg fn_lo_solutions.svg

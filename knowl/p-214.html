@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In an initial value problem, we can use the growth factor to modify the variation of parameters formula:</p>
-<div class="displaymath">
-\begin{equation}
-x(t) = G(t_0,t)x_0 + \int_{t_0}^t G(s,t) f(s)\, ds\text{.}\tag{2.5.1}
-\end{equation}
-</div>
-<p>We can use <a data-knowl="./knowl/fl-thm-growthfactor.html" title="Theorem 2.4.3: Growth factor">Theorem 2.4.3</a> to show that this is the desired solution. First, \(x(t_0)=G(t_0,t_0)x_0 + 0 = x_0\text{,}\) as required. The derivative is a little tricky, as it requries an extension of the Fundamental Theorem of Calculus:</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{d}{dt} \int_{t_0}^t G(s,t) f(s)\, ds = G(t,t)f(t) + \int_{t_0}^t \frac{d}{dt} \left[ G(s,t)f(s) \right]\, ds  = f(t) + a(t)  \int_{t_0}^t G(s,t) f(s)\, ds\text{.}
-\end{equation*}
-</div>
+<p>In this and the next section we turn to looking for particular solutions of the first-order linear ODE \(x'-a(t)x=f(t)\text{,}\) or \(\opA[x]=f\text{.}\) We start here with an all-purpose method, and then look at a method that's a bit simpler for the most common problems.</p>
 <span class="incontext"><a href="fl-varparam.html#p-214">in-context</a></span>
 </body>
 </html>

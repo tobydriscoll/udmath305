@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>MATLAB does have an <code class="code-inline tex2jax_ignore">inv</code> command to find an inverse. However, it's not considered the best way to solve a linear system (it will be much slower for large matrices). <pre class="prettyprint lang-matlab">A = magic(3)
-b = [ 1; 6; -2 ]
-
-x = A\b
-b - A*x
-</pre> MATLAB works with 16-digit approximations of real numbers, so things that are truly equal in exact arithmetic may only agree to many significant digits. Usually it's best to take the difference of two things to test near-equality.</p>
+<p>If \(\bA\in\Rmn{n}{n}\) is invertible, then we can use its inverse to solve a linear system \(\bA\bx=\bb\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bA^{-1} \bb = \bA^{-1} (\bA \bx) = \bigl(  \bA^{-1} \bA \bigr) \bx = \bI \bx = \bx\text{.}
+\end{equation*}
+</div>
+<p>The uniqueness of the inverse means that this solution is unique as well. We will see later on that the converse is also true: unique solution implies invertibility.</p>
 <span class="incontext"><a href="la-inverse.html#p-105">in-context</a></span>
 </body>
 </html>

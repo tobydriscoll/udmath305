@@ -586,7 +586,8 @@
 			The following grabs and plots the closing price of Bitcoin for the last 31 days.
 		</p>
 			<sidebyside>
-	 			<program language="matlab" xml:id="so_conv_bitcoin1">
+			<listing  xml:id="so_conv_bitcoin1">
+	 			<program language="matlab">
 	    			<input>
 %bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
 %data = jsondecode(bc);
@@ -596,14 +597,15 @@ v = cat(1,v{:});
 plot(v,'-o')
 					</input>
 				</program>
+				</listing>
 				<image source="matlab/so_conv_bitcoin1.svg"/>	  
 			</sidebyside>
-
 			<p>
 				It's a noisy curve. We can smooth that out by taking 4-day moving averages, for example. I don't claim that this is the best way, but we can do this by:
 			</p>
 			<sidebyside>
-	 			<program language="matlab" xml:id="so_conv_bitcoin2">
+				<listing  xml:id="so_conv_bitcoin2">
+	 			<program language="matlab">
 	    			<input>
 %bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
 %data = jsondecode(bc);
@@ -618,6 +620,7 @@ z(1:3) = NaN;  % not a number
 hold on, plot(z,'-o')
 					</input>
 				</program>
+				</listing>
 				<image source="matlab/so_conv_bitcoin2.svg"/>	  
 			</sidebyside>
 
@@ -625,7 +628,8 @@ hold on, plot(z,'-o')
 				We might decide, however, to weight the most recent values more heavily. Here's how this might look.
 			</p>
 			<sidebyside>
-	 			<program language="matlab" xml:id="so_conv_bitcoin3">
+				<listing xml:id="so_conv_bitcoin3">
+	 			<program language="matlab">
 	    			<input>
 %bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
 %data = jsondecode(bc);
@@ -641,6 +645,7 @@ z(1:3) = NaN;  % not a number
 hold on, plot(z,'-o')
 					</input>
 				</program>
+				</listing>
 				<image source="matlab/so_conv_bitcoin3.svg"/>	  
 			</sidebyside>
 			<p>

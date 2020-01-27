@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The <dfn class="terminology">algebraic multiplicity</dfn> of an eigenvalue is its multiplicity as a root of the characteristic polynomial.</p>
+<p>Consider \(\bA=\twomat{4}{0}{1}{4}\text{.}\) The characteristic polynomial is</p>
+<div class="displaymath">
+\begin{equation*}
+\twodet{4-\lambda}{0}{1}{4-\lambda} = (4-\lambda)^2\text{,}
+\end{equation*}
+</div>
+<p>so \(\lambda_1=4\) is the only eigenvalue. Since</p>
+<div class="displaymath">
+\begin{equation*}
+\bA - 4\bI = \twomat{0}{0}{1}{0}\text{,}
+\end{equation*}
+</div>
+<p>the nullspace consists of all vectors \(\twovec{0}{s}\text{,}\) i.e., it is \(\span\left(\twovec{0}{1}\right)\text{.}\)</p>
 <span class="incontext"><a href="la-eigen.html#p-158">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:18-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Put it all together and you have some important theoretical connections. The solution to any forced problem is a convolution of the forcing function with the impulse response in the time domain, and the product of the forcing and the transfer function in the \(s\) domain. Finally, the transfer function is just the reciprocal of the characteristic polynomial.</p>
-<span class="incontext"><a href="so-convolutions.html#p-398">in-context</a></span>
+<p>For a harmonically forced case such as \(x''+2x'+10x=\cos(2t)\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{s}{(s^2+4)(s^2+2s+10)}\text{.}
+\end{equation*}
+</div>
+<p>We could find a decomposition in the form</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{2A+Bs}{s^2+4} + \frac{3C+E(s+1)}{(s+1)^2+9}\text{,}
+\end{equation*}
+</div>
+<p>which is eminently invertible. The details are left to the proverbial reader.</p>
+<span class="incontext"><a href="so-laplace-repeated.html#p-398">in-context</a></span>
 </body>
 </html>

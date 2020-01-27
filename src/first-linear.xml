@@ -39,7 +39,9 @@
 			Exponential growth is most naturally plotted on a log-linear graph, in which case the solution is a straight line with positive slope. Because of the log scale, a <q>difference</q> in the <m>y</m>-coordinate is actually a multiplicative factor in the solution. Thus each unit of time applies a constant multiplier of growth. 
 		</p>
 		<sidebyside>
-			<program language="matlab" xml:id="fo_intro_const_growth">
+			<listing xml:id="fo_intro_const_growth">
+			<caption>Exponential growth.</caption>
+			<program language="matlab">
 			<input>
 				x = @(t) exp(t);
 				fplot(x,[0,4]), set(gca,'yscale','log')
@@ -47,6 +49,7 @@
 				title('Exponential growth')
 			</input>
 			</program>
+			</listing>
 			<image source="matlab/fo_intro_const_growth.svg"/>
 		</sidebyside>
 	</example>
@@ -64,7 +67,8 @@
 			Exponential decay is most naturally plotted on a log-linear graph, in which case the solution is a straight line with negative slope. 
 		</p>
 		<sidebyside>
-			<program language="matlab" xml:id="fo_intro_const_decay">
+			<listing xml:id="fo_intro_const_decay">
+			<program language="matlab">
 			<input>
 				x = @(t) exp(-t);
 				fplot(x,[0,4]), set(gca,'yscale','log')
@@ -72,6 +76,7 @@
 				title('Exponential decay')
 			</input>
 			</program>
+			</listing>
 			<image source="matlab/fo_intro_const_decay.svg"/>
 		</sidebyside>
 
@@ -84,7 +89,8 @@
 		In this case we are back to a positive growth rate for positive solution values. In fact, the growth rate increases with time as well as with the solution itself. You can verify that <m>x=e^{t^2}</m> is a solution, and indeed this grows at a "super-exponential" rate.
 		</p>
 		<sidebyside>
-			<program language="matlab" xml:id="fo_intro_var_growth">
+			<listing  xml:id="fo_intro_var_growth">	
+			<program language="matlab">
 			<input>
 				x = @(t) exp(t.^2);
 				fplot(x,[0,4]), set(gca,'yscale','log')
@@ -92,6 +98,7 @@
 				title('Variable growth')
 			</input>
 			</program>
+			</listing>
 			<image source="matlab/fo_intro_var_growth.svg"/>
 		</sidebyside>
 
@@ -104,7 +111,8 @@
 			This is our first example featuring a nonlinear term in the variable <m>x</m>. As a rule, nonlinear ODEs are much harder to solve and have less mathematical structure than linear problems. This particular example isn't so tough, though; you can check that <m>x=1/(1-t)</m> is a solution. Note that the growth is even faster--literally off the charts as <m>t\to 1</m>. 
 		</p>
 		<sidebyside>
-			<program language="matlab" xml:id="fo_intro_nonlin_growth">
+			<listing xml:id="fo_intro_nonlin_growth">
+			<program language="matlab">
 			<input>
 				x = @(t) 1./(1-t);
 				fplot(x,[0,1]), set(gca,'yscale','log')
@@ -112,6 +120,7 @@
 				title('Nonlinear growth')
 			</input>
 			</program>
+			</listing>
 			<image source="matlab/fo_intro_nonlin_growth.svg"/>
 		</sidebyside>
 		<aside>
@@ -722,7 +731,8 @@ title('Solution of a linear problem')
 				</me>. 
 			</p>
 			<sidebyside>
-				<program language="matlab" xml:id="fo_lcc_window">
+				<listing xml:id="fo_lcc_window">
+				<program language="matlab">
 					<input>
 					step = @(t) double(t>0);
 					dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
@@ -731,11 +741,13 @@ title('Solution of a linear problem')
 					xlabel('t'), ylabel('y(t)')
 					title('Window forcing')
 					</input>
-			</program>
-			<image source="matlab/fo_lcc_window.svg"/>	  
+				</program>
+				</listing>
+				<image source="matlab/fo_lcc_window.svg"/>	  
 			</sidebyside>
 			<sidebyside>
-				<program language="matlab" xml:id="fo_lcc_window_2">
+				<listing xml:id="fo_lcc_window_2">
+				<program language="matlab">
 					<input>
 					step = @(t) double(t>0);
 					dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
@@ -744,7 +756,8 @@ title('Solution of a linear problem')
 					xlabel('t'), ylabel('y(t)')
 					title('Window forcing (semi-log)')
 					</input>
-			</program>
+				</program>
+				</listing>
 			<image source="matlab/fo_lcc_window_2.svg"/>	  
 			</sidebyside>
 		</example>
@@ -802,7 +815,8 @@ title('Solution of a linear problem')
 				If <m>t \lt 2</m>, the integration interval does not contain the impulse, so the solution is just <m>e^{-5t}</m>. But if <m>t \gt 2</m>, <m>x(t) = e^{-5t} + 3 e^{-5(t-2)}</m>.
 			</p>
 				<sidebyside>
-					<program language="matlab" xml:id="fo_lcc_impulse">
+					<listing xml:id="fo_lcc_impulse">
+					<program language="matlab">
 						<input>
 						dydt = @(t,y) -5*y;
 						[t1,y1] = ode45(dydt,[0,2],1);
@@ -814,11 +828,13 @@ title('Solution of a linear problem')
 						xlabel('t'), ylabel('y(t)')
 						title('Impulse forcing')
 						</input>
-				</program>
+					</program>
+					</listing>
 				<image source="matlab/fo_lcc_impulse.svg"/>	  
 				</sidebyside>
 				<sidebyside>
-					<program language="matlab" xml:id="fo_lcc_impulse_2">
+					<listing xml:id="fo_lcc_impulse_2">
+					<program language="matlab">
 						<input>
 						dydt = @(t,y) -5*y;
 						[t1,y1] = ode45(dydt,[0,2],1);
@@ -827,7 +843,8 @@ title('Solution of a linear problem')
 						xlabel('t'), ylabel('y(t)')
 						title('Impulse forcing (semi-log)')
 						</input>
-				</program>
+					</program>
+					</listing>
 				<image source="matlab/fo_lcc_impulse_2.svg"/>	  
 				</sidebyside> 
 		</example>   
@@ -909,15 +926,17 @@ title('Solution of a linear problem')
 	<introduction>
 	<p>
 		There is a shorthand method for deriving the solutions of linear, constant-coefficient equations that have forcing functions such as exponentials, steps, and impulses. Given (almost) any function <m>f(t)</m>, there is a doppelganger function <m>F(s)</m> defined by an integral. 
-		<definition xml:id="fl-df-laplace">
-			<title>Laplace transform</title>
-			<statement><p>
-				The <idx>Laplace transform</idx><term>Laplace transform</term> of a function <m>f(t)</m> is defined as 
-				<men xml:id="so-lap-lxform">
-					\lx[f(t)] = F(s) = \int_0^\infty f(t) e^{-st}\, dt
-				</men>. 
-			</p></statement>
-		</definition>
+	</p>
+	<definition xml:id="fl-df-laplace">
+		<title>Laplace transform</title>
+		<statement><p>
+			The <idx>Laplace transform</idx><term>Laplace transform</term> of a function <m>f(t)</m> is defined as 
+			<men xml:id="so-lap-lxform">
+				\lx[f(t)] = F(s) = \int_0^\infty f(t) e^{-st}\, dt
+			</men>. 
+		</p></statement>
+	</definition>
+	<p>
 		In this business, time starts at <m>t=0</m>, and any reference to <m>f(t)</m> for negative <m>t</m> is defined to be zero. A convention is that a lowercase function of <m>t</m> transforms to its uppercase namesake as a function of <m>s</m>. (Another convention is that <m>\lx</m> is used with curly braces, but we have already commited to using square brackets for operators.) 
 	</p>
 	<fact>

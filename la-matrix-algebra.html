@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:16-05:00    *-->
+<!--*    on 2020-01-27T16:53:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -176,7 +176,6 @@ var js_version = 0.12;
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
 <li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
-<li><a href="fs-complex-eigenvalues.html" data-scroll="fs-complex-eigenvalues">Complex solutions</a></li>
 <li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
@@ -212,12 +211,12 @@ var js_version = 0.12;
 <a href="la-matrix-algebra.html" class="permalink">¶</a><section class="subsection" id="subsection-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">Matrix multiplication</span>
 </h3>
-<p id="p-42">Addition and scalar multiplication of matrices is exactly the same as for vectors—elementwise. Things get interesting when we get to matrix products.</p>
-<p id="p-43">In order to define the product \(\bA\bB\text{,}\) we require that the number of <em class="emphasis">columns</em> in \(\bA\) is the same as the number of <em class="emphasis">rows</em> in \(\bB\text{.}\) We say that the <em class="emphasis">inner dimensions</em> must agree; otherwise, the product is considered undefined.</p>
+<p id="p-44">Addition and scalar multiplication of matrices is exactly the same as for vectors—elementwise. Things get interesting when we get to matrix products.</p>
+<p id="p-45">In order to define the product \(\bA\bB\text{,}\) we require that the number of <em class="emphasis">columns</em> in \(\bA\) is the same as the number of <em class="emphasis">rows</em> in \(\bB\text{.}\) We say that the <em class="emphasis">inner dimensions</em> must agree; otherwise, the product is considered undefined.</p>
 <article class="definition definition-like" id="definition-6"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.4.1</span>. <span class="title">Matrix times matrix.</span>
 </h6>
-<p id="p-44">If \(\bA\) is \(m\times n\) and \(\bB\) is \(n\times p\text{,}\) then the product \(\bA\bB\) is defined as</p>
+<p id="p-46">If \(\bA\) is \(m\times n\) and \(\bB\) is \(n\times p\text{,}\) then the product \(\bA\bB\) is defined as</p>
 <div class="displaymath">
 \begin{equation}
 \bA\mathbf{B} =
@@ -228,15 +227,15 @@ var js_version = 0.12;
 \bA\mathbf{b}_1 \amp \bA\mathbf{b}_2 \amp \cdots \amp \bA\mathbf{b}_p
 \end{bmatrix}\text{.}\label{la-eq-matmat}\tag{1.4.1}
 \end{equation}
-</div></article><p id="p-45">In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix. Note that when we multiply \(m\times n\) by \(n\times p\text{,}\) the result is \(m\times p\text{;}\) that is, the <em class="emphasis">outer dimensions</em> remain.</p>
-<p id="p-46">When we compute a matrix product by hand, we usually don't write out the above. Instead we use a more compact definition for the individual entries of \(\bC = \bA\bB\text{,}\)</p>
+</div></article><p id="p-47">In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix. Note that when we multiply \(m\times n\) by \(n\times p\text{,}\) the result is \(m\times p\text{;}\) that is, the <em class="emphasis">outer dimensions</em> remain.</p>
+<p id="p-48">When we compute a matrix product by hand, we usually don't write out the above. Instead we use a more compact definition for the individual entries of \(\bC = \bA\bB\text{,}\)</p>
 <div class="displaymath">
 \begin{equation}
 C_{ij} = \sum_{k=1}^n A_{ik}B_{kj}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text{.}\label{la-eq-matmatinner}\tag{1.4.2}
 \end{equation}
 </div>
 <article class="example example-like" id="example-7"><a data-knowl="" class="id-ref" data-refid="hk-example-7"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.4.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-7"><article class="example example-like"><p id="p-47">Let</p>
+<span class="type">Example</span> <span class="codenumber">1.4.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-7"><article class="example example-like"><p id="p-49">Let</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix}
@@ -260,7 +259,7 @@ C_{ij} = \sum_{k=1}^n A_{ik}B_{kj}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text
 \end{bmatrix}\text{.}
 \end{align*}
 </div>
-<p id="p-48">Observe that</p>
+<p id="p-50">Observe that</p>
 <div class="displaymath">
 \begin{equation*}
 \bA \begin{bmatrix} 2 \\ 1 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ 0 \\ -3
@@ -269,31 +268,33 @@ C_{ij} = \sum_{k=1}^n A_{ik}B_{kj}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p\text
 \end{equation*}
 </div>
 <p>and so on.</p>
-<p id="p-49">MATLAB interprets the <code class="code-inline tex2jax_ignore">*</code> operator to mean multiplication in the sense of matrices and vectors. <pre class="prettyprint lang-matlab">A = [ 1 -1; 0 2; -3 1 ]
+<p id="p-51">MATLAB interprets the <code class="code-inline tex2jax_ignore">*</code> operator to mean multiplication in the sense of matrices and vectors.</p>
+<figure class="listing figure-like" id="la_matrixmult"><pre class="prettyprint lang-matlab">A = [ 1 -1; 0 2; -3 1 ]
 B = [ 2 -1 0 4; 1 1 3 2 ]
 
 A*B
 
 A(3,:)*B(:,1)
-</pre></p></article></div></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">1.4.3.</span> Matrix multiplication in MATLAB.</figcaption></figure></article></div></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">Properties</span>
 </h3>
-<p id="p-50">First, the bad news. In the previous subsection we computed the product \(\bA\bB\text{,}\) where the matrices are \(3\times 2\) and \(2\times 4\text{,}\) to get a result that is \(3\times 4\text{.}\) However, the product \(\bB\bA\) isn't even defined, because \(4\neq 3\text{.}\) Moreover, even when both \(\bA\bB\) and \(\bB\bA\) <em class="emphasis">are</em> defined, we cannot automatically expect them to be equal. You may have to unlearn some very old habits.</p>
-<aside class="aside aside-like" id="aside-4"><p id="p-51">In a product of matrices (and vectors), position matters. You cannot change the ordering without an explicit justification!</p></aside><article class="fact theorem-like" id="fact-1"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">1.4.3</span>.</h6>
-<p id="p-52">Matrix multiplication is not commutative. That is, the order of terms in a product affects the result.</p></article><p id="p-53">Fortunately, other familiar properties of multiplication do come along for the ride:</p>
+<p id="p-52">First, the bad news. In the previous subsection we computed the product \(\bA\bB\text{,}\) where the matrices are \(3\times 2\) and \(2\times 4\text{,}\) to get a result that is \(3\times 4\text{.}\) However, the product \(\bB\bA\) isn't even defined, because \(4\neq 3\text{.}\) Moreover, even when both \(\bA\bB\) and \(\bB\bA\) <em class="emphasis">are</em> defined, we cannot automatically expect them to be equal. You may have to unlearn some very old habits.</p>
+<aside class="aside aside-like" id="aside-4"><p id="p-53">In a product of matrices (and vectors), position matters. You cannot change the ordering without an explicit justification!</p></aside><article class="fact theorem-like" id="fact-1"><h6 class="heading">
+<span class="type">Fact</span> <span class="codenumber">1.4.4</span>.</h6>
+<p id="p-54">Matrix multiplication is not commutative. That is, the order of terms in a product affects the result.</p></article><p id="p-55">Fortunately, other familiar properties of multiplication do come along for the ride:</p>
 <ol class="decimal">
 <li id="li-28">\(\displaystyle (\bA\bB)\bC=\bA(\bB\bC)\)</li>
 <li id="li-29">\(\displaystyle \bA(\bB+\bC) = \bA\bB + \bA\bC\)</li>
 <li id="li-30">\(\displaystyle (\bA+\bB)\bC = \bA\bC + \bB\bC\)</li>
 </ol>
 <article class="example example-like" id="example-8"><a data-knowl="" class="id-ref" data-refid="hk-example-8"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.4.4</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-8"><article class="example example-like"><p id="p-54">These properties are easy to demonstrate (not prove!) in MATLAB. Any undefined matrix operation throws an error. <pre class="prettyprint lang-matlab">A = [ 1 -1; 0 2; -3 1 ]
+<span class="type">Example</span> <span class="codenumber">1.4.5</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-8"><article class="example example-like"><p id="p-56">These properties are easy to demonstrate (not prove!) in MATLAB. Any undefined matrix operation throws an error.</p>
+<figure class="listing figure-like" id="la_algprops"><pre class="prettyprint lang-matlab">A = [ 1 -1; 0 2; -3 1 ]
 B = [ 2 -1 0 4; 1 1 3 2 ]
 
 A*B
-B*A
-A-B
+%B*A  % causes an error
 
 size(B)
 size(A)
@@ -310,14 +311,15 @@ C = round(10*rand(4,4))
 ( A*(B+C) ) - ( A*B + A*C )
 
 ( (A+B)*C ) - ( A*C + B*C )
-</pre></p></article></div></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">1.4.6.</span> </figcaption></figure></article></div></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.3</span> <span class="title">Identity matrix</span>
 </h3>
-<p id="p-55">It's pretty immediate that for any square matrix \(\bA\text{,}\) \(\bA\boldsymbol{0}=\boldsymbol{0}\bA=\boldsymbol{0}\) for the all-zero square matrix \(\boldsymbol{0}\) of approrpiate size. So we have a multiplicative zero. But the situation is a bit less obvious when it comes to a multiplicative unit element (the counterpart of the scalar 1).</p>
+<p id="p-57">It's pretty immediate that for any square matrix \(\bA\text{,}\) \(\bA\boldsymbol{0}=\boldsymbol{0}\bA=\boldsymbol{0}\) for the all-zero square matrix \(\boldsymbol{0}\) of approrpiate size. So we have a multiplicative zero. But the situation is a bit less obvious when it comes to a multiplicative unit element (the counterpart of the scalar 1).</p>
 <article class="definition definition-like" id="definition-7"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.4.5</span>. <span class="title">Identity matrix.</span>
+<span class="type">Definition</span> <span class="codenumber">1.4.7</span>. <span class="title">Identity matrix.</span>
 </h6>
-<p id="p-56">The \(n\times n\)  <dfn class="terminology">identity matrix</dfn> is</p>
+<p id="p-58">The \(n\times n\)  <dfn class="terminology">identity matrix</dfn> is</p>
 <div class="displaymath">
 \begin{equation*}
 \bI = \begin{bmatrix}
@@ -328,8 +330,8 @@ C = round(10*rand(4,4))
 0 \amp \cdots \amp 0 \amp 0 \amp 1
 \end{bmatrix}\text{.}
 \end{equation*}
-</div></article><p id="p-57">The definition of the identity is such that \(\bA\bI=\bA\) for all \(\bA\in\Rmn{m}{n}\) and \(\bI\bB=\bB\) for all \(\bB\in\Rmn{n}{p}\text{.}\) This includes vectors, i.e., \(\bI\bx=\bx\) for all \(\bx \in \Rn{n}\text{.}\)</p>
-<p id="p-58">The MATLAB command to create an identity matrix is <code class="code-inline tex2jax_ignore">eye</code>.</p></section></section></div></main>
+</div></article><p id="p-59">The definition of the identity is such that \(\bA\bI=\bA\) for all \(\bA\in\Rmn{m}{n}\) and \(\bI\bB=\bB\) for all \(\bB\in\Rmn{n}{p}\text{.}\) This includes vectors, i.e., \(\bI\bx=\bx\) for all \(\bx \in \Rn{n}\text{.}\)</p>
+<p id="p-60">The MATLAB command to create an identity matrix is <code class="code-inline tex2jax_ignore">eye</code>.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

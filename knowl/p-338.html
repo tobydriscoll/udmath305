@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Our main item of business is the linear, constant-coefficient model problem</p>
+<p>For a nondefective \(\bA\text{,}\) <a data-knowl="./knowl/fs-thm-eigensolution.html" title="Theorem 3.3.1: Solution by eigenvectors">Theorem 3.3.1</a> guarantees that</p>
 <div class="displaymath">
-\begin{equation}
-x'' + bx' + cx = f(t)\text{,}\tag{4.1.3}
-\end{equation}
+\begin{equation*}
+\bX(t) = \begin{bmatrix} e^{t\lambda_1}\bv_1 \amp e^{t\lambda_2}\bv_2 \amp \cdots \amp e^{t\lambda_n}\bv_n \end{bmatrix}  
+\end{equation*}
 </div>
-<p>for which the conversion process with \(u_1=x\text{,}\) \(u_2=x'\) yields</p>
+<p>is a fundamental matrix for the ODE \(\bx'=\bA\bx\text{,}\) where the \((\lambda_j,\bv_j)\) are eigenpairs. If we now define</p>
 <div class="displaymath">
-\begin{equation}
-\twovec{u_1'}{u_2'} = \twovec{u_2}{f(t)-cx_1-bx_2} = \twomat{0}{1}{-c}{-b} \bu + \twovec{0}{f(t)}\text{,}\tag{4.1.4}
-\end{equation}
+\begin{equation*}
+\bY(t) = \bX(t) \bX(0)^{-1}\text{,}
+\end{equation*}
 </div>
-<p>which has the form \(\bu'=\bA\bu+\bff(t)\text{.}\) Thus everything from the last chapter is again in play.</p>
-<span class="incontext"><a href="so-convert.html#p-338">in-context</a></span>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+\bY'(t) = \bX'(t) \bX(0)^{-1} = \bA \bX(t) \bX(0)^{-1} = \bA \bY(t)\text{,}
+\end{equation*}
+</div>
+<p>so \(\bY(t)\) is a fundamental matrix as well. But also \(\bY(0)=\bX(0)\bX(0)^{-1}=\bI\text{,}\) so in fact \(\bY(t)\) is the matrix exponential.</p>
+<span class="incontext"><a href="fs-matrix-exp.html#p-338">in-context</a></span>
 </body>
 </html>

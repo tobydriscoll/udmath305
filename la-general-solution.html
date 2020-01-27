@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:16-05:00    *-->
+<!--*    on 2020-01-27T16:53:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -176,7 +176,6 @@ var js_version = 0.12;
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
 <li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
-<li><a href="fs-complex-eigenvalues.html" data-scroll="fs-complex-eigenvalues">Complex solutions</a></li>
 <li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
@@ -209,14 +208,14 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="la-general-solution"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">General and particular solutions</span>
 </h2>
-<a href="la-general-solution.html" class="permalink">¶</a><section class="introduction" id="introduction-1"><p id="p-59">Our next goal is to show that solutions to \(\bA\bx=\bb\) can all be expressed as \(\bx=\bx_h+\bx_p\text{,}\) with the two parts belonging to different sets. The same thing is going to happen when we study differential equations, pretty much for exactly the same reasons.</p></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
+<a href="la-general-solution.html" class="permalink">¶</a><section class="introduction" id="introduction-1"><p id="p-61">Our next goal is to show that solutions to \(\bA\bx=\bb\) can all be expressed as \(\bx=\bx_h+\bx_p\text{,}\) with the two parts belonging to different sets. The same thing is going to happen when we study differential equations, pretty much for exactly the same reasons.</p></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.5.1</span> <span class="title">Homogeneous solutions</span>
 </h3>
-<p id="p-60">The linear system \(\bA\bx=\bzero\) plays a special role and is called a  <dfn class="terminology">homoegeneous linear system</dfn>.</p>
+<p id="p-62">The linear system \(\bA\bx=\bzero\) plays a special role and is called a  <dfn class="terminology">homoegeneous linear system</dfn>.</p>
 <article class="theorem theorem-like" id="la-gs-homolincomb"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.5.1</span>. <span class="title">Homogeneous linear systems.</span>
 </h6>
-<p id="p-61">If \(\bx_1,\ldots,\bx_k\) are solutions of a homogeneous system \(\bA\bx=\bzero\text{,}\) then every linear combination of them is also a solution.</p></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-62">Let \(c_1\bx_1 + \cdots + c_k\bx_k\) be such a linear combination. Then</p>
+<p id="p-63">If \(\bx_1,\ldots,\bx_k\) are solutions of a homogeneous system \(\bA\bx=\bzero\text{,}\) then every linear combination of them is also a solution.</p></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-64">Let \(c_1\bx_1 + \cdots + c_k\bx_k\) be such a linear combination. Then</p>
 <div class="displaymath">
 \begin{align*}
 \bA(c_1\bx_1 + \cdots + c_k\bx_k) \amp = \bA(c_1 \bx_1 ) + \cdots + \bA(c_k \bx_k) \\
@@ -224,10 +223,10 @@ var js_version = 0.12;
 \amp = \bzero\text{.}
 \end{align*}
 </div></article></div>
-<p id="p-63">By itself this is nice, but what makes this theorem important is that <em class="emphasis">every</em> homogeneous solution can obtained this way. There is some geometric intuition in three dimensions. Each row of \(\bA\bx=\bzero\) is a plane through the origin. Typically three planes intersect at a single point (unique solution), but if two planes coincide, the intersection is a straight line through the origin. We can express such a line as the set of all possible \(c_1\bx_1\) for any vector \(\bx_1\) parallel to the line. Furthermore, if all three planes coincide, then the solution is just the common plane, which can be expressed as the set of alll possible \(c_1\bx_1+c_2\bx_2\) for any two nonparallel vectors in that plane.</p>
-<p id="p-64">None of the geometry is necessary to apply the algebra.</p>
+<p id="p-65">By itself this is nice, but what makes this theorem important is that <em class="emphasis">every</em> homogeneous solution can obtained this way. There is some geometric intuition in three dimensions. Each row of \(\bA\bx=\bzero\) is a plane through the origin. Typically three planes intersect at a single point (unique solution), but if two planes coincide, the intersection is a straight line through the origin. We can express such a line as the set of all possible \(c_1\bx_1\) for any vector \(\bx_1\) parallel to the line. Furthermore, if all three planes coincide, then the solution is just the common plane, which can be expressed as the set of alll possible \(c_1\bx_1+c_2\bx_2\) for any two nonparallel vectors in that plane.</p>
+<p id="p-66">None of the geometry is necessary to apply the algebra.</p>
 <article class="example example-like" id="la-ex-33homog"><a data-knowl="" class="id-ref" data-refid="hk-la-ex-33homog"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.5.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-la-ex-33homog"><article class="example example-like"><p id="p-65">Suppose</p>
+<span class="type">Example</span> <span class="codenumber">1.5.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-la-ex-33homog"><article class="example example-like"><p id="p-67">Suppose</p>
 <div class="displaymath">
 \begin{equation*}
 \bA =
@@ -252,33 +251,33 @@ var js_version = 0.12;
 \end{equation*}
 </div>
 <p>where \(s\) and \(t\) are arbitrary scalars. You can easily check that both of the constant vectors above are themselves homogeneous solutions.</p></article></div>
-<p id="p-66">Motivated by the theorem and example above, we make a new definition.</p>
+<p id="p-68">Motivated by the theorem and example above, we make a new definition.</p>
 <article class="definition definition-like" id="la-gs-homogen"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.5.3</span>. <span class="title">General solution of a linear system (homoegeneous).</span>
 </h6>
-<p id="p-67">We say that \(\bx_h = c_1\bx_1 + \cdots + c_k\bx_k\) is the <dfn class="terminology">general solution</dfn> of \(\bA\bx=\bzero\) if every solution to the homogeneous system can be so written for some choice of the coefficients.</p></article></section><section class="subsection" id="la-gs-particular"><h3 class="heading hide-type">
+<p id="p-69">We say that \(\bx_h = c_1\bx_1 + \cdots + c_k\bx_k\) is the <dfn class="terminology">general solution</dfn> of \(\bA\bx=\bzero\) if every solution to the homogeneous system can be so written for some choice of the coefficients.</p></article></section><section class="subsection" id="la-gs-particular"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.5.2</span> <span class="title">Particular solutions</span>
 </h3>
-<a href="la-general-solution.html#la-gs-particular" class="permalink">¶</a><p id="p-68">We now come to one of the simplest yet most confusing terms in the course. A <dfn class="terminology">particular solution</dfn> of the linear system \(\bA\bx=\bb\) is just any one solution of the problem. The only reason the term exists is to distinguish it from the <em class="emphasis">general</em> solution, which (as above) is an expression for <em class="emphasis">every possible</em> solution of the system.</p>
+<a href="la-general-solution.html#la-gs-particular" class="permalink">¶</a><p id="p-70">We now come to one of the simplest yet most confusing terms in the course. A <dfn class="terminology">particular solution</dfn> of the linear system \(\bA\bx=\bb\) is just any one solution of the problem. The only reason the term exists is to distinguish it from the <em class="emphasis">general</em> solution, which (as above) is an expression for <em class="emphasis">every possible</em> solution of the system.</p>
 <article class="theorem theorem-like" id="la-gs-general"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">1.5.4</span>. <span class="title">General solution of alinear system.</span>
 </h6>
-<p id="p-69">All solutions of \(\bA\bx=\bb\) may be written as</p>
+<p id="p-71">All solutions of \(\bA\bx=\bb\) may be written as</p>
 <div class="displaymath">
 \begin{equation*}
 \bx = \bx_h + \bx_p\text{,}
 \end{equation*}
 </div>
-<p>where \(\bx_h\) is the general solution of \(\bA\bx=\bzero\) and \(\bx_p\) is any particular solution of \(\bA\bx=\bb\text{.}\) We call this the <dfn class="terminology">general solution</dfn> of \(\bA\bx=\bb\text{.}\)</p></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-70">Let \(\bx_p\) be a particular solution, and suppose \(\bu\) is another solution. Then</p>
+<p>where \(\bx_h\) is the general solution of \(\bA\bx=\bzero\) and \(\bx_p\) is any particular solution of \(\bA\bx=\bb\text{.}\) We call this the <dfn class="terminology">general solution</dfn> of \(\bA\bx=\bb\text{.}\)</p></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-72">Let \(\bx_p\) be a particular solution, and suppose \(\bu\) is another solution. Then</p>
 <div class="displaymath">
 \begin{equation*}
 \bA(\bu-\bx_p)=\bA\bu - \bA\bx_p = \bb - \bb = \bzero\text{.}
 \end{equation*}
 </div>
 <p>Hence \(\bu-\bx_p\) is a homogeneous solution, which means that we can write it as \(\bx_h\text{.}\)</p></article></div>
-<p id="p-71">Thus, one way to attack \(\bA\bx=\bb\) is to first find the general homogeneous solution, then find any particular solution of the nonhomogeneous problem. You will do this many times over for differential equations in future chapters.</p>
+<p id="p-73">Thus, one way to attack \(\bA\bx=\bb\) is to first find the general homogeneous solution, then find any particular solution of the nonhomogeneous problem. You will do this many times over for differential equations in future chapters.</p>
 <article class="example example-like" id="example-10"><a data-knowl="" class="id-ref" data-refid="hk-example-10"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.5.5</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-10"><article class="example example-like"><p id="p-72">We continue with the matrix \(\bA\) from <a data-knowl="./knowl/la-ex-33homog.html" title="Example 1.5.2">Example 1.5.2</a>, now with \(\bb=[-8,4,12]\text{.}\) The RREF of the augmented matrix works out to be</p>
+<span class="type">Example</span> <span class="codenumber">1.5.5</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-10"><article class="example example-like"><p id="p-74">We continue with the matrix \(\bA\) from <a data-knowl="./knowl/la-ex-33homog.html" title="Example 1.5.2">Example 1.5.2</a>, now with \(\bb=[-8,4,12]\text{.}\) The RREF of the augmented matrix works out to be</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -298,7 +297,7 @@ var js_version = 0.12;
 \bx = \threevec{0}{4}{0} + s \threevec{1}{0}{0} + t \threevec{0}{2}{1}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-73">This process doesn't really save us any algebraic work right now, because we would have gotten the same expression for the solution directly from the RREF. So you might be wondering what the point of this section is. Have patience, grasshopper.</p></section></section></div></main>
+<p id="p-75">This process doesn't really save us any algebraic work right now, because we would have gotten the same expression for the solution directly from the RREF. So you might be wondering what the point of this section is. Have patience, grasshopper.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

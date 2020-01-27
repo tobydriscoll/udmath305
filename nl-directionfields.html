@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -176,7 +176,6 @@ var js_version = 0.12;
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
 <li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
-<li><a href="fs-complex-eigenvalues.html" data-scroll="fs-complex-eigenvalues">Complex solutions</a></li>
 <li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
@@ -209,7 +208,7 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="nl-directionfields"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">Direction fields</span>
 </h2>
-<a href="nl-directionfields.html" class="permalink">¶</a><p id="p-424">An autonomous system in two dimensions has the particular form</p>
+<a href="nl-directionfields.html" class="permalink">¶</a><p id="p-438">An autonomous system in two dimensions has the particular form</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x_1}{t} \amp = f_1(x_1,x_2), \\
@@ -219,7 +218,7 @@ var js_version = 0.12;
 <p>For such a system we can use a simple visualization to suggest solution behavior.</p>
 <article class="example example-like" id="nl-ex-direction-field-system"><a data-knowl="" class="id-ref" data-refid="hk-nl-ex-direction-field-system"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.4.1</span>. <span class="title">Direction field for a system of two equations.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-nl-ex-direction-field-system"><article class="example example-like"><p id="p-425">Here is a direction field for the linear ODE system</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-nl-ex-direction-field-system"><article class="example example-like"><p id="p-439">Here is a direction field for the linear ODE system</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = -y\\
@@ -227,13 +226,14 @@ var js_version = 0.12;
 \end{align*}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">F = @(x,y) -y;   G = @(x,y) x;
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="nl_dirfield_1"><pre class="prettyprint lang-matlab">F = @(x,y) -y;   G = @(x,y) x;
 
 slopefield(F,G,[-2 2],[-2 2])
-</pre></div>
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">5.4.2.</span> </figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/nl_dirfield_1.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-426">Here is a slope field in the first quadrant for the nonlinear system</p>
+<p id="p-440">Here is a slope field in the first quadrant for the nonlinear system</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = 3x - \frac{1}{2}xy\\
@@ -241,14 +241,15 @@ slopefield(F,G,[-2 2],[-2 2])
 \end{align*}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">F = @(x,y) 3.*x-x.*y/2;
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="nl_dirfield_2"><pre class="prettyprint lang-matlab">F = @(x,y) 3.*x-x.*y/2;
 G = @(x,y) -y + x.*y/4;
 
 slopefield(F,G,[0 10],[0 12])
-</pre></div>
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">5.4.3.</span> </figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/nl_dirfield_2.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-427">We can use a simple trick to create direction fields for the nonautonomous scalar problem \(x'=f(t,x)\) as well. Introducing the variables \(u_1=t\) and \(u_2=x\text{,}\) we have</p>
+<p id="p-441">We can use a simple trick to create direction fields for the nonautonomous scalar problem \(x'=f(t,x)\) as well. Introducing the variables \(u_1=t\) and \(u_2=x\text{,}\) we have</p>
 <div class="displaymath">
 \begin{align*}
 \dd{u_1}{t} \amp = 1, \\
@@ -256,13 +257,14 @@ slopefield(F,G,[0 10],[0 12])
 \end{align*}
 </div>
 <p>which has the form of a two-dimensional autonomous system.</p>
-<aside class="aside aside-like" id="aside-16"><p id="p-428">Both higher-order and nonautonomous problems can be converted to an autonomous, first-order system of the form \(\bx'=\bff(\bx)\) in a higher dimension. Hence those are as general a type as we need to study.</p></aside><article class="example example-like" id="example-67"><a data-knowl="" class="id-ref" data-refid="hk-example-67"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">5.4.2</span>. <span class="title">Direction field for a scalar problem.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-67"><article class="example example-like"><p id="p-429">Here is a direction field for \(x'=t-x^2\text{.}\) Note that the arrows are horizontal along the sideways parabola \(t=x^2\text{.}\)</p>
+<aside class="aside aside-like" id="aside-16"><p id="p-442">Both higher-order and nonautonomous problems can be converted to an autonomous, first-order system of the form \(\bx'=\bff(\bx)\) in a higher dimension. Hence those are as general a type as we need to study.</p></aside><article class="example example-like" id="example-67"><a data-knowl="" class="id-ref" data-refid="hk-example-67"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">5.4.4</span>. <span class="title">Direction field for a scalar problem.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-67"><article class="example example-like"><p id="p-443">Here is a direction field for \(x'=t-x^2\text{.}\) Note that the arrows are horizontal along the sideways parabola \(t=x^2\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">f = @(t,x) t-x^2;
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="nl_dirfield_3"><pre class="prettyprint lang-matlab">f = @(t,x) t-x^2;
 slopefield(f,[-2 2],[-2 2])
-</pre></div>
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">5.4.5.</span> </figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/nl_dirfield_3.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div></section></div></main>
 </div>

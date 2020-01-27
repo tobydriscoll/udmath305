@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:18-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Finally, consider the driven, undamped oscillator \(x''+\omega_0^2 x = \cos(\omega t)\text{.}\) It leads to</p>
+<p>What is the meaning if \(\omega = \omega_0\text{?}\) This is exactly when \(i\omega\) is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients needs to be modified from the above derivation. But there is a sneaky shortcut. For a certain choice of \(c_1\) and \(c_2\text{,}\) we get a different particular solution</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{s}{(s^2+\omega_0^2)(s^2+1)} = \frac{1}{\omega_0^2-\omega^2} \left( \frac{s}{s^2+\omega^2} - \frac{s}{s^2+\omega_n^2} \right)\text{,}
+\hat{x}_p(t) = \frac{\omega_0^2}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)\text{,}
 \end{equation*}
 </div>
-<p>which is readily inverted into a combination of \(\cos(\omega t)\) and \(\cos(\omega_0 t)\text{.}\) However, at this point we are probably better off using the method of undetermined coefficients instead.</p>
-<span class="incontext"><a href="so-laplace.html#p-376">in-context</a></span>
+<p>which has an indeterminate form in the limit \(\omega \to \omega_0\text{,}\) allowing us to use L'Hopital's Rule:</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0} \omega_0^2 \frac{it e^{i\omega t}}{-2\omega} = -\frac{i\omega_0^2}{2} t e^{i\omega_0 t}\text{.}
+\end{equation*}
+</div>
+<p>(It's a little tricky, because the derivatives here are with respect to the limited variable \(\omega\) and not \(t\text{.}\)) This leads to the general solution</p>
+<span class="incontext"><a href="so-expforcing.html#p-376">in-context</a></span>
 </body>
 </html>

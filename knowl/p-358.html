@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It's often useful to rewrite the complex factor \(A(i\omega)\) from <a data-knowl="./knowl/so-eq-coeff.html" title="Equation 4.4.2">(4.4.2)</a> in polar form:</p>
+<p>The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
 <div class="displaymath">
 \begin{equation*}
-A(i\omega) = \frac{\omega_0^2}{\omega_0^2-\omega^2  + 2 Z i \omega_0 \omega } = g(\omega) e^{-i\phi(\omega)}\text{,}
+\theta'' + \gamma \theta + \frac{g}{L}\sin \theta = F(t)\text{,}
 \end{equation*}
 </div>
-<p>where \(g=|A|\) is the <dfn class="terminology">gain</dfn> and \(\phi\) is the <dfn class="terminology">phase lag</dfn>. Note that the particular solution is</p>
+<p>where \(\theta(t)\) is the angle made with vertical-down and \(L\) is the arm length. This equation is nonlinear. But if the angle remains small, then a reasonable approximation is</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = g(\omega) e^{-i\phi(\omega)} e^{i\omega t} = g e^{i(\omega t-\phi)}\text{.}
+\theta'' + \gamma \theta + \frac{g}{L}\theta = F(t)\text{,}
 \end{equation*}
 </div>
-<p>This means that as we pass from the input forcing to the output solution, \(g\) is the scaling of the amplitude and \(\phi\) changes the phase of our trip around the complex unit circle.</p>
-<span class="incontext"><a href="so-expforcing.html#p-358">in-context</a></span>
+<p>which is a linear oscillator.</p>
+<span class="incontext"><a href="so-oscillators.html#p-358">in-context</a></span>
 </body>
 </html>

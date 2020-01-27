@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -176,7 +176,6 @@ var js_version = 0.12;
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
 <li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
-<li><a href="fs-complex-eigenvalues.html" data-scroll="fs-complex-eigenvalues">Complex solutions</a></li>
 <li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
@@ -209,11 +208,11 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-laplace-repeated"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.6</span> <span class="title">Repeated and complex poles</span>
 </h2>
-<a href="so-laplace-repeated.html" class="permalink">¶</a><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
+<a href="so-laplace-repeated.html" class="permalink">¶</a><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.1</span> <span class="title">Repeated poles and resonance</span>
 </h3>
-<p id="p-377">We know by now that repeated poles in \(X_p(s)\) arise in two ways: from repeated characteristic roots (i.e. poles of the transfer function), or perfect resonance with the forcing function. We can anticipate the effect on the transform, because we know the answer in the time domain is something like \(te^{rt}\text{.}\) </p>
-<p id="p-378">In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
+<p id="p-391">We know by now that repeated poles in \(X_p(s)\) arise in two ways: from repeated characteristic roots (i.e. poles of the transfer function), or perfect resonance with the forcing function. We can anticipate the effect on the transform, because we know the answer in the time domain is something like \(te^{rt}\text{.}\) </p>
+<p id="p-392">In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
 <div class="displaymath">
 \begin{align*}
 F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
@@ -223,7 +222,7 @@ F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
 </div>
 <p>Take a moment to appreciate this. Earlier we found that a derivative in \(t\) corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
 <article class="example example-like" id="example-59"><a data-knowl="" class="id-ref" data-refid="hk-example-59"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.6.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-59"><article class="example example-like"><p id="p-379">The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
+<span class="type">Example</span> <span class="codenumber">4.6.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-59"><article class="example example-like"><p id="p-393">The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{3}{(s^2+9)^2}\text{.}
@@ -241,7 +240,7 @@ sX_p(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frac{d}{ds} \left[ \frac{1}{s^2+9
 x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-380">If we keep differentiating in \(s\) we find</p>
+<p id="p-394">If we keep differentiating in \(s\) we find</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{d^n}{ds^n} \lx[ f(t) ] = (-1)^n \lx[ t^n f(t) ]\text{.}
@@ -253,10 +252,10 @@ x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 \lx \left[ t^n e^{rt} \right] = \frac{n!}{(s-r)^{n+1}} \text{.}
 \end{equation*}
 </div>
-<p>The even specialer case \(r=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
+<p>The even specialer case \(r=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.2</span> <span class="title">Complex poles</span>
 </h3>
-<p id="p-381">Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
+<p id="p-395">Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} \text{.}
@@ -276,7 +275,7 @@ e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{,}
 </div>
 <p>In similar fashion we can show that \(e^{at} \sin( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion. However, the details can get pretty intense for hand calculation.</p>
 <article class="example example-like" id="example-60"><a data-knowl="" class="id-ref" data-refid="hk-example-60"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.6.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-60"><article class="example example-like"><p id="p-382">Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution has</p>
+<span class="type">Example</span> <span class="codenumber">4.6.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-60"><article class="example example-like"><p id="p-396">Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution has</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
@@ -289,7 +288,7 @@ X_p(s) = e^{-s} \frac{6}{(s+1)^2+9} = e^{-s} F(s)\text{,}
 \end{equation*}
 </div>
 <p>where we can now see that \(f(t) = 2e^{-t}\sin(3t)\text{.}\) By the shift theorem, \(x_p(t)=H(t-1)f(t-1)\text{.}\)</p>
-<p id="p-383">Now consider \(x''+2x'+10x=40\text{.}\) We get</p>
+<p id="p-397">Now consider \(x''+2x'+10x=40\text{.}\) We get</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{40}{s(s^2+2s+10)} = \frac{40}{s[(s+1)^2+9]}\text{.}
@@ -313,7 +312,7 @@ X_p(s) = \frac{A}{s} + \frac{3B+C(s+1)}{(s+1)^2+9}\text{.}
 x_p(t) = 4 - \frac{4}{3} e^{-t} \sin(3t) - 4 e^{-t} \cos(3t)\text{.}
 \end{equation*}
 </div>
-<p id="p-384">For a harmonically forced case such as \(x''+2x'+10x=\cos(2t)\text{,}\) we have</p>
+<p id="p-398">For a harmonically forced case such as \(x''+2x'+10x=\cos(2t)\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{s}{(s^2+4)(s^2+2s+10)}\text{.}
@@ -326,7 +325,7 @@ X_p(s) = \frac{2A+Bs}{s^2+4} + \frac{3C+E(s+1)}{(s+1)^2+9}\text{,}
 \end{equation*}
 </div>
 <p>which is eminently invertible. The details are left to the proverbial reader.</p></article></div>
-<p id="p-385">The drawback to Laplace transforms as a one-stop solver is that either we include the initial conditions from the start, which forces us to do more partial fraction decompositions, or else the particular solution we find almost always includes some terms from the homogeneous solution. Mathematically, the poles of \(X_p(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in many cases.</p></section></section></div></main>
+<p id="p-399">The drawback to Laplace transforms as a one-stop solver is that either we include the initial conditions from the start, which forces us to do more partial fraction decompositions, or else the particular solution we find almost always includes some terms from the homogeneous solution. Mathematically, the poles of \(X_p(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in many cases.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

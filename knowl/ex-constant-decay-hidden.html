@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -20,11 +20,12 @@
 <p>But we can end the suspense by easily verifying that \(x=e^{-t}\) is a solution. This function asymptotically approaches zero as \(t\to\infty\text{,}\) which we call <dfn class="terminology">exponential decay</dfn>. In other, related problems we will find that solutions can decay (or "relax") to any value, not just zero.</p>
 <p>Exponential decay is most naturally plotted on a log-linear graph, in which case the solution is a straight line with negative slope.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">x = @(t) exp(-t);
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">x = @(t) exp(-t);
 fplot(x,[0,4]), set(gca,'yscale','log')
 xlabel('t'), ylabel('x(t)')
 title('Exponential decay')
-</pre></div>
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">2.1.5.</span> </figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_intro_const_decay.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></body>
 </html>

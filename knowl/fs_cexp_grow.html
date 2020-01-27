@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<figure class="listing figure-like"><pre class="prettyprint lang-matlab">a = 0.02;  om = 2;
+t = linspace(0, 25, 500);
+f = exp((a+1i*om)*t);
+
+plot3(t, real(f), imag(f), 'LineWidth',2)
+hold on
+plot3(t,real(f), 0*t-1.5)
+plot3(t, 0*t+2, imag(f))
+plot3(0*t+30,real(f),imag(f),'k')
+axis([0 30 -2  2 -1.5 1.5])
+title(sprintf('a = %.2f, omega = %.1f',a,om))
+grid on, xlabel('Time')
+ylabel('Real Axis')
+zlabel('Imag Axis')	  
+set(gca,'dataaspect',[6,1,1])
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">3.4.5.</span> </figcaption></figure><span class="incontext"><a href="fs-complex-exponentials.html#fs_cexp_grow">in-context</a></span>
+</body>
+</html>

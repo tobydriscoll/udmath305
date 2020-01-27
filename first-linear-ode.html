@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:16-05:00    *-->
+<!--*    on 2020-01-27T16:53:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -176,7 +176,6 @@ var js_version = 0.12;
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
 <li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
-<li><a href="fs-complex-eigenvalues.html" data-scroll="fs-complex-eigenvalues">Complex solutions</a></li>
 <li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
@@ -209,39 +208,39 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="first-linear-ode"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Linear ODEs</span>
 </h2>
-<a href="first-linear-ode.html" class="permalink">¶</a><section class="introduction" id="introduction-4"><p id="p-182">Linear ODEs are the most fundamental type. If you could only get to ask one yes-or-no question about a new ODE, your question should be, "Is it linear?"</p>
+<a href="first-linear-ode.html" class="permalink">¶</a><section class="introduction" id="introduction-4"><p id="p-187">Linear ODEs are the most fundamental type. If you could only get to ask one yes-or-no question about a new ODE, your question should be, "Is it linear?"</p>
 <article class="definition definition-like" id="fl-df-linear-ode"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.2.1</span>. <span class="title">First-order linear ODE.</span>
 </h6>
-<p id="p-183">A <dfn class="terminology">first-order linear ODE</dfn> is an equation of the form</p>
+<p id="p-188">A <dfn class="terminology">first-order linear ODE</dfn> is an equation of the form</p>
 <div class="displaymath">
 \begin{equation}
 \dd{x}{t} = a(t)x + f(t) \text{.}\label{fl-eq-linear}\tag{2.2.1}
 \end{equation}
-</div></article><p id="p-184">We may often refer to \(a(t)\) as the <dfn class="terminology">coefficient function</dfn> and \(f(t)\) as the <dfn class="terminology">forcing function</dfn>. Note that it is <em class="emphasis">not</em> necessary for these to be linear functions of time, nor is the solution \(x(t)\) generally a linear function. The linearity being referred to is the fact that there are no terms such as \(\sin(x')\text{,}\) \(e^x\text{,}\) \(xx'\text{,}\) etc.</p></section><section class="subsection" id="fl-li-general"><h3 class="heading hide-type">
+</div></article><p id="p-189">We may often refer to \(a(t)\) as the <dfn class="terminology">coefficient function</dfn> and \(f(t)\) as the <dfn class="terminology">forcing function</dfn>. Note that it is <em class="emphasis">not</em> necessary for these to be linear functions of time, nor is the solution \(x(t)\) generally a linear function. The linearity being referred to is the fact that there are no terms such as \(\sin(x')\text{,}\) \(e^x\text{,}\) \(xx'\text{,}\) etc.</p></section><section class="subsection" id="fl-li-general"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.1</span> <span class="title">General solutions</span>
 </h3>
-<a href="first-linear-ode.html#fl-li-general" class="permalink">¶</a><p id="p-185">All solutions to first-order linear problems share a basic structure. In fact, it's the same structure as the solutions of \(\bA\bx=\bb\text{.}\) In order to describe this, we're going to replace the vectors \(\bx\) and \(\bb\) with the functions \(x(t)\) and \(f(t)\text{,}\) and the matrix \(\bA\) by something analagous for functions.</p>
+<a href="first-linear-ode.html#fl-li-general" class="permalink">¶</a><p id="p-190">All solutions to first-order linear problems share a basic structure. In fact, it's the same structure as the solutions of \(\bA\bx=\bb\text{.}\) In order to describe this, we're going to replace the vectors \(\bx\) and \(\bb\) with the functions \(x(t)\) and \(f(t)\text{,}\) and the matrix \(\bA\) by something analagous for functions.</p>
 <article class="definition definition-like" id="fl-df-operator"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">2.2.2</span>. <span class="title">Linear operator.</span>
 </h6>
-<p id="p-186">A <dfn class="terminology">linear operator</dfn> \(\opA\) is a rule for transforming functions to other functions, such that</p>
+<p id="p-191">A <dfn class="terminology">linear operator</dfn> \(\opA\) is a rule for transforming functions to other functions, such that</p>
 <div class="displaymath">
 \begin{equation*}
 \opA[cx(t) + y(t)]=c\opA[x(t)] + \opA[y(t)]
 \end{equation*}
 </div>
-<p>for all functions \(x,y\) and numbers \(c\text{.}\)</p></article><p id="p-187">In the first chapter we pointed out that the linear function \(L\) defined by &gt;\(L(\bx)=\bA\bx\) for a given matrix \(\bA\) has the same property. In the context of the first order linear ODE <a data-knowl="./knowl/fl-eq-linear.html" title="Equation 2.2.1">(2.2.1)</a>, the operator of interest to us is defined by</p>
+<p>for all functions \(x,y\) and numbers \(c\text{.}\)</p></article><p id="p-192">In the first chapter we pointed out that the linear function \(L\) defined by &gt;\(L(\bx)=\bA\bx\) for a given matrix \(\bA\) has the same property. In the context of the first order linear ODE <a data-knowl="./knowl/fl-eq-linear.html" title="Equation 2.2.1">(2.2.1)</a>, the operator of interest to us is defined by</p>
 <div class="displaymath">
 \begin{equation}
 \opA[x] = x' - a(t)x \text{,}\label{fl-eq-linop}\tag{2.2.2}
 \end{equation}
 </div>
 <p>whose linearity you can easily validate for yourself. We can now express the ODE simply as \(\opA[x]=f\text{.}\)</p>
-<p id="p-188">As with linear systems, we have a special role for the <dfn class="terminology">homogeneous</dfn> linear ODE \(\dd{x}{t} = a(t)x\text{,}\) that is, \(\opA[x]=0\text{,}\) or equation <a data-knowl="./knowl/fl-eq-linear.html" title="Equation 2.2.1">(2.2.1)</a> with zero forcing.</p>
+<p id="p-193">As with linear systems, we have a special role for the <dfn class="terminology">homogeneous</dfn> linear ODE \(\dd{x}{t} = a(t)x\text{,}\) that is, \(\opA[x]=0\text{,}\) or equation <a data-knowl="./knowl/fl-eq-linear.html" title="Equation 2.2.1">(2.2.1)</a> with zero forcing.</p>
 <article class="fact theorem-like" id="fact-7"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">2.2.3</span>.</h6>
-<p id="p-189">If \(x_1(t)\) and \(x_2(t)\) are solutions of \(\opA[x]=0\text{,}\) then so is any linear combination \(c_1x_1 + c_2x_2\) for constants \(c_1,c_2\text{.}\)</p></article><p id="p-190">Quite simply, this is because</p>
+<p id="p-194">If \(x_1(t)\) and \(x_2(t)\) are solutions of \(\opA[x]=0\text{,}\) then so is any linear combination \(c_1x_1 + c_2x_2\) for constants \(c_1,c_2\text{.}\)</p></article><p id="p-195">Quite simply, this is because</p>
 <div class="displaymath">
 \begin{equation*}
 \opA[c_1x_1 + c_2x_2] = c_1\opA[x_1] + c_2\opA[x_2]=0+0=0\text{.}
@@ -250,7 +249,7 @@ var js_version = 0.12;
 <p>Clearly, we could extend the linear combination to any number of terms, with the same result. We can make a related observation:</p>
 <article class="fact theorem-like" id="fact-8"><h6 class="heading">
 <span class="type">Fact</span> <span class="codenumber">2.2.4</span>.</h6>
-<p id="p-191">If \(x_h\) is a solution of the homogeneous \(\opA[x]=0\) and \(x_p\) is any particular solution of \(\opA[x]=f\text{,}\) then \(x=x_h+x_p\) is also a solution of \(\opA[x]=f\text{.}\)</p></article><p id="p-192">This is just as easy as the last fact:</p>
+<p id="p-196">If \(x_h\) is a solution of the homogeneous \(\opA[x]=0\) and \(x_p\) is any particular solution of \(\opA[x]=f\text{,}\) then \(x=x_h+x_p\) is also a solution of \(\opA[x]=f\text{.}\)</p></article><p id="p-197">This is just as easy as the last fact:</p>
 <div class="displaymath">
 \begin{equation*}
 \opA[x_h+x_p] = \opA[x_h] + \opA[x_p]=0+f=f\text{.}
@@ -260,7 +259,7 @@ var js_version = 0.12;
 <article class="theorem theorem-like" id="fl-general"><h6 class="heading">
 <span class="type">Theorem</span> <span class="codenumber">2.2.5</span>. <span class="title">General solutions (first-order linear ODEs).</span>
 </h6>
-<p id="p-193">Every solution of the ODE \(\opA[x]=f\) can be written in the form \(x=x_h+x_p\text{,}\) where \(x_h\) is the general solution of \(\opA[x]=0\) and \(x_p\) is any solution of \(\opA[x]=f\text{.}\)</p></article></section></section></div></main>
+<p id="p-198">Every solution of the ODE \(\opA[x]=f\) can be written in the form \(x=x_h+x_p\text{,}\) where \(x_h\) is the general solution of \(\opA[x]=0\) and \(x_p\) is any solution of \(\opA[x]=f\text{.}\)</p></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

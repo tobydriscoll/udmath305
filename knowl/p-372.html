@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
+<p>It's often useful to rewrite the complex factor \(A(i\omega)\) from <a data-knowl="./knowl/so-eq-coeff.html" title="Equation 4.4.2">(4.4.2)</a> in polar form:</p>
 <div class="displaymath">
 \begin{equation*}
-\lx[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
+A(i\omega) = \frac{\omega_0^2}{\omega_0^2-\omega^2  + 2 Z i \omega_0 \omega } = g(\omega) e^{-i\phi(\omega)}\text{,}
 \end{equation*}
 </div>
-<p>and</p>
+<p>where \(g=|A|\) is the <dfn class="terminology">gain</dfn> and \(\phi\) is the <dfn class="terminology">phase lag</dfn>. Note that the particular solution is</p>
 <div class="displaymath">
 \begin{equation*}
-\lx[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
+x_p(t) = g(\omega) e^{-i\phi(\omega)} e^{i\omega t} = g e^{i(\omega t-\phi)}\text{.}
 \end{equation*}
 </div>
-<p>Conversely, a transform \(X(s)\) that has \(s^2+\omega^2\) as a factor in the denominator has poles at \(\pm i\omega\text{.}\) The simplest case is</p>
-<div class="displaymath">
-\begin{equation*}
-X_p(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)\text{.}
-\end{equation*}
-</div>
-<span class="incontext"><a href="so-laplace.html#p-372">in-context</a></span>
+<p>This means that as we pass from the input forcing to the output solution, \(g\) is the scaling of the amplitude and \(\phi\) changes the phase of our trip around the complex unit circle.</p>
+<span class="incontext"><a href="so-expforcing.html#p-372">in-context</a></span>
 </body>
 </html>

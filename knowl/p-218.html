@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For this section we will limit <a data-knowl="./knowl/fl-eq-linear.html" title="Equation 2.2.1">(2.2.1)</a> to the important special case when (1) the growth/decay rate coefficient \(a(t)\) is constant, and (2) the forcing function is a polynomial, exponential, sin, or cos, or a combination of these. In this situation, the form of \(x_p\) can be written down immediately with some unknown or <dfn class="terminology">undetermined coefficients</dfn>, which are then found by substitution into the ODE. The correct form of \(x_p\) for various \(f\) are given in <a data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.6.1: Particular solutions for undetermined coefficients">Table 2.6.1</a>.</p>
-<span class="incontext"><a href="fl-undeter.html#p-218">in-context</a></span>
+<p>After being thoroughly trained to always include integration constants, you might wonder why we are being so cavalier about them here. Let's walk through what would happen to them in the last example above. First,</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = \exp\left[  \ln(2+t) + C_1 \right] = A_1(2 + t)\text{,}
+\end{equation*}
+</div>
+<p>where we renamed \(A_1=e^{C_1}\gt 0\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+k(t) = A_1^{-1} \int \frac{-1}{2+t} (2+t)^{-1} \, dt = A_1^{-1} [-(2+t)^{-1}+C_2] = -A_1^{-1}(2+t)^{-1} + A_2\text{.}
+\end{equation*}
+</div>
+<p>Finally,</p>
+<div class="displaymath">
+\begin{equation*}
+x = x_h + kg = c_1 A_1(2 + t) + \bigl[-A_1^{-1}(2+t)^{-1} + A_2\bigr ]A_1(2 + t) = (c_1A_1+A_1A_2)(2+t) - 1\text{.}
+\end{equation*}
+</div>
+<p>This is exactly the same family of solutions as \(c_1(2+t)-1\text{.}\) Essentially, all the integration constants end up lumped into that \(c_1\text{,}\) which is always the case.</p>
+<span class="incontext"><a href="fl-varparam.html#p-218">in-context</a></span>
 </body>
 </html>

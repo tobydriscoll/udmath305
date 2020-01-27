@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,32 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The general solution of \(x'' + bx' + cx = f(t)\) consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem. For the homogeneous part the relevant matrix is from <a data-knowl="./knowl/so-eq-matrixmodel.html" title="Equation 4.1.4">(4.1.4)</a>:</p>
+<p>When this argument is fully unraveled, it can be summarized as follows. Given a complete set of eigenvectors, i.e.,</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \twomat{0}{1}{-c}{-b}\text{.}
+\bA \bv_1 = \lambda_1 \bv_1, \;
+\bA \bv_2 = \lambda_2 \bv_2,\; \dots, \;
+\bA \bv_n = \lambda_n \bv_n\text{,}
 \end{equation*}
 </div>
-<p>We have the characteristic polynomial</p>
+<p>define</p>
 <div class="displaymath">
 \begin{equation*}
-|\bA-\lambda\bI| = \twodet{-\lambda}{1}{-c}{-b-\lambda} = \lambda^2 + b\lambda + c\text{.}
+\bV = \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}.
 \end{equation*}
 </div>
-<p>(This is easily remembered in terms of the original ODE \(x'' + bx' + cx=0\text{.}\)) The eigenvalues can therefore be found from the quadratic formula.</p>
-<span class="incontext"><a href="so-homogeneous.html#p-339">in-context</a></span>
+<p>(In the notation above, this is \(\bX(0)\text{.}\)) Then</p>
+<div class="displaymath">
+\begin{equation}
+e^{t\bA} = \bV \begin{bmatrix} 
+e^{t\lambda_1} \amp \amp \amp \\ 
+\amp e^{t\lambda_2} \amp \amp \\ 
+\amp \amp \ddots \amp \\ 
+\amp \amp \amp e^{t\lambda_n} 
+\end{bmatrix}  \bV^{-1}\text{.}\tag{3.6.2}
+\end{equation}
+</div>
+<p>This is one of those cases in which you're probably better off working from the formula than going each time through the process we used to get it.</p>
+<span class="incontext"><a href="fs-matrix-exp.html#p-339">in-context</a></span>
 </body>
 </html>

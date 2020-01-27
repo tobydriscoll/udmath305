@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>MATLAB has a command <code class="code-inline tex2jax_ignore">rref</code> to put a matrix in RREF. However, it's not ideal, because MATLAB uses floating point and cannot always produce exact zeros. You can also <a class="external" href="https://www.wolframalpha.com/input/?i=rref%20%7B%7B1%2C2%2C3%7D%2C%7B4%2C5%2C6%7D%2C%7B7%2C8%2C9%7D%7D" target="_blank">try Wolfram Alpha</a> for this.</p>
+<p>A matrix is in  <dfn class="terminology">RREF</dfn> (reduced row echelon form) if it meets all of these requirements:</p>
+<ol class="decimal">
+<li>Any rows of all zeros appear below all nonzero rows.</li>
+<li>The leading nonzero of any row is a one.</li>
+<li>Every leading one is the only nonzero in its column.</li>
+</ol>
+<p>The columns that have leading ones are called  <dfn class="terminology">pivot columns</dfn>. The other columns are called  <dfn class="terminology">free columns</dfn>.</p>
 <span class="incontext"><a href="la-elimination.html#p-32">in-context</a></span>
 </body>
 </html>

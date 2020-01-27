@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:16-05:00    *-->
+<!--*    on 2020-01-27T16:53:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -176,7 +176,6 @@ var js_version = 0.12;
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
 <li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
-<li><a href="fs-complex-eigenvalues.html" data-scroll="fs-complex-eigenvalues">Complex solutions</a></li>
 <li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
@@ -209,21 +208,21 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="first-order-models"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.7</span> <span class="title">Modeling with first-order ODEs</span>
 </h2>
-<a href="first-order-models.html" class="permalink">¶</a><p id="p-227">First-order ODEs are often used to model situations of growth and decay. The linear problem \(x'=ax+f(t)\) is a prototype for many important problems:</p>
+<a href="first-order-models.html" class="permalink">¶</a><p id="p-232">First-order ODEs are often used to model situations of growth and decay. The linear problem \(x'=ax+f(t)\) is a prototype for many important problems:</p>
 <dl class="description-list">
 <dt id="li-57">Population</dt>
-<dd><p id="p-228">Population \(x(t)\) of organisms has a constant net per capita birth (or death) rate</p></dd>
+<dd><p id="p-233">Population \(x(t)\) of organisms has a constant net per capita birth (or death) rate</p></dd>
 <dt id="li-58">Interest</dt>
-<dd><p id="p-229">Money amount \(x(t)\) grows at fixed positive interest rate \(a\)</p></dd>
+<dd><p id="p-234">Money amount \(x(t)\) grows at fixed positive interest rate \(a\)</p></dd>
 <dt id="li-59">Radioactivity</dt>
-<dd><p id="p-230">\(x(t)\) is the mass of a radioactive isotope, and \(a \lt 0\)</p></dd>
+<dd><p id="p-235">\(x(t)\) is the mass of a radioactive isotope, and \(a \lt 0\)</p></dd>
 <dt id="li-60">Pharmacokinetics</dt>
-<dd><p id="p-231">\(x(t)\) is the amount of a drug being metabolized in the body</p></dd>
+<dd><p id="p-236">\(x(t)\) is the amount of a drug being metabolized in the body</p></dd>
 <dt id="li-61">Newtonian cooling</dt>
-<dd><p id="p-232">If \(x(t)\) is the temperature of a body kept in an environment at fixed temperature \(E\text{,}\) then the difference \(z(t)=x(t)-E\) satisfies \(z'=a z\) for a cooling rate \(a \lt 0\)</p></dd>
+<dd><p id="p-237">If \(x(t)\) is the temperature of a body kept in an environment at fixed temperature \(E\text{,}\) then the difference \(z(t)=x(t)-E\) satisfies \(z'=a z\) for a cooling rate \(a \lt 0\)</p></dd>
 </dl>
 <p>To belabor the obvious, positive \(a\) represents growth and negative \(a\) leads to decay. In the simplest contexts, the rate \(a\) is constant, but in most models a variable rate is more realistic.</p>
-<aside class="aside aside-like" id="aside-13"><p id="p-233">Interest rates in the real world may be quoted yearly, or quarterly, or according to any other finite time period. The rate in an ODE model is the <em class="emphasis">continuously compounded</em> rate.</p></aside><p id="p-234">The units of the derivative \(dx/dt\) are those of \(x\) divided by those of \(t\text{.}\) Let's write these as \(X/T\text{.}\) Additive terms all need to have the same units, so both \(f(t)\) and \(a(t)x\) have those units as well. Consequently \(a\) has units \(1/T\) and has various interpretations when inverted:</p>
+<aside class="aside aside-like" id="aside-13"><p id="p-238">Interest rates in the real world may be quoted yearly, or quarterly, or according to any other finite time period. The rate in an ODE model is the <em class="emphasis">continuously compounded</em> rate.</p></aside><p id="p-239">The units of the derivative \(dx/dt\) are those of \(x\) divided by those of \(t\text{.}\) Let's write these as \(X/T\text{.}\) Additive terms all need to have the same units, so both \(f(t)\) and \(a(t)x\) have those units as well. Consequently \(a\) has units \(1/T\) and has various interpretations when inverted:</p>
 <ul class="disc">
 <li id="li-62">When \(a \lt 0\text{,}\) the time \(\tau=-1/a\) is the <dfn class="terminology">relaxation time</dfn> or <dfn class="terminology">characteristic time</dfn>. If there is no forcing, then \(x(\tau)= e^{-1} x(0) \approx 0.37 x(0)\text{.}\)</li>
 <li id="li-63">In radioactivity it's more common to use \(t_h=-\ln(2)/a\text{,}\) which is the <dfn class="terminology">half-life</dfn>. That's because \(\exp(at_h)=1/2\text{,}\) so half of the radioactive isotope is depleted in that much time.</li>
@@ -231,31 +230,31 @@ var js_version = 0.12;
 </ul>
 <article class="example example-like" id="example-39"><a data-knowl="" class="id-ref" data-refid="hk-example-39"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.7.1</span>. <span class="title">First-order pharmacokinetics.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-39"><article class="example example-like"><p id="p-235">According to <em class="emphasis">R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52</em>, caffeine in the bloodstream approximately satisfies first-order kinetics, though the half-life varies a great deal from one person to the next.</p>
-<p id="p-236">Suppose \(t_h=6\) hours. We can calculate \(a=-\ln(2)/t_h\approx 0.116\) per hour, and then the predicted effects of one cup of coffee are \(x(t) = e^{0.116t}x(0)\text{.}\) You can check that an equivalent, more direct expression is</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-39"><article class="example example-like"><p id="p-240">According to <em class="emphasis">R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52</em>, caffeine in the bloodstream approximately satisfies first-order kinetics, though the half-life varies a great deal from one person to the next.</p>
+<p id="p-241">Suppose \(t_h=6\) hours. We can calculate \(a=-\ln(2)/t_h\approx 0.116\) per hour, and then the predicted effects of one cup of coffee are \(x(t) = e^{0.116t}x(0)\text{.}\) You can check that an equivalent, more direct expression is</p>
 <div class="displaymath">
 \begin{equation*}
 x(t) = 2^{-t/t_h} x(0)\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-237">A <dfn class="terminology">continuously stirred tank reactor</dfn> (CSTR) appears often in chemical engineering. One ideally assumes that the contents of the tank are mixed perfectly and instantaneously at all times. Then one writes an ODE that expresses mass balance.</p>
+<p id="p-242">A <dfn class="terminology">continuously stirred tank reactor</dfn> (CSTR) appears often in chemical engineering. One ideally assumes that the contents of the tank are mixed perfectly and instantaneously at all times. Then one writes an ODE that expresses mass balance.</p>
 <article class="exercise exercise-like" id="exercise-1"><a data-knowl="" class="id-ref" data-refid="hk-exercise-1"><h6 class="heading">
-<span class="type">Checkpoint</span> <span class="codenumber">2.7.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-1"><article class="exercise exercise-like"><p id="p-238">A 200 L tank contains 10 kg of dye. Pure water is added at a rate of 4 L per minute, while the mixture is drained at the same rate. How much dye is in the tank after 10 minutes?</p>
+<span class="type">Checkpoint</span> <span class="codenumber">2.7.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-1"><article class="exercise exercise-like"><p id="p-243">A 200 L tank contains 10 kg of dye. Pure water is added at a rate of 4 L per minute, while the mixture is drained at the same rate. How much dye is in the tank after 10 minutes?</p>
 <div class="solutions">
 <a data-knowl="" class="id-ref" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
-<p id="p-239">Let \(x(t)\) be the mass of dye in the tank. The trick is to realize how rapidly it is being removed, and that depends on the time-varying concentration, \(x(t)/200\text{.}\) Specifically,</p>
+<p id="p-244">Let \(x(t)\) be the mass of dye in the tank. The trick is to realize how rapidly it is being removed, and that depends on the time-varying concentration, \(x(t)/200\text{.}\) Specifically,</p>
 <div class="displaymath">
 \begin{equation*}
 \dd{x}{t} = - \frac{4 \text{ L}}{\text{minute}} \cdot \frac{x\, \text{ kg}}{200\, \text{ L}} = -0.02 x \text{ kg/min}\text{.}
 \end{equation*}
 </div>
 <p>So \(x(t)=e^{-0.02 t}x(0)\) and \(x(10)=10 e^{-0.2}\) kg.</p>
-<p id="p-240">(These problems can also be solved by using concentration, not mass, as the dependent variable. Either is fine, so long as you are consistent.)</p>
+<p id="p-245">(These problems can also be solved by using concentration, not mass, as the dependent variable. Either is fine, so long as you are consistent.)</p>
 </div></div>
 </div></article></div>
 <article class="example example-like" id="example-40"><a data-knowl="" class="id-ref" data-refid="hk-example-40"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.7.3</span>. <span class="title">Newton cooling.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-40"><article class="example example-like"><p id="p-241">Suppose a mug of coffee at 90 C is put in a room kept at 20 C. In terms of the notation above, we have</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-40"><article class="example example-like"><p id="p-246">Suppose a mug of coffee at 90 C is put in a room kept at 20 C. In terms of the notation above, we have</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dx}{dt} = a (x-20), \quad x(0)=90\text{.}

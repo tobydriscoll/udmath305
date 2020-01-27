@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This example is the template for our use of Laplace transforms. In the general case we get</p>
+<p>Exponential forcing \(F(t)=e^{rt}\) is particulary important when \(r\) is imaginary. Say \(r=i\omega\text{.}\) Then by Euler's identity we have</p>
 <div class="displaymath">
 \begin{equation*}
-[s^2X(s) - sx(0)-x'(0)] + b[sX(s)-x(0)] + cX(s) = F(s)\text{.}
+F(t) = \cos(\omega t) + i\sin(\omega t)\text{.}
 \end{equation*}
 </div>
-<p>We choose to find a particular solution with zero initial conditions, so that</p>
+<p>Thanks to linearity, if given a cos or sin forcing, we can solve the complex-valued problem and then take a real or imaginary part. That is, if \(x_p(t) = A e^{i\omega t}\) as above, then</p>
 <div class="displaymath">
-\begin{equation*}
-X_p(s) = \frac{F(s)}{s^2+bs+c}\text{.}
-\end{equation*}
+\begin{align*}
+[\Re x_p]'' + 2 Z \omega_0 [\Re x_p]' + \omega_0^2 [\Re x_p] \amp = \omega_0^2 \cos(\omega t), \\
+[\Im x_p]'' + 2 Z \omega_0 [\Im x_p]' + \omega_0^2 [\Im x_p]  \amp = \omega_0^2 \sin(\omega t). 
+\end{align*}
 </div>
-<p>The real effort comes in finding the inverse transform of the right-hand side. Note that the denominator has roots at the eigenvalues of the homogeneous problem. These are called <dfn class="terminology">poles</dfn> of the transform \(X_p\text{.}\) Typically \(F(s)\) will contribute one or more of its own poles. Each pole at \(s=r\) corresponds to an exponential solution \(e^{rt}\) in time, but the exact expression depends on a partial fraction decomposition and perhaps other manipulations.</p>
-<span class="incontext"><a href="so-laplace.html#p-371">in-context</a></span>
+<span class="incontext"><a href="so-expforcing.html#p-371">in-context</a></span>
 </body>
 </html>

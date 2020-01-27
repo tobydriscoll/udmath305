@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
+<p>Let's find the exponential of</p>
 <div class="displaymath">
 \begin{equation*}
-\bu_h(t) = c_1 e^{\lambda_1 t} \twovec{1}{\lambda_1} + c_2 e^{\lambda_2 t} \twovec{1}{\lambda_2}\text{.}
+\bA = \twomat{1}{1}{4}{1}\text{,}
 \end{equation*}
 </div>
-<p>In terms of the original variable \(x=u_1\text{,}\) this is simply</p>
+<p>given \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) We identify</p>
 <div class="displaymath">
 \begin{equation*}
-x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \qquad \text{if } \lambda_1\neq\lambda_2\text{.}
+\bV = \twomat{1}{1}{2}{-2}
 \end{equation*}
 </div>
-<span class="incontext"><a href="so-homogeneous.html#p-340">in-context</a></span>
+<p>and compute</p>
+<div class="displaymath">
+\begin{align*}
+e^{t\bA} \amp = \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{1}{1}{2}{-2}^{-1} \\
+\amp = -\frac{1}{4} \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{-2}{-1}{-2}{1} \\
+\amp = -\frac{1}{4} \twomat{e^{3t}}{e^{-t}}{2e^{3t}}{-2e^{-t}} \twomat{-2}{-1}{-2}{1} \\
+\amp = \frac{1}{4} \twomat{2e^{3t}+2e^{-t}}{e^{3t}-e^{-t}}{4e^{3t}-4e^{-t}}{2e^{3t}+2e^{-t}} \text{.}
+\end{align*}
+</div>
+<p>Not exactly a walk in the park, but doable.</p>
+<span class="incontext"><a href="fs-matrix-exp.html#p-340">in-context</a></span>
 </body>
 </html>

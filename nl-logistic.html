@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -176,7 +176,6 @@ var js_version = 0.12;
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
 <li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
-<li><a href="fs-complex-eigenvalues.html" data-scroll="fs-complex-eigenvalues">Complex solutions</a></li>
 <li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
@@ -209,14 +208,14 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="nl-logistic"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Case study: Logistic equation</span>
 </h2>
-<a href="nl-logistic.html" class="permalink">¶</a><section class="introduction" id="introduction-17"><p id="p-416">Say \(x(t)\) represents a population of bacteria. (There is always a whole number of bacteria, of course, but we'll allow real values. For large numbers that shouldn't matter.) If we assume that each bacterium produces offspring and ages at a constant rate, the result is a constant <em class="emphasis">net per capita growth rate</em>:</p>
+<a href="nl-logistic.html" class="permalink">¶</a><section class="introduction" id="introduction-17"><p id="p-430">Say \(x(t)\) represents a population of bacteria. (There is always a whole number of bacteria, of course, but we'll allow real values. For large numbers that shouldn't matter.) If we assume that each bacterium produces offspring and ages at a constant rate, the result is a constant <em class="emphasis">net per capita growth rate</em>:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{x} \dd{x}{t} = a\text{.}
 \end{equation*}
 </div>
 <p>If \(a\gt 0\text{,}\) then this is a recipe for exponential growth, a la \(x'=ax\text{.}\)</p>
-<p id="p-417">There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
+<p id="p-431">There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
 <div class="displaymath">
 \begin{equation}
 \frac{1}{x} \dd{x}{t} = a - bx, \qquad or \dd{x}{t} = ax - bx^2 \text{.}\label{eq-logistic}\tag{5.3.1}
@@ -225,8 +224,8 @@ var js_version = 0.12;
 <p>This is the <dfn class="terminology">logistic equation</dfn>.</p></section><section class="subsection" id="nl-lo-steady"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">Steady states</span>
 </h3>
-<a href="nl-logistic.html#nl-lo-steady" class="permalink">¶</a><p id="p-418">We begin with the steady states. We have \(x'=f(x)=x(a-bx)\) with roots \(x=0\) and \(x=a/b\text{.}\) Since \(f'(x)=a-2bx\text{,}\) we conclude that the former steady state is unstable and the latter is stable. The stable equilibrium value \(K=a/b\) is important and known as the <dfn class="terminology">carrying capacity</dfn> of the environment. We will find later that this value is the long-term fate of the system for any positive initial condition.</p>
-<p id="p-419">We can get creative and show that the halfway value \(x=K/2\) is also special. Still without knowing explicitly what \(x\) is, we can differentiate the ODE and use the chain rule to obtain</p>
+<a href="nl-logistic.html#nl-lo-steady" class="permalink">¶</a><p id="p-432">We begin with the steady states. We have \(x'=f(x)=x(a-bx)\) with roots \(x=0\) and \(x=a/b\text{.}\) Since \(f'(x)=a-2bx\text{,}\) we conclude that the former steady state is unstable and the latter is stable. The stable equilibrium value \(K=a/b\) is important and known as the <dfn class="terminology">carrying capacity</dfn> of the environment. We will find later that this value is the long-term fate of the system for any positive initial condition.</p>
+<p id="p-433">We can get creative and show that the halfway value \(x=K/2\) is also special. Still without knowing explicitly what \(x\) is, we can differentiate the ODE and use the chain rule to obtain</p>
 <div class="displaymath">
 \begin{equation*}
 x'' = ax'-2bxx' = (a-2bx)(ax-bx^2)\text{.}
@@ -235,7 +234,7 @@ x'' = ax'-2bxx' = (a-2bx)(ax-bx^2)\text{.}
 <p>This is zero for \(x=K/2=a/2b\text{,}\) suggesting that it is an inflection point.</p></section><section class="subsection" id="fn-nl-easy"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">First solution method: Substitution</span>
 </h3>
-<a href="nl-logistic.html#fn-nl-easy" class="permalink">¶</a><p id="p-420">When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of “lucky” solutions is the idea of variable substitution, and the logistic equation is a nice case study. Define \(z=1/x\text{.}\) From the chain rule we have \(x'=-x^{-2}x'=-x'z^2\text{.}\) The logistic equation converts to</p>
+<a href="nl-logistic.html#fn-nl-easy" class="permalink">¶</a><p id="p-434">When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of “lucky” solutions is the idea of variable substitution, and the logistic equation is a nice case study. Define \(z=1/x\text{.}\) From the chain rule we have \(x'=-x^{-2}x'=-x'z^2\text{.}\) The logistic equation converts to</p>
 <div class="displaymath">
 \begin{equation*}
 -\frac{z'}{z^2} = \frac{a}{z} - \frac{b}{z^2}\text{,}
@@ -254,10 +253,10 @@ x(t) = \frac{Kx_0}{e^{-at}(K-x_0)+x_0}\text{,}\label{eq-logistic-solution}\tag{5
 \end{equation}
 </div>
 <p>where \(x_0=x(0)\text{.}\)</p>
-<p id="p-421">The solution makes it clear that \(x\to K\) as \(t\to \infty\text{,}\) if \(x_0\gt 0\text{.}\) The logistic curve is an S-shaped or <em class="emphasis">sigmoidal</em> curve. You can think of it as a nice, smooth transition between two states (the two equilibria).</p>
+<p id="p-435">The solution makes it clear that \(x\to K\) as \(t\to \infty\text{,}\) if \(x_0\gt 0\text{.}\) The logistic curve is an S-shaped or <em class="emphasis">sigmoidal</em> curve. You can think of it as a nice, smooth transition between two states (the two equilibria).</p>
 <article class="example example-like" id="example-65"><a data-knowl="" class="id-ref" data-refid="hk-example-65"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">5.3.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-65"><article class="example example-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = 6; b = 2;
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="fn_lo_solutions"><pre class="prettyprint lang-matlab">a = 6; b = 2;
 K = a/b;
 
 f = @(t,x) a*x - b*x^2;
@@ -269,13 +268,14 @@ end
 xlabel('t'), ylabel('x(t)')
 set(gca,'ygrid','on',...
 'ytick',K*(0:.25:1),'yticklabel',{'0','','0.5K','','K'})
-</pre></div>
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">5.3.2.</span> </figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fn_lo_solutions.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-422">It's not easy to say why the variable substitution works out so well here. It's also not something you can expect to happen in most problems. The situation is very much like substitutions to solve integration problems: when they work, they're golden, and when they don't, you try something else.</p></section><section class="subsection" id="fn-lo-separate"><h3 class="heading hide-type">
+<p id="p-436">It's not easy to say why the variable substitution works out so well here. It's also not something you can expect to happen in most problems. The situation is very much like substitutions to solve integration problems: when they work, they're golden, and when they don't, you try something else.</p></section><section class="subsection" id="fn-lo-separate"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.3</span> <span class="title">Second solution method: Separation</span>
 </h3>
-<a href="nl-logistic.html#fn-lo-separate" class="permalink">¶</a><p id="p-423">The logistic equation is separable:</p>
+<a href="nl-logistic.html#fn-lo-separate" class="permalink">¶</a><p id="p-437">The logistic equation is separable:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dx}{x(a-bx)} = dt\text{.}

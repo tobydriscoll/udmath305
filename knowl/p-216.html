@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Now let us start over instead with <a data-knowl="./knowl/fl-eq-varparivp.html" title="Equation 2.5.1">(2.5.1)</a>, with \(a(t)=4\) and \(f(t)=8t\text{.}\) First,</p>
+<p>Consider \(x'=4x+8t\text{.}\) Rewriting as \(x'-4x=8t\text{,}\) we identify \(a(t)=4\) and \(f(t)=8t\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
-G(s,t) = \exp\left[ \int_s^t 4\,du \right] = \exp(4t-4s) = e^{4(t-s)}\text{.}
+g(t) = \exp\left[ \int 4\,dt \right] = e^{4t}\text{,}
 \end{equation*}
 </div>
-<p>Then</p>
+<p>and</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds = \frac{3}{2} e^{4t} +  \int_{0}^t 8se^{4(t-s)} \, ds = \frac{3}{2} e^{4t} + \frac{1}{2} (e^{4 t} - 1-4t) \text{,}
+k(t) = \int \frac{8t}{e^{4t}}\, dt = -\frac{1}{2} (4t+1)e^{-4t}\text{,}
 \end{equation*}
 </div>
-<p>which is identical to the first answer.</p>
+<p>where you need integration by parts (or a computer) to perform the integral. Hence</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \left[ \frac{1}{2} (4t+1)e^{-4t} \right] e^{4t} = -\frac{1}{2} (4t+1)\text{,}
+\end{equation*}
+</div>
+<p>and the general solution is</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = x_h(t) + x_p(t) = c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="fl-varparam.html#p-216">in-context</a></span>
 </body>
 </html>

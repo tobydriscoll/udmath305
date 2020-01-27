@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:18-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>First note that we can recast the nonlinear problem as a first-order system in two variables. Define \(x=\theta\) and \(y=\theta'\text{.}\) Then</p>
+<p>There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
 <div class="displaymath">
-\begin{align*}
-\dd{x}{t} \amp = y \\
-\dd{y}{t} \amp = -\frac{g}{L}\sin(x)\text{.}
-\end{align*}
+\begin{equation}
+\frac{1}{x} \dd{x}{t} = a - bx, \qquad or \dd{x}{t} = ax - bx^2 \text{.}\tag{5.3.1}
+\end{equation}
 </div>
-<p>This trick works for any nonlinear second-order equation \(\theta''=g(t,\theta,\theta')\text{.}\) Thus we can focus on problems in the general form</p>
-<div class="displaymath">
-\begin{align*}
-\dd{x}{t} \amp = F(x,y) \\
-\dd{y}{t} \amp = G(x,y)\text{,}
-\end{align*}
-</div>
-<p>or \(\bu' = \bff(\bu)\) for 2-vector \(\bu(t)\text{.}\) Note that (as we saw before), the vector \(\bu\) represents the state of the system.</p>
-<span class="incontext"><a href="nl-linearization.html#p-431">in-context</a></span>
+<p>This is the <dfn class="terminology">logistic equation</dfn>.</p>
+<span class="incontext"><a href="nl-logistic.html#p-431">in-context</a></span>
 </body>
 </html>

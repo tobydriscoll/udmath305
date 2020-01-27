@@ -143,8 +143,9 @@
 		</p>
 		<example>
 		<sidebyside>
-		<program language="matlab" xml:id="fn_lo_solutions">
-		<input>
+			<listing xml:id="fn_lo_solutions">
+			<program language="matlab">
+			<input>
 			a = 6; b = 2;
 			K = a/b;
 
@@ -157,8 +158,9 @@
 			xlabel('t'), ylabel('x(t)')
 			set(gca,'ygrid','on',...
 			'ytick',K*(0:.25:1),'yticklabel',{'0','','0.5K','','K'})
-		</input>
-		</program>
+			</input>
+			</program>
+		</listing>
 		<image source="matlab/fn_lo_solutions.svg"/>	  
 		</sidebyside>
 		</example>
@@ -203,13 +205,15 @@
 			</md>. 
 		</p>
 		<sidebyside>
-			<program language="matlab" xml:id="nl_dirfield_1">
+			<listing xml:id="nl_dirfield_1">
+			<program language="matlab">
 			<input>
 			F = @(x,y) -y;   G = @(x,y) x;
 
 			slopefield(F,G,[-2 2],[-2 2])
 			</input>
 			</program>
+			</listing>
 			<image source="matlab/nl_dirfield_1.svg"/>
 		</sidebyside>
 		<p> 
@@ -220,7 +224,8 @@
 			</md>. 
 		</p>
 		<sidebyside>
-			<program language="matlab" xml:id="nl_dirfield_2">
+			<listing xml:id="nl_dirfield_2">
+			<program language="matlab">
 			<input>
 			F = @(x,y) 3.*x-x.*y/2;
 			G = @(x,y) -y + x.*y/4;
@@ -228,6 +233,7 @@
 			slopefield(F,G,[0 10],[0 12])
 			</input>
 			</program>
+			</listing>
 			<image source="matlab/nl_dirfield_2.svg"/>
 		</sidebyside>
 	</example>	
@@ -250,12 +256,14 @@
 			Here is a direction field for <m>x'=t-x^2</m>. Note that the arrows are horizontal along the sideways parabola <m>t=x^2</m>. 
 		</p>
 		<sidebyside>
-			<program language="matlab" xml:id="nl_dirfield_3">
+			<listing xml:id="nl_dirfield_3">
+			<program language="matlab">
 			<input>
 			f = @(t,x) t-x^2;
 			slopefield(f,[-2 2],[-2 2])
 			</input>
 			</program>
+			</listing>
 			<image source="matlab/nl_dirfield_3.svg"/>
 		</sidebyside>
 	</example>

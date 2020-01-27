@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>At \(Z=1\) the complex eigenvalues collapse to a double eigenvalue at</p>
+<p>The general solution of \(x'' + bx' + cx = f(t)\) consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem. For the homogeneous part the relevant matrix is from <a data-knowl="./knowl/so-eq-matrixmodel.html" title="Equation 4.1.4">(4.1.4)</a>:</p>
 <div class="displaymath">
 \begin{equation*}
-\lambda_1 = \lambda_2 = -\omega_0\text{,}
+\bA = \twomat{0}{1}{-c}{-b}\text{.}
 \end{equation*}
 </div>
-<p>with general homogeneous solution</p>
+<p>We have the characteristic polynomial</p>
 <div class="displaymath">
 \begin{equation*}
-x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t)\text{.}
+|\bA-\lambda\bI| = \twodet{-\lambda}{1}{-c}{-b-\lambda} = \lambda^2 + b\lambda + c\text{.}
 \end{equation*}
 </div>
-<p>There is no longer any oscillation present, and we have a <dfn class="terminology">critically damped oscillator</dfn>. The linear growth of \(c_2 t\) doesn't make much difference against the exponential decay.</p>
-<span class="incontext"><a href="so-oscillators.html#p-353">in-context</a></span>
+<p>(This is easily remembered in terms of the original ODE \(x'' + bx' + cx=0\text{.}\)) The eigenvalues can therefore be found from the quadratic formula.</p>
+<span class="incontext"><a href="so-homogeneous.html#p-353">in-context</a></span>
 </body>
 </html>

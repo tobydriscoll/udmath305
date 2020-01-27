@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The Laplace transform is a linear operator. That is,</p>
+<p>It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple of decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
 <div class="displaymath">
-\begin{gather*}
-\lx[ f(t) + g(t) ] = F(s) + G(s) \\
-\lx[ c f(t) ] = c F(s)\text{,}
-\end{gather*}
+\begin{equation*}
+\int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \frac{1}{h} f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}\text{,}
+\end{equation*}
 </div>
-<p>where \(c\) is any constant.</p>
-<span class="incontext"><a href="fl-laplace.html#p-253">in-context</a></span>
+<p>where \(\phi\) is an antiderivative of \(f\text{.}\) In the limit this suggests</p>
+<div class="displaymath">
+\begin{equation*}
+\int_I \delta(t)f(t)\, dt = f(0)\text{.}
+\end{equation*}
+</div>
+<p>As with the step, we often want to introduce a delay in the impulse by using \(\delta(t-T)\text{.}\) Then the math becomes</p>
+<div class="displaymath">
+\begin{equation}
+\int_I \delta(t-T)f(t)\, dt = f(T)\text{,}\tag{2.8.1}
+\end{equation}
+</div>
+<p>where \(I\) is any interval containing \(T\text{.}\) This is the key identity for working with impulses.</p>
+<span class="incontext"><a href="fl-impulse.html#p-253">in-context</a></span>
 </body>
 </html>

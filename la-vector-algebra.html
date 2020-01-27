@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:16-05:00    *-->
+<!--*    on 2020-01-27T16:53:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -176,7 +176,6 @@ var js_version = 0.12;
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
 <li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
-<li><a href="fs-complex-eigenvalues.html" data-scroll="fs-complex-eigenvalues">Complex solutions</a></li>
 <li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
@@ -212,20 +211,20 @@ var js_version = 0.12;
 <a href="la-vector-algebra.html" class="permalink">¶</a><section class="subsection" id="la-vectors"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">Linear combinations</span>
 </h3>
-<a href="la-vector-algebra.html#la-vectors" class="permalink">¶</a><p id="p-33">We use \(\Rn{n}\) to denote the set of all vectors with \(n\) real elements. (Every vector is assumed to have a single-column shape.) If \(\bx\) is in \(\Rn{n}\text{,}\) then for any real number \(c\) we define \(c\bx\) by elementwise multiplication. Because this just scales the magnitude of the vector, a real value is often called a <dfn class="terminology">scalar</dfn>. If \(\bx\) and \(\by\) are in \(\Rn{n}\text{,}\) then we can add or subtract them elementwise. (Addition of a scalar and a vector, and addition of vectors of different lengths, are undefined.)</p>
-<p id="p-34">Scaling and addition are often rolled together into a singly namned operation.</p>
+<a href="la-vector-algebra.html#la-vectors" class="permalink">¶</a><p id="p-35">We use \(\Rn{n}\) to denote the set of all vectors with \(n\) real elements. (Every vector is assumed to have a single-column shape.) If \(\bx\) is in \(\Rn{n}\text{,}\) then for any real number \(c\) we define \(c\bx\) by elementwise multiplication. Because this just scales the magnitude of the vector, a real value is often called a <dfn class="terminology">scalar</dfn>. If \(\bx\) and \(\by\) are in \(\Rn{n}\text{,}\) then we can add or subtract them elementwise. (Addition of a scalar and a vector, and addition of vectors of different lengths, are undefined.)</p>
+<p id="p-36">Scaling and addition are often rolled together into a singly namned operation.</p>
 <article class="definition definition-like" id="definition-4"><h6 class="heading">
 <span class="type">Definition</span> <span class="codenumber">1.3.1</span>. <span class="title">Linear combination.</span>
 </h6>
-<p id="p-35">A  <dfn class="terminology">linear combination</dfn> of vectors \(\ba_1,\ldots,\ba_k\text{,}\) all in \(\Rn{n}\text{,}\) is</p>
+<p id="p-37">A  <dfn class="terminology">linear combination</dfn> of vectors \(\ba_1,\ldots,\ba_k\text{,}\) all in \(\Rn{n}\text{,}\) is</p>
 <div class="displaymath">
 \begin{equation}
 x_1 \ba_1 + x_2 \ba_2 + \cdots + x_k \ba_k = \sum_{j=1}^k x_j \ba_j\text{,}\label{la-va-lincomb}\tag{1.3.1}
 \end{equation}
 </div>
-<p>where the \(x_j\) are scalars known as <dfn class="terminology">coefficients</dfn> (or <dfn class="terminology">weights</dfn>).</p></article><p id="p-36">One motivation for this definition is to express linear systems.</p>
+<p>where the \(x_j\) are scalars known as <dfn class="terminology">coefficients</dfn> (or <dfn class="terminology">weights</dfn>).</p></article><p id="p-38">One motivation for this definition is to express linear systems.</p>
 <article class="example example-like" id="example-6"><a data-knowl="" class="id-ref" data-refid="hk-example-6"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.3.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-6"><article class="example example-like"><p id="p-37">Consider the system</p>
+<span class="type">Example</span> <span class="codenumber">1.3.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-6"><article class="example example-like"><p id="p-39">Consider the system</p>
 <div class="displaymath">
 \begin{align*}
 x_1 - x_2  - x_3 \amp = 2 \\
@@ -236,8 +235,7 @@ x_1 - 2x_2 - x_3 \amp = 5 \text{.}
 <p>Interpreting vector equalities elementwise, this is equivalent to</p>
 <div class="displaymath">
 \begin{equation*}
-x_1 \threevec{1}{3}{1} + x_2 \threevec{-1}{-2}{-2} + x_3 \threevec{-1}{0}{-1} =
-\threevec{2}{9}{5}\text{.}
+x_1 \threevec{1}{3}{1} + x_2 \threevec{-1}{-2}{-2} + x_3 \threevec{-1}{0}{-1} = \threevec{2}{9}{5}\text{.}
 \end{equation*}
 </div>
 <p>We can identify the three vectors on the left side as the columns of the coefficient matrix \(\bA\text{,}\) and the one on the right is \(\bb\text{.}\) In an earlier example, we found the solution \(\bx=[1,-3,2]\text{.}\) Hence</p>
@@ -246,23 +244,25 @@ x_1 \threevec{1}{3}{1} + x_2 \threevec{-1}{-2}{-2} + x_3 \threevec{-1}{0}{-1} =
 \ba_1 - 3 \ba_2 + 2\ba_3 = \bb\text{,}
 \end{equation*}
 </div>
-<p>where we gave names to the columns. In MATLAB syntax, <pre class="prettyprint lang-matlab">A = [ 1 -1 -1; 3 -2 0; 1 -2 -1 ]
+<p>where we gave names to the columns. In MATLAB syntax,</p>
+<figure class="listing figure-like" id="la_lincombination"><pre class="prettyprint lang-matlab">A = [ 1 -1 -1; 3 -2 0; 1 -2 -1 ]
 b = [ 2; 9; 5 ]
 x = [1; -3; 2 ]
 x(1)*A(:,1) + x(2)*A(:,2) + x(3)*A(:,3)
-</pre></p></article></div></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">1.3.3.</span> Linear combination of columns in MATLAB.</figcaption></figure></article></div></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">Matrix times vector</span>
 </h3>
-<p id="p-38">The linear combination definition <a data-knowl="./knowl/la-va-lincomb.html" title="Equation 1.3.1">(1.3.1)</a> actually serves as the foundation of multiplication between a matrix and a vector. We use \(\Rmn{m}{n}\) to mean the set of all matrices with \(m\) rows and \(n\) columns.</p>
+<p id="p-40">The linear combination definition <a data-knowl="./knowl/la-va-lincomb.html" title="Equation 1.3.1">(1.3.1)</a> actually serves as the foundation of multiplication between a matrix and a vector. We use \(\Rmn{m}{n}\) to mean the set of all matrices with \(m\) rows and \(n\) columns.</p>
 <article class="definition definition-like" id="definition-5"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.3.3</span>. <span class="title">Matrix times vector.</span>
+<span class="type">Definition</span> <span class="codenumber">1.3.4</span>. <span class="title">Matrix times vector.</span>
 </h6>
-<p id="p-39">Given \(\bA\in\Rmn{m}{n}\) and \(\bx\in\Rn{n}\text{,}\) the product \(\bA\bx\) is defined as</p>
+<p id="p-41">Given \(\bA\in\Rmn{m}{n}\) and \(\bx\in\Rn{n}\text{,}\) the product \(\bA\bx\) is defined as</p>
 <div class="displaymath">
 \begin{equation}
 \bA\bx = x_1 \ba_1 + x_2 \ba_2 + \cdots + x_n \ba_n = \sum_{j=1}^n x_j \ba_j\text{.}\label{la-mv-matvec}\tag{1.3.2}
 \end{equation}
-</div></article><p id="p-40">What justifies calling this opearation multiplication? In large part, it's the natural distributive properties</p>
+</div></article><p id="p-42">What justifies calling this opearation multiplication? In large part, it's the natural distributive properties</p>
 <div class="displaymath">
 \begin{align*}
 \bA(\bx+\by) \amp =  \bA\bx + \bA\by\\
@@ -270,7 +270,7 @@ x(1)*A(:,1) + x(2)*A(:,2) + x(3)*A(:,3)
 \end{align*}
 </div>
 <p>(where matrix addition is also defined elementwise), which can be checked with just a little determination. It's also true that \(\bA(c\bx)=c(\bA\bx)\text{.}\) However, <em class="alert">the product \(\bA\bx\) is <em class="emphasis">not</em> commutative; \(\bx\bA\) is not even defined.</em></p>
-<p id="p-41">As a matter of fact, these properties combine in a way worth noting. We can define a function \(L\) on vectors by \(L(\bx)=\bA\bx\text{.}\) This is what we call a <dfn class="terminology">linear function</dfn>, because \(L(c\bx + \by)=cL(\bx)+L(\by)\) for all \(n\)-vectors \(\bx,\by\) and scalars \(c\text{.}\) This would not be true for, for example, \(L(\bx)=x_1x_2\text{.}\)</p></section></section></div></main>
+<p id="p-43">As a matter of fact, these properties combine in a way worth noting. We can define a function \(L\) on vectors by \(L(\bx)=\bA\bx\text{.}\) This is what we call a <dfn class="terminology">linear function</dfn>, because \(L(c\bx + \by)=cL(\bx)+L(\by)\) for all \(n\)-vectors \(\bx,\by\) and scalars \(c\text{.}\) This would not be true for, for example, \(L(\bx)=x_1x_2\text{.}\)</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

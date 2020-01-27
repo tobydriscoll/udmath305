@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<figure class="listing figure-like"><pre class="prettyprint lang-matlab">dydt = @(t,y) -5*y;
+[t1,y1] = ode45(dydt,[0,2],1);
+[t2,y2] = ode45(dydt,[2,6],3+y1(end));
+semilogy([t1;t2],[y1;y2])
+xlabel('t'), ylabel('y(t)')
+title('Impulse forcing (semi-log)')
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">2.8.6.</span> </figcaption></figure><span class="incontext"><a href="fl-impulse.html#fo_lcc_impulse_2">in-context</a></span>
+</body>
+</html>

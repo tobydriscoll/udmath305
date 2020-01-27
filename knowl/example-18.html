@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -40,11 +40,13 @@
 \end{equation*}
 </div>
 <p>leading to the eigenspace \(\span\left(\twovec{-1/2}{1}\right)\text{.}\)</p>
-<p>MATLAB computes eigenvalues and eigenvectors (through an entirely different process) with the <code class="code-inline tex2jax_ignore">eig</code> command. <pre class="prettyprint lang-matlab">A = [ 1 1; 4 1 ];
+<p>MATLAB computes eigenvalues and eigenvectors (through an entirely different process) with the <code class="code-inline tex2jax_ignore">eig</code> command.</p>
+<figure class="listing figure-like"><pre class="prettyprint lang-matlab">A = [ 1 1; 4 1 ];
 lambda = eig(A)
 
 [V,D] = eig(A)
-</pre> In the second format (two outputs), the eigenvalues are on the diagonal of <code class="code-inline tex2jax_ignore">D</code>. The corresponding columns of <code class="code-inline tex2jax_ignore">V</code> are basis vectors for their eigenspaces, provided those are one-dimensional.</p>
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">1.11.6.</span> </figcaption></figure><p>In the second format (two outputs), the eigenvalues are on the diagonal of <code class="code-inline tex2jax_ignore">D</code>. The corresponding columns of <code class="code-inline tex2jax_ignore">V</code> are basis vectors for their eigenspaces, provided those are one-dimensional.</p>
 <aside class="aside aside-like"><p>By hand you usually find eigenvalues by finding the roots of a low-degree polynomial. It turns out that when the size is greater than \(2\times 2\text{,}\) other linear algebra methods for eigenvalues are much easier than finding the polynomial roots. In fact, MATLAB uses eigenvalues to find polynomial roots, rather than the other way around!</p></aside></article><span class="incontext"><a href="la-eigen.html#example-18">in-context</a></span>
 </body>
 </html>

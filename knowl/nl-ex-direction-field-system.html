@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:18-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -23,10 +23,11 @@
 \end{align*}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">F = @(x,y) -y;   G = @(x,y) x;
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">F = @(x,y) -y;   G = @(x,y) x;
 
 slopefield(F,G,[-2 2],[-2 2])
-</pre></div>
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">5.4.2.</span> </figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/nl_dirfield_1.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
 <p>Here is a slope field in the first quadrant for the nonlinear system</p>
@@ -37,11 +38,12 @@ slopefield(F,G,[-2 2],[-2 2])
 \end{align*}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">F = @(x,y) 3.*x-x.*y/2;
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">F = @(x,y) 3.*x-x.*y/2;
 G = @(x,y) -y + x.*y/4;
 
 slopefield(F,G,[0 10],[0 12])
-</pre></div>
+</pre>
+<figcaption><span class="type">Listing</span> <span class="codenumber">5.4.3.</span> </figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/nl_dirfield_2.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article><span class="incontext"><a href="nl-directionfields.html#nl-ex-direction-field-system">in-context</a></span>
 </body>

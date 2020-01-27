@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(\bA\) and \(\bB\) be \(n\times n\text{,}\) and let \(c\) be a scalar. Then</p>
-<ol class="decimal">
-<li>\(\det(c\bA) = c^n \det(\bA)\text{,}\)</li>
-<li>\(\det(\bA\bB) = \det(\bA)\det(\bB)\text{,}\)</li>
-<li>\(\det(\bA)=0\) if and only if \(\bA\) is singular, and</li>
-</ol>
+<p>If \(\bA\in\Rmn{n}{n}\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\det(\bA) = \sum (-1)^{i+j} a_{ij} \det( \mathbf{M}_{ij} )\text{,}
+\end{equation*}
+</div>
+<p>where the sum is taken over any row or column of \(\bA\text{,}\) and \(\mathbf{M}_{ij}\) is the matrix that results from deleting row \(i\) and column \(j\) from \(\bA\text{.}\)</p>
 <span class="incontext"><a href="la-determinant.html#p-95">in-context</a></span>
 </body>
 </html>

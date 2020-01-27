@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-24T10:38:39-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,9 +209,9 @@ var js_version = 0.12;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-complex-eigenvalues"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.5</span> <span class="title">Complex solutions</span>
 </h2>
-<a href="fs-complex-eigenvalues.html" class="permalink">¶</a><p id="p-298">For a real matrix \(\bA\text{,}\) complex eigenvalues and their corresponding eigenvectors occur in conjugate pairs.</p>
+<a href="fs-complex-eigenvalues.html" class="permalink">¶</a><p id="p-303">For a real matrix \(\bA\text{,}\) complex eigenvalues and their corresponding eigenvectors occur in conjugate pairs.</p>
 <article class="example example-like" id="example-47"><a data-knowl="" class="id-ref" data-refid="hk-example-47"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.5.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-47"><article class="example example-like"><p id="p-299">We eariler found the eigenvalues and eigenvectors of</p>
+<span class="type">Example</span> <span class="codenumber">3.5.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-47"><article class="example example-like"><p id="p-304">We eariler found the eigenvalues and eigenvectors of</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}\text{.}
@@ -230,7 +230,7 @@ var js_version = 0.12;
 \end{equation*}
 </div>
 <p>It's implied that \(c_{1,2}\) are complex constants.</p>
-<p id="p-300">There is more to the story. A purely real problem, with real initial conditions, will lead to a solution that is real at all times. In that case it works out that \(c_2=\overline{c_1}\text{.}\) But an alternative way to express the solution is to take the real and imaginary parts of</p>
+<p id="p-305">There is more to the story. A purely real problem, with real initial conditions, will lead to a solution that is real at all times. In that case it works out that \(c_2=\overline{c_1}\text{.}\) But an alternative way to express the solution is to take the real and imaginary parts of</p>
 <div class="displaymath">
 \begin{align*}
 e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [\cos(t)+i\sin(t)] \left( \twovec{1}{2} + i\twovec{0}{-1} \right)\\
@@ -245,7 +245,7 @@ e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [\cos(t)+i\sin(t)] \left( \twovec{1}{2
 \end{equation*}
 </div>
 <p>where here \(b_1\) and \(b_2\) are real.</p></article></div>
-<p id="p-301">As you can see, converting from the complex to the real form is quite an algebraic slog. It's easier to become comfortable with the complex exponentials themselves. Observe that</p>
+<p id="p-306">As you can see, converting from the complex to the real form is quite an algebraic slog. It's easier to become comfortable with the complex exponentials themselves. Observe that</p>
 <div class="displaymath">
 \begin{equation}
 e^{(a+i \omega)t} =  e^{at} (\cos \omega t + i \sin \omega t)\text{.}\label{fs-eq-complex-exp}\tag{3.5.1}
@@ -253,7 +253,7 @@ e^{(a+i \omega)t} =  e^{at} (\cos \omega t + i \sin \omega t)\text{.}\label{fs-e
 </div>
 <p>Reading from right to left, we have the product of \(e^{i\omega t}\text{,}\) which goes around and around the unit circle at constant angular velocity \(\omega\) , and \(e^{at}\text{,}\) which is an amplitude that exponentially grows or decays (or stays fixed if \(a=0\)).</p>
 <article class="example example-like" id="example-48"><a data-knowl="" class="id-ref" data-refid="hk-example-48"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.5.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-48"><article class="example example-like"><p id="p-302">Here are some looks at the function \(e^{\lambda t}\) for different complex values of \(\lambda\text{.}\) First, when \(\lambda\) is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of the function give cosine and sine, respectively.</p>
+<span class="type">Example</span> <span class="codenumber">3.5.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-48"><article class="example example-like"><p id="p-307">Here are some looks at the function \(e^{\lambda t}\) for different complex values of \(\lambda\text{.}\) First, when \(\lambda\) is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of the function give cosine and sine, respectively.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = 0;  om = 1;
 t = linspace(0, 25, 500);
@@ -273,7 +273,7 @@ set(gca,'dataaspect',[6,1,1])
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_neutral.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-303">If \(\Re(\lambda) \gt 0\text{,}\) the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of \(\lambda\) controls the frequency or "tightness" of the spiral.</p>
+<p id="p-308">If \(\Re(\lambda) \gt 0\text{,}\) the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of \(\lambda\) controls the frequency or "tightness" of the spiral.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = 0.01;  om = 2;
 t = linspace(0, 25, 500);
@@ -293,7 +293,7 @@ set(gca,'dataaspect',[6,1,1])
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_grow.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-304">Finally, if \(\Re(\lambda) \lt 0\text{,}\) the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
+<p id="p-309">Finally, if \(\Re(\lambda) \lt 0\text{,}\) the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">a = -0.1;  om = 0.8;
 t = linspace(0, 25, 500);
@@ -313,7 +313,7 @@ set(gca,'dataaspect',[6,1,1])
 </pre></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_cexp_decay.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-305">The upshot is that in the function \(e^{\lambda t}\text{,}\) the real part of \(\lambda\) determines exponential growth or decay, and the imaginary part of \(\lambda\) determines frequency of oscillation. All real exponentials, and all harmonic sines and cosines, are just special cases.</p></section></div></main>
+<p id="p-310">The upshot is that in the function \(e^{\lambda t}\text{,}\) the real part of \(\lambda\) determines exponential growth or decay, and the imaginary part of \(\lambda\) determines frequency of oscillation. All real exponentials, and all harmonic sines and cosines, are just special cases.</p></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.12/login.js"></script>

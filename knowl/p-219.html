@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To solve \(x'+3x=6t\text{,}\) first note that \(x_h(t)=c_1e^{-3t}\text{.}\) For \(x_p\) we use the educated guess</p>
+<p>In an initial value problem, we can use the growth factor to modify the variation of parameters formula:</p>
+<div class="displaymath">
+\begin{equation}
+x(t) = G(t_0,t)x_0 + \int_{t_0}^t G(s,t) f(s)\, ds\text{.}\tag{2.5.1}
+\end{equation}
+</div>
+<p>We can use <a data-knowl="./knowl/fl-thm-growthfactor.html" title="Theorem 2.4.3: Growth factor">Theorem 2.4.3</a> to show that this is the desired solution. First, \(x(t_0)=G(t_0,t_0)x_0 + 0 = x_0\text{,}\) as required. The derivative is a little tricky, as it requries an extension of the Fundamental Theorem of Calculus:</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = B_1 t + B_0\text{.}
+\frac{d}{dt} \int_{t_0}^t G(s,t) f(s)\, ds = G(t,t)f(t) + \int_{t_0}^t \frac{d}{dt} \left[ G(s,t)f(s) \right]\, ds  = f(t) + a(t)  \int_{t_0}^t G(s,t) f(s)\, ds\text{.}
 \end{equation*}
 </div>
-<p>Substituting that into the ODE yields</p>
-<div class="displaymath">
-\begin{equation*}
-(B_1)+3(B_1 t + B_0) = 6t\text{.}
-\end{equation*}
-</div>
-<p>On matching like powers of \(t\) we get the equations \(3B_1=6\) and \(B_1+B_0=0\text{.}\) This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that \(B_1=2\) and \(B_0=-2\text{.}\) So the general solution is</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = c_1 e^{-3t} + 2t - 2\text{.}
-\end{equation*}
-</div>
-<span class="incontext"><a href="fl-undeter.html#p-219">in-context</a></span>
+<span class="incontext"><a href="fl-varparam.html#p-219">in-context</a></span>
 </body>
 </html>

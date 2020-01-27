@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-23T15:10:17-05:00    *-->
+<!--*    on 2020-01-27T16:53:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>What is the meaning if \(\omega = \omega_0\text{?}\) This is exactly when \(i\omega\) is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients needs to be modified from the above derivation. But there is a sneaky shortcut. For a certain choice of \(c_1\) and \(c_2\text{,}\) we get a different particular solution</p>
+<p>The mechanical oscillator \(mx'' + bx' + kx = F(t)\) is more conveniently expressed as</p>
 <div class="displaymath">
 \begin{equation*}
-\hat{x}_p(t) = \frac{\omega_0^2}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)\text{,}
+x'' + \frac{b}{m} x' + \frac{k}{m} x = \frac{1}{m} F(t)\text{.}
 \end{equation*}
 </div>
-<p>which has an indeterminate form in the limit \(\omega \to \omega_0\text{,}\) allowing us to use L'Hopital's Rule:</p>
+<p>One reason to prefer this form is dimensional analysis: \(x\) must have the same units as  \(F/m\text{,}\) and both \(b/m\) and \(\sqrt{k/m}\) have units of inverse time. We introduce new parameters</p>
 <div class="displaymath">
 \begin{equation*}
-\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0} \omega_0^2 \frac{it e^{i\omega t}}{-2\omega} = -\frac{i\omega_0^2}{2} t e^{i\omega_0 t}\text{.}
+\omega_0 = \sqrt{\frac{k}{m}} \gt 0, \quad Z = \frac{1}{2} \frac{b/m}{\omega_0} = \frac{b}{\sqrt{4km}}\ge 0\text{.}
 \end{equation*}
 </div>
-<p>(It's a little tricky, because the derivatives here are with respect to the limited variable \(\omega\) and not \(t\text{.}\)) This leads to the general solution</p>
-<span class="incontext"><a href="so-expforcing.html#p-362">in-context</a></span>
+<p>\(\omega_0\) is known as the <dfn class="terminology">natural frequency</dfn>, with units of inverse time, and \(Z\) is a dimensionless number describing the intensity of the damping. Now the ODE becomes</p>
+<div class="displaymath">
+\begin{equation}
+x'' + 2 Z \omega_0 x' + \omega_0^2 x = \omega_0^2 F(t)\text{.}\tag{4.3.1}
+\end{equation}
+</div>
+<p>A similar derivation can be done starting from the electrical circuit equation.</p>
+<span class="incontext"><a href="so-oscillators.html#p-362">in-context</a></span>
 </body>
 </html>
