@@ -5,7 +5,7 @@ java -classpath ~/Dropbox/etc/jing-trang/build -Dorg.apache.xerces.xni.parser.XM
 echo "...done jing"
 
 echo "schematron validation..."
-xsltproc --xinclude ~/Dropbox/books/mathbook/schema/pretext-schematron.xsl notes305.xml
+xsltproc -stringparam publisher webpublish.xml --xinclude ~/Dropbox/books/mathbook/schema/pretext-schematron.xsl notes305.xml
 echo "...done schematron"
 
 echo "Conversion to html..."
