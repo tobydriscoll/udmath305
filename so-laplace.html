@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-27T17:03:24-05:00    *-->
+<!--*    on 2020-01-28T11:09:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
     jax: ["input/AsciiMath"],
     extensions: ["asciimath2jax.js"],
     TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
         equationNumbers: { autoNumber: "none", useLabelIds: true, },
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -57,7 +66,7 @@ MathJax.Hub.Config({
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.12;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -116,6 +125,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -204,7 +214,7 @@ var js_version = 0.12;
 x'' + bx' + cx = f(t)\text{.}
 \end{equation*}
 </div>
-<p>We cast this problem as a first-order system in two dimensions, found that the eigenvalues are the roots of \(\lambda^2+b\lambda + c\text{,}\) and then constructed exponential solutions for the homogeneous part (except for the double eigenvalue case). We also found a particular solution for the case of an exponential \(f(t)\text{.}\) There is an alternative way to derive the same results using the method of Laplace transforms to systematize the manipulations.</p></section><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
+<p data-braille="continuation">We cast this problem as a first-order system in two dimensions, found that the eigenvalues are the roots of \(\lambda^2+b\lambda + c\text{,}\) and then constructed exponential solutions for the homogeneous part (except for the double eigenvalue case). We also found a particular solution for the case of an exponential \(f(t)\text{.}\) There is an alternative way to derive the same results using the method of Laplace transforms to systematize the manipulations.</p></section><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Second derivatives</span>
 </h3>
 <p id="p-383">Recall that the transform of \(x'(t)\) is \(sX(s)-x(0)\text{.}\) Applying this formula twice shows that</p>
@@ -213,52 +223,53 @@ x'' + bx' + cx = f(t)\text{.}
 \lx[x''(t)] = s \lx[x'(t)] - x'(0) = s^2X(s) - sx(0) - x'(0)\text{.}
 \end{equation*}
 </div>
-<p>Let's look at an example first.</p>
-<article class="example example-like" id="example-56"><a data-knowl="" class="id-ref" data-refid="hk-example-56"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.5.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-56"><article class="example example-like"><p id="p-384">Let's observe what happens in a fundamental case, \(x''-x=e^{rt}\text{.}\)  Transforming both sides gives</p>
+<p data-braille="continuation">Let's look at an example first.</p>
+<article class="example example-like" id="example-56"><a data-knowl="" class="id-ref original" data-refid="hk-example-56"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-56"><article class="example example-like"><p id="p-384">Let's observe what happens in a fundamental case, \(x''-x=e^{rt}\text{.}\)  Transforming both sides gives</p>
 <div class="displaymath">
 \begin{equation*}
 [s^2X(s) - sx(0)-x'(0)] - X(s) = \frac{1}{s-r}\text{.}
 \end{equation*}
 </div>
-<p>We easily solve for \(X\text{:}\)</p>
+<p data-braille="continuation">We easily solve for \(X\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 X(s) = x'(0)\frac{1}{(s^2-1)} + x(0)\frac{s}{(s^2-1)} + \frac{1}{(s^2-1)(s-r)} \text{.}
 \end{equation*}
 </div>
-<p>This is doable, but we are going to lighten the load a bit. Even before we took the transform, we knew how to find the general homogeneous solution, \(c_1e^t+c_2e^{-t}\text{.}\) So let's use the transform to find any particular solution of the nonhomogeneous problem. Based on the expression above, we're best off with finding the particular solution with \(x(0)=x'(0)=0\text{,}\) leaving us with</p>
+<p data-braille="continuation">This is doable, but we are going to lighten the load a bit. Even before we took the transform, we knew how to find the general homogeneous solution, \(c_1e^t+c_2e^{-t}\text{.}\) So let's use the transform to find any particular solution of the nonhomogeneous problem. Based on the expression above, we're best off with finding the particular solution with \(x(0)=x'(0)=0\text{,}\) leaving us with</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{1}{(s+1)(s-1)(s-r)} \text{.}
 \end{equation*}
 </div>
-<p>The partial fraction mneomic gives us</p>
+<p data-braille="continuation">The partial fraction mneomic gives us</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} \text{.}
 \end{equation*}
 </div>
-<p>Note that this requires \(r\neq -1\) and \(r \neq 1\) (i.e., no resonance). From here we get</p>
+<p data-braille="continuation">Note that this requires \(r\neq -1\) and \(r \neq 1\) (i.e., no resonance). From here we get</p>
 <div class="displaymath">
 \begin{equation*}
 x_p(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}\text{.}
 \end{equation*}
 </div>
-<p>With this we can construct a general solution \(x_n+x_p\text{,}\) and then apply initial conditions to solve for the constants, if those are given.</p></article></div>
+<p data-braille="continuation">With this we can construct a general solution \(x_n+x_p\text{,}\) and then apply initial conditions to solve for the constants, if those are given.</p></article></div>
 <p id="p-385">This example is the template for our use of Laplace transforms. In the general case we get</p>
 <div class="displaymath">
 \begin{equation*}
 [s^2X(s) - sx(0)-x'(0)] + b[sX(s)-x(0)] + cX(s) = F(s)\text{.}
 \end{equation*}
 </div>
-<p>We choose to find a particular solution with zero initial conditions, so that</p>
+<p data-braille="continuation">We choose to find a particular solution with zero initial conditions, so that</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{F(s)}{s^2+bs+c}\text{.}
 \end{equation*}
 </div>
-<p>The real effort comes in finding the inverse transform of the right-hand side. Note that the denominator has roots at the eigenvalues of the homogeneous problem. These are called <dfn class="terminology">poles</dfn> of the transform \(X_p\text{.}\) Typically \(F(s)\) will contribute one or more of its own poles. Each pole at \(s=r\) corresponds to an exponential solution \(e^{rt}\) in time, but the exact expression depends on a partial fraction decomposition and perhaps other manipulations.</p></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
+<p data-braille="continuation">The real effort comes in finding the inverse transform of the right-hand side. Note that the denominator has roots at the eigenvalues of the homogeneous problem. These are called <dfn class="terminology">poles</dfn> of the transform \(X_p\text{.}\) Typically \(F(s)\) will contribute one or more of its own poles. Each pole at \(s=r\) corresponds to an exponential solution \(e^{rt}\) in time, but the exact expression depends on a partial fraction decomposition and perhaps other manipulations.</p></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.2</span> <span class="title">Imaginary poles</span>
 </h3>
 <p id="p-386">If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
@@ -267,26 +278,27 @@ X_p(s) = \frac{F(s)}{s^2+bs+c}\text{.}
 \lx[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
 \end{equation*}
 </div>
-<p>and</p>
+<p data-braille="continuation">and</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
 \end{equation*}
 </div>
-<p>Conversely, a transform \(X(s)\) that has \(s^2+\omega^2\) as a factor in the denominator has poles at \(\pm i\omega\text{.}\) The simplest case is</p>
+<p data-braille="continuation">Conversely, a transform \(X(s)\) that has \(s^2+\omega^2\) as a factor in the denominator has poles at \(\pm i\omega\text{.}\) The simplest case is</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)\text{.}
 \end{equation*}
 </div>
-<article class="example example-like" id="example-57"><a data-knowl="" class="id-ref" data-refid="hk-example-57"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.5.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-57"><article class="example example-like"><p id="p-387">Let's solve \(x''+9x=\delta(t-2)\text{.}\) A particular solution has transform</p>
+<article class="example example-like" id="example-57"><a data-knowl="" class="id-ref original" data-refid="hk-example-57"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-57"><article class="example example-like"><p id="p-387">Let's solve \(x''+9x=\delta(t-2)\text{.}\) A particular solution has transform</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{e^{-2s}}{s^2+9} = e^{-2s} F(s)\text{,}
 \end{equation*}
 </div>
-<p>where \(F(s)\) is the transform of \(\sin(3t)/3\text{.}\) So the shift theorem implies</p>
+<p data-braille="continuation">where \(F(s)\) is the transform of \(\sin(3t)/3\text{.}\) So the shift theorem implies</p>
 <div class="displaymath">
 \begin{equation*}
 x_p(t) = \frac{1}{3} H(t-2) \sin(3t-6)\text{.}
@@ -298,34 +310,35 @@ x_p(t) = \frac{1}{3} H(t-2) \sin(3t-6)\text{.}
 X_p(s) = \frac{A+Bs}{s^2+\omega^2} + \frac{C}{s-c} \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t) + C e^{ct}\text{.}
 \end{equation*}
 </div>
-<p>Usually there is some grunt (or computer) work involved in finding the values of \(A\text{,}\) \(B\text{,}\) and \(C\text{.}\)</p>
-<article class="example example-like" id="example-58"><a data-knowl="" class="id-ref" data-refid="hk-example-58"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">4.5.3</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-58"><article class="example example-like"><p id="p-389">The undamped oscillator \(x''+16x=40e^{-2t}\) has a particular solution whose transform is</p>
+<p data-braille="continuation">Usually there is some grunt (or computer) work involved in finding the values of \(A\text{,}\) \(B\text{,}\) and \(C\text{.}\)</p>
+<article class="example example-like" id="example-58"><a data-knowl="" class="id-ref original" data-refid="hk-example-58"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-58"><article class="example example-like"><p id="p-389">The undamped oscillator \(x''+16x=40e^{-2t}\) has a particular solution whose transform is</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{40}{(s+2)(s^2+16)} = \frac{A+Bs}{s^2+16^2} + \frac{C}{s+2}\text{.}
 \end{equation*}
 </div>
-<p>Clearing the denominators gives the identity</p>
+<p data-braille="continuation">Clearing the denominators gives the identity</p>
 <div class="displaymath">
 \begin{equation*}
 (A+Bs)(s+2) + C(s^2+16) = 40\text{.}
 \end{equation*}
 </div>
-<p>We need three equations to determine the unknown coefficients. Setting \(s=-2\) quickly gives \(20C=40\text{,}\) so \(C=2\text{.}\) Then setting \(s=\pm 4\) gives the system</p>
+<p data-braille="continuation">We need three equations to determine the unknown coefficients. Setting \(s=-2\) quickly gives \(20C=40\text{,}\) so \(C=2\text{.}\) Then setting \(s=\pm 4\) gives the system</p>
 <div class="displaymath">
 \begin{align*}
 (A+4B)(6) \amp = 40 - 64 = -24\\
 (A-4B)(-2) \amp = -24\text{,}
 \end{align*}
 </div>
-<p>or \(A+4B=-4\) and \(A-4B=12\text{.}\) We can add and subtract these equations to get \(2A=8\text{,}\) \(8B=-16\text{,}\) so finally</p>
+<p data-braille="continuation">or \(A+4B=-4\) and \(A-4B=12\text{.}\) We can add and subtract these equations to get \(2A=8\text{,}\) \(8B=-16\text{,}\) so finally</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} \text{.}
 \end{equation*}
 </div>
-<p>Hence</p>
+<p data-braille="continuation">Hence</p>
 <div class="displaymath">
 \begin{equation*}
 x_p(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
@@ -337,9 +350,9 @@ x_p(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
 X_p(s) = \frac{s}{(s^2+\omega_0^2)(s^2+1)} = \frac{1}{\omega_0^2-\omega^2} \left( \frac{s}{s^2+\omega^2} - \frac{s}{s^2+\omega_n^2} \right)\text{,}
 \end{equation*}
 </div>
-<p>which is readily inverted into a combination of \(\cos(\omega t)\) and \(\cos(\omega_0 t)\text{.}\) However, at this point we are probably better off using the method of undetermined coefficients instead.</p></section></section></div></main>
+<p data-braille="continuation">which is readily inverted into a combination of \(\cos(\omega t)\) and \(\cos(\omega_0 t)\text{.}\) However, at this point we are probably better off using the method of undetermined coefficients instead.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

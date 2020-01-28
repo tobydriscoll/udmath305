@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-27T17:03:24-05:00    *-->
+<!--*    on 2020-01-28T11:09:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
     jax: ["input/AsciiMath"],
     extensions: ["asciimath2jax.js"],
     TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
         equationNumbers: { autoNumber: "none", useLabelIds: true, },
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -57,7 +66,7 @@ MathJax.Hub.Config({
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.12;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -116,6 +125,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -204,7 +214,7 @@ var js_version = 0.12;
 \bX' = \bigl[ \bx_1' \: \bx_2' \: \cdots \: \bx_n'  \bigr] = \bigl[ \bA\bx_1 \: \bA\bx_2 \: \cdots \: \bA\bx_n  \bigr] = \bA \bX\text{.}
 \end{equation*}
 </div>
-<p>With such a matrix in hand, the general solution is \(\bx(t)=\bX(t)\bc\) for an arbitrary “integration constant” \(\bc\text{.}\)</p>
+<p data-braille="continuation">With such a matrix in hand, the general solution is \(\bx(t)=\bX(t)\bc\) for an arbitrary “integration constant” \(\bc\text{.}\)</p>
 <p id="p-291">The good news for the general case pretty much ends there; in most problems we cannot get a reasonably simple expression for \(\bX\text{.}\) But there is a very important special case in which we can say a lot: when \(\bA(t)\) is a constant matrix.</p>
 <p id="p-292">We begin the journey with an eigenpair of \(\bA\text{,}\)</p>
 <div class="displaymath">
@@ -212,22 +222,22 @@ var js_version = 0.12;
 \bA \bv = \lambda \bv\text{.}
 \end{equation*}
 </div>
-<p>If we posit that \(\bx(t)=g(t)\bv\text{,}\) then</p>
+<p data-braille="continuation">If we posit that \(\bx(t)=g(t)\bv\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 g'\bv = \bA(g\bv) = g(\bA\bv) = g\lambda \bv\text{,}
 \end{equation*}
 </div>
-<p>which can be satisfied if \(g'=\lambda g\text{,}\) or \(g(t)=ce^{\lambda t}\text{.}\) That is, each eigenpair gives us a homogeneous solution! (Yes, this the moment all the eigenstuff was preparing us for.)</p>
+<p data-braille="continuation">which can be satisfied if \(g'=\lambda g\text{,}\) or \(g(t)=ce^{\lambda t}\text{.}\) That is, each eigenpair gives us a homogeneous solution! (Yes, this the moment all the eigenstuff was preparing us for.)</p>
 <p id="p-293">Counting algebraic multiplicities, we know that \(\bA\) has eigenvalues \(\lambda_1,\ldots,\lambda_n\text{.}\) Say that we have eigenvectors \(\bv_1,\ldots,\bv_n\) to go with them. Then we have \(n\) homogeneous solutions</p>
 <div class="displaymath">
 \begin{equation*}
 \bx_j(t) = e^{\lambda_j t} \bv_j, \quad j=1,\ldots,n\text{.}
 \end{equation*}
 </div>
-<p>To determine whether they form a fundamental matrix, we need to determine whether they form a basis. According to <a data-knowl="./knowl/fs-thm-abel.html" title="Theorem 3.2.3: Homogeneous solution independence">Theorem 3.2.3</a>, we can ask that question at any value of \(t\text{,}\) including \(t=0\text{.}\) So the key issue is the independence of the eigenvectors.</p>
+<p data-braille="continuation">To determine whether they form a fundamental matrix, we need to determine whether they form a basis. According to <a class="xref" data-knowl="./knowl/fs-thm-abel.html" title="Theorem 3.2.3: Homogeneous solution independence">Theorem 3.2.3</a>, we can ask that question at any value of \(t\text{,}\) including \(t=0\text{.}\) So the key issue is the independence of the eigenvectors.</p>
 <article class="theorem theorem-like" id="fs-thm-eigensolution"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">3.3.1</span>. <span class="title">Solution by eigenvectors.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Solution by eigenvectors.</span>
 </h6>
 <p id="p-294">Let \(\bA\) have eigenvalues \(\lambda_1,\ldots,\lambda_n\) and corresponding eigenvectors \(\bv_1,\ldots,\bv_n\text{.}\) If the eigenvectors are independent (that is, they form a basis), then</p>
 <div class="displaymath">
@@ -237,44 +247,45 @@ e^{\lambda_1 t} \bv_1 \amp \cdots \amp e^{\lambda_n t} \bv_n
 \end{bmatrix}\label{fs-eq-eigenfundamental}\tag{3.3.1}
 \end{equation}
 </div>
-<p>is a fundamental matrix for \(\bx'=\bA\bx\text{.}\) Hence the general solution can be expressed as</p>
+<p data-braille="continuation">is a fundamental matrix for \(\bx'=\bA\bx\text{.}\) Hence the general solution can be expressed as</p>
 <div class="displaymath">
 \begin{equation}
 \bx(t) = \bX(t)\bc = c_1 e^{\lambda_1 t} \bv_1 + \cdots + c_n e^{\lambda_n t} \bv_n\text{.}\label{fs-eq-eigengeneral}\tag{3.3.2}
 \end{equation}
-</div></article><article class="example example-like" id="fs-ex-eigen-real"><a data-knowl="" class="id-ref" data-refid="hk-fs-ex-eigen-real"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">3.3.2</span>. <span class="title">System with real, distinct eigenvalues.</span>
+</div></article><article class="example example-like" id="fs-ex-eigen-real"><a data-knowl="" class="id-ref original" data-refid="hk-fs-ex-eigen-real"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">System with real, distinct eigenvalues.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-fs-ex-eigen-real"><article class="example example-like"><p id="p-295">We can find the eigenstuff of</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
 \end{equation*}
 </div>
-<p>as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This gives us solutions of \(\bx'=\bA\bx\text{:}\)</p>
+<p data-braille="continuation">as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This gives us solutions of \(\bx'=\bA\bx\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \bx_1(t) = e^{3t} \twovec{1}{2},\quad \bx_2(t) = e^{-t} \twovec{1}{-2} \text{.}
 \end{equation*}
 </div>
-<p>Because the eigenvalues are distinct, we know that these are independent solutions. The general homogeneous solution is</p>
+<p data-braille="continuation">Because the eigenvalues are distinct, we know that these are independent solutions. The general homogeneous solution is</p>
 <div class="displaymath">
 \begin{equation*}
 \bx(t) = \bX(t)\bc = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
 = \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-296">Matrices with real, distinct eigenvalues will always look like <a data-knowl="./knowl/fs-ex-eigen-real.html" title="Example 3.3.2: System with real, distinct eigenvalues">Example 3.3.2</a>. But there are two other situations to consider: repeated eigenvalues and complex eigenvalues.</p>
+<p id="p-296">Matrices with real, distinct eigenvalues will always look like <a class="xref" data-knowl="./knowl/fs-ex-eigen-real.html" title="Example 3.3.2: System with real, distinct eigenvalues">Example 3.3.2</a>. But there are two other situations to consider: repeated eigenvalues and complex eigenvalues.</p>
 <p id="p-297">The situation of repeated eigenvalues splits into two subcases. In section <a href="la-eigen.html#la-ei-multiplicity" class="internal" title="Subsection 1.11.2: Multiplicity">Subsection 1.11.2</a> we saw the definition of a <dfn class="terminology">defective</dfn> eigenvalue, whose eigenspace has dimension lower than its multiplicity in the characteristic polynomial. A matrix with any defective eigenvalues is also called defective, and the opposite situation is . One characterization of a defective \(n\times n\) matrix is that it has less than \(n\) independent eigenvectors. (That is, the sum of the eigenspace dimensions is less than \(n\text{.}\)) It's easy to spot when \(n=2\text{:}\)</p>
 <article class="definition definition-like" id="ls-def-defectivematrix"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">3.3.3</span>. <span class="title">Defective matrix.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Defective matrix.</span>
 </h6>
-<p id="p-298">A matrix with one or more defective eigenvalues is called <dfn class="terminology">defective</dfn>. A matrix with no defective eigenvalues is called <dfn class="terminology">nondefective</dfn>.</p></article><p id="p-299">Using this new language, <a data-knowl="./knowl/fs-thm-eigensolution.html" title="Theorem 3.3.1: Solution by eigenvectors">Theorem 3.3.1</a> applies when \(\bA\) is nondefective, even when it has some repeated eigenvalues. In the two-dimensional case this is easy to spot.</p>
+<p id="p-298">A matrix with one or more defective eigenvalues is called <dfn class="terminology">defective</dfn>. A matrix with no defective eigenvalues is called <dfn class="terminology">nondefective</dfn>.</p></article><p id="p-299">Using this new language, <a class="xref" data-knowl="./knowl/fs-thm-eigensolution.html" title="Theorem 3.3.1: Solution by eigenvectors">Theorem 3.3.1</a> applies when \(\bA\) is nondefective, even when it has some repeated eigenvalues. In the two-dimensional case this is easy to spot.</p>
 <article class="fact theorem-like" id="fact-13"><h6 class="heading">
-<span class="type">Fact</span> <span class="codenumber">3.3.4</span>.</h6>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
+</h6>
 <p id="p-300">A \(2\times 2\) matrix with a repeated eigenvalue is either diagonal or defective.</p></article><p id="p-301">The situation of a defective matrix will be touched on in <a href="fs-matrix-exp.html" class="internal" title="Section 3.6: Matrix exponential">Section 3.6</a>.</p>
-<p id="p-302">With complex eigenvalues the algebra gets nastier, but the principles don't change. In fact <a data-knowl="./knowl/fs-eq-eigengeneral.html" title="Equation 3.3.2">(3.3.2)</a> remains a valid solution expression. However, we do have to come to understand in <a href="fs-complex-exponentials.html" class="internal" title="Section 3.4: Complex exponentials">Section 3.4</a> what it means to take the exponential of a complex number.</p></section></div></main>
+<p id="p-302">With complex eigenvalues the algebra gets nastier, but the principles don't change. In fact <a class="xref" data-knowl="./knowl/fs-eq-eigengeneral.html" title="Equation 3.3.2">(3.3.2)</a> remains a valid solution expression. However, we do have to come to understand in <a href="fs-complex-exponentials.html" class="internal" title="Section 3.4: Complex exponentials">Section 3.4</a> what it means to take the exponential of a complex number.</p></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

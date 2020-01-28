@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-27T17:03:23-05:00    *-->
+<!--*    on 2020-01-28T11:09:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
     jax: ["input/AsciiMath"],
     extensions: ["asciimath2jax.js"],
     TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
         equationNumbers: { autoNumber: "none", useLabelIds: true, },
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -57,7 +66,7 @@ MathJax.Hub.Config({
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.12;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -116,6 +125,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -199,8 +209,9 @@ var js_version = 0.12;
 <span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Row elimination</span>
 </h2>
 <a href="la-elimination.html" class="permalink">¶</a><p id="p-14">You've probably solved small systems of equations by substitution. In order to solve systems with more equations and variables, we take a slightly different point of view and use <dfn class="terminology">elimination</dfn>. The goal of elimination is to transform the system to an equivalent one whose solution(s) we can just read off.</p>
-<article class="example example-like" id="la-ex-gausselim"><a data-knowl="" class="id-ref" data-refid="hk-la-ex-gausselim"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.2.1</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-la-ex-gausselim"><article class="example example-like"><p id="p-15">We start with a system</p>
+<article class="example example-like" id="la-ex-gausselim"><a data-knowl="" class="id-ref original" data-refid="hk-la-ex-gausselim"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-la-ex-gausselim"><article class="example example-like"><p id="p-15">We start with a system</p>
 <div class="displaymath">
 \begin{align*}
 x_1 - x_2  - x_3 \amp = 2 \\
@@ -208,7 +219,7 @@ x_1 - x_2  - x_3 \amp = 2 \\
 x_1 - 2x_2 - x_3 \amp = 5 \text{.}
 \end{align*}
 </div>
-<p>The first step is to use the first equation to eliminate \(x_1\) from the second and third equations. We subtract 3 times equation 1 from equation 2, and 1 times equation 1 from equation 3:</p>
+<p data-braille="continuation">The first step is to use the first equation to eliminate \(x_1\) from the second and third equations. We subtract 3 times equation 1 from equation 2, and 1 times equation 1 from equation 3:</p>
 <div class="displaymath">
 \begin{align*}
 x_1 - x_2  - x_3  \amp = 2 \amp \amp \\
@@ -224,10 +235,11 @@ x_2 + 3x_3 \amp = 3 \amp \amp \\
 (-x_2) + (x_2+3x_3)  \amp = 3 + 3 \amp \quad \Rightarrow \quad 3x_3 \amp = 6\text{.}
 \end{align*}
 </div></article></div>
-<p id="p-18">The process in <a data-knowl="./knowl/la-ex-gausselim.html" title="Example 1.2.1">Example 1.2.1</a> is most commonly known as <dfn class="terminology">Gaussian elimination</dfn>. (It's a misnomer, as the process was known in China thousands of years before Gauss, but never mind.) We <em class="emphasis">could</em> solve the system at the end of the example by starting with the last equation to deduce that \(x_3=2\text{.}\) We then put that value into the second equation and can solve that for \(x_2\text{,}\) etc.</p>
+<p id="p-18">The process in <a class="xref" data-knowl="./knowl/la-ex-gausselim.html" title="Example 1.2.1">Example 1.2.1</a> is most commonly known as <dfn class="terminology">Gaussian elimination</dfn>. (It's a misnomer, as the process was known in China thousands of years before Gauss, but never mind.) We <em class="emphasis">could</em> solve the system at the end of the example by starting with the last equation to deduce that \(x_3=2\text{.}\) We then put that value into the second equation and can solve that for \(x_2\text{,}\) etc.</p>
 <p id="p-19">Instead, though, we are going to continue to manipulate the system to get something even simpler.</p>
-<article class="example example-like" id="la-ex-gaussjordan"><a data-knowl="" class="id-ref" data-refid="hk-la-ex-gaussjordan"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.2.2</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-la-ex-gaussjordan"><article class="example example-like"><p id="p-20">(Continuation of <a data-knowl="./knowl/la-ex-gausselim.html" title="Example 1.2.1">Example 1.2.1</a>.) Having reached the last variable and equation, we turn around and eliminate <em class="emphasis">upwards</em> instead:</p>
+<article class="example example-like" id="la-ex-gaussjordan"><a data-knowl="" class="id-ref original" data-refid="hk-la-ex-gaussjordan"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-la-ex-gaussjordan"><article class="example example-like"><p id="p-20">(Continuation of <a class="xref" data-knowl="./knowl/la-ex-gausselim.html" title="Example 1.2.1">Example 1.2.1</a>.) Having reached the last variable and equation, we turn around and eliminate <em class="emphasis">upwards</em> instead:</p>
 <div class="displaymath">
 \begin{align*}
 (x_1 - x_2 - x_3) + \frac{1}{3}(3x_3) \amp = 2  +\frac{1}{3}(6) \amp \quad \Rightarrow \quad x_1  -x_2 \amp = 4\\
@@ -235,7 +247,7 @@ x_2 + 3x_3 \amp = 3 \amp \amp \\
 3x_3  \amp = 6 \amp  \amp\text{.}
 \end{align*}
 </div>
-<p>Continue moving back upwards, to the second equation, and use it to eliminate above:</p>
+<p data-braille="continuation">Continue moving back upwards, to the second equation, and use it to eliminate above:</p>
 <div class="displaymath">
 \begin{align*}
 (x_1 - x_2 ) + (x_2) \amp = 4  + (-3)  \amp \quad \Rightarrow \quad x_1  \amp = 1\\
@@ -243,10 +255,11 @@ x_2 \amp = -3 \amp \amp \\
 3x_3  \amp = 6 \amp \amp \text{.}
 \end{align*}
 </div>
-<p>Obviously, the (unique) solution is \(x_1=1\text{,}\) \(x_2=-3\text{,}\) \(x_3=2\text{.}\)</p></article></div>
+<p data-braille="continuation">Obviously, the (unique) solution is \(x_1=1\text{,}\) \(x_2=-3\text{,}\) \(x_3=2\text{.}\)</p></article></div>
 <p id="p-21">That was a mouthful. We can make it easier if we express the system as \(\bA=\bx=\bb\) for a constant matrix and vector, and just manipulate the numbers without carrying around extra notation. We start with the  <dfn class="terminology">augmented matrix</dfn> \([\bA,\,\bb]\text{.}\)</p>
-<article class="example example-like" id="example-4"><a data-knowl="" class="id-ref" data-refid="hk-example-4"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.2.3</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-4"><article class="example example-like"><p id="p-22">We repeat <a data-knowl="./knowl/la-ex-gausselim.html" title="Example 1.2.1">Example 1.2.1</a> and <a data-knowl="./knowl/la-ex-gaussjordan.html" title="Example 1.2.2">Example 1.2.2</a> but just with the relevant constants. The key is to use zeros as coefficients where there are “silent” variables. The starting augmented matrix is</p>
+<article class="example example-like" id="example-4"><a data-knowl="" class="id-ref original" data-refid="hk-example-4"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-4"><article class="example example-like"><p id="p-22">We repeat <a class="xref" data-knowl="./knowl/la-ex-gausselim.html" title="Example 1.2.1">Example 1.2.1</a> and <a class="xref" data-knowl="./knowl/la-ex-gaussjordan.html" title="Example 1.2.2">Example 1.2.2</a> but just with the relevant constants. The key is to use zeros as coefficients where there are “silent” variables. The starting augmented matrix is</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -256,7 +269,7 @@ x_2 \amp = -3 \amp \amp \\
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>First elimination step uses the first row to eliminate below it:</p>
+<p data-braille="continuation">First elimination step uses the first row to eliminate below it:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -266,7 +279,7 @@ x_2 \amp = -3 \amp \amp \\
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>Next we use the second row to eliminate below it:</p>
+<p data-braille="continuation">Next we use the second row to eliminate below it:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -276,7 +289,7 @@ x_2 \amp = -3 \amp \amp \\
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>Having reached the last row, we turn around and eliminate above it.</p>
+<p data-braille="continuation">Having reached the last row, we turn around and eliminate above it.</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -286,7 +299,7 @@ x_2 \amp = -3 \amp \amp \\
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>We move up to the second row and eliminate above that:</p>
+<p data-braille="continuation">We move up to the second row and eliminate above that:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -296,7 +309,7 @@ x_2 \amp = -3 \amp \amp \\
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>Finally, to be super pedantic, we normalize each row:</p>
+<p data-braille="continuation">Finally, to be super pedantic, we normalize each row:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -306,7 +319,7 @@ x_2 \amp = -3 \amp \amp \\
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>The last column is now the solution.</p>
+<p data-braille="continuation">The last column is now the solution.</p>
 <p id="p-23">The following code performs these operations in MATLAB. Note the square brackets used to define matrices and vectors, and the notation used to access a row or part of a row.</p>
 <figure class="listing figure-like" id="la_rowops"><pre class="prettyprint lang-matlab">A = [ 1 -1 -1; 3 -2 0; 1 -2 -1 ]
 b = [ 2; 9; 5 ]
@@ -322,10 +335,11 @@ AA(1,3:end) = AA(1,3:end) + (1/3)*AA(3,3:end)
 
 AA(1,2:end) = AA(1,2:end) + AA(2,2:end)
 </pre>
-<figcaption><span class="type">Listing</span> <span class="codenumber">1.2.4.</span> Row operations in MATLAB</figcaption></figure></article></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.2.4<span class="period">.</span></span><span class="space"> </span>Row operations in MATLAB</figcaption></figure></article></div>
 <p id="p-24">Before we generalize, let's look at an example that works out differently.</p>
-<article class="example example-like" id="la-ex-rowelim"><a data-knowl="" class="id-ref" data-refid="hk-la-ex-rowelim"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">1.2.5</span>.</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-la-ex-rowelim"><article class="example example-like"><p id="p-25">Let's solve the system having augmented matrix</p>
+<article class="example example-like" id="la-ex-rowelim"><a data-knowl="" class="id-ref original" data-refid="hk-la-ex-rowelim"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-la-ex-rowelim"><article class="example example-like"><p id="p-25">Let's solve the system having augmented matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -335,7 +349,7 @@ AA(1,2:end) = AA(1,2:end) + AA(2,2:end)
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>Use multiples of the first row to eliminate below it.</p>
+<p data-braille="continuation">Use multiples of the first row to eliminate below it.</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -345,7 +359,7 @@ AA(1,2:end) = AA(1,2:end) + AA(2,2:end)
 \end{bmatrix}
 \end{equation*}
 </div>
-<p>Use a multiple of the second row to eliminate below that.</p>
+<p data-braille="continuation">Use a multiple of the second row to eliminate below that.</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -355,7 +369,7 @@ AA(1,2:end) = AA(1,2:end) + AA(2,2:end)
 \end{bmatrix}
 \end{equation*}
 </div>
-<p>We have reached the last row, and it's time to turn around and eliminate upwards. But we can't, because the last row is entirely zero. So skip that and move up to the next row, eliminating upwards again in the second column:</p>
+<p data-braille="continuation">We have reached the last row, and it's time to turn around and eliminate upwards. But we can't, because the last row is entirely zero. So skip that and move up to the next row, eliminating upwards again in the second column:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -365,23 +379,23 @@ AA(1,2:end) = AA(1,2:end) + AA(2,2:end)
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p>This is as simple as we can get things. The last row is telling us the astounding fact that \(0=0\text{,}\) i.e., nothing at all. The fact that there was nothing there to determine \(x_3\) means that we can set it to be anything we like, say \(x_3=s\) for arbitrary \(s\text{.}\) Now the second row says</p>
+<p data-braille="continuation">This is as simple as we can get things. The last row is telling us the astounding fact that \(0=0\text{,}\) i.e., nothing at all. The fact that there was nothing there to determine \(x_3\) means that we can set it to be anything we like, say \(x_3=s\) for arbitrary \(s\text{.}\) Now the second row says</p>
 <div class="displaymath">
 \begin{equation*}
 x_2 = -1 - 3s\text{,}
 \end{equation*}
 </div>
-<p>which is as specific as we can get. Finally, the first row says</p>
+<p data-braille="continuation">which is as specific as we can get. Finally, the first row says</p>
 <div class="displaymath">
 \begin{equation*}
 x_1 = 5 + s\text{.}
 \end{equation*}
 </div>
-<p>So \([5+s,-1-3s,s]\) is a solution for every \(s\text{,}\) and we have infinitely many solutions.</p></article></div>
-<p id="p-26">The process demonstrated in <a data-knowl="./knowl/la-ex-rowelim.html" title="Example 1.2.5">Example 1.2.5</a> is best known as  <dfn class="terminology">Gauss-Jordan elimination</dfn>, though I prefer to call it <dfn class="terminology">row elimination</dfn>. As seen in the examples, row elimination consists of two phases, one downward (Gaussian elimination) and one upward. The goal is to put the augmented matrix into a special form. </p>
+<p data-braille="continuation">So \([5+s,-1-3s,s]\) is a solution for every \(s\text{,}\) and we have infinitely many solutions.</p></article></div>
+<p id="p-26">The process demonstrated in <a class="xref" data-knowl="./knowl/la-ex-rowelim.html" title="Example 1.2.5">Example 1.2.5</a> is best known as  <dfn class="terminology">Gauss-Jordan elimination</dfn>, though I prefer to call it <dfn class="terminology">row elimination</dfn>. As seen in the examples, row elimination consists of two phases, one downward (Gaussian elimination) and one upward. The goal is to put the augmented matrix into a special form. </p>
 <p id="p-27">Time for some more formal definitions. We start with the downward phase of the elimination. It's organized a tad differently in order to make everything easier to describe. In what follows we use the term <dfn class="terminology">leading nonzero</dfn> to mean the first (leftmost) entry of a row that is not zero.</p>
 <article class="definition definition-like" id="la-def-phase1"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.2.6</span>. <span class="title">Row elimination Phase 1 (Gaussian elimination).</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Row elimination Phase 1 (Gaussian elimination).</span>
 </h6>
 <ol id="p-28" class="decimal">
 <li id="li-13">Set \(i=1\text{.}\)</li>
@@ -391,7 +405,7 @@ x_1 = 5 + s\text{.}
 <li id="li-17">Increment \(i\) and return to step 2.</li>
 </ol></article><p id="p-29">At the end of Phase 1 the augmented matrix has a simple form. However, it's not the cleanest form to work with theoretically, so we continue.</p>
 <article class="definition definition-like" id="la-def-phase2"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.2.7</span>. <span class="title">Row elimination Phase 2.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Row elimination Phase 2.</span>
 </h6>
 <ol id="p-30" class="decimal">
 <li id="li-18">Set \(i=m\) (the number of equations).</li>
@@ -399,7 +413,7 @@ x_1 = 5 + s\text{.}
 <li id="li-20">Decrement \(i\text{.}\) If \(i\gt 1\text{,}\) return to step 2.</li>
 </ol></article><p id="p-31">At the end of Phase 2, the matrix is in a form that we define formally here.</p>
 <article class="definition definition-like" id="definition-3"><h6 class="heading">
-<span class="type">Definition</span> <span class="codenumber">1.2.8</span>. <span class="title">RREF.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">RREF.</span>
 </h6>
 <p id="p-32">A matrix is in  <dfn class="terminology">RREF</dfn> (reduced row echelon form) if it meets all of these requirements:</p>
 <ol class="decimal">
@@ -407,7 +421,7 @@ x_1 = 5 + s\text{.}
 <li id="li-22">The leading nonzero of any row is a one.</li>
 <li id="li-23">Every leading one is the only nonzero in its column.</li>
 </ol>
-<p>The columns that have leading ones are called  <dfn class="terminology">pivot columns</dfn>. The other columns are called  <dfn class="terminology">free columns</dfn>.</p></article><p id="p-33">As seen in the examples above, the RREF of an augmented matrix represents a linear system that we can solve by inspection:</p>
+<p data-braille="continuation">The columns that have leading ones are called  <dfn class="terminology">pivot columns</dfn>. The other columns are called  <dfn class="terminology">free columns</dfn>.</p></article><p id="p-33">As seen in the examples above, the RREF of an augmented matrix represents a linear system that we can solve by inspection:</p>
 <ul class="disc">
 <li id="li-24">Ignore all zero rows.</li>
 <li id="li-25">If a leading one occurs in the last column, the system is inconsistent.</li>
@@ -417,6 +431,6 @@ x_1 = 5 + s\text{.}
 <aside class="aside aside-like" id="aside-3"><p id="p-34">MATLAB has a command <code class="code-inline tex2jax_ignore">rref</code> to put a matrix in RREF. However, it's not ideal, because MATLAB uses floating point and cannot always produce exact zeros. You can also <a class="external" href="https://www.wolframalpha.com/input/?i=rref%20%7B%7B1%2C2%2C3%7D%2C%7B4%2C5%2C6%7D%2C%7B7%2C8%2C9%7D%7D" target="_blank">try Wolfram Alpha</a> for this.</p></aside></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>

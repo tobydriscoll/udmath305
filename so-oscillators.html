@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-27T17:03:24-05:00    *-->
+<!--*    on 2020-01-28T11:09:52-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
     jax: ["input/AsciiMath"],
     extensions: ["asciimath2jax.js"],
     TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
         equationNumbers: { autoNumber: "none", useLabelIds: true, },
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -57,7 +66,7 @@ MathJax.Hub.Config({
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.12;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -116,6 +125,7 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
@@ -207,20 +217,20 @@ var js_version = 0.12;
 mx'' + b x' + kx = F(t)\text{.}
 \end{equation*}
 </div>
-<p>(As is typical, all the named constants are nonnegative.) Here \(m\)&gt; is the mass, \(b\)&gt;is a coefficient of friction or other damping forces, and \(k\)&gt; is a characteristic constant of the spring. The term \(F(t)\) represents an external driving force. If we have initial conditions, they give values for \(x\) and \(x'\text{.}\)</p>
+<p data-braille="continuation">(As is typical, all the named constants are nonnegative.) Here \(m\)&gt; is the mass, \(b\)&gt;is a coefficient of friction or other damping forces, and \(k\)&gt; is a characteristic constant of the spring. The term \(F(t)\) represents an external driving force. If we have initial conditions, they give values for \(x\) and \(x'\text{.}\)</p>
 <p id="p-358">The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
 <div class="displaymath">
 \begin{equation*}
 \theta'' + \gamma \theta + \frac{g}{L}\sin \theta = F(t)\text{,}
 \end{equation*}
 </div>
-<p>where \(\theta(t)\) is the angle made with vertical-down and \(L\) is the arm length. This equation is nonlinear. But if the angle remains small, then a reasonable approximation is</p>
+<p data-braille="continuation">where \(\theta(t)\) is the angle made with vertical-down and \(L\) is the arm length. This equation is nonlinear. But if the angle remains small, then a reasonable approximation is</p>
 <div class="displaymath">
 \begin{equation*}
 \theta'' + \gamma \theta + \frac{g}{L}\theta = F(t)\text{,}
 \end{equation*}
 </div>
-<p>which is a linear oscillator.</p></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
+<p data-braille="continuation">which is a linear oscillator.</p></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.2</span> <span class="title">Electrical oscillators</span>
 </h3>
 <p id="p-359">An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is</p>
@@ -229,7 +239,7 @@ mx'' + b x' + kx = F(t)\text{.}
 LI'' + RI' + CI = \mathcal{E}'(t)\text{,}
 \end{equation*}
 </div>
-<p>where \(L\) is inductance, \(R\) is resistance, \(C\) is capacitance, and \(I(t)\) is the current flowing through the circuit. The forcing term represents the generator whose voltage (EMF) is \(\mathcal{E}(t)\text{.}\) For alternating current this is modeled as a cosine (or complex exponential) function.</p>
+<p data-braille="continuation">where \(L\) is inductance, \(R\) is resistance, \(C\) is capacitance, and \(I(t)\) is the current flowing through the circuit. The forcing term represents the generator whose voltage (EMF) is \(\mathcal{E}(t)\text{.}\) For alternating current this is modeled as a cosine (or complex exponential) function.</p>
 <p id="p-360">In DC circuits we have Ohm's Law, \(I=V/R\text{,}\) for a resistance \(R\text{.}\) In the AC case, if \(\mathcal{E}(t)=Ve^{i\omega t}\text{,}\) then \(e^{i\omega t}\) appears in the current as well, and it still makes sense to talk about \(V/I\) as a kind of resistance, now called <dfn class="terminology">impedance</dfn> and dependent on the frequency \(\omega\text{.}\)</p></section><section class="subsection" id="so-os-notation"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.3</span> <span class="title">Unifying notation</span>
 </h3>
@@ -240,50 +250,50 @@ LI'' + RI' + CI = \mathcal{E}'(t)\text{,}
 x'' + \frac{b}{m} x' + \frac{k}{m} x = \frac{1}{m} F(t)\text{.}
 \end{equation*}
 </div>
-<p>One reason to prefer this form is dimensional analysis: \(x\) must have the same units as  \(F/m\text{,}\) and both \(b/m\) and \(\sqrt{k/m}\) have units of inverse time. We introduce new parameters</p>
+<p data-braille="continuation">One reason to prefer this form is dimensional analysis: \(x\) must have the same units as  \(F/m\text{,}\) and both \(b/m\) and \(\sqrt{k/m}\) have units of inverse time. We introduce new parameters</p>
 <div class="displaymath">
 \begin{equation*}
 \omega_0 = \sqrt{\frac{k}{m}} \gt 0, \quad Z = \frac{1}{2} \frac{b/m}{\omega_0} = \frac{b}{\sqrt{4km}}\ge 0\text{.}
 \end{equation*}
 </div>
-<p>\(\omega_0\) is known as the <dfn class="terminology">natural frequency</dfn>, with units of inverse time, and \(Z\) is a dimensionless number describing the intensity of the damping. Now the ODE becomes</p>
+<p data-braille="continuation">\(\omega_0\) is known as the <dfn class="terminology">natural frequency</dfn>, with units of inverse time, and \(Z\) is a dimensionless number describing the intensity of the damping. Now the ODE becomes</p>
 <div class="displaymath">
 \begin{equation}
 x'' + 2 Z \omega_0 x' + \omega_0^2 x = \omega_0^2 F(t)\text{.}\label{so-eq-unified}\tag{4.3.1}
 \end{equation}
 </div>
-<p>A similar derivation can be done starting from the electrical circuit equation.</p>
+<p data-braille="continuation">A similar derivation can be done starting from the electrical circuit equation.</p>
 <aside class="aside aside-like" id="aside-15"><p id="p-363">In math we usually use “frequency” to mean the multiplier of \(t\) in a sin or cos function. In some fields this is called <dfn class="terminology">angular frequency</dfn> and “frequency” is used to mean the number of cycles per time unit, as in Hz.</p></aside><p id="p-364">The eigenvalues of the homogeneous form of this equation are</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1}\text{.}
 \end{equation*}
 </div>
-<p>The discussion now splits into four cases marked by increasing values of \(Z\text{.}\)</p></section><section class="subsection" id="so-os-undamped"><h3 class="heading hide-type">
+<p data-braille="continuation">The discussion now splits into four cases marked by increasing values of \(Z\text{.}\)</p></section><section class="subsection" id="so-os-undamped"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.4</span> <span class="title">Undamped</span>
 </h3>
-<a href="so-oscillators.html#so-os-undamped" class="permalink">¶</a><p id="p-365">The first case for <a data-knowl="./knowl/so-eq-unified.html" title="Equation 4.3.1">(4.3.1)</a> is \(Z=0\text{,}\) which is the idealization of no mechanical damping or friction (or resistance, in a circuit). The homogeneous equation is \(x''+\omega_0^2x=0\text{,}\) which has eigenvalues \(\pm i\omega_0\) and general solution</p>
+<a href="so-oscillators.html#so-os-undamped" class="permalink">¶</a><p id="p-365">The first case for <a class="xref" data-knowl="./knowl/so-eq-unified.html" title="Equation 4.3.1">(4.3.1)</a> is \(Z=0\text{,}\) which is the idealization of no mechanical damping or friction (or resistance, in a circuit). The homogeneous equation is \(x''+\omega_0^2x=0\text{,}\) which has eigenvalues \(\pm i\omega_0\) and general solution</p>
 <div class="displaymath">
 \begin{equation*}
 x_h(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} = a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t)\text{.}
 \end{equation*}
 </div>
-<p>Thus the undamped case results in pure oscillation at frequency \(\omega_0\text{.}\)</p></section><section class="subsection" id="so-os-underdamped"><h3 class="heading hide-type">
+<p data-braille="continuation">Thus the undamped case results in pure oscillation at frequency \(\omega_0\text{.}\)</p></section><section class="subsection" id="so-os-underdamped"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.5</span> <span class="title">Underdamped</span>
 </h3>
-<a href="so-oscillators.html#so-os-underdamped" class="permalink">¶</a><p id="p-366">For \(0\lt Z \lt 1\) the eigenvalues of <a data-knowl="./knowl/so-eq-unified.html" title="Equation 4.3.1">(4.3.1)</a> are complex:</p>
+<a href="so-oscillators.html#so-os-underdamped" class="permalink">¶</a><p id="p-366">For \(0\lt Z \lt 1\) the eigenvalues of <a class="xref" data-knowl="./knowl/so-eq-unified.html" title="Equation 4.3.1">(4.3.1)</a> are complex:</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda_{1,2} = -Z \omega_0 \pm i \omega_0 \sqrt{1-Z^2}\text{.}
 \end{equation*}
 </div>
-<p>Defining \(\omega_d=\omega_0 \sqrt{1-Z^2}\text{,}\) the general homogeneous solution is therefore</p>
+<p data-braille="continuation">Defining \(\omega_d=\omega_0 \sqrt{1-Z^2}\text{,}\) the general homogeneous solution is therefore</p>
 <div class="displaymath">
 \begin{equation*}
 x_h(t) = e^{-Z\omega_0 t} \left( c_1 e^{i\omega_d t} + c_2 e^{-i\omega_d t} \right)\text{,}
 \end{equation*}
 </div>
-<p>or the equivalent real form with cos and sin. This solution is pseudoperiodic, combining oscillation at frequency \(\omega_d \lt \omega_0\) inside an exponential decay envelope. This situation is called an <dfn class="terminology">underdamped oscillator</dfn>.</p></section><section class="subsection" id="so-os-critical"><h3 class="heading hide-type">
+<p data-braille="continuation">or the equivalent real form with cos and sin. This solution is pseudoperiodic, combining oscillation at frequency \(\omega_d \lt \omega_0\) inside an exponential decay envelope. This situation is called an <dfn class="terminology">underdamped oscillator</dfn>.</p></section><section class="subsection" id="so-os-critical"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.6</span> <span class="title">Critically damped</span>
 </h3>
 <a href="so-oscillators.html#so-os-critical" class="permalink">¶</a><p id="p-367">At \(Z=1\) the complex eigenvalues collapse to a double eigenvalue at</p>
@@ -292,13 +302,13 @@ x_h(t) = e^{-Z\omega_0 t} \left( c_1 e^{i\omega_d t} + c_2 e^{-i\omega_d t} \rig
 \lambda_1 = \lambda_2 = -\omega_0\text{,}
 \end{equation*}
 </div>
-<p>with general homogeneous solution</p>
+<p data-braille="continuation">with general homogeneous solution</p>
 <div class="displaymath">
 \begin{equation*}
 x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t)\text{.}
 \end{equation*}
 </div>
-<p>There is no longer any oscillation present, and we have a <dfn class="terminology">critically damped oscillator</dfn>. The linear growth of \(c_2 t\) doesn't make much difference against the exponential decay.</p></section><section class="subsection" id="so-os-overdamped"><h3 class="heading hide-type">
+<p data-braille="continuation">There is no longer any oscillation present, and we have a <dfn class="terminology">critically damped oscillator</dfn>. The linear growth of \(c_2 t\) doesn't make much difference against the exponential decay.</p></section><section class="subsection" id="so-os-overdamped"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.7</span> <span class="title">Overdamped</span>
 </h3>
 <a href="so-oscillators.html#so-os-overdamped" class="permalink">¶</a><p id="p-368">For \(Z&gt;1\) the eigenvalues</p>
@@ -307,9 +317,9 @@ x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t)\text{.}
 \lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1}
 \end{equation*}
 </div>
-<p>are negative and real, thus giving an exponentially decaying homogeneous solution. In this case we have an <dfn class="terminology">overdamped oscillator</dfn>.</p></section></section></div></main>
+<p data-braille="continuation">are negative and real, thus giving an exponentially decaying homogeneous solution. In this case we have an <dfn class="terminology">overdamped oscillator</dfn>.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>
