@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-28T11:09:53-05:00    *-->
+<!--*    on 2020-01-30T16:56:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
+<p>Let's find a particular solution of \(x'' +4x'+4x=8t^2\text{.}\) The correct form of \(x_p\) is a quadratic polynomial, like \(f\text{,}\) so</p>
 <div class="displaymath">
 \begin{equation*}
-\theta'' + \gamma \theta + \frac{g}{L}\sin \theta = F(t)\text{,}
+x_p = A + Bt + Ct^2\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(\theta(t)\) is the angle made with vertical-down and \(L\) is the arm length. This equation is nonlinear. But if the angle remains small, then a reasonable approximation is</p>
+<p data-braille="continuation">Plugging that into the ODE yields</p>
 <div class="displaymath">
-\begin{equation*}
-\theta'' + \gamma \theta + \frac{g}{L}\theta = F(t)\text{,}
-\end{equation*}
+\begin{align*}
+2C + 4(B+2Ct) + 4(A+Bt+Ct^2) \amp = 8t^2\\
+4C t^2 + (8C+4B) + (2C+4B+4A) \amp = 8t^2\text{.}
+\end{align*}
 </div>
-<p data-braille="continuation">which is a linear oscillator.</p>
-<span class="incontext"><a href="so-oscillators.html#p-358">in-context</a></span>
+<p data-braille="continuation">This has to be an identity for all \(t\text{.}\) Matching like powers, we can read off \(C=2\text{,}\) then \(B=-4\text{,}\) and finally \(A=3\text{.}\) This provides us with \(x_p=2t^2+4t+3\text{.}\)</p>
+<span class="incontext"><a href="so-undetermined.html#p-358">in-context</a></span>
 </body>
 </html>

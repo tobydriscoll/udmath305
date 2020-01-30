@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-28T11:09:52-05:00    *-->
+<!--*    on 2020-01-30T16:56:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -159,13 +159,13 @@ var js_version = 0.13;
 </li>
 <li class="link">
 <a href="first-order-linear.html" data-scroll="first-order-linear"><span class="codenumber">2</span> <span class="title">First-order linear ODEs</span></a><ul>
-<li><a href="linearity.html" data-scroll="linearity">Introduction</a></li>
-<li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
+<li><a href="fl-linearity.html" data-scroll="fl-linearity">Introduction</a></li>
+<li><a href="fl-linear-ode.html" data-scroll="fl-linear-ode">Linear ODEs</a></li>
 <li><a href="fl-homogeneous.html" data-scroll="fl-homogeneous">Homogeneous solutions</a></li>
 <li><a href="fl-ivp.html" data-scroll="fl-ivp">Initial value problems</a></li>
 <li><a href="fl-varparam.html" data-scroll="fl-varparam">Variation of parameters</a></li>
 <li><a href="fl-undeter.html" data-scroll="fl-undeter">Undetermined coefficients</a></li>
-<li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
+<li><a href="fl-models.html" data-scroll="fl-models">Modeling with first-order ODEs</a></li>
 <li><a href="fl-impulse.html" data-scroll="fl-impulse">Steps and impulses</a></li>
 <li><a href="fl-laplace.html" data-scroll="fl-laplace">Laplace transform methods</a></li>
 </ul>
@@ -185,6 +185,7 @@ var js_version = 0.13;
 <a href="first-order-linear.html" data-scroll="first-order-linear"><span class="codenumber">4</span> <span class="title">Second-order ODEs</span></a><ul>
 <li><a href="so-convert.html" data-scroll="so-convert">Order equals dimension</a></li>
 <li><a href="so-homogeneous.html" data-scroll="so-homogeneous">Homogeneous problem</a></li>
+<li><a href="so-undetermined.html" data-scroll="so-undetermined">Undetermined coefficients</a></li>
 <li><a href="so-oscillators.html" data-scroll="so-oscillators">Oscillators</a></li>
 <li><a href="so-expforcing.html" data-scroll="so-expforcing">Driven oscillator</a></li>
 <li><a href="so-laplace.html" data-scroll="so-laplace" class="active">Laplace transform methods</a></li>
@@ -206,27 +207,27 @@ var js_version = 0.13;
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-laplace"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Laplace transform methods</span>
+<span class="type">Section</span> <span class="codenumber">4.6</span> <span class="title">Laplace transform methods</span>
 </h2>
-<a href="so-laplace.html" class="permalink">¶</a><section class="introduction" id="introduction-14"><p id="p-382">We return to our linear, second-order, constant-coefficient problem in the simpler notation</p>
+<a href="so-laplace.html" class="permalink">¶</a><section class="introduction" id="introduction-14"><p id="p-391">We return to our linear, second-order, constant-coefficient problem in the simpler notation</p>
 <div class="displaymath">
 \begin{equation*}
 x'' + bx' + cx = f(t)\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">We cast this problem as a first-order system in two dimensions, found that the eigenvalues are the roots of \(\lambda^2+b\lambda + c\text{,}\) and then constructed exponential solutions for the homogeneous part (except for the double eigenvalue case). We also found a particular solution for the case of an exponential \(f(t)\text{.}\) There is an alternative way to derive the same results using the method of Laplace transforms to systematize the manipulations.</p></section><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Second derivatives</span>
+<span class="type">Subsection</span> <span class="codenumber">4.6.1</span> <span class="title">Second derivatives</span>
 </h3>
-<p id="p-383">Recall that the transform of \(x'(t)\) is \(sX(s)-x(0)\text{.}\) Applying this formula twice shows that</p>
+<p id="p-392">Recall that the transform of \(x'(t)\) is \(sX(s)-x(0)\text{.}\) Applying this formula twice shows that</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[x''(t)] = s \lx[x'(t)] - x'(0) = s^2X(s) - sx(0) - x'(0)\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">Let's look at an example first.</p>
-<article class="example example-like" id="example-56"><a data-knowl="" class="id-ref original" data-refid="hk-example-56"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-56"><article class="example example-like"><p id="p-384">Let's observe what happens in a fundamental case, \(x''-x=e^{rt}\text{.}\)  Transforming both sides gives</p>
+<article class="example example-like" id="example-60"><a data-knowl="" class="id-ref original" data-refid="hk-example-60"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-60"><article class="example example-like"><p id="p-393">Let's observe what happens in a fundamental case, \(x''-x=e^{rt}\text{.}\)  Transforming both sides gives</p>
 <div class="displaymath">
 \begin{equation*}
 [s^2X(s) - sx(0)-x'(0)] - X(s) = \frac{1}{s-r}\text{.}
@@ -257,7 +258,7 @@ x_p(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}\
 \end{equation*}
 </div>
 <p data-braille="continuation">With this we can construct a general solution \(x_n+x_p\text{,}\) and then apply initial conditions to solve for the constants, if those are given.</p></article></div>
-<p id="p-385">This example is the template for our use of Laplace transforms. In the general case we get</p>
+<p id="p-394">This example is the template for our use of Laplace transforms. In the general case we get</p>
 <div class="displaymath">
 \begin{equation*}
 [s^2X(s) - sx(0)-x'(0)] + b[sX(s)-x(0)] + cX(s) = F(s)\text{.}
@@ -270,9 +271,9 @@ X_p(s) = \frac{F(s)}{s^2+bs+c}\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">The real effort comes in finding the inverse transform of the right-hand side. Note that the denominator has roots at the eigenvalues of the homogeneous problem. These are called <dfn class="terminology">poles</dfn> of the transform \(X_p\text{.}\) Typically \(F(s)\) will contribute one or more of its own poles. Each pole at \(s=r\) corresponds to an exponential solution \(e^{rt}\) in time, but the exact expression depends on a partial fraction decomposition and perhaps other manipulations.</p></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.5.2</span> <span class="title">Imaginary poles</span>
+<span class="type">Subsection</span> <span class="codenumber">4.6.2</span> <span class="title">Imaginary poles</span>
 </h3>
-<p id="p-386">If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
+<p id="p-395">If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
@@ -290,9 +291,9 @@ X_p(s) = \frac{F(s)}{s^2+bs+c}\text{.}
 X_p(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)\text{.}
 \end{equation*}
 </div>
-<article class="example example-like" id="example-57"><a data-knowl="" class="id-ref original" data-refid="hk-example-57"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-57"><article class="example example-like"><p id="p-387">Let's solve \(x''+9x=\delta(t-2)\text{.}\) A particular solution has transform</p>
+<article class="example example-like" id="example-61"><a data-knowl="" class="id-ref original" data-refid="hk-example-61"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-61"><article class="example example-like"><p id="p-396">Let's solve \(x''+9x=\delta(t-2)\text{.}\) A particular solution has transform</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{e^{-2s}}{s^2+9} = e^{-2s} F(s)\text{,}
@@ -304,16 +305,16 @@ X_p(s) = \frac{e^{-2s}}{s^2+9} = e^{-2s} F(s)\text{,}
 x_p(t) = \frac{1}{3} H(t-2) \sin(3t-6)\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-388">Things are not too bad if there is an additional real pole:</p>
+<p id="p-397">Things are not too bad if there is an additional real pole:</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{A+Bs}{s^2+\omega^2} + \frac{C}{s-c} \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t) + C e^{ct}\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">Usually there is some grunt (or computer) work involved in finding the values of \(A\text{,}\) \(B\text{,}\) and \(C\text{.}\)</p>
-<article class="example example-like" id="example-58"><a data-knowl="" class="id-ref original" data-refid="hk-example-58"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-58"><article class="example example-like"><p id="p-389">The undamped oscillator \(x''+16x=40e^{-2t}\) has a particular solution whose transform is</p>
+<article class="example example-like" id="example-62"><a data-knowl="" class="id-ref original" data-refid="hk-example-62"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-62"><article class="example example-like"><p id="p-398">The undamped oscillator \(x''+16x=40e^{-2t}\) has a particular solution whose transform is</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{40}{(s+2)(s^2+16)} = \frac{A+Bs}{s^2+16^2} + \frac{C}{s+2}\text{.}
@@ -344,7 +345,7 @@ X_p(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} \text{.}
 x_p(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-390">Finally, consider the driven, undamped oscillator \(x''+\omega_0^2 x = \cos(\omega t)\text{.}\) It leads to</p>
+<p id="p-399">Finally, consider the driven, undamped oscillator \(x''+\omega_0^2 x = \cos(\omega t)\text{.}\) It leads to</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{s}{(s^2+\omega_0^2)(s^2+1)} = \frac{1}{\omega_0^2-\omega^2} \left( \frac{s}{s^2+\omega^2} - \frac{s}{s^2+\omega_n^2} \right)\text{,}

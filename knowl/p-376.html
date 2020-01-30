@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-28T11:09:53-05:00    *-->
+<!--*    on 2020-01-30T16:56:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>What is the meaning if \(\omega = \omega_0\text{?}\) This is exactly when \(i\omega\) is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients needs to be modified from the above derivation. But there is a sneaky shortcut. For a certain choice of \(c_1\) and \(c_2\text{,}\) we get a different particular solution</p>
+<p>At \(Z=1\) the complex eigenvalues collapse to a double eigenvalue at</p>
 <div class="displaymath">
 \begin{equation*}
-\hat{x}_p(t) = \frac{\omega_0^2}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)\text{,}
+\lambda_1 = \lambda_2 = -\omega_0\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">which has an indeterminate form in the limit \(\omega \to \omega_0\text{,}\) allowing us to use L'Hopital's Rule:</p>
+<p data-braille="continuation">with general homogeneous solution</p>
 <div class="displaymath">
 \begin{equation*}
-\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0} \omega_0^2 \frac{it e^{i\omega t}}{-2\omega} = -\frac{i\omega_0^2}{2} t e^{i\omega_0 t}\text{.}
+x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">(It's a little tricky, because the derivatives here are with respect to the limited variable \(\omega\) and not \(t\text{.}\)) This leads to the general solution</p>
-<span class="incontext"><a href="so-expforcing.html#p-376">in-context</a></span>
+<p data-braille="continuation">There is no longer any oscillation present, and we have a <dfn class="terminology">critically damped oscillator</dfn>. The linear growth of \(c_2 t\) doesn't make much difference against the exponential decay.</p>
+<span class="incontext"><a href="so-oscillators.html#p-376">in-context</a></span>
 </body>
 </html>

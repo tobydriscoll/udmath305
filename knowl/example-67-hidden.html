@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-28T11:09:53-05:00    *-->
+<!--*    on 2020-01-30T16:56:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,12 +11,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Here is a direction field for \(x'=t-x^2\text{.}\) Note that the arrows are horizontal along the sideways parabola \(t=x^2\text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">f = @(t,x) t-x^2;
-slopefield(f,[-2 2],[-2 2])
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.4.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/nl_dirfield_3.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></article></body>
+<body><article class="example example-like"><p>Suppose \(x'=t^2/(x^3-2)\text{.}\) Separation and integration lead to</p>
+<div class="displaymath">
+\begin{equation*}
+\int x^3\, dx = \int t^2\, dt\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">or \(\frac{1}{4}x^4 - 2x  = C + \frac{1}{3}t^3\text{.}\) We could work hard to try to solve explicitly for \(y\text{,}\) but it's probably best to leave it in implicit form. This is a common limitation to separable "solutions".</p>
+<p>Even in implicit form, we can solve for the arbitrary constant if given an initial condition. For instance, suppose \(x(0)=4\) is given for this ODE. Then \(4^4/4-2\cdot4 = C+0\text{,}\) so \(C=56\text{.}\)</p></article></body>
 </html>

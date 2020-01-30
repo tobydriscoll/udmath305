@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-28T11:09:53-05:00    *-->
+<!--*    on 2020-01-30T16:56:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If \(\omega\approx \omega_0\text{,}\) then the amplitude of the particular solution is very large.</p>
-<span class="incontext"><a href="so-expforcing.html#p-375">in-context</a></span>
+<p>For \(0\lt Z \lt 1\) the eigenvalues of <a class="xref" data-knowl="./knowl/so-eq-unified.html" title="Equation 4.4.1">(4.4.1)</a> are complex:</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda_{1,2} = -Z \omega_0 \pm i \omega_0 \sqrt{1-Z^2}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Defining \(\omega_d=\omega_0 \sqrt{1-Z^2}\text{,}\) the general homogeneous solution is therefore</p>
+<div class="displaymath">
+\begin{equation*}
+x_h(t) = e^{-Z\omega_0 t} \left( c_1 e^{i\omega_d t} + c_2 e^{-i\omega_d t} \right)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">or the equivalent real form with cos and sin. This solution is pseudoperiodic, combining oscillation at frequency \(\omega_d \lt \omega_0\) inside an exponential decay envelope. This situation is called an <dfn class="terminology">underdamped oscillator</dfn>.</p>
+<span class="incontext"><a href="so-oscillators.html#p-375">in-context</a></span>
 </body>
 </html>

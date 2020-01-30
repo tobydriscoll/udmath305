@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-28T11:09:53-05:00    *-->
+<!--*    on 2020-01-30T16:56:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Here is a direction field for \(x'=t-x^2\text{.}\) Note that the arrows are horizontal along the sideways parabola \(t=x^2\text{.}\)</p>
-<span class="incontext"><a href="nl-directionfields.html#p-443">in-context</a></span>
+<p>When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of “lucky” solutions is the idea of variable substitution, and the logistic equation is a nice case study. Define \(z=1/x\text{.}\) From the chain rule we have \(x'=-x^{-2}x'=-x'z^2\text{.}\) The logistic equation converts to</p>
+<div class="displaymath">
+\begin{equation*}
+-\frac{z'}{z^2} = \frac{a}{z} - \frac{b}{z^2}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">or \(z'=b-az\text{.}\) This is a linear equation! It even has constant coefficients. In terms of \(z\text{,}\) we can jump right to the solution:</p>
+<div class="displaymath">
+\begin{equation*}
+z(t) = e^{-at}z(0) - \frac{b}{a} \left( e^{-at}-1 \right) = \frac{e^{-at}(Kz_0-1)+1)}{K}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally, with \(x=1/z\) we get</p>
+<div class="displaymath">
+\begin{equation}
+x(t) = \frac{Kx_0}{e^{-at}(K-x_0)+x_0}\text{,}\tag{5.3.2}
+\end{equation}
+</div>
+<p data-braille="continuation">where \(x_0=x(0)\text{.}\)</p>
+<span class="incontext"><a href="nl-logistic.html#p-443">in-context</a></span>
 </body>
 </html>

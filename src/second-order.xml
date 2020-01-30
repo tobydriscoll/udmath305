@@ -14,10 +14,10 @@
 	</p>
 	<p>
 		Our first observation is that this problem can always be converted to a first-order problem in two dimensions. Define a vector <m>\bu</m> by <m>u_1=x</m>, <m>u_2=x'</m>. By definition, <m>u_1'=u_2</m>. Since <m>u_2'=x''=f(t,x,x')</m>, we can get the system 
-		<mdn xml:id="so-eq-convert1st">
+		<md>
 			<mrow> u_1' \amp =  u_2</mrow>
 			<mrow> u_2' \amp =  f(t,u_1,u_2).</mrow>
-		</mdn>
+		</md>
 		This is a first-order system <m>\bu'=\mathbf{g}(t,\bu)</m> of two scalar equations for the two components. 
 	</p>
 	<example>
@@ -41,6 +41,7 @@
 		which has the form <m>\bu'=\bA\bu+\bff(t)</m>. Thus everything from the last chapter is again in play.
 	</p>
 </section>
+
 <section xml:id="so-homogeneous">
 	<title>Homogeneous problem</title>
 	<p>
@@ -77,6 +78,84 @@
 		<me>
 			x_h(t) = e^{-bt/2} \left[ c_1 + t\left(c_2 + c_1\frac{b}{2}\right) \right] = e^{-bt/2} \left( c_1 + C_2 t\right)
 		</me>. 
+	</p>
+</section>
+
+<section xml:id="so-undetermined">
+	<title>Undetermined coefficients</title>
+	<p>
+		As always in linear equations, the general solution of an ODE with a forcing term is the homogeneous solution plus a particular solution. Since a second-order problem has a first-order system equivalent, we can use variation of parameters for a system, as in <xref ref="fs-varparam"/>, to find a particular solution. However, the algebra for doing this is quite messy. For many common second-order problems with constant coefficients, it can be much easier to return to the method of undetermined coefficients described in <xref ref="fl-undeter"/>. 
+	</p>
+	<p>
+		Specifically, the ODE <m>L[x] = ax''(t)+bx'(t)+cx(t)=f(t)</m> can be solved with this method when <m>f</m> is a polynomial, exponential, sin, or cos function. The appropriate form for the particular <m>x_p</m>  for each case is given in <xref ref="fl-tb-undeter"/>. This form is plugged into <m>L[x]=f</m>, and the equality is used to deduce the undetermined coefficients in <m>x_p</m>. 
+	</p>
+	<example>
+		<p>Let's find a particular solution of <m>x'' +4x'+4x=8t^2</m>. The correct form of <m>x_p</m> is a quadratic polynomial, like <m>f</m>, so 
+		<me>
+			x_p = A + Bt + Ct^2
+		</me>. 
+		Plugging that into the ODE yields
+		<md>
+			<mrow>2C + 4(B+2Ct) + 4(A+Bt+Ct^2) \amp = 8t^2</mrow>
+			<mrow>4C t^2 + (8C+4B) + (2C+4B+4A) \amp = 8t^2</mrow>
+		</md>. This has to be an identity for all <m>t</m>. Matching like powers, we can read off <m>C=2</m>, then <m>B=-4</m>, and finally <m>A=3</m>. This provides us with <m>x_p=2t^2+4t+3</m>. 
+		</p>
+	</example>
+	<!--example>
+		<p>Let's try for <m>y'' -2y'-3y=10te^{4t}</m>. For much the same reasons as in the last case, we try 
+		<me>y_p = (A + Bt)e^{4t}</me>. There's nothing to do now except grind out some derivatives. 
+		<md>
+			<mrow>8(2A+B+2Bt)e^{4t} - 2(4A+B+4Bt)e^{4t} -3 (A + Bt)e^{4t} \amp =10t e^{4t}</mrow>
+			<mrow> 8(2A+B) - 2(4A+B) -3A + t(16B-8B-3B) =  10t</mrow>
+		</md>. From this, by matching powers, we deduce <m>B=2</m> and then <m>5A+12=0</m>. So <m>y_p = [2t - (12/5)]e^{4t}</m>.
+		</p>
+	</example-->
+	<example>
+		<p>
+			For <m>x'' - 2x'-3x=10e^{4t}</m>, the proper choice is 
+			<me>
+				x_p = Ae^{4t}
+			</me>. Everything else is just basic manipulations.  
+			<md>
+				<mrow>16A e^{4t} - 2 (4A e^{4t}) - 3 (Ae^{4t}) \amp =10 e^{4t}</mrow>
+				<mrow> 16A -8A -3A =  10</mrow>
+			</md>. From this it's clear that <m>A=2</m>.
+			</p>
+	</example>
+	<example>
+		<p>
+			For <m>x''+x'=\sin(2t)</m>, we use 
+			<me>
+				x_p = A\cos(2t) + B\sin(2t)
+			</me>. 
+			Inserting this into the ODE leads to 
+			<me>
+				[-4A\cos(2t) - 4B\sin(2t)] + [-2A\sin(2t) + 2B\cos(2t)] = \sin(2t)
+			</me>. 
+			This is true for all time if and only if we match the coefficients of like trig functions:
+			<me>
+				-4A + 2B = 0, \qquad -4B-2A = 1 
+			</me>. 
+			The solution of these equations is <m>A=-1/10</m>, <m>B=-1/5</m>.
+		</p>
+	</example>
+	<p>
+		The examples above are the basic ones. There are rules for more intricate combinations of the same functions, but we won't go into them here. 
+	</p>
+	<p>
+		We have to repeat the warning from the first time we saw this method: occasionally it fails.
+	</p>
+	<example xml:id="so-ex-noundeter">
+		<p>
+			The equation <m>x''+x=\cos(t)</m> is supposed to suggest the particular solution <m>x_p=A\cos(t)+B\sin(t)</m>. But look at what happens after substitution:
+			<md>
+				<mrow>[-A\cos(t) - B\sin(t) ] + [ A\cos(t) + B\sin(t)] \amp =\cos(t)</mrow>
+				<mrow> 0 = \cos(t)</mrow>
+			</md>. This leads us nowhere good. 
+		</p>
+	</example>
+	<p>
+		The failure of <xref ref="so-ex-noundeter"/> was due to the fact that the <m>x_p</m> we picked is actually a homogeneous solution (a fact we inadvertently proved). There is a way to fix this method in that circumstance, but we will appeal to alternative routes. 
 	</p>
 </section>
 
@@ -265,7 +344,7 @@
 			If <m>\omega\approx \omega_0</m>, then the amplitude of the particular solution is very large. 
 		</p>
 		<p>
-			What is the meaning if <m>\omega = \omega_0</m>? This is exactly when <m>i\omega</m> is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients needs to be modified from the above derivation. But there is a sneaky shortcut. For a certain choice of <m>c_1</m> and <m>c_2</m>, we get a different particular solution 
+			What is the meaning if <m>\omega = \omega_0</m>? This is exactly when <m>i\omega</m> is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients will actually fail like in <xref ref="so-ex-noundeter"/>. But there is a sneaky shortcut. For a certain choice of <m>c_1</m> and <m>c_2</m>, we get a different particular solution 
 			<me>
 				\hat{x}_p(t) = \frac{\omega_0^2}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)
 			</me>, 
@@ -273,7 +352,7 @@
 			<me>
 				\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0} \omega_0^2 \frac{it e^{i\omega t}}{-2\omega} = -\frac{i\omega_0^2}{2} t e^{i\omega_0 t}
 			</me>. 
-			(It's a little tricky, because the derivatives here are with respect to the limited variable <m>\omega</m> and not <m>t</m>.) This leads to the general solution 
+			(The derivation is subtle because the derivatives here are with respect to the limited variable <m>\omega</m> and not <m>t</m>.) This leads to the general solution 
 		</p>
 		<fact>
 			<title>Solution for undamped driven oscillator at resonance</title>

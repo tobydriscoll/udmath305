@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-28T11:09:52-05:00    *-->
+<!--*    on 2020-01-30T16:56:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -159,13 +159,13 @@ var js_version = 0.13;
 </li>
 <li class="link">
 <a href="first-order-linear.html" data-scroll="first-order-linear"><span class="codenumber">2</span> <span class="title">First-order linear ODEs</span></a><ul>
-<li><a href="linearity.html" data-scroll="linearity">Introduction</a></li>
-<li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
+<li><a href="fl-linearity.html" data-scroll="fl-linearity">Introduction</a></li>
+<li><a href="fl-linear-ode.html" data-scroll="fl-linear-ode">Linear ODEs</a></li>
 <li><a href="fl-homogeneous.html" data-scroll="fl-homogeneous">Homogeneous solutions</a></li>
 <li><a href="fl-ivp.html" data-scroll="fl-ivp">Initial value problems</a></li>
 <li><a href="fl-varparam.html" data-scroll="fl-varparam">Variation of parameters</a></li>
 <li><a href="fl-undeter.html" data-scroll="fl-undeter">Undetermined coefficients</a></li>
-<li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
+<li><a href="fl-models.html" data-scroll="fl-models">Modeling with first-order ODEs</a></li>
 <li><a href="fl-impulse.html" data-scroll="fl-impulse">Steps and impulses</a></li>
 <li><a href="fl-laplace.html" data-scroll="fl-laplace">Laplace transform methods</a></li>
 </ul>
@@ -185,6 +185,7 @@ var js_version = 0.13;
 <a href="first-order-linear.html" data-scroll="first-order-linear"><span class="codenumber">4</span> <span class="title">Second-order ODEs</span></a><ul>
 <li><a href="so-convert.html" data-scroll="so-convert">Order equals dimension</a></li>
 <li><a href="so-homogeneous.html" data-scroll="so-homogeneous">Homogeneous problem</a></li>
+<li><a href="so-undetermined.html" data-scroll="so-undetermined">Undetermined coefficients</a></li>
 <li><a href="so-oscillators.html" data-scroll="so-oscillators">Oscillators</a></li>
 <li><a href="so-expforcing.html" data-scroll="so-expforcing">Driven oscillator</a></li>
 <li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
@@ -206,12 +207,12 @@ var js_version = 0.13;
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-convolutions"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.7</span> <span class="title">Convolutions</span>
+<span class="type">Section</span> <span class="codenumber">4.8</span> <span class="title">Convolutions</span>
 </h2>
-<a href="so-convolutions.html" class="permalink">¶</a><section class="introduction" id="introduction-15"><p id="p-400"></p></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Moving averages</span>
+<a href="so-convolutions.html" class="permalink">¶</a><section class="introduction" id="introduction-15"><p id="p-409"></p></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.8.1</span> <span class="title">Moving averages</span>
 </h3>
-<p id="p-401">The following grabs and plots the closing price of Bitcoin for the last 31 days.</p>
+<p id="p-410">The following grabs and plots the closing price of Bitcoin for the last 31 days.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="so_conv_bitcoin1"><pre class="prettyprint lang-matlab">%bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
 %data = jsondecode(bc);
@@ -220,10 +221,10 @@ v = struct2cell(data.bpi);
 v = cat(1,v{:});
 plot(v,'-o')
 </pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.7.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.8.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_conv_bitcoin1.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-402">It's a noisy curve. We can smooth that out by taking 4-day moving averages, for example. I don't claim that this is the best way, but we can do this by:</p>
+<p id="p-411">It's a noisy curve. We can smooth that out by taking 4-day moving averages, for example. I don't claim that this is the best way, but we can do this by:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="so_conv_bitcoin2"><pre class="prettyprint lang-matlab">%bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
 %data = jsondecode(bc);
@@ -237,10 +238,10 @@ end
 z(1:3) = NaN;  % not a number
 hold on, plot(z,'-o')
 </pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.7.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.8.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_conv_bitcoin2.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-403">We might decide, however, to weight the most recent values more heavily. Here's how this might look.</p>
+<p id="p-412">We might decide, however, to weight the most recent values more heavily. Here's how this might look.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="so_conv_bitcoin3"><pre class="prettyprint lang-matlab">%bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
 %data = jsondecode(bc);
@@ -255,13 +256,13 @@ end
 z(1:3) = NaN;  % not a number
 hold on, plot(z,'-o')
 </pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.7.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.8.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/so_conv_bitcoin3.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-404">Note that each new value \(z_i\) is a linear combination of the elements of \(v\text{,}\) weighted by the values in \(w\text{.}\) And we always go forward 1,2,3,4 in \(w\text{,}\) while on \(v\) we have a sliding group going backward: \(i,i-1,i-2,i-3\text{.}\) Put concisely, the indices add up to the constant value \(i+1\text{.}\)</p></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.7.2</span> <span class="title">Convolution integral</span>
+<p id="p-413">Note that each new value \(z_i\) is a linear combination of the elements of \(v\text{,}\) weighted by the values in \(w\text{.}\) And we always go forward 1,2,3,4 in \(w\text{,}\) while on \(v\) we have a sliding group going backward: \(i,i-1,i-2,i-3\text{.}\) Put concisely, the indices add up to the constant value \(i+1\text{.}\)</p></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.8.2</span> <span class="title">Convolution integral</span>
 </h3>
-<p id="p-405">The moving average above gave us a certain way to multiply together vectors \(v\) and \(w\) to get a new vector \(z\text{:}\)</p>
+<p id="p-414">The moving average above gave us a certain way to multiply together vectors \(v\) and \(w\) to get a new vector \(z\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 z_i =  \sum_{j} w_j v_{i-j} 
@@ -274,7 +275,7 @@ z_i =  \sum_{j} w_j v_{i-j}
 \end{equation*}
 </div>
 <p data-braille="continuation">This too is like a weighted average, with the values of \(g(\tau)\) being multiplied against different windows of the function \(f\) such that the arguments sum to \(t\text{.}\)</p>
-<p id="p-406">An interesting fact is that while I interpreted \(f*g\) as \(g\) acting on \(f\text{,}\) in fact the operation is symmetric:</p>
+<p id="p-415">An interesting fact is that while I interpreted \(f*g\) as \(g\) acting on \(f\text{,}\) in fact the operation is symmetric:</p>
 <div class="displaymath">
 \begin{align*}
 [g*f](t) \amp = \int_0^t f(t-\tau)g(\tau)\, d\tau\\
@@ -296,24 +297,24 @@ f * 0=0\text{.}
 [f*\delta](t) = \int_0^t f(t-\tau) \delta(\tau)\, d\tau = f(t)\text{.}
 \end{equation*}
 </div></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.7.3</span> <span class="title">Convolution theorem</span>
+<span class="type">Subsection</span> <span class="codenumber">4.8.3</span> <span class="title">Convolution theorem</span>
 </h3>
-<p id="p-407">Here is what makes convolution a big deal.</p>
+<p id="p-416">Here is what makes convolution a big deal.</p>
 <article class="theorem theorem-like" id="theorem-14"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.4</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.8.4</span><span class="period">.</span>
 </h6>
-<p id="p-408">Suppose \(\lx[f] = F(s)\text{,}\) \(\lx[g] = G(s)\text{,}\) \(h=f*g\text{,}\) and \(\lx[h] = H(s)\text{.}\) Then \(H(s)=F(s)G(s)\text{.}\)</p></article><p id="p-409">Why does this matter? Consider finding a particular solution of \(x''+bx'+cx=f(t)\text{.}\) After taking transforms we get</p>
+<p id="p-417">Suppose \(\lx[f] = F(s)\text{,}\) \(\lx[g] = G(s)\text{,}\) \(h=f*g\text{,}\) and \(\lx[h] = H(s)\text{.}\) Then \(H(s)=F(s)G(s)\text{.}\)</p></article><p id="p-418">Why does this matter? Consider finding a particular solution of \(x''+bx'+cx=f(t)\text{.}\) After taking transforms we get</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{1}{s^2+bs+c} F(s) = G(s) F(s)\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(G(s)\) is the transfer function. Right away then, we know that \(x_p(t)=f(t)*g(t)\) is a particular solution.</p>
-<p id="p-410">But wait, there's more! Consider the problem of an impulse response, \(x''+bx'+cx=\delta(t)\text{,}\) with zero initial conditions. The solution of this problem has \(X(s)=G(s)\text{.}\) That is,</p>
+<p id="p-419">But wait, there's more! Consider the problem of an impulse response, \(x''+bx'+cx=\delta(t)\text{,}\) with zero initial conditions. The solution of this problem has \(X(s)=G(s)\text{.}\) That is,</p>
 <article class="fact theorem-like" id="fact-21"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.7.5</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.8.5</span><span class="period">.</span>
 </h6>
-<p id="p-411">The impulse response of a linear constant-coefficient equation is the inverse Laplace transform of the transfer function.</p></article><p id="p-412">Put it all together and you have some important theoretical connections. The solution to any forced problem is a convolution of the forcing function with the impulse response in the time domain, and the product of the forcing and the transfer function in the \(s\) domain. Finally, the transfer function is just the reciprocal of the characteristic polynomial.</p></section></section></div></main>
+<p id="p-420">The impulse response of a linear constant-coefficient equation is the inverse Laplace transform of the transfer function.</p></article><p id="p-421">Put it all together and you have some important theoretical connections. The solution to any forced problem is a convolution of the forcing function with the impulse response in the time domain, and the product of the forcing and the transfer function in the \(s\) domain. Finally, the transfer function is just the reciprocal of the characteristic polynomial.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

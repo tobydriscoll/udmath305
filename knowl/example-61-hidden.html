@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-27T22:53:26-05:00    *-->
+<!--*    on 2020-01-30T16:56:15-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,6 +11,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Consider the ODE \(x'=x-x^3\text{.}\) The equilibrium solutions are \(x=0\) and \(x=\pm 1\text{.}\) Consider also that \(x'\lt 0\) if \(-1\lt x \lt 0\) or \(x\gt 1\text{;}\) otherwise, \(x' \gt 0\text{.}\) The phase line diagram clarifies that the steady states at \(x=\pm 1\) are stable, while the one at \(x=0\) is unstable.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="matlab/fo_ss_phaseline.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article></body>
+<body><article class="example example-like"><p>Let's solve \(x''+9x=\delta(t-2)\text{.}\) A particular solution has transform</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{e^{-2s}}{s^2+9} = e^{-2s} F(s)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(F(s)\) is the transform of \(\sin(3t)/3\text{.}\) So the shift theorem implies</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{3} H(t-2) \sin(3t-6)\text{.}
+\end{equation*}
+</div></article></body>
 </html>
