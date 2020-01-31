@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We return to our linear, second-order, constant-coefficient problem in the simpler notation</p>
+<p>This formula is a bit easier to parse in terms of the frequency ratio \(\rho=\omega/\omega_0\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-x'' + bx' + cx = f(t)\text{.}
+g(\rho) =  \frac{1}{[(1-\rho^2)^2  + 4 Z^2 \rho^2]^{1/2} }\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">We cast this problem as a first-order system in two dimensions, found that the eigenvalues are the roots of \(\lambda^2+b\lambda + c\text{,}\) and then constructed exponential solutions for the homogeneous part (except for the double eigenvalue case). We also found a particular solution for the case of an exponential \(f(t)\text{.}\) There is an alternative way to derive the same results using the method of Laplace transforms to systematize the manipulations.</p>
-<span class="incontext"><a href="so-laplace.html#p-391">in-context</a></span>
+<p data-braille="continuation">Basic calculus shows that the denominator is minimized, and thus the gain is maximized, when</p>
+<div class="displaymath">
+\begin{equation*}
+\rho_\text{max} = \sqrt{1-2Z^2}, \quad  \text{ if } Z^2 \le \frac{1}{2}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">and \(\rho=0\) if \(\frac{1}{2} \lt Z^2 \lt 1\text{.}\) Since \(\rho_\text{max} \lt 1\text{,}\) the “most resonant” frequency is lower than the natural frequency. For \(Z^2 \le \frac{1}{2}\) the maximum gain is</p>
+<div class="displaymath">
+\begin{equation*}
+g(\rho_\text{max}) = \frac{1}{2Z\sqrt{1-Z^2}}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which is finite but large for \(Z\approx 0\text{.}\)</p>
+<span class="incontext"><a href="so-expforcing.html#p-391">in-context</a></span>
 </body>
 </html>

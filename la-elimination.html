@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:49-05:00    *-->
+<!--*    on 2020-01-31T13:50:33-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -393,7 +393,7 @@ x_1 = 5 + s\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">So \([5+s,-1-3s,s]\) is a solution for every \(s\text{,}\) and we have infinitely many solutions.</p></article></div>
-<p id="p-26">The process demonstrated in <a class="xref" data-knowl="./knowl/la-ex-rowelim.html" title="Example 1.2.5">Example 1.2.5</a> is best known as  <dfn class="terminology">Gauss-Jordan elimination</dfn>, though I prefer to call it <dfn class="terminology">row elimination</dfn>. As seen in the examples, row elimination consists of two phases, one downward (Gaussian elimination) and one upward. The goal is to put the augmented matrix into a special form. </p>
+<p id="p-26">The process demonstrated in <a class="xref" data-knowl="./knowl/la-ex-rowelim.html" title="Example 1.2.5">Example 1.2.5</a> is best known as  <dfn class="terminology">Gauss-Jordan elimination</dfn>, though I prefer to call it <dfn class="terminology">row elimination</dfn>. As seen in the examples, row elimination consists of two phases, one downward (Gaussian elimination) and one upward. The goal is to put the augmented matrix into a special form.</p>
 <p id="p-27">Time for some more formal definitions. We start with the downward phase of the elimination. It's organized a tad differently in order to make everything easier to describe. In what follows we use the term <dfn class="terminology">leading nonzero</dfn> to mean the first (leftmost) entry of a row that is not zero.</p>
 <article class="definition definition-like" id="la-def-phase1"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Row elimination Phase 1 (Gaussian elimination).</span>
@@ -402,7 +402,7 @@ x_1 = 5 + s\text{.}
 <li id="li-13">Set \(i=1\text{.}\)</li>
 <li id="li-14">Find the leftmost leading nonzero in rows \(i\) and below. The column of this leading nonzero is known as the <dfn class="terminology">pivot column</dfn>. If no such column exists, stop.</li>
 <li id="li-15">As necessary, swap rows and/or multiply a row by a constant to put a 1 in the pivot column of row \(i\text{.}\)</li>
-<li id="li-16">Add muliples of row \(i\) to the rows below it in order to put zeros into the pivot column.</li>
+<li id="li-16">Add multiples of row \(i\) to the rows below it in order to put zeros into the pivot column.</li>
 <li id="li-17">Increment \(i\) and return to step 2.</li>
 </ol></article><p id="p-29">At the end of Phase 1 the augmented matrix has a simple form. However, it's not the cleanest form to work with theoretically, so we continue.</p>
 <article class="definition definition-like" id="la-def-phase2"><h6 class="heading">

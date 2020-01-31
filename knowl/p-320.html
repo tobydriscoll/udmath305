@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It's useful to discuss more specifically what can happen with the homogeneous equation \(\bx'=\bA\bx\) in the two-dimensional, constant-matrix case. Not only is this the simplest possible non-scalar case, but it's easily visualized using the <dfn class="terminology">phase plane</dfn>, which is a plot of trajectories and directions in the \((x_1,x_2)\) plane.</p>
-<span class="incontext"><a href="fs-phaseplane.html#p-320">in-context</a></span>
+<p>To find an alternative real form, we write</p>
+<div class="displaymath">
+\begin{align*}
+e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [\cos(t)+i\sin(t)] \left( \twovec{1}{2} + i\twovec{0}{-1} \right)\\
+\amp = e^{-t} \left[ \left( \cos(t)\twovec{1}{2} - \sin(t) \twovec{0}{-1} \right)\\
+\amp \qquad + i \left( \cos(t)\twovec{0}{-1} + \sin(t) \twovec{1}{2} \right) \right]\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Thus the general solution can also be written as</p>
+<div class="displaymath">
+\begin{equation*}
+\bx(t) = b_1 e^{-t} \twovec{\cos(t)}{2\cos(t)+\sin(t)} + b_2 e^{-t}\twovec{\sin(t)}{2\sin(t)-\cos(t)} \text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">where here \(b_1\) and \(b_2\) are real.</p>
+<span class="incontext"><a href="fs-complex-exponentials.html#p-320">in-context</a></span>
 </body>
 </html>

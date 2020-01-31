@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For \(x''+x'=\sin(2t)\text{,}\) we use</p>
+<p>For \(x'' - 2x'-3x=10e^{4t}\text{,}\) the proper choice is</p>
 <div class="displaymath">
 \begin{equation*}
-x_p = A\cos(2t) + B\sin(2t)\text{.}
+x_p = Ae^{4t}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Inserting this into the ODE leads to</p>
+<p data-braille="continuation">Everything else is just basic manipulations.</p>
 <div class="displaymath">
-\begin{equation*}
-[-4A\cos(2t) - 4B\sin(2t)] + [-2A\sin(2t) + 2B\cos(2t)] = \sin(2t)\text{.}
-\end{equation*}
+\begin{align*}
+16A e^{4t} - 2 (4A e^{4t}) - 3 (Ae^{4t}) \amp =10 e^{4t}\\
+16A -8A -3A =  10\text{.}
+\end{align*}
 </div>
-<p data-braille="continuation">This is true for all time if and only if we match the coefficients of like trig functions:</p>
-<div class="displaymath">
-\begin{equation*}
--4A + 2B = 0, \qquad -4B-2A = 1 \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">The solution of these equations is \(A=-1/10\text{,}\) \(B=-1/5\text{.}\)</p>
+<p data-braille="continuation">From this it's clear that \(A=2\text{.}\)</p>
 <span class="incontext"><a href="so-undetermined.html#p-360">in-context</a></span>
 </body>
 </html>

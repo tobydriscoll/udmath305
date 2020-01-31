@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This process doesn't really save us any algebraic work right now, because we would have gotten the same expression for the solution directly from the RREF. So you might be wondering what the point of this section is. Have patience, grasshopper.</p>
+<p>We continue with the matrix \(\bA\) from <a class="xref" data-knowl="./knowl/la-ex-33homog.html" title="Example 1.5.2">Example 1.5.2</a>, now with \(\bb=[-8,4,12]\text{.}\) The RREF of the augmented matrix works out to be</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+0 \amp 1 \amp -2 \amp 4 \\ 0 \amp 0 \amp -0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This contains all the information we need. If we imagine replacing all entries in the last column by zeros, then we get (as before) the general homogeneous solution</p>
+<div class="displaymath">
+\begin{equation*}
+\bx_h =	s \threevec{1}{0}{0} + t \threevec{0}{2}{1}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">For the particular solution we again have free variables from columns 1 and 3. But we can use <em class="emphasis">any</em> particular solution, so it will be easiest if we set the free variables to zero. Then the first row tells us that \(x_2=4\text{,}\) and we get the general solution</p>
+<div class="displaymath">
+\begin{equation*}
+\bx = \threevec{0}{4}{0} + s \threevec{1}{0}{0} + t \threevec{0}{2}{1}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="la-general-solution.html#p-75">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,12 +11,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>MATLAB does have an <code class="code-inline tex2jax_ignore">inv</code> command to find an inverse. However, it's not considered the best way to solve a linear system (it will be much slower for large matrices).</p>
-<figure class="listing figure-like"><pre class="prettyprint lang-matlab">A = magic(3)
-b = [ 1; 6; -2 ]
-
-x = A\b
-b - A*x
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.8.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p>MATLAB works with 16-digit approximations of real numbers, so things that are truly equal in exact arithmetic may only agree to many significant digits. Usually it's best to take the difference of two things to test near-equality.</p></article></body>
+<body><article class="example example-like"><p>Suppose the RREF of a matrix ends with</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">(i.e., an identity matrix). There are no free variables, and the only solution is \(\bx=[0,0,0]\text{.}\) Hence \(\null(\bA) = \{\bzero\}\text{.}\) This singleton set does not have a basis and is considered to have dimension zero. (Try this example in MATLAB!)</p></article></body>
 </html>

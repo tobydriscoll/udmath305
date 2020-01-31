@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,34 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The solution to the linear ODE with an impulse forcing is called an <dfn class="terminology">impulse response</dfn>. Thanks to the main impulse identity, this is easier to deal with than step forcing. Again we start with</p>
+<p>It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple of decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds\text{.}
+\int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \frac{1}{h} f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">For \(f(t)=\delta(t-T)\text{,}\) there are just two cases to consider for the integral:</p>
+<p data-braille="continuation">where \(\phi\) is an antiderivative of \(f\text{.}\) In the limit this suggests</p>
 <div class="displaymath">
 \begin{equation*}
-\int_{0}^t G(s,t)\delta(s-T) \, ds = \begin{cases} 
-0, \amp t \le T, \\ 
-G(T,t) \amp t &gt; T.
-\end{cases}
+\int_I \delta(t)f(t)\, dt = f(0)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Again using a step to express the result, we have</p>
+<p data-braille="continuation">As with the step, we often want to introduce a delay in the impulse by using \(\delta(t-T)\text{.}\) Then the math becomes</p>
 <div class="displaymath">
-\begin{equation*}
-x(t) = G(0,t)x_0 + H(t-T) G(T,t)\text{.}
-\end{equation*}
+\begin{equation}
+\int_I \delta(t-T)f(t)\, dt = f(T)\text{,}\tag{2.8.1}
+\end{equation}
 </div>
-<p data-braille="continuation">For a constant-coefficient ODE this becomes</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = e^{at} x_0 + H(t-T) e^{a(t-T)}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">One way to read this formula is that at the impulse time, the state is instantaneously increased by one, with the usual evolution following.</p>
+<p data-braille="continuation">where \(I\) is any interval containing \(T\text{.}\) This is the key identity for working with impulses.</p>
 <span class="incontext"><a href="fl-impulse.html#p-254">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It's one thing to say “the inverse exists” and quite another to say “here it is.” Finding the inverse of a given matrix is in principle a matter of solving \(n\) linear systems. That's because if we let \(\mathbf{e}_j\) be the \(j\)th column of \(\bI\text{,}\) then according to the columnwise interpretation of \(\bA\bA^{-1}\text{,}\) the solution of \(\bA \bx = \mathbf{e}_j\) is the \(j\)th column of \(\bA^{-1}\text{.}\)</p>
+<p>If \(\bA\in\Rmn{n}{n}\) is invertible, then we can use its inverse to solve a linear system \(\bA\bx=\bb\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bA^{-1} \bb = \bA^{-1} (\bA \bx) = \bigl(  \bA^{-1} \bA \bigr) \bx = \bI \bx = \bx\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The uniqueness of the inverse means that this solution is unique as well. We will see later on that the converse is also true: unique solution implies invertibility.</p>
 <span class="incontext"><a href="la-inverse.html#p-106">in-context</a></span>
 </body>
 </html>

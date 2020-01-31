@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,38 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.1</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="period">.</span>
 </h6>
-<p>The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
+<p>The undamped oscillator \(x''+16x=40e^{-2t}\) has a particular solution whose transform is</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{3}{(s^2+9)^2}\text{.}
+X_p(s) = \frac{40}{(s+2)(s^2+16)} = \frac{A+Bs}{s^2+16^2} + \frac{C}{s+2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">This doesn't look like anything easy. However, note that</p>
+<p data-braille="continuation">Clearing the denominators gives the identity</p>
 <div class="displaymath">
 \begin{equation*}
-sX_p(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frac{d}{ds} \left[ \frac{1}{s^2+9} \right] \text{.}
+(A+Bs)(s+2) + C(s^2+16) = 40\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Therefore, \(sX_p(s)\) is the transform of \(\frac{1}{2} t \sin(3t)\text{.}\) So this must be \(x_p'(t)\text{.}\) An integration by parts then recovers</p>
+<p data-braille="continuation">We need three equations to determine the unknown coefficients. Setting \(s=-2\) quickly gives \(20C=40\text{,}\) so \(C=2\text{.}\) Then setting \(s=\pm 4\) gives the system</p>
+<div class="displaymath">
+\begin{align*}
+(A+4B)(6) \amp = 40 - 64 = -24\\
+(A-4B)(-2) \amp = -24\text{,}
+\end{align*}
+</div>
+<p data-braille="continuation">or \(A+4B=-4\) and \(A-4B=12\text{.}\) We can add and subtract these equations to get \(2A=8\text{,}\) \(8B=-16\text{,}\) so finally</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
+X_p(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} \text{.}
 \end{equation*}
-</div></article><span class="incontext"><a href="so-laplace-repeated.html#example-63">in-context</a></span>
+</div>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="so-laplace.html#example-63">in-context</a></span>
 </body>
 </html>

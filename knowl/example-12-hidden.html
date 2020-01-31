@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,10 +11,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>We find the RREF of a \(3\times 3\) matrix:</p>
+<body><article class="example example-like"><p>Suppose we want to check the independence of</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \begin{bmatrix}
+\bx_1 = \threevec{1}{2}{-1}, \quad \bx_2 = \threevec{2}{4}{-2}, \quad \bx_3 = \threevec{-1}{1}{4}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We assemble these as the columns of a matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 2 \amp -1 \\
+2 \amp 4 \amp 1 \\
+-1 \amp -2 \amp 4
+\end{bmatrix} \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">(The order of columns doesn't matter to independence.) Technically we ought to tack on a zero column to get the augmented matrix, but row operations can never change that column. So we can find the RREF without it:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
 1 \amp 2 \amp -1 \\
 2 \amp 4 \amp 1 \\
 -1 \amp -2 \amp 4
@@ -31,22 +47,5 @@
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Columns 1 and 3 are the pivot columns. We regard \(x_2\) as a free variable; say \(x_2=s\text{.}\) Then \(x_3=0\) and \(x_1=-s\text{,}\) and the homogeneous general solution is</p>
-<div class="displaymath">
-\begin{equation*}
-\bx_h = \begin{bmatrix} -s \\ s \\ 0 \end{bmatrix} = s \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Equivalently, we say that</p>
-<div class="displaymath">
-\begin{equation*}
-\null(\bA) = \span\left(\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\right)\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">and in fact \([-1,1,0]\)  is a basis of the nullspace, which is therefore one-dimensional.</p>
-<p>MATLAB has a <code class="code-inline tex2jax_ignore">null</code> command that produces a basis of the nullspace.</p>
-<figure class="listing figure-like"><pre class="prettyprint lang-matlab">A = [ 1 1 -1; 2 2 1; -1 -1 4 ]
-null(A)
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.6.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p>This is equivalent to the answer we gave above, just with a different normalization of the vector.</p></article></body>
+<p data-braille="continuation">(We could have actually stopped before the end, when it became clear that the second column is not a pivot column.) Thus the homogeneous problem will have at least one free parameter.</p></article></body>
 </html>

@@ -3,7 +3,7 @@
 <chapter xml:id="ch1-linear-algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Linear algebra</title>
 
-  <section xml:id="la-linear-systems">
+<section xml:id="la-linear-systems">
 	<title>Linear systems of equations</title>
 	<p>
 		When you first learned algebra, there was a lot of focus on solving equations. It's very likely that you started with linear equations, because these are the easiest ones.
@@ -284,23 +284,7 @@
 		</p>
 	</example>
 	<p>
-	The process demonstrated in <xref ref="la-ex-rowelim"/> is best known as <idx>Gauss-Jordan elimination</idx> <term>Gauss-Jordan elimination</term>, though I prefer to call it <term>row elimination</term>. As seen in the examples, row elimination consists of two phases, one downward (Gaussian elimination) and one upward. The goal is to put the augmented matrix into a special form.
-	<!--dl>
-	<dt>Downward phase</dt>
-	<dd><p>For each <m>i=1,2,\ldots,m-1</m>:
-	<ol>
-	<li>If the <term>pivot</term> element in the <m>(i,i)</m> position is zero, swap row <m>i</m> with a row below it to get a nonzero pivot, if possible.</li>
-	<li>If the pivot is now nonzero, use row <m>i</m> to put zeros below it in column <m>i</m>.</li>
-	</ol>
-	</p></dd>
-	<dt>Upward phase</dt>
-	<dd><p>
-	For each <m>i=m,m-1,\ldots,2:</m>
-	<ol>
-	<li>If the pivot element is nonzero, use row <m>i</m> to put zeros above it in column <m>i</m>.</li>
-	</ol>
-	</p></dd>
-	</dl-->
+		The process demonstrated in <xref ref="la-ex-rowelim"/> is best known as <idx>Gauss-Jordan elimination</idx> <term>Gauss-Jordan elimination</term>, though I prefer to call it <term>row elimination</term>. As seen in the examples, row elimination consists of two phases, one downward (Gaussian elimination) and one upward. The goal is to put the augmented matrix into a special form.
 	</p>
 	<p>
 		Time for some more formal definitions. We start with the downward phase of the elimination. It's organized a tad differently in order to make everything easier to describe. In what follows we use the term <idx>leading nonzero</idx><term>leading nonzero</term> to mean the first (leftmost) entry of a row that is not zero.
@@ -313,7 +297,7 @@
 			<li>Set <m>i=1</m>.</li>
 			<li>Find the leftmost leading nonzero in rows <m>i</m> and below. The column of this leading nonzero is known as the <term>pivot column</term>. If no such column exists, stop.</li>
 			<li>As necessary, swap rows and/or multiply a row by a constant to put a 1 in the pivot column of row <m>i</m>.</li>
-			<li>Add muliples of row <m>i</m> to the rows below it in order to put zeros into the pivot column.</li>
+			<li>Add multiples of row <m>i</m> to the rows below it in order to put zeros into the pivot column.</li>
 			<li>Increment <m>i</m> and return to step 2.</li>
 		</ol>
 		</p>
@@ -322,20 +306,6 @@
 	<p>
 		At the end of Phase 1 the augmented matrix has a simple form. However, it's not the cleanest form to work with theoretically, so we continue.
 	</p>
-	<!-- <definition>
-		<title>REF</title>
-		<statement>
-		<p>
-			A matrix is in <idx>REF (row echelon form)</idx> <term>REF</term> (row echelon form) if it meets these requirements:
-			<ol>
-			<li>Any rows of all zeros appear below all rows having nonzeros.</li>
-			<li>The leading nonzero of any row is a one.</li>
-			<li>Every leading one has only zeros below it.</li>
-			</ol>
-			The columns that have leading ones are called <idx>pivot column</idx> <term>pivot columns</term>. The other columns are called <idx>free column</idx> <term>free columns</term>.
-		</p>
-		</statement>
-	</definition> -->
 	<definition xml:id="la-def-phase2">
 		<title>Row elimination Phase 2</title>
 		<statement>
@@ -386,10 +356,14 @@
 	  <subsection xml:id="la-vectors">
 	  <title>Linear combinations</title>
 	  <p>
-	  We use <m>\Rn{n}</m> to denote the set of all vectors with <m>n</m> real elements. (Every vector is assumed to have a single-column shape.) If <m>\bx</m> is in <m>\Rn{n}</m>, then for any real number <m>c</m> we define <m>c\bx</m> by elementwise multiplication. Because this just scales the magnitude of the vector, a real value is often called a <term>scalar</term><idx>scalar</idx>. If <m>\bx</m> and <m>\by</m> are in <m>\Rn{n}</m>, then we can add or subtract them elementwise. (Addition of a scalar and a vector, and addition of vectors of different lengths, are undefined.)
+	  	<notation>
+			<usage>\Rn{n}</usage>
+			<description>all vectors having <m>n</m> real components</description>
+		</notation>
+	  	We use <m>\Rn{n}</m> to denote the set of all vectors with <m>n</m> real elements. (Every vector is assumed to have a single-column shape.) If <m>\bx</m> is in <m>\Rn{n}</m>, then for any real number <m>c</m> we define <m>c\bx</m> by elementwise multiplication. Because this just scales the magnitude of the vector, a real value is often called a <term>scalar</term><idx>scalar</idx>. If <m>\bx</m> and <m>\by</m> are in <m>\Rn{n}</m>, then we can add or subtract them elementwise. (Addition of a scalar and a vector, and addition of vectors of different lengths, are undefined.)
 	  </p>
 	  <p>
-	  Scaling and addition are often rolled together into a singly namned operation.
+	  Scaling and addition are often rolled together into a singly named operation.
 	  </p>
 	  <definition>
 		<title>Linear combination</title>
@@ -436,38 +410,58 @@
 	</example>
 	</subsection>
 	<subsection>
-	  <title>Matrix times vector</title>
-	  <p>
-		The linear combination definition <xref ref="la-va-lincomb"/> actually serves as the foundation of multiplication between a matrix and a vector. We use <m>\Rmn{m}{n}</m> to mean the set of all matrices with <m>m</m> rows and <m>n</m> columns.
-	  </p>
-	  <definition>
 		<title>Matrix times vector</title>
-		<statement>
-		<p>Given <m>\bA\in\Rmn{m}{n}</m> and <m>\bx\in\Rn{n}</m>, the product <m>\bA\bx</m> is defined as
-		<men xml:id="la-mv-matvec">
-		  \bA\bx = x_1 \ba_1 + x_2 \ba_2 + \cdots + x_n \ba_n = \sum_{j=1}^n x_j \ba_j
-		</men>.
-		</p></statement>
-	  </definition>
-	  <p>
-	  What justifies calling this opearation multiplication? In large part, it's the natural distributive properties
-	  <md>
-	  <mrow> \bA(\bx+\by) \amp =  \bA\bx + \bA\by</mrow>
-	  <mrow> (\bA+\bB)\bx \amp =  \bA\bx + \bB\bx</mrow>
-	  </md>
-	  (where matrix addition is also defined elementwise), which can be checked with just a little determination. It's also true that <m>\bA(c\bx)=c(\bA\bx)</m>. However, <alert>the product <m>\bA\bx</m> is <em>not</em> commutative; <m>\bx\bA</m> is not even defined.</alert>
-	   </p>
-	   <p>
-	   As a matter of fact, these properties combine in a way worth noting. We can define a function <m>L</m> on vectors by <m>L(\bx)=\bA\bx</m>. This is what we call a <idx>linear function</idx><term>linear function</term>, because <m>L(c\bx + \by)=cL(\bx)+L(\by)</m> for all <m>n</m>-vectors <m>\bx,\by</m> and scalars <m>c</m>. This would not be true for, for example, <m>L(\bx)=x_1x_2</m>.
-	   </p>
-	  </subsection>
-  </section>
+		<p>
+			The linear combination definition <xref ref="la-va-lincomb"/> actually serves as the foundation of multiplication between a matrix and a vector. We use <m>\Rmn{m}{n}</m> to mean the set of all matrices with <m>m</m> rows and <m>n</m> columns.
+		</p>
+		<definition>
+			<title>Matrix times vector</title>
+			<statement>
+			<p>
+				Given <m>\bA\in\Rmn{m}{n}</m> and <m>\bx\in\Rn{n}</m>, the product <m>\bA\bx</m> is defined as
+				<men xml:id="la-mv-matvec">
+		  			\bA\bx = x_1 \ba_1 + x_2 \ba_2 + \cdots + x_n \ba_n = \sum_{j=1}^n x_j \ba_j
+				</men>.
+			</p>
+			</statement>
+		</definition>
+		<example> 
+		 <p>
+		   The product
+			<me>
+				\begin{bmatrix} 
+					1 \amp -1 \amp -1 \\ 3 \amp -2 \amp 0 \\ 1 \amp -2 \amp -1 
+				\end{bmatrix} \threevec{-1}{2}{-1} 
+			</me> 
+			is equivalent to 
+		  	<me>
+				(-1) \threevec{1}{3}{1} + (2) \threevec{-1}{-2}{-2} + (-1) \threevec{-1}{0}{-1} = \threevec{-2}{-7}{-4}
+			</me>.
+			We often don't write out the product in this much detail. Instead we "zip together" the rows of the matrix with the entries of the vector: 
+			<me>
+				\threevec{(-1)(1)+(2)(-1)+(-1)(-1)}{(-1)(3)+(2)(-2)+(-1)(0)}{(-1)(1)+(2)(-2)+(-1)(-1)}  = \threevec{-2}{-7}{-4}
+			</me>. You might recognize the expressions in this vector as dot products from vector calculus, but that's a whole 'nother story.
+		 </p>  
+		</example>
+		<p>
+			What justifies calling this operation multiplication? In large part, it's the natural distributive properties
+			<md>
+				<mrow> \bA(\bx+\by) \amp =  \bA\bx + \bA\by</mrow>
+				<mrow> (\bA+\bB)\bx \amp =  \bA\bx + \bB\bx</mrow>
+			</md>
+			(where matrix addition is also defined elementwise), which can be checked with just a little determination. It's also true that <m>\bA(c\bx)=c(\bA\bx)</m>. However, <alert>the product <m>\bA\bx</m> is <em>not</em> commutative; <m>\bx\bA</m> is not even defined.</alert>
+		</p>
+		<p>
+			As a matter of fact, these properties combine in a way worth noting. We can define a function <m>L</m> on vectors by <m>L(\bx)=\bA\bx</m>. This is what we call a <idx>linear function</idx><term>linear function</term>, because <m>L(c\bx + \by)=cL(\bx)+L(\by)</m> for all <m>n</m>-vectors <m>\bx,\by</m> and scalars <m>c</m>. This would not be true for, for example, <m>L(\bx)=x_1x_2</m>.
+		</p>
+	</subsection>
+</section>
 
   <section xml:id="la-matrix-algebra">
 	<title>Matrix algebra</title>
 	<subsection>
 	<title>Matrix multiplication</title>
-	<p>Addition and scalar multiplication of matrices is exactly the same as for vectors—elementwise. Things get interesting when we get to matrix products.</p>
+	<p>Addition and scalar multiplication of matrices is exactly the same as for vectors: elementwise. Things get interesting when we get to matrix products.</p>
 	<p>
 		In order to define the product <m>\bA\bB</m>, we require that the number of <em>columns</em> in <m>\bA</m> is the same as the number of <em>rows</em> in <m>\bB</m>. We say that the <em>inner dimensions</em> must agree; otherwise, the product is considered undefined.
 	</p>
@@ -598,7 +592,7 @@
 	<subsection>
 	<title>Identity matrix</title>
 		<p>
-			It's pretty immediate that for any square matrix <m>\bA</m>, <m>\bA\boldsymbol{0}=\boldsymbol{0}\bA=\boldsymbol{0}</m> for the all-zero square matrix <m>\boldsymbol{0}</m> of approrpiate size. So we have a multiplicative zero. But the situation is a bit less obvious when it comes to a multiplicative unit element (the counterpart of the scalar 1).
+			It's pretty immediate that for any square matrix <m>\bA</m>, <m>\bA\boldsymbol{0}=\boldsymbol{0}\bA=\boldsymbol{0}</m> for the all-zero square matrix <m>\boldsymbol{0}</m> of appropriate size. So we have a multiplicative zero. But the situation is a bit less obvious when it comes to a multiplicative unit element (the counterpart of the scalar 1).
 		</p>
 		<definition>
 			<title>Identity matrix</title>
@@ -635,7 +629,7 @@
 	<subsection>
 		<title>Homogeneous solutions</title>
 		<p>
-		The linear system <m>\bA\bx=\bzero</m> plays a special role and is called a <idx><h>homogeneous</h> <h>linear system</h></idx> <term>homoegeneous linear system</term>.
+		The linear system <m>\bA\bx=\bzero</m> plays a special role and is called a <idx><h>homogeneous</h> <h>linear system</h></idx> <term>homogeneous linear system</term>.
 		</p>
 		<theorem xml:id="la-gs-homolincomb">
 			<title>Homogeneous linear systems</title>
@@ -652,7 +646,7 @@
 			</p></proof>
 		</theorem>
 		<p>
-			By itself this is nice, but what makes this theorem important is that <em>every</em> homogeneous solution can obtained this way. There is some geometric intuition in three dimensions. Each row of <m>\bA\bx=\bzero</m> is a plane through the origin. Typically three planes intersect at a single point (unique solution), but if two planes coincide, the intersection is a straight line through the origin. We can express such a line as the set of all possible <m>c_1\bx_1</m> for any vector <m>\bx_1</m> parallel to the line. Furthermore, if all three planes coincide, then the solution is just the common plane, which can be expressed as the set of alll possible <m>c_1\bx_1+c_2\bx_2</m> for any two nonparallel vectors in that plane.
+			By itself this is nice, but what makes this theorem important is that <em>every</em> homogeneous solution can obtained this way. There is some geometric intuition in three dimensions. Each row of <m>\bA\bx=\bzero</m> is a plane through the origin. Typically three planes intersect at a single point (unique solution), but if two planes coincide, the intersection is a straight line through the origin. We can express such a line as the set of all possible <m>c_1\bx_1</m> for any vector <m>\bx_1</m> parallel to the line. Furthermore, if all three planes coincide, then the solution is just the common plane, which can be expressed as the set of all possible <m>c_1\bx_1+c_2\bx_2</m> for any two nonparallel vectors in that plane.
 		</p>
 		<p>
 			None of the geometry is necessary to apply the algebra.
@@ -684,7 +678,7 @@
 			Motivated by the theorem and example above, we make a new definition.
 		</p>
 		<definition xml:id="la-gs-homogen">
-			<title>General solution of a linear system (homoegeneous)</title>
+			<title>General solution of a linear system (homogeneous)</title>
 			<statement><p>
 				We say that <m>\bx_h = c_1\bx_1 + \cdots + c_k\bx_k</m> is the <term>general solution</term><idx><h>general solution</h><h>of homogeneous linear system</h></idx> of <m>\bA\bx=\bzero</m> if every solution to the homogeneous system can be so written for some choice of the coefficients.
 			</p></statement>
@@ -696,7 +690,7 @@
 			We now come to one of the simplest yet most confusing terms in the course. A <term>particular solution</term><idx><h>particular solution</h><h>of a linear system</h></idx> of the linear system <m>\bA\bx=\bb</m> is just any one solution of the problem. The only reason the term exists is to distinguish it from the <em>general</em> solution, which (as above) is an expression for <em>every possible</em> solution of the system.
 		</p>
 		<theorem xml:id="la-gs-general">
-			<title>General solution of alinear system</title>
+			<title>General solution of a linear system</title>
 			<statement><p>
 				All solutions of <m>\bA\bx=\bb</m> may be written as
 				<me>\bx = \bx_h + \bx_p</me>,
@@ -785,7 +779,7 @@
 			<me>
 				\sum_{j=1}^k c_j \bx_j = c_1\bx_1+\cdots+c_k\bx_k = \begin{bmatrix} \bx_1 \amp \cdots \amp \bx_k \end{bmatrix} \begin{bmatrix} c_1 \\ \vdots \\ c_k \end{bmatrix} = \bX \bc. 
 			</me>
-			Hence the question <q>Are <m>\bx_1,\dots,\bx_k</m> indedendent?</q> is equivalent to <q>Does <m>\bX\bc=\bzero</m> have any nonzero solutions?</q> Because homogeneous problems always have at least one solution (the zero vector), this question is also equivalent to <q>Does <m>\bX\bc=\bzero</m> have infinitely many solutions?</q>
+			Hence the question <q>Are <m>\bx_1,\dots,\bx_k</m> independent?</q> is equivalent to <q>Does <m>\bX\bc=\bzero</m> have any nonzero solutions?</q> Because homogeneous problems always have at least one solution (the zero vector), this question is also equivalent to <q>Does <m>\bX\bc=\bzero</m> have infinitely many solutions?</q>
 		</p>
 		<example>
 			<p>
@@ -1058,7 +1052,7 @@
 		  The last equivalent statement is a placeholder in anticipation of <xref ref="la-eigen"/>.
 	  </p>
 	  <p>
-		  There are related statements that can be made regarding nonsquare matrices, but we aren't going to get into them. It is worth knowing, though, that the square case is the only one in which a unique solution is a possibility. If the matrix is singular, then that is ruled out, and there may be zero or an infinity of solutions, depending on both <m>\bA</m> and <m>\bb</m>.
+		  There are related statements that can be made regarding non-square matrices, but we aren't going to get into them. It is worth knowing, though, that the square case is the only one in which a unique solution is a possibility. If the matrix is singular, then that is ruled out, and there may be zero or an infinity of solutions, depending on both <m>\bA</m> and <m>\bb</m>.
 	  </p>
   </section>
 
@@ -1277,7 +1271,7 @@
 				Suppose <m>\bA</m> is an <m>n\times n</m> matrix. Then
 				<ol>
 					<li><m>\bA</m> has at most <m>n</m> distinct complex eigenvalues, and</li>
-					<li>if <m>\bA</m> is real, then any complex eigenvalues occur in conjugate pairs, as do their assoicated eigenvectors.</li>
+					<li>if <m>\bA</m> is real, then any complex eigenvalues occur in conjugate pairs, as do their associated eigenvectors.</li>
 				</ol>
 			</p></statement>
 		</theorem>
@@ -1317,7 +1311,7 @@
 				<me>
 					p(z) = (z-\lambda_1)^{m_1}(z-\lambda_2)^{m_2}\dots(z-\lambda_k)^{m_k}
 				</me>
-				for nonnegative integer exponents such that <m>m_1+\cdots+m_k=n</m>. These exponents are the mulitiplicites of the roots.
+				for nonnegative integer exponents such that <m>m_1+\cdots+m_k=n</m>. These exponents are the multiplicities of the roots.
 			</p>
 			<definition xml:id="la-df-algmult">
 				<title>Algebraic multiplicity</title>

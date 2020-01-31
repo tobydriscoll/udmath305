@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,33 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It's worth mentioning here the related idea of a <dfn class="terminology">window</dfn> function, which turns on and then back off. To get a forcing that is one only between times \(S\) and \(T\text{,}\) for example, we can use \(f(t)=H(t-S)-H(t-T)\text{.}\) The formulas for the window solution become a bit messy, so it's best to just work out results from each step separately.</p>
+<p>It's relatively straightforward to incorporate step forcing into variation of parameters, if we use the definite integral form <a class="xref" data-knowl="./knowl/fl-eq-varparivp.html" title="Equation 2.5.1">(2.5.1)</a>. The usual situation is that the initial condition is given at \(t_0=0\text{,}\) so we start with</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">For \(f(t)=H(t-T)\) for \(T\ge 0\text{,}\) the integrand is zero until time \(T\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{0}^t G(s,t)H(s-T) \, ds = \begin{cases} 
+0, \amp t \le T, \\ 
+\displaystyle\int_{T}^t G(s,t)\, ds, \amp t &gt; T.
+\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">This situation is itself most easily expressed using step functions. The result is</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = G(0,t)x_0 + H(t-T) \int_{T}^t G(s,t)\, ds\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">In the case of a constant coefficient, this becomes</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = e^{at} x_0 + H(t-T) \int_{T}^t e^{a(t-s)}\, ds = e^{at} x_0 + \frac{1}{a} H(t-T) \bigl[e^{a(T-t)}-1\bigr]\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="fl-impulse.html#p-249">in-context</a></span>
 </body>
 </html>

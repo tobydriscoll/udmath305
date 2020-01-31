@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,7 +209,7 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="nl-directionfields"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">Direction fields</span>
 </h2>
-<a href="nl-directionfields.html" class="permalink">¶</a><p id="p-447">An autonomous system in two dimensions has the particular form</p>
+<a href="nl-directionfields.html" class="permalink">¶</a><p id="p-448">An autonomous system in two dimensions has the particular form</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x_1}{t} \amp = f_1(x_1,x_2), \\
@@ -219,7 +219,7 @@ var js_version = 0.13;
 <p data-braille="continuation">For such a system we can use a simple visualization to suggest solution behavior.</p>
 <article class="example example-like" id="nl-ex-direction-field-system"><a data-knowl="" class="id-ref original" data-refid="hk-nl-ex-direction-field-system"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Direction field for a system of two equations.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-nl-ex-direction-field-system"><article class="example example-like"><p id="p-448">Here is a direction field for the linear ODE system</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-nl-ex-direction-field-system"><article class="example example-like"><p id="p-449">Here is a direction field for the linear ODE system</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = -y\\
@@ -234,7 +234,7 @@ slopefield(F,G,[-2 2],[-2 2])
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.4.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/nl_dirfield_1.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-449">Here is a slope field in the first quadrant for the nonlinear system</p>
+<p id="p-450">Here is a slope field in the first quadrant for the nonlinear system</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = 3x - \frac{1}{2}xy\\
@@ -250,7 +250,7 @@ slopefield(F,G,[0 10],[0 12])
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.4.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/nl_dirfield_2.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-450">We can use a simple trick to create direction fields for the nonautonomous scalar problem \(x'=f(t,x)\) as well. Introducing the variables \(u_1=t\) and \(u_2=x\text{,}\) we have</p>
+<p id="p-451">We can use a simple trick to create direction fields for the nonautonomous scalar problem \(x'=f(t,x)\) as well. Introducing the variables \(u_1=t\) and \(u_2=x\text{,}\) we have</p>
 <div class="displaymath">
 \begin{align*}
 \dd{u_1}{t} \amp = 1, \\
@@ -258,9 +258,9 @@ slopefield(F,G,[0 10],[0 12])
 \end{align*}
 </div>
 <p data-braille="continuation">which has the form of a two-dimensional autonomous system.</p>
-<aside class="aside aside-like" id="aside-16"><p id="p-451">Both higher-order and nonautonomous problems can be converted to an autonomous, first-order system of the form \(\bx'=\bff(\bx)\) in a higher dimension. Hence those are as general a type as we need to study.</p></aside><article class="example example-like" id="example-71"><a data-knowl="" class="id-ref original" data-refid="hk-example-71"><h6 class="heading">
+<aside class="aside aside-like" id="aside-16"><p id="p-452">Both higher-order and nonautonomous problems can be converted to an autonomous, first-order system of the form \(\bx'=\bff(\bx)\) in a higher dimension. Hence those are as general a type as we need to study.</p></aside><article class="example example-like" id="example-72"><a data-knowl="" class="id-ref original" data-refid="hk-example-72"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Direction field for a scalar problem.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-71"><article class="example example-like"><p id="p-452">Here is a direction field for \(x'=t-x^2\text{.}\) Note that the arrows are horizontal along the sideways parabola \(t=x^2\text{.}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-72"><article class="example example-like"><p id="p-453">Here is a direction field for \(x'=t-x^2\text{.}\) Note that the arrows are horizontal along the sideways parabola \(t=x^2\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="nl_dirfield_3"><pre class="prettyprint lang-matlab">f = @(t,x) t-x^2;
 slopefield(f,[-2 2],[-2 2])

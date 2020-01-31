@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In an initial value problem, we can use the growth factor to modify the variation of parameters formula:</p>
-<div class="displaymath">
-\begin{equation}
-x(t) = G(t_0,t)x_0 + \int_{t_0}^t G(s,t) f(s)\, ds\text{.}\tag{2.5.1}
-\end{equation}
-</div>
-<p data-braille="continuation">We can use <a class="xref" data-knowl="./knowl/fl-thm-growthfactor.html" title="Theorem 2.4.3: Growth factor">Theorem 2.4.3</a> to show that this is the desired solution. First, \(x(t_0)=G(t_0,t_0)x_0 + 0 = x_0\text{,}\) as required. The derivative is a little tricky, as it requries an extension of the Fundamental Theorem of Calculus:</p>
+<p>After being thoroughly trained to always include integration constants, you might wonder why we are being so cavalier about them here. Let's walk through what would happen to them in the last example above. First,</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{d}{dt} \int_{t_0}^t G(s,t) f(s)\, ds = G(t,t)f(t) + \int_{t_0}^t \frac{d}{dt} \left[ G(s,t)f(s) \right]\, ds  = f(t) + a(t)  \int_{t_0}^t G(s,t) f(s)\, ds\text{.}
+g(t) = \exp\left[  \ln(2+t) + C_1 \right] = A_1(2 + t)\text{,}
 \end{equation*}
 </div>
+<p data-braille="continuation">where we renamed \(A_1=e^{C_1}\gt 0\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+k(t) = A_1^{-1} \int \frac{-1}{2+t} (2+t)^{-1} \, dt = A_1^{-1} [-(2+t)^{-1}+C_2] = -A_1^{-1}(2+t)^{-1} + A_2\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally,</p>
+<div class="displaymath">
+\begin{equation*}
+x = x_h + kg = c_1 A_1(2 + t) + \bigl[-A_1^{-1}(2+t)^{-1} + A_2\bigr ]A_1(2 + t) = (c_1A_1+A_1A_2)(2+t) - 1\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This is exactly the same family of solutions as \(c_1(2+t)-1\text{.}\) Essentially, all the integration constants end up lumped into that \(c_1\text{,}\) which is always the case.</p>
 <span class="incontext"><a href="fl-varparam.html#p-219">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,22 +11,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>To solve \(x'+3x=6t\text{,}\) first note that \(x_h(t)=c_1e^{-3t}\text{.}\) For \(x_p\) we use the educated guess</p>
+<body><article class="example example-like"><p>Above we found that the general solution of \(x'=4x+8t\) is \(x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}\) If we also have that \(x(0)=3/2\text{,}\) then we can conclude \(c_1=2\text{.}\)</p>
+<p>Now let us start over instead with <a class="xref" data-knowl="./knowl/fl-eq-varparivp.html" title="Equation 2.5.1">(2.5.1)</a>, with \(a(t)=4\) and \(f(t)=8t\text{.}\) First,</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = B_1 t + B_0\text{.}
+G(s,t) = \exp\left[ \int_s^t 4\,du \right] = \exp(4t-4s) = e^{4(t-s)}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Substituting that into the ODE yields</p>
+<p data-braille="continuation">Then</p>
 <div class="displaymath">
 \begin{equation*}
-(B_1)+3(B_1 t + B_0) = 6t\text{.}
+x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds = \frac{3}{2} e^{4t} +  \int_{0}^t 8se^{4(t-s)} \, ds = \frac{3}{2} e^{4t} + \frac{1}{2} (e^{4 t} - 1-4t) \text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">On matching like powers of \(t\) we get the equations \(3B_1=6\) and \(B_1+B_0=0\text{.}\) This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that \(B_1=2\) and \(B_0=-2\text{.}\) So the general solution is</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = c_1 e^{-3t} + 2t - 2\text{.}
-\end{equation*}
-</div></article></body>
+<p data-braille="continuation">which is identical to the first answer.</p></article></body>
 </html>

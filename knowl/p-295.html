@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We can find the eigenstuff of</p>
+<p>Let \(\bA\) have eigenvalues \(\lambda_1,\ldots,\lambda_n\) and corresponding eigenvectors \(\bv_1,\ldots,\bv_n\text{.}\) If the eigenvectors are independent (that is, they form a basis), then</p>
 <div class="displaymath">
-\begin{equation*}
-\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
-\end{equation*}
+\begin{equation}
+\bX(t) = \begin{bmatrix} 
+e^{\lambda_1 t} \bv_1 \amp \cdots \amp e^{\lambda_n t} \bv_n
+\end{bmatrix}\tag{3.3.1}
+\end{equation}
 </div>
-<p data-braille="continuation">as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This gives us solutions of \(\bx'=\bA\bx\text{:}\)</p>
+<p data-braille="continuation">is a fundamental matrix for \(\bx'=\bA\bx\text{.}\) Hence the general solution can be expressed as</p>
 <div class="displaymath">
-\begin{equation*}
-\bx_1(t) = e^{3t} \twovec{1}{2},\quad \bx_2(t) = e^{-t} \twovec{1}{-2} \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Because the eigenvalues are distinct, we know that these are independent solutions. The general homogeneous solution is</p>
-<div class="displaymath">
-\begin{equation*}
-\bx(t) = \bX(t)\bc = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
-= \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
-\end{equation*}
+\begin{equation}
+\bx(t) = \bX(t)\bc = c_1 e^{\lambda_1 t} \bv_1 + \cdots + c_n e^{\lambda_n t} \bv_n\text{.}\tag{3.3.2}
+\end{equation}
 </div>
 <span class="incontext"><a href="fs-constcoeff.html#p-295">in-context</a></span>
 </body>

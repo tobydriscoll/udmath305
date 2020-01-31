@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,29 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Reconsider the previous IVP \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) First we find</p>
-<div class="displaymath">
+<ol class="decimal">
+<li><div class="displaymath">
 \begin{equation*}
-G(s,t) = \exp \left[ \int_{s}^t \sin(u)\, du \right] = \exp[-\cos(t)+\cos(s)] \text{.}
+G(t,t)=1
 \end{equation*}
-</div>
-<p data-braille="continuation">The solution of the IVP is therefore</p>
-<div class="displaymath">
+</div></li>
+<li><div class="displaymath">
 \begin{equation*}
-x(t) = G(0,t)\cdot 1 = \exp[1-\cos(t)]\text{,}
+\frac{d}{dt} G(t_0,t) = a(t) G(t_0,t)
 \end{equation*}
-</div>
-<p data-braille="continuation">which is what we found before.</p>
+</div></li>
+<li><div class="displaymath">
+\begin{equation*}
+G(s,r)G(r,t) = G(s,t)
+\end{equation*}
+</div></li>
+<li><div class="displaymath">
+\begin{equation*}
+\frac{1}{G(s,t)}=G(t,s)
+\end{equation*}
+</div></li>
+<li>The unique solution of \(x'-ax=0\text{,}\) \(x(t_0)=x_0\) is \(G(t_0,t)x_0\text{.}\)</li>
+</ol>
 <span class="incontext"><a href="fl-ivp.html#p-210">in-context</a></span>
 </body>
 </html>

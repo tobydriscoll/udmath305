@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,29 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="decimal">
-<li><div class="displaymath">
+<p>Another option is to rewrite some formulas for the IVP case. Consider again the integrating factor,</p>
+<div class="displaymath">
 \begin{equation*}
-G(t,t)=1
+g(t) = \exp\left[ \int a(t)\, dt \right]\text{.}
 \end{equation*}
-</div></li>
-<li><div class="displaymath">
-\begin{equation*}
-\frac{d}{dt} G(t_0,t) = a(t) G(t_0,t)
-\end{equation*}
-</div></li>
-<li><div class="displaymath">
-\begin{equation*}
-G(s,r)G(r,t) = G(s,t)
-\end{equation*}
-</div></li>
-<li><div class="displaymath">
-\begin{equation*}
-\frac{1}{G(s,t)}=G(t,s)
-\end{equation*}
-</div></li>
-<li>The unique solution of \(x'-ax=0\text{,}\) \(x(t_0)=x_0\) is \(G(t_0,t)x_0\text{.}\)</li>
-</ol>
+</div>
+<p data-braille="continuation">It is not uniquely defined thanks to the integration constant. For an ODE alone this is natural, as the solution itself is not unique. But for the IVP we can define</p>
+<div class="displaymath">
+\begin{equation}
+G(s,t) = \exp\left[ \int_{s}^t a(u)\, du \right]\text{,}\tag{2.4.1}
+\end{equation}
+</div>
+<p data-braille="continuation">which we call the <dfn class="terminology">growth factor</dfn>. It has some interesting and useful properties.</p>
 <span class="incontext"><a href="fl-ivp.html#p-209">in-context</a></span>
 </body>
 </html>

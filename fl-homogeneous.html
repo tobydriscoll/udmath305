@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:49-05:00    *-->
+<!--*    on 2020-01-31T13:50:33-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,8 +209,8 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fl-homogeneous"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Homogeneous solutions</span>
 </h2>
-<a href="fl-homogeneous.html" class="permalink">¶</a><p id="p-199">Our first job is to figure out how to express all possible solutions of the homogeneous problem \(\opA[x]=0\text{,}\) or \(x'-a(t)x=0\text{.}\) As with linear systems, the goal is to find a basis, so that the general \(x_h\) is a linear combination of the basis functions. However, there is no analog of the RREF of a matrix to exploit here.</p>
-<p id="p-200">Fortunately we can just use some calculus. Define an <dfn class="terminology">integrating factor</dfn> as</p>
+<a href="fl-homogeneous.html" class="permalink">¶</a><p id="p-200">Our first job is to figure out how to express all possible solutions of the homogeneous problem \(\opA[x]=0\text{,}\) or \(x'-a(t)x=0\text{.}\) As with linear systems, the goal is to find a basis, so that the general \(x_h\) is a linear combination of the basis functions. However, there is no analog of the RREF of a matrix to exploit here.</p>
+<p id="p-201">Fortunately we can just use some calculus. Define an <dfn class="terminology">integrating factor</dfn> as</p>
 <div class="displaymath">
 \begin{equation*}
 g(t) = \exp[ q(t) ]\text{,}
@@ -229,9 +229,9 @@ g(t) = \exp\left( \int a(t)\,dt \right)\text{.}\label{fl-eq-intfactor}\tag{2.3.1
 \end{equation}
 </div>
 <p data-braille="continuation">Thus, \(x_h=c_1g(t)\) is a homogeneous solution for any constant \(c_1\text{.}\) It's not an elementary fact that this is the <em class="emphasis">general</em> homogeneous solution.</p>
-<aside class="aside aside-like" id="aside-11"><p id="p-201">The integrating factor \(g(t)\) is not uniquely defined, because it contains an indefinite integral. But adding \(C\) to the integral is the same as multiplying \(g(t)\) by \(e^C\text{,}\) and the general homogeneous solution is not affected. This is the usual situation of scalar nonuniqueness for expressing the basis of a nullspace.</p></aside><article class="example example-like" id="example-27"><a data-knowl="" class="id-ref original" data-refid="hk-example-27"><h6 class="heading">
+<aside class="aside aside-like" id="aside-11"><p id="p-202">The integrating factor \(g(t)\) is not uniquely defined, because it contains an indefinite integral. But adding \(C\) to the integral is the same as multiplying \(g(t)\) by \(e^C\text{,}\) and the general homogeneous solution is not affected. This is the usual situation of scalar nonuniqueness for expressing the basis of a nullspace.</p></aside><article class="example example-like" id="example-28"><a data-knowl="" class="id-ref original" data-refid="hk-example-28"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-27"><article class="example example-like"><p id="p-202">To solve \(x'=\sin(t) x\text{,}\) we integrate to get \(-\cos(t)\) and then exponentiate, so that</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-28"><article class="example example-like"><p id="p-203">To solve \(x'=\sin(t) x\text{,}\) we integrate to get \(-\cos(t)\) and then exponentiate, so that</p>
 <div class="displaymath">
 \begin{equation*}
 x_h(t) = c_1 \exp[ -\cos(t) ]\text{.}

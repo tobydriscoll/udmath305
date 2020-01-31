@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T11:44:50-05:00    *-->
+<!--*    on 2020-01-31T13:50:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,28 +13,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For \((2+t) x'= x - 1\text{,}\) we rewrite as</p>
+<p>Consider \(x'=4x+8t\text{.}\) Rewriting as \(x'-4x=8t\text{,}\) we identify \(a(t)=4\) and \(f(t)=8t\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
-x' - \frac{1}{2+t} x = -\frac{1}{2+t}\text{.}
+g(t) = \exp\left[ \int 4\,dt \right] = e^{4t}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then</p>
+<p data-braille="continuation">and</p>
 <div class="displaymath">
 \begin{equation*}
-g(t) = \exp\left[ \int \frac{1}{2+t}\, dt \right] = \exp[ \ln(2+t) ] = 2+t\text{.}
+k(t) = \int \frac{8t}{e^{4t}}\, dt = -\frac{1}{2} (4t+1)e^{-4t}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">Next,</p>
+<p data-braille="continuation">where you need integration by parts (or a computer) to perform the integral. Hence</p>
 <div class="displaymath">
 \begin{equation*}
-k(t) = \int \frac{-1}{2+t} (2+t)^{-1} \, dt = - (2+t)^{-1}\text{,}
+x_p(t) = \left[ \frac{1}{2} (4t+1)e^{-4t} \right] e^{4t} = -\frac{1}{2} (4t+1)\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">so that</p>
+<p data-braille="continuation">and the general solution is</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = c_1 (2+t) - (2+t)^{-1} (2+t) = c_1(2+t)-1\text{.}
+x(t) = x_h(t) + x_p(t) = c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}
 \end{equation*}
 </div>
 <span class="incontext"><a href="fl-varparam.html#p-217">in-context</a></span>
