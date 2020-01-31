@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-31T15:52:14-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<figure class="listing figure-like"><pre class="prettyprint lang-matlab">step = @(t) double(t&gt;0);
+dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
+[t,y] = ode45(dydt,[0,8],1);
+semilogy(t,y)
+xlabel('t'), ylabel('y(t)')
+title('Window forcing (semi-log)')
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.8.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><span class="incontext"><a href="fl-impulse.html#fo_lcc_window_2">in-context</a></span>
+</body>
+</html>

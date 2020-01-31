@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-31T15:52:13-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Constant growth rate.</span>
+</h6>
+<div class="displaymath">
+\begin{equation*}
+\dd{x}{t} = x
+\end{equation*}
+</div>
+<p data-braille="continuation">It's trivial to check that \(x=e^t\) is one solution of \(x'=x\text{,}\) i.e.,  it makes the ODE a true equation.  As a mathematical model, the ODE states that the rate of change in \(x\) is equal to \(x\) itself, and the result is <dfn class="terminology">exponential growth</dfn>: the solution grows larger, which increases the rate of growth, and so on in a feedback loop.</p>
+<p>Exponential growth is most naturally plotted on a log-linear graph, in which case the solution is a straight line with positive slope. Because of the log scale, a “difference” in the \(y\)-coordinate is actually a multiplicative factor in the solution. Thus each unit of time applies a constant multiplier of growth.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">x = @(t) exp(t);
+fplot(x,[0,4]), set(gca,'yscale','log')
+xlabel('t'), ylabel('x(t)')
+title('Exponential growth')
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.1.3<span class="period">.</span></span><span class="space"> </span>Exponential growth.</figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_intro_const_growth.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article><span class="incontext"><a href="fl-linearity.html#ex-constant-growth">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-31T15:52:14-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<figure class="listing figure-like"><pre class="prettyprint lang-matlab">%bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
+%data = jsondecode(bc);
+load bitcoindata
+v = struct2cell(data.bpi);
+v = cat(1,v{:});
+plot(v,'-ko')
+for i = 4:31
+    z(i) = (v(i) + v(i-1) + v(i-2) + v(i-3)) / 4;
+end
+z(1:3) = NaN;  % not a number
+hold on, plot(z,'-o')
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.8.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure><span class="incontext"><a href="so-convolutions.html#so_conv_bitcoin2">in-context</a></span>
+</body>
+</html>

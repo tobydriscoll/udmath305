@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-31T15:52:13-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>In an initial value problem, we can use the growth factor to modify the variation of parameters formula:</p>
+<div class="displaymath">
+\begin{equation}
+x(t) = G(t_0,t)x_0 + \int_{t_0}^t G(s,t) f(s)\, ds\text{.}\tag{2.5.1}
+\end{equation}
+</div>
+<p data-braille="continuation">We can use <a class="xref" data-knowl="./knowl/fl-thm-growthfactor.html" title="Theorem 2.4.3: Growth factor">Theorem 2.4.3</a> to show that this is the desired solution. First, \(x(t_0)=G(t_0,t_0)x_0 + 0 = x_0\text{,}\) as required. The derivative is a little tricky, as it requries an extension of the Fundamental Theorem of Calculus:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{dt} \int_{t_0}^t G(s,t) f(s)\, ds = G(t,t)f(t) + \int_{t_0}^t \frac{d}{dt} \left[ G(s,t)f(s) \right]\, ds  = f(t) + a(t)  \int_{t_0}^t G(s,t) f(s)\, ds\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="fl-varparam.html#p-220">in-context</a></span>
+</body>
+</html>

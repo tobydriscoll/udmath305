@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-31T15:52:13-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Initial value problems</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="colors_delaware.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.13;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\spr}[1]{^{(#1)}}
+\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ddd}[2]{\frac{d^2 #1}{d #2^2}}
+\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ppp}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\det}{\operatorname{det}}
+\newcommand{\null}{\operatorname{null}}
+\newcommand{\span}{\operatorname{span}}
+\newcommand{\bzero}{\boldsymbol{0}}
+\newcommand{\Rn}[1]{\mathbb{R}^{#1}}
+\newcommand{\Cn}[1]{\mathbb{C}^{#1}}
+\newcommand{\Rmn}[2]{\mathbb{R}^{#1\times #2}}
+\newcommand{\Cmn}[2]{\mathbb{C}^{#1\times #2}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\opA}{\mathcal{A}}
+\newcommand{\lx}{\mathcal{L}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\inprod}[2]{\langle #1, #2 \rangle}
+\newcommand{\twovec}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
+\newcommand{\threevec}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
+\newcommand{\twodet}[4]{\begin{vmatrix}#1 \amp #2\\#3 \amp #4\end{vmatrix}}
+\newcommand{\twomat}[4]{\begin{bmatrix}#1 \amp #2\\#3 \amp #4\end{bmatrix}}
+\newcommand{\twodiag}[2]{\begin{bmatrix} #1 \amp 0 \\ 0 \amp #2 \end{bmatrix}}
+\newcommand{\fourdiag}[3]{\begin{bmatrix} #1 \amp  \amp \amp  \\                    \amp #2 \amp  \amp  \\  \amp \amp \ddots \amp \\  \amp  \amp  \amp #3 \end{bmatrix}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
+<p class="byline">Toby Driscoll</p>
+</div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="fl-homogeneous.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch2-first-order-linear.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="fl-varparam.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="fl-homogeneous.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch2-first-order-linear.html" title="Up">Up</a><a class="next-button button toolbar-item" href="fl-varparam.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+</li>
+<li class="link">
+<a href="ch1-linear-algebra.html" data-scroll="ch1-linear-algebra"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a><ul>
+<li><a href="la-linear-systems.html" data-scroll="la-linear-systems">Linear systems of equations</a></li>
+<li><a href="la-elimination.html" data-scroll="la-elimination">Row elimination</a></li>
+<li><a href="la-vector-algebra.html" data-scroll="la-vector-algebra">Vector algebra</a></li>
+<li><a href="la-matrix-algebra.html" data-scroll="la-matrix-algebra">Matrix algebra</a></li>
+<li><a href="la-general-solution.html" data-scroll="la-general-solution">General and particular solutions</a></li>
+<li><a href="la-basis.html" data-scroll="la-basis">Basis and dimension</a></li>
+<li><a href="la-determinant.html" data-scroll="la-determinant">Determinants</a></li>
+<li><a href="la-inverse.html" data-scroll="la-inverse">Inverses</a></li>
+<li><a href="la-equivalent.html" data-scroll="la-equivalent">Equivalent conditions</a></li>
+<li><a href="la-complex.html" data-scroll="la-complex">Complex numbers</a></li>
+<li><a href="la-eigen.html" data-scroll="la-eigen">Eigenvalues</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch2-first-order-linear.html" data-scroll="ch2-first-order-linear"><span class="codenumber">2</span> <span class="title">First-order linear ODEs</span></a><ul>
+<li><a href="fl-linearity.html" data-scroll="fl-linearity">Introduction</a></li>
+<li><a href="fl-linear-ode.html" data-scroll="fl-linear-ode">Linear ODEs</a></li>
+<li><a href="fl-homogeneous.html" data-scroll="fl-homogeneous">Homogeneous solutions</a></li>
+<li><a href="fl-ivp.html" data-scroll="fl-ivp" class="active">Initial value problems</a></li>
+<li><a href="fl-varparam.html" data-scroll="fl-varparam">Variation of parameters</a></li>
+<li><a href="fl-undeter.html" data-scroll="fl-undeter">Undetermined coefficients</a></li>
+<li><a href="fl-models.html" data-scroll="fl-models">Modeling with first-order ODEs</a></li>
+<li><a href="fl-impulse.html" data-scroll="fl-impulse">Steps and impulses</a></li>
+<li><a href="fl-laplace.html" data-scroll="fl-laplace">Laplace transform methods</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch3-first-order-systems.html" data-scroll="ch3-first-order-systems"><span class="codenumber">3</span> <span class="title">First-order linear systems</span></a><ul>
+<li><a href="fs-structure.html" data-scroll="fs-structure">Structure of linear ODE systems</a></li>
+<li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
+<li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
+<li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
+<li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
+<li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
+<li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch4-second-order-linear.html" data-scroll="ch4-second-order-linear"><span class="codenumber">4</span> <span class="title">Second-order ODEs</span></a><ul>
+<li><a href="so-convert.html" data-scroll="so-convert">Order equals dimension</a></li>
+<li><a href="so-homogeneous.html" data-scroll="so-homogeneous">Homogeneous problem</a></li>
+<li><a href="so-undetermined.html" data-scroll="so-undetermined">Undetermined coefficients</a></li>
+<li><a href="so-oscillators.html" data-scroll="so-oscillators">Oscillators</a></li>
+<li><a href="so-expforcing.html" data-scroll="so-expforcing">Driven oscillator</a></li>
+<li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
+<li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
+<li><a href="so-convolutions.html" data-scroll="so-convolutions">Convolutions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch5-nonlinear-ode.html" data-scroll="ch5-nonlinear-ode"><span class="codenumber">5</span> <span class="title">Nonlinear ODEs</span></a><ul>
+<li><a href="nl-autonomous.html" data-scroll="nl-autonomous">Autonomous scalar problems</a></li>
+<li><a href="nl-separable.html" data-scroll="nl-separable">Separable equations</a></li>
+<li><a href="nl-logistic.html" data-scroll="nl-logistic">Case study: Logistic equation</a></li>
+<li><a href="nl-directionfields.html" data-scroll="nl-directionfields">Direction fields</a></li>
+<li><a href="nl-linearization.html" data-scroll="nl-linearization">Linearization</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="fl-ivp"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Initial value problems</span>
+</h2>
+<a href="fl-ivp.html" class="permalink">¶</a><section class="introduction" id="introduction-5"><p id="p-204">The general solution of \(x'=a(t)x+f(t)\) includes the general homogeneous solution, which contains an arbitrary multiplicative constant. This “solution” is therefore really a family of solutions. Many models include one piece of additional information that specifies the solution uniquely.</p>
+<article class="definition definition-like" id="fl-df-ivp"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Initial value problem (IVP).</span>
+</h6>
+<p id="p-205">A first-order <dfn class="terminology">initial value problem</dfn> is a first-order ODE together with an <dfn class="terminology">initial condition</dfn> \(x(t_0)=x_0\text{.}\)</p></article><aside class="aside aside-like" id="aside-12"><p id="p-206">The definition of IVP, unlike most of what we have done so far, applies to nonlinear ODEs as well as linear ones.</p></aside><p id="p-207">Solving an IVP typically involves first finding the general solution of the ODE, then applying the initial condition to determine a specific value for the integration constant.</p>
+<article class="example example-like" id="example-29"><a data-knowl="" class="id-ref original" data-refid="hk-example-29"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-29"><article class="example example-like"><p id="p-208">We found earlier that the general solution of \(x'=\sin(t) x\) is</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 \exp[ -\cos(t) ]\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">If we are also given the initial condition \(x(0)=1\text{,}\) then we substitute to determine</p>
+<div class="displaymath">
+\begin{equation*}
+1 = x(0) = c_1 e^{-\cos(0)} = \frac{c_1}{e}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">so that \(c_1=e\text{.}\) We then write</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = e \exp[ -\cos(t) ] = \exp[1-\cos(t)]\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which has no arbitrary constants left.</p></article></div></section><section class="subsection" id="fl-iv-growth"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Growth factor</span>
+</h3>
+<a href="fl-ivp.html#fl-iv-growth" class="permalink">¶</a><p id="p-209">Another option is to rewrite some formulas for the IVP case. Consider again the integrating factor,</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = \exp\left[ \int a(t)\, dt \right]\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">It is not uniquely defined thanks to the integration constant. For an ODE alone this is natural, as the solution itself is not unique. But for the IVP we can define</p>
+<div class="displaymath">
+\begin{equation}
+G(s,t) = \exp\left[ \int_{s}^t a(u)\, du \right]\text{,}\label{fl-eq-growthfactor}\tag{2.4.1}
+\end{equation}
+</div>
+<p data-braille="continuation">which we call the <dfn class="terminology">growth factor</dfn>. It has some interesting and useful properties.</p>
+<article class="theorem theorem-like" id="fl-thm-growthfactor"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Growth factor.</span>
+</h6>
+<ol id="p-210" class="decimal">
+<li id="li-52"><div class="displaymath">
+\begin{equation*}
+G(t,t)=1
+\end{equation*}
+</div></li>
+<li id="li-53"><div class="displaymath">
+\begin{equation*}
+\frac{d}{dt} G(t_0,t) = a(t) G(t_0,t)
+\end{equation*}
+</div></li>
+<li id="li-54"><div class="displaymath">
+\begin{equation*}
+G(s,r)G(r,t) = G(s,t)
+\end{equation*}
+</div></li>
+<li id="li-55"><div class="displaymath">
+\begin{equation*}
+\frac{1}{G(s,t)}=G(t,s)
+\end{equation*}
+</div></li>
+<li id="li-56">The unique solution of \(x'-ax=0\text{,}\) \(x(t_0)=x_0\) is \(G(t_0,t)x_0\text{.}\)</li>
+</ol></article><article class="example example-like" id="example-30"><a data-knowl="" class="id-ref original" data-refid="hk-example-30"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-30"><article class="example example-like"><p id="p-211">Reconsider the previous IVP \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) First we find</p>
+<div class="displaymath">
+\begin{equation*}
+G(s,t) = \exp \left[ \int_{s}^t \sin(u)\, du \right] = \exp[-\cos(t)+\cos(s)] \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The solution of the IVP is therefore</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = G(0,t)\cdot 1 = \exp[1-\cos(t)]\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which is what we found before.</p></article></div>
+<p id="p-212">The growth factor has a simple interpretation: multiplication by \(G(s,t)\) represents the evolution of \(x\) from a state at time \(s\) to the state at time \(t\text{.}\) That makes the first three properties of <a class="xref" data-knowl="./knowl/fl-thm-growthfactor.html" title="Theorem 2.4.3: Growth factor">Theorem 2.4.3</a> seem pretty obvious.</p></section><section class="subsection" id="fl-iv-numerical"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.2</span> <span class="title">Numerical solutions</span>
+</h3>
+<a href="fl-ivp.html#fl-iv-numerical" class="permalink">¶</a><p id="p-213">Because an IVP has a unique solution, it is a suitable target for an approximate numerical solution.</p>
+<article class="example example-like" id="example-31"><a data-knowl="" class="id-ref original" data-refid="hk-example-31"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-31"><article class="example example-like"><p id="p-214">We look again at \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) Most numerical routines, like those in MATLAB, are coded to solve an ODE given in the general form \(x'=F(t,x)\text{.}\) Therefore we have to define a function for \(F\text{.}\)</p>
+<pre class="code-block tex2jax_ignore">
+F = @(t,x) sin(t)*x;
+		</pre>
+<p data-braille="continuation">Now we call the function <code class="code-inline tex2jax_ignore">ode45</code> to solve the problem, designating times of interest and the initial value.</p>
+<pre class="code-block tex2jax_ignore">
+t = linspace(0,5,500);
+[t,x] = ode45(F,t,1);
+		</pre>
+<p data-braille="continuation">The outputs here are vectors of equal length, giving the times we selected and values of the solution at those times. For instance, to get values at the final time we use</p>
+<pre class="code-block tex2jax_ignore">
+format long
+[ t(end), x(end) ]
+		</pre>
+<p data-braille="continuation">and get the response</p>
+<pre class="code-block tex2jax_ignore">
+ans =
+5.000000000000000   2.046942183624863
+		</pre>
+<p data-braille="continuation">The outputs are also in a form easy to plot.</p>
+<pre class="code-block tex2jax_ignore">
+plot(t,x)
+xlabel('t'), ylabel('x(t)')
+title('Solution of a linear problem')
+		</pre>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="matlab/fo_linear_first_ivp.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article></div></section></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-01-31T15:52:13-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Structure of linear ODE systems</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="colors_delaware.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.13;
+</script>
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\spr}[1]{^{(#1)}}
+\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ddd}[2]{\frac{d^2 #1}{d #2^2}}
+\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ppp}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\det}{\operatorname{det}}
+\newcommand{\null}{\operatorname{null}}
+\newcommand{\span}{\operatorname{span}}
+\newcommand{\bzero}{\boldsymbol{0}}
+\newcommand{\Rn}[1]{\mathbb{R}^{#1}}
+\newcommand{\Cn}[1]{\mathbb{C}^{#1}}
+\newcommand{\Rmn}[2]{\mathbb{R}^{#1\times #2}}
+\newcommand{\Cmn}[2]{\mathbb{C}^{#1\times #2}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\opA}{\mathcal{A}}
+\newcommand{\lx}{\mathcal{L}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\inprod}[2]{\langle #1, #2 \rangle}
+\newcommand{\twovec}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
+\newcommand{\threevec}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
+\newcommand{\twodet}[4]{\begin{vmatrix}#1 \amp #2\\#3 \amp #4\end{vmatrix}}
+\newcommand{\twomat}[4]{\begin{bmatrix}#1 \amp #2\\#3 \amp #4\end{bmatrix}}
+\newcommand{\twodiag}[2]{\begin{bmatrix} #1 \amp 0 \\ 0 \amp #2 \end{bmatrix}}
+\newcommand{\fourdiag}[3]{\begin{bmatrix} #1 \amp  \amp \amp  \\                    \amp #2 \amp  \amp  \\  \amp \amp \ddots \amp \\  \amp  \amp  \amp #3 \end{bmatrix}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
+<p class="byline">Toby Driscoll</p>
+</div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch3-first-order-systems.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch3-first-order-systems.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="fs-homogeneous.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch3-first-order-systems.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch3-first-order-systems.html" title="Up">Up</a><a class="next-button button toolbar-item" href="fs-homogeneous.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
+</li>
+<li class="link">
+<a href="ch1-linear-algebra.html" data-scroll="ch1-linear-algebra"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a><ul>
+<li><a href="la-linear-systems.html" data-scroll="la-linear-systems">Linear systems of equations</a></li>
+<li><a href="la-elimination.html" data-scroll="la-elimination">Row elimination</a></li>
+<li><a href="la-vector-algebra.html" data-scroll="la-vector-algebra">Vector algebra</a></li>
+<li><a href="la-matrix-algebra.html" data-scroll="la-matrix-algebra">Matrix algebra</a></li>
+<li><a href="la-general-solution.html" data-scroll="la-general-solution">General and particular solutions</a></li>
+<li><a href="la-basis.html" data-scroll="la-basis">Basis and dimension</a></li>
+<li><a href="la-determinant.html" data-scroll="la-determinant">Determinants</a></li>
+<li><a href="la-inverse.html" data-scroll="la-inverse">Inverses</a></li>
+<li><a href="la-equivalent.html" data-scroll="la-equivalent">Equivalent conditions</a></li>
+<li><a href="la-complex.html" data-scroll="la-complex">Complex numbers</a></li>
+<li><a href="la-eigen.html" data-scroll="la-eigen">Eigenvalues</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch2-first-order-linear.html" data-scroll="ch2-first-order-linear"><span class="codenumber">2</span> <span class="title">First-order linear ODEs</span></a><ul>
+<li><a href="fl-linearity.html" data-scroll="fl-linearity">Introduction</a></li>
+<li><a href="fl-linear-ode.html" data-scroll="fl-linear-ode">Linear ODEs</a></li>
+<li><a href="fl-homogeneous.html" data-scroll="fl-homogeneous">Homogeneous solutions</a></li>
+<li><a href="fl-ivp.html" data-scroll="fl-ivp">Initial value problems</a></li>
+<li><a href="fl-varparam.html" data-scroll="fl-varparam">Variation of parameters</a></li>
+<li><a href="fl-undeter.html" data-scroll="fl-undeter">Undetermined coefficients</a></li>
+<li><a href="fl-models.html" data-scroll="fl-models">Modeling with first-order ODEs</a></li>
+<li><a href="fl-impulse.html" data-scroll="fl-impulse">Steps and impulses</a></li>
+<li><a href="fl-laplace.html" data-scroll="fl-laplace">Laplace transform methods</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch3-first-order-systems.html" data-scroll="ch3-first-order-systems"><span class="codenumber">3</span> <span class="title">First-order linear systems</span></a><ul>
+<li><a href="fs-structure.html" data-scroll="fs-structure" class="active">Structure of linear ODE systems</a></li>
+<li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
+<li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
+<li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
+<li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
+<li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
+<li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch4-second-order-linear.html" data-scroll="ch4-second-order-linear"><span class="codenumber">4</span> <span class="title">Second-order ODEs</span></a><ul>
+<li><a href="so-convert.html" data-scroll="so-convert">Order equals dimension</a></li>
+<li><a href="so-homogeneous.html" data-scroll="so-homogeneous">Homogeneous problem</a></li>
+<li><a href="so-undetermined.html" data-scroll="so-undetermined">Undetermined coefficients</a></li>
+<li><a href="so-oscillators.html" data-scroll="so-oscillators">Oscillators</a></li>
+<li><a href="so-expforcing.html" data-scroll="so-expforcing">Driven oscillator</a></li>
+<li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
+<li><a href="so-laplace-repeated.html" data-scroll="so-laplace-repeated">Repeated and complex poles</a></li>
+<li><a href="so-convolutions.html" data-scroll="so-convolutions">Convolutions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch5-nonlinear-ode.html" data-scroll="ch5-nonlinear-ode"><span class="codenumber">5</span> <span class="title">Nonlinear ODEs</span></a><ul>
+<li><a href="nl-autonomous.html" data-scroll="nl-autonomous">Autonomous scalar problems</a></li>
+<li><a href="nl-separable.html" data-scroll="nl-separable">Separable equations</a></li>
+<li><a href="nl-logistic.html" data-scroll="nl-logistic">Case study: Logistic equation</a></li>
+<li><a href="nl-directionfields.html" data-scroll="nl-directionfields">Direction fields</a></li>
+<li><a href="nl-linearization.html" data-scroll="nl-linearization">Linearization</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-structure"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Structure of linear ODE systems</span>
+</h2>
+<a href="fs-structure.html" class="permalink">¶</a><p id="p-274">Most phenomena in the real world do not have just one dependent variable.</p>
+<article class="example example-like" id="fs-ex-twotanks"><a data-knowl="" class="id-ref original" data-refid="hk-fs-ex-twotanks"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-fs-ex-twotanks"><article class="example example-like"><p id="p-275">Consider two connected tanks holding brine. Tank 1 holds 100 L, has an input of 4 L/hr of brine of concentration 3 kg/L, and an output of 6 L/hr. Tank 2 holds 200 L, has an input of 7 L/hr of brine of concentration 5 kg/L, and an output of 5 L/hr. Tank 1 pumps 1 L/hr into tank 2, and tank 2 pumps 3 L/hr into tank 1.</p>
+<p id="p-276">Let \(x_i(t)\) be the mass of salt in tank \(i\text{.}\) The statements above imply</p>
+<div class="displaymath">
+\begin{align*}
+\dd{x_1}{t} \amp = 4\cdot 3 - 6\cdot \frac{x_1}{100} - 1\cdot \frac{x_1}{100} + 3 \cdot \frac{x_2}{200}  \\
+\dd{x_2}{t} \amp = 7\cdot 5 - 5\cdot \frac{x_2}{200} - 3\cdot \frac{x_2}{200} +  1\cdot \frac{x_1}{100}\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">This is neatly expressed using linear algebra:</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{}{t} \twovec{x_1}{x_2} = \frac{1}{200}\twomat{-14}{3}{2}{-8} \twovec{x_1}{x_2} + \twovec{12}{35} \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Here we have naturally extended the derivative of a vector to mean the derivative of each component.</p></article></div>
+<p id="p-277">The model in <a class="xref" data-knowl="./knowl/fs-ex-twotanks.html" title="Example 3.1.1">Example 3.1.1</a> is of an important general form.</p>
+<article class="definition definition-like" id="fs-df-linsystem"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Linear system of ODEs.</span>
+</h6>
+<p id="p-278">A <dfn class="terminology">linear system of ODEs</dfn> is an equation of the form</p>
+<div class="displaymath">
+\begin{equation}
+\bx' = \bA(t)\bx + \bff(t)\text{,}\label{fs-eq-system}\tag{3.1.1}
+\end{equation}
+</div>
+<p data-braille="continuation">where \(\bx\) is an \(n\)-dimensional <dfn class="terminology">state vector</dfn>, \(\bA\) is an \(n\times n\) <dfn class="terminology">coefficient matrix</dfn>, and \(\bff(t)\) is an \(n\)-dimensional <dfn class="terminology">forcing function</dfn>. If given, an <dfn class="terminology">initial condition</dfn> of the system is a time \(t_0\) and vector \(\bx_0\) such that \(\bx(t_0)=\bx_0\text{.}\)</p></article><p id="p-279">Because the matrix in <a class="xref" data-knowl="./knowl/fs-ex-twotanks.html" title="Example 3.1.1">Example 3.1.1</a> is constant in time, we would call its model a <dfn class="terminology">constant-coefficient</dfn> system.</p>
+<p id="p-280">It's not a stretch to say that virtually all of the general statements we made about the scalar linear problem \(x'=a(t)x+f(t)\) can be remade with boldface/capital letters for the linear system \(\bx'=\bA(t)\bx+\bff(t)\text{.}\) Those statements relied mainly on linearity, which remains present. So for example,</p>
+<article class="theorem theorem-like" id="fs-general"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">General solutions (first-order linear systems).</span>
+</h6>
+<p id="p-281">Every solution of \(\bx'=\bA(t)\bx+\bff(t)\) can be written in the form \(\bx=\bx_h+\bx_p\text{,}\) where \(\bx_h\) is the general solution of \(\bx'=\bA(t)\bx\) and \(\bx_p\) is any solution of \(\bx'=\bA(t)\bx+\bff(t)\text{.}\)</p></article><p id="p-282">Once again, then, we look first at the homogeneous system (no forcing term), and then for particular solutions of the nonhomogeneous problem.</p></section></div></main>
+</div>
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
+</body>
+</html>
