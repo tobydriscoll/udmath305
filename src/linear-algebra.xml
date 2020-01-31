@@ -485,7 +485,7 @@
 	<p>
 	When we compute a matrix product by hand, we usually don't write out the above. Instead we use a more compact definition for the individual entries of <m>\bC = \bA\bB</m>,
 	<men xml:id="la-eq-matmatinner">
-		C_{ij} = \sum_{k=1}^n A_{ik}B_{kj}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p
+		C_{ij} = \sum_{k=1}^n a_{ik}b_{kj}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p
 	</men>.
 	</p>
 	<example>
@@ -561,6 +561,7 @@
 				These properties are easy to demonstrate (not prove!) in MATLAB. Any undefined matrix operation throws an error.
 			</p>
 			<listing xml:id="la_algprops">
+				<caption>Demonstration of matrix algebra.</caption>
 				<program language="matlab">
 					<input>
 						A = [ 1 -1; 0 2; -3 1 ]
