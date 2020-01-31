@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-30T16:56:14-05:00    *-->
+<!--*    on 2020-01-31T11:44:49-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>First-order linear systems</title>
+<title>First-order linear ODEs</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/x-mathjax-config">
@@ -130,11 +130,11 @@ var js_version = 0.13;
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="fl-laplace.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="notes.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="fs-structure.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="la-eigen.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="notes.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="fl-linearity.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="fl-laplace.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="notes.html" title="Up">Up</a><a class="next-button button toolbar-item" href="fs-structure.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="la-eigen.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="notes.html" title="Up">Up</a><a class="next-button button toolbar-item" href="fl-linearity.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -143,7 +143,7 @@ var js_version = 0.13;
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
 </li>
 <li class="link">
-<a href="linear-algebra.html" data-scroll="linear-algebra"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a><ul>
+<a href="ch1-linear-algebra.html" data-scroll="ch1-linear-algebra"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a><ul>
 <li><a href="la-linear-systems.html" data-scroll="la-linear-systems">Linear systems of equations</a></li>
 <li><a href="la-elimination.html" data-scroll="la-elimination">Row elimination</a></li>
 <li><a href="la-vector-algebra.html" data-scroll="la-vector-algebra">Vector algebra</a></li>
@@ -157,8 +157,8 @@ var js_version = 0.13;
 <li><a href="la-eigen.html" data-scroll="la-eigen">Eigenvalues</a></li>
 </ul>
 </li>
-<li class="link">
-<a href="first-order-linear.html" data-scroll="first-order-linear"><span class="codenumber">2</span> <span class="title">First-order linear ODEs</span></a><ul>
+<li class="link active">
+<a href="ch2-first-order-linear.html" data-scroll="ch2-first-order-linear"><span class="codenumber">2</span> <span class="title">First-order linear ODEs</span></a><ul>
 <li><a href="fl-linearity.html" data-scroll="fl-linearity">Introduction</a></li>
 <li><a href="fl-linear-ode.html" data-scroll="fl-linear-ode">Linear ODEs</a></li>
 <li><a href="fl-homogeneous.html" data-scroll="fl-homogeneous">Homogeneous solutions</a></li>
@@ -170,8 +170,8 @@ var js_version = 0.13;
 <li><a href="fl-laplace.html" data-scroll="fl-laplace">Laplace transform methods</a></li>
 </ul>
 </li>
-<li class="link active">
-<a href="first-systems.html" data-scroll="first-systems"><span class="codenumber">3</span> <span class="title">First-order linear systems</span></a><ul>
+<li class="link">
+<a href="ch3-first-order-systems.html" data-scroll="ch3-first-order-systems"><span class="codenumber">3</span> <span class="title">First-order linear systems</span></a><ul>
 <li><a href="fs-structure.html" data-scroll="fs-structure">Structure of linear ODE systems</a></li>
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
@@ -182,7 +182,7 @@ var js_version = 0.13;
 </ul>
 </li>
 <li class="link">
-<a href="first-order-linear.html" data-scroll="first-order-linear"><span class="codenumber">4</span> <span class="title">Second-order ODEs</span></a><ul>
+<a href="ch4-second-order-linear.html" data-scroll="ch4-second-order-linear"><span class="codenumber">4</span> <span class="title">Second-order ODEs</span></a><ul>
 <li><a href="so-convert.html" data-scroll="so-convert">Order equals dimension</a></li>
 <li><a href="so-homogeneous.html" data-scroll="so-homogeneous">Homogeneous problem</a></li>
 <li><a href="so-undetermined.html" data-scroll="so-undetermined">Undetermined coefficients</a></li>
@@ -194,7 +194,7 @@ var js_version = 0.13;
 </ul>
 </li>
 <li class="link">
-<a href="nonlinear-systems.html" data-scroll="nonlinear-systems"><span class="codenumber">5</span> <span class="title">Nonlinear ODEs</span></a><ul>
+<a href="ch5-nonlinear-ode.html" data-scroll="ch5-nonlinear-ode"><span class="codenumber">5</span> <span class="title">Nonlinear ODEs</span></a><ul>
 <li><a href="nl-autonomous.html" data-scroll="nl-autonomous">Autonomous scalar problems</a></li>
 <li><a href="nl-separable.html" data-scroll="nl-separable">Separable equations</a></li>
 <li><a href="nl-logistic.html" data-scroll="nl-logistic">Case study: Logistic equation</a></li>
@@ -206,17 +206,19 @@ var js_version = 0.13;
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="chapter" id="first-systems"><h2 class="heading">
-<span class="type">Chapter</span> <span class="codenumber">3</span> <span class="title">First-order linear systems</span>
+<main class="main"><div id="content" class="pretext-content"><section class="chapter" id="ch2-first-order-linear"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">2</span> <span class="title">First-order linear ODEs</span>
 </h2>
-<a href="first-systems.html" class="permalink">¶</a><nav class="summary-links"><ul>
-<li><a href="fs-structure.html"><span class="codenumber">3.1</span> <span class="title">Structure of linear ODE systems</span></a></li>
-<li><a href="fs-homogeneous.html"><span class="codenumber">3.2</span> <span class="title">Homogeneous systems</span></a></li>
-<li><a href="fs-constcoeff.html"><span class="codenumber">3.3</span> <span class="title">Constant-coefficient systems</span></a></li>
-<li><a href="fs-complex-exponentials.html"><span class="codenumber">3.4</span> <span class="title">Complex exponentials</span></a></li>
-<li><a href="fs-phaseplane.html"><span class="codenumber">3.5</span> <span class="title">Phase plane</span></a></li>
-<li><a href="fs-matrix-exp.html"><span class="codenumber">3.6</span> <span class="title">Matrix exponential</span></a></li>
-<li><a href="fs-varparam.html"><span class="codenumber">3.7</span> <span class="title">Variation of parameters</span></a></li>
+<a href="ch2-first-order-linear.html" class="permalink">¶</a><nav class="summary-links"><ul>
+<li><a href="fl-linearity.html"><span class="codenumber">2.1</span> <span class="title">Introduction</span></a></li>
+<li><a href="fl-linear-ode.html"><span class="codenumber">2.2</span> <span class="title">Linear ODEs</span></a></li>
+<li><a href="fl-homogeneous.html"><span class="codenumber">2.3</span> <span class="title">Homogeneous solutions</span></a></li>
+<li><a href="fl-ivp.html"><span class="codenumber">2.4</span> <span class="title">Initial value problems</span></a></li>
+<li><a href="fl-varparam.html"><span class="codenumber">2.5</span> <span class="title">Variation of parameters</span></a></li>
+<li><a href="fl-undeter.html"><span class="codenumber">2.6</span> <span class="title">Undetermined coefficients</span></a></li>
+<li><a href="fl-models.html"><span class="codenumber">2.7</span> <span class="title">Modeling with first-order ODEs</span></a></li>
+<li><a href="fl-impulse.html"><span class="codenumber">2.8</span> <span class="title">Steps and impulses</span></a></li>
+<li><a href="fl-laplace.html"><span class="codenumber">2.9</span> <span class="title">Laplace transform methods</span></a></li>
 </ul></nav></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>

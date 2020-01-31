@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-30T16:56:14-05:00    *-->
+<!--*    on 2020-01-31T11:44:50-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Second-order ODEs</title>
+<title>Nonlinear ODEs</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/x-mathjax-config">
@@ -130,11 +130,11 @@ var js_version = 0.13;
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="fs-varparam.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="notes.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="so-convert.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="so-convolutions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="notes.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="nl-autonomous.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="fs-varparam.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="notes.html" title="Up">Up</a><a class="next-button button toolbar-item" href="so-convert.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="so-convolutions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="notes.html" title="Up">Up</a><a class="next-button button toolbar-item" href="nl-autonomous.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -143,7 +143,7 @@ var js_version = 0.13;
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
 </li>
 <li class="link">
-<a href="linear-algebra.html" data-scroll="linear-algebra"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a><ul>
+<a href="ch1-linear-algebra.html" data-scroll="ch1-linear-algebra"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a><ul>
 <li><a href="la-linear-systems.html" data-scroll="la-linear-systems">Linear systems of equations</a></li>
 <li><a href="la-elimination.html" data-scroll="la-elimination">Row elimination</a></li>
 <li><a href="la-vector-algebra.html" data-scroll="la-vector-algebra">Vector algebra</a></li>
@@ -158,7 +158,7 @@ var js_version = 0.13;
 </ul>
 </li>
 <li class="link">
-<a href="first-order-linear.html" data-scroll="first-order-linear"><span class="codenumber">2</span> <span class="title">First-order linear ODEs</span></a><ul>
+<a href="ch2-first-order-linear.html" data-scroll="ch2-first-order-linear"><span class="codenumber">2</span> <span class="title">First-order linear ODEs</span></a><ul>
 <li><a href="fl-linearity.html" data-scroll="fl-linearity">Introduction</a></li>
 <li><a href="fl-linear-ode.html" data-scroll="fl-linear-ode">Linear ODEs</a></li>
 <li><a href="fl-homogeneous.html" data-scroll="fl-homogeneous">Homogeneous solutions</a></li>
@@ -171,7 +171,7 @@ var js_version = 0.13;
 </ul>
 </li>
 <li class="link">
-<a href="first-systems.html" data-scroll="first-systems"><span class="codenumber">3</span> <span class="title">First-order linear systems</span></a><ul>
+<a href="ch3-first-order-systems.html" data-scroll="ch3-first-order-systems"><span class="codenumber">3</span> <span class="title">First-order linear systems</span></a><ul>
 <li><a href="fs-structure.html" data-scroll="fs-structure">Structure of linear ODE systems</a></li>
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
@@ -181,8 +181,8 @@ var js_version = 0.13;
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
 </ul>
 </li>
-<li class="link active">
-<a href="first-order-linear.html" data-scroll="first-order-linear"><span class="codenumber">4</span> <span class="title">Second-order ODEs</span></a><ul>
+<li class="link">
+<a href="ch4-second-order-linear.html" data-scroll="ch4-second-order-linear"><span class="codenumber">4</span> <span class="title">Second-order ODEs</span></a><ul>
 <li><a href="so-convert.html" data-scroll="so-convert">Order equals dimension</a></li>
 <li><a href="so-homogeneous.html" data-scroll="so-homogeneous">Homogeneous problem</a></li>
 <li><a href="so-undetermined.html" data-scroll="so-undetermined">Undetermined coefficients</a></li>
@@ -193,8 +193,8 @@ var js_version = 0.13;
 <li><a href="so-convolutions.html" data-scroll="so-convolutions">Convolutions</a></li>
 </ul>
 </li>
-<li class="link">
-<a href="nonlinear-systems.html" data-scroll="nonlinear-systems"><span class="codenumber">5</span> <span class="title">Nonlinear ODEs</span></a><ul>
+<li class="link active">
+<a href="ch5-nonlinear-ode.html" data-scroll="ch5-nonlinear-ode"><span class="codenumber">5</span> <span class="title">Nonlinear ODEs</span></a><ul>
 <li><a href="nl-autonomous.html" data-scroll="nl-autonomous">Autonomous scalar problems</a></li>
 <li><a href="nl-separable.html" data-scroll="nl-separable">Separable equations</a></li>
 <li><a href="nl-logistic.html" data-scroll="nl-logistic">Case study: Logistic equation</a></li>
@@ -206,18 +206,17 @@ var js_version = 0.13;
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="chapter" id="first-order-linear"><h2 class="heading">
-<span class="type">Chapter</span> <span class="codenumber">4</span> <span class="title">Second-order ODEs</span>
+<main class="main"><div id="content" class="pretext-content"><section class="chapter" id="ch5-nonlinear-ode"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">5</span> <span class="title">Nonlinear ODEs</span>
 </h2>
-<a href="first-order-linear.html" class="permalink">¶</a><nav class="summary-links"><ul>
-<li><a href="so-convert.html"><span class="codenumber">4.1</span> <span class="title">Order equals dimension</span></a></li>
-<li><a href="so-homogeneous.html"><span class="codenumber">4.2</span> <span class="title">Homogeneous problem</span></a></li>
-<li><a href="so-undetermined.html"><span class="codenumber">4.3</span> <span class="title">Undetermined coefficients</span></a></li>
-<li><a href="so-oscillators.html"><span class="codenumber">4.4</span> <span class="title">Oscillators</span></a></li>
-<li><a href="so-expforcing.html"><span class="codenumber">4.5</span> <span class="title">Driven oscillator</span></a></li>
-<li><a href="so-laplace.html"><span class="codenumber">4.6</span> <span class="title">Laplace transform methods</span></a></li>
-<li><a href="so-laplace-repeated.html"><span class="codenumber">4.7</span> <span class="title">Repeated and complex poles</span></a></li>
-<li><a href="so-convolutions.html"><span class="codenumber">4.8</span> <span class="title">Convolutions</span></a></li>
+<a href="ch5-nonlinear-ode.html" class="permalink">¶</a><section class="introduction" id="introduction-16"><p id="p-422">Given how much we have invested in understanding linear equations and systems, it may be a shock to realize that they pale in comparison to the possibilities in nonlinear problems. In a linear problem we can say a lot about the structure of solutions, and we do have solution formulas, though we may not be able to carry them out in closed form.</p>
+<p id="p-423">By contrast, nonlinear problems don't even always have solutions, or unique ones. Even for those that do, calculating the solution exactly is more the exception than the rule. Hence we use other tools to draw some conclusions about the solutions of many problems.</p>
+<p id="p-424">As with linear problems, nonlinear ODEs of order higher than one can be converted to first-order problems in a higher dimension. Therefore we can organize the discussion entirely around first-order problems. In the first few sections we limit ourselves to scalar (or one-dimensional) problems in the form \(x'=f(t,x)\text{.}\) Then we turn our attention to systems of two equations in two variables. The extension to still higher dimensions is closely related, but more complicated.</p></section><nav class="summary-links"><ul>
+<li><a href="nl-autonomous.html"><span class="codenumber">5.1</span> <span class="title">Autonomous scalar problems</span></a></li>
+<li><a href="nl-separable.html"><span class="codenumber">5.2</span> <span class="title">Separable equations</span></a></li>
+<li><a href="nl-logistic.html"><span class="codenumber">5.3</span> <span class="title">Case study: Logistic equation</span></a></li>
+<li><a href="nl-directionfields.html"><span class="codenumber">5.4</span> <span class="title">Direction fields</span></a></li>
+<li><a href="nl-linearization.html"><span class="codenumber">5.5</span> <span class="title">Linearization</span></a></li>
 </ul></nav></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>

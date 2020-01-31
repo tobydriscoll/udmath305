@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-12-20T22:31:56-05:00    *-->
+<!--*    on 2020-01-31T11:44:49-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Direction fields</title>
+<title>Linear algebra</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/x-mathjax-config">
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
     jax: ["input/AsciiMath"],
     extensions: ["asciimath2jax.js"],
     TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", ],
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
         equationNumbers: { autoNumber: "none", useLabelIds: true, },
@@ -41,7 +41,16 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script>(function() {
+  var cx = '001745383498963294448:kueq4ektvbo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
@@ -57,7 +66,7 @@ MathJax.Hub.Config({
 var role = 'student';
 var guest_access = true;
 var login_required = false;
-var js_version = 0.12;
+var js_version = 0.13;
 </script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
@@ -86,8 +95,10 @@ var js_version = 0.12;
 \newcommand{\bC}{\mathbf{C}}
 \newcommand{\bD}{\mathbf{D}}
 \newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
 \newcommand{\bV}{\mathbf{V}}
 \newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
 \newcommand{\bff}{\mathbf{f}}
 \newcommand{\ba}{\mathbf{a}}
 \newcommand{\bx}{\mathbf{x}}
@@ -114,15 +125,16 @@ var js_version = 0.12;
 <h1 class="heading"><a href="notes.html"><span class="title">Notes for MATH 305</span></a></h1>
 <p class="byline">Toby Driscoll</p>
 </div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="nonlinear-systems.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="nonlinear-systems.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ns-linearization.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="preface-1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="notes.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="la-linear-systems.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="nonlinear-systems.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="nonlinear-systems.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ns-linearization.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="preface-1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="notes.html" title="Up">Up</a><a class="next-button button toolbar-item" href="la-linear-systems.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -130,9 +142,10 @@ var js_version = 0.12;
 <li class="link">
 <a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
 </li>
-<li class="link">
-<a href="linear-algebra.html" data-scroll="linear-algebra"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a><ul>
+<li class="link active">
+<a href="ch1-linear-algebra.html" data-scroll="ch1-linear-algebra"><span class="codenumber">1</span> <span class="title">Linear algebra</span></a><ul>
 <li><a href="la-linear-systems.html" data-scroll="la-linear-systems">Linear systems of equations</a></li>
+<li><a href="la-elimination.html" data-scroll="la-elimination">Row elimination</a></li>
 <li><a href="la-vector-algebra.html" data-scroll="la-vector-algebra">Vector algebra</a></li>
 <li><a href="la-matrix-algebra.html" data-scroll="la-matrix-algebra">Matrix algebra</a></li>
 <li><a href="la-general-solution.html" data-scroll="la-general-solution">General and particular solutions</a></li>
@@ -142,45 +155,37 @@ var js_version = 0.12;
 <li><a href="la-equivalent.html" data-scroll="la-equivalent">Equivalent conditions</a></li>
 <li><a href="la-complex.html" data-scroll="la-complex">Complex numbers</a></li>
 <li><a href="la-eigen.html" data-scroll="la-eigen">Eigenvalues</a></li>
-<li><a href="la-diagonalization.html" data-scroll="la-diagonalization">Diagonalization</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="first-order-linear.html" data-scroll="first-order-linear"><span class="codenumber">2</span> <span class="title">First-order linear ODEs</span></a><ul>
-<li><a href="linearity.html" data-scroll="linearity">Introduction</a></li>
-<li><a href="first-linear-ode.html" data-scroll="first-linear-ode">Linear ODEs</a></li>
+<a href="ch2-first-order-linear.html" data-scroll="ch2-first-order-linear"><span class="codenumber">2</span> <span class="title">First-order linear ODEs</span></a><ul>
+<li><a href="fl-linearity.html" data-scroll="fl-linearity">Introduction</a></li>
+<li><a href="fl-linear-ode.html" data-scroll="fl-linear-ode">Linear ODEs</a></li>
 <li><a href="fl-homogeneous.html" data-scroll="fl-homogeneous">Homogeneous solutions</a></li>
 <li><a href="fl-ivp.html" data-scroll="fl-ivp">Initial value problems</a></li>
 <li><a href="fl-varparam.html" data-scroll="fl-varparam">Variation of parameters</a></li>
 <li><a href="fl-undeter.html" data-scroll="fl-undeter">Undetermined coefficients</a></li>
-<li><a href="first-order-models.html" data-scroll="first-order-models">Modeling with first-order ODEs</a></li>
+<li><a href="fl-models.html" data-scroll="fl-models">Modeling with first-order ODEs</a></li>
 <li><a href="fl-impulse.html" data-scroll="fl-impulse">Steps and impulses</a></li>
 <li><a href="fl-laplace.html" data-scroll="fl-laplace">Laplace transform methods</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="first-order-nonlinear.html" data-scroll="first-order-nonlinear"><span class="codenumber">3</span> <span class="title">First-order nonlinear ODEs</span></a><ul>
-<li><a href="fn-qual.html" data-scroll="fn-qual">Qualitative analysis</a></li>
-<li><a href="fn-separable.html" data-scroll="fn-separable">Separable equations</a></li>
-<li><a href="fn-logistic.html" data-scroll="fn-logistic">Logistic equation</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="first-systems.html" data-scroll="first-systems"><span class="codenumber">4</span> <span class="title">First-order linear systems</span></a><ul>
+<a href="ch3-first-order-systems.html" data-scroll="ch3-first-order-systems"><span class="codenumber">3</span> <span class="title">First-order linear systems</span></a><ul>
 <li><a href="fs-structure.html" data-scroll="fs-structure">Structure of linear ODE systems</a></li>
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
 <li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
-<li><a href="fs-complex-eigenvalues.html" data-scroll="fs-complex-eigenvalues">Complex solutions</a></li>
 <li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="first-order-linear.html" data-scroll="first-order-linear"><span class="codenumber">5</span> <span class="title">Second-order ODEs</span></a><ul>
+<a href="ch4-second-order-linear.html" data-scroll="ch4-second-order-linear"><span class="codenumber">4</span> <span class="title">Second-order ODEs</span></a><ul>
 <li><a href="so-convert.html" data-scroll="so-convert">Order equals dimension</a></li>
 <li><a href="so-homogeneous.html" data-scroll="so-homogeneous">Homogeneous problem</a></li>
+<li><a href="so-undetermined.html" data-scroll="so-undetermined">Undetermined coefficients</a></li>
 <li><a href="so-oscillators.html" data-scroll="so-oscillators">Oscillators</a></li>
 <li><a href="so-expforcing.html" data-scroll="so-expforcing">Driven oscillator</a></li>
 <li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
@@ -189,59 +194,36 @@ var js_version = 0.12;
 </ul>
 </li>
 <li class="link">
-<a href="nonlinear-systems.html" data-scroll="nonlinear-systems"><span class="codenumber">6</span> <span class="title">Nonlinear ODE systems</span></a><ul>
-<li><a href="ns-directionfields.html" data-scroll="ns-directionfields" class="active">Direction fields</a></li>
-<li><a href="ns-linearization.html" data-scroll="ns-linearization">Linearization</a></li>
+<a href="ch5-nonlinear-ode.html" data-scroll="ch5-nonlinear-ode"><span class="codenumber">5</span> <span class="title">Nonlinear ODEs</span></a><ul>
+<li><a href="nl-autonomous.html" data-scroll="nl-autonomous">Autonomous scalar problems</a></li>
+<li><a href="nl-separable.html" data-scroll="nl-separable">Separable equations</a></li>
+<li><a href="nl-logistic.html" data-scroll="nl-logistic">Case study: Logistic equation</a></li>
+<li><a href="nl-directionfields.html" data-scroll="nl-directionfields">Direction fields</a></li>
+<li><a href="nl-linearization.html" data-scroll="nl-linearization">Linearization</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="ns-directionfields"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">6.1</span> <span class="title">Direction fields</span>
+<main class="main"><div id="content" class="pretext-content"><section class="chapter" id="ch1-linear-algebra"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">1</span> <span class="title">Linear algebra</span>
 </h2>
-<a href="ns-directionfields.html" class="permalink">¶</a><p id="p-411">A system in two dimensions of the particular form</p>
-<div class="displaymath">
-\begin{align*}
-\dd{x_1}{t} \amp = f_1(x_1,x_2), \\
-\dd{x_2}{t} \amp = f_2(x_1,x_2), 
-\end{align*}
-</div>
-<p>in which the equation itself does not explicitly depend on \(t\text{,}\) is called an <dfn class="terminology">autonomous</dfn> system. For such a system we can use a simple visualization to suggest solution behavior.</p>
-<article class="example example-like" id="twod-ex-slope-field-system"><a data-knowl="" class="id-ref" data-refid="hk-twod-ex-slope-field-system"><h6 class="heading">
-<span class="type">Example</span> <span class="codenumber">6.1.1</span>. <span class="title">Direction field for a system of two equations.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-twod-ex-slope-field-system"><article class="example example-like"><p id="p-412">Here is a direction field for the linear ODE system</p>
-<div class="displaymath">
-\begin{align*}
-\dd{x}{t} \amp = -y\\
-\dd{y}{t} \amp = x\text{.}
-\end{align*}
-</div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">F = @(x,y) -y;   G = @(x,y) x;
-
-slopefield(F,G,[-2 2],[-2 2])
-</pre></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/ns_dirfield_1.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<p id="p-413">Here is a slope field in the first quadrant for the nonlinear system</p>
-<div class="displaymath">
-\begin{align*}
-\dd{x}{t} \amp = 3x - \frac{1}{2}xy\\
-\dd{y}{t} \amp = \frac{1}{4}xy - y\text{.}
-\end{align*}
-</div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><pre class="prettyprint lang-matlab">F = @(x,y) 3.*x-x.*y/2;
-G = @(x,y) -y + x.*y/4;
-
-slopefield(F,G,[0 10],[0 12])
-</pre></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/ns_dirfield_2.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></article></div></section></div></main>
+<a href="ch1-linear-algebra.html" class="permalink">¶</a><nav class="summary-links"><ul>
+<li><a href="la-linear-systems.html"><span class="codenumber">1.1</span> <span class="title">Linear systems of equations</span></a></li>
+<li><a href="la-elimination.html"><span class="codenumber">1.2</span> <span class="title">Row elimination</span></a></li>
+<li><a href="la-vector-algebra.html"><span class="codenumber">1.3</span> <span class="title">Vector algebra</span></a></li>
+<li><a href="la-matrix-algebra.html"><span class="codenumber">1.4</span> <span class="title">Matrix algebra</span></a></li>
+<li><a href="la-general-solution.html"><span class="codenumber">1.5</span> <span class="title">General and particular solutions</span></a></li>
+<li><a href="la-basis.html"><span class="codenumber">1.6</span> <span class="title">Basis and dimension</span></a></li>
+<li><a href="la-determinant.html"><span class="codenumber">1.7</span> <span class="title">Determinants</span></a></li>
+<li><a href="la-inverse.html"><span class="codenumber">1.8</span> <span class="title">Inverses</span></a></li>
+<li><a href="la-equivalent.html"><span class="codenumber">1.9</span> <span class="title">Equivalent conditions</span></a></li>
+<li><a href="la-complex.html"><span class="codenumber">1.10</span> <span class="title">Complex numbers</span></a></li>
+<li><a href="la-eigen.html"><span class="codenumber">1.11</span> <span class="title">Eigenvalues</span></a></li>
+</ul></nav></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
-<script src="https://pretextbook.org/js/0.12/login.js"></script>
+<script src="https://pretextbook.org/js/0.13/login.js"></script>
 </body>
 </html>
