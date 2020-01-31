@@ -28,10 +28,11 @@ then
     echo "Running matlab codes..."
     matlab -nodisplay < process_cmd.m
     echo "...done codes"
-    mv matlab/*.svg ../matlab
-    git add ../matlab/*.svg 
+    mv matlab/*.svg ../figures
 fi
 
+cp figures/* ../figures
+git add ../figures/*
 git add ../*.html 
 git add ../knowl/*
 git add *.xml 
