@@ -156,7 +156,7 @@
 	<subsection xml:id="fl-li-general">
 		<title>General solutions</title>    
 		<p>
-			All solutions to first-order linear problems share a basic structure. In fact, it's the same structure as the solutions of <m>\bA\bx=\bb</m>. In order to describe this, we're going to replace the vectors <m>\bx</m> and <m>\bb</m> with the functions <m>x(t)</m> and <m>f(t)</m>, and the matrix <m>\bA</m> by something analagous for functions. 
+			All solutions to first-order linear problems share a basic structure. In fact, it's the same structure as the solutions of <m>\bA\bx=\bb</m>. In order to describe this, we're going to replace the vectors <m>\bx</m> and <m>\bb</m> with the functions <m>x(t)</m> and <m>f(t)</m>, and the matrix <m>\bA</m> by something analogous for functions. 
 		</p>
 		<definition xml:id="fl-df-operator">
 			<title>Linear operator</title>
@@ -209,42 +209,44 @@
 
 <section xml:id="fl-homogeneous">
 	<title>Homogeneous solutions</title>
-	<p>
-		Our first job is to figure out how to express all possible solutions of the homogeneous problem <m>\opA[x]=0</m>, or <m>x'-a(t)x=0</m>. As with linear systems, the goal is to find a basis, so that the general <m>x_h</m> is a linear combination of the basis functions. However, there is no analog of the RREF of a matrix to exploit here. 
-	</p>
-	<p>
-		Fortunately we can just use some calculus. Define an <idx>integrating factor</idx><term>integrating factor</term> as 
-		<me>
-			g(t) = \exp[ q(t) ]
-		</me>,
-		for a <m>q(t)</m> to be defined momentarily. Then 
-		<me>
-			g'(t) = q'(t) g(t)
-		</me>. 
-		So <m>x=g</m> is a solution of <m>x'-a(t)x=0</m> if <m>a(t)=q'(t)</m>, that is, <m>q</m> is an antiderivative of <m>a</m>: 
-		<men xml:id="fl-eq-intfactor">
-				g(t) = \exp\left( \int a(t)\,dt \right)
-		</men>. 
-		Thus, <m>x_h=c_1g(t)</m> is a homogeneous solution for any constant <m>c_1</m>. It's not an elementary fact that this is the <em>general</em> homogeneous solution. 
-	</p>
-	<aside>
-		<p>
-			The integrating factor <m>g(t)</m> is not uniquely defined, because it contains an indefinite integral. But adding <m>C</m> to the integral is the same as multiplying <m>g(t)</m> by <m>e^C</m>, and the general homogeneous solution is not affected. This is the usual situation of scalar nonuniqueness for expressing the basis of a nullspace.
-		</p>
-	</aside>
-	<example>
-		<p>
-			To solve <m>x'=\sin(t) x</m>, we integrate to get <m>-\cos(t)</m> and then exponentiate, so that 
-			<me>
-				x_h(t) = c_1 \exp[ -\cos(t) ]
-			</me>.
-		</p>
-	</example>
-</section>
-
-<section xml:id="fl-ivp">
-	<title>Initial value problems</title>
 	<introduction>
+		<p>
+			Our first job is to figure out how to express all possible solutions of the homogeneous problem <m>\opA[x]=0</m>, or <m>x'-a(t)x=0</m>. As with linear systems, the goal is to find a basis, so that the general <m>x_h</m> is a linear combination of the basis functions. However, there is no analog of the RREF of a matrix to exploit here. 
+		</p>
+	</introduction>
+	<subsection xml:id="fl-ho-intfactor">
+		<title>Integrating factor</title>
+		<p>
+			We can go far with some simple calculus. Define an <idx>integrating factor</idx><term>integrating factor</term> as 
+			<me>
+				g(t) = \exp[ q(t) ]
+			</me>,
+			for a <m>q(t)</m> to be defined momentarily. Then 
+			<me>
+				g'(t) = q'(t) g(t)
+			</me>. 
+			So <m>x=g</m> is a solution of <m>x'-a(t)x=0</m> if <m>a(t)=q'(t)</m>, that is, <m>q</m> is an antiderivative of <m>a</m>: 
+			<men xml:id="fl-eq-intfactor">
+					g(t) = \exp\left( \int a(t)\,dt \right)
+			</men>. 
+			Thus, <m>x_h=c_1g(t)</m> is a homogeneous solution for any constant <m>c_1</m>. It's not an elementary fact that this is the <em>general</em> homogeneous solution. 
+		</p>
+		<aside>
+			<p>
+				The integrating factor <m>g(t)</m> is not uniquely defined, because it contains an indefinite integral. But adding <m>C</m> to the integral is the same as multiplying <m>g(t)</m> by <m>e^C</m>, and the general homogeneous solution is not affected. This is the usual situation of scalar nonuniqueness for expressing the basis of a nullspace.
+			</p>
+		</aside>
+		<example>
+			<p>
+				To solve <m>x'=\sin(t) x</m>, we integrate to get <m>-\cos(t)</m> and then exponentiate, so that 
+				<me>
+					x_h(t) = c_1 \exp[ -\cos(t) ]
+				</me>.
+			</p>
+		</example>
+	</subsection>
+	<subsection xml:id="fl-ho-ivp">
+		<title>Initial-value problems</title>
 		<p>
 			The general solution of <m>x'=a(t)x+f(t)</m> includes the general homogeneous solution, which contains an arbitrary multiplicative constant. This <q>solution</q> is therefore really a family of solutions. Many models include one piece of additional information that specifies the solution uniquely. 
 		</p>
@@ -263,23 +265,23 @@
 			Solving an IVP typically involves first finding the general solution of the ODE, then applying the initial condition to determine a specific value for the integration constant. 
 		</p>
 		<example>
-				<p>
-					We found earlier that the general solution of <m>x'=\sin(t) x</m> is 
-					<me>
-						x(t) = c_1 \exp[ -\cos(t) ]
-					</me>.
-					If we are also given the initial condition <m>x(0)=1</m>, then we substitute to determine 
-					<me>
-						1 = x(0) = c_1 e^{-\cos(0)} = \frac{c_1}{e}
-					</me>,
-					so that <m>c_1=e</m>. We then write 
-					<me>
-							x(t) = e \exp[ -\cos(t) ] = \exp[1-\cos(t)]
-					</me>,
-					which has no arbitrary constants left. 
-				</p>
+			<p>
+				We found earlier that the general solution of <m>x'=\sin(t) x</m> is 
+				<me>
+					x(t) = c_1 \exp[ -\cos(t) ]
+				</me>.
+				If we are also given the initial condition <m>x(0)=1</m>, then we substitute to determine 
+				<me>
+					1 = x(0) = c_1 e^{-\cos(0)} = \frac{c_1}{e}
+				</me>,
+				so that <m>c_1=e</m>. We then write 
+				<me>
+						x(t) = e \exp[ -\cos(t) ] = \exp[1-\cos(t)]
+				</me>,
+				which has no arbitrary constants left. 
+			</p>
 		</example>
-	</introduction>
+	</subsection>
 	<subsection xml:id="fl-iv-growth">
 		<title>Growth factor</title>  
 		<p>
@@ -358,7 +360,7 @@ title('Solution of a linear problem')
 		</cd>
 		</p>
 		<sidebyside>
-			<image source="matlab/fo_linear_first_ivp.svg"/>
+			<image source="matlab/fl_linear_first_ivp.svg"/>
 		</sidebyside>
 		</example>
 	</subsection>
