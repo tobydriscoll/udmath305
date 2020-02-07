@@ -50,7 +50,7 @@
 			</input>
 			</program>
 			</listing>
-			<image source="matlab/fo_intro_const_growth.svg"/>
+			<image source="figures/fo_intro_const_growth.svg"/>
 		</sidebyside>
 	</example>
 
@@ -78,7 +78,7 @@
 			</input>
 			</program>
 			</listing>
-			<image source="matlab/fo_intro_const_decay.svg"/>
+			<image source="figures/fo_intro_const_decay.svg"/>
 		</sidebyside>
 
 	</example>
@@ -100,7 +100,7 @@
 			</input>
 			</program>
 			</listing>
-			<image source="matlab/fo_intro_var_growth.svg"/>
+			<image source="figures/fo_intro_var_growth.svg"/>
 		</sidebyside>
 
 	</example>
@@ -122,7 +122,7 @@
 			</input>
 			</program>
 			</listing>
-			<image source="matlab/fo_intro_nonlin_growth.svg"/>
+			<image source="figures/fo_intro_nonlin_growth.svg"/>
 		</sidebyside>
 		<aside>
 			<p>
@@ -282,7 +282,7 @@
 			</p>
 		</example>
 	</subsection>
-	<subsection xml:id="fl-iv-growth">
+	<!--subsection xml:id="fl-iv-growth">
 		<title>Growth factor</title>  
 		<p>
 			Another option is to rewrite some formulas for the IVP case. Consider again the integrating factor, 
@@ -325,7 +325,7 @@
 		<p>
 			The growth factor has a simple interpretation: multiplication by <m>G(s,t)</m> represents the evolution of <m>x</m> from a state at time <m>s</m> to the state at time <m>t</m>. That makes the first three properties of <xref ref="fl-thm-growthfactor"/> seem pretty obvious. 
 		</p>
-	</subsection>
+	</subsection-->
 	<subsection xml:id="fl-iv-numerical">
 		<title>Numerical solutions</title>  
 		<p>
@@ -360,7 +360,7 @@ title('Solution of a linear problem')
 		</cd>
 		</p>
 		<sidebyside>
-			<image source="matlab/fl_linear_first_ivp.svg"/>
+			<image source="figures/fl_linear_first_ivp.svg"/>
 		</sidebyside>
 		</example>
 	</subsection>
@@ -368,32 +368,36 @@ title('Solution of a linear problem')
 
 <section xml:id="fl-varparam">
 	<title>Variation of parameters</title>
-	<introduction>
+	<!--introduction-->
 		<p>
-			In this and the next section we turn to looking for particular solutions of the first-order linear ODE <m>x'-a(t)x=f(t)</m>, or <m>\opA[x]=f</m>. We start here with an all-purpose method, and then look at a method that's a bit simpler for the most common problems.
+			In this and the next section we turn to looking for particular solutions of the first-order linear ODE 
+			<men xml:id="fl-eq-folinrepeat">
+				x'-a(t)x=f(t)
+			</men>, 
+			or <m>\opA[x]=f</m>. We start in this section with an all-purpose method. In the next section we look at a method that's simpler for the most common problems.
 		</p>
 		<p>
 			We begin with the homogeneous solution 
 			<me>
 				x_h(t) = c_1 g(t) = c_1 \exp\left[\int a(t)\, dt\right]
 			</me>,
-			where <m>g(t)</m> is the growth factor from <xref ref="fl-eq-growthfactor"/>. The idea of <idx>variation of parameters</idx><term>variation of parameters</term> is to posit that the particular solution can be written by replacing the constant with a function,
-			<me>
+			where <m>g(t)</m> is the integrating factor from <xref ref="fl-eq-intfactor"/>. The idea of <idx>variation of parameters</idx><term>variation of parameters</term> is to posit that the particular solution can be written by replacing the constant with a function,
+			<men xml:id="fl-eq-vofp1">
 				x_p(t) = k(t) g(t)
-			</me>,
+			</men>,
 			and then choose <m>k(t)</m> to make it so: 
 			<me>
 				f(t) = x_p' - a(t) x_p = [k'g+kg'] - a k g = k'g + k[g'-ag]
 			</me>,
 			which, because <m>g</m> is a homogeneous solution, is simply <m>f(t)=k'(t)g(t)</m>. Hence we get a proper particular solution provided 
-			<me>
+			<men xml:id="fl-eq-vofp2">
 				k(t) = \int \frac{f(t)}{g(t)}\, dt 
-			</me>. 
-			Observe that we have to integrate once to get <m>g</m>, then again to get <m>k</m> and thus <m>x_p</m>.
+			</men>.
+			Step by step, we have to (1) integrate once to get <m>g</m> in <xref ref="fl-eq-intfactor"/>, (2) integrate again to get <m>k</m> in <xref ref="fl-eq-vofp2"/>, and (3) multiply them together to get the particular solution in <xref ref="fl-eq-vofp1"/>. It's probably also worth mentioning step (0), which is to put the given problem in the standard form of <xref ref="fl-eq-folinrepeat"/>; i.e., divide the equation through by any coefficient of <m>x'</m>.
 		</p>
 		<example>
 			<p>
-				Consider <m>x'=4x+8t</m>. Rewriting as <m>x'-4x=8t</m>, we identify <m>a(t)=4</m> and <m>f(t)=8t</m>. Then
+				Consider <m>3x'=12x+24t</m>. Rewriting it as <m>x'-4x=8t</m>, we identify <m>a(t)=4</m> and <m>f(t)=8t</m>. Then
 				<me>
 					g(t) = \exp\left[ \int 4\,dt \right] = e^{4t}
 				</me>,
@@ -445,8 +449,21 @@ title('Solution of a linear problem')
 			</me>.
 			This is exactly the same family of solutions as <m>c_1(2+t)-1</m>. Essentially, all the integration constants end up lumped into that <m>c_1</m>, which is always the case. 
 		</p>
-	</introduction>
-	<subsection xml:id="fl-vp-ivp">
+		<p>
+			For initial-value problems, we find the entire general solution first, and then apply the initial condition to get a specific value for the free constant.
+		</p>
+		<example>
+			<p>
+				Above we found that the general solution of <m>x'=4x+8t</m> is <m>x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)</m>. If we also have that <m>x(0)=3/2</m>, then we can conclude
+				<me> 
+					\frac{3}{2} = x(0) = c_1 - \frac{1}{2}(1)
+				</me>,				
+				so <m>c_1=2</m>. 
+			</p>
+		</example>
+
+	<!--/introduction-->
+	<!--subsection xml:id="fl-vp-ivp">
 		<title>Incorporating initial conditions</title>
 		<p>
 			In an initial value problem, we can use the growth factor to modify the variation of parameters formula:
@@ -477,17 +494,17 @@ title('Solution of a linear problem')
 		<p>
 		 Not only does this formula streamline the solution process, but it actually says something quite profound about the solution. We can think of <m>G(s,t)</m> as the evolution in the homogeneous equation of a state from time <m>s</m> to time <m>t</m>, and the full solution combines this evolution of the initial condition with the sum (integral) of evolution of all the forcing at moments from the initial time to <m>t</m>. Each instant of forcing acts like a momentary <q>kick</q> to the state, and the final state is the combined evolution of all the kicks, plus the contribution due to <m>x_0</m>.
 		</p>
-	</subsection>
+	</subsection-->
 </section>
 
 <section xml:id="fl-undeter">
 		<title>Undetermined coefficients</title>
 		<introduction>
 			<p>
-				For this section we will limit <xref ref="fl-eq-linear"/> to the important special case when (1) the growth/decay rate coefficient <m>a(t)</m> is constant, and (2) the forcing function is a polynomial, exponential, sin, or cos, or a combination of these. In this situation, the form of <m>x_p</m> can be written down immediately with some unknown or <idx>undetermined coefficients</idx><term>undetermined coefficients</term>, which are then found by substitution into the ODE. The correct form of <m>x_p</m> for various <m>f</m> are given in <xref ref="fl-tb-undeter"/>.
+				Variation of parameters is all that we technically need for linear first-order problems, but as we have seen, it requires some grunt work--in particular, two integrals. There is a significantly shorter path for <xref ref="fl-eq-linear"/> in the important special case when (1) the growth/decay rate coefficient <m>a(t)</m> is constant, and (2) the forcing function is a polynomial, exponential, sin, or cos, or a combination of these. In this situation, the correct <m>x_p</m> can be written down immediately up to some unknowns or <idx>undetermined coefficients</idx><term>undetermined coefficients</term>. Values for these coefficients are by substitution of <m>x_p</m> into the ODE. The correct form of <m>x_p</m> for various <m>f</m> are given in <xref ref="fl-tb-undeter"/>.
 			</p>
 			<table xml:id="fl-tb-undeter">
-				<title>Particular solutions for undetermined coefficients</title>
+				<title>Particular solutions for undetermined coefficients.</title>
 					<tabular>
 						<row>
 							<cell><m>\mathbf{f(t)}</m></cell>
@@ -521,7 +538,7 @@ title('Solution of a linear problem')
 					<me> 
 						(B_1)+3(B_1 t + B_0) = 6t
 					</me>. 
-					On matching like powers of <m>t</m> we get the equations <m>3B_1=6</m> and <m>B_1+B_0=0</m>. This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that <m>B_1=2</m> and <m>B_0=-2</m>. So the general solution is 
+					This has to be identically true for all <m>t</m>. On matching like powers of <m>t</m> we get the equations <m>3B_1=6</m> and <m>B_1+B_0=0</m>. This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that <m>B_1=2</m> and <m>B_0=-2</m>. So the general solution is 
 					<me>
 						x(t) = c_1 e^{-3t} + 2t - 2
 					</me>.
@@ -590,7 +607,7 @@ title('Solution of a linear problem')
 				</p>
 			</example>
 			<p>
-				The example above is a failure of the method, not a statement about the existence of the solution. There are advanced rules for fixing the method of undetermined coefficients in this circumstance, but it's easier to just fall back to variation of parameters, as shown in <xref ref="fl-varparam"/>.
+				The example above is a failure of the method, not a statement about the existence of the solution. There are advanced rules for fixing the method of undetermined coefficients in this circumstance, but it's easier to just fall back to variation of parameters (<xref ref="fl-varparam"/>).
 			</p>
 			<example>
 					<p>
@@ -692,36 +709,64 @@ title('Solution of a linear problem')
 <section xml:id="fl-impulse">
 		<title>Steps and impulses</title>
 		<p>
-			The <idx><h>unit step function</h></idx><term>unit step function</term> or <idx><h>Heaviside function</h><see>unit step function</see></idx><term>Heaviside function</term> <m>H(t)</m> is defined to be zero for <m>t\le 0</m> and one for <m>t\gt 0</m>. It represents throwing on a switch. To have the forcing turn on at some other time <m>T</m>, we use <m>H(t-T)</m>. 
+			The following function is very useful in some modeling situations. 
+		</p>
+		<definition xml:id="fl-df-unitstep">
+			<title>Unit step function</title>
+			<statement><p>
+				The <idx><h>unit step function</h></idx><term>unit step function</term> or <idx><h>Heaviside function</h><see>unit step function</see></idx><term>Heaviside function</term> <m>H(t)</m> is defined to be zero for <m>t\le 0</m> and one for <m>t\gt 0</m>.
+			</p>
+			</statement>
+			<notation><usage>$H(t-T)$</usage><description>unit step function activated at time <m>T</m></description></notation>
+		</definition>
+		<p>
+			The unit step function represents throwing on an idealized switch. To have the switch turn on at an arbitrary time <m>T</m>, we use <m>H(t-T)</m>. It's worth mentioning here the related idea of a <term>window</term> function, which turns on and then back off. To get a function that is one only between times <m>S</m> and <m>T</m>, for example, we can use <m>f(t)=H(t-S)-H(t-T)</m>. 
 		</p>
 		<p>
-			It's relatively straightforward to incorporate step forcing into variation of parameters, if we use the definite integral form <xref ref="fl-eq-varparivp"/>. The usual situation is that the initial condition is given at <m>t_0=0</m>, so we start with
-			<me>
-					x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds
-			</me>. 
-			For <m>f(t)=H(t-T)</m> for <m>T\ge 0</m>, the integrand is zero until time <m>T</m>. Hence  
-			<me> 
-					\int_{0}^t G(s,t)H(s-T) \, ds = \begin{cases} 
-					0, \amp t \le T, \\ 
-					\displaystyle\int_{T}^t G(s,t)\, ds, \amp t > T.
-					\end{cases}
-			</me>
-			This situation is itself most easily expressed using step functions. The result is 
-			<me>
-					x(t) = G(0,t)x_0 + H(t-T) \int_{T}^t G(s,t)\, ds
-			</me>. 
-			In the case of a constant coefficient, this becomes 
-			<me>
-					x(t) = e^{at} x_0 + H(t-T) \int_{T}^t e^{a(t-s)}\, ds = e^{at} x_0 + \frac{1}{a} H(t-T) \bigl[e^{a(T-t)}-1\bigr]
-			</me>.  
+			It's relatively straightforward, if cumbersome, to incorporate step forcing into our solution methods used so far. The key fact to keep in mind is:
 		</p>
-		<p>
-			It's worth mentioning here the related idea of a <term>window</term> function, which turns on and then back off. To get a forcing that is one only between times <m>S</m> and <m>T</m>, for example, we can use <m>f(t)=H(t-S)-H(t-T)</m>. The formulas for the window solution become a bit messy, so it's best to just work out results from each step separately. 
-		</p>
-		<example>
+		<fact>
 			<p>
-				Let's solve <m>x'-x=f(t)</m>, where <m>f(t)</m> is 5 for <m>3 \lt t \le 6</m> and zero elsewhere. We have <m>a=1</m>. The particular solution due to the first step is 
+				The solution of <m>x'-a(t)x=H(t-T)f(t)</m>  having continuous <m>a(t)</m> and <m>f(t)</m> is continuous.
+			</p>
+		</fact>
+		<p>
+			As a result, we can solve an initial-value problem for <m>x'-a(t)x=H(t-T)</m> piecewise. Assuming the initial time is zero for simplicity, we first solve 
+			<me>
+				x'-a(t)x=0
+			</me> 
+			over <m>0 \le t \le T</m>, using the given value of <m>x(0)</m>. Then we solve 
+			<me>
+				x'-a(t)x=1
+			</me>
+			for <m>t\gt T</m>, using the already-known <m>x(T)</m> as the <q>initial</q> value of this stage. If there are multiple step functions present, then there are more than just two pieces to integrate. At each jump point in the forcing function we reset the initial value and start again with a different nonhomogeneous forcing value. The process is the same for <m>x'-ax=H(t-T)f(t)</m>.
+		</p>
+		<example xml:id="fl-ex-stepforce">
+			<p>
+				Let's solve <m>x'-x=f(t)</m>, <m>x(0)=-2</m>, where <m>f(t)</m> is 5 for <m>3 \lt t \le 6</m> and zero elsewhere. The homogeneous solution is <m>x_h(t)=c_1e^{t}</m>. 
+			</p>
+			<p>
+				Over <m>0 \le t \le 3</m>, the homogeneous solution is the full solution. Applying <m>x(0)=-2</m> we get 
 				<me>
+					x_{[0,3]}(t) = -2 e^t
+				</me>
+				for this interval. Over <m>3 \le t \le 6</m>, the ODE is <m>x'-x=5</m>. Undetermined coefficients suggests the particular solution <m>x_p(t)=A</m>, and it's then clear that <m>A=-5</m>. Our general solution over this segment is therefore <m>c_2e^t-5</m>. Joining this to the previous segment at <m>t=3</m> requires 
+				<me>
+					-2e^3 = c_2 e^3 - 5 \Rightarrow c_2 = 5e^{-3} -2
+				</me>,
+				so that 
+				<me>
+					x_{[3,6]}(t) = (5e^{-3} -2)e^t - 5 = -2 e^t + 5(e^{t-3}-1)
+				</me>. 
+				Finally, for <m>t \gt 6</m> the ODE is homogeneous again, so the general solution here is <m>c_3e^t</m>. Continuity at <m>t=6</m> requires 
+				<me>
+					-2 e^6 + 5(e^3-1) = c_3e^6 \Rightarrow c_3 = -2 + 5(e^{-3}-e^{-6})
+				</me>. 
+				Hence the last phase of the solution is 
+				<me>
+					x_{[6,\infty)}(t) = -2e^t + 5(e^{t-3} - e^{t-6})
+				</me>.					
+				<!--me>
 						\frac{1}{1} 5 H(t-3) \bigl[e^{(3-t)}-1\bigr]
 				</me>,
 				and from the second step it's 
@@ -731,10 +776,11 @@ title('Solution of a linear problem')
 				Put these together with the homogeneous solution and we get 
 				<me>
 					x(t) = e^{t}x_0 + 5 H(t-3) \bigl[e^{(3-t)}-1\bigr] - 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]
-				</me>. 
+				</me--> 
 			</p>
 			<sidebyside>
 				<listing xml:id="fo_lcc_window">
+				<caption>Numerical solution with step forcing (1st order).</caption>
 				<program language="matlab">
 					<input>
 					step = @(t) double(t>0);
@@ -746,31 +792,16 @@ title('Solution of a linear problem')
 					</input>
 				</program>
 				</listing>
-				<image source="matlab/fo_lcc_window.svg"/>	  
-			</sidebyside>
-			<sidebyside>
-				<listing xml:id="fo_lcc_window_2">
-				<program language="matlab">
-					<input>
-					step = @(t) double(t>0);
-					dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
-					[t,y] = ode45(dydt,[0,8],1);
-					semilogy(t,y)
-					xlabel('t'), ylabel('y(t)')
-					title('Window forcing (semi-log)')
-					</input>
-				</program>
-				</listing>
-			<image source="matlab/fo_lcc_window_2.svg"/>	  
+				<image source="figures/fo_lcc_window.svg"/>	  
 			</sidebyside>
 		</example>
 		<p>
 			We next come to a curious type of forcing called an <idx>impulse</idx><term>impulse</term>. The idea is that the system is given an instantaneous jolt. To make this work, start by imagining a forcing of constant strength <m>1/h</m> that is turned on only for <m>0\lt t \le h</m>:
-			<me>\delta_h(t) = \frac{H(t-h)-H(t)}{h}</me>.
-			The area under <m>\delta_h</m> is one for all <m>h \gt 0</m>.
+			<me>\delta_h(t) = \frac{H(t)-H(t-h)}{h}</me>.
+			The area under the <m>\delta_h(t)</m> curve equals one for all <m>h \gt 0</m>.
 		</p>
 		<p>
-			Now we idealize the situation by taking the limit as <m>h\to 0</m>. Effectively, we are taking the derivative of a step. The resulting <q>function</q>, which we call <m>\delta(t)</m>, is zero at all points except <m>t=0</m>, yet should have unit area under its curve!
+			Now we idealize the situation by taking the limit as <m>h\to 0</m>. Effectively, we are taking the derivative of a step. The resulting <q>function</q>, which we call <m>\delta(t)</m>, is zero at all points except <m>t=0</m>, yet it should have unit area under its curve!
 		</p>
 		<p>
 			It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple of decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If <m>I</m> is any interval containing <m>[0,h]</m> and <m>f(t)</m> is any other function, then
@@ -788,37 +819,46 @@ title('Solution of a linear problem')
 			where <m>I</m> is any interval containing <m>T</m>. This is the key identity for working with impulses.
 		</p>
 		<p>
-			The solution to the linear ODE with an impulse forcing is called an <term>impulse response</term>. Thanks to the main impulse identity, this is easier to deal with than step forcing. Again we start with
+			The solution to <m>x'-ax=\delta(t)</m> with <m>x(0)=0</m> is called an <term>impulse response</term>. This winds up being rather easy to find. Using the methods above, the solution for <m>x'-ax=\delta_h(t)</m> for <m>t\gt h</m> is 
 			<me>
-					x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds
+				x(t) = \frac{1-e^{-ah}}{ah} e^{at}
 			</me>. 
-			For <m>f(t)=\delta(t-T)</m>, there are just two cases to consider for the integral: 
-			<me> 
-					\int_{0}^t G(s,t)\delta(s-T) \, ds = \begin{cases} 
-					0, \amp t \le T, \\ 
-					G(T,t) \amp t > T.
-					\end{cases}
-			</me>
-			Again using a step to express the result, we have 
-			<me>
-					x(t) = G(0,t)x_0 + H(t-T) G(T,t)
-			</me>. 
-			For a constant-coefficient ODE this becomes 
-			<me>
-					x(t) = e^{at} x_0 + H(t-T) e^{a(t-T)}
-			</me>. 
-			One way to read this formula is that at the impulse time, the state is instantaneously increased by one, with the usual evolution following. 
+			Using L'Hôpital's Rule, the limit as <m>h\to 0</m> is simply <m>x(t)=e^{at}</m>. This is the same as the solution of the homogeneous <m>x'-ax=0</m> with initial value one rather than zero. This observation generalizes:
+		</p>
+		<fact>
+			<p>
+				The solution of <m>x'-a(t)x=f(t) + k \delta(t-T)</m>, <m>x(0)=x_0</m>, where <m>a(t)</m> and <m>f(t)</m> are continuous, satisfies 
+				<me>
+					x'-a(t)x=f(t), \; x(0)=x_0   
+				</me>
+				for <m>t\lt T</m>, and 
+				<me>
+					x'-a(t)x=f(t), \; x(T)=x(T^-)+k   
+				</me>
+				for <m>t\gt T</m>, where <m>x(T^-)=\lim_{t\to T^-} x(t)</m> comes from the first stage of the solution. If <m>T=0</m>, then
+				<me>
+					x'-a(t)x=f(t), \; x(0)=x_0+k    
+				</me>
+				for <m>t\gt 0</m>. 
+			</p>
+		</fact>
+		<p>
+	  		In words, <alert>an impulse in a first-order linear equation is equivalent to an instantaneous jump in the value of the solution</alert>. 
 		</p>
 		<example>
 			<p>
-				Suppose we solve <m>x'+5y=3\delta(t-2)</m>, with <m>x(0)=1</m>. Start with
+				Suppose we solve <m>x'+5x=3\delta(t-2)</m>, with <m>x(0)=1</m>. For <m>0\lt t \lt 2</m>, the equation is homogeneous and <m>x(t)=e^{-5t}</m>. Then the solution receives an instantaneous kick from <m>e^{-10}</m> to <m>e^{-10}+3</m> and continues evolving homogeneously. So for <m>t\gt 2</m>,
 				<me>
-					x(t) = e^{-5t} + 3 \int_0^t e^{-5(t-s)}\delta(s-2)\, ds
+					x(t) = (e^{-10}+3) e^{-5(t-2)} = e^{-5t} + 3 e^{-5(t-2)}
+				</me>. 
+				In fact we could write the solution at all times in one formula using step function notation: 
+				<me>
+					x(t) = e^{-5t} + 3 H(t-2) e^{-5(t-2)}
 				</me>.
-				If <m>t \lt 2</m>, the integration interval does not contain the impulse, so the solution is just <m>e^{-5t}</m>. But if <m>t \gt 2</m>, <m>x(t) = e^{-5t} + 3 e^{-5(t-2)}</m>.
 			</p>
 				<sidebyside>
 					<listing xml:id="fo_lcc_impulse">
+					<caption>Numerical solution with impulse forcing (1st order).</caption>
 					<program language="matlab">
 						<input>
 						dydt = @(t,y) -5*y;
@@ -833,102 +873,16 @@ title('Solution of a linear problem')
 						</input>
 					</program>
 					</listing>
-				<image source="matlab/fo_lcc_impulse.svg"/>	  
+				<image source="figures/fo_lcc_impulse.svg"/>	  
 				</sidebyside>
-				<sidebyside>
-					<listing xml:id="fo_lcc_impulse_2">
-					<program language="matlab">
-						<input>
-						dydt = @(t,y) -5*y;
-						[t1,y1] = ode45(dydt,[0,2],1);
-						[t2,y2] = ode45(dydt,[2,6],3+y1(end));
-						semilogy([t1;t2],[y1;y2])
-						xlabel('t'), ylabel('y(t)')
-						title('Impulse forcing (semi-log)')
-						</input>
-					</program>
-					</listing>
-				<image source="matlab/fo_lcc_impulse_2.svg"/>	  
-				</sidebyside> 
 		</example>   
 </section>
-
-		<!-- <example>
-			<p>To solve <m>y'=2ty - t</m> with <m>y(0)=0</m>, we identify <m>a(t)=2t</m>. Hence <m>G(s,t)=\exp(t^2-s^2)</m>. Then
-			<me>
-				y(t) = \int_0^t (-s) e^{t^2-s^2}\, ds = \frac{1}{2} \left( 1 - e^{t^2} \right)
-			</me>.
-			</p>
-			<sidebyside>
-		<program language="matlab" xml:id="fo_lvc_linear">
-			<input>
-			dydt = @(t,y) 2*t*y - t;
-			[t,y] = ode45(dydt,[0,2],0);
-			plot(t,y)
-			xlabel('t'), ylabel('y(t)')
-			</input>
-	</program>
-	<image source="matlab/fo_lvc_linear.svg"/>	  
-	</sidebyside>
-		</example> -->
-
-		<!-- <example>
-			<p>
-				Let's solve <m>y'=2y+1</m>, with <m>y(0)=6</m>. We have <m>a(t)=2</m>, hence <m>G(s,t)=\exp[2(t-s)]=e^{2(t-s)}</m>. So the solution is
-			<me>
-	e^{2t}\cdot 6 + \int_0^t e^{2(t-s)}\, ds
-	= 6e^{2t} - \frac{1}{2} \left[ 1 - e^{2t} \right] = - \frac{1}{2} + \frac{13}{2} e^{2t}
-			</me>.</p>
-				<sidebyside>
-		<program language="matlab" xml:id="fo_lvc_constant">
-			<input>
-			dydt = @(t,y) 2*y + 1;
-			[t,y] = ode45(dydt,[0,1],6);
-			plot(t,y)
-			xlabel('t'), ylabel('y(t)')
-			</input>
-	</program>
-	<image source="matlab/fo_lvc_constant.svg"/>	  
-	</sidebyside>
-		<p>
-			This example is linear with constant coefficients, so the result is something we have seen before. The point is that the approach we have now is a true generalization, working for all those previous problems as well. 
-		</p>
-		</example> -->
-				<!-- <example>
-			<p>
-				Consider the problem <m>ty' + 2y = 4t^2</m>, with initial value <m>y(1)=2</m>. In order to identify this with the standard way we present a linear, first-order ODE, we have to isolate the <m>y'</m> term to get
-				<me>
-					y' = -\frac{2}{t}y + 4t
-				</me>.
-				Note that we may need to stay away from <m>t=0</m>, where the variable coefficient blows up. Fortunately, it's easy to use the growth factor formula starting from any value of <m>t</m>. The growth factor is, as usual, 
-				<me>G(s,t) = \exp\left( \int_s^t -\frac{2}{r}\, dr \right) = \exp\left( -2 \log(t/s) \right) = \left(\frac{s}{t}\right)^2</me>.
-				The solution is
-				<md>
-					<mrow>y(t) \amp = G(t,1)y(1) + \int_1^t G(s,t) q(s)\, ds  </mrow>
-					<mrow>\amp = 2t^{-2} + \int_1^t \left(\frac{s}{t}\right)^2 4s\, ds </mrow>
-					<mrow>\amp = 2t^{-2} + t^{-2}\left[ t^4-1^4 \right] = t^2 + t^{-2} </mrow>
-				</md>.
-				We now do see that trying to go backward to time zero would cause the solution to blow up. (That's in the math sense, not the chemical engineering sense, but still.)
-			</p>
-				<sidebyside>
-				<program language="matlab" xml:id="fo_lvc_sing">
-					<input>
-					dydt = @(t,y) (4*t^2 - 2*y)/t;
-					[t,y] = ode45(dydt,[1,3],2);
-					plot(t,y)
-					xlabel('t'), ylabel('y(t)')
-					</input>
-			</program>
-			<image source="matlab/fo_lvc_sing.svg"/>	  
-			</sidebyside>
-
-		</example> -->
 
 <section xml:id="fl-laplace">
 	<title>Laplace transform methods</title>
 	<introduction>
 	<p>
-		There is a shorthand method for deriving the solutions of linear, constant-coefficient equations that have forcing functions such as exponentials, steps, and impulses. Given (almost) any function <m>f(t)</m>, there is a doppelganger function <m>F(s)</m> defined by an integral. 
+		There is a shorthand method for deriving the solutions of linear, constant-coefficient equations that have forcing functions such as steps, impulses, and elementary functions. Given (almost) any function <m>f(t)</m>, there is a doppelganger function <m>F(s)</m> defined by an integral. 
 	</p>
 	<definition xml:id="fl-df-laplace">
 		<title>Laplace transform</title>
@@ -957,13 +911,13 @@ title('Solution of a linear problem')
 	<subsection>
 		<title>Derivatives</title>
 		<p>
-			Applying integration by parts to the definition reveals the main reason Laplace transforms are useful in ODEs:
+			Applying integration by parts to the definition of <m>\lx[x'(t)]</m> reveals the main reason Laplace transforms are useful in ODEs:
 			<md>
 				<mrow>\lx[x'(t)] \amp = \int_0^\infty x'(t) e^{-st}\, dt </mrow>
 				<mrow>\amp = \left[ x(t)e^{-st}\right]_0^\infty - \int_0^\infty (-s) x(t) e^{-st}\, dt </mrow>
 				<mrow>\amp = -x(0) + s X(s)</mrow>
 			</md>. 
-			Calculus (differentiation) is thereby turned into algebra (multiplication). So here is the plan of attack. Given an ODE <m>x'-ax=f(t)</m>, we transform everything in sight to get 
+			<alert>Calculus is turned into algebra by the Laplace transform.</alert> So here is the plan of attack. Given an ODE <m>x'-ax=f(t)</m>, we transform everything in sight to get 
 			<me>
 				sX(s)-x(0) - a X(s) =  F(s)
 			</me>. 
@@ -971,7 +925,7 @@ title('Solution of a linear problem')
 			<me>
 				X(s) = \frac{ F(s) + x(0)}{s-a}
 			</me>. 
-			Now <q>all</q> we have to do know is to compute the inverse transform, that is, find <m>x(t)</m> given <m>X(s)</m>. This is a lot less straightforward than computing the forward transform, unfortunately. But we can make it managable in much the same way you learned indefinite integration: by learning some canonical cases and then matching patterns. 
+			Now <q>all</q> we have to do know is to compute the inverse transform, that is, find <m>x(t)</m> given <m>X(s)</m>. This is a lot less straightforward than computing the forward transform, unfortunately. But we can make it manageable in much the same way you learned indefinite integration: by learning some canonical cases and then matching patterns. 
 		</p>
 	</subsection>
 
@@ -1077,8 +1031,15 @@ title('Solution of a linear problem')
 			Perhaps it's clear by now that <m>x'-ax=f(t)</m> always leads to <m>X(s) = F(s)/(s-a)</m> as a particular solution. The term <m>1/(s-a)</m> is called the <idx>transfer function</idx><term>transfer function</term> of the ODE. Values of <m>s</m> that are roots of the denominator are known as <term>poles</term> of the transform. They point out exponential solutions. 
 		</p>
 		<p>
-			The impulse response is the case when <m>f(t)=\delta(t)</m>, so that <m>F(s)=1</m>. This implies that <em>the transfer function is the transform of the impulse response</em>. 
+			The impulse response is the case when <m>f(t)=\delta(t)</m>, so that <m>F(s)=1</m>. This implies the following. 
 		</p>
+		<fact>
+			<statement>
+				<p>
+					The transfer function is the Laplace transform of the impulse response.
+				</p>
+			</statement>
+		</fact>
 	</subsection>
 
 </section>

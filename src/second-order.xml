@@ -677,7 +677,7 @@ plot(v,'-o')
 					</input>
 				</program>
 				</listing>
-				<image source="matlab/so_conv_bitcoin1.svg"/>	  
+				<image source="figures/so_conv_bitcoin1.svg"/>	  
 			</sidebyside>
 			<p>
 				It's a noisy curve. We can smooth that out by taking 4-day moving averages, for example. I don't claim that this is the best way, but we can do this by:
@@ -700,7 +700,7 @@ hold on, plot(z,'-o')
 					</input>
 				</program>
 				</listing>
-				<image source="matlab/so_conv_bitcoin2.svg"/>	  
+				<image source="figures/so_conv_bitcoin2.svg"/>	  
 			</sidebyside>
 
 			<p>
@@ -725,7 +725,7 @@ hold on, plot(z,'-o')
 					</input>
 				</program>
 				</listing>
-				<image source="matlab/so_conv_bitcoin3.svg"/>	  
+				<image source="figures/so_conv_bitcoin3.svg"/>	  
 			</sidebyside>
 			<p>
 				Note that each new value <m>z_i</m> is a linear combination of the elements of <m>v</m>, weighted by the values in <m>w</m>. And we always go forward 1,2,3,4 in <m>w</m>, while on <m>v</m> we have a sliding group going backward: <m>i,i-1,i-2,i-3</m>. Put concisely, the indices add up to the constant value <m>i+1</m>. 

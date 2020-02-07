@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:14-05:00    *-->
+<!--*    on 2020-02-07T16:15:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple of decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
+<p>The solution of \(x'-a(t)x=f(t) + k \delta(t-T)\text{,}\) \(x(0)=x_0\text{,}\) where \(a(t)\) and \(f(t)\) are continuous, satisfies</p>
 <div class="displaymath">
 \begin{equation*}
-\int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \frac{1}{h} f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}\text{,}
+x'-a(t)x=f(t), \; x(0)=x_0   
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(\phi\) is an antiderivative of \(f\text{.}\) In the limit this suggests</p>
+<p data-braille="continuation">for \(t\lt T\text{,}\) and</p>
 <div class="displaymath">
 \begin{equation*}
-\int_I \delta(t)f(t)\, dt = f(0)\text{.}
+x'-a(t)x=f(t), \; x(T)=x(T^-)+k   
 \end{equation*}
 </div>
-<p data-braille="continuation">As with the step, we often want to introduce a delay in the impulse by using \(\delta(t-T)\text{.}\) Then the math becomes</p>
+<p data-braille="continuation">for \(t\gt T\text{,}\) where \(x(T^-)=\lim_{t\to T^-} x(t)\) comes from the first stage of the solution. If \(T=0\text{,}\) then</p>
 <div class="displaymath">
-\begin{equation}
-\int_I \delta(t-T)f(t)\, dt = f(T)\text{,}\tag{2.8.1}
-\end{equation}
+\begin{equation*}
+x'-a(t)x=f(t), \; x(0)=x_0+k    
+\end{equation*}
 </div>
-<p data-braille="continuation">where \(I\) is any interval containing \(T\text{.}\) This is the key identity for working with impulses.</p>
+<p data-braille="continuation">for \(t\gt 0\text{.}\)</p>
 <span class="incontext"><a href="fl-impulse.html#p-254">in-context</a></span>
 </body>
 </html>

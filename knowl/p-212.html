@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:13-05:00    *-->
+<!--*    on 2020-02-07T16:15:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The growth factor has a simple interpretation: multiplication by \(G(s,t)\) represents the evolution of \(x\) from a state at time \(s\) to the state at time \(t\text{.}\) That makes the first three properties of <a class="xref" data-knowl="./knowl/fl-thm-growthfactor.html" title="Theorem 2.4.3: Growth factor">Theorem 2.4.3</a> seem pretty obvious.</p>
-<span class="incontext"><a href="fl-ivp.html#p-212">in-context</a></span>
+<p>We begin with the homogeneous solution</p>
+<div class="displaymath">
+\begin{equation*}
+x_h(t) = c_1 g(t) = c_1 \exp\left[\int a(t)\, dt\right]\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(g(t)\) is the integrating factor from <a class="xref" data-knowl="./knowl/fl-eq-intfactor.html" title="Equation 2.3.1">(2.3.1)</a>. The idea of <dfn class="terminology">variation of parameters</dfn> is to posit that the particular solution can be written by replacing the constant with a function,</p>
+<div class="displaymath">
+\begin{equation}
+x_p(t) = k(t) g(t)\text{,}\tag{2.4.2}
+\end{equation}
+</div>
+<p data-braille="continuation">and then choose \(k(t)\) to make it so:</p>
+<div class="displaymath">
+\begin{equation*}
+f(t) = x_p' - a(t) x_p = [k'g+kg'] - a k g = k'g + k[g'-ag]\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which, because \(g\) is a homogeneous solution, is simply \(f(t)=k'(t)g(t)\text{.}\) Hence we get a proper particular solution provided</p>
+<div class="displaymath">
+\begin{equation}
+k(t) = \int \frac{f(t)}{g(t)}\, dt \text{.}\tag{2.4.3}
+\end{equation}
+</div>
+<p data-braille="continuation">Step by step, we have to (1) integrate once to get \(g\) in <a class="xref" data-knowl="./knowl/fl-eq-intfactor.html" title="Equation 2.3.1">(2.3.1)</a>, (2) integrate again to get \(k\) in <a class="xref" data-knowl="./knowl/fl-eq-vofp2.html" title="Equation 2.4.3">(2.4.3)</a>, and (3) multiply them together to get the particular solution in <a class="xref" data-knowl="./knowl/fl-eq-vofp1.html" title="Equation 2.4.2">(2.4.2)</a>. It's probably also worth mentioning step (0), which is to put the given problem in the standard form of <a class="xref" data-knowl="./knowl/fl-eq-folinrepeat.html" title="Equation 2.4.1">(2.4.1)</a>; i.e., divide the equation through by any coefficient of \(x'\text{.}\)</p>
+<span class="incontext"><a href="fl-varparam.html#p-212">in-context</a></span>
 </body>
 </html>

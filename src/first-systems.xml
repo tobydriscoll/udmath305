@@ -248,7 +248,7 @@
 			</input>
 			</program>
 			</listing>
-			<image source="matlab/exp_complex.svg"/>
+			<image source="figures/exp_complex.svg"/>
 		</sidebyside>
 		<!--p>
 			In fact, the path of <m>e^{it}</m> in the complex plane for real <m>t</m> is just a unit circle. 
@@ -264,7 +264,7 @@
 				title('Complex exponential = Unit circle')
 			</input>
 			</program>
-			<image source="matlab/exp_circle.svg"/>
+			<image source="figures/exp_circle.svg"/>
 		</sidebyside-->
 	</introduction>
 	<subsection xml:id="fs-complex-polar">
@@ -330,7 +330,7 @@
 					</input>
 				</program>
 				</listing>
-				<image source="matlab/fs_cexp_neutral.svg"/>	  
+				<image source="figures/fs_cexp_neutral.svg"/>	  
 			</sidebyside>
 			<p>
 				If <m>\Re(\lambda) \gt 0</m>, the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of <m>\lambda</m> controls the frequency or "tightness" of the spiral. 
@@ -357,7 +357,7 @@
 					</input>
 				</program>
 				</listing>
-				<image source="matlab/fs_cexp_grow.svg"/>	  
+				<image source="figures/fs_cexp_grow.svg"/>	  
 			</sidebyside>
 			<p>
 				Finally, if <m>\Re(\lambda) \lt 0</m>, the spiral is a decaying one. The real and imaginary parts are attenuated oscillations. 
@@ -384,7 +384,7 @@
 					</input>
 				</program>
 				</listing>
-				<image source="matlab/fs_cexp_decay.svg"/>	  
+				<image source="figures/fs_cexp_decay.svg"/>	  
 			</sidebyside>
 		</example>
 		<fact>
@@ -541,7 +541,7 @@
 				</input>
 				</program>
 				</listing>
-				<image source="matlab/fs_pp_nodestable.svg"/>
+				<image source="figures/fs_pp_nodestable.svg"/>
 			</sidebyside>
 			<p>
 				The black lines show the directions of the eigenvectors. An initial state on one of those lines stays on it forever. Other initial conditions follow a path tending to become parallel to eigenvector <m>\bv_1</m>, since the other component decays out more quickly. The plot for <m>-\bA</m> would just reverse all of the arrows and show an unstable fixed point. 
@@ -596,7 +596,7 @@
 					</input>
 				</program>
 				</listing>
-				<image source="matlab/fs_pp_saddle.svg"/>
+				<image source="figures/fs_pp_saddle.svg"/>
 			</sidebyside>
 			<p>
 				An initial condition exactly on the stable black line (eigenvector) will approach the origin, but anything else ends up shooting away more or less in the direction of the unstable eigenvector.  
@@ -649,7 +649,7 @@
 					</input>					
 				</program>
 				</listing>
-				<image source="matlab/fs_pp_spiral.svg"/>
+				<image source="figures/fs_pp_spiral.svg"/>
 			</sidebyside>
 			<p>
 				The eigenvectors are complex and don't show up on the plot; there are no purely linear trajectories.   

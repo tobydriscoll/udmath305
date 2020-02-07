@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:13-05:00    *-->
+<!--*    on 2020-02-07T16:15:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,42 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Now let us start over instead with <a class="xref" data-knowl="./knowl/fl-eq-varparivp.html" title="Equation 2.5.1">(2.5.1)</a>, with \(a(t)=4\) and \(f(t)=8t\text{.}\) First,</p>
+<p>Let's solve \(x'=3x+50\cos(4t)\text{.}\) We have \(x_h=c_1e^{3t}\) and choose</p>
 <div class="displaymath">
 \begin{equation*}
-G(s,t) = \exp\left[ \int_s^t 4\,du \right] = \exp(4t-4s) = e^{4(t-s)}\text{.}
+x_p = A \cos(4t) + B\sin(4t)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then</p>
+<p data-braille="continuation">Put this into the ODE to get</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds = \frac{3}{2} e^{4t} +  \int_{0}^t 8se^{4(t-s)} \, ds = \frac{3}{2} e^{4t} + \frac{1}{2} (e^{4 t} - 1-4t) \text{,}
+[-4A\sin(4t) + 4B\cos(4t)] - 3[A \cos(4t) + B\sin(4t)] = 50\cos(4t)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">which is identical to the first answer.</p>
-<span class="incontext"><a href="fl-varparam.html#p-222">in-context</a></span>
+<p data-braille="continuation">Matching the coefficients of cosine and sine leads to</p>
+<div class="displaymath">
+\begin{equation*}
+4B-3A = 50, \quad -4A-3B = 0\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This is the linear system</p>
+<div class="displaymath">
+\begin{equation*}
+\twomat{-3}{4}{-4}{-3} \twovec{A}{B} = \twovec{50}{0}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We apply Cramer's Rule to get</p>
+<div class="displaymath">
+\begin{equation*}
+A = \frac{ \twodet{50}{4}{0}{-3} }{9+16} = -6, \quad B = \frac{ \twodet{-3}{50}{-4}{0} }{9+16} = 8\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Thus finally</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1e^{3t} + 8\cos(4t) - 6 \sin(4t) \text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="fl-undeter.html#p-222">in-context</a></span>
 </body>
 </html>

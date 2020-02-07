@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:13-05:00    *-->
+<!--*    on 2020-02-07T16:15:28-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -162,7 +162,6 @@ var js_version = 0.13;
 <li><a href="fl-linearity.html" data-scroll="fl-linearity">Introduction</a></li>
 <li><a href="fl-linear-ode.html" data-scroll="fl-linear-ode">Linear ODEs</a></li>
 <li><a href="fl-homogeneous.html" data-scroll="fl-homogeneous">Homogeneous solutions</a></li>
-<li><a href="fl-ivp.html" data-scroll="fl-ivp">Initial value problems</a></li>
 <li><a href="fl-varparam.html" data-scroll="fl-varparam">Variation of parameters</a></li>
 <li><a href="fl-undeter.html" data-scroll="fl-undeter">Undetermined coefficients</a></li>
 <li><a href="fl-models.html" data-scroll="fl-models">Modeling with first-order ODEs</a></li>
@@ -207,55 +206,61 @@ var js_version = 0.13;
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fl-impulse"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.8</span> <span class="title">Steps and impulses</span>
+<span class="type">Section</span> <span class="codenumber">2.7</span> <span class="title">Steps and impulses</span>
 </h2>
-<a href="fl-impulse.html" class="permalink">¶</a><p id="p-248">The <dfn class="terminology">unit step function</dfn> or <dfn class="terminology">Heaviside function</dfn> \(H(t)\) is defined to be zero for \(t\le 0\) and one for \(t\gt 0\text{.}\) It represents throwing on a switch. To have the forcing turn on at some other time \(T\text{,}\) we use \(H(t-T)\text{.}\)</p>
-<p id="p-249">It's relatively straightforward to incorporate step forcing into variation of parameters, if we use the definite integral form <a class="xref" data-knowl="./knowl/fl-eq-varparivp.html" title="Equation 2.5.1">(2.5.1)</a>. The usual situation is that the initial condition is given at \(t_0=0\text{,}\) so we start with</p>
+<a href="fl-impulse.html" class="permalink">¶</a><p id="p-242">The following function is very useful in some modeling situations.</p>
+<article class="definition definition-like" id="fl-df-unitstep"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Unit step function.</span>
+</h6>
+<p id="p-243">The <dfn class="terminology">unit step function</dfn> or <dfn class="terminology">Heaviside function</dfn> \(H(t)\) is defined to be zero for \(t\le 0\) and one for \(t\gt 0\text{.}\)</p></article><p id="p-244">The unit step function represents throwing on an idealized switch. To have the switch turn on at an arbitrary time \(T\text{,}\) we use \(H(t-T)\text{.}\) It's worth mentioning here the related idea of a <dfn class="terminology">window</dfn> function, which turns on and then back off. To get a function that is one only between times \(S\) and \(T\text{,}\) for example, we can use \(f(t)=H(t-S)-H(t-T)\text{.}\)</p>
+<p id="p-245">It's relatively straightforward, if cumbersome, to incorporate step forcing into our solution methods used so far. The key fact to keep in mind is:</p>
+<article class="fact theorem-like" id="fact-9"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.7.2</span><span class="period">.</span>
+</h6>
+<p id="p-246">The solution of \(x'-a(t)x=H(t-T)f(t)\)  having continuous \(a(t)\) and \(f(t)\) is continuous.</p></article><p id="p-247">As a result, we can solve an initial-value problem for \(x'-a(t)x=H(t-T)\) piecewise. Assuming the initial time is zero for simplicity, we first solve</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds\text{.}
+x'-a(t)x=0
 \end{equation*}
 </div>
-<p data-braille="continuation">For \(f(t)=H(t-T)\) for \(T\ge 0\text{,}\) the integrand is zero until time \(T\text{.}\) Hence</p>
+<p data-braille="continuation">over \(0 \le t \le T\text{,}\) using the given value of \(x(0)\text{.}\) Then we solve</p>
 <div class="displaymath">
 \begin{equation*}
-\int_{0}^t G(s,t)H(s-T) \, ds = \begin{cases} 
-0, \amp t \le T, \\ 
-\displaystyle\int_{T}^t G(s,t)\, ds, \amp t &gt; T.
-\end{cases}
+x'-a(t)x=1
 \end{equation*}
 </div>
-<p data-braille="continuation">This situation is itself most easily expressed using step functions. The result is</p>
+<p data-braille="continuation">for \(t\gt T\text{,}\) using the already-known \(x(T)\) as the “initial” value of this stage. If there are multiple step functions present, then there are more than just two pieces to integrate. At each jump point in the forcing function we reset the initial value and start again with a different nonhomogeneous forcing value. The process is the same for \(x'-ax=H(t-T)f(t)\text{.}\)</p>
+<article class="example example-like" id="fl-ex-stepforce"><a data-knowl="" class="id-ref original" data-refid="hk-fl-ex-stepforce"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-fl-ex-stepforce"><article class="example example-like"><p id="p-248">Let's solve \(x'-x=f(t)\text{,}\) \(x(0)=-2\text{,}\) where \(f(t)\) is 5 for \(3 \lt t \le 6\) and zero elsewhere. The homogeneous solution is \(x_h(t)=c_1e^{t}\text{.}\)</p>
+<p id="p-249">Over \(0 \le t \le 3\text{,}\) the homogeneous solution is the full solution. Applying \(x(0)=-2\) we get</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = G(0,t)x_0 + H(t-T) \int_{T}^t G(s,t)\, ds\text{.}
+x_{[0,3]}(t) = -2 e^t
 \end{equation*}
 </div>
-<p data-braille="continuation">In the case of a constant coefficient, this becomes</p>
+<p data-braille="continuation">for this interval. Over \(3 \le t \le 6\text{,}\) the ODE is \(x'-x=5\text{.}\) Undetermined coefficients suggests the particular solution \(x_p(t)=A\text{,}\) and it's then clear that \(A=-5\text{.}\) Our general solution over this segment is therefore \(c_2e^t-5\text{.}\) Joining this to the previous segment at \(t=3\) requires</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = e^{at} x_0 + H(t-T) \int_{T}^t e^{a(t-s)}\, ds = e^{at} x_0 + \frac{1}{a} H(t-T) \bigl[e^{a(T-t)}-1\bigr]\text{.}
+-2e^3 = c_2 e^3 - 5 \Rightarrow c_2 = 5e^{-3} -2\text{,}
 \end{equation*}
 </div>
-<p id="p-250">It's worth mentioning here the related idea of a <dfn class="terminology">window</dfn> function, which turns on and then back off. To get a forcing that is one only between times \(S\) and \(T\text{,}\) for example, we can use \(f(t)=H(t-S)-H(t-T)\text{.}\) The formulas for the window solution become a bit messy, so it's best to just work out results from each step separately.</p>
-<article class="example example-like" id="example-42"><a data-knowl="" class="id-ref original" data-refid="hk-example-42"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-42"><article class="example example-like"><p id="p-251">Let's solve \(x'-x=f(t)\text{,}\) where \(f(t)\) is 5 for \(3 \lt t \le 6\) and zero elsewhere. We have \(a=1\text{.}\) The particular solution due to the first step is</p>
+<p data-braille="continuation">so that</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{1}{1} 5 H(t-3) \bigl[e^{(3-t)}-1\bigr]\text{,}
+x_{[3,6]}(t) = (5e^{-3} -2)e^t - 5 = -2 e^t + 5(e^{t-3}-1)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">and from the second step it's</p>
+<p data-braille="continuation">Finally, for \(t \gt 6\) the ODE is homogeneous again, so the general solution here is \(c_3e^t\text{.}\) Continuity at \(t=6\) requires</p>
 <div class="displaymath">
 \begin{equation*}
--\frac{1}{1} 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]\text{.}
+-2 e^6 + 5(e^3-1) = c_3e^6 \Rightarrow c_3 = -2 + 5(e^{-3}-e^{-6})\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Put these together with the homogeneous solution and we get</p>
+<p data-braille="continuation">Hence the last phase of the solution is</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = e^{t}x_0 + 5 H(t-3) \bigl[e^{(3-t)}-1\bigr] - 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]\text{.}
+x_{[6,\infty)}(t) = -2e^t + 5(e^{t-3} - e^{t-6})\text{.}
 \end{equation*}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
@@ -266,29 +271,18 @@ plot(t,y)
 xlabel('t'), ylabel('y(t)')
 title('Window forcing')
 </pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.8.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_window.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="fo_lcc_window_2"><pre class="prettyprint lang-matlab">step = @(t) double(t&gt;0);
-dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
-[t,y] = ode45(dydt,[0,8],1);
-semilogy(t,y)
-xlabel('t'), ylabel('y(t)')
-title('Window forcing (semi-log)')
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.8.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_window_2.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.7.4<span class="period">.</span></span><span class="space"> </span>Numerical solution with step forcing (1st order).</figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fo_lcc_window.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-252">We next come to a curious type of forcing called an <dfn class="terminology">impulse</dfn>. The idea is that the system is given an instantaneous jolt. To make this work, start by imagining a forcing of constant strength \(1/h\) that is turned on only for \(0\lt t \le h\text{:}\)</p>
+<p id="p-250">We next come to a curious type of forcing called an <dfn class="terminology">impulse</dfn>. The idea is that the system is given an instantaneous jolt. To make this work, start by imagining a forcing of constant strength \(1/h\) that is turned on only for \(0\lt t \le h\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\delta_h(t) = \frac{H(t-h)-H(t)}{h}\text{.}
+\delta_h(t) = \frac{H(t)-H(t-h)}{h}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The area under \(\delta_h\) is one for all \(h \gt 0\text{.}\)</p>
-<p id="p-253">Now we idealize the situation by taking the limit as \(h\to 0\text{.}\) Effectively, we are taking the derivative of a step. The resulting “function”, which we call \(\delta(t)\text{,}\) is zero at all points except \(t=0\text{,}\) yet should have unit area under its curve!</p>
-<p id="p-254">It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple of decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
+<p data-braille="continuation">The area under the \(\delta_h(t)\) curve equals one for all \(h \gt 0\text{.}\)</p>
+<p id="p-251">Now we idealize the situation by taking the limit as \(h\to 0\text{.}\) Effectively, we are taking the derivative of a step. The resulting “function”, which we call \(\delta(t)\text{,}\) is zero at all points except \(t=0\text{,}\) yet it should have unit area under its curve!</p>
+<p id="p-252">It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple of decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
 <div class="displaymath">
 \begin{equation*}
 \int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \frac{1}{h} f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}\text{,}
@@ -303,47 +297,53 @@ title('Window forcing (semi-log)')
 <p data-braille="continuation">As with the step, we often want to introduce a delay in the impulse by using \(\delta(t-T)\text{.}\) Then the math becomes</p>
 <div class="displaymath">
 \begin{equation}
-\int_I \delta(t-T)f(t)\, dt = f(T)\text{,}\label{eq-delta-integrate}\tag{2.8.1}
+\int_I \delta(t-T)f(t)\, dt = f(T)\text{,}\label{eq-delta-integrate}\tag{2.7.1}
 \end{equation}
 </div>
 <p data-braille="continuation">where \(I\) is any interval containing \(T\text{.}\) This is the key identity for working with impulses.</p>
-<p id="p-255">The solution to the linear ODE with an impulse forcing is called an <dfn class="terminology">impulse response</dfn>. Thanks to the main impulse identity, this is easier to deal with than step forcing. Again we start with</p>
+<p id="p-253">The solution to \(x'-ax=\delta(t)\) with \(x(0)=0\) is called an <dfn class="terminology">impulse response</dfn>. This winds up being rather easy to find. Using the methods above, the solution for \(x'-ax=\delta_h(t)\) for \(t\gt h\) is</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds\text{.}
+x(t) = \frac{1-e^{-ah}}{ah} e^{at}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">For \(f(t)=\delta(t-T)\text{,}\) there are just two cases to consider for the integral:</p>
+<p data-braille="continuation">Using L'Hôpital's Rule, the limit as \(h\to 0\) is simply \(x(t)=e^{at}\text{.}\) This is the same as the solution of the homogeneous \(x'-ax=0\) with initial value one rather than zero. This observation generalizes:</p>
+<article class="fact theorem-like" id="fact-10"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.7.5</span><span class="period">.</span>
+</h6>
+<p id="p-254">The solution of \(x'-a(t)x=f(t) + k \delta(t-T)\text{,}\) \(x(0)=x_0\text{,}\) where \(a(t)\) and \(f(t)\) are continuous, satisfies</p>
 <div class="displaymath">
 \begin{equation*}
-\int_{0}^t G(s,t)\delta(s-T) \, ds = \begin{cases} 
-0, \amp t \le T, \\ 
-G(T,t) \amp t &gt; T.
-\end{cases}
+x'-a(t)x=f(t), \; x(0)=x_0   
 \end{equation*}
 </div>
-<p data-braille="continuation">Again using a step to express the result, we have</p>
+<p data-braille="continuation">for \(t\lt T\text{,}\) and</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = G(0,t)x_0 + H(t-T) G(T,t)\text{.}
+x'-a(t)x=f(t), \; x(T)=x(T^-)+k   
 \end{equation*}
 </div>
-<p data-braille="continuation">For a constant-coefficient ODE this becomes</p>
+<p data-braille="continuation">for \(t\gt T\text{,}\) where \(x(T^-)=\lim_{t\to T^-} x(t)\) comes from the first stage of the solution. If \(T=0\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = e^{at} x_0 + H(t-T) e^{a(t-T)}\text{.}
+x'-a(t)x=f(t), \; x(0)=x_0+k    
 \end{equation*}
 </div>
-<p data-braille="continuation">One way to read this formula is that at the impulse time, the state is instantaneously increased by one, with the usual evolution following.</p>
-<article class="example example-like" id="example-43"><a data-knowl="" class="id-ref original" data-refid="hk-example-43"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-43"><article class="example example-like"><p id="p-256">Suppose we solve \(x'+5y=3\delta(t-2)\text{,}\) with \(x(0)=1\text{.}\) Start with</p>
+<p data-braille="continuation">for \(t\gt 0\text{.}\)</p></article><p id="p-255">In words, <em class="alert">an impulse in a first-order linear equation is equivalent to an instantaneous jump in the value of the solution</em>.</p>
+<article class="example example-like" id="example-42"><a data-knowl="" class="id-ref original" data-refid="hk-example-42"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-42"><article class="example example-like"><p id="p-256">Suppose we solve \(x'+5x=3\delta(t-2)\text{,}\) with \(x(0)=1\text{.}\) For \(0\lt t \lt 2\text{,}\) the equation is homogeneous and \(x(t)=e^{-5t}\text{.}\) Then the solution receives an instantaneous kick from \(e^{-10}\) to \(e^{-10}+3\) and continues evolving homogeneously. So for \(t\gt 2\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = e^{-5t} + 3 \int_0^t e^{-5(t-s)}\delta(s-2)\, ds\text{.}
+x(t) = (e^{-10}+3) e^{-5(t-2)} = e^{-5t} + 3 e^{-5(t-2)}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">If \(t \lt 2\text{,}\) the integration interval does not contain the impulse, so the solution is just \(e^{-5t}\text{.}\) But if \(t \gt 2\text{,}\) \(x(t) = e^{-5t} + 3 e^{-5(t-2)}\text{.}\)</p>
+<p data-braille="continuation">In fact we could write the solution at all times in one formula using step function notation:</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = e^{-5t} + 3 H(t-2) e^{-5(t-2)}\text{.}
+\end{equation*}
+</div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="fo_lcc_impulse"><pre class="prettyprint lang-matlab">dydt = @(t,y) -5*y;
 [t1,y1] = ode45(dydt,[0,2],1);
@@ -355,19 +355,8 @@ semilogy([t1;t2],[y1;y2])
 xlabel('t'), ylabel('y(t)')
 title('Impulse forcing')
 </pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.8.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_impulse.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="fo_lcc_impulse_2"><pre class="prettyprint lang-matlab">dydt = @(t,y) -5*y;
-[t1,y1] = ode45(dydt,[0,2],1);
-[t2,y2] = ode45(dydt,[2,6],3+y1(end));
-semilogy([t1;t2],[y1;y2])
-xlabel('t'), ylabel('y(t)')
-title('Impulse forcing (semi-log)')
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.8.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_impulse_2.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.7.7<span class="period">.</span></span><span class="space"> </span>Numerical solution with impulse forcing (1st order).</figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fo_lcc_impulse.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>

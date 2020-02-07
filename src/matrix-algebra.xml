@@ -66,7 +66,7 @@ axis equal, grid on
 xlabel('x'), ylabel('y')
         </input>
         </program>
-        <image source="matlab/ma_rc_rows.svg"/>	  
+        <image source="figures/ma_rc_rows.svg"/>	  
     </sidebyside>
     <p>
         If we were to choose a different vector <m>\bb</m>, the lines in the picture would keep their same slopes and just move up and down. Thus we expect one unique solution (intersection) for any given <m>\bb</m>.
@@ -101,7 +101,7 @@ plot([-2 8],[0 0],'k-','linewid',2)
 xlabel('b_1'), ylabel('b_2')
         </input>
         </program>
-        <image source="matlab/ma_rc_cols.svg"/>	  
+        <image source="figures/ma_rc_cols.svg"/>	  
     </sidebyside>
     <p>
         We might think of solving the system in this picture as expressing <m>\bb</m> in a different coordinate system defined by the columns of <m>\bA</m>. In fact, it's just a rotation and scaling of the default Cartesian system, so again from this perspective we expect a unique result for each <m>\bb</m>.
@@ -179,7 +179,7 @@ plot([-2 2],[0 0],'k-','linewid',2)
 xlabel('x'), ylabel('y')
         </input>
         </program>
-        <image source="matlab/ma_rc_parallel.svg"/>	  
+        <image source="figures/ma_rc_parallel.svg"/>	  
     </sidebyside>
     <p>
         The row picture makes it clear that we are seeking the intersection of two distinct parallel lines, an enterprise that is bound to disappoint us. Likewise, the column picture (not given) is about finding combinations of the column vectors <m>\twovec{1}{-2}</m> and <m>\twovec{2}{-4}</m>. These too are parallel, so all of their linear combinations lie on a single line through the origin. The given vector <m>\bb=\twovec{1}{1}</m> is not on this line, so no solution exists. 

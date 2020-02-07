@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:14-05:00    *-->
+<!--*    on 2020-02-07T16:15:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,57 +13,9 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.2</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
 </h6>
-<p>Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution has</p>
-<div class="displaymath">
-\begin{equation*}
-X_p(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">We can use the trick of completing the square to write this as</p>
-<div class="displaymath">
-\begin{equation*}
-X_p(s) = e^{-s} \frac{6}{(s+1)^2+9} = e^{-s} F(s)\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">where we can now see that \(f(t) = 2e^{-t}\sin(3t)\text{.}\) By the shift theorem, \(x_p(t)=H(t-1)f(t-1)\text{.}\)</p>
-<p>Now consider \(x''+2x'+10x=40\text{.}\) We get</p>
-<div class="displaymath">
-\begin{equation*}
-X_p(s) = \frac{40}{s(s^2+2s+10)} = \frac{40}{s[(s+1)^2+9]}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">We decompose into</p>
-<div class="displaymath">
-\begin{equation*}
-X_p(s) = \frac{A}{s} + \frac{3B+C(s+1)}{(s+1)^2+9}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Once we find the constants, we know that the inverse of this is \(x_p(t) = A + Be^{-t}\sin(3t) + C e^{-t}\cos(3t)\text{.}\)  To find the constants we clear denominators and get</p>
-<div class="displaymath">
-\begin{equation*}
-40 = A[(s+1)^2+9] + (3B+Cs+C) s\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">With \(s=0\) we conclude that \(A=4\text{.}\) From this we find that \(40 = Cs^2+(3B+C)s + 4s^2 +8s + 40\text{,}\) which tells us \(C=-4\) and \(B=-4/3\text{.}\) Hence</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = 4 - \frac{4}{3} e^{-t} \sin(3t) - 4 e^{-t} \cos(3t)\text{.}
-\end{equation*}
-</div>
-<p>For a harmonically forced case such as \(x''+2x'+10x=\cos(2t)\text{,}\) we have</p>
-<div class="displaymath">
-\begin{equation*}
-X_p(s) = \frac{s}{(s^2+4)(s^2+2s+10)}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">We could find a decomposition in the form</p>
-<div class="displaymath">
-\begin{equation*}
-X_p(s) = \frac{2A+Bs}{s^2+4} + \frac{3C+E(s+1)}{(s+1)^2+9}\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">which is eminently invertible. The details are left to the proverbial reader.</p></article><span class="incontext"><a href="so-laplace-repeated.html#example-65">in-context</a></span>
+<p>Consider the ODE \(x'=x-x^3\text{.}\) The equilibrium solutions are \(x=0\) and \(x=\pm 1\text{.}\) Consider also that \(x'\lt 0\) if \(-1\lt x \lt 0\) or \(x\gt 1\text{;}\) otherwise, \(x' \gt 0\text{.}\) The phase line diagram clarifies that the steady states at \(x=\pm 1\) are stable, while the one at \(x=0\) is unstable.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/fo_ss_phaseline.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article><span class="incontext"><a href="nl-autonomous.html#example-65">in-context</a></span>
 </body>
 </html>

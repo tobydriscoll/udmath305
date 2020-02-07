@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:12-05:00    *-->
+<!--*    on 2020-02-07T16:15:28-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -130,11 +130,11 @@ var js_version = 0.13;
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="fl-linear-ode.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch2-first-order-linear.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="fl-ivp.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="fl-linear-ode.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch2-first-order-linear.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="fl-varparam.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="fl-linear-ode.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch2-first-order-linear.html" title="Up">Up</a><a class="next-button button toolbar-item" href="fl-ivp.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="fl-linear-ode.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch2-first-order-linear.html" title="Up">Up</a><a class="next-button button toolbar-item" href="fl-varparam.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -162,7 +162,6 @@ var js_version = 0.13;
 <li><a href="fl-linearity.html" data-scroll="fl-linearity">Introduction</a></li>
 <li><a href="fl-linear-ode.html" data-scroll="fl-linear-ode">Linear ODEs</a></li>
 <li><a href="fl-homogeneous.html" data-scroll="fl-homogeneous" class="active">Homogeneous solutions</a></li>
-<li><a href="fl-ivp.html" data-scroll="fl-ivp">Initial value problems</a></li>
 <li><a href="fl-varparam.html" data-scroll="fl-varparam">Variation of parameters</a></li>
 <li><a href="fl-undeter.html" data-scroll="fl-undeter">Undetermined coefficients</a></li>
 <li><a href="fl-models.html" data-scroll="fl-models">Modeling with first-order ODEs</a></li>
@@ -209,8 +208,10 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fl-homogeneous"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Homogeneous solutions</span>
 </h2>
-<a href="fl-homogeneous.html" class="permalink">¶</a><p id="p-200">Our first job is to figure out how to express all possible solutions of the homogeneous problem \(\opA[x]=0\text{,}\) or \(x'-a(t)x=0\text{.}\) As with linear systems, the goal is to find a basis, so that the general \(x_h\) is a linear combination of the basis functions. However, there is no analog of the RREF of a matrix to exploit here.</p>
-<p id="p-201">Fortunately we can just use some calculus. Define an <dfn class="terminology">integrating factor</dfn> as</p>
+<a href="fl-homogeneous.html" class="permalink">¶</a><section class="introduction" id="introduction-5"><p id="p-200">Our first job is to figure out how to express all possible solutions of the homogeneous problem \(\opA[x]=0\text{,}\) or \(x'-a(t)x=0\text{.}\) As with linear systems, the goal is to find a basis, so that the general \(x_h\) is a linear combination of the basis functions. However, there is no analog of the RREF of a matrix to exploit here.</p></section><section class="subsection" id="fl-ho-intfactor"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">Integrating factor</span>
+</h3>
+<a href="fl-homogeneous.html#fl-ho-intfactor" class="permalink">¶</a><p id="p-201">We can go far with some simple calculus. Define an <dfn class="terminology">integrating factor</dfn> as</p>
 <div class="displaymath">
 \begin{equation*}
 g(t) = \exp[ q(t) ]\text{,}
@@ -236,7 +237,66 @@ g(t) = \exp\left( \int a(t)\,dt \right)\text{.}\label{fl-eq-intfactor}\tag{2.3.1
 \begin{equation*}
 x_h(t) = c_1 \exp[ -\cos(t) ]\text{.}
 \end{equation*}
-</div></article></div></section></div></main>
+</div></article></div></section><section class="subsection" id="fl-ho-ivp"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">Initial-value problems</span>
+</h3>
+<a href="fl-homogeneous.html#fl-ho-ivp" class="permalink">¶</a><p id="p-204">The general solution of \(x'=a(t)x+f(t)\) includes the general homogeneous solution, which contains an arbitrary multiplicative constant. This “solution” is therefore really a family of solutions. Many models include one piece of additional information that specifies the solution uniquely.</p>
+<article class="definition definition-like" id="fl-df-ivp"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Initial value problem (IVP).</span>
+</h6>
+<p id="p-205">A first-order <dfn class="terminology">initial value problem</dfn> is a first-order ODE together with an <dfn class="terminology">initial condition</dfn> \(x(t_0)=x_0\text{.}\)</p></article><aside class="aside aside-like" id="aside-12"><p id="p-206">The definition of IVP, unlike most of what we have done so far, applies to nonlinear ODEs as well as linear ones.</p></aside><p id="p-207">Solving an IVP typically involves first finding the general solution of the ODE, then applying the initial condition to determine a specific value for the integration constant.</p>
+<article class="example example-like" id="example-29"><a data-knowl="" class="id-ref original" data-refid="hk-example-29"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-29"><article class="example example-like"><p id="p-208">We found earlier that the general solution of \(x'=\sin(t) x\) is</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 \exp[ -\cos(t) ]\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">If we are also given the initial condition \(x(0)=1\text{,}\) then we substitute to determine</p>
+<div class="displaymath">
+\begin{equation*}
+1 = x(0) = c_1 e^{-\cos(0)} = \frac{c_1}{e}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">so that \(c_1=e\text{.}\) We then write</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = e \exp[ -\cos(t) ] = \exp[1-\cos(t)]\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which has no arbitrary constants left.</p></article></div></section><section class="subsection" id="fl-iv-numerical"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">Numerical solutions</span>
+</h3>
+<a href="fl-homogeneous.html#fl-iv-numerical" class="permalink">¶</a><p id="p-209">Because an IVP has a unique solution, it is a suitable target for an approximate numerical solution.</p>
+<article class="example example-like" id="example-30"><a data-knowl="" class="id-ref original" data-refid="hk-example-30"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-30"><article class="example example-like"><p id="p-210">We look again at \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) Most numerical routines, like those in MATLAB, are coded to solve an ODE given in the general form \(x'=F(t,x)\text{.}\) Therefore we have to define a function for \(F\text{.}\)</p>
+<pre class="code-block tex2jax_ignore">
+F = @(t,x) sin(t)*x;
+		</pre>
+<p data-braille="continuation">Now we call the function <code class="code-inline tex2jax_ignore">ode45</code> to solve the problem, designating times of interest and the initial value.</p>
+<pre class="code-block tex2jax_ignore">
+t = linspace(0,5,500);
+[t,x] = ode45(F,t,1);
+		</pre>
+<p data-braille="continuation">The outputs here are vectors of equal length, giving the times we selected and values of the solution at those times. For instance, to get values at the final time we use</p>
+<pre class="code-block tex2jax_ignore">
+format long
+[ t(end), x(end) ]
+		</pre>
+<p data-braille="continuation">and get the response</p>
+<pre class="code-block tex2jax_ignore">
+ans =
+5.000000000000000   2.046942183624863
+		</pre>
+<p data-braille="continuation">The outputs are also in a form easy to plot.</p>
+<pre class="code-block tex2jax_ignore">
+plot(t,x)
+xlabel('t'), ylabel('x(t)')
+title('Solution of a linear problem')
+		</pre>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/fl_linear_first_ivp.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article></div></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

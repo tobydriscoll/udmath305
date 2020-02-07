@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:13-05:00    *-->
+<!--*    on 2020-02-07T16:15:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To solve \(x'+3x=6t\text{,}\) first note that \(x_h(t)=c_1e^{-3t}\text{.}\) For \(x_p\) we use the educated guess</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = B_1 t + B_0\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Substituting that into the ODE yields</p>
-<div class="displaymath">
-\begin{equation*}
-(B_1)+3(B_1 t + B_0) = 6t\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">On matching like powers of \(t\) we get the equations \(3B_1=6\) and \(B_1+B_0=0\text{.}\) This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that \(B_1=2\) and \(B_0=-2\text{.}\) So the general solution is</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = c_1 e^{-3t} + 2t - 2\text{.}
-\end{equation*}
-</div>
+<p>The example above is a failure of the method, not a statement about the existence of the solution. There are advanced rules for fixing the method of undetermined coefficients in this circumstance, but it's easier to just fall back to variation of parameters (<a href="fl-varparam.html" class="internal" title="Section 2.4: Variation of parameters">Section 2.4</a>).</p>
 <span class="incontext"><a href="fl-undeter.html#p-225">in-context</a></span>
 </body>
 </html>

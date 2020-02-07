@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-02-07T16:15:29-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="period">.</span>
+</h6>
+<p>Let's solve \(x'-x=f(t)\text{,}\) \(x(0)=-2\text{,}\) where \(f(t)\) is 5 for \(3 \lt t \le 6\) and zero elsewhere. The homogeneous solution is \(x_h(t)=c_1e^{t}\text{.}\)</p>
+<p>Over \(0 \le t \le 3\text{,}\) the homogeneous solution is the full solution. Applying \(x(0)=-2\) we get</p>
+<div class="displaymath">
+\begin{equation*}
+x_{[0,3]}(t) = -2 e^t
+\end{equation*}
+</div>
+<p data-braille="continuation">for this interval. Over \(3 \le t \le 6\text{,}\) the ODE is \(x'-x=5\text{.}\) Undetermined coefficients suggests the particular solution \(x_p(t)=A\text{,}\) and it's then clear that \(A=-5\text{.}\) Our general solution over this segment is therefore \(c_2e^t-5\text{.}\) Joining this to the previous segment at \(t=3\) requires</p>
+<div class="displaymath">
+\begin{equation*}
+-2e^3 = c_2 e^3 - 5 \Rightarrow c_2 = 5e^{-3} -2\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{equation*}
+x_{[3,6]}(t) = (5e^{-3} -2)e^t - 5 = -2 e^t + 5(e^{t-3}-1)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally, for \(t \gt 6\) the ODE is homogeneous again, so the general solution here is \(c_3e^t\text{.}\) Continuity at \(t=6\) requires</p>
+<div class="displaymath">
+\begin{equation*}
+-2 e^6 + 5(e^3-1) = c_3e^6 \Rightarrow c_3 = -2 + 5(e^{-3}-e^{-6})\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence the last phase of the solution is</p>
+<div class="displaymath">
+\begin{equation*}
+x_{[6,\infty)}(t) = -2e^t + 5(e^{t-3} - e^{t-6})\text{.}
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">step = @(t) double(t&gt;0);
+dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
+[t,y] = ode45(dydt,[0,8],1);
+plot(t,y)
+xlabel('t'), ylabel('y(t)')
+title('Window forcing')
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.7.4<span class="period">.</span></span><span class="space"> </span>Numerical solution with step forcing (1st order).</figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fo_lcc_window.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article><span class="incontext"><a href="fl-impulse.html#fl-ex-stepforce">in-context</a></span>
+</body>
+</html>

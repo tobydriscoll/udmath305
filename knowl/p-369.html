@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:14-05:00    *-->
+<!--*    on 2020-02-07T16:15:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is</p>
+<p>The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
 <div class="displaymath">
 \begin{equation*}
-LI'' + RI' + CI = \mathcal{E}'(t)\text{,}
+\theta'' + \gamma \theta + \frac{g}{L}\sin \theta = F(t)\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(L\) is inductance, \(R\) is resistance, \(C\) is capacitance, and \(I(t)\) is the current flowing through the circuit. The forcing term represents the generator whose voltage (EMF) is \(\mathcal{E}(t)\text{.}\) For alternating current this is modeled as a cosine (or complex exponential) function.</p>
+<p data-braille="continuation">where \(\theta(t)\) is the angle made with vertical-down and \(L\) is the arm length. This equation is nonlinear. But if the angle remains small, then a reasonable approximation is</p>
+<div class="displaymath">
+\begin{equation*}
+\theta'' + \gamma \theta + \frac{g}{L}\theta = F(t)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which is a linear oscillator.</p>
 <span class="incontext"><a href="so-oscillators.html#p-369">in-context</a></span>
 </body>
 </html>

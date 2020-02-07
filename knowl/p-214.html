@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:13-05:00    *-->
+<!--*    on 2020-02-07T16:15:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We look again at \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) Most numerical routines, like those in MATLAB, are coded to solve an ODE given in the general form \(x'=F(t,x)\text{.}\) Therefore we have to define a function for \(F\text{.}\)</p>
-<pre class="code-block tex2jax_ignore">
-F = @(t,x) sin(t)*x;
-		</pre>
-<p data-braille="continuation">Now we call the function <code class="code-inline tex2jax_ignore">ode45</code> to solve the problem, designating times of interest and the initial value.</p>
-<pre class="code-block tex2jax_ignore">
-t = linspace(0,5,500);
-[t,x] = ode45(F,t,1);
-		</pre>
-<p data-braille="continuation">The outputs here are vectors of equal length, giving the times we selected and values of the solution at those times. For instance, to get values at the final time we use</p>
-<pre class="code-block tex2jax_ignore">
-format long
-[ t(end), x(end) ]
-		</pre>
-<p data-braille="continuation">and get the response</p>
-<pre class="code-block tex2jax_ignore">
-ans =
-5.000000000000000   2.046942183624863
-		</pre>
-<p data-braille="continuation">The outputs are also in a form easy to plot.</p>
-<pre class="code-block tex2jax_ignore">
-plot(t,x)
-xlabel('t'), ylabel('x(t)')
-title('Solution of a linear problem')
-		</pre>
-<span class="incontext"><a href="fl-ivp.html#p-214">in-context</a></span>
+<p>For \((2+t) x'= x - 1\text{,}\) we rewrite as</p>
+<div class="displaymath">
+\begin{equation*}
+x' - \frac{1}{2+t} x = -\frac{1}{2+t}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = \exp\left[ \int \frac{1}{2+t}\, dt \right] = \exp[ \ln(2+t) ] = 2+t\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Next,</p>
+<div class="displaymath">
+\begin{equation*}
+k(t) = \int \frac{-1}{2+t} (2+t)^{-1} \, dt = - (2+t)^{-1}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 (2+t) - (2+t)^{-1} (2+t) = c_1(2+t)-1\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="fl-varparam.html#p-214">in-context</a></span>
 </body>
 </html>

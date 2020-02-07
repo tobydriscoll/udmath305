@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:14-05:00    *-->
+<!--*    on 2020-02-07T16:15:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,34 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It's relatively straightforward to incorporate step forcing into variation of parameters, if we use the definite integral form <a class="xref" data-knowl="./knowl/fl-eq-varparivp.html" title="Equation 2.5.1">(2.5.1)</a>. The usual situation is that the initial condition is given at \(t_0=0\text{,}\) so we start with</p>
+<p>Over \(0 \le t \le 3\text{,}\) the homogeneous solution is the full solution. Applying \(x(0)=-2\) we get</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds\text{.}
+x_{[0,3]}(t) = -2 e^t
 \end{equation*}
 </div>
-<p data-braille="continuation">For \(f(t)=H(t-T)\) for \(T\ge 0\text{,}\) the integrand is zero until time \(T\text{.}\) Hence</p>
+<p data-braille="continuation">for this interval. Over \(3 \le t \le 6\text{,}\) the ODE is \(x'-x=5\text{.}\) Undetermined coefficients suggests the particular solution \(x_p(t)=A\text{,}\) and it's then clear that \(A=-5\text{.}\) Our general solution over this segment is therefore \(c_2e^t-5\text{.}\) Joining this to the previous segment at \(t=3\) requires</p>
 <div class="displaymath">
 \begin{equation*}
-\int_{0}^t G(s,t)H(s-T) \, ds = \begin{cases} 
-0, \amp t \le T, \\ 
-\displaystyle\int_{T}^t G(s,t)\, ds, \amp t &gt; T.
-\end{cases}
+-2e^3 = c_2 e^3 - 5 \Rightarrow c_2 = 5e^{-3} -2\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">This situation is itself most easily expressed using step functions. The result is</p>
+<p data-braille="continuation">so that</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = G(0,t)x_0 + H(t-T) \int_{T}^t G(s,t)\, ds\text{.}
+x_{[3,6]}(t) = (5e^{-3} -2)e^t - 5 = -2 e^t + 5(e^{t-3}-1)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">In the case of a constant coefficient, this becomes</p>
+<p data-braille="continuation">Finally, for \(t \gt 6\) the ODE is homogeneous again, so the general solution here is \(c_3e^t\text{.}\) Continuity at \(t=6\) requires</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = e^{at} x_0 + H(t-T) \int_{T}^t e^{a(t-s)}\, ds = e^{at} x_0 + \frac{1}{a} H(t-T) \bigl[e^{a(T-t)}-1\bigr]\text{.}
+-2 e^6 + 5(e^3-1) = c_3e^6 \Rightarrow c_3 = -2 + 5(e^{-3}-e^{-6})\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence the last phase of the solution is</p>
+<div class="displaymath">
+\begin{equation*}
+x_{[6,\infty)}(t) = -2e^t + 5(e^{t-3} - e^{t-6})\text{.}
 \end{equation*}
 </div>
 <span class="incontext"><a href="fl-impulse.html#p-249">in-context</a></span>

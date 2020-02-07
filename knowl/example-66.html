@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:14-05:00    *-->
+<!--*    on 2020-02-07T16:15:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,9 +13,14 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
 </h6>
-<p>Consider the ODE \(x'=x-x^3\text{.}\) The equilibrium solutions are \(x=0\) and \(x=\pm 1\text{.}\) Consider also that \(x'\lt 0\) if \(-1\lt x \lt 0\) or \(x\gt 1\text{;}\) otherwise, \(x' \gt 0\text{.}\) The phase line diagram clarifies that the steady states at \(x=\pm 1\) are stable, while the one at \(x=0\) is unstable.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="matlab/fo_ss_phaseline.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article><span class="incontext"><a href="nl-autonomous.html#example-66">in-context</a></span>
+<p>Consider the <a class="xref" data-knowl="./knowl/ex-variable-growth.html" title="Example 2.1.6: Variable growth rate">variable growth archetype 2.1.6</a> \(x'=2tx\text{.}\) We express \(x'\) as \(dx/dt\) and then isolate the variables:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dx}{x} = 2t\,dt\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Integrating both sides leads to \(\log |x| = t^2 + C\text{,}\) or \(|x|=Ae^{t^2}\) for a positive constant \(A\) (since it is the exponential of a real constant). Taking the absolute value off of \(x\) means that \(A\) can be negative as well. Also, \(A=0\) clearly leads to a solution. Finally, we conclude that \(x=Ce^{t^2}\) for arbitrary \(C\text{.}\)</p></article><span class="incontext"><a href="nl-separable.html#example-66">in-context</a></span>
 </body>
 </html>

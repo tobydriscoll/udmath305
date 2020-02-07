@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:14-05:00    *-->
+<!--*    on 2020-02-07T16:15:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,44 +11,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Let's solve \(x'-x=f(t)\text{,}\) where \(f(t)\) is 5 for \(3 \lt t \le 6\) and zero elsewhere. We have \(a=1\text{.}\) The particular solution due to the first step is</p>
+<body><article class="example example-like"><p>Suppose we solve \(x'+5x=3\delta(t-2)\text{,}\) with \(x(0)=1\text{.}\) For \(0\lt t \lt 2\text{,}\) the equation is homogeneous and \(x(t)=e^{-5t}\text{.}\) Then the solution receives an instantaneous kick from \(e^{-10}\) to \(e^{-10}+3\) and continues evolving homogeneously. So for \(t\gt 2\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{1}{1} 5 H(t-3) \bigl[e^{(3-t)}-1\bigr]\text{,}
+x(t) = (e^{-10}+3) e^{-5(t-2)} = e^{-5t} + 3 e^{-5(t-2)}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">and from the second step it's</p>
+<p data-braille="continuation">In fact we could write the solution at all times in one formula using step function notation:</p>
 <div class="displaymath">
 \begin{equation*}
--\frac{1}{1} 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Put these together with the homogeneous solution and we get</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = e^{t}x_0 + 5 H(t-3) \bigl[e^{(3-t)}-1\bigr] - 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]\text{.}
+x(t) = e^{-5t} + 3 H(t-2) e^{-5(t-2)}\text{.}
 \end{equation*}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">step = @(t) double(t&gt;0);
-dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
-[t,y] = ode45(dydt,[0,8],1);
-plot(t,y)
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">dydt = @(t,y) -5*y;
+[t1,y1] = ode45(dydt,[0,2],1);
+[t2,y2] = ode45(dydt,[2,6],3+y1(end));
+plot([t1;t2],[y1;y2])
 xlabel('t'), ylabel('y(t)')
-title('Window forcing')
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.8.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_window.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">step = @(t) double(t&gt;0);
-dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
-[t,y] = ode45(dydt,[0,8],1);
-semilogy(t,y)
+title('Impulse forcing')
+semilogy([t1;t2],[y1;y2])
 xlabel('t'), ylabel('y(t)')
-title('Window forcing (semi-log)')
+title('Impulse forcing')
 </pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.8.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="matlab/fo_lcc_window_2.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.7.7<span class="period">.</span></span><span class="space"> </span>Numerical solution with impulse forcing (1st order).</figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fo_lcc_impulse.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></body>
 </html>

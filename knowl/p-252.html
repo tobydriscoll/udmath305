@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-01-31T15:52:14-05:00    *-->
+<!--*    on 2020-02-07T16:15:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We next come to a curious type of forcing called an <dfn class="terminology">impulse</dfn>. The idea is that the system is given an instantaneous jolt. To make this work, start by imagining a forcing of constant strength \(1/h\) that is turned on only for \(0\lt t \le h\text{:}\)</p>
+<p>It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple of decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
 <div class="displaymath">
 \begin{equation*}
-\delta_h(t) = \frac{H(t-h)-H(t)}{h}\text{.}
+\int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \frac{1}{h} f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">The area under \(\delta_h\) is one for all \(h \gt 0\text{.}\)</p>
+<p data-braille="continuation">where \(\phi\) is an antiderivative of \(f\text{.}\) In the limit this suggests</p>
+<div class="displaymath">
+\begin{equation*}
+\int_I \delta(t)f(t)\, dt = f(0)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">As with the step, we often want to introduce a delay in the impulse by using \(\delta(t-T)\text{.}\) Then the math becomes</p>
+<div class="displaymath">
+\begin{equation}
+\int_I \delta(t-T)f(t)\, dt = f(T)\text{,}\tag{2.7.1}
+\end{equation}
+</div>
+<p data-braille="continuation">where \(I\) is any interval containing \(T\text{.}\) This is the key identity for working with impulses.</p>
 <span class="incontext"><a href="fl-impulse.html#p-252">in-context</a></span>
 </body>
 </html>
