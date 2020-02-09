@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-07T16:15:28-05:00    *-->
+<!--*    on 2020-02-09T17:45:18-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -202,6 +202,7 @@ var js_version = 0.13;
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1"><span class="codenumber">A</span> <span class="title">Notation glossary</span></a></li>
 <li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
@@ -274,42 +275,32 @@ title('Window forcing')
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.7.4<span class="period">.</span></span><span class="space"> </span>Numerical solution with step forcing (1st order).</figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fo_lcc_window.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-250">We next come to a curious type of forcing called an <dfn class="terminology">impulse</dfn>. The idea is that the system is given an instantaneous jolt. To make this work, start by imagining a forcing of constant strength \(1/h\) that is turned on only for \(0\lt t \le h\text{:}\)</p>
+<p id="p-250">Next imagine that we use a window function as the forcing term over ever shortening times, but in such a way that the integral under the curve remains constant. It's analogous to delivering a dose of medication via a slow IV drip versus injecting the same dose all at once directly. Define</p>
 <div class="displaymath">
 \begin{equation*}
-\delta_h(t) = \frac{H(t)-H(t-h)}{h}\text{.}
+\delta_\epsilon(t) = \frac{H(t)-H(t-\epsilon)}{\epsilon}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The area under the \(\delta_h(t)\) curve equals one for all \(h \gt 0\text{.}\)</p>
-<p id="p-251">Now we idealize the situation by taking the limit as \(h\to 0\text{.}\) Effectively, we are taking the derivative of a step. The resulting “function”, which we call \(\delta(t)\text{,}\) is zero at all points except \(t=0\text{,}\) yet it should have unit area under its curve!</p>
-<p id="p-252">It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple of decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If \(I\) is any interval containing \([0,h]\) and \(f(t)\) is any other function, then</p>
+<p data-braille="continuation">The area under the \(\delta_\epsilon(t)\) curve equals one for all \(\epsilon \gt 0\text{.}\) We now ask what happens as the window width \(\epsilon\) approaches zero.</p>
+<article class="definition definition-like" id="fl-def-impresp"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Impulse response.</span>
+</h6>
+<p id="p-251">The <dfn class="terminology">impulse response</dfn> of the linear operator \(\mathcal{A}[x]=x'-ax\) is the limit as \(\epsilon\to 0\) of the solution to \(\mathcal{A}[x]=\delta_\epsilon(t)\) with \(x(0)=0\text{.}\)</p></article><p id="p-252">We often write the impulse response as the solution of \(x'-ax=\delta(t)\text{,}\) where \(\delta(t)\) is an <dfn class="terminology">impulse</dfn> or a <dfn class="terminology">delta function</dfn>.  (A math pedant will never fail to remind you that \(\delta(t)\) isn't actually a function. More on that later.)</p>
+<p id="p-253">The solution to \(x'-ax=\delta_\epsilon(t)\text{,}\) \(x(0)=0\) is easily found for a constant \(a\) using the method described above, resulting in</p>
 <div class="displaymath">
 \begin{equation*}
-\int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \frac{1}{h} f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}\text{,}
+x_\epsilon(t) = \frac{1-e^{-a\epsilon}}{a\epsilon} e^{at}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(\phi\) is an antiderivative of \(f\text{.}\) In the limit this suggests</p>
+<p data-braille="continuation">for \(t\gt \epsilon\text{.}\) As \(\epsilon\to 0\text{,}\) this is the only part of the solution we care about. Using L'Hôpital's Rule,</p>
 <div class="displaymath">
 \begin{equation*}
-\int_I \delta(t)f(t)\, dt = f(0)\text{.}
+\lim_{\epsilon\to 0} x_\epsilon(t) = e^{at}, \quad t \gt 0\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">As with the step, we often want to introduce a delay in the impulse by using \(\delta(t-T)\text{.}\) Then the math becomes</p>
-<div class="displaymath">
-\begin{equation}
-\int_I \delta(t-T)f(t)\, dt = f(T)\text{,}\label{eq-delta-integrate}\tag{2.7.1}
-\end{equation}
-</div>
-<p data-braille="continuation">where \(I\) is any interval containing \(T\text{.}\) This is the key identity for working with impulses.</p>
-<p id="p-253">The solution to \(x'-ax=\delta(t)\) with \(x(0)=0\) is called an <dfn class="terminology">impulse response</dfn>. This winds up being rather easy to find. Using the methods above, the solution for \(x'-ax=\delta_h(t)\) for \(t\gt h\) is</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = \frac{1-e^{-ah}}{ah} e^{at}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Using L'Hôpital's Rule, the limit as \(h\to 0\) is simply \(x(t)=e^{at}\text{.}\) This is the same as the solution of the homogeneous \(x'-ax=0\) with initial value one rather than zero. This observation generalizes:</p>
+<p data-braille="continuation">Hence the constant-coefficient impulse response is simply \(e^{at}\text{.}\) This is the same as the solution of the homogeneous \(x'-ax=0\) with initial value one rather than zero. This remarkable observation generalizes:</p>
 <article class="fact theorem-like" id="fact-10"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.7.5</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.7.6</span><span class="period">.</span>
 </h6>
 <p id="p-254">The solution of \(x'-a(t)x=f(t) + k \delta(t-T)\text{,}\) \(x(0)=x_0\text{,}\) where \(a(t)\) and \(f(t)\) are continuous, satisfies</p>
 <div class="displaymath">
@@ -331,7 +322,7 @@ x'-a(t)x=f(t), \; x(0)=x_0+k
 </div>
 <p data-braille="continuation">for \(t\gt 0\text{.}\)</p></article><p id="p-255">In words, <em class="alert">an impulse in a first-order linear equation is equivalent to an instantaneous jump in the value of the solution</em>.</p>
 <article class="example example-like" id="example-42"><a data-knowl="" class="id-ref original" data-refid="hk-example-42"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.6</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.7</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-42"><article class="example example-like"><p id="p-256">Suppose we solve \(x'+5x=3\delta(t-2)\text{,}\) with \(x(0)=1\text{.}\) For \(0\lt t \lt 2\text{,}\) the equation is homogeneous and \(x(t)=e^{-5t}\text{.}\) Then the solution receives an instantaneous kick from \(e^{-10}\) to \(e^{-10}+3\) and continues evolving homogeneously. So for \(t\gt 2\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
@@ -355,7 +346,7 @@ semilogy([t1;t2],[y1;y2])
 xlabel('t'), ylabel('y(t)')
 title('Impulse forcing')
 </pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.7.7<span class="period">.</span></span><span class="space"> </span>Numerical solution with impulse forcing (1st order).</figcaption></figure></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.7.8<span class="period">.</span></span><span class="space"> </span>Numerical solution with impulse forcing (1st order).</figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fo_lcc_impulse.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div></section></div></main>
 </div>
