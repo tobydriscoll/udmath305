@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:02:11-05:00    *-->
+<!--*    on 2020-02-10T11:32:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We begin with the homogeneous solution</p>
-<div class="displaymath">
-\begin{equation*}
-x_h(t) = c_1 g(t) = c_1 \exp\left[\int a(t)\, dt\right]\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">where \(g(t)\) is the integrating factor from <a class="xref" data-knowl="./knowl/fl-eq-intfactor.html" title="Equation 2.3.1">(2.3.1)</a>. The idea of <dfn class="terminology">variation of parameters</dfn> is to posit that the particular solution can be written by replacing the constant with a function,</p>
-<div class="displaymath">
-\begin{equation}
-x_p(t) = k(t) g(t)\text{,}\tag{2.4.2}
-\end{equation}
-</div>
-<p data-braille="continuation">and then choose \(k(t)\) to make it so:</p>
-<div class="displaymath">
-\begin{equation*}
-f(t) = x_p' - a(t) x_p = [k'g+kg'] - a k g = k'g + k[g'-ag]\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">which, because \(g\) is a homogeneous solution, is simply \(f(t)=k'(t)g(t)\text{.}\) Hence we get a proper particular solution provided</p>
-<div class="displaymath">
-\begin{equation}
-k(t) = \int \frac{f(t)}{g(t)}\, dt \text{.}\tag{2.4.3}
-\end{equation}
-</div>
-<p data-braille="continuation">Step by step, we have to (1) integrate once to get \(g\) in <a class="xref" data-knowl="./knowl/fl-eq-intfactor.html" title="Equation 2.3.1">(2.3.1)</a>, (2) integrate again to get \(k\) in <a class="xref" data-knowl="./knowl/fl-eq-vofp2.html" title="Equation 2.4.3">(2.4.3)</a>, and (3) multiply them together to get the particular solution in <a class="xref" data-knowl="./knowl/fl-eq-vofp1.html" title="Equation 2.4.2">(2.4.2)</a>. It's probably also worth mentioning step (0), which is to put the given problem in the standard form of <a class="xref" data-knowl="./knowl/fl-eq-folinrepeat.html" title="Equation 2.4.1">(2.4.1)</a>; i.e., divide the equation through by any coefficient of \(x'\text{.}\)</p>
-<span class="incontext"><a href="fl-varparam.html#p-212">in-context</a></span>
+<p>We look again at \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) Most numerical routines, like those in MATLAB, are coded to solve an ODE given in the general form \(x'=F(t,x)\text{.}\) Therefore we have to define a function for \(F\text{.}\)</p>
+<pre class="code-block tex2jax_ignore">
+F = @(t,x) sin(t)*x;
+		</pre>
+<p data-braille="continuation">Now we call the function <code class="code-inline tex2jax_ignore">ode45</code> to solve the problem, designating times of interest and the initial value.</p>
+<pre class="code-block tex2jax_ignore">
+t = linspace(0,5,500);
+[t,x] = ode45(F,t,1);
+		</pre>
+<p data-braille="continuation">The outputs here are vectors of equal length, giving the times we selected and values of the solution at those times. For instance, to get values at the final time we use</p>
+<pre class="code-block tex2jax_ignore">
+format long
+[ t(end), x(end) ]
+		</pre>
+<p data-braille="continuation">and get the response</p>
+<pre class="code-block tex2jax_ignore">
+ans =
+5.000000000000000   2.046942183624863
+		</pre>
+<p data-braille="continuation">The outputs are also in a form easy to plot.</p>
+<pre class="code-block tex2jax_ignore">
+plot(t,x)
+xlabel('t'), ylabel('x(t)')
+title('Solution of a linear problem')
+		</pre>
+<span class="incontext"><a href="fl-homogeneous.html#p-212">in-context</a></span>
 </body>
 </html>

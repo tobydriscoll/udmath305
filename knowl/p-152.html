@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:02:11-05:00    *-->
+<!--*    on 2020-02-10T11:32:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In the second format (two outputs), the eigenvalues are on the diagonal of <code class="code-inline tex2jax_ignore">D</code>. The corresponding columns of <code class="code-inline tex2jax_ignore">V</code> are basis vectors for their eigenspaces, provided those are one-dimensional.</p>
+<p>What about the eigenspaces? First consider \(\lambda_1=3\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bA-3 \bI = \twomat{-2}{1}{4}{-2} \overset{\text{RREF}}{\Longrightarrow} \twomat{1}{-1/2}{0}{0}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Therefore this nullspace (the eigenspace) is \(\span\left(\twovec{1/2}{1}\right)\text{.}\) As for \(\lambda_2=-1\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bA+ \bI = \twomat{2}{1}{4}{2} \overset{\text{RREF}}{\Longrightarrow} \twomat{1}{1/2}{0}{0}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">leading to the eigenspace \(\span\left(\twovec{-1/2}{1}\right)\text{.}\)</p>
 <span class="incontext"><a href="la-eigen.html#p-152">in-context</a></span>
 </body>
 </html>

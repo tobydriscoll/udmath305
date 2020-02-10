@@ -149,7 +149,7 @@
 			</p></statement>
 		</definition>
 		<p>
-			We may often refer to <m>a(t)</m> as the <idx><h>coefficient</h><h>in linear ODE</h></idx><term>coefficient function</term> and <m>f(t)</m> as the <idx>forcing function</idx><term>forcing function</term>. 
+			We often refer to <m>a(t)</m> as the <idx><h>coefficient</h><h>in linear ODE</h></idx><term>coefficient function</term> and <m>f(t)</m> as the <idx>forcing function</idx><term>forcing function</term>. 
 			Note that it is <em>not</em> necessary for these to be linear functions of time, nor is the solution <m>x(t)</m> generally a linear function. The linearity being referred to is the fact that there are no terms such as <m>\sin(x')</m>, <m>e^x</m>, <m>xx'</m>, etc. 
 		</p>
 	</introduction>
@@ -167,6 +167,10 @@
 				</me> 
 				for all functions <m>x,y</m> and numbers <m>c</m>.
 			</p></statement>
+			<notation>
+			  <usage>\opA[x]</usage>
+			  <description>linear operator applied to a function</description>
+			</notation>
 		</definition>
 		<p>  
 			In the first chapter we pointed out that the linear function <m>L</m> defined by ><m>L(\bx)=\bA\bx</m> for a given matrix <m>\bA</m> has the same property. In the context of the first order linear ODE <xref ref="fl-eq-linear"/>, the operator of interest to us is defined by 
@@ -192,6 +196,14 @@
 			<p>
 				If <m>x_h</m> is a solution of the homogeneous <m>\opA[x]=0</m> and <m>x_p</m> is any particular solution of <m>\opA[x]=f</m>, then <m>x=x_h+x_p</m> is also a solution of <m>\opA[x]=f</m>.
 			</p>
+			<notation>
+			  <usage>x_h</usage>
+			  <description>homogeneous solution (ODE)</description>
+			</notation>
+			<notation>
+			  <usage>x_p</usage>
+			  <description>particular solution (ODE)</description>
+			</notation>
 		</fact>
 		<p>
 			This is just as easy as the last fact: 
@@ -857,6 +869,10 @@ title('Solution of a linear problem')
 				\lx[f(t)] = F(s) = \int_0^\infty f(t) e^{-st}\, dt
 			</men>. 
 		</p></statement>
+		<notation>
+		  <usage>\lx[f(t)]</usage>
+		  <description>Laplace transform of a function</description>
+		</notation>
 	</definition>
 	<p>
 		In this business, time starts at <m>t=0</m>, and any reference to <m>f(t)</m> for negative <m>t</m> is defined to be zero. A convention is that a lowercase function of <m>t</m> transforms to its uppercase namesake as a function of <m>s</m>. (Another convention is that <m>\lx</m> is used with curly braces, but we have already committed to using square brackets for operators.) 

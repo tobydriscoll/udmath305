@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:02:10-05:00    *-->
+<!--*    on 2020-02-10T11:32:40-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -295,7 +295,17 @@ x(1)*A(:,1) + x(2)*A(:,2) + x(3)*A(:,3)
 \end{align*}
 </div>
 <p data-braille="continuation">(where matrix addition is also defined elementwise), which can be checked with just a little determination. It's also true that \(\bA(c\bx)=c(\bA\bx)\text{.}\) However, <em class="alert">the product \(\bA\bx\) is <em class="emphasis">not</em> commutative; \(\bx\bA\) is not even defined.</em></p>
-<p id="p-44">As a matter of fact, these properties combine in a way worth noting. We can define a function \(L\) on vectors by \(L(\bx)=\bA\bx\text{.}\) This is what we call a <dfn class="terminology">linear function</dfn>, because \(L(c\bx + \by)=cL(\bx)+L(\by)\) for all \(n\)-vectors \(\bx,\by\) and scalars \(c\text{.}\) This would not be true for, for example, \(L(\bx)=x_1x_2\text{.}\)</p></section></section></div></main>
+<p id="p-44">As a matter of fact, these properties combine in a way worth noting. We can define a function \(L\) on vectors by \(L(\bx)=\bA\bx\text{.}\) It has very important properties that we want to single out by name.</p>
+<article class="definition definition-like" id="la-def-linearfunction"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Linear function.</span>
+</h6>
+<p id="p-45">A function \(L\) from \(\Rn{n}\) to \(\Rn{m}\) is a <dfn class="terminology">linear function</dfn> if</p>
+<div class="displaymath">
+\begin{equation*}
+L(c\bx + \by)=cL(\bx)+L(\by)
+\end{equation*}
+</div>
+<p data-braille="continuation">for all \(n\)-vectors \(\bx,\by\) and scalars \(c\text{.}\)</p></article><p id="p-46">This property would not hold for \(L(\bx)=x_1x_2\text{,}\) for instance. But that nonlinear function also cannot be described using a matrix-vector multiplication.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

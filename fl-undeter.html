@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:02:10-05:00    *-->
+<!--*    on 2020-02-10T11:32:41-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,7 +209,7 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fl-undeter"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Undetermined coefficients</span>
 </h2>
-<a href="fl-undeter.html" class="permalink">¶</a><section class="introduction" id="introduction-6"><p id="p-218">Variation of parameters is all that we technically need for linear first-order problems, but as we have seen, it requires some grunt work--in particular, two integrals. There is a significantly shorter path for <a class="xref" data-knowl="./knowl/fl-eq-linear.html" title="Equation 2.2.1">(2.2.1)</a> in the important special case when (1) the growth/decay rate coefficient \(a(t)\) is constant, and (2) the forcing function is a polynomial, exponential, sin, or cos, or a combination of these. In this situation, the correct \(x_p\) can be written down immediately up to some unknowns or <dfn class="terminology">undetermined coefficients</dfn>. Values for these coefficients are by substitution of \(x_p\) into the ODE. The correct form of \(x_p\) for various \(f\) are given in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a>.</p>
+<a href="fl-undeter.html" class="permalink">¶</a><section class="introduction" id="introduction-6"><p id="p-220">Variation of parameters is all that we technically need for linear first-order problems, but as we have seen, it requires some grunt work--in particular, two integrals. There is a significantly shorter path for <a class="xref" data-knowl="./knowl/fl-eq-linear.html" title="Equation 2.2.1">(2.2.1)</a> in the important special case when (1) the growth/decay rate coefficient \(a(t)\) is constant, and (2) the forcing function is a polynomial, exponential, sin, or cos, or a combination of these. In this situation, the correct \(x_p\) can be written down immediately up to some unknowns or <dfn class="terminology">undetermined coefficients</dfn>. Values for these coefficients are by substitution of \(x_p\) into the ODE. The correct form of \(x_p\) for various \(f\) are given in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a>.</p>
 <figure class="table figure-like" id="fl-tb-undeter"><table>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(\mathbf{f(t)}\)</td>
@@ -234,7 +234,7 @@ var js_version = 0.13;
 </table>
 <figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.5.1<span class="period">.</span></span><span class="space"> </span>Particular solutions for undetermined coefficients.</figcaption></figure><article class="example example-like" id="example-34"><a data-knowl="" class="id-ref original" data-refid="hk-example-34"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-34"><article class="example example-like"><p id="p-219">To solve \(x'+3x=6t\text{,}\) first note that \(x_h(t)=c_1e^{-3t}\text{.}\) For \(x_p\) we use the educated guess</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-34"><article class="example example-like"><p id="p-221">To solve \(x'+3x=6t\text{,}\) first note that \(x_h(t)=c_1e^{-3t}\text{.}\) For \(x_p\) we use the educated guess</p>
 <div class="displaymath">
 \begin{equation*}
 x_p(t) = B_1 t + B_0\text{.}
@@ -254,7 +254,7 @@ x(t) = c_1 e^{-3t} + 2t - 2\text{.}
 </div></article></div>
 <article class="example example-like" id="example-35"><a data-knowl="" class="id-ref original" data-refid="hk-example-35"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-35"><article class="example example-like"><p id="p-220">To solve \(x'+x=-te^t\text{,}\) first note that \(x_h(t)=c_1e^{-t}\text{.}\) For \(x_p\) we use the educated guess</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-35"><article class="example example-like"><p id="p-222">To solve \(x'+x=-te^t\text{,}\) first note that \(x_h(t)=c_1e^{-t}\text{.}\) For \(x_p\) we use the educated guess</p>
 <div class="displaymath">
 \begin{equation*}
 x_p(t) = (B_1 t + B_0)e^t\text{.}
@@ -272,10 +272,10 @@ B_1e^t + (B_1 t + B_0)e^t = -te^t\text{.}
 x(t) = c_1 e^{-t} + e^t(1-t)\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-221">An important aspect of the previous two examples is that if the forcing function \(f\) includes a polynomial, then the particular solution has to include all the terms for a polynomial of the same degree, even if the forcing polynomial has some zero coefficients.</p>
+<p id="p-223">An important aspect of the previous two examples is that if the forcing function \(f\) includes a polynomial, then the particular solution has to include all the terms for a polynomial of the same degree, even if the forcing polynomial has some zero coefficients.</p>
 <article class="example example-like" id="example-36"><a data-knowl="" class="id-ref original" data-refid="hk-example-36"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-36"><article class="example example-like"><p id="p-222">Let's solve \(x'=3x+50\cos(4t)\text{.}\) We have \(x_h=c_1e^{3t}\) and choose</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-36"><article class="example example-like"><p id="p-224">Let's solve \(x'=3x+50\cos(4t)\text{.}\) We have \(x_h=c_1e^{3t}\) and choose</p>
 <div class="displaymath">
 \begin{equation*}
 x_p = A \cos(4t) + B\sin(4t)\text{.}
@@ -313,20 +313,20 @@ x(t) = c_1e^{3t} + 8\cos(4t) - 6 \sin(4t) \text{.}
 </div></article></div></section><section class="subsection" id="fl-uc-breakdown"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.1</span> <span class="title">Breakdown of the method</span>
 </h3>
-<a href="fl-undeter.html#fl-uc-breakdown" class="permalink">¶</a><p id="p-223">The suggestions in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a> can fail if the forcing \(f\) includes the homogeneous solution \(e^{at}\text{.}\)</p>
+<a href="fl-undeter.html#fl-uc-breakdown" class="permalink">¶</a><p id="p-225">The suggestions in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a> can fail if the forcing \(f\) includes the homogeneous solution \(e^{at}\text{.}\)</p>
 <article class="example example-like" id="example-37"><a data-knowl="" class="id-ref original" data-refid="hk-example-37"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-37"><article class="example example-like"><p id="p-224">Consider \(x'-ax=e^{at}\text{.}\) We get \(x_h=c_1e^{at}\text{,}\) and the table suggests</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-37"><article class="example example-like"><p id="p-226">Consider \(x'-ax=e^{at}\text{.}\) We get \(x_h=c_1e^{at}\text{,}\) and the table suggests</p>
 <div class="displaymath">
 \begin{equation*}
 x_p = B_0 e^{at}\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">But this is a repeat of the homogeneous solution. Hence if we substitute it into \(x'-ax\text{,}\) we (naturally) get zero, and it's impossible to match this with the forcing function \(e^{at}\text{.}\)</p></article></div>
-<p id="p-225">The example above is a failure of the method, not a statement about the existence of the solution. There are advanced rules for fixing the method of undetermined coefficients in this circumstance, but it's easier to just fall back to variation of parameters (<a href="fl-varparam.html" class="internal" title="Section 2.4: Variation of parameters">Section 2.4</a>).</p>
+<p id="p-227">The example above is a failure of the method, not a statement about the existence of the solution. There are advanced rules for fixing the method of undetermined coefficients in this circumstance, but it's easier to just fall back to variation of parameters (<a href="fl-varparam.html" class="internal" title="Section 2.4: Variation of parameters">Section 2.4</a>).</p>
 <article class="example example-like" id="example-38"><a data-knowl="" class="id-ref original" data-refid="hk-example-38"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-38"><article class="example example-like"><p id="p-226">We solve \(x'-ax=e^{at}\) by the variation of parameters formula</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-38"><article class="example example-like"><p id="p-228">We solve \(x'-ax=e^{at}\) by the variation of parameters formula</p>
 <div class="displaymath">
 \begin{equation*}
 x(t) = c_1 g(t) + g(t) \int g(t)^{-1} e^{at} \, dt \text{,}

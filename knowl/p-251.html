@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:02:11-05:00    *-->
+<!--*    on 2020-02-10T11:32:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,36 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The <dfn class="terminology">impulse response</dfn> of the linear operator \(\mathcal{A}[x]=x'-ax\) is the limit as \(\epsilon\to 0\) of the solution to \(\mathcal{A}[x]=\delta_\epsilon(t)\) with \(x(0)=0\text{.}\)</p>
+<p>Over \(0 \le t \le 3\text{,}\) the homogeneous solution is the full solution. Applying \(x(0)=-2\) we get</p>
+<div class="displaymath">
+\begin{equation*}
+x_{[0,3]}(t) = -2 e^t
+\end{equation*}
+</div>
+<p data-braille="continuation">for this interval. Over \(3 \le t \le 6\text{,}\) the ODE is \(x'-x=5\text{.}\) Undetermined coefficients suggests the particular solution \(x_p(t)=A\text{,}\) and it's then clear that \(A=-5\text{.}\) Our general solution over this segment is therefore \(c_2e^t-5\text{.}\) Joining this to the previous segment at \(t=3\) requires</p>
+<div class="displaymath">
+\begin{equation*}
+-2e^3 = c_2 e^3 - 5 \Rightarrow c_2 = 5e^{-3} -2\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{equation*}
+x_{[3,6]}(t) = (5e^{-3} -2)e^t - 5 = -2 e^t + 5(e^{t-3}-1)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally, for \(t \gt 6\) the ODE is homogeneous again, so the general solution here is \(c_3e^t\text{.}\) Continuity at \(t=6\) requires</p>
+<div class="displaymath">
+\begin{equation*}
+-2 e^6 + 5(e^3-1) = c_3e^6 \Rightarrow c_3 = -2 + 5(e^{-3}-e^{-6})\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence the last phase of the solution is</p>
+<div class="displaymath">
+\begin{equation*}
+x_{[6,\infty)}(t) = -2e^t + 5(e^{t-3} - e^{t-6})\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="fl-impulse.html#p-251">in-context</a></span>
 </body>
 </html>

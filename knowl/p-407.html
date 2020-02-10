@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:02:12-05:00    *-->
+<!--*    on 2020-02-10T11:32:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution has</p>
+<p>If we keep differentiating in \(s\) we find</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
+\frac{d^n}{ds^n} \lx[ f(t) ] = (-1)^n \lx[ t^n f(t) ]\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">We can use the trick of completing the square to write this as</p>
+<p data-braille="continuation">Of interest is the special case of an exponential function \(e^{rt}\text{,}\) whose transform is \(1/(s-r)\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = e^{-s} \frac{6}{(s+1)^2+9} = e^{-s} F(s)\text{,}
+\lx \left[ t^n e^{rt} \right] = \frac{n!}{(s-r)^{n+1}} \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">where we can now see that \(f(t) = 2e^{-t}\sin(3t)\text{.}\) By the shift theorem, \(x_p(t)=H(t-1)f(t-1)\text{.}\)</p>
+<p data-braille="continuation">The even specialer case \(r=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p>
 <span class="incontext"><a href="so-laplace-repeated.html#p-407">in-context</a></span>
 </body>
 </html>

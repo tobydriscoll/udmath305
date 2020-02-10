@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:02:12-05:00    *-->
+<!--*    on 2020-02-10T11:32:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) We recall the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.6.2: Defective matrix">Subsection 3.6.2</a> and define</p>
+<p>The general solution of \(x'' + bx' + cx = f(t)\) consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem. For the homogeneous part the relevant matrix is from <a class="xref" data-knowl="./knowl/so-eq-matrixmodel.html" title="Equation 4.1.2">(4.1.2)</a>:</p>
 <div class="displaymath">
 \begin{equation*}
-\bB = \bA + \frac{b}{2}\bI = \twomat{b/2}{1}{-c}{-b/2} = \twomat{b/2}{1}{-b^2/4}{-b/2}\text{.}
+\bA = \twomat{0}{1}{-c}{-b}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">You can easily check that \(\bB^2=\bzero\text{.}\) Hence</p>
+<p data-braille="continuation">We have the characteristic polynomial</p>
 <div class="displaymath">
 \begin{equation*}
-e^{t\bA} = e^{-(bt/2)\bI} e^{t\bB} = e^{-bt/2}(\bI + t\bB) \text{.}
+|\bA-\lambda\bI| = \twodet{-\lambda}{1}{-c}{-b-\lambda} = \lambda^2 + b\lambda + c\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The general solution is \(e^{t\bA}\bc\text{,}\) but again we need only the first row to get the original \(x=u_1\text{:}\)</p>
-<div class="displaymath">
-\begin{equation*}
-x_h(t) = e^{-bt/2} \left[ c_1 + t\left(c_2 + c_1\frac{b}{2}\right) \right] = e^{-bt/2} \left( c_1 + C_2 t\right)\text{.}
-\end{equation*}
-</div>
+<p data-braille="continuation">(This is easily remembered in terms of the original ODE \(x'' + bx' + cx=0\text{.}\)) The eigenvalues can therefore be found from the quadratic formula.</p>
 <span class="incontext"><a href="so-homogeneous.html#p-357">in-context</a></span>
 </body>
 </html>

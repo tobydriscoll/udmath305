@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:02:11-05:00    *-->
+<!--*    on 2020-02-10T11:32:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To find an alternative real form, we write</p>
-<div class="displaymath">
-\begin{align*}
-e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [\cos(t)+i\sin(t)] \left( \twovec{1}{2} + i\twovec{0}{-1} \right)\\
-\amp = e^{-t} \left[ \left( \cos(t)\twovec{1}{2} - \sin(t) \twovec{0}{-1} \right)\\
-\amp \qquad + i \left( \cos(t)\twovec{0}{-1} + \sin(t) \twovec{1}{2} \right) \right]\text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">Thus the general solution can also be written as</p>
+<p>The pain is lessened if we use a different form of the general solution by writing out the real and imaginary parts of \(e^{\lambda_1 t} \bv_1\text{.}\) If \(\lambda_1=a+i\omega\text{,}\) then write</p>
 <div class="displaymath">
 \begin{equation*}
-\bx(t) = b_1 e^{-t} \twovec{\cos(t)}{2\cos(t)+\sin(t)} + b_2 e^{-t}\twovec{\sin(t)}{2\sin(t)-\cos(t)} \text{,}
+e^{\lambda_1 t} \bv_1 = e^{at} \bigl[\cos(\omegta t)+i\sin(\omega t) \bigr] \bv_1 =  e^{at} \bigl[ u(t) + i w(t) \bigr]\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">where here \(b_1\) and \(b_2\) are real.</p>
+<p data-braille="continuation">Then an alternative expression for the general solution is \(\bx(t)=b_1 e^{at} u(t) + b_2 e^{at} w(t)\text{,}\) where everything in that formula is now real-valued.</p>
 <span class="incontext"><a href="fs-complex-exponentials.html#p-321">in-context</a></span>
 </body>
 </html>

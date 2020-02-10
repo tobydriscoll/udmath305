@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:02:12-05:00    *-->
+<!--*    on 2020-02-10T11:32:43-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We are interested in the stability of fixed points, that is, the dynamics close to them. We will use linear approximations of the functions \(F\) and \(G\) near a fixed point:</p>
+<p>First note that we can recast the nonlinear problem as a first-order system in two variables. Define \(x=\theta\) and \(y=\theta'\text{.}\) Then</p>
 <div class="displaymath">
 \begin{align*}
-F(x,y) \amp \approx F(x_p,y_p) + \pp{F}{x} (x-x_p) + \pp{F}{y} (y-y_p)\\
-G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)\text{,}
+\dd{x}{t} \amp = y \\
+\dd{y}{t} \amp = -\frac{g}{L}\sin(x)\text{.}
 \end{align*}
 </div>
-<p data-braille="continuation">where it is understood for brevity that the partial derivatives are all evaluated at \((x_p,y_p)\text{.}\) Given that \((x_p,y_p)\) is a fixed point, two terms above are zero. Finally, define \(u_1(t)=x(t)-x_p\text{,}\) \(u_2(t)=y(t)-y_p\) to arrive at</p>
+<p data-braille="continuation">This trick works for any nonlinear second-order equation \(\theta''=g(t,\theta,\theta')\text{.}\) Thus we can focus on problems in the general form</p>
 <div class="displaymath">
 \begin{align*}
-\dd{u_1}{t} \amp \approx \pp{F}{x} u_1 + \pp{F}{y} u_2, \\
-\dd{u_2}{t} \amp \approx \pp{G}{x} u_1 + \pp{G}{y} u_2. 
+\dd{x}{t} \amp = F(x,y) \\
+\dd{y}{t} \amp = G(x,y)\text{,}
 \end{align*}
 </div>
-<p data-braille="continuation">This inspires the following definition.</p>
+<p data-braille="continuation">or \(\bu' = \bff(\bu)\) for 2-vector \(\bu(t)\text{.}\) Note that (as we saw before), the vector \(\bu\) represents the state of the system.</p>
 <span class="incontext"><a href="nl-linearization.html#p-458">in-context</a></span>
 </body>
 </html>
