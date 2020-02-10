@@ -463,38 +463,6 @@ title('Solution of a linear problem')
 		</example>
 
 	<!--/introduction-->
-	<!--subsection xml:id="fl-vp-ivp">
-		<title>Incorporating initial conditions</title>
-		<p>
-			In an initial value problem, we can use the growth factor to modify the variation of parameters formula:
-			<men xml:id="fl-eq-varparivp">
-				x(t) = G(t_0,t)x_0 + \int_{t_0}^t G(s,t) f(s)\, ds
-		 </men>. 
-			We can use <xref ref="fl-thm-growthfactor"/> to show that this is the desired solution. First, <m>x(t_0)=G(t_0,t_0)x_0 + 0 = x_0</m>, as required. The derivative is a little tricky, as it requries an extension of the Fundamental Theorem of Calculus:
-			<me> 
-				\frac{d}{dt} \int_{t_0}^t G(s,t) f(s)\, ds = G(t,t)f(t) + \int_{t_0}^t \frac{d}{dt} \left[ G(s,t)f(s) \right]\, ds  = f(t) + a(t)  \int_{t_0}^t G(s,t) f(s)\, ds
-			</me>. 
-		</p>
-		<example>
-			<p>
-				Above we found that the general solution of <m>x'=4x+8t</m> is <m>x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)</m>. If we also have that <m>x(0)=3/2</m>, then we can conclude <m>c_1=2</m>. 
-			</p>
-			<p>  
-				Now let us start over instead with <xref ref="fl-eq-varparivp"/>, with <m>a(t)=4</m> and <m>f(t)=8t</m>. First,
-				<me>
-					G(s,t) = \exp\left[ \int_s^t 4\,du \right] = \exp(4t-4s) = e^{4(t-s)}
-				</me>. 
-				Then 
-				<me>
-					x(t) = G(0,t)x_0 + \int_{0}^t G(s,t) f(s)\, ds = \frac{3}{2} e^{4t} +  \int_{0}^t 8se^{4(t-s)} \, ds = \frac{3}{2} e^{4t} + \frac{1}{2} (e^{4 t} - 1-4t) 
-				</me>,
-				which is identical to the first answer. 
-			</p>
-		</example>
-		<p>
-		 Not only does this formula streamline the solution process, but it actually says something quite profound about the solution. We can think of <m>G(s,t)</m> as the evolution in the homogeneous equation of a state from time <m>s</m> to time <m>t</m>, and the full solution combines this evolution of the initial condition with the sum (integral) of evolution of all the forcing at moments from the initial time to <m>t</m>. Each instant of forcing acts like a momentary <q>kick</q> to the state, and the final state is the combined evolution of all the kicks, plus the contribution due to <m>x_0</m>.
-		</p>
-	</subsection-->
 </section>
 
 <section xml:id="fl-undeter">
@@ -511,12 +479,12 @@ title('Solution of a linear problem')
 							<cell><m>\mathbf{x_p(t)}</m></cell>
 						</row>
 						<row>
-							<cell><m>b_nt^n + \cdots b_0</m></cell>
-							<cell><m>B_nt^n + \cdots + B_0</m></cell>
+							<cell><m>b_n t^n + \cdots b_0</m></cell>
+							<cell><m>B_n t^n + \cdots + B_0</m></cell>
 						</row>
 						<row>
-							<cell><m>e^{rt}(b_nt^n + \cdots b_0)</m></cell>
-							<cell><m>e^{rt}(B_nt^n + \cdots B_0)</m></cell>
+							<cell><m>e^{rt}(b_n t^n + \cdots b_0)</m></cell>
+							<cell><m>e^{rt}(B_n t^n + \cdots B_0)</m></cell>
 						</row>
 						<row>
 							<cell><m>\cos(\omega t)</m></cell>
@@ -554,7 +522,7 @@ title('Solution of a linear problem')
 						<me> 
 							B_1e^t + (B_1 t + B_0)e^t = -te^t
 						</me>. 
-						On cancelling the exponentials and matching like powers of <m>t</m>, we get the equations <m>B_1=-1</m> and <m>B_1+B_0=0</m>. Hence <m>B_1=-1</m> and <m>B_0=1</m>. So the general solution is 
+						On canceling the exponentials and matching like powers of <m>t</m>, we get the equations <m>B_1=-1</m> and <m>B_1+B_0=0</m>. Hence <m>B_1=-1</m> and <m>B_0=1</m>. So the general solution is 
 						<me>
 							x(t) = c_1 e^{-t} + e^t(1-t)
 						</me>.
@@ -634,7 +602,7 @@ title('Solution of a linear problem')
 
 	<p>First-order ODEs are often used to model situations of growth and decay. The linear problem <m>x'=ax+f(t)</m> is a prototype for many important problems:
 	<dl>
-		<li><title>Population</title><p>Population <m>x(t)</m> of organisms has a constant net per capita birth (or death) rate</p></li>
+		<li><title>Population</title><p>Population <m>x(t)</m> of organisms has a constant net per-capita birth (or death) rate</p></li>
 		<li><title>Interest</title><p>Money amount <m>x(t)</m> grows at fixed positive interest rate <m>a</m></p></li>
 		<li><title>Radioactivity</title><p><m>x(t)</m> is the mass of a radioactive isotope, and <m>a \lt 0</m></p></li>
 		<li><title>Pharmacokinetics</title><p> <m>x(t)</m> is the amount of a drug being metabolized in the body</p></li>
@@ -809,7 +777,7 @@ title('Solution of a linear problem')
 		</p></statement>
 	</definition>
 	<p>
-		We often write the impulse response as the solution of <m>x'-ax=\delta(t)</m>, where <m>\delta(t)</m> is an <idx>impulse</idx><term>impulse</term> or a <term>delta function</term>. <notation><usage>\delta(t)</usage><description>impulse forcing</description></notation> (A math pedant will never fail to remind you that <m>\delta(t)</m> isn't actually a function. More on that later.) 
+		We often write the impulse response as the solution of <m>x'-ax=\delta(t)</m>, where <m>\delta(t)</m> is an <idx>impulse</idx><term>impulse</term> or a <term>delta function</term>. <notation><usage>\delta(t)</usage><description>impulse forcing</description></notation> (A math pedant will never fail to remind you that <m>\delta(t)</m> isn't actually a function. Let's not go there.) 
 	</p>
 	<p>
 		The solution to <m>x'-ax=\delta_\epsilon(t)</m>, <m>x(0)=0</m> is easily found for a constant <m>a</m> using the method described above, resulting in 
@@ -820,26 +788,8 @@ title('Solution of a linear problem')
 		<me>
 			\lim_{\epsilon\to 0} x_\epsilon(t) = e^{at}, \quad t \gt 0
 		</me>.
-		Hence the constant-coefficient impulse response is simply <m>e^{at}</m>. This is the same as the solution of the homogeneous <m>x'-ax=0</m> with initial value one rather than zero. This remarkable observation generalizes:
+		Hence the constant-coefficient impulse response is simply <m>e^{at}</m>. This is the same as the solution of the homogeneous <m>x'-ax=0</m> with initial value one rather than zero. This remarkable observation generalizes as follows.
 	</p>
-	<!-- <p>
-		Now we idealize the situation by taking the limit as <m>h\to 0</m>. Effectively, we are taking the derivative of a step. The resulting <q>function</q>, which we call <m>\delta(t)</m>, is zero at all points except <m>t=0</m>, yet it should have unit area under its curve!
-	</p>
-	<p>
-		It's not really possible for a function to do that (something that originally sent mathematicians into a tizzy for a couple of decades), but let's set that aside for now. We will be safe if we stick to statements about integrals. If <m>I</m> is any interval containing <m>[0,h]</m> and <m>f(t)</m> is any other function, then
-		<me>
-			\int_{I} \delta_h(t) f(t)\,dt = \int_{0}^h \frac{1}{h} f(t)\,dt= \frac{\phi(h)-\phi(0)}{h}
-		</me>, 
-		where <m>\phi</m> is an antiderivative of <m>f</m>. In the limit this suggests
-		<me>
-			\int_I \delta(t)f(t)\, dt = f(0)
-		</me>.
-		As with the step, we often want to introduce a delay in the impulse by using <m>\delta(t-T)</m>. Then the math becomes
-		<men xml:id="eq-delta-integrate">
-			\int_I \delta(t-T)f(t)\, dt = f(T)
-		</men>,
-		where <m>I</m> is any interval containing <m>T</m>. This is the key identity for working with impulses.
-	</p> -->
 	<fact>
 		<p>
 			The solution of <m>x'-a(t)x=f(t) + k \delta(t-T)</m>, <m>x(0)=x_0</m>, where <m>a(t)</m> and <m>f(t)</m> are continuous, satisfies 
@@ -909,7 +859,7 @@ title('Solution of a linear problem')
 		</p></statement>
 	</definition>
 	<p>
-		In this business, time starts at <m>t=0</m>, and any reference to <m>f(t)</m> for negative <m>t</m> is defined to be zero. A convention is that a lowercase function of <m>t</m> transforms to its uppercase namesake as a function of <m>s</m>. (Another convention is that <m>\lx</m> is used with curly braces, but we have already commited to using square brackets for operators.) 
+		In this business, time starts at <m>t=0</m>, and any reference to <m>f(t)</m> for negative <m>t</m> is defined to be zero. A convention is that a lowercase function of <m>t</m> transforms to its uppercase namesake as a function of <m>s</m>. (Another convention is that <m>\lx</m> is used with curly braces, but we have already committed to using square brackets for operators.) 
 	</p>
 	<fact>
 		<p>
@@ -959,21 +909,34 @@ title('Solution of a linear problem')
 				<men xml:id="fl-eq-ltexp">
 					\lx[e^{c t}] = \frac{1}{s-c}
 				</men>.
-				An important special case is <m>c=0</m>: <m>\lx[1]=1/s</m>.
+				An important special case is <m>c=0</m>: 
+				<me>
+					\lx[1]=\frac{1}{s}
+				</me>.
 			</p>
 		</fact>
-		<p>
-			Since integration against an impulse is just point evaluation, finding the transform of an impulse is easy. 
-		</p>
-		<fact> 
-			<title>Transform of an impulse</title>
+			<example>
 			<p>
-				<men xml:id="fl-eq-ltimpulse">
-					\lx[\delta(t-T)] = e^{-sT}
-				</men>.
-				An important special case is <m>T=0</m>: <m>\lx[\delta(t)] = 1</m>.
+				Let's consider <m>x'-ax=e^{ct}</m>, where <m>a,c</m> are different constants. Transforming both sides, we get 
+				<me> 
+					[sX(s)-x(0)] - aX(s) =\frac{1}{s-c}
+				</me>,
+				and thus 
+				<me> 
+					X(s) = \frac{x(0)}{s-a} + \frac{1}{(s-c)(s-a)}
+				</me>. 
+				We can immediately recognize the first term as the transform of <m>e^{at}x(0)</m>. To invert the transform of the second term, we need to express it using partial fractions. There is a general procedure for this, but it's worth knowing a simple mnemonic for this particular form:
+				<me> 
+					\frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}
+				</me>. 
+				Thus the inverse transform of this fraction is a sum of two exponentials,
+				<me>
+					x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) 
+				</me>. 
+				This is a particular solution that has <m>x_p(0)=0</m>. The general solution is <m>e^{at}x(0) + x_p(t)</m>. 
 			</p>
-		</fact>
+		</example>  
+
 		<p>
 			Finding the transform of a step is also pretty easy:
 			<md>
@@ -1000,28 +963,26 @@ title('Solution of a linear problem')
 				</men>.
 			</p></statement>
 		</theorem>
-
-		<example>
+		<p>
+			To get the transform of an impulse, we can play the same game as before. The transform of our narrow step <m>\delta_\epsilon</m>  is 
+			<me>
+				\lx[ \delta_\epsilon(t-T)] = \frac{1}{\epsilon} \left( \lx[H(t-T)] - \lx[H(t-T-\epsilon) \right) = \frac{1 - e^{\epsilon s}}{\epsilon s}e^{-sT}
+			</me>. 
+			Taking the limit as <m>\epsilon\to 0</m> gives the following. 
+		</p>
+		<fact> 
+			<title>Transform of an impulse</title>
 			<p>
-				Let's consider <m>x'-ax=e^{ct}</m>, where <m>a,c</m> are different constants. Transforming both sides, we get 
-				<me> 
-					[sX(s)-x(0)] - aX(s) =\frac{1}{s-c}
-				</me>,
-				and thus 
-				<me> 
-					X(s) = \frac{x(0)}{s-a} + \frac{1}{(s-c)(s-a)}
-				</me>. 
-				We can immediately recognize the first term as the transform of <m>e^{at}x(0)</m>. To invert the transform of the second term, we need to express it using partial fractions. There is a general procedure for this, but it's worth knowing a simple mnemonic for this particular form:
-				<me> 
-					\frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}
-				</me>. 
-				Thus the inverse transform of this fraction is a sum of two exponentials,
+				<men xml:id="fl-eq-ltimpulse">
+					\lx[\delta(t-T)] = e^{-sT}
+				</men>.
+				An important special case is <m>T=0</m>: 
 				<me>
-					x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) 
-				</me>. 
-				This is a particular solution that has <m>x_p(0)=0</m>. The general solution is <m>e^{at}x(0) + x_p(t)</m>. 
+					\lx[\delta(t)] = 1
+				</me>.
 			</p>
-		</example>  
+		</fact>
+
 		<example>
 			<p>
 				Let's consider <m>x'=ax + \delta(t-T)</m>, with <m>x(0)=0</m>. Transform to get 
