@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:42-05:00    *-->
+<!--*    on 2020-02-12T14:35:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,11 +11,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>A pendulum is governed by the nonlinear equation \(\theta''+ b\theta' + \frac{g}{L}\sin(\theta)=0\text{.}\) Define \(u_1=\theta\text{,}\) \(u_2=\theta'\text{.}\) Then</p>
+<body><article class="example example-like"><p>The matrix</p>
 <div class="displaymath">
 \begin{equation*}
-\twovec{u_1'}{u_2'} = \twovec{u_2}{-bu_2 - \frac{g}{L}\sin(u_1)}
+\bA = \twomat{-1}{1}{0}{-1}
 \end{equation*}
 </div>
-<p data-braille="continuation">is an equivalent system.</p></article></body>
+<p data-braille="continuation">has a double eigenvalue of \(\lambda=-1\) and is defective. Now consider</p>
+<div class="displaymath">
+\begin{equation*}
+\bB = \bA - \lambda \bI = \twomat{0}{1}{0}{0}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This matrix has the property that \(\bB^2=\bzero\text{.}\) That means the exponential series for it is just</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bB} = \bI + t\bB = \twomat{1}{t}{0}{1}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally, we can use <a class="xref" data-knowl="./knowl/fs-thm-matrixexp.html" title="Theorem 3.6.1: Matrix exponential">Theorem 3.6.1</a> to calculate</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bA} = e^{t\lambda\bI}e^{t(\bA-\lambda\bI)} = e^{-t}\twomat{1}{t}{0}{1}\text{.}
+\end{equation*}
+</div></article></body>
 </html>

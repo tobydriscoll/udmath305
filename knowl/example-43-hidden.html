@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:42-05:00    *-->
+<!--*    on 2020-02-12T14:35:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,29 +11,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Let's consider \(x'-ax=e^{ct}\text{,}\) where \(a,c\) are different constants. Transforming both sides, we get</p>
+<body><article class="example example-like"><p>Suppose we solve \(x'+5x=3\delta(t-2)\text{,}\) with \(x(0)=1\text{.}\) For \(0\lt t \lt 2\text{,}\) the equation is homogeneous and \(x(t)=e^{-5t}\text{.}\) Then the solution receives an instantaneous kick from \(e^{-10}\) to \(e^{-10}+3\) and continues evolving homogeneously. So for \(t\gt 2\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
-[sX(s)-x(0)] - aX(s) =\frac{1}{s-c}\text{,}
+x(t) = (e^{-10}+3) e^{-5(t-2)} = e^{-5t} + 3 e^{-5(t-2)}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">and thus</p>
+<p data-braille="continuation">In fact we could write the solution at all times in one formula using step function notation:</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{x(0)}{s-a} + \frac{1}{(s-c)(s-a)}\text{.}
+x(t) = e^{-5t} + 3 H(t-2) e^{-5(t-2)}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">We can immediately recognize the first term as the transform of \(e^{at}x(0)\text{.}\) To invert the transform of the second term, we need to express it using partial fractions. There is a general procedure for this, but it's worth knowing a simple mnemonic for this particular form:</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Thus the inverse transform of this fraction is a sum of two exponentials,</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">This is a particular solution that has \(x_p(0)=0\text{.}\) The general solution is \(e^{at}x(0) + x_p(t)\text{.}\)</p></article></body>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">dydt = @(t,y) -5*y;
+[t1,y1] = ode45(dydt,[0,2],1);
+[t2,y2] = ode45(dydt,[2,6],3+y1(end));
+plot([t1;t2],[y1;y2])
+xlabel('t'), ylabel('y(t)')
+title('Impulse forcing')
+semilogy([t1;t2],[y1;y2])
+xlabel('t'), ylabel('y(t)')
+title('Impulse forcing')
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.7.8<span class="period">.</span></span><span class="space"> </span>Numerical solution with impulse forcing (1st order).</figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fo_lcc_impulse.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article></body>
 </html>

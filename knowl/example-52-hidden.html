@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:42-05:00    *-->
+<!--*    on 2020-02-12T14:35:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,26 +11,41 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Let's find the exponential of</p>
-<div class="displaymath">
-\begin{equation*}
-\bA = \twomat{1}{1}{4}{1}\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">given \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) We identify</p>
-<div class="displaymath">
-\begin{equation*}
-\bV = \twomat{1}{1}{2}{-2}
-\end{equation*}
-</div>
-<p data-braille="continuation">and compute</p>
-<div class="displaymath">
-\begin{align*}
-e^{t\bA} \amp = \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{1}{1}{2}{-2}^{-1} \\
-\amp = -\frac{1}{4} \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{-2}{-1}{-2}{1} \\
-\amp = -\frac{1}{4} \twomat{e^{3t}}{e^{-t}}{2e^{3t}}{-2e^{-t}} \twomat{-2}{-1}{-2}{1} \\
-\amp = \frac{1}{4} \twomat{2e^{3t}+2e^{-t}}{e^{3t}-e^{-t}}{4e^{3t}-4e^{-t}}{2e^{3t}+2e^{-t}} \text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">Not exactly a walk in the park, but doable.</p></article></body>
+<body><article class="example example-like"><p>Here is a phase plane plot for \(\bA=\twomat{1}{-2}{4}{-3}\text{,}\) which has eigenvalues \(-1\pm 2i\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">A = [1 -2; 4 -3];
+[V,D] = eig(A);
+lam = diag(D);
+
+clf
+plot(0,0,'r.','markersize',18)
+hold on
+
+% plot directions
+[x1,x2] = meshgrid(-1:.2:1);
+v = A*[x1(:)';x2(:)'];
+sz = size(x1);
+quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
+
+% plot trajectories
+colr = get(gca,'colororder');
+t = linspace(0,7,300);
+for theta = 2*pi*(0:6)/7
+	for j = 1:length(t)
+		X = expm(t(j)*A);
+		c = exp(lam(1)*t(j)-1i*theta);
+		x(:,j) = X*[ cos(theta); sin(theta) ];
+	end
+	plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
+end
+
+axis([-1.2 1.2 -1.2 1.2]), axis square
+title('stable spiral')
+xlabel('x_1')
+ylabel('x_2')
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.5.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fs_pp_spiral.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>The eigenvectors are complex and don't show up on the plot; there are no purely linear trajectories.</p></article></body>
 </html>

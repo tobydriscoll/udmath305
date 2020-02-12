@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:40-05:00    *-->
+<!--*    on 2020-02-12T14:35:21-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,9 +209,9 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fl-linearity"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Introduction</span>
 </h2>
-<a href="fl-linearity.html" class="permalink">¶</a><p id="p-176">A <dfn class="terminology">differential equation</dfn> is an equation that has some derivatives in it. (Duh.) The variable whose derivative is taken is called the <dfn class="terminology">dependent variable</dfn> and is considered the "unknown" of the differential equation. We'll be concerned with the case where there is only one <dfn class="terminology">independent variable</dfn>  (a "with respect to" variable in the denominator of a derivative), so there are no partial derivatives and we say the equation is  an <dfn class="terminology">ordinary differential equation</dfn>, or ODE. For discussions and theory we will stick to \(x\) and \(t\) as the dependent and independent variables, but in general these are determined by what is being modeled by the ODE.</p>
-<p id="p-177">If only first derivatives appear (that is, no \(x''\text{,}\) \(x'''\text{,}\) etc.), it's a <dfn class="terminology">first-order</dfn> ODE. We're going to stick to this kind of ODE for a while.</p>
-<p id="p-178">The easiest ODE in the world is</p>
+<a href="fl-linearity.html" class="permalink">¶</a><p id="p-177">A <dfn class="terminology">differential equation</dfn> is an equation that has some derivatives in it. (Duh.) The variable whose derivative is taken is called the <dfn class="terminology">dependent variable</dfn> and is considered the "unknown" of the differential equation. We'll be concerned with the case where there is only one <dfn class="terminology">independent variable</dfn>  (a "with respect to" variable in the denominator of a derivative), so there are no partial derivatives and we say the equation is  an <dfn class="terminology">ordinary differential equation</dfn>, or ODE. For discussions and theory we will stick to \(x\) and \(t\) as the dependent and independent variables, but in general these are determined by what is being modeled by the ODE.</p>
+<p id="p-178">If only first derivatives appear (that is, no \(x''\text{,}\) \(x'''\text{,}\) etc.), it's a <dfn class="terminology">first-order</dfn> ODE. We're going to stick to this kind of ODE for a while.</p>
+<p id="p-179">The easiest ODE in the world is</p>
 <div class="displaymath">
 \begin{equation*}
 \dd{x}{t} = 0\text{.}
@@ -221,17 +221,17 @@ var js_version = 0.13;
 <article class="fact theorem-like" id="fact-6"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
 </h6>
-<p id="p-179">Solutions to ODEs are not unique.</p></article><p id="p-180">More general, but not really any more new to you, is the ODE \(\dd{x}{t}=f(t)\text{.}\) Both sides can be integrated to give \(x(t) = \int f(t)\,dt + C\text{.}\)</p>
-<p id="p-181">Things get interesting only when both \(x\) and \(x'\) appear in the equation. We'll use four examples or archetypes to begin the discussion.</p>
+<p id="p-180">Solutions to ODEs are not unique.</p></article><p id="p-181">More general, but not really any more new to you, is the ODE \(\dd{x}{t}=f(t)\text{.}\) Both sides can be integrated to give \(x(t) = \int f(t)\,dt + C\text{.}\)</p>
+<p id="p-182">Things get interesting only when both \(x\) and \(x'\) appear in the equation. We'll use four examples or archetypes to begin the discussion.</p>
 <article class="example example-like" id="ex-constant-growth"><a data-knowl="" class="id-ref original" data-refid="hk-ex-constant-growth"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Constant growth rate.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-constant-growth"><article class="example example-like"><div class="displaymath" id="p-182">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-constant-growth"><article class="example example-like"><div class="displaymath" id="p-183">
 \begin{equation*}
 \dd{x}{t} = x
 \end{equation*}
 </div>
 <p data-braille="continuation">It's trivial to check that \(x=e^t\) is one solution of \(x'=x\text{,}\) i.e.,  it makes the ODE a true equation.  As a mathematical model, the ODE states that the rate of change in \(x\) is equal to \(x\) itself, and the result is <dfn class="terminology">exponential growth</dfn>: the solution grows larger, which increases the rate of growth, and so on in a feedback loop.</p>
-<p id="p-183">Exponential growth is most naturally plotted on a log-linear graph, in which case the solution is a straight line with positive slope. Because of the log scale, a “difference” in the \(y\)-coordinate is actually a multiplicative factor in the solution. Thus each unit of time applies a constant multiplier of growth.</p>
+<p id="p-184">Exponential growth is most naturally plotted on a log-linear graph, in which case the solution is a straight line with positive slope. Because of the log scale, a “difference” in the \(y\)-coordinate is actually a multiplicative factor in the solution. Thus each unit of time applies a constant multiplier of growth.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="fo_intro_const_growth"><pre class="prettyprint lang-matlab">x = @(t) exp(t);
 fplot(x,[0,4]), set(gca,'yscale','log')
@@ -243,14 +243,14 @@ title('Exponential growth')
 </div></div></article></div>
 <article class="example example-like" id="ex-constant-decay"><a data-knowl="" class="id-ref original" data-refid="hk-ex-constant-decay"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Constant decay rate.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-constant-decay"><article class="example example-like"><div class="displaymath" id="p-184">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-constant-decay"><article class="example example-like"><div class="displaymath" id="p-185">
 \begin{equation*}
 \dd{x}{t} = -x
 \end{equation*}
 </div>
 <p data-braille="continuation">Now the model states that the rate of change is negative when \(x\) is positive (and vice versa). So a positive starting value will decrease, but the rate of decrease will then lessen, etc. From this qualitative description alone it's impossible to tell whether the solution ever reaches zero--at which point its rate of change would be zero.</p>
-<p id="p-185">But we can end the suspense by easily verifying that \(x=e^{-t}\) is a solution. This function asymptotically approaches zero as \(t\to\infty\text{,}\) which we call <dfn class="terminology">exponential decay</dfn>. In other, related problems we will find that solutions can decay (or "relax") to any value, not just zero.</p>
-<p id="p-186">Exponential decay is most naturally plotted on a log-linear graph, in which case the solution is a straight line with negative slope.</p>
+<p id="p-186">But we can end the suspense by easily verifying that \(x=e^{-t}\) is a solution. This function asymptotically approaches zero as \(t\to\infty\text{,}\) which we call <dfn class="terminology">exponential decay</dfn>. In other, related problems we will find that solutions can decay (or "relax") to any value, not just zero.</p>
+<p id="p-187">Exponential decay is most naturally plotted on a log-linear graph, in which case the solution is a straight line with negative slope.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="fo_intro_const_decay"><pre class="prettyprint lang-matlab">x = @(t) exp(-t);
 fplot(x,[0,4]), set(gca,'yscale','log')
@@ -262,7 +262,7 @@ title('Exponential decay')
 </div></div></article></div>
 <article class="example example-like" id="ex-variable-growth"><a data-knowl="" class="id-ref original" data-refid="hk-ex-variable-growth"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Variable growth rate.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-variable-growth"><article class="example example-like"><div class="displaymath" id="p-187">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-variable-growth"><article class="example example-like"><div class="displaymath" id="p-188">
 \begin{equation*}
 \dd{x}{t} = 2tx
 \end{equation*}
@@ -279,7 +279,7 @@ title('Variable growth')
 </div></div></article></div>
 <article class="example example-like" id="ex-nonlinear-growth"><a data-knowl="" class="id-ref original" data-refid="hk-ex-nonlinear-growth"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Nonlinear growth.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-nonlinear-growth"><article class="example example-like"><div class="displaymath" id="p-188">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-nonlinear-growth"><article class="example example-like"><div class="displaymath" id="p-189">
 \begin{equation*}
 \dd{x}{t} = x^2
 \end{equation*}
@@ -294,7 +294,7 @@ title('Nonlinear growth')
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.1.9<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fo_intro_nonlin_growth.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<aside class="aside aside-like" id="aside-10"><p id="p-189">You might wonder about the validity of any mathematical model that leads to an infinite result in finite time. But this particular ODE describes, for instance, the evolution of the slope of the line of sight to an airplane flying straight over you. When the airplane is directly overhead, the slope is infinite. So while the model becomes mathematically invalid at that moment, it does describe a real physical situation.</p></aside></article></div></section></div></main>
+<aside class="aside aside-like" id="aside-10"><p id="p-190">You might wonder about the validity of any mathematical model that leads to an infinite result in finite time. But this particular ODE describes, for instance, the evolution of the slope of the line of sight to an airplane flying straight over you. When the airplane is directly overhead, the slope is infinite. So while the model becomes mathematically invalid at that moment, it does describe a real physical situation.</p></aside></article></div></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

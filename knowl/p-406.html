@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:42-05:00    *-->
+<!--*    on 2020-02-12T14:35:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
+<p>In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
 <div class="displaymath">
-\begin{equation*}
-X_p(s) = \frac{3}{(s^2+9)^2}\text{.}
-\end{equation*}
+\begin{align*}
+F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
+\amp = -\int_0^\infty t f(t) e^{-st}\, dt\\
+\amp = - \lx[ tf(t) ]\text{.}
+\end{align*}
 </div>
-<p data-braille="continuation">This doesn't look like anything easy. However, note that</p>
-<div class="displaymath">
-\begin{equation*}
-sX_p(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frac{d}{ds} \left[ \frac{1}{s^2+9} \right] \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Therefore, \(sX_p(s)\) is the transform of \(\frac{1}{2} t \sin(3t)\text{.}\) So this must be \(x_p'(t)\text{.}\) An integration by parts then recovers</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
-\end{equation*}
-</div>
+<p data-braille="continuation">Take a moment to appreciate this. Earlier we found that a derivative in \(t\) corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
 <span class="incontext"><a href="so-laplace-repeated.html#p-406">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:42-05:00    *-->
+<!--*    on 2020-02-12T14:35:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Perhaps it's clear by now that \(x'-ax=f(t)\) always leads to \(X(s) = F(s)/(s-a)\) as a particular solution. The term \(1/(s-a)\) is called the <dfn class="terminology">transfer function</dfn> of the ODE. Values of \(s\) that are roots of the denominator are known as <dfn class="terminology">poles</dfn> of the transform. They point out exponential solutions.</p>
+<p>Let's consider \(x'=ax + \delta(t-T)\text{,}\) with \(x(0)=0\text{.}\) Transform to get</p>
+<div class="displaymath">
+\begin{equation*}
+[sX(s)-x(0)] - aX(s) = e^{-sT}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">and thus</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = \frac{e^{-sT}}{s-a}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice that \(X(s) = e^{-sT} Y(s)\text{,}\) where \(Y(s)=1/(s-a)\) is the transform of \(y(t)=e^{at}\text{.}\) By the shift theorem, it must be that</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="fl-laplace.html#p-274">in-context</a></span>
 </body>
 </html>

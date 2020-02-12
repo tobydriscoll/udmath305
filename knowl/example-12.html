@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:42-05:00    *-->
+<!--*    on 2020-02-12T14:35:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,44 +13,27 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span>
 </h6>
-<p>Suppose we want to check the independence of</p>
-<div class="displaymath">
-\begin{equation*}
-\bx_1 = \threevec{1}{2}{-1}, \quad \bx_2 = \threevec{2}{4}{-2}, \quad \bx_3 = \threevec{-1}{1}{4}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">We assemble these as the columns of a matrix</p>
+<p>We continue with the matrix \(\bA\) from <a class="xref" data-knowl="./knowl/la-ex-33homog.html" title="Example 1.5.2">Example 1.5.2</a>, now with \(\bb=[-8,4,12]\text{.}\) The RREF of the augmented matrix works out to be</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
-1 \amp 2 \amp -1 \\
-2 \amp 4 \amp 1 \\
--1 \amp -2 \amp 4
-\end{bmatrix} \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">(The order of columns doesn't matter to independence.) Technically we ought to tack on a zero column to get the augmented matrix, but row operations can never change that column. So we can find the RREF without it:</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-1 \amp 2 \amp -1 \\
-2 \amp 4 \amp 1 \\
--1 \amp -2 \amp 4
-\end{bmatrix} \mapsto
-\begin{bmatrix}
-1 \amp 1 \amp -1 \\
-0 \amp 0 \amp 3 \\
-0 \amp 0 \amp 3
-\end{bmatrix} \mapsto
-\begin{bmatrix}
-1 \amp 1 \amp 0 \\
-0 \amp 0 \amp 1 \\
-0 \amp 0 \amp 0
+0 \amp 1 \amp -2 \amp 4 \\ 0 \amp 0 \amp -0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">(We could have actually stopped before the end, when it became clear that the second column is not a pivot column.) Thus the homogeneous problem will have at least one free parameter.</p></article><span class="incontext"><a href="la-basis.html#example-12">in-context</a></span>
+<p data-braille="continuation">This contains all the information we need. If we imagine replacing all entries in the last column by zeros, then we get (as before) the general homogeneous solution</p>
+<div class="displaymath">
+\begin{equation*}
+\bx_h =	s \threevec{1}{0}{0} + t \threevec{0}{2}{1}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">For the particular solution we again have free variables from columns 1 and 3. But we can use <em class="emphasis">any</em> particular solution, so it will be easiest if we set the free variables to zero. Then the first row tells us that \(x_2=4\text{,}\) and we get the general solution</p>
+<div class="displaymath">
+\begin{equation*}
+\bx = \threevec{0}{4}{0} + s \threevec{1}{0}{0} + t \threevec{0}{2}{1}\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="la-general-solution.html#example-12">in-context</a></span>
 </body>
 </html>

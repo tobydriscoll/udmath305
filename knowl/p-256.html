@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:42-05:00    *-->
+<!--*    on 2020-02-12T14:35:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The solution of \(x'-a(t)x=f(t) + k \delta(t-T)\text{,}\) \(x(0)=x_0\text{,}\) where \(a(t)\) and \(f(t)\) are continuous, satisfies</p>
+<p>The solution to \(x'-ax=\delta_\epsilon(t)\text{,}\) \(x(0)=0\) is easily found for a constant \(a\) using the method described above, resulting in</p>
 <div class="displaymath">
 \begin{equation*}
-x'-a(t)x=f(t), \; x(0)=x_0   
+x_\epsilon(t) = \frac{1-e^{-a\epsilon}}{a\epsilon} e^{at}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">for \(t\lt T\text{,}\) and</p>
+<p data-braille="continuation">for \(t\gt \epsilon\text{.}\) As \(\epsilon\to 0\text{,}\) this is the only part of the solution we care about. Using L'Hôpital's Rule,</p>
 <div class="displaymath">
 \begin{equation*}
-x'-a(t)x=f(t), \; x(T)=x(T^-)+k   
+\lim_{\epsilon\to 0} x_\epsilon(t) = e^{at}, \quad t \gt 0\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">for \(t\gt T\text{,}\) where \(x(T^-)=\lim_{t\to T^-} x(t)\) comes from the first stage of the solution. If \(T=0\text{,}\) then</p>
-<div class="displaymath">
-\begin{equation*}
-x'-a(t)x=f(t), \; x(0)=x_0+k    
-\end{equation*}
-</div>
-<p data-braille="continuation">for \(t\gt 0\text{.}\)</p>
+<p data-braille="continuation">Hence the constant-coefficient impulse response is simply \(e^{at}\text{.}\) This is the same as the solution of the homogeneous \(x'-ax=0\) with initial value one rather than zero. This remarkable observation generalizes as follows.</p>
 <span class="incontext"><a href="fl-impulse.html#p-256">in-context</a></span>
 </body>
 </html>

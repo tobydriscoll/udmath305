@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:42-05:00    *-->
+<!--*    on 2020-02-12T14:35:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,42 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The suggestions in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a> can fail if the forcing \(f\) includes the homogeneous solution \(e^{at}\text{.}\)</p>
+<p>Let's solve \(x'=3x+50\cos(4t)\text{.}\) We have \(x_h=c_1e^{3t}\) and choose</p>
+<div class="displaymath">
+\begin{equation*}
+x_p = A \cos(4t) + B\sin(4t)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Put this into the ODE to get</p>
+<div class="displaymath">
+\begin{equation*}
+[-4A\sin(4t) + 4B\cos(4t)] - 3[A \cos(4t) + B\sin(4t)] = 50\cos(4t)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Matching the coefficients of cosine and sine leads to</p>
+<div class="displaymath">
+\begin{equation*}
+4B-3A = 50, \quad -4A-3B = 0\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This is the linear system</p>
+<div class="displaymath">
+\begin{equation*}
+\twomat{-3}{4}{-4}{-3} \twovec{A}{B} = \twovec{50}{0}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We apply Cramer's Rule to get</p>
+<div class="displaymath">
+\begin{equation*}
+A = \frac{ \twodet{50}{4}{0}{-3} }{9+16} = -6, \quad B = \frac{ \twodet{-3}{50}{-4}{0} }{9+16} = 8\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Thus finally</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1e^{3t} + 8\cos(4t) - 6 \sin(4t) \text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="fl-undeter.html#p-225">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:40-05:00    *-->
+<!--*    on 2020-02-12T14:35:21-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,14 +209,14 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fl-varparam"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Variation of parameters</span>
 </h2>
-<a href="fl-varparam.html" class="permalink">¶</a><p id="p-213">In this and the next section we turn to looking for particular solutions of the first-order linear ODE</p>
+<a href="fl-varparam.html" class="permalink">¶</a><p id="p-214">In this and the next section we turn to looking for particular solutions of the first-order linear ODE</p>
 <div class="displaymath">
 \begin{equation}
 x'-a(t)x=f(t)\text{,}\label{fl-eq-folinrepeat}\tag{2.4.1}
 \end{equation}
 </div>
 <p data-braille="continuation">or \(\opA[x]=f\text{.}\) We start in this section with an all-purpose method. In the next section we look at a method that's simpler for the most common problems.</p>
-<p id="p-214">We begin with the homogeneous solution</p>
+<p id="p-215">We begin with the homogeneous solution</p>
 <div class="displaymath">
 \begin{equation*}
 x_h(t) = c_1 g(t) = c_1 \exp\left[\int a(t)\, dt\right]\text{,}
@@ -241,9 +241,9 @@ k(t) = \int \frac{f(t)}{g(t)}\, dt \text{.}\label{fl-eq-vofp2}\tag{2.4.3}
 \end{equation}
 </div>
 <p data-braille="continuation">Step by step, we have to (1) integrate once to get \(g\) in <a class="xref" data-knowl="./knowl/fl-eq-intfactor.html" title="Equation 2.3.1">(2.3.1)</a>, (2) integrate again to get \(k\) in <a class="xref" data-knowl="./knowl/fl-eq-vofp2.html" title="Equation 2.4.3">(2.4.3)</a>, and (3) multiply them together to get the particular solution in <a class="xref" data-knowl="./knowl/fl-eq-vofp1.html" title="Equation 2.4.2">(2.4.2)</a>. It's probably also worth mentioning step (0), which is to put the given problem in the standard form of <a class="xref" data-knowl="./knowl/fl-eq-folinrepeat.html" title="Equation 2.4.1">(2.4.1)</a>; i.e., divide the equation through by any coefficient of \(x'\text{.}\)</p>
-<article class="example example-like" id="example-31"><a data-knowl="" class="id-ref original" data-refid="hk-example-31"><h6 class="heading">
+<article class="example example-like" id="example-32"><a data-knowl="" class="id-ref original" data-refid="hk-example-32"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-31"><article class="example example-like"><p id="p-215">Consider \(3x'=12x+24t\text{.}\) Rewriting it as \(x'-4x=8t\text{,}\) we identify \(a(t)=4\) and \(f(t)=8t\text{.}\) Then</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-32"><article class="example example-like"><p id="p-216">Consider \(3x'=12x+24t\text{.}\) Rewriting it as \(x'-4x=8t\text{,}\) we identify \(a(t)=4\) and \(f(t)=8t\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 g(t) = \exp\left[ \int 4\,dt \right] = e^{4t}\text{,}
@@ -267,9 +267,9 @@ x_p(t) = \left[ \frac{1}{2} (4t+1)e^{-4t} \right] e^{4t} = -\frac{1}{2} (4t+1)\t
 x(t) = x_h(t) + x_p(t) = c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}
 \end{equation*}
 </div></article></div>
-<article class="example example-like" id="example-32"><a data-knowl="" class="id-ref original" data-refid="hk-example-32"><h6 class="heading">
+<article class="example example-like" id="example-33"><a data-knowl="" class="id-ref original" data-refid="hk-example-33"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-32"><article class="example example-like"><p id="p-216">For \((2+t) x'= x - 1\text{,}\) we rewrite as</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-33"><article class="example example-like"><p id="p-217">For \((2+t) x'= x - 1\text{,}\) we rewrite as</p>
 <div class="displaymath">
 \begin{equation*}
 x' - \frac{1}{2+t} x = -\frac{1}{2+t}\text{.}
@@ -293,7 +293,7 @@ k(t) = \int \frac{-1}{2+t} (2+t)^{-1} \, dt = - (2+t)^{-1}\text{,}
 x(t) = c_1 (2+t) - (2+t)^{-1} (2+t) = c_1(2+t)-1\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-217">After being thoroughly trained to always include integration constants, you might wonder why we are being so cavalier about them here. Let's walk through what would happen to them in the last example above. First,</p>
+<p id="p-218">After being thoroughly trained to always include integration constants, you might wonder why we are being so cavalier about them here. Let's walk through what would happen to them in the last example above. First,</p>
 <div class="displaymath">
 \begin{equation*}
 g(t) = \exp\left[  \ln(2+t) + C_1 \right] = A_1(2 + t)\text{,}
@@ -312,10 +312,10 @@ x = x_h + kg = c_1 A_1(2 + t) + \bigl[-A_1^{-1}(2+t)^{-1} + A_2\bigr ]A_1(2 + t)
 \end{equation*}
 </div>
 <p data-braille="continuation">This is exactly the same family of solutions as \(c_1(2+t)-1\text{.}\) Essentially, all the integration constants end up lumped into that \(c_1\text{,}\) which is always the case.</p>
-<p id="p-218">For initial-value problems, we find the entire general solution first, and then apply the initial condition to get a specific value for the free constant.</p>
-<article class="example example-like" id="example-33"><a data-knowl="" class="id-ref original" data-refid="hk-example-33"><h6 class="heading">
+<p id="p-219">For initial-value problems, we find the entire general solution first, and then apply the initial condition to get a specific value for the free constant.</p>
+<article class="example example-like" id="example-34"><a data-knowl="" class="id-ref original" data-refid="hk-example-34"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-33"><article class="example example-like"><p id="p-219">Above we found that the general solution of \(x'=4x+8t\) is \(x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}\) If we also have that \(x(0)=3/2\text{,}\) then we can conclude</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-34"><article class="example example-like"><p id="p-220">Above we found that the general solution of \(x'=4x+8t\) is \(x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}\) If we also have that \(x(0)=3/2\text{,}\) then we can conclude</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{3}{2} = x(0) = c_1 - \frac{1}{2}(1)\text{,}

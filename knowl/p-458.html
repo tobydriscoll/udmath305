@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:43-05:00    *-->
+<!--*    on 2020-02-12T14:35:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>First note that we can recast the nonlinear problem as a first-order system in two variables. Define \(x=\theta\) and \(y=\theta'\text{.}\) Then</p>
+<p>A pendulum with length \(L\) and angle of deflection \(\theta(t)\) from the vertical is governed by the nonlinear second-order equation</p>
 <div class="displaymath">
-\begin{align*}
-\dd{x}{t} \amp = y \\
-\dd{y}{t} \amp = -\frac{g}{L}\sin(x)\text{.}
-\end{align*}
+\begin{equation*}
+\ddd{\theta}{t} + \frac{g}{L} \sin(\theta) = 0\text{,}
+\end{equation*}
 </div>
-<p data-braille="continuation">This trick works for any nonlinear second-order equation \(\theta''=g(t,\theta,\theta')\text{.}\) Thus we can focus on problems in the general form</p>
+<p data-braille="continuation">where \(g\) is gravitational acceleration. It's standard to argue that as long as \(|\theta|\) remains small, a good approximation is the linear problem</p>
 <div class="displaymath">
-\begin{align*}
-\dd{x}{t} \amp = F(x,y) \\
-\dd{y}{t} \amp = G(x,y)\text{,}
-\end{align*}
+\begin{equation*}
+\ddd{\theta}{t} + \frac{g}{L} \theta = 0\text{,}
+\end{equation*}
 </div>
-<p data-braille="continuation">or \(\bu' = \bff(\bu)\) for 2-vector \(\bu(t)\text{.}\) Note that (as we saw before), the vector \(\bu\) represents the state of the system.</p>
+<p data-braille="continuation">because \(\sin \theta \approx \theta\text{.}\)  We want to get more systematic with this process.</p>
 <span class="incontext"><a href="nl-linearization.html#p-458">in-context</a></span>
 </body>
 </html>

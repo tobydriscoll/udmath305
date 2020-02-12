@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:40-05:00    *-->
+<!--*    on 2020-02-12T14:35:21-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -412,24 +412,75 @@ x_1 = 5 + s\text{.}
 <li id="li-18">Set \(i=m\) (the number of equations).</li>
 <li id="li-19">Use multiples of row \(i\) to put zeros above the leading 1 in that row.</li>
 <li id="li-20">Decrement \(i\text{.}\) If \(i\gt 1\text{,}\) return to step 2.</li>
-</ol></article><p id="p-31">At the end of Phase 2, the matrix is in a form that we define formally here.</p>
+</ol></article><article class="example example-like" id="example-6"><a data-knowl="" class="id-ref original" data-refid="hk-example-6"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-6"><article class="example example-like"><p id="p-31">Here we use MATLAB to do the arithmetic in the row operation steps. (Meant to be run in sections.)</p>
+<figure class="listing figure-like" id="la_rowelim"><pre class="console"><b>A = [
+     2    0    4    3 
+    -2    0    2  -13
+    -4    5   -7  -10 
+     1   15    2   -4.5
+    ];
+b = [ 4; 40; 9; 29 ];
+
+S = [A, b]
+
+%%
+S(1,:) = S(1,:)/S(1,1)
+S(2,:) = S(2,:) - S(2,1)*S(1,:)
+
+%%
+S(3,:) = S(3,:) - S(3,1)*S(1,:);
+S(4,:) = S(4,:) - S(4,1)*S(1,:);
+S
+
+%%
+S(2:3,:) = S([3 2],:)
+
+%%
+S(2,:) = S(2,:)/S(2,2);
+S(3,:) = S(3,:) - S(3,2)*S(2,:);
+S(4,:) = S(4,:) - S(4,2)*S(2,:)
+
+%%
+S(3,:) = S(3,:)/S(3,3);
+S(4,:) = S(4,:) - S(4,3)*S(3,:);
+S(4,:) = S(4,:)/S(4,4)
+
+%%
+S(3,:) = S(3,:) - S(3,4)*S(4,:);
+S(2,:) = S(2,:) - S(2,4)*S(4,:);
+S(1,:) = S(1,:) - S(1,4)*S(4,:)
+
+%%
+S(2,:) = S(2,:) - S(2,3)*S(3,:);
+S(1,:) = S(1,:) - S(1,3)*S(3,:);
+
+S(1,:) = S(1,:) - S(1,2)*S(2,:)
+
+%%
+x = S(:,end)
+dif = b - A*x
+</b></pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.2.9<span class="period">.</span></span><span class="space"> </span>Row elimination in matlab.</figcaption></figure></article></div>
+<p id="p-32">At the end of Phase 2, the matrix is in a form that we define formally here.</p>
 <article class="definition definition-like" id="definition-3"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">RREF.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">RREF.</span>
 </h6>
-<p id="p-32">A matrix is in  <dfn class="terminology">RREF</dfn> (reduced row echelon form) if it meets all of these requirements:</p>
+<p id="p-33">A matrix is in  <dfn class="terminology">RREF</dfn> (reduced row echelon form) if it meets all of these requirements:</p>
 <ol class="decimal">
 <li id="li-21">Any rows of all zeros appear below all nonzero rows.</li>
 <li id="li-22">The leading nonzero of any row is a one.</li>
 <li id="li-23">Every leading one is the only nonzero in its column.</li>
 </ol>
-<p data-braille="continuation">The columns that have leading ones are called  <dfn class="terminology">pivot columns</dfn>. The other columns are called  <dfn class="terminology">free columns</dfn>.</p></article><p id="p-33">As seen in the examples above, the RREF of an augmented matrix represents a linear system that we can solve by inspection:</p>
+<p data-braille="continuation">The columns that have leading ones are called  <dfn class="terminology">pivot columns</dfn>. The other columns are called  <dfn class="terminology">free columns</dfn>.</p></article><p id="p-34">As seen in the examples above, the RREF of an augmented matrix represents a linear system that we can solve by inspection:</p>
 <ul class="disc">
 <li id="li-24">Ignore all zero rows.</li>
 <li id="li-25">If a leading one occurs in the last column, the system is inconsistent.</li>
 <li id="li-26">Otherwise, each variable associated with a free column is assigned to a free parameter (e.g., \(s\text{,}\) \(t\text{,}\) etc.).</li>
 <li id="li-27">Use the pivot columns to solve for their corresponding variables in terms of the free parameters.</li>
 </ul>
-<aside class="aside aside-like" id="aside-3"><p id="p-34">MATLAB has a command <code class="code-inline tex2jax_ignore">rref</code> to put a matrix in RREF. However, it's not ideal, because MATLAB uses floating point and cannot always produce exact zeros. You can also <a class="external" href="https://www.wolframalpha.com/input/?i=rref%20%7B%7B1%2C2%2C3%7D%2C%7B4%2C5%2C6%7D%2C%7B7%2C8%2C9%7D%7D" target="_blank">try Wolfram Alpha</a> for this.</p></aside></section></div></main>
+<aside class="aside aside-like" id="aside-3"><p id="p-35">MATLAB has a command <code class="code-inline tex2jax_ignore">rref</code> to put a matrix in RREF. However, it's not ideal, because MATLAB uses floating point and cannot always produce exact zeros. You can also <a class="external" href="https://www.wolframalpha.com/input/?i=rref%20%7B%7B1%2C2%2C3%7D%2C%7B4%2C5%2C6%7D%2C%7B7%2C8%2C9%7D%7D" target="_blank">try Wolfram Alpha</a> for this.</p></aside></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

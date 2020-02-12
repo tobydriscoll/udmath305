@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:41-05:00    *-->
+<!--*    on 2020-02-12T14:35:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,31 +11,53 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Consider the system</p>
-<div class="displaymath">
-\begin{align*}
-x_1 - x_2  - x_3 \amp = 2 \\
-3x_1 - 2x_2 \amp = 9 \\
-x_1 - 2x_2 - x_3 \amp = 5 \text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">Interpreting vector equalities elementwise, this is equivalent to</p>
-<div class="displaymath">
-\begin{equation*}
-x_1 \threevec{1}{3}{1} + x_2 \threevec{-1}{-2}{-2} + x_3 \threevec{-1}{0}{-1} = \threevec{2}{9}{5}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">We can identify the three vectors on the left side as the columns of the coefficient matrix \(\bA\text{,}\) and the one on the right is \(\bb\text{.}\) In an earlier example, we found the solution \(\bx=[1,-3,2]\text{.}\) Hence</p>
-<div class="displaymath">
-\begin{equation*}
-\ba_1 - 3 \ba_2 + 2\ba_3 = \bb\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">where we gave names to the columns. In MATLAB syntax,</p>
-<figure class="listing figure-like"><pre class="prettyprint lang-matlab">A = [ 1 -1 -1; 3 -2 0; 1 -2 -1 ]
-b = [ 2; 9; 5 ]
-x = [1; -3; 2 ]
-x(1)*A(:,1) + x(2)*A(:,2) + x(3)*A(:,3)
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.3.3<span class="period">.</span></span><span class="space"> </span>Linear combination of columns in MATLAB.</figcaption></figure></article></body>
+<body><article class="example example-like"><p>Here we use MATLAB to do the arithmetic in the row operation steps. (Meant to be run in sections.)</p>
+<figure class="listing figure-like"><pre class="console"><b>A = [
+     2    0    4    3 
+    -2    0    2  -13
+    -4    5   -7  -10 
+     1   15    2   -4.5
+    ];
+b = [ 4; 40; 9; 29 ];
+
+S = [A, b]
+
+%%
+S(1,:) = S(1,:)/S(1,1)
+S(2,:) = S(2,:) - S(2,1)*S(1,:)
+
+%%
+S(3,:) = S(3,:) - S(3,1)*S(1,:);
+S(4,:) = S(4,:) - S(4,1)*S(1,:);
+S
+
+%%
+S(2:3,:) = S([3 2],:)
+
+%%
+S(2,:) = S(2,:)/S(2,2);
+S(3,:) = S(3,:) - S(3,2)*S(2,:);
+S(4,:) = S(4,:) - S(4,2)*S(2,:)
+
+%%
+S(3,:) = S(3,:)/S(3,3);
+S(4,:) = S(4,:) - S(4,3)*S(3,:);
+S(4,:) = S(4,:)/S(4,4)
+
+%%
+S(3,:) = S(3,:) - S(3,4)*S(4,:);
+S(2,:) = S(2,:) - S(2,4)*S(4,:);
+S(1,:) = S(1,:) - S(1,4)*S(4,:)
+
+%%
+S(2,:) = S(2,:) - S(2,3)*S(3,:);
+S(1,:) = S(1,:) - S(1,3)*S(3,:);
+
+S(1,:) = S(1,:) - S(1,2)*S(2,:)
+
+%%
+x = S(:,end)
+dif = b - A*x
+</b></pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.2.9<span class="period">.</span></span><span class="space"> </span>Row elimination in matlab.</figcaption></figure></article></body>
 </html>

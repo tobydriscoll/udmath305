@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:42-05:00    *-->
+<!--*    on 2020-02-12T14:35:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For a harmonically forced case such as \(x''+2x'+10x=\cos(2t)\text{,}\) we have</p>
+<p>Now consider \(x''+2x'+10x=40\text{.}\) We get</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{s}{(s^2+4)(s^2+2s+10)}\text{.}
+X_p(s) = \frac{40}{s(s^2+2s+10)} = \frac{40}{s[(s+1)^2+9]}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">We could find a decomposition in the form</p>
+<p data-braille="continuation">We decompose into</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{2A+Bs}{s^2+4} + \frac{3C+E(s+1)}{(s+1)^2+9}\text{,}
+X_p(s) = \frac{A}{s} + \frac{3B+C(s+1)}{(s+1)^2+9}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">which is eminently invertible. The details are left to the proverbial reader.</p>
+<p data-braille="continuation">Once we find the constants, we know that the inverse of this is \(x_p(t) = A + Be^{-t}\sin(3t) + C e^{-t}\cos(3t)\text{.}\)  To find the constants we clear denominators and get</p>
+<div class="displaymath">
+\begin{equation*}
+40 = A[(s+1)^2+9] + (3B+Cs+C) s\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">With \(s=0\) we conclude that \(A=4\text{.}\) From this we find that \(40 = Cs^2+(3B+C)s + 4s^2 +8s + 40\text{,}\) which tells us \(C=-4\) and \(B=-4/3\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = 4 - \frac{4}{3} e^{-t} \sin(3t) - 4 e^{-t} \cos(3t)\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-laplace-repeated.html#p-411">in-context</a></span>
 </body>
 </html>

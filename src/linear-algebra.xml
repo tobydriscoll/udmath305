@@ -318,6 +318,66 @@
 		</p>
 		</statement>
 	</definition>
+	<example>
+		<p>
+			Here we use MATLAB to do the arithmetic in the row operation steps. (Meant to be run in sections.)
+		</p>
+		<listing xml:id="la_rowelim">
+			<caption>Row elimination in matlab.</caption>
+			<console language="matlab">
+			<input>
+A = [
+     2    0    4    3 
+    -2    0    2  -13
+    -4    5   -7  -10 
+     1   15    2   -4.5
+    ];
+b = [ 4; 40; 9; 29 ];
+
+S = [A, b]
+
+%%
+S(1,:) = S(1,:)/S(1,1)
+S(2,:) = S(2,:) - S(2,1)*S(1,:)
+
+%%
+S(3,:) = S(3,:) - S(3,1)*S(1,:);
+S(4,:) = S(4,:) - S(4,1)*S(1,:);
+S
+
+%%
+S(2:3,:) = S([3 2],:)
+
+%%
+S(2,:) = S(2,:)/S(2,2);
+S(3,:) = S(3,:) - S(3,2)*S(2,:);
+S(4,:) = S(4,:) - S(4,2)*S(2,:)
+
+%%
+S(3,:) = S(3,:)/S(3,3);
+S(4,:) = S(4,:) - S(4,3)*S(3,:);
+S(4,:) = S(4,:)/S(4,4)
+
+%%
+S(3,:) = S(3,:) - S(3,4)*S(4,:);
+S(2,:) = S(2,:) - S(2,4)*S(4,:);
+S(1,:) = S(1,:) - S(1,4)*S(4,:)
+
+%%
+S(2,:) = S(2,:) - S(2,3)*S(3,:);
+S(1,:) = S(1,:) - S(1,3)*S(3,:);
+
+S(1,:) = S(1,:) - S(1,2)*S(2,:)
+
+%%
+x = S(:,end)
+dif = b - A*x
+			</input>
+			</console>
+		</listing>
+	</example>
+
+
 	<p>
 		At the end of Phase 2, the matrix is in a form that we define formally here.
 	</p>
@@ -415,11 +475,11 @@
 			The linear combination definition <xref ref="la-va-lincomb"/> actually serves as the foundation of multiplication between a matrix and a vector. We use <m>\Rmn{m}{n}</m> to mean the set of all matrices with <m>m</m> rows and <m>n</m> columns.
 		</p>
 		<definition>
+			<title>Matrix times vector</title>
 			<notation>
 			  <usage>\Rmn{m}{n}</usage>
 			  <description>All <m>m\times n</m> matrices with real elements</description>
 			</notation>
-			<title>Matrix times vector</title>
 			<statement>
 			<p>
 				Given <m>\bA\in\Rmn{m}{n}</m> and <m>\bx\in\Rn{n}</m>, the product <m>\bA\bx</m> is defined as
@@ -614,6 +674,10 @@
 		</p>
 		<definition>
 			<title>Identity matrix</title>
+			<notation>
+			  <usage>\bI</usage>
+			  <description>identity matrix</description>
+			</notation>
 			<statement>
 			<p>The <m>n\times n</m> <idx>identity matrix</idx> <term>identity matrix</term> is
 				<me>
@@ -627,10 +691,6 @@
 				</me>.
 			</p>
 			</statement>
-			<notation>
-			  <usage>\bI</usage>
-			  <description>identity matrix</description>
-			</notation>
 		</definition>
 		<p>
 		The definition of the identity is such that <m>\bA\bI=\bA</m> for all <m>\bA\in\Rmn{m}{n}</m> and <m>\bI\bB=\bB</m> for all <m>\bB\in\Rmn{n}{p}</m>. This includes vectors, i.e., <m>\bI\bx=\bx</m> for all <m>\bx \in \Rn{n}</m>.
@@ -701,13 +761,13 @@
 		</p>
 		<definition xml:id="la-gs-homogen">
 			<title>General solution of a linear system (homogeneous)</title>
-			<statement><p>
-				We say that <m>\bx_h = c_1\bx_1 + \cdots + c_k\bx_k</m> is the <term>general solution</term><idx><h>general solution</h><h>of homogeneous linear system</h></idx> of <m>\bA\bx=\bzero</m> if every solution to the homogeneous system can be so written for some choice of the coefficients.
-			</p></statement>
 			<notation>
 			  <usage>\bx_h</usage>
 			  <description>homogeneous solution (linear algebra)</description>
 			</notation>
+			<statement><p>
+				We say that <m>\bx_h = c_1\bx_1 + \cdots + c_k\bx_k</m> is the <term>general solution</term><idx><h>general solution</h><h>of homogeneous linear system</h></idx> of <m>\bA\bx=\bzero</m> if every solution to the homogeneous system can be so written for some choice of the coefficients.
+			</p></statement>
 		</definition>
 	</subsection>
 	<subsection xml:id="la-gs-particular">
@@ -762,30 +822,30 @@
 		<p>In the last section we saw that solutions of <m>\bA\bx=\bzero</m> play an important role in all linear systems.</p>
 		<definition xml:id="la-df-nullspace">
 			<title>Nullspace</title>
+			<notation>
+			  <usage>\null(\bA)</usage>
+			  <description>nullspace of a matrix</description>
+			</notation>
 			<statement><p>
 				The <term>nullspace</term><idx>nullspace</idx> of a matrix <m>\bA\in\Rmn{m}{n}</m> is
 				<men xml:id="la-eq-nullspace">
 					\null(\bA) = \{ \bx\in\Rn{n} : \bA\bx=\bzero \}
 				</men>.
 			</p></statement>
-			<notation>
-			  <usage>\null(\bA)</usage>
-			  <description>nullspace of a matrix</description>
-			</notation>
 		</definition>
 		<p>We also saw that every element of <m>\null(\bA)</m> can be expressed as a linear combination, <m>c_1\bx_1+\cdots+c_k\bx_k</m>.</p>
 		<definition xml:id="la-df-span">
 			<title>Span</title>
+			<notation>
+			  <usage>\span(\bx_1,\ldots,\bx_k)</usage>
+			  <description>span of vectors</description>
+			</notation>
 			<statement><p>
 				The <term>span</term> of vectors <m>\bx_1,\ldots,\bx_k</m> is
 				<men xml:id="la-eq-span">
 					\span(\bx_1,\ldots,\bx_k) = \{ c_1\bx_1+\cdots+c_k\bx_k : c_1,\ldots,c_k \in \mathbb{R} \}
 				</men>.
 			</p></statement>
-			<notation>
-			  <usage>\span(\bx_1,\ldots,\bx_k)</usage>
-			  <description>span of vectors</description>
-			</notation>
 		</definition>
 		<p>
 			The notion of span gives us a shorthand for expressing the nullspace (equivalently, the general homogeneous solution). For reasons we won't get into, every span is referred to as a space. However, it's important to know that there are infinitely many different ways to express the same space. For instance,
@@ -944,6 +1004,10 @@
 	<aside><p>Here and for the rest of this chapter, we are going to deal with square matrices only.</p></aside>
 	<definition xml:id="la-df-det">
 		<title>Determinant</title>
+		<notation>
+		  <usage>\det(\bA),\,\bigl| \bA \bigr|</usage>
+		  <description>determinant of a (square) matrix</description>
+		</notation>
 		<statement><p>
 			If <m>\bA\in\Rmn{n}{n}</m>, then
 			<me>
@@ -951,10 +1015,6 @@
 			</me>,
 			where the sum is taken over any row or column of <m>\bA</m>, and <m>\mathbf{M}_{ij}</m> is the matrix that results from deleting row <m>i</m> and column <m>j</m> from <m>\bA</m>.
 		</p></statement>
-		<notation>
-		  <usage>\det(\bA),\,\bigl| \bA \bigr|</usage>
-		  <description>determinant of a (square) matrix</description>
-		</notation>
 	</definition>
 	<p>
 		The definition, which is called <term>cofactor expansion</term>, is recursive: the <m>n\times n</m> case is defined in terms of the <m>(n-1)\times (n-1)</m> case, and so on all the way back down to <m>2\times 2</m>.
@@ -985,13 +1045,13 @@
 			</p>
 			<definition>
 				<title>Inverse matrix</title>
-				<statement>
-					<p>The <term>inverse</term> of an <m>n\times n</m> matrix <m>\bA</m> is a matrix <m>\bC\in\Rmn{n}{n}</m> such that <m> \bA\bC = \bC\bA = \bI </m>. If such a <m>\bC</m> exists, we write <m>\bA^{-1}=\bC</m> and say that <m>\bA</m> is <term>invertible</term>; otherwise, it is <term>singular</term>.</p>
-				</statement>
 				<notation>
 				  <usage>\bA^{-1}</usage>
 				  <description>inverse of a (square) matrix</description>
 				</notation>
+				<statement>
+					<p>The <term>inverse</term> of an <m>n\times n</m> matrix <m>\bA</m> is a matrix <m>\bC\in\Rmn{n}{n}</m> such that <m> \bA\bC = \bC\bA = \bI </m>. If such a <m>\bC</m> exists, we write <m>\bA^{-1}=\bC</m> and say that <m>\bA</m> is <term>invertible</term>; otherwise, it is <term>singular</term>.</p>
+				</statement>
 			</definition>
 			<aside><p>Inverses are possible for square matrices only. The concept does not directly translate to rectangular matrices.</p></aside>
 			<p>
@@ -1318,13 +1378,13 @@
 		</p>
 		<definition xml:id="la-df-charpoly">
 			<title>Characteristic polynomial</title>
-			<statement><p>
-				The <term>characteristic polynomial</term> of <m>\bA</m> is <m>\det(\bA-\lambda\bI)</m>.
-			</p></statement>
 			<notation>
 			  <usage>\det(\bA-\lambda\bI)</usage>
 			  <description>characteristic polynomial of a matrix</description>
 			</notation>
+			<statement><p>
+				The <term>characteristic polynomial</term> of <m>\bA</m> is <m>\det(\bA-\lambda\bI)</m>.
+			</p></statement>
 		</definition>
 		<p>
 			Given what we know about roots of polynomials, there are some conclusions it's worth stating clearly.
