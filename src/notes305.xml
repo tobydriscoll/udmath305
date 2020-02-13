@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  
+<docinfo>
+  <macros>
+\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\spr}[1]{^{(#1)}}
+\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ddd}[2]{\frac{d^2 #1}{d #2^2}}
+\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ppp}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\det}{\operatorname{det}}
+\newcommand{\null}{\operatorname{null}}
+\newcommand{\span}{\operatorname{span}}
+\newcommand{\bzero}{\boldsymbol{0}}
+\newcommand{\Rn}[1]{\mathbb{R}^{#1}}
+\newcommand{\Cn}[1]{\mathbb{C}^{#1}}
+\newcommand{\Rmn}[2]{\mathbb{R}^{#1\times #2}}
+\newcommand{\Cmn}[2]{\mathbb{C}^{#1\times #2}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\opA}{\mathcal{A}}
+\newcommand{\lx}{\mathcal{L}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\inprod}[2]{\langle #1, #2 \rangle}
+\newcommand{\twovec}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
+\newcommand{\threevec}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
+\newcommand{\twodet}[4]{\begin{vmatrix}#1 \amp #2\\#3 \amp #4\end{vmatrix}}
+\newcommand{\twomat}[4]{\begin{bmatrix}#1 \amp #2\\#3 \amp #4\end{bmatrix}}
+\newcommand{\twodiag}[2]{\begin{bmatrix} #1 \amp 0 \\ 0 \amp #2 \end{bmatrix}}
+\newcommand{\fourdiag}[3]{\begin{bmatrix} #1 \amp  \amp \amp  \\                    \amp #2 \amp  \amp  \\  \amp \amp \ddots \amp \\  \amp  \amp  \amp #3 \end{bmatrix}}
+  </macros>
+</docinfo>
+  
+  <book xml:id="notes">
+    <title>Notes for MATH 305</title>
+
+    <frontmatter xml:id="frontmatter">
+       <titlepage>
+        <author>
+            <personname>Toby Driscoll</personname>
+            <department>Department of Mathematical Sciences</department>
+            <institution>University of Delaware</institution>
+            <email>driscoll@udel.edu</email>
+        </author>
+
+        <date> <today /> </date>
+      </titlepage>
+
+      <preface>
+
+	<p>These are course notes written for the course MATH 305 at the University of Delaware. They were started in January 2018.</p>
+	
+	<p>These are a lot rougher than a book! Don't expect perfection. Also, while I use them to guide lectures, they're not meant as a substitute, as I don't follow them slavishly.</p>
+
+	
+      </preface>
+
+    </frontmatter>
+
+    <xi:include href="linear-algebra.xml" />
+    <xi:include href="first-linear.xml" />
+    <xi:include href="first-systems.xml" />
+    <xi:include href="second-order.xml" />
+    <xi:include href="nonlinear-odes.xml" />
+
+  <backmatter>
+    <index><index-list/></index>
+  </backmatter>
+  </book>
+  
+</pretext>
+
