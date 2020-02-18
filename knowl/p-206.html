@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-12T14:35:22-05:00    *-->
+<!--*    on 2020-02-18T08:41:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To solve \(x'=\sin(t) x\text{,}\) we integrate to get \(-\cos(t)\) and then exponentiate, so that</p>
+<p>We can go far with some simple calculus. Define an <dfn class="terminology">integrating factor</dfn> as</p>
 <div class="displaymath">
 \begin{equation*}
-x_h(t) = c_1 \exp[ -\cos(t) ]\text{.}
+g(t) = \exp[ q(t) ]\text{,}
 \end{equation*}
 </div>
+<p data-braille="continuation">for a \(q(t)\) to be defined momentarily. Then</p>
+<div class="displaymath">
+\begin{equation*}
+g'(t) = q'(t) g(t)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">So \(x=g\) is a solution of \(x'-a(t)x=0\) if \(a(t)=q'(t)\text{,}\) that is, \(q\) is an antiderivative of \(a\text{:}\)</p>
+<div class="displaymath">
+\begin{equation}
+g(t) = \exp\left( \int a(t)\,dt \right)\text{.}\tag{2.3.1}
+\end{equation}
+</div>
+<p data-braille="continuation">Thus, \(x_h=c_1g(t)\) is a homogeneous solution for any constant \(c_1\text{.}\) It's not an elementary fact that this is the <em class="emphasis">general</em> homogeneous solution.</p>
 <span class="incontext"><a href="fl-homogeneous.html#p-206">in-context</a></span>
 </body>
 </html>

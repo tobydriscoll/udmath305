@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-12T14:35:22-05:00    *-->
+<!--*    on 2020-02-18T08:41:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Happily, there is a simple formula for the matrix inverse in the \(2\times 2\) case:</p>
-<div class="displaymath">
-\begin{equation}
-\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}\text{.}\tag{1.8.1}
-\end{equation}
-</div>
-<p data-braille="continuation">This formula breaks down if \(ad=bc\text{,}\) in which case \(\det(\bA)=0\) and the matrix is singular. You might remember that this is the same algebraic condition we derived for the linear system \(\bA\bx=\bb\) not having a unique solution.</p>
+<p>MATLAB does have an <code class="code-inline tex2jax_ignore">inv</code> command to find an inverse. However, it's not considered the best way to solve a linear system (it will be much slower for large matrices).</p>
 <span class="incontext"><a href="la-inverse.html#p-114">in-context</a></span>
 </body>
 </html>

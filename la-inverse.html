@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-12T14:35:21-05:00    *-->
+<!--*    on 2020-02-18T08:41:01-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -212,12 +212,12 @@ var js_version = 0.13;
 <a href="la-inverse.html" class="permalink">¶</a><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.8.1</span> <span class="title">Inverse matrix</span>
 </h3>
-<p id="p-104">For scalars, the multiplicative inverse of \(a\) is the reciprocal, \(a^{-1}\text{,}\) except that zero has no inverse. Now we investigate the same question for square matrices.</p>
+<p id="p-106">For scalars, the multiplicative inverse of \(a\) is the reciprocal, \(a^{-1}\text{,}\) except that zero has no inverse. Now we investigate the same question for square matrices.</p>
 <article class="definition definition-like" id="definition-15"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.8.1</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse matrix.</span>
 </h6>
-<p id="p-105">The <dfn class="terminology">inverse</dfn> of an \(n\times n\) matrix \(\bA\) is a matrix \(\bC\in\Rmn{n}{n}\) such that \(\bA\bC = \bC\bA = \bI \text{.}\) If such a \(\bC\) exists, we write \(\bA^{-1}=\bC\) and say that \(\bA\) is <dfn class="terminology">invertible</dfn>; otherwise, it is <dfn class="terminology">singular</dfn>.</p></article><aside class="aside aside-like" id="aside-6"><p id="p-106">Inverses are possible for square matrices only. The concept does not directly translate to rectangular matrices.</p></aside><p id="p-107">We are going to use without proof two important facts about matrix inverses. First, if an inverse exists, it is unique, so we can talk about “the” inverse of a matrix. And second, a left-inverse is automatically a right-inverse, and vice versa, so you can check just one of the equalities in the definition and the other comes for free.</p>
-<p id="p-108">Because the zero matrix gives zero for every multiplicative partner, it cannot have an inverse. However, unlike scalars, <em class="alert">there are nonzero matrices that are singular</em>. The simplest is</p>
+<p id="p-107">The <dfn class="terminology">inverse</dfn> of an \(n\times n\) matrix \(\bA\) is a matrix \(\bC\in\Rmn{n}{n}\) such that \(\bA\bC = \bC\bA = \bI \text{.}\) If such a \(\bC\) exists, we write \(\bA^{-1}=\bC\) and say that \(\bA\) is <dfn class="terminology">invertible</dfn>; otherwise, it is <dfn class="terminology">singular</dfn>.</p></article><aside class="aside aside-like" id="aside-7"><p id="p-108">Inverses are possible for square matrices only. The concept does not directly translate to rectangular matrices.</p></aside><p id="p-109">We are going to use without proof two important facts about matrix inverses. First, if an inverse exists, it is unique, so we can talk about “the” inverse of a matrix. And second, a left-inverse is automatically a right-inverse, and vice versa, so you can check just one of the equalities in the definition and the other comes for free.</p>
+<p id="p-110">Because the zero matrix gives zero for every multiplicative partner, it cannot have an inverse. However, unlike scalars, <em class="alert">there are nonzero matrices that are singular</em>. The simplest is</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix}  0 \amp 1 \\ 0 \amp 0 \end{bmatrix}\text{.}
@@ -226,35 +226,35 @@ var js_version = 0.13;
 <p data-braille="continuation">(Proof: The second column of \(\bC\bA\) is zero for any square \(\bC\text{.}\))</p></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.8.2</span> <span class="title">Inverses and linear systems</span>
 </h3>
-<p id="p-109">If \(\bA\in\Rmn{n}{n}\) is invertible, then we can use its inverse to solve a linear system \(\bA\bx=\bb\text{:}\)</p>
+<p id="p-111">If \(\bA\in\Rmn{n}{n}\) is invertible, then we can use its inverse to solve a linear system \(\bA\bx=\bb\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \bA^{-1} \bb = \bA^{-1} (\bA \bx) = \bigl(  \bA^{-1} \bA \bigr) \bx = \bI \bx = \bx\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">The uniqueness of the inverse means that this solution is unique as well. We will see later on that the converse is also true: unique solution implies invertibility.</p>
-<p id="p-110">It's one thing to say “the inverse exists” and quite another to say “here it is.” Finding the inverse of a given matrix is in principle a matter of solving \(n\) linear systems. That's because if we let \(\mathbf{e}_j\) be the \(j\)th column of \(\bI\text{,}\) then according to the columnwise interpretation of \(\bA\bA^{-1}\text{,}\) the solution of \(\bA \bx = \mathbf{e}_j\) is the \(j\)th column of \(\bA^{-1}\text{.}\)</p>
-<p id="p-111">Row elimination can be used to solve those systems simultaneously. However, it's all beside the point. If our goal is to solve a linear system \(\bA\bx=\bb\text{,}\) then there is little reason to solve \(n\) other systems first to get the inverse! The inverse tends to be much more important theoretically than for practical computation.</p>
+<p id="p-112">It's one thing to say “the inverse exists” and quite another to say “here it is.” Finding the inverse of a given matrix is in principle a matter of solving \(n\) linear systems. That's because if we let \(\mathbf{e}_j\) be the \(j\)th column of \(\bI\text{,}\) then according to the columnwise interpretation of \(\bA\bA^{-1}\text{,}\) the solution of \(\bA \bx = \mathbf{e}_j\) is the \(j\)th column of \(\bA^{-1}\text{.}\)</p>
+<p id="p-113">Row elimination can be used to solve those systems simultaneously. However, it's all beside the point. If our goal is to solve a linear system \(\bA\bx=\bb\text{,}\) then there is little reason to solve \(n\) other systems first to get the inverse! The inverse tends to be much more important theoretically than for practical computation.</p>
 <article class="example example-like" id="example-16"><a data-knowl="" class="id-ref original" data-refid="hk-example-16"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-16"><article class="example example-like"><p id="p-112">MATLAB does have an <code class="code-inline tex2jax_ignore">inv</code> command to find an inverse. However, it's not considered the best way to solve a linear system (it will be much slower for large matrices).</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-16"><article class="example example-like"><p id="p-114">MATLAB does have an <code class="code-inline tex2jax_ignore">inv</code> command to find an inverse. However, it's not considered the best way to solve a linear system (it will be much slower for large matrices).</p>
 <figure class="listing figure-like" id="la_linsolve"><pre class="prettyprint lang-matlab">A = magic(3)
 b = [ 1; 6; -2 ]
 
 x = A\b
 b - A*x
 </pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.8.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-113">MATLAB works with 16-digit approximations of real numbers, so things that are truly equal in exact arithmetic may only agree to many significant digits. Usually it's best to take the difference of two things to test near-equality.</p></article></div></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.8.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-115">MATLAB works with 16-digit approximations of real numbers, so things that are truly equal in exact arithmetic may only agree to many significant digits. Usually it's best to take the difference of two things to test near-equality.</p></article></div></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.8.3</span> <span class="title">\(2\times 2\) inverses and systems</span>
 </h3>
-<p id="p-114">Happily, there is a simple formula for the matrix inverse in the \(2\times 2\) case:</p>
+<p id="p-116">Happily, there is a simple formula for the matrix inverse in the \(2\times 2\) case:</p>
 <div class="displaymath">
 \begin{equation}
 \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}\text{.}\label{la-eq-twotwoinv}\tag{1.8.1}
 \end{equation}
 </div>
 <p data-braille="continuation">This formula breaks down if \(ad=bc\text{,}\) in which case \(\det(\bA)=0\) and the matrix is singular. You might remember that this is the same algebraic condition we derived for the linear system \(\bA\bx=\bb\) not having a unique solution.</p>
-<p id="p-115">Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system. There is an even faster equivalent shortcut known as <dfn class="terminology">Cramer's Rule</dfn>:</p>
+<p id="p-117">Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system. There is an even faster equivalent shortcut known as <dfn class="terminology">Cramer's Rule</dfn>:</p>
 <div class="displaymath">
 \begin{align*}
 x_1 \amp = \frac{ \twodet{b_1}{a_{12}}{b_2}{a_{22}} }{ \det(\bA) }\\
@@ -263,7 +263,7 @@ x_2 \amp = \frac{ \twodet{a_{11}}{b_1}{a_{21}}{b_2} }{ \det(\bA) }\text{.}
 </div>
 <article class="example example-like" id="example-17"><a data-knowl="" class="id-ref original" data-refid="hk-example-17"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-17"><article class="example example-like"><p id="p-116">For</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-17"><article class="example example-like"><p id="p-118">For</p>
 <div class="displaymath">
 \begin{align*}
 -x + 3y \amp = 1 \\

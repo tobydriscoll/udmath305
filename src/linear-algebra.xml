@@ -705,7 +705,7 @@ dif = b - A*x
 	<title>General and particular solutions</title>
 	<introduction>
 		<p>
-		Our next goal is to show that solutions to <m>\bA\bx=\bb</m> can all be expressed as <m>\bx=\bx_h+\bx_p</m>, with the two parts belonging to different sets. The same thing is going to happen when we study differential equations, pretty much for exactly the same reasons.
+		Our next step is to observe that solutions to <m>\bA\bx=\bb</m> can all be expressed as <m>\bx=\bx_h+\bx_p</m>, with the two parts belonging to different sets. The same thing is going to happen when we study differential equations, pretty much for exactly the same reasons.
 		</p>
 	</introduction>
 	<subsection>
@@ -728,10 +728,7 @@ dif = b - A*x
 			</p></proof>
 		</theorem>
 		<p>
-			By itself this is nice, but what makes this theorem important is that <em>every</em> homogeneous solution can obtained this way. There is some geometric intuition in three dimensions. Each row of <m>\bA\bx=\bzero</m> is a plane through the origin. Typically three planes intersect at a single point (unique solution), but if two planes coincide, the intersection is a straight line through the origin. We can express such a line as the set of all possible <m>c_1\bx_1</m> for any vector <m>\bx_1</m> parallel to the line. Furthermore, if all three planes coincide, then the solution is just the common plane, which can be expressed as the set of all possible <m>c_1\bx_1+c_2\bx_2</m> for any two nonparallel vectors in that plane.
-		</p>
-		<p>
-			None of the geometry is necessary to apply the algebra.
+			By itself this is nice, but what makes this theorem really important is that <em>every</em> homogeneous solution can obtained this way. 
 		</p>
 		<example xml:id="la-ex-33homog">
 			<p>
@@ -749,11 +746,11 @@ dif = b - A*x
 						0 \amp 1 \amp -2 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0
 						\end{bmatrix}
 				</me>.
-				(Note that row operations could never change the zeros in the augmented column.) Hence the only pivot column is column 2, and all solutions are of the form
+				Hence the only pivot column is column 2, and all solutions are of the form
 				<me>
 					\threevec{s}{2t}{t} = s \threevec{1}{0}{0} + t \threevec{0}{2}{1}
 				</me>,
-				where <m>s</m> and <m>t</m> are arbitrary scalars. You can easily check that both of the constant vectors above are themselves homogeneous solutions.
+				where <m>s</m> and <m>t</m> are arbitrary scalars. You can easily check that <m>[1,0,0]</m> and <m>[0,2,1]</m> are each solutions of <m>\bA\bx=\bzero</m>.
 			</p>
 		</example>
 		<p>
@@ -766,7 +763,7 @@ dif = b - A*x
 			  <description>homogeneous solution (linear algebra)</description>
 			</notation>
 			<statement><p>
-				We say that <m>\bx_h = c_1\bx_1 + \cdots + c_k\bx_k</m> is the <term>general solution</term><idx><h>general solution</h><h>of homogeneous linear system</h></idx> of <m>\bA\bx=\bzero</m> if every solution to the homogeneous system can be so written for some choice of the coefficients.
+				We say that <m>\bx_h = c_1\bx_1 + \cdots + c_k\bx_k</m> is the <term>general solution</term><idx><h>general solution</h><h>of homogeneous linear system</h></idx> of <m>\bA\bx=\bzero</m> if every solution to the system can be so written for some choice of the coefficients.
 			</p></statement>
 		</definition>
 	</subsection>
@@ -800,12 +797,12 @@ dif = b - A*x
 				We continue with the matrix <m>\bA</m> from <xref ref="la-ex-33homog"/>, now with <m>\bb=[-8,4,12]</m>. The RREF of the augmented matrix works out to be
 				<me>
 					\begin{bmatrix}
-					0 \amp 1 \amp -2 \amp 4 \\ 0 \amp 0 \amp -0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0
+					0 \amp 1 \amp -2 \amp 4 \\ 0 \amp 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0
 					\end{bmatrix}
 				</me>.
-				This contains all the information we need. If we imagine replacing all entries in the last column by zeros, then we get (as before) the general homogeneous solution
+				The general homogeneous solution is found, as before, by replacing the last column with zeros to get 
 				<me>\bx_h =	s \threevec{1}{0}{0} + t \threevec{0}{2}{1}</me>.
-				For the particular solution we again have free variables from columns 1 and 3. But we can use <em>any</em> particular solution, so it will be easiest if we set the free variables to zero. Then the first row tells us that <m>x_2=4</m>, and we get the general solution
+				For the particular solution we have free variables from columns 1 and 3. But since we can use <em>any</em> particular solution, we will take the easy route and set the free variables to zero. Then the first row tells us that <m>x_2=4</m>, and we get the general solution
 				<me>\bx = \threevec{0}{4}{0} + s \threevec{1}{0}{0} + t \threevec{0}{2}{1}</me>.
 			</p>
 		</example>
@@ -833,6 +830,11 @@ dif = b - A*x
 				</men>.
 			</p></statement>
 		</definition>
+		<aside>
+			<p>
+				The term <em>space</em> itself has a technical definition, and there are many different types of spaces. But the nullspace is the only one we will need. 
+			</p>
+		</aside>
 		<p>We also saw that every element of <m>\null(\bA)</m> can be expressed as a linear combination, <m>c_1\bx_1+\cdots+c_k\bx_k</m>.</p>
 		<definition xml:id="la-df-span">
 			<title>Span</title>
@@ -865,7 +867,7 @@ dif = b - A*x
 			</p></statement>
 		</definition>
 		<p>
-			Why is this the right concept? Well, if the vectors are dependent, then by definition we can write
+			Why is this the right concept? Well, if the vectors are dependent, then by definition there is some <m>j</m> for which we can write
 			<me> c_j \bx_j = - \sum_{i\neq j} c_i \bx_i</me>,
 			where <m>c_j\neq 0</m>. If we divide this through by <m>c_j</m>, then we have shown that <m>\bx_j</m> lies within the span of all the other vectors, and therefore including it with linear combinations is redundant.
 		</p>
@@ -873,11 +875,11 @@ dif = b - A*x
 	<subsection xml:id="la-ba-homogeneous">
 		<title>Independence and homogeneous systems</title>
 		<p>
-			Matters of linearly independence can be restated in terms of homogeneous linear systems (and vice versa). That is because of the equivalence between linear combinations of vectors and matrix-vector multiplication: 
+			Matters of linear independence can be restated in terms of homogeneous linear systems (and vice versa). That is because of the equivalence between linear combinations of vectors and matrix-vector multiplication: 
 			<me>
 				\sum_{j=1}^k c_j \bx_j = c_1\bx_1+\cdots+c_k\bx_k = \begin{bmatrix} \bx_1 \amp \cdots \amp \bx_k \end{bmatrix} \begin{bmatrix} c_1 \\ \vdots \\ c_k \end{bmatrix} = \bX \bc. 
 			</me>
-			Hence the question <q>Are <m>\bx_1,\dots,\bx_k</m> independent?</q> is equivalent to <q>Does <m>\bX\bc=\bzero</m> have any nonzero solutions?</q> Because homogeneous problems always have at least one solution (the zero vector), this question is also equivalent to <q>Does <m>\bX\bc=\bzero</m> have infinitely many solutions?</q>
+			Hence the question <q>Are <m>\bx_1,\dots,\bx_k</m> dependent?</q> is equivalent to <q>Does <m>\bX\bc=\bzero</m> have any nonzero solutions?</q> Because homogeneous problems always have at least one solution (the zero vector), this question is also equivalent to <q>Does <m>\bX\bc=\bzero</m> have infinitely many solutions?</q>
 		</p>
 		<example>
 			<p>
@@ -892,7 +894,7 @@ dif = b - A*x
 					2 \amp 4 \amp 1 \\
 					-1 \amp -2 \amp 4
 					\end{bmatrix} 
-				</me>. (The order of columns doesn't matter to independence.) 
+				</me>. 
 				Technically we ought to tack on a zero column to get the augmented matrix, but row operations can never change that column. So we can find the RREF without it: 
 				<me>
 					\begin{bmatrix}
@@ -911,7 +913,7 @@ dif = b - A*x
 					0 \amp 0 \amp 0
 					\end{bmatrix}
 			   </me>.
-			   (We could have actually stopped before the end, when it became clear that the second column is not a pivot column.) Thus the homogeneous problem will have at least one free parameter. 
+			   Thus the homogeneous problem will have at least one free parameter. 
 			</p>
 		</example>
 	</subsection>
@@ -924,7 +926,19 @@ dif = b - A*x
 				If <m>\bx_1,\dots,\bx_k</m> are independent, then they form a <term>basis</term> of <m>\span(\bx_1,\dots,\bx_k)</m>.
 			</p></statement>
 		</definition>
-		<p>It turns out that every basis of a given space has the same number of vectors in it. This number is called the <term>dimension</term> of the space. </p>
+		<p>
+			The following can be proved as a theorem. 
+		</p>
+		<fact xml:id="la-fact-dimension">
+			<statement>
+				<p>
+					Every basis of a given space has the same number of vectors in it.
+				</p>
+			</statement>
+		</fact>
+		<p>
+			This number is called the <idx>dimension</idx><term>dimension</term> of the space. 
+		</p>
 		<example>
 				<p>We find the RREF of a <m>3\times 3</m> matrix:
 				<me>
@@ -981,7 +995,7 @@ dif = b - A*x
 				</p>
 		  </example>
 		  <p>
-			  I emphasize that <em>we have done no new math here</em>. It's still just about linear systems and RREF matrices, with different and more precise terminology.
+			  I emphasize that <em>we have done no new math here</em>. It's still just about linear systems and RREF matrices, with different terminology.
 		  </p>
 	</subsection>
 </section>
