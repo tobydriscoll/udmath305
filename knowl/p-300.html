@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:03-05:00    *-->
+<!--*    on 2020-02-20T08:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Counting algebraic multiplicities, we know that \(\bA\) has eigenvalues \(\lambda_1,\ldots,\lambda_n\text{.}\) Say that we have eigenvectors \(\bv_1,\ldots,\bv_n\) to go with them. Then we have \(n\) homogeneous solutions</p>
+<p>The solutions of \(\bx'=\bA(t)\bx\) largely boil down to finding a fundamental matrix, which satisfies</p>
 <div class="displaymath">
 \begin{equation*}
-\bx_j(t) = e^{\lambda_j t} \bv_j, \quad j=1,\ldots,n\text{.}
+\bX' = \bigl[ \bx_1' \: \bx_2' \: \cdots \: \bx_n'  \bigr] = \bigl[ \bA\bx_1 \: \bA\bx_2 \: \cdots \: \bA\bx_n  \bigr] = \bA \bX\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">To determine whether they form a fundamental matrix, we need to determine whether they form a basis. According to <a class="xref" data-knowl="./knowl/fs-thm-abel.html" title="Theorem 3.2.3: Homogeneous solution independence">Theorem 3.2.3</a>, we can ask that question at any value of \(t\text{,}\) including \(t=0\text{.}\) So the key issue is the independence of the eigenvectors.</p>
+<p data-braille="continuation">With such a matrix in hand, the general solution is \(\bx(t)=\bX(t)\bc\) for an arbitrary “integration constant” \(\bc\text{.}\)</p>
 <span class="incontext"><a href="fs-constcoeff.html#p-300">in-context</a></span>
 </body>
 </html>

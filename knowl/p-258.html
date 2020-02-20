@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:02-05:00    *-->
+<!--*    on 2020-02-20T08:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The solution to \(x'-ax=\delta_\epsilon(t)\text{,}\) \(x(0)=0\) is easily found for a constant \(a\) using the method described above, resulting in</p>
+<p>Next imagine that we use a window function as the forcing term over ever shortening times, but in such a way that the integral under the curve remains constant. It's analogous to delivering a dose of medication via a slow IV drip versus injecting the same dose all at once directly. Define</p>
 <div class="displaymath">
 \begin{equation*}
-x_\epsilon(t) = \frac{1-e^{-a\epsilon}}{a\epsilon} e^{at}\text{,}
+\delta_\epsilon(t) = \frac{H(t)-H(t-\epsilon)}{\epsilon}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">for \(t\gt \epsilon\text{.}\) As \(\epsilon\to 0\text{,}\) this is the only part of the solution we care about. Using L'Hôpital's Rule,</p>
-<div class="displaymath">
-\begin{equation*}
-\lim_{\epsilon\to 0} x_\epsilon(t) = e^{at}, \quad t \gt 0\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Hence the constant-coefficient impulse response is simply \(e^{at}\text{.}\) This is the same as the solution of the homogeneous \(x'-ax=0\) with initial value one rather than zero. This remarkable observation generalizes as follows.</p>
+<p data-braille="continuation">The area under the \(\delta_\epsilon(t)\) curve equals one for all \(\epsilon \gt 0\text{.}\) We now ask what happens as the window width \(\epsilon\) approaches zero.</p>
 <span class="incontext"><a href="fl-impulse.html#p-258">in-context</a></span>
 </body>
 </html>

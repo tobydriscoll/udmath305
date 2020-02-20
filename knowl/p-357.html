@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:03-05:00    *-->
+<!--*    on 2020-02-20T08:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Our first observation is that this problem can always be converted to a first-order problem in two dimensions. Define a vector \(\bu\) by \(u_1=x\text{,}\) \(u_2=x'\text{.}\) By definition, \(u_1'=u_2\text{.}\) Since \(u_2'=x''=f(t,x,x')\text{,}\) we can get the system</p>
+<p>Let \(\bX(t)\) be a fundamental matrix of the homogeneous problem \(\bx'=\bA(t)\bx\text{.}\) Then the general solution of \(\bx'=\bA(t)\bx+\bf(t)\) is</p>
 <div class="displaymath">
-\begin{align*}
-u_1' \amp =  u_2\\
-u_2' \amp =  f(t,u_1,u_2).
-\end{align*}
+\begin{equation}
+\bx(t) = \bx_h(t) + \bx_p(t) = \bX(t)\bc + \bX(t) \int \bX(t)^{-1} \bff(t) \, dt\text{.}\tag{3.7.1}
+\end{equation}
 </div>
-<p data-braille="continuation">This is a first-order system \(\bu'=\mathbf{g}(t,\bu)\) of two scalar equations for the two components.</p>
-<span class="incontext"><a href="so-convert.html#p-357">in-context</a></span>
+<p data-braille="continuation">The solution with initial condition \(\bx(0)=\bx_0\) is</p>
+<div class="displaymath">
+\begin{equation}
+\bx(t) = \bX(t)\bX(0)^{-1}\bx_0 + \bX(t) \int_0^t \bX(s)^{-1}\bff(s) \, ds\text{.}\tag{3.7.2}
+\end{equation}
+</div>
+<p data-braille="continuation">In the case of a constant matrix \(\bA\text{,}\) one option is \(\bX(t)=e^{t\bA}, and\)</p>
+<div class="displaymath">
+\begin{equation}
+\bx(t) = e^{t\bA}\bx_0 + \int_0^t e^{(t-s)\bA} \bff(s) \, ds\text{.}\tag{3.7.3}
+\end{equation}
+</div>
+<span class="incontext"><a href="fs-varparam.html#p-357">in-context</a></span>
 </body>
 </html>

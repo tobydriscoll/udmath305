@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:02-05:00    *-->
+<!--*    on 2020-02-20T08:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If \(\bA\in\Rmn{n}{n}\) is invertible, then we can use its inverse to solve a linear system \(\bA\bx=\bb\text{:}\)</p>
+<p>There does happen to be a convenient formula for the matrix inverse in the \(2\times 2\) case:</p>
 <div class="displaymath">
-\begin{equation*}
-\bA^{-1} \bb = \bA^{-1} (\bA \bx) = \bigl(  \bA^{-1} \bA \bigr) \bx = \bI \bx = \bx\text{.}
-\end{equation*}
+\begin{equation}
+\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}\text{.}\tag{1.7.1}
+\end{equation}
 </div>
-<p data-braille="continuation">The uniqueness of the inverse means that this solution is unique as well. We will see later on that the converse is also true: unique solution implies invertibility.</p>
+<p data-braille="continuation">This formula breaks down if \(ad=bc\text{,}\) in which case the matrix is singular. You might remember that this is the same algebraic condition quoted for the \(2\times 2\) linear system \(\bA\bx=\bb\) not having a unique solution.</p>
 <span class="incontext"><a href="la-inverse.html#p-111">in-context</a></span>
 </body>
 </html>

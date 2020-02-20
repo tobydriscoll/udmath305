@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:02-05:00    *-->
+<!--*    on 2020-02-20T08:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>After being thoroughly trained to always include integration constants, you might wonder why we are being so cavalier about them here. Let's walk through what would happen to them in the last example above. First,</p>
+<p>We begin with the homogeneous solution</p>
 <div class="displaymath">
 \begin{equation*}
-g(t) = \exp\left[  \ln(2+t) + C_1 \right] = A_1(2 + t)\text{,}
+x_h(t) = c_1 g(t) = c_1 \exp\left[\int a(t)\, dt\right]\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">where we renamed \(A_1=e^{C_1}\gt 0\text{.}\) Then</p>
+<p data-braille="continuation">where \(g(t)\) is the integrating factor from <a class="xref" data-knowl="./knowl/fl-eq-intfactor.html" title="Equation 2.3.1">(2.3.1)</a>. The idea of <dfn class="terminology">variation of parameters</dfn> is to posit that the particular solution can be written by replacing the constant with a function,</p>
+<div class="displaymath">
+\begin{equation}
+x_p(t) = k(t) g(t)\text{,}\tag{2.4.2}
+\end{equation}
+</div>
+<p data-braille="continuation">and then choose \(k(t)\) to make it so:</p>
 <div class="displaymath">
 \begin{equation*}
-k(t) = A_1^{-1} \int \frac{-1}{2+t} (2+t)^{-1} \, dt = A_1^{-1} [-(2+t)^{-1}+C_2] = -A_1^{-1}(2+t)^{-1} + A_2\text{.}
+f(t) = x_p' - a(t) x_p = [k'g+kg'] - a k g = k'g + k[g'-ag]\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">Finally,</p>
+<p data-braille="continuation">which, because \(g\) is a homogeneous solution, is simply \(f(t)=k'(t)g(t)\text{.}\) Hence we get a proper particular solution provided</p>
 <div class="displaymath">
-\begin{equation*}
-x = x_h + kg = c_1 A_1(2 + t) + \bigl[-A_1^{-1}(2+t)^{-1} + A_2\bigr ]A_1(2 + t) = (c_1A_1+A_1A_2)(2+t) - 1\text{.}
-\end{equation*}
+\begin{equation}
+k(t) = \int \frac{f(t)}{g(t)}\, dt \text{.}\tag{2.4.3}
+\end{equation}
 </div>
-<p data-braille="continuation">This is exactly the same family of solutions as \(c_1(2+t)-1\text{.}\) Essentially, all the integration constants end up lumped into that \(c_1\text{,}\) which is always the case.</p>
+<p data-braille="continuation">Step by step, we have to (1) integrate once to get \(g\) in <a class="xref" data-knowl="./knowl/fl-eq-intfactor.html" title="Equation 2.3.1">(2.3.1)</a>, (2) integrate again to get \(k\) in <a class="xref" data-knowl="./knowl/fl-eq-vofp2.html" title="Equation 2.4.3">(2.4.3)</a>, and (3) multiply them together to get the particular solution in <a class="xref" data-knowl="./knowl/fl-eq-vofp1.html" title="Equation 2.4.2">(2.4.2)</a>. It's probably also worth mentioning step (0), which is to put the given problem in the standard form of <a class="xref" data-knowl="./knowl/fl-eq-folinrepeat.html" title="Equation 2.4.1">(2.4.1)</a>; i.e., divide the equation through by any coefficient of \(x'\text{.}\)</p>
 <span class="incontext"><a href="fl-varparam.html#p-220">in-context</a></span>
 </body>
 </html>

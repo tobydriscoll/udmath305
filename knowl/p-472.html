@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:03-05:00    *-->
+<!--*    on 2020-02-20T08:47:43-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The system</p>
+<p>The first steady state we consider is at the origin. Here the Jacobian matrix is</p>
 <div class="displaymath">
-\begin{align*}
-\frac{dx}{dt} \amp= 3x-\frac{xy}{2}\\
-\frac{dy}{dt} \amp= -y+\frac{xy}{4}
-\end{align*}
+\begin{equation*}
+\begin{bmatrix} 
+0 \amp 1 \\ -g/L \amp -\gamma
+\end{bmatrix}\text{.}
+\end{equation*}
 </div>
-<p data-braille="continuation">is called a <dfn class="terminology">predator–prey</dfn> equation. If species \(y\) is set to zero, species \(x\) would grow exponentially on its own (the prey). Similarly, species \(y\) would die off on its own (predator). We assume that encounters between the species are jointly proportional to the population of each, and they subtract from the prey and add to the predators.</p>
+<p data-braille="continuation">We get \(T=-\gamma \lt 0\) and \(D=g/L \gt 0\text{,}\) which is a stable sink. That comports with our experience with a pendulum hanging straight down!</p>
 <span class="incontext"><a href="nl-linearization.html#p-472">in-context</a></span>
 </body>
 </html>

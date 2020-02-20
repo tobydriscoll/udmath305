@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:03-05:00    *-->
+<!--*    on 2020-02-20T08:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The general solution of \(x'' + bx' + cx = f(t)\) consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem. For the homogeneous part the relevant matrix is from <a class="xref" data-knowl="./knowl/so-eq-matrixmodel.html" title="Equation 4.1.2">(4.1.2)</a>:</p>
+<p>Our first observation is that this problem can always be converted to a first-order problem in two dimensions. Define a vector \(\bu\) by \(u_1=x\text{,}\) \(u_2=x'\text{.}\) By definition, \(u_1'=u_2\text{.}\) Since \(u_2'=x''=f(t,x,x')\text{,}\) we can get the system</p>
 <div class="displaymath">
-\begin{equation*}
-\bA = \twomat{0}{1}{-c}{-b}\text{.}
-\end{equation*}
+\begin{align*}
+u_1' \amp =  u_2\\
+u_2' \amp =  f(t,u_1,u_2).
+\end{align*}
 </div>
-<p data-braille="continuation">We have the characteristic polynomial</p>
-<div class="displaymath">
-\begin{equation*}
-|\bA-\lambda\bI| = \twodet{-\lambda}{1}{-c}{-b-\lambda} = \lambda^2 + b\lambda + c\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">(This is easily remembered in terms of the original ODE \(x'' + bx' + cx=0\text{.}\)) The eigenvalues can therefore be found from the quadratic formula.</p>
-<span class="incontext"><a href="so-homogeneous.html#p-360">in-context</a></span>
+<p data-braille="continuation">This is a first-order system \(\bu'=\mathbf{g}(t,\bu)\) of two scalar equations for the two components.</p>
+<span class="incontext"><a href="so-convert.html#p-360">in-context</a></span>
 </body>
 </html>

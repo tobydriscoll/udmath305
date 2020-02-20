@@ -1008,173 +1008,209 @@ dif = b - A*x
 	  <title>Bases</title>
   </section-->
 
-<section xml:id="la-determinant">
-	<title>Determinants</title>
-	<p>
-		 You should have seen some <m>2\times 2</m> and <m>3\times 3</m> determinants before now, in vector calculus. The <m>2\times 2</m> case is easy to describe:
-		 <me>\det\left( \twomat{a}{b}{c}{d} \right) = \twodet{a}{b}{c}{d} = ad-bc</me>.
-		 This can be extended to create a real-valued function for square matrices of any size. The formalities can be complicated, but we are going to use a practical definition.
-	</p>
-	<aside><p>Here and for the rest of this chapter, we are going to deal with square matrices only.</p></aside>
-	<definition xml:id="la-df-det">
-		<title>Determinant</title>
-		<notation>
-		  <usage>\det(\bA),\,\bigl| \bA \bigr|</usage>
-		  <description>determinant of a (square) matrix</description>
-		</notation>
-		<statement><p>
-			If <m>\bA\in\Rmn{n}{n}</m>, then
-			<me>
-				\det(\bA) = \sum (-1)^{i+j} a_{ij} \det( \mathbf{M}_{ij} )
-			</me>,
-			where the sum is taken over any row or column of <m>\bA</m>, and <m>\mathbf{M}_{ij}</m> is the matrix that results from deleting row <m>i</m> and column <m>j</m> from <m>\bA</m>.
-		</p></statement>
-	</definition>
-	<p>
-		The definition, which is called <term>cofactor expansion</term>, is recursive: the <m>n\times n</m> case is defined in terms of the <m>(n-1)\times (n-1)</m> case, and so on all the way back down to <m>2\times 2</m>.
-	</p>
-	<p>
-		There are a few facts about determinants that are good to know.
-	</p>
-	<fact>
+<section xml:id="la-inverse">
+	<title>Inverses</title>
+	<subsection>
+		<title>Inverse matrix</title>
 		<p>
-		Let <m>\bA</m> and <m>\bB</m> be <m>n\times n</m>, and let <m>c</m> be a scalar. Then
-		<ol>
-			<li><m>\det(c\bA) = c^n \det(\bA)</m>,</li>
-			<li><m>\det(\bA\bB) = \det(\bA)\det(\bB)</m>,</li>
-			<li><m>\det(\bA)=0</m> if and only if <m>\bA</m> is singular, and</li>
-			<!--li>If <m>\bA</m> is nonsingular, <m>\det(\bA^{-1})=1/\det(\bA)</m>.</li-->
-		</ol>
+			For scalars, the multiplicative inverse of <m>a</m> is the reciprocal, <m>a^{-1}</m>, except that zero has no inverse. Now we investigate the same question for square matrices.
 		</p>
-	</fact>
-	<p>The determinant condition is often the easiest way to check for singularity of a small matrix by hand.</p>
+		<definition>
+			<title>Inverse matrix</title>
+			<notation>
+				<usage>\bA^{-1}</usage>
+				<description>inverse of a (square) matrix</description>
+			</notation>
+			<statement>
+				<p>The <term>inverse</term> of an <m>n\times n</m> matrix <m>\bA</m> is a matrix <m>\bC\in\Rmn{n}{n}</m> such that <m> \bA\bC = \bC\bA = \bI </m>. If such a <m>\bC</m> exists, we write <m>\bA^{-1}=\bC</m> and say that <m>\bA</m> is <term>invertible</term>; otherwise, it is <term>singular</term>.</p>
+			</statement>
+		</definition>
+		<aside><p>Inverses are possible for square matrices only. The concept does not directly translate to rectangular matrices.</p></aside>
+		<p>
+			From the start there are two important things to appreciate about inverses. 
+		</p>
+		<fact xml:id="la-fact-inverse">
+			<statement>
+				<p>
+					<ol>
+					  <li>
+						<p>
+						  If a matrix has an inverse, it is unique. (So it makes sense to talk about <q>the</q> inverse of a matrix.)
+						</p>
+					  </li>
+					  <li> <m>\bA\mathbf{Z}=\bI</m> if and only if <m>\mathbf{Z}\bA=\bI</m>. (So we don't need to separately think about left-inverse and right-inverse.)   </li>
+					</ol>
+				</p>
+			</statement>
+		</fact>
+		<p>
+		Because the zero matrix gives zero for every multiplicative partner, it cannot have an inverse. However, unlike scalars, <alert>there are nonzero matrices that are singular</alert>. The simplest is
+		<me>
+			\bA = \begin{bmatrix}  0 \amp 1 \\ 0 \amp 0 \end{bmatrix}
+		</me>.
+		(Proof: The first column of <m>\bC\bA</m> is zero for any square <m>\bC</m>.)
+		</p>
+	</subsection>
+	<subsection>
+		<title>Inverses and linear systems</title>
+		<p>
+			If <m>\bA\in\Rmn{n}{n}</m> is invertible, then we can use its inverse to solve a linear system <m>\bA\bx=\bb</m>:
+			<me>
+				\bA^{-1} \bb = \bA^{-1} (\bA \bx) = \bigl(  \bA^{-1} \bA \bigr) \bx = \bI \bx = \bx
+			</me>.
+			The uniqueness of the inverse means that this solution is unique as well. We will see later on that the converse is also true: unique solution implies invertibility.
+		</p>
+		<p>
+			It's one thing to say <q>the inverse exists</q> and quite another to say <q>here it is.</q> Finding the inverse of a given matrix is in principle a matter of solving <m>n</m> linear systems. That's because if we let <m>\mathbf{e}_j</m> be the <m>j</m>th column of <m>\bI</m>, then according to the columnwise interpretation of <m>\bA\bA^{-1}</m>, the solution of <m>\bA \bx = \mathbf{e}_j</m> is the <m>j</m>th column of <m>\bA^{-1}</m>.
+		</p>
+		<p>
+			Row elimination can be used to solve those systems simultaneously. However, it's all beside the point. If our goal is to solve a linear system <m>\bA\bx=\bb</m>, then there is little reason to solve <m>n</m> other systems first to get the inverse! The inverse tends to be much more important theoretically than for practical computation.
+		</p>
+		<example>
+			<p>
+				MATLAB does have an <c>inv</c> command to find an inverse. However, it's not considered the best way to solve a linear system (it will be much slower for large matrices).
+			</p>
+			<listing xml:id="la_linsolve">
+				<program language="matlab">
+					<input>
+						A = magic(3)
+						b = [ 1; 6; -2 ]
+
+						x = A\b
+						b - A*x
+					</input>
+				</program>
+			</listing>
+			<p>
+				MATLAB works with 16-digit approximations of real numbers, so things that are truly equal in exact arithmetic may only agree to many significant digits. Usually it's best to take the difference of two things to test near-equality.
+			</p>
+		</example>
+	</subsection>
+	<subsection>
+		<title><m>2\times 2</m> inverses</title>
+		<p>
+			There does happen to be a convenient formula for the matrix inverse in the <m>2\times 2</m> case:
+			<men xml:id="la-eq-twotwoinv">
+				\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}
+			</men>.
+			This formula breaks down if <m>ad=bc</m>, in which case the matrix is singular. You might remember that this is the same algebraic condition quoted for the <m>2\times 2</m> linear system <m>\bA\bx=\bb</m> not having a unique solution.
+		</p>
+	</subsection>
 </section>
 
-<section xml:id="la-inverse">
-		<title>Inverses</title>
-		<subsection>
-			<title>Inverse matrix</title>
-			<p>
-			For scalars, the multiplicative inverse of <m>a</m> is the reciprocal, <m>a^{-1}</m>, except that zero has no inverse. Now we investigate the same question for square matrices.
-			</p>
-			<definition>
-				<title>Inverse matrix</title>
-				<notation>
-				  <usage>\bA^{-1}</usage>
-				  <description>inverse of a (square) matrix</description>
-				</notation>
-				<statement>
-					<p>The <term>inverse</term> of an <m>n\times n</m> matrix <m>\bA</m> is a matrix <m>\bC\in\Rmn{n}{n}</m> such that <m> \bA\bC = \bC\bA = \bI </m>. If such a <m>\bC</m> exists, we write <m>\bA^{-1}=\bC</m> and say that <m>\bA</m> is <term>invertible</term>; otherwise, it is <term>singular</term>.</p>
-				</statement>
-			</definition>
-			<aside><p>Inverses are possible for square matrices only. The concept does not directly translate to rectangular matrices.</p></aside>
-			<p>
-			We are going to use without proof two important facts about matrix inverses. First, if an inverse exists, it is unique, so we can talk about <q>the</q> inverse of a matrix. And second, a left-inverse is automatically a right-inverse, and vice versa, so you can check just one of the equalities in the definition and the other comes for free.
-			</p>
-			<p>
-			Because the zero matrix gives zero for every multiplicative partner, it cannot have an inverse. However, unlike scalars, <alert>there are nonzero matrices that are singular</alert>. The simplest is
-			<me>
-				\bA = \begin{bmatrix}  0 \amp 1 \\ 0 \amp 0 \end{bmatrix}
-			</me>.
-			(Proof: The second column of <m>\bC\bA</m> is zero for any square <m>\bC</m>.)
-			</p>
-		</subsection>
-		<subsection>
-			<title>Inverses and linear systems</title>
-			<p>
-				If <m>\bA\in\Rmn{n}{n}</m> is invertible, then we can use its inverse to solve a linear system <m>\bA\bx=\bb</m>:
+<section xml:id="la-determinant">
+	<title>Determinants</title>
+	<introduction>
+		<p>
+			You should have seen some <m>2\times 2</m> and <m>3\times 3</m> determinants before now, in vector calculus. The <m>2\times 2</m> case is easy to describe:
+			<me>\det\left( \twomat{a}{b}{c}{d} \right) = \twodet{a}{b}{c}{d} = ad-bc</me>.
+			This can be extended to create a real-valued function for square matrices of any size. The formalities can be complicated, but we are going to use a practical definition.
+		</p>
+		<aside><p>Here and for the rest of this chapter, we are going to deal with square matrices only.</p></aside>
+		<definition xml:id="la-df-det">
+			<title>Determinant</title>
+			<notation>
+			<usage>\det(\bA),\,\bigl| \bA \bigr|</usage>
+			<description>determinant of a (square) matrix</description>
+			</notation>
+			<statement><p>
+				If <m>\bA\in\Rmn{n}{n}</m>, then
 				<me>
-					\bA^{-1} \bb = \bA^{-1} (\bA \bx) = \bigl(  \bA^{-1} \bA \bigr) \bx = \bI \bx = \bx
-				</me>.
-				The uniqueness of the inverse means that this solution is unique as well. We will see later on that the converse is also true: unique solution implies invertibility.
-			</p>
+					\det(\bA) = \sum (-1)^{i+j} a_{ij} \det( \mathbf{M}_{ij} )
+				</me>,
+				where the sum is taken over any row or column of <m>\bA</m>, and <m>\mathbf{M}_{ij}</m> is the matrix that results from deleting row <m>i</m> and column <m>j</m> from <m>\bA</m>.
+			</p></statement>
+		</definition>
+		<p>
+			The definition, which is called <term>cofactor expansion</term>, is recursive: the <m>n\times n</m> case is defined in terms of the <m>(n-1)\times (n-1)</m> case, and so on all the way back down to <m>2\times 2</m>.
+		</p>
+		<example>
 			<p>
-				It's one thing to say <q>the inverse exists</q> and quite another to say <q>here it is.</q> Finding the inverse of a given matrix is in principle a matter of solving <m>n</m> linear systems. That's because if we let <m>\mathbf{e}_j</m> be the <m>j</m>th column of <m>\bI</m>, then according to the columnwise interpretation of <m>\bA\bA^{-1}</m>, the solution of <m>\bA \bx = \mathbf{e}_j</m> is the <m>j</m>th column of <m>\bA^{-1}</m>.
-			</p>
-			<p>
-				Row elimination can be used to solve those systems simultaneously. However, it's all beside the point. If our goal is to solve a linear system <m>\bA\bx=\bb</m>, then there is little reason to solve <m>n</m> other systems first to get the inverse! The inverse tends to be much more important theoretically than for practical computation.
-			</p>
-			<example>
-				<p>
-					MATLAB does have an <c>inv</c> command to find an inverse. However, it's not considered the best way to solve a linear system (it will be much slower for large matrices).
-				</p>
-				<listing xml:id="la_linsolve">
-					<program language="matlab">
-						<input>
-							A = magic(3)
-							b = [ 1; 6; -2 ]
-
-							x = A\b
-							b - A*x
-						</input>
-					</program>
-				</listing>
-				<p>
-					MATLAB works with 16-digit approximations of real numbers, so things that are truly equal in exact arithmetic may only agree to many significant digits. Usually it's best to take the difference of two things to test near-equality.
-				</p>
-			</example>
-		</subsection>
-		<subsection>
-			<title><m>2\times 2</m> inverses and systems</title>
-			<p>
-				Happily, there is a simple formula for the matrix inverse in the <m>2\times 2</m> case:
-				<men xml:id="la-eq-twotwoinv">
-					\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}
-				</men>.
-				This formula breaks down if <m>ad=bc</m>, in which case <m>\det(\bA)=0</m> and the matrix is singular. You might remember that this is the same algebraic condition we derived for the linear system <m>\bA\bx=\bb</m> not having a unique solution.
-		  </p>
-		  <p>
-				Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system. There is an even faster equivalent shortcut known as <term>Cramer's Rule</term>:
+				Using expansion along the first row,
 				<md>
-					 <mrow>x_1 \amp = \frac{ \twodet{b_1}{a_{12}}{b_2}{a_{22}} }{ \det(\bA) }</mrow>
-					 <mrow>x_2 \amp = \frac{ \twodet{a_{11}}{b_1}{a_{21}}{b_2} }{ \det(\bA) }</mrow>
-				</md>.
-		  </p>
-		  <example>
-				<p>
+				  <mrow> \begin{vmatrix} 2 \amp 0 \amp -1 \\ -2 \amp 3 \amp -1 \\ 2 \amp 0 \amp  1 end{vmatrix} \amp =  (2) \twodet{3}{-1}{0}{1} - (0) \twodet{-2}{-1}{2}{1} + (-1)\twodet{-2}{3}{2}{0}    </mrow>
+				  <mrow>  \amp = 2(3-0) + (-1)(0-6) = 12. </mrow>
+				</md>
+				In this case it might have been a tad easier to exploit the zeros by expanding along the second column instead:
+				<md>
+				  <mrow> \begin{vmatrix} 2 \amp 0 \amp -1 \\ -2 \amp 3 \amp -1 \\ 2 \amp 0 \amp  1 end{vmatrix} \amp =  -(0) [\cdots] + (3) \twodet{2}{-1}{2}{1} - (0)[\cdots]    </mrow>
+				  <mrow>  \amp = 3(2+2) = 12. </mrow>
+				</md>
+			</p>
+		</example>
+		<p>
+			There are a few facts about determinants that are good to know.
+		</p>
+		<fact>
+			<p>
+			Let <m>\bA</m> and <m>\bB</m> be <m>n\times n</m>, and let <m>c</m> be a scalar. Then
+			<ol>
+				<li><m>\det(c\bA) = c^n \det(\bA)</m>,</li>
+				<li><m>\det(\bA\bB) = \det(\bA)\det(\bB)</m>,</li>
+				<li><m>\det(\bA)=0</m> if and only if <m>\bA</m> is singular, and</li>
+				<!--li>If <m>\bA</m> is nonsingular, <m>\det(\bA^{-1})=1/\det(\bA)</m>.</li-->
+			</ol>
+			</p>
+		</fact>
+		<p>
+			It's the third one that we will be using. The determinant is often the easiest way to check for singularity of a small matrix by hand.
+		</p>
+	</introduction>
+	<subsection xml:id="la-det-cramer">
+		<title>Cramer's Rule</title>
+		<p>
+			Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system <m>\bA\bx=\bb</m>. There is an even faster equivalent shortcut known as <idx><h>Cramer's Rule</h></idx> <term>Cramer's Rule</term>:
+			<md>
+				<mrow>x_1 \amp = \frac{ \twodet{b_1}{a_{12}}{b_2}{a_{22}} }{ \det(\bA) }</mrow>
+				<mrow>x_2 \amp = \frac{ \twodet{a_{11}}{b_1}{a_{21}}{b_2} }{ \det(\bA) }</mrow>
+			</md>.
+			Obviously this does not work if <m>\det(\bA)=0</m>. In that case the matrix is singular, and it's best to investigate by row elimination as usual. 
+		</p>
+		<example>
+			<p>
 				For
 				<md>
-					 <mrow>-x + 3y \amp = 1 </mrow>
-					 <mrow>3x + y \amp = 7</mrow>
+					<mrow>-x + 3y \amp = 1 </mrow>
+					<mrow>3x + y \amp = 7</mrow>
 				</md>,
 				Cramer's Rule says
 				<md>
-					 <mrow>x \amp = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} = 2 </mrow>
+					<mrow>x \amp = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} = 2 </mrow>
 					<mrow>y \amp = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10} = 1</mrow>
 				</md>.
-				</p>
-			</example>
-			</subsection>
-	</section>
+			</p>
+		</example>
+	</subsection>
+</section>
 
-  <section xml:id="la-equivalent">
-	  <title>Equivalent conditions</title>
-	  <p>
-		  You might have noticed by now that much of what we have covered is the same thing over and over with different notations and terminology. Here is where we pull all of that together.
-	  </p>
-	  <theorem xml:id="la-thm-FTLA">
-		  <title>Fundamental Theorem of Linear Algebra</title>
-		  <statement><p>
-			  Suppose <m>\bA\bx=\bb</m> is a linear system with an <m>n\times n</m> matrix <m>\bA</m>. Each of the following statements is equivalent to all of the others:
-			  <ol>
-				  <li><m>\bA\bx=\bb</m> has a unique solution,</li>
-				  <li>the linear system has no free variables,</li>
-				  <li>the RREF of <m>\bA</m> is the <m>n\times n</m> identity matrix,</li>
-				  <li><m>\bA</m> is invertible,</li>
-				  <li>the columns of <m>\bA</m> are a basis of <m>\Rn{n}</m>,</li>
-				  <li>the dimension of <m>\null(\bA)</m> is zero,</li>
-				  <li><m>\det(\bA)\neq 0</m>, and</li>
-				  <li><m>\bA</m> does not have a zero eigenvalue.</li>
-			  </ol>
-		  </p></statement>
-	  </theorem>
-	  <p>
-		  The last equivalent statement is a placeholder in anticipation of <xref ref="la-eigen"/>.
-	  </p>
-	  <p>
-		  There are related statements that can be made regarding non-square matrices, but we aren't going to get into them. It is worth knowing, though, that the square case is the only one in which a unique solution is a possibility. If the matrix is singular, then that is ruled out, and there may be zero or an infinity of solutions, depending on both <m>\bA</m> and <m>\bb</m>.
-	  </p>
-  </section>
+<section xml:id="la-equivalent">
+	<title>Equivalent conditions</title>
+	<p>
+		You might have noticed by now that much of what we have covered is the same thing over and over with different notations and terminology. Here is where we pull all of that together.
+	</p>
+	<theorem xml:id="la-thm-FTLA">
+		<title>Fundamental Theorem of Linear Algebra</title>
+		<statement><p>
+			Suppose <m>\bA\bx=\bb</m> is a linear system with an <m>n\times n</m> matrix <m>\bA</m>. Each of the following statements is equivalent to all of the others:
+			<ol>
+				<li><m>\bA\bx=\bb</m> has a unique solution,</li>
+				<li>the linear system has no free variables,</li>
+				<li>the RREF of <m>\bA</m> is the <m>n\times n</m> identity matrix,</li>
+				<li><m>\bA</m> is invertible,</li>
+				<li>the columns of <m>\bA</m> are a basis of <m>\Rn{n}</m>,</li>
+				<li>the dimension of <m>\null(\bA)</m> is zero,</li>
+				<li><m>\det(\bA)\neq 0</m>, and</li>
+				<li><m>\bA</m> does not have a zero eigenvalue.</li>
+			</ol>
+		</p></statement>
+	</theorem>
+	<p>
+		The last equivalent statement is a placeholder in anticipation of <xref ref="la-eigen"/>.
+	</p>
+	<p>
+		There are related statements that can be made regarding non-square matrices, but we aren't going to get into them. It is worth knowing, though, that the square case is the only one in which a unique solution is a possibility. If the matrix is singular, then that is ruled out, and there may be zero or an infinity of solutions, depending on both <m>\bA</m> and <m>\bb</m>.
+	</p>
+</section>
 
 <section xml:id="la-complex">
 	<title>Complex numbers</title>

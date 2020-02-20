@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:03-05:00    *-->
+<!--*    on 2020-02-20T08:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,16 +11,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Let's solve \(x''+9x=\delta(t-2)\text{.}\) A particular solution has transform</p>
+<body><article class="example example-like"><p>Let's observe what happens in a fundamental case, \(x''-x=e^{rt}\text{.}\)  Transforming both sides gives</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{e^{-2s}}{s^2+9} = e^{-2s} F(s)\text{,}
+[s^2X(s) - sx(0)-x'(0)] - X(s) = \frac{1}{s-r}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(F(s)\) is the transform of \(\sin(3t)/3\text{.}\) So the shift theorem implies</p>
+<p data-braille="continuation">We easily solve for \(X\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = \frac{1}{3} H(t-2) \sin(3t-6)\text{.}
+X(s) = x'(0)\frac{1}{(s^2-1)} + x(0)\frac{s}{(s^2-1)} + \frac{1}{(s^2-1)(s-r)} \text{.}
 \end{equation*}
-</div></article></body>
+</div>
+<p data-braille="continuation">This is doable, but we are going to lighten the load a bit. Even before we took the transform, we knew how to find the general homogeneous solution, \(c_1e^t+c_2e^{-t}\text{.}\) So let's use the transform to find any particular solution of the nonhomogeneous problem. Based on the expression above, we're best off with finding the particular solution with \(x(0)=x'(0)=0\text{,}\) leaving us with</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{1}{(s+1)(s-1)(s-r)} \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The partial fraction mneomic gives us</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Note that this requires \(r\neq -1\) and \(r \neq 1\) (i.e., no resonance). From here we get</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">With this we can construct a general solution \(x_n+x_p\text{,}\) and then apply initial conditions to solve for the constants, if those are given.</p></article></body>
 </html>

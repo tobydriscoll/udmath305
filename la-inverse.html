@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:01-05:00    *-->
+<!--*    on 2020-02-20T08:47:41-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -130,11 +130,11 @@ var js_version = 0.13;
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="la-determinant.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch1-linear-algebra.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="la-equivalent.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="la-basis.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch1-linear-algebra.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="la-determinant.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="la-determinant.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch1-linear-algebra.html" title="Up">Up</a><a class="next-button button toolbar-item" href="la-equivalent.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="la-basis.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch1-linear-algebra.html" title="Up">Up</a><a class="next-button button toolbar-item" href="la-determinant.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -150,8 +150,8 @@ var js_version = 0.13;
 <li><a href="la-matrix-algebra.html" data-scroll="la-matrix-algebra">Matrix algebra</a></li>
 <li><a href="la-general-solution.html" data-scroll="la-general-solution">General and particular solutions</a></li>
 <li><a href="la-basis.html" data-scroll="la-basis">Basis and dimension</a></li>
-<li><a href="la-determinant.html" data-scroll="la-determinant">Determinants</a></li>
 <li><a href="la-inverse.html" data-scroll="la-inverse" class="active">Inverses</a></li>
+<li><a href="la-determinant.html" data-scroll="la-determinant">Determinants</a></li>
 <li><a href="la-equivalent.html" data-scroll="la-equivalent">Equivalent conditions</a></li>
 <li><a href="la-complex.html" data-scroll="la-complex">Complex numbers</a></li>
 <li><a href="la-eigen.html" data-scroll="la-eigen">Eigenvalues</a></li>
@@ -207,76 +207,59 @@ var js_version = 0.13;
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="la-inverse"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.8</span> <span class="title">Inverses</span>
+<span class="type">Section</span> <span class="codenumber">1.7</span> <span class="title">Inverses</span>
 </h2>
 <a href="la-inverse.html" class="permalink">¶</a><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.8.1</span> <span class="title">Inverse matrix</span>
+<span class="type">Subsection</span> <span class="codenumber">1.7.1</span> <span class="title">Inverse matrix</span>
 </h3>
-<p id="p-106">For scalars, the multiplicative inverse of \(a\) is the reciprocal, \(a^{-1}\text{,}\) except that zero has no inverse. Now we investigate the same question for square matrices.</p>
-<article class="definition definition-like" id="definition-15"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.8.1</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse matrix.</span>
+<p id="p-99">For scalars, the multiplicative inverse of \(a\) is the reciprocal, \(a^{-1}\text{,}\) except that zero has no inverse. Now we investigate the same question for square matrices.</p>
+<article class="definition definition-like" id="definition-14"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse matrix.</span>
 </h6>
-<p id="p-107">The <dfn class="terminology">inverse</dfn> of an \(n\times n\) matrix \(\bA\) is a matrix \(\bC\in\Rmn{n}{n}\) such that \(\bA\bC = \bC\bA = \bI \text{.}\) If such a \(\bC\) exists, we write \(\bA^{-1}=\bC\) and say that \(\bA\) is <dfn class="terminology">invertible</dfn>; otherwise, it is <dfn class="terminology">singular</dfn>.</p></article><aside class="aside aside-like" id="aside-7"><p id="p-108">Inverses are possible for square matrices only. The concept does not directly translate to rectangular matrices.</p></aside><p id="p-109">We are going to use without proof two important facts about matrix inverses. First, if an inverse exists, it is unique, so we can talk about “the” inverse of a matrix. And second, a left-inverse is automatically a right-inverse, and vice versa, so you can check just one of the equalities in the definition and the other comes for free.</p>
-<p id="p-110">Because the zero matrix gives zero for every multiplicative partner, it cannot have an inverse. However, unlike scalars, <em class="alert">there are nonzero matrices that are singular</em>. The simplest is</p>
+<p id="p-100">The <dfn class="terminology">inverse</dfn> of an \(n\times n\) matrix \(\bA\) is a matrix \(\bC\in\Rmn{n}{n}\) such that \(\bA\bC = \bC\bA = \bI \text{.}\) If such a \(\bC\) exists, we write \(\bA^{-1}=\bC\) and say that \(\bA\) is <dfn class="terminology">invertible</dfn>; otherwise, it is <dfn class="terminology">singular</dfn>.</p></article><aside class="aside aside-like" id="aside-6"><p id="p-101">Inverses are possible for square matrices only. The concept does not directly translate to rectangular matrices.</p></aside><p id="p-102">From the start there are two important things to appreciate about inverses.</p>
+<article class="fact theorem-like" id="la-fact-inverse"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.7.2</span><span class="period">.</span>
+</h6>
+<ol id="p-103" class="decimal">
+<li id="li-31"><p id="p-104">If a matrix has an inverse, it is unique. (So it makes sense to talk about “the” inverse of a matrix.)</p></li>
+<li id="li-32">\(\bA\mathbf{Z}=\bI\) if and only if \(\mathbf{Z}\bA=\bI\text{.}\) (So we don't need to separately think about left-inverse and right-inverse.)</li>
+</ol></article><p id="p-105">Because the zero matrix gives zero for every multiplicative partner, it cannot have an inverse. However, unlike scalars, <em class="alert">there are nonzero matrices that are singular</em>. The simplest is</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix}  0 \amp 1 \\ 0 \amp 0 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">(Proof: The second column of \(\bC\bA\) is zero for any square \(\bC\text{.}\))</p></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.8.2</span> <span class="title">Inverses and linear systems</span>
+<p data-braille="continuation">(Proof: The first column of \(\bC\bA\) is zero for any square \(\bC\text{.}\))</p></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.2</span> <span class="title">Inverses and linear systems</span>
 </h3>
-<p id="p-111">If \(\bA\in\Rmn{n}{n}\) is invertible, then we can use its inverse to solve a linear system \(\bA\bx=\bb\text{:}\)</p>
+<p id="p-106">If \(\bA\in\Rmn{n}{n}\) is invertible, then we can use its inverse to solve a linear system \(\bA\bx=\bb\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \bA^{-1} \bb = \bA^{-1} (\bA \bx) = \bigl(  \bA^{-1} \bA \bigr) \bx = \bI \bx = \bx\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">The uniqueness of the inverse means that this solution is unique as well. We will see later on that the converse is also true: unique solution implies invertibility.</p>
-<p id="p-112">It's one thing to say “the inverse exists” and quite another to say “here it is.” Finding the inverse of a given matrix is in principle a matter of solving \(n\) linear systems. That's because if we let \(\mathbf{e}_j\) be the \(j\)th column of \(\bI\text{,}\) then according to the columnwise interpretation of \(\bA\bA^{-1}\text{,}\) the solution of \(\bA \bx = \mathbf{e}_j\) is the \(j\)th column of \(\bA^{-1}\text{.}\)</p>
-<p id="p-113">Row elimination can be used to solve those systems simultaneously. However, it's all beside the point. If our goal is to solve a linear system \(\bA\bx=\bb\text{,}\) then there is little reason to solve \(n\) other systems first to get the inverse! The inverse tends to be much more important theoretically than for practical computation.</p>
+<p id="p-107">It's one thing to say “the inverse exists” and quite another to say “here it is.” Finding the inverse of a given matrix is in principle a matter of solving \(n\) linear systems. That's because if we let \(\mathbf{e}_j\) be the \(j\)th column of \(\bI\text{,}\) then according to the columnwise interpretation of \(\bA\bA^{-1}\text{,}\) the solution of \(\bA \bx = \mathbf{e}_j\) is the \(j\)th column of \(\bA^{-1}\text{.}\)</p>
+<p id="p-108">Row elimination can be used to solve those systems simultaneously. However, it's all beside the point. If our goal is to solve a linear system \(\bA\bx=\bb\text{,}\) then there is little reason to solve \(n\) other systems first to get the inverse! The inverse tends to be much more important theoretically than for practical computation.</p>
 <article class="example example-like" id="example-16"><a data-knowl="" class="id-ref original" data-refid="hk-example-16"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-16"><article class="example example-like"><p id="p-114">MATLAB does have an <code class="code-inline tex2jax_ignore">inv</code> command to find an inverse. However, it's not considered the best way to solve a linear system (it will be much slower for large matrices).</p>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-16"><article class="example example-like"><p id="p-109">MATLAB does have an <code class="code-inline tex2jax_ignore">inv</code> command to find an inverse. However, it's not considered the best way to solve a linear system (it will be much slower for large matrices).</p>
 <figure class="listing figure-like" id="la_linsolve"><pre class="prettyprint lang-matlab">A = magic(3)
 b = [ 1; 6; -2 ]
 
 x = A\b
 b - A*x
 </pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.8.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-115">MATLAB works with 16-digit approximations of real numbers, so things that are truly equal in exact arithmetic may only agree to many significant digits. Usually it's best to take the difference of two things to test near-equality.</p></article></div></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.8.3</span> <span class="title">\(2\times 2\) inverses and systems</span>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.7.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-110">MATLAB works with 16-digit approximations of real numbers, so things that are truly equal in exact arithmetic may only agree to many significant digits. Usually it's best to take the difference of two things to test near-equality.</p></article></div></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.7.3</span> <span class="title">\(2\times 2\) inverses</span>
 </h3>
-<p id="p-116">Happily, there is a simple formula for the matrix inverse in the \(2\times 2\) case:</p>
+<p id="p-111">There does happen to be a convenient formula for the matrix inverse in the \(2\times 2\) case:</p>
 <div class="displaymath">
 \begin{equation}
-\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}\text{.}\label{la-eq-twotwoinv}\tag{1.8.1}
+\begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix}\text{.}\label{la-eq-twotwoinv}\tag{1.7.1}
 \end{equation}
 </div>
-<p data-braille="continuation">This formula breaks down if \(ad=bc\text{,}\) in which case \(\det(\bA)=0\) and the matrix is singular. You might remember that this is the same algebraic condition we derived for the linear system \(\bA\bx=\bb\) not having a unique solution.</p>
-<p id="p-117">Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system. There is an even faster equivalent shortcut known as <dfn class="terminology">Cramer's Rule</dfn>:</p>
-<div class="displaymath">
-\begin{align*}
-x_1 \amp = \frac{ \twodet{b_1}{a_{12}}{b_2}{a_{22}} }{ \det(\bA) }\\
-x_2 \amp = \frac{ \twodet{a_{11}}{b_1}{a_{21}}{b_2} }{ \det(\bA) }\text{.}
-\end{align*}
-</div>
-<article class="example example-like" id="example-17"><a data-knowl="" class="id-ref original" data-refid="hk-example-17"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-17"><article class="example example-like"><p id="p-118">For</p>
-<div class="displaymath">
-\begin{align*}
--x + 3y \amp = 1 \\
-3x + y \amp = 7\text{,}
-\end{align*}
-</div>
-<p data-braille="continuation">Cramer's Rule says</p>
-<div class="displaymath">
-\begin{align*}
-x \amp = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} = 2 \\
-y \amp = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10} = 1\text{.}
-\end{align*}
-</div></article></div></section></section></div></main>
+<p data-braille="continuation">This formula breaks down if \(ad=bc\text{,}\) in which case the matrix is singular. You might remember that this is the same algebraic condition quoted for the \(2\times 2\) linear system \(\bA\bx=\bb\) not having a unique solution.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

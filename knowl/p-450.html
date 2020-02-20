@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:03-05:00    *-->
+<!--*    on 2020-02-20T08:47:43-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of “lucky” solutions is the idea of variable substitution, and the logistic equation is a nice case study. Define \(z=1/x\text{.}\) From the chain rule we have \(x'=-x^{-2}x'=-x'z^2\text{.}\) The logistic equation converts to</p>
-<div class="displaymath">
-\begin{equation*}
--\frac{z'}{z^2} = \frac{a}{z} - \frac{b}{z^2}\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">or \(z'=b-az\text{.}\) This is a linear equation! It even has constant coefficients. In terms of \(z\text{,}\) we can jump right to the solution:</p>
-<div class="displaymath">
-\begin{equation*}
-z(t) = e^{-at}z(0) - \frac{b}{a} \left( e^{-at}-1 \right) = \frac{e^{-at}(Kz_0-1)+1)}{K}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Finally, with \(x=1/z\) we get</p>
+<p>There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
 <div class="displaymath">
 \begin{equation}
-x(t) = \frac{Kx_0}{e^{-at}(K-x_0)+x_0}\text{,}\tag{5.3.2}
+\frac{1}{x} \dd{x}{t} = a - bx, \qquad or \dd{x}{t} = ax - bx^2 \text{.}\tag{5.3.1}
 \end{equation}
 </div>
-<p data-braille="continuation">where \(x_0=x(0)\text{.}\)</p>
+<p data-braille="continuation">This is the <dfn class="terminology">logistic equation</dfn>.</p>
 <span class="incontext"><a href="nl-logistic.html#p-450">in-context</a></span>
 </body>
 </html>

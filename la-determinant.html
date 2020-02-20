@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:01-05:00    *-->
+<!--*    on 2020-02-20T08:47:41-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -130,11 +130,11 @@ var js_version = 0.13;
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="la-basis.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch1-linear-algebra.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="la-inverse.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="la-inverse.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch1-linear-algebra.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="la-equivalent.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="la-basis.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch1-linear-algebra.html" title="Up">Up</a><a class="next-button button toolbar-item" href="la-inverse.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="la-inverse.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch1-linear-algebra.html" title="Up">Up</a><a class="next-button button toolbar-item" href="la-equivalent.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -150,8 +150,8 @@ var js_version = 0.13;
 <li><a href="la-matrix-algebra.html" data-scroll="la-matrix-algebra">Matrix algebra</a></li>
 <li><a href="la-general-solution.html" data-scroll="la-general-solution">General and particular solutions</a></li>
 <li><a href="la-basis.html" data-scroll="la-basis">Basis and dimension</a></li>
-<li><a href="la-determinant.html" data-scroll="la-determinant" class="active">Determinants</a></li>
 <li><a href="la-inverse.html" data-scroll="la-inverse">Inverses</a></li>
+<li><a href="la-determinant.html" data-scroll="la-determinant" class="active">Determinants</a></li>
 <li><a href="la-equivalent.html" data-scroll="la-equivalent">Equivalent conditions</a></li>
 <li><a href="la-complex.html" data-scroll="la-complex">Complex numbers</a></li>
 <li><a href="la-eigen.html" data-scroll="la-eigen">Eigenvalues</a></li>
@@ -207,35 +207,77 @@ var js_version = 0.13;
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="la-determinant"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.7</span> <span class="title">Determinants</span>
+<span class="type">Section</span> <span class="codenumber">1.8</span> <span class="title">Determinants</span>
 </h2>
-<a href="la-determinant.html" class="permalink">¶</a><p id="p-99">You should have seen some \(2\times 2\) and \(3\times 3\) determinants before now, in vector calculus. The \(2\times 2\) case is easy to describe:</p>
+<a href="la-determinant.html" class="permalink">¶</a><section class="introduction" id="introduction-2"><p id="p-112">You should have seen some \(2\times 2\) and \(3\times 3\) determinants before now, in vector calculus. The \(2\times 2\) case is easy to describe:</p>
 <div class="displaymath">
 \begin{equation*}
 \det\left( \twomat{a}{b}{c}{d} \right) = \twodet{a}{b}{c}{d} = ad-bc\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">This can be extended to create a real-valued function for square matrices of any size. The formalities can be complicated, but we are going to use a practical definition.</p>
-<aside class="aside aside-like" id="aside-6"><p id="p-100">Here and for the rest of this chapter, we are going to deal with square matrices only.</p></aside><article class="definition definition-like" id="la-df-det"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant.</span>
+<aside class="aside aside-like" id="aside-7"><p id="p-113">Here and for the rest of this chapter, we are going to deal with square matrices only.</p></aside><article class="definition definition-like" id="la-df-det"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.8.1</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant.</span>
 </h6>
-<p id="p-101">If \(\bA\in\Rmn{n}{n}\text{,}\) then</p>
+<p id="p-114">If \(\bA\in\Rmn{n}{n}\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \det(\bA) = \sum (-1)^{i+j} a_{ij} \det( \mathbf{M}_{ij} )\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">where the sum is taken over any row or column of \(\bA\text{,}\) and \(\mathbf{M}_{ij}\) is the matrix that results from deleting row \(i\) and column \(j\) from \(\bA\text{.}\)</p></article><p id="p-102">The definition, which is called <dfn class="terminology">cofactor expansion</dfn>, is recursive: the \(n\times n\) case is defined in terms of the \((n-1)\times (n-1)\) case, and so on all the way back down to \(2\times 2\text{.}\)</p>
-<p id="p-103">There are a few facts about determinants that are good to know.</p>
-<article class="fact theorem-like" id="fact-3"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.7.2</span><span class="period">.</span>
+<p data-braille="continuation">where the sum is taken over any row or column of \(\bA\text{,}\) and \(\mathbf{M}_{ij}\) is the matrix that results from deleting row \(i\) and column \(j\) from \(\bA\text{.}\)</p></article><p id="p-115">The definition, which is called <dfn class="terminology">cofactor expansion</dfn>, is recursive: the \(n\times n\) case is defined in terms of the \((n-1)\times (n-1)\) case, and so on all the way back down to \(2\times 2\text{.}\)</p>
+<article class="example example-like" id="example-17"><a data-knowl="" class="id-ref original" data-refid="hk-example-17"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-17"><article class="example example-like"><p id="p-116">Using expansion along the first row,</p>
+<div class="displaymath">
+\begin{align*}
+\begin{vmatrix} 2 \amp 0 \amp -1 \\ -2 \amp 3 \amp -1 \\ 2 \amp 0 \amp  1 end{vmatrix} \amp =  (2) \twodet{3}{-1}{0}{1} - (0) \twodet{-2}{-1}{2}{1} + (-1)\twodet{-2}{3}{2}{0}    \\
+\amp = 2(3-0) + (-1)(0-6) = 12. 
+\end{align*}
+</div>
+<p data-braille="continuation">In this case it might have been a tad easier to exploit the zeros by expanding along the second column instead:</p>
+<div class="displaymath">
+\begin{align*}
+\begin{vmatrix} 2 \amp 0 \amp -1 \\ -2 \amp 3 \amp -1 \\ 2 \amp 0 \amp  1 end{vmatrix} \amp =  -(0) [\cdots] + (3) \twodet{2}{-1}{2}{1} - (0)[\cdots]    \\
+\amp = 3(2+2) = 12. 
+\end{align*}
+</div></article></div>
+<p id="p-117">There are a few facts about determinants that are good to know.</p>
+<article class="fact theorem-like" id="fact-4"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.8.3</span><span class="period">.</span>
 </h6>
-<p id="p-104">Let \(\bA\) and \(\bB\) be \(n\times n\text{,}\) and let \(c\) be a scalar. Then</p>
+<p id="p-118">Let \(\bA\) and \(\bB\) be \(n\times n\text{,}\) and let \(c\) be a scalar. Then</p>
 <ol class="decimal">
-<li id="li-31">\(\det(c\bA) = c^n \det(\bA)\text{,}\)</li>
-<li id="li-32">\(\det(\bA\bB) = \det(\bA)\det(\bB)\text{,}\)</li>
-<li id="li-33">\(\det(\bA)=0\) if and only if \(\bA\) is singular, and</li>
-</ol></article><p id="p-105">The determinant condition is often the easiest way to check for singularity of a small matrix by hand.</p></section></div></main>
+<li id="li-33">\(\det(c\bA) = c^n \det(\bA)\text{,}\)</li>
+<li id="li-34">\(\det(\bA\bB) = \det(\bA)\det(\bB)\text{,}\)</li>
+<li id="li-35">\(\det(\bA)=0\) if and only if \(\bA\) is singular, and</li>
+</ol></article><p id="p-119">It's the third one that we will be using. The determinant is often the easiest way to check for singularity of a small matrix by hand.</p></section><section class="subsection" id="la-det-cramer"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.8.1</span> <span class="title">Cramer's Rule</span>
+</h3>
+<a href="la-determinant.html#la-det-cramer" class="permalink">¶</a><p id="p-120">Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system \(\bA\bx=\bb\text{.}\) There is an even faster equivalent shortcut known as  <dfn class="terminology">Cramer's Rule</dfn>:</p>
+<div class="displaymath">
+\begin{align*}
+x_1 \amp = \frac{ \twodet{b_1}{a_{12}}{b_2}{a_{22}} }{ \det(\bA) }\\
+x_2 \amp = \frac{ \twodet{a_{11}}{b_1}{a_{21}}{b_2} }{ \det(\bA) }\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Obviously this does not work if \(\det(\bA)=0\text{.}\) In that case the matrix is singular, and it's best to investigate by row elimination as usual.</p>
+<article class="example example-like" id="example-18"><a data-knowl="" class="id-ref original" data-refid="hk-example-18"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-18"><article class="example example-like"><p id="p-121">For</p>
+<div class="displaymath">
+\begin{align*}
+-x + 3y \amp = 1 \\
+3x + y \amp = 7\text{,}
+\end{align*}
+</div>
+<p data-braille="continuation">Cramer's Rule says</p>
+<div class="displaymath">
+\begin{align*}
+x \amp = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} = 2 \\
+y \amp = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10} = 1\text{.}
+\end{align*}
+</div></article></div></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

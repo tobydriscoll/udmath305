@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:03-05:00    *-->
+<!--*    on 2020-02-20T08:47:43-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The logistic equation is separable:</p>
+<p>When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of “lucky” solutions is the idea of variable substitution, and the logistic equation is a nice case study. Define \(z=1/x\text{.}\) From the chain rule we have \(x'=-x^{-2}x'=-x'z^2\text{.}\) The logistic equation converts to</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{dx}{x(a-bx)} = dt\text{.}
+-\frac{z'}{z^2} = \frac{a}{z} - \frac{b}{z^2}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence</p>
+<p data-braille="continuation">or \(z'=b-az\text{.}\) This is a linear equation! It even has constant coefficients. In terms of \(z\text{,}\) we can jump right to the solution:</p>
 <div class="displaymath">
 \begin{equation*}
-t + C = \int \frac{dx}{x(a-bx)} = \frac{1}{b} \int \frac{dx}{x(K-x)} = \frac{1}{bK} \int \left( \frac{1}{x} + \frac{1}{K-x} \right)\,dx\text{.}
+z(t) = e^{-at}z(0) - \frac{b}{a} \left( e^{-at}-1 \right) = \frac{e^{-at}(Kz_0-1)+1)}{K}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The last step above required converting the single fraction into partial fractions. These are now easily integrated to get logs, and the solution follows from there. Obviously we have to end up with <a class="xref" data-knowl="./knowl/eq-logistic-solution.html" title="Equation 5.3.2">(5.3.2)</a> again.</p>
+<p data-braille="continuation">Finally, with \(x=1/z\) we get</p>
+<div class="displaymath">
+\begin{equation}
+x(t) = \frac{Kx_0}{e^{-at}(K-x_0)+x_0}\text{,}\tag{5.3.2}
+\end{equation}
+</div>
+<p data-braille="continuation">where \(x_0=x(0)\text{.}\)</p>
 <span class="incontext"><a href="nl-logistic.html#p-453">in-context</a></span>
 </body>
 </html>

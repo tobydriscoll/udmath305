@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:02-05:00    *-->
+<!--*    on 2020-02-20T08:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Variation of parameters is all that we technically need for linear first-order problems, but as we have seen, it requires some grunt work--in particular, two integrals. There is a significantly shorter path for <a class="xref" data-knowl="./knowl/fl-eq-linear.html" title="Equation 2.2.1">(2.2.1)</a> in the important special case when (1) the growth/decay rate coefficient \(a(t)\) is constant, and (2) the forcing function is a polynomial, exponential, sin, or cos, or a combination of these. In this situation, the correct \(x_p\) can be written down immediately up to some unknowns or <dfn class="terminology">undetermined coefficients</dfn>. Values for these coefficients are by substitution of \(x_p\) into the ODE. The correct form of \(x_p\) for various \(f\) are given in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a>.</p>
-<span class="incontext"><a href="fl-undeter.html#p-223">in-context</a></span>
+<p>After being thoroughly trained to always include integration constants, you might wonder why we are being so cavalier about them here. Let's walk through what would happen to them in the last example above. First,</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = \exp\left[  \ln(2+t) + C_1 \right] = A_1(2 + t)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">where we renamed \(A_1=e^{C_1}\gt 0\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+k(t) = A_1^{-1} \int \frac{-1}{2+t} (2+t)^{-1} \, dt = A_1^{-1} [-(2+t)^{-1}+C_2] = -A_1^{-1}(2+t)^{-1} + A_2\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally,</p>
+<div class="displaymath">
+\begin{equation*}
+x = x_h + kg = c_1 A_1(2 + t) + \bigl[-A_1^{-1}(2+t)^{-1} + A_2\bigr ]A_1(2 + t) = (c_1A_1+A_1A_2)(2+t) - 1\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This is exactly the same family of solutions as \(c_1(2+t)-1\text{.}\) Essentially, all the integration constants end up lumped into that \(c_1\text{,}\) which is always the case.</p>
+<span class="incontext"><a href="fl-varparam.html#p-223">in-context</a></span>
 </body>
 </html>

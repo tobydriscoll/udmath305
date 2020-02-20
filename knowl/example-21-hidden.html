@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-10T11:32:42-05:00    *-->
+<!--*    on 2020-02-20T08:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,13 +11,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>We find the eigenvalues and eigenvectors of</p>
+<body><article class="example example-like"><p>We look for eigenvalues of</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}\text{.}
+\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The characteristic polynomial is \(\lambda^2 +2 \lambda +2\text{,}\) with roots  \(\lambda_{1,2} = -1 \pm 1i.\)</p>
-<p>To find an eigenvector for \(\lambda_1\text{,}\) we note that the first row of \(\bA - \lambda_1 \mathbf{I} \) is \([(2-i),-1]\text{.}\) Thus a basis for this eigenspace is the single eigenvector \(\twovec{1}{2-i}\text{.}\)</p>
-<p>We get a benefit here from the complex eigenvalues: the conjugate of an eigenvector for \(\lambda_1\) will be an eigenvector for \(\lambda_2\text{.}\) So we have \(\span\left(\twovec{1}{2+i}\right)\) to go with \(\lambda_2\text{.}\)</p></article></body>
+<p data-braille="continuation">Start by computing</p>
+<div class="displaymath">
+\begin{equation*}
+\left| \twomat{1}{1}{4}{1} - \twomat{\lambda}{0}{0}{\lambda} \right| = \twodet{1-\lambda}{1}{4}{1-\lambda} = (1-\lambda)^2 - 4 = \lambda^2-2\lambda-3\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We find eigenvalues by setting this equal to zero, which means \(\lambda_1=3\) or \(\lambda_2=-1\text{.}\) These are the eigenvalues.</p>
+<p>What about the eigenspaces? First consider \(\lambda_1=3\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bA-3 \bI = \twomat{-2}{1}{4}{-2} \overset{\text{RREF}}{\Longrightarrow} \twomat{1}{-1/2}{0}{0}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Therefore this nullspace (the eigenspace) is \(\span\left(\twovec{1/2}{1}\right)\text{.}\) As for \(\lambda_2=-1\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bA+ \bI = \twomat{2}{1}{4}{2} \overset{\text{RREF}}{\Longrightarrow} \twomat{1}{1/2}{0}{0}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">leading to the eigenspace \(\span\left(\twovec{-1/2}{1}\right)\text{.}\)</p>
+<p>MATLAB computes eigenvalues and eigenvectors (through an entirely different process) with the <code class="code-inline tex2jax_ignore">eig</code> command.</p>
+<figure class="listing figure-like"><pre class="prettyprint lang-matlab">A = [ 1 1; 4 1 ];
+lambda = eig(A)
+
+[V,D] = eig(A)
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.11.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p>In the second format (two outputs), the eigenvalues are on the diagonal of <code class="code-inline tex2jax_ignore">D</code>. The corresponding columns of <code class="code-inline tex2jax_ignore">V</code> are basis vectors for their eigenspaces, provided those are one-dimensional.</p>
+<aside class="aside aside-like"><p>By hand you usually find eigenvalues by finding the roots of a low-degree polynomial. It turns out that when the size is greater than \(2\times 2\text{,}\) other linear algebra methods for eigenvalues are much easier than finding the polynomial roots. In fact, MATLAB uses eigenvalues to find polynomial roots, rather than the other way around!</p></aside></article></body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:03-05:00    *-->
+<!--*    on 2020-02-20T08:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The drawback to Laplace transforms as a one-stop solver is that either we include the initial conditions from the start, which forces us to do more partial fraction decompositions, or else the particular solution we find almost always includes some terms from the homogeneous solution. Mathematically, the poles of \(X_p(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in many cases.</p>
+<p>Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution has</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We can use the trick of completing the square to write this as</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = e^{-s} \frac{6}{(s+1)^2+9} = e^{-s} F(s)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">where we can now see that \(f(t) = 2e^{-t}\sin(3t)\text{.}\) By the shift theorem, \(x_p(t)=H(t-1)f(t-1)\text{.}\)</p>
 <span class="incontext"><a href="so-laplace-repeated.html#p-415">in-context</a></span>
 </body>
 </html>

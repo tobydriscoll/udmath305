@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:02-05:00    *-->
+<!--*    on 2020-02-20T08:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,18 +11,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>For</p>
+<body><article class="example example-like"><p>Using expansion along the first row,</p>
 <div class="displaymath">
 \begin{align*}
--x + 3y \amp = 1 \\
-3x + y \amp = 7\text{,}
+\begin{vmatrix} 2 \amp 0 \amp -1 \\ -2 \amp 3 \amp -1 \\ 2 \amp 0 \amp  1 end{vmatrix} \amp =  (2) \twodet{3}{-1}{0}{1} - (0) \twodet{-2}{-1}{2}{1} + (-1)\twodet{-2}{3}{2}{0}    \\
+\amp = 2(3-0) + (-1)(0-6) = 12. 
 \end{align*}
 </div>
-<p data-braille="continuation">Cramer's Rule says</p>
+<p data-braille="continuation">In this case it might have been a tad easier to exploit the zeros by expanding along the second column instead:</p>
 <div class="displaymath">
 \begin{align*}
-x \amp = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} = 2 \\
-y \amp = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10} = 1\text{.}
+\begin{vmatrix} 2 \amp 0 \amp -1 \\ -2 \amp 3 \amp -1 \\ 2 \amp 0 \amp  1 end{vmatrix} \amp =  -(0) [\cdots] + (3) \twodet{2}{-1}{2}{1} - (0)[\cdots]    \\
+\amp = 3(2+2) = 12. 
 \end{align*}
 </div></article></body>
 </html>

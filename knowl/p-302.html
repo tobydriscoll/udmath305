@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:03-05:00    *-->
+<!--*    on 2020-02-20T08:47:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We can find the eigenstuff of</p>
+<p>We begin the journey with an eigenpair of \(\bA\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
+\bA \bv = \lambda \bv\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This gives us solutions of \(\bx'=\bA\bx\text{:}\)</p>
+<p data-braille="continuation">If we posit that \(\bx(t)=g(t)\bv\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
-\bx_1(t) = e^{3t} \twovec{1}{2},\quad \bx_2(t) = e^{-t} \twovec{1}{-2} \text{.}
+g'\bv = \bA(g\bv) = g(\bA\bv) = g\lambda \bv\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">Because the eigenvalues are distinct, we know that these are independent solutions. The general homogeneous solution is</p>
-<div class="displaymath">
-\begin{equation*}
-\bx(t) = \bX(t)\bc = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
-= \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
-\end{equation*}
-</div>
+<p data-braille="continuation">which can be satisfied if \(g'=\lambda g\text{,}\) or \(g(t)=ce^{\lambda t}\text{.}\) That is, each eigenpair gives us a homogeneous solution! (Yes, this the moment all the eigenstuff was preparing us for.)</p>
 <span class="incontext"><a href="fs-constcoeff.html#p-302">in-context</a></span>
 </body>
 </html>
