@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-20T08:47:42-05:00    *-->
+<!--*    on 2020-02-24T08:29:57-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,33 +13,25 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.7</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.8</span><span class="period">.</span>
 </h6>
-<p>Suppose we solve \(x'+5x=3\delta(t-2)\text{,}\) with \(x(0)=1\text{.}\) For \(0\lt t \lt 2\text{,}\) the equation is homogeneous and \(x(t)=e^{-5t}\text{.}\) Then the solution receives an instantaneous kick from \(e^{-10}\) to \(e^{-10}+3\) and continues evolving homogeneously. So for \(t\gt 2\text{,}\)</p>
+<p>Let's consider \(x'=ax + \delta(t-T)\text{,}\) with \(x(0)=0\text{.}\) Transform to get</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = (e^{-10}+3) e^{-5(t-2)} = e^{-5t} + 3 e^{-5(t-2)}\text{.}
+[sX(s)-x(0)] - aX(s) = e^{-sT}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">In fact we could write the solution at all times in one formula using step function notation:</p>
+<p data-braille="continuation">and thus</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = e^{-5t} + 3 H(t-2) e^{-5(t-2)}\text{.}
+X(s) = \frac{e^{-sT}}{s-a}\text{.}
 \end{equation*}
 </div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">dydt = @(t,y) -5*y;
-[t1,y1] = ode45(dydt,[0,2],1);
-[t2,y2] = ode45(dydt,[2,6],3+y1(end));
-plot([t1;t2],[y1;y2])
-xlabel('t'), ylabel('y(t)')
-title('Impulse forcing')
-semilogy([t1;t2],[y1;y2])
-xlabel('t'), ylabel('y(t)')
-title('Impulse forcing')
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.7.8<span class="period">.</span></span><span class="space"> </span>Numerical solution with impulse forcing (1st order).</figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fo_lcc_impulse.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></article><span class="incontext"><a href="fl-impulse.html#example-44">in-context</a></span>
+<p data-braille="continuation">Notice that \(X(s) = e^{-sT} Y(s)\text{,}\) where \(Y(s)=1/(s-a)\) is the transform of \(y(t)=e^{at}\text{.}\) By the shift theorem, it must be that</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="fl-laplace.html#example-44">in-context</a></span>
 </body>
 </html>

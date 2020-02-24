@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-20T08:47:41-05:00    *-->
+<!--*    on 2020-02-24T08:29:56-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -237,13 +237,13 @@ f(t) = x_p' - a(t) x_p = [k'g+kg'] - a k g = k'g + k[g'-ag]\text{,}
 <p data-braille="continuation">which, because \(g\) is a homogeneous solution, is simply \(f(t)=k'(t)g(t)\text{.}\) Hence we get a proper particular solution provided</p>
 <div class="displaymath">
 \begin{equation}
-k(t) = \int \frac{f(t)}{g(t)}\, dt \text{.}\label{fl-eq-vofp2}\tag{2.4.3}
+k(t) = \int \frac{f(t)}{g(t)}\, dt\text{.}\label{fl-eq-vofp2}\tag{2.4.3}
 \end{equation}
 </div>
 <p data-braille="continuation">Step by step, we have to (1) integrate once to get \(g\) in <a class="xref" data-knowl="./knowl/fl-eq-intfactor.html" title="Equation 2.3.1">(2.3.1)</a>, (2) integrate again to get \(k\) in <a class="xref" data-knowl="./knowl/fl-eq-vofp2.html" title="Equation 2.4.3">(2.4.3)</a>, and (3) multiply them together to get the particular solution in <a class="xref" data-knowl="./knowl/fl-eq-vofp1.html" title="Equation 2.4.2">(2.4.2)</a>. It's probably also worth mentioning step (0), which is to put the given problem in the standard form of <a class="xref" data-knowl="./knowl/fl-eq-folinrepeat.html" title="Equation 2.4.1">(2.4.1)</a>; i.e., divide the equation through by any coefficient of \(x'\text{.}\)</p>
-<article class="example example-like" id="example-33"><a data-knowl="" class="id-ref original" data-refid="hk-example-33"><h6 class="heading">
+<article class="example example-like" id="example-32"><a data-knowl="" class="id-ref original" data-refid="hk-example-32"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-33"><article class="example example-like"><p id="p-221">Consider \(3x'=12x+24t\text{.}\) Rewriting it as \(x'-4x=8t\text{,}\) we identify \(a(t)=4\) and \(f(t)=8t\text{.}\) Then</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-32"><article class="example example-like"><p id="p-221">Consider \(3x'=12x+24t\text{.}\) Rewriting it as \(x'-4x=8t\text{,}\) we identify \(a(t)=4\) and \(f(t)=8t\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 g(t) = \exp\left[ \int 4\,dt \right] = e^{4t}\text{,}
@@ -267,9 +267,9 @@ x_p(t) = \left[ \frac{1}{2} (4t+1)e^{-4t} \right] e^{4t} = -\frac{1}{2} (4t+1)\t
 x(t) = x_h(t) + x_p(t) = c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}
 \end{equation*}
 </div></article></div>
-<article class="example example-like" id="example-34"><a data-knowl="" class="id-ref original" data-refid="hk-example-34"><h6 class="heading">
+<article class="example example-like" id="example-33"><a data-knowl="" class="id-ref original" data-refid="hk-example-33"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-34"><article class="example example-like"><p id="p-222">For \((2+t) x'= x - 1\text{,}\) we rewrite as</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-33"><article class="example example-like"><p id="p-222">For \((2+t) x'= x - 1\text{,}\) we rewrite as</p>
 <div class="displaymath">
 \begin{equation*}
 x' - \frac{1}{2+t} x = -\frac{1}{2+t}\text{.}
@@ -313,9 +313,9 @@ x = x_h + kg = c_1 A_1(2 + t) + \bigl[-A_1^{-1}(2+t)^{-1} + A_2\bigr ]A_1(2 + t)
 </div>
 <p data-braille="continuation">This is exactly the same family of solutions as \(c_1(2+t)-1\text{.}\) Essentially, all the integration constants end up lumped into that \(c_1\text{,}\) which is always the case.</p>
 <p id="p-224">For initial-value problems, we find the entire general solution first, and then apply the initial condition to get a specific value for the free constant.</p>
-<article class="example example-like" id="example-35"><a data-knowl="" class="id-ref original" data-refid="hk-example-35"><h6 class="heading">
+<article class="example example-like" id="example-34"><a data-knowl="" class="id-ref original" data-refid="hk-example-34"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-35"><article class="example example-like"><p id="p-225">Above we found that the general solution of \(x'=4x+8t\) is \(x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}\) If we also have that \(x(0)=3/2\text{,}\) then we can conclude</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-34"><article class="example example-like"><p id="p-225">Above we found that the general solution of \(x'=4x+8t\) is \(x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}\) If we also have that \(x(0)=3/2\text{,}\) then we can conclude</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{3}{2} = x(0) = c_1 - \frac{1}{2}(1)\text{,}

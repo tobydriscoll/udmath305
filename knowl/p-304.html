@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-20T08:47:42-05:00    *-->
+<!--*    on 2020-02-24T08:29:57-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,20 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(\bA\) have eigenvalues \(\lambda_1,\ldots,\lambda_n\) and corresponding eigenvectors \(\bv_1,\ldots,\bv_n\text{.}\) If the eigenvectors are independent (that is, they form a basis), then</p>
+<p>Counting algebraic multiplicities, we know that \(\bA\) has eigenvalues \(\lambda_1,\ldots,\lambda_n\text{.}\) Say that we have eigenvectors \(\bv_1,\ldots,\bv_n\) to go with them. Then we have \(n\) homogeneous solutions</p>
 <div class="displaymath">
-\begin{equation}
-\bX(t) = \begin{bmatrix} 
-e^{\lambda_1 t} \bv_1 \amp \cdots \amp e^{\lambda_n t} \bv_n
-\end{bmatrix}\tag{3.3.1}
-\end{equation}
+\begin{equation*}
+\bx_j(t) = e^{\lambda_j t} \bv_j, \quad j=1,\ldots,n\text{.}
+\end{equation*}
 </div>
-<p data-braille="continuation">is a fundamental matrix for \(\bx'=\bA\bx\text{.}\) Hence the general solution can be expressed as</p>
-<div class="displaymath">
-\begin{equation}
-\bx(t) = \bX(t)\bc = c_1 e^{\lambda_1 t} \bv_1 + \cdots + c_n e^{\lambda_n t} \bv_n\text{.}\tag{3.3.2}
-\end{equation}
-</div>
+<p data-braille="continuation">To determine whether they form a fundamental matrix, we need to determine whether they form a basis. According to <a class="xref" data-knowl="./knowl/fs-thm-abel.html" title="Theorem 3.2.3: Homogeneous solution independence">Theorem 3.2.3</a>, we can ask that question at any value of \(t\text{,}\) including \(t=0\text{.}\) So the key issue is the independence of the eigenvectors.</p>
 <span class="incontext"><a href="fs-constcoeff.html#p-304">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-20T08:47:41-05:00    *-->
+<!--*    on 2020-02-24T08:29:56-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,20 +209,20 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fl-laplace"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.8</span> <span class="title">Laplace transform methods</span>
 </h2>
-<a href="fl-laplace.html" class="permalink">¶</a><section class="introduction" id="introduction-8"><p id="p-265">There is a shorthand method for deriving the solutions of linear, constant-coefficient equations that have forcing functions such as steps, impulses, and elementary functions. Given (almost) any function \(f(t)\text{,}\) there is a doppelganger function \(F(s)\) defined by an integral.</p>
+<a href="fl-laplace.html" class="permalink">¶</a><section class="introduction" id="introduction-8"><p id="p-266">There is a shorthand method for deriving the solutions of linear, constant-coefficient equations that have forcing functions such as steps, impulses, and elementary functions. Given (almost) any function \(f(t)\text{,}\) there is a doppelganger function \(F(s)\) defined by an integral.</p>
 <article class="definition definition-like" id="fl-df-laplace"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.8.1</span><span class="period">.</span><span class="space"> </span><span class="title">Laplace transform.</span>
 </h6>
-<p id="p-266">The <dfn class="terminology">Laplace transform</dfn> of a function \(f(t)\) is defined as</p>
+<p id="p-267">The <dfn class="terminology">Laplace transform</dfn> of a function \(f(t)\) is defined as</p>
 <div class="displaymath">
 \begin{equation}
 \lx[f(t)] = F(s) = \int_0^\infty f(t) e^{-st}\, dt\text{.}\label{so-lap-lxform}\tag{2.8.1}
 \end{equation}
-</div></article><p id="p-267">In this business, time starts at \(t=0\text{,}\) and any reference to \(f(t)\) for negative \(t\) is defined to be zero. A convention is that a lowercase function of \(t\) transforms to its uppercase namesake as a function of \(s\text{.}\) (Another convention is that \(\lx\) is used with curly braces, but we have already committed to using square brackets for operators.)</p>
+</div></article><p id="p-268">In this business, time starts at \(t=0\text{,}\) and any reference to \(f(t)\) for negative \(t\) is defined to be zero. A convention is that a lowercase function of \(t\) transforms to its uppercase namesake as a function of \(s\text{.}\) (Another convention is that \(\lx\) is used with curly braces, but we have already committed to using square brackets for operators.)</p>
 <article class="fact theorem-like" id="fact-13"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.8.2</span><span class="period">.</span>
 </h6>
-<p id="p-268">The Laplace transform is a linear operator. That is,</p>
+<p id="p-269">The Laplace transform is a linear operator. That is,</p>
 <div class="displaymath">
 \begin{gather*}
 \lx[ f(t) + g(t) ] = F(s) + G(s) \\
@@ -232,7 +232,7 @@ var js_version = 0.13;
 <p data-braille="continuation">where \(c\) is any constant.</p></article></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.8.1</span> <span class="title">Derivatives</span>
 </h3>
-<p id="p-269">Applying integration by parts to the definition of \(\lx[x'(t)]\) reveals the main reason Laplace transforms are useful in ODEs:</p>
+<p id="p-270">Applying integration by parts to the definition of \(\lx[x'(t)]\) reveals the main reason Laplace transforms are useful in ODEs:</p>
 <div class="displaymath">
 \begin{align*}
 \lx[x'(t)] \amp = \int_0^\infty x'(t) e^{-st}\, dt \\
@@ -255,7 +255,7 @@ X(s) = \frac{ F(s) + x(0)}{s-a}\text{.}
 <p data-braille="continuation">Now “all” we have to do know is to compute the inverse transform, that is, find \(x(t)\) given \(X(s)\text{.}\) This is a lot less straightforward than computing the forward transform, unfortunately. But we can make it manageable in much the same way you learned indefinite integration: by learning some canonical cases and then matching patterns.</p></section><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.8.2</span> <span class="title">Basic transforms</span>
 </h3>
-<p id="p-270">We can find the transform of an exponential function from the transform definition. For any complex number \(c\text{,}\)</p>
+<p id="p-271">We can find the transform of an exponential function from the transform definition. For any complex number \(c\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[e^{c t}] = \int_0^\infty e^{(c-s)t}\, dt = \left[ -\frac{1}{s-c} e^{(c-s)t} \right]_0^\infty = \frac{1}{s-c}\text{.}
@@ -265,7 +265,7 @@ X(s) = \frac{ F(s) + x(0)}{s-a}\text{.}
 <article class="fact theorem-like" id="fact-14"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.8.3</span><span class="period">.</span><span class="space"> </span><span class="title">Transform of an exponential.</span>
 </h6>
-<div class="displaymath" id="p-271">
+<div class="displaymath" id="p-272">
 \begin{equation}
 \lx[e^{c t}] = \frac{1}{s-c}\text{.}\label{fl-eq-ltexp}\tag{2.8.2}
 \end{equation}
@@ -275,9 +275,9 @@ X(s) = \frac{ F(s) + x(0)}{s-a}\text{.}
 \begin{equation*}
 \lx[1]=\frac{1}{s}\text{.}
 \end{equation*}
-</div></article><article class="example example-like" id="example-45"><a data-knowl="" class="id-ref original" data-refid="hk-example-45"><h6 class="heading">
+</div></article><article class="example example-like" id="example-43"><a data-knowl="" class="id-ref original" data-refid="hk-example-43"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-45"><article class="example example-like"><p id="p-272">Let's consider \(x'-ax=e^{ct}\text{,}\) where \(a,c\) are different constants. Transforming both sides, we get</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-43"><article class="example example-like"><p id="p-273">Let's consider \(x'-ax=e^{ct}\text{,}\) where \(a,c\) are different constants. Transforming both sides, we get</p>
 <div class="displaymath">
 \begin{equation*}
 [sX(s)-x(0)] - aX(s) =\frac{1}{s-c}\text{,}
@@ -298,11 +298,11 @@ X(s) = \frac{x(0)}{s-a} + \frac{1}{(s-c)(s-a)}\text{.}
 <p data-braille="continuation">Thus the inverse transform of this fraction is a sum of two exponentials,</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
+x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right)\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">This is a particular solution that has \(x_p(0)=0\text{.}\) The general solution is \(e^{at}x(0) + x_p(t)\text{.}\)</p></article></div>
-<p id="p-273">Finding the transform of a step is also pretty easy:</p>
+<p id="p-274">Finding the transform of a step is also pretty easy:</p>
 <div class="displaymath">
 \begin{align*}
 \lx[H(t-T)] \amp = \int_T^\infty e^{-st}\, dt \\
@@ -312,19 +312,19 @@ x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
 <article class="fact theorem-like" id="fact-15"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.8.5</span><span class="period">.</span><span class="space"> </span><span class="title">Transform of a step.</span>
 </h6>
-<div class="displaymath" id="p-274">
+<div class="displaymath" id="p-275">
 \begin{equation}
 \lx[H(t-T)] = \frac{e^{-sT}}{s}\text{.}\label{fl-eq-ltstep}\tag{2.8.3}
 \end{equation}
-</div></article><p id="p-275">A generalization of the same calculation results in a very important rule.</p>
+</div></article><p id="p-276">A generalization of the same calculation results in a very important rule.</p>
 <article class="theorem theorem-like" id="fl-thm-shift"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.8.6</span><span class="period">.</span><span class="space"> </span><span class="title">Shift theorem.</span>
 </h6>
-<div class="displaymath" id="p-276">
+<div class="displaymath" id="p-277">
 \begin{equation}
 \lx[H(t-T)f(t-T)] = e^{-sT} \lx[f(t)]\text{.}\label{fl-eq-ltshift}\tag{2.8.4}
 \end{equation}
-</div></article><p id="p-277">To get the transform of an impulse, we can play the same game as before. The transform of our narrow step \(\delta_\epsilon\)  is</p>
+</div></article><p id="p-278">To get the transform of an impulse, we can play the same game as before. The transform of our narrow step \(\delta_\epsilon\)  is</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[ \delta_\epsilon(t-T)] = \frac{1}{\epsilon} \left( \lx[H(t-T)] - \lx[H(t-T-\epsilon) \right) = \frac{1 - e^{\epsilon s}}{\epsilon s}e^{-sT}\text{.}
@@ -334,7 +334,7 @@ x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
 <article class="fact theorem-like" id="fact-16"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.8.7</span><span class="period">.</span><span class="space"> </span><span class="title">Transform of an impulse.</span>
 </h6>
-<div class="displaymath" id="p-278">
+<div class="displaymath" id="p-279">
 \begin{equation}
 \lx[\delta(t-T)] = e^{-sT}\text{.}\label{fl-eq-ltimpulse}\tag{2.8.5}
 \end{equation}
@@ -344,9 +344,9 @@ x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) \text{.}
 \begin{equation*}
 \lx[\delta(t)] = 1\text{.}
 \end{equation*}
-</div></article><article class="example example-like" id="example-46"><a data-knowl="" class="id-ref original" data-refid="hk-example-46"><h6 class="heading">
+</div></article><article class="example example-like" id="example-44"><a data-knowl="" class="id-ref original" data-refid="hk-example-44"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.8</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-46"><article class="example example-like"><p id="p-279">Let's consider \(x'=ax + \delta(t-T)\text{,}\) with \(x(0)=0\text{.}\) Transform to get</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-44"><article class="example example-like"><p id="p-280">Let's consider \(x'=ax + \delta(t-T)\text{,}\) with \(x(0)=0\text{.}\) Transform to get</p>
 <div class="displaymath">
 \begin{equation*}
 [sX(s)-x(0)] - aX(s) = e^{-sT}\text{,}
@@ -366,12 +366,12 @@ x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}\text{.}
 </div></article></div></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.8.3</span> <span class="title">Transfer function</span>
 </h3>
-<p id="p-280">Perhaps it's clear by now that \(x'-ax=f(t)\) always leads to \(X(s) = F(s)/(s-a)\) as a particular solution. The term \(1/(s-a)\) is called the <dfn class="terminology">transfer function</dfn> of the ODE. Values of \(s\) that are roots of the denominator are known as <dfn class="terminology">poles</dfn> of the transform. They point out exponential solutions.</p>
-<p id="p-281">The impulse response is the case when \(f(t)=\delta(t)\text{,}\) so that \(F(s)=1\text{.}\) This implies the following.</p>
+<p id="p-281">Perhaps it's clear by now that \(x'-ax=f(t)\) always leads to \(X(s) = F(s)/(s-a)\) as a particular solution. The term \(1/(s-a)\) is called the <dfn class="terminology">transfer function</dfn> of the ODE. Values of \(s\) that are roots of the denominator are known as <dfn class="terminology">poles</dfn> of the transform. They point out exponential solutions.</p>
+<p id="p-282">The impulse response is the case when \(f(t)=\delta(t)\text{,}\) so that \(F(s)=1\text{.}\) This implies the following.</p>
 <article class="fact theorem-like" id="fact-17"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.8.9</span><span class="period">.</span>
 </h6>
-<p id="p-282">The transfer function is the Laplace transform of the impulse response.</p></article></section></section></div></main>
+<p id="p-283">The transfer function is the Laplace transform of the impulse response.</p></article></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-20T08:47:41-05:00    *-->
+<!--*    on 2020-02-24T08:29:56-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -231,9 +231,9 @@ g(t) = \exp\left( \int a(t)\,dt \right)\text{.}\label{fl-eq-intfactor}\tag{2.3.1
 \end{equation}
 </div>
 <p data-braille="continuation">Thus, \(x_h=c_1g(t)\) is a homogeneous solution for any constant \(c_1\text{.}\) It's not an elementary fact that this is the <em class="emphasis">general</em> homogeneous solution.</p>
-<aside class="aside aside-like" id="aside-12"><p id="p-210">The integrating factor \(g(t)\) is not uniquely defined, because it contains an indefinite integral. But adding \(C\) to the integral is the same as multiplying \(g(t)\) by \(e^C\text{,}\) and the general homogeneous solution is not affected. This is the usual situation of scalar nonuniqueness for expressing the basis of a nullspace.</p></aside><article class="example example-like" id="example-30"><a data-knowl="" class="id-ref original" data-refid="hk-example-30"><h6 class="heading">
+<aside class="aside aside-like" id="aside-13"><p id="p-210">The integrating factor \(g(t)\) is not uniquely defined, because it contains an indefinite integral. But adding \(C\) to the integral is the same as multiplying \(g(t)\) by \(e^C\text{,}\) and the general homogeneous solution is not affected. This is the usual situation of scalar nonuniqueness for expressing the basis of a nullspace.</p></aside><article class="example example-like" id="example-29"><a data-knowl="" class="id-ref original" data-refid="hk-example-29"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-30"><article class="example example-like"><p id="p-211">To solve \(x'=\sin(t) x\text{,}\) we integrate to get \(-\cos(t)\) and then exponentiate, so that</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-29"><article class="example example-like"><p id="p-211">To solve \(x'=\sin(t) x\text{,}\) we integrate to get \(-\cos(t)\) and then exponentiate, so that</p>
 <div class="displaymath">
 \begin{equation*}
 x_h(t) = c_1 \exp[ -\cos(t) ]\text{.}
@@ -245,10 +245,10 @@ x_h(t) = c_1 \exp[ -\cos(t) ]\text{.}
 <article class="definition definition-like" id="fl-df-ivp"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Initial value problem (IVP).</span>
 </h6>
-<p id="p-213">A first-order <dfn class="terminology">initial value problem</dfn> is a first-order ODE together with an <dfn class="terminology">initial condition</dfn> \(x(t_0)=x_0\text{.}\)</p></article><aside class="aside aside-like" id="aside-13"><p id="p-214">The definition of IVP, unlike most of what we have done so far, applies to nonlinear ODEs as well as linear ones.</p></aside><p id="p-215">Solving an IVP typically involves first finding the general solution of the ODE, then applying the initial condition to determine a specific value for the integration constant.</p>
-<article class="example example-like" id="example-31"><a data-knowl="" class="id-ref original" data-refid="hk-example-31"><h6 class="heading">
+<p id="p-213">A first-order <dfn class="terminology">initial value problem</dfn> is a first-order ODE together with an <dfn class="terminology">initial condition</dfn> \(x(t_0)=x_0\text{.}\)</p></article><aside class="aside aside-like" id="aside-14"><p id="p-214">The definition of IVP, unlike most of what we have done so far, applies to nonlinear ODEs as well as linear ones.</p></aside><p id="p-215">Solving an IVP typically involves first finding the general solution of the ODE, then applying the initial condition to determine a specific value for the integration constant.</p>
+<article class="example example-like" id="example-30"><a data-knowl="" class="id-ref original" data-refid="hk-example-30"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-31"><article class="example example-like"><p id="p-216">We found earlier that the general solution of \(x'=\sin(t) x\) is</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-30"><article class="example example-like"><p id="p-216">We found earlier that the general solution of \(x'=\sin(t) x\) is</p>
 <div class="displaymath">
 \begin{equation*}
 x(t) = c_1 \exp[ -\cos(t) ]\text{.}
@@ -270,9 +270,9 @@ x(t) = e \exp[ -\cos(t) ] = \exp[1-\cos(t)]\text{,}
 <span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">Numerical solutions</span>
 </h3>
 <a href="fl-homogeneous.html#fl-iv-numerical" class="permalink">¶</a><p id="p-217">Because an IVP has a unique solution, it is a suitable target for an approximate numerical solution.</p>
-<article class="example example-like" id="example-32"><a data-knowl="" class="id-ref original" data-refid="hk-example-32"><h6 class="heading">
+<article class="example example-like" id="example-31"><a data-knowl="" class="id-ref original" data-refid="hk-example-31"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-32"><article class="example example-like"><p id="p-218">We look again at \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) Most numerical routines, like those in MATLAB, are coded to solve an ODE given in the general form \(x'=F(t,x)\text{.}\) Therefore we have to define a function for \(F\text{.}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-31"><article class="example example-like"><p id="p-218">We look again at \(x'=\sin(t) x\text{,}\)  \(x(0)=1\text{.}\) Most numerical routines, like those in MATLAB, are coded to solve an ODE given in the general form \(x'=F(t,x)\text{.}\) Therefore we have to define a function for \(F\text{.}\)</p>
 <pre class="code-block tex2jax_ignore">
 F = @(t,x) sin(t)*x;
 		</pre>

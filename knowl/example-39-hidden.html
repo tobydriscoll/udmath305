@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-20T08:47:42-05:00    *-->
+<!--*    on 2020-02-24T08:29:57-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,11 +11,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Consider \(x'-ax=e^{at}\text{.}\) We get \(x_h=c_1e^{at}\text{,}\) and the table suggests</p>
+<body><article class="example example-like"><p>We solve \(x'-ax=e^{at}\) by the variation of parameters formula</p>
 <div class="displaymath">
 \begin{equation*}
-x_p = B_0 e^{at}\text{.}
+x(t) = c_1 g(t) + g(t) \int g(t)^{-1} e^{at} \, dt\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">But this is a repeat of the homogeneous solution. Hence if we substitute it into \(x'-ax\text{,}\) we (naturally) get zero, and it's impossible to match this with the forcing function \(e^{at}\text{.}\)</p></article></body>
+<p data-braille="continuation">where</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = \exp \left( \int a\, dt \right) = e^{at}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 e^{at} + e^{at} \int e^{-at} e^{at} \, dt = c_1 e^{at} + t e^{at}\text{.}
+\end{equation*}
+</div></article></body>
 </html>

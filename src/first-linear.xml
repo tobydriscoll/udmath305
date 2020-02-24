@@ -8,7 +8,7 @@
 	<!--p><em>Refer to section 1.1 of the text.</em></p-->
 
 	<p>
-		A <term>differential equation</term> is an equation that has some derivatives in it. (Duh.) The variable whose derivative is taken is called the <idx>dependent variable</idx><term>dependent variable</term> and is considered the "unknown" of the differential equation. We'll be concerned with the case where there is only one <idx>independent variable</idx><term>independent variable</term>  (a "with respect to" variable in the denominator of a derivative), so there are no partial derivatives and we say the equation is  an <term>ordinary differential equation</term>, or ODE. For discussions and theory we will stick to <m>x</m> and <m>t</m> as the dependent and independent variables, but in general these are determined by what is being modeled by the ODE. 
+		A <term>differential equation</term> is an equation that has some derivatives in it. (Duh.) The variable whose derivative is taken is called the <idx>dependent variable</idx><term>dependent variable</term> and is considered the "unknown" of the differential equation. We'll be concerned with the case where there is only one <idx>independent variable</idx><term>independent variable</term>  (a "with respect to" variable in the denominator of a derivative), so there are no partial derivatives and we say the equation is  an <term>ordinary differential equation</term>, or ODE. For discussions and theory we will stick to <m>x</m> and <m>t</m> as the dependent and independent variables, but in general these are determined by what is being modeled by the ODE.
 	</p>
 
 	<p>
@@ -16,18 +16,18 @@
 	</p>
 
 	<p>
-		The easiest ODE in the world is 
-		<me> \dd{x}{t} = 0</me>. 
+		The easiest ODE in the world is
+		<me> \dd{x}{t} = 0</me>.
 		A <idx><h>solution</h><h>of ODE</h></idx><term>solution</term> of this ODE is a function <m>x(t)</m> that satisfies the ODE. Perhaps you can work out that the solution here is <m>x(t)=C</m> for an arbitrary constant <m>C</m>. As dumb as this example is, it points out something important right away.
 	</p>
 	<fact>
 		<p>Solutions to ODEs are not unique.</p>
 	</fact>
 	<p>
-		More general, but not really any more new to you, is the ODE <m>\dd{x}{t}=f(t)</m>. Both sides can be integrated to give <m>x(t) = \int f(t)\,dt + C</m>. 
+		More general, but not really any more new to you, is the ODE <m>\dd{x}{t}=f(t)</m>. Both sides can be integrated to give <m>x(t) = \int f(t)\,dt + C</m>.
 	</p>
 	<p>
-		Things get interesting only when both <m>x</m> and <m>x'</m> appear in the equation. We'll use four examples or archetypes to begin the discussion. 
+		Things get interesting only when both <m>x</m> and <m>x'</m> appear in the equation. We'll use four examples or archetypes to begin the discussion.
 	</p>
 	<example xml:id="ex-constant-growth">
 		<title>Constant growth rate</title>
@@ -36,7 +36,7 @@
 			It's trivial to check that <m>x=e^t</m> is one solution of <m>x'=x</m>, i.e.,  it makes the ODE a true equation.  As a mathematical model, the ODE states that the rate of change in <m>x</m> is equal to <m>x</m> itself, and the result is <idx>exponential growth</idx><term>exponential growth</term>: the solution grows larger, which increases the rate of growth, and so on in a feedback loop.
 		</p>
 		<p>
-			Exponential growth is most naturally plotted on a log-linear graph, in which case the solution is a straight line with positive slope. Because of the log scale, a <q>difference</q> in the <m>y</m>-coordinate is actually a multiplicative factor in the solution. Thus each unit of time applies a constant multiplier of growth. 
+			Exponential growth is most naturally plotted on a log-linear graph, in which case the solution is a straight line with positive slope. Because of the log scale, a <q>difference</q> in the <m>y</m>-coordinate is actually a multiplicative factor in the solution. Thus each unit of time applies a constant multiplier of growth.
 		</p>
 		<sidebyside>
 			<listing xml:id="fo_intro_const_growth">
@@ -64,7 +64,7 @@
 			But we can end the suspense by easily verifying that <m>x=e^{-t}</m> is a solution. This function asymptotically approaches zero as <m>t\to\infty</m>, which we call <idx>exponential decay</idx><term>exponential decay</term>. In other, related problems we will find that solutions can decay (or "relax") to any value, not just zero.
 		</p>
 		<p>
-			Exponential decay is most naturally plotted on a log-linear graph, in which case the solution is a straight line with negative slope. 
+			Exponential decay is most naturally plotted on a log-linear graph, in which case the solution is a straight line with negative slope.
 		</p>
 		<sidebyside>
 			<listing xml:id="fo_intro_const_decay">
@@ -90,7 +90,7 @@
 		In this case we are back to a positive growth rate for positive solution values. In fact, the growth rate increases with time as well as with the solution itself. You can verify that <m>x=e^{t^2}</m> is a solution, and indeed this grows at a "super-exponential" rate.
 		</p>
 		<sidebyside>
-			<listing  xml:id="fo_intro_var_growth">	
+			<listing  xml:id="fo_intro_var_growth">
 			<program language="matlab">
 			<input>
 				x = @(t) exp(t.^2);
@@ -109,7 +109,7 @@
 		<title>Nonlinear growth</title>
 		<p>
 			<me>\dd{x}{t} = x^2</me>
-			This is our first example featuring a nonlinear term in the variable <m>x</m>. As a rule, nonlinear ODEs are much harder to solve and have less mathematical structure than linear problems. This particular example isn't so tough, though; you can check that <m>x=1/(1-t)</m> is a solution. Note that the growth is even faster--literally off the charts as <m>t\to 1</m>. 
+			This is our first example featuring a nonlinear term in the variable <m>x</m>. As a rule, nonlinear ODEs are much harder to solve and have less mathematical structure than linear problems. This particular example isn't so tough, though; you can check that <m>x=1/(1-t)</m> is a solution. Note that the growth is even faster--literally off the charts as <m>t\to 1</m>.
 		</p>
 		<sidebyside>
 			<listing xml:id="fo_intro_nonlin_growth">
@@ -136,7 +136,7 @@
 	<title>Linear ODEs</title>
 	<introduction>
 		<p>
-			Linear ODEs are the most fundamental type. If you could only get to ask one yes-or-no question about a new ODE, your question should be, "Is it linear?" 
+			Linear ODEs are the most fundamental type. If you could only get to ask one yes-or-no question about a new ODE, your question should be, "Is it linear?"
 		</p>
 		<definition xml:id="fl-df-linear-ode">
 			<title>First-order linear ODE</title>
@@ -144,27 +144,27 @@
 			<p>
 				A <idx><h>linear ODE</h><h>first order</h></idx><term>first-order linear ODE</term> is an equation of the form
 				<men xml:id="fl-eq-linear">
-					\dd{x}{t} = a(t)x + f(t) 
-				</men>. 
+					\dd{x}{t} = a(t)x + f(t)
+				</men>.
 			</p></statement>
 		</definition>
 		<p>
-			We often refer to <m>a(t)</m> as the <idx><h>coefficient</h><h>in linear ODE</h></idx><term>coefficient function</term> and <m>f(t)</m> as the <idx>forcing function</idx><term>forcing function</term>. 
-			Note that it is <em>not</em> necessary for these to be linear functions of time, nor is the solution <m>x(t)</m> generally a linear function. The linearity being referred to is the fact that there are no terms such as <m>\sin(x')</m>, <m>e^x</m>, <m>xx'</m>, etc. 
+			We often refer to <m>a(t)</m> as the <idx><h>coefficient</h><h>in linear ODE</h></idx><term>coefficient function</term> and <m>f(t)</m> as the <idx>forcing function</idx><term>forcing function</term>.
+			Note that it is <em>not</em> necessary for these to be linear functions of time, nor is the solution <m>x(t)</m> generally a linear function. The linearity being referred to is the fact that there are no terms such as <m>\sin(x')</m>, <m>e^x</m>, <m>xx'</m>, etc.
 		</p>
 	</introduction>
 	<subsection xml:id="fl-li-general">
-		<title>General solutions</title>    
+		<title>General solutions</title>
 		<p>
-			All solutions to first-order linear problems share a basic structure. In fact, it's the same structure as the solutions of <m>\bA\bx=\bb</m>. In order to describe this, we're going to replace the vectors <m>\bx</m> and <m>\bb</m> with the functions <m>x(t)</m> and <m>f(t)</m>, and the matrix <m>\bA</m> by something analogous for functions. 
+			All solutions to first-order linear problems share a basic structure. In fact, it's the same structure as the solutions of <m>\bA\bx=\bb</m>. In order to describe this, we're going to replace the vectors <m>\bx</m> and <m>\bb</m> with the functions <m>x(t)</m> and <m>f(t)</m>, and the matrix <m>\bA</m> by something analogous for functions.
 		</p>
 		<definition xml:id="fl-df-operator">
 			<title>Linear operator</title>
 			<statement><p>
-				A <idx>linear operator</idx><term>linear operator</term> <m>\opA</m> is a rule for transforming functions to other functions, such that 
+				A <idx>linear operator</idx><term>linear operator</term> <m>\opA</m> is a rule for transforming functions to other functions, such that
 				<me>
 					\opA[cx(t) + y(t)]=c\opA[x(t)] + \opA[y(t)]
-				</me> 
+				</me>
 				for all functions <m>x,y</m> and numbers <m>c</m>.
 			<notation>
 			  <usage>\opA[x]</usage>
@@ -172,24 +172,24 @@
 			</notation>
 			</p></statement>
 		</definition>
-		<p>  
-			In the first chapter we pointed out that the linear function <m>L</m> defined by ><m>L(\bx)=\bA\bx</m> for a given matrix <m>\bA</m> has the same property. In the context of the first order linear ODE <xref ref="fl-eq-linear"/>, the operator of interest to us is defined by 
+		<p>
+			In the first chapter we pointed out that the linear function <m>L</m> defined by ><m>L(\bx)=\bA\bx</m> for a given matrix <m>\bA</m> has the same property. In the context of the first order linear ODE <xref ref="fl-eq-linear"/>, the operator of interest to us is defined by
 			<men xml:id="fl-eq-linop">
-				\opA[x] = x' - a(t)x 
+				\opA[x] = x' - a(t)x
 			</men>,
-			whose linearity you can easily validate for yourself. We can now express the ODE simply as <m>\opA[x]=f</m>. 
+			whose linearity you can easily validate for yourself. We can now express the ODE simply as <m>\opA[x]=f</m>.
 		</p>
 		<p>
-			As with linear systems, we have a special role for the <idx><h>homogeneous</h><h>linear ODE</h></idx><term>homogeneous</term> linear ODE <m>\dd{x}{t} = a(t)x</m>, that is, <m>\opA[x]=0</m>, or equation <xref ref="fl-eq-linear"/> with zero forcing. 
+			As with linear systems, we have a special role for the <idx><h>homogeneous</h><h>linear ODE</h></idx><term>homogeneous</term> linear ODE <m>\dd{x}{t} = a(t)x</m>, that is, <m>\opA[x]=0</m>, or equation <xref ref="fl-eq-linear"/> with zero forcing.
 		</p>
 		<fact>
 			<p>
 				If <m>x_1(t)</m> and <m>x_2(t)</m> are solutions of <m>\opA[x]=0</m>, then so is any linear combination <m>c_1x_1 + c_2x_2</m> for constants <m>c_1,c_2</m>.
-			</p> 
+			</p>
 		</fact>
 		<p>
-			Quite simply, this is because 
-			<me>\opA[c_1x_1 + c_2x_2] = c_1\opA[x_1] + c_2\opA[x_2]=0+0=0</me>. 
+			Quite simply, this is because
+			<me>\opA[c_1x_1 + c_2x_2] = c_1\opA[x_1] + c_2\opA[x_2]=0+0=0</me>.
 			Clearly, we could extend the linear combination to any number of terms, with the same result. We can make a related observation:
 		</p>
 		<fact>
@@ -206,9 +206,9 @@
 			</p>
 		</fact>
 		<p>
-			This is just as easy as the last fact: 
-			<me>\opA[x_h+x_p] = \opA[x_h] + \opA[x_p]=0+f=f</me>. 
-			As with linear systems, then, we can boil the general solution of the complete problem to finding the most general solution of the homogeneous problem, plus a particular solution of the original problem. 
+			This is just as easy as the last fact:
+			<me>\opA[x_h+x_p] = \opA[x_h] + \opA[x_p]=0+f=f</me>.
+			As with linear systems, then, we can boil the general solution of the complete problem to finding the most general solution of the homogeneous problem, plus a particular solution of the original problem.
 		</p>
 		<theorem xml:id="fl-general">
 			<title>General solutions (first-order linear ODEs)</title>
@@ -223,25 +223,25 @@
 	<title>Homogeneous solutions</title>
 	<introduction>
 		<p>
-			Our first job is to figure out how to express all possible solutions of the homogeneous problem <m>\opA[x]=0</m>, or <m>x'-a(t)x=0</m>. As with linear systems, the goal is to find a basis, so that the general <m>x_h</m> is a linear combination of the basis functions. However, there is no analog of the RREF of a matrix to exploit here. 
+			Our first job is to figure out how to express all possible solutions of the homogeneous problem <m>\opA[x]=0</m>, or <m>x'-a(t)x=0</m>. As with linear systems, the goal is to find a basis, so that the general <m>x_h</m> is a linear combination of the basis functions. However, there is no analog of the RREF of a matrix to exploit here.
 		</p>
 	</introduction>
 	<subsection xml:id="fl-ho-intfactor">
 		<title>Integrating factor</title>
 		<p>
-			We can go far with some simple calculus. Define an <idx>integrating factor</idx><term>integrating factor</term> as 
+			We can go far with some simple calculus. Define an <idx>integrating factor</idx><term>integrating factor</term> as
 			<me>
 				g(t) = \exp[ q(t) ]
 			</me>,
-			for a <m>q(t)</m> to be defined momentarily. Then 
+			for a <m>q(t)</m> to be defined momentarily. Then
 			<me>
 				g'(t) = q'(t) g(t)
-			</me>. 
-			So <m>x=g</m> is a solution of <m>x'-a(t)x=0</m> if <m>a(t)=q'(t)</m>, that is, <m>q</m> is an antiderivative of <m>a</m>: 
+			</me>.
+			So <m>x=g</m> is a solution of <m>x'-a(t)x=0</m> if <m>a(t)=q'(t)</m>, that is, <m>q</m> is an antiderivative of <m>a</m>:
 			<men xml:id="fl-eq-intfactor">
 					g(t) = \exp\left( \int a(t)\,dt \right)
-			</men>. 
-			Thus, <m>x_h=c_1g(t)</m> is a homogeneous solution for any constant <m>c_1</m>. It's not an elementary fact that this is the <em>general</em> homogeneous solution. 
+			</men>.
+			Thus, <m>x_h=c_1g(t)</m> is a homogeneous solution for any constant <m>c_1</m>. It's not an elementary fact that this is the <em>general</em> homogeneous solution.
 		</p>
 		<aside>
 			<p>
@@ -250,7 +250,7 @@
 		</aside>
 		<example>
 			<p>
-				To solve <m>x'=\sin(t) x</m>, we integrate to get <m>-\cos(t)</m> and then exponentiate, so that 
+				To solve <m>x'=\sin(t) x</m>, we integrate to get <m>-\cos(t)</m> and then exponentiate, so that
 				<me>
 					x_h(t) = c_1 \exp[ -\cos(t) ]
 				</me>.
@@ -260,7 +260,7 @@
 	<subsection xml:id="fl-ho-ivp">
 		<title>Initial-value problems</title>
 		<p>
-			The general solution of <m>x'=a(t)x+f(t)</m> includes the general homogeneous solution, which contains an arbitrary multiplicative constant. This <q>solution</q> is therefore really a family of solutions. Many models include one piece of additional information that specifies the solution uniquely. 
+			The general solution of <m>x'=a(t)x+f(t)</m> includes the general homogeneous solution, which contains an arbitrary multiplicative constant. This <q>solution</q> is therefore really a family of solutions. Many models include one piece of additional information that specifies the solution uniquely.
 		</p>
 		<definition xml:id="fl-df-ivp">
 			<title>Initial value problem (IVP)</title>
@@ -270,42 +270,42 @@
 		</definition>
 		<aside>
 			<p>
-				The definition of IVP, unlike most of what we have done so far, applies to nonlinear ODEs as well as linear ones. 
+				The definition of IVP, unlike most of what we have done so far, applies to nonlinear ODEs as well as linear ones.
 			</p>
-		</aside>  
+		</aside>
 		<p>
-			Solving an IVP typically involves first finding the general solution of the ODE, then applying the initial condition to determine a specific value for the integration constant. 
+			Solving an IVP typically involves first finding the general solution of the ODE, then applying the initial condition to determine a specific value for the integration constant.
 		</p>
 		<example>
 			<p>
-				We found earlier that the general solution of <m>x'=\sin(t) x</m> is 
+				We found earlier that the general solution of <m>x'=\sin(t) x</m> is
 				<me>
 					x(t) = c_1 \exp[ -\cos(t) ]
 				</me>.
-				If we are also given the initial condition <m>x(0)=1</m>, then we substitute to determine 
+				If we are also given the initial condition <m>x(0)=1</m>, then we substitute to determine
 				<me>
 					1 = x(0) = c_1 e^{-\cos(0)} = \frac{c_1}{e}
 				</me>,
-				so that <m>c_1=e</m>. We then write 
+				so that <m>c_1=e</m>. We then write
 				<me>
 						x(t) = e \exp[ -\cos(t) ] = \exp[1-\cos(t)]
 				</me>,
-				which has no arbitrary constants left. 
+				which has no arbitrary constants left.
 			</p>
 		</example>
 	</subsection>
 	<!--subsection xml:id="fl-iv-growth">
-		<title>Growth factor</title>  
+		<title>Growth factor</title>
 		<p>
-			Another option is to rewrite some formulas for the IVP case. Consider again the integrating factor, 
+			Another option is to rewrite some formulas for the IVP case. Consider again the integrating factor,
 			<me>
 				g(t) = \exp\left[ \int a(t)\, dt \right]
-			</me>. 
-			It is not uniquely defined thanks to the integration constant. For an ODE alone this is natural, as the solution itself is not unique. But for the IVP we can define 
+			</me>.
+			It is not uniquely defined thanks to the integration constant. For an ODE alone this is natural, as the solution itself is not unique. But for the IVP we can define
 			<men xml:id="fl-eq-growthfactor">
 				G(s,t) = \exp\left[ \int_{s}^t a(u)\, du \right]
 			</men>,
-			which we call the <idx>growth factor</idx><term>growth factor</term>. It has some interesting and useful properties. 
+			which we call the <idx>growth factor</idx><term>growth factor</term>. It has some interesting and useful properties.
 		</p>
 		<theorem xml:id="fl-thm-growthfactor">
 			<title>Growth factor</title>
@@ -323,25 +323,25 @@
 		</theorem>
 		<example>
 			<p>
-				Reconsider the previous IVP <m>x'=\sin(t) x</m>,  <m>x(0)=1</m>. First we find  
+				Reconsider the previous IVP <m>x'=\sin(t) x</m>,  <m>x(0)=1</m>. First we find
 				<me>
-					G(s,t) = \exp \left[ \int_{s}^t \sin(u)\, du \right] = \exp[-\cos(t)+\cos(s)] 
+					G(s,t) = \exp \left[ \int_{s}^t \sin(u)\, du \right] = \exp[-\cos(t)+\cos(s)]
 				</me>.
-				The solution of the IVP is therefore 
+				The solution of the IVP is therefore
 				<me>
 					x(t) = G(0,t)\cdot 1 = \exp[1-\cos(t)]
 				</me>,
-				which is what we found before. 
+				which is what we found before.
 			</p>
 		</example>
 		<p>
-			The growth factor has a simple interpretation: multiplication by <m>G(s,t)</m> represents the evolution of <m>x</m> from a state at time <m>s</m> to the state at time <m>t</m>. That makes the first three properties of <xref ref="fl-thm-growthfactor"/> seem pretty obvious. 
+			The growth factor has a simple interpretation: multiplication by <m>G(s,t)</m> represents the evolution of <m>x</m> from a state at time <m>s</m> to the state at time <m>t</m>. That makes the first three properties of <xref ref="fl-thm-growthfactor"/> seem pretty obvious.
 		</p>
 	</subsection-->
 	<subsection xml:id="fl-iv-numerical">
-		<title>Numerical solutions</title>  
+		<title>Numerical solutions</title>
 		<p>
-			Because an IVP has a unique solution, it is a suitable target for an approximate numerical solution. 
+			Because an IVP has a unique solution, it is a suitable target for an approximate numerical solution.
 		</p>
 		<example>
 			<p>
@@ -382,14 +382,14 @@ title('Solution of a linear problem')
 	<title>Variation of parameters</title>
 	<!--introduction-->
 		<p>
-			In this and the next section we turn to looking for particular solutions of the first-order linear ODE 
+			In this and the next section we turn to looking for particular solutions of the first-order linear ODE
 			<men xml:id="fl-eq-folinrepeat">
 				x'-a(t)x=f(t)
-			</men>, 
+			</men>,
 			or <m>\opA[x]=f</m>. We start in this section with an all-purpose method. In the next section we look at a method that's simpler for the most common problems.
 		</p>
 		<p>
-			We begin with the homogeneous solution 
+			We begin with the homogeneous solution
 			<me>
 				x_h(t) = c_1 g(t) = c_1 \exp\left[\int a(t)\, dt\right]
 			</me>,
@@ -397,13 +397,13 @@ title('Solution of a linear problem')
 			<men xml:id="fl-eq-vofp1">
 				x_p(t) = k(t) g(t)
 			</men>,
-			and then choose <m>k(t)</m> to make it so: 
+			and then choose <m>k(t)</m> to make it so:
 			<me>
 				f(t) = x_p' - a(t) x_p = [k'g+kg'] - a k g = k'g + k[g'-ag]
 			</me>,
-			which, because <m>g</m> is a homogeneous solution, is simply <m>f(t)=k'(t)g(t)</m>. Hence we get a proper particular solution provided 
+			which, because <m>g</m> is a homogeneous solution, is simply <m>f(t)=k'(t)g(t)</m>. Hence we get a proper particular solution provided
 			<men xml:id="fl-eq-vofp2">
-				k(t) = \int \frac{f(t)}{g(t)}\, dt 
+				k(t) = \int \frac{f(t)}{g(t)}\, dt
 			</men>.
 			Step by step, we have to (1) integrate once to get <m>g</m> in <xref ref="fl-eq-intfactor"/>, (2) integrate again to get <m>k</m> in <xref ref="fl-eq-vofp2"/>, and (3) multiply them together to get the particular solution in <xref ref="fl-eq-vofp1"/>. It's probably also worth mentioning step (0), which is to put the given problem in the standard form of <xref ref="fl-eq-folinrepeat"/>; i.e., divide the equation through by any coefficient of <m>x'</m>.
 		</p>
@@ -413,26 +413,26 @@ title('Solution of a linear problem')
 				<me>
 					g(t) = \exp\left[ \int 4\,dt \right] = e^{4t}
 				</me>,
-				and 
+				and
 				<me>
 					k(t) = \int \frac{8t}{e^{4t}}\, dt = -\frac{1}{2} (4t+1)e^{-4t}
 				</me>,
-				where you need integration by parts (or a computer) to perform the integral. Hence 
-				<me> 
+				where you need integration by parts (or a computer) to perform the integral. Hence
+				<me>
 					x_p(t) = \left[ \frac{1}{2} (4t+1)e^{-4t} \right] e^{4t} = -\frac{1}{2} (4t+1)
 				</me>,
-				and the general solution is 
-				<me> 
+				and the general solution is
+				<me>
 					x(t) = x_h(t) + x_p(t) = c_1 e^{4t} - \frac{1}{2} (4t+1)
 				</me>.
 			</p>
 		</example>
 		<example>
 			<p>
-				For <m>(2+t) x'= x - 1</m>, we rewrite as 
+				For <m>(2+t) x'= x - 1</m>, we rewrite as
 				<me>
 					x' - \frac{1}{2+t} x = -\frac{1}{2+t}
-				</me>. Then 
+				</me>. Then
 				<me>
 					g(t) = \exp\left[ \int \frac{1}{2+t}\, dt \right] = \exp[ \ln(2+t) ] = 2+t
 				</me>.
@@ -440,18 +440,18 @@ title('Solution of a linear problem')
 				<me>
 					k(t) = \int \frac{-1}{2+t} (2+t)^{-1} \, dt = - (2+t)^{-1}
 				</me>,
-				so that 
+				so that
 				<me>
 					x(t) = c_1 (2+t) - (2+t)^{-1} (2+t) = c_1(2+t)-1
 				</me>.
 			</p>
 		</example>
 		<p>
-			After being thoroughly trained to always include integration constants, you might wonder why we are being so cavalier about them here. Let's walk through what would happen to them in the last example above. First, 
+			After being thoroughly trained to always include integration constants, you might wonder why we are being so cavalier about them here. Let's walk through what would happen to them in the last example above. First,
 			<me>
 				g(t) = \exp\left[  \ln(2+t) + C_1 \right] = A_1(2 + t)
 			</me>,
-			where we renamed <m>A_1=e^{C_1}\gt 0</m>. Then 
+			where we renamed <m>A_1=e^{C_1}\gt 0</m>. Then
 			<me>
 				k(t) = A_1^{-1} \int \frac{-1}{2+t} (2+t)^{-1} \, dt = A_1^{-1} [-(2+t)^{-1}+C_2] = -A_1^{-1}(2+t)^{-1} + A_2
 			</me>.
@@ -459,7 +459,7 @@ title('Solution of a linear problem')
 			<me>
 				x = x_h + kg = c_1 A_1(2 + t) + \bigl[-A_1^{-1}(2+t)^{-1} + A_2\bigr ]A_1(2 + t) = (c_1A_1+A_1A_2)(2+t) - 1
 			</me>.
-			This is exactly the same family of solutions as <m>c_1(2+t)-1</m>. Essentially, all the integration constants end up lumped into that <m>c_1</m>, which is always the case. 
+			This is exactly the same family of solutions as <m>c_1(2+t)-1</m>. Essentially, all the integration constants end up lumped into that <m>c_1</m>, which is always the case.
 		</p>
 		<p>
 			For initial-value problems, we find the entire general solution first, and then apply the initial condition to get a specific value for the free constant.
@@ -467,10 +467,10 @@ title('Solution of a linear problem')
 		<example>
 			<p>
 				Above we found that the general solution of <m>x'=4x+8t</m> is <m>x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)</m>. If we also have that <m>x(0)=3/2</m>, then we can conclude
-				<me> 
+				<me>
 					\frac{3}{2} = x(0) = c_1 - \frac{1}{2}(1)
-				</me>,				
-				so <m>c_1=2</m>. 
+				</me>,
+				so <m>c_1=2</m>.
 			</p>
 		</example>
 
@@ -510,15 +510,15 @@ title('Solution of a linear problem')
 			</table>
 			<example>
 				<p>
-					To solve <m>x'+3x=6t</m>, first note that <m>x_h(t)=c_1e^{-3t}</m>. For <m>x_p</m> we use the educated guess 
+					To solve <m>x'+3x=6t</m>, first note that <m>x_h(t)=c_1e^{-3t}</m>. For <m>x_p</m> we use the educated guess
 					<me>
 						x_p(t) = B_1 t + B_0
-					</me>. 
-					Substituting that into the ODE yields 
-					<me> 
+					</me>.
+					Substituting that into the ODE yields
+					<me>
 						(B_1)+3(B_1 t + B_0) = 6t
-					</me>. 
-					This has to be identically true for all <m>t</m>. On matching like powers of <m>t</m> we get the equations <m>3B_1=6</m> and <m>B_1+B_0=0</m>. This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that <m>B_1=2</m> and <m>B_0=-2</m>. So the general solution is 
+					</me>.
+					This has to be identically true for all <m>t</m>. On matching like powers of <m>t</m> we get the equations <m>3B_1=6</m> and <m>B_1+B_0=0</m>. This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that <m>B_1=2</m> and <m>B_0=-2</m>. So the general solution is
 					<me>
 						x(t) = c_1 e^{-3t} + 2t - 2
 					</me>.
@@ -526,48 +526,48 @@ title('Solution of a linear problem')
 			</example>
 			<example>
 					<p>
-						To solve <m>x'+x=-te^t</m>, first note that <m>x_h(t)=c_1e^{-t}</m>. For <m>x_p</m> we use the educated guess 
+						To solve <m>x'+x=-te^t</m>, first note that <m>x_h(t)=c_1e^{-t}</m>. For <m>x_p</m> we use the educated guess
 						<me>
 							x_p(t) = (B_1 t + B_0)e^t
-						</me>. 
-						Substituting that into the ODE yields 
-						<me> 
+						</me>.
+						Substituting that into the ODE yields
+						<me>
 							B_1e^t + (B_1 t + B_0)e^t = -te^t
-						</me>. 
-						On canceling the exponentials and matching like powers of <m>t</m>, we get the equations <m>B_1=-1</m> and <m>B_1+B_0=0</m>. Hence <m>B_1=-1</m> and <m>B_0=1</m>. So the general solution is 
+						</me>.
+						On canceling the exponentials and matching like powers of <m>t</m>, we get the equations <m>B_1=-1</m> and <m>B_1+B_0=0</m>. Hence <m>B_1=-1</m> and <m>B_0=1</m>. So the general solution is
 						<me>
 							x(t) = c_1 e^{-t} + e^t(1-t)
 						</me>.
 					</p>
 			</example>
 			<p>
-					An important aspect of the previous two examples is that if the forcing function <m>f</m> includes a polynomial, then the particular solution has to include all the terms for a polynomial of the same degree, even if the forcing polynomial has some zero coefficients. 
+					An important aspect of the previous two examples is that if the forcing function <m>f</m> includes a polynomial, then the particular solution has to include all the terms for a polynomial of the same degree, even if the forcing polynomial has some zero coefficients.
 			</p>
-			<example> 
+			<example>
 				<p>
-					Let's solve <m>x'=3x+50\cos(4t)</m>. We have <m>x_h=c_1e^{3t}</m> and choose 
+					Let's solve <m>x'=3x+50\cos(4t)</m>. We have <m>x_h=c_1e^{3t}</m> and choose
 					<me>
 						x_p = A \cos(4t) + B\sin(4t)
-					</me>. 
-					Put this into the ODE to get 
+					</me>.
+					Put this into the ODE to get
 					<me>
 						[-4A\sin(4t) + 4B\cos(4t)] - 3[A \cos(4t) + B\sin(4t)] = 50\cos(4t)
 					</me>.
-					Matching the coefficients of cosine and sine leads to 
-					<me> 
+					Matching the coefficients of cosine and sine leads to
+					<me>
 						4B-3A = 50, \quad -4A-3B = 0
-					</me>. 
-					This is the linear system 
+					</me>.
+					This is the linear system
 					<me>
 						\twomat{-3}{4}{-4}{-3} \twovec{A}{B} = \twovec{50}{0}
-					</me>. 
-					We apply Cramer's Rule to get 
-					<me> 
-						A = \frac{ \twodet{50}{4}{0}{-3} }{9+16} = -6, \quad B = \frac{ \twodet{-3}{50}{-4}{0} }{9+16} = 8
-					</me>. 
-					Thus finally 
+					</me>.
+					We apply Cramer's Rule to get
 					<me>
-						x(t) = c_1e^{3t} + 8\cos(4t) - 6 \sin(4t) 
+						A = \frac{ \twodet{50}{4}{0}{-3} }{9+16} = -6, \quad B = \frac{ \twodet{-3}{50}{-4}{0} }{9+16} = 8
+					</me>.
+					Thus finally
+					<me>
+						x(t) = c_1e^{3t} + 8\cos(4t) - 6 \sin(4t)
 					</me>.
 				</p>
 			</example>
@@ -575,15 +575,15 @@ title('Solution of a linear problem')
 		<subsection xml:id="fl-uc-breakdown">
 			<title>Breakdown of the method</title>
 			<p>
-				The suggestions in <xref ref="fl-tb-undeter"/> can fail if the forcing <m>f</m> includes the homogeneous solution <m>e^{at}</m>. 
+				The suggestions in <xref ref="fl-tb-undeter"/> can fail if the forcing <m>f</m> includes the homogeneous solution <m>e^{at}</m>.
 			</p>
 			<example>
 				<p>
-					Consider <m>x'-ax=e^{at}</m>. We get <m>x_h=c_1e^{at}</m>, and the table suggests 
+					Consider <m>x'-ax=e^{at}</m>. We get <m>x_h=c_1e^{at}</m>, and the table suggests
 					<me>
 						x_p = B_0 e^{at}
-					</me>. 
-					But this is a repeat of the homogeneous solution. Hence if we substitute it into <m>x'-ax</m>, we (naturally) get zero, and it's impossible to match this with the forcing function <m>e^{at}</m>. 
+					</me>.
+					But this is a repeat of the homogeneous solution. Hence if we substitute it into <m>x'-ax</m>, we (naturally) get zero, and it's impossible to match this with the forcing function <m>e^{at}</m>.
 				</p>
 			</example>
 			<p>
@@ -591,21 +591,21 @@ title('Solution of a linear problem')
 			</p>
 			<example>
 					<p>
-						We solve <m>x'-ax=e^{at}</m> by the variation of parameters formula 
+						We solve <m>x'-ax=e^{at}</m> by the variation of parameters formula
 						<me>
-							x(t) = c_1 g(t) + g(t) \int g(t)^{-1} e^{at} \, dt 
+							x(t) = c_1 g(t) + g(t) \int g(t)^{-1} e^{at} \, dt
 						</me>,
-						where 
+						where
 						<me>
 							g(t) = \exp \left( \int a\, dt \right) = e^{at}
-						</me>. 
-						Hence 
+						</me>.
+						Hence
 						<me>
 								x(t) = c_1 e^{at} + e^{at} \int e^{-at} e^{at} \, dt = c_1 e^{at} + t e^{at}
-						</me>. 
+						</me>.
 					 </p>
 			</example>
-			 
+
 		</subsection>
 </section>
 
@@ -622,7 +622,7 @@ title('Solution of a linear problem')
 		environment at fixed temperature <m>E</m>, then the difference <m>z(t)=x(t)-E</m> satisfies
 		<m>z'=a z</m> for a cooling rate <m>a \lt 0</m></p></li>
 	</dl>
-	To belabor the obvious, positive <m>a</m> represents growth and negative <m>a</m> leads to decay. In the simplest contexts, the rate <m>a</m> is constant, but in most models a variable rate is more realistic. 
+	To belabor the obvious, positive <m>a</m> represents growth and negative <m>a</m> leads to decay. In the simplest contexts, the rate <m>a</m> is constant, but in most models a variable rate is more realistic.
 	</p>
 
 <aside>
@@ -653,8 +653,9 @@ title('Solution of a linear problem')
 
 	<p>
 		A <term>continuously stirred tank reactor</term> (CSTR) appears often in chemical engineering. One ideally assumes that the contents of the tank are mixed perfectly and instantaneously at all times. Then one writes an ODE that expresses mass balance.
-	</p> 
+	</p>
 	<exercise>
+		<title>Tank reactor</title>
 		<statement>
 			<p>A 200 L tank contains 10 kg of dye. Pure water is added at a rate of 4 L per minute, while the mixture is drained at the same rate. How much dye is in the tank after 10 minutes?</p>
 		</statement>
@@ -670,26 +671,39 @@ title('Solution of a linear problem')
 		</solution>
 	</exercise>
 
-	<example>
+	<exercise>
 		<title>Newton cooling</title>
-		<p>
-			Suppose a mug of coffee at 90 C is put in a room kept at 20 C. In terms of the notation above, we have 
+		<statement>
+		  <p>
+			Suppose a mug of coffee at 90 C is put in a room kept at 20 C. After 10 minutes the coffee has cooled by <m>7</m> C. When will the coffee reach 60 C?
+		  </p>
+		</statement>
+		<solution>
+		  <p>
+			 In terms of the notation above, we have
 			<me>
 				\frac{dx}{dt} = a (x-20), \quad x(0)=90
-			</me>. 
-			We could also pose it for the temperature difference <m>z=x-20</m> as <m>z'=az</m>. Either way it's a linear problem with solution 
+			</me>.
+			We could also pose it for the temperature difference <m>z=x-20</m> as <m>z'=az</m>. Either way it's a linear problem with solution
 			<me>
 				x(t) = Ce^{at} + 20
-			</me>. 
-			We determine <m>C</m> from the initial value: <m>C=70</m>. To get a value for <m>a</m>, we need the temperature at another time too. Say the coffee has cooled by <m>7</m> degrees in 10 minutes. Then <m>83 = 70e^{10a}+20</m>, or <m>a=0.1\ln(0.9) \approx -0.01054</m> per min. The coffee will reach 60 C when <m>40 = 70e^{at}</m>, or <m>t\approx 53.1</m> minutes. 
-		</p>
-	</example>
+			</me>.
+			We have two unknown parameters in the solution, but also two unused pieces of information. We determine <m>C</m> from the initial value:
+			<me>
+				x(0)= 90 \Rightarrow C=70
+			</me>.
+			To get a value for <m>a</m>, we use
+			<me> 83 = x(7) = 70e^{10a}+20</me>,
+			or <m>a=0.1\ln(0.9) \approx -0.01054</m> per min. Hence the coffee will reach 60 C when <m>40 = 70e^{at}</m>, or <m>t\approx 53.1</m> minutes.
+		  </p>
+		</solution>
+	</exercise>
 </section>
 
 <section xml:id="fl-impulse">
 	<title>Steps and impulses</title>
 	<p>
-		The following function is very useful in some modeling situations.  
+		The following function is very useful in some modeling situations.
 	</p>
 	<definition xml:id="fl-df-unitstep">
 		<title>Unit step function</title>
@@ -700,7 +714,7 @@ title('Solution of a linear problem')
 		</statement>
 	</definition>
 	<p>
-		The unit step function represents throwing on an idealized switch. To have the switch turn on at an arbitrary time <m>T</m>, we use <m>H(t-T)</m>. It's worth mentioning here the related idea of a <term>window</term> function, which turns on and then back off. To get a function that is one only between times <m>S</m> and <m>T</m>, for example, we can use <m>f(t)=H(t-S)-H(t-T)</m>. 
+		The unit step function represents throwing on an idealized switch. To have the switch turn on at an arbitrary time <m>T</m>, we use <m>H(t-T)</m>. It's worth mentioning here the related idea of a <term>window</term> function, which turns on and then back off. To get a function that is one only between times <m>S</m> and <m>T</m>, for example, we can use <m>f(t)=H(t-S)-H(t-T)</m>.
 	</p>
 	<p>
 		It's relatively straightforward, if cumbersome, to incorporate step forcing into our solution methods used so far. The key fact to keep in mind is:
@@ -711,11 +725,11 @@ title('Solution of a linear problem')
 		</p>
 	</fact>
 	<p>
-		As a result, we can solve an initial-value problem for <m>x'-a(t)x=H(t-T)</m> piecewise. Assuming the initial time is zero for simplicity, we first solve 
+		As a result, we can solve an initial-value problem for <m>x'-a(t)x=H(t-T)</m> piecewise. Assuming the initial time is zero for simplicity, we first solve
 		<me>
 			x'-a(t)x=0
-		</me> 
-		over <m>0 \le t \le T</m>, using the given value of <m>x(0)</m>. Then we solve 
+		</me>
+		over <m>0 \le t \le T</m>, using the given value of <m>x(0)</m>. Then we solve
 		<me>
 			x'-a(t)x=1
 		</me>
@@ -723,40 +737,40 @@ title('Solution of a linear problem')
 	</p>
 	<example xml:id="fl-ex-stepforce">
 		<p>
-			Let's solve <m>x'-x=f(t)</m>, <m>x(0)=-2</m>, where <m>f(t)</m> is 5 for <m>3 \lt t \le 6</m> and zero elsewhere. The homogeneous solution is <m>x_h(t)=c_1e^{t}</m>. 
+			Let's solve <m>x'-x=f(t)</m>, <m>x(0)=-2</m>, where <m>f(t)</m> is 5 for <m>3 \lt t \le 6</m> and zero elsewhere. The homogeneous solution is <m>x_h(t)=c_1e^{t}</m>.
 		</p>
 		<p>
-			Over <m>0 \le t \le 3</m>, the homogeneous solution is the full solution. Applying <m>x(0)=-2</m> we get 
+			Over <m>0 \le t \le 3</m>, the homogeneous solution is the full solution. Applying <m>x(0)=-2</m> we get
 			<me>
 				x_{[0,3]}(t) = -2 e^t
 			</me>
-			for this interval. Over <m>3 \le t \le 6</m>, the ODE is <m>x'-x=5</m>. Undetermined coefficients suggests the particular solution <m>x_p(t)=A</m>, and it's then clear that <m>A=-5</m>. Our general solution over this segment is therefore <m>c_2e^t-5</m>. Joining this to the previous segment at <m>t=3</m> requires 
+			for this interval. Over <m>3 \le t \le 6</m>, the ODE is <m>x'-x=5</m>. Undetermined coefficients suggests the particular solution <m>x_p(t)=A</m>, and it's then clear that <m>A=-5</m>. Our general solution over this segment is therefore <m>c_2e^t-5</m>. Joining this to the previous segment at <m>t=3</m> requires
 			<me>
 				-2e^3 = c_2 e^3 - 5 \Rightarrow c_2 = 5e^{-3} -2
 			</me>,
-			so that 
+			so that
 			<me>
 				x_{[3,6]}(t) = (5e^{-3} -2)e^t - 5 = -2 e^t + 5(e^{t-3}-1)
-			</me>. 
-			Finally, for <m>t \gt 6</m> the ODE is homogeneous again, so the general solution here is <m>c_3e^t</m>. Continuity at <m>t=6</m> requires 
+			</me>.
+			Finally, for <m>t \gt 6</m> the ODE is homogeneous again, so the general solution here is <m>c_3e^t</m>. Continuity at <m>t=6</m> requires
 			<me>
 				-2 e^6 + 5(e^3-1) = c_3e^6 \Rightarrow c_3 = -2 + 5(e^{-3}-e^{-6})
-			</me>. 
-			Hence the last phase of the solution is 
+			</me>.
+			Hence the last phase of the solution is
 			<me>
 				x_{[6,\infty)}(t) = -2e^t + 5(e^{t-3} - e^{t-6})
-			</me>.					
+			</me>.
 			<!--me>
 					\frac{1}{1} 5 H(t-3) \bigl[e^{(3-t)}-1\bigr]
 			</me>,
-			and from the second step it's 
+			and from the second step it's
 			<me>
 					-\frac{1}{1} 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]
-			</me>. 
-			Put these together with the homogeneous solution and we get 
+			</me>.
+			Put these together with the homogeneous solution and we get
 			<me>
 				x(t) = e^{t}x_0 + 5 H(t-3) \bigl[e^{(3-t)}-1\bigr] - 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]
-			</me--> 
+			</me-->
 		</p>
 		<sidebyside>
 			<listing xml:id="fo_lcc_window">
@@ -772,15 +786,15 @@ title('Solution of a linear problem')
 				</input>
 			</program>
 			</listing>
-			<image source="figures/fo_lcc_window.svg"/>	  
+			<image source="figures/fo_lcc_window.svg"/>
 		</sidebyside>
 	</example>
 	<p>
-		Next imagine that we use a window function as the forcing term over ever shortening times, but in such a way that the integral under the curve remains constant. It's analogous to delivering a dose of medication via a slow IV drip versus injecting the same dose all at once directly. Define 
+		Next imagine that we use a window function as the forcing term over ever shortening times, but in such a way that the integral under the curve remains constant. It's analogous to delivering a dose of medication via a slow IV drip versus injecting the same dose all at once directly. Define
 		<me>
 			\delta_\epsilon(t) = \frac{H(t)-H(t-\epsilon)}{\epsilon}
 		</me>.
-		The area under the <m>\delta_\epsilon(t)</m> curve equals one for all <m>\epsilon \gt 0</m>. We now ask what happens as the window width <m>\epsilon</m> approaches zero. 
+		The area under the <m>\delta_\epsilon(t)</m> curve equals one for all <m>\epsilon \gt 0</m>. We now ask what happens as the window width <m>\epsilon</m> approaches zero.
 	</p>
 	<definition xml:id="fl-def-impresp">
 		<title>Impulse response</title>
@@ -789,14 +803,14 @@ title('Solution of a linear problem')
 		</p></statement>
 	</definition>
 	<p>
-		We often write the impulse response as the solution of <m>x'-ax=\delta(t)</m>, where <m>\delta(t)</m> is an <idx>impulse</idx><term>impulse</term> or a <term>delta function</term>. <notation><usage>\delta(t)</usage><description>impulse forcing</description></notation> (A math pedant will never fail to remind you that <m>\delta(t)</m> isn't actually a function. Let's not go there.) 
+		We often write the impulse response as the solution of <m>x'-ax=\delta(t)</m>, where <m>\delta(t)</m> is an <idx>impulse</idx><term>impulse</term> or a <term>delta function</term>. <notation><usage>\delta(t)</usage><description>impulse forcing</description></notation> (A math pedant will never fail to remind you that <m>\delta(t)</m> isn't actually a function. Let's not go there.)
 	</p>
 	<p>
-		The solution to <m>x'-ax=\delta_\epsilon(t)</m>, <m>x(0)=0</m> is easily found for a constant <m>a</m> using the method described above, resulting in 
+		The solution to <m>x'-ax=\delta_\epsilon(t)</m>, <m>x(0)=0</m> is easily found for a constant <m>a</m> using the method described above, resulting in
 		<me>
 			x_\epsilon(t) = \frac{1-e^{-a\epsilon}}{a\epsilon} e^{at}
 		</me>,
-		for <m>t\gt \epsilon</m>. As <m>\epsilon\to 0</m>, this is the only part of the solution we care about. Using L'Hôpital's Rule, 
+		for <m>t\gt \epsilon</m>. As <m>\epsilon\to 0</m>, this is the only part of the solution we care about. Using L'Hôpital's Rule,
 		<me>
 			\lim_{\epsilon\to 0} x_\epsilon(t) = e^{at}, \quad t \gt 0
 		</me>.
@@ -804,31 +818,31 @@ title('Solution of a linear problem')
 	</p>
 	<fact>
 		<p>
-			The solution of <m>x'-a(t)x=f(t) + k \delta(t-T)</m>, <m>x(0)=x_0</m>, where <m>a(t)</m> and <m>f(t)</m> are continuous, satisfies 
+			The solution of <m>x'-a(t)x=f(t) + k \delta(t-T)</m>, <m>x(0)=x_0</m>, where <m>a(t)</m> and <m>f(t)</m> are continuous, satisfies
 			<me>
-				x'-a(t)x=f(t), \; x(0)=x_0   
+				x'-a(t)x=f(t), \; x(0)=x_0
 			</me>
-			for <m>t\lt T</m>, and 
+			for <m>t\lt T</m>, and
 			<me>
-				x'-a(t)x=f(t), \; x(T)=x(T^-)+k   
+				x'-a(t)x=f(t), \; x(T)=x(T^-)+k
 			</me>
 			for <m>t\gt T</m>, where <m>x(T^-)=\lim_{t\to T^-} x(t)</m> comes from the first stage of the solution. If <m>T=0</m>, then
 			<me>
-				x'-a(t)x=f(t), \; x(0)=x_0+k    
+				x'-a(t)x=f(t), \; x(0)=x_0+k
 			</me>
-			for <m>t\gt 0</m>. 
+			for <m>t\gt 0</m>.
 		</p>
 	</fact>
 	<p>
-		In words, <alert>an impulse in a first-order linear equation is equivalent to an instantaneous jump in the value of the solution</alert>. 
+		In words, <alert>an impulse in a first-order linear equation is equivalent to an instantaneous jump in the value of the solution</alert>.
 	</p>
 	<example>
 		<p>
 			Suppose we solve <m>x'+5x=3\delta(t-2)</m>, with <m>x(0)=1</m>. For <m>0\lt t \lt 2</m>, the equation is homogeneous and <m>x(t)=e^{-5t}</m>. Then the solution receives an instantaneous kick from <m>e^{-10}</m> to <m>e^{-10}+3</m> and continues evolving homogeneously. So for <m>t\gt 2</m>,
 			<me>
 				x(t) = (e^{-10}+3) e^{-5(t-2)} = e^{-5t} + 3 e^{-5(t-2)}
-			</me>. 
-			In fact we could write the solution at all times in one formula using step function notation: 
+			</me>.
+			In fact we could write the solution at all times in one formula using step function notation:
 			<me>
 				x(t) = e^{-5t} + 3 H(t-2) e^{-5(t-2)}
 			</me>.
@@ -850,24 +864,24 @@ title('Solution of a linear problem')
 					</input>
 				</program>
 				</listing>
-			<image source="figures/fo_lcc_impulse.svg"/>	  
+			<image source="figures/fo_lcc_impulse.svg"/>
 			</sidebyside>
-	</example>   
+	</example>
 </section>
 
 <section xml:id="fl-laplace">
 	<title>Laplace transform methods</title>
 	<introduction>
 	<p>
-		There is a shorthand method for deriving the solutions of linear, constant-coefficient equations that have forcing functions such as steps, impulses, and elementary functions. Given (almost) any function <m>f(t)</m>, there is a doppelganger function <m>F(s)</m> defined by an integral. 
+		There is a shorthand method for deriving the solutions of linear, constant-coefficient equations that have forcing functions such as steps, impulses, and elementary functions. Given (almost) any function <m>f(t)</m>, there is a doppelganger function <m>F(s)</m> defined by an integral.
 	</p>
 	<definition xml:id="fl-df-laplace">
 		<title>Laplace transform</title>
 		<statement><p>
-			The <idx>Laplace transform</idx><term>Laplace transform</term> of a function <m>f(t)</m> is defined as 
+			The <idx>Laplace transform</idx><term>Laplace transform</term> of a function <m>f(t)</m> is defined as
 			<men xml:id="so-lap-lxform">
 				\lx[f(t)] = F(s) = \int_0^\infty f(t) e^{-st}\, dt
-			</men>. 
+			</men>.
 		</p></statement>
 		<notation>
 		  <usage>\lx[f(t)]</usage>
@@ -875,16 +889,16 @@ title('Solution of a linear problem')
 		</notation>
 	</definition>
 	<p>
-		In this business, time starts at <m>t=0</m>, and any reference to <m>f(t)</m> for negative <m>t</m> is defined to be zero. A convention is that a lowercase function of <m>t</m> transforms to its uppercase namesake as a function of <m>s</m>. (Another convention is that <m>\lx</m> is used with curly braces, but we have already committed to using square brackets for operators.) 
+		In this business, time starts at <m>t=0</m>, and any reference to <m>f(t)</m> for negative <m>t</m> is defined to be zero. A convention is that a lowercase function of <m>t</m> transforms to its uppercase namesake as a function of <m>s</m>. (Another convention is that <m>\lx</m> is used with curly braces, but we have already committed to using square brackets for operators.)
 	</p>
 	<fact>
 		<p>
-			The Laplace transform is a linear operator. That is, 
+			The Laplace transform is a linear operator. That is,
 			<md>
 				<mrow>\lx[ f(t) + g(t) ] = F(s) + G(s) </mrow>
 				<mrow>\lx[ c f(t) ] = c F(s)</mrow>
-			</md>, 
-			where <m>c</m> is any constant.  
+			</md>,
+			where <m>c</m> is any constant.
 		</p>
 	</fact>
 	</introduction>
@@ -897,35 +911,35 @@ title('Solution of a linear problem')
 				<mrow>\lx[x'(t)] \amp = \int_0^\infty x'(t) e^{-st}\, dt </mrow>
 				<mrow>\amp = \left[ x(t)e^{-st}\right]_0^\infty - \int_0^\infty (-s) x(t) e^{-st}\, dt </mrow>
 				<mrow>\amp = -x(0) + s X(s)</mrow>
-			</md>. 
-			<alert>Calculus is turned into algebra by the Laplace transform.</alert> So here is the plan of attack. Given an ODE <m>x'-ax=f(t)</m>, we transform everything in sight to get 
+			</md>.
+			<alert>Calculus is turned into algebra by the Laplace transform.</alert> So here is the plan of attack. Given an ODE <m>x'-ax=f(t)</m>, we transform everything in sight to get
 			<me>
 				sX(s)-x(0) - a X(s) =  F(s)
-			</me>. 
+			</me>.
 			Now solve for the transform of the solution:
 			<me>
 				X(s) = \frac{ F(s) + x(0)}{s-a}
-			</me>. 
-			Now <q>all</q> we have to do know is to compute the inverse transform, that is, find <m>x(t)</m> given <m>X(s)</m>. This is a lot less straightforward than computing the forward transform, unfortunately. But we can make it manageable in much the same way you learned indefinite integration: by learning some canonical cases and then matching patterns. 
+			</me>.
+			Now <q>all</q> we have to do know is to compute the inverse transform, that is, find <m>x(t)</m> given <m>X(s)</m>. This is a lot less straightforward than computing the forward transform, unfortunately. But we can make it manageable in much the same way you learned indefinite integration: by learning some canonical cases and then matching patterns.
 		</p>
 	</subsection>
 
-	<subsection> 
+	<subsection>
 		<title>Basic transforms</title>
 		<p>
 			We can find the transform of an exponential function from the transform definition. For any complex number <m>c</m>,
 			<me>
 				\lx[e^{c t}] = \int_0^\infty e^{(c-s)t}\, dt = \left[ -\frac{1}{s-c} e^{(c-s)t} \right]_0^\infty = \frac{1}{s-c}
-			</me>. 
-			(To make this valid requires that <m>{\text Re}(c)\lt s</m>, but we are going to ignore all such technicalities.) 
+			</me>.
+			(To make this valid requires that <m>{\text Re}(c)\lt s</m>, but we are going to ignore all such technicalities.)
 		</p>
-		<fact> 
+		<fact>
 			<title>Transform of an exponential</title>
 			<p>
 				<men xml:id="fl-eq-ltexp">
 					\lx[e^{c t}] = \frac{1}{s-c}
 				</men>.
-				An important special case is <m>c=0</m>: 
+				An important special case is <m>c=0</m>:
 				<me>
 					\lx[1]=\frac{1}{s}
 				</me>.
@@ -933,43 +947,43 @@ title('Solution of a linear problem')
 		</fact>
 			<example>
 			<p>
-				Let's consider <m>x'-ax=e^{ct}</m>, where <m>a,c</m> are different constants. Transforming both sides, we get 
-				<me> 
+				Let's consider <m>x'-ax=e^{ct}</m>, where <m>a,c</m> are different constants. Transforming both sides, we get
+				<me>
 					[sX(s)-x(0)] - aX(s) =\frac{1}{s-c}
 				</me>,
-				and thus 
-				<me> 
+				and thus
+				<me>
 					X(s) = \frac{x(0)}{s-a} + \frac{1}{(s-c)(s-a)}
-				</me>. 
+				</me>.
 				We can immediately recognize the first term as the transform of <m>e^{at}x(0)</m>. To invert the transform of the second term, we need to express it using partial fractions. There is a general procedure for this, but it's worth knowing a simple mnemonic for this particular form:
-				<me> 
+				<me>
 					\frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}
-				</me>. 
+				</me>.
 				Thus the inverse transform of this fraction is a sum of two exponentials,
 				<me>
-					x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right) 
-				</me>. 
-				This is a particular solution that has <m>x_p(0)=0</m>. The general solution is <m>e^{at}x(0) + x_p(t)</m>. 
+					x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right)
+				</me>.
+				This is a particular solution that has <m>x_p(0)=0</m>. The general solution is <m>e^{at}x(0) + x_p(t)</m>.
 			</p>
-		</example>  
+		</example>
 
 		<p>
 			Finding the transform of a step is also pretty easy:
 			<md>
 				<mrow>\lx[H(t-T)] \amp = \int_T^\infty e^{-st}\, dt </mrow>
 				<mrow>\amp = -\frac{1}{s} \Bigl[ e^{-st} \Bigr]_T^\infty = \frac{e^{-sT}}{s} </mrow>
-			</md>. 
+			</md>.
 		</p>
 		<fact>
 			<title>Transform of a step</title>
 			<p>
 				<men xml:id="fl-eq-ltstep">
 					\lx[H(t-T)] = \frac{e^{-sT}}{s}
-				</men>. 
+				</men>.
 			</p>
 		</fact>
 		<p>
-			A generalization of the same calculation results in a very important rule. 
+			A generalization of the same calculation results in a very important rule.
 		</p>
 		<theorem xml:id="fl-thm-shift">
 			<title>Shift theorem</title>
@@ -980,19 +994,19 @@ title('Solution of a linear problem')
 			</p></statement>
 		</theorem>
 		<p>
-			To get the transform of an impulse, we can play the same game as before. The transform of our narrow step <m>\delta_\epsilon</m>  is 
+			To get the transform of an impulse, we can play the same game as before. The transform of our narrow step <m>\delta_\epsilon</m>  is
 			<me>
 				\lx[ \delta_\epsilon(t-T)] = \frac{1}{\epsilon} \left( \lx[H(t-T)] - \lx[H(t-T-\epsilon) \right) = \frac{1 - e^{\epsilon s}}{\epsilon s}e^{-sT}
-			</me>. 
-			Taking the limit as <m>\epsilon\to 0</m> gives the following. 
+			</me>.
+			Taking the limit as <m>\epsilon\to 0</m> gives the following.
 		</p>
-		<fact> 
+		<fact>
 			<title>Transform of an impulse</title>
 			<p>
 				<men xml:id="fl-eq-ltimpulse">
 					\lx[\delta(t-T)] = e^{-sT}
 				</men>.
-				An important special case is <m>T=0</m>: 
+				An important special case is <m>T=0</m>:
 				<me>
 					\lx[\delta(t)] = 1
 				</me>.
@@ -1001,15 +1015,15 @@ title('Solution of a linear problem')
 
 		<example>
 			<p>
-				Let's consider <m>x'=ax + \delta(t-T)</m>, with <m>x(0)=0</m>. Transform to get 
-				<me> 
+				Let's consider <m>x'=ax + \delta(t-T)</m>, with <m>x(0)=0</m>. Transform to get
+				<me>
 					[sX(s)-x(0)] - aX(s) = e^{-sT}
 				</me>,
-				and thus 
-				<me> 
+				and thus
+				<me>
 					X(s) = \frac{e^{-sT}}{s-a}
-				</me>. 
-				Notice that <m>X(s) = e^{-sT} Y(s)</m>, where <m>Y(s)=1/(s-a)</m> is the transform of <m>y(t)=e^{at}</m>. By the shift theorem, it must be that 
+				</me>.
+				Notice that <m>X(s) = e^{-sT} Y(s)</m>, where <m>Y(s)=1/(s-a)</m> is the transform of <m>y(t)=e^{at}</m>. By the shift theorem, it must be that
 				<me>
 					x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}
 				</me>.
@@ -1020,10 +1034,10 @@ title('Solution of a linear problem')
 	<subsection>
 		<title>Transfer function</title>
 		<p>
-			Perhaps it's clear by now that <m>x'-ax=f(t)</m> always leads to <m>X(s) = F(s)/(s-a)</m> as a particular solution. The term <m>1/(s-a)</m> is called the <idx>transfer function</idx><term>transfer function</term> of the ODE. Values of <m>s</m> that are roots of the denominator are known as <term>poles</term> of the transform. They point out exponential solutions. 
+			Perhaps it's clear by now that <m>x'-ax=f(t)</m> always leads to <m>X(s) = F(s)/(s-a)</m> as a particular solution. The term <m>1/(s-a)</m> is called the <idx>transfer function</idx><term>transfer function</term> of the ODE. Values of <m>s</m> that are roots of the denominator are known as <term>poles</term> of the transform. They point out exponential solutions.
 		</p>
 		<p>
-			The impulse response is the case when <m>f(t)=\delta(t)</m>, so that <m>F(s)=1</m>. This implies the following. 
+			The impulse response is the case when <m>f(t)=\delta(t)</m>, so that <m>F(s)=1</m>. This implies the following.
 		</p>
 		<fact>
 			<statement>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-20T08:47:42-05:00    *-->
+<!--*    on 2020-02-24T08:29:57-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,11 +11,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Above we found that the general solution of \(x'=4x+8t\) is \(x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}\) If we also have that \(x(0)=3/2\text{,}\) then we can conclude</p>
+<body><article class="example example-like"><p>To solve \(x'+3x=6t\text{,}\) first note that \(x_h(t)=c_1e^{-3t}\text{.}\) For \(x_p\) we use the educated guess</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{3}{2} = x(0) = c_1 - \frac{1}{2}(1)\text{,}
+x_p(t) = B_1 t + B_0\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">so \(c_1=2\text{.}\)</p></article></body>
+<p data-braille="continuation">Substituting that into the ODE yields</p>
+<div class="displaymath">
+\begin{equation*}
+(B_1)+3(B_1 t + B_0) = 6t\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This has to be identically true for all \(t\text{.}\) On matching like powers of \(t\) we get the equations \(3B_1=6\) and \(B_1+B_0=0\text{.}\) This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that \(B_1=2\) and \(B_0=-2\text{.}\) So the general solution is</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 e^{-3t} + 2t - 2\text{.}
+\end{equation*}
+</div></article></body>
 </html>

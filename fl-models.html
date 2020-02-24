@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-20T08:47:41-05:00    *-->
+<!--*    on 2020-02-24T08:29:56-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -223,15 +223,15 @@ var js_version = 0.13;
 <dd><p id="p-240">If \(x(t)\) is the temperature of a body kept in an environment at fixed temperature \(E\text{,}\) then the difference \(z(t)=x(t)-E\) satisfies \(z'=a z\) for a cooling rate \(a \lt 0\)</p></dd>
 </dl>
 <p data-braille="continuation">To belabor the obvious, positive \(a\) represents growth and negative \(a\) leads to decay. In the simplest contexts, the rate \(a\) is constant, but in most models a variable rate is more realistic.</p>
-<aside class="aside aside-like" id="aside-14"><p id="p-241">Interest rates in the real world may be quoted yearly, or quarterly, or according to any other finite time period. The rate in an ODE model is the <em class="emphasis">continuously compounded</em> rate.</p></aside><p id="p-242">The units of the derivative \(dx/dt\) are those of \(x\) divided by those of \(t\text{.}\) Let's write these as \(X/T\text{.}\) Additive terms all need to have the same units, so both \(f(t)\) and \(a(t)x\) have those units as well. Consequently \(a\) has units \(1/T\) and has various interpretations when inverted:</p>
+<aside class="aside aside-like" id="aside-15"><p id="p-241">Interest rates in the real world may be quoted yearly, or quarterly, or according to any other finite time period. The rate in an ODE model is the <em class="emphasis">continuously compounded</em> rate.</p></aside><p id="p-242">The units of the derivative \(dx/dt\) are those of \(x\) divided by those of \(t\text{.}\) Let's write these as \(X/T\text{.}\) Additive terms all need to have the same units, so both \(f(t)\) and \(a(t)x\) have those units as well. Consequently \(a\) has units \(1/T\) and has various interpretations when inverted:</p>
 <ul class="disc">
 <li id="li-59">When \(a \lt 0\text{,}\) the time \(\tau=-1/a\) is the <dfn class="terminology">relaxation time</dfn> or <dfn class="terminology">characteristic time</dfn>. If there is no forcing, then \(x(\tau)= e^{-1} x(0) \approx 0.37 x(0)\text{.}\)</li>
 <li id="li-60">In radioactivity it's more common to use \(t_h=-\ln(2)/a\text{,}\) which is the <dfn class="terminology">half-life</dfn>. That's because \(\exp(at_h)=1/2\text{,}\) so half of the radioactive isotope is depleted in that much time.</li>
 <li id="li-61">Similarly, in population or another growth situation with \(a \gt 0\text{,}\) the time \(t_D=\ln(2)/a\) is the <dfn class="terminology">doubling time</dfn>. Note that populations and interest don't grow arithmetically, like \(1,2,3,4,\ldots\text{,}\) but geometrically, like \(1,2,4,8,\ldots\text{.}\)</li>
 </ul>
-<article class="example example-like" id="example-41"><a data-knowl="" class="id-ref original" data-refid="hk-example-41"><h6 class="heading">
+<article class="example example-like" id="example-40"><a data-knowl="" class="id-ref original" data-refid="hk-example-40"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">First-order pharmacokinetics.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-41"><article class="example example-like"><p id="p-243">According to <em class="emphasis">R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52</em>, caffeine in the bloodstream approximately satisfies first-order kinetics, though the half-life varies a great deal from one person to the next.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-40"><article class="example example-like"><p id="p-243">According to <em class="emphasis">R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52</em>, caffeine in the bloodstream approximately satisfies first-order kinetics, though the half-life varies a great deal from one person to the next.</p>
 <p id="p-244">Suppose \(t_h=6\) hours. We can calculate \(a=-\ln(2)/t_h\approx 0.116\) per hour, and then the predicted effects of one cup of coffee are \(x(t) = e^{0.116t}x(0)\text{.}\) You can check that an equivalent, more direct expression is</p>
 <div class="displaymath">
 \begin{equation*}
@@ -240,7 +240,7 @@ x(t) = 2^{-t/t_h} x(0)\text{.}
 </div></article></div>
 <p id="p-245">A <dfn class="terminology">continuously stirred tank reactor</dfn> (CSTR) appears often in chemical engineering. One ideally assumes that the contents of the tank are mixed perfectly and instantaneously at all times. Then one writes an ODE that expresses mass balance.</p>
 <article class="exercise exercise-like" id="exercise-1"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-1"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Tank reactor.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-1"><article class="exercise exercise-like"><p id="p-246">A 200 L tank contains 10 kg of dye. Pure water is added at a rate of 4 L per minute, while the mixture is drained at the same rate. How much dye is in the tank after 10 minutes?</p>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
@@ -254,9 +254,12 @@ x(t) = 2^{-t/t_h} x(0)\text{.}
 <p id="p-248">(These problems can also be solved by using concentration, not mass, as the dependent variable. Either is fine, so long as you are consistent.)</p>
 </div></div>
 </div></article></div>
-<article class="example example-like" id="example-42"><a data-knowl="" class="id-ref original" data-refid="hk-example-42"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Newton cooling.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-42"><article class="example example-like"><p id="p-249">Suppose a mug of coffee at 90 C is put in a room kept at 20 C. In terms of the notation above, we have</p>
+<article class="exercise exercise-like" id="exercise-2"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-2"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Newton cooling.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-2"><article class="exercise exercise-like"><p id="p-249">Suppose a mug of coffee at 90 C is put in a room kept at 20 C. After 10 minutes the coffee has cooled by \(7\) C. When will the coffee reach 60 C?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
+<p id="p-250">In terms of the notation above, we have</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dx}{dt} = a (x-20), \quad x(0)=90\text{.}
@@ -268,7 +271,21 @@ x(t) = 2^{-t/t_h} x(0)\text{.}
 x(t) = Ce^{at} + 20\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">We determine \(C\) from the initial value: \(C=70\text{.}\) To get a value for \(a\text{,}\) we need the temperature at another time too. Say the coffee has cooled by \(7\) degrees in 10 minutes. Then \(83 = 70e^{10a}+20\text{,}\) or \(a=0.1\ln(0.9) \approx -0.01054\) per min. The coffee will reach 60 C when \(40 = 70e^{at}\text{,}\) or \(t\approx 53.1\) minutes.</p></article></div></section></div></main>
+<p data-braille="continuation">We have two unknown parameters in the solution, but also two unused pieces of information. We determine \(C\) from the initial value:</p>
+<div class="displaymath">
+\begin{equation*}
+x(0)= 90 \Rightarrow C=70\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">To get a value for \(a\text{,}\) we use</p>
+<div class="displaymath">
+\begin{equation*}
+83 = x(7) = 70e^{10a}+20\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">or \(a=0.1\ln(0.9) \approx -0.01054\) per min. Hence the coffee will reach 60 C when \(40 = 70e^{at}\text{,}\) or \(t\approx 53.1\) minutes.</p>
+</div></div>
+</div></article></div></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

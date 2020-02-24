@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-20T08:47:42-05:00    *-->
+<!--*    on 2020-02-24T08:29:57-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,26 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
 </h6>
-<p>To solve \(x'=\sin(t) x\text{,}\) we integrate to get \(-\cos(t)\) and then exponentiate, so that</p>
+<p>We found earlier that the general solution of \(x'=\sin(t) x\) is</p>
 <div class="displaymath">
 \begin{equation*}
-x_h(t) = c_1 \exp[ -\cos(t) ]\text{.}
+x(t) = c_1 \exp[ -\cos(t) ]\text{.}
 \end{equation*}
-</div></article><span class="incontext"><a href="fl-homogeneous.html#example-30">in-context</a></span>
+</div>
+<p data-braille="continuation">If we are also given the initial condition \(x(0)=1\text{,}\) then we substitute to determine</p>
+<div class="displaymath">
+\begin{equation*}
+1 = x(0) = c_1 e^{-\cos(0)} = \frac{c_1}{e}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">so that \(c_1=e\text{.}\) We then write</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = e \exp[ -\cos(t) ] = \exp[1-\cos(t)]\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which has no arbitrary constants left.</p></article><span class="incontext"><a href="fl-homogeneous.html#example-30">in-context</a></span>
 </body>
 </html>

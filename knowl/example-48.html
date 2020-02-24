@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-18T08:41:03-05:00    *-->
+<!--*    on 2020-02-24T08:29:57-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,70 +13,41 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.8</span><span class="period">.</span>
 </h6>
-<p>Here are some looks at the function \(e^{\lambda t}\) for different complex values of \(\lambda\text{.}\) First, when \(\lambda\) is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of the function give cosine and sine, respectively.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">a = 0;  om = 1;
-t = linspace(0, 25, 500);
-f = exp((a+1i*om)*t);
-
-plot3(t, real(f), imag(f), 'LineWidth',2)
-hold on
-plot3(t,real(f), 0*t-1.5)
-plot3(t, 0*t+2, imag(f))
-plot3(0*t+30,real(f),imag(f),'k')
-axis([0 30 -2  2 -1.5 1.5])
-title(sprintf('a = %.2f, omega = %.1f',a,om))
-grid on, xlabel('Time')
-ylabel('Real Axis')
-zlabel('Imag Axis')	
-set(gca,'dataaspect',[6,1,1])
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.4.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fs_cexp_neutral.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<p>If \(\Re(\lambda) \gt 0\text{,}\) the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of \(\lambda\) controls the frequency or "tightness" of the spiral.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">a = 0.02;  om = 2;
-t = linspace(0, 25, 500);
-f = exp((a+1i*om)*t);
-
-plot3(t, real(f), imag(f), 'LineWidth',2)
-hold on
-plot3(t,real(f), 0*t-1.5)
-plot3(t, 0*t+2, imag(f))
-plot3(0*t+30,real(f),imag(f),'k')
-axis([0 30 -2  2 -1.5 1.5])
-title(sprintf('a = %.2f, omega = %.1f',a,om))
-grid on, xlabel('Time')
-ylabel('Real Axis')
-zlabel('Imag Axis')	  
-set(gca,'dataaspect',[6,1,1])
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.4.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fs_cexp_grow.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<p>Finally, if \(\Re(\lambda) \lt 0\text{,}\) the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">a = -0.1;  om = 0.8;
-t = linspace(0, 25, 500);
-f = exp((a+1i*om)*t);
-
-plot3(t, real(f), imag(f), 'LineWidth',2)
-hold on
-plot3(t,real(f), 0*t-1.5)
-plot3(t, 0*t+2, imag(f))
-plot3(0*t+30,real(f),imag(f),'k')
-axis([0 30 -2  2 -1.5 1.5])
-title(sprintf('a = %.2f, omega = %.1f',a,om))
-grid on, xlabel('Time')
-ylabel('Real Axis')
-zlabel('Imag Axis')	 
-set(gca,'dataaspect',[6,1,1])
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.4.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fs_cexp_decay.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></article><span class="incontext"><a href="fs-complex-exponentials.html#example-48">in-context</a></span>
+<p>We eariler found the eigenvalues and eigenvectors of</p>
+<div class="displaymath">
+\begin{equation*}
+\bA = \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">to be</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda_{1,2} = -1 \pm 1i, \qquad \bv_{1,2} = \twovec{1}{2\mp i}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This gives a general solution in the complex form</p>
+<div class="displaymath">
+\begin{equation*}
+\bx(t) = c_1 e^{(-1+i)t} \twovec{1}{2- i} + c_2 e^{(-1-i)t} \twovec{1}{2+i}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">It's implied that \(c_{1,2}\) are complex constants.</p>
+<p>To find an alternative real form, we write</p>
+<div class="displaymath">
+\begin{align*}
+e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [\cos(t)+i\sin(t)] \left( \twovec{1}{2} + i\twovec{0}{-1} \right)\\
+\amp = e^{-t} \left[ \left( \cos(t)\twovec{1}{2} - \sin(t) \twovec{0}{-1} \right)\\
+\amp \qquad + i \left( \cos(t)\twovec{0}{-1} + \sin(t) \twovec{1}{2} \right) \right]\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Thus the general solution can also be written as</p>
+<div class="displaymath">
+\begin{equation*}
+\bx(t) = b_1 e^{-t} \twovec{\cos(t)}{2\cos(t)+\sin(t)} + b_2 e^{-t}\twovec{\sin(t)}{2\sin(t)-\cos(t)} \text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">where here \(b_1\) and \(b_2\) are real.</p></article><span class="incontext"><a href="fs-complex-exponentials.html#example-48">in-context</a></span>
 </body>
 </html>

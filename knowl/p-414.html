@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-20T08:47:42-05:00    *-->
+<!--*    on 2020-02-24T08:29:58-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
+<p>If we keep differentiating in \(s\) we find</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} \text{.}
+\frac{d^n}{ds^n} \lx[ f(t) ] = (-1)^n \lx[ t^n f(t) ]\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Since we also know that</p>
+<p data-braille="continuation">Of interest is the special case of an exponential function \(e^{rt}\text{,}\) whose transform is \(1/(s-r)\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{,}
+\lx \left[ t^n e^{rt} \right] = \frac{n!}{(s-r)^{n+1}} \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">the conclusion is</p>
-<div class="displaymath">
-\begin{equation*}
-\lx[ e^{at} \cos( b t) ] = \frac{s-a}{(s-a)^2+b^2}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">In similar fashion we can show that \(e^{at} \sin( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion. However, the details can get pretty intense for hand calculation.</p>
+<p data-braille="continuation">The even specialer case \(r=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p>
 <span class="incontext"><a href="so-laplace-repeated.html#p-414">in-context</a></span>
 </body>
 </html>

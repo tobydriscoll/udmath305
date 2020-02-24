@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-20T08:47:42-05:00    *-->
+<!--*    on 2020-02-24T08:29:58-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,21 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.6.6</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
 </h6>
-<p>The matrix</p>
+<p>Let's find a particular solution of \(x'' +4x'+4x=8t^2\text{.}\) The correct form of \(x_p\) is a quadratic polynomial, like \(f\text{,}\) so</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \twomat{-1}{1}{0}{-1}
+x_p = A + Bt + Ct^2\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">has a double eigenvalue of \(\lambda=-1\) and is defective. Now consider</p>
+<p data-braille="continuation">Plugging that into the ODE yields</p>
 <div class="displaymath">
-\begin{equation*}
-\bB = \bA - \lambda \bI = \twomat{0}{1}{0}{0}\text{.}
-\end{equation*}
+\begin{align*}
+2C + 4(B+2Ct) + 4(A+Bt+Ct^2) \amp = 8t^2\\
+4C t^2 + (8C+4B) + (2C+4B+4A) \amp = 8t^2\text{.}
+\end{align*}
 </div>
-<p data-braille="continuation">This matrix has the property that \(\bB^2=\bzero\text{.}\) That means the exponential series for it is just</p>
-<div class="displaymath">
-\begin{equation*}
-e^{t\bB} = \bI + t\bB = \twomat{1}{t}{0}{1}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Finally, we can use <a class="xref" data-knowl="./knowl/fs-thm-matrixexp.html" title="Theorem 3.6.1: Matrix exponential">Theorem 3.6.1</a> to calculate</p>
-<div class="displaymath">
-\begin{equation*}
-e^{t\bA} = e^{t\lambda\bI}e^{t(\bA-\lambda\bI)} = e^{-t}\twomat{1}{t}{0}{1}\text{.}
-\end{equation*}
-</div></article><span class="incontext"><a href="fs-matrix-exp.html#example-56">in-context</a></span>
+<p data-braille="continuation">This has to be an identity for all \(t\text{.}\) Matching like powers, we can read off \(C=2\text{,}\) then \(B=-4\text{,}\) and finally \(A=3\text{.}\) This provides us with \(x_p=2t^2+4t+3\text{.}\)</p></article><span class="incontext"><a href="so-undetermined.html#example-56">in-context</a></span>
 </body>
 </html>

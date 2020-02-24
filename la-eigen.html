@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-20T08:47:41-05:00    *-->
+<!--*    on 2020-02-24T08:29:56-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -210,7 +210,7 @@ var js_version = 0.13;
 <span class="type">Section</span> <span class="codenumber">1.11</span> <span class="title">Eigenvalues</span>
 </h2>
 <a href="la-eigen.html" class="permalink">¶</a><section class="introduction" id="introduction-4"><p id="p-145">The last stop on our whirlwind tour of linear algebra is a topic that is very important to the differential equations we study in future chapters. (I say “very important” here in the sense of oxygen being a very important part of breathing.)</p>
-<aside class="aside aside-like" id="aside-8"><p id="p-146">Everything in this section still relates only to square matrices.</p></aside><article class="definition definition-like" id="la-df-eigenvalue"><h6 class="heading">
+<aside class="aside aside-like" id="aside-9"><p id="p-146">Everything in this section still relates only to square matrices.</p></aside><article class="definition definition-like" id="la-df-eigenvalue"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.1</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalue and eigenvector.</span>
 </h6>
 <p id="p-147">Suppose \(\bA\in\Cmn{n}{n}\text{.}\) If there exist a scalar \(\lambda\) and a nonzero vector \(\bv\) such that</p>
@@ -229,9 +229,9 @@ var js_version = 0.13;
 \end{equation*}
 </div>
 <p data-braille="continuation">Hence <em class="alert">every nonzero multiple of an eigenvector is also an eigenvector for the same \(\lambda\)</em>. But there can be even more ambiguity than that.</p>
-<article class="example example-like" id="example-20"><a data-knowl="" class="id-ref original" data-refid="hk-example-20"><h6 class="heading">
+<article class="example example-like" id="example-19"><a data-knowl="" class="id-ref original" data-refid="hk-example-19"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-20"><article class="example example-like"><p id="p-150">Let \(\bI\) be an identity matrix. Then \(\bI\bx=\bx\) for any vector \(\bx\text{,}\) so every nonzero vector is an eigenvector!</p></article></div>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-19"><article class="example example-like"><p id="p-150">Let \(\bI\) be an identity matrix. Then \(\bI\bx=\bx\) for any vector \(\bx\text{,}\) so every nonzero vector is an eigenvector!</p></article></div>
 <p id="p-151">Fortunately we already have the tools we need to describe a more robust target, based on the very simple reformulation \(\bzero=\bA\bv-\lambda\bv=(\bA-\lambda\bI)\bv\text{.}\)</p>
 <article class="definition definition-like" id="la-df-eigenspace"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.3</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenspace.</span>
@@ -242,9 +242,9 @@ var js_version = 0.13;
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.11.4</span><span class="period">.</span>
 </h6>
 <p id="p-155">\(\lambda\) is an eigenvalue of \(\bA\) if and only if \(\bA-\lambda\bI\) is singular.</p></article><p id="p-156">In practice the most common way to find eigenvalues by hand is through the equivalent condition \(\det(\bA-\lambda\bI)=0\text{.}\)</p>
-<article class="example example-like" id="example-21"><a data-knowl="" class="id-ref original" data-refid="hk-example-21"><h6 class="heading">
+<article class="example example-like" id="example-20"><a data-knowl="" class="id-ref original" data-refid="hk-example-20"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-21"><article class="example example-like"><p id="p-157">We look for eigenvalues of</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-20"><article class="example example-like"><p id="p-157">We look for eigenvalues of</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}\text{.}
@@ -277,8 +277,8 @@ lambda = eig(A)
 [V,D] = eig(A)
 </pre>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">1.11.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-160">In the second format (two outputs), the eigenvalues are on the diagonal of <code class="code-inline tex2jax_ignore">D</code>. The corresponding columns of <code class="code-inline tex2jax_ignore">V</code> are basis vectors for their eigenspaces, provided those are one-dimensional.</p>
-<aside class="aside aside-like" id="aside-9"><p id="p-161">By hand you usually find eigenvalues by finding the roots of a low-degree polynomial. It turns out that when the size is greater than \(2\times 2\text{,}\) other linear algebra methods for eigenvalues are much easier than finding the polynomial roots. In fact, MATLAB uses eigenvalues to find polynomial roots, rather than the other way around!</p></aside></article></div>
-<aside class="aside aside-like" id="aside-10"><p id="p-162">In the \(2\times 2\) case, suppose \(\lambda\) is already known to be an eigenvalue. Let the first row of \(\bA-\lambda\bI\) be \([\alpha,\beta]\text{.}\) If \(\alpha=\beta=0\text{,}\) then the eigenspace is all of \(\Cn{2}\text{.}\) Otherwise, the eigenspace is \(\span\left(\twovec{-\beta}{\alpha}\right)\text{.}\)</p></aside><p id="p-163">In the general \(n\times n\) case, \(\det(\bA-\lambda\bI)\) is a polynomial of degree \(n\) whose roots are the eigenvalues of \(\bA\text{.}\) (This can be seen through the cofactor expansion definition of the determinant.)</p>
+<aside class="aside aside-like" id="aside-10"><p id="p-161">By hand you usually find eigenvalues by finding the roots of a low-degree polynomial. It turns out that when the size is greater than \(2\times 2\text{,}\) other linear algebra methods for eigenvalues are much easier than finding the polynomial roots. In fact, MATLAB uses eigenvalues to find polynomial roots, rather than the other way around!</p></aside></article></div>
+<aside class="aside aside-like" id="aside-11"><p id="p-162">In the \(2\times 2\) case, suppose \(\lambda\) is already known to be an eigenvalue. Let the first row of \(\bA-\lambda\bI\) be \([\alpha,\beta]\text{.}\) If \(\alpha=\beta=0\text{,}\) then the eigenspace is all of \(\Cn{2}\text{.}\) Otherwise, the eigenspace is \(\span\left(\twovec{-\beta}{\alpha}\right)\text{.}\)</p></aside><p id="p-163">In the general \(n\times n\) case, \(\det(\bA-\lambda\bI)\) is a polynomial of degree \(n\) whose roots are the eigenvalues of \(\bA\text{.}\) (This can be seen through the cofactor expansion definition of the determinant.)</p>
 <article class="definition definition-like" id="la-df-charpoly"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.7</span><span class="period">.</span><span class="space"> </span><span class="title">Characteristic polynomial.</span>
 </h6>
@@ -305,9 +305,9 @@ lambda = eig(A)
 \end{equation*}
 </div>
 <p data-braille="continuation">the nullspace consists of all vectors \(\twovec{0}{s}\text{,}\) i.e., it is \(\span\left(\twovec{0}{1}\right)\text{.}\)</p></article></div>
-<article class="example example-like" id="example-23"><a data-knowl="" class="id-ref original" data-refid="hk-example-23"><h6 class="heading">
+<article class="example example-like" id="example-22"><a data-knowl="" class="id-ref original" data-refid="hk-example-22"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.10</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-23"><article class="example example-like"><p id="p-168">We find the eigenvalues and eigenvectors of</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-22"><article class="example example-like"><p id="p-168">We find the eigenvalues and eigenvectors of</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}\text{.}
@@ -338,12 +338,12 @@ p(z) = (z-\lambda_1)^{m_1}(z-\lambda_2)^{m_2}\dots(z-\lambda_k)^{m_k}
 <p id="p-175">The geometric multiplicity of an eigenvalue is less than or equal to its algebraic multiplicity.</p></article><article class="definition definition-like" id="la-df-defective"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.14</span><span class="period">.</span><span class="space"> </span><span class="title">Defective eigenvalue.</span>
 </h6>
-<p id="p-176">An eigenvalue \(\lambda\) whose geometric multiplicity is strictly less than its algebraic multiplicity is said to be <dfn class="terminology">defective</dfn>.</p></article><article class="example example-like" id="example-24"><a data-knowl="" class="id-ref original" data-refid="hk-example-24"><h6 class="heading">
+<p id="p-176">An eigenvalue \(\lambda\) whose geometric multiplicity is strictly less than its algebraic multiplicity is said to be <dfn class="terminology">defective</dfn>.</p></article><article class="example example-like" id="example-23"><a data-knowl="" class="id-ref original" data-refid="hk-example-23"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.15</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-24"><article class="example example-like"><p id="p-177">The \(n\times n\) identity matrix has characteristic polynomial \(p(z)=(z-1)^n\) (by recursive cofactor expansion). Thus its only eigenvalue is \(\lambda=1\text{,}\) with algebraic multiplicity \(n\text{.}\) All nonzero vectors are eigenvectors, so the dimension of the eigenspace is also \(n\text{.}\) Hence \(\lambda=1\) is nondefective.</p></article></div>
-<article class="example example-like" id="example-25"><a data-knowl="" class="id-ref original" data-refid="hk-example-25"><h6 class="heading">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-23"><article class="example example-like"><p id="p-177">The \(n\times n\) identity matrix has characteristic polynomial \(p(z)=(z-1)^n\) (by recursive cofactor expansion). Thus its only eigenvalue is \(\lambda=1\text{,}\) with algebraic multiplicity \(n\text{.}\) All nonzero vectors are eigenvectors, so the dimension of the eigenspace is also \(n\text{.}\) Hence \(\lambda=1\) is nondefective.</p></article></div>
+<article class="example example-like" id="example-24"><a data-knowl="" class="id-ref original" data-refid="hk-example-24"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.16</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-25"><article class="example example-like"><p id="p-178"><a class="xref" data-knowl="./knowl/la-ex-defective.html" title="Example 1.11.9">Example 1.11.9</a> showed that the matrix \(\bA=\twomat{4}{0}{1}{4}\) has eigenvalue \(\lambda_1=4\) with algebraic multiplicity 2 and geometric multiplicity 1. Thus this eigenvalue (and by extension the matrix itself) is defective.</p></article></div>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-24"><article class="example example-like"><p id="p-178"><a class="xref" data-knowl="./knowl/la-ex-defective.html" title="Example 1.11.9">Example 1.11.9</a> showed that the matrix \(\bA=\twomat{4}{0}{1}{4}\) has eigenvalue \(\lambda_1=4\) with algebraic multiplicity 2 and geometric multiplicity 1. Thus this eigenvalue (and by extension the matrix itself) is defective.</p></article></div>
 <p id="p-179">Since multiplicities are always at least one, there is one simple but common case in which we are certain that there are no defective eigenvalues.</p>
 <article class="theorem theorem-like" id="la-thm-distincteigs"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11.17</span><span class="period">.</span><span class="space"> </span><span class="title">Distinct eigenvalues imply nondefectiveness.</span>
