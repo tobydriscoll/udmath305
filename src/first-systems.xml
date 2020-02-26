@@ -411,7 +411,7 @@
 		<p>
 			The pain is lessened if we use a different form of the general solution by writing out the real and imaginary parts of <m>e^{\lambda_1 t} \bv_1</m>. If <m>\lambda_1=a+i\omega</m>, then write 
 			<me>
-				e^{\lambda_1 t} \bv_1 = e^{at} \bigl[\cos(\omegta t)+i\sin(\omega t) \bigr] \bv_1 =  e^{at} \bigl[ u(t) + i w(t) \bigr]
+				e^{\lambda_1 t} \bv_1 = e^{at} \bigl[\cos(\omega t)+i\sin(\omega t) \bigr] \bv_1 =  e^{at} \bigl[ u(t) + i w(t) \bigr]
 			</me>. 
 			Then an alternative expression for the general solution is <m>\bx(t)=b_1 e^{at} u(t) + b_2 e^{at} w(t)</m>, where everything in that formula is now real-valued. 
 		</p>
@@ -435,8 +435,8 @@
 				To find an alternative real form, we write 
 				<md>
 					<mrow>e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [\cos(t)+i\sin(t)] \left( \twovec{1}{2} + i\twovec{0}{-1} \right)</mrow>
-					<mrow>\amp = e^{-t} \left[ \left( \cos(t)\twovec{1}{2} - \sin(t) \twovec{0}{-1} \right)</mrow>
-					<mrow> \amp \qquad + i \left( \cos(t)\twovec{0}{-1} + \sin(t) \twovec{1}{2} \right) \right]</mrow>
+					<mrow>\amp = e^{-t} \left( \cos(t)\twovec{1}{2} - \sin(t) \twovec{0}{-1} \right)</mrow>
+					<mrow> \amp \qquad + i \left( \cos(t)\twovec{0}{-1} + \sin(t) \twovec{1}{2} \right) </mrow>
 				</md>. 
 				Thus the general solution can also be written as 
 				<me>

@@ -1128,12 +1128,12 @@ dif = b - A*x
 			<p>
 				Using expansion along the first row,
 				<md>
-				  <mrow> \begin{vmatrix} 2 \amp 0 \amp -1 \\ -2 \amp 3 \amp -1 \\ 2 \amp 0 \amp  1 end{vmatrix} \amp =  (2) \twodet{3}{-1}{0}{1} - (0) \twodet{-2}{-1}{2}{1} + (-1)\twodet{-2}{3}{2}{0}    </mrow>
+				  <mrow> \begin{vmatrix} 2 \amp 0 \amp -1 \\ -2 \amp 3 \amp -1 \\ 2 \amp 0 \amp  1 \end{vmatrix} \amp =  (2) \twodet{3}{-1}{0}{1} - (0) \twodet{-2}{-1}{2}{1} + (-1)\twodet{-2}{3}{2}{0}    </mrow>
 				  <mrow>  \amp = 2(3-0) + (-1)(0-6) = 12. </mrow>
 				</md>
 				In this case it might have been a tad easier to exploit the zeros by expanding along the second column instead:
 				<md>
-				  <mrow> \begin{vmatrix} 2 \amp 0 \amp -1 \\ -2 \amp 3 \amp -1 \\ 2 \amp 0 \amp  1 end{vmatrix} \amp =  -(0) [\cdots] + (3) \twodet{2}{-1}{2}{1} - (0)[\cdots]    </mrow>
+				  <mrow> \begin{vmatrix} 2 \amp 0 \amp -1 \\ -2 \amp 3 \amp -1 \\ 2 \amp 0 \amp  1 \end{vmatrix} \amp =  -(0) \begin{vmatrix} \cdots \end{vmatrix} + (3) \twodet{2}{-1}{2}{1} - (0)\begin{vmatrix} \cdots \end{vmatrix}    </mrow>
 				  <mrow>  \amp = 3(2+2) = 12. </mrow>
 				</md>
 			</p>
