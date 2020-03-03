@@ -229,23 +229,23 @@
 	<subsection xml:id="fl-ho-intfactor">
 		<title>Integrating factor</title>
 		<p>
-			We can go far with some simple calculus. Define an <idx>integrating factor</idx><term>integrating factor</term> as
+			We can go far with some simple calculus. Let's try an exponential solution, 
 			<me>
-				g(t) = \exp[ q(t) ]
+				x(t) = \exp[ q(t) ]
 			</me>,
-			for a <m>q(t)</m> to be defined momentarily. Then
+			for a <m>q(t)</m> to be defined momentarily. Then by the chain rule,
 			<me>
-				g'(t) = q'(t) g(t)
+				x'(t) = q'(t) x(t)
 			</me>.
-			So <m>x=g</m> is a solution of <m>x'-a(t)x=0</m> if <m>a(t)=q'(t)</m>, that is, <m>q</m> is an antiderivative of <m>a</m>:
+			So <m>x</m> is a solution of <m>x'-a(t)x=0</m> if <m>a(t)=q'(t)</m>, that is, <m>q</m> is an antiderivative of <m>a</m>. The general homogeneous solution is thus
 			<men xml:id="fl-eq-intfactor">
-					g(t) = \exp\left( \int a(t)\,dt \right)
-			</men>.
-			Thus, <m>x_h=c_1g(t)</m> is a homogeneous solution for any constant <m>c_1</m>. It's not an elementary fact that this is the <em>general</em> homogeneous solution.
+					x_h(t) = c_1 \exp\left( \int a(t)\,dt \right)
+			</men>,
+			for arbitrary constant <m>c_1</m>.
 		</p>
 		<aside>
 			<p>
-				The integrating factor <m>g(t)</m> is not uniquely defined, because it contains an indefinite integral. But adding <m>C</m> to the integral is the same as multiplying <m>g(t)</m> by <m>e^C</m>, and the general homogeneous solution is not affected. This is the usual situation of scalar nonuniqueness for expressing the basis of a nullspace.
+				The indefinite integral in the solution has an additive arbitrary constant. But adding <m>C</m> to the integral is the same as multiplying the solution by <m>e^C</m>, so the general homogeneous solution is not affected. This is the usual situation of scalar nonuniqueness for expressing the basis of a nullspace.
 			</p>
 		</aside>
 		<example>
@@ -393,7 +393,7 @@ title('Solution of a linear problem')
 			<me>
 				x_h(t) = c_1 g(t) = c_1 \exp\left[\int a(t)\, dt\right]
 			</me>,
-			where <m>g(t)</m> is the integrating factor from <xref ref="fl-eq-intfactor"/>. The idea of <idx>variation of parameters</idx><term>variation of parameters</term> is to posit that the particular solution can be written by replacing the constant with a function,
+			where <m>g(t)</m> is the integral. The idea of <idx>variation of parameters</idx><term>variation of parameters</term> is to posit (i.e., guess) that the particular solution can be written by replacing the constant with a function,
 			<men xml:id="fl-eq-vofp1">
 				x_p(t) = k(t) g(t)
 			</men>,
@@ -405,7 +405,7 @@ title('Solution of a linear problem')
 			<men xml:id="fl-eq-vofp2">
 				k(t) = \int \frac{f(t)}{g(t)}\, dt
 			</men>.
-			Step by step, we have to (1) integrate once to get <m>g</m> in <xref ref="fl-eq-intfactor"/>, (2) integrate again to get <m>k</m> in <xref ref="fl-eq-vofp2"/>, and (3) multiply them together to get the particular solution in <xref ref="fl-eq-vofp1"/>. It's probably also worth mentioning step (0), which is to put the given problem in the standard form of <xref ref="fl-eq-folinrepeat"/>; i.e., divide the equation through by any coefficient of <m>x'</m>.
+			Step by step, we have to (1) integrate once to get <m>g</m> in <xref ref="fl-eq-intfactor"/>, (2) integrate again to get <m>k</m> in <xref ref="fl-eq-vofp2"/>, and (3) multiply them together to get the particular solution in <xref ref="fl-eq-vofp1"/>. It's also worth mentioning the implicit step (0), which is to first of all put the given problem in the standard form of <xref ref="fl-eq-folinrepeat"/>; i.e., divide the equation through by any coefficient of <m>x'</m>.
 		</p>
 		<example>
 			<p>

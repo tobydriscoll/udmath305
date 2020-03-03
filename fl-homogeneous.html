@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-02-26T17:28:49-05:00    *-->
+<!--*    on 2020-03-03T09:00:09-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -212,26 +212,26 @@ var js_version = 0.13;
 <a href="fl-homogeneous.html" class="permalink">¶</a><section class="introduction" id="introduction-6"><p id="p-208">Our first job is to figure out how to express all possible solutions of the homogeneous problem \(\opA[x]=0\text{,}\) or \(x'-a(t)x=0\text{.}\) As with linear systems, the goal is to find a basis, so that the general \(x_h\) is a linear combination of the basis functions. However, there is no analog of the RREF of a matrix to exploit here.</p></section><section class="subsection" id="fl-ho-intfactor"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">Integrating factor</span>
 </h3>
-<a href="fl-homogeneous.html#fl-ho-intfactor" class="permalink">¶</a><p id="p-209">We can go far with some simple calculus. Define an <dfn class="terminology">integrating factor</dfn> as</p>
+<a href="fl-homogeneous.html#fl-ho-intfactor" class="permalink">¶</a><p id="p-209">We can go far with some simple calculus. Let's try an exponential solution,</p>
 <div class="displaymath">
 \begin{equation*}
-g(t) = \exp[ q(t) ]\text{,}
+x(t) = \exp[ q(t) ]\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">for a \(q(t)\) to be defined momentarily. Then</p>
+<p data-braille="continuation">for a \(q(t)\) to be defined momentarily. Then by the chain rule,</p>
 <div class="displaymath">
 \begin{equation*}
-g'(t) = q'(t) g(t)\text{.}
+x'(t) = q'(t) x(t)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">So \(x=g\) is a solution of \(x'-a(t)x=0\) if \(a(t)=q'(t)\text{,}\) that is, \(q\) is an antiderivative of \(a\text{:}\)</p>
+<p data-braille="continuation">So \(x\) is a solution of \(x'-a(t)x=0\) if \(a(t)=q'(t)\text{,}\) that is, \(q\) is an antiderivative of \(a\text{.}\) The general homogeneous solution is thus</p>
 <div class="displaymath">
 \begin{equation}
-g(t) = \exp\left( \int a(t)\,dt \right)\text{.}\label{fl-eq-intfactor}\tag{2.3.1}
+x_h(t) = c_1 \exp\left( \int a(t)\,dt \right)\text{,}\label{fl-eq-intfactor}\tag{2.3.1}
 \end{equation}
 </div>
-<p data-braille="continuation">Thus, \(x_h=c_1g(t)\) is a homogeneous solution for any constant \(c_1\text{.}\) It's not an elementary fact that this is the <em class="emphasis">general</em> homogeneous solution.</p>
-<aside class="aside aside-like" id="aside-13"><p id="p-210">The integrating factor \(g(t)\) is not uniquely defined, because it contains an indefinite integral. But adding \(C\) to the integral is the same as multiplying \(g(t)\) by \(e^C\text{,}\) and the general homogeneous solution is not affected. This is the usual situation of scalar nonuniqueness for expressing the basis of a nullspace.</p></aside><article class="example example-like" id="example-29"><a data-knowl="" class="id-ref original" data-refid="hk-example-29"><h6 class="heading">
+<p data-braille="continuation">for arbitrary constant \(c_1\text{.}\)</p>
+<aside class="aside aside-like" id="aside-13"><p id="p-210">The indefinite integral in the solution has an additive arbitrary constant. But adding \(C\) to the integral is the same as multiplying the solution by \(e^C\text{,}\) so the general homogeneous solution is not affected. This is the usual situation of scalar nonuniqueness for expressing the basis of a nullspace.</p></aside><article class="example example-like" id="example-29"><a data-knowl="" class="id-ref original" data-refid="hk-example-29"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-29"><article class="example example-like"><p id="p-211">To solve \(x'=\sin(t) x\text{,}\) we integrate to get \(-\cos(t)\) and then exponentiate, so that</p>
 <div class="displaymath">
