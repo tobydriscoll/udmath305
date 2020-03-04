@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-04T16:45:21-05:00    *-->
+<!--*    on 2020-03-04T17:03:45-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,40 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's solve \(x'=3x+50\cos(4t)\text{.}\) We have \(x_h=c_1e^{3t}\) and choose</p>
+<p>To solve \(x'+x=-te^t\text{,}\) first note that \(x_h(t)=c_1e^{-t}\text{.}\) For \(x_p\) we use the educated guess</p>
 <div class="displaymath">
 \begin{equation*}
-x_p = A \cos(4t) + B\sin(4t)\text{.}
+x_p(t) = (B_1 t + B_0)e^t\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Put this into the ODE to get</p>
+<p data-braille="continuation">Substituting that into the ODE yields</p>
 <div class="displaymath">
 \begin{equation*}
-[-4A\sin(4t) + 4B\cos(4t)] - 3[A \cos(4t) + B\sin(4t)] = 50\cos(4t)\text{.}
+B_1e^t + (B_1 t + B_0)e^t = -te^t\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Matching the coefficients of cosine and sine leads to</p>
+<p data-braille="continuation">On canceling the exponentials and matching like powers of \(t\text{,}\) we get the equations \(B_1=-1\) and \(B_1+B_0=0\text{.}\) Hence \(B_1=-1\) and \(B_0=1\text{.}\) So the general solution is</p>
 <div class="displaymath">
 \begin{equation*}
-4B-3A = 50, \quad -4A-3B = 0\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">This is the linear system</p>
-<div class="displaymath">
-\begin{equation*}
-\twomat{-3}{4}{-4}{-3} \twovec{A}{B} = \twovec{50}{0}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">We apply Cramer's Rule to get</p>
-<div class="displaymath">
-\begin{equation*}
-A = \frac{ \twodet{50}{4}{0}{-3} }{9+16} = -6, \quad B = \frac{ \twodet{-3}{50}{-4}{0} }{9+16} = 8\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Thus finally</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = c_1e^{3t} + 8\cos(4t) - 6 \sin(4t)\text{.}
+x(t) = c_1 e^{-t} + e^t(1-t)\text{.}
 \end{equation*}
 </div>
 <span class="incontext"><a href="fl-undeter.html#p-234">in-context</a></span>

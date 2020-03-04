@@ -432,6 +432,26 @@ title('Solution of a linear problem')
 		</example>
 		<example>
 			<p>
+			  To find a particular solution of <m>x'=2tx + 6t</m>, we start with 
+			  <me>
+				  g(t) = \exp\left[ \int 2t\, dt \right] = e^{t^2} 
+			  </me>. 
+			  Then we can compute 
+			  <me>
+				  k(t) = \int \frac{6t}{e^{t^2}}\, dt  = -3 e^{-t^2}
+			  </me>. 
+			  Finally, 
+			  <me>
+				  x_p(t) = k(t) g(t) = -3
+			  </me>,
+			  and the general solution is <m>x(t)=c_1 e^{t^2}-3</m>.
+			</p>
+			<p>
+			  (It should be clear that we needed a very special <m>f</m> to make the second integral feasible. If not, try reworking it for <m>f(t)=6</m> and you will quickly find yourself stuck, at least while using familiar functions.) 
+			</p>
+		</example>
+		<example>
+			<p>
 				For <m>(2+t) x'= x - 1</m>, we first rewrite as
 				<me>
 					x' - \frac{1}{2+t} x = -\frac{1}{2+t}

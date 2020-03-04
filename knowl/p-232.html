@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-04T16:45:21-05:00    *-->
+<!--*    on 2020-03-04T17:03:45-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To solve \(x'+x=-te^t\text{,}\) first note that \(x_h(t)=c_1e^{-t}\text{.}\) For \(x_p\) we use the educated guess</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = (B_1 t + B_0)e^t\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Substituting that into the ODE yields</p>
-<div class="displaymath">
-\begin{equation*}
-B_1e^t + (B_1 t + B_0)e^t = -te^t\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">On canceling the exponentials and matching like powers of \(t\text{,}\) we get the equations \(B_1=-1\) and \(B_1+B_0=0\text{.}\) Hence \(B_1=-1\) and \(B_0=1\text{.}\) So the general solution is</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = c_1 e^{-t} + e^t(1-t)\text{.}
-\end{equation*}
-</div>
+<p>Variation of parameters is all that we technically need for linear first-order problems, but as we have seen, it requires some grunt work--in particular, two integrals. There is a significantly shorter path for <a class="xref" data-knowl="./knowl/fl-eq-linear.html" title="Equation 2.2.1">(2.2.1)</a> in the important special case when (1) the growth/decay rate coefficient \(a(t)\) is constant, and (2) the forcing function is a polynomial, exponential, sin, or cos, or a combination of these. In this situation, the correct \(x_p\) can be written down immediately up to some unknowns or <dfn class="terminology">undetermined coefficients</dfn>. Values for these coefficients are by substitution of \(x_p\) into the ODE. The correct form of \(x_p\) for various \(f\) are given in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a>.</p>
 <span class="incontext"><a href="fl-undeter.html#p-232">in-context</a></span>
 </body>
 </html>

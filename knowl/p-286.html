@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-04T16:45:22-05:00    *-->
+<!--*    on 2020-03-04T17:03:45-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's consider \(x'=ax + \delta(t-T)\text{,}\) with \(x(0)=0\text{.}\) Transform to get</p>
+<p>To get the transform of an impulse, we can play the same game as before. The transform of our narrow step \(\delta_\epsilon\)  is</p>
 <div class="displaymath">
 \begin{equation*}
-[sX(s)-x(0)] - aX(s) = e^{-sT}\text{,}
+\lx[ \delta_\epsilon(t-T)] = \frac{1}{\epsilon} \left( \lx[H(t-T)] - \lx[H(t-T-\epsilon) \right) = \frac{1 - e^{\epsilon s}}{\epsilon s}e^{-sT}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">and thus</p>
-<div class="displaymath">
-\begin{equation*}
-X(s) = \frac{e^{-sT}}{s-a}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Notice that \(X(s) = e^{-sT} Y(s)\text{,}\) where \(Y(s)=1/(s-a)\) is the transform of \(y(t)=e^{at}\text{.}\) By the shift theorem, it must be that</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}\text{.}
-\end{equation*}
-</div>
+<p data-braille="continuation">Taking the limit as \(\epsilon\to 0\) gives the following.</p>
 <span class="incontext"><a href="fl-laplace.html#p-286">in-context</a></span>
 </body>
 </html>

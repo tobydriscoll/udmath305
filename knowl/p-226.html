@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-04T16:45:21-05:00    *-->
+<!--*    on 2020-03-04T17:03:45-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Above we found that the general solution of \(x'=4x+8t\) is \(x(t)=c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}\) If we also have that \(x(0)=3/2\text{,}\) then we can conclude</p>
+<p>Combining the expressions for both the homogeneous and particular parts, we obtained the full general solution</p>
 <div class="displaymath">
-\begin{equation*}
-\frac{3}{2} = x(0) = c_1 - \frac{1}{2}(1)\text{,}
-\end{equation*}
+\begin{equation}
+x(t) = c_1 \exp[q(t)] + \exp[q(t)] \int f(t) \exp[-q(t)]\, dt = \exp[q(t)] \left[ c_1  + \int f(t) \exp[-q(t)]\, dt \right]\text{,}\tag{2.4.4}
+\end{equation}
 </div>
-<p data-braille="continuation">so \(c_1=2\text{.}\)</p>
+<p data-braille="continuation">where as before, \(q\) is any antiderivative of \(a(t)\text{.}\) Writing the solution this way clarifies that once again the “plus C” of indefinite integration doesn't really matter, as it gets absorbed into the final arbitrary \(c_1\text{.}\)</p>
 <span class="incontext"><a href="fl-varparam.html#p-226">in-context</a></span>
 </body>
 </html>

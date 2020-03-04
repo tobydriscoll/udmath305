@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-04T16:45:22-05:00    *-->
+<!--*    on 2020-03-04T17:03:45-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This is one of the big and fundamental surprises of applied math: exponential functions, when you go in an imaginary direction, become sin/cos oscillations. We can illustrate this with MATLAB, which handles complex values routinely. Note the use of <code class="code-inline tex2jax_ignore">1i</code> to get the imaginary unit.</p>
+<p>Let's start with the simplest, scalar case, \(e^{it}\text{.}\) This should be the solution of \(x'=ix\text{,}\) \(x(0)=1\text{.}\) If we assume that \(x(t)\) is complex-valued, let us write it as</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = u(t) + i v(t)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">for real \(u,v\text{.}\) Then \(x'=ix\) becomes</p>
+<div class="displaymath">
+\begin{equation*}
+u' + iv' = i(u+iv) = i^2v + iu = -v + iu\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This leads to the coupled real equations</p>
+<div class="displaymath">
+\begin{equation*}
+u' = -v, \quad v'=u\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">together with \(u(0)=1\text{,}\) \(v(0)=0\text{.}\) It won't take you long to verify that \(u(t)=\cos(t)\text{,}\) \(v(t)=\sin(t)\) is the solution. So this implies the identity</p>
 <span class="incontext"><a href="fs-complex-exponentials.html#p-323">in-context</a></span>
 </body>
 </html>

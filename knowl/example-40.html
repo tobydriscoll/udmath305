@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-04T16:45:21-05:00    *-->
+<!--*    on 2020-03-04T17:03:45-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,19 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span>
 </h6>
-<p>Consider \(x'-ax=e^{at}\text{.}\) We get \(x_h=c_1e^{at}\text{,}\) and the table suggests</p>
+<p>To find a particular solution of  \(x'+3x=6t-4e^{-t}\text{,}\) we can separately find them for the cases \(x'+3x=6t\) and \(x'+3x=-4e^{-t}\text{.}\) Above we found \(x_p=2t-(2/3)\) for the first case. For the second case we choose \(x_p=A e^{-t}\) and plug in:</p>
 <div class="displaymath">
 \begin{equation*}
-x_p = B_0 e^{at}\text{.}
+-4e^{-t} = x'+3x = -A e^{-t} + 3A e^{-t}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">But this is a repeat of the homogeneous solution. Hence if we substitute it into \(x'-ax\text{,}\) we (naturally) get zero, and it's impossible to match this with the forcing function \(e^{at}\text{.}\)</p></article><span class="incontext"><a href="fl-undeter.html#example-40">in-context</a></span>
+<p data-braille="continuation">which tells us that \(A=-2\text{.}\) Finally, the particular solution of the original equation is</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = 2t-\frac{2}{3}-2e^{-t}\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="fl-undeter.html#example-40">in-context</a></span>
 </body>
 </html>

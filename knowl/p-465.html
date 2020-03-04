@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-04T16:45:22-05:00    *-->
+<!--*    on 2020-03-04T17:03:46-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Here is a direction field for the linear ODE system</p>
+<p>The logistic equation is separable:</p>
 <div class="displaymath">
-\begin{align*}
-\dd{x}{t} \amp = -y\\
-\dd{y}{t} \amp = x\text{.}
-\end{align*}
+\begin{equation*}
+\frac{dx}{x(a-bx)} = dt\text{.}
+\end{equation*}
 </div>
-<span class="incontext"><a href="nl-directionfields.html#p-465">in-context</a></span>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{equation*}
+t + C = \int \frac{dx}{x(a-bx)} = \frac{1}{b} \int \frac{dx}{x(K-x)} = \frac{1}{bK} \int \left( \frac{1}{x} + \frac{1}{K-x} \right)\,dx\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The last step above required converting the single fraction into partial fractions. These are now easily integrated to get logs, and the solution follows from there. Obviously we have to end up with <a class="xref" data-knowl="./knowl/eq-logistic-solution.html" title="Equation 5.3.2">(5.3.2)</a> again.</p>
+<span class="incontext"><a href="nl-logistic.html#p-465">in-context</a></span>
 </body>
 </html>

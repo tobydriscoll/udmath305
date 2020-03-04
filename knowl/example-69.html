@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-04T16:45:22-05:00    *-->
+<!--*    on 2020-03-04T17:03:46-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,15 +13,14 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
 </h6>
-<p>Suppose \(x'=t^2/(x^3-2)\text{.}\) Separation and integration lead to</p>
+<p>Consider the <a class="xref" data-knowl="./knowl/ex-variable-growth.html" title="Example 2.1.6: Variable growth rate">variable growth archetype 2.1.6</a> \(x'=2tx\text{.}\) We express \(x'\) as \(dx/dt\) and then isolate the variables:</p>
 <div class="displaymath">
 \begin{equation*}
-\int x^3\, dx = \int t^2\, dt\text{,}
+\frac{dx}{x} = 2t\,dt\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">or \(\frac{1}{4}x^4 - 2x  = C + \frac{1}{3}t^3\text{.}\) We could work hard to try to solve explicitly for \(y\text{,}\) but it's probably best to leave it in implicit form. This is a common limitation to separable "solutions".</p>
-<p>Even in implicit form, we can solve for the arbitrary constant if given an initial condition. For instance, suppose \(x(0)=4\) is given for this ODE. Then \(4^4/4-2\cdot4 = C+0\text{,}\) so \(C=56\text{.}\)</p></article><span class="incontext"><a href="nl-separable.html#example-69">in-context</a></span>
+<p data-braille="continuation">Integrating both sides leads to \(\log |x| = t^2 + C\text{,}\) or \(|x|=Ae^{t^2}\) for a positive constant \(A\) (since it is the exponential of a real constant). Taking the absolute value off of \(x\) means that \(A\) can be negative as well. Also, \(A=0\) clearly leads to a solution. Finally, we conclude that \(x=Ce^{t^2}\) for arbitrary \(C\text{.}\)</p></article><span class="incontext"><a href="nl-separable.html#example-69">in-context</a></span>
 </body>
 </html>
