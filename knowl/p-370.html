@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-03T09:00:16-05:00    *-->
+<!--*    on 2020-03-04T15:56:00-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,20 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For \(x'' - 2x'-3x=10e^{4t}\text{,}\) the proper choice is</p>
+<p>We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) We recall the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.6.2: Defective matrix">Subsection 3.6.2</a> and define</p>
 <div class="displaymath">
 \begin{equation*}
-x_p = Ae^{4t}\text{.}
+\bB = \bA + \frac{b}{2}\bI = \twomat{b/2}{1}{-c}{-b/2} = \twomat{b/2}{1}{-b^2/4}{-b/2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Everything else is just basic manipulations.</p>
+<p data-braille="continuation">You can easily check that \(\bB^2=\bzero\text{.}\) Hence</p>
 <div class="displaymath">
-\begin{align*}
-16A e^{4t} - 2 (4A e^{4t}) - 3 (Ae^{4t}) \amp =10 e^{4t}\\
-16A -8A -3A =  10\text{.}
-\end{align*}
+\begin{equation*}
+e^{t\bA} = e^{-(bt/2)\bI} e^{t\bB} = e^{-bt/2}(\bI + t\bB) \text{.}
+\end{equation*}
 </div>
-<p data-braille="continuation">From this it's clear that \(A=2\text{.}\)</p>
-<span class="incontext"><a href="so-undetermined.html#p-370">in-context</a></span>
+<p data-braille="continuation">The general solution is \(e^{t\bA}\bc\text{,}\) but again we need only the first row to get the original \(x=u_1\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+x_h(t) = e^{-bt/2} \left[ c_1 + t\left(c_2 + c_1\frac{b}{2}\right) \right] = e^{-bt/2} \left( c_1 + C_2 t\right)\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="so-homogeneous.html#p-370">in-context</a></span>
 </body>
 </html>

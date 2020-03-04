@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-03T09:00:10-05:00    *-->
+<!--*    on 2020-03-04T15:55:59-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,14 +209,14 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-homogeneous"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Homogeneous systems</span>
 </h2>
-<a href="fs-homogeneous.html" class="permalink">¶</a><p id="p-293">Given</p>
+<a href="fs-homogeneous.html" class="permalink">¶</a><p id="p-297">Given</p>
 <div class="displaymath">
 \begin{equation*}
 \bx' = \bA(t)\bx, 
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(\bx\in\Rn{n}\) and \(\bA\in\Rmn{n}{n}\text{,}\) we can easily show in the usual way that any linear combination of solutions is also a solution. Thus our real task is to find a basis for the solution space.</p>
-<aside class="aside aside-like" id="aside-16"><p id="p-294">You need to read and write carefully when in vector-land. In particular, note that \(\bx_1\) refers to the first vector of a collection, while \(x_1\) means the first component of a vector \(\bx\text{.}\)</p></aside><p id="p-295">Suppose \(\bx_1,\ldots,\bx_m\) are homogeneous solutions of the ODE, and we use a linear combination of them to satisfy an initial condition \(\bx(t_0)=\bx_0\text{:}\)</p>
+<aside class="aside aside-like" id="aside-17"><p id="p-298">You need to read and write carefully when in vector-land. In particular, note that \(\bx_1\) refers to the first vector of a collection, while \(x_1\) means the first component of a vector \(\bx\text{.}\)</p></aside><p id="p-299">Suppose \(\bx_1,\ldots,\bx_m\) are homogeneous solutions of the ODE, and we use a linear combination of them to satisfy an initial condition \(\bx(t_0)=\bx_0\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 c_1 \bx_1 + \cdots + c_m \bx_m = \bx_0\text{.}
@@ -238,20 +238,20 @@ c_1 \bx_1 + \cdots + c_m \bx_m = \bx_0\text{.}
 <article class="definition definition-like" id="fs-df-fundamental"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental matrix.</span>
 </h6>
-<p id="p-296">The \(n\times n\) matrix \(\bX(t)\) is a <dfn class="terminology">fundamental matrix</dfn> of the homogeneous system \(\bx' = \bA(t)\bx\) if its columns satisfy \(\bx_j'=\bA\bx_j\) at all times and they form a basis at time \(t=t_0\text{.}\)</p></article><p id="p-297">Because the nonsingularity of a fundamental matrix is one of its key properties, its determinant plays an important role.</p>
+<p id="p-300">The \(n\times n\) matrix \(\bX(t)\) is a <dfn class="terminology">fundamental matrix</dfn> of the homogeneous system \(\bx' = \bA(t)\bx\) if its columns satisfy \(\bx_j'=\bA\bx_j\) at all times and they form a basis at time \(t=t_0\text{.}\)</p></article><p id="p-301">Because the nonsingularity of a fundamental matrix is one of its key properties, its determinant plays an important role.</p>
 <article class="definition definition-like" id="ls-df-wronskian"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Wronskian.</span>
 </h6>
-<p id="p-298">The <dfn class="terminology">Wronskian</dfn> of a collection of homogeneous solutions \(\bx_1,\ldots,\bx_n\) is</p>
+<p id="p-302">The <dfn class="terminology">Wronskian</dfn> of a collection of homogeneous solutions \(\bx_1,\ldots,\bx_n\) is</p>
 <div class="displaymath">
 \begin{equation*}
 W(t) = \det\Bigl( \bigl| \bx_1(t) \: \cdots \: \bx_n(t)  \bigr| \Bigr)\text{.}
 \end{equation*}
-</div></article><p id="p-299">Thus, solutions with a nonzero Wronskian are the columns of a fundamental matrix. There is a remarkable result known as <em class="emphasis">Abel's formula</em> that greatly simplifies this issue.</p>
+</div></article><p id="p-303">Thus, solutions with a nonzero Wronskian are the columns of a fundamental matrix. There is a remarkable result known as <em class="emphasis">Abel's formula</em> that greatly simplifies this issue.</p>
 <article class="theorem theorem-like" id="fs-thm-abel"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Homogeneous solution independence.</span>
 </h6>
-<p id="p-300">Suppose that \(\bA(t)\) is continuous on an open interval \(I\text{,}\) and let \(\bx_1,\ldots,\bx_n\) be solutions of \(\bx'=\bA\bx\) whose Wronskian is \(W(t)\text{.}\) Then if \(W\) is nonzero at any time in \(I\text{,}\) it is nonzero at all times in \(I\text{.}\)</p></article></section></div></main>
+<p id="p-304">Suppose that \(\bA(t)\) is continuous on an open interval \(I\text{,}\) and let \(\bx_1,\ldots,\bx_n\) be solutions of \(\bx'=\bA\bx\) whose Wronskian is \(W(t)\text{.}\) Then if \(W\) is nonzero at any time in \(I\text{,}\) it is nonzero at all times in \(I\text{.}\)</p></article></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

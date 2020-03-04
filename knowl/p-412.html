@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-03T09:00:17-05:00    *-->
+<!--*    on 2020-03-04T15:56:00-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,15 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
+<p>Things are not too bad if there is an additional real pole:</p>
 <div class="displaymath">
-\begin{align*}
-F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
-\amp = -\int_0^\infty t f(t) e^{-st}\, dt\\
-\amp = - \lx[ tf(t) ]\text{.}
-\end{align*}
+\begin{equation*}
+X_p(s) = \frac{A+Bs}{s^2+\omega^2} + \frac{C}{s-c} \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t) + C e^{ct}\text{.}
+\end{equation*}
 </div>
-<p data-braille="continuation">Take a moment to appreciate this. Earlier we found that a derivative in \(t\) corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
-<span class="incontext"><a href="so-laplace-repeated.html#p-412">in-context</a></span>
+<p data-braille="continuation">Usually there is some grunt (or computer) work involved in finding the values of \(A\text{,}\) \(B\text{,}\) and \(C\text{.}\)</p>
+<span class="incontext"><a href="so-laplace.html#p-412">in-context</a></span>
 </body>
 </html>

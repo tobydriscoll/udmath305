@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-03T09:00:16-05:00    *-->
+<!--*    on 2020-03-04T15:56:00-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To get the transform of an impulse, we can play the same game as before. The transform of our narrow step \(\delta_\epsilon\)  is</p>
+<p>Finding the transform of a step is also pretty easy:</p>
 <div class="displaymath">
-\begin{equation*}
-\lx[ \delta_\epsilon(t-T)] = \frac{1}{\epsilon} \left( \lx[H(t-T)] - \lx[H(t-T-\epsilon) \right) = \frac{1 - e^{\epsilon s}}{\epsilon s}e^{-sT}\text{.}
-\end{equation*}
+\begin{align*}
+\lx[H(t-T)] \amp = \int_T^\infty e^{-st}\, dt \\
+\amp = -\frac{1}{s} \Bigl[ e^{-st} \Bigr]_T^\infty = \frac{e^{-sT}}{s} \text{.}
+\end{align*}
 </div>
-<p data-braille="continuation">Taking the limit as \(\epsilon\to 0\) gives the following.</p>
 <span class="incontext"><a href="fl-laplace.html#p-278">in-context</a></span>
 </body>
 </html>

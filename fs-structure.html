@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-03T09:00:10-05:00    *-->
+<!--*    on 2020-03-04T15:55:59-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,11 +209,11 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-structure"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Structure of linear ODE systems</span>
 </h2>
-<a href="fs-structure.html" class="permalink">¶</a><p id="p-284">Most phenomena in the real world do not have just one dependent variable.</p>
+<a href="fs-structure.html" class="permalink">¶</a><p id="p-288">Most phenomena in the real world do not have just one dependent variable.</p>
 <article class="example example-like" id="fs-ex-twotanks"><a data-knowl="" class="id-ref original" data-refid="hk-fs-ex-twotanks"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-fs-ex-twotanks"><article class="example example-like"><p id="p-285">Consider two connected tanks holding brine. Tank 1 holds 100 L, has an input of 4 L/hr of brine of concentration 3 kg/L, and an output of 6 L/hr. Tank 2 holds 200 L, has an input of 7 L/hr of brine of concentration 5 kg/L, and an output of 5 L/hr. Tank 1 pumps 1 L/hr into tank 2, and tank 2 pumps 3 L/hr into tank 1.</p>
-<p id="p-286">Let \(x_i(t)\) be the mass of salt in tank \(i\text{.}\) The statements above imply</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-fs-ex-twotanks"><article class="example example-like"><p id="p-289">Consider two connected tanks holding brine. Tank 1 holds 100 L, has an input of 4 L/hr of brine of concentration 3 kg/L, and an output of 6 L/hr. Tank 2 holds 200 L, has an input of 7 L/hr of brine of concentration 5 kg/L, and an output of 5 L/hr. Tank 1 pumps 1 L/hr into tank 2, and tank 2 pumps 3 L/hr into tank 1.</p>
+<p id="p-290">Let \(x_i(t)\) be the mass of salt in tank \(i\text{.}\) The statements above imply</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x_1}{t} \amp = 4\cdot 3 - 6\cdot \frac{x_1}{100} - 1\cdot \frac{x_1}{100} + 3 \cdot \frac{x_2}{200}  \\
@@ -227,22 +227,22 @@ var js_version = 0.13;
 \end{equation*}
 </div>
 <p data-braille="continuation">Here we have naturally extended the derivative of a vector to mean the derivative of each component.</p></article></div>
-<p id="p-287">The model in <a class="xref" data-knowl="./knowl/fs-ex-twotanks.html" title="Example 3.1.1">Example 3.1.1</a> is of an important general form.</p>
+<p id="p-291">The model in <a class="xref" data-knowl="./knowl/fs-ex-twotanks.html" title="Example 3.1.1">Example 3.1.1</a> is of an important general form.</p>
 <article class="definition definition-like" id="fs-df-linsystem"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Linear system of ODEs.</span>
 </h6>
-<p id="p-288">A <dfn class="terminology">linear system of ODEs</dfn> is an equation of the form</p>
+<p id="p-292">A <dfn class="terminology">linear system of ODEs</dfn> is an equation of the form</p>
 <div class="displaymath">
 \begin{equation}
 \bx' = \bA(t)\bx + \bff(t)\text{,}\label{fs-eq-system}\tag{3.1.1}
 \end{equation}
 </div>
-<p data-braille="continuation">where \(\bx\) is an \(n\)-dimensional <dfn class="terminology">state vector</dfn>, \(\bA\) is an \(n\times n\) <dfn class="terminology">coefficient matrix</dfn>, and \(\bff(t)\) is an \(n\)-dimensional <dfn class="terminology">forcing function</dfn>. If given, an <dfn class="terminology">initial condition</dfn> of the system is a time \(t_0\) and vector \(\bx_0\) such that \(\bx(t_0)=\bx_0\text{.}\)</p></article><p id="p-289">Because the matrix in <a class="xref" data-knowl="./knowl/fs-ex-twotanks.html" title="Example 3.1.1">Example 3.1.1</a> is constant in time, we would call its model a <dfn class="terminology">constant-coefficient</dfn> system.</p>
-<p id="p-290">It's not a stretch to say that virtually all of the general statements we made about the scalar linear problem \(x'=a(t)x+f(t)\) can be remade with boldface/capital letters for the linear system \(\bx'=\bA(t)\bx+\bff(t)\text{.}\) Those statements relied mainly on linearity, which remains present. So for example,</p>
+<p data-braille="continuation">where \(\bx\) is an \(n\)-dimensional <dfn class="terminology">state vector</dfn>, \(\bA\) is an \(n\times n\) <dfn class="terminology">coefficient matrix</dfn>, and \(\bff(t)\) is an \(n\)-dimensional <dfn class="terminology">forcing function</dfn>. If given, an <dfn class="terminology">initial condition</dfn> of the system is a time \(t_0\) and vector \(\bx_0\) such that \(\bx(t_0)=\bx_0\text{.}\)</p></article><p id="p-293">Because the matrix in <a class="xref" data-knowl="./knowl/fs-ex-twotanks.html" title="Example 3.1.1">Example 3.1.1</a> is constant in time, we would call its model a <dfn class="terminology">constant-coefficient</dfn> system.</p>
+<p id="p-294">It's not a stretch to say that virtually all of the general statements we made about the scalar linear problem \(x'=a(t)x+f(t)\) can be remade with boldface/capital letters for the linear system \(\bx'=\bA(t)\bx+\bff(t)\text{.}\) Those statements relied mainly on linearity, which remains present. So for example,</p>
 <article class="theorem theorem-like" id="fs-general"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">General solutions (first-order linear systems).</span>
 </h6>
-<p id="p-291">Every solution of \(\bx'=\bA(t)\bx+\bff(t)\) can be written in the form \(\bx=\bx_h+\bx_p\text{,}\) where \(\bx_h\) is the general solution of \(\bx'=\bA(t)\bx\) and \(\bx_p\) is any solution of \(\bx'=\bA(t)\bx+\bff(t)\text{.}\)</p></article><p id="p-292">Once again, then, we look first at the homogeneous system (no forcing term), and then for particular solutions of the nonhomogeneous problem.</p></section></div></main>
+<p id="p-295">Every solution of \(\bx'=\bA(t)\bx+\bff(t)\) can be written in the form \(\bx=\bx_h+\bx_p\text{,}\) where \(\bx_h\) is the general solution of \(\bx'=\bA(t)\bx\) and \(\bx_p\) is any solution of \(\bx'=\bA(t)\bx+\bff(t)\text{.}\)</p></article><p id="p-296">Once again, then, we look first at the homogeneous system (no forcing term), and then for particular solutions of the nonhomogeneous problem.</p></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-03T09:00:17-05:00    *-->
+<!--*    on 2020-03-04T15:56:00-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If \(\omega\approx \omega_0\text{,}\) then the amplitude of the particular solution is very large.</p>
+<p>Exponential forcing \(F(t)=e^{rt}\) is particulary important when \(r\) is imaginary. Say \(r=i\omega\text{.}\) Then by Euler's identity we have</p>
+<div class="displaymath">
+\begin{equation*}
+F(t) = \cos(\omega t) + i\sin(\omega t)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Thanks to linearity, if given a cos or sin forcing, we can solve the complex-valued problem and then take a real or imaginary part. That is, if \(x_p(t) = A e^{i\omega t}\) as above, then</p>
+<div class="displaymath">
+\begin{align*}
+[\Re x_p]'' + 2 Z \omega_0 [\Re x_p]' + \omega_0^2 [\Re x_p] \amp = \omega_0^2 \cos(\omega t), \\
+[\Im x_p]'' + 2 Z \omega_0 [\Im x_p]' + \omega_0^2 [\Im x_p]  \amp = \omega_0^2 \sin(\omega t). 
+\end{align*}
+</div>
 <span class="incontext"><a href="so-expforcing.html#p-395">in-context</a></span>
 </body>
 </html>

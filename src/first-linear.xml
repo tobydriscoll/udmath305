@@ -227,7 +227,7 @@
 		</p>
 	</introduction>
 	<subsection xml:id="fl-ho-intfactor">
-		<title>Integrating factor</title>
+		<title>Exponential solution</title>
 		<p>
 			We can go far with some simple calculus. Let's try an exponential solution, 
 			<me>
@@ -241,7 +241,7 @@
 			<men xml:id="fl-eq-intfactor">
 					x_h(t) = c_1 \exp\left( \int a(t)\,dt \right)
 			</men>,
-			for arbitrary constant <m>c_1</m>.
+			for arbitrary constant <m>c_1</m>. It's implicit that any antiderivative can be used here; i.e., the <q>plus C</q> you usually have to include can just be left out, because it's absorbed into <m>c_1</m> anyway. 
 		</p>
 		<aside>
 			<p>
@@ -393,7 +393,7 @@ title('Solution of a linear problem')
 			<me>
 				x_h(t) = c_1 g(t) = c_1 \exp\left[\int a(t)\, dt\right]
 			</me>,
-			where <m>g(t)</m> is the integral. The idea of <idx>variation of parameters</idx><term>variation of parameters</term> is to posit (i.e., guess) that the particular solution can be written by replacing the constant with a function,
+			where <m>g(t)</m> is a shorthand for the exponential. The idea of <idx>variation of parameters</idx><term>variation of parameters</term> is to posit (i.e., guess) that the particular solution can be written by replacing the constant with a function,
 			<men xml:id="fl-eq-vofp1">
 				x_p(t) = k(t) g(t)
 			</men>,
@@ -401,12 +401,15 @@ title('Solution of a linear problem')
 			<me>
 				f(t) = x_p' - a(t) x_p = [k'g+kg'] - a k g = k'g + k[g'-ag]
 			</me>,
-			which, because <m>g</m> is a homogeneous solution, is simply <m>f(t)=k'(t)g(t)</m>. Hence we get a proper particular solution provided
+			which, because <m>g(t)</m> is a homogeneous solution, is simply <m>f(t)=k'(t)g(t)</m>. Hence we get a proper particular solution of the original problem provided <m>f=k'g</m>, or 
 			<men xml:id="fl-eq-vofp2">
 				k(t) = \int \frac{f(t)}{g(t)}\, dt
 			</men>.
-			Step by step, we have to (1) integrate once to get <m>g</m> in <xref ref="fl-eq-intfactor"/>, (2) integrate again to get <m>k</m> in <xref ref="fl-eq-vofp2"/>, and (3) multiply them together to get the particular solution in <xref ref="fl-eq-vofp1"/>. It's also worth mentioning the implicit step (0), which is to first of all put the given problem in the standard form of <xref ref="fl-eq-folinrepeat"/>; i.e., divide the equation through by any coefficient of <m>x'</m>.
-		</p>
+			Step by step, we have to (1) integrate <m>a(t)</m> once to get <m>g</m>, (2) integrate <m>f/g</m> to get <m>k</m> in <xref ref="fl-eq-vofp2"/>, and (3) multiply them together to get the particular solution in <xref ref="fl-eq-vofp1"/>. It's also worth reiterating the implicit step (0), which is to first of all put the given problem in the standard form of <xref ref="fl-eq-folinrepeat"/>; i.e., divide the equation through by any coefficient of <m>x'</m>.
+		</p>	
+		<aside>
+			<p>The function <m>1/g</m> is often called an <term>integrating factor</term>. If you multiply the original equation by <m>1/g</m>, then the solution can be found by one more integration. It's the same result as we derived here.</p>
+		</aside>
 		<example>
 			<p>
 				Consider <m>3x'=12x+24t</m>. Rewriting it as <m>x'-4x=8t</m>, we identify <m>a(t)=4</m> and <m>f(t)=8t</m>. Then
@@ -429,7 +432,7 @@ title('Solution of a linear problem')
 		</example>
 		<example>
 			<p>
-				For <m>(2+t) x'= x - 1</m>, we rewrite as
+				For <m>(2+t) x'= x - 1</m>, we first rewrite as
 				<me>
 					x' - \frac{1}{2+t} x = -\frac{1}{2+t}
 				</me>. Then
@@ -447,22 +450,14 @@ title('Solution of a linear problem')
 			</p>
 		</example>
 		<p>
-			After being thoroughly trained to always include integration constants, you might wonder why we are being so cavalier about them here. Let's walk through what would happen to them in the last example above. First,
-			<me>
-				g(t) = \exp\left[  \ln(2+t) + C_1 \right] = A_1(2 + t)
-			</me>,
-			where we renamed <m>A_1=e^{C_1}\gt 0</m>. Then
-			<me>
-				k(t) = A_1^{-1} \int \frac{-1}{2+t} (2+t)^{-1} \, dt = A_1^{-1} [-(2+t)^{-1}+C_2] = -A_1^{-1}(2+t)^{-1} + A_2
-			</me>.
-			Finally,
-			<me>
-				x = x_h + kg = c_1 A_1(2 + t) + \bigl[-A_1^{-1}(2+t)^{-1} + A_2\bigr ]A_1(2 + t) = (c_1A_1+A_1A_2)(2+t) - 1
-			</me>.
-			This is exactly the same family of solutions as <m>c_1(2+t)-1</m>. Essentially, all the integration constants end up lumped into that <m>c_1</m>, which is always the case.
+			Combining the expressions for both the homogeneous and particular parts, we obtained the full general solution
+			<men xml:id="fl-eq-vofpgen">
+				x(t) = c_1 \exp[q(t)] + \exp[q(t)] \int f(t) \exp[-q(t)]\, dt = \exp[q(t)] \left[ c_1  + \int f(t) \exp[-q(t)]\, dt \right]
+			</men>,
+			where as before, <m>q</m> is any antiderivative of <m>a(t)</m>. Writing the solution this way clarifies that once again the <q>plus C</q> of indefinite integration doesn't really matter, as it gets absorbed into the final arbitrary <m>c_1</m>. 
 		</p>
 		<p>
-			For initial-value problems, we find the entire general solution first, and then apply the initial condition to get a specific value for the free constant.
+			For initial-value problems, we have two options. The first is the default: find the entire general solution, and then apply the initial condition to get a specific value for the free constant.
 		</p>
 		<example>
 			<p>
@@ -473,6 +468,44 @@ title('Solution of a linear problem')
 				so <m>c_1=2</m>.
 			</p>
 		</example>
+		<p>
+			A slightly streamlined version of the process is available for IVPs. Given the initial condition <m>x(t_0)=x_0</m>, we rewrite the general solution <xref ref="fl-eq-vofpgen"/> using definite integrals:
+			<me>
+				q_0(t) = \int_{t_0}^t a(s)\, ds,
+			</me>
+			followed by
+			<me>
+				x(t) = \exp[q_0(t)] \left[ c_1  + \int_{t_0}^t f(s) \exp[-q_0(s)]\, ds \right]
+			</me>. 
+			By the properties of definite integrals, we know that <m>q(t_0)=0</m>, and hence 
+			<me>
+				x_0 = x(t_0) = 1\cdot \left[ c_1  + 0 \right]
+			</me>. 
+			So there is really no need to solve for the constant; the initial value can be baked in from the beginning:
+			<me>
+				x(t) = \exp[q_0(t)] \left[ x_0  + \int_{t_0}^t f(s) \exp[-q_0(s)]\, ds \right]
+			</me>. 		
+		</p>
+		<example>
+			<p>
+				Reconsider the previous example of <m>x'=4x+8t</m> with <m>x(0)=3/2</m>. Then 
+				<me>
+					q_0(t) = \int_0^t 4s\, ds = 4t
+				</me>, 
+				and
+				<me>
+					x(t) = e^{4t} \left[ \frac{3}{2}  + \int_{0}^t 8s e^{-4s}\, ds \right].
+				</me>
+				This evaluates to 
+				<me>
+					 x(t) = e^{4t} \left[ \frac{3}{2} + \frac{1}{2} \Bigl(1-e^{-4 t} (4 t+1)\Bigr) \right] = 2e^{4t} - \frac{1}{2}(4t+1)
+				</me>,
+				just as before. 
+			</p>
+		</example>
+		<p>
+			When the homogeneous and particular solutions are known or given, it's easier to write out the general solution and then find the constant in it. But starting from scratch, the definite integral approach is tidier. 
+		</p>
 
 	<!--/introduction-->
 </section>

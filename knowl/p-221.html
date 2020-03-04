@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-03T09:00:15-05:00    *-->
+<!--*    on 2020-03-04T15:56:00-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,30 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider \(3x'=12x+24t\text{.}\) Rewriting it as \(x'-4x=8t\text{,}\) we identify \(a(t)=4\) and \(f(t)=8t\text{.}\) Then</p>
-<div class="displaymath">
-\begin{equation*}
-g(t) = \exp\left[ \int 4\,dt \right] = e^{4t}\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">and</p>
-<div class="displaymath">
-\begin{equation*}
-k(t) = \int \frac{8t}{e^{4t}}\, dt = -\frac{1}{2} (4t+1)e^{-4t}\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">where you need integration by parts (or a computer) to perform the integral. Hence</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = \left[ \frac{1}{2} (4t+1)e^{-4t} \right] e^{4t} = -\frac{1}{2} (4t+1)\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">and the general solution is</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = x_h(t) + x_p(t) = c_1 e^{4t} - \frac{1}{2} (4t+1)\text{.}
-\end{equation*}
-</div>
+<p>The function \(1/g\) is often called an <dfn class="terminology">integrating factor</dfn>. If you multiply the original equation by \(1/g\text{,}\) then the solution can be found by one more integration. It's the same result as we derived here.</p>
 <span class="incontext"><a href="fl-varparam.html#p-221">in-context</a></span>
 </body>
 </html>

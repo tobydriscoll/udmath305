@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-03T09:00:16-05:00    *-->
+<!--*    on 2020-03-04T15:56:00-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Using this new language, <a class="xref" data-knowl="./knowl/fs-thm-eigensolution.html" title="Theorem 3.3.1: Solution by eigenvectors">Theorem 3.3.1</a> applies when \(\bA\) is nondefective, even when it has some repeated eigenvalues. In the two-dimensional case this is easy to spot.</p>
+<p>We can find the eigenstuff of</p>
+<div class="displaymath">
+\begin{equation*}
+\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This gives us solutions of \(\bx'=\bA\bx\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bx_1(t) = e^{3t} \twovec{1}{2},\quad \bx_2(t) = e^{-t} \twovec{1}{-2} \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Because the eigenvalues are distinct, we know that these are independent solutions. The general homogeneous solution is</p>
+<div class="displaymath">
+\begin{equation*}
+\bx(t) = \bX(t)\bc = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
+= \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="fs-constcoeff.html#p-310">in-context</a></span>
 </body>
 </html>

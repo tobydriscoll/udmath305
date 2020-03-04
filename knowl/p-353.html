@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-03T09:00:16-05:00    *-->
+<!--*    on 2020-03-04T15:56:00-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,38 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose</p>
+<p>For a nondefective \(\bA\text{,}\) <a class="xref" data-knowl="./knowl/fs-thm-eigensolution.html" title="Theorem 3.3.1: Solution by eigenvectors">Theorem 3.3.1</a> guarantees that</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \twomat{1}{-2}{5}{-3}\text{,}
+\bX(t) = \begin{bmatrix} e^{t\lambda_1}\bv_1 \amp e^{t\lambda_2}\bv_2 \amp \cdots \amp e^{t\lambda_n}\bv_n \end{bmatrix}  
 \end{equation*}
 </div>
-<p data-braille="continuation">and we are given or work out that</p>
+<p data-braille="continuation">is a fundamental matrix for the ODE \(\bx'=\bA\bx\text{,}\) where the \((\lambda_j,\bv_j)\) are eigenpairs. If we now define</p>
 <div class="displaymath">
 \begin{equation*}
-\lambda_1 = -1+i, \; \lambda_2 = -1-i, \qquad \bV = \twomat{1}{1}{2-i}{2+i}\text{.}
+\bY(t) = \bX(t) \bX(0)^{-1}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then</p>
+<p data-braille="continuation">then</p>
 <div class="displaymath">
 \begin{equation*}
-\bV^{-1} = \frac{1}{2+i-2+i} \twomat{2+i}{-1}{-2+i}{1} = \frac{i}{2} \twomat{-2-i}{1}{2-i}{-1}\text{,}
+\bY'(t) = \bX'(t) \bX(0)^{-1} = \bA \bX(t) \bX(0)^{-1} = \bA \bY(t)\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">and then</p>
-<div class="displaymath">
-\begin{align*}
-e^{t \bA} \amp = e^{-t}\frac{i}{2}\twomat{1}{1}{2-i}{2+i} \twomat{e^{it}}{0}{0}{e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
-\amp = e^{-t}\frac{i}{2}\twomat{e^{it}}{e^{-it}}{(2-i)e^{it}}{(2+i)e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
-\amp = e^{-t}\frac{i}{2} \twomat{-(2+i)e^{it}+(2-i) e^{-it}}{e^{it}-e^{-it}}{-(2-i)(2+i)e^{it}+(2+i)(2-i) e^{-it}}{(2-i)e^{it}-(2+i) e^{-it}} \text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">Each entry is written in the form of a complex number minus its conjugate, which gives \(2i\) times the imaginary part. This helps a lot.</p>
-<div class="displaymath">
-\begin{equation*}
-e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\sin(t)}\text{.}
-\end{equation*}
-</div>
+<p data-braille="continuation">so \(\bY(t)\) is a fundamental matrix as well. But also \(\bY(0)=\bX(0)\bX(0)^{-1}=\bI\text{,}\) so in fact \(\bY(t)\) is the matrix exponential.</p>
 <span class="incontext"><a href="fs-matrix-exp.html#p-353">in-context</a></span>
 </body>
 </html>
