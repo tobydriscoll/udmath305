@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-04T15:55:59-05:00    *-->
+<!--*    on 2020-03-04T16:45:20-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -246,10 +246,10 @@ x_p(t) = B_1 t + B_0\text{.}
 (B_1)+3(B_1 t + B_0) = 6t\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">This has to be identically true for all \(t\text{.}\) On matching like powers of \(t\) we get the equations \(3B_1=6\) and \(B_1+B_0=0\text{.}\) This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that \(B_1=2\) and \(B_0=-2\text{.}\) So the general solution is</p>
+<p data-braille="continuation">This has to be identically true for all \(t\text{.}\) On matching like powers of \(t\) we get the equations \(3B_1=6\) and \(B_1+B_0=0\text{.}\) This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that \(B_1=2\) and \(B_0=-2/3\text{.}\) So the general solution is</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = c_1 e^{-3t} + 2t - 2\text{.}
+x(t) = c_1 e^{-3t} + 2t - \frac{2}{3}\text{.}
 \end{equation*}
 </div></article></div>
 <article class="example example-like" id="example-37"><a data-knowl="" class="id-ref original" data-refid="hk-example-37"><h6 class="heading">
@@ -272,7 +272,7 @@ B_1e^t + (B_1 t + B_0)e^t = -te^t\text{.}
 x(t) = c_1 e^{-t} + e^t(1-t)\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-233">An important aspect of the previous two examples is that if the forcing function \(f\) includes a polynomial, then the particular solution has to include all the terms for a polynomial of the same degree, even if the forcing polynomial has some zero coefficients.</p>
+<p id="p-233">An important aspect of the previous two examples is that if the forcing function \(f\) includes a polynomial, then the particular solution has to include all the terms for a polynomial of the same degree, even if the forcing polynomial has some zero coefficients. Similarly, if <em class="emphasis">either</em> sin or cos appears in \(f\text{,}\) then <em class="emphasis">both</em> sin and cos have to be included in the form of \(x_p\text{.}\)</p>
 <article class="example example-like" id="example-38"><a data-knowl="" class="id-ref original" data-refid="hk-example-38"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-38"><article class="example example-like"><p id="p-234">Let's solve \(x'=3x+50\cos(4t)\text{.}\) We have \(x_h=c_1e^{3t}\) and choose</p>
@@ -310,23 +310,38 @@ A = \frac{ \twodet{50}{4}{0}{-3} }{9+16} = -6, \quad B = \frac{ \twodet{-3}{50}{
 \begin{equation*}
 x(t) = c_1e^{3t} + 8\cos(4t) - 6 \sin(4t)\text{.}
 \end{equation*}
+</div></article></div>
+<p id="p-235">If the forcing function includes multiple different types of functions added together, then you can find particular solutions for the different terms separately and add them together to get the overall particular solution.</p>
+<article class="example example-like" id="example-39"><a data-knowl="" class="id-ref original" data-refid="hk-example-39"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-39"><article class="example example-like"><p id="p-236">To find a particular solution of  \(x'+3x=6t-4e^{-t}\text{,}\) we can separately find them for the cases \(x'+3x=6t\) and \(x'+3x=-4e^{-t}\text{.}\) Above we found \(x_p=2t-(2/3)\) for the first case. For the second case we choose \(x_p=A e^{-t}\) and plug in:</p>
+<div class="displaymath">
+\begin{equation*}
+-4e^{-t} = x'+3x = -A e^{-t} + 3A e^{-t}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which tells us that \(A=-2\text{.}\) Finally, the particular solution of the original equation is</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = 2t-\frac{2}{3}-2e^{-t}\text{.}
+\end{equation*}
 </div></article></div></section><section class="subsection" id="fl-uc-breakdown"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.5.1</span> <span class="title">Breakdown of the method</span>
 </h3>
-<a href="fl-undeter.html#fl-uc-breakdown" class="permalink">¶</a><p id="p-235">The suggestions in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a> can fail if the forcing \(f\) includes the homogeneous solution \(e^{at}\text{.}\)</p>
-<article class="example example-like" id="example-39"><a data-knowl="" class="id-ref original" data-refid="hk-example-39"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-39"><article class="example example-like"><p id="p-236">Consider \(x'-ax=e^{at}\text{.}\) We get \(x_h=c_1e^{at}\text{,}\) and the table suggests</p>
+<a href="fl-undeter.html#fl-uc-breakdown" class="permalink">¶</a><p id="p-237">The suggestions in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a> can fail if the forcing \(f\) includes the homogeneous solution \(e^{at}\text{.}\)</p>
+<article class="example example-like" id="example-40"><a data-knowl="" class="id-ref original" data-refid="hk-example-40"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-40"><article class="example example-like"><p id="p-238">Consider \(x'-ax=e^{at}\text{.}\) We get \(x_h=c_1e^{at}\text{,}\) and the table suggests</p>
 <div class="displaymath">
 \begin{equation*}
 x_p = B_0 e^{at}\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">But this is a repeat of the homogeneous solution. Hence if we substitute it into \(x'-ax\text{,}\) we (naturally) get zero, and it's impossible to match this with the forcing function \(e^{at}\text{.}\)</p></article></div>
-<p id="p-237">The example above is a failure of the method, not a statement about the existence of the solution. There are advanced rules for fixing the method of undetermined coefficients in this circumstance, but it's easier to just fall back to variation of parameters (<a href="fl-varparam.html" class="internal" title="Section 2.4: Variation of parameters">Section 2.4</a>).</p>
-<article class="example example-like" id="example-40"><a data-knowl="" class="id-ref original" data-refid="hk-example-40"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-40"><article class="example example-like"><p id="p-238">We solve \(x'-ax=e^{at}\) by the variation of parameters formula</p>
+<p id="p-239">The example above is a failure of the method, not a statement about the existence of the solution. There are advanced rules for fixing the method of undetermined coefficients in this circumstance, but it's easier to just fall back to variation of parameters (<a href="fl-varparam.html" class="internal" title="Section 2.4: Variation of parameters">Section 2.4</a>).</p>
+<article class="example example-like" id="example-41"><a data-knowl="" class="id-ref original" data-refid="hk-example-41"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-41"><article class="example example-like"><p id="p-240">We solve \(x'-ax=e^{at}\) by the variation of parameters formula</p>
 <div class="displaymath">
 \begin{equation*}
 x(t) = c_1 g(t) + g(t) \int g(t)^{-1} e^{at} \, dt\text{,}

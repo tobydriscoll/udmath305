@@ -504,7 +504,7 @@ title('Solution of a linear problem')
 			</p>
 		</example>
 		<p>
-			When the homogeneous and particular solutions are known or given, it's easier to write out the general solution and then find the constant in it. But starting from scratch, the definite integral approach is tidier. 
+			When the homogeneous and particular solutions are known or given, it's easier to write out the general solution and then find the constant in it. But starting from scratch, the definite integral approach is tidier. The overall difficulty is about the same.
 		</p>
 
 	<!--/introduction-->
@@ -551,9 +551,9 @@ title('Solution of a linear problem')
 					<me>
 						(B_1)+3(B_1 t + B_0) = 6t
 					</me>.
-					This has to be identically true for all <m>t</m>. On matching like powers of <m>t</m> we get the equations <m>3B_1=6</m> and <m>B_1+B_0=0</m>. This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that <m>B_1=2</m> and <m>B_0=-2</m>. So the general solution is
+					This has to be identically true for all <m>t</m>. On matching like powers of <m>t</m> we get the equations <m>3B_1=6</m> and <m>B_1+B_0=0</m>. This is a linear system of two equations with two unknowns, but we don't need any fancy linear algebra to see that <m>B_1=2</m> and <m>B_0=-2/3</m>. So the general solution is
 					<me>
-						x(t) = c_1 e^{-3t} + 2t - 2
+						x(t) = c_1 e^{-3t} + 2t - \frac{2}{3}
 					</me>.
 				</p>
 			</example>
@@ -574,7 +574,7 @@ title('Solution of a linear problem')
 					</p>
 			</example>
 			<p>
-					An important aspect of the previous two examples is that if the forcing function <m>f</m> includes a polynomial, then the particular solution has to include all the terms for a polynomial of the same degree, even if the forcing polynomial has some zero coefficients.
+					An important aspect of the previous two examples is that if the forcing function <m>f</m> includes a polynomial, then the particular solution has to include all the terms for a polynomial of the same degree, even if the forcing polynomial has some zero coefficients. Similarly, if <em>either</em> sin or cos appears in <m>f</m>, then <em>both</em> sin and cos have to be included in the form of <m>x_p</m>.
 			</p>
 			<example>
 				<p>
@@ -603,6 +603,21 @@ title('Solution of a linear problem')
 						x(t) = c_1e^{3t} + 8\cos(4t) - 6 \sin(4t)
 					</me>.
 				</p>
+			</example>
+			<p>
+				If the forcing function includes multiple different types of functions added together, then you can find particular solutions for the different terms separately and add them together to get the overall particular solution. 
+			</p>
+			<example>
+				<p>
+					To find a particular solution of  <m>x'+3x=6t-4e^{-t}</m>, we can separately find them for the cases <m>x'+3x=6t</m> and <m>x'+3x=-4e^{-t}</m>. Above we found <m>x_p=2t-(2/3)</m> for the first case. For the second case we choose <m>x_p=A e^{-t}</m> and plug in: 
+					<me>
+						-4e^{-t} = x'+3x = -A e^{-t} + 3A e^{-t}
+					</me>,
+					which tells us that <m>A=-2</m>. Finally, the particular solution of the original equation is 
+					<me>
+						x_p(t) = 2t-\frac{2}{3}-2e^{-t}
+					</me>.
+				</p>		
 			</example>
 		</introduction>
 		<subsection xml:id="fl-uc-breakdown">
