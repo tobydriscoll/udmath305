@@ -579,7 +579,7 @@ title('Solution of a linear problem')
 			</example>
 			<example>
 					<p>
-						To solve <m>x'+x=-te^t</m>, first note that <m>x_h(t)=c_1e^{-t}</m>. For <m>x_p</m> we use the educated guess
+						To solve <m>x'+x=-t e^t</m>, first note that <m>x_h(t)=c_1e^{-t}</m>. For <m>x_p</m> we use the educated guess
 						<me>
 							x_p(t) = (B_1 t + B_0)e^t
 						</me>.
@@ -719,7 +719,7 @@ title('Solution of a linear problem')
 		According to <em>R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52</em>, caffeine in the bloodstream approximately satisfies first-order kinetics, though the half-life varies a great deal from one person to the next.
 	</p>
 	<p>
-		Suppose <m>t_h=6</m> hours. We can calculate <m>a=-\ln(2)/t_h\approx 0.116</m> per hour, and then the predicted effects of one cup of coffee are <m>x(t) = e^{0.116t}x(0)</m>. You can check that an equivalent, more direct expression is
+		Suppose <m>t_h=6</m> hours. We can calculate <m>a=-\ln(2)/t_h\approx -0.116</m> per hour, and then the predicted effects of one cup of coffee are <m>x(t) = e^{-0.116t}x(0)</m>. You can check that an equivalent, more direct expression is
 		<me>x(t) = 2^{-t/t_h} x(0)</me>.
 	</p>
 </example>
