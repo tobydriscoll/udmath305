@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-04T17:03:45-05:00    *-->
+<!--*    on 2020-03-10T13:21:50-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -17,16 +17,22 @@
 x_p(t) = (B_1 t + B_0)e^t\text{.}
 \end{equation*}
 </div>
+<p data-braille="continuation">Then</p>
+<div class="displaymath">
+\begin{equation*}
+x_p'(t) = (B_1 t + B_0)e^t + (B_1)e^t
+\end{equation*}
+</div>
 <p data-braille="continuation">Substituting that into the ODE yields</p>
 <div class="displaymath">
 \begin{equation*}
-B_1e^t + (B_1 t + B_0)e^t = -te^t\text{.}
+e^t(B_1t+B_0+B_1) + e^t(B_1 t + B_0) = -t e^t\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">On canceling the exponentials and matching like powers of \(t\text{,}\) we get the equations \(B_1=-1\) and \(B_1+B_0=0\text{.}\) Hence \(B_1=-1\) and \(B_0=1\text{.}\) So the general solution is</p>
+<p data-braille="continuation">On canceling the exponentials and matching like powers of \(t\text{,}\) we get the equations \(2B_1=-1\) and \(2B_0+B_1=0\text{.}\) Hence \(B_1=-1/2\) and \(B_0=1/4\text{.}\) So the general solution is</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = c_1 e^{-t} + e^t(1-t)\text{.}
+x(t) = c_1 e^{-t} + \frac{1-2t}{4}\, e^t\text{.}
 \end{equation*}
 </div></article></body>
 </html>
