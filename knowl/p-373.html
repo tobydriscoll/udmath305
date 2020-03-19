@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-10T13:28:13-04:00    *-->
+<!--*    on 2020-03-19T16:40:50-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
+<p>Our main item of business is the linear, constant-coefficient model problem</p>
 <div class="displaymath">
-\begin{equation*}
-\bu_h(t) = c_1 e^{\lambda_1 t} \twovec{1}{\lambda_1} + c_2 e^{\lambda_2 t} \twovec{1}{\lambda_2}\text{.}
-\end{equation*}
+\begin{equation}
+x'' + bx' + cx = f(t)\text{,}\tag{4.1.1}
+\end{equation}
 </div>
-<p data-braille="continuation">In terms of the original variable \(x=u_1\text{,}\) this is simply</p>
+<p data-braille="continuation">for which the conversion process with \(u_1=x\text{,}\) \(u_2=x'\) yields</p>
 <div class="displaymath">
-\begin{equation*}
-x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \qquad \text{if } \lambda_1\neq\lambda_2\text{.}
-\end{equation*}
+\begin{equation}
+\twovec{u_1'}{u_2'} = \twovec{u_2}{f(t)-cx_1-bx_2} = \twomat{0}{1}{-c}{-b} \bu + \twovec{0}{f(t)}\text{,}\tag{4.1.2}
+\end{equation}
 </div>
-<span class="incontext"><a href="so-homogeneous.html#p-373">in-context</a></span>
+<p data-braille="continuation">which has the form \(\bu'=\bA\bu+\bff(t)\text{.}\) Thus everything from the last chapter is again in play.</p>
+<span class="incontext"><a href="so-convert.html#p-373">in-context</a></span>
 </body>
 </html>

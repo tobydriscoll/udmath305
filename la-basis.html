@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-10T13:28:11-04:00    *-->
+<!--*    on 2020-03-19T16:40:46-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -80,8 +80,8 @@ var js_version = 0.13;
 \newcommand{\ppp}[2]{\frac{\partial^2 #1}{\partial #2^2}}
 \newcommand{\norm}[1]{\left\| #1 \right\|}
 \newcommand{\det}{\operatorname{det}}
-\newcommand{\null}{\operatorname{null}}
-\newcommand{\span}{\operatorname{span}}
+\newcommand{\nullsp}{\operatorname{null}}
+\newcommand{\spanset}{\operatorname{span}}
 \newcommand{\bzero}{\boldsymbol{0}}
 \newcommand{\Rn}[1]{\mathbb{R}^{#1}}
 \newcommand{\Cn}[1]{\mathbb{C}^{#1}}
@@ -174,7 +174,7 @@ var js_version = 0.13;
 <li><a href="fs-structure.html" data-scroll="fs-structure">Structure of linear ODE systems</a></li>
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
-<li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
+<li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex eigenvalues</a></li>
 <li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
@@ -219,27 +219,27 @@ var js_version = 0.13;
 <p id="p-80">The <dfn class="terminology">nullspace</dfn> of a matrix \(\bA\in\Rmn{m}{n}\) is</p>
 <div class="displaymath">
 \begin{equation}
-\null(\bA) = \{ \bx\in\Rn{n} : \bA\bx=\bzero \}\text{.}\label{la-eq-nullspace}\tag{1.6.1}
+\nullsp(\bA) = \{ \bx\in\Rn{n} : \bA\bx=\bzero \}\text{.}\label{la-eq-nullspace}\tag{1.6.1}
 \end{equation}
-</div></article><aside class="aside aside-like" id="aside-5"><p id="p-81">The term <em class="emphasis">space</em> itself has a technical definition, and there are many different types of spaces. But the nullspace is the only one we will need.</p></aside><p id="p-82">We also saw that every element of \(\null(\bA)\) can be expressed as a linear combination, \(c_1\bx_1+\cdots+c_k\bx_k\text{.}\)</p>
+</div></article><aside class="aside aside-like" id="aside-5"><p id="p-81">The term <em class="emphasis">space</em> itself has a technical definition, and there are many different types of spaces. But the nullspace is the only one we will need.</p></aside><p id="p-82">We also saw that every element of \(\nullsp(\bA)\) can be expressed as a linear combination, \(c_1\bx_1+\cdots+c_k\bx_k\text{.}\)</p>
 <article class="definition definition-like" id="la-df-span"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Span.</span>
 </h6>
 <p id="p-83">The <dfn class="terminology">span</dfn> of vectors \(\bx_1,\ldots,\bx_k\) is</p>
 <div class="displaymath">
 \begin{equation}
-\span(\bx_1,\ldots,\bx_k) = \{ c_1\bx_1+\cdots+c_k\bx_k : c_1,\ldots,c_k \in \mathbb{R} \}\text{.}\label{la-eq-span}\tag{1.6.2}
+\spanset(\bx_1,\ldots,\bx_k) = \{ c_1\bx_1+\cdots+c_k\bx_k : c_1,\ldots,c_k \in \mathbb{R} \}\text{.}\label{la-eq-span}\tag{1.6.2}
 \end{equation}
 </div></article><p id="p-84">The notion of span gives us a shorthand for expressing the nullspace (equivalently, the general homogeneous solution). For reasons we won't get into, every span is referred to as a space. However, it's important to know that there are infinitely many different ways to express the same space. For instance,</p>
 <div class="displaymath">
 \begin{equation*}
-\span\left(\bx_1\right) = \span\left(\bx_1,\bx_1,\bx_1\right)\text{.}
+\spanset\left(\bx_1\right) = \spanset\left(\bx_1,\bx_1,\bx_1\right)\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">That's kind of an obvious “cheat”. Here is a more subtle one:</p>
 <div class="displaymath">
 \begin{equation*}
-\span\left( \twovec{1}{0}, \twovec{0}{1}, \twovec{1}{1} \right) = \span\left( \twovec{1}{0}, \twovec{0}{1} \right)\text{.}
+\spanset\left( \twovec{1}{0}, \twovec{0}{1}, \twovec{1}{1} \right) = \spanset\left( \twovec{1}{0}, \twovec{0}{1} \right)\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">The reasoning here is that the first two vectors already span all of \(\Rn{2}\text{,}\) so there's nothing more that the third vector can bring to the table. We have a term for these observations.</p>
@@ -313,7 +313,7 @@ c_j \bx_j = - \sum_{i\neq j} c_i \bx_i\text{,}
 <article class="definition definition-like" id="la-df-basis"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Basis.</span>
 </h6>
-<p id="p-90">If \(\bx_1,\dots,\bx_k\) are independent, then they form a <dfn class="terminology">basis</dfn> of \(\span(\bx_1,\dots,\bx_k)\text{.}\)</p></article><p id="p-91">The following can be proved as a theorem.</p>
+<p id="p-90">If \(\bx_1,\dots,\bx_k\) are independent, then they form a <dfn class="terminology">basis</dfn> of \(\spanset(\bx_1,\dots,\bx_k)\text{.}\)</p></article><p id="p-91">The following can be proved as a theorem.</p>
 <article class="fact theorem-like" id="la-fact-dimension"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.6.6</span><span class="period">.</span>
 </h6>
@@ -349,7 +349,7 @@ c_j \bx_j = - \sum_{i\neq j} c_i \bx_i\text{,}
 <p data-braille="continuation">Equivalently, we say that</p>
 <div class="displaymath">
 \begin{equation*}
-\null(\bA) = \span\left(\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\right)\text{,}
+\nullsp(\bA) = \spanset\left(\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\right)\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">and in fact \([-1,1,0]\)  is a basis of the nullspace, which is therefore one-dimensional.</p>
@@ -370,7 +370,7 @@ null(A)
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">(i.e., an identity matrix). There are no free variables, and the only solution is \(\bx=[0,0,0]\text{.}\) Hence \(\null(\bA) = \{\bzero\}\text{.}\) This singleton set does not have a basis and is considered to have dimension zero. (Try this example in MATLAB!)</p></article></div>
+<p data-braille="continuation">(i.e., an identity matrix). There are no free variables, and the only solution is \(\bx=[0,0,0]\text{.}\) Hence \(\nullsp(\bA) = \{\bzero\}\text{.}\) This singleton set does not have a basis and is considered to have dimension zero. (Try this example in MATLAB!)</p></article></div>
 <p id="p-98">I emphasize that <em class="emphasis">we have done no new math here</em>. It's still just about linear systems and RREF matrices, with different terminology.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>

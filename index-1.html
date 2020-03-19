@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-10T13:28:12-04:00    *-->
+<!--*    on 2020-03-19T16:40:48-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -80,8 +80,8 @@ var js_version = 0.13;
 \newcommand{\ppp}[2]{\frac{\partial^2 #1}{\partial #2^2}}
 \newcommand{\norm}[1]{\left\| #1 \right\|}
 \newcommand{\det}{\operatorname{det}}
-\newcommand{\null}{\operatorname{null}}
-\newcommand{\span}{\operatorname{span}}
+\newcommand{\nullsp}{\operatorname{null}}
+\newcommand{\spanset}{\operatorname{span}}
 \newcommand{\bzero}{\boldsymbol{0}}
 \newcommand{\Rn}[1]{\mathbb{R}^{#1}}
 \newcommand{\Cn}[1]{\mathbb{C}^{#1}}
@@ -174,7 +174,7 @@ var js_version = 0.13;
 <li><a href="fs-structure.html" data-scroll="fs-structure">Structure of linear ODE systems</a></li>
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
-<li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex exponentials</a></li>
+<li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex eigenvalues</a></li>
 <li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane">Phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
@@ -212,18 +212,18 @@ var js_version = 0.13;
 <div class="indexletter" id="indexletter-a">
 <div class="indexitem">augmented matrix<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-21.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">autonomous ODE<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-444.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">autonomous ODE<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-446.html" title="Paragraph">Paragraph</a></span>
 </div>
 </div>
 <div class="indexletter" id="indexletter-c">
-<div class="indexitem">carrying capacity<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-460.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">carrying capacity<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-462.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">coefficient</div>
 <div class="subindexitem">in linear ODE<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-198.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">Cramer's Rule<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-120.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">critically damped oscillator<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-395.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">critically damped oscillator<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-397.html" title="Paragraph">Paragraph</a></span>
 </div>
 </div>
 <div class="indexletter" id="indexletter-d">
@@ -245,7 +245,7 @@ var js_version = 0.13;
 </div>
 </div>
 <div class="indexletter" id="indexletter-f">
-<div class="indexitem">fixed point<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-445.html" title="Paragraph">Paragraph</a>. <span class="seealso"><em>See also</em> steady state</span></span>
+<div class="indexitem">fixed point<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-447.html" title="Paragraph">Paragraph</a>. <span class="seealso"><em>See also</em> steady state</span></span>
 </div>
 <div class="indexitem">forcing function<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-198.html" title="Paragraph">Paragraph</a></span>
 </div>
@@ -255,7 +255,7 @@ var js_version = 0.13;
 </div>
 </div>
 <div class="indexletter" id="indexletter-g">
-<div class="indexitem">gain<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-400.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">gain<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-402.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">Gauss-Jordan elimination<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-26.html" title="Paragraph">Paragraph</a></span>
 </div>
@@ -307,69 +307,71 @@ var js_version = 0.13;
 </div>
 <div class="indexitem">linear operator<span class="indexknowl">, <a class="xref" data-knowl="./knowl/fl-df-operator.html" title="Definition 2.2.2: Linear operator">Definition</a></span>
 </div>
-<div class="indexitem">logistic equation<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-459.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">logistic equation<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-461.html" title="Paragraph">Paragraph</a></span>
 </div>
 </div>
 <div class="indexletter" id="indexletter-m">
 <div class="indexitem">matrix<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-11.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">matrix exponential<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-350.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">matrix exponential<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-352.html" title="Paragraph">Paragraph</a></span>
 </div>
 </div>
 <div class="indexletter" id="indexletter-n">
-<div class="indexitem">natural frequency<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-390.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">natural frequency<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-392.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">node<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-341.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">node<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-343.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">nondefective<span class="indexknowl">, <a class="xref" data-knowl="./knowl/ls-def-defectivematrix.html" title="Definition 3.3.3: Defective matrix">Definition</a></span>
+</div>
+<div class="indexitem">nondimensionalization<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-274.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">nullspace<span class="indexknowl">, <a class="xref" data-knowl="./knowl/la-df-nullspace.html" title="Definition 1.6.1: Nullspace">Definition</a></span>
 </div>
 </div>
-<div class="indexletter" id="indexletter-o"><div class="indexitem">overdamped oscillator<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-396.html" title="Paragraph">Paragraph</a></span>
+<div class="indexletter" id="indexletter-o"><div class="indexitem">overdamped oscillator<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-398.html" title="Paragraph">Paragraph</a></span>
 </div></div>
 <div class="indexletter" id="indexletter-p">
 <div class="indexitem">particular solution</div>
 <div class="subindexitem">of a linear system<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-73.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">phase lag<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-400.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">phase lag<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-402.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">phase line diagram<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-449.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">phase line diagram<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-451.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">phase plane<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-339.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">phase plane<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-341.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">pivot column<span class="indexknowl">, <a class="xref" data-knowl="./knowl/definition-3.html" title="Definition 1.2.10: RREF">Definition</a></span>
 </div>
-<div class="indexitem">poles<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-413.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">poles<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-415.html" title="Paragraph">Paragraph</a></span>
 </div>
 </div>
 <div class="indexletter" id="indexletter-r">
-<div class="indexitem">resonance<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-406.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">resonance<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-408.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">RREF (row reduced echelon form)<span class="indexknowl">, <a class="xref" data-knowl="./knowl/definition-3.html" title="Definition 1.2.10: RREF">Definition</a></span>
 </div>
 </div>
 <div class="indexletter" id="indexletter-s">
-<div class="indexitem">saddle<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-344.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">saddle<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-346.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">scalar<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-36.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">separable ODE<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-451.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">separable ODE<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-453.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">solution</div>
 <div class="subindexitem">of ODE<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-184.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">spiral<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-347.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">spiral<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-349.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">stability<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-448.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">stability<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-450.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">steady state<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-445.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">steady state<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-447.html" title="Paragraph">Paragraph</a></span>
 </div>
 </div>
-<div class="indexletter" id="indexletter-t"><div class="indexitem">transfer function<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-289.html" title="Paragraph">Paragraph</a></span>
+<div class="indexletter" id="indexletter-t"><div class="indexitem">transfer function<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-291.html" title="Paragraph">Paragraph</a></span>
 </div></div>
 <div class="indexletter" id="indexletter-u">
-<div class="indexitem">underdamped oscillator<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-394.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">underdamped oscillator<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-396.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">undetermined coefficients<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-232.html" title="Paragraph">Paragraph</a></span>
 </div>
