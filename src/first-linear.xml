@@ -1014,11 +1014,11 @@ title('Solution of a linear problem')
 	<subsection>
 		<title>Basic transforms</title>
 		<p>
-			We can find the transform of an exponential function from the transform definition. For any complex number <m>c</m>,
+			We can find the transform of an exponential function from the transform definition. For any real number <m>c</m>,
 			<me>
 				\lx[e^{c t}] = \int_0^\infty e^{(c-s)t}\, dt = \left[ -\frac{1}{s-c} e^{(c-s)t} \right]_0^\infty = \frac{1}{s-c}
 			</me>.
-			(To make this valid requires that <m>{\text Re}(c)\lt s</m>, but we are going to ignore all such technicalities.)
+			(To make this valid requires that <m>c\lt s</m>, but we are going to ignore all such technicalities.)
 		</p>
 		<fact>
 			<title>Transform of an exponential</title>

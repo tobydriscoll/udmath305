@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-19T16:40:47-04:00    *-->
+<!--*    on 2020-03-24T09:54:36-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -255,13 +255,13 @@ X(s) = \frac{ F(s) + x(0)}{s-a}\text{.}
 <p data-braille="continuation">Now “all” we have to do know is to compute the inverse transform, that is, find \(x(t)\) given \(X(s)\text{.}\) This is a lot less straightforward than computing the forward transform, unfortunately. But we can make it manageable in much the same way you learned indefinite integration: by learning some canonical cases and then matching patterns.</p></section><section class="subsection" id="subsection-26"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.8.2</span> <span class="title">Basic transforms</span>
 </h3>
-<p id="p-281">We can find the transform of an exponential function from the transform definition. For any complex number \(c\text{,}\)</p>
+<p id="p-281">We can find the transform of an exponential function from the transform definition. For any real number \(c\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[e^{c t}] = \int_0^\infty e^{(c-s)t}\, dt = \left[ -\frac{1}{s-c} e^{(c-s)t} \right]_0^\infty = \frac{1}{s-c}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">(To make this valid requires that \({\text Re}(c)\lt s\text{,}\) but we are going to ignore all such technicalities.)</p>
+<p data-braille="continuation">(To make this valid requires that \(c\lt s\text{,}\) but we are going to ignore all such technicalities.)</p>
 <article class="fact theorem-like" id="fact-14"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.8.3</span><span class="period">.</span><span class="space"> </span><span class="title">Transform of an exponential.</span>
 </h6>
