@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-24T09:54:38-04:00    *-->
+<!--*    on 2020-03-25T10:19:55-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,28 +13,32 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's find the exponential of</p>
+<p>When this argument is fully unraveled, it can be summarized as follows. Given a complete set of eigenvectors, i.e.,</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \twomat{1}{1}{4}{1}\text{,}
+\bA \bv_1 = \lambda_1 \bv_1, \;
+\bA \bv_2 = \lambda_2 \bv_2,\; \dots, \;
+\bA \bv_n = \lambda_n \bv_n\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">given \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) We identify</p>
+<p data-braille="continuation">define</p>
 <div class="displaymath">
 \begin{equation*}
-\bV = \twomat{1}{1}{2}{-2}
+\bV = \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}.
 \end{equation*}
 </div>
-<p data-braille="continuation">and compute</p>
+<p data-braille="continuation">(In the notation above, this is \(\bX(0)\text{.}\)) Then</p>
 <div class="displaymath">
-\begin{align*}
-e^{t\bA} \amp = \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{1}{1}{2}{-2}^{-1} \\
-\amp = -\frac{1}{4} \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{-2}{-1}{-2}{1} \\
-\amp = -\frac{1}{4} \twomat{e^{3t}}{e^{-t}}{2e^{3t}}{-2e^{-t}} \twomat{-2}{-1}{-2}{1} \\
-\amp = \frac{1}{4} \twomat{2e^{3t}+2e^{-t}}{e^{3t}-e^{-t}}{4e^{3t}-4e^{-t}}{2e^{3t}+2e^{-t}} \text{.}
-\end{align*}
+\begin{equation}
+e^{t\bA} = \bV \begin{bmatrix} 
+e^{t\lambda_1} \amp \amp \amp \\ 
+\amp e^{t\lambda_2} \amp \amp \\ 
+\amp \amp \ddots \amp \\ 
+\amp \amp \amp e^{t\lambda_n} 
+\end{bmatrix}  \bV^{-1}\text{.}\tag{3.6.2}
+\end{equation}
 </div>
-<p data-braille="continuation">Not exactly a walk in the park, but doable.</p>
+<p data-braille="continuation">This is one of those cases in which you're probably better off working from the formula than going each time through the process we used to get it.</p>
 <span class="incontext"><a href="fs-matrix-exp.html#p-361">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-24T09:54:38-04:00    *-->
+<!--*    on 2020-03-25T10:19:55-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Counting algebraic multiplicities, we know that \(\bA\) has eigenvalues \(\lambda_1,\ldots,\lambda_n\text{.}\) Say that we have eigenvectors \(\bv_1,\ldots,\bv_n\) to go with them. Then we have \(n\) homogeneous solutions</p>
+<p>We begin the journey with an eigenpair of \(\bA\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\bx_j(t) = e^{\lambda_j t} \bv_j, \quad j=1,\ldots,n\text{.}
+\bA \bv = \lambda \bv\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">To determine whether they form a fundamental matrix, we need to determine whether they form a basis. According to <a class="xref" data-knowl="./knowl/fs-thm-abel.html" title="Theorem 3.2.3: Homogeneous solution independence">Theorem 3.2.3</a>, we can ask that question at any value of \(t\text{,}\) including \(t=0\text{.}\) So the key issue is the independence of the eigenvectors.</p>
+<p data-braille="continuation">If we posit that \(\bx(t)=g(t)\bv\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+g'\bv = \bA(g\bv) = g(\bA\bv) = g\lambda \bv\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which can be satisfied if \(g'=\lambda g\text{,}\) or \(g(t)=c e^{\lambda t}\text{.}\) That is, each eigenpair gives us a homogeneous solution! (Yes, this the moment all the eigenstuff was preparing us for.)</p>
 <span class="incontext"><a href="fs-constcoeff.html#p-314">in-context</a></span>
 </body>
 </html>

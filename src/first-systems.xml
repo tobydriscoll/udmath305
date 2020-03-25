@@ -90,6 +90,11 @@
 			The <m>n\times n</m> matrix <m>\bX(t)</m> is a <idx>fundamental matrix</idx><term>fundamental matrix</term> of the homogeneous system <m>\bx' = \bA(t)\bx</m> if its columns satisfy <m>\bx_j'=\bA\bx_j</m> at all times and they form a basis at time <m>t=t_0</m>. 
 		</p></statement>
 	</definition>
+	<aside>
+		<p>
+			The Kapitula book uses <m>\Phi(t)</m> as the notation for a fundamental matrix. Pot-ay-to, pot-ah-to.
+		</p>
+	</aside>
 	<p>
 		Because the nonsingularity of a fundamental matrix is one of its key properties, its determinant plays an important role.
 	</p>
@@ -98,7 +103,7 @@
 		<statement><p>
 			The <idx>Wronskian</idx><term>Wronskian</term> of a collection of homogeneous solutions <m>\bx_1,\ldots,\bx_n</m> is 
 			<me>
-				W(t) = \det\Bigl( \bigl| \bx_1(t) \: \cdots \: \bx_n(t)  \bigr| \Bigr)
+				W(t) = \det\Bigl( \bigl[ \bx_1(t) \: \cdots \: \bx_n(t)  \bigr] \Bigr)
 			</me>.
 		</p></statement>
 	</definition>
@@ -134,7 +139,7 @@
 		<me>
 			g'\bv = \bA(g\bv) = g(\bA\bv) = g\lambda \bv
 		</me>,
-		which can be satisfied if <m>g'=\lambda g</m>, or <m>g(t)=ce^{\lambda t}</m>. That is, each eigenpair gives us a homogeneous solution! (Yes, this the moment all the eigenstuff was preparing us for.)
+		which can be satisfied if <m>g'=\lambda g</m>, or <m>g(t)=c e^{\lambda t}</m>. That is, each eigenpair gives us a homogeneous solution! (Yes, this the moment all the eigenstuff was preparing us for.)
 	</p>
 	<p>
 		Counting algebraic multiplicities, we know that <m>\bA</m> has eigenvalues <m>\lambda_1,\ldots,\lambda_n</m>. Say that we have eigenvectors <m>\bv_1,\ldots,\bv_n</m> to go with them. Then we have <m>n</m> homogeneous solutions
@@ -237,16 +242,17 @@
 		</p>
 		<sidebyside>
 			<listing xml:id="exp_complex">
-			<program language="matlab">
-			<input>
-				c = @(t) real(exp(1i*t));
-				s = @(t) imag(exp(1i*t));
-				fplot({c,s},[0,4*pi])
-				xlabel('t'), ylabel('e^{it}')
-				title('Complex exponential')
-				legend('Re part','Im part')
-			</input>
-			</program>
+				<caption>The parts of a complex exponential.</caption>
+				<program language="matlab">
+				<input>
+					c = @(t) real(exp(1i*t));
+					s = @(t) imag(exp(1i*t));
+					fplot({c,s},[0,4*pi])
+					xlabel('t'), ylabel('e^{it}')
+					title('Complex exponential')
+					legend('Re part','Im part')
+				</input>
+				</program>
 			</listing>
 			<image source="figures/exp_complex.svg"/>
 		</sidebyside>
@@ -279,7 +285,7 @@
 		<p>
 			In rectangular form, addition and subtraction of complex numbers is easy and naturally interpreted as vector addition in the plane. In polar form, it's multiplication and division that become easy:
 			<me>
-				(re^{i\theta})(se^{i\phi}) = rse^{i(\theta+\phi)},  \qquad   \frac{re^{i\theta}}{se^{i\phi}} = \frac{r}{s}e^{i(\theta-\phi)}
+				(re^{i\theta})(se^{i\phi}) = r s e^{i(\theta+\phi)},  \qquad   \frac{re^{i\theta}}{se^{i\phi}} = \frac{r}{s}e^{i(\theta-\phi)}
 			</me>. 
 			Geometrically, multiplication by a complex number scales the magnitude and then rotates around the origin. 
 		</p>
@@ -310,25 +316,26 @@
 			</p>
 			<sidebyside>
 				<listing  xml:id="fs_cexp_neutral">
-				<program language="matlab">
-					<input>
-					a = 0;  om = 1;
-					t = linspace(0, 25, 500);
-					f = exp((a+1i*om)*t);
+					<caption>Traveling around the unit circle.</caption>
+					<program language="matlab">
+						<input>
+						a = 0;  om = 1;
+						t = linspace(0, 25, 500);
+						f = exp((a+1i*om)*t);
 
-					plot3(t, real(f), imag(f), 'LineWidth',2)
-					hold on
-					plot3(t,real(f), 0*t-1.5)
-					plot3(t, 0*t+2, imag(f))
-					plot3(0*t+30,real(f),imag(f),'k')
-					axis([0 30 -2  2 -1.5 1.5])
-					title(sprintf('a = %.2f, omega = %.1f',a,om))
-					grid on, xlabel('Time')
-					ylabel('Real Axis')
-					zlabel('Imag Axis')	
-					set(gca,'dataaspect',[6,1,1])    			
-					</input>
-				</program>
+						plot3(t, real(f), imag(f), 'LineWidth',2)
+						hold on
+						plot3(t,real(f), 0*t-1.5)
+						plot3(t, 0*t+2, imag(f))
+						plot3(0*t+30,real(f),imag(f),'k')
+						axis([0 30 -2  2 -1.5 1.5])
+						title(sprintf('a = %.2f, omega = %.1f',a,om))
+						grid on, xlabel('Time')
+						ylabel('Real Axis')
+						zlabel('Imag Axis')	
+						set(gca,'dataaspect',[6,1,1])    			
+						</input>
+					</program>
 				</listing>
 				<image source="figures/fs_cexp_neutral.svg"/>	  
 			</sidebyside>
@@ -337,25 +344,26 @@
 			</p>
 			<sidebyside>
 				<listing xml:id="fs_cexp_grow">
-				<program language="matlab">
-					<input>
-					a = 0.02;  om = 2;
-					t = linspace(0, 25, 500);
-					f = exp((a+1i*om)*t);
+					<caption>A growing spiral.</caption>
+					<program language="matlab">
+						<input>
+						a = 0.02;  om = 2;
+						t = linspace(0, 25, 500);
+						f = exp((a+1i*om)*t);
 
-					plot3(t, real(f), imag(f), 'LineWidth',2)
-					hold on
-					plot3(t,real(f), 0*t-1.5)
-					plot3(t, 0*t+2, imag(f))
-					plot3(0*t+30,real(f),imag(f),'k')
-					axis([0 30 -2  2 -1.5 1.5])
-					title(sprintf('a = %.2f, omega = %.1f',a,om))
-					grid on, xlabel('Time')
-					ylabel('Real Axis')
-					zlabel('Imag Axis')	  
-					set(gca,'dataaspect',[6,1,1])  			
-					</input>
-				</program>
+						plot3(t, real(f), imag(f), 'LineWidth',2)
+						hold on
+						plot3(t,real(f), 0*t-1.5)
+						plot3(t, 0*t+2, imag(f))
+						plot3(0*t+30,real(f),imag(f),'k')
+						axis([0 30 -2  2 -1.5 1.5])
+						title(sprintf('a = %.2f, omega = %.1f',a,om))
+						grid on, xlabel('Time')
+						ylabel('Real Axis')
+						zlabel('Imag Axis')	  
+						set(gca,'dataaspect',[6,1,1])  			
+						</input>
+					</program>
 				</listing>
 				<image source="figures/fs_cexp_grow.svg"/>	  
 			</sidebyside>
@@ -364,25 +372,26 @@
 			</p>
 			<sidebyside>
 				<listing  xml:id="fs_cexp_decay">
-				<program language="matlab">
-					<input>
-					a = -0.1;  om = 0.8;
-					t = linspace(0, 25, 500);
-					f = exp((a+1i*om)*t);
+					<caption>A decaying spiral.</caption>
+					<program language="matlab">
+						<input>
+						a = -0.1;  om = 0.8;
+						t = linspace(0, 25, 500);
+						f = exp((a+1i*om)*t);
 
-					plot3(t, real(f), imag(f), 'LineWidth',2)
-					hold on
-					plot3(t,real(f), 0*t-1.5)
-					plot3(t, 0*t+2, imag(f))
-					plot3(0*t+30,real(f),imag(f),'k')
-					axis([0 30 -2  2 -1.5 1.5])
-					title(sprintf('a = %.2f, omega = %.1f',a,om))
-					grid on, xlabel('Time')
-					ylabel('Real Axis')
-					zlabel('Imag Axis')	 
-					set(gca,'dataaspect',[6,1,1])   			
-					</input>
-				</program>
+						plot3(t, real(f), imag(f), 'LineWidth',2)
+						hold on
+						plot3(t,real(f), 0*t-1.5)
+						plot3(t, 0*t+2, imag(f))
+						plot3(0*t+30,real(f),imag(f),'k')
+						axis([0 30 -2  2 -1.5 1.5])
+						title(sprintf('a = %.2f, omega = %.1f',a,om))
+						grid on, xlabel('Time')
+						ylabel('Real Axis')
+						zlabel('Imag Axis')	 
+						set(gca,'dataaspect',[6,1,1])   			
+						</input>
+					</program>
 				</listing>
 				<image source="figures/fs_cexp_decay.svg"/>	  
 			</sidebyside>
@@ -399,7 +408,7 @@
 	<subsection xml:id="fs-cx-real">
 		<title>Converting to real solutions</title>
 		<p>
-			An applied mathematician is perfectly happy with a solution using complex numbers, even if it represents something that is actually real. But an engineer might get fired for not explaining things in real form to the sales team. 
+			An applied mathematician is perfectly happy with a solution using complex numbers, even if it represents something that is actually real. But an engineer might get fired for not explaining things in real form to the sales team. (And let's be honest, for not using very small words.)
 		</p>		
 		<p>
 			Let's consider the <m>2\times 2</m> case for simplicity. The general solution is 
@@ -417,7 +426,7 @@
 		</p>
 		<example>
 			<p>
-				We eariler found the eigenvalues and eigenvectors of
+				We earlier found the eigenvalues and eigenvectors of
 				<me>
 					\bA = \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}
 				</me>
@@ -481,12 +490,12 @@
 					<cell>unstable</cell>
 			</row>
 			<row>
-				<cell><m>\lambda = a\pm ib,\: a\lt 0</m></cell>
+				<cell><m>\lambda = a\pm i b,\: a\lt 0</m></cell>
 				<cell>spiral</cell>
 				<cell>stable</cell>
 			</row>
 			<row>
-				<cell><m>\lambda = a\pm ib,\: a\gt 0</m></cell>
+				<cell><m>\lambda = a\pm i b,\: a\gt 0</m></cell>
 				<cell>spiral</cell>
 				<cell>unstable</cell>
 			</row>
@@ -504,64 +513,10 @@
 			</p>
 			<sidebyside>
 				<listing xml:id="fs_pp_nodestable">
-				<program language="matlab">
-				<input>
-					A = [-4 -1; -2 -5];
-					[V,D] = eig(A);
-					lam = diag(D);
-					
-					clf
-					plot(0,0,'r.','markersize',18)
-					hold on
-					
-					% plot directions
-					[x1,x2] = meshgrid(-1:.2:1);
-					v = A*[x1(:)';x2(:)'];
-					sz = size(x1);
-					quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
-					
-					% plot eigenvectors
-					plot(5*[-V(1,:);V(1,:)],5*[-V(2,:);V(2,:)],'k','linew',2)
-					
-					% plot trajectories
-					colr = get(gca,'colororder');
-					t = linspace(0,10,300);
-					for theta = 2*pi*(0:23)/24
-						for j = 1:length(t)
-							X = expm(t(j)*A);
-							x(:,j) = X*[ cos(theta); sin(theta) ];
-						end
-						plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
-					end
-					
-					axis([-1.1 1.1 -1.1 1.1]), axis square
-					title('stable node')
-					xlabel('x_1')
-					ylabel('x_2')		
-				</input>
-				</program>
-				</listing>
-				<image source="figures/fs_pp_nodestable.svg"/>
-			</sidebyside>
-			<p>
-				The black lines show the directions of the eigenvectors. An initial state on one of those lines stays on it forever. Other initial conditions follow a path tending to become parallel to eigenvector <m>\bv_1</m>, since the other component decays out more quickly. The plot for <m>-\bA</m> would just reverse all of the arrows and show an unstable fixed point. 
-			</p>
-	</example>
-	</subsection>
-	<subsection xml:id="fs-pp-saddle">
-		<title>Saddle</title>
-		<p>
-			When the eigenvalues are real and of different signs, the fixed point is called a <idx>saddle</idx><term>saddle</term>. A saddle point is always unstable. The part of the solution along the negative eigenvector decays away, but the contribution from the positive eigenvector grows with time. 
-		</p>
-		<example>
-			<p>
-				Here is a phase plane plot for <m>\bA=\twomat{-2}{-3}{-6}{-5}</m>, which has eigenvalues <m>1</m> and <m>-8</m>. 
-			</p>
-			<sidebyside>
-				<listing  xml:id="fs_pp_saddle">
-				<program language="matlab">
-				<input>
-						A = [-2 -3; -6 -5];
+					<caption>A stable node.</caption>
+					<program language="matlab">
+					<input>
+						A = [-4 -1; -2 -5];
 						[V,D] = eig(A);
 						lam = diag(D);
 						
@@ -590,11 +545,67 @@
 						end
 						
 						axis([-1.1 1.1 -1.1 1.1]), axis square
-						title('saddle')
+						title('stable node')
 						xlabel('x_1')
-						ylabel('x_2')					
+						ylabel('x_2')		
 					</input>
-				</program>
+					</program>
+				</listing>
+				<image source="figures/fs_pp_nodestable.svg"/>
+			</sidebyside>
+			<p>
+				The black lines show the directions of the eigenvectors. An initial state on one of those lines stays on it forever. Other initial conditions follow a path tending to become parallel to eigenvector <m>\bv_1</m>, since the other component decays out more quickly. The plot for <m>-\bA</m> would just reverse all of the arrows and show an unstable fixed point. 
+			</p>
+	</example>
+	</subsection>
+	<subsection xml:id="fs-pp-saddle">
+		<title>Saddle</title>
+		<p>
+			When the eigenvalues are real and of different signs, the fixed point is called a <idx>saddle</idx><term>saddle</term>. A saddle point is always unstable. The part of the solution along the negative eigenvector decays away, but the contribution from the positive eigenvector grows with time. 
+		</p>
+		<example>
+			<p>
+				Here is a phase plane plot for <m>\bA=\twomat{-2}{-3}{-6}{-5}</m>, which has eigenvalues <m>1</m> and <m>-8</m>. 
+			</p>
+			<sidebyside>
+				<listing  xml:id="fs_pp_saddle">
+					<caption>A saddle point.</caption>
+					<program language="matlab">
+					<input>
+							A = [-2 -3; -6 -5];
+							[V,D] = eig(A);
+							lam = diag(D);
+							
+							clf
+							plot(0,0,'r.','markersize',18)
+							hold on
+							
+							% plot directions
+							[x1,x2] = meshgrid(-1:.2:1);
+							v = A*[x1(:)';x2(:)'];
+							sz = size(x1);
+							quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
+							
+							% plot eigenvectors
+							plot(5*[-V(1,:);V(1,:)],5*[-V(2,:);V(2,:)],'k','linew',2)
+							
+							% plot trajectories
+							colr = get(gca,'colororder');
+							t = linspace(0,10,300);
+							for theta = 2*pi*(0:23)/24
+								for j = 1:length(t)
+									X = expm(t(j)*A);
+									x(:,j) = X*[ cos(theta); sin(theta) ];
+								end
+								plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
+							end
+							
+							axis([-1.1 1.1 -1.1 1.1]), axis square
+							title('saddle')
+							xlabel('x_1')
+							ylabel('x_2')					
+						</input>
+					</program>
 				</listing>
 				<image source="figures/fs_pp_saddle.svg"/>
 			</sidebyside>
@@ -606,7 +617,7 @@
 	<subsection xml:id="fs-pp-spiral">
 		<title>Spiral</title>
 		<p>
-			When the eigenvalues are complex conjugates, the fixed point is called a <idx>spiral</idx><term>spiral</term>. If the eigenvalues are <m>a \pm ib</m>, then all solutions contain <m>e^{at}e^{\pm ibt}</m>, or equivalently, <m>e^{at}\cos{bt}</m> and <m>e^{at}\sin{bt}</m>. The real part causes growth and instability if <m>a\gt 0</m>, or decay and stability if <m>a \lt 0</m>. The imaginary part determines the angular speed of the spiral. 
+			When the eigenvalues are complex conjugates, the fixed point is called a <idx>spiral</idx><term>spiral</term>. If the eigenvalues are <m>a \pm i b</m>, then all solutions contain <m>e^{at}e^{\pm i b t}</m>, or equivalently, <m>e^{at}\cos{b t}</m> and <m>e^{at}\sin{b t}</m>. The real part causes growth and instability if <m>a\gt 0</m>, or decay and stability if <m>a \lt 0</m>. The imaginary part determines the angular speed of the spiral. 
 		</p>
 		<example>
 			<p>
@@ -614,40 +625,41 @@
 			</p>
 			<sidebyside>
 				<listing  xml:id="fs_pp_spiral">
-				<program language="matlab">
-				<input>
-						A = [1 -2; 4 -3];
-						[V,D] = eig(A);
-						lam = diag(D);
-						
-						clf
-						plot(0,0,'r.','markersize',18)
-						hold on
-						
-						% plot directions
-						[x1,x2] = meshgrid(-1:.2:1);
-						v = A*[x1(:)';x2(:)'];
-						sz = size(x1);
-						quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
-						
-						% plot trajectories
-						colr = get(gca,'colororder');
-						t = linspace(0,7,300);
-						for theta = 2*pi*(0:6)/7
-							for j = 1:length(t)
-								X = expm(t(j)*A);
-								c = exp(lam(1)*t(j)-1i*theta);
-								x(:,j) = X*[ cos(theta); sin(theta) ];
+					<caption>A spiral point.</caption>
+					<program language="matlab">
+					<input>
+							A = [1 -2; 4 -3];
+							[V,D] = eig(A);
+							lam = diag(D);
+							
+							clf
+							plot(0,0,'r.','markersize',18)
+							hold on
+							
+							% plot directions
+							[x1,x2] = meshgrid(-1:.2:1);
+							v = A*[x1(:)';x2(:)'];
+							sz = size(x1);
+							quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
+							
+							% plot trajectories
+							colr = get(gca,'colororder');
+							t = linspace(0,7,300);
+							for theta = 2*pi*(0:6)/7
+								for j = 1:length(t)
+									X = expm(t(j)*A);
+									c = exp(lam(1)*t(j)-1i*theta);
+									x(:,j) = X*[ cos(theta); sin(theta) ];
+								end
+								plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
 							end
-							plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
-						end
-						
-						axis([-1.2 1.2 -1.2 1.2]), axis square
-						title('stable spiral')
-						xlabel('x_1')
-						ylabel('x_2')
-					</input>					
-				</program>
+							
+							axis([-1.2 1.2 -1.2 1.2]), axis square
+							title('stable spiral')
+							xlabel('x_1')
+							ylabel('x_2')
+						</input>					
+					</program>
 				</listing>
 				<image source="figures/fs_pp_spiral.svg"/>
 			</sidebyside>

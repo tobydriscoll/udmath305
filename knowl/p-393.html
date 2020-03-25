@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-24T09:54:38-04:00    *-->
+<!--*    on 2020-03-25T10:19:55-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In math we usually use “frequency” to mean the multiplier of \(t\) in a sin or cos function. In some fields this is called <dfn class="terminology">angular frequency</dfn> and “frequency” is used to mean the number of cycles per time unit, as in Hz.</p>
+<p>The mechanical oscillator \(mx'' + bx' + kx = F(t)\) is more conveniently expressed as</p>
+<div class="displaymath">
+\begin{equation*}
+x'' + \frac{b}{m} x' + \frac{k}{m} x = \frac{1}{m} F(t)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">One reason to prefer this form is dimensional analysis: \(x\) must have the same units as  \(F/m\text{,}\) and both \(b/m\) and \(\sqrt{k/m}\) have units of inverse time. We introduce new parameters</p>
+<div class="displaymath">
+\begin{equation*}
+\omega_0 = \sqrt{\frac{k}{m}} \gt 0, \quad Z = \frac{1}{2} \frac{b/m}{\omega_0} = \frac{b}{\sqrt{4km}}\ge 0\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">\(\omega_0\) is known as the <dfn class="terminology">natural frequency</dfn>, with units of inverse time, and \(Z\) is a dimensionless number describing the intensity of the damping. Now the ODE becomes</p>
+<div class="displaymath">
+\begin{equation}
+x'' + 2 Z \omega_0 x' + \omega_0^2 x = \omega_0^2 F(t)\text{.}\tag{4.4.1}
+\end{equation}
+</div>
+<p data-braille="continuation">A similar derivation can be done starting from the electrical circuit equation.</p>
 <span class="incontext"><a href="so-oscillators.html#p-393">in-context</a></span>
 </body>
 </html>
