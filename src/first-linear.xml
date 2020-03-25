@@ -790,60 +790,76 @@ title('Solution of a linear problem')
 		The unit step function represents throwing on an idealized switch. To have the switch turn on at an arbitrary time <m>T</m>, we use <m>H(t-T)</m>. It's worth mentioning here the related idea of a <term>window</term> function, which turns on and then back off. To get a function that is one only between times <m>S</m> and <m>T</m>, for example, we can use <m>f(t)=H(t-S)-H(t-T)</m>.
 	</p>
 	<p>
-		It's relatively straightforward, if cumbersome, to incorporate step forcing into our solution methods used so far. The key fact to keep in mind is:
+		It's relatively straightforward to incorporate step forcing into our solution methods. The key fact to keep in mind is:
 	</p>
 	<fact>
 		<p>
-			The solution of <m>x'-a(t)x=H(t-T)f(t)</m>  having continuous <m>a(t)</m> and <m>f(t)</m> is continuous.
+			If <m>x(t)</m> solves <m>x'-a(t)x=H(t-T)f(t-T)</m>, where <m>a(t)</m> and <m>f(t)</m> are continuous, then <m>x(t)</m> is continuous.
 		</p>
 	</fact>
 	<p>
-		As a result, we can solve an initial-value problem for <m>x'-a(t)x=H(t-T)</m> piecewise. Assuming the initial time is zero for simplicity, we first solve
+		The reason for writing the forcing function as <m>H(t-T)f(t-T)</m> here is that it represents <q>do nothing until time <m>T</m>, then activate <m>f</m> as if starting from time zero</q>. To solve the IVP 
+		<men xml:id="fl-eq-step_ivp">
+			\opA[x] = x' - a(t) x = H(t-T)f(t-T), \quad x(0)=x_0,
+		</men>
+		we will exploit the linearity of the problem at a root level. That is, suppose <m>x_h</m> solves 
+		<men xml:id="fl-eq-step_h">
+			x' - a(t) x = 0, \quad x(0)=x_0,
+		</men>
+		and that <m>x_p</m> solves 
+		<men xml:id="fl-eq-step_p">
+			x' - a(t+T) x = f(t), \quad x(0)=0.
+		</men>
+		Now define <m>\tilde{x}_p(t) = H(t-T)x_p(t-T)</m>. For <m>t \lt T</m>, this function is identically zero. For <m>t \gt T</m>, we have 
 		<me>
-			x'-a(t)x=0
-		</me>
-		over <m>0 \le t \le T</m>, using the given value of <m>x(0)</m>. Then we solve
+			\frac{d}{dt} \tilde{x}_p(t) = \frac{d}{dt} x_p(t-T) = x_p'(t-T) \cdot 1 = a(t+T-T) x_p(t-T) + f(t-T) = a(t) \tilde{x}_p(t) + f(t-T).
+		</me> 
+		If we combine the two time intervals, we have proven that <m>\tilde{x}_p</m> solves <m>\opA[x]=H(t-T)f(t-T)</m>. Finally, let <m>x(t)=x_h(t)+\tilde{x}_p(t)</m>. Then <m>x(0)=x_h(0)+\tilde{x}_p(0)=x_0+0</m>, and 
 		<me>
-			x'-a(t)x=1
-		</me>
-		for <m>t\gt T</m>, using the already-known <m>x(T)</m> as the <q>initial</q> value of this stage. If there are multiple step functions present, then there are more than just two pieces to integrate. At each jump point in the forcing function we reset the initial value and start again with a different nonhomogeneous forcing value. The process is the same for <m>x'-ax=H(t-T)f(t)</m>.
+			\opA[x] = \opA[x_h] + \opA[\tilde{x}_p] = 0 + H(t-T)f(t-T)
+		</me>. 
+		Hence <m>x</m> is the solution of <xref ref="fl-eq-step_ivp"/>. 	
+	</p>
+	<p>
+		That derivation may have seemed complicated, but the conclusion is not. To solve <xref ref="fl-eq-step_ivp"/>, first solve <xref ref="fl-eq-step_h"/> to get <m>x_h(t)</m>, then solve <xref ref="fl-eq-step_p"/> to get <m>x_p(t)</m>, and let <m>x(t)=x_h(t)+H(t-T)x_p(t-T)</m>. This technique of adding together solutions to linear equations is called <idx>superposition</idx><term>superposition</term>. It nicely extends to having multiple step functions in the forcing. For example, to solve 
+		<me>
+			\opA[x] = H(t-T)f(t-T) + H(t-S)g(t-S), \quad x(0)=x_0
+		</me>,
+		we would also solve <m>x'-a(t+S)x=g(t)</m> with zero initial condition to get <m>x_q(t)</m>, and let 
+		<me>
+			x(t)=x_h(t)+H(t-T)x_p(t-T)+H(t-S)x_q(t-S)
+		</me>. 
+		This is all especially easy to carry out when <m>a(t)</m>, <m>f(t)</m>, and <m>g(t)</m> are all constant. 
 	</p>
 	<example xml:id="fl-ex-stepforce">
 		<p>
-			Let's solve <m>x'-x=f(t)</m>, <m>x(0)=-2</m>, where <m>f(t)</m> is 5 for <m>3 \lt t \le 6</m> and zero elsewhere. The homogeneous solution is <m>x_h(t)=c_1e^{t}</m>.
+			Let's solve <m>x'-x=w(t)</m>, <m>x(0)=-2</m>, where <m>w(t)</m> is a window function that is 5 for <m>3 \lt t \le 6</m> and zero elsewhere. We can write the problem as 
+			<me>
+				x' - x = 5[H(t-3) - H(t-6)] = 5H(t-3) - 5H(t-6), \quad x(0)=-2
+			</me>. 
 		</p>
 		<p>
-			Over <m>0 \le t \le 3</m>, the homogeneous solution is the full solution. Applying <m>x(0)=-2</m> we get
+			The first task is to solve 
 			<me>
-				x_{[0,3]}(t) = -2 e^t
+				x' - x = 0, \quad x(0)=-2
 			</me>
-			for this interval. Over <m>3 \le t \le 6</m>, the ODE is <m>x'-x=5</m>. Undetermined coefficients suggests the particular solution <m>x_p(t)=A</m>, and it's then clear that <m>A=-5</m>. Our general solution over this segment is therefore <m>c_2e^t-5</m>. Joining this to the previous segment at <m>t=3</m> requires
+			to get <m>x_h(t)=-2e^t</m>. For forcing <m>5H(t-3)</m>, the problem <xref ref="fl-eq-step_p"/> becomes 
 			<me>
-				-2e^3 = c_2 e^3 - 5 \Rightarrow c_2 = 5e^{-3} -2
-			</me>,
-			so that
+				x' - x = 5, \quad x(0)=0
+			</me>. 
+			This is easily solved to get <m>x_p(t)=5(e^t-1)</m>. The other part of the forcing is very similar, giving <m>x_q(t)=-5(e^t-1)</m>. Altogether, then, 
+			<md>
+			  <mrow>x(t) \amp = x_h(t) + x_p(t-3) + x_q(t-6)</mrow>
+			  <mrow>  \amp = -2e^t + 5H(t-3)(e^{t-3}-1) - 5H(t-6)(e^{t-6}-1).</mrow>
+			</md>
+			To be clear, the piecewise expression of the solution is 
 			<me>
-				x_{[3,6]}(t) = (5e^{-3} -2)e^t - 5 = -2 e^t + 5(e^{t-3}-1)
+				x(t) = \begin{cases} 
+				   -2e^t, \amp 0 \le t \lt 3, \\ 
+				   -2e^t + 5(e^{t-3}-1), \amp 3 \le \lt 5, \\ 
+				   -2e^t + 5(e^{t-3}-e^{t-6}), \amp 5 \le t
+				   \end{cases}
 			</me>.
-			Finally, for <m>t \gt 6</m> the ODE is homogeneous again, so the general solution here is <m>c_3e^t</m>. Continuity at <m>t=6</m> requires
-			<me>
-				-2 e^6 + 5(e^3-1) = c_3e^6 \Rightarrow c_3 = -2 + 5(e^{-3}-e^{-6})
-			</me>.
-			Hence the last phase of the solution is
-			<me>
-				x_{[6,\infty)}(t) = -2e^t + 5(e^{t-3} - e^{t-6})
-			</me>.
-			<!--me>
-					\frac{1}{1} 5 H(t-3) \bigl[e^{(3-t)}-1\bigr]
-			</me>,
-			and from the second step it's
-			<me>
-					-\frac{1}{1} 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]
-			</me>.
-			Put these together with the homogeneous solution and we get
-			<me>
-				x(t) = e^{t}x_0 + 5 H(t-3) \bigl[e^{(3-t)}-1\bigr] - 5 H(t-6) \bigl[e^{(6-t)}-1\bigr]
-			</me-->
 		</p>
 		<sidebyside>
 			<listing xml:id="fo_lcc_window">
@@ -865,7 +881,7 @@ title('Solution of a linear problem')
 	<p>
 		Next imagine that we use a window function as the forcing term over ever shortening times, but in such a way that the integral under the curve remains constant. It's analogous to delivering a dose of medication via a slow IV drip versus injecting the same dose all at once directly. Define
 		<me>
-			\delta_\epsilon(t) = \frac{H(t)-H(t-\epsilon)}{\epsilon}
+			\delta_\epsilon(t) = \frac{1-H(t-\epsilon)}{\epsilon}
 		</me>.
 		The area under the <m>\delta_\epsilon(t)</m> curve equals one for all <m>\epsilon \gt 0</m>. We now ask what happens as the window width <m>\epsilon</m> approaches zero.
 	</p>
@@ -881,9 +897,13 @@ title('Solution of a linear problem')
 	<p>
 		The solution to <m>x'-ax=\delta_\epsilon(t)</m>, <m>x(0)=0</m> is easily found for a constant <m>a</m> using the method described above, resulting in
 		<me>
-			x_\epsilon(t) = \frac{1-e^{-a\epsilon}}{a\epsilon} e^{at}
-		</me>,
-		for <m>t\gt \epsilon</m>. As <m>\epsilon\to 0</m>, this is the only part of the solution we care about. Using L'Hôpital's Rule,
+			x_\epsilon(t) = \frac{1}{a \epsilon} \left[  (e^{at}-1) - H(t-\epsilon) (e^{a(t-\epsilon)}-1) \right]
+		</me>. 
+		As <m>\epsilon\to 0</m>, we only care about what happens for <m>t\gt \epsilon</m>, which gives 
+		<me>
+			x_\epsilon(t) = \frac{e^{a t}}{a \epsilon}  \left( 1 - e^{-a\epsilon} \right), \quad t \gt \epsilon
+		</me>. 
+		Using L'Hôpital's Rule,
 		<me>
 			\lim_{\epsilon\to 0} x_\epsilon(t) = e^{at}, \quad t \gt 0
 		</me>.
