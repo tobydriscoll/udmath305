@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T10:19:54-04:00    *-->
+<!--*    on 2020-03-25T16:12:41-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -16,13 +16,19 @@
 <p>The solution to \(x'-ax=\delta_\epsilon(t)\text{,}\) \(x(0)=0\) is easily found for a constant \(a\) using the method described above, resulting in</p>
 <div class="displaymath">
 \begin{equation*}
-x_\epsilon(t) = \frac{1-e^{-a\epsilon}}{a\epsilon} e^{at}\text{,}
+x_\epsilon(t) = \frac{1}{a \epsilon} \left[  (e^{at}-1) - H(t-\epsilon) (e^{a(t-\epsilon)}-1) \right]\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">for \(t\gt \epsilon\text{.}\) As \(\epsilon\to 0\text{,}\) this is the only part of the solution we care about. Using L'Hôpital's Rule,</p>
+<p data-braille="continuation">As \(\epsilon\to 0\text{,}\) we only care about what happens for \(t\gt \epsilon\text{,}\) which gives</p>
 <div class="displaymath">
 \begin{equation*}
-\lim_{\epsilon\to 0} x_\epsilon(t) = e^{at}, \quad t \gt 0\text{.}
+x_\epsilon(t) = \frac{e^{a t}}{a \epsilon}  \left( 1 - e^{-a\epsilon} \right), \quad t \gt \epsilon\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Using L'Hôpital's Rule,</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{\epsilon\to 0} x_\epsilon(t) =e^{at}  \lim_{\epsilon\to 0}  \frac{1 - e^{-a\epsilon}}{a \epsilon} = e^{at}, \quad t \gt 0\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">Hence the constant-coefficient impulse response is simply \(e^{at}\text{.}\) This is the same as the solution of the homogeneous \(x'-ax=0\) with initial value one rather than zero. This remarkable observation generalizes as follows.</p>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T10:19:54-04:00    *-->
+<!--*    on 2020-03-25T16:12:41-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -15,16 +15,10 @@
 <article class="example example-like"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.7</span><span class="period">.</span>
 </h6>
-<p>Suppose we solve \(x'+5x=3\delta(t-2)\text{,}\) with \(x(0)=1\text{.}\) For \(0\lt t \lt 2\text{,}\) the equation is homogeneous and \(x(t)=e^{-5t}\text{.}\) Then the solution receives an instantaneous kick from \(e^{-10}\) to \(e^{-10}+3\) and continues evolving homogeneously. So for \(t\gt 2\text{,}\)</p>
+<p>To solve \(x'+5x=3\delta(t-2)\text{,}\) with \(x(0)=1\text{,}\) we combine</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = (e^{-10}+3) e^{-5(t-2)} = e^{-5t} + 3 e^{-5(t-2)}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">In fact we could write the solution at all times in one formula using step function notation:</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = e^{-5t} + 3 H(t-2) e^{-5(t-2)}\text{.}
+x(t) = x_h(t) + 3H(t-2)x_d(t-2) = e^{-5 t} + 3H(t-2)e^{-5(t-2)}\text{.}
 \end{equation*}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">

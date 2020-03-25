@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T10:19:55-04:00    *-->
+<!--*    on 2020-03-25T16:12:41-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,12 @@
 </head>
 <body>
 <div class="displaymath">
-\begin{gather*}
-\lx[ f(t) + g(t) ] = F(s) + G(s) \\
-\lx[ c f(t) ] = c F(s)
-\end{gather*}
+\begin{align*}
+\frac{d}{dt} \tilde{x}_s(t)  \amp = \frac{d}{dt} x_s(t-T) = x_s'(t-T) \cdot 1\\
+\amp = a(t+T-T) x_s(t-T) + f(t-T) \\
+\amp = a(t) \tilde{x}_s(t) + f(t-T).
+\end{align*}
 </div>
-<span class="incontext"><a href="fl-laplace.html#mjx-eqn-mrow-47">in-context</a></span>
+<span class="incontext"><a href="fl-impulse.html#mjx-eqn-mrow-47">in-context</a></span>
 </body>
 </html>

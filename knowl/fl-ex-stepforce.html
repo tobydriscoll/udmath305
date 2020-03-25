@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T10:19:54-04:00    *-->
+<!--*    on 2020-03-25T16:12:41-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -15,35 +15,26 @@
 <article class="example example-like"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="period">.</span>
 </h6>
-<p>Let's solve \(x'-x=f(t)\text{,}\) \(x(0)=-2\text{,}\) where \(f(t)\) is 5 for \(3 \lt t \le 6\) and zero elsewhere. The homogeneous solution is \(x_h(t)=c_1e^{t}\text{.}\)</p>
-<p>Over \(0 \le t \le 3\text{,}\) the homogeneous solution is the full solution. Applying \(x(0)=-2\) we get</p>
+<p>Let's solve \(x'-x=w(t)\text{,}\) \(x(0)=-2\text{,}\) where \(w(t)\) is a window function that is 5 for \(3 \lt t \le 6\) and zero elsewhere. We can write the problem as</p>
 <div class="displaymath">
 \begin{equation*}
-x_{[0,3]}(t) = -2 e^t
+x' - x = 5[H(t-3) - H(t-6)] = 5H(t-3) - 5H(t-6), \quad x(0)=-2\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">for this interval. Over \(3 \le t \le 6\text{,}\) the ODE is \(x'-x=5\text{.}\) Undetermined coefficients suggests the particular solution \(x_p(t)=A\text{,}\) and it's then clear that \(A=-5\text{.}\) Our general solution over this segment is therefore \(c_2e^t-5\text{.}\) Joining this to the previous segment at \(t=3\) requires</p>
+<p data-braille="continuation">The solution therefore consists of three terms:</p>
 <div class="displaymath">
 \begin{equation*}
--2e^3 = c_2 e^3 - 5 \Rightarrow c_2 = 5e^{-3} -2\text{,}
+x(t) = -2 e^t + 5 H(t-3) (e^{t-3}-1) - 5H(t-6)(e^{t-6}-1)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">so that</p>
+<p data-braille="continuation">The first term is the homogeneous (or free) response, and the others switch on as the forcing changes its value. A piecewise expression of the solution is</p>
 <div class="displaymath">
 \begin{equation*}
-x_{[3,6]}(t) = (5e^{-3} -2)e^t - 5 = -2 e^t + 5(e^{t-3}-1)\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Finally, for \(t \gt 6\) the ODE is homogeneous again, so the general solution here is \(c_3e^t\text{.}\) Continuity at \(t=6\) requires</p>
-<div class="displaymath">
-\begin{equation*}
--2 e^6 + 5(e^3-1) = c_3e^6 \Rightarrow c_3 = -2 + 5(e^{-3}-e^{-6})\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Hence the last phase of the solution is</p>
-<div class="displaymath">
-\begin{equation*}
-x_{[6,\infty)}(t) = -2e^t + 5(e^{t-3} - e^{t-6})\text{.}
+x(t) = \begin{cases} 
+-2e^t, \amp 0 \le t \lt 3, \\ 
+-2e^t + 5(e^{t-3}-1), \amp 3 \le \lt 5, \\ 
+-2e^t + 5(e^{t-3}-e^{t-6}), \amp 5 \le t
+\end{cases}\text{.}
 \end{equation*}
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">

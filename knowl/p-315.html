@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T10:19:55-04:00    *-->
+<!--*    on 2020-03-25T16:12:41-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Counting algebraic multiplicities, we know that \(\bA\) has eigenvalues \(\lambda_1,\ldots,\lambda_n\text{.}\) Say that we have eigenvectors \(\bv_1,\ldots,\bv_n\) to go with them. Then we have \(n\) homogeneous solutions</p>
+<p>We can find the eigenstuff of</p>
 <div class="displaymath">
 \begin{equation*}
-\bx_j(t) = e^{\lambda_j t} \bv_j, \quad j=1,\ldots,n\text{.}
+\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">To determine whether they form a fundamental matrix, we need to determine whether they form a basis. According to <a class="xref" data-knowl="./knowl/fs-thm-abel.html" title="Theorem 3.2.3: Homogeneous solution independence">Theorem 3.2.3</a>, we can ask that question at any value of \(t\text{,}\) including \(t=0\text{.}\) So the key issue is the independence of the eigenvectors.</p>
+<p data-braille="continuation">as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This gives us solutions of \(\bx'=\bA\bx\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\bx_1(t) = e^{3t} \twovec{1}{2},\quad \bx_2(t) = e^{-t} \twovec{1}{-2} \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Because the eigenvalues are distinct, we know that these are independent solutions. The general homogeneous solution is</p>
+<div class="displaymath">
+\begin{equation*}
+\bx(t) = \bX(t)\bc = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
+= \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="fs-constcoeff.html#p-315">in-context</a></span>
 </body>
 </html>

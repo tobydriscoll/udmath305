@@ -806,30 +806,48 @@ title('Solution of a linear problem')
 		<men xml:id="fl-eq-step_h">
 			x' - a(t) x = 0, \quad x(0)=x_0,
 		</men>
-		and that <m>x_p</m> solves 
+		and that <m>x_s</m> solves 
 		<men xml:id="fl-eq-step_p">
 			x' - a(t+T) x = f(t), \quad x(0)=0.
 		</men>
-		Now define <m>\tilde{x}_p(t) = H(t-T)x_p(t-T)</m>. For <m>t \lt T</m>, this function is identically zero. For <m>t \gt T</m>, we have 
+		Now define <m>\tilde{x}_s(t) = H(t-T)x_s(t-T)</m>. For <m>t \lt T</m>, this function is identically zero. For <m>t \gt T</m>, we have 
+		<md>
+		  <mrow> \frac{d}{dt} \tilde{x}_s(t)  \amp = \frac{d}{dt} x_s(t-T) = x_s'(t-T) \cdot 1</mrow>
+		  <mrow>\amp = a(t+T-T) x_s(t-T) + f(t-T) </mrow>
+			<mrow>  \amp = a(t) \tilde{x}_s(t) + f(t-T).</mrow>
+		</md>
+		If we combine the two time intervals, we have proven that <m>\tilde{x}_s</m> solves <m>\opA[x]=H(t-T)f(t-T)</m>. Finally, let <m>x(t)=x_h(t)+\tilde{x}_s(t)</m>. Then <m>x(0)=x_h(0)+\tilde{x}_s(0)=x_0+0</m>, and 
 		<me>
-			\frac{d}{dt} \tilde{x}_p(t) = \frac{d}{dt} x_p(t-T) = x_p'(t-T) \cdot 1 = a(t+T-T) x_p(t-T) + f(t-T) = a(t) \tilde{x}_p(t) + f(t-T).
-		</me> 
-		If we combine the two time intervals, we have proven that <m>\tilde{x}_p</m> solves <m>\opA[x]=H(t-T)f(t-T)</m>. Finally, let <m>x(t)=x_h(t)+\tilde{x}_p(t)</m>. Then <m>x(0)=x_h(0)+\tilde{x}_p(0)=x_0+0</m>, and 
-		<me>
-			\opA[x] = \opA[x_h] + \opA[\tilde{x}_p] = 0 + H(t-T)f(t-T)
+			\opA[x] = \opA[x_h] + \opA[\tilde{x}_s] = 0 + H(t-T)f(t-T)
 		</me>. 
 		Hence <m>x</m> is the solution of <xref ref="fl-eq-step_ivp"/>. 	
 	</p>
 	<p>
-		That derivation may have seemed complicated, but the conclusion is not. To solve <xref ref="fl-eq-step_ivp"/>, first solve <xref ref="fl-eq-step_h"/> to get <m>x_h(t)</m>, then solve <xref ref="fl-eq-step_p"/> to get <m>x_p(t)</m>, and let <m>x(t)=x_h(t)+H(t-T)x_p(t-T)</m>. This technique of adding together solutions to linear equations is called <idx>superposition</idx><term>superposition</term>. It nicely extends to having multiple step functions in the forcing. For example, to solve 
+		That derivation may have seemed complicated, but the conclusion is not. To simplify it we will restate it for the special case in which the functions in the ODE are all constants. Thus, to solve 
 		<me>
-			\opA[x] = H(t-T)f(t-T) + H(t-S)g(t-S), \quad x(0)=x_0
+			\opA[x] = x' - a x = H(t-T), \quad x(0)=x_0
 		</me>,
-		we would also solve <m>x'-a(t+S)x=g(t)</m> with zero initial condition to get <m>x_q(t)</m>, and let 
+		we first solve <m>x' - a x = 0</m> with <m>x(0)=x_0</m> to get 
 		<me>
-			x(t)=x_h(t)+H(t-T)x_p(t-T)+H(t-S)x_q(t-S)
+			x_h(t) = e^{a t} x_0
 		</me>. 
-		This is all especially easy to carry out when <m>a(t)</m>, <m>f(t)</m>, and <m>g(t)</m> are all constant. 
+		Then we solve <m>x' - a x = 1</m> with <m>x(0)=0</m> to get 
+		<me>
+			x_s(t) = e^{a t} - 1
+		</me>. 
+		Then the solution to the original IVP is 
+		<me>
+			x(t) = x_h(t) + H(t-T)x_s(t-T) = e^{a t} x_0 + H(t-T)(e^{a(t-T)}-1)
+		</me>. 
+		This technique of adding together solutions to linear equations is called <idx>superposition</idx><term>superposition</term>. It nicely extends to having multiple step functions that define a piecewise constant forcing. For example, to solve 
+		<me>
+			x'- a x  = k_1 H(t-T_1) + k_2 H(t-T_2), \quad x(0)=x_0
+		</me>,
+		we would use 
+		<me>
+			x(t)=x_h(t) + k_1 H(t-T_1)x_s(t-T_1) + k_2 H(t-T_2)x_s(t-T_2)
+		</me>, 
+		and so on. 
 	</p>
 	<example xml:id="fl-ex-stepforce">
 		<p>
@@ -837,22 +855,11 @@ title('Solution of a linear problem')
 			<me>
 				x' - x = 5[H(t-3) - H(t-6)] = 5H(t-3) - 5H(t-6), \quad x(0)=-2
 			</me>. 
-		</p>
-		<p>
-			The first task is to solve 
+			The solution therefore consists of three terms: 
 			<me>
-				x' - x = 0, \quad x(0)=-2
-			</me>
-			to get <m>x_h(t)=-2e^t</m>. For forcing <m>5H(t-3)</m>, the problem <xref ref="fl-eq-step_p"/> becomes 
-			<me>
-				x' - x = 5, \quad x(0)=0
+				x(t) = -2 e^t + 5 H(t-3) (e^{t-3}-1) - 5H(t-6)(e^{t-6}-1)
 			</me>. 
-			This is easily solved to get <m>x_p(t)=5(e^t-1)</m>. The other part of the forcing is very similar, giving <m>x_q(t)=-5(e^t-1)</m>. Altogether, then, 
-			<md>
-			  <mrow>x(t) \amp = x_h(t) + x_p(t-3) + x_q(t-6)</mrow>
-			  <mrow>  \amp = -2e^t + 5H(t-3)(e^{t-3}-1) - 5H(t-6)(e^{t-6}-1).</mrow>
-			</md>
-			To be clear, the piecewise expression of the solution is 
+			The first term is the homogeneous (or free) response, and the others switch on as the forcing changes its value. A piecewise expression of the solution is 
 			<me>
 				x(t) = \begin{cases} 
 				   -2e^t, \amp 0 \le t \lt 3, \\ 
@@ -905,7 +912,7 @@ title('Solution of a linear problem')
 		</me>. 
 		Using L'Hôpital's Rule,
 		<me>
-			\lim_{\epsilon\to 0} x_\epsilon(t) = e^{at}, \quad t \gt 0
+			\lim_{\epsilon\to 0} x_\epsilon(t) =e^{at}  \lim_{\epsilon\to 0}  \frac{1 - e^{-a\epsilon}}{a \epsilon} = e^{at}, \quad t \gt 0
 		</me>.
 		Hence the constant-coefficient impulse response is simply <m>e^{at}</m>. This is the same as the solution of the homogeneous <m>x'-ax=0</m> with initial value one rather than zero. This remarkable observation generalizes as follows.
 	</p>
@@ -927,53 +934,47 @@ title('Solution of a linear problem')
 		</p>
 	</fact>
 	<p>
-		In words, <alert>an impulse in a first-order linear equation is equivalent to an instantaneous jump in the value of the solution</alert>.
+		In words, <alert>an impulse in a first-order linear equation is equivalent to an instantaneous jump in the value of the solution</alert>. As before, it's easy to use superposition to get a solution for the case of constant coefficients, 
+		<me> 
+			x' - ax = k \delta(t-T), \quad x(0)=x_0
+		</me>. 
+		The homogeneous part is, as before, <m>x_h(t)=e^{a t}x_0</m>. The forced response is the solution of 
+		<me> 
+			x' - ax = k \delta(t), \quad x(0)=0
+		</me>,
+		which, following the derivation above, is <m>x_d(t)=k e^{a t}</m>. Then the complete solution is the superposition 
+		<me>
+			x_h(t) + H(t-T) x_d(t-T) = e^{a t}x_0 + k H(t-T)e^{a (t-T)}
+		</me>. 
+		This technique extends naturally to multiple impulses of different amplitudes--in fact, to any linear combination of steps and impulses. 
 	</p>
 	<example>
 		<p>
-			Suppose we solve <m>x'+5x=3\delta(t-2)</m>, with <m>x(0)=1</m>. For <m>0\lt t \lt 2</m>, the equation is homogeneous and <m>x(t)=e^{-5t}</m>. Then the solution receives an instantaneous kick from <m>e^{-10}</m> to <m>e^{-10}+3</m> and continues evolving homogeneously. So for <m>t\gt 2</m>,
+			To solve <m>x'+5x=3\delta(t-2)</m>, with <m>x(0)=1</m>, we combine 
 			<me>
-				x(t) = (e^{-10}+3) e^{-5(t-2)} = e^{-5t} + 3 e^{-5(t-2)}
-			</me>.
-			In fact we could write the solution at all times in one formula using step function notation:
-			<me>
-				x(t) = e^{-5t} + 3 H(t-2) e^{-5(t-2)}
+				x(t) = x_h(t) + 3H(t-2)x_d(t-2) = e^{-5 t} + 3H(t-2)e^{-5(t-2)}
 			</me>.
 		</p>
-			<sidebyside>
-				<listing xml:id="fo_lcc_impulse">
-				<caption>Numerical solution with impulse forcing (1st order).</caption>
-				<program language="matlab">
-					<input>
-					dydt = @(t,y) -5*y;
-					[t1,y1] = ode45(dydt,[0,2],1);
-					[t2,y2] = ode45(dydt,[2,6],3+y1(end));
-					plot([t1;t2],[y1;y2])
-					xlabel('t'), ylabel('y(t)')
-					title('Impulse forcing')
-					semilogy([t1;t2],[y1;y2])
-					xlabel('t'), ylabel('y(t)')
-					title('Impulse forcing')
-					</input>
-				</program>
-				</listing>
-			<image source="figures/fo_lcc_impulse.svg"/>
-			</sidebyside>
+		<sidebyside>
+			<listing xml:id="fo_lcc_impulse">
+			<caption>Numerical solution with impulse forcing (1st order).</caption>
+			<program language="matlab">
+				<input>
+				dydt = @(t,y) -5*y;
+				[t1,y1] = ode45(dydt,[0,2],1);
+				[t2,y2] = ode45(dydt,[2,6],3+y1(end));
+				plot([t1;t2],[y1;y2])
+				xlabel('t'), ylabel('y(t)')
+				title('Impulse forcing')
+				semilogy([t1;t2],[y1;y2])
+				xlabel('t'), ylabel('y(t)')
+				title('Impulse forcing')
+				</input>
+			</program>
+			</listing>
+		<image source="figures/fo_lcc_impulse.svg"/>
+		</sidebyside>
 	</example>
-	<p>
-		Engineering problems are usually expressed in terms of physical units. In math we often like to go in the opposite direction, through a process called <idx>nondimensionalization</idx><term>nondimensionalization</term>. For <m>x'=ax+f</m> with positive <m>a</m>, it's as simple as defining a new dimensionless time variable <m>T=at</m>, because then
-		<me>
-			\frac{dx}{dt} = \frac{dx}{dT}\cdot \frac{dT}{dt} = a\frac{dx}{dT}
-		</me>,
-		from which we get 
-		<me>
-			\frac{dx}{dT} = x(T) + \frac{1}{a} f(T/a) = x(T) + F(T)
-		</me>,
-		where <m>F(T)=f(T/a)/a</m>, unlike <m>f</m>, has the same units as <m>x</m>. (For negative <m>a</m>, we would use <m>T=-at</m> and get <m>x'=-x+F</m>.) 
-	</p>
-	<p>
-		The conclusion is that if we measure time as multiples of the characteristic time <m>1/a</m>, then the equation has no remaining coefficient in it. That simplifies the analysis and formulas we derive in terms of the new variables, though of course if we go back to the original variables we must get the same result as before. It may not be clear here that this transformation is worth the bother. But later we will have an equation with several dimensional coefficients, and reducing their number makes that equation a lot easier to talk about. 
-	</p>
 </section>
 
 <section xml:id="fl-laplace">
