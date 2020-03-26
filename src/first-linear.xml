@@ -775,31 +775,66 @@ title('Solution of a linear problem')
 
 <section xml:id="fl-impulse">
 	<title>Steps and impulses</title>
-	<p>
-		The following function is very useful in some modeling situations.
-	</p>
-	<definition xml:id="fl-df-unitstep">
-		<title>Unit step function</title>
-		<notation><usage>H(t-T)</usage><description>unit step function activated at time <m>T</m></description></notation>
-		<statement><p>
-			The <idx><h>unit step function</h></idx><term>unit step function</term> or <idx><h>Heaviside function</h><see>unit step function</see></idx><term>Heaviside function</term> <m>H(t)</m> is defined to be zero for <m>t\le 0</m> and one for <m>t\gt 0</m>.
-		</p>
-		</statement>
-	</definition>
-	<p>
-		The unit step function represents throwing on an idealized switch. To have the switch turn on at an arbitrary time <m>T</m>, we use <m>H(t-T)</m>. It's worth mentioning here the related idea of a <term>window</term> function, which turns on and then back off. To get a function that is one only between times <m>S</m> and <m>T</m>, for example, we can use <m>f(t)=H(t-S)-H(t-T)</m>.
-	</p>
-	<p>
-		It's relatively straightforward to incorporate step forcing into our solution methods. The key fact to keep in mind is:
-	</p>
-	<fact>
+	<introduction>
 		<p>
-			If <m>x(t)</m> solves <m>x'-a(t)x=H(t-T)f(t-T)</m>, where <m>a(t)</m> and <m>f(t)</m> are continuous, then <m>x(t)</m> is continuous.
+			The following function is very useful in some modeling situations.
 		</p>
-	</fact>
-	<p>
-		The reason for writing the forcing function as <m>H(t-T)f(t-T)</m> here is that it represents <q>do nothing until time <m>T</m>, then activate <m>f</m> as if starting from time zero</q>. To solve the IVP 
-		<men xml:id="fl-eq-step_ivp">
+		<definition xml:id="fl-df-unitstep">
+			<title>Unit step function</title>
+			<notation><usage>H(t-T)</usage><description>unit step function activated at time <m>T</m></description></notation>
+			<statement><p>
+				The <idx><h>unit step function</h></idx><term>unit step function</term> or <idx><h>Heaviside function</h><see>unit step function</see></idx><term>Heaviside function</term> <m>H(t)</m> is defined to be zero for <m>t\le 0</m> and one for <m>t\gt 0</m>.
+			</p>
+			</statement>
+		</definition>
+		<p>
+			The unit step function represents throwing on an idealized switch. To have the switch turn on at an arbitrary time <m>T</m>, we use <m>H(t-T)</m>. It's worth mentioning here the related idea of a <term>window</term> function, which turns on and then back off. To get a function that is one only between times <m>S</m> and <m>T</m>, for example, we can use <m>H(t-S)-H(t-T)</m>.
+		</p>
+		<p>
+			A key fact to keep in mind about step inputs is:
+		</p>
+		<fact>
+			<p>
+				If <m>x(t)</m> solves <m>x'-a(t)x=H(t-T)f(t-T)</m>, where <m>a(t)</m> and <m>f(t)</m> are continuous, then <m>x(t)</m> is continuous.
+			</p>
+		</fact>
+		<p>
+			The reason for writing the forcing function as <m>H(t-T)f(t-T)</m> here is that it represents <q>do nothing until time <m>T</m>, then activate <m>f</m> as if starting from time zero</q>. 
+		</p>
+	</introduction>
+	<subsection xml:id="fl-sec-step-solution">
+		<title>Solution with piecewise constant forcing</title>
+		<p>
+			To keep things simple, we will consider problems <m>x'-ax=f(t)</m> in which <m>a</m> is constant and the forcing is piecewise constant, that is,
+			<me>
+				f(t) = k_1 H(t-T_1) + k_2 H(t-T_2) + \cdots + k_m H(t-T_m)
+			</me>. 
+			We will exploit the linearity of the problem. Returning to our operator notation <m>\opA[x]=x'-ax</m>, we solve the following problems:
+			<md>
+			  <mrow>\opA[x_h] \amp= 0, \quad x_h(0)=x_0 , </mrow>
+			  <mrow>\opA[x_1] \amp = H(t-T_1),\quad x_1(0)=0, </mrow>
+			  <mrow>\amp \vdots </mrow>
+			  <mrow>\opA[x_m] \amp = H(t-T_m),\quad  x_m(0)=0. </mrow>
+			</md>
+			Then we set <m>x(t)=x_h(t)+k_1 x_1(t)+\cdots+k_m x_m(t)</m>. As a result, <m>x(0)=x_0+0+\cdots+0=x_0</m> and 
+			<md>
+				<mrow> \opA[x] \amp = \opA[x_h] + k_1 \opA[x_1] + \cdots + k_m \opA[x_m] </mrow>
+				<mrow>\amp = 0 + k_1[H(t-T_t)] + \cdots + k_m[H(t-T_m)],  </mrow>
+			</md>
+			which shows that <m>x</m> solves the original IVP.
+		</p>
+		<p>
+			Really there are only two unique subproblems to solve. The homogeneous part is <m>x_h(t)=e^{a t}x_0</m>. To solve a step problem <m>\opA[x_j]=H(t-T_j)</m> with zero initial condition, we first note that <m>x_j(t)=0</m> for <m>0\le t \le T_j</m>, since there is no forcing over that time interval. Starting at time <m>T_j</m> we have 
+			<me>
+				\opA[x_j]=1, \quad x_j(T_j)=0
+			</me>. 
+			This can be solved easily using undetermined coefficients with a constant particular solution. The result is <m>x_j(t)=(e^{a (t-T_j)} - 1)/a</m> for <m>t \gt T_j</m>. Putting both time intervals together, we get 
+			<me>
+				x_j(t) = \frac{1}{a} H(t-T_j) (e^{a(t-T_j)} - 1)
+			</me>. 
+			We now have  everything we need.	
+		</p>
+		<!--men xml:id="fl-eq-step_ivp">
 			\opA[x] = x' - a(t) x = H(t-T)f(t-T), \quad x(0)=x_0,
 		</men>
 		we will exploit the linearity of the problem at a root level. That is, suppose <m>x_h</m> solves 
@@ -812,8 +847,8 @@ title('Solution of a linear problem')
 		</men>
 		Now define <m>\tilde{x}_s(t) = H(t-T)x_s(t-T)</m>. For <m>t \lt T</m>, this function is identically zero. For <m>t \gt T</m>, we have 
 		<md>
-		  <mrow> \frac{d}{dt} \tilde{x}_s(t)  \amp = \frac{d}{dt} x_s(t-T) = x_s'(t-T) \cdot 1</mrow>
-		  <mrow>\amp = a(t+T-T) x_s(t-T) + f(t-T) </mrow>
+			<mrow> \frac{d}{dt} \tilde{x}_s(t)  \amp = \frac{d}{dt} x_s(t-T) = x_s'(t-T) \cdot 1</mrow>
+			<mrow>\amp = a(t+T-T) x_s(t-T) + f(t-T) </mrow>
 			<mrow>  \amp = a(t) \tilde{x}_s(t) + f(t-T).</mrow>
 		</md>
 		If we combine the two time intervals, we have proven that <m>\tilde{x}_s</m> solves <m>\opA[x]=H(t-T)f(t-T)</m>. Finally, let <m>x(t)=x_h(t)+\tilde{x}_s(t)</m>. Then <m>x(0)=x_h(0)+\tilde{x}_s(0)=x_0+0</m>, and 
@@ -848,133 +883,135 @@ title('Solution of a linear problem')
 			x(t)=x_h(t) + k_1 H(t-T_1)x_s(t-T_1) + k_2 H(t-T_2)x_s(t-T_2)
 		</me>, 
 		and so on. 
-	</p>
-	<example xml:id="fl-ex-stepforce">
+	</p-->
+		<example xml:id="fl-ex-stepforce">
+			<p>
+				Let's solve <m>x'-\frac{1}{10}x=w(t)</m>, <m>x(0)=-2</m>, where <m>w(t)</m> is a window function that is 5 for <m>3 \lt t \le 6</m> and zero elsewhere. We can write the problem as 
+				<me>
+					x' - \frac{1}{10}x = 5[H(t-3) - H(t-6)] = 5H(t-3) - 5H(t-6), \quad x(0)=-2
+				</me>. 
+				The solution therefore consists of three terms: 
+				<me>
+					x(t) = -2 e^{t/10} + 50 H(t-3) (e^{(t-3)/10}-1) - 50 H(t-6)(e^{(t-6)/10}-1)
+				</me>. 
+				The first term is the homogeneous (or free) response, and the others switch on as the forcing changes its value. A piecewise expression of the solution is 
+				<me>
+					x(t) = \begin{cases} 
+					-2e^{t/10}, \amp 0 \le t \lt 3, \\ 
+					-2e^{t/10} + 50(e^{(t-3)/10}-1), \amp 3 \le \lt 5, \\ 
+					-2e^{t/10} + 50(e^{(t-3)/10}-e^{(t-6)/10}), \amp 5 \le t
+					\end{cases}
+				</me>.
+			</p>
+			<sidebyside>
+				<listing xml:id="fo_lcc_window">
+					<caption>Numerical solution with step forcing (1st order).</caption>
+					<program language="matlab">
+						<input>
+							step = @(t) double(t>0);
+							dxdt = @(t,x) 0.1*x + 5*(step(t-3) - step(t-6));
+							[t,x] = ode45(dxdt,[0,8],-2);
+							plot(t,x)
+							xlabel('t'), ylabel('x(t)')
+							title('Window forcing')
+						</input>
+					</program>
+				</listing>
+				<image source="figures/fo_lcc_window.svg"/>
+			</sidebyside>
+		</example>
+	</subsection>
+	<subsection xml:id="fl-sec-impulse-forcing">
+		<title>Impulse forcing</title>
 		<p>
-			Let's solve <m>x'-x=w(t)</m>, <m>x(0)=-2</m>, where <m>w(t)</m> is a window function that is 5 for <m>3 \lt t \le 6</m> and zero elsewhere. We can write the problem as 
+			Next imagine that we use a window function as the forcing term over ever shortening times, but in such a way that the integral under the curve remains constant. It's analogous to delivering a dose of medication via a slow IV drip versus injecting the same dose all at once directly. Define
 			<me>
-				x' - x = 5[H(t-3) - H(t-6)] = 5H(t-3) - 5H(t-6), \quad x(0)=-2
-			</me>. 
-			The solution therefore consists of three terms: 
-			<me>
-				x(t) = -2 e^t + 5 H(t-3) (e^{t-3}-1) - 5H(t-6)(e^{t-6}-1)
-			</me>. 
-			The first term is the homogeneous (or free) response, and the others switch on as the forcing changes its value. A piecewise expression of the solution is 
-			<me>
-				x(t) = \begin{cases} 
-				   -2e^t, \amp 0 \le t \lt 3, \\ 
-				   -2e^t + 5(e^{t-3}-1), \amp 3 \le \lt 5, \\ 
-				   -2e^t + 5(e^{t-3}-e^{t-6}), \amp 5 \le t
-				   \end{cases}
+				\delta_\epsilon(t) = \frac{1-H(t-\epsilon)}{\epsilon}
 			</me>.
+			The area under the <m>\delta_\epsilon(t)</m> curve equals one for all <m>\epsilon \gt 0</m>. We now ask what happens as the window width <m>\epsilon</m> approaches zero.
 		</p>
-		<sidebyside>
-			<listing xml:id="fo_lcc_window">
-			<caption>Numerical solution with step forcing (1st order).</caption>
-			<program language="matlab">
-				<input>
-				step = @(t) double(t>0);
-				dydt = @(t,y) y + 5*(step(t-3) - step(t-6));
-				[t,y] = ode45(dydt,[0,8],1);
-				plot(t,y)
-				xlabel('t'), ylabel('y(t)')
-				title('Window forcing')
-				</input>
-			</program>
-			</listing>
-			<image source="figures/fo_lcc_window.svg"/>
-		</sidebyside>
-	</example>
-	<p>
-		Next imagine that we use a window function as the forcing term over ever shortening times, but in such a way that the integral under the curve remains constant. It's analogous to delivering a dose of medication via a slow IV drip versus injecting the same dose all at once directly. Define
-		<me>
-			\delta_\epsilon(t) = \frac{1-H(t-\epsilon)}{\epsilon}
-		</me>.
-		The area under the <m>\delta_\epsilon(t)</m> curve equals one for all <m>\epsilon \gt 0</m>. We now ask what happens as the window width <m>\epsilon</m> approaches zero.
-	</p>
-	<definition xml:id="fl-def-impresp">
-		<title>Impulse response</title>
-		<statement><p>
-			The <idx>impulse response</idx><term>impulse response</term> of the linear operator <m>\mathcal{A}[x]=x'-ax</m> is the limit as <m>\epsilon\to 0</m> of the solution to <m>\mathcal{A}[x]=\delta_\epsilon(t)</m> with <m>x(0)=0</m>.
-		</p></statement>
-	</definition>
-	<p>
-		We often write the impulse response as the solution of <m>x'-ax=\delta(t)</m>, where <m>\delta(t)</m> is an <idx>impulse</idx><term>impulse</term> or a <term>delta function</term>. <notation><usage>\delta(t)</usage><description>impulse forcing</description></notation> (A math pedant will never fail to remind you that <m>\delta(t)</m> isn't actually a function. Let's not go there.)
-	</p>
-	<p>
-		The solution to <m>x'-ax=\delta_\epsilon(t)</m>, <m>x(0)=0</m> is easily found for a constant <m>a</m> using the method described above, resulting in
-		<me>
-			x_\epsilon(t) = \frac{1}{a \epsilon} \left[  (e^{at}-1) - H(t-\epsilon) (e^{a(t-\epsilon)}-1) \right]
-		</me>. 
-		As <m>\epsilon\to 0</m>, we only care about what happens for <m>t\gt \epsilon</m>, which gives 
-		<me>
-			x_\epsilon(t) = \frac{e^{a t}}{a \epsilon}  \left( 1 - e^{-a\epsilon} \right), \quad t \gt \epsilon
-		</me>. 
-		Using L'Hôpital's Rule,
-		<me>
-			\lim_{\epsilon\to 0} x_\epsilon(t) =e^{at}  \lim_{\epsilon\to 0}  \frac{1 - e^{-a\epsilon}}{a \epsilon} = e^{at}, \quad t \gt 0
-		</me>.
-		Hence the constant-coefficient impulse response is simply <m>e^{at}</m>. This is the same as the solution of the homogeneous <m>x'-ax=0</m> with initial value one rather than zero. This remarkable observation generalizes as follows.
-	</p>
-	<fact>
+		<definition xml:id="fl-def-impresp">
+			<title>Impulse response</title>
+			<statement><p>
+				The <idx>impulse response</idx><term>impulse response</term> of the linear operator <m>\mathcal{A}[x]=x'-ax</m> is the limit as <m>\epsilon\to 0</m> of the solution to <m>\mathcal{A}[x]=\delta_\epsilon(t)</m> with <m>x(0)=0</m>.
+			</p></statement>
+		</definition>
 		<p>
-			The solution of <m>x'-a(t)x=f(t) + k \delta(t-T)</m>, <m>x(0)=x_0</m>, where <m>a(t)</m> and <m>f(t)</m> are continuous, satisfies
-			<me>
-				x'-a(t)x=f(t), \; x(0)=x_0
-			</me>
-			for <m>t\lt T</m>, and
-			<me>
-				x'-a(t)x=f(t), \; x(T)=x(T^-)+k
-			</me>
-			for <m>t\gt T</m>, where <m>x(T^-)=\lim_{t\to T^-} x(t)</m> comes from the first stage of the solution. If <m>T=0</m>, then
-			<me>
-				x'-a(t)x=f(t), \; x(0)=x_0+k
-			</me>
-			for <m>t\gt 0</m>.
+			We often write the impulse response as the solution of <m>x'-ax=\delta(t)</m>, where <m>\delta(t)</m> is an <idx>impulse</idx><term>impulse</term> or a <term>delta function</term>. <notation><usage>\delta(t)</usage><description>impulse forcing</description></notation> (A math pedant will never fail to remind you that <m>\delta(t)</m> isn't actually a function. Let's not go there.)
 		</p>
-	</fact>
-	<p>
-		In words, <alert>an impulse in a first-order linear equation is equivalent to an instantaneous jump in the value of the solution</alert>. As before, it's easy to use superposition to get a solution for the case of constant coefficients, 
-		<me> 
-			x' - ax = k \delta(t-T), \quad x(0)=x_0
-		</me>. 
-		The homogeneous part is, as before, <m>x_h(t)=e^{a t}x_0</m>. The forced response is the solution of 
-		<me> 
-			x' - ax = k \delta(t), \quad x(0)=0
-		</me>,
-		which, following the derivation above, is <m>x_d(t)=k e^{a t}</m>. Then the complete solution is the superposition 
-		<me>
-			x_h(t) + H(t-T) x_d(t-T) = e^{a t}x_0 + k H(t-T)e^{a (t-T)}
-		</me>. 
-		This technique extends naturally to multiple impulses of different amplitudes--in fact, to any linear combination of steps and impulses. 
-	</p>
-	<example>
 		<p>
-			To solve <m>x'+5x=3\delta(t-2)</m>, with <m>x(0)=1</m>, we combine 
+			The solution to <m>x'-ax=\delta_\epsilon(t)</m>, <m>x(0)=0</m> is easily found for a constant <m>a</m> using the method described above, resulting in
 			<me>
-				x(t) = x_h(t) + 3H(t-2)x_d(t-2) = e^{-5 t} + 3H(t-2)e^{-5(t-2)}
+				x_\epsilon(t) = \frac{1}{a \epsilon} \left[  (e^{at}-1) - H(t-\epsilon) (e^{a(t-\epsilon)}-1) \right]
+			</me>. 
+			As <m>\epsilon\to 0</m>, we only care about what happens for <m>t\gt \epsilon</m>, which gives 
+			<me>
+				x_\epsilon(t) = \frac{e^{a t}}{a \epsilon}  \left( 1 - e^{-a\epsilon} \right), \quad t \gt \epsilon
+			</me>. 
+			Using L'Hôpital's Rule,
+			<me>
+				\lim_{\epsilon\to 0} x_\epsilon(t) =e^{at} \left[ \lim_{\epsilon\to 0}  \frac{1 - e^{-a\epsilon}}{a \epsilon}\right] = e^{at}, \quad t \gt 0
 			</me>.
+			Hence the constant-coefficient impulse response is simply <m>e^{at}</m>. This is the same as the solution of the homogeneous <m>x'-ax=0</m> with initial value one rather than zero. This remarkable observation generalizes as follows.
 		</p>
-		<sidebyside>
-			<listing xml:id="fo_lcc_impulse">
-			<caption>Numerical solution with impulse forcing (1st order).</caption>
-			<program language="matlab">
-				<input>
-				dydt = @(t,y) -5*y;
-				[t1,y1] = ode45(dydt,[0,2],1);
-				[t2,y2] = ode45(dydt,[2,6],3+y1(end));
-				plot([t1;t2],[y1;y2])
-				xlabel('t'), ylabel('y(t)')
-				title('Impulse forcing')
-				semilogy([t1;t2],[y1;y2])
-				xlabel('t'), ylabel('y(t)')
-				title('Impulse forcing')
-				</input>
-			</program>
-			</listing>
-		<image source="figures/fo_lcc_impulse.svg"/>
-		</sidebyside>
-	</example>
+		<fact>
+			<p>
+				The solution of <m>x'-a(t)x=f(t) + k \delta(t-T)</m>, <m>x(0)=x_0</m>, where <m>a(t)</m> and <m>f(t)</m> are continuous, satisfies
+				<me>
+					x'-a(t)x=f(t), \; x(0)=x_0
+				</me>
+				for <m>t\lt T</m>, and
+				<me>
+					x'-a(t)x=f(t), \; x(T)=x(T^-)+k
+				</me>
+				for <m>t\gt T</m>, where <m>x(T^-)=\lim_{t\to T^-} x(t)</m> comes from the first stage of the solution. If <m>T=0</m>, then
+				<me>
+					x'-a(t)x=f(t), \; x(0)=x_0+k
+				</me>
+				for <m>t\gt 0</m>.
+			</p>
+		</fact>
+		<p>
+			In words, <alert>an impulse in a first-order linear equation is equivalent to an instantaneous jump in the value of the solution</alert>. As before, it's easy to use superposition to get a solution for the case of constant coefficients, 
+			<me> 
+				x' - ax = k \delta(t-T), \quad x(0)=x_0
+			</me>. 
+			The homogeneous part is, as before, <m>x_h(t)=e^{a t}x_0</m>. The forced response is the solution of 
+			<me> 
+				x' - ax = \delta(t-T), \quad x(0)=0
+			</me>,
+			which, similarly to the derivation above, is <m>x_d(t)=H(t-T) e^{a (t-T)}</m>. Then the complete solution is the superposition 
+			<me>
+				x_h(t) +  k x_d(t) = e^{a t}x_0 + k H(t-T)e^{a (t-T)}
+			</me>. 
+			This technique extends naturally to multiple impulses of different amplitudes--in fact, to any linear combination of steps and impulses. 
+		</p>
+		<example>
+			<p>
+				To solve <m>x'+5x=3\delta(t-2)</m>, with <m>x(0)=1</m>, we combine 
+				<me>
+					x(t) = x_h(t) + 3H(t-2)x_d(t-2) = e^{-5 t} + 3H(t-2)e^{-5(t-2)}
+				</me>.
+			</p>
+			<sidebyside>
+				<listing xml:id="fo_lcc_impulse">
+				<caption>Numerical solution with impulse forcing (1st order).</caption>
+				<program language="matlab">
+					<input>
+					dxdt = @(t,x) -5*x;
+					[t1,x1] = ode45(dxdt,[0,2],1);
+					[t2,x2] = ode45(dxdt,[2,5],3+x1(end));
+					semilogy([t1;t2],[x1;x2])
+					xlabel('t'), ylabel('x(t)')
+					title('Impulse forcing')
+					</input>
+				</program>
+				</listing>
+			<image source="figures/fo_lcc_impulse.svg"/>
+			</sidebyside>
+		</example>
+	</subsection>
+
 </section>
 
 <section xml:id="fl-laplace">

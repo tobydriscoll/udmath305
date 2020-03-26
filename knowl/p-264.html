@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T16:12:41-04:00    *-->
+<!--*    on 2020-03-26T09:57:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,39 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The reason for writing the forcing function as \(H(t-T)f(t-T)\) here is that it represents “do nothing until time \(T\text{,}\) then activate \(f\) as if starting from time zero”. To solve the IVP</p>
-<div class="displaymath">
-\begin{equation}
-\opA[x] = x' - a(t) x = H(t-T)f(t-T), \quad x(0)=x_0,\tag{2.7.1}
-\end{equation}
-</div>
-<p data-braille="continuation">we will exploit the linearity of the problem at a root level. That is, suppose \(x_h\) solves</p>
-<div class="displaymath">
-\begin{equation}
-x' - a(t) x = 0, \quad x(0)=x_0,\tag{2.7.2}
-\end{equation}
-</div>
-<p data-braille="continuation">and that \(x_s\) solves</p>
-<div class="displaymath">
-\begin{equation}
-x' - a(t+T) x = f(t), \quad x(0)=0.\tag{2.7.3}
-\end{equation}
-</div>
-<p data-braille="continuation">Now define \(\tilde{x}_s(t) = H(t-T)x_s(t-T)\text{.}\) For \(t \lt T\text{,}\) this function is identically zero. For \(t \gt T\text{,}\) we have</p>
-<div class="displaymath">
-\begin{align*}
-\frac{d}{dt} \tilde{x}_s(t)  \amp = \frac{d}{dt} x_s(t-T) = x_s'(t-T) \cdot 1\\
-\amp = a(t+T-T) x_s(t-T) + f(t-T) \\
-\amp = a(t) \tilde{x}_s(t) + f(t-T).
-\end{align*}
-</div>
-<p data-braille="continuation">If we combine the two time intervals, we have proven that \(\tilde{x}_s\) solves \(\opA[x]=H(t-T)f(t-T)\text{.}\) Finally, let \(x(t)=x_h(t)+\tilde{x}_s(t)\text{.}\) Then \(x(0)=x_h(0)+\tilde{x}_s(0)=x_0+0\text{,}\) and</p>
-<div class="displaymath">
-\begin{equation*}
-\opA[x] = \opA[x_h] + \opA[\tilde{x}_s] = 0 + H(t-T)f(t-T)\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Hence \(x\) is the solution of <a class="xref" data-knowl="./knowl/fl-eq-step_ivp.html" title="Equation 2.7.1">(2.7.1)</a>.</p>
+<p>The reason for writing the forcing function as \(H(t-T)f(t-T)\) here is that it represents “do nothing until time \(T\text{,}\) then activate \(f\) as if starting from time zero”.</p>
 <span class="incontext"><a href="fl-impulse.html#p-264">in-context</a></span>
 </body>
 </html>

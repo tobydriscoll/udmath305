@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T16:12:41-04:00    *-->
+<!--*    on 2020-03-26T09:57:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,14 +12,11 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<figure class="listing figure-like"><pre class="prettyprint lang-matlab">dydt = @(t,y) -5*y;
-[t1,y1] = ode45(dydt,[0,2],1);
-[t2,y2] = ode45(dydt,[2,6],3+y1(end));
-plot([t1;t2],[y1;y2])
-xlabel('t'), ylabel('y(t)')
-title('Impulse forcing')
-semilogy([t1;t2],[y1;y2])
-xlabel('t'), ylabel('y(t)')
+<figure class="listing figure-like"><pre class="prettyprint lang-matlab">dxdt = @(t,x) -5*x;
+[t1,x1] = ode45(dxdt,[0,2],1);
+[t2,x2] = ode45(dxdt,[2,5],3+x1(end));
+semilogy([t1;t2],[x1;x2])
+xlabel('t'), ylabel('x(t)')
 title('Impulse forcing')
 </pre>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.7.8<span class="period">.</span></span><span class="space"> </span>Numerical solution with impulse forcing (1st order).</figcaption></figure><span class="incontext"><a href="fl-impulse.html#fo_lcc_impulse">in-context</a></span>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T16:12:41-04:00    *-->
+<!--*    on 2020-03-26T09:57:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In words, <em class="alert">an impulse in a first-order linear equation is equivalent to an instantaneous jump in the value of the solution</em>. As before, it's easy to use superposition to get a solution for the case of constant coefficients,</p>
+<p>The solution of \(x'-a(t)x=f(t) + k \delta(t-T)\text{,}\) \(x(0)=x_0\text{,}\) where \(a(t)\) and \(f(t)\) are continuous, satisfies</p>
 <div class="displaymath">
 \begin{equation*}
-x' - ax = k \delta(t-T), \quad x(0)=x_0\text{.}
+x'-a(t)x=f(t), \; x(0)=x_0
 \end{equation*}
 </div>
-<p data-braille="continuation">The homogeneous part is, as before, \(x_h(t)=e^{a t}x_0\text{.}\) The forced response is the solution of</p>
+<p data-braille="continuation">for \(t\lt T\text{,}\) and</p>
 <div class="displaymath">
 \begin{equation*}
-x' - ax = k \delta(t), \quad x(0)=0\text{,}
+x'-a(t)x=f(t), \; x(T)=x(T^-)+k
 \end{equation*}
 </div>
-<p data-braille="continuation">which, following the derivation above, is \(x_d(t)=k e^{a t}\text{.}\) Then the complete solution is the superposition</p>
+<p data-braille="continuation">for \(t\gt T\text{,}\) where \(x(T^-)=\lim_{t\to T^-} x(t)\) comes from the first stage of the solution. If \(T=0\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
-x_h(t) + H(t-T) x_d(t-T) = e^{a t}x_0 + k H(t-T)e^{a (t-T)}\text{.}
+x'-a(t)x=f(t), \; x(0)=x_0+k
 \end{equation*}
 </div>
-<p data-braille="continuation">This technique extends naturally to multiple impulses of different amplitudes--in fact, to any linear combination of steps and impulses.</p>
+<p data-braille="continuation">for \(t\gt 0\text{.}\)</p>
 <span class="incontext"><a href="fl-impulse.html#p-272">in-context</a></span>
 </body>
 </html>

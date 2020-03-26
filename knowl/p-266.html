@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T16:12:41-04:00    *-->
+<!--*    on 2020-03-26T09:57:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,28 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's solve \(x'-x=w(t)\text{,}\) \(x(0)=-2\text{,}\) where \(w(t)\) is a window function that is 5 for \(3 \lt t \le 6\) and zero elsewhere. We can write the problem as</p>
+<p>Really there are only two unique subproblems to solve. The homogeneous part is \(x_h(t)=e^{a t}x_0\text{.}\) To solve a step problem \(\opA[x_j]=H(t-T_j)\) with zero initial condition, we first note that \(x_j(t)=0\) for \(0\le t \le T_j\text{,}\) since there is no forcing over that time interval. Starting at time \(T_j\) we have</p>
 <div class="displaymath">
 \begin{equation*}
-x' - x = 5[H(t-3) - H(t-6)] = 5H(t-3) - 5H(t-6), \quad x(0)=-2\text{.}
+\opA[x_j]=1, \quad x_j(T_j)=0\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The solution therefore consists of three terms:</p>
+<p data-braille="continuation">This can be solved easily using undetermined coefficients with a constant particular solution. The result is \(x_j(t)=(e^{a (t-T_j)} - 1)/a\) for \(t \gt T_j\text{.}\) Putting both time intervals together, we get</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = -2 e^t + 5 H(t-3) (e^{t-3}-1) - 5H(t-6)(e^{t-6}-1)\text{.}
+x_j(t) = \frac{1}{a} H(t-T_j) (e^{a(t-T_j)} - 1)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The first term is the homogeneous (or free) response, and the others switch on as the forcing changes its value. A piecewise expression of the solution is</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = \begin{cases} 
--2e^t, \amp 0 \le t \lt 3, \\ 
--2e^t + 5(e^{t-3}-1), \amp 3 \le \lt 5, \\ 
--2e^t + 5(e^{t-3}-e^{t-6}), \amp 5 \le t
-\end{cases}\text{.}
-\end{equation*}
-</div>
+<p data-braille="continuation">We now have  everything we need.</p>
 <span class="incontext"><a href="fl-impulse.html#p-266">in-context</a></span>
 </body>
 </html>

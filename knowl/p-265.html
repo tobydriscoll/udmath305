@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T16:12:41-04:00    *-->
+<!--*    on 2020-03-26T09:57:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,43 +13,29 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>That derivation may have seemed complicated, but the conclusion is not. To simplify it we will restate it for the special case in which the functions in the ODE are all constants. Thus, to solve</p>
+<p>To keep things simple, we will consider problems \(x'-ax=f(t)\) in which \(a\) is constant and the forcing is piecewise constant, that is,</p>
 <div class="displaymath">
 \begin{equation*}
-\opA[x] = x' - a x = H(t-T), \quad x(0)=x_0\text{,}
+f(t) = k_1 H(t-T_1) + k_2 H(t-T_2) + \cdots + k_m H(t-T_m)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">we first solve \(x' - a x = 0\) with \(x(0)=x_0\) to get</p>
+<p data-braille="continuation">We will exploit the linearity of the problem. Returning to our operator notation \(\opA[x]=x'-ax\text{,}\) we solve the following problems:</p>
 <div class="displaymath">
-\begin{equation*}
-x_h(t) = e^{a t} x_0\text{.}
-\end{equation*}
+\begin{align*}
+\opA[x_h] \amp= 0, \quad x_h(0)=x_0 , \\
+\opA[x_1] \amp = H(t-T_1),\quad x_1(0)=0, \\
+\amp \vdots \\
+\opA[x_m] \amp = H(t-T_m),\quad  x_m(0)=0. 
+\end{align*}
 </div>
-<p data-braille="continuation">Then we solve \(x' - a x = 1\) with \(x(0)=0\) to get</p>
+<p data-braille="continuation">Then we set \(x(t)=x_h(t)+k_1 x_1(t)+\cdots+k_m x_m(t)\text{.}\) As a result, \(x(0)=x_0+0+\cdots+0=x_0\) and</p>
 <div class="displaymath">
-\begin{equation*}
-x_s(t) = e^{a t} - 1\text{.}
-\end{equation*}
+\begin{align*}
+\opA[x] \amp = \opA[x_h] + k_1 \opA[x_1] + \cdots + k_m \opA[x_m] \\
+\amp = 0 + k_1[H(t-T_t)] + \cdots + k_m[H(t-T_m)],  
+\end{align*}
 </div>
-<p data-braille="continuation">Then the solution to the original IVP is</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = x_h(t) + H(t-T)x_s(t-T) = e^{a t} x_0 + H(t-T)(e^{a(t-T)}-1)\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">This technique of adding together solutions to linear equations is called <dfn class="terminology">superposition</dfn>. It nicely extends to having multiple step functions that define a piecewise constant forcing. For example, to solve</p>
-<div class="displaymath">
-\begin{equation*}
-x'- a x  = k_1 H(t-T_1) + k_2 H(t-T_2), \quad x(0)=x_0\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">we would use</p>
-<div class="displaymath">
-\begin{equation*}
-x(t)=x_h(t) + k_1 H(t-T_1)x_s(t-T_1) + k_2 H(t-T_2)x_s(t-T_2)\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">and so on.</p>
+<p data-braille="continuation">which shows that \(x\) solves the original IVP.</p>
 <span class="incontext"><a href="fl-impulse.html#p-265">in-context</a></span>
 </body>
 </html>

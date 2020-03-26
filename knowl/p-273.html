@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T16:12:41-04:00    *-->
+<!--*    on 2020-03-26T09:57:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To solve \(x'+5x=3\delta(t-2)\text{,}\) with \(x(0)=1\text{,}\) we combine</p>
+<p>In words, <em class="alert">an impulse in a first-order linear equation is equivalent to an instantaneous jump in the value of the solution</em>. As before, it's easy to use superposition to get a solution for the case of constant coefficients,</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = x_h(t) + 3H(t-2)x_d(t-2) = e^{-5 t} + 3H(t-2)e^{-5(t-2)}\text{.}
+x' - ax = k \delta(t-T), \quad x(0)=x_0\text{.}
 \end{equation*}
 </div>
+<p data-braille="continuation">The homogeneous part is, as before, \(x_h(t)=e^{a t}x_0\text{.}\) The forced response is the solution of</p>
+<div class="displaymath">
+\begin{equation*}
+x' - ax = \delta(t-T), \quad x(0)=0\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which, similarly to the derivation above, is \(x_d(t)=H(t-T) e^{a (t-T)}\text{.}\) Then the complete solution is the superposition</p>
+<div class="displaymath">
+\begin{equation*}
+x_h(t) +  k x_d(t) = e^{a t}x_0 + k H(t-T)e^{a (t-T)}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This technique extends naturally to multiple impulses of different amplitudes--in fact, to any linear combination of steps and impulses.</p>
 <span class="incontext"><a href="fl-impulse.html#p-273">in-context</a></span>
 </body>
 </html>

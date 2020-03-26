@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T16:12:39-04:00    *-->
+<!--*    on 2020-03-26T09:57:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,11 +209,11 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-undetermined"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Undetermined coefficients</span>
 </h2>
-<a href="so-undetermined.html" class="permalink">¶</a><p id="p-376">As always in linear equations, the general solution of an ODE with a forcing term is the homogeneous solution plus a particular solution. Since a second-order problem has a first-order system equivalent, we can use variation of parameters for a system, as in <a href="fs-varparam.html" class="internal" title="Section 3.7: Variation of parameters">Section 3.7</a>, to find a particular solution. However, the algebra for doing this is quite messy. For many common second-order problems with constant coefficients, it can be much easier to return to the method of undetermined coefficients described in <a href="fl-undeter.html" class="internal" title="Section 2.5: Undetermined coefficients">Section 2.5</a>.</p>
-<p id="p-377">Specifically, the ODE \(L[x] = ax''(t)+bx'(t)+cx(t)=f(t)\) can be solved with this method when \(f\) is a polynomial, exponential, sin, or cos function. The appropriate form for the particular \(x_p\)  for each case is given in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a>. This form is plugged into \(L[x]=f\text{,}\) and the equality is used to deduce the undetermined coefficients in \(x_p\text{.}\)</p>
+<a href="so-undetermined.html" class="permalink">¶</a><p id="p-377">As always in linear equations, the general solution of an ODE with a forcing term is the homogeneous solution plus a particular solution. Since a second-order problem has a first-order system equivalent, we can use variation of parameters for a system, as in <a href="fs-varparam.html" class="internal" title="Section 3.7: Variation of parameters">Section 3.7</a>, to find a particular solution. However, the algebra for doing this is quite messy. For many common second-order problems with constant coefficients, it can be much easier to return to the method of undetermined coefficients described in <a href="fl-undeter.html" class="internal" title="Section 2.5: Undetermined coefficients">Section 2.5</a>.</p>
+<p id="p-378">Specifically, the ODE \(L[x] = ax''(t)+bx'(t)+cx(t)=f(t)\) can be solved with this method when \(f\) is a polynomial, exponential, sin, or cos function. The appropriate form for the particular \(x_p\)  for each case is given in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a>. This form is plugged into \(L[x]=f\text{,}\) and the equality is used to deduce the undetermined coefficients in \(x_p\text{.}\)</p>
 <article class="example example-like" id="example-59"><a data-knowl="" class="id-ref original" data-refid="hk-example-59"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-59"><article class="example example-like"><p id="p-378">Let's find a particular solution of \(x'' +4x'+4x=8t^2\text{.}\) The correct form of \(x_p\) is a quadratic polynomial, like \(f\text{,}\) so</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-59"><article class="example example-like"><p id="p-379">Let's find a particular solution of \(x'' +4x'+4x=8t^2\text{.}\) The correct form of \(x_p\) is a quadratic polynomial, like \(f\text{,}\) so</p>
 <div class="displaymath">
 \begin{equation*}
 x_p = A + Bt + Ct^2\text{.}
@@ -229,7 +229,7 @@ x_p = A + Bt + Ct^2\text{.}
 <p data-braille="continuation">This has to be an identity for all \(t\text{.}\) Matching like powers, we can read off \(C=2\text{,}\) then \(B=-4\text{,}\) and finally \(A=3\text{.}\) This provides us with \(x_p=2t^2+4t+3\text{.}\)</p></article></div>
 <article class="example example-like" id="example-60"><a data-knowl="" class="id-ref original" data-refid="hk-example-60"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-60"><article class="example example-like"><p id="p-379">For \(x'' - 2x'-3x=10e^{4t}\text{,}\) the proper choice is</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-60"><article class="example example-like"><p id="p-380">For \(x'' - 2x'-3x=10e^{4t}\text{,}\) the proper choice is</p>
 <div class="displaymath">
 \begin{equation*}
 x_p = Ae^{4t}\text{.}
@@ -245,7 +245,7 @@ x_p = Ae^{4t}\text{.}
 <p data-braille="continuation">From this it's clear that \(A=2\text{.}\)</p></article></div>
 <article class="example example-like" id="example-61"><a data-knowl="" class="id-ref original" data-refid="hk-example-61"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-61"><article class="example example-like"><p id="p-380">For \(x''+x'=\sin(2t)\text{,}\) we use</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-61"><article class="example example-like"><p id="p-381">For \(x''+x'=\sin(2t)\text{,}\) we use</p>
 <div class="displaymath">
 \begin{equation*}
 x_p = A\cos(2t) + B\sin(2t)\text{.}
@@ -264,11 +264,11 @@ x_p = A\cos(2t) + B\sin(2t)\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">The solution of these equations is \(A=-1/10\text{,}\) \(B=-1/5\text{.}\)</p></article></div>
-<p id="p-381">The examples above are the basic ones. There are rules for more intricate combinations of the same functions, but we won't go into them here.</p>
-<p id="p-382">We have to repeat the warning from the first time we saw this method: occasionally it fails.</p>
+<p id="p-382">The examples above are the basic ones. There are rules for more intricate combinations of the same functions, but we won't go into them here.</p>
+<p id="p-383">We have to repeat the warning from the first time we saw this method: occasionally it fails.</p>
 <article class="example example-like" id="so-ex-noundeter"><a data-knowl="" class="id-ref original" data-refid="hk-so-ex-noundeter"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-so-ex-noundeter"><article class="example example-like"><p id="p-383">The equation \(x''+x=\cos(t)\) is supposed to suggest the particular solution \(x_p=A\cos(t)+B\sin(t)\text{.}\) But look at what happens after substitution:</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-so-ex-noundeter"><article class="example example-like"><p id="p-384">The equation \(x''+x=\cos(t)\) is supposed to suggest the particular solution \(x_p=A\cos(t)+B\sin(t)\text{.}\) But look at what happens after substitution:</p>
 <div class="displaymath">
 \begin{align*}
 [-A\cos(t) - B\sin(t) ] + [ A\cos(t) + B\sin(t)] \amp =\cos(t)\\
@@ -276,7 +276,7 @@ x_p = A\cos(2t) + B\sin(2t)\text{.}
 \end{align*}
 </div>
 <p data-braille="continuation">This leads us nowhere good.</p></article></div>
-<p id="p-384">The failure of <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a> was due to the fact that the \(x_p\) we picked is actually a homogeneous solution (a fact we inadvertently proved). There is a way to fix this method in that circumstance, but we will appeal to alternative routes.</p></section></div></main>
+<p id="p-385">The failure of <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a> was due to the fact that the \(x_p\) we picked is actually a homogeneous solution (a fact we inadvertently proved). There is a way to fix this method in that circumstance, but we will appeal to alternative routes.</p></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

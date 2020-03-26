@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-25T16:12:42-04:00    *-->
+<!--*    on 2020-03-26T09:57:07-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution has</p>
+<p>Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
+\frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">We can use the trick of completing the square to write this as</p>
+<p data-braille="continuation">Since we also know that</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = e^{-s} \frac{6}{(s+1)^2+9} = e^{-s} F(s)\text{,}
+e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">where we can now see that \(f(t) = 2e^{-t}\sin(3t)\text{.}\) By the shift theorem, \(x_p(t)=H(t-1)f(t-1)\text{.}\)</p>
+<p data-braille="continuation">the conclusion is</p>
+<div class="displaymath">
+\begin{equation*}
+\lx[ e^{at} \cos( b t) ] = \frac{s-a}{(s-a)^2+b^2}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">In similar fashion we can show that \(e^{at} \sin( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion. However, the details can get pretty intense for hand calculation.</p>
 <span class="incontext"><a href="so-laplace-repeated.html#p-425">in-context</a></span>
 </body>
 </html>
