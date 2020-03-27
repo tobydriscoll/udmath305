@@ -821,7 +821,7 @@ title('Solution of a linear problem')
 				<mrow> \opA[x] \amp = \opA[x_h] + k_1 \opA[x_1] + \cdots + k_m \opA[x_m] </mrow>
 				<mrow>\amp = 0 + k_1[H(t-T_t)] + \cdots + k_m[H(t-T_m)],  </mrow>
 			</md>
-			which shows that <m>x</m> solves the original IVP.
+			which shows that <m>x</m> solves the original IVP. This technique of adding together solutions to linear equations is called <idx>superposition</idx><term>superposition</term>.
 		</p>
 		<p>
 			Really there are only two unique subproblems to solve. The homogeneous part is <m>x_h(t)=e^{a t}x_0</m>. To solve a step problem <m>\opA[x_j]=H(t-T_j)</m> with zero initial condition, we first note that <m>x_j(t)=0</m> for <m>0\le t \le T_j</m>, since there is no forcing over that time interval. Starting at time <m>T_j</m> we have 
