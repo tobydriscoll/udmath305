@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-27T17:20:07-04:00    *-->
+<!--*    on 2020-03-31T17:14:14-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Phase plane</title>
+<title>Stability in the phase plane</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/x-mathjax-config">
@@ -175,7 +175,7 @@ var js_version = 0.13;
 <li><a href="fs-homogeneous.html" data-scroll="fs-homogeneous">Homogeneous systems</a></li>
 <li><a href="fs-constcoeff.html" data-scroll="fs-constcoeff">Constant-coefficient systems</a></li>
 <li><a href="fs-complex-exponentials.html" data-scroll="fs-complex-exponentials">Complex eigenvalues</a></li>
-<li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane" class="active">Phase plane</a></li>
+<li><a href="fs-phaseplane.html" data-scroll="fs-phaseplane" class="active">Stability in the phase plane</a></li>
 <li><a href="fs-matrix-exp.html" data-scroll="fs-matrix-exp">Matrix exponential</a></li>
 <li><a href="fs-varparam.html" data-scroll="fs-varparam">Variation of parameters</a></li>
 </ul>
@@ -207,49 +207,59 @@ var js_version = 0.13;
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-phaseplane"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.5</span> <span class="title">Phase plane</span>
+<span class="type">Section</span> <span class="codenumber">3.5</span> <span class="title">Stability in the phase plane</span>
 </h2>
-<a href="fs-phaseplane.html" class="permalink">¶</a><section class="introduction" id="introduction-11"><p id="p-341">It's useful to discuss more specifically what can happen with the homogeneous equation \(\bx'=\bA\bx\) in the two-dimensional, constant-matrix case. Not only is this the simplest possible non-scalar case, but it's easily visualized using the <dfn class="terminology">phase plane</dfn>, which is a plot of trajectories and directions in the \((x_1,x_2)\) plane.</p>
-<p id="p-342">Of special interest is the steady state at the origin, \(\bx=\bzero\text{.}\) In scalar problems we found the stability of a steady state to be of interest, and that applies here as well. In higher dimensions we often call a steady state a <dfn class="terminology">fixed point</dfn>. The behavior near a fixed point depends strongly on the eigenvalues \(\lambda_1,\lambda_2\text{.}\) The major cases to be considered are summarized in <a class="xref" data-knowl="./knowl/fs-tb-stability.html" title="Table 3.5.1: Eigenvalues and fixed point">Table 3.5.1</a>, leaving out special “edge cases” of zeros or equalities.</p>
+<a href="fs-phaseplane.html" class="permalink">¶</a><section class="introduction" id="introduction-11"><p id="p-341">The homogeneous system \(\bx'=\bA\bx\) for a constant matrix \(\bA\) clearly has the constant function \(\bx(t)\equiv \bzero\) as a solution. We call this a <dfn class="terminology">steady-state</dfn> or <dfn class="terminology">equilibrium</dfn> solution. Not all equilibria are the same, however.</p>
+<p id="p-342">Imagine holding a broom by two fingers, with the bristles pointing straight down at the floor. You will not have much difficulty keeping the broom in approximately this position for a long time, even if an annoying friend comes by and jostles you a bit. Now imagine holding it inverted, with the bristles pointing toward the ceiling. If you were able to <em class="emphasis">perfectly</em> balance the center of gravity of a symmetric broom above your fingers, then in principle it ought to stay there. But the broom is not perfect, and your arm and fingers can't stay perfectly still. You might keep the broom upright for a few seconds, but it will soon crash to the floor.</p>
+<p id="p-343">Both the downward and upward positions of the broom are equilibria. The property that differentiates them is <dfn class="terminology">stability</dfn>. Stability refers to the response of the system to a perturbation (small change) of its state away from an equilibrium. If the system stays very (arbitrarily) close to the equilibrium after perturbation, we say the equilibrium is <dfn class="terminology">stable</dfn>. (What happens near equilibrium, stays near equilibrium.) Otherwise it is <dfn class="terminology">unstable</dfn>.</p>
+<p id="p-344">Stability of the origin depends on the eigenvalues of \(\bA\text{.}\) This is most easily summarized in the special case of a \(2\times 2\) real matrix with eigenvalues \(\lambda_1,\lambda_2\text{.}\) The major cases to be considered are summarized in <a class="xref" data-knowl="./knowl/fs-tb-stability.html" title="Table 3.5.1: Eigenvalues and stability">Table 3.5.1</a>, leaving out some subtle “edge cases” when things are zero or exactly equal. The other column of the table is to be explained next.</p>
 <figure class="table figure-like" id="fs-tb-stability"><table>
 <tr>
 <td class="l m b0 r0 l0 t0 lines"><dfn class="terminology">Eigenvalues</dfn></td>
-<td class="l m b0 r0 l0 t0 lines"><dfn class="terminology">Type</dfn></td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><dfn class="terminology">Stability</dfn></td>
+<td class="l m b0 r0 l0 t0 lines"><dfn class="terminology">Stability</dfn></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"><dfn class="terminology">Type</dfn></td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(\lambda_1 \lt \lambda_2 \lt 0\)</td>
-<td class="l m b0 r0 l0 t0 lines">node</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">stable</td>
+<td class="l m b0 r0 l0 t0 lines">stable</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">node</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(\lambda_1 \lt 0 \lt \lambda_2 \)</td>
-<td class="l m b0 r0 l0 t0 lines">saddle</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">unstable</td>
+<td class="l m b0 r0 l0 t0 lines">unstable</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">saddle</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(0 \lt \lambda_1 \lt \lambda_2 \)</td>
-<td class="l m b0 r0 l0 t0 lines">node</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">unstable</td>
+<td class="l m b0 r0 l0 t0 lines">unstable</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">node</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(\lambda = a\pm i b,\: a\lt 0\)</td>
-<td class="l m b0 r0 l0 t0 lines">spiral</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">stable</td>
+<td class="l m b0 r0 l0 t0 lines">stable</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">spiral</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\lambda = \pm i b\)</td>
+<td class="l m b0 r0 l0 t0 lines">stable</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">center</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(\lambda = a\pm i b,\: a\gt 0\)</td>
-<td class="l m b0 r0 l0 t0 lines">spiral</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">unstable</td>
+<td class="l m b0 r0 l0 t0 lines">unstable</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">spiral</td>
 </tr>
 </table>
-<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.5.1<span class="period">.</span></span><span class="space"> </span>Eigenvalues and fixed point</figcaption></figure></section><section class="subsection" id="fs-pp-node"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.5.1</span> <span class="title">Node</span>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.5.1<span class="period">.</span></span><span class="space"> </span>Eigenvalues and stability</figcaption></figure></section><section class="subsection" id="fs-sec-phase-plane"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.5.1</span> <span class="title">Phase plane</span>
 </h3>
-<a href="fs-phaseplane.html#fs-pp-node" class="permalink">¶</a><p id="p-343">When the eigenvalues are real and have the same sign, the fixed point is called a <dfn class="terminology">node</dfn>. If the sign is negative, all trajectories head into the fixed point and it is stable; conversely, in the positive case it is unstable.</p>
+<a href="fs-phaseplane.html#fs-sec-phase-plane" class="permalink">¶</a><section class="introduction" id="introduction-12"><p id="p-345">In the two-dimensional case, the solutions of \(\bx'=\bA\bx\) can be plotted as trajectories parameterized by time in the \((x_1,x_2)\) plane, often called the <dfn class="terminology">phase plane</dfn>. Each of the cases in <a class="xref" data-knowl="./knowl/fs-tb-stability.html" title="Table 3.5.1: Eigenvalues and stability">Table 3.5.1</a> has a phase plane portrait that shares certain general characteristics that clarify the major aspects of possible solution behaviors.</p></section><section class="subsubsection" id="fs-pp-node"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">3.5.1.1</span> <span class="title">Node</span>
+</h4>
+<a href="fs-phaseplane.html#fs-pp-node" class="permalink">¶</a><p id="p-346">When the eigenvalues are real and have the same sign, the fixed point is called a <dfn class="terminology">node</dfn>. If the sign is negative, all trajectories head into the fixed point and it is stable; conversely, in the positive case it is unstable.</p>
 <article class="example example-like" id="example-52"><a data-knowl="" class="id-ref original" data-refid="hk-example-52"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-52"><article class="example example-like"><p id="p-344">Here is a phase plane plot for \(\bA=\twomat{-4}{-1}{-2}{-5}\text{,}\) which has eigenvalues \(-3\) and \(-6\text{.}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-52"><article class="example example-like"><p id="p-347">Here is a phase plane plot for \(\bA=\twomat{-4}{-1}{-2}{-5}\text{,}\) which has eigenvalues \(-3\) and \(-6\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="fs_pp_nodestable"><pre class="prettyprint lang-matlab">A = [-4 -1; -2 -5];
 [V,D] = eig(A);
@@ -287,13 +297,13 @@ ylabel('x_2')
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.5.3<span class="period">.</span></span><span class="space"> </span>A stable node.</figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fs_pp_nodestable.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-345">The black lines show the directions of the eigenvectors. An initial state on one of those lines stays on it forever. Other initial conditions follow a path tending to become parallel to eigenvector \(\bv_1\text{,}\) since the other component decays out more quickly. The plot for \(-\bA\) would just reverse all of the arrows and show an unstable fixed point.</p></article></div></section><section class="subsection" id="fs-pp-saddle"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.5.2</span> <span class="title">Saddle</span>
-</h3>
-<a href="fs-phaseplane.html#fs-pp-saddle" class="permalink">¶</a><p id="p-346">When the eigenvalues are real and of different signs, the fixed point is called a <dfn class="terminology">saddle</dfn>. A saddle point is always unstable. The part of the solution along the negative eigenvector decays away, but the contribution from the positive eigenvector grows with time.</p>
+<p id="p-348">The black lines show the directions of the eigenvectors. An initial state on one of those lines stays on it forever. Other initial conditions follow a path tending to become parallel to eigenvector \(\bv_1\text{,}\) since the other component decays out more quickly. The plot for \(-\bA\) would just reverse all of the arrows and show an unstable fixed point.</p></article></div></section><section class="subsubsection" id="fs-pp-saddle"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">3.5.1.2</span> <span class="title">Saddle</span>
+</h4>
+<a href="fs-phaseplane.html#fs-pp-saddle" class="permalink">¶</a><p id="p-349">When the eigenvalues are real and of different signs, the fixed point is called a <dfn class="terminology">saddle</dfn>. A saddle point is always unstable. The part of the solution along the negative eigenvector decays away, but the contribution from the positive eigenvector grows with time.</p>
 <article class="example example-like" id="example-53"><a data-knowl="" class="id-ref original" data-refid="hk-example-53"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-53"><article class="example example-like"><p id="p-347">Here is a phase plane plot for \(\bA=\twomat{-2}{-3}{-6}{-5}\text{,}\) which has eigenvalues \(1\) and \(-8\text{.}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-53"><article class="example example-like"><p id="p-350">Here is a phase plane plot for \(\bA=\twomat{-2}{-3}{-6}{-5}\text{,}\) which has eigenvalues \(1\) and \(-8\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="fs_pp_saddle"><pre class="prettyprint lang-matlab">A = [-2 -3; -6 -5];
 [V,D] = eig(A);
@@ -331,13 +341,13 @@ ylabel('x_2')
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.5.5<span class="period">.</span></span><span class="space"> </span>A saddle point.</figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fs_pp_saddle.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-348">An initial condition exactly on the stable black line (eigenvector) will approach the origin, but anything else ends up shooting away more or less in the direction of the unstable eigenvector.</p></article></div></section><section class="subsection" id="fs-pp-spiral"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.5.3</span> <span class="title">Spiral</span>
-</h3>
-<a href="fs-phaseplane.html#fs-pp-spiral" class="permalink">¶</a><p id="p-349">When the eigenvalues are complex conjugates, the fixed point is called a <dfn class="terminology">spiral</dfn>. If the eigenvalues are \(a \pm i b\text{,}\) then all solutions contain \(e^{at}e^{\pm i b t}\text{,}\) or equivalently, \(e^{at}\cos{b t}\) and \(e^{at}\sin{b t}\text{.}\) The real part causes growth and instability if \(a\gt 0\text{,}\) or decay and stability if \(a \lt 0\text{.}\) The imaginary part determines the angular speed of the spiral.</p>
+<p id="p-351">An initial condition exactly on the stable black line (eigenvector) will approach the origin, but anything else ends up shooting away more or less in the direction of the unstable eigenvector.</p></article></div></section><section class="subsubsection" id="fs-pp-spiral"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">3.5.1.3</span> <span class="title">Spiral</span>
+</h4>
+<a href="fs-phaseplane.html#fs-pp-spiral" class="permalink">¶</a><p id="p-352">When the eigenvalues are complex conjugates, the fixed point is called a <dfn class="terminology">spiral</dfn>. If the eigenvalues are \(a \pm i b\text{,}\) then all solutions contain \(e^{at}e^{\pm i b t}\text{,}\) or equivalently, \(e^{at}\cos{b t}\) and \(e^{at}\sin{b t}\text{.}\) The real part causes growth and instability if \(a\gt 0\text{,}\) or decay and stability if \(a \lt 0\text{.}\) The imaginary part determines the angular speed of the spiral.</p>
 <article class="example example-like" id="example-54"><a data-knowl="" class="id-ref original" data-refid="hk-example-54"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-54"><article class="example example-like"><p id="p-350">Here is a phase plane plot for \(\bA=\twomat{1}{-2}{4}{-3}\text{,}\) which has eigenvalues \(-1\pm 2i\text{.}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-54"><article class="example example-like"><p id="p-353">Here is a phase plane plot for \(\bA=\twomat{1}{-2}{4}{-3}\text{,}\) which has eigenvalues \(-1\pm 2i\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="fs_pp_spiral"><pre class="prettyprint lang-matlab">A = [1 -2; 4 -3];
 [V,D] = eig(A);
@@ -373,7 +383,10 @@ ylabel('x_2')
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.5.7<span class="period">.</span></span><span class="space"> </span>A spiral point.</figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fs_pp_spiral.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-351">The eigenvectors are complex and don't show up on the plot; there are no purely linear trajectories.</p></article></div></section></section></div></main>
+<p id="p-354">The eigenvectors are complex and don't show up on the plot; there are no purely linear trajectories.</p></article></div></section><section class="subsubsection" id="fs-sec-center"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">3.5.1.4</span> <span class="title">Center</span>
+</h4>
+<a href="fs-phaseplane.html#fs-sec-center" class="permalink">¶</a><p id="p-355">The special case of imaginary eigenvalues, \(\lambda=\pm i b\text{,}\) is called a <dfn class="terminology">center</dfn>. You can think of the trajectories as spirals that is perfectly neutral--that is, circles or ellipses. These equilibria are often associated with conservation principles, such as conservation of energy.</p></section></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

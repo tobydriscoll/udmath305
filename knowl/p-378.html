@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-27T17:20:09-04:00    *-->
+<!--*    on 2020-03-31T17:14:17-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Specifically, the ODE \(L[x] = ax''(t)+bx'(t)+cx(t)=f(t)\) can be solved with this method when \(f\) is a polynomial, exponential, sin, or cos function. The appropriate form for the particular \(x_p\)  for each case is given in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a>. This form is plugged into \(L[x]=f\text{,}\) and the equality is used to deduce the undetermined coefficients in \(x_p\text{.}\)</p>
-<span class="incontext"><a href="so-undetermined.html#p-378">in-context</a></span>
+<p>The general solution of \(x'' + bx' + cx = f(t)\) consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem. For the homogeneous part the relevant matrix is from <a class="xref" data-knowl="./knowl/so-eq-matrixmodel.html" title="Equation 4.1.2">(4.1.2)</a>:</p>
+<div class="displaymath">
+\begin{equation*}
+\bA = \twomat{0}{1}{-c}{-b}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We have the characteristic polynomial</p>
+<div class="displaymath">
+\begin{equation*}
+|\bA-\lambda\bI| = \twodet{-\lambda}{1}{-c}{-b-\lambda} = \lambda^2 + b\lambda + c\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">(This is easily remembered in terms of the original ODE \(x'' + bx' + cx=0\text{.}\)) The eigenvalues can therefore be found from the quadratic formula.</p>
+<span class="incontext"><a href="so-homogeneous.html#p-378">in-context</a></span>
 </body>
 </html>

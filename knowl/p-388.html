@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-27T17:20:09-04:00    *-->
+<!--*    on 2020-03-31T17:14:17-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
+<p>The equation \(x''+x=\cos(t)\) is supposed to suggest the particular solution \(x_p=A\cos(t)+B\sin(t)\text{.}\) But look at what happens after substitution:</p>
 <div class="displaymath">
-\begin{equation*}
-\theta'' + \gamma \theta + \frac{g}{L}\sin \theta = F(t)\text{,}
-\end{equation*}
+\begin{align*}
+[-A\cos(t) - B\sin(t) ] + [ A\cos(t) + B\sin(t)] \amp =\cos(t)\\
+0 = \cos(t)\text{.}
+\end{align*}
 </div>
-<p data-braille="continuation">where \(\theta(t)\) is the angle made with vertical-down and \(L\) is the arm length. This equation is nonlinear. But if the angle remains small, then a reasonable approximation is</p>
-<div class="displaymath">
-\begin{equation*}
-\theta'' + \gamma \theta + \frac{g}{L}\theta = F(t)\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">which is a linear oscillator.</p>
-<span class="incontext"><a href="so-oscillators.html#p-388">in-context</a></span>
+<p data-braille="continuation">This leads us nowhere good.</p>
+<span class="incontext"><a href="so-undetermined.html#p-388">in-context</a></span>
 </body>
 </html>

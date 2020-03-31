@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-27T17:20:10-04:00    *-->
+<!--*    on 2020-03-31T17:14:18-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We find fixed points when \(3x-(xy/2)=(xy/4)-y=0\text{,}\) which has two solutions, \((0,0)\) and \((4,6)\text{.}\) The Jacobian matrix of the system is</p>
+<p>The first steady state we consider is at the origin. Here the Jacobian matrix is</p>
 <div class="displaymath">
 \begin{equation*}
-\mathbf{A}(x,y) = \begin{bmatrix} F_x \amp F_y  \\ G_x \amp G_y \end{bmatrix} = \begin{bmatrix} 3-y/2 \amp -x/2 \\ y/4 \amp -1+x/4 \end{bmatrix}\text{.}
+\begin{bmatrix} 
+0 \amp 1 \\ -g/L \amp -\gamma
+\end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">At the origin, the Jacobian becomes</p>
-<div class="displaymath">
-\begin{equation*}
-\mathbf{A}(0,0) = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">The eigenvalues of a diagonal matrix (in fact, a triangular matrix) are the diagonal entries. Hence the origin is a saddle point.</p>
+<p data-braille="continuation">We get \(T=-\gamma \lt 0\) and \(D=g/L \gt 0\text{,}\) which is a stable sink. That comports with our experience with a pendulum hanging straight down!</p>
 <span class="incontext"><a href="nl-linearization.html#p-487">in-context</a></span>
 </body>
 </html>

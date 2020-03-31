@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-27T17:20:09-04:00    *-->
+<!--*    on 2020-03-31T17:14:17-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Given how tedious it is to calculate even a small fundamental matrix by hand, it's no mean feat to apply these formulas to a specific example. We're going to save that for when we really need it later.</p>
-<span class="incontext"><a href="fs-varparam.html#p-369">in-context</a></span>
+<p>The matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\bA = \twomat{-1}{1}{0}{-1}
+\end{equation*}
+</div>
+<p data-braille="continuation">has a double eigenvalue of \(\lambda=-1\) and is defective. Now consider</p>
+<div class="displaymath">
+\begin{equation*}
+\bB = \bA - \lambda \bI = \twomat{0}{1}{0}{0}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This matrix has the property that \(\bB^2=\bzero\text{.}\) That means the exponential series for it is just</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bB} = \bI + t\bB = \twomat{1}{t}{0}{1}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally, we can use <a class="xref" data-knowl="./knowl/fs-thm-matrixexp.html" title="Theorem 3.6.1: Matrix exponential">Theorem 3.6.1</a> to calculate</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bA} = e^{t\lambda\bI}e^{t(\bA-\lambda\bI)} = e^{-t}\twomat{1}{t}{0}{1}\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="fs-matrix-exp.html#p-369">in-context</a></span>
 </body>
 </html>

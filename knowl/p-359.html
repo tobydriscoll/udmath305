@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-27T17:20:09-04:00    *-->
+<!--*    on 2020-03-31T17:14:17-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,10 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For a nondefective \(\bA\text{,}\) <a class="xref" data-knowl="./knowl/fs-thm-eigensolution.html" title="Theorem 3.3.1: Solution by eigenvectors">Theorem 3.3.1</a> guarantees that</p>
-<div class="displaymath">
-\begin{equation*}
-\bX(t) = \begin{bmatrix} e^{t\lambda_1}\bv_1 \amp e^{t\lambda_2}\bv_2 \amp \cdots \amp e^{t\lambda_n}\bv_n \end{bmatrix}  
-\end{equation*}
-</div>
-<p data-braille="continuation">is a fundamental matrix for the ODE \(\bx'=\bA\bx\text{,}\) where the \((\lambda_j,\bv_j)\) are eigenpairs. If we now define</p>
-<div class="displaymath">
-\begin{equation*}
-\bY(t) = \bX(t) \bX(0)^{-1}\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">then</p>
-<div class="displaymath">
-\begin{equation*}
-\bY'(t) = \bX'(t) \bX(0)^{-1} = \bA \bX(t) \bX(0)^{-1} = \bA \bY(t)\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">so \(\bY(t)\) is a fundamental matrix as well. But also \(\bY(0)=\bX(0)\bX(0)^{-1}=\bI\text{,}\) so in fact \(\bY(t)\) is the matrix exponential.</p>
+<ol class="decimal">
+<li>For any constant vector \(\bc\text{,}\) \(\bx(t)=e^{t\bA}\bc\) is a solution of \(\bx'=\bA\bx\text{.}\)</li>
+<li>\(\bX(t)=e^{t\bA}\) is a fundamental matrix for \(\bx'=\bA\bx\) with \(\bX(0)=\bI\text{.}\)</li>
+</ol>
 <span class="incontext"><a href="fs-matrix-exp.html#p-359">in-context</a></span>
 </body>
 </html>

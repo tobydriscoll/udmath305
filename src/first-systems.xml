@@ -458,121 +458,83 @@
 </section>
 
 <section xml:id="fs-phaseplane">
-	<title>Phase plane</title>
+	<title>Stability in the phase plane</title>
 	<introduction>
 		<p>
-			It's useful to discuss more specifically what can happen with the homogeneous equation <m>\bx'=\bA\bx</m> in the two-dimensional, constant-matrix case. Not only is this the simplest possible non-scalar case, but it's easily visualized using the <idx>phase plane</idx><term>phase plane</term>, which is a plot of trajectories and directions in the <m>(x_1,x_2)</m> plane. 
+			The homogeneous system <m>\bx'=\bA\bx</m> for a constant matrix <m>\bA</m> clearly has the constant function <m>\bx(t)\equiv \bzero</m> as a solution. We call this a <idx>steady-state</idx><term>steady-state</term> or <idx>equilibrium</idx><term>equilibrium</term> solution. Not all equilibria are the same, however. 
 		</p>
 		<p>
-			Of special interest is the steady state at the origin, <m>\bx=\bzero</m>. In scalar problems we found the stability of a steady state to be of interest, and that applies here as well. In higher dimensions we often call a steady state a <idx><h>fixed point</h><seealso>steady state</seealso></idx><term>fixed point</term>. The behavior near a fixed point depends strongly on the eigenvalues <m>\lambda_1,\lambda_2</m>. The major cases to be considered are summarized in <xref ref="fs-tb-stability"/>, leaving out special <q>edge cases</q> of zeros or equalities. 
+			Imagine holding a broom by two fingers, with the bristles pointing straight down at the floor. You will not have much difficulty keeping the broom in approximately this position for a long time, even if an annoying friend comes by and jostles you a bit. Now imagine holding it inverted, with the bristles pointing toward the ceiling. If you were able to <em>perfectly</em> balance the center of gravity of a symmetric broom above your fingers, then in principle it ought to stay there. But the broom is not perfect, and your arm and fingers can't stay perfectly still. You might keep the broom upright for a few seconds, but it will soon crash to the floor. 
+		</p>
+		<p>
+			Both the downward and upward positions of the broom are equilibria. The property that differentiates them is <idx>stability</idx><term>stability</term>. Stability refers to the response of the system to a perturbation (small change) of its state away from an equilibrium. If the system stays very (arbitrarily) close to the equilibrium after perturbation, we say the equilibrium is <idx>stable</idx><term>stable</term>. (What happens near equilibrium, stays near equilibrium.) Otherwise it is <idx>unstable</idx><term>unstable</term>. 
+		</p>
+		<p>
+			Stability of the origin depends on the eigenvalues of <m>\bA</m>. This is most easily summarized in the special case of a <m>2\times 2</m> real matrix with eigenvalues <m>\lambda_1,\lambda_2</m>. The major cases to be considered are summarized in <xref ref="fs-tb-stability"/>, leaving out some subtle <q>edge cases</q> when things are zero or exactly equal. The other column of the table is to be explained next.
 		</p>
 		<table xml:id="fs-tb-stability">
-			<title>Eigenvalues and fixed point</title>
+			<title>Eigenvalues and stability</title>
 			<tabular>
 			<row>
 				<cell><term>Eigenvalues</term></cell>
-				<cell><term>Type</term></cell>
 				<cell><term>Stability</term></cell>
+				<cell><term>Type</term></cell>
 			</row>
 			<row>
 				<cell><m>\lambda_1 \lt \lambda_2 \lt 0</m></cell>
-				<cell>node</cell>
 				<cell>stable</cell>
+				<cell>node</cell>
 			</row>
 			<row>
 				<cell><m>\lambda_1 \lt 0 \lt \lambda_2 </m></cell>
-				<cell>saddle</cell>
 				<cell>unstable</cell>
+				<cell>saddle</cell>
 			</row>
 			<row>
-					<cell><m>0 \lt \lambda_1 \lt \lambda_2 </m></cell>
-					<cell>node</cell>
-					<cell>unstable</cell>
+				<cell><m>0 \lt \lambda_1 \lt \lambda_2 </m></cell>
+				<cell>unstable</cell>
+				<cell>node</cell>
 			</row>
 			<row>
 				<cell><m>\lambda = a\pm i b,\: a\lt 0</m></cell>
-				<cell>spiral</cell>
 				<cell>stable</cell>
+				<cell>spiral</cell>
+			</row>
+			<row>
+				<cell><m>\lambda = \pm i b</m></cell>
+				<cell>stable</cell>
+				<cell>center</cell>
 			</row>
 			<row>
 				<cell><m>\lambda = a\pm i b,\: a\gt 0</m></cell>
-				<cell>spiral</cell>
 				<cell>unstable</cell>
+				<cell>spiral</cell>
 			</row>
 			</tabular>
 		</table>		
 	</introduction>
-	<subsection xml:id="fs-pp-node">
-		<title>Node</title>
-		<p>
-			When the eigenvalues are real and have the same sign, the fixed point is called a <idx>node</idx><term>node</term>. If the sign is negative, all trajectories head into the fixed point and it is stable; conversely, in the positive case it is unstable. 
-		</p>
-		<example>
+	<subsection xml:id="fs-sec-phase-plane">
+		<title>Phase plane</title>
+		<introduction>
 			<p>
-				Here is a phase plane plot for <m>\bA=\twomat{-4}{-1}{-2}{-5}</m>, which has eigenvalues <m>-3</m> and <m>-6</m>. 
+				In the two-dimensional case, the solutions of <m>\bx'=\bA\bx</m> can be plotted as trajectories parameterized by time in the <m>(x_1,x_2)</m> plane, often called the <idx>phase plane</idx><term>phase plane</term>. Each of the cases in <xref ref="fs-tb-stability"/> has a phase plane portrait that shares certain general characteristics that clarify the major aspects of possible solution behaviors.  
 			</p>
-			<sidebyside>
-				<listing xml:id="fs_pp_nodestable">
-					<caption>A stable node.</caption>
-					<program language="matlab">
-					<input>
-						A = [-4 -1; -2 -5];
-						[V,D] = eig(A);
-						lam = diag(D);
-						
-						clf
-						plot(0,0,'r.','markersize',18)
-						hold on
-						
-						% plot directions
-						[x1,x2] = meshgrid(-1:.2:1);
-						v = A*[x1(:)';x2(:)'];
-						sz = size(x1);
-						quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
-						
-						% plot eigenvectors
-						plot(5*[-V(1,:);V(1,:)],5*[-V(2,:);V(2,:)],'k','linew',2)
-						
-						% plot trajectories
-						colr = get(gca,'colororder');
-						t = linspace(0,10,300);
-						for theta = 2*pi*(0:23)/24
-							for j = 1:length(t)
-								X = expm(t(j)*A);
-								x(:,j) = X*[ cos(theta); sin(theta) ];
-							end
-							plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
-						end
-						
-						axis([-1.1 1.1 -1.1 1.1]), axis square
-						title('stable node')
-						xlabel('x_1')
-						ylabel('x_2')		
-					</input>
-					</program>
-				</listing>
-				<image source="figures/fs_pp_nodestable.svg"/>
-			</sidebyside>
+		</introduction>
+		<subsubsection xml:id="fs-pp-node">
+			<title>Node</title>
 			<p>
-				The black lines show the directions of the eigenvectors. An initial state on one of those lines stays on it forever. Other initial conditions follow a path tending to become parallel to eigenvector <m>\bv_1</m>, since the other component decays out more quickly. The plot for <m>-\bA</m> would just reverse all of the arrows and show an unstable fixed point. 
+				When the eigenvalues are real and have the same sign, the fixed point is called a <idx>node</idx><term>node</term>. If the sign is negative, all trajectories head into the fixed point and it is stable; conversely, in the positive case it is unstable. 
 			</p>
-	</example>
-	</subsection>
-	<subsection xml:id="fs-pp-saddle">
-		<title>Saddle</title>
-		<p>
-			When the eigenvalues are real and of different signs, the fixed point is called a <idx>saddle</idx><term>saddle</term>. A saddle point is always unstable. The part of the solution along the negative eigenvector decays away, but the contribution from the positive eigenvector grows with time. 
-		</p>
-		<example>
-			<p>
-				Here is a phase plane plot for <m>\bA=\twomat{-2}{-3}{-6}{-5}</m>, which has eigenvalues <m>1</m> and <m>-8</m>. 
-			</p>
-			<sidebyside>
-				<listing  xml:id="fs_pp_saddle">
-					<caption>A saddle point.</caption>
-					<program language="matlab">
-					<input>
-							A = [-2 -3; -6 -5];
+			<example>
+				<p>
+					Here is a phase plane plot for <m>\bA=\twomat{-4}{-1}{-2}{-5}</m>, which has eigenvalues <m>-3</m> and <m>-6</m>. 
+				</p>
+				<sidebyside>
+					<listing xml:id="fs_pp_nodestable">
+						<caption>A stable node.</caption>
+						<program language="matlab">
+						<input>
+							A = [-4 -1; -2 -5];
 							[V,D] = eig(A);
 							lam = diag(D);
 							
@@ -601,72 +563,135 @@
 							end
 							
 							axis([-1.1 1.1 -1.1 1.1]), axis square
-							title('saddle')
+							title('stable node')
 							xlabel('x_1')
-							ylabel('x_2')					
+							ylabel('x_2')		
 						</input>
-					</program>
-				</listing>
-				<image source="figures/fs_pp_saddle.svg"/>
-			</sidebyside>
-			<p>
-				An initial condition exactly on the stable black line (eigenvector) will approach the origin, but anything else ends up shooting away more or less in the direction of the unstable eigenvector.  
-			</p>
+						</program>
+					</listing>
+					<image source="figures/fs_pp_nodestable.svg"/>
+				</sidebyside>
+				<p>
+					The black lines show the directions of the eigenvectors. An initial state on one of those lines stays on it forever. Other initial conditions follow a path tending to become parallel to eigenvector <m>\bv_1</m>, since the other component decays out more quickly. The plot for <m>-\bA</m> would just reverse all of the arrows and show an unstable fixed point. 
+				</p>
 		</example>
-	</subsection>
-	<subsection xml:id="fs-pp-spiral">
-		<title>Spiral</title>
-		<p>
-			When the eigenvalues are complex conjugates, the fixed point is called a <idx>spiral</idx><term>spiral</term>. If the eigenvalues are <m>a \pm i b</m>, then all solutions contain <m>e^{at}e^{\pm i b t}</m>, or equivalently, <m>e^{at}\cos{b t}</m> and <m>e^{at}\sin{b t}</m>. The real part causes growth and instability if <m>a\gt 0</m>, or decay and stability if <m>a \lt 0</m>. The imaginary part determines the angular speed of the spiral. 
-		</p>
-		<example>
+		</subsubsection>
+		<subsubsection xml:id="fs-pp-saddle">
+			<title>Saddle</title>
 			<p>
-			Here is a phase plane plot for <m>\bA=\twomat{1}{-2}{4}{-3}</m>, which has eigenvalues <m>-1\pm 2i</m>. 
+				When the eigenvalues are real and of different signs, the fixed point is called a <idx>saddle</idx><term>saddle</term>. A saddle point is always unstable. The part of the solution along the negative eigenvector decays away, but the contribution from the positive eigenvector grows with time. 
 			</p>
-			<sidebyside>
-				<listing  xml:id="fs_pp_spiral">
-					<caption>A spiral point.</caption>
-					<program language="matlab">
-					<input>
-							A = [1 -2; 4 -3];
-							[V,D] = eig(A);
-							lam = diag(D);
-							
-							clf
-							plot(0,0,'r.','markersize',18)
-							hold on
-							
-							% plot directions
-							[x1,x2] = meshgrid(-1:.2:1);
-							v = A*[x1(:)';x2(:)'];
-							sz = size(x1);
-							quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
-							
-							% plot trajectories
-							colr = get(gca,'colororder');
-							t = linspace(0,7,300);
-							for theta = 2*pi*(0:6)/7
-								for j = 1:length(t)
-									X = expm(t(j)*A);
-									c = exp(lam(1)*t(j)-1i*theta);
-									x(:,j) = X*[ cos(theta); sin(theta) ];
+			<example>
+				<p>
+					Here is a phase plane plot for <m>\bA=\twomat{-2}{-3}{-6}{-5}</m>, which has eigenvalues <m>1</m> and <m>-8</m>. 
+				</p>
+				<sidebyside>
+					<listing  xml:id="fs_pp_saddle">
+						<caption>A saddle point.</caption>
+						<program language="matlab">
+						<input>
+								A = [-2 -3; -6 -5];
+								[V,D] = eig(A);
+								lam = diag(D);
+								
+								clf
+								plot(0,0,'r.','markersize',18)
+								hold on
+								
+								% plot directions
+								[x1,x2] = meshgrid(-1:.2:1);
+								v = A*[x1(:)';x2(:)'];
+								sz = size(x1);
+								quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
+								
+								% plot eigenvectors
+								plot(5*[-V(1,:);V(1,:)],5*[-V(2,:);V(2,:)],'k','linew',2)
+								
+								% plot trajectories
+								colr = get(gca,'colororder');
+								t = linspace(0,10,300);
+								for theta = 2*pi*(0:23)/24
+									for j = 1:length(t)
+										X = expm(t(j)*A);
+										x(:,j) = X*[ cos(theta); sin(theta) ];
+									end
+									plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
 								end
-								plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
-							end
-							
-							axis([-1.2 1.2 -1.2 1.2]), axis square
-							title('stable spiral')
-							xlabel('x_1')
-							ylabel('x_2')
-						</input>					
-					</program>
-				</listing>
-				<image source="figures/fs_pp_spiral.svg"/>
-			</sidebyside>
+								
+								axis([-1.1 1.1 -1.1 1.1]), axis square
+								title('saddle')
+								xlabel('x_1')
+								ylabel('x_2')					
+							</input>
+						</program>
+					</listing>
+					<image source="figures/fs_pp_saddle.svg"/>
+				</sidebyside>
+				<p>
+					An initial condition exactly on the stable black line (eigenvector) will approach the origin, but anything else ends up shooting away more or less in the direction of the unstable eigenvector.  
+				</p>
+			</example>
+		</subsubsection>
+		<subsubsection xml:id="fs-pp-spiral">
+			<title>Spiral</title>
 			<p>
-				The eigenvectors are complex and don't show up on the plot; there are no purely linear trajectories.   
+				When the eigenvalues are complex conjugates, the fixed point is called a <idx>spiral</idx><term>spiral</term>. If the eigenvalues are <m>a \pm i b</m>, then all solutions contain <m>e^{at}e^{\pm i b t}</m>, or equivalently, <m>e^{at}\cos{b t}</m> and <m>e^{at}\sin{b t}</m>. The real part causes growth and instability if <m>a\gt 0</m>, or decay and stability if <m>a \lt 0</m>. The imaginary part determines the angular speed of the spiral. 
 			</p>
-		</example>
+			<example>
+				<p>
+				Here is a phase plane plot for <m>\bA=\twomat{1}{-2}{4}{-3}</m>, which has eigenvalues <m>-1\pm 2i</m>. 
+				</p>
+				<sidebyside>
+					<listing  xml:id="fs_pp_spiral">
+						<caption>A spiral point.</caption>
+						<program language="matlab">
+						<input>
+								A = [1 -2; 4 -3];
+								[V,D] = eig(A);
+								lam = diag(D);
+								
+								clf
+								plot(0,0,'r.','markersize',18)
+								hold on
+								
+								% plot directions
+								[x1,x2] = meshgrid(-1:.2:1);
+								v = A*[x1(:)';x2(:)'];
+								sz = size(x1);
+								quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
+								
+								% plot trajectories
+								colr = get(gca,'colororder');
+								t = linspace(0,7,300);
+								for theta = 2*pi*(0:6)/7
+									for j = 1:length(t)
+										X = expm(t(j)*A);
+										c = exp(lam(1)*t(j)-1i*theta);
+										x(:,j) = X*[ cos(theta); sin(theta) ];
+									end
+									plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
+								end
+								
+								axis([-1.2 1.2 -1.2 1.2]), axis square
+								title('stable spiral')
+								xlabel('x_1')
+								ylabel('x_2')
+							</input>					
+						</program>
+					</listing>
+					<image source="figures/fs_pp_spiral.svg"/>
+				</sidebyside>
+				<p>
+					The eigenvectors are complex and don't show up on the plot; there are no purely linear trajectories.   
+				</p>
+			</example>
+		</subsubsection>
+		<subsubsection xml:id="fs-sec-center">
+			<title>Center</title>
+			<p>
+				The special case of imaginary eigenvalues, <m>\lambda=\pm i b</m>, is called a <idx>center</idx><term>center</term>. You can think of the trajectories as spirals that is perfectly neutral--that is, circles or ellipses. These equilibria are often associated with conservation principles, such as conservation of energy. 
+			</p>
+		</subsubsection>
 	</subsection>
 </section>
 
