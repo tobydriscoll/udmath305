@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:04:07-04:00    *-->
+<!--*    on 2020-04-01T17:21:57-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Stability of the origin depends on the eigenvalues of \(\bA\text{.}\) This is most easily summarized in the special case of a \(2\times 2\) real matrix with eigenvalues \(\lambda_1,\lambda_2\text{.}\) The major cases to be considered are summarized in <a class="xref" data-knowl="./knowl/fs-tb-stability.html" title="Table 3.5.1: Eigenvalues and stability">Table 3.5.1</a>, leaving out some subtle “edge cases” when things are zero or exactly equal. The other column of the table is to be explained next.</p>
-<span class="incontext"><a href="fs-phaseplane.html#p-380">in-context</a></span>
+<p>Let's consider the \(2\times 2\) case for simplicity. The general solution is</p>
+<div class="displaymath">
+\begin{equation*}
+\bx(t) = \bX(t)\bc = c_1 e^{\lambda_1 t} \bv_1 + c_2 e^{\lambda_2 t} \bv_2\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">If \(\bA\) is real, then \(\lambda_2=\overline{\lambda_1}\) and \(\bv_2=\overline{\bv_1}\text{.}\) If the initial conditions are also real, then it works out that \(c_2=\overline{c_1}\) as well, and the entire solution can be expressed by expanding each item into real and imaginary parts. This is, as we say in the biz, not fun.</p>
+<span class="incontext"><a href="fs-complex-exponentials.html#p-380">in-context</a></span>
 </body>
 </html>

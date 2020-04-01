@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:04:07-04:00    *-->
+<!--*    on 2020-04-01T17:21:57-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The first case for <a class="xref" data-knowl="./knowl/so-eq-unified.html" title="Equation 4.4.1">(4.4.1)</a> is \(Z=0\text{,}\) which is the idealization of no mechanical damping or friction (or resistance, in a circuit). The homogeneous equation is \(x''+\omega_0^2x=0\text{,}\) which has eigenvalues \(\pm i\omega_0\) and general solution</p>
+<p>The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
 <div class="displaymath">
 \begin{equation*}
-x_h(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} = a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t)\text{.}
+\theta'' + \gamma \theta + \frac{g}{L}\sin \theta = F(t)\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">Thus the undamped case results in pure oscillation at frequency \(\omega_0\text{.}\)</p>
+<p data-braille="continuation">where \(\theta(t)\) is the angle made with vertical-down and \(L\) is the arm length. This equation is nonlinear. But if the angle remains small, then a reasonable approximation is</p>
+<div class="displaymath">
+\begin{equation*}
+\theta'' + \gamma \theta + \frac{g}{L}\theta = F(t)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which is a linear oscillator.</p>
 <span class="incontext"><a href="so-oscillators.html#p-435">in-context</a></span>
 </body>
 </html>

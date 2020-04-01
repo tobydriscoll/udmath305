@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:04:07-04:00    *-->
+<!--*    on 2020-04-01T17:21:57-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,32 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>When this argument is fully unraveled, it can be summarized as follows. Given a complete set of eigenvectors, i.e.,</p>
-<div class="displaymath">
-\begin{equation*}
-\bA \bv_1 = \lambda_1 \bv_1, \;
-\bA \bv_2 = \lambda_2 \bv_2,\; \dots, \;
-\bA \bv_n = \lambda_n \bv_n\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">define</p>
-<div class="displaymath">
-\begin{equation*}
-\bV = \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}.
-\end{equation*}
-</div>
-<p data-braille="continuation">(In the notation above, this is \(\bX(0)\text{.}\)) Then</p>
-<div class="displaymath">
-\begin{equation}
-e^{t\bA} = \bV \begin{bmatrix} 
-e^{t\lambda_1} \amp \amp \amp \\ 
-\amp e^{t\lambda_2} \amp \amp \\ 
-\amp \amp \ddots \amp \\ 
-\amp \amp \amp e^{t\lambda_n} 
-\end{bmatrix}  \bV^{-1}\text{.}\tag{3.6.2}
-\end{equation}
-</div>
-<p data-braille="continuation">This is one of those cases in which you're probably better off working from the formula than going each time through the process we used to get it.</p>
+<p>Let \(\bA,\bB\) be \(n\times n\) matrices. Then</p>
+<ol class="decimal">
+<li>\(e^{t\bA}=\bI\) if \(t=0\text{,}\)</li>
+<li>\(\dd{}{t}e^{t\bA} = \bA e^{t\bA} = e^{t\bA}\bA\text{,}\)</li>
+<li>\([e^{t\bA}]^{-1} = e^{-t\bA}\text{,}\) and</li>
+<li>If \(\bA\bB=\bB\bA\text{,}\) then \(e^{\bA+\bB} = e^{t\bA}e^{t\bB} = e^{t\bB}e^{t\bA}\text{.}\)</li>
+</ol>
 <span class="incontext"><a href="fs-matrix-exp.html#p-400">in-context</a></span>
 </body>
 </html>

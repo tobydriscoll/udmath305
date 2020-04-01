@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:04:07-04:00    *-->
+<!--*    on 2020-04-01T17:21:57-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,18 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
+<p>Let \(\bX(t)\) be a fundamental matrix of the homogeneous problem \(\bx'=\bA(t)\bx\text{.}\) Then the general solution of \(\bx'=\bA(t)\bx+\bf(t)\) is</p>
 <div class="displaymath">
-\begin{equation*}
-\bu_h(t) = c_1 e^{\lambda_1 t} \twovec{1}{\lambda_1} + c_2 e^{\lambda_2 t} \twovec{1}{\lambda_2}\text{.}
-\end{equation*}
+\begin{equation}
+\bx(t) = \bx_h(t) + \bx_p(t) = \bX(t)\bc + \bX(t) \int \bX(t)^{-1} \bff(t) \, dt\text{.}\tag{3.7.1}
+\end{equation}
 </div>
-<p data-braille="continuation">In terms of the original variable \(x=u_1\text{,}\) this is simply</p>
+<p data-braille="continuation">The solution with initial condition \(\bx(0)=\bx_0\) is</p>
 <div class="displaymath">
-\begin{equation*}
-x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \qquad \text{if } \lambda_1\neq\lambda_2\text{.}
-\end{equation*}
+\begin{equation}
+\bx(t) = \bX(t)\bX(0)^{-1}\bx_0 + \bX(t) \int_0^t \bX(s)^{-1}\bff(s) \, ds\text{.}\tag{3.7.2}
+\end{equation}
 </div>
-<span class="incontext"><a href="so-homogeneous.html#p-415">in-context</a></span>
+<p data-braille="continuation">In the case of a constant matrix \(\bA\text{,}\) one option is \(\bX(t)=e^{t\bA}, and\)</p>
+<div class="displaymath">
+\begin{equation}
+\bx(t) = e^{t\bA}\bx_0 + \int_0^t e^{(t-s)\bA} \bff(s) \, ds\text{.}\tag{3.7.3}
+\end{equation}
+</div>
+<span class="incontext"><a href="fs-varparam.html#p-415">in-context</a></span>
 </body>
 </html>

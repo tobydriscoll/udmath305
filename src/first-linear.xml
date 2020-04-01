@@ -1523,6 +1523,33 @@ title('Solution of a linear problem')
 	<exercises xml:id="fl-exer-laplace">
 		<title>Practice for Laplace transforms</title>
 		<exercise>
+			<title>Linear function</title>
+			<statement>
+			  <p>
+				Use the definition of the Laplace transform to find <m>\lx[t]</m>. (As usual, assume that <m>s</m> is constrained in any way needed to make the integral converge.)
+			  </p>
+			</statement>
+			<answer>
+			  <p>
+				<me>
+					\frac{1}{s^2}
+				</me>
+				
+			  </p>
+			</answer>
+			<solution>
+				<p>
+				  Using integration by parts, 
+					<md>
+				  		<mrow>\lx[t] \amp = \int_0^\infty t e^{-s t}\, dt  </mrow>
+						<mrow>  \amp = \left[ -\frac{t e^{-s t}}{s} \right]_{t=0}^\infty + \frac{1}{s} \int_0^\infty e^{-s t}\, dt  </mrow>
+						<mrow>  \amp = [0 - 0] + \frac{1}{s} \lx[1] </mrow>
+						<mrow>  \amp = \frac{1}{s^2}.</mrow>
+					</md>
+				</p>
+			</solution>
+		</exercise>
+		<exercise>
 			<title>Second derivative</title>
 			<statement>
 				<p>
@@ -1536,7 +1563,7 @@ title('Solution of a linear problem')
 			</hint>
 			<answer>
 				<p>
-				  <m>\lx[x''(t)] = s[sX(s)-x(0)] - u(0) = s^2X(s) - s x(0) - x'(0)</m>
+				  <m>\lx[x''(t)] = s^2X(s) - s x(0) - x'(0)</m>
 				</p>
 			</answer>  
 			<solution>
@@ -1556,7 +1583,30 @@ title('Solution of a linear problem')
 			  </p>
 			</solution>
 		</exercise>
-	</exercises>
+		<exercise>
+			<title>Hyperbolic sine</title>
+			<statement>
+			  <p>
+				Find the Laplace transform of the function <m>\sinh(t)</m>.
+			  </p>
+			</statement>
+			<hint>
+			  <p>
+				<me>\sinh(t)=\frac{1}{2}(e^t-e^{-t})</me>
+			  </p>
+			</hint>
+			<answer><p> <me>\frac{1}{s^2-1}</me> </p> </answer>
+			<solution>
+			  <p>
+				  <md>
+					<mrow>\lx\left[ \tfrac{1}{2}\bigl( e^t - e^{-t} \bigr) \right]  \amp = \frac{1}{2} \left( \lx[e^t] - \lx[e^{-t}] \right) </mrow>
+					<mrow>  \amp = \frac{1}{2} \left( \frac{1}{s-1} - \frac{1}{s+1} \right) </mrow>
+					<mrow>  \amp = \frac{1}{s^2-1}.</mrow>
+				  </md>
+			  </p>
+			</solution>
+		</exercise>
+		</exercises>
 	<solutions divisional="solution"></solutions>
 
 </section>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:04:04-04:00    *-->
+<!--*    on 2020-04-01T17:21:53-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -375,12 +375,37 @@ x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}\text{.}
 <span class="type">Exercises</span> <span class="codenumber">2.8.4</span> <span class="title">Practice for Laplace transforms</span>
 </h3>
 <a href="fl-laplace.html#fl-exer-laplace" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-10"><h6 class="heading">
-<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Second derivative.</span>
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Linear function.</span>
 </h6>
-<p id="p-325">Find the Laplace transform of the second derivative of a function: \(\lx[x''(t)]\text{.}\)</p>
+<p id="p-325">Use the definition of the Laplace transform to find \(\lx[t]\text{.}\) (As usual, assume that \(s\) is constrained in any way needed to make the integral converge.)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><p id="p-326">It's possible to do this by applying the integral definition of the Laplace transform. However, it's a lot easier to do by twice applying the known transform formula of the first derivative.</p></div></div>
-<a data-knowl="" class="id-ref original" data-refid="hk-answer-10" id="answer-10"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-10"><div class="answer solution-like"><p id="p-327">\(\lx[x''(t)] = s[sX(s)-x(0)] - u(0) = s^2X(s) - s x(0) - x'(0)\)</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-10" id="answer-10"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-10"><div class="answer solution-like"><div class="displaymath" id="p-326">
+\begin{equation*}
+\frac{1}{s^2}
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-11"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Second derivative.</span>
+</h6>
+<p id="p-328">Find the Laplace transform of the second derivative of a function: \(\lx[x''(t)]\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><p id="p-329">It's possible to do this by applying the integral definition of the Laplace transform. However, it's a lot easier to do by twice applying the known transform formula of the first derivative.</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-11" id="answer-11"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-11"><div class="answer solution-like"><p id="p-330">\(\lx[x''(t)] = s^2X(s) - s x(0) - x'(0)\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Hyperbolic sine.</span>
+</h6>
+<p id="p-332">Find the Laplace transform of the function \(\sinh(t)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><div class="displaymath" id="p-333">
+\begin{equation*}
+\sinh(t)=\frac{1}{2}(e^t-e^{-t})
+\end{equation*}
+</div></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-12" id="answer-12"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-12"><div class="answer solution-like"><div class="displaymath" id="p-334">
+\begin{equation*}
+\frac{1}{s^2-1}
+\end{equation*}
+</div></div></div>
 </div></article></section><section class="solutions" id="solutions-3"><h3 class="heading hide-type">
 <span class="type">Solutions</span> <span class="codenumber">2.8.5</span> <span class="title">Solutions</span>
 </h3>
@@ -388,9 +413,15 @@ x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}\text{.}
 <span class="type">Exercises</span> <span class="codenumber">2.8.4</span> <span class="title">Practice for Laplace transforms</span>
 </h4>
 <a href="fl-laplace.html#fl-exer-laplace" class="permalink">¶</a><article class="exercise-like"><h6 class="heading">
-<span class="codenumber">2.8.4.1<span class="period">.</span></span><span class="space"> </span><span class="title">Second derivative.</span>
+<span class="codenumber">2.8.4.1<span class="period">.</span></span><span class="space"> </span><span class="title">Linear function.</span>
 </h6>
-<div class="solutions"><a class="original" data-knowl="./knowl/solution-11-hidden.html" title="Solution 2.8.4.1.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-11-hidden.html" title="Solution 2.8.4.1.1"><span class="type">Solution</span></a></div></article><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">2.8.4.2<span class="period">.</span></span><span class="space"> </span><span class="title">Second derivative.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-12-hidden.html" title="Solution 2.8.4.2.1"><span class="type">Solution</span></a></div></article><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">2.8.4.3<span class="period">.</span></span><span class="space"> </span><span class="title">Hyperbolic sine.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-13-hidden.html" title="Solution 2.8.4.3.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

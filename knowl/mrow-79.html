@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:04:07-04:00    *-->
+<!--*    on 2020-04-01T17:21:56-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,11 +14,12 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [\cos(t)+i\sin(t)] \left( \twovec{1}{2} + i\twovec{0}{-1} \right)\\
-\amp = e^{-t} \left( \cos(t)\twovec{1}{2} - \sin(t) \twovec{0}{-1} \right)\\
-\amp \qquad + i \left( \cos(t)\twovec{0}{-1} + \sin(t) \twovec{1}{2} \right) 
+\lx[t] \amp = \int_0^\infty t e^{-s t}\, dt  \\
+\amp = \left[ -\frac{t e^{-s t}}{s} \right]_{t=0}^\infty + \frac{1}{s} \int_0^\infty e^{-s t}\, dt  \\
+\amp = [0 - 0] + \frac{1}{s} \lx[1] \\
+\amp = \frac{1}{s^2}.
 \end{align*}
 </div>
-<span class="incontext"><a href="fs-complex-exponentials.html#mjx-eqn-mrow-79">in-context</a></span>
+<span class="incontext"><a href="fl-laplace.html#mjx-eqn-mrow-79">in-context</a></span>
 </body>
 </html>
