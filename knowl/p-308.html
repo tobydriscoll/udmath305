@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:17-04:00    *-->
+<!--*    on 2020-04-01T11:46:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The <dfn class="terminology">Wronskian</dfn> of a collection of homogeneous solutions \(\bx_1,\ldots,\bx_n\) is</p>
+<p>Let \(x_i(t)\) be the mass of salt in tank \(i\text{.}\) The statements above imply</p>
+<div class="displaymath">
+\begin{align*}
+\dd{x_1}{t} \amp = 4\cdot 3 - 6\cdot \frac{x_1}{100} - 1\cdot \frac{x_1}{100} + 3 \cdot \frac{x_2}{200}  \\
+\dd{x_2}{t} \amp = 7\cdot 5 - 5\cdot \frac{x_2}{200} - 3\cdot \frac{x_2}{200} +  1\cdot \frac{x_1}{100}\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">This is neatly expressed using linear algebra:</p>
 <div class="displaymath">
 \begin{equation*}
-W(t) = \det\Bigl( \bigl[ \bx_1(t) \: \cdots \: \bx_n(t)  \bigr] \Bigr)\text{.}
+\dd{}{t} \twovec{x_1}{x_2} = \frac{1}{200}\twomat{-14}{3}{2}{-8} \twovec{x_1}{x_2} + \twovec{12}{35} \text{.}
 \end{equation*}
 </div>
-<span class="incontext"><a href="fs-homogeneous.html#p-308">in-context</a></span>
+<p data-braille="continuation">Here we have naturally extended the derivative of a vector to mean the derivative of each component.</p>
+<span class="incontext"><a href="fs-structure.html#p-308">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:17-04:00    *-->
+<!--*    on 2020-04-01T11:46:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This example is the template for our use of Laplace transforms. In the general case we get</p>
+<p>It's often useful to rewrite the complex factor \(A(i\omega)\) from <a class="xref" data-knowl="./knowl/so-eq-coeff.html" title="Equation 4.5.2">(4.5.2)</a> in polar form:</p>
 <div class="displaymath">
 \begin{equation*}
-[s^2X(s) - sx(0)-x'(0)] + b[sX(s)-x(0)] + cX(s) = F(s)\text{.}
+A(i\omega) = \frac{\omega_0^2}{\omega_0^2-\omega^2  + 2 Z i \omega_0 \omega } = g(\omega) e^{-i\phi(\omega)}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">We choose to find a particular solution with zero initial conditions, so that</p>
+<p data-braille="continuation">where \(g=|A|\) is the <dfn class="terminology">gain</dfn> and \(\phi\) is the <dfn class="terminology">phase lag</dfn>. Note that the particular solution is</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{F(s)}{s^2+bs+c}\text{.}
+x_p(t) = g(\omega) e^{-i\phi(\omega)} e^{i\omega t} = g e^{i(\omega t-\phi)}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The real effort comes in finding the inverse transform of the right-hand side. Note that the denominator has roots at the eigenvalues of the homogeneous problem. These are called <dfn class="terminology">poles</dfn> of the transform \(X_p\text{.}\) Typically \(F(s)\) will contribute one or more of its own poles. Each pole at \(s=r\) corresponds to an exponential solution \(e^{rt}\) in time, but the exact expression depends on a partial fraction decomposition and perhaps other manipulations.</p>
-<span class="incontext"><a href="so-laplace.html#p-419">in-context</a></span>
+<p data-braille="continuation">This means that as we pass from the input forcing to the output solution, \(g\) is the scaling of the amplitude and \(\phi\) changes the phase of our trip around the complex unit circle.</p>
+<span class="incontext"><a href="so-expforcing.html#p-419">in-context</a></span>
 </body>
 </html>

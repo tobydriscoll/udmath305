@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:17-04:00    *-->
+<!--*    on 2020-04-01T11:46:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
+<p>To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
 <div class="displaymath">
 \begin{equation*}
-\theta'' + \gamma \theta + \frac{g}{L}\sin \theta = F(t)\text{,}
+\bu_h(t) = c_1 e^{\lambda_1 t} \twovec{1}{\lambda_1} + c_2 e^{\lambda_2 t} \twovec{1}{\lambda_2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(\theta(t)\) is the angle made with vertical-down and \(L\) is the arm length. This equation is nonlinear. But if the angle remains small, then a reasonable approximation is</p>
+<p data-braille="continuation">In terms of the original variable \(x=u_1\text{,}\) this is simply</p>
 <div class="displaymath">
 \begin{equation*}
-\theta'' + \gamma \theta + \frac{g}{L}\theta = F(t)\text{,}
+x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \qquad \text{if } \lambda_1\neq\lambda_2\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">which is a linear oscillator.</p>
-<span class="incontext"><a href="so-oscillators.html#p-392">in-context</a></span>
+<span class="incontext"><a href="so-homogeneous.html#p-392">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:17-04:00    *-->
+<!--*    on 2020-04-01T11:46:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>As we did with single scalar equations, we will pay close attention to <dfn class="terminology">steady states</dfn> or <dfn class="terminology">fixed points</dfn> of these systems. Here this means constants \((x_p,y_p)\) such that \(F(x_p,y_p)=G(x_p,y_p)=0\text{.}\) For the nonlinear pendulum, both \((0,0)\) and \((\pi,0)\) are steady states.</p>
-<span class="incontext"><a href="nl-linearization.html#p-480">in-context</a></span>
+<p>We can get creative and show that the halfway value \(x=K/2\) is also special. Still without knowing explicitly what \(x\) is, we can differentiate the ODE and use the chain rule to obtain</p>
+<div class="displaymath">
+\begin{equation*}
+x'' = ax'-2bxx' = (a-2bx)(ax-bx^2)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This is zero for \(x=K/2=a/2b\text{,}\) suggesting that it is an inflection point.</p>
+<span class="incontext"><a href="nl-logistic.html#p-480">in-context</a></span>
 </body>
 </html>

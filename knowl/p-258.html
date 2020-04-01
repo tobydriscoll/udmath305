@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:16-04:00    *-->
+<!--*    on 2020-04-01T11:46:48-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,32 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In terms of the notation above, we have</p>
+<p>To write a rate equation for the amount \(x(t)\) of salt in the tank at time \(t\text{,}\) we use the principle of conservation of mass. We assume no reaction takes place in the tank, so that up to the moment of overflow we have</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{dx}{dt} = a (x-20), \quad x(0)=90\text{.}
+\text{rate of change of } x = \text{(rate of salt in)} - \text{(rate of salt out)}
 \end{equation*}
 </div>
-<p data-braille="continuation">We could also pose it for the temperature difference \(z=x-20\) as \(z'=az\text{.}\) Either way it's a linear problem with solution</p>
+<p data-braille="continuation">Let \(V(t)=\) the volume of the mixture at time \(t\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\text{rate of salt in} \amp = 2 \text{ lb/gal }\times 3 \text{ gal/min }= 6 \text{ lb/min}\\
+\text{rate of salt out} \amp = \frac{x}{V} \text{ lb/gal }\times 2 \text{ gal/min }= \frac{2}{V}\,x \text{ lb/min.}
+\end{align*}
+</div>
+<p data-braille="continuation">Hence,</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = Ce^{at} + 20\text{.}
+\frac{dx}{dt} = 6 -  \frac{2}{V}\,x.
 \end{equation*}
 </div>
-<p data-braille="continuation">We have two unknown parameters in the solution, but also two unused pieces of information. We determine \(C\) from the initial value:</p>
+<p data-braille="continuation">But the volume of the mixture changes as well (rate of change = rate in - rate out):</p>
 <div class="displaymath">
 \begin{equation*}
-x(0)= 90 \Rightarrow C=70\text{.}
+\frac{dV}{dt}= 3 - 2 = 1 \text{ gal/min } \; \Rightarrow\; V(t) = (t+100) \text{ gal, } 
 \end{equation*}
 </div>
-<p data-braille="continuation">To get a value for \(a\text{,}\) we use</p>
-<div class="displaymath">
-\begin{equation*}
-83 = x(7) = 70e^{10a}+20\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">or \(a=0.1\ln(0.9) \approx -0.01054\) per min. Hence the coffee will reach 60 C when \(40 = 70e^{at}\text{,}\) or \(t\approx 53.1\) minutes.</p>
+<p data-braille="continuation">where we have used the initial volume (100 gal) for the constant of integration.  Note that the time for overflow is when \(V=300\) gal, i.e. 200 min.</p>
 <span class="incontext"><a href="fl-models.html#p-258">in-context</a></span>
 </body>
 </html>

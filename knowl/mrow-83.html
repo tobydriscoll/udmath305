@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:17-04:00    *-->
+<!--*    on 2020-04-01T11:46:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,11 +14,12 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
-\amp = -\int_0^\infty t f(t) e^{-st}\, dt\\
-\amp = - \lx[ tf(t) ]
+e^{t\bA} \amp = \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{1}{1}{2}{-2}^{-1} \\
+\amp = -\frac{1}{4} \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{-2}{-1}{-2}{1} \\
+\amp = -\frac{1}{4} \twomat{e^{3t}}{e^{-t}}{2e^{3t}}{-2e^{-t}} \twomat{-2}{-1}{-2}{1} \\
+\amp = \frac{1}{4} \twomat{2e^{3t}+2e^{-t}}{e^{3t}-e^{-t}}{4e^{3t}-4e^{-t}}{2e^{3t}+2e^{-t}} 
 \end{align*}
 </div>
-<span class="incontext"><a href="so-laplace-repeated.html#mjx-eqn-mrow-83">in-context</a></span>
+<span class="incontext"><a href="fs-matrix-exp.html#mjx-eqn-mrow-83">in-context</a></span>
 </body>
 </html>

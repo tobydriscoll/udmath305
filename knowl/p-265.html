@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:16-04:00    *-->
+<!--*    on 2020-04-01T11:46:48-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,29 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To keep things simple, we will consider problems \(x'-ax=f(t)\) in which \(a\) is constant and the forcing is piecewise constant, that is,</p>
+<p>A more sophisticated model for the cooling of coffee in a well-insulated mug is</p>
 <div class="displaymath">
 \begin{equation*}
-f(t) = k_1 H(t-T_1) + k_2 H(t-T_2) + \cdots + k_m H(t-T_m)\text{.}
+z' = -rSz,
 \end{equation*}
 </div>
-<p data-braille="continuation">We will exploit the linearity of the problem. Returning to our operator notation \(\opA[x]=x'-ax\text{,}\) we solve the following problems:</p>
-<div class="displaymath">
-\begin{align*}
-\opA[x_h] \amp= 0, \quad x_h(0)=x_0 , \\
-\opA[x_1] \amp = H(t-T_1),\quad x_1(0)=0, \\
-\amp \vdots \\
-\opA[x_m] \amp = H(t-T_m),\quad  x_m(0)=0. 
-\end{align*}
-</div>
-<p data-braille="continuation">Then we set \(x(t)=x_h(t)+k_1 x_1(t)+\cdots+k_m x_m(t)\text{.}\) As a result, \(x(0)=x_0+0+\cdots+0=x_0\) and</p>
-<div class="displaymath">
-\begin{align*}
-\opA[x] \amp = \opA[x_h] + k_1 \opA[x_1] + \cdots + k_m \opA[x_m] \\
-\amp = 0 + k_1[H(t-T_t)] + \cdots + k_m[H(t-T_m)],  
-\end{align*}
-</div>
-<p data-braille="continuation">which shows that \(x\) solves the original IVP. This technique of adding together solutions to linear equations is called <dfn class="terminology">superposition</dfn>.</p>
-<span class="incontext"><a href="fl-impulse.html#p-265">in-context</a></span>
+<p data-braille="continuation">where \(z(t)\) is the difference between the coffee temperature and the room temperature, \(S\) is the exposed surface area of the coffee, and \(r\) is a positive rate constant. Thus, a wider mug that exposes more surface area will cause the coffee to cool faster.</p>
+<span class="incontext"><a href="fl-models.html#p-265">in-context</a></span>
 </body>
 </html>

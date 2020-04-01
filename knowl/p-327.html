@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:17-04:00    *-->
+<!--*    on 2020-04-01T11:46:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This is one of the big and fundamental surprises of applied math: exponential functions, when you go in an imaginary direction, become sin/cos oscillations. We can illustrate this with MATLAB, which handles complex values routinely. Note the use of <code class="code-inline tex2jax_ignore">1i</code> to get the imaginary unit.</p>
-<span class="incontext"><a href="fs-complex-exponentials.html#p-327">in-context</a></span>
+<p>Counting algebraic multiplicities, we know that \(\bA\) has eigenvalues \(\lambda_1,\ldots,\lambda_n\text{.}\) Say that we have eigenvectors \(\bv_1,\ldots,\bv_n\) to go with them. Then we have \(n\) homogeneous solutions</p>
+<div class="displaymath">
+\begin{equation*}
+\bx_j(t) = e^{\lambda_j t} \bv_j, \quad j=1,\ldots,n\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">To determine whether they form a fundamental matrix, we need to determine whether they form a basis. According to <a class="xref" data-knowl="./knowl/fs-thm-abel.html" title="Theorem 3.2.3: Homogeneous solution independence">Theorem 3.2.3</a>, we can ask that question at any value of \(t\text{,}\) including \(t=0\text{.}\) So the key issue is the independence of the eigenvectors.</p>
+<span class="incontext"><a href="fs-constcoeff.html#p-327">in-context</a></span>
 </body>
 </html>

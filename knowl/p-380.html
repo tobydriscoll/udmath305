@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:17-04:00    *-->
+<!--*    on 2020-04-01T11:46:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,38 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) We recall the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.6.2: Defective matrix">Subsection 3.6.2</a> and define</p>
+<p>Suppose</p>
 <div class="displaymath">
 \begin{equation*}
-\bB = \bA + \frac{b}{2}\bI = \twomat{b/2}{1}{-c}{-b/2} = \twomat{b/2}{1}{-b^2/4}{-b/2}\text{.}
+\bA = \twomat{1}{-2}{5}{-3}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">You can easily check that \(\bB^2=\bzero\text{.}\) Hence</p>
+<p data-braille="continuation">and we are given or work out that</p>
 <div class="displaymath">
 \begin{equation*}
-e^{t\bA} = e^{-(bt/2)\bI} e^{t\bB} = e^{-bt/2}(\bI + t\bB) \text{.}
+\lambda_1 = -1+i, \; \lambda_2 = -1-i, \qquad \bV = \twomat{1}{1}{2-i}{2+i}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The general solution is \(e^{t\bA}\bc\text{,}\) but again we need only the first row to get the original \(x=u_1\text{:}\)</p>
+<p data-braille="continuation">Then</p>
 <div class="displaymath">
 \begin{equation*}
-x_h(t) = e^{-bt/2} \left[ c_1 + t\left(c_2 + c_1\frac{b}{2}\right) \right] = e^{-bt/2} \left( c_1 + C_2 t\right)\text{.}
+\bV^{-1} = \frac{1}{2+i-2+i} \twomat{2+i}{-1}{-2+i}{1} = \frac{i}{2} \twomat{-2-i}{1}{2-i}{-1}\text{,}
 \end{equation*}
 </div>
-<span class="incontext"><a href="so-homogeneous.html#p-380">in-context</a></span>
+<p data-braille="continuation">and then</p>
+<div class="displaymath">
+\begin{align*}
+e^{t \bA} \amp = e^{-t}\frac{i}{2}\twomat{1}{1}{2-i}{2+i} \twomat{e^{it}}{0}{0}{e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
+\amp = e^{-t}\frac{i}{2}\twomat{e^{it}}{e^{-it}}{(2-i)e^{it}}{(2+i)e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
+\amp = e^{-t}\frac{i}{2} \twomat{-(2+i)e^{it}+(2-i) e^{-it}}{e^{it}-e^{-it}}{-(2-i)(2+i)e^{it}+(2+i)(2-i) e^{-it}}{(2-i)e^{it}-(2+i) e^{-it}} \text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Each entry is written in the form of a complex number minus its conjugate, which gives \(2i\) times the imaginary part. This helps a lot.</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\sin(t)}\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="fs-matrix-exp.html#p-380">in-context</a></span>
 </body>
 </html>

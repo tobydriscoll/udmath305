@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:14-04:00    *-->
+<!--*    on 2020-04-01T11:46:46-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,15 +209,15 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-constcoeff"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Constant-coefficient systems</span>
 </h2>
-<a href="fs-constcoeff.html" class="permalink">¶</a><p id="p-311">The solutions of \(\bx'=\bA(t)\bx\) largely boil down to finding a fundamental matrix, which satisfies</p>
+<a href="fs-constcoeff.html" class="permalink">¶</a><p id="p-324">The solutions of \(\bx'=\bA(t)\bx\) largely boil down to finding a fundamental matrix, which satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 \bX' = \bigl[ \bx_1' \: \bx_2' \: \cdots \: \bx_n'  \bigr] = \bigl[ \bA\bx_1 \: \bA\bx_2 \: \cdots \: \bA\bx_n  \bigr] = \bA \bX\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">With such a matrix in hand, the general solution is \(\bx(t)=\bX(t)\bc\) for an arbitrary “integration constant” \(\bc\text{.}\)</p>
-<p id="p-312">The good news for the general case pretty much ends there; in most problems we cannot get a reasonably simple expression for \(\bX\text{.}\) But there is a very important special case in which we can say a lot: when \(\bA(t)\) is a constant matrix.</p>
-<p id="p-313">We begin the journey with an eigenpair of \(\bA\text{,}\)</p>
+<p id="p-325">The good news for the general case pretty much ends there; in most problems we cannot get a reasonably simple expression for \(\bX\text{.}\) But there is a very important special case in which we can say a lot: when \(\bA(t)\) is a constant matrix.</p>
+<p id="p-326">We begin the journey with an eigenpair of \(\bA\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \bA \bv = \lambda \bv\text{.}
@@ -230,7 +230,7 @@ g'\bv = \bA(g\bv) = g(\bA\bv) = g\lambda \bv\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">which can be satisfied if \(g'=\lambda g\text{,}\) or \(g(t)=c e^{\lambda t}\text{.}\) That is, each eigenpair gives us a homogeneous solution! (Yes, this the moment all the eigenstuff was preparing us for.)</p>
-<p id="p-314">Counting algebraic multiplicities, we know that \(\bA\) has eigenvalues \(\lambda_1,\ldots,\lambda_n\text{.}\) Say that we have eigenvectors \(\bv_1,\ldots,\bv_n\) to go with them. Then we have \(n\) homogeneous solutions</p>
+<p id="p-327">Counting algebraic multiplicities, we know that \(\bA\) has eigenvalues \(\lambda_1,\ldots,\lambda_n\text{.}\) Say that we have eigenvectors \(\bv_1,\ldots,\bv_n\) to go with them. Then we have \(n\) homogeneous solutions</p>
 <div class="displaymath">
 \begin{equation*}
 \bx_j(t) = e^{\lambda_j t} \bv_j, \quad j=1,\ldots,n\text{.}
@@ -240,7 +240,7 @@ g'\bv = \bA(g\bv) = g(\bA\bv) = g\lambda \bv\text{,}
 <article class="theorem theorem-like" id="fs-thm-eigensolution"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Solution by eigenvectors.</span>
 </h6>
-<p id="p-315">Let \(\bA\) have eigenvalues \(\lambda_1,\ldots,\lambda_n\) and corresponding eigenvectors \(\bv_1,\ldots,\bv_n\text{.}\) If the eigenvectors are independent (that is, they form a basis), then</p>
+<p id="p-328">Let \(\bA\) have eigenvalues \(\lambda_1,\ldots,\lambda_n\) and corresponding eigenvectors \(\bv_1,\ldots,\bv_n\text{.}\) If the eigenvectors are independent (that is, they form a basis), then</p>
 <div class="displaymath">
 \begin{equation}
 \bX(t) = \begin{bmatrix} 
@@ -255,7 +255,7 @@ e^{\lambda_1 t} \bv_1 \amp \cdots \amp e^{\lambda_n t} \bv_n
 \end{equation}
 </div></article><article class="example example-like" id="fs-ex-eigen-real"><a data-knowl="" class="id-ref original" data-refid="hk-fs-ex-eigen-real"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">System with real, distinct eigenvalues.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-fs-ex-eigen-real"><article class="example example-like"><p id="p-316">We can find the eigenstuff of</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-fs-ex-eigen-real"><article class="example example-like"><p id="p-329">We can find the eigenstuff of</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
@@ -274,17 +274,17 @@ e^{\lambda_1 t} \bv_1 \amp \cdots \amp e^{\lambda_n t} \bv_n
 = \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-317">Matrices with real, distinct eigenvalues will always look like <a class="xref" data-knowl="./knowl/fs-ex-eigen-real.html" title="Example 3.3.2: System with real, distinct eigenvalues">Example 3.3.2</a>. But there are two other situations to consider: repeated eigenvalues and complex eigenvalues.</p>
-<p id="p-318">The situation of repeated eigenvalues splits into two subcases. In section <a href="la-eigen.html#la-ei-multiplicity" class="internal" title="Subsection 1.11.2: Multiplicity">Subsection 1.11.2</a> we saw the definition of a <dfn class="terminology">defective</dfn> eigenvalue, whose eigenspace has dimension lower than its multiplicity in the characteristic polynomial. A matrix with any defective eigenvalues is also called defective, and the opposite situation is . One characterization of a defective \(n\times n\) matrix is that it has less than \(n\) independent eigenvectors. (That is, the sum of the eigenspace dimensions is less than \(n\text{.}\)) It's easy to spot when \(n=2\text{:}\)</p>
+<p id="p-330">Matrices with real, distinct eigenvalues will always look like <a class="xref" data-knowl="./knowl/fs-ex-eigen-real.html" title="Example 3.3.2: System with real, distinct eigenvalues">Example 3.3.2</a>. But there are two other situations to consider: repeated eigenvalues and complex eigenvalues.</p>
+<p id="p-331">The situation of repeated eigenvalues splits into two subcases. In section <a href="la-eigen.html#la-ei-multiplicity" class="internal" title="Subsection 1.11.2: Multiplicity">Subsection 1.11.2</a> we saw the definition of a <dfn class="terminology">defective</dfn> eigenvalue, whose eigenspace has dimension lower than its multiplicity in the characteristic polynomial. A matrix with any defective eigenvalues is also called defective, and the opposite situation is . One characterization of a defective \(n\times n\) matrix is that it has less than \(n\) independent eigenvectors. (That is, the sum of the eigenspace dimensions is less than \(n\text{.}\)) It's easy to spot when \(n=2\text{:}\)</p>
 <article class="definition definition-like" id="ls-def-defectivematrix"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Defective matrix.</span>
 </h6>
-<p id="p-319">A matrix with one or more defective eigenvalues is called <dfn class="terminology">defective</dfn>. A matrix with no defective eigenvalues is called <dfn class="terminology">nondefective</dfn>.</p></article><p id="p-320">Using this new language, <a class="xref" data-knowl="./knowl/fs-thm-eigensolution.html" title="Theorem 3.3.1: Solution by eigenvectors">Theorem 3.3.1</a> applies when \(\bA\) is nondefective, even when it has some repeated eigenvalues. In the two-dimensional case this is easy to spot.</p>
+<p id="p-332">A matrix with one or more defective eigenvalues is called <dfn class="terminology">defective</dfn>. A matrix with no defective eigenvalues is called <dfn class="terminology">nondefective</dfn>.</p></article><p id="p-333">Using this new language, <a class="xref" data-knowl="./knowl/fs-thm-eigensolution.html" title="Theorem 3.3.1: Solution by eigenvectors">Theorem 3.3.1</a> applies when \(\bA\) is nondefective, even when it has some repeated eigenvalues. In the two-dimensional case this is easy to spot.</p>
 <article class="fact theorem-like" id="fact-18"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
 </h6>
-<p id="p-321">A \(2\times 2\) matrix with a repeated eigenvalue is either diagonal or defective.</p></article><p id="p-322">The situation of a defective matrix will be touched on in <a href="fs-matrix-exp.html" class="internal" title="Section 3.6: Matrix exponential">Section 3.6</a>.</p>
-<p id="p-323">With complex eigenvalues the algebra gets nastier, but the principles don't change. In fact <a class="xref" data-knowl="./knowl/fs-eq-eigengeneral.html" title="Equation 3.3.2">(3.3.2)</a> remains a valid solution expression. However, we do have to come to understand in <a href="fs-complex-exponentials.html" class="internal" title="Section 3.4: Complex eigenvalues">Section 3.4</a> what it means to take the exponential of a complex number.</p></section></div></main>
+<p id="p-334">A \(2\times 2\) matrix with a repeated eigenvalue is either diagonal or defective.</p></article><p id="p-335">The situation of a defective matrix will be touched on in <a href="fs-matrix-exp.html" class="internal" title="Section 3.6: Matrix exponential">Section 3.6</a>.</p>
+<p id="p-336">With complex eigenvalues the algebra gets nastier, but the principles don't change. In fact <a class="xref" data-knowl="./knowl/fs-eq-eigengeneral.html" title="Equation 3.3.2">(3.3.2)</a> remains a valid solution expression. However, we do have to come to understand in <a href="fs-complex-exponentials.html" class="internal" title="Section 3.4: Complex eigenvalues">Section 3.4</a> what it means to take the exponential of a complex number.</p></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

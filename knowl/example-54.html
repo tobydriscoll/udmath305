@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:17-04:00    *-->
+<!--*    on 2020-04-01T11:46:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,11 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.6</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span>
 </h6>
-<p>Here is a phase plane plot for \(\bA=\twomat{1}{-2}{4}{-3}\text{,}\) which has eigenvalues \(-1\pm 2i\text{.}\)</p>
+<p>Here is a phase plane plot for \(\bA=\twomat{-2}{-3}{-6}{-5}\text{,}\) which has eigenvalues \(1\) and \(-8\text{.}\)</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">A = [1 -2; 4 -3];
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">A = [-2 -3; -6 -5];
 [V,D] = eig(A);
 lam = diag(D);
 
@@ -31,26 +31,28 @@ v = A*[x1(:)';x2(:)'];
 sz = size(x1);
 quiver(x1,x2,reshape(v(1,:),sz),reshape(v(2,:),sz))
 
+% plot eigenvectors
+plot(5*[-V(1,:);V(1,:)],5*[-V(2,:);V(2,:)],'k','linew',2)
+
 % plot trajectories
 colr = get(gca,'colororder');
-t = linspace(0,7,300);
-for theta = 2*pi*(0:6)/7
+t = linspace(0,10,300);
+for theta = 2*pi*(0:23)/24
 	for j = 1:length(t)
 		X = expm(t(j)*A);
-		c = exp(lam(1)*t(j)-1i*theta);
 		x(:,j) = X*[ cos(theta); sin(theta) ];
 	end
 	plot(x(1,:),x(2,:),'linew',1.5,'color',colr(1,:))
 end
 
-axis([-1.2 1.2 -1.2 1.2]), axis square
-title('stable spiral')
+axis([-1.1 1.1 -1.1 1.1]), axis square
+title('saddle')
 xlabel('x_1')
 ylabel('x_2')
 </pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.5.7<span class="period">.</span></span><span class="space"> </span>A spiral point.</figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fs_pp_spiral.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.5.5<span class="period">.</span></span><span class="space"> </span>A saddle point.</figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fs_pp_saddle.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p>The eigenvectors are complex and don't show up on the plot; there are no purely linear trajectories.</p></article><span class="incontext"><a href="fs-phaseplane.html#example-54">in-context</a></span>
+<p>An initial condition exactly on the stable black line (eigenvector) will approach the origin, but anything else ends up shooting away more or less in the direction of the unstable eigenvector.</p></article><span class="incontext"><a href="fs-phaseplane.html#example-54">in-context</a></span>
 </body>
 </html>

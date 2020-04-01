@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:16-04:00    *-->
+<!--*    on 2020-04-01T11:46:48-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,32 +13,24 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.4</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.7</span><span class="period">.</span>
 </h6>
-<p>Let's consider \(x'-ax=e^{ct}\text{,}\) where \(a,c\) are different constants. Transforming both sides, we get</p>
+<p>To solve \(x'+5x=3\delta(t-2)\text{,}\) with \(x(0)=1\text{,}\) we combine</p>
 <div class="displaymath">
 \begin{equation*}
-[sX(s)-x(0)] - aX(s) =\frac{1}{s-c}\text{,}
+x(t) = x_h(t) + 3H(t-2)x_d(t-2) = e^{-5 t} + 3H(t-2)e^{-5(t-2)}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">and thus</p>
-<div class="displaymath">
-\begin{equation*}
-X(s) = \frac{x(0)}{s-a} + \frac{1}{(s-c)(s-a)}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">We can immediately recognize the first term as the transform of \(e^{at}x(0)\text{.}\) To invert the transform of the second term, we need to express it using partial fractions. There is a general procedure for this, but it's worth knowing a simple mnemonic for this particular form:</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Thus the inverse transform of this fraction is a sum of two exponentials,</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right)\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">This is a particular solution that has \(x_p(0)=0\text{.}\) The general solution is \(e^{at}x(0) + x_p(t)\text{.}\)</p></article><span class="incontext"><a href="fl-laplace.html#example-46">in-context</a></span>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">dxdt = @(t,x) -5*x;
+[t1,x1] = ode45(dxdt,[0,2],1);
+[t2,x2] = ode45(dxdt,[2,5],3+x1(end));
+semilogy([t1;t2],[x1;x2])
+xlabel('t'), ylabel('x(t)')
+title('Impulse forcing')
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">2.7.8<span class="period">.</span></span><span class="space"> </span>Numerical solution with impulse forcing (1st order).</figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fo_lcc_impulse.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article><span class="incontext"><a href="fl-impulse.html#example-46">in-context</a></span>
 </body>
 </html>

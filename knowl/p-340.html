@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:17-04:00    *-->
+<!--*    on 2020-04-01T11:46:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To find an alternative real form, we write</p>
-<div class="displaymath">
-\begin{align*}
-e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [\cos(t)+i\sin(t)] \left( \twovec{1}{2} + i\twovec{0}{-1} \right)\\
-\amp = e^{-t} \left( \cos(t)\twovec{1}{2} - \sin(t) \twovec{0}{-1} \right)\\
-\amp \qquad + i \left( \cos(t)\twovec{0}{-1} + \sin(t) \twovec{1}{2} \right) \text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">Thus the general solution can also be written as</p>
-<div class="displaymath">
-\begin{equation*}
-\bx(t) = b_1 e^{-t} \twovec{\cos(t)}{2\cos(t)+\sin(t)} + b_2 e^{-t}\twovec{\sin(t)}{2\sin(t)-\cos(t)} \text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">where here \(b_1\) and \(b_2\) are real.</p>
+<p>This is one of the big and fundamental surprises of applied math: exponential functions, when you go in an imaginary direction, become sin/cos oscillations. We can illustrate this with MATLAB, which handles complex values routinely. Note the use of <code class="code-inline tex2jax_ignore">1i</code> to get the imaginary unit.</p>
 <span class="incontext"><a href="fs-complex-exponentials.html#p-340">in-context</a></span>
 </body>
 </html>

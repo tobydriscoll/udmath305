@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:17-04:00    *-->
+<!--*    on 2020-04-01T11:46:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Given</p>
+<p>Let's consider \(x'=ax + \delta(t-T)\text{,}\) with \(x(0)=0\text{.}\) Transform to get</p>
 <div class="displaymath">
 \begin{equation*}
-\bx' = \bA(t)\bx, 
+[sX(s)-x(0)] - aX(s) = e^{-sT}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(\bx\in\Rn{n}\) and \(\bA\in\Rmn{n}{n}\text{,}\) we can easily show in the usual way that any linear combination of solutions is also a solution. Thus our real task is to find a basis for the solution space.</p>
-<span class="incontext"><a href="fs-homogeneous.html#p-302">in-context</a></span>
+<p data-braille="continuation">and thus</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = \frac{e^{-sT}}{s-a}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice that \(X(s) = e^{-sT} Y(s)\text{,}\) where \(Y(s)=1/(s-a)\) is the transform of \(y(t)=e^{at}\text{.}\) By the shift theorem, it must be that</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="fl-laplace.html#p-302">in-context</a></span>
 </body>
 </html>

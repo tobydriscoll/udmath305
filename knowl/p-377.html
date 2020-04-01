@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-03-31T17:14:17-04:00    *-->
+<!--*    on 2020-04-01T11:46:49-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,32 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Our main item of business is the linear, constant-coefficient model problem</p>
+<p>When this argument is fully unraveled, it can be summarized as follows. Given a complete set of eigenvectors, i.e.,</p>
+<div class="displaymath">
+\begin{equation*}
+\bA \bv_1 = \lambda_1 \bv_1, \;
+\bA \bv_2 = \lambda_2 \bv_2,\; \dots, \;
+\bA \bv_n = \lambda_n \bv_n\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">define</p>
+<div class="displaymath">
+\begin{equation*}
+\bV = \begin{bmatrix} \bv_1 \amp \bv_2 \amp \cdots \amp \bv_n \end{bmatrix}.
+\end{equation*}
+</div>
+<p data-braille="continuation">(In the notation above, this is \(\bX(0)\text{.}\)) Then</p>
 <div class="displaymath">
 \begin{equation}
-x'' + bx' + cx = f(t)\text{,}\tag{4.1.1}
+e^{t\bA} = \bV \begin{bmatrix} 
+e^{t\lambda_1} \amp \amp \amp \\ 
+\amp e^{t\lambda_2} \amp \amp \\ 
+\amp \amp \ddots \amp \\ 
+\amp \amp \amp e^{t\lambda_n} 
+\end{bmatrix}  \bV^{-1}\text{.}\tag{3.6.2}
 \end{equation}
 </div>
-<p data-braille="continuation">for which the conversion process with \(u_1=x\text{,}\) \(u_2=x'\) yields</p>
-<div class="displaymath">
-\begin{equation}
-\twovec{u_1'}{u_2'} = \twovec{u_2}{f(t)-cx_1-bx_2} = \twomat{0}{1}{-c}{-b} \bu + \twovec{0}{f(t)}\text{,}\tag{4.1.2}
-\end{equation}
-</div>
-<p data-braille="continuation">which has the form \(\bu'=\bA\bu+\bff(t)\text{.}\) Thus everything from the last chapter is again in play.</p>
-<span class="incontext"><a href="so-convert.html#p-377">in-context</a></span>
+<p data-braille="continuation">This is one of those cases in which you're probably better off working from the formula than going each time through the process we used to get it.</p>
+<span class="incontext"><a href="fs-matrix-exp.html#p-377">in-context</a></span>
 </body>
 </html>
