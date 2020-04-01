@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T11:46:48-04:00    *-->
+<!--*    on 2020-04-01T17:04:07-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The <dfn class="terminology">Laplace transform</dfn> of a function \(f(t)\) is defined as</p>
+<p>The solution to \(x'-ax=\delta_\epsilon(t)\text{,}\) \(x(0)=0\) is easily found for a constant \(a\) using the method described above, resulting in</p>
 <div class="displaymath">
-\begin{equation}
-\lx[f(t)] = F(s) = \int_0^\infty f(t) e^{-st}\, dt\text{.}\tag{2.8.1}
-\end{equation}
+\begin{equation*}
+x_\epsilon(t) = \frac{1}{a \epsilon} \left[  (e^{at}-1) - H(t-\epsilon) (e^{a(t-\epsilon)}-1) \right]\text{.}
+\end{equation*}
 </div>
-<span class="incontext"><a href="fl-laplace.html#p-289">in-context</a></span>
+<p data-braille="continuation">As \(\epsilon\to 0\text{,}\) we only care about what happens for \(t\gt \epsilon\text{,}\) which gives</p>
+<div class="displaymath">
+\begin{equation*}
+x_\epsilon(t) = \frac{e^{a t}}{a \epsilon}  \left( 1 - e^{-a\epsilon} \right), \quad t \gt \epsilon\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Using L'Hôpital's Rule,</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{\epsilon\to 0} x_\epsilon(t) =e^{at} \left[ \lim_{\epsilon\to 0}  \frac{1 - e^{-a\epsilon}}{a \epsilon}\right] = e^{at}, \quad t \gt 0\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence the constant-coefficient impulse response is simply \(e^{at}\text{.}\) This is the same as the solution of the homogeneous \(x'-ax=0\) with initial value one rather than zero. This remarkable observation generalizes as follows.</p>
+<span class="incontext"><a href="fl-impulse.html#p-289">in-context</a></span>
 </body>
 </html>

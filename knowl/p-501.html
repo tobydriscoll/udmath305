@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T11:46:49-04:00    *-->
+<!--*    on 2020-04-01T17:04:08-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,15 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The other steady state is at \((\pi,0)\text{.}\) Now the Jacobian is</p>
+<p>There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
 <div class="displaymath">
-\begin{equation*}
-\begin{bmatrix} 
-0 \amp 1 \\ g/L \amp -\gamma
-\end{bmatrix}\text{,}
-\end{equation*}
+\begin{equation}
+\frac{1}{x} \dd{x}{t} = a - bx, \qquad or \dd{x}{t} = ax - bx^2 \text{.}\tag{5.3.1}
+\end{equation}
 </div>
-<p data-braille="continuation">with \(T=-\gamma\) and \(D=-g/L\text{.}\) This implies a saddle point, so the "inverted pendulum" is indeed unstable.</p>
-<span class="incontext"><a href="nl-linearization.html#p-501">in-context</a></span>
+<p data-braille="continuation">This is the <dfn class="terminology">logistic equation</dfn>.</p>
+<span class="incontext"><a href="nl-logistic.html#p-501">in-context</a></span>
 </body>
 </html>

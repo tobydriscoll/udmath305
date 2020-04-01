@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T11:46:49-04:00    *-->
+<!--*    on 2020-04-01T17:04:07-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The situation of repeated eigenvalues splits into two subcases. In section <a href="la-eigen.html#la-ei-multiplicity" class="internal" title="Subsection 1.11.2: Multiplicity">Subsection 1.11.2</a> we saw the definition of a <dfn class="terminology">defective</dfn> eigenvalue, whose eigenspace has dimension lower than its multiplicity in the characteristic polynomial. A matrix with any defective eigenvalues is also called defective, and the opposite situation is . One characterization of a defective \(n\times n\) matrix is that it has less than \(n\) independent eigenvectors. (That is, the sum of the eigenspace dimensions is less than \(n\text{.}\)) It's easy to spot when \(n=2\text{:}\)</p>
-<span class="incontext"><a href="fs-constcoeff.html#p-331">in-context</a></span>
+<p>Let \(x_i(t)\) be the mass of salt in tank \(i\text{.}\) The statements above imply</p>
+<div class="displaymath">
+\begin{align*}
+\dd{x_1}{t} \amp = 4\cdot 3 - 6\cdot \frac{x_1}{100} - 1\cdot \frac{x_1}{100} + 3 \cdot \frac{x_2}{200}  \\
+\dd{x_2}{t} \amp = 7\cdot 5 - 5\cdot \frac{x_2}{200} - 3\cdot \frac{x_2}{200} +  1\cdot \frac{x_1}{100}\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">This is neatly expressed using linear algebra:</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{}{t} \twovec{x_1}{x_2} = \frac{1}{200}\twomat{-14}{3}{2}{-8} \twovec{x_1}{x_2} + \twovec{12}{35} \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Here we have naturally extended the derivative of a vector to mean the derivative of each component.</p>
+<span class="incontext"><a href="fs-structure.html#p-331">in-context</a></span>
 </body>
 </html>

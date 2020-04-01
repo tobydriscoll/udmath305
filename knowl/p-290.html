@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T11:46:48-04:00    *-->
+<!--*    on 2020-04-01T17:04:07-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In this business, time starts at \(t=0\text{,}\) and any reference to \(f(t)\) for negative \(t\) is defined to be zero. A convention is that a lowercase function of \(t\) transforms to its uppercase namesake as a function of \(s\text{.}\) (Another convention is that \(\lx\) is used with curly braces, but we have already committed to using square brackets for operators.)</p>
-<span class="incontext"><a href="fl-laplace.html#p-290">in-context</a></span>
+<p>The solution of \(x'-a(t)x=f(t) + k \delta(t-T)\text{,}\) \(x(0)=x_0\text{,}\) where \(a(t)\) and \(f(t)\) are continuous, satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+x'-a(t)x=f(t), \; x(0)=x_0
+\end{equation*}
+</div>
+<p data-braille="continuation">for \(t\lt T\text{,}\) and</p>
+<div class="displaymath">
+\begin{equation*}
+x'-a(t)x=f(t), \; x(T)=x(T^-)+k
+\end{equation*}
+</div>
+<p data-braille="continuation">for \(t\gt T\text{,}\) where \(x(T^-)=\lim_{t\to T^-} x(t)\) comes from the first stage of the solution. If \(T=0\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+x'-a(t)x=f(t), \; x(0)=x_0+k
+\end{equation*}
+</div>
+<p data-braille="continuation">for \(t\gt 0\text{.}\)</p>
+<span class="incontext"><a href="fl-impulse.html#p-290">in-context</a></span>
 </body>
 </html>

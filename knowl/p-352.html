@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T11:46:49-04:00    *-->
+<!--*    on 2020-04-01T17:04:07-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We earlier found the eigenvalues and eigenvectors of</p>
+<p>We can find the eigenstuff of</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}
+\bA = \begin{bmatrix} 1 \amp 1 \\ 4 \amp 1 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">to be</p>
+<p data-braille="continuation">as \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) This gives us solutions of \(\bx'=\bA\bx\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\lambda_{1,2} = -1 \pm 1i, \qquad \bv_{1,2} = \twovec{1}{2\mp i}\text{.}
+\bx_1(t) = e^{3t} \twovec{1}{2},\quad \bx_2(t) = e^{-t} \twovec{1}{-2} \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">This gives a general solution in the complex form</p>
+<p data-braille="continuation">Because the eigenvalues are distinct, we know that these are independent solutions. The general homogeneous solution is</p>
 <div class="displaymath">
 \begin{equation*}
-\bx(t) = c_1 e^{(-1+i)t} \twovec{1}{2- i} + c_2 e^{(-1-i)t} \twovec{1}{2+i}\text{.}
+\bx(t) = \bX(t)\bc = c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
+= \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">It's implied that \(c_{1,2}\) are complex constants.</p>
-<span class="incontext"><a href="fs-complex-exponentials.html#p-352">in-context</a></span>
+<span class="incontext"><a href="fs-constcoeff.html#p-352">in-context</a></span>
 </body>
 </html>

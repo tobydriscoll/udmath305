@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T11:46:48-04:00    *-->
+<!--*    on 2020-04-01T17:04:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,27 +13,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's write the IVPs for the two mugs as</p>
-<div class="displaymath">
-\begin{align*}
-z_F' \amp = -r S_F z_F, \quad z_F(0) = 85-25, \\
-z_W' \amp = -r S_W z_W, \quad z_W(0) = 85-25,
-\end{align*}
-</div>
-<p data-braille="continuation">in which we also know that \(S_W=2S_F\) (because area is proportional to the square of the radius). The solutions are</p>
-<div class="displaymath">
-\begin{align*}
-z_F(t) \amp = 60 \exp(-r S_F t), \\
-z_W(t) \amp = 60 \exp(-r 2 S_F t). 
-\end{align*}
-</div>
-<p data-braille="continuation">We are informed that \(z_F(30) = 60-25=35\text{,}\) and we need to find \(z_W(30)\text{.}\) But notice that</p>
+<p>In terms of the notation above, we have</p>
 <div class="displaymath">
 \begin{equation*}
-60 z_W(t) = 60\cdot 60 \cdot \exp(-r S_F t) \cdot \exp(-r S_F t) = z_F(t)^2. 
+\frac{dx}{dt} = a (x-20), \quad x(0)=90\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence \(z_W(30)=z_F(30)^2/60=35^2/60\approx 20.4\text{,}\) and Wilma's coffee is at \(45.4^\circ\) C.</p>
+<p data-braille="continuation">We could also pose it for the temperature difference \(z=x-20\) as \(z'=az\text{.}\) Either way it's a linear problem with solution</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = Ce^{at} + 20\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We have two unknown parameters in the solution, but also two unused pieces of information. We determine \(C\) from the initial value:</p>
+<div class="displaymath">
+\begin{equation*}
+x(0)= 90 \Rightarrow C=70\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">To get a value for \(a\text{,}\) we use</p>
+<div class="displaymath">
+\begin{equation*}
+83 = x(7) = 70e^{10a}+20\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">or \(a=0.1\ln(0.9) \approx -0.01054\) per min. Hence the coffee will reach 60 C when \(40 = 70e^{at}\text{,}\) or \(t\approx 53.1\) minutes.</p>
 <span class="incontext"><a href="fl-models.html#p-267">in-context</a></span>
 </body>
 </html>

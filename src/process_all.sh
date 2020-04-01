@@ -9,7 +9,7 @@ xsltproc --xinclude ~/Dropbox/books/mathbook/schema/pretext-schematron.xsl notes
 echo "...done schematron"
 
 echo "Conversion to html..."
-xsltproc --xinclude --stringparam publisher webpublish.xml --stringparam html.css.colorfile "colors_delaware.css" ~/Dropbox/books/mathbook/xsl/mathbook-html.xsl notes305.xml
+xsltproc --xinclude --stringparam exercise.divisional.solution no --stringparam publisher webpublish.xml --stringparam html.css.colorfile "colors_delaware.css" ~/Dropbox/books/mathbook/xsl/mathbook-html.xsl notes305.xml
 echo "...done html"
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     sed -i 's+https://pretextbook.org/css/0.31/colors_delaware+colors_delaware+' *.html

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T11:46:49-04:00    *-->
+<!--*    on 2020-04-01T17:04:07-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The moving average above gave us a certain way to multiply together vectors \(v\) and \(w\) to get a new vector \(z\text{:}\)</p>
+<p>We return to our linear, second-order, constant-coefficient problem in the simpler notation</p>
 <div class="displaymath">
 \begin{equation*}
-z_i =  \sum_{j} w_j v_{i-j} 
+x'' + bx' + cx = f(t)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">(although I reindexed the output vector from \(i+1\) to \(i\) compared to the computer code). This is analogous to a different way to multiply two <em class="emphasis">functions</em>, by the <dfn class="terminology">convolution integral</dfn></p>
-<div class="displaymath">
-\begin{equation*}
-[f*g](t) = \int_0^t f(t-\tau)g(\tau)\, d\tau\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">This too is like a weighted average, with the values of \(g(\tau)\) being multiplied against different windows of the function \(f\) such that the arguments sum to \(t\text{.}\)</p>
-<span class="incontext"><a href="so-convolutions.html#p-452">in-context</a></span>
+<p data-braille="continuation">We cast this problem as a first-order system in two dimensions, found that the eigenvalues are the roots of \(\lambda^2+b\lambda + c\text{,}\) and then constructed exponential solutions for the homogeneous part (except for the double eigenvalue case). We also found a particular solution for the case of an exponential \(f(t)\text{.}\) There is an alternative way to derive the same results using the method of Laplace transforms to systematize the manipulations.</p>
+<span class="incontext"><a href="so-laplace.html#p-452">in-context</a></span>
 </body>
 </html>

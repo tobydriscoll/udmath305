@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-01T17:04:07-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">2.7.3.1.1</span><span class="period">.</span>
+</h6>
+<p>We use the window function \(1-H(t-0.5)\) to represent the time interval of the IV drip. So the appropriate IVP (in time units of hours) is</p>
+<div class="displaymath">
+\begin{equation*}
+x'=-r x + 12 \left[ 1-H(t-0.5) \right], \quad x(0)=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Recall that for the solution times \(t&gt;0\text{,}\) \(H(t)\) is just the constant 1. We can solve this IVP using three pieces. The unforced part with the initial condition is \(x_h(t)=0\text{,}\) so it contributes nothing. The other two are due to the steps:</p>
+<div class="displaymath">
+\begin{align*}
+x_1(t) \amp = \frac{1}{-r} H(t-0) \bigl(e^{-r(t-0)} - 1\bigr) = \frac{1}{r} \bigl(1- e^{-r t}\bigr), \\
+x_2(t) \amp = \frac{1}{r} H(t-0.5) \bigl(1 - e^{-r(t-0.5)}\bigr). 
+\end{align*}
+</div>
+<p data-braille="continuation">Hence we arrive at</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = 12x_1(t) - 12 x_2(t) = \frac{12}{r}\left[ 1-e^{-r t} - H(t-0.5)\bigl(1-e^{-r(t-0.5)} \bigr)\right]\text{.}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="fl-impulse.html#solution-7">in-context</a></span>
+</body>
+</html>

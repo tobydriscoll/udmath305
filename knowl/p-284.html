@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T11:46:48-04:00    *-->
+<!--*    on 2020-04-01T17:04:07-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The solution to \(x'-ax=\delta_\epsilon(t)\text{,}\) \(x(0)=0\) is easily found for a constant \(a\) using the method described above, resulting in</p>
+<p>Really there are only two unique subproblems to solve. The homogeneous part is \(x_h(t)=e^{a t}x_0\text{.}\) To solve a step problem \(\opA[x_j]=H(t-T_j)\) with zero initial condition, we first note that \(x_j(t)=0\) for \(0\le t \le T_j\text{,}\) since there is no forcing over that time interval. Starting at time \(T_j\) we have</p>
 <div class="displaymath">
 \begin{equation*}
-x_\epsilon(t) = \frac{1}{a \epsilon} \left[  (e^{at}-1) - H(t-\epsilon) (e^{a(t-\epsilon)}-1) \right]\text{.}
+\opA[x_j]=1, \quad x_j(T_j)=0\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">As \(\epsilon\to 0\text{,}\) we only care about what happens for \(t\gt \epsilon\text{,}\) which gives</p>
+<p data-braille="continuation">This can be solved easily using undetermined coefficients with a constant particular solution. The result is \(x_j(t)=(e^{a (t-T_j)} - 1)/a\) for \(t \gt T_j\text{.}\) Putting both time intervals together, we get</p>
 <div class="displaymath">
 \begin{equation*}
-x_\epsilon(t) = \frac{e^{a t}}{a \epsilon}  \left( 1 - e^{-a\epsilon} \right), \quad t \gt \epsilon\text{.}
+x_j(t) = \frac{1}{a} H(t-T_j) (e^{a(t-T_j)} - 1)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Using L'Hôpital's Rule,</p>
-<div class="displaymath">
-\begin{equation*}
-\lim_{\epsilon\to 0} x_\epsilon(t) =e^{at} \left[ \lim_{\epsilon\to 0}  \frac{1 - e^{-a\epsilon}}{a \epsilon}\right] = e^{at}, \quad t \gt 0\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Hence the constant-coefficient impulse response is simply \(e^{at}\text{.}\) This is the same as the solution of the homogeneous \(x'-ax=0\) with initial value one rather than zero. This remarkable observation generalizes as follows.</p>
+<p data-braille="continuation">We now have  everything we need.</p>
 <span class="incontext"><a href="fl-impulse.html#p-284">in-context</a></span>
 </body>
 </html>

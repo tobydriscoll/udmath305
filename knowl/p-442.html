@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T11:46:49-04:00    *-->
+<!--*    on 2020-04-01T17:04:07-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
+<p>It's often useful to rewrite the complex factor \(A(i\omega)\) from <a class="xref" data-knowl="./knowl/so-eq-coeff.html" title="Equation 4.5.2">(4.5.2)</a> in polar form:</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} \text{.}
+A(i\omega) = \frac{\omega_0^2}{\omega_0^2-\omega^2  + 2 Z i \omega_0 \omega } = g(\omega) e^{-i\phi(\omega)}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">Since we also know that</p>
+<p data-braille="continuation">where \(g=|A|\) is the <dfn class="terminology">gain</dfn> and \(\phi\) is the <dfn class="terminology">phase lag</dfn>. Note that the particular solution is</p>
 <div class="displaymath">
 \begin{equation*}
-e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{,}
+x_p(t) = g(\omega) e^{-i\phi(\omega)} e^{i\omega t} = g e^{i(\omega t-\phi)}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">the conclusion is</p>
-<div class="displaymath">
-\begin{equation*}
-\lx[ e^{at} \cos( b t) ] = \frac{s-a}{(s-a)^2+b^2}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">In similar fashion we can show that \(e^{at} \sin( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion. However, the details can get pretty intense for hand calculation.</p>
-<span class="incontext"><a href="so-laplace-repeated.html#p-442">in-context</a></span>
+<p data-braille="continuation">This means that as we pass from the input forcing to the output solution, \(g\) is the scaling of the amplitude and \(\phi\) changes the phase of our trip around the complex unit circle.</p>
+<span class="incontext"><a href="so-expforcing.html#p-442">in-context</a></span>
 </body>
 </html>

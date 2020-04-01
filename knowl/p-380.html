@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T11:46:49-04:00    *-->
+<!--*    on 2020-04-01T17:04:07-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,38 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose</p>
-<div class="displaymath">
-\begin{equation*}
-\bA = \twomat{1}{-2}{5}{-3}\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">and we are given or work out that</p>
-<div class="displaymath">
-\begin{equation*}
-\lambda_1 = -1+i, \; \lambda_2 = -1-i, \qquad \bV = \twomat{1}{1}{2-i}{2+i}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Then</p>
-<div class="displaymath">
-\begin{equation*}
-\bV^{-1} = \frac{1}{2+i-2+i} \twomat{2+i}{-1}{-2+i}{1} = \frac{i}{2} \twomat{-2-i}{1}{2-i}{-1}\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">and then</p>
-<div class="displaymath">
-\begin{align*}
-e^{t \bA} \amp = e^{-t}\frac{i}{2}\twomat{1}{1}{2-i}{2+i} \twomat{e^{it}}{0}{0}{e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
-\amp = e^{-t}\frac{i}{2}\twomat{e^{it}}{e^{-it}}{(2-i)e^{it}}{(2+i)e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
-\amp = e^{-t}\frac{i}{2} \twomat{-(2+i)e^{it}+(2-i) e^{-it}}{e^{it}-e^{-it}}{-(2-i)(2+i)e^{it}+(2+i)(2-i) e^{-it}}{(2-i)e^{it}-(2+i) e^{-it}} \text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">Each entry is written in the form of a complex number minus its conjugate, which gives \(2i\) times the imaginary part. This helps a lot.</p>
-<div class="displaymath">
-\begin{equation*}
-e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\sin(t)}\text{.}
-\end{equation*}
-</div>
-<span class="incontext"><a href="fs-matrix-exp.html#p-380">in-context</a></span>
+<p>Stability of the origin depends on the eigenvalues of \(\bA\text{.}\) This is most easily summarized in the special case of a \(2\times 2\) real matrix with eigenvalues \(\lambda_1,\lambda_2\text{.}\) The major cases to be considered are summarized in <a class="xref" data-knowl="./knowl/fs-tb-stability.html" title="Table 3.5.1: Eigenvalues and stability">Table 3.5.1</a>, leaving out some subtle “edge cases” when things are zero or exactly equal. The other column of the table is to be explained next.</p>
+<span class="incontext"><a href="fs-phaseplane.html#p-380">in-context</a></span>
 </body>
 </html>

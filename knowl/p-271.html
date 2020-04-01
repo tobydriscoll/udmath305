@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T11:46:48-04:00    *-->
+<!--*    on 2020-04-01T17:04:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,43 +13,27 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Using the given assumptions and mass balances we obtain the system</p>
+<p>Let's write the IVPs for the two mugs as</p>
 <div class="displaymath">
 \begin{align*}
-\frac{dx}{dt} \amp =-k_1 x, \quad x(0)=A,\\
-\frac{dy}{dt} \amp = k_1 x - k_2y, \quad y(0)=0.
+z_F' \amp = -r S_F z_F, \quad z_F(0) = 85-25, \\
+z_W' \amp = -r S_W z_W, \quad z_W(0) = 85-25,
 \end{align*}
 </div>
-<p data-braille="continuation">Although this takes the form of a system of two equations for two dependent variables, we can solve the first one for \(x\) independently and then put that result into the second ODE. Specifically, \(x(t)=A\exp(-k_1 t)\text{,}\) so</p>
+<p data-braille="continuation">in which we also know that \(S_W=2S_F\) (because area is proportional to the square of the radius). The solutions are</p>
+<div class="displaymath">
+\begin{align*}
+z_F(t) \amp = 60 \exp(-r S_F t), \\
+z_W(t) \amp = 60 \exp(-r 2 S_F t). 
+\end{align*}
+</div>
+<p data-braille="continuation">We are informed that \(z_F(30) = 60-25=35\text{,}\) and we need to find \(z_W(30)\text{.}\) But notice that</p>
 <div class="displaymath">
 \begin{equation*}
-y' + k_2 y = k_1 A e^{-k_1t}.
+60 z_W(t) = 60\cdot 60 \cdot \exp(-r S_F t) \cdot \exp(-r S_F t) = z_F(t)^2. 
 \end{equation*}
 </div>
-<p data-braille="continuation">Let us use undetermined coefficients here. The homogeneous solution is \(y_h(t)=c_1e^{-k_2 t}\text{,}\) and the particular solution has to take the form \(y_p(t)=B e^{-k_1 t}\text{.}\) We find the coefficient through placement into the ODE:</p>
-<div class="displaymath">
-\begin{equation*}
-(-k_1B e^{-k_1t}) + k_2 (B e^{-k_1 t}) = k_1 A e^{-k_1t},
-\end{equation*}
-</div>
-<p data-braille="continuation">which implies \(B=k_1A/(k_2-k_1)\text{,}\) provided the rate constants are different. (Whatever solution method is chosen would have to deal with that case separately.) Thus</p>
-<div class="displaymath">
-\begin{equation*}
-y(t) = c_1e^{-k_2 t} + \frac{k_1 A}{k_2-k_1} e^{-k_1 t}. 
-\end{equation*}
-</div>
-<p data-braille="continuation">We find the unknown \(c_1\) through the condition</p>
-<div class="displaymath">
-\begin{equation*}
-0 = y(0) = c_1 + \frac{k_1 A}{k_2-k_1},
-\end{equation*}
-</div>
-<p data-braille="continuation">and finally</p>
-<div class="displaymath">
-\begin{equation*}
-y(t) = \frac{k_1 A}{k_2-k_1} \left( e^{-k_1 t} - e^{-k_2 t} \right).
-\end{equation*}
-</div>
+<p data-braille="continuation">Hence \(z_W(30)=z_F(30)^2/60=35^2/60\approx 20.4\text{,}\) and Wilma's coffee is at \(45.4^\circ\) C.</p>
 <span class="incontext"><a href="fl-models.html#p-271">in-context</a></span>
 </body>
 </html>

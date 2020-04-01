@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T11:46:48-04:00    *-->
+<!--*    on 2020-04-01T17:04:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,38 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In terms of the notation above, we have</p>
+<p>It's clear that given the net fluid inflow rate of 3 kL/h, the lake volume is given by \(V(t)=1000 + 3t\) kL at time \(t\) hours. Let \(x(t)\) be the mass of pollutant in the lake at \(t\) hours in kg/kL. Mass conservation implies</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{dx}{dt} = a (x-20), \quad x(0)=90\text{.}
+\frac{dx}{dt} \text{ kg/h} = (5)(7) \text{ kg/h} - 2 \frac{x}{V} \text{ kg/h},
 \end{equation*}
 </div>
-<p data-braille="continuation">We could also pose it for the temperature difference \(z=x-20\) as \(z'=az\text{.}\) Either way it's a linear problem with solution</p>
+<p data-braille="continuation">or</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = Ce^{at} + 20\text{.}
+x' + \frac{2x}{3t+1000}  = 35.
 \end{equation*}
 </div>
-<p data-braille="continuation">We have two unknown parameters in the solution, but also two unused pieces of information. We determine \(C\) from the initial value:</p>
+<p data-braille="continuation">This equation readily solved through variation of parameters:</p>
+<div class="displaymath">
+\begin{align*}
+g(t) \amp =\exp\left(\int -\frac{2}{3t+1000}\,dt\right)=(3t+1000)^{-2/3}, \\
+k(t) \amp = \int  35(3t+1000)^{2/3} \, dt = 7(3t+1000)^{5/3},  \\
+x(t) \amp = c_1(3t+1000)^{-2/3} + 7(3t+1000). 
+\end{align*}
+</div>
+<p data-braille="continuation">The initial condition is that \(x(0)/V(0)=2\text{,}\) so</p>
 <div class="displaymath">
 \begin{equation*}
-x(0)= 90 \Rightarrow C=70\text{.}
+2 = \frac{c_1\cdot(1000)^{-2/3} + 7000}{1000}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">To get a value for \(a\text{,}\) we use</p>
+<p data-braille="continuation">which implies \(c_1=-5(1000)^{5/3}=-5\times 10^5\text{.}\) Thus</p>
 <div class="displaymath">
 \begin{equation*}
-83 = x(7) = 70e^{10a}+20\text{,}
+x(t)=7(3t+1000) - \frac{5\times 10^5}{(3t+1000)^{2/3}} \; \text{kg/kL.}
 \end{equation*}
 </div>
-<p data-braille="continuation">or \(a=0.1\ln(0.9) \approx -0.01054\) per min. Hence the coffee will reach 60 C when \(40 = 70e^{at}\text{,}\) or \(t\approx 53.1\) minutes.</p>
 <span class="incontext"><a href="fl-models.html#p-264">in-context</a></span>
 </body>
 </html>
