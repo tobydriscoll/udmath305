@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:21:57-04:00    *-->
+<!--*    on 2020-04-02T12:14:26-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
+<p>This formula is a bit easier to parse in terms of the frequency ratio \(\rho=\omega/\omega_0\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\lx[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
+g(\rho) =  \frac{1}{[(1-\rho^2)^2  + 4 Z^2 \rho^2]^{1/2} }\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">and</p>
+<p data-braille="continuation">Basic calculus shows that the denominator is minimized, and thus the gain is maximized, when</p>
 <div class="displaymath">
 \begin{equation*}
-\lx[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
+\rho_\text{max} = \sqrt{1-2Z^2}, \quad  \text{ if } Z^2 \le \frac{1}{2}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">Conversely, a transform \(X(s)\) that has \(s^2+\omega^2\) as a factor in the denominator has poles at \(\pm i\omega\text{.}\) The simplest case is</p>
+<p data-braille="continuation">and \(\rho=0\) if \(\frac{1}{2} \lt Z^2 \lt 1\text{.}\) Since \(\rho_\text{max} \lt 1\text{,}\) the “most resonant” frequency is lower than the natural frequency. For \(Z^2 \le \frac{1}{2}\) the maximum gain is</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)\text{.}
+g(\rho_\text{max}) = \frac{1}{2Z\sqrt{1-Z^2}}\text{,}
 \end{equation*}
 </div>
-<span class="incontext"><a href="so-laplace.html#p-463">in-context</a></span>
+<p data-braille="continuation">which is finite but large for \(Z\approx 0\text{.}\)</p>
+<span class="incontext"><a href="so-expforcing.html#p-463">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:21:57-04:00    *-->
+<!--*    on 2020-04-02T12:14:26-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,18 +11,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Let's find a particular solution of \(x'' +4x'+4x=8t^2\text{.}\) The correct form of \(x_p\) is a quadratic polynomial, like \(f\text{,}\) so</p>
+<body><article class="example example-like"><p>In <a class="xref" data-knowl="./knowl/fs-ex-expm1.html" title="Example 3.6.6">Example 3.6.6</a> we worked out a matrix exponential:</p>
 <div class="displaymath">
 \begin{equation*}
-x_p = A + Bt + Ct^2\text{.}
+\bA = \twomat{1}{-2}{5}{-3}
+\Rightarrow 
+e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\sin(t)}
 \end{equation*}
 </div>
-<p data-braille="continuation">Plugging that into the ODE yields</p>
+<p data-braille="continuation">If we want to solve</p>
+<div class="displaymath">
+\begin{equation*}
+\bx' = \bA\bx + \twovec{1}{t}, \quad \bx(0)=\bzero,
+\end{equation*}
+</div>
+<p data-braille="continuation">then <a class="xref" data-knowl="./knowl/fs-eq-varparam3.html" title="Equation 3.7.3">(3.7.3)</a> gives</p>
 <div class="displaymath">
 \begin{align*}
-2C + 4(B+2Ct) + 4(A+Bt+Ct^2) \amp = 8t^2\\
-4C t^2 + (8C+4B) + (2C+4B+4A) \amp = 8t^2\text{.}
+\bx(t) \amp = \int_0^t -e^{s-t} \twomat{-\cos(t-s)-2\sin(t-s)}{\sin(t-s)}{-5\sin(t-s)}{-\cos(t-s)+2\sin(t-s)} \twovec{1}{s} \, ds\\
+\amp = \int_0^t -e^{s-t} \twovec{-\cos(t-s)+(s-2)\sin(t-s)}{-s\cos(t-s)+(2s-5)\sin(t-s)} \, ds.   
 \end{align*}
 </div>
-<p data-braille="continuation">This has to be an identity for all \(t\text{.}\) Matching like powers, we can read off \(C=2\text{,}\) then \(B=-4\text{,}\) and finally \(A=3\text{.}\) This provides us with \(x_p=2t^2+4t+3\text{.}\)</p></article></body>
+<p data-braille="continuation">Some computer algebra would be advisable at this point.</p></article></body>
 </html>

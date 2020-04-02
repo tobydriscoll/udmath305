@@ -699,7 +699,7 @@
 	<title>Matrix exponential</title>
 	<introduction>
 		<p>
-			A solution of <m>x'=ax</m> for constant <m>a</m> is <m>x=e^{at}</m>. We know the Taylor series 
+			One solution of <m>x'=ax</m> for constant <m>a</m> is <m>x=e^{at}</m>. We know the Taylor series 
 			<me>
 				e^{at} = 1 + at + \frac{1}{2!}(at)^2 + \frac{1}{3!} (at)^3 + \cdots
 			</me>. 
@@ -722,28 +722,38 @@
 			</p></statement>
 		</theorem>
 		<p>
-			The first three conclusions of the theorem follow quickly from the series definition <xref ref="fs-eq-matrixexp"/>. (The last is a deeper fact that is important below as well as in other areas such as theoretical physics.) They establish some important facts.  
+			These conclusions follow from the series definition <xref ref="fs-eq-matrixexp"/>. They establish some important facts.  
 		</p>
 		<fact>
 			<p>
 				<ol>
 					<li>For any constant vector <m>\bc</m>, <m>\bx(t)=e^{t\bA}\bc</m> is a solution of <m>\bx'=\bA\bx</m>.</li>
-					<li><m>\bX(t)=e^{t\bA}</m> is a fundamental matrix for <m>\bx'=\bA\bx</m> with <m>\bX(0)=\bI</m>.</li>
+					<li><m>\bX(t)=e^{t\bA}</m> is the unique fundamental matrix for <m>\bx'=\bA\bx</m> with <m>\bX(0)=\bI</m>.</li>
 				</ol>
 			</p>
 		</fact>
 		<p>
-			Obviously, summing an infinite series of matrices doesn't seem like a great prospect. But we have two ways around that.
+			Summing an infinite series of matrices may not seem like a great prospect. But we have two ways to keep it fairly tame. Which to use depends on an important property of the matrix. 
 		</p>
+		<p>
+			In section <xref ref="la-ei-multiplicity"/> we saw the definition of a defective eigenvalue (<xref ref="la-df-defective"/>). A matrix with one or more defective eigenvalues is also called <idx>defective</idx>.
+		</p>
+		<fact xml:id="ls-fact-defective">
+			<statement>
+				<p>
+					A defective <m>n\times n</m> matrix has fewer than <m>n</m> independent eigenvectors--that is, the sum of the eigenspace dimensions is less than <m>n</m>.
+				</p>
+			</statement>
+		</fact>
+		<p>
+		  This is especially easy to spot when <m>n=2</m>:
+		</p>
+		<fact>
+			<p>A <m>2\times 2</m> matrix with repeated eigenvalue is either a multiple of the identity or defective.</p>
+		</fact>
 	</introduction>
 	<subsection xml:id="fs-me-diagonal">
 		<title>Nondefective matrix</title>
-		<p>
-			In section <xref ref="la-ei-multiplicity"/> we saw the definition of a defective eigenvalue. A matrix with any defective eigenvalues is also called defective. One characterization of a defective <m>n\times n</m> matrix is that it has less than <m>n</m> independent eigenvectors. (That is, the sum of the eigenspace dimensions is less than <m>n</m>.) It's easy to spot when <m>n=2</m>:
-		</p>
-		<fact>
-			<p>A <m>2\times 2</m> matrix with repeated eigenvalue is either diagonal or defective.</p>
-		</fact>
 		<p>
 			For a nondefective <m>\bA</m>, <xref ref="fs-thm-eigensolution"/> guarantees that 
 			<me>
@@ -801,14 +811,7 @@
 			Not exactly a walk in the park, but doable. 
 		</p>
 		</example>
-		<p>
-			Because the matrix exponential is a fundamental matrix, the general solution to <m>\bx'=\bA\bx</m> can always be written in the form <m>e^{t\bA}\bc</m>. This isn't the easiest way to get a general solution, because the <m>\bX(t)</m> above requires less work. But this form is handy with an IVP, because 
-			<me>
-				\bx_0 = \bx(0) = e^{0\bA}\bc = \bc
-			</me>. 
-			That is, <m>e^{t\bA}\bx_0</m> solves the IVP.  
-		</p>
-		<example>
+		<example xml:id="fs-ex-expm1">
 			<p>
 				Suppose 
 				<me>
@@ -833,6 +836,42 @@
 					e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\sin(t)}
 				</me>.
 			</p>
+		</example>
+		<p>
+			Because the matrix exponential is a fundamental matrix, the general solution to <m>\bx'=\bA\bx</m> can always be written in the form <m>e^{t\bA}\bc</m>. This isn't the easiest way to get a general solution, because the <m>\bX(t)</m> above requires less work. But this form is handy with an IVP, because 
+			<me>
+				\bx_0 = \bx(0) = e^{0\bA}\bc = \bc
+			</me>. 
+			That is, <m>e^{t\bA}\bx_0</m> solves the IVP.  
+		</p>
+		<example>
+			<p>
+				Using the matrix from the previous example, we show how the numerical solution of <m>\bx'=\bA\bx</m> (which doesn't know what kind of ODE it solves) is the same as the one computed via <m>e^{t\bA}\bx_0</m>.
+			</p>
+			<sidebyside>
+				<listing xml:id="fs_expm">
+					<caption>Solution by the matrix exponential</caption>
+					<program language="matlab">
+						<input>
+A = [1 -2; 5 -3];
+x0 = [-1;2];
+t = linspace(0,8,400);
+% Numerical solution: curves
+f = @(t,x) A*x;
+[t,xnum] = ode45(f,t,x0);
+plot(t,xnum)
+% Solution by matrix exponential: dots
+xexp = zeros(length(t),2);
+for j = 1:length(t)
+	xexp(j,:) = expm(A*t(j))*x0;
+end
+hold on, plot(t,xexp,'k.')
+xlabel('t'), ylabel('x_1(t), x_2(t)')
+						</input>
+					</program>
+				</listing>
+				<image source="figures/fs_expm.svg"/>
+			</sidebyside>
 		</example>
 	</subsection>
 	<subsection xml:id="fs-me-defective">
@@ -861,7 +900,7 @@
 			</p>
 		</example>
 		<p>
-			Matters are not so simple for larger matrices, but we won't be going there. 
+			Matters are less simple for larger matrices, but we won't be going there. 
 		</p>
 	</subsection>
 </section>
@@ -869,12 +908,12 @@
 <section xml:id="fs-varparam">
 	<title>Variation of parameters</title>
 	<p>
-		We return to the forced problem <m>\bx'=\bA\bx+\bf</m>. We can use the same technique of variation of parameters as in <xref ref="fl-varparam"/> and get very similar formulas. 
+		We return to the forced problem <m>\bx'=\bA\bx+\bff(t)</m>. We can use the same technique of variation of parameters as in <xref ref="fl-varparam"/> and get very similar formulas. 
 	</p>
 	<theorem xml:id="fs-thm-varparam">
 		<title>Variation of parameters</title>
 		<statement><p>
-			Let <m>\bX(t)</m> be a fundamental matrix of the homogeneous problem <m>\bx'=\bA(t)\bx</m>. Then the general solution of <m>\bx'=\bA(t)\bx+\bf(t)</m> is 
+			Let <m>\bX(t)</m> be a fundamental matrix of the homogeneous problem <m>\bx'=\bA(t)\bx</m>. Then the general solution of <m>\bx'=\bA(t)\bx+\bff(t)</m> is 
 			<men xml:id="fs-eq-varparam1">
 				\bx(t) = \bx_h(t) + \bx_p(t) = \bX(t)\bc + \bX(t) \int \bX(t)^{-1} \bff(t) \, dt
 			</men>. 
@@ -889,7 +928,30 @@
 		</p></statement>
 	</theorem>
 	<p>
-		Given how tedious it is to calculate even a small fundamental matrix by hand, it's no mean feat to apply these formulas to a specific example. We're going to save that for when we really need it later.
+		Given how tedious it is to calculate even a small fundamental matrix by hand, it's no mean feat to apply these formulas to a specific example. 
+	</p>
+	<example>
+		<p>
+			In <xref ref="fs-ex-expm1"/> we worked out a matrix exponential:
+			<me>
+				\bA = \twomat{1}{-2}{5}{-3}
+				\Rightarrow 
+				e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\sin(t)}
+			</me>
+			If we want to solve 
+			<me>
+				\bx' = \bA\bx + \twovec{1}{t}, \quad \bx(0)=\bzero,
+			</me>
+			then <xref ref="fs-eq-varparam3"/> gives 
+			<md>
+			  <mrow> \bx(t) \amp = \int_0^t -e^{s-t} \twomat{-\cos(t-s)-2\sin(t-s)}{\sin(t-s)}{-5\sin(t-s)}{-\cos(t-s)+2\sin(t-s)} \twovec{1}{s} \, ds</mrow>
+			  <mrow>  \amp = \int_0^t -e^{s-t} \twovec{-\cos(t-s)+(s-2)\sin(t-s)}{-s\cos(t-s)+(2s-5)\sin(t-s)} \, ds.   </mrow>
+			</md>
+			Some computer algebra would be advisable at this point.	
+		</p>	
+	</example>
+	<p>
+		The formulas of the theorem are useful mainly as a theoretical tool, a starting point for further derivations, and in specific cases where they can be greatly simplified. But <xref ref="fs-eq-varparam3"/> does have a reasonable interpretation. The term <m>e^{t\bA}\bx_0</m> is the homogeneous (unforced) response to the initial condition. The integrand <m>e^{(t-s)\bA} \bff(s)</m> represents the ODE evolution of an initial <m>\bff(s)</m> through time <m>t-s</m>; that is, the forcing at time <m>s</m> contributes an impulse of amplitude <m>\bff(s)</m>. Finally, the integral just adds up all of those impulse contributions from prior times. 
 	</p>
 </section>
 

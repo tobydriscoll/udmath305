@@ -8,37 +8,59 @@
 	<p>
 		We now turn our attention to second-order ODEs of the form 
 		<me>
-			x''=f(t,x,x')
+			u''=f(t,u,u')
 		</me>. 
-		Most of what we develop extends easily to vector-valued <m>x</m>  and equations of order higher than two, but we focus on this problem to keep notation simple. 
+		Most of what we develop extends easily to vector-valued <m>u(t)</m>  and equations of order higher than two, but we focus on this problem to keep notation simple. 
 	</p>
 	<p>
-		Our first observation is that this problem can always be converted to a first-order problem in two dimensions. Define a vector <m>\bu</m> by <m>u_1=x</m>, <m>u_2=x'</m>. By definition, <m>u_1'=u_2</m>. Since <m>u_2'=x''=f(t,x,x')</m>, we can get the system 
+		Our first observation is that this problem can always be converted to a first-order problem in two dimensions. Define a vector <m>\bx</m> by <m>x_1=u</m>, <m>x_2=u'</m>. By definition, <m>x_1'=x_2</m>. Since <m>x_2'=u''=f(t,u,u')</m>, we get the system 
 		<md>
-			<mrow> u_1' \amp =  u_2</mrow>
-			<mrow> u_2' \amp =  f(t,u_1,u_2).</mrow>
+			<mrow> x_1' \amp =  x_2</mrow>
+			<mrow> x_2' \amp =  f(t,x_1,x_2).</mrow>
 		</md>
-		This is a first-order system <m>\bu'=\mathbf{g}(t,\bu)</m> of two scalar equations for the two components. 
+		This is a first-order system <m>\bx'=\mathbf{g}(t,\bx)</m> of two scalar equations for the two components. 
 	</p>
 	<example>
 		<p>
-			A pendulum is governed by the nonlinear equation <m>\theta''+ b\theta' + \frac{g}{L}\sin(\theta)=0</m>. Define <m>u_1=\theta</m>, <m>u_2=\theta'</m>. Then 
+			A pendulum is governed by the nonlinear equation <m>\theta''+ b\theta' + \frac{g}{L}\sin(\theta)=0</m>, where <m>\theta(t)</m> is the angle made by the pendulum from the straight-down position. Define <m>x_1=\theta</m>, <m>x_2=\theta'</m>. Then 
 			<me>
-				\twovec{u_1'}{u_2'} = \twovec{u_2}{-bu_2 - \frac{g}{L}\sin(u_1)}
+				\twovec{x_1'}{x_2'} = \twovec{x_2}{-bx_2 - \frac{g}{L}\sin(x_1)}
 			</me>
 			is an equivalent system.
 		</p>
 	</example>
 	<p>
-		Our main item of business is the linear, constant-coefficient model problem 
+		The technique above generalizes to any system of equations of any order. 
+	</p>
+	<example>
+		<p>
+			Two pendulums hanging from a bar and swinging in parallel planes are coupled through torsion on the bar, according to 
+			<md>
+			  <mrow> \theta_1''+ b\theta_1' + \frac{g}{L}\sin(\theta_1) + \kappa(\theta_1-\theta_2) \amp = 0 </mrow>
+			  <mrow> \theta_2''+ b\theta_2' + \frac{g}{L}\sin(\theta_2) + \kappa(\theta_2-\theta_1) \amp = 0 </mrow>
+			</md>
+			We define 
+			<me>
+				x_1 = \theta_1, \quad x_2 = \theta_1', \quad x_3 = \theta_2, \quad x_4 = \theta_2'.
+			</me>
+			Two differential equations, <m>x_1'=x_2</m> and <m>x_3'=x_4</m>, come automatically from the definitions. The remaining two come from substituting into the original ODEs: 
+			<md>
+			  <mrow>x_2' = \theta_1'' \amp = - b x_2 - \frac{g}{L}\sin(x_1) - \kappa(x_1-x_3)</mrow>
+			  <mrow>x_4' = \theta_2'' \amp = - b x_4 - \frac{g}{L}\sin(x_3) - \kappa(x_3-x_1)</mrow>
+			</md>
+			The result is a four-dimensional, first-order system <m>\bx'=\mathbf{g}(t,\bx)</m>.
+		</p>
+	</example>
+	<p>
+		Our main item of business in this chapter is the linear, constant-coefficient model problem 
 		<men xml:id="so-eq-linearmodel">
-			x'' + bx' + cx = f(t)
+			u'' + bu' + cu = f(t)
 		</men>,
 		for which the conversion process with <m>u_1=x</m>, <m>u_2=x'</m> yields 
 		<men xml:id="so-eq-matrixmodel">
-			\twovec{u_1'}{u_2'} = \twovec{u_2}{f(t)-cx_1-bx_2} = \twomat{0}{1}{-c}{-b} \bu + \twovec{0}{f(t)}
+			\twovec{x_1'}{x_2'} = \twovec{x_2}{f(t)-cx_1-bx_2} = \twomat{0}{1}{-c}{-b} \bx + \twovec{0}{f(t)}
 		</men>,
-		which has the form <m>\bu'=\bA\bu+\bff(t)</m>. Thus everything from the last chapter is again in play.
+		which has the form <m>\bx'=\bA\bx+\bff(t)</m> for the <idx>companion matrix</idx><term>companion matrix</term> <m>\bA</m>. Thus everything we learned from the last chapter is again in play. However, the applications of <xref ref="so-eq-linearmodel"/> are important and numerous enough to consider the solutions in detail, and the structure of the companion matrix is such that the conclusions can often be rewritten more simply than in the general case. 
 	</p>
 </section>
 

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:21:57-04:00    *-->
+<!--*    on 2020-04-02T12:14:26-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,9 +13,25 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.1</span><span class="period">.</span>
 </h6>
-<p>Consider the ODE \(x'=x-x^3\text{.}\) The equilibrium solutions are \(x=0\) and \(x=\pm 1\text{.}\) Consider also that \(x'\lt 0\) if \(-1\lt x \lt 0\) or \(x\gt 1\text{;}\) otherwise, \(x' \gt 0\text{.}\) The phase line diagram clarifies that the steady states at \(x=\pm 1\) are stable, while the one at \(x=0\) is unstable.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/fo_ss_phaseline.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article><span class="incontext"><a href="nl-autonomous.html#example-69">in-context</a></span>
+<p>The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{3}{(s^2+9)^2}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This doesn't look like anything easy. However, note that</p>
+<div class="displaymath">
+\begin{equation*}
+sX_p(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frac{d}{ds} \left[ \frac{1}{s^2+9} \right] \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Therefore, \(sX_p(s)\) is the transform of \(\frac{1}{2} t \sin(3t)\text{.}\) So this must be \(x_p'(t)\text{.}\) An integration by parts then recovers</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="so-laplace-repeated.html#example-69">in-context</a></span>
 </body>
 </html>

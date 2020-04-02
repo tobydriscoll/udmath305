@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:21:58-04:00    *-->
+<!--*    on 2020-04-02T12:14:26-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,35 +11,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>The system</p>
-<div class="displaymath">
-\begin{align*}
-\frac{dx}{dt} \amp= 3x-\frac{xy}{2}\\
-\frac{dy}{dt} \amp= -y+\frac{xy}{4}
-\end{align*}
-</div>
-<p data-braille="continuation">is called a <dfn class="terminology">predator–prey</dfn> equation. If species \(y\) is set to zero, species \(x\) would grow exponentially on its own (the prey). Similarly, species \(y\) would die off on its own (predator). We assume that encounters between the species are jointly proportional to the population of each, and they subtract from the prey and add to the predators.</p>
-<p>We find fixed points when \(3x-(xy/2)=(xy/4)-y=0\text{,}\) which has two solutions, \((0,0)\) and \((4,6)\text{.}\) The Jacobian matrix of the system is</p>
-<div class="displaymath">
-\begin{equation*}
-\mathbf{A}(x,y) = \begin{bmatrix} F_x \amp F_y  \\ G_x \amp G_y \end{bmatrix} = \begin{bmatrix} 3-y/2 \amp -x/2 \\ y/4 \amp -1+x/4 \end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">At the origin, the Jacobian becomes</p>
-<div class="displaymath">
-\begin{equation*}
-\mathbf{A}(0,0) = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">The eigenvalues of a diagonal matrix (in fact, a triangular matrix) are the diagonal entries. Hence the origin is a saddle point.</p>
-<p>At the other steady state we have</p>
-<div class="displaymath">
-\begin{equation*}
-\mathbf{A}(4,6) = \twomat{0}{-2}{3/2}{0}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">The characteristic polynomial is \(\lambda^2 - 0\lambda + 3\text{,}\) so the eigenvalues are \(\pm i\sqrt{3}\text{.}\) Hence this fixed point is a center. Close to the point, the orbits are impossible to tell apart from those of a linear center:</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/linearized_center1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<p>However, as we zoom out, the nonlinearity of the system makes its influence felt:</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/linearized_center2.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article></body>
+<body><article class="example example-like"><p>Here is a direction field for \(x'=t-x^2\text{.}\) Note that the arrows are horizontal along the sideways parabola \(t=x^2\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">f = @(t,x) t-x^2;
+slopefield(f,[-2 2],[-2 2])
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.4.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/nl_dirfield_3.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article></body>
 </html>

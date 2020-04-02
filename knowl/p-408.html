@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:21:57-04:00    *-->
+<!--*    on 2020-04-02T12:14:25-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,28 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's find the exponential of</p>
+<p>For a nondefective \(\bA\text{,}\) <a class="xref" data-knowl="./knowl/fs-thm-eigensolution.html" title="Theorem 3.3.1: Solution by eigenvectors">Theorem 3.3.1</a> guarantees that</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \twomat{1}{1}{4}{1}\text{,}
+\bX(t) = \begin{bmatrix} e^{t\lambda_1}\bv_1 \amp e^{t\lambda_2}\bv_2 \amp \cdots \amp e^{t\lambda_n}\bv_n \end{bmatrix}  
 \end{equation*}
 </div>
-<p data-braille="continuation">given \(\lambda_1=3\text{,}\) \(\bv_1 = \twovec{1}{2}\text{,}\) and \(\lambda_2=-1\text{,}\) \(\bv_2=\twovec{1}{-2}\text{.}\) We identify</p>
+<p data-braille="continuation">is a fundamental matrix for the ODE \(\bx'=\bA\bx\text{,}\) where the \((\lambda_j,\bv_j)\) are eigenpairs. If we now define</p>
 <div class="displaymath">
 \begin{equation*}
-\bV = \twomat{1}{1}{2}{-2}
+\bY(t) = \bX(t) \bX(0)^{-1}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">and compute</p>
+<p data-braille="continuation">then</p>
 <div class="displaymath">
-\begin{align*}
-e^{t\bA} \amp = \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{1}{1}{2}{-2}^{-1} \\
-\amp = -\frac{1}{4} \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{-2}{-1}{-2}{1} \\
-\amp = -\frac{1}{4} \twomat{e^{3t}}{e^{-t}}{2e^{3t}}{-2e^{-t}} \twomat{-2}{-1}{-2}{1} \\
-\amp = \frac{1}{4} \twomat{2e^{3t}+2e^{-t}}{e^{3t}-e^{-t}}{4e^{3t}-4e^{-t}}{2e^{3t}+2e^{-t}} \text{.}
-\end{align*}
+\begin{equation*}
+\bY'(t) = \bX'(t) \bX(0)^{-1} = \bA \bX(t) \bX(0)^{-1} = \bA \bY(t)\text{,}
+\end{equation*}
 </div>
-<p data-braille="continuation">Not exactly a walk in the park, but doable.</p>
+<p data-braille="continuation">so \(\bY(t)\) is a fundamental matrix as well. But also \(\bY(0)=\bX(0)\bX(0)^{-1}=\bI\text{,}\) so in fact \(\bY(t)\) is the matrix exponential.</p>
 <span class="incontext"><a href="fs-matrix-exp.html#p-408">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:21:57-04:00    *-->
+<!--*    on 2020-04-02T12:14:26-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Finally, consider the driven, undamped oscillator \(x''+\omega_0^2 x = \cos(\omega t)\text{.}\) It leads to</p>
+<p>This example is the template for our use of Laplace transforms. In the general case we get</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{s}{(s^2+\omega_0^2)(s^2+1)} = \frac{1}{\omega_0^2-\omega^2} \left( \frac{s}{s^2+\omega^2} - \frac{s}{s^2+\omega_n^2} \right)\text{,}
+[s^2X(s) - sx(0)-x'(0)] + b[sX(s)-x(0)] + cX(s) = F(s)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">which is readily inverted into a combination of \(\cos(\omega t)\) and \(\cos(\omega_0 t)\text{.}\) However, at this point we are probably better off using the method of undetermined coefficients instead.</p>
+<p data-braille="continuation">We choose to find a particular solution with zero initial conditions, so that</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{F(s)}{s^2+bs+c}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The real effort comes in finding the inverse transform of the right-hand side. Note that the denominator has roots at the eigenvalues of the homogeneous problem. These are called <dfn class="terminology">poles</dfn> of the transform \(X_p\text{.}\) Typically \(F(s)\) will contribute one or more of its own poles. Each pole at \(s=r\) corresponds to an exponential solution \(e^{rt}\) in time, but the exact expression depends on a partial fraction decomposition and perhaps other manipulations.</p>
 <span class="incontext"><a href="so-laplace.html#p-467">in-context</a></span>
 </body>
 </html>

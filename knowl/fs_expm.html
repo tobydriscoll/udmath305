@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-02T12:14:25-04:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<figure class="listing figure-like"><pre class="prettyprint lang-matlab">A = [1 -2; 5 -3];
+x0 = [-1;2];
+t = linspace(0,8,400);
+% Numerical solution: curves
+f = @(t,x) A*x;
+[t,xnum] = ode45(f,t,x0);
+plot(t,xnum)
+% Solution by matrix exponential: dots
+xexp = zeros(length(t),2);
+for j = 1:length(t)
+	xexp(j,:) = expm(A*t(j))*x0;
+end
+hold on, plot(t,xexp,'k.')
+xlabel('t'), ylabel('x_1(t), x_2(t)')
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.6.8<span class="period">.</span></span><span class="space"> </span>Solution by the matrix exponential</figcaption></figure><span class="incontext"><a href="fs-matrix-exp.html#fs_expm">in-context</a></span>
+</body>
+</html>

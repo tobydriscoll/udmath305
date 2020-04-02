@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-01T17:21:57-04:00    *-->
+<!--*    on 2020-04-02T12:14:25-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,28 +11,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>The matrix</p>
-<div class="displaymath">
-\begin{equation*}
-\bA = \twomat{-1}{1}{0}{-1}
-\end{equation*}
-</div>
-<p data-braille="continuation">has a double eigenvalue of \(\lambda=-1\) and is defective. Now consider</p>
-<div class="displaymath">
-\begin{equation*}
-\bB = \bA - \lambda \bI = \twomat{0}{1}{0}{0}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">This matrix has the property that \(\bB^2=\bzero\text{.}\) That means the exponential series for it is just</p>
-<div class="displaymath">
-\begin{equation*}
-e^{t\bB} = \bI + t\bB = \twomat{1}{t}{0}{1}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Finally, we can use <a class="xref" data-knowl="./knowl/fs-thm-matrixexp.html" title="Theorem 3.6.1: Matrix exponential">Theorem 3.6.1</a> to calculate</p>
-<div class="displaymath">
-\begin{equation*}
-e^{t\bA} = e^{t\lambda\bI}e^{t(\bA-\lambda\bI)} = e^{-t}\twomat{1}{t}{0}{1}\text{.}
-\end{equation*}
-</div></article></body>
+<body><article class="example example-like"><p>Using the matrix from the previous example, we show how the numerical solution of \(\bx'=\bA\bx\) (which doesn't know what kind of ODE it solves) is the same as the one computed via \(e^{t\bA}\bx_0\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">A = [1 -2; 5 -3];
+x0 = [-1;2];
+t = linspace(0,8,400);
+% Numerical solution: curves
+f = @(t,x) A*x;
+[t,xnum] = ode45(f,t,x0);
+plot(t,xnum)
+% Solution by matrix exponential: dots
+xexp = zeros(length(t),2);
+for j = 1:length(t)
+	xexp(j,:) = expm(A*t(j))*x0;
+end
+hold on, plot(t,xexp,'k.')
+xlabel('t'), ylabel('x_1(t), x_2(t)')
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.6.8<span class="period">.</span></span><span class="space"> </span>Solution by the matrix exponential</figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fs_expm.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article></body>
 </html>
