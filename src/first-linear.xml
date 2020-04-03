@@ -1221,7 +1221,11 @@ title('Solution of a linear problem')
 				<title>One dose</title>
 				<statement>
 					<p>
-						Suppose the initial serum drug concentration is zero and that the IV is given at a constant rate of 12 units per hour for 30 minutes. Write an IVP that models this case, and solve it to find the concentration of the drug over time.
+						Suppose the initial serum drug concentration <m>x(t)</m> is initially zero when an IV is given at a constant rate of 12 units per hour for 30 minutes. An IVP that models this case is 
+						<me>
+							x'=-r x + 12 \left[ 1-H(t-0.5) \right], \quad x(0)=0,
+						</me>
+						where <m>t</m> is measured in hours. Solve it to find the concentration of the drug over time.
 					</p>
 				</statement>
 				<answer>
@@ -1232,9 +1236,6 @@ title('Solution of a linear problem')
 				<solution>
 				  <p>
 					We use the window function <m>1-H(t-0.5)</m> to represent the time interval of the IV drip. So the appropriate IVP (in time units of hours) is
-					<me>
-						x'=-r x + 12 \left[ 1-H(t-0.5) \right], \quad x(0)=0.
-					</me>
 					Recall that for the solution times <m>t>0</m>, <m>H(t)</m> is just the constant 1. We can solve this IVP using three pieces. The unforced part with the initial condition is <m>x_h(t)=0</m>, so it contributes nothing. The other two are due to the steps: 
 					<md>
 					  <mrow>x_1(t) \amp = \frac{1}{-r} H(t-0) \bigl(e^{-r(t-0)} - 1\bigr) = \frac{1}{r} \bigl(1- e^{-r t}\bigr), </mrow>
@@ -1251,8 +1252,12 @@ title('Solution of a linear problem')
 				<title>Four doses</title>
 				<statement>
 				  <p>
-					Now suppose the drug concentration starts at zero and we give four doses, each given at 3 units per hour over five minutes and separated by six hours. Write down and solve the new model. 
-				  </p>
+					If the drug is given in four doses, each given at 3 units per hour over five minutes and separated by six hours, the model becomes  
+					<me>
+						x' + r x = 3 \sum_{n=0}^3 \left[H(t-6n)-H\Bigl(t-6n-\tfrac{1}{12}\Bigr)\right].
+					</me>
+					Solve it for <m>x(t)</m>.
+			  </p>
 				</statement>
 				<answer>
 				  <p>
@@ -1264,14 +1269,6 @@ title('Solution of a linear problem')
 				</answer>
 				<solution>
 					<p>
-						The first dose is modeled by the forcing function <m>3\left[H(t)-H\bigl(t-\frac{1}{12}\bigr)\right]</m>, the second dose is modeled by 
-						<me>
-							3\left[H(t-6)-H\Bigl(t-6-\tfrac{1}{12}\Bigr)\right],
-						</me>
-						and so on. To keep the expression length reasonable, it's best to use summation notation to express all four doses: 
-						<me>
-							x' + r x = 3 \sum_{n=0}^3 \left[H(t-6n)-H\Bigl(t-6n-\tfrac{1}{12}\Bigr)\right].
-						</me>
 						In total the forcing function has eight terms, which we can group into four pairs. These lead to the solution parts 
 						<me>
 							x_n(t) = \frac{1}{r} H(t-6n) \Bigl(1 - e^{-r(t-6n)}\Bigr) - 
@@ -1292,7 +1289,11 @@ title('Solution of a linear problem')
 				<title>One injection</title>
 				<statement>
 				  <p>
-					Starting from an initial drug-free state, suppose we deliver an injection of 6 units. What is the resulting concentration?
+					Starting from an initial drug-free state, suppose we deliver an injection of 6 units. The model is now 
+					<me>
+						x'+r x = 6\delta(t), \quad x(0)=0.
+					</me>
+					What is the resulting <m>x(t)</m>?
 				  </p>
 				</statement>
 				<answer>
@@ -1302,7 +1303,7 @@ title('Solution of a linear problem')
 				</answer>
 				<solution>
 				  <p>
-					Now the IVP is <m>x'+r x = 6\delta(t)</m>, with <m>x(0)=0</m>. This is equivalent to <m>x'+r x = 0</m> with <m>x(0)=6</m>, whose solution is <m>x(t) = 6e^{-r t}</m>.
+					The model IVP is equivalent to <m>x'+r x = 0</m> with <m>x(0)=6</m>, whose solution is <m>x(t) = 6e^{-r t}</m>.
 				  </p>
 				</solution>
 			</exercise>
@@ -1310,7 +1311,11 @@ title('Solution of a linear problem')
 				<title>Four injections</title>
 				<statement>
 				  <p>
-					Starting from an initial drug-free state, suppose we deliver four injections every 6 hours, each with 3 units of the drug. What is the resulting concentration?
+					If we deliver four injections every 6 hours, each with 3 units of the drug, the model becomes 
+					<me>
+						x' + r x = 3 \sum_{n=0}^3 \delta(t-6n), \quad x(0)=0.
+					</me>
+					Solve it for <m>x(t)</m>.
 				  </p>
 				</statement>
 				<answer>
@@ -1320,15 +1325,11 @@ title('Solution of a linear problem')
 				</answer>
 				<solution>
 				  <p>
-					The correct IVP is 
-					<me>
-						x' + r x = 3 \sum_{n=0}^3 \delta(t-6n), \quad x(0)=0.
-					</me>	
-					Now we can apply the machinery from this section. With a zero initial value, the homogeneous part of the solution is identically zero. Using delayed impulse responses, term <m>n</m> from the sum leads to 
+					We can apply the machinery from this section. With a zero initial value, the homogeneous part of the solution is identically zero. Using delayed impulse responses, term <m>n</m> from the sum leads to 
 					<me>
 						x_n(t) = H(t-6n) e^{-r (t-6n)}.
 					</me>
-					So the total solution is 
+					Hence the total solution is 
 					<me>
 						x(t) = 3\sum_{n=0}^3 H(t-6n) e^{-r (t-6n)}.
 					</me>

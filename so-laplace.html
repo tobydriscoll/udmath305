@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-02T12:14:23-04:00    *-->
+<!--*    on 2020-04-03T11:21:08-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,7 +209,7 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-laplace"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.6</span> <span class="title">Laplace transform methods</span>
 </h2>
-<a href="so-laplace.html" class="permalink">¶</a><section class="introduction" id="introduction-18"><p id="p-464">We return to our linear, second-order, constant-coefficient problem in the simpler notation</p>
+<a href="so-laplace.html" class="permalink">¶</a><section class="introduction" id="introduction-18"><p id="p-471">We return to our linear, second-order, constant-coefficient problem in the simpler notation</p>
 <div class="displaymath">
 \begin{equation*}
 x'' + bx' + cx = f(t)\text{.}
@@ -218,16 +218,16 @@ x'' + bx' + cx = f(t)\text{.}
 <p data-braille="continuation">We cast this problem as a first-order system in two dimensions, found that the eigenvalues are the roots of \(\lambda^2+b\lambda + c\text{,}\) and then constructed exponential solutions for the homogeneous part (except for the double eigenvalue case). We also found a particular solution for the case of an exponential \(f(t)\text{.}\) There is an alternative way to derive the same results using the method of Laplace transforms to systematize the manipulations.</p></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.1</span> <span class="title">Second derivatives</span>
 </h3>
-<p id="p-465">Recall that the transform of \(x'(t)\) is \(sX(s)-x(0)\text{.}\) Applying this formula twice shows that</p>
+<p id="p-472">Recall that the transform of \(x'(t)\) is \(sX(s)-x(0)\text{.}\) Applying this formula twice shows that</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[x''(t)] = s \lx[x'(t)] - x'(0) = s^2X(s) - sx(0) - x'(0)\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">Let's look at an example first.</p>
-<article class="example example-like" id="example-66"><a data-knowl="" class="id-ref original" data-refid="hk-example-66"><h6 class="heading">
+<article class="example example-like" id="example-71"><a data-knowl="" class="id-ref original" data-refid="hk-example-71"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-66"><article class="example example-like"><p id="p-466">Let's observe what happens in a fundamental case, \(x''-x=e^{rt}\text{.}\)  Transforming both sides gives</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-71"><article class="example example-like"><p id="p-473">Let's observe what happens in a fundamental case, \(x''-x=e^{rt}\text{.}\)  Transforming both sides gives</p>
 <div class="displaymath">
 \begin{equation*}
 [s^2X(s) - sx(0)-x'(0)] - X(s) = \frac{1}{s-r}\text{.}
@@ -258,7 +258,7 @@ x_p(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}\
 \end{equation*}
 </div>
 <p data-braille="continuation">With this we can construct a general solution \(x_n+x_p\text{,}\) and then apply initial conditions to solve for the constants, if those are given.</p></article></div>
-<p id="p-467">This example is the template for our use of Laplace transforms. In the general case we get</p>
+<p id="p-474">This example is the template for our use of Laplace transforms. In the general case we get</p>
 <div class="displaymath">
 \begin{equation*}
 [s^2X(s) - sx(0)-x'(0)] + b[sX(s)-x(0)] + cX(s) = F(s)\text{.}
@@ -273,7 +273,7 @@ X_p(s) = \frac{F(s)}{s^2+bs+c}\text{.}
 <p data-braille="continuation">The real effort comes in finding the inverse transform of the right-hand side. Note that the denominator has roots at the eigenvalues of the homogeneous problem. These are called <dfn class="terminology">poles</dfn> of the transform \(X_p\text{.}\) Typically \(F(s)\) will contribute one or more of its own poles. Each pole at \(s=r\) corresponds to an exponential solution \(e^{rt}\) in time, but the exact expression depends on a partial fraction decomposition and perhaps other manipulations.</p></section><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.2</span> <span class="title">Imaginary poles</span>
 </h3>
-<p id="p-468">If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
+<p id="p-475">If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
@@ -291,9 +291,9 @@ X_p(s) = \frac{F(s)}{s^2+bs+c}\text{.}
 X_p(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)\text{.}
 \end{equation*}
 </div>
-<article class="example example-like" id="example-67"><a data-knowl="" class="id-ref original" data-refid="hk-example-67"><h6 class="heading">
+<article class="example example-like" id="example-72"><a data-knowl="" class="id-ref original" data-refid="hk-example-72"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-67"><article class="example example-like"><p id="p-469">Let's solve \(x''+9x=\delta(t-2)\text{.}\) A particular solution has transform</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-72"><article class="example example-like"><p id="p-476">Let's solve \(x''+9x=\delta(t-2)\text{.}\) A particular solution has transform</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{e^{-2s}}{s^2+9} = e^{-2s} F(s)\text{,}
@@ -305,16 +305,16 @@ X_p(s) = \frac{e^{-2s}}{s^2+9} = e^{-2s} F(s)\text{,}
 x_p(t) = \frac{1}{3} H(t-2) \sin(3t-6)\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-470">Things are not too bad if there is an additional real pole:</p>
+<p id="p-477">Things are not too bad if there is an additional real pole:</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{A+Bs}{s^2+\omega^2} + \frac{C}{s-c} \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t) + C e^{ct}\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">Usually there is some grunt (or computer) work involved in finding the values of \(A\text{,}\) \(B\text{,}\) and \(C\text{.}\)</p>
-<article class="example example-like" id="example-68"><a data-knowl="" class="id-ref original" data-refid="hk-example-68"><h6 class="heading">
+<article class="example example-like" id="example-73"><a data-knowl="" class="id-ref original" data-refid="hk-example-73"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-68"><article class="example example-like"><p id="p-471">The undamped oscillator \(x''+16x=40e^{-2t}\) has a particular solution whose transform is</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-73"><article class="example example-like"><p id="p-478">The undamped oscillator \(x''+16x=40e^{-2t}\) has a particular solution whose transform is</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{40}{(s+2)(s^2+16)} = \frac{A+Bs}{s^2+16^2} + \frac{C}{s+2}\text{.}
@@ -345,7 +345,7 @@ X_p(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} \text{.}
 x_p(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-472">Finally, consider the driven, undamped oscillator \(x''+\omega_0^2 x = \cos(\omega t)\text{.}\) It leads to</p>
+<p id="p-479">Finally, consider the driven, undamped oscillator \(x''+\omega_0^2 x = \cos(\omega t)\text{.}\) It leads to</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{s}{(s^2+\omega_0^2)(s^2+1)} = \frac{1}{\omega_0^2-\omega^2} \left( \frac{s}{s^2+\omega^2} - \frac{s}{s^2+\omega_n^2} \right)\text{,}

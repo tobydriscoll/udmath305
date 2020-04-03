@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-02T12:14:22-04:00    *-->
+<!--*    on 2020-04-03T11:21:07-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -391,13 +391,25 @@ title('Impulse forcing')
 <article class="exercise exercise-like" id="exercise-6"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">One dose.</span>
 </h6>
-<p id="p-294">Suppose the initial serum drug concentration is zero and that the IV is given at a constant rate of 12 units per hour for 30 minutes. Write an IVP that models this case, and solve it to find the concentration of the drug over time.</p>
+<p id="p-294">Suppose the initial serum drug concentration \(x(t)\) is initially zero when an IV is given at a constant rate of 12 units per hour for 30 minutes. An IVP that models this case is</p>
+<div class="displaymath">
+\begin{equation*}
+x'=-r x + 12 \left[ 1-H(t-0.5) \right], \quad x(0)=0,
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(t\) is measured in hours. Solve it to find the concentration of the drug over time.</p>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-answer-6" id="answer-6"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-6"><div class="answer solution-like"><p id="p-295">\(\frac{12}{r}\left[ 1-e^{-r t} - H(t-0.5)\bigl(1-e^{-r(t-0.5)} \bigr)\right]\)</p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-7"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Four doses.</span>
 </h6>
-<p id="p-297">Now suppose the drug concentration starts at zero and we give four doses, each given at 3 units per hour over five minutes and separated by six hours. Write down and solve the new model.</p>
+<p id="p-297">If the drug is given in four doses, each given at 3 units per hour over five minutes and separated by six hours, the model becomes</p>
+<div class="displaymath">
+\begin{equation*}
+x' + r x = 3 \sum_{n=0}^3 \left[H(t-6n)-H\Bigl(t-6n-\tfrac{1}{12}\Bigr)\right].
+\end{equation*}
+</div>
+<p data-braille="continuation">Solve it for \(x(t)\text{.}\)</p>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-answer-7" id="answer-7"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-7"><div class="answer solution-like"><div class="displaymath" id="p-298">
 \begin{equation*}
@@ -414,13 +426,25 @@ H\bigl(t-6n-\tfrac{1}{12}\bigr) \Bigl(1 - \exp\bigl(-r(t-6n-\tfrac{1}{12})\bigr)
 <article class="exercise exercise-like" id="exercise-8"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">One injection.</span>
 </h6>
-<p id="p-301">Starting from an initial drug-free state, suppose we deliver an injection of 6 units. What is the resulting concentration?</p>
+<p id="p-301">Starting from an initial drug-free state, suppose we deliver an injection of 6 units. The model is now</p>
+<div class="displaymath">
+\begin{equation*}
+x'+r x = 6\delta(t), \quad x(0)=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">What is the resulting \(x(t)\text{?}\)</p>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-answer-8" id="answer-8"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-8"><div class="answer solution-like"><p id="p-302">\(6e^{-r t}\)</p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-9"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Four injections.</span>
 </h6>
-<p id="p-304">Starting from an initial drug-free state, suppose we deliver four injections every 6 hours, each with 3 units of the drug. What is the resulting concentration?</p>
+<p id="p-304">If we deliver four injections every 6 hours, each with 3 units of the drug, the model becomes</p>
+<div class="displaymath">
+\begin{equation*}
+x' + r x = 3 \sum_{n=0}^3 \delta(t-6n), \quad x(0)=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Solve it for \(x(t)\text{.}\)</p>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-answer-9" id="answer-9"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-9"><div class="answer solution-like"><div class="displaymath" id="p-305">
 \begin{equation*}

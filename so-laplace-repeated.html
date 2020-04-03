@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-02T12:14:23-04:00    *-->
+<!--*    on 2020-04-03T11:21:08-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -212,8 +212,8 @@ var js_version = 0.13;
 <a href="so-laplace-repeated.html" class="permalink">¶</a><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Repeated poles and resonance</span>
 </h3>
-<p id="p-473">We know by now that repeated poles in \(X_p(s)\) arise in two ways: from repeated characteristic roots (i.e. poles of the transfer function), or perfect resonance with the forcing function. We can anticipate the effect on the transform, because we know the answer in the time domain is something like \(te^{rt}\text{.}\) </p>
-<p id="p-474">In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
+<p id="p-480">We know by now that repeated poles in \(X_p(s)\) arise in two ways: from repeated characteristic roots (i.e. poles of the transfer function), or perfect resonance with the forcing function. We can anticipate the effect on the transform, because we know the answer in the time domain is something like \(te^{rt}\text{.}\) </p>
+<p id="p-481">In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
 <div class="displaymath">
 \begin{align*}
 F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
@@ -222,9 +222,9 @@ F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
 \end{align*}
 </div>
 <p data-braille="continuation">Take a moment to appreciate this. Earlier we found that a derivative in \(t\) corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
-<article class="example example-like" id="example-69"><a data-knowl="" class="id-ref original" data-refid="hk-example-69"><h6 class="heading">
+<article class="example example-like" id="example-74"><a data-knowl="" class="id-ref original" data-refid="hk-example-74"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-69"><article class="example example-like"><p id="p-475">The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-74"><article class="example example-like"><p id="p-482">The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{3}{(s^2+9)^2}\text{.}
@@ -242,7 +242,7 @@ sX_p(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frac{d}{ds} \left[ \frac{1}{s^2+9
 x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-476">If we keep differentiating in \(s\) we find</p>
+<p id="p-483">If we keep differentiating in \(s\) we find</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{d^n}{ds^n} \lx[ f(t) ] = (-1)^n \lx[ t^n f(t) ]\text{.}
@@ -257,7 +257,7 @@ x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 <p data-braille="continuation">The even specialer case \(r=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.2</span> <span class="title">Complex poles</span>
 </h3>
-<p id="p-477">Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
+<p id="p-484">Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} \text{.}
@@ -276,9 +276,9 @@ e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">In similar fashion we can show that \(e^{at} \sin( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion. However, the details can get pretty intense for hand calculation.</p>
-<article class="example example-like" id="example-70"><a data-knowl="" class="id-ref original" data-refid="hk-example-70"><h6 class="heading">
+<article class="example example-like" id="example-75"><a data-knowl="" class="id-ref original" data-refid="hk-example-75"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-70"><article class="example example-like"><p id="p-478">Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution has</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-75"><article class="example example-like"><p id="p-485">Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution has</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
@@ -291,7 +291,7 @@ X_p(s) = e^{-s} \frac{6}{(s+1)^2+9} = e^{-s} F(s)\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">where we can now see that \(f(t) = 2e^{-t}\sin(3t)\text{.}\) By the shift theorem, \(x_p(t)=H(t-1)f(t-1)\text{.}\)</p>
-<p id="p-479">Now consider \(x''+2x'+10x=40\text{.}\) We get</p>
+<p id="p-486">Now consider \(x''+2x'+10x=40\text{.}\) We get</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{40}{s(s^2+2s+10)} = \frac{40}{s[(s+1)^2+9]}\text{.}
@@ -315,7 +315,7 @@ X_p(s) = \frac{A}{s} + \frac{3B+C(s+1)}{(s+1)^2+9}\text{.}
 x_p(t) = 4 - \frac{4}{3} e^{-t} \sin(3t) - 4 e^{-t} \cos(3t)\text{.}
 \end{equation*}
 </div>
-<p id="p-480">For a harmonically forced case such as \(x''+2x'+10x=\cos(2t)\text{,}\) we have</p>
+<p id="p-487">For a harmonically forced case such as \(x''+2x'+10x=\cos(2t)\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{s}{(s^2+4)(s^2+2s+10)}\text{.}
@@ -328,7 +328,7 @@ X_p(s) = \frac{2A+Bs}{s^2+4} + \frac{3C+E(s+1)}{(s+1)^2+9}\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">which is eminently invertible. The details are left to the proverbial reader.</p></article></div>
-<p id="p-481">The drawback to Laplace transforms as a one-stop solver is that either we include the initial conditions from the start, which forces us to do more partial fraction decompositions, or else the particular solution we find almost always includes some terms from the homogeneous solution. Mathematically, the poles of \(X_p(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in many cases.</p></section></section></div></main>
+<p id="p-488">The drawback to Laplace transforms as a one-stop solver is that either we include the initial conditions from the start, which forces us to do more partial fraction decompositions, or else the particular solution we find almost always includes some terms from the homogeneous solution. Mathematically, the poles of \(X_p(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in many cases.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

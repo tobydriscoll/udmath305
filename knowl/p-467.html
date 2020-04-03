@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-02T12:14:26-04:00    *-->
+<!--*    on 2020-04-03T11:21:11-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This example is the template for our use of Laplace transforms. In the general case we get</p>
-<div class="displaymath">
-\begin{equation*}
-[s^2X(s) - sx(0)-x'(0)] + b[sX(s)-x(0)] + cX(s) = F(s)\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">We choose to find a particular solution with zero initial conditions, so that</p>
-<div class="displaymath">
-\begin{equation*}
-X_p(s) = \frac{F(s)}{s^2+bs+c}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">The real effort comes in finding the inverse transform of the right-hand side. Note that the denominator has roots at the eigenvalues of the homogeneous problem. These are called <dfn class="terminology">poles</dfn> of the transform \(X_p\text{.}\) Typically \(F(s)\) will contribute one or more of its own poles. Each pole at \(s=r\) corresponds to an exponential solution \(e^{rt}\) in time, but the exact expression depends on a partial fraction decomposition and perhaps other manipulations.</p>
-<span class="incontext"><a href="so-laplace.html#p-467">in-context</a></span>
+<p>This particular solution oscillates at the natural/driving frequency but with a linearly growing amplitude. This situation is called <dfn class="terminology">resonance</dfn> and is one of the most important phenomena in physics.</p>
+<span class="incontext"><a href="so-expforcing.html#p-467">in-context</a></span>
 </body>
 </html>

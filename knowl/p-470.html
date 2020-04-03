@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-02T12:14:26-04:00    *-->
+<!--*    on 2020-04-03T11:21:11-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Things are not too bad if there is an additional real pole:</p>
+<p>This formula is a bit easier to parse in terms of the frequency ratio \(\rho=\omega/\omega_0\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{A+Bs}{s^2+\omega^2} + \frac{C}{s-c} \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t) + C e^{ct}\text{.}
+g(\rho) =  \frac{1}{[(1-\rho^2)^2  + 4 Z^2 \rho^2]^{1/2} }\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Usually there is some grunt (or computer) work involved in finding the values of \(A\text{,}\) \(B\text{,}\) and \(C\text{.}\)</p>
-<span class="incontext"><a href="so-laplace.html#p-470">in-context</a></span>
+<p data-braille="continuation">Basic calculus shows that the denominator is minimized, and thus the gain is maximized, when</p>
+<div class="displaymath">
+\begin{equation*}
+\rho_\text{max} = \sqrt{1-2Z^2}, \quad  \text{ if } Z^2 \le \frac{1}{2}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">and \(\rho=0\) if \(\frac{1}{2} \lt Z^2 \lt 1\text{.}\) Since \(\rho_\text{max} \lt 1\text{,}\) the “most resonant” frequency is lower than the natural frequency. For \(Z^2 \le \frac{1}{2}\) the maximum gain is</p>
+<div class="displaymath">
+\begin{equation*}
+g(\rho_\text{max}) = \frac{1}{2Z\sqrt{1-Z^2}}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which is finite but large for \(Z\approx 0\text{.}\)</p>
+<span class="incontext"><a href="so-expforcing.html#p-470">in-context</a></span>
 </body>
 </html>

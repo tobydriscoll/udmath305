@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-02T12:14:26-04:00    *-->
+<!--*    on 2020-04-03T11:21:11-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) We recall the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.6.2: Defective matrix">Subsection 3.6.2</a> and define</p>
-<div class="displaymath">
-\begin{equation*}
-\bB = \bA + \frac{b}{2}\bI = \twomat{b/2}{1}{-c}{-b/2} = \twomat{b/2}{1}{-b^2/4}{-b/2}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">You can easily check that \(\bB^2=\bzero\text{.}\) Hence</p>
-<div class="displaymath">
-\begin{equation*}
-e^{t\bA} = e^{-(bt/2)\bI} e^{t\bB} = e^{-bt/2}(\bI + t\bB) \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">The general solution is \(e^{t\bA}\bc\text{,}\) but again we need only the first row to get the original \(x=u_1\text{:}\)</p>
-<div class="displaymath">
-\begin{equation*}
-x_h(t) = e^{-bt/2} \left[ c_1 + t\left(c_2 + c_1\frac{b}{2}\right) \right] = e^{-bt/2} \left( c_1 + C_2 t\right)\text{.}
-\end{equation*}
-</div>
-<span class="incontext"><a href="so-homogeneous.html#p-428">in-context</a></span>
+<p>As a result of the equivalence to a first-order system, we know that the general solution of <a class="xref" data-knowl="./knowl/so-eq-linearmodel.html" title="Equation 4.1.1">(4.1.1)</a> consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem: \(x(t)=x_h(t)+x_p(t)\text{.}\) Our next steps will be to translate the system results for each of these parts to the new situation.</p>
+<span class="incontext"><a href="so-convert.html#p-428">in-context</a></span>
 </body>
 </html>
