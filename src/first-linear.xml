@@ -980,7 +980,7 @@ title('Solution of a linear problem')
 			<title>Unit step function</title>
 			<notation><usage>H(t-T)</usage><description>unit step function activated at time <m>T</m></description></notation>
 			<statement><p>
-				The <idx><h>unit step function</h></idx><term>unit step function</term> or <idx><h>Heaviside function</h><see>unit step function</see></idx><term>Heaviside function</term> <m>H(t)</m> is defined to be zero for <m>t\le 0</m> and one for <m>t\gt 0</m>.
+				The <idx><h>unit step function</h></idx><term>unit step function</term> or <idx><h>Heaviside function</h><see>unit step function</see></idx><term>Heaviside function</term> <m>H(t)</m> is defined to be zero for <m>t\lt 0</m> and one for <m>t\ge 0</m>.
 			</p>
 			</statement>
 		</definition>
@@ -1502,6 +1502,46 @@ title('Solution of a linear problem')
 				</me>.
 			</p>
 		</example>
+		<p>
+			<xref ref="fl-tab-laplace"/> summarizes the transform formulas we have learned so far. When faced with finding an inverse transform, the game is to manipulate the expression algebraically until it can be matched with one or more lines in the right column.
+		</p>
+			<table xml:id="fl-tab-laplace">
+			<title>Laplace transforms (basic)</title>
+			<tabular>
+				<row>
+					<cell>Function</cell>
+					<cell>Transform</cell>
+				</row>
+			<row>
+				<cell><m>x'(t)</m></cell>
+				<cell><m>sX(s)-x(0)</m></cell>
+			</row>
+			<row>
+				<cell>1</cell>
+				<cell><m>\dfrac{1}{s}</m></cell>
+			</row>
+			<row>
+				<cell><m>e^{at}</m></cell>
+				<cell><m>\dfrac{1}{s-a}</m></cell>
+			</row>
+			<row>
+				<cell><m>e^{at}</m></cell>
+				<cell><m>\dfrac{1}{s-a}</m></cell>
+			</row>
+			<row>
+				<cell><m>H(t-T)</m></cell>
+				<cell><m>\dfrac{e^{-sT}}{s}</m></cell>
+			</row>
+			<row>
+				<cell><m>H(t-T)f(t-T)</m></cell>
+				<cell><m>e^{-sT}F(s)</m> (shift theorem)</cell>
+			</row>
+			<row>
+				<cell><m>\delta(t-T)</m></cell>
+				<cell><m>e^{-sT}</m></cell>
+			</row>
+			</tabular>
+		</table>
 	</subsection>
 
 	<subsection>
@@ -1534,8 +1574,7 @@ title('Solution of a linear problem')
 			  <p>
 				<me>
 					\frac{1}{s^2}
-				</me>
-				
+				</me>			
 			  </p>
 			</answer>
 			<solution>
@@ -1604,6 +1643,29 @@ title('Solution of a linear problem')
 					<mrow>  \amp = \frac{1}{2} \left( \frac{1}{s-1} - \frac{1}{s+1} \right) </mrow>
 					<mrow>  \amp = \frac{1}{s^2-1}.</mrow>
 				  </md>
+			  </p>
+			</solution>
+		</exercise>
+		<exercise>
+			<title>Multiplying by an exponential</title>
+			<statement>
+			<p>
+				Suppose as usual that <m>\lx[f(t)]=F(s)</m>. Use the integral definition of the Laplace transform to find a simple expression for <m>\lx[e^{at} f(t)]</m> in terms of <m>F</m>.
+			</p>
+			</statement>
+			<answer>
+			  <p>
+				<m>F(s-a)</m>
+			  </p>
+			</answer>
+			<solution>
+			  <p>
+				  It takes two applications of the transform definition to get a simple and useful fact:
+				  <md>
+					<mrow>\lx[e^{at} f(t)] \amp = \int_0^\infty e^{at} f(t) e^{-st} \, dt</mrow>
+					<mrow>  \amp = \int_0^\infty f(t) e^{-(s-a)t} \, dt  </mrow>
+					<mrow>  \amp = F(s-a)</mrow>
+				</md>
 			  </p>
 			</solution>
 		</exercise>

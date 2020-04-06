@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-03T11:21:12-04:00    *-->
+<!--*    on 2020-04-06T15:27:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,11 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's examine the steady states of a pendulum with damping,</p>
+<p>The <dfn class="terminology">Jacobian matrix</dfn> of the system \(x'=F(x,y),\, y'=G(x,y)\) is</p>
 <div class="displaymath">
-\begin{equation*}
-\ddd{\theta}{t} + \gamma \theta' + \frac{g}{L} \sin(\theta) = 0\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">with \(\gamma \gt 0\text{.}\) It transforms into the first-order system</p>
-<div class="displaymath">
-\begin{align*}
-\dd{x}{t} \amp = y \\
-\dd{y}{t} \amp = -\frac{g}{L}\sin(x) - \gamma y\text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">These define \(F(x,y)\) and \(G(x,y)\text{.}\) From here we note all the first partial derivatives:</p>
-<div class="displaymath">
-\begin{align*}
-\pp{F}{x} = 0 \amp \qquad \pp{F}{y} = 1\\
-\pp{G}{x} = - \frac{g}{L}\cos(x) \amp \qquad \pp{G}{y} = -\gamma\text{.}
-\end{align*}
+\begin{equation}
+\bJ(x,y) = \twomat{\pp{F}{x}}{\pp{F}{y}}{\pp{G}{x}}{\pp{G}{y}}\tag{5.5.1}
+\end{equation}
 </div>
 <span class="incontext"><a href="nl-linearization.html#p-541">in-context</a></span>
 </body>

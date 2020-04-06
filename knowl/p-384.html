@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-03T11:21:11-04:00    *-->
+<!--*    on 2020-04-06T15:27:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The homogeneous system \(\bx'=\bA\bx\) for a constant matrix \(\bA\) clearly has the constant function \(\bx(t)\equiv \bzero\) as a solution. We call this a <dfn class="terminology">steady-state</dfn> or <dfn class="terminology">equilibrium</dfn> solution. Not all equilibria are the same, however.</p>
-<span class="incontext"><a href="fs-phaseplane.html#p-384">in-context</a></span>
+<p>Let's consider the \(2\times 2\) case for simplicity. The general solution is</p>
+<div class="displaymath">
+\begin{equation*}
+\bx(t) = \bX(t)\bc = c_1 e^{\lambda_1 t} \bv_1 + c_2 e^{\lambda_2 t} \bv_2\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">If \(\bA\) is real, then \(\lambda_2=\overline{\lambda_1}\) and \(\bv_2=\overline{\bv_1}\text{.}\) If the initial conditions are also real, then it works out that \(c_2=\overline{c_1}\) as well, and the entire solution can be expressed by expanding each item into real and imaginary parts. This is, as we say in the biz, not fun.</p>
+<span class="incontext"><a href="fs-complex-exponentials.html#p-384">in-context</a></span>
 </body>
 </html>

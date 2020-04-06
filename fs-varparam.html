@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-03T11:21:08-04:00    *-->
+<!--*    on 2020-04-06T15:27:01-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,11 +209,11 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-varparam"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.7</span> <span class="title">Variation of parameters</span>
 </h2>
-<a href="fs-varparam.html" class="permalink">¶</a><p id="p-417">We return to the forced problem \(\bx'=\bA\bx+\bff(t)\text{.}\) We can use the same technique of variation of parameters as in <a href="fl-varparam.html" class="internal" title="Section 2.4: Variation of parameters">Section 2.4</a> and get very similar formulas.</p>
+<a href="fs-varparam.html" class="permalink">¶</a><p id="p-421">We return to the forced problem \(\bx'=\bA\bx+\bff(t)\text{.}\) We can use the same technique of variation of parameters as in <a href="fl-varparam.html" class="internal" title="Section 2.4: Variation of parameters">Section 2.4</a> and get very similar formulas.</p>
 <article class="theorem theorem-like" id="fs-thm-varparam"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Variation of parameters.</span>
 </h6>
-<p id="p-418">Let \(\bX(t)\) be a fundamental matrix of the homogeneous problem \(\bx'=\bA(t)\bx\text{.}\) Then the general solution of \(\bx'=\bA(t)\bx+\bff(t)\) is</p>
+<p id="p-422">Let \(\bX(t)\) be a fundamental matrix of the homogeneous problem \(\bx'=\bA(t)\bx\text{.}\) Then the general solution of \(\bx'=\bA(t)\bx+\bff(t)\) is</p>
 <div class="displaymath">
 \begin{equation}
 \bx(t) = \bx_h(t) + \bx_p(t) = \bX(t)\bc + \bX(t) \int \bX(t)^{-1} \bff(t) \, dt\text{.}\label{fs-eq-varparam1}\tag{3.7.1}
@@ -230,10 +230,10 @@ var js_version = 0.13;
 \begin{equation}
 \bx(t) = e^{t\bA}\bx_0 + \int_0^t e^{(t-s)\bA} \bff(s) \, ds\text{.}\label{fs-eq-varparam3}\tag{3.7.3}
 \end{equation}
-</div></article><p id="p-419">Given how tedious it is to calculate even a small fundamental matrix by hand, it's no mean feat to apply these formulas to a specific example.</p>
+</div></article><p id="p-423">Given how tedious it is to calculate even a small fundamental matrix by hand, it's no mean feat to apply these formulas to a specific example.</p>
 <article class="example example-like" id="example-60"><a data-knowl="" class="id-ref original" data-refid="hk-example-60"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.7.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-60"><article class="example example-like"><p id="p-420">In <a class="xref" data-knowl="./knowl/fs-ex-expm1.html" title="Example 3.6.6">Example 3.6.6</a> we worked out a matrix exponential:</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-60"><article class="example example-like"><p id="p-424">In <a class="xref" data-knowl="./knowl/fs-ex-expm1.html" title="Example 3.6.6">Example 3.6.6</a> we worked out a matrix exponential:</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \twomat{1}{-2}{5}{-3}
@@ -255,7 +255,7 @@ e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\si
 \end{align*}
 </div>
 <p data-braille="continuation">Some computer algebra would be advisable at this point.</p></article></div>
-<p id="p-421">The formulas of the theorem are useful mainly as a theoretical tool, a starting point for further derivations, and in specific cases where they can be greatly simplified. But <a class="xref" data-knowl="./knowl/fs-eq-varparam3.html" title="Equation 3.7.3">(3.7.3)</a> does have a reasonable interpretation. The term \(e^{t\bA}\bx_0\) is the homogeneous (unforced) response to the initial condition. The integrand \(e^{(t-s)\bA} \bff(s)\) represents the ODE evolution of an initial \(\bff(s)\) through time \(t-s\text{;}\) that is, the forcing at time \(s\) contributes an impulse of amplitude \(\bff(s)\text{.}\) Finally, the integral just adds up all of those impulse contributions from prior times.</p></section></div></main>
+<p id="p-425">The formulas of the theorem are useful mainly as a theoretical tool, a starting point for further derivations, and in specific cases where they can be greatly simplified. But <a class="xref" data-knowl="./knowl/fs-eq-varparam3.html" title="Equation 3.7.3">(3.7.3)</a> does have a reasonable interpretation. The term \(e^{t\bA}\bx_0\) is the homogeneous (unforced) response to the initial condition. The integrand \(e^{(t-s)\bA} \bff(s)\) represents the ODE evolution of an initial \(\bff(s)\) through time \(t-s\text{;}\) that is, the forcing at time \(s\) contributes an impulse of amplitude \(\bff(s)\text{.}\) Finally, the integral just adds up all of those impulse contributions from prior times.</p></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

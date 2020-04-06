@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-03T11:21:08-04:00    *-->
+<!--*    on 2020-04-06T15:27:01-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,7 +209,7 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-homogeneous"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Homogeneous problem</span>
 </h2>
-<a href="so-homogeneous.html" class="permalink">¶</a><p id="p-429">For the homogeneous equation \(x''+bx'+cx=0\) the relevant companion matrix is from <a class="xref" data-knowl="./knowl/so-eq-companion.html" title="Equation 4.1.3">(4.1.3)</a>:</p>
+<a href="so-homogeneous.html" class="permalink">¶</a><p id="p-433">For the homogeneous equation \(x''+bx'+cx=0\) the relevant companion matrix is from <a class="xref" data-knowl="./knowl/so-eq-companion.html" title="Equation 4.1.3">(4.1.3)</a>:</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \twomat{0}{1}{-c}{-b}\text{.}
@@ -222,7 +222,7 @@ var js_version = 0.13;
 \end{equation*}
 </div>
 <p data-braille="continuation">This is easily remembered in terms of the original ODE \(x'' + bx' + cx=0\text{.}\) The eigenvalues can therefore be found from the quadratic formula.</p>
-<p id="p-430">To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
+<p id="p-434">To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
 <div class="displaymath">
 \begin{equation*}
 \bu_h(t) = c_1 e^{\lambda_1 t} \twovec{1}{\lambda_1} + c_2 e^{\lambda_2 t} \twovec{1}{\lambda_2}\text{.}
@@ -248,14 +248,14 @@ x_h(t) = e^{\alpha t} \bigl[ c_1 \cos(\beta t) + c_2 \sin(\beta t) \bigr], \qqua
 </div>
 <article class="example example-like" id="example-63"><a data-knowl="" class="id-ref original" data-refid="hk-example-63"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-63"><article class="example example-like"><p id="p-431">Let's find the general solution of \(x''+5x'+6x=0\text{.}\) The characteristic polynomial is \(\lambda^2+5\lambda+6\text{,}\) which has roots \(\lambda_1=-2\text{,}\) \(\lambda_2=-3\text{.}\) Thus \(x(t)=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p></article></div>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-63"><article class="example example-like"><p id="p-435">Let's find the general solution of \(x''+5x'+6x=0\text{.}\) The characteristic polynomial is \(\lambda^2+5\lambda+6\text{,}\) which has roots \(\lambda_1=-2\text{,}\) \(\lambda_2=-3\text{.}\) Thus \(x(t)=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p></article></div>
 <article class="example example-like" id="example-64"><a data-knowl="" class="id-ref original" data-refid="hk-example-64"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-64"><article class="example example-like"><p id="p-432">The characteristic polynomial of \(x''-2x'=0\) is \(\lambda^2 - 2\lambda\text{,}\) which has roots \(\lambda_1=0\text{,}\) \(\lambda_2=2\text{.}\) Thus \(x(t)=c_1 + c_2e^{2t}\text{.}\)</p></article></div>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-64"><article class="example example-like"><p id="p-436">The characteristic polynomial of \(x''-2x'=0\) is \(\lambda^2 - 2\lambda\text{,}\) which has roots \(\lambda_1=0\text{,}\) \(\lambda_2=2\text{.}\) Thus \(x(t)=c_1 + c_2e^{2t}\text{.}\)</p></article></div>
 <article class="example example-like" id="example-65"><a data-knowl="" class="id-ref original" data-refid="hk-example-65"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-65"><article class="example example-like"><p id="p-433">To solve \(3x''+6x'+30x=0\text{,}\) we first should divide through by 3 to get the standard form. Then the characteristic polynomial is \(\lambda^2 + 2\lambda + 10\text{,}\) which has roots \(-1\pm 3i\text{.}\) So \(x(t) = e^{-t}[c_1 e^{3it} + c_2e^{-3it}]\) or, equivalently, \(x(t) = e^{-t}[c_1 \cos(3t) + c_2\sin(3t)]\text{.}\)</p></article></div>
-<p id="p-434">We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) The companion matrix is not diagonal unless \(b=c=0\text{,}\) which leaves the truly trivial problem \(x''=0\text{,}\) so we ignore that case. Otherwise the companion matrix is defective. Recalling the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.6.2: Defective matrix">Subsection 3.6.2</a>, we define</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-65"><article class="example example-like"><p id="p-437">To solve \(3x''+6x'+30x=0\text{,}\) we first should divide through by 3 to get the standard form. Then the characteristic polynomial is \(\lambda^2 + 2\lambda + 10\text{,}\) which has roots \(-1\pm 3i\text{.}\) So \(x(t) = e^{-t}[c_1 e^{3it} + c_2e^{-3it}]\) or, equivalently, \(x(t) = e^{-t}[c_1 \cos(3t) + c_2\sin(3t)]\text{.}\)</p></article></div>
+<p id="p-438">We need to look more carefully at the case of a repeated eigenvalue. In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) The companion matrix is not diagonal unless \(b=c=0\text{,}\) which leaves the truly trivial problem \(x''=0\text{,}\) so we ignore that case. Otherwise the companion matrix is defective. Recalling the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.6.2: Defective matrix">Subsection 3.6.2</a>, we define</p>
 <div class="displaymath">
 \begin{equation*}
 \bB = \bA + \frac{b}{2}\bI = \twomat{b/2}{1}{-c}{-b/2} = \twomat{b/2}{1}{-b^2/4}{-b/2}\text{.}
@@ -281,7 +281,7 @@ x_h(t) = e^{-bt/2} \left( c_1 + c_2 t\right) , \qquad \text{if } \lambda_1 = \la
 </div>
 <article class="example example-like" id="example-66"><a data-knowl="" class="id-ref original" data-refid="hk-example-66"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-66"><article class="example example-like"><p id="p-435">The characteristic polynomial of \(x''-4x'+4x=0\) is \(\lambda^2 - 4\lambda + 4\text{,}\) which has a double root at 2. Hence \(x(t)=e^{2t}(c_1+c_2 t)\text{.}\)</p></article></div></section></div></main>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-66"><article class="example example-like"><p id="p-439">The characteristic polynomial of \(x''-4x'+4x=0\) is \(\lambda^2 - 4\lambda + 4\text{,}\) which has a double root at 2. Hence \(x(t)=e^{2t}(c_1+c_2 t)\text{.}\)</p></article></div></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

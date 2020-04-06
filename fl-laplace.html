@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-03T11:21:07-04:00    *-->
+<!--*    on 2020-04-06T15:27:00-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -363,23 +363,59 @@ X(s) = \frac{e^{-sT}}{s-a}\text{.}
 \begin{equation*}
 x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}\text{.}
 \end{equation*}
-</div></article></div></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
+</div></article></div>
+<p id="p-322"><a class="xref" data-knowl="./knowl/fl-tab-laplace.html" title="Table 2.8.9: Laplace transforms (basic)">Table 2.8.9</a> summarizes the transform formulas we have learned so far. When faced with finding an inverse transform, the game is to manipulate the expression algebraically until it can be matched with one or more lines in the right column.</p>
+<figure class="table figure-like" id="fl-tab-laplace"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Function</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Transform</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(x'(t)\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(sX(s)-x(0)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\dfrac{1}{s}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(e^{at}\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\dfrac{1}{s-a}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(e^{at}\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\dfrac{1}{s-a}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(H(t-T)\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\dfrac{e^{-sT}}{s}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(H(t-T)f(t-T)\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(e^{-sT}F(s)\) (shift theorem)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\delta(t-T)\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(e^{-sT}\)</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.8.9<span class="period">.</span></span><span class="space"> </span>Laplace transforms (basic)</figcaption></figure></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.8.3</span> <span class="title">Transfer function</span>
 </h3>
-<p id="p-322">Perhaps it's clear by now that \(x'-ax=f(t)\) always leads to \(X(s) = F(s)/(s-a)\) as a particular solution. The term \(1/(s-a)\) is called the <dfn class="terminology">transfer function</dfn> of the ODE. Values of \(s\) that are roots of the denominator are known as <dfn class="terminology">poles</dfn> of the transform. They point out exponential solutions.</p>
-<p id="p-323">The impulse response is the case when \(f(t)=\delta(t)\text{,}\) so that \(F(s)=1\text{.}\) This implies the following.</p>
+<p id="p-323">Perhaps it's clear by now that \(x'-ax=f(t)\) always leads to \(X(s) = F(s)/(s-a)\) as a particular solution. The term \(1/(s-a)\) is called the <dfn class="terminology">transfer function</dfn> of the ODE. Values of \(s\) that are roots of the denominator are known as <dfn class="terminology">poles</dfn> of the transform. They point out exponential solutions.</p>
+<p id="p-324">The impulse response is the case when \(f(t)=\delta(t)\text{,}\) so that \(F(s)=1\text{.}\) This implies the following.</p>
 <article class="fact theorem-like" id="fact-17"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.8.9</span><span class="period">.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.8.10</span><span class="period">.</span>
 </h6>
-<p id="p-324">The transfer function is the Laplace transform of the impulse response.</p></article></section><section class="exercises" id="fl-exer-laplace"><h3 class="heading hide-type">
+<p id="p-325">The transfer function is the Laplace transform of the impulse response.</p></article></section><section class="exercises" id="fl-exer-laplace"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">2.8.4</span> <span class="title">Practice for Laplace transforms</span>
 </h3>
 <a href="fl-laplace.html#fl-exer-laplace" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-10"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Linear function.</span>
 </h6>
-<p id="p-325">Use the definition of the Laplace transform to find \(\lx[t]\text{.}\) (As usual, assume that \(s\) is constrained in any way needed to make the integral converge.)</p>
+<p id="p-326">Use the definition of the Laplace transform to find \(\lx[t]\text{.}\) (As usual, assume that \(s\) is constrained in any way needed to make the integral converge.)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-answer-10" id="answer-10"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-10"><div class="answer solution-like"><div class="displaymath" id="p-326">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-10" id="answer-10"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-10"><div class="answer solution-like"><div class="displaymath" id="p-327">
 \begin{equation*}
 \frac{1}{s^2}
 \end{equation*}
@@ -387,25 +423,31 @@ x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}\text{.}
 </div></article><article class="exercise exercise-like" id="exercise-11"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Second derivative.</span>
 </h6>
-<p id="p-328">Find the Laplace transform of the second derivative of a function: \(\lx[x''(t)]\text{.}\)</p>
+<p id="p-329">Find the Laplace transform of the second derivative of a function: \(\lx[x''(t)]\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><p id="p-329">It's possible to do this by applying the integral definition of the Laplace transform. However, it's a lot easier to do by twice applying the known transform formula of the first derivative.</p></div></div>
-<a data-knowl="" class="id-ref original" data-refid="hk-answer-11" id="answer-11"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-11"><div class="answer solution-like"><p id="p-330">\(\lx[x''(t)] = s^2X(s) - s x(0) - x'(0)\)</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><p id="p-330">It's possible to do this by applying the integral definition of the Laplace transform. However, it's a lot easier to do by twice applying the known transform formula of the first derivative.</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-11" id="answer-11"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-11"><div class="answer solution-like"><p id="p-331">\(\lx[x''(t)] = s^2X(s) - s x(0) - x'(0)\)</p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Hyperbolic sine.</span>
 </h6>
-<p id="p-332">Find the Laplace transform of the function \(\sinh(t)\text{.}\)</p>
+<p id="p-333">Find the Laplace transform of the function \(\sinh(t)\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><div class="displaymath" id="p-333">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><div class="displaymath" id="p-334">
 \begin{equation*}
 \sinh(t)=\frac{1}{2}(e^t-e^{-t})
 \end{equation*}
 </div></div></div>
-<a data-knowl="" class="id-ref original" data-refid="hk-answer-12" id="answer-12"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-12"><div class="answer solution-like"><div class="displaymath" id="p-334">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-12" id="answer-12"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-12"><div class="answer solution-like"><div class="displaymath" id="p-335">
 \begin{equation*}
 \frac{1}{s^2-1}
 \end{equation*}
 </div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-13"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Multiplying by an exponential.</span>
+</h6>
+<p id="p-337">Suppose as usual that \(\lx[f(t)]=F(s)\text{.}\) Use the integral definition of the Laplace transform to find a simple expression for \(\lx[e^{at} f(t)]\) in terms of \(F\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-13" id="answer-13"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-13"><div class="answer solution-like"><p id="p-338">\(F(s-a)\)</p></div></div>
 </div></article></section><section class="solutions" id="solutions-3"><h3 class="heading hide-type">
 <span class="type">Solutions</span> <span class="codenumber">2.8.5</span> <span class="title">Solutions</span>
 </h3>
@@ -421,7 +463,10 @@ x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}\text{.}
 <div class="solutions"><a class="original" data-knowl="./knowl/solution-12-hidden.html" title="Solution 2.8.4.2.1"><span class="type">Solution</span></a></div></article><article class="exercise-like"><h6 class="heading">
 <span class="codenumber">2.8.4.3<span class="period">.</span></span><span class="space"> </span><span class="title">Hyperbolic sine.</span>
 </h6>
-<div class="solutions"><a class="original" data-knowl="./knowl/solution-13-hidden.html" title="Solution 2.8.4.3.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-13-hidden.html" title="Solution 2.8.4.3.1"><span class="type">Solution</span></a></div></article><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">2.8.4.4<span class="period">.</span></span><span class="space"> </span><span class="title">Multiplying by an exponential.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-14-hidden.html" title="Solution 2.8.4.4.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

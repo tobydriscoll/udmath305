@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-03T11:21:11-04:00    *-->
+<!--*    on 2020-04-06T15:27:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Exponential forcing \(F(t)=e^{rt}\) is particulary important when \(r\) is imaginary. Say \(r=i\omega\text{.}\) Then by Euler's identity we have</p>
+<p>At \(Z=1\) the complex eigenvalues collapse to a double eigenvalue at</p>
 <div class="displaymath">
 \begin{equation*}
-F(t) = \cos(\omega t) + i\sin(\omega t)\text{.}
+\lambda_1 = \lambda_2 = -\omega_0\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">Thanks to linearity, if given a cos or sin forcing, we can solve the complex-valued problem and then take a real or imaginary part. That is, if \(x_p(t) = A e^{i\omega t}\) as above, then</p>
+<p data-braille="continuation">with general homogeneous solution</p>
 <div class="displaymath">
-\begin{align*}
-[\Re x_p]'' + 2 Z \omega_0 [\Re x_p]' + \omega_0^2 [\Re x_p] \amp = \omega_0^2 \cos(\omega t), \\
-[\Im x_p]'' + 2 Z \omega_0 [\Im x_p]' + \omega_0^2 [\Im x_p]  \amp = \omega_0^2 \sin(\omega t). 
-\end{align*}
+\begin{equation*}
+x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t)\text{.}
+\end{equation*}
 </div>
-<span class="incontext"><a href="so-expforcing.html#p-460">in-context</a></span>
+<p data-braille="continuation">There is no longer any oscillation present, and we have a <dfn class="terminology">critically damped oscillator</dfn>. The linear growth of \(c_2 t\) doesn't make much difference against the exponential decay.</p>
+<span class="incontext"><a href="so-oscillators.html#p-460">in-context</a></span>
 </body>
 </html>
