@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-06T15:27:01-04:00    *-->
+<!--*    on 2020-04-08T19:57:39-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,8 +209,8 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-complex-exponentials"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Complex eigenvalues</span>
 </h2>
-<a href="fs-complex-exponentials.html" class="permalink">¶</a><section class="introduction" id="introduction-12"><p id="p-371">How are we going to make sense of \(e^{\lambda t}\bv\) when \(\lambda\) is not a real number? This question leads to some really profound and useful mathematics.</p>
-<p id="p-372">Let's start with the simplest, scalar case, \(e^{it}\text{.}\) This should be the solution of \(x'=ix\text{,}\) \(x(0)=1\text{.}\) If we assume that \(x(t)\) is complex-valued, let us write it as</p>
+<a href="fs-complex-exponentials.html" class="permalink">¶</a><section class="introduction" id="introduction-12"><p id="p-378">How are we going to make sense of \(e^{\lambda t}\bv\) when \(\lambda\) is not a real number? This question leads to some really profound and useful mathematics.</p>
+<p id="p-379">Let's start with the simplest, scalar case, \(e^{it}\text{.}\) This should be the solution of \(x'=ix\text{,}\) \(x(0)=1\text{.}\) If we assume that \(x(t)\) is complex-valued, let us write it as</p>
 <div class="displaymath">
 \begin{equation*}
 x(t) = u(t) + i v(t)\text{,}
@@ -232,11 +232,11 @@ u' = -v, \quad v'=u\text{,}
 <article class="fact theorem-like" id="fact-19"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Euler's identity.</span>
 </h6>
-<div class="displaymath" id="p-373">
+<div class="displaymath" id="p-380">
 \begin{equation}
 e^{it} = \cos(t) + i\sin(t)\text{.}\label{fs-eq-euler}\tag{3.4.1}
 \end{equation}
-</div></article><p id="p-374">This is one of the big and fundamental surprises of applied math: exponential functions, when you go in an imaginary direction, become sin/cos oscillations. We can illustrate this with MATLAB, which handles complex values routinely. Note the use of <code class="code-inline tex2jax_ignore">1i</code> to get the imaginary unit.</p>
+</div></article><p id="p-381">This is one of the big and fundamental surprises of applied math: exponential functions, when you go in an imaginary direction, become sin/cos oscillations. We can illustrate this with MATLAB, which handles complex values routinely. Note the use of <code class="code-inline tex2jax_ignore">1i</code> to get the imaginary unit.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="exp_complex"><pre class="prettyprint lang-matlab">c = @(t) real(exp(1i*t));
 s = @(t) imag(exp(1i*t));
@@ -250,14 +250,14 @@ legend('Re part','Im part')
 </div></div></section><section class="subsection" id="fs-complex-polar"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">Polar form of complex numbers</span>
 </h3>
-<a href="fs-complex-exponentials.html#fs-complex-polar" class="permalink">¶</a><p id="p-375">Euler's identity <a class="xref" data-knowl="./knowl/fs-eq-euler.html" title="Equation 3.4.1">(3.4.1)</a> gives us an alternative to the rectangular decomposition \(z=u+iv\text{.}\) If \(r\) is a positive number, and we write</p>
+<a href="fs-complex-exponentials.html#fs-complex-polar" class="permalink">¶</a><p id="p-382">Euler's identity <a class="xref" data-knowl="./knowl/fs-eq-euler.html" title="Equation 3.4.1">(3.4.1)</a> gives us an alternative to the rectangular decomposition \(z=u+iv\text{.}\) If \(r\) is a positive number, and we write</p>
 <div class="displaymath">
 \begin{equation*}
 re^{i\theta} = (r\cos \theta)+i(r\sin \theta)\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">then it is clear that \((r,\theta)\) represent the polar coordinates of the point. Furthermore, the polar \(r\) is just the modulus \(|z|\text{.}\) (The angle \(\theta\) might variously be called the <dfn class="terminology">argument</dfn> or <dfn class="terminology">phase</dfn> of \(z\text{.}\))</p>
-<p id="p-376">In rectangular form, addition and subtraction of complex numbers is easy and naturally interpreted as vector addition in the plane. In polar form, it's multiplication and division that become easy:</p>
+<p id="p-383">In rectangular form, addition and subtraction of complex numbers is easy and naturally interpreted as vector addition in the plane. In polar form, it's multiplication and division that become easy:</p>
 <div class="displaymath">
 \begin{equation*}
 (re^{i\theta})(se^{i\phi}) = r s e^{i(\theta+\phi)},  \qquad   \frac{re^{i\theta}}{se^{i\phi}} = \frac{r}{s}e^{i(\theta-\phi)}\text{.}
@@ -266,7 +266,7 @@ re^{i\theta} = (r\cos \theta)+i(r\sin \theta)\text{,}
 <p data-braille="continuation">Geometrically, multiplication by a complex number scales the magnitude and then rotates around the origin.</p></section><section class="subsection" id="ls-cx-complexexp"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.2</span> <span class="title">Complex exponentials</span>
 </h3>
-<a href="fs-complex-exponentials.html#ls-cx-complexexp" class="permalink">¶</a><p id="p-377">There is a key connection between the rectangular form of a complex number and the polar form of its exponential:</p>
+<a href="fs-complex-exponentials.html#ls-cx-complexexp" class="permalink">¶</a><p id="p-384">There is a key connection between the rectangular form of a complex number and the polar form of its exponential:</p>
 <div class="displaymath">
 \begin{equation}
 e^{(a+i \omega)t} =  e^{at} e^{i \omega t} = e^{at} (\cos \omega t + i \sin \omega t)\text{.}\label{fs-eq-complex-exp}\tag{3.4.2}
@@ -275,7 +275,7 @@ e^{(a+i \omega)t} =  e^{at} e^{i \omega t} = e^{at} (\cos \omega t + i \sin \ome
 <p data-braille="continuation">The first term in the product is the familiar real \(e^{at}\text{,}\) which is an amplitude that exponentially grows or decays in time (or stays fixed if \(a=0\)). The other term has modulus one and can be interpreted as a parameterization of the unit circle in the complex plane with constant angular velocity \(\omega\text{.}\)</p>
 <article class="example example-like" id="example-51"><a data-knowl="" class="id-ref original" data-refid="hk-example-51"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-51"><article class="example example-like"><p id="p-378">Here are some looks at the function \(e^{\lambda t}\) for different complex values of \(\lambda\text{.}\) First, when \(\lambda\) is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of the function give cosine and sine, respectively.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-51"><article class="example example-like"><p id="p-385">Here are some looks at the function \(e^{\lambda t}\) for different complex values of \(\lambda\text{.}\) First, when \(\lambda\) is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of the function give cosine and sine, respectively.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="fs_cexp_neutral"><pre class="prettyprint lang-matlab">a = 0;  om = 1;
 t = linspace(0, 25, 500);
@@ -296,7 +296,7 @@ set(gca,'dataaspect',[6,1,1])
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.4.4<span class="period">.</span></span><span class="space"> </span>Traveling around the unit circle.</figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fs_cexp_neutral.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-379">If \(\Re(\lambda) \gt 0\text{,}\) the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of \(\lambda\) controls the frequency or "tightness" of the spiral.</p>
+<p id="p-386">If \(\Re(\lambda) \gt 0\text{,}\) the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of \(\lambda\) controls the frequency or "tightness" of the spiral.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="fs_cexp_grow"><pre class="prettyprint lang-matlab">a = 0.02;  om = 2;
 t = linspace(0, 25, 500);
@@ -317,7 +317,7 @@ set(gca,'dataaspect',[6,1,1])
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">3.4.5<span class="period">.</span></span><span class="space"> </span>A growing spiral.</figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fs_cexp_grow.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-380">Finally, if \(\Re(\lambda) \lt 0\text{,}\) the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
+<p id="p-387">Finally, if \(\Re(\lambda) \lt 0\text{,}\) the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="fs_cexp_decay"><pre class="prettyprint lang-matlab">a = -0.1;  om = 0.8;
 t = linspace(0, 25, 500);
@@ -341,18 +341,18 @@ set(gca,'dataaspect',[6,1,1])
 <article class="fact theorem-like" id="fact-20"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">3.4.7</span><span class="period">.</span>
 </h6>
-<p id="p-381">In the function \(e^{\lambda t}\text{,}\) the real part of \(\lambda\) determines exponential growth or decay of amplitude, and the imaginary part of \(\lambda\) determines constant frequency of oscillation.</p></article><p id="p-382">Both purely real exponentials and purely harmonic sines and cosines are just special cases of the complex exponential!</p></section><section class="subsection" id="fs-cx-real"><h3 class="heading hide-type">
+<p id="p-388">In the function \(e^{\lambda t}\text{,}\) the real part of \(\lambda\) determines exponential growth or decay of amplitude, and the imaginary part of \(\lambda\) determines constant frequency of oscillation.</p></article><p id="p-389">Both purely real exponentials and purely harmonic sines and cosines are just special cases of the complex exponential!</p></section><section class="subsection" id="fs-cx-real"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.3</span> <span class="title">Converting to real solutions</span>
 </h3>
-<a href="fs-complex-exponentials.html#fs-cx-real" class="permalink">¶</a><p id="p-383">An applied mathematician is perfectly happy with a solution using complex numbers, even if it represents something that is actually real. But an engineer might get fired for not explaining things in real form to the sales team. (And let's be honest, for not using very small words.)</p>
-<p id="p-384">Let's consider the \(2\times 2\) case for simplicity. The general solution is</p>
+<a href="fs-complex-exponentials.html#fs-cx-real" class="permalink">¶</a><p id="p-390">An applied mathematician is perfectly happy with a solution using complex numbers, even if it represents something that is actually real. But an engineer might get fired for not explaining things in real form to the sales team. (And let's be honest, for not using very small words.)</p>
+<p id="p-391">Let's consider the \(2\times 2\) case for simplicity. The general solution is</p>
 <div class="displaymath">
 \begin{equation*}
 \bx(t) = \bX(t)\bc = c_1 e^{\lambda_1 t} \bv_1 + c_2 e^{\lambda_2 t} \bv_2\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">If \(\bA\) is real, then \(\lambda_2=\overline{\lambda_1}\) and \(\bv_2=\overline{\bv_1}\text{.}\) If the initial conditions are also real, then it works out that \(c_2=\overline{c_1}\) as well, and the entire solution can be expressed by expanding each item into real and imaginary parts. This is, as we say in the biz, not fun.</p>
-<p id="p-385">The pain is lessened if we use a different form of the general solution by writing out the real and imaginary parts of \(e^{\lambda_1 t} \bv_1\text{.}\) If \(\lambda_1=a+i\omega\text{,}\) then write</p>
+<p id="p-392">The pain is lessened if we use a different form of the general solution by writing out the real and imaginary parts of \(e^{\lambda_1 t} \bv_1\text{.}\) If \(\lambda_1=a+i\omega\text{,}\) then write</p>
 <div class="displaymath">
 \begin{equation*}
 e^{\lambda_1 t} \bv_1 = e^{at} \bigl[\cos(\omega t)+i\sin(\omega t) \bigr] \bv_1 =  e^{at} \bigl[ u(t) + i w(t) \bigr]\text{.}
@@ -361,7 +361,7 @@ e^{\lambda_1 t} \bv_1 = e^{at} \bigl[\cos(\omega t)+i\sin(\omega t) \bigr] \bv_1
 <p data-braille="continuation">Then an alternative expression for the general solution is \(\bx(t)=b_1 e^{at} u(t) + b_2 e^{at} w(t)\text{,}\) where everything in that formula is now real-valued.</p>
 <article class="example example-like" id="example-52"><a data-knowl="" class="id-ref original" data-refid="hk-example-52"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.8</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-52"><article class="example example-like"><p id="p-386">We earlier found the eigenvalues and eigenvectors of</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-52"><article class="example example-like"><p id="p-393">We earlier found the eigenvalues and eigenvectors of</p>
 <div class="displaymath">
 \begin{equation*}
 \bA = \begin{bmatrix} 1 \amp -1 \\ 5 \amp -3 \end{bmatrix}
@@ -380,7 +380,7 @@ e^{\lambda_1 t} \bv_1 = e^{at} \bigl[\cos(\omega t)+i\sin(\omega t) \bigr] \bv_1
 \end{equation*}
 </div>
 <p data-braille="continuation">It's implied that \(c_{1,2}\) are complex constants.</p>
-<p id="p-387">To find an alternative real form, we write</p>
+<p id="p-394">To find an alternative real form, we write</p>
 <div class="displaymath">
 \begin{align*}
 e^{(-1+i)t} \twovec{1}{2-i} \amp = e^{-t} [\cos(t)+i\sin(t)] \left( \twovec{1}{2} + i\twovec{0}{-1} \right)\\

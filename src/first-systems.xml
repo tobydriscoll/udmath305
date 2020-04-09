@@ -53,6 +53,46 @@
 	<p>
 		Once again, then, we look first at the homogeneous system (no forcing term), and then for particular solutions of the nonhomogeneous problem.
 	</p>
+	<exercises xml:id="fs-exer-linsysmodels">
+		<title>Practice for linear systems of ODEs</title>
+		<exercise>
+			<title>Heating a house</title>
+			<statement>
+			  <p>
+				Here is an (overly) simple model for heating in a house. Let <m>b(t)</m> be the temperature of the basement, <m>m(t)</m> be the temperature of the main living area, and <m>a(t)</m> be the temperature of the attic. Suppose the ground is at a constant 10 degrees C. We use a Newtonian model to describe how the temperature of the basement evolves due to interactions with the earth and the main floor:
+				<me>
+					\frac{db}{dt} = -k_b (b - 10) - k_{mb} (b-m). 
+				</me>
+				Similarly, the attic interacts with the air, which we will hold at 2 degrees, and the main floor:
+				<me>
+					\frac{da}{dt} = -k_a (a - 2) - k_{ma} (a-m). 
+				</me>
+				Finally, suppose the main area interacts mostly with the other levels and experiences input from a heater:
+				<me>
+					\frac{dm}{dt} = -k_{mb} (m - b) - k_{ma} (m - a) + h(t).
+				</me>
+				Using the vector variable <m>\bx = \bigl[b,m,a\bigr]</m>, write the entire system in the form <m>\bx' = \bA \bx + \bff(t)</m>. That is, identify what <m>\bA</m> and <m>\bff(t)</m> must be based on the above equations. 
+			  </p>
+			  <p>
+				  Now suppose that the heater is shut off and the three temperatures settle into a steady state (i.e., stop changing in time). Write out an algebraic linear system of equations for the temperatures. 
+			  </p>
+			</statement>
+			<answer>
+			  <p>
+				<me>
+					\frac{d}{dt} \threevec{b}{m}{a} = 
+					\begin{bmatrix} -k_b-k_{mb} \amp k_{mb} \amp 0 \\ k_{mb} \amp -k_{mb}-k_{ma} \amp k_{ma} \\  0 \amp k_{ma} \amp - k_{ma} \end{bmatrix}\threevec{b}{m}{a} 
+					+ \threevec{10k_b}{h(t)}{2k_a}
+				</me>
+				<me>
+					\begin{bmatrix} -k_b-k_{mb} \amp k_{mb} \amp 0 \\ k_{mb} \amp -k_{mb}-k_{ma} \amp k_{ma} \\  0 \amp k_{ma} \amp - k_{ma} \end{bmatrix}\threevec{b}{m}{a} 
+					= - \threevec{10k_b}{0}{2k_a}
+				</me>
+			  </p>
+			</answer>
+		</exercise>
+	</exercises>
+	<solutions divisional="solution"></solutions>
 </section>
 
 <section xml:id="fs-homogeneous">
@@ -116,6 +156,39 @@
 			Suppose that <m>\bA(t)</m> is continuous on an open interval <m>I</m>, and let <m>\bx_1,\ldots,\bx_n</m> be solutions of <m>\bx'=\bA\bx</m> whose Wronskian is <m>W(t)</m>. Then if <m>W</m> is nonzero at any time in <m>I</m>, it is nonzero at all times in <m>I</m>. 
 		</p></statement>
 	</theorem>
+	<exercises xml:id="fs-exer-homog">
+		<title>Practice for homogeneous ODE systems</title>
+		<exercise>
+			<title>Wronskian of exponentials</title>
+			<statement>
+				<p>
+					Suppose <m>\bx_1(t)=e^{\lambda_1 t}\bv_1</m> and <m>\bx_2(t)=e^{\lambda_2 t}\bv_2</m>, where <m>\bv_1</m> and <m>\bv_2</m> are linearly independent vectors in two dimensions. Find the Wronskian of <m>\bx_1,\bx_2</m> at any time, and explain why it is nonzero. 
+				</p>
+			</statement>
+			<hint>
+				<p>
+					You don't know the elements of <m>\bv_1,\bv_2</m>, so give them arbitrary names. The Wronskian has a common factor that you can pull out. 
+				</p>
+			</hint>
+			<answer>
+				<p>
+					<m>W(t) = e^{t(\lambda_1+\lambda_2)} \det\Bigl(\bigl[\bv_1\: \bv_2\bigr]\Bigr)</m>
+				</p>
+			</answer>
+			<solution>
+				<p>
+					Say <m>\bv_1=[a,\,c]</m> and <m>\bv_2=[b,\,d]</m>. Then 
+					<md>
+						<mrow>W(t) \amp = \det\Bigl( \bigl[ \bx_1(t) \: \bx_2(t)  \bigr] \Bigr)</mrow>
+						<mrow>  \amp = \twodet{ae^{\lambda_1 t}}{be^{\lambda_2 t}}{ce^{\lambda_1 t}}{de^{\lambda_2 t}}</mrow>
+						<mrow>  \amp = e^{t(\lambda_1+\lambda_2)} (ad-bc) =  e^{t(\lambda_1+\lambda_2)} \det\Bigl(\bigl[\bv_1\: \bv_2\bigr]\Bigr) </mrow>
+					  </md>
+					  The exponential function is never zero, and, because of the independence of <m>\bv_1,\bv_2</m>, <xref ref="la-thm-FTLA"/> guarantees that the last determinant above is nonzero as well.
+				</p>
+			</solution>
+		</exercise>
+	</exercises>
+	<solutions divisional="solution"></solutions>
 </section>
 
 <section xml:id="fs-constcoeff">
@@ -815,7 +888,7 @@
 			<p>
 				Suppose 
 				<me>
-					\bA = \twomat{1}{-2}{5}{-3}
+					\bA = \twomat{1}{-1}{5}{-3}
 				</me>, 
 				and we are given or work out that 
 				<me>

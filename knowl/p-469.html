@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-06T15:27:04-04:00    *-->
+<!--*    on 2020-04-08T19:58:19-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>What is the meaning if \(\omega = \omega_0\text{?}\) This is exactly when \(i\omega\) is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients will actually fail like in <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a>. But there is a sneaky shortcut. For a certain choice of \(c_1\) and \(c_2\text{,}\) we get a different particular solution</p>
+<p>We next want to examine <a class="xref" data-knowl="./knowl/so-eq-unified.html" title="Equation 4.4.1">(4.4.1)</a> when the forcing function is an exponential:</p>
 <div class="displaymath">
-\begin{equation*}
-\hat{x}_p(t) = \frac{\omega_0^2}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)\text{,}
-\end{equation*}
+\begin{equation}
+x'' + 2 Z \omega_0 x' + \omega_0^2 x = \omega_0^2 e^{rt}\text{.}\tag{4.5.1}
+\end{equation}
 </div>
-<p data-braille="continuation">which has an indeterminate form in the limit \(\omega \to \omega_0\text{,}\) allowing us to use L'Hopital's Rule:</p>
-<div class="displaymath">
-\begin{equation*}
-\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0} \omega_0^2 \frac{it e^{i\omega t}}{-2\omega} = -\frac{i\omega_0^2}{2} t e^{i\omega_0 t}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">(The derivation is subtle because the derivatives here are with respect to the limited variable \(\omega\) and not \(t\text{.}\)) This leads to the general solution</p>
+<p data-braille="continuation">We're interested in the undamped and underdamped cases, \(0\le Z \lt 1\text{.}\)</p>
 <span class="incontext"><a href="so-expforcing.html#p-469">in-context</a></span>
 </body>
 </html>

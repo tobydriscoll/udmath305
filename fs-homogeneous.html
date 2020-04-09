@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-06T15:27:00-04:00    *-->
+<!--*    on 2020-04-08T19:57:39-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,14 +209,14 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="fs-homogeneous"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Homogeneous systems</span>
 </h2>
-<a href="fs-homogeneous.html" class="permalink">¶</a><p id="p-349">Given</p>
+<a href="fs-homogeneous.html" class="permalink">¶</a><p id="p-352">Given</p>
 <div class="displaymath">
 \begin{equation*}
 \bx' = \bA(t)\bx, 
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(\bx\in\Rn{n}\) and \(\bA\in\Rmn{n}{n}\text{,}\) we can easily show in the usual way that any linear combination of solutions is also a solution. Thus our real task is to find a basis for the solution space.</p>
-<aside class="aside aside-like" id="aside-17"><p id="p-350">You need to read and write carefully when in vector-land. In particular, note that \(\bx_1\) refers to the first vector of a collection, while \(x_1\) means the first component of a vector \(\bx\text{.}\)</p></aside><p id="p-351">Suppose \(\bx_1,\ldots,\bx_m\) are homogeneous solutions of the ODE, and we use a linear combination of them to satisfy an initial condition \(\bx(t_0)=\bx_0\text{:}\)</p>
+<aside class="aside aside-like" id="aside-17"><p id="p-353">You need to read and write carefully when in vector-land. In particular, note that \(\bx_1\) refers to the first vector of a collection, while \(x_1\) means the first component of a vector \(\bx\text{.}\)</p></aside><p id="p-354">Suppose \(\bx_1,\ldots,\bx_m\) are homogeneous solutions of the ODE, and we use a linear combination of them to satisfy an initial condition \(\bx(t_0)=\bx_0\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 c_1 \bx_1 + \cdots + c_m \bx_m = \bx_0\text{.}
@@ -238,20 +238,39 @@ c_1 \bx_1 + \cdots + c_m \bx_m = \bx_0\text{.}
 <article class="definition definition-like" id="fs-df-fundamental"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental matrix.</span>
 </h6>
-<p id="p-352">The \(n\times n\) matrix \(\bX(t)\) is a <dfn class="terminology">fundamental matrix</dfn> of the homogeneous system \(\bx' = \bA(t)\bx\) if its columns satisfy \(\bx_j'=\bA\bx_j\) at all times and they form a basis at time \(t=t_0\text{.}\)</p></article><aside class="aside aside-like" id="aside-18"><p id="p-353">The Kapitula book uses \(\Phi(t)\) as the notation for a fundamental matrix. Pot-ay-to, pot-ah-to.</p></aside><p id="p-354">Because the nonsingularity of a fundamental matrix is one of its key properties, its determinant plays an important role.</p>
+<p id="p-355">The \(n\times n\) matrix \(\bX(t)\) is a <dfn class="terminology">fundamental matrix</dfn> of the homogeneous system \(\bx' = \bA(t)\bx\) if its columns satisfy \(\bx_j'=\bA\bx_j\) at all times and they form a basis at time \(t=t_0\text{.}\)</p></article><aside class="aside aside-like" id="aside-18"><p id="p-356">The Kapitula book uses \(\Phi(t)\) as the notation for a fundamental matrix. Pot-ay-to, pot-ah-to.</p></aside><p id="p-357">Because the nonsingularity of a fundamental matrix is one of its key properties, its determinant plays an important role.</p>
 <article class="definition definition-like" id="ls-df-wronskian"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Wronskian.</span>
 </h6>
-<p id="p-355">The <dfn class="terminology">Wronskian</dfn> of a collection of homogeneous solutions \(\bx_1,\ldots,\bx_n\) is</p>
+<p id="p-358">The <dfn class="terminology">Wronskian</dfn> of a collection of homogeneous solutions \(\bx_1,\ldots,\bx_n\) is</p>
 <div class="displaymath">
 \begin{equation*}
 W(t) = \det\Bigl( \bigl[ \bx_1(t) \: \cdots \: \bx_n(t)  \bigr] \Bigr)\text{.}
 \end{equation*}
-</div></article><p id="p-356">Thus, solutions with a nonzero Wronskian are the columns of a fundamental matrix. There is a remarkable result known as <em class="emphasis">Abel's formula</em> that greatly simplifies this issue.</p>
+</div></article><p id="p-359">Thus, solutions with a nonzero Wronskian are the columns of a fundamental matrix. There is a remarkable result known as <em class="emphasis">Abel's formula</em> that greatly simplifies this issue.</p>
 <article class="theorem theorem-like" id="fs-thm-abel"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Homogeneous solution independence.</span>
 </h6>
-<p id="p-357">Suppose that \(\bA(t)\) is continuous on an open interval \(I\text{,}\) and let \(\bx_1,\ldots,\bx_n\) be solutions of \(\bx'=\bA\bx\) whose Wronskian is \(W(t)\text{.}\) Then if \(W\) is nonzero at any time in \(I\text{,}\) it is nonzero at all times in \(I\text{.}\)</p></article></section></div></main>
+<p id="p-360">Suppose that \(\bA(t)\) is continuous on an open interval \(I\text{,}\) and let \(\bx_1,\ldots,\bx_n\) be solutions of \(\bx'=\bA\bx\) whose Wronskian is \(W(t)\text{.}\) Then if \(W\) is nonzero at any time in \(I\text{,}\) it is nonzero at all times in \(I\text{.}\)</p></article><section class="exercises" id="fs-exer-homog"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.2.1</span> <span class="title">Practice for homogeneous ODE systems</span>
+</h3>
+<a href="fs-homogeneous.html#fs-exer-homog" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-15"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Wronskian of exponentials.</span>
+</h6>
+<p id="p-361">Suppose \(\bx_1(t)=e^{\lambda_1 t}\bv_1\) and \(\bx_2(t)=e^{\lambda_2 t}\bv_2\text{,}\) where \(\bv_1\) and \(\bv_2\) are linearly independent vectors in two dimensions. Find the Wronskian of \(\bx_1,\bx_2\) at any time, and explain why it is nonzero.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-4" id="hint-4"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like"><p id="p-362">You don't know the elements of \(\bv_1,\bv_2\text{,}\) so give them arbitrary names. The Wronskian has a common factor that you can pull out.</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-15" id="answer-15"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-15"><div class="answer solution-like"><p id="p-363">\(W(t) = e^{t(\lambda_1+\lambda_2)} \det\Bigl(\bigl[\bv_1\: \bv_2\bigr]\Bigr)\)</p></div></div>
+</div></article></section><section class="solutions" id="solutions-5"><h3 class="heading hide-type">
+<span class="type">Solutions</span> <span class="codenumber">3.2.2</span> <span class="title">Solutions</span>
+</h3>
+<section class="exercises"><h4 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.2.1</span> <span class="title">Practice for homogeneous ODE systems</span>
+</h4>
+<a href="fs-homogeneous.html#fs-exer-homog" class="permalink">¶</a><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">3.2.1.1<span class="period">.</span></span><span class="space"> </span><span class="title">Wronskian of exponentials.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-15-hidden.html" title="Solution 3.2.1.1.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

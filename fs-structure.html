@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-06T15:27:00-04:00    *-->
+<!--*    on 2020-04-08T19:57:39-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -242,7 +242,52 @@ var js_version = 0.13;
 <article class="theorem theorem-like" id="fs-general"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">General solutions (first-order linear systems).</span>
 </h6>
-<p id="p-347">Every solution of \(\bx'=\bA(t)\bx+\bff(t)\) can be written in the form \(\bx=\bx_h+\bx_p\text{,}\) where \(\bx_h\) is the general solution of \(\bx'=\bA(t)\bx\) and \(\bx_p\) is any solution of \(\bx'=\bA(t)\bx+\bff(t)\text{.}\)</p></article><p id="p-348">Once again, then, we look first at the homogeneous system (no forcing term), and then for particular solutions of the nonhomogeneous problem.</p></section></div></main>
+<p id="p-347">Every solution of \(\bx'=\bA(t)\bx+\bff(t)\) can be written in the form \(\bx=\bx_h+\bx_p\text{,}\) where \(\bx_h\) is the general solution of \(\bx'=\bA(t)\bx\) and \(\bx_p\) is any solution of \(\bx'=\bA(t)\bx+\bff(t)\text{.}\)</p></article><p id="p-348">Once again, then, we look first at the homogeneous system (no forcing term), and then for particular solutions of the nonhomogeneous problem.</p>
+<section class="exercises" id="fs-exer-linsysmodels"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.1.1</span> <span class="title">Practice for linear systems of ODEs</span>
+</h3>
+<a href="fs-structure.html#fs-exer-linsysmodels" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-14"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Heating a house.</span>
+</h6>
+<p id="p-349">Here is an (overly) simple model for heating in a house. Let \(b(t)\) be the temperature of the basement, \(m(t)\) be the temperature of the main living area, and \(a(t)\) be the temperature of the attic. Suppose the ground is at a constant 10 degrees C. We use a Newtonian model to describe how the temperature of the basement evolves due to interactions with the earth and the main floor:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{db}{dt} = -k_b (b - 10) - k_{mb} (b-m). 
+\end{equation*}
+</div>
+<p data-braille="continuation">Similarly, the attic interacts with the air, which we will hold at 2 degrees, and the main floor:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{da}{dt} = -k_a (a - 2) - k_{ma} (a-m). 
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally, suppose the main area interacts mostly with the other levels and experiences input from a heater:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dm}{dt} = -k_{mb} (m - b) - k_{ma} (m - a) + h(t).
+\end{equation*}
+</div>
+<p data-braille="continuation">Using the vector variable \(\bx = \bigl[b,m,a\bigr]\text{,}\) write the entire system in the form \(\bx' = \bA \bx + \bff(t)\text{.}\) That is, identify what \(\bA\) and \(\bff(t)\) must be based on the above equations.</p>
+<p id="p-350">Now suppose that the heater is shut off and the three temperatures settle into a steady state (i.e., stop changing in time). Write out an algebraic linear system of equations for the temperatures.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-14" id="answer-14"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-14"><div class="answer solution-like">
+<div class="displaymath" id="p-351">
+\begin{equation*}
+\frac{d}{dt} \threevec{b}{m}{a} = 
+\begin{bmatrix} -k_b-k_{mb} \amp k_{mb} \amp 0 \\ k_{mb} \amp -k_{mb}-k_{ma} \amp k_{ma} \\  0 \amp k_{ma} \amp - k_{ma} \end{bmatrix}\threevec{b}{m}{a} 
++ \threevec{10k_b}{h(t)}{2k_a}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} -k_b-k_{mb} \amp k_{mb} \amp 0 \\ k_{mb} \amp -k_{mb}-k_{ma} \amp k_{ma} \\  0 \amp k_{ma} \amp - k_{ma} \end{bmatrix}\threevec{b}{m}{a} 
+= - \threevec{10k_b}{0}{2k_a}
+\end{equation*}
+</div>
+</div></div>
+</div></article></section><section class="solutions" id="solutions-4"><h3 class="heading hide-type">
+<span class="type">Solutions</span> <span class="codenumber">3.1.2</span> <span class="title">Solutions</span>
+</h3></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

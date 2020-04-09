@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-06T15:27:04-04:00    *-->
+<!--*    on 2020-04-08T19:58:19-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,30 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To find the eigenvectors we look for the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{,}\) if the eigenvalues are distinct. Thus the general homogeneous solution is</p>
+<p>Our first observation is that this problem can always be converted to a first-order problem in two dimensions. Define a vector \(\bu\) by \(u_1=x\text{,}\) \(u_2=x'\text{.}\) By definition, \(u_1'=u_2\text{.}\) Since \(u_2'=x''=f(t,x,x')\text{,}\) we get the system</p>
 <div class="displaymath">
-\begin{equation*}
-\bu_h(t) = c_1 e^{\lambda_1 t} \twovec{1}{\lambda_1} + c_2 e^{\lambda_2 t} \twovec{1}{\lambda_2}\text{.}
-\end{equation*}
+\begin{align*}
+u_1' \amp =  u_2\\
+u_2' \amp =  f(t,u_1,u_2).
+\end{align*}
 </div>
-<p data-braille="continuation">In terms of the original variable \(x=u_1\text{,}\) this is simply</p>
-<div class="displaymath">
-\begin{equation}
-x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \qquad \text{if } \lambda_1\neq\lambda_2\text{.}\tag{4.2.1}
-\end{equation}
-</div>
-<p data-braille="continuation">If the eigenvalues are complex and written as \(\alpha \pm i \beta\text{,}\) we might want an alternative real-only form. Starting with</p>
-<div class="displaymath">
-\begin{equation*}
-e^{(\alpha + i\beta)t} = e^{\alpha t} [\cos(\beta t) + i \sin(\beta t)],
-\end{equation*}
-</div>
-<p data-braille="continuation">we can take real and imaginary parts to get independent solutions. Thus</p>
-<div class="displaymath">
-\begin{equation}
-x_h(t) = e^{\alpha t} \bigl[ c_1 \cos(\beta t) + c_2 \sin(\beta t) \bigr], \qquad \text{if } \lambda=\alpha \pm i\beta\text{.}\tag{4.2.2}
-\end{equation}
-</div>
-<span class="incontext"><a href="so-homogeneous.html#p-434">in-context</a></span>
+<p data-braille="continuation">This is a first-order system \(\bu'=\mathbf{g}(t,\bu)\) of two scalar equations for the two components.</p>
+<span class="incontext"><a href="so-convert.html#p-434">in-context</a></span>
 </body>
 </html>

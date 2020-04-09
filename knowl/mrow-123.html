@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-06T15:27:04-04:00    *-->
+<!--*    on 2020-04-08T19:58:19-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,11 @@
 </head>
 <body>
 <div class="displaymath">
-\begin{gather*}
-f * ( g * h ) = ( f * g) * h \\
-f * (g+h)=(f * g)+(f*h)\\
-f * 0=0
-\end{gather*}
+\begin{align*}
+[g*f](t) \amp = \int_0^t f(t-\tau)g(\tau)\, d\tau\\
+\amp = \int_t^0 f(u)g(t-u)\, (-du)  \\
+\amp = \int_0^t g(t-u)f(u)\, du = [f*g](t)
+\end{align*}
 </div>
 <span class="incontext"><a href="so-convolutions.html#mjx-eqn-mrow-123">in-context</a></span>
 </body>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-06T15:27:04-04:00    *-->
+<!--*    on 2020-04-08T19:58:18-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,38 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(\bX(t)\) be a fundamental matrix of the homogeneous problem \(\bx'=\bA(t)\bx\text{.}\) Then the general solution of \(\bx'=\bA(t)\bx+\bff(t)\) is</p>
+<p>Suppose</p>
 <div class="displaymath">
-\begin{equation}
-\bx(t) = \bx_h(t) + \bx_p(t) = \bX(t)\bc + \bX(t) \int \bX(t)^{-1} \bff(t) \, dt\text{.}\tag{3.7.1}
-\end{equation}
+\begin{equation*}
+\bA = \twomat{1}{-1}{5}{-3}\text{,}
+\end{equation*}
 </div>
-<p data-braille="continuation">The solution with initial condition \(\bx(0)=\bx_0\) is</p>
+<p data-braille="continuation">and we are given or work out that</p>
 <div class="displaymath">
-\begin{equation}
-\bx(t) = \bX(t)\bX(0)^{-1}\bx_0 + \bX(t) \int_0^t \bX(s)^{-1}\bff(s) \, ds\text{.}\tag{3.7.2}
-\end{equation}
+\begin{equation*}
+\lambda_1 = -1+i, \; \lambda_2 = -1-i, \qquad \bV = \twomat{1}{1}{2-i}{2+i}\text{.}
+\end{equation*}
 </div>
-<p data-braille="continuation">In the case of a constant matrix \(\bA\text{,}\) one option is \(\bX(t)=e^{t\bA}, and\)</p>
+<p data-braille="continuation">Then</p>
 <div class="displaymath">
-\begin{equation}
-\bx(t) = e^{t\bA}\bx_0 + \int_0^t e^{(t-s)\bA} \bff(s) \, ds\text{.}\tag{3.7.3}
-\end{equation}
+\begin{equation*}
+\bV^{-1} = \frac{1}{2+i-2+i} \twomat{2+i}{-1}{-2+i}{1} = \frac{i}{2} \twomat{-2-i}{1}{2-i}{-1}\text{,}
+\end{equation*}
 </div>
-<span class="incontext"><a href="fs-varparam.html#p-422">in-context</a></span>
+<p data-braille="continuation">and then</p>
+<div class="displaymath">
+\begin{align*}
+e^{t \bA} \amp = e^{-t}\frac{i}{2}\twomat{1}{1}{2-i}{2+i} \twomat{e^{it}}{0}{0}{e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
+\amp = e^{-t}\frac{i}{2}\twomat{e^{it}}{e^{-it}}{(2-i)e^{it}}{(2+i)e^{-it}} \twomat{-2-i}{1}{2-i}{-1} \\
+\amp = e^{-t}\frac{i}{2} \twomat{-(2+i)e^{it}+(2-i) e^{-it}}{e^{it}-e^{-it}}{-(2-i)(2+i)e^{it}+(2+i)(2-i) e^{-it}}{(2-i)e^{it}-(2+i) e^{-it}} \text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Each entry is written in the form of a complex number minus its conjugate, which gives \(2i\) times the imaginary part. This helps a lot.</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\sin(t)}\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="fs-matrix-exp.html#p-422">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-06T15:27:04-04:00    *-->
+<!--*    on 2020-04-08T19:58:19-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The most common use of second-order equations is the modeling of oscillatory or other periodic behavior.</p>
-<span class="incontext"><a href="so-oscillators.html#p-449">in-context</a></span>
+<p>Let's find a particular solution of \(x'' +4x'+4x=8t^2\text{.}\) The correct form of \(x_p\) is a quadratic polynomial, so</p>
+<div class="displaymath">
+\begin{equation*}
+x_p = A + Bt + Ct^2\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Plugging that into the ODE yields</p>
+<div class="displaymath">
+\begin{align*}
+2C + 4(B+2Ct) + 4(A+Bt+Ct^2) \amp = 8t^2\\
+4C t^2 + (8C+4B) + (2C+4B+4A) \amp = 8t^2\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">This has to be an identity for all \(t\text{.}\) Matching like powers, we can read off \(C=2\text{,}\) then \(B=-4\text{,}\) and finally \(A=3\text{.}\) This provides us with \(x_p=2t^2+4t+3\text{.}\)</p>
+<span class="incontext"><a href="so-undetermined.html#p-449">in-context</a></span>
 </body>
 </html>
