@@ -81,11 +81,11 @@
 			  <p>
 				<me>
 					\frac{d}{dt} \threevec{b}{m}{a} = 
-					\begin{bmatrix} -k_b-k_{mb} \amp k_{mb} \amp 0 \\ k_{mb} \amp -k_{mb}-k_{ma} \amp k_{ma} \\  0 \amp k_{ma} \amp - k_{ma} \end{bmatrix}\threevec{b}{m}{a} 
+					\begin{bmatrix} -k_b-k_{mb} \amp k_{mb} \amp 0 \\ k_{mb} \amp -k_{mb}-k_{ma} \amp k_{ma} \\  0 \amp k_{ma} \amp -k_{ma}-k_a \end{bmatrix}\threevec{b}{m}{a} 
 					+ \threevec{10k_b}{h(t)}{2k_a}
 				</me>
 				<me>
-					\begin{bmatrix} -k_b-k_{mb} \amp k_{mb} \amp 0 \\ k_{mb} \amp -k_{mb}-k_{ma} \amp k_{ma} \\  0 \amp k_{ma} \amp - k_{ma} \end{bmatrix}\threevec{b}{m}{a} 
+					\begin{bmatrix} -k_b-k_{mb} \amp k_{mb} \amp 0 \\ k_{mb} \amp -k_{mb}-k_{ma} \amp k_{ma} \\  0 \amp k_{ma} \amp -k_{ma}-k_a \end{bmatrix}\threevec{b}{m}{a} 
 					= - \threevec{10k_b}{0}{2k_a}
 				</me>
 			  </p>
@@ -994,7 +994,7 @@ xlabel('t'), ylabel('x_1(t), x_2(t)')
 			<men xml:id="fs-eq-varparam2">
 				\bx(t) = \bX(t)\bX(0)^{-1}\bx_0 + \bX(t) \int_0^t \bX(s)^{-1}\bff(s) \, ds
 			</men>.	
-			In the case of a constant matrix <m>\bA</m>, one option is <m>\bX(t)=e^{t\bA}, and</m>
+			In the case of a constant matrix <m>\bA</m>, 
 			<men xml:id="fs-eq-varparam3">
 				\bx(t) = e^{t\bA}\bx_0 + \int_0^t e^{(t-s)\bA} \bff(s) \, ds
 			</men>.
@@ -1007,7 +1007,7 @@ xlabel('t'), ylabel('x_1(t), x_2(t)')
 		<p>
 			In <xref ref="fs-ex-expm1"/> we worked out a matrix exponential:
 			<me>
-				\bA = \twomat{1}{-2}{5}{-3}
+				\bA = \twomat{1}{-1}{5}{-3}
 				\Rightarrow 
 				e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\sin(t)}
 			</me>
