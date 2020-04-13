@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-10T09:39:04-04:00    *-->
+<!--*    on 2020-04-13T15:49:03-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -16,20 +16,22 @@
 <p>This formula is a bit easier to parse in terms of the frequency ratio \(\rho=\omega/\omega_0\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-g(\rho) =  \frac{1}{[(1-\rho^2)^2  + 4 Z^2 \rho^2]^{1/2} }\text{.}
+g(\rho) =  \frac{1}{\omega_0^2 [(1-\rho^2)^2  + 4 Z^2 \rho^2]^{1/2} }\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Basic calculus shows that the denominator is minimized, and thus the gain is maximized, when</p>
+<p data-braille="continuation">In the presence of any damping, the gain always remains finite, and there is no longer a perfect resonance. But as a function of the frequency ratio, the denominator is minimized, and thus the gain is maximized, when</p>
 <div class="displaymath">
-\begin{equation*}
-\rho_\text{max} = \sqrt{1-2Z^2}, \quad  \text{ if } Z^2 \le \frac{1}{2}\text{,}
-\end{equation*}
+\begin{equation}
+\rho_\text{max} = \begin{cases} 
+\sqrt{1-2Z^2}, \amp \text{ if } 0 \lt Z^2 \le \frac{1}{2},\\ 0, \amp \text{ if } \frac{1}{2} \lt Z^2 \lt 1.
+\end{cases}\text{,}\tag{4.5.3}
+\end{equation}
 </div>
-<p data-braille="continuation">and \(\rho=0\) if \(\frac{1}{2} \lt Z^2 \lt 1\text{.}\) Since \(\rho_\text{max} \lt 1\text{,}\) the “most resonant” frequency is lower than the natural frequency. For \(Z^2 \le \frac{1}{2}\) the maximum gain is</p>
+<p data-braille="continuation">Since \(\rho_\text{max} \lt 1\text{,}\) the “most resonant” frequency is always lower than the natural frequency. For \(Z^2 \le \frac{1}{2}\) the maximum gain is</p>
 <div class="displaymath">
-\begin{equation*}
-g(\rho_\text{max}) = \frac{1}{2Z\sqrt{1-Z^2}}\text{,}
-\end{equation*}
+\begin{equation}
+g(\rho_\text{max}) = \frac{1}{2Z\omega_0^2\sqrt{1-Z^2}}\text{,}\tag{4.5.4}
+\end{equation}
 </div>
 <p data-braille="continuation">which is finite but large for \(Z\approx 0\text{.}\)</p>
 <span class="incontext"><a href="so-expforcing.html#p-481">in-context</a></span>

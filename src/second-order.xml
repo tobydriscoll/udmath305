@@ -259,17 +259,17 @@
 			When you have lots of different versions of the same root problem, with different symbols and units, you have three options. You can solve each new problem from scratch, you can derive custom formulas for each application, or you can try to find a minimal set of parameters and express each problem using those. Let's consider the last pathway here.
 		</p>
 		<p>
-			The mechanical oscillator <m>mx'' + bx' + kx = F(t)</m> is more conveniently expressed as
+			The mechanical oscillator <m>mx'' + bx' + kx = F(t)</m> has, like all linear ODEs, a homogeneous part and a forced part. For now we consider only the homogeneous part, taking up the forcing term in the next section. Ignoring the degenerate case of zero mass, we write  
 			<me> 
-				x'' + \frac{b}{m} x' + \frac{k}{m} x = \frac{1}{m} F(t)
+				x'' + \frac{b}{m} x' + \frac{k}{m} x = 0
 			</me>.
-			One reason to prefer this form is dimensional analysis: <m>x</m> must have the same units as  <m>F/m</m>, and both <m>b/m</m> and <m>\sqrt{k/m}</m> have units of inverse time. We introduce new parameters 
+			One reason to prefer this form is dimensional analysis: both <m>b/m</m> and <m>\sqrt{k/m}</m> have units of inverse time. We introduce new parameters 
 			<me>
 				\omega_0 = \sqrt{\frac{k}{m}} \gt 0, \quad Z = \frac{1}{2} \frac{b/m}{\omega_0} = \frac{b}{\sqrt{4km}}\ge 0
 			</me>.
-			<m>\omega_0</m> is known as the <idx>natural frequency</idx><term>natural frequency</term>, with units of inverse time, and <m>Z</m> is a dimensionless number describing the intensity of the damping. Now the ODE becomes 
+			<m>\omega_0</m> is known as the <idx>natural frequency</idx><term>natural frequency</term>, with units of inverse time, and <m>Z</m> is a dimensionless number describing the intensity of the damping. Now the unforced ODE becomes 
 			<men xml:id="so-eq-unified"> 
-				x'' + 2 Z \omega_0 x' + \omega_0^2 x = \omega_0^2 F(t)
+				x'' + 2 Z \omega_0 x' + \omega_0^2 x = 0
 			</men>.
 			A similar derivation can be done starting from the electrical circuit equation.
 		</p>
@@ -279,7 +279,7 @@
 			</p>
 		</aside>
 		<p>
-			The eigenvalues of the homogeneous form of this equation are  
+			The eigenvalues of the homogeneous equation are  
 			<me>
 				\lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1}
 			</me>. 
@@ -340,22 +340,22 @@
 	<title>Driven oscillator</title>
 	<introduction>
 		<p>
-			We next want to examine <xref ref="so-eq-unified"/> when the forcing function is an exponential: 
+			We next want to examine the linear oscillator in standardized form <xref ref="so-eq-unified"/> when there is an exponential forcing function present: 
 			<men xml:id="so-eq-unifiedexp"> 
-				x'' + 2 Z \omega_0 x' + \omega_0^2 x = \omega_0^2 e^{rt}
+				x'' + 2 Z \omega_0 x' + \omega_0^2 x = e^{rt}
 			</men>.
-			We're interested in the undamped and underdamped cases, <m>0\le Z \lt 1</m>. 
+			We're typically interested in the undamped and underdamped cases, <m>0\le Z \lt 1</m>. 
 		</p>
 		<p>
-			It's possible to use variation of parameters as in <xref ref="fs-varparam"/> to derive a particular solution, but it's overkill here. Instead we just appeal to the method of undetermined coefficients, positing a solution in the form <m>x_p(t) = A e^{rt}</m> to derive
+			We appeal to the method of undetermined coefficients, positing a solution in the form <m>x_p(t) = A e^{rt}</m> to derive
 			<me>
-				(r^2  + 2 Z \omega_0 r + \omega_0^2)Ae^{rt} = \omega_0^2 e^{rt}
+				(r^2  + 2 Z \omega_0 r + \omega_0^2)Ae^{rt} = e^{rt}
 			</me>. 
 			Hence 
 			<men xml:id="so-eq-coeff">
-				A(r) = \frac{\omega_0^2}{r^2  + 2 Z \omega_0 r + \omega_0^2}
+				A(r) = \frac{1}{r^2  + 2 Z \omega_0 r + \omega_0^2}
 			</men>
-			gives a particular solution unless the denominator is zero, i.e., <m>r</m> is an eigenvalue (since the denominator is the characteristic polynomial). More on that situation later. 
+			gives a particular solution unless the denominator, which is really just the characteristic polynomial, is zero. In that case, <m>r</m> is an eigenvalue; we consider that situation later. 
 		</p>
 	</introduction>
 	<subsection xml:id="so-ef-harmonic">
@@ -363,18 +363,18 @@
 		<p>
 			Exponential forcing <m>F(t)=e^{rt}</m> is particulary important when <m>r</m> is imaginary. Say <m>r=i\omega</m>. Then by Euler's identity we have 
 			<me>
-				F(t) = \cos(\omega t) + i\sin(\omega t)
+				e^{rt} = \cos(\omega t) + i\sin(\omega t)
 			</me>. 
 			Thanks to linearity, if given a cos or sin forcing, we can solve the complex-valued problem and then take a real or imaginary part. That is, if <m>x_p(t) = A e^{i\omega t}</m> as above, then
 			<md>
-				<mrow>[\Re x_p]'' + 2 Z \omega_0 [\Re x_p]' + \omega_0^2 [\Re x_p] \amp = \omega_0^2 \cos(\omega t), </mrow>
-				<mrow>[\Im x_p]'' + 2 Z \omega_0 [\Im x_p]' + \omega_0^2 [\Im x_p]  \amp = \omega_0^2 \sin(\omega t). </mrow>
+				<mrow>[\Re x_p]'' + 2 Z \omega_0 [\Re x_p]' + \omega_0^2 [\Re x_p] \amp = \cos(\omega t), </mrow>
+				<mrow>[\Im x_p]'' + 2 Z \omega_0 [\Im x_p]' + \omega_0^2 [\Im x_p]  \amp = \sin(\omega t). </mrow>
 			</md>
 		</p>
 		<p>
 			It's often useful to rewrite the complex factor <m>A(i\omega)</m> from <xref ref="so-eq-coeff"/> in polar form: 
 			<me>
-				A(i\omega) = \frac{\omega_0^2}{\omega_0^2-\omega^2  + 2 Z i \omega_0 \omega } = g(\omega) e^{-i\phi(\omega)}
+				A(i\omega) = \frac{1}{\omega_0^2-\omega^2  + 2 Z i \omega_0 \omega } = g(\omega) e^{-i\phi(\omega)}
 			</me>,
 			where <m>g=|A|</m> is the <idx>gain</idx><term>gain</term> and <m>\phi</m> is the <idx>phase lag</idx><term>phase lag</term>. Note that the particular solution is 
 			<me>
@@ -388,15 +388,15 @@
 		<p>
 			Consider forcing <m>e^{i\omega t}</m> in the undamped case with <m>Z=0</m>. Then 
 			<me>
-				A(i\omega) = \frac{\omega_0^2}{\omega_0^2-\omega^2}
+				A(i\omega) = \frac{1}{\omega_0^2-\omega^2}
 			</me>
 			is purely real, and the general solution is 
 		</p>
 		<fact>
-			<title>Solution for undamped driven oscillator (not resonant)</title>
+			<title>Solution for standardized undamped driven oscillator (not resonant)</title>
 			<p>
 				<me>	
-					x(t) = x_h(t) + x_p(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} + \frac{\omega_0^2}{\omega_0^2-\omega^2} e^{i\omega t}
+					x(t) = x_h(t) + x_p(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} + \frac{1}{\omega_0^2-\omega^2} e^{i\omega t}
 				</me>
 				(or a real equivalent), provided <m>\omega\neq\omega_0</m>
 			</p>
@@ -407,19 +407,19 @@
 		<p>
 			What is the meaning if <m>\omega = \omega_0</m>? This is exactly when <m>i\omega</m> is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients will actually fail like in <xref ref="so-ex-noundeter"/>. But there is a sneaky shortcut. For a certain choice of <m>c_1</m> and <m>c_2</m>, we get a different particular solution 
 			<me>
-				\hat{x}_p(t) = \frac{\omega_0^2}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)
+				\hat{x}_p(t) = \frac{1}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)
 			</me>, 
 			which has an indeterminate form in the limit <m>\omega \to \omega_0</m>, allowing us to use L'Hopital's Rule: 
 			<me>
-				\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0} \omega_0^2 \frac{it e^{i\omega t}}{-2\omega} = -\frac{i\omega_0^2}{2} t e^{i\omega_0 t}
+				\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0}  \frac{it e^{i\omega t}}{-2\omega} = -\frac{i}{2} t e^{i\omega_0 t}
 			</me>. 
 			(The derivation is subtle because the derivatives here are with respect to the limited variable <m>\omega</m> and not <m>t</m>.) This leads to the general solution 
 		</p>
 		<fact>
-			<title>Solution for undamped driven oscillator at resonance</title>
+			<title>Solution for standardized undamped driven oscillator at resonance</title>
 			<p>
 				<me>	
-					x(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} -\frac{i\omega_0^2}{2} t e^{i\omega_0 t}
+					x(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} -\frac{i}{2} t e^{i\omega_0 t}
 				</me>
 				(or a real equivalent)
 			</p>
@@ -427,10 +427,13 @@
 		<p>
 			This particular solution oscillates at the natural/driving frequency but with a linearly growing amplitude. This situation is called <idx>resonance</idx><term>resonance</term> and is one of the most important phenomena in physics. 
 		</p>
+	</subsection>
+	<subsection>
+		<title>Forcing the underdamped oscillator</title>
 		<p>
-			The eternally growing amplitude in resonance is a byproduct of the idealized undamped model. What happens if <m>Z\gt 0</m>? We are back to <m>x_p=Ae^{i\omega t}</m>, with
+			The eternally growing amplitude seen in resonance is an unphysical byproduct of the idealized undamped model. What happens if <m>Z\gt 0</m>? We are back to <m>x_p=Ae^{i\omega t}</m> with amplitude from <xref ref="so-eq-coeff"/>:
 			<me>
-				A(i\omega) = \frac{\omega_0^2}{\omega_0^2-\omega^2  + 2 Z i \omega_0\,\omega }
+				A(i\omega) = \frac{1}{\omega_0^2-\omega^2  + 2 Z i \omega_0\,\omega }
 			</me>. 
 			Of particular interest is the gain, 
 		</p>
@@ -438,25 +441,53 @@
 			<title>Gain for damped driven oscillator</title>
 			<p>
 				<me>
-					g(\omega) = |A(i\omega)| = \frac{\omega_0^2}{[(\omega^2-\omega_0^2)^2  + 4 Z^2 \omega_0^2\,\omega^2]^{1/2} }
+					g(\omega) = |A(i\omega)| = \frac{1}{[(\omega^2-\omega_0^2)^2  + 4 Z^2 \omega_0^2\,\omega^2]^{1/2} }
 				</me>
 			</p>
 		</fact>
 		<p>
 			This formula is a bit easier to parse in terms of the frequency ratio <m>\rho=\omega/\omega_0</m>:
 			<me>
-				g(\rho) =  \frac{1}{[(1-\rho^2)^2  + 4 Z^2 \rho^2]^{1/2} }
+				g(\rho) =  \frac{1}{\omega_0^2 [(1-\rho^2)^2  + 4 Z^2 \rho^2]^{1/2} }
 			</me>. 
-			Basic calculus shows that the denominator is minimized, and thus the gain is maximized, when 
-			<me>
-				\rho_\text{max} = \sqrt{1-2Z^2}, \quad  \text{ if } Z^2 \le \frac{1}{2}
-			</me>,
-			and <m>\rho=0</m> if <m>\frac{1}{2} \lt Z^2 \lt 1</m>. Since <m>\rho_\text{max} \lt 1</m>, the <q>most resonant</q> frequency is lower than the natural frequency. For <m>Z^2 \le \frac{1}{2}</m> the maximum gain is 
-			<me>
-				g(\rho_\text{max}) = \frac{1}{2Z\sqrt{1-Z^2}}
-			</me>,
+			In the presence of any damping, the gain always remains finite, and there is no longer a perfect resonance. But as a function of the frequency ratio, the denominator is minimized, and thus the gain is maximized, when 
+			<men xml:id="so-eq-rhomax">
+				\rho_\text{max} = \begin{cases} 
+				\sqrt{1-2Z^2}, \amp \text{ if } 0 \lt Z^2 \le \frac{1}{2},\\ 0, \amp \text{ if } \frac{1}{2} \lt Z^2 \lt 1.
+				\end{cases}
+			</men>,
+			Since <m>\rho_\text{max} \lt 1</m>, the <q>most resonant</q> frequency is always lower than the natural frequency. For <m>Z^2 \le \frac{1}{2}</m> the maximum gain is 
+			<men xml:id="so-eq-gainmax">
+				g(\rho_\text{max}) = \frac{1}{2Z\omega_0^2\sqrt{1-Z^2}}
+			</men>,
 			which is finite but large for <m>Z\approx 0</m>. 
 		</p>
+		<p>
+			<xref ref="so_oscgain"/> shows the gain as a function of damping <m>Z</m> and forcing frequency <m>\omega</m> when <m>\omega_0=1</m>. The white curve shows the path of greatest resonance. For high values of the damping, the gain can never be larger than one. But as <m>Z\to 0</m>, the resonance peak becomes proportional to <m>1/Z</m>. 
+		</p>
+		<sidebyside>
+			<listing  xml:id="so_oscgain">
+				<caption>Gain for natural frequency equal to one</caption>
+	 			<program language="matlab">
+	    			<input>
+A = @(omega,Z) 1./(-omega.^2 + 2i*Z.*omega + 1);
+log_g = @(omega,Z) log10(abs(A(omega,Z)));
+fsurf( log_g,[0 1.5 1e-3 1])
+set(gca,'ydir','rev')
+view(20,20)
+xlabel('driving frequency')
+ylabel('damping intensity')
+zlabel('log_{10}(gain)')
+hold on
+Z = linspace(1e-3,1,300);
+rhomax = real(sqrt(1-2*Z.^2));
+plot3(rhomax,Z,log_g(rhomax,Z),'w','linew',2)
+					</input>
+				</program>
+				</listing>
+				<image source="figures/so_oscgain.svg"/>	  
+			</sidebyside>
+
 	</subsection>
 </section>
 

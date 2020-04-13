@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-10T09:39:01-04:00    *-->
+<!--*    on 2020-04-13T15:49:00-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,45 +209,45 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-expforcing"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Driven oscillator</span>
 </h2>
-<a href="so-expforcing.html" class="permalink">¶</a><section class="introduction" id="introduction-17"><p id="p-469">We next want to examine <a class="xref" data-knowl="./knowl/so-eq-unified.html" title="Equation 4.4.1">(4.4.1)</a> when the forcing function is an exponential:</p>
+<a href="so-expforcing.html" class="permalink">¶</a><section class="introduction" id="introduction-17"><p id="p-469">We next want to examine the linear oscillator in standardized form <a class="xref" data-knowl="./knowl/so-eq-unified.html" title="Equation 4.4.1">(4.4.1)</a> when there is an exponential forcing function present:</p>
 <div class="displaymath">
 \begin{equation}
-x'' + 2 Z \omega_0 x' + \omega_0^2 x = \omega_0^2 e^{rt}\text{.}\label{so-eq-unifiedexp}\tag{4.5.1}
+x'' + 2 Z \omega_0 x' + \omega_0^2 x = e^{rt}\text{.}\label{so-eq-unifiedexp}\tag{4.5.1}
 \end{equation}
 </div>
-<p data-braille="continuation">We're interested in the undamped and underdamped cases, \(0\le Z \lt 1\text{.}\)</p>
-<p id="p-470">It's possible to use variation of parameters as in <a href="fs-varparam.html" class="internal" title="Section 3.7: Variation of parameters">Section 3.7</a> to derive a particular solution, but it's overkill here. Instead we just appeal to the method of undetermined coefficients, positing a solution in the form \(x_p(t) = A e^{rt}\) to derive</p>
+<p data-braille="continuation">We're typically interested in the undamped and underdamped cases, \(0\le Z \lt 1\text{.}\)</p>
+<p id="p-470">We appeal to the method of undetermined coefficients, positing a solution in the form \(x_p(t) = A e^{rt}\) to derive</p>
 <div class="displaymath">
 \begin{equation*}
-(r^2  + 2 Z \omega_0 r + \omega_0^2)Ae^{rt} = \omega_0^2 e^{rt}\text{.}
+(r^2  + 2 Z \omega_0 r + \omega_0^2)Ae^{rt} = e^{rt}\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">Hence</p>
 <div class="displaymath">
 \begin{equation}
-A(r) = \frac{\omega_0^2}{r^2  + 2 Z \omega_0 r + \omega_0^2}\label{so-eq-coeff}\tag{4.5.2}
+A(r) = \frac{1}{r^2  + 2 Z \omega_0 r + \omega_0^2}\label{so-eq-coeff}\tag{4.5.2}
 \end{equation}
 </div>
-<p data-braille="continuation">gives a particular solution unless the denominator is zero, i.e., \(r\) is an eigenvalue (since the denominator is the characteristic polynomial). More on that situation later.</p></section><section class="subsection" id="so-ef-harmonic"><h3 class="heading hide-type">
+<p data-braille="continuation">gives a particular solution unless the denominator, which is really just the characteristic polynomial, is zero. In that case, \(r\) is an eigenvalue; we consider that situation later.</p></section><section class="subsection" id="so-ef-harmonic"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Harmonic forcing</span>
 </h3>
 <a href="so-expforcing.html#so-ef-harmonic" class="permalink">¶</a><p id="p-471">Exponential forcing \(F(t)=e^{rt}\) is particulary important when \(r\) is imaginary. Say \(r=i\omega\text{.}\) Then by Euler's identity we have</p>
 <div class="displaymath">
 \begin{equation*}
-F(t) = \cos(\omega t) + i\sin(\omega t)\text{.}
+e^{rt} = \cos(\omega t) + i\sin(\omega t)\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">Thanks to linearity, if given a cos or sin forcing, we can solve the complex-valued problem and then take a real or imaginary part. That is, if \(x_p(t) = A e^{i\omega t}\) as above, then</p>
 <div class="displaymath">
 \begin{align*}
-[\Re x_p]'' + 2 Z \omega_0 [\Re x_p]' + \omega_0^2 [\Re x_p] \amp = \omega_0^2 \cos(\omega t), \\
-[\Im x_p]'' + 2 Z \omega_0 [\Im x_p]' + \omega_0^2 [\Im x_p]  \amp = \omega_0^2 \sin(\omega t). 
+[\Re x_p]'' + 2 Z \omega_0 [\Re x_p]' + \omega_0^2 [\Re x_p] \amp = \cos(\omega t), \\
+[\Im x_p]'' + 2 Z \omega_0 [\Im x_p]' + \omega_0^2 [\Im x_p]  \amp = \sin(\omega t). 
 \end{align*}
 </div>
 <p id="p-472">It's often useful to rewrite the complex factor \(A(i\omega)\) from <a class="xref" data-knowl="./knowl/so-eq-coeff.html" title="Equation 4.5.2">(4.5.2)</a> in polar form:</p>
 <div class="displaymath">
 \begin{equation*}
-A(i\omega) = \frac{\omega_0^2}{\omega_0^2-\omega^2  + 2 Z i \omega_0 \omega } = g(\omega) e^{-i\phi(\omega)}\text{,}
+A(i\omega) = \frac{1}{\omega_0^2-\omega^2  + 2 Z i \omega_0 \omega } = g(\omega) e^{-i\phi(\omega)}\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(g=|A|\) is the <dfn class="terminology">gain</dfn> and \(\phi\) is the <dfn class="terminology">phase lag</dfn>. Note that the particular solution is</p>
@@ -262,45 +262,47 @@ x_p(t) = g(\omega) e^{-i\phi(\omega)} e^{i\omega t} = g e^{i(\omega t-\phi)}\tex
 <a href="so-expforcing.html#so-ef-resonance" class="permalink">¶</a><p id="p-473">Consider forcing \(e^{i\omega t}\) in the undamped case with \(Z=0\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
-A(i\omega) = \frac{\omega_0^2}{\omega_0^2-\omega^2}
+A(i\omega) = \frac{1}{\omega_0^2-\omega^2}
 \end{equation*}
 </div>
 <p data-braille="continuation">is purely real, and the general solution is</p>
 <article class="fact theorem-like" id="fact-24"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Solution for undamped driven oscillator (not resonant).</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Solution for standardized undamped driven oscillator (not resonant).</span>
 </h6>
 <div class="displaymath" id="p-474">
 \begin{equation*}
-x(t) = x_h(t) + x_p(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} + \frac{\omega_0^2}{\omega_0^2-\omega^2} e^{i\omega t}
+x(t) = x_h(t) + x_p(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} + \frac{1}{\omega_0^2-\omega^2} e^{i\omega t}
 \end{equation*}
 </div>
 <p data-braille="continuation">(or a real equivalent), provided \(\omega\neq\omega_0\)</p></article><p id="p-475">If \(\omega\approx \omega_0\text{,}\) then the amplitude of the particular solution is very large.</p>
 <p id="p-476">What is the meaning if \(\omega = \omega_0\text{?}\) This is exactly when \(i\omega\) is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients will actually fail like in <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a>. But there is a sneaky shortcut. For a certain choice of \(c_1\) and \(c_2\text{,}\) we get a different particular solution</p>
 <div class="displaymath">
 \begin{equation*}
-\hat{x}_p(t) = \frac{\omega_0^2}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)\text{,}
+\hat{x}_p(t) = \frac{1}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">which has an indeterminate form in the limit \(\omega \to \omega_0\text{,}\) allowing us to use L'Hopital's Rule:</p>
 <div class="displaymath">
 \begin{equation*}
-\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0} \omega_0^2 \frac{it e^{i\omega t}}{-2\omega} = -\frac{i\omega_0^2}{2} t e^{i\omega_0 t}\text{.}
+\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0}  \frac{it e^{i\omega t}}{-2\omega} = -\frac{i}{2} t e^{i\omega_0 t}\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">(The derivation is subtle because the derivatives here are with respect to the limited variable \(\omega\) and not \(t\text{.}\)) This leads to the general solution</p>
 <article class="fact theorem-like" id="fact-25"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Solution for undamped driven oscillator at resonance.</span>
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Solution for standardized undamped driven oscillator at resonance.</span>
 </h6>
 <div class="displaymath" id="p-477">
 \begin{equation*}
-x(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} -\frac{i\omega_0^2}{2} t e^{i\omega_0 t}
+x(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} -\frac{i}{2} t e^{i\omega_0 t}
 \end{equation*}
 </div>
-<p data-braille="continuation">(or a real equivalent)</p></article><p id="p-478">This particular solution oscillates at the natural/driving frequency but with a linearly growing amplitude. This situation is called <dfn class="terminology">resonance</dfn> and is one of the most important phenomena in physics.</p>
-<p id="p-479">The eternally growing amplitude in resonance is a byproduct of the idealized undamped model. What happens if \(Z\gt 0\text{?}\) We are back to \(x_p=Ae^{i\omega t}\text{,}\) with</p>
+<p data-braille="continuation">(or a real equivalent)</p></article><p id="p-478">This particular solution oscillates at the natural/driving frequency but with a linearly growing amplitude. This situation is called <dfn class="terminology">resonance</dfn> and is one of the most important phenomena in physics.</p></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.3</span> <span class="title">Forcing the underdamped oscillator</span>
+</h3>
+<p id="p-479">The eternally growing amplitude seen in resonance is an unphysical byproduct of the idealized undamped model. What happens if \(Z\gt 0\text{?}\) We are back to \(x_p=Ae^{i\omega t}\) with amplitude from <a class="xref" data-knowl="./knowl/so-eq-coeff.html" title="Equation 4.5.2">(4.5.2)</a>:</p>
 <div class="displaymath">
 \begin{equation*}
-A(i\omega) = \frac{\omega_0^2}{\omega_0^2-\omega^2  + 2 Z i \omega_0\,\omega }\text{.}
+A(i\omega) = \frac{1}{\omega_0^2-\omega^2  + 2 Z i \omega_0\,\omega }\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">Of particular interest is the gain,</p>
@@ -309,27 +311,46 @@ A(i\omega) = \frac{\omega_0^2}{\omega_0^2-\omega^2  + 2 Z i \omega_0\,\omega }\t
 </h6>
 <div class="displaymath" id="p-480">
 \begin{equation*}
-g(\omega) = |A(i\omega)| = \frac{\omega_0^2}{[(\omega^2-\omega_0^2)^2  + 4 Z^2 \omega_0^2\,\omega^2]^{1/2} }
+g(\omega) = |A(i\omega)| = \frac{1}{[(\omega^2-\omega_0^2)^2  + 4 Z^2 \omega_0^2\,\omega^2]^{1/2} }
 \end{equation*}
 </div></article><p id="p-481">This formula is a bit easier to parse in terms of the frequency ratio \(\rho=\omega/\omega_0\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-g(\rho) =  \frac{1}{[(1-\rho^2)^2  + 4 Z^2 \rho^2]^{1/2} }\text{.}
+g(\rho) =  \frac{1}{\omega_0^2 [(1-\rho^2)^2  + 4 Z^2 \rho^2]^{1/2} }\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Basic calculus shows that the denominator is minimized, and thus the gain is maximized, when</p>
+<p data-braille="continuation">In the presence of any damping, the gain always remains finite, and there is no longer a perfect resonance. But as a function of the frequency ratio, the denominator is minimized, and thus the gain is maximized, when</p>
 <div class="displaymath">
-\begin{equation*}
-\rho_\text{max} = \sqrt{1-2Z^2}, \quad  \text{ if } Z^2 \le \frac{1}{2}\text{,}
-\end{equation*}
+\begin{equation}
+\rho_\text{max} = \begin{cases} 
+\sqrt{1-2Z^2}, \amp \text{ if } 0 \lt Z^2 \le \frac{1}{2},\\ 0, \amp \text{ if } \frac{1}{2} \lt Z^2 \lt 1.
+\end{cases}\text{,}\label{so-eq-rhomax}\tag{4.5.3}
+\end{equation}
 </div>
-<p data-braille="continuation">and \(\rho=0\) if \(\frac{1}{2} \lt Z^2 \lt 1\text{.}\) Since \(\rho_\text{max} \lt 1\text{,}\) the “most resonant” frequency is lower than the natural frequency. For \(Z^2 \le \frac{1}{2}\) the maximum gain is</p>
+<p data-braille="continuation">Since \(\rho_\text{max} \lt 1\text{,}\) the “most resonant” frequency is always lower than the natural frequency. For \(Z^2 \le \frac{1}{2}\) the maximum gain is</p>
 <div class="displaymath">
-\begin{equation*}
-g(\rho_\text{max}) = \frac{1}{2Z\sqrt{1-Z^2}}\text{,}
-\end{equation*}
+\begin{equation}
+g(\rho_\text{max}) = \frac{1}{2Z\omega_0^2\sqrt{1-Z^2}}\text{,}\label{so-eq-gainmax}\tag{4.5.4}
+\end{equation}
 </div>
-<p data-braille="continuation">which is finite but large for \(Z\approx 0\text{.}\)</p></section></section></div></main>
+<p data-braille="continuation">which is finite but large for \(Z\approx 0\text{.}\)</p>
+<p id="p-482"><a class="xref" data-knowl="./knowl/so_oscgain.html" title="Listing 4.5.4">Listing 4.5.4</a> shows the gain as a function of damping \(Z\) and forcing frequency \(\omega\) when \(\omega_0=1\text{.}\) The white curve shows the path of greatest resonance. For high values of the damping, the gain can never be larger than one. But as \(Z\to 0\text{,}\) the resonance peak becomes proportional to \(1/Z\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="so_oscgain"><pre class="prettyprint lang-matlab">A = @(omega,Z) 1./(-omega.^2 + 2i*Z.*omega + 1 );
+fsurf( @(omega,Z) log10(abs(A(omega,Z))),[0 1.5 1e-3 1])
+view(-36,50), set(gca,'ydir','rev')
+view(20,20)
+xlabel('driving frequency')
+ylabel('damping intensity')
+zlabel('log_{10}(gain)')
+hold on
+Z = linspace(1e-3,1,300);
+rhomax = real(sqrt(1-2*Z.^2));
+plot3(rhomax,Z,log10(abs(A(rhomax,Z))),'w','linew',3)
+</pre>
+<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.5.4<span class="period">.</span></span><span class="space"> </span>Gain for natural frequency equal to one</figcaption></figure></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/so_oscgain.svg" style="width: 100%; height: auto;" alt=""></div>
+</div></div></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

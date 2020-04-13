@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-10T09:39:04-04:00    *-->
+<!--*    on 2020-04-13T15:49:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>As we did with single scalar equations, we will pay close attention to <dfn class="terminology">steady states</dfn> or <dfn class="terminology">fixed points</dfn> of these systems. Here this means constants \((x_p,y_p)\) such that \(F(x_p,y_p)=G(x_p,y_p)=0\text{.}\) For the nonlinear pendulum, both \((0,0)\) and \((\pi,0)\) are steady states.</p>
+<p>First note that we can recast the nonlinear problem as a first-order system in two variables. Define \(x=\theta\) and \(y=\theta'\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\dd{x}{t} \amp = y \\
+\dd{y}{t} \amp = -\frac{g}{L}\sin(x)\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">This trick works for any nonlinear second-order equation \(\theta''=g(t,\theta,\theta')\text{.}\) Thus we can focus on problems in the general form</p>
+<div class="displaymath">
+\begin{align*}
+\dd{x}{t} \amp = F(x,y) \\
+\dd{y}{t} \amp = G(x,y)\text{,}
+\end{align*}
+</div>
+<p data-braille="continuation">or \(\bu' = \bff(\bu)\) for 2-vector \(\bu(t)\text{.}\) Note that (as we saw before), the vector \(\bu\) represents the state of the system.</p>
 <span class="incontext"><a href="nl-linearization.html#p-546">in-context</a></span>
 </body>
 </html>
