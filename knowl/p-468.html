@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-13T15:49:03-04:00    *-->
+<!--*    on 2020-04-14T12:32:43-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,39 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For \(Z&gt;1\) the eigenvalues</p>
+<p>Hooke's Law for a spring states that \(F=k x\text{,}\) so we find the spring constant from \(k=F/x=2g/0.25=8g\text{,}\) where \(g=9.8\) m per second squared. The ODE for free motion of the system is thus</p>
+<div class="displaymath">
+\begin{align*}
+2 x'' + 8g x  \amp = 0 \\
+x'' + 4g x  \amp = 0, 
+\end{align*}
+</div>
+<p data-braille="continuation">from which we identify the natural frequency</p>
 <div class="displaymath">
 \begin{equation*}
-\lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1}
+\omega_0 = \sqrt{4g} = 2\sqrt{g} \approx 6.26 \text{s}^{-1}. 
 \end{equation*}
 </div>
-<p data-braille="continuation">are negative and real, thus giving an exponentially decaying homogeneous solution. In this case we have an <dfn class="terminology">overdamped oscillator</dfn>.</p>
+<p data-braille="continuation">We can apply the initial conditions directly to the amplitude-phase form:</p>
+<div class="displaymath">
+\begin{align*}
+-0.2 \amp = x(0) = R\cos(0-\theta) = R\cos(\theta) \\
+1 \amp = x'(0) = -\omega_0 R\sin(0-\theta) = \omega_0 R\sin(\theta) 
+\end{align*}
+</div>
+<p data-braille="continuation">Therefore,</p>
+<div class="displaymath">
+\begin{equation*}
+R = \sqrt{ [R\cos(\theta)]^2 + [R\sin(\theta)]^2 } = \sqrt{ 0.04 + \omega_0^{-2} } \approx 0.256 \text{m}.
+\end{equation*}
+</div>
+<p data-braille="continuation">We could go on to find the phase by taking a ratio to get</p>
+<div class="displaymath">
+\begin{equation*}
+\tan(\theta) = \frac{1}{-0.2\omega_0}.
+\end{equation*}
+</div>
+<p data-braille="continuation">In solving for \(\theta\text{,}\) you have to do a “four-quadrant” arctan. Observe that \((R\cos\theta,R\sin\theta)\) lies in the second quadrant, so \(\theta\) has to be between \(\pi/2\) and \(\pi\text{.}\) One finds that \(\theta\approx 2.47\text{.}\)</p>
 <span class="incontext"><a href="so-oscillators.html#p-468">in-context</a></span>
 </body>
 </html>

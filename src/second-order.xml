@@ -267,7 +267,7 @@
 			<me>
 				\omega_0 = \sqrt{\frac{k}{m}} \gt 0, \quad Z = \frac{1}{2} \frac{b/m}{\omega_0} = \frac{b}{\sqrt{4km}}\ge 0
 			</me>.
-			<m>\omega_0</m> is known as the <idx>natural frequency</idx><term>natural frequency</term>, with units of inverse time, and <m>Z</m> is a dimensionless number describing the intensity of the damping. Now the unforced ODE becomes 
+			<m>\omega_0</m> is known as the <idx>natural frequency</idx><term>natural frequency</term>, with units of inverse time, and <m>Z</m> is a dimensionless <idx>damping coefficient</idx><term>damping coefficient</term> describing the relative intensity of the damping. Now the unforced ODE becomes 
 			<men xml:id="so-eq-unified"> 
 				x'' + 2 Z \omega_0 x' + \omega_0^2 x = 0
 			</men>.
@@ -293,8 +293,51 @@
 			<me>
 				x_h(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} = a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t)
 			</me>. 
-			Thus the undamped case results in pure oscillation at frequency <m>\omega_0</m>. 
+			Thus the undamped case results in pure oscillation at frequency <m>\omega_0</m>. This is often called <idx>simple harmonic motion</idx><term>simple harmonic motion</term>. 
 		</p>
+		<p>
+			This is a good moment to observe that there are three equivalent ways to express harmonic motion: 
+			<md>
+			<mrow>\text{complex exponential} \amp \qquad c_1 e^{i\omega_0 t} + \overline{c_1} e^{-i\omega_0 t} </mrow>
+			  <mrow>\text{sin and cos} \amp \qquad a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t) </mrow>
+			  <mrow>\text{amplitude and phase} \amp \qquad R \cos(\omega_0 t - \theta) </mrow>
+			</md>
+			We have seen before how Euler's identity connects the first two, but the third one is new. Applying a trig identity to this new form yields 
+			<me>
+				R \cos(\theta) \cos(\omega_0 t) + R \sin(\theta) \sin(\omega_0 t),
+			</me>
+			which shows that <m>(R,\theta)</m> merely expresses the Cartesian point <m>(a_1,a_2)</m> in polar form. In any of the expressions, there are two real arbitrary constants that are determined by initial conditions, if those are given. 
+		</p>
+		<example>
+			<p>
+				When a 2 kg mass is hung on a spring, the spring stretches by 0.25 m. What is the natural frequency of the mass-spring system? Suppose the mass is pulled down 0.2 m past equilibrium and then thrown upward at 1 m/s. What is the amplitude of the motion? 
+			</p>
+			<p>
+				Hooke's Law for a spring states that <m>F=k x</m>, so we find the spring constant from <m>k=F/x=2g/0.25=8g</m>, where <m>g=9.8</m> m per second squared. The ODE for free motion of the system is thus 
+				<md>
+				  <mrow> 2 x'' + 8g x  \amp = 0 </mrow> 
+				  <mrow> x'' + 4g x  \amp = 0, </mrow> 
+				</md>
+				from which we identify the natural frequency
+				<me>
+					\omega_0 = \sqrt{4g} = 2\sqrt{g} \approx 6.26 \text{s}^{-1}. 
+				</me>
+				We can apply the initial conditions directly to the amplitude-phase form: 
+				<md>
+				  <mrow> -0.2 \amp = x(0) = R\cos(0-\theta) = R\cos(\theta) </mrow>
+				  <mrow> 1 \amp = x'(0) = -\omega_0 R\sin(0-\theta) = \omega_0 R\sin(\theta) </mrow>
+				</md>
+				Therefore, 
+				<me>
+					R = \sqrt{ [R\cos(\theta)]^2 + [R\sin(\theta)]^2 } = \sqrt{ 0.04 + \omega_0^{-2} } \approx 0.256 \text{m}.
+				</me>
+				We could go on to find the phase by taking a ratio to get 
+				<me>
+					\tan(\theta) = \frac{1}{-0.2\omega_0}.
+				</me>
+				In solving for <m>\theta</m>, you have to do a <q>four-quadrant</q> arctan. Observe that <m>(R\cos\theta,R\sin\theta)</m> lies in the second quadrant, so <m>\theta</m> has to be between <m>\pi/2</m> and <m>\pi</m>. One finds that <m>\theta\approx 2.47</m>. 
+			</p>
+		</example>
 	</subsection>
 	<subsection xml:id="so-os-underdamped">
 		<title>Underdamped</title>
@@ -309,6 +352,14 @@
 			</me>, 
 			or the equivalent real form with cos and sin. This solution is pseudoperiodic, combining oscillation at frequency <m>\omega_d \lt \omega_0</m> inside an exponential decay envelope. This situation is called an <idx>underdamped oscillator</idx><term>underdamped oscillator</term>. 
 		</p>
+		<p>
+			As in the undamped case, we have three different ways to express the real unforced solution in the underdamped case:
+			<md>
+				<mrow>\text{complex exponential} \amp \qquad e^{-Z\omega_0 t} \left( c_1 e^{i\omega_d t} + \overline{c_1} e^{-i\omega_d t} \right) </mrow>
+				<mrow>\text{sin and cos} \amp \qquad a_1 e^{-Z\omega_0 t} \cos(\omega_d t) + a_2 e^{-Z\omega_0 t} \sin(\omega_d t) </mrow>
+				<mrow>\text{amplitude and phase} \amp \qquad R e^{-Z\omega_0 t} \cos(\omega_d t - \theta) </mrow>
+			  </md>
+		</p>
 	</subsection>
 	<subsection xml:id="so-os-critical">
 		<title>Critically damped</title>
@@ -321,7 +372,7 @@
 			<me>
 				x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t)
 			</me>. 
-			There is no longer any oscillation present, and we have a <idx>critically damped oscillator</idx><term>critically damped oscillator</term>. The linear growth of <m>c_2 t</m> doesn't make much difference against the exponential decay. 
+			There is no longer any oscillation present, and we have a <idx>critically damped oscillator</idx><term>critically damped</term> system. The linear growth of <m>c_2 t</m> doesn't make much of a difference against the exponential decay. 
 		</p>
 	</subsection>
 	<subsection xml:id="so-os-overdamped">
@@ -334,6 +385,83 @@
 			are negative and real, thus giving an exponentially decaying homogeneous solution. In this case we have an <idx>overdamped oscillator</idx><term>overdamped oscillator</term>. 
 		</p>
 	</subsection>
+	<conclusion>
+		<p>
+			<xref ref="so-tab-damping"/> summarizes the four major cases for damping. If the damping coefficient <m>Z</m> is nonzero, the eigenvalues of the problem have negative real part, and therefore all the homogeneous solutions decay exponentially in amplitude as <m>t\to\infty</m>. For this reason the homogeneous solution is often called a <idx>transient solution</idx><term>transient solution</term> or transient response. 
+		</p>
+		<table xml:id="so-tab-damping">
+		  <title>Damping coefficient and eigenvalues</title>
+		  <tabular>
+			<row>
+			  <cell>Damping coefficient</cell> 
+			  <cell>Eigenvalue property</cell>
+			  <cell>Description</cell>
+			</row>
+			<row>
+				<cell><m>Z=0</m></cell>
+				<cell>imaginary</cell>
+				<cell>undamped</cell>
+			</row>
+			<row>
+				<cell><m>0 \lt Z \lt 1</m></cell>
+				<cell>complex</cell>
+				<cell>underdamped</cell>
+			</row>
+			<row>
+				<cell><m>Z=1</m></cell>
+				<cell>real, negative, repeated</cell>
+				<cell>critically damped</cell>
+			</row>
+			<row>
+				<cell><m>Z \gt 1</m></cell>
+				<cell>real, negative </cell>
+				<cell>overdamped</cell>
+			</row>
+		  </tabular>
+		</table>
+		<example>
+			<p>
+				A 5 kg mass is hung on a spring with constant <m>11</m> N per m and connected to a dashpot that provides 8 N-sec per meter of resistance. Is this system underdamped, overdamped, or critically damped? 
+			</p>
+			<p>
+				The ODE for the mass-spring system is 
+				<md>
+				  <mrow> 5 x'' + 8x' + 11 x  \amp = 0 </mrow> 
+				  <mrow> x'' + 1.6 x' + 2.2 x  \amp = 0, </mrow> 
+				</md>
+				from which we identify the natural frequency
+				<me>
+					\omega_0 = \sqrt{2.2} = \approx 1.483 \text{s}^{-1}.   , \qquad 
+				</me>
+				The damping coefficient is therefore
+				<me>
+					Z = \frac{1.6}{2\omega_0} \approx 0.539.
+				</me>
+				Since this value is less than one, the system is underdamped. 
+			</p>
+		</example>
+		<example>
+			<p>
+				Suppose the system from the last example is initially at equilibrium when the mass is suddenly pushed downward at 0.5 m/sec. Find the motion of the mass.
+			</p>
+			<p>
+				The ODE is, as before, <m>x'' + 1.6 x' + 2.2 x = 0</m>. The eigenvalues are the roots of <m>\lambda^2 + 1.6\lambda + 2.2</m>, which are found numerically to be 
+				<me>
+					\lambda \approx -0.8000 \pm 1.2490i.
+				</me>
+				Note that the imaginary part is smaller than the natural frequency found in the last example, as it must be. From here I will treat these rounded values as though they are exact. Choosing the sin-cos form of the general solution, we have 
+				<md>
+					<mrow>x(t) \amp = a_1 e^{-0.8 t} \cos(1.249 t) + a_2 e^{-0.8 t} \sin(1.249 t).</mrow>
+				</md>
+				(It is not necessary to use the general formula derived above for this; the solution comes entirely from the eigenvalues.) We apply the initial conditions <m>x(0)=0</m>, <m>x'(0)=-0.5</m> to find 
+				<md>
+					<mrow> 0 \amp = x(0) = a_1, </mrow> 
+					<mrow> -0.5 \amp = x'(0) = a_1( -0.8 ) + a_2 (1.249 ), </mrow> 
+				</md>
+				thus <m>a_2 = -0.4003</m>. The motion is therefore given by <m>x(t)=-0.4003\, e^{-0.8 t} \sin(1.249 t)</m>. 
+			</p>
+		</example>
+	</conclusion>
 </section>
 
 <section xml:id="so-expforcing">
@@ -476,7 +604,7 @@ fsurf( log_g,[0 1.5 1e-3 1])
 set(gca,'ydir','rev')
 view(20,20)
 xlabel('driving frequency')
-ylabel('damping intensity')
+ylabel('damping coefficient')
 zlabel('log_{10}(gain)')
 hold on
 Z = linspace(1e-3,1,300);

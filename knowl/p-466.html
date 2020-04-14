@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-13T15:49:03-04:00    *-->
+<!--*    on 2020-04-14T12:32:43-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For \(0\lt Z \lt 1\) the eigenvalues of <a class="xref" data-knowl="./knowl/so-eq-unified.html" title="Equation 4.4.1">(4.4.1)</a> are complex:</p>
+<p>This is a good moment to observe that there are three equivalent ways to express harmonic motion:</p>
+<div class="displaymath">
+\begin{align*}
+\text{complex exponential} \amp \qquad c_1 e^{i\omega_0 t} + \overline{c_1} e^{-i\omega_0 t} \\
+\text{sin and cos} \amp \qquad a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t) \\
+\text{amplitude and phase} \amp \qquad R \cos(\omega_0 t - \theta) 
+\end{align*}
+</div>
+<p data-braille="continuation">We have seen before how Euler's identity connects the first two, but the third one is new. Applying a trig identity to this new form yields</p>
 <div class="displaymath">
 \begin{equation*}
-\lambda_{1,2} = -Z \omega_0 \pm i \omega_0 \sqrt{1-Z^2}\text{.}
+R \cos(\theta) \cos(\omega_0 t) + R \sin(\theta) \sin(\omega_0 t),
 \end{equation*}
 </div>
-<p data-braille="continuation">Defining \(\omega_d=\omega_0 \sqrt{1-Z^2}\text{,}\) the general homogeneous solution is therefore</p>
-<div class="displaymath">
-\begin{equation*}
-x_h(t) = e^{-Z\omega_0 t} \left( c_1 e^{i\omega_d t} + c_2 e^{-i\omega_d t} \right)\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">or the equivalent real form with cos and sin. This solution is pseudoperiodic, combining oscillation at frequency \(\omega_d \lt \omega_0\) inside an exponential decay envelope. This situation is called an <dfn class="terminology">underdamped oscillator</dfn>.</p>
+<p data-braille="continuation">which shows that \((R,\theta)\) merely expresses the Cartesian point \((a_1,a_2)\) in polar form. In any of the expressions, there are two real arbitrary constants that are determined by initial conditions, if those are given.</p>
 <span class="incontext"><a href="so-oscillators.html#p-466">in-context</a></span>
 </body>
 </html>

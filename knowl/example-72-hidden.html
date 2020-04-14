@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-13T15:49:03-04:00    *-->
+<!--*    on 2020-04-14T12:32:43-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,16 +11,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Let's solve \(x''+9x=\delta(t-2)\text{.}\) A particular solution has transform</p>
+<body><article class="example example-like"><p>A 5 kg mass is hung on a spring with constant \(11\) N per m and connected to a dashpot that provides 8 N-sec per meter of resistance. Is this system underdamped, overdamped, or critically damped?</p>
+<p>The ODE for the mass-spring system is</p>
+<div class="displaymath">
+\begin{align*}
+5 x'' + 8x' + 11 x  \amp = 0 \\
+x'' + 1.6 x' + 2.2 x  \amp = 0, 
+\end{align*}
+</div>
+<p data-braille="continuation">from which we identify the natural frequency</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{e^{-2s}}{s^2+9} = e^{-2s} F(s)\text{,}
+\omega_0 = \sqrt{2.2} = \approx 1.483 \text{s}^{-1}.   , \qquad 
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(F(s)\) is the transform of \(\sin(3t)/3\text{.}\) So the shift theorem implies</p>
+<p data-braille="continuation">The damping coefficient is therefore</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = \frac{1}{3} H(t-2) \sin(3t-6)\text{.}
+Z = \frac{1.6}{2\omega_0} \approx 0.539.
 \end{equation*}
-</div></article></body>
+</div>
+<p data-braille="continuation">Since this value is less than one, the system is underdamped.</p></article></body>
 </html>
