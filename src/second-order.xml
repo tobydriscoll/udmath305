@@ -265,11 +265,11 @@
 			</me>.
 			One reason to prefer this form is dimensional analysis: both <m>b/m</m> and <m>\sqrt{k/m}</m> have units of inverse time. We introduce new parameters 
 			<me>
-				\omega_0 = \sqrt{\frac{k}{m}} \gt 0, \quad Z = \frac{1}{2} \frac{b/m}{\omega_0} = \frac{b}{\sqrt{4km}}\ge 0
+				\omega_0 = \sqrt{\frac{k}{m}} \gt 0, \quad Z = \frac{b/m}{2\omega_0} = \frac{b}{\sqrt{4km}} \ge 0
 			</me>.
 			<m>\omega_0</m> is known as the <idx>natural frequency</idx><term>natural frequency</term>, with units of inverse time, and <m>Z</m> is a dimensionless <idx>damping coefficient</idx><term>damping coefficient</term> describing the relative intensity of the damping. Now the unforced ODE becomes 
 			<men xml:id="so-eq-unified"> 
-				x'' + 2 Z \omega_0 x' + \omega_0^2 x = 0
+				x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = 0
 			</men>.
 			A similar derivation can be done starting from the electrical circuit equation.
 		</p>
@@ -470,7 +470,7 @@
 		<p>
 			We next want to examine the linear oscillator in standardized form <xref ref="so-eq-unified"/> when there is an exponential forcing function present: 
 			<men xml:id="so-eq-unifiedexp"> 
-				x'' + 2 Z \omega_0 x' + \omega_0^2 x = e^{rt}
+				x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = e^{rt}
 			</men>.
 			We're typically interested in the undamped and underdamped cases, <m>0\le Z \lt 1</m>. 
 		</p>
@@ -481,7 +481,7 @@
 			</me>. 
 			Hence 
 			<men xml:id="so-eq-coeff">
-				A(r) = \frac{1}{r^2  + 2 Z \omega_0 r + \omega_0^2}
+				x_p(t) = A e^{rt}, \qquad A(r) = \frac{1}{r^2  + 2 Z \omega_0 r + \omega_0^2}
 			</men>
 			gives a particular solution unless the denominator, which is really just the characteristic polynomial, is zero. In that case, <m>r</m> is an eigenvalue; we consider that situation later. 
 		</p>
@@ -489,7 +489,7 @@
 	<subsection xml:id="so-ef-harmonic">
 		<title>Harmonic forcing</title>
 		<p>
-			Exponential forcing <m>F(t)=e^{rt}</m> is particulary important when <m>r</m> is imaginary. Say <m>r=i\omega</m>. Then by Euler's identity we have 
+			Exponential forcing is particularly important when <m>r</m> is imaginary. Say <m>r=i\omega</m> in the above. Then by Euler's identity we have 
 			<me>
 				e^{rt} = \cos(\omega t) + i\sin(\omega t)
 			</me>. 
