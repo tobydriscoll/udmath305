@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-14T12:32:43-04:00    *-->
+<!--*    on 2020-04-14T19:53:34-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>As in the undamped case, we have three different ways to express the real unforced solution in the underdamped case:</p>
+<p>At \(Z=1\) the complex eigenvalues collapse to a double eigenvalue at</p>
 <div class="displaymath">
-\begin{align*}
-\text{complex exponential} \amp \qquad e^{-Z\omega_0 t} \left( c_1 e^{i\omega_d t} + \overline{c_1} e^{-i\omega_d t} \right) \\
-\text{sin and cos} \amp \qquad a_1 e^{-Z\omega_0 t} \cos(\omega_d t) + a_2 e^{-Z\omega_0 t} \sin(\omega_d t) \\
-\text{amplitude and phase} \amp \qquad R e^{-Z\omega_0 t} \cos(\omega_d t - \theta) 
-\end{align*}
+\begin{equation*}
+\lambda_1 = \lambda_2 = -\omega_0\text{,}
+\end{equation*}
 </div>
+<p data-braille="continuation">with general homogeneous solution</p>
+<div class="displaymath">
+\begin{equation*}
+x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">There is no longer any oscillation present, and we have a <dfn class="terminology">critically damped</dfn> system. The linear growth of \(c_2 t\) doesn't make much of a difference against the exponential decay.</p>
 <span class="incontext"><a href="so-oscillators.html#p-470">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-14T12:32:43-04:00    *-->
+<!--*    on 2020-04-14T19:53:35-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,11 +14,11 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
-\amp = -\int_0^\infty t f(t) e^{-st}\, dt\\
-\amp = - \lx[ tf(t) ]
+[g*f](t) \amp = \int_0^t f(t-\tau)g(\tau)\, d\tau\\
+\amp = \int_t^0 f(u)g(t-u)\, (-du)  \\
+\amp = \int_0^t g(t-u)f(u)\, du = [f*g](t)
 \end{align*}
 </div>
-<span class="incontext"><a href="so-laplace-repeated.html#mjx-eqn-mrow-137">in-context</a></span>
+<span class="incontext"><a href="so-convolutions.html#mjx-eqn-mrow-137">in-context</a></span>
 </body>
 </html>

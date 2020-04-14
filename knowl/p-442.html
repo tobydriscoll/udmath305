@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-14T12:32:43-04:00    *-->
+<!--*    on 2020-04-14T19:53:32-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,55 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's find the general solution of \(x''+5x'+6x=0\text{.}\) The characteristic polynomial is \(\lambda^2+5\lambda+6\text{,}\) which has roots \(\lambda_1=-2\text{,}\) \(\lambda_2=-3\text{.}\) Thus \(x(t)=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p>
+<p>In the nondefective case, we find the eigenvectors from the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{.}\) Thus the general homogeneous solution is</p>
+<div class="displaymath">
+\begin{equation*}
+\bu_h(t) = c_1 e^{\lambda_1 t} \twovec{1}{\lambda_1} + c_2 e^{\lambda_2 t} \twovec{1}{\lambda_2}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">In terms of the original variable \(x=u_1\text{,}\) this is more simply</p>
+<div class="displaymath">
+\begin{equation}
+x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \qquad \text{if } \lambda_1\neq\lambda_2\text{.}\tag{4.2.1}
+\end{equation}
+</div>
+<p data-braille="continuation">For real problems with complex eigenvalues, the second term in the sum is the conjugate of the first, and we could write instead</p>
+<div class="displaymath">
+\begin{equation*}
+x_h(t) = \Re \left[ c_1 e^{\lambda_1 t} \right] 
+\end{equation*}
+</div>
+<p data-braille="continuation">We might want an alternative real-only form. Suppose the eigenvalues are written as \(\alpha \pm i \beta\text{.}\) Starting with</p>
+<div class="displaymath">
+\begin{equation*}
+e^{(\alpha + i\beta)t} = e^{\alpha t} [\cos(\beta t) + i \sin(\beta t)],
+\end{equation*}
+</div>
+<p data-braille="continuation">we can take real and imaginary parts to get independent real solutions. Thus</p>
+<div class="displaymath">
+\begin{equation}
+x_h(t) = e^{\alpha t} \bigl[ a_1 \cos(\beta t) + a_2 \sin(\beta t) \bigr], \qquad \text{if } \lambda=\alpha \pm i\beta\text{.}\tag{4.2.2}
+\end{equation}
+</div>
+<p data-braille="continuation">There is a third equivalent form in the complex case: the <dfn class="terminology">phase-amplitude form</dfn>,</p>
+<div class="displaymath">
+\begin{equation}
+x_h(t) = R e^{\alpha t} \cos(\beta t - \theta)\text{.}\tag{4.2.3}
+\end{equation}
+</div>
+<p data-braille="continuation">To see the equivalence to <a class="xref" data-knowl="./knowl/so-eq-homogcomplex.html" title="Equation 4.2.2">(4.2.2)</a>, we can use a trig identity on the phase-shifted cosine:</p>
+<div class="displaymath">
+\begin{equation*}
+R e^{\alpha t} \cos(\beta t - \theta) = R e^{\alpha t} \cos(\theta) \cos(\beta t) + R e^{\alpha t} \sin(\theta) \sin(\beta t).
+\end{equation*}
+</div>
+<p data-braille="continuation">We get back to <a class="xref" data-knowl="./knowl/so-eq-homogcomplex.html" title="Equation 4.2.2">(4.2.2)</a> by choosing</p>
+<div class="displaymath">
+\begin{equation*}
+R\cos(\theta) = a_1, \qquad R\sin(\theta) = a_2.
+\end{equation*}
+</div>
+<p data-braille="continuation">More simply, we can think of \((a_1,a_2)\) as Cartesian coordinates and express the same point in polar form to get \((R,\theta)\text{.}\) Usually the amplitude, \(R=\sqrt{a_1^2+a_2^2}\text{,}\) is of the most interest. Whichever form is chosen for the general solution, it has two real constants that can be determined by the initial conditions, if supplied.</p>
 <span class="incontext"><a href="so-homogeneous.html#p-442">in-context</a></span>
 </body>
 </html>

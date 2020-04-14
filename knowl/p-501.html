@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-14T12:32:43-04:00    *-->
+<!--*    on 2020-04-14T19:53:35-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,15 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We know by now that repeated poles in \(X_p(s)\) arise in two ways: from repeated characteristic roots (i.e. poles of the transfer function), or perfect resonance with the forcing function. We can anticipate the effect on the transform, because we know the answer in the time domain is something like \(te^{rt}\text{.}\) </p>
+<p>In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
+<div class="displaymath">
+\begin{align*}
+F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
+\amp = -\int_0^\infty t f(t) e^{-st}\, dt\\
+\amp = - \lx[ tf(t) ]\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Take a moment to appreciate this. Earlier we found that a derivative in \(t\) corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
 <span class="incontext"><a href="so-laplace-repeated.html#p-501">in-context</a></span>
 </body>
 </html>

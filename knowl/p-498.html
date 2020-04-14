@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-14T12:32:43-04:00    *-->
+<!--*    on 2020-04-14T19:53:35-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,37 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Things are not too bad if there is an additional real pole:</p>
+<p>The undamped oscillator \(x''+16x=40e^{-2t}\) has a particular solution whose transform is</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{A+Bs}{s^2+\omega^2} + \frac{C}{s-c} \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t) + C e^{ct}\text{.}
+X_p(s) = \frac{40}{(s+2)(s^2+16)} = \frac{A+Bs}{s^2+16^2} + \frac{C}{s+2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Usually there is some grunt (or computer) work involved in finding the values of \(A\text{,}\) \(B\text{,}\) and \(C\text{.}\)</p>
+<p data-braille="continuation">Clearing the denominators gives the identity</p>
+<div class="displaymath">
+\begin{equation*}
+(A+Bs)(s+2) + C(s^2+16) = 40\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We need three equations to determine the unknown coefficients. Setting \(s=-2\) quickly gives \(20C=40\text{,}\) so \(C=2\text{.}\) Then setting \(s=\pm 4\) gives the system</p>
+<div class="displaymath">
+\begin{align*}
+(A+4B)(6) \amp = 40 - 64 = -24\\
+(A-4B)(-2) \amp = -24\text{,}
+\end{align*}
+</div>
+<p data-braille="continuation">or \(A+4B=-4\) and \(A-4B=12\text{.}\) We can add and subtract these equations to get \(2A=8\text{,}\) \(8B=-16\text{,}\) so finally</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-laplace.html#p-498">in-context</a></span>
 </body>
 </html>

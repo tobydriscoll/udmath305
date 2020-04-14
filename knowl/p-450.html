@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-14T12:32:43-04:00    *-->
+<!--*    on 2020-04-14T19:53:32-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,20 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For \(x'' - 2x'-3x=10e^{4t}\text{,}\) the proper choice is</p>
+<p>Let's find a particular solution of \(x'' +4x'+4x=8t^2\text{.}\) The correct form of \(x_p\) is a quadratic polynomial, so</p>
 <div class="displaymath">
 \begin{equation*}
-x_p = Ae^{4t}\text{.}
+x_p = A + Bt + Ct^2\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Everything else is just basic manipulations.</p>
+<p data-braille="continuation">Plugging that into the ODE yields</p>
 <div class="displaymath">
 \begin{align*}
-16A e^{4t} - 2 (4A e^{4t}) - 3 (Ae^{4t}) \amp =10 e^{4t}\\
-16A -8A -3A =  10\text{.}
+2C + 4(B+2Ct) + 4(A+Bt+Ct^2) \amp = 8t^2\\
+4C t^2 + (8C+4B) + (2C+4B+4A) \amp = 8t^2\text{.}
 \end{align*}
 </div>
-<p data-braille="continuation">From this it's clear that \(A=2\text{.}\)</p>
+<p data-braille="continuation">This has to be an identity for all \(t\text{.}\) Matching like powers, we can read off \(C=2\text{,}\) then \(B=-4\text{,}\) and finally \(A=3\text{.}\) This provides us with \(x_p=2t^2+4t+3\text{.}\)</p>
 <span class="incontext"><a href="so-undetermined.html#p-450">in-context</a></span>
 </body>
 </html>
