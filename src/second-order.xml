@@ -236,15 +236,29 @@
 	</p>
 	<example xml:id="so-ex-noundeter">
 		<p>
-			The equation <m>x''+x=\cos(t)</m> is supposed to suggest the particular solution <m>x_p=A\cos(t)+B\sin(t)</m>. But look at what happens after substitution:
+			The equation <m>x''+x=\cos(\omega t)</m> suggests the particular solution <m>x_p=A\cos(\omega t)+B\sin(\omega t)</m>. Upon substitution,
 			<md>
-				<mrow>[-A\cos(t) - B\sin(t) ] + [ A\cos(t) + B\sin(t)] \amp =\cos(t)</mrow>
-				<mrow> 0 = \cos(t)</mrow>
-			</md>. This leads us nowhere good. 
+				<mrow>[-\omega^2 A\cos(\omega t) - \omega^2 B\sin(\omega t) ] + [ A\cos(\omega t) + B\sin(\omega t)] \amp =\cos(\omega t),</mrow>
+			</md>. 
+			which leads to the conclusion that <m>B=0</m> and, if <m>\omega^2 \neq 1</m>, <m>A=1/(1-\omega^2)</m>. However, if <m>\omega = 1</m>, the substitution would leave us with <m>0=\cos(t)</m>, which is impossible to satisfy for all <m>t</m>.
 		</p>
 	</example>
 	<p>
-		The failure of <xref ref="so-ex-noundeter"/> was due to the fact that the <m>x_p</m> we picked is actually a homogeneous solution (a fact we inadvertently proved). There is a way to fix this method in that circumstance, but we will not go into the details. 
+		The failure of <xref ref="so-ex-noundeter"/> at <m>\omega = 1</m> was due to the fact that the <m>x_p</m> we picked is actually a homogeneous solution. There are additional rules to cover this case, but here is an interesting workaround instead. Suppose we seek a particular solution for <m>\omega=1</m> as the limit of a particular solution as <m>\omega\to 1</m>. We won't use the exact <m>x_p</m> found in the example, but instead subtract a homogeneous solution from it to get 
+		<me>
+			\frac{ \cos(\omega t) - \cos(t) } {1-\omega^2},
+		</me>
+		which is also a particular solution. Then L'Hopital applies in the limit to give us 
+		<men xml:id="so-eq-secular">
+			x_p(t) = \frac{ -t \sin(\omega t) }{ -2 \omega } = \frac{1}{2}t\sin(t). 
+		</men>
+		Now, to verify that this is a particular solution in the limiting case, we compute 
+		<md>
+		  <mrow> x_p \amp = \frac{1}{2}t\sin(t) </mrow>
+		  <mrow> x_p' \amp = \frac{1}{2}[\sin(t)+t\cos(t)] </mrow>
+		  <mrow> x_p'' \amp = \frac{1}{2}[\cos(t) + \cos(t) - t\sin(t)], </mrow>
+		</md>
+		so that <m>x_p''+x_p=\cos(t)</m> as required.
 	</p>
 </section>
 
@@ -498,15 +512,20 @@
 	<subsection xml:id="so-ef-harmonic">
 		<title>Harmonic forcing</title>
 		<p>
-			Exponential forcing is particularly important when <m>r</m> is imaginary. Say <m>r=i\omega</m> in the above. Then by Euler's identity we have 
+			Exponential forcing is particularly important when <m>r</m> is imaginary. Set <m>r=i\omega</m> in the above. The particular solution 
 			<me>
-				e^{rt} = \cos(\omega t) + i\sin(\omega t)
+				x_p(t) = A(i\omega) e^{i\omega t}
+			</me>			
+			is complex; say we decompose it as <m>x_p(t)=u_p(t)+i\, v_p(t)</m>. Using operator notation to write <m>\opA[x_p]=e^{i\omega t}</m>, linearity implies
+			<me>
+				\opA[u_p] + i\,\opA[v_p] = \cos(\omega t) + i\sin(\omega t)
 			</me>. 
-			Thanks to linearity, if given a cos or sin forcing, we can solve the complex-valued problem and then take a real or imaginary part. That is, if <m>x_p(t) = A e^{i\omega t}</m> as above, then
+			Matching real and imaginary parts gives us
 			<md>
-				<mrow>[\Re x_p]'' + 2 Z \omega_0 [\Re x_p]' + \omega_0^2 [\Re x_p] \amp = \cos(\omega t), </mrow>
-				<mrow>[\Im x_p]'' + 2 Z \omega_0 [\Im x_p]' + \omega_0^2 [\Im x_p]  \amp = \sin(\omega t). </mrow>
+				<mrow>\opA[u_p] \amp = \cos(\omega t), </mrow>
+				<mrow>\opA[v_p]  \amp = \sin(\omega t). </mrow>
 			</md>
+			In words, the particular solution for imaginary-exponential forcing gives us the solutions we need for all cosine and sine forcing. All combinations of such forcing functions can be described as <idx>harmonic forcing</idx><term>harmonic forcing</term>. 
 		</p>
 		<p>
 			It's often useful to rewrite the complex factor <m>A(i\omega)</m> from <xref ref="so-eq-coeff"/> in polar form: 
@@ -542,15 +561,7 @@
 			If <m>\omega\approx \omega_0</m>, then the amplitude of the particular solution is very large. 
 		</p>
 		<p>
-			What is the meaning if <m>\omega = \omega_0</m>? This is exactly when <m>i\omega</m> is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients will actually fail like in <xref ref="so-ex-noundeter"/>. But there is a sneaky shortcut. For a certain choice of <m>c_1</m> and <m>c_2</m>, we get a different particular solution 
-			<me>
-				\hat{x}_p(t) = \frac{1}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)
-			</me>, 
-			which has an indeterminate form in the limit <m>\omega \to \omega_0</m>, allowing us to use L'Hopital's Rule: 
-			<me>
-				\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0}  \frac{it e^{i\omega t}}{-2\omega} = -\frac{i}{2} t e^{i\omega_0 t}
-			</me>. 
-			(The derivation is subtle because the derivatives here are with respect to the limited variable <m>\omega</m> and not <m>t</m>.) This leads to the general solution 
+			What is the meaning if <m>\omega = \omega_0</m>? This is exactly when <m>i\omega</m> is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients will actually fail like it did in <xref ref="so-ex-noundeter"/>. If we use the same trick that gave us <xref ref="so-eq-secular"/>, we end up with the following.  
 		</p>
 		<fact>
 			<title>Solution for standardized undamped driven oscillator at resonance</title>

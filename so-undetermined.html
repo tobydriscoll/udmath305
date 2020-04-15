@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-15T13:20:35-04:00    *-->
+<!--*    on 2020-04-15T14:36:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -268,15 +268,34 @@ x_p = A\cos(2t) + B\sin(2t)\text{.}
 <p id="p-454">We have to repeat the warning from the first time we saw this method: occasionally it fails, given our rules.</p>
 <article class="example example-like" id="so-ex-noundeter"><a data-knowl="" class="id-ref original" data-refid="hk-so-ex-noundeter"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-so-ex-noundeter"><article class="example example-like"><p id="p-455">The equation \(x''+x=\cos(t)\) is supposed to suggest the particular solution \(x_p=A\cos(t)+B\sin(t)\text{.}\) But look at what happens after substitution:</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-so-ex-noundeter"><article class="example example-like"><p id="p-455">The equation \(x''+x=\cos(\omega t)\) suggests the particular solution \(x_p=A\cos(\omega t)+B\sin(\omega t)\text{.}\) Upon substitution,</p>
 <div class="displaymath">
 \begin{align*}
-[-A\cos(t) - B\sin(t) ] + [ A\cos(t) + B\sin(t)] \amp =\cos(t)\\
-0 = \cos(t)\text{.}
+[-\omega^2 A\cos(\omega t) - \omega^2 B\sin(\omega t) ] + [ A\cos(\omega t) + B\sin(\omega t)] \amp =\cos(\omega t),\text{.}
 \end{align*}
 </div>
-<p data-braille="continuation">This leads us nowhere good.</p></article></div>
-<p id="p-456">The failure of <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a> was due to the fact that the \(x_p\) we picked is actually a homogeneous solution (a fact we inadvertently proved). There is a way to fix this method in that circumstance, but we will not go into the details.</p></section></div></main>
+<p data-braille="continuation">which leads to the conclusion that \(B=0\) and, if \(\omega^2 \neq 1\text{,}\) \(A=1/(1-\omega^2)\text{.}\) However, if \(\omega = 1\text{,}\) the substitution would leave us with \(0=\cos(t)\text{,}\) which is impossible to satisfy for all \(t\text{.}\)</p></article></div>
+<p id="p-456">The failure of <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a> at \(\omega = 1\) was due to the fact that the \(x_p\) we picked is actually a homogeneous solution. There are additional rules to cover this case, but here is an interesting workaround instead. Suppose we seek a particular solution for \(\omega=1\) as the limit of a particular solution as \(\omega\to 1\text{.}\) We won't use the exact \(x_p\) found in the example, but instead subtract a homogeneous solution from it to get</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{ \cos(\omega t) - \cos(t) } {1-\omega^2},
+\end{equation*}
+</div>
+<p data-braille="continuation">which is also a particular solution. Then L'Hopital applies in the limit to give us</p>
+<div class="displaymath">
+\begin{equation}
+x_p(t) = \frac{ -t \sin(\omega t) }{ -2 \omega } = \frac{1}{2}t\sin(t). \label{so-eq-secular}\tag{4.3.1}
+\end{equation}
+</div>
+<p data-braille="continuation">Now, to verify that this is a particular solution in the limiting case, we compute</p>
+<div class="displaymath">
+\begin{align*}
+x_p \amp = \frac{1}{2}t\sin(t) \\
+x_p' \amp = \frac{1}{2}[\sin(t)+t\cos(t)] \\
+x_p'' \amp = \frac{1}{2}[\cos(t) + \cos(t) - t\sin(t)], 
+\end{align*}
+</div>
+<p data-braille="continuation">so that \(x_p''+x_p=\cos(t)\) as required.</p></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-15T13:20:35-04:00    *-->
+<!--*    on 2020-04-15T14:36:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -231,19 +231,26 @@ x_p(t) = A e^{rt}, \qquad A(r) = \frac{1}{r^2  + 2 Z \omega_0 r + \omega_0^2}\la
 <p data-braille="continuation">gives a particular solution unless the denominator, which is really just the characteristic polynomial, is zero. In that case, \(r\) is an eigenvalue; we consider that situation later.</p></section><section class="subsection" id="so-ef-harmonic"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Harmonic forcing</span>
 </h3>
-<a href="so-expforcing.html#so-ef-harmonic" class="permalink">¶</a><p id="p-479">Exponential forcing is particularly important when \(r\) is imaginary. Say \(r=i\omega\) in the above. Then by Euler's identity we have</p>
+<a href="so-expforcing.html#so-ef-harmonic" class="permalink">¶</a><p id="p-479">Exponential forcing is particularly important when \(r\) is imaginary. Set \(r=i\omega\) in the above. The particular solution</p>
 <div class="displaymath">
 \begin{equation*}
-e^{rt} = \cos(\omega t) + i\sin(\omega t)\text{.}
+x_p(t) = A(i\omega) e^{i\omega t}
 \end{equation*}
 </div>
-<p data-braille="continuation">Thanks to linearity, if given a cos or sin forcing, we can solve the complex-valued problem and then take a real or imaginary part. That is, if \(x_p(t) = A e^{i\omega t}\) as above, then</p>
+<p data-braille="continuation">is complex; say we decompose it as \(x_p(t)=u_p(t)+i\, v_p(t)\text{.}\) Using operator notation to write \(\opA[x_p]=e^{i\omega t}\text{,}\) linearity implies</p>
+<div class="displaymath">
+\begin{equation*}
+\opA[u_p] + i\,\opA[v_p] = \cos(\omega t) + i\sin(\omega t)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Matching real and imaginary parts gives us</p>
 <div class="displaymath">
 \begin{align*}
-[\Re x_p]'' + 2 Z \omega_0 [\Re x_p]' + \omega_0^2 [\Re x_p] \amp = \cos(\omega t), \\
-[\Im x_p]'' + 2 Z \omega_0 [\Im x_p]' + \omega_0^2 [\Im x_p]  \amp = \sin(\omega t). 
+\opA[u_p] \amp = \cos(\omega t), \\
+\opA[v_p]  \amp = \sin(\omega t). 
 \end{align*}
 </div>
+<p data-braille="continuation">In words, the particular solution for imaginary-exponential forcing gives us the solutions we need for all cosine and sine forcing. All combinations of such forcing functions can be described as <dfn class="terminology">harmonic forcing</dfn>.</p>
 <p id="p-480">It's often useful to rewrite the complex factor \(A(i\omega)\) from <a class="xref" data-knowl="./knowl/so-eq-coeff.html" title="Equation 4.5.2">(4.5.2)</a> in polar form:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -275,19 +282,7 @@ x(t) = x_h(t) + x_p(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t} + \frac{1}{\
 \end{equation*}
 </div>
 <p data-braille="continuation">(or a real equivalent), provided \(\omega\neq\omega_0\)</p></article><p id="p-483">If \(\omega\approx \omega_0\text{,}\) then the amplitude of the particular solution is very large.</p>
-<p id="p-484">What is the meaning if \(\omega = \omega_0\text{?}\) This is exactly when \(i\omega\) is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients will actually fail like in <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a>. But there is a sneaky shortcut. For a certain choice of \(c_1\) and \(c_2\text{,}\) we get a different particular solution</p>
-<div class="displaymath">
-\begin{equation*}
-\hat{x}_p(t) = \frac{1}{\omega_0^2-\omega^2} \left( e^{i\omega t} - e^{i\omega_0 t} \right)\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">which has an indeterminate form in the limit \(\omega \to \omega_0\text{,}\) allowing us to use L'Hopital's Rule:</p>
-<div class="displaymath">
-\begin{equation*}
-\lim_{\omega \to \omega_0} \hat{x}_p(t) = \lim_{\omega \to \omega_0}  \frac{it e^{i\omega t}}{-2\omega} = -\frac{i}{2} t e^{i\omega_0 t}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">(The derivation is subtle because the derivatives here are with respect to the limited variable \(\omega\) and not \(t\text{.}\)) This leads to the general solution</p>
+<p id="p-484">What is the meaning if \(\omega = \omega_0\text{?}\) This is exactly when \(i\omega\) is an eigenvalue of the homogeneous problem, so the method of undetermined coefficients will actually fail like it did in <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a>. If we use the same trick that gave us <a class="xref" data-knowl="./knowl/so-eq-secular.html" title="Equation 4.3.1">(4.3.1)</a>, we end up with the following.</p>
 <article class="fact theorem-like" id="fact-25"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Solution for standardized undamped driven oscillator at resonance.</span>
 </h6>
