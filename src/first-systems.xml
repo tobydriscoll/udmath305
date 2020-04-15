@@ -528,6 +528,73 @@
 			</p>
 		</example>
 	</subsection>
+
+	<exercises xml:id="fs-exer-complex">
+		<exercise>
+			<title>Power series</title>
+			<statement>
+			  <p>
+				Use the power series around <m>x=0</m> for <m>e^x</m> to derive Euler's identity.
+			  </p>
+			</statement>
+			<hint>
+				<p>
+					Set <m>x=it</m> and simplify powers of <m>i</m>, then collect real and imaginary terms to find the series for <m>\cos(t)</m> and <m>\sin(t)</m>.
+				</p>
+			</hint>
+		</exercise>
+		<exercise>
+			<title>Trig identities through complex algebra</title>
+			<statement>
+			  <p>
+				By taking powers of <m>e^{it}</m> and applying Euler's identity multiple times, derive the identities
+				<md>
+					<mrow> \sin(2\theta) \amp = 2\sin(\theta)\cos(\theta) </mrow>
+					<mrow>\cos(3\theta) \amp = \cos^3(\theta)-3\sin^2(\theta)\cos(\theta)</mrow>
+				</md>
+			  </p>
+			</statement>
+			<hint>
+			  <p>
+				Apply Euler's identity both to <m>e^{i\theta}</m>, then square both sides and apply Euler to <m>e^{2i\theta}</m>. Etc.
+			  </p>
+			</hint>
+			<solution>
+			  <p>
+				<md>
+				  <mrow> \cos(\theta) + i \sin(\theta) \amp = e^{i\theta} </mrow>
+				  <mrow> (\cos(\theta) + i \sin(\theta))^2 \amp = e^{2i\theta}  </mrow>
+				  <mrow> [\cos^2(\theta) - \sin^2(\theta) ] +i[ 2\cos(\theta)\sin(\theta) ] \amp = \cos(2\theta) + i\sin(2\theta)  </mrow>
+				</md>
+				The imaginary part of both sides gives the first required identity. 
+				Multiply by <m>e^{i\theta}</m> again to get the triple-angle identity. 
+			  </p>
+			</solution>
+		</exercise>
+		<exercise>
+			<title>Laplace transform of cos and sin</title>
+			<statement>
+			  <p>
+				Assume that our previously derived <m>\lx[e^{ct}] = 1/(s-c)</m> remains true when <m>c</m> is imaginary. (Also assume that <m>s</m> remains real.) Take the real and imaginary parts of both sides and apply the linearity of the transform to deduce formulas for <m>\lx[\sin(\omega t)</m> and <m>\lx[\cos(\omega t)]</m>.
+			  </p>
+			</statement>
+			<solution>
+			  <p>
+				  <md>
+					<mrow>\lx[e^{i\omega t}] \amp =  \frac{1}{s-i\omega}   </mrow>
+					<mrow> \lx[\cos(\omega t) + i \sin(\omega t)]  \amp = \frac{1}{s-i\omega} \cdot \frac{s+i\omega}{s+i\omega} </mrow>
+					<mrow> \lx[\cos(\omega t)] + i \lx[\sin(\omega t)]  \amp = \frac{s+i\omega}{s^2 + \omega^2}  </mrow>
+				  </md>
+				  By taking real and imaginary parts, obtain
+				<me>
+					\lx[\cos(\omega t)] = \frac{s}{s^2 + \omega^2}, \qquad \lx[\sin(\omega t)] = \frac{\omega}{s^2 + \omega^2}
+				</me>
+			  </p>
+			</solution>
+		</exercise>
+	</exercises>
+	<solutions divisional="solution"></solutions>
+
 </section>
 
 <section xml:id="fs-phaseplane">

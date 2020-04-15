@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-15T14:36:48-04:00    *-->
+<!--*    on 2020-04-15T17:03:29-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,27 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The mechanical oscillator \(mx'' + bx' + kx = F(t)\) has, like all linear ODEs, a homogeneous part and a forced part. For now we consider only the homogeneous part, taking up the forcing term in the next section. Ignoring the degenerate case of zero mass, we write</p>
+<p>The failure of <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a> at \(\omega = 1\) was due to the fact that the \(x_p\) we picked is actually a homogeneous solution. There are additional rules to cover this case, but here is an interesting workaround instead. Suppose we seek a particular solution for \(\omega=1\) as the limit of a particular solution as \(\omega\to 1\text{.}\) We won't use the exact \(x_p\) found in the example, but instead subtract a homogeneous solution from it to get</p>
 <div class="displaymath">
 \begin{equation*}
-x'' + \frac{b}{m} x' + \frac{k}{m} x = 0\text{.}
+\frac{ \cos(\omega t) - \cos(t) } {1-\omega^2},
 \end{equation*}
 </div>
-<p data-braille="continuation">One reason to prefer this form is dimensional analysis: both \(b/m\) and \(\sqrt{k/m}\) have units of inverse time. We introduce new parameters</p>
-<div class="displaymath">
-\begin{equation*}
-\omega_0 = \sqrt{\frac{k}{m}} \gt 0, \quad Z = \frac{b/m}{2\omega_0} = \frac{b}{\sqrt{4km}} \ge 0\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">\(\omega_0\) is known as the <dfn class="terminology">natural frequency</dfn>, with units of inverse time, and \(Z\) is a dimensionless <dfn class="terminology">damping coefficient</dfn> describing the relative intensity of the damping. Now the unforced ODE becomes</p>
+<p data-braille="continuation">which is also a particular solution. Then L'Hopital applies in the limit to give us</p>
 <div class="displaymath">
 \begin{equation}
-x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = 0\text{.}\tag{4.4.1}
+x_p(t) = \frac{ -t \sin(\omega t) }{ -2 \omega } = \frac{1}{2}t\sin(t). \tag{4.3.1}
 \end{equation}
 </div>
-<p data-braille="continuation">A similar derivation can be done starting from the electrical circuit equation.</p>
-<span class="incontext"><a href="so-oscillators.html#p-463">in-context</a></span>
+<p data-braille="continuation">Now, to verify that this is a particular solution in the limiting case, we compute</p>
+<div class="displaymath">
+\begin{align*}
+x_p \amp = \frac{1}{2}t\sin(t) \\
+x_p' \amp = \frac{1}{2}[\sin(t)+t\cos(t)] \\
+x_p'' \amp = \frac{1}{2}[\cos(t) + \cos(t) - t\sin(t)], 
+\end{align*}
+</div>
+<p data-braille="continuation">so that \(x_p''+x_p=\cos(t)\) as required.</p>
+<span class="incontext"><a href="so-undetermined.html#p-463">in-context</a></span>
 </body>
 </html>

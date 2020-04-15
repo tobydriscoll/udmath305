@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-15T14:36:48-04:00    *-->
+<!--*    on 2020-04-15T17:03:29-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,15 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In fact if we have any \(f(t)\) with transform \(F(s)\text{,}\) then from the transform definition we compute</p>
+<p>This example is the template for our use of Laplace transforms. In the general case we get</p>
 <div class="displaymath">
-\begin{align*}
-F'(s) \amp = \frac{d}{ds} \int_0^\infty f(t) e^{-st}\, dt\\
-\amp = -\int_0^\infty t f(t) e^{-st}\, dt\\
-\amp = - \lx[ tf(t) ]\text{.}
-\end{align*}
+\begin{equation*}
+[s^2X(s) - sx(0)-x'(0)] + b[sX(s)-x(0)] + cX(s) = F(s)\text{.}
+\end{equation*}
 </div>
-<p data-braille="continuation">Take a moment to appreciate this. Earlier we found that a derivative in \(t\) corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
-<span class="incontext"><a href="so-laplace-repeated.html#p-501">in-context</a></span>
+<p data-braille="continuation">We choose to find a particular solution with zero initial conditions, so that</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{F(s)}{s^2+bs+c}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The real effort comes in finding the inverse transform of the right-hand side. Note that the denominator has roots at the eigenvalues of the homogeneous problem. These are called <dfn class="terminology">poles</dfn> of the transform \(X_p\text{.}\) Typically \(F(s)\) will contribute one or more of its own poles. Each pole at \(s=r\) corresponds to an exponential solution \(e^{rt}\) in time, but the exact expression depends on a partial fraction decomposition and perhaps other manipulations.</p>
+<span class="incontext"><a href="so-laplace.html#p-501">in-context</a></span>
 </body>
 </html>

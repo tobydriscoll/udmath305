@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-15T14:36:48-04:00    *-->
+<!--*    on 2020-04-15T17:03:29-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,10 +14,12 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-\bx(t) \amp = \int_0^t -e^{s-t} \twomat{-\cos(t-s)-2\sin(t-s)}{\sin(t-s)}{-5\sin(t-s)}{-\cos(t-s)+2\sin(t-s)} \twovec{1}{s} \, ds\\
-\amp = \int_0^t -e^{s-t} \twovec{-\cos(t-s)+(s-2)\sin(t-s)}{-s\cos(t-s)+(2s-5)\sin(t-s)} \, ds.   
+e^{t\bA} \amp = \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{1}{1}{2}{-2}^{-1} \\
+\amp = -\frac{1}{4} \twomat{1}{1}{2}{-2} \twomat{e^{3t}}{0}{0}{e^{-t}} \twomat{-2}{-1}{-2}{1} \\
+\amp = -\frac{1}{4} \twomat{e^{3t}}{e^{-t}}{2e^{3t}}{-2e^{-t}} \twomat{-2}{-1}{-2}{1} \\
+\amp = \frac{1}{4} \twomat{2e^{3t}+2e^{-t}}{e^{3t}-e^{-t}}{4e^{3t}-4e^{-t}}{2e^{3t}+2e^{-t}} 
 \end{align*}
 </div>
-<span class="incontext"><a href="fs-varparam.html#mjx-eqn-mrow-103">in-context</a></span>
+<span class="incontext"><a href="fs-matrix-exp.html#mjx-eqn-mrow-103">in-context</a></span>
 </body>
 </html>

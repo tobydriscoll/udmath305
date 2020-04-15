@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-15T14:36:48-04:00    *-->
+<!--*    on 2020-04-15T17:03:29-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider forcing \(e^{i\omega t}\) in the undamped case with \(Z=0\text{.}\) Then</p>
+<p>The ODE for the mass-spring system is</p>
+<div class="displaymath">
+\begin{align*}
+5 x'' + 8x' + 11 x  \amp = 0 \\
+x'' + 1.6 x' + 2.2 x  \amp = 0, 
+\end{align*}
+</div>
+<p data-braille="continuation">from which we identify the natural frequency</p>
 <div class="displaymath">
 \begin{equation*}
-A(i\omega) = \frac{1}{\omega_0^2-\omega^2}
+\omega_0 = \sqrt{2.2} = \approx 1.483 \text{s}^{-1}.   , \qquad 
 \end{equation*}
 </div>
-<p data-braille="continuation">is purely real, and the general solution is</p>
-<span class="incontext"><a href="so-expforcing.html#p-481">in-context</a></span>
+<p data-braille="continuation">The damping coefficient is therefore</p>
+<div class="displaymath">
+\begin{equation*}
+Z = \frac{1.6}{2\omega_0} \approx 0.539.
+\end{equation*}
+</div>
+<p data-braille="continuation">Since this value is less than one, the system is underdamped.</p>
+<span class="incontext"><a href="so-oscillators.html#p-481">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-15T14:36:48-04:00    *-->
+<!--*    on 2020-04-15T17:03:29-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
+<p>If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{3}{(s^2+9)^2}\text{.}
+\lx[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">This doesn't look like anything easy. However, note that</p>
+<p data-braille="continuation">and</p>
 <div class="displaymath">
 \begin{equation*}
-sX_p(s) = \frac{3s}{(s^2+9)^2} = -\frac{3}{2} \frac{d}{ds} \left[ \frac{1}{s^2+9} \right] \text{.}
+\lx[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Therefore, \(sX_p(s)\) is the transform of \(\frac{1}{2} t \sin(3t)\text{.}\) So this must be \(x_p'(t)\text{.}\) An integration by parts then recovers</p>
+<p data-braille="continuation">Conversely, a transform \(X(s)\) that has \(s^2+\omega^2\) as a factor in the denominator has poles at \(\pm i\omega\text{.}\) The simplest case is</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
+X_p(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x_p(t)=(A/\omega)\sin(\omega t) + B\cos(\omega t)\text{.}
 \end{equation*}
 </div>
-<span class="incontext"><a href="so-laplace-repeated.html#p-502">in-context</a></span>
+<span class="incontext"><a href="so-laplace.html#p-502">in-context</a></span>
 </body>
 </html>
