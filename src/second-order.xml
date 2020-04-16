@@ -288,7 +288,7 @@
 		<title>Electrical oscillators</title>
 		<p>
 			An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is
-			<me>LI'' + RI' + CI = \mathcal{E}'(t)</me>,
+			<me>LI'' + RI' + \frac{1}{C}I = \mathcal{E}'(t)</me>,
 			where <m>L</m> is inductance, <m>R</m> is resistance, <m>C</m> is capacitance, and <m>I(t)</m> is the current flowing through the circuit. The forcing term represents the generator whose voltage (EMF) is <m>\mathcal{E}(t)</m>. For alternating current this is modeled as a cosine (or complex exponential) function.  
 		</p>
 		<p>
@@ -454,7 +454,7 @@
 				</md>
 				from which we identify the natural frequency
 				<me>
-					\omega_0 = \sqrt{2.2} = \approx 1.483 \text{s}^{-1}.   , \qquad 
+					\omega_0 = \sqrt{2.2} \approx 1.483 \text{s}^{-1}, \qquad 
 				</me>
 				The damping coefficient is therefore
 				<me>
