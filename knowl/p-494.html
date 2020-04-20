@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-20T12:28:50-04:00    *-->
+<!--*    on 2020-04-20T14:22:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The eternally growing amplitude seen in resonance is an unphysical byproduct of the idealized undamped model. What happens if \(Z\gt 0\text{?}\) We are back to \(x_p=Ae^{i\omega t}\) with amplitude from <a class="xref" data-knowl="./knowl/so-eq-coeff.html" title="Equation 4.5.2">(4.5.2)</a>:</p>
+<p>We appeal to the method of undetermined coefficients, positing a solution in the form \(x_p(t) = A e^{rt}\) to derive</p>
 <div class="displaymath">
 \begin{equation*}
-A(i\omega) = \frac{1}{\omega_0^2-\omega^2  + 2 Z i \omega_0\,\omega }\text{.}
+(r^2  + 2 Z \omega_0 r + \omega_0^2)Ae^{rt} = e^{rt}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Of particular interest is the gain,</p>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{equation}
+x_p(t) = A e^{rt}, \qquad A(r) = \frac{1}{r^2  + 2 Z \omega_0 r + \omega_0^2}\tag{4.5.2}
+\end{equation}
+</div>
+<p data-braille="continuation">gives a particular solution unless the denominator, which is really just the characteristic polynomial, is zero. In that case, \(r\) is an eigenvalue; we consider that situation later.</p>
 <span class="incontext"><a href="so-expforcing.html#p-494">in-context</a></span>
 </body>
 </html>

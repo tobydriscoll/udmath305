@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-20T12:28:50-04:00    *-->
+<!--*    on 2020-04-20T14:22:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>As we did with single scalar equations, we will pay close attention to <dfn class="terminology">steady states</dfn> or <dfn class="terminology">fixed points</dfn> of these systems. Here this means constants \((x_p,y_p)\) such that \(F(x_p,y_p)=G(x_p,y_p)=0\text{.}\) For the nonlinear pendulum, both \((0,0)\) and \((\pi,0)\) are steady states.</p>
-<span class="incontext"><a href="nl-linearization.html#p-566">in-context</a></span>
+<p>The logistic equation is separable:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dx}{x(a-bx)} = dt\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{equation*}
+t + C = \int \frac{dx}{x(a-bx)} = \frac{1}{b} \int \frac{dx}{x(K-x)} = \frac{1}{bK} \int \left( \frac{1}{x} + \frac{1}{K-x} \right)\,dx\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The last step above required converting the single fraction into partial fractions. These are now easily integrated to get logs, and the solution follows from there. Obviously we have to end up with <a class="xref" data-knowl="./knowl/eq-logistic-solution.html" title="Equation 5.3.2">(5.3.2)</a> again.</p>
+<span class="incontext"><a href="nl-logistic.html#p-566">in-context</a></span>
 </body>
 </html>

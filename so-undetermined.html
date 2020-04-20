@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-20T12:28:47-04:00    *-->
+<!--*    on 2020-04-20T14:22:01-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -109,6 +109,7 @@ var js_version = 0.13;
 \newcommand{\bw}{\mathbf{w}}
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bz}{\mathbf{z}}
+\newcommand{\diag}{\operatorname{diag}}
 \newcommand{\inprod}[2]{\langle #1, #2 \rangle}
 \newcommand{\twovec}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
 \newcommand{\threevec}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
@@ -209,11 +210,11 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-undetermined"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Undetermined coefficients</span>
 </h2>
-<a href="so-undetermined.html" class="permalink">¶</a><p id="p-455">We saw two ways to get particular solutions for first-order equations: variation of parameters and undetermined coefficients. Since a second-order problem has a first-order system equivalent, we can use variation of parameters for a system, as in <a href="fs-varparam.html" class="internal" title="Section 3.7: Variation of parameters">Section 3.7</a>, to find a particular solution. However, for many common second-order problems with constant coefficients, it is much easier to adapt the method of undetermined coefficients.</p>
-<p id="p-456">Specifically, the ODE \(x''+bx'+cx=f(t)\) can be solved with this method when \(f\) is a polynomial, exponential, sin, or cos function. The appropriate form for the particular \(x_p\)  for each case is given in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a>. This form is plugged into the ODE, and the resulting identity is used to deduce the undetermined coefficients.</p>
+<a href="so-undetermined.html" class="permalink">¶</a><p id="p-464">We saw two ways to get particular solutions for first-order equations: variation of parameters and undetermined coefficients. Since a second-order problem has a first-order system equivalent, we can use variation of parameters for a system, as in <a href="fs-varparam.html" class="internal" title="Section 3.7: Variation of parameters">Section 3.7</a>, to find a particular solution. However, for many common second-order problems with constant coefficients, it is much easier to adapt the method of undetermined coefficients.</p>
+<p id="p-465">Specifically, the ODE \(x''+bx'+cx=f(t)\) can be solved with this method when \(f\) is a polynomial, exponential, sin, or cos function. The appropriate form for the particular \(x_p\)  for each case is given in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a>. This form is plugged into the ODE, and the resulting identity is used to deduce the undetermined coefficients.</p>
 <article class="example example-like" id="example-67"><a data-knowl="" class="id-ref original" data-refid="hk-example-67"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-67"><article class="example example-like"><p id="p-457">Let's find a particular solution of \(x'' +4x'+4x=8t^2\text{.}\) The correct form of \(x_p\) is a quadratic polynomial, so</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-67"><article class="example example-like"><p id="p-466">Let's find a particular solution of \(x'' +4x'+4x=8t^2\text{.}\) The correct form of \(x_p\) is a quadratic polynomial, so</p>
 <div class="displaymath">
 \begin{equation*}
 x_p = A + Bt + Ct^2\text{.}
@@ -229,7 +230,7 @@ x_p = A + Bt + Ct^2\text{.}
 <p data-braille="continuation">This has to be an identity for all \(t\text{.}\) Matching like powers, we can read off \(C=2\text{,}\) then \(B=-4\text{,}\) and finally \(A=3\text{.}\) This provides us with \(x_p=2t^2+4t+3\text{.}\)</p></article></div>
 <article class="example example-like" id="example-68"><a data-knowl="" class="id-ref original" data-refid="hk-example-68"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-68"><article class="example example-like"><p id="p-458">For \(x'' - 2x'-3x=10e^{4t}\text{,}\) the proper choice is</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-68"><article class="example example-like"><p id="p-467">For \(x'' - 2x'-3x=10e^{4t}\text{,}\) the proper choice is</p>
 <div class="displaymath">
 \begin{equation*}
 x_p = Ae^{4t}\text{.}
@@ -245,7 +246,7 @@ x_p = Ae^{4t}\text{.}
 <p data-braille="continuation">From this it's clear that \(A=2\text{.}\)</p></article></div>
 <article class="example example-like" id="example-69"><a data-knowl="" class="id-ref original" data-refid="hk-example-69"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-69"><article class="example example-like"><p id="p-459">For \(x''+x'=\sin(2t)\text{,}\) we use</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-69"><article class="example example-like"><p id="p-468">For \(x''+x'=\sin(2t)\text{,}\) we use</p>
 <div class="displaymath">
 \begin{equation*}
 x_p = A\cos(2t) + B\sin(2t)\text{.}
@@ -264,18 +265,18 @@ x_p = A\cos(2t) + B\sin(2t)\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">The solution of these equations is \(A=-1/10\text{,}\) \(B=-1/5\text{.}\)</p></article></div>
-<p id="p-460">The examples above are the fundamental ones. There are rules for more intricate combinations of the same functions, but we won't go into them here.</p>
-<p id="p-461">We have to repeat the warning from the first time we saw this method: occasionally it fails, given our rules.</p>
+<p id="p-469">The examples above are the fundamental ones. There are rules for more intricate combinations of the same functions, but we won't go into them here.</p>
+<p id="p-470">We have to repeat the warning from the first time we saw this method: occasionally it fails, given our rules.</p>
 <article class="example example-like" id="so-ex-noundeter"><a data-knowl="" class="id-ref original" data-refid="hk-so-ex-noundeter"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-so-ex-noundeter"><article class="example example-like"><p id="p-462">The equation \(x''+x=\cos(\omega t)\) suggests the particular solution \(x_p=A\cos(\omega t)+B\sin(\omega t)\text{.}\) Upon substitution,</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-so-ex-noundeter"><article class="example example-like"><p id="p-471">The equation \(x''+x=\cos(\omega t)\) suggests the particular solution \(x_p=A\cos(\omega t)+B\sin(\omega t)\text{.}\) Upon substitution,</p>
 <div class="displaymath">
 \begin{align*}
 [-\omega^2 A\cos(\omega t) - \omega^2 B\sin(\omega t) ] + [ A\cos(\omega t) + B\sin(\omega t)] \amp =\cos(\omega t),\text{.}
 \end{align*}
 </div>
 <p data-braille="continuation">which leads to the conclusion that \(B=0\) and, if \(\omega^2 \neq 1\text{,}\) \(A=1/(1-\omega^2)\text{.}\) However, if \(\omega = 1\text{,}\) the substitution would leave us with \(0=\cos(t)\text{,}\) which is impossible to satisfy for all \(t\text{.}\)</p></article></div>
-<p id="p-463">The failure of <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a> at \(\omega = 1\) was due to the fact that the \(x_p\) we picked is actually a homogeneous solution. There are additional rules to cover this case, but here is an interesting workaround instead. Suppose we seek a particular solution for \(\omega=1\) as the limit of a particular solution as \(\omega\to 1\text{.}\) We won't use the exact \(x_p\) found in the example, but instead subtract a homogeneous solution from it to get</p>
+<p id="p-472">The failure of <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a> at \(\omega = 1\) was due to the fact that the \(x_p\) we picked is actually a homogeneous solution. There are additional rules to cover this case, but here is an interesting workaround instead. Suppose we seek a particular solution for \(\omega=1\) as the limit of a particular solution as \(\omega\to 1\text{.}\) We won't use the exact \(x_p\) found in the example, but instead subtract a homogeneous solution from it to get</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{ \cos(\omega t) - \cos(t) } {1-\omega^2},

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-20T12:28:50-04:00    *-->
+<!--*    on 2020-04-20T14:22:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,27 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The eigenvalues of the homogeneous equation are</p>
+<p>The failure of <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a> at \(\omega = 1\) was due to the fact that the \(x_p\) we picked is actually a homogeneous solution. There are additional rules to cover this case, but here is an interesting workaround instead. Suppose we seek a particular solution for \(\omega=1\) as the limit of a particular solution as \(\omega\to 1\text{.}\) We won't use the exact \(x_p\) found in the example, but instead subtract a homogeneous solution from it to get</p>
 <div class="displaymath">
 \begin{equation*}
-\lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1}\text{.}
+\frac{ \cos(\omega t) - \cos(t) } {1-\omega^2},
 \end{equation*}
 </div>
-<p data-braille="continuation">The discussion now splits into four cases, marked by increasing values of \(Z\text{.}\)</p>
-<span class="incontext"><a href="so-oscillators.html#p-472">in-context</a></span>
+<p data-braille="continuation">which is also a particular solution. Then L'Hopital applies in the limit to give us</p>
+<div class="displaymath">
+\begin{equation}
+x_p(t) = \frac{ -t \sin(\omega t) }{ -2 \omega } = \frac{1}{2}t\sin(t). \tag{4.3.1}
+\end{equation}
+</div>
+<p data-braille="continuation">Now, to verify that this is a particular solution in the limiting case, we compute</p>
+<div class="displaymath">
+\begin{align*}
+x_p \amp = \frac{1}{2}t\sin(t) \\
+x_p' \amp = \frac{1}{2}[\sin(t)+t\cos(t)] \\
+x_p'' \amp = \frac{1}{2}[\cos(t) + \cos(t) - t\sin(t)], 
+\end{align*}
+</div>
+<p data-braille="continuation">so that \(x_p''+x_p=\cos(t)\) as required.</p>
+<span class="incontext"><a href="so-undetermined.html#p-472">in-context</a></span>
 </body>
 </html>

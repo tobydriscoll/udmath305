@@ -1043,6 +1043,88 @@ xlabel('t'), ylabel('x_1(t), x_2(t)')
 			Matters are less simple for larger matrices, but we won't be going there. 
 		</p>
 	</subsection>
+	<exercises xml:id="fs-exer-matrixexp">
+		<title>Challenge problems for matrix exponentials</title>
+		<exercise>
+			<title>Diagonal matrix</title>
+			<statement>
+			  <p>
+				Show that the exponential of a diagonal matrix <m>\diag(\lambda_1,\lambda_2,\dots,\lambda_n)</m> is the diagonal matrix <m>\diag(e^{t\lambda_1},e^{t\lambda_2},\dots,e^{t\lambda_n})</m>. 
+			  </p>
+			</statement>
+			<hint>
+			  <p>
+				What do the powers of a diagonal matrix look like?
+			  </p>
+			</hint>
+		</exercise>
+		<exercise>
+			<title>Rotation matrix</title>
+			<statement>
+			  <p>
+				Find <m>e^{t\bA}</m> if <m>\bA=\twomat{0}{-1}{1}{0}</m>. Then show that if the initial condition is expressed in polar form, 
+				<me>
+					\bx(0) = \twovec{r\cos\theta}{r\sin\theta},
+				</me>
+				then 
+				<me>
+					\bx(t) = \twovec{r\cos(\theta+t)}{r\sin(\theta+t)}.
+				</me>
+				(In other words, the solution just moves with unit angular velocity around the circle of radius <m>r</m>.) 
+			  </p>
+			</statement>
+			<answer>
+			  <p>
+				<m>e^{t\bA} = \twomat{\cos t}{-\sin t}{\sin t}{\cos t}</m> 
+			  </p>
+			</answer>
+		</exercise>
+		<exercise>
+			<title>Noncommutative pair</title>
+			<statement>
+			  <p>
+				Calculate <m>e^\mathbf{L}</m> and <m>e^\mathbf{U}</m> if 
+				<me>
+					\mathbf{U} = \twomat{0}{-1}{0}{0}, \qquad \mathbf{L} = \twomat{0}{0}{1}{0}. 
+				</me>
+				Then show that 
+				<me>
+					e^{\mathbf{L}+\mathbf{U}} \neq e^\mathbf{L}\,e^\mathbf{U}.
+				</me>
+				(The result of the <q>rotation matrix</q> exercise can provide the left-hand side.) This happens because <m>\mathbf{L}\mathbf{U}\neq \mathbf{U}\mathbf{L}</m>. 
+			  </p>
+			</statement>
+			<answer>
+			  <p>
+				<me>
+					e^\mathbf{U} = \twomat{1}{-t}{0}{1}, \qquad e^\mathbf{L} = \twomat{1}{0}{t}{1}
+				</me>
+				<me>
+					e^\mathbf{L}\,e^\mathbf{U} = \twomat{1}{-t}{t}{1-t^2}
+				</me>
+			  </p>
+			</answer>
+		</exercise>
+		<exercise>
+			<title>A 3-by-3 case</title>
+			<statement>
+			  <p>
+				Find <m>e^{t\bA}</m> if <m>\bA=\begin{bmatrix}  0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \\ 0 \amp 0 \amp 0 \end{bmatrix}</m>.
+			  </p>
+			</statement>
+			<hint>
+			  <p>
+				Start taking powers.
+			  </p>
+			</hint>
+			<answer>
+			  <p>
+				<m>e^{t\bA} =\begin{bmatrix}  1 \amp t \amp t^2/2 \\ 0 \amp 1 \amp t \\ 0 \amp 0 \amp 1 \end{bmatrix}</m>
+			  </p>
+			</answer>
+		</exercise>
+	</exercises>
+	<solutions divisional="solution"></solutions>
 </section>
 
 <section xml:id="fs-varparam">

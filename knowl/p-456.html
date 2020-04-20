@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-20T12:28:49-04:00    *-->
+<!--*    on 2020-04-20T14:22:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Specifically, the ODE \(x''+bx'+cx=f(t)\) can be solved with this method when \(f\) is a polynomial, exponential, sin, or cos function. The appropriate form for the particular \(x_p\)  for each case is given in <a class="xref" data-knowl="./knowl/fl-tb-undeter.html" title="Table 2.5.1: Particular solutions for undetermined coefficients.">Table 2.5.1</a>. This form is plugged into the ODE, and the resulting identity is used to deduce the undetermined coefficients.</p>
-<span class="incontext"><a href="so-undetermined.html#p-456">in-context</a></span>
+<p>Referring to <a class="xref" data-knowl="./knowl/so-eq-companion.html" title="Equation 4.1.3">(4.1.3)</a>, the homogeneous equation \(x''+bx'+cx=0\) can be recast as a first-order homogeneous system \(\bu'=\bA\bu\) through the definitions</p>
+<div class="displaymath">
+\begin{equation*}
+\bu = \twovec{x}{x'},\qquad  \bA = \twomat{0}{1}{-c}{-b}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Note that an initial-value problem for the system specifies \(\bu(0)\text{,}\) or equivalently, both \(x(0)\) and \(x'(0)\text{.}\) Hence <em class="alert">a second-order scalar problem requires two initial conditions to have a unique solution.</em></p>
+<span class="incontext"><a href="so-homogeneous.html#p-456">in-context</a></span>
 </body>
 </html>

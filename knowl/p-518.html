@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-20T12:28:50-04:00    *-->
+<!--*    on 2020-04-20T14:22:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,27 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For a harmonically forced case such as \(x''+2x'+10x=\cos(2t)\text{,}\) we have</p>
+<p>Consider inverting the double real pole</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{s}{(s^2+4)(s^2+2s+10)}\text{.}
+X(s) = \frac{1}{(s-a)^2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The best first step is to decompose</p>
+<p data-braille="continuation">The key is to note that \(X(s)=-F'(s)\text{,}\) where \(F(s) = (s-a)^{-1}\) is the transform of \(e^{at}\text{.}\) From the transform definition we compute</p>
 <div class="displaymath">
-\begin{equation*}
-X_p(s) = \frac{A+Bs}{s^2+4} + \frac{C+Es}{s^2+2s+10}\text{.}
-\end{equation*}
+\begin{align*}
+-F'(s) \amp = -\frac{d}{ds} \int_0^\infty f(t) e^{-s t}\, dt\\
+\amp = \int_0^\infty t f(t) e^{-s t}\, dt\\
+\amp = \lx[ t f(t) ] = \lx[ t e^{at} ] \text{.}
+\end{align*}
 </div>
-<p data-braille="continuation">The first term leads directly to \(\sin(2t)\) and \(\cos(2t)\text{,}\) while the second would once again be shifted to get \(s^2+9\) in the denominator. The details are left to the proverbial reader.</p>
+<p data-braille="continuation">If we keep differentiating in \(s\) we find</p>
+<div class="displaymath">
+\begin{equation}
+\lx[t^n e^{at} ] = \frac{n!}{(s-a)^{n+1}}.\tag{4.7.1}
+\end{equation}
+</div>
+<p data-braille="continuation">The special case \(a=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p>
 <span class="incontext"><a href="so-laplace-repeated.html#p-518">in-context</a></span>
 </body>
 </html>

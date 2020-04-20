@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-20T12:28:47-04:00    *-->
+<!--*    on 2020-04-20T14:22:01-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -109,6 +109,7 @@ var js_version = 0.13;
 \newcommand{\bw}{\mathbf{w}}
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bz}{\mathbf{z}}
+\newcommand{\diag}{\operatorname{diag}}
 \newcommand{\inprod}[2]{\langle #1, #2 \rangle}
 \newcommand{\twovec}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
 \newcommand{\threevec}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}
@@ -209,17 +210,17 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-oscillators"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.4</span> <span class="title">Oscillators</span>
 </h2>
-<a href="so-oscillators.html" class="permalink">¶</a><section class="introduction" id="introduction-17"><p id="p-464">The most common use of second-order equations is the modeling of oscillatory or other periodic behavior.</p></section><section class="subsection" id="so-os-mechanical"><h3 class="heading hide-type">
+<a href="so-oscillators.html" class="permalink">¶</a><section class="introduction" id="introduction-17"><p id="p-473">The most common use of second-order equations is the modeling of oscillatory or other periodic behavior.</p></section><section class="subsection" id="so-os-mechanical"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.4.1</span> <span class="title">Mechanical</span>
 </h3>
-<a href="so-oscillators.html#so-os-mechanical" class="permalink">¶</a><p id="p-465">As we have already seen, a mass hanging from a spring satisfies the ODE</p>
+<a href="so-oscillators.html#so-os-mechanical" class="permalink">¶</a><p id="p-474">As we have already seen, a mass hanging from a spring satisfies the ODE</p>
 <div class="displaymath">
 \begin{equation*}
 mx'' + b x' + kx = F(t)\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">(As is typical, all the named constants are nonnegative.) Here \(m\)&gt; is the mass, \(b\)&gt;is a coefficient of friction or other damping forces, and \(k\)&gt; is a characteristic constant of the spring. The term \(F(t)\) represents an external driving force. If we have initial conditions, they give values for \(x\) and \(x'\text{.}\)</p>
-<p id="p-466">The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
+<p id="p-475">The gravitational force on a pendulum bob (think child on a swing) has a related equation. The proper ODE is</p>
 <div class="displaymath">
 \begin{equation*}
 \theta'' + \gamma \theta + \frac{g}{L}\sin \theta = F(t)\text{,}
@@ -234,18 +235,18 @@ mx'' + b x' + kx = F(t)\text{.}
 <p data-braille="continuation">which is a linear oscillator.</p></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.4.2</span> <span class="title">Electrical oscillators</span>
 </h3>
-<p id="p-467">An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is</p>
+<p id="p-476">An AC circuit often has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series with a generator, the governing ODE is</p>
 <div class="displaymath">
 \begin{equation*}
 LI'' + RI' + \frac{1}{C}I = \mathcal{E}'(t)\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(L\) is inductance, \(R\) is resistance, \(C\) is capacitance, and \(I(t)\) is the current flowing through the circuit. The forcing term represents the generator whose voltage (EMF) is \(\mathcal{E}(t)\text{.}\) For alternating current this is modeled as a cosine (or complex exponential) function.</p>
-<p id="p-468">In DC circuits we have Ohm's Law, \(I=V/R\text{,}\) for a resistance \(R\text{.}\) In the AC case, if \(\mathcal{E}(t)=Ve^{i\omega t}\text{,}\) then \(e^{i\omega t}\) appears in the current as well, and it still makes sense to talk about \(V/I\) as a kind of resistance, now called <dfn class="terminology">impedance</dfn> and dependent on the frequency \(\omega\text{.}\)</p></section><section class="subsection" id="so-os-notation"><h3 class="heading hide-type">
+<p id="p-477">In DC circuits we have Ohm's Law, \(I=V/R\text{,}\) for a resistance \(R\text{.}\) In the AC case, if \(\mathcal{E}(t)=Ve^{i\omega t}\text{,}\) then \(e^{i\omega t}\) appears in the current as well, and it still makes sense to talk about \(V/I\) as a kind of resistance, now called <dfn class="terminology">impedance</dfn> and dependent on the frequency \(\omega\text{.}\)</p></section><section class="subsection" id="so-os-notation"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.4.3</span> <span class="title">Unifying notation</span>
 </h3>
-<a href="so-oscillators.html#so-os-notation" class="permalink">¶</a><p id="p-469">When you have lots of different versions of the same root problem, with different symbols and units, you have three options. You can solve each new problem from scratch, you can derive custom formulas for each application, or you can try to find a minimal set of parameters and express each problem using those. Let's consider the last pathway here.</p>
-<p id="p-470">The mechanical oscillator \(mx'' + bx' + kx = F(t)\) has, like all linear ODEs, a homogeneous part and a forced part. For now we consider only the homogeneous part, taking up the forcing term in the next section. Ignoring the degenerate case of zero mass, we write</p>
+<a href="so-oscillators.html#so-os-notation" class="permalink">¶</a><p id="p-478">When you have lots of different versions of the same root problem, with different symbols and units, you have three options. You can solve each new problem from scratch, you can derive custom formulas for each application, or you can try to find a minimal set of parameters and express each problem using those. Let's consider the last pathway here.</p>
+<p id="p-479">The mechanical oscillator \(mx'' + bx' + kx = F(t)\) has, like all linear ODEs, a homogeneous part and a forced part. For now we consider only the homogeneous part, taking up the forcing term in the next section. Ignoring the degenerate case of zero mass, we write</p>
 <div class="displaymath">
 \begin{equation*}
 x'' + \frac{b}{m} x' + \frac{k}{m} x = 0\text{.}
@@ -264,7 +265,7 @@ x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = 0\text{.}\label{so-eq-unified}\tag{4.
 \end{equation}
 </div>
 <p data-braille="continuation">A similar derivation can be done starting from the electrical circuit equation.</p>
-<aside class="aside aside-like" id="aside-19"><p id="p-471">In math we usually use “frequency” to mean the multiplier of \(t\) in a sin or cos function. In some fields this is called <dfn class="terminology">angular frequency</dfn> and “frequency” is used to mean the number of cycles per time unit, as in Hz.</p></aside><p id="p-472">The eigenvalues of the homogeneous equation are</p>
+<aside class="aside aside-like" id="aside-19"><p id="p-480">In math we usually use “frequency” to mean the multiplier of \(t\) in a sin or cos function. In some fields this is called <dfn class="terminology">angular frequency</dfn> and “frequency” is used to mean the number of cycles per time unit, as in Hz.</p></aside><p id="p-481">The eigenvalues of the homogeneous equation are</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1}\text{.}
@@ -273,7 +274,7 @@ x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = 0\text{.}\label{so-eq-unified}\tag{4.
 <p data-braille="continuation">The discussion now splits into four cases, marked by increasing values of \(Z\text{.}\)</p></section><section class="subsection" id="so-os-undamped"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.4.4</span> <span class="title">Undamped</span>
 </h3>
-<a href="so-oscillators.html#so-os-undamped" class="permalink">¶</a><p id="p-473">The first case for <a class="xref" data-knowl="./knowl/so-eq-unified.html" title="Equation 4.4.1">(4.4.1)</a> is \(Z=0\text{,}\) which is the idealization of no mechanical damping or friction (or resistance, in a circuit). The homogeneous equation is \(x''+\omega_0^2x=0\text{,}\) which has eigenvalues \(\pm i\omega_0\) and a general solution that can be expressed three ways:</p>
+<a href="so-oscillators.html#so-os-undamped" class="permalink">¶</a><p id="p-482">The first case for <a class="xref" data-knowl="./knowl/so-eq-unified.html" title="Equation 4.4.1">(4.4.1)</a> is \(Z=0\text{,}\) which is the idealization of no mechanical damping or friction (or resistance, in a circuit). The homogeneous equation is \(x''+\omega_0^2x=0\text{,}\) which has eigenvalues \(\pm i\omega_0\) and a general solution that can be expressed three ways:</p>
 <div class="displaymath">
 \begin{align*}
 x_h(t) \amp = \Re \left[  c_1 e^{i\omega_0 t} \right] \\
@@ -284,8 +285,8 @@ x_h(t) \amp = \Re \left[  c_1 e^{i\omega_0 t} \right] \\
 <p data-braille="continuation">Thus the undamped case results in pure oscillation at frequency \(\omega_0\text{.}\) This is known as <dfn class="terminology">simple harmonic motion</dfn>.</p>
 <article class="example example-like" id="example-71"><a data-knowl="" class="id-ref original" data-refid="hk-example-71"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-71"><article class="example example-like"><p id="p-474">When a 2 kg mass is hung on a spring, the spring stretches by 0.25 m. What is the natural frequency of the mass-spring system? Suppose the mass is pulled down 0.2 m past equilibrium and then thrown upward at 1 m/s. What is the amplitude of the motion?</p>
-<p id="p-475">Hooke's Law for a spring states that \(F=k x\text{,}\) so we find the spring constant from \(k=F/x=2g/0.25=8g\text{,}\) where \(g=9.8\) m per second squared. The ODE for free motion of the system is thus</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-71"><article class="example example-like"><p id="p-483">When a 2 kg mass is hung on a spring, the spring stretches by 0.25 m. What is the natural frequency of the mass-spring system? Suppose the mass is pulled down 0.2 m past equilibrium and then thrown upward at 1 m/s. What is the amplitude of the motion?</p>
+<p id="p-484">Hooke's Law for a spring states that \(F=k x\text{,}\) so we find the spring constant from \(k=F/x=2g/0.25=8g\text{,}\) where \(g=9.8\) m per second squared. The ODE for free motion of the system is thus</p>
 <div class="displaymath">
 \begin{align*}
 2 x'' + 8g x  \amp = 0 \\
@@ -320,7 +321,7 @@ R = \sqrt{ [R\cos(\theta)]^2 + [R\sin(\theta)]^2 } = \sqrt{ 0.04 + \omega_0^{-2}
 <p data-braille="continuation">In solving for \(\theta\text{,}\) you have to do a “four-quadrant” arctan. Observe that \((R\cos\theta,R\sin\theta)\) lies in the second quadrant, so \(\theta\) has to be between \(\pi/2\) and \(\pi\text{.}\) One finds that \(\theta\approx 2.47\text{.}\)</p></article></div></section><section class="subsection" id="so-os-underdamped"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.4.5</span> <span class="title">Underdamped</span>
 </h3>
-<a href="so-oscillators.html#so-os-underdamped" class="permalink">¶</a><p id="p-476">For \(0\lt Z \lt 1\) the eigenvalues of <a class="xref" data-knowl="./knowl/so-eq-unified.html" title="Equation 4.4.1">(4.4.1)</a> are complex:</p>
+<a href="so-oscillators.html#so-os-underdamped" class="permalink">¶</a><p id="p-485">For \(0\lt Z \lt 1\) the eigenvalues of <a class="xref" data-knowl="./knowl/so-eq-unified.html" title="Equation 4.4.1">(4.4.1)</a> are complex:</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda_{1,2} = -Z \omega_0 \pm i \omega_0 \sqrt{1-Z^2}\text{.}
@@ -335,7 +336,7 @@ x_h(t) = e^{-Z\omega_0 t} \left( c_1 e^{i\omega_d t} + c_2 e^{-i\omega_d t} \rig
 <p data-braille="continuation">or the equivalent real form with cos and sin. This solution is pseudoperiodic, combining oscillation at frequency \(\omega_d \lt \omega_0\) inside an exponential decay envelope. This situation is called an <dfn class="terminology">underdamped oscillator</dfn>. As in the undamped case, we have three different ways to express the real unforced solution in the underdamped case, corresponding to <a class="xref" data-knowl="./knowl/so-eq-homogdistinct.html" title="Equation 4.2.1">(4.2.1)</a>, <a class="xref" data-knowl="./knowl/so-eq-homogcomplex.html" title="Equation 4.2.2">(4.2.2)</a>, and <a class="xref" data-knowl="./knowl/so-eq-homogphaseamp.html" title="Equation 4.2.3">(4.2.3)</a>.</p></section><section class="subsection" id="so-os-critical"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.4.6</span> <span class="title">Critically damped</span>
 </h3>
-<a href="so-oscillators.html#so-os-critical" class="permalink">¶</a><p id="p-477">At \(Z=1\) the complex eigenvalues collapse to a double eigenvalue at</p>
+<a href="so-oscillators.html#so-os-critical" class="permalink">¶</a><p id="p-486">At \(Z=1\) the complex eigenvalues collapse to a double eigenvalue at</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda_1 = \lambda_2 = -\omega_0\text{,}
@@ -350,13 +351,13 @@ x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t)\text{.}
 <p data-braille="continuation">There is no longer any oscillation present, and we have a <dfn class="terminology">critically damped</dfn> system. The linear growth of \(c_2 t\) doesn't make much of a difference against the exponential decay.</p></section><section class="subsection" id="so-os-overdamped"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.4.7</span> <span class="title">Overdamped</span>
 </h3>
-<a href="so-oscillators.html#so-os-overdamped" class="permalink">¶</a><p id="p-478">For \(Z&gt;1\) the eigenvalues</p>
+<a href="so-oscillators.html#so-os-overdamped" class="permalink">¶</a><p id="p-487">For \(Z&gt;1\) the eigenvalues</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1}
 \end{equation*}
 </div>
-<p data-braille="continuation">are negative and real, thus giving an exponentially decaying homogeneous solution. In this case we have an <dfn class="terminology">overdamped oscillator</dfn>.</p></section><section class="conclusion" id="conclusion-1"><p id="p-479"><a class="xref" data-knowl="./knowl/so-tab-damping.html" title="Table 4.4.2: Damping coefficient and eigenvalues">Table 4.4.2</a> summarizes the four major cases for damping. If the damping coefficient \(Z\) is nonzero, the eigenvalues of the problem have negative real part, and therefore all the homogeneous solutions decay exponentially in amplitude as \(t\to\infty\text{.}\) For this reason the homogeneous solution is often called a <dfn class="terminology">transient solution</dfn> or transient response.</p>
+<p data-braille="continuation">are negative and real, thus giving an exponentially decaying homogeneous solution. In this case we have an <dfn class="terminology">overdamped oscillator</dfn>.</p></section><section class="conclusion" id="conclusion-1"><p id="p-488"><a class="xref" data-knowl="./knowl/so-tab-damping.html" title="Table 4.4.2: Damping coefficient and eigenvalues">Table 4.4.2</a> summarizes the four major cases for damping. If the damping coefficient \(Z\) is nonzero, the eigenvalues of the problem have negative real part, and therefore all the homogeneous solutions decay exponentially in amplitude as \(t\to\infty\text{.}\) For this reason the homogeneous solution is often called a <dfn class="terminology">transient solution</dfn> or transient response.</p>
 <figure class="table figure-like" id="so-tab-damping"><table>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Damping coefficient</td>
@@ -386,8 +387,8 @@ x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t)\text{.}
 </table>
 <figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.4.2<span class="period">.</span></span><span class="space"> </span>Damping coefficient and eigenvalues</figcaption></figure><article class="example example-like" id="example-72"><a data-knowl="" class="id-ref original" data-refid="hk-example-72"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-72"><article class="example example-like"><p id="p-480">A 5 kg mass is hung on a spring with constant \(11\) N per m and connected to a dashpot that provides 8 N-sec per meter of resistance. Is this system underdamped, overdamped, or critically damped?</p>
-<p id="p-481">The ODE for the mass-spring system is</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-72"><article class="example example-like"><p id="p-489">A 5 kg mass is hung on a spring with constant \(11\) N per m and connected to a dashpot that provides 8 N-sec per meter of resistance. Is this system underdamped, overdamped, or critically damped?</p>
+<p id="p-490">The ODE for the mass-spring system is</p>
 <div class="displaymath">
 \begin{align*}
 5 x'' + 8x' + 11 x  \amp = 0 \\
@@ -409,8 +410,8 @@ Z = \frac{1.6}{2\omega_0} \approx 0.539.
 <p data-braille="continuation">Since this value is less than one, the system is underdamped.</p></article></div>
 <article class="example example-like" id="example-73"><a data-knowl="" class="id-ref original" data-refid="hk-example-73"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-73"><article class="example example-like"><p id="p-482">Suppose the system from the last example is initially at equilibrium when the mass is suddenly pushed downward at 0.5 m/sec. Find the motion of the mass.</p>
-<p id="p-483">The ODE is, as before, \(x'' + 1.6 x' + 2.2 x = 0\text{.}\) The eigenvalues are the roots of \(\lambda^2 + 1.6\lambda + 2.2\text{,}\) which are found numerically to be</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-73"><article class="example example-like"><p id="p-491">Suppose the system from the last example is initially at equilibrium when the mass is suddenly pushed downward at 0.5 m/sec. Find the motion of the mass.</p>
+<p id="p-492">The ODE is, as before, \(x'' + 1.6 x' + 2.2 x = 0\text{.}\) The eigenvalues are the roots of \(\lambda^2 + 1.6\lambda + 2.2\text{,}\) which are found numerically to be</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda \approx -0.8000 \pm 1.2490i.

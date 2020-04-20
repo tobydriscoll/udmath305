@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-20T12:28:50-04:00    *-->
+<!--*    on 2020-04-20T14:22:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution with zero initial conditions has</p>
+<p>Finally, consider the driven, undamped oscillator \(x''+\omega_0^2 x = \cos(\omega t)\text{.}\) It leads to</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
+X_p(s) = \frac{s}{(s^2+\omega_0^2)(s^2+\omega^2)} = \frac{1}{\omega_0^2-\omega^2} \left( \frac{s}{s^2+\omega^2} - \frac{s}{s^2+\omega_0^2} \right)\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">The quadratic formula tells us the homogeneous eigenvalues \(-1\pm 3i\text{,}\) so we assume a shift of \(-1\) and designate \(X_p(s)=G(s+1)\text{.}\) Thus</p>
+<p data-braille="continuation">which is readily inverted into</p>
 <div class="displaymath">
 \begin{equation*}
-G(s) = X_p(s-1) = 6e \frac{e^{-s}}{s^2-2s+1+2s-2+10} = 6e \frac{e^{-s}}{s^2+9}.
+x_p(t) = \frac{1}{\omega_0^2-\omega^2}  \bigl[ \cos(\omega t) - \cos(\omega_0 t) \bigr].
 \end{equation*}
 </div>
-<p data-braille="continuation">Now we can apply the Shift Theorem to \(G\) and get</p>
-<div class="displaymath">
-\begin{equation*}
-g(t) = 6e H(t-1) v(t-1),
-\end{equation*}
-</div>
-<p data-braille="continuation">where \(v(t)=\sin(3t)/3\text{.}\) When we unwind the definitions, we get</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = e^{-t} g(t) = 2 e^{-t+1} H(t-1)\sin(3t-3).
-\end{equation*}
-</div>
-<p data-braille="continuation">Are we having fun yet?</p>
-<span class="incontext"><a href="so-laplace-repeated.html#p-516">in-context</a></span>
+<p data-braille="continuation">That is a particular solution, but unlike the method of undetermined coefficients we used before, it includes \(\cos(\omega_0 t)\text{,}\) which comes from the homogeneous solution. In the Laplace transform method, we set the initial conditions to zero in order to simplify the algebra, and in general that means the homogeneous terms are needed in order to satisfy them. Undetermined coefficients pays no attention to initial conditions and can therefore ignore the homogeneous terms.</p>
+<span class="incontext"><a href="so-laplace.html#p-516">in-context</a></span>
 </body>
 </html>

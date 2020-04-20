@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-20T12:28:49-04:00    *-->
+<!--*    on 2020-04-20T14:22:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Our main item of business in this chapter is the linear, constant-coefficient model problem</p>
+<p>Let \(\bX(t)\) be a fundamental matrix of the homogeneous problem \(\bx'=\bA(t)\bx\text{.}\) Then the general solution of \(\bx'=\bA(t)\bx+\bff(t)\) is</p>
 <div class="displaymath">
 \begin{equation}
-x'' + bx' + cx = f(t)\text{,}\tag{4.1.1}
+\bx(t) = \bx_h(t) + \bx_p(t) = \bX(t)\bc + \bX(t) \int \bX(t)^{-1} \bff(t) \, dt\text{.}\tag{3.7.1}
 \end{equation}
 </div>
-<p data-braille="continuation">for which the conversion process with \(u_1=x\text{,}\) \(u_2=x'\) yields</p>
+<p data-braille="continuation">The solution with initial condition \(\bx(0)=\bx_0\) is</p>
 <div class="displaymath">
 \begin{equation}
-\twovec{u_1'}{u_2'} = \twovec{u_2}{f(t)-cu_1-bu_2} = \twomat{0}{1}{-c}{-b} \bu + \twovec{0}{f(t)}\text{,}\tag{4.1.2}
+\bx(t) = \bX(t)\bX(0)^{-1}\bx_0 + \bX(t) \int_0^t \bX(s)^{-1}\bff(s) \, ds\text{.}\tag{3.7.2}
 \end{equation}
 </div>
-<p data-braille="continuation">which has the form \(\bu'=\bA\bu+\bff(t)\) for the <dfn class="terminology">companion matrix</dfn></p>
+<p data-braille="continuation">In the case of a constant matrix \(\bA\text{,}\)</p>
 <div class="displaymath">
 \begin{equation}
-\bA = \twomat{0}{1}{-c}{-b}\text{.}\tag{4.1.3}
+\bx(t) = e^{t\bA}\bx_0 + \int_0^t e^{(t-s)\bA} \bff(s) \, ds\text{.}\tag{3.7.3}
 \end{equation}
 </div>
-<p data-braille="continuation">Thus everything we learned from the last chapter is again in play. However, the applications of <a class="xref" data-knowl="./knowl/so-eq-linearmodel.html" title="Equation 4.1.1">(4.1.1)</a> are important and numerous enough to consider the solutions in detail, and the structure of the companion matrix is such that the conclusions can often be rewritten more simply than in the general case.</p>
-<span class="incontext"><a href="so-convert.html#p-445">in-context</a></span>
+<span class="incontext"><a href="fs-varparam.html#p-445">in-context</a></span>
 </body>
 </html>

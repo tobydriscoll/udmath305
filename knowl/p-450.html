@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-20T12:28:49-04:00    *-->
+<!--*    on 2020-04-20T14:22:04-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's find the general solution of \(x''+5x'+6x=0\text{.}\) The characteristic polynomial is \(\lambda^2+5\lambda+6\text{,}\) which has roots \(\lambda_1=-2\text{,}\) \(\lambda_2=-3\text{.}\) Thus \(x(t)=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p>
-<span class="incontext"><a href="so-homogeneous.html#p-450">in-context</a></span>
+<p>Our first observation is that this problem can always be converted to a first-order problem in two dimensions. Define a vector \(\bu\) by \(u_1=x\text{,}\) \(u_2=x'\text{.}\) By definition, \(u_1'=u_2\text{.}\) Since \(u_2'=x''=f(t,x,x')\text{,}\) we get the system</p>
+<div class="displaymath">
+\begin{align*}
+u_1' \amp =  u_2\\
+u_2' \amp =  f(t,u_1,u_2).
+\end{align*}
+</div>
+<p data-braille="continuation">This is a first-order system \(\bu'=\mathbf{g}(t,\bu)\) of two scalar equations for the two components.</p>
+<span class="incontext"><a href="so-convert.html#p-450">in-context</a></span>
 </body>
 </html>
