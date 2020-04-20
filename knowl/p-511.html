@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-16T15:43:39-04:00    *-->
+<!--*    on 2020-04-20T12:28:50-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. We have</p>
+<p>If you look carefully at the derivation of <a class="xref" data-knowl="./knowl/so-eq-repeatedexp.html" title="Equation 4.7.1">(4.7.1)</a>, you will see that the identity of \(f(t)\) played no role in the key steps. As shown in <a class="xref" data-knowl="./knowl/so-tab-laplace.html" title="Table 4.6.1: Laplace transforms (complete)">Table 4.6.1</a>, we can repeat the calculation for a generic \(F(s)\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{1}{s-(a+ib)} + \frac{1}{s-(a-ib)} = \frac{2(s-a)}{(s-a)^2+b^2} \text{.}
+\lx[t^n f(t) ] = (-1)^n F^{(n)}(s), \qquad n=1,2,3,\dots.
 \end{equation*}
 </div>
-<p data-braille="continuation">Since we also know that</p>
-<div class="displaymath">
-\begin{equation*}
-e^{(a+ib)t} + e^{(a-ib)t} = 2 e^{at} \cos( b t)\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">the conclusion is</p>
-<div class="displaymath">
-\begin{equation*}
-\lx[ e^{at} \cos( b t) ] = \frac{s-a}{(s-a)^2+b^2}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">In similar fashion we can show that \(e^{at} \sin( b t)\) transforms to \(b/[(s-a)^2+b^2]\text{.}\) In principle we can always find quadratic denominators like these for a partial fraction conversion. However, the details can get pretty intense for hand calculation.</p>
+<p data-braille="continuation">Take a moment to appreciate this. Earlier we found that a derivative in \(t\) essentially corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
 <span class="incontext"><a href="so-laplace-repeated.html#p-511">in-context</a></span>
 </body>
 </html>

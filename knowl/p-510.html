@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-16T15:43:39-04:00    *-->
+<!--*    on 2020-04-20T12:28:50-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If we keep differentiating in \(s\) we find</p>
+<p>The critically damped oscillator \(x'' + 6x' + 9=0\) has a double eigenvalue at \(-3\text{.}\) To find the solution with \(x(0)=0\text{,}\) \(x'(0)=6\text{,}\) we use the transform to find</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{d^n}{ds^n} \lx[ f(t) ] = (-1)^n \lx[ t^n f(t) ]\text{.}
+[s^2X(s) - 6] + 6[sX(s)] + 9[X(s)] = 0 \quad \Rightarrow \quad X(s) = \frac{6}{(s+3)^2}.
 \end{equation*}
 </div>
-<p data-braille="continuation">Of interest is the special case of an exponential function \(e^{rt}\text{,}\) whose transform is \(1/(s-r)\text{:}\)</p>
+<p data-braille="continuation">Hence <a class="xref" data-knowl="./knowl/so-eq-repeatedexp.html" title="Equation 4.7.1">(4.7.1)</a> applies with \(n=1\text{,}\) and</p>
 <div class="displaymath">
 \begin{equation*}
-\lx \left[ t^n e^{rt} \right] = \frac{n!}{(s-r)^{n+1}} \text{.}
+x(t) = 6t e^{-3t}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The even specialer case \(r=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p>
 <span class="incontext"><a href="so-laplace-repeated.html#p-510">in-context</a></span>
 </body>
 </html>

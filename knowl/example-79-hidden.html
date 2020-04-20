@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-16T15:43:40-04:00    *-->
+<!--*    on 2020-04-20T12:28:50-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,6 +11,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Consider the ODE \(x'=x-x^3\text{.}\) The equilibrium solutions are \(x=0\) and \(x=\pm 1\text{.}\) Consider also that \(x'\lt 0\) if \(-1\lt x \lt 0\) or \(x\gt 1\text{;}\) otherwise, \(x' \gt 0\text{.}\) The phase line diagram clarifies that the steady states at \(x=\pm 1\) are stable, while the one at \(x=0\) is unstable.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/fo_ss_phaseline.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article></body>
+<body><article class="example example-like"><p>Again we consider how to invert</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{3}{(s^2+9)^2} = \frac{3}{(s-3i)^2(s+3i)^2} \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The PFD has four terms that work out as</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{1}{36} \left[ \frac{i}{s+3i} - \frac{i}{s-3i} - \frac{3}{(s+3i)^2} - \frac{3}{(s-3i)^2} \right]. 
+\end{equation*}
+</div>
+<p data-braille="continuation">These easily invert using complex exponentials:</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{36} \left[ i\bigl(e^{-3it}-e^{3it}\bigr) - 3 t \bigl(e^{-3it}+e^{3it}\bigr)  \right]. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Now Euler' formula leads back to the same result,</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
+\end{equation*}
+</div></article></body>
 </html>
