@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T15:36:06-04:00    *-->
+<!--*    on 2020-04-22T16:24:57-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -288,10 +288,10 @@ x'' + bx' + cx = f(t)\text{.}
 <p data-braille="continuation">It is now trivial to solve for \(X(s)\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{ sx(0)+x'(0)}{s^2 +bs+c} +  \frac{F(s)}{s^2 +bs+c}\text{.}
+X(s) = \frac{ (s+b)x(0)+x'(0)}{s^2 +bs+c} +  \frac{F(s)}{s^2 +bs+c}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The first fraction above is what leads to the free or unforced response, while the second is the effect of the forcing. The denominator in both cases is simply the characteristic polynomial of the ODE.</p>
+<p data-braille="continuation">The first fraction above is what leads to the free or unforced response, while the second is the effect of the forcing when the initial conditions are zero. The denominator in both cases is simply the characteristic polynomial of the ODE.</p>
 <p id="p-510">If the goal is to solve an initial-value problem with the transform, then it's necessary to find the inverse transform of \(X(s)\text{,}\) which typically involves some partial fraction efforts.</p>
 <article class="example example-like" id="example-74"><a data-knowl="" class="id-ref original" data-refid="hk-example-74"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="period">.</span>
@@ -343,7 +343,7 @@ X(s) = \frac{2}{s-1} + \frac{-1}{s+1} + \frac{3}{s-3}.
 <p id="p-512">In light of the last example, let's look again at the general case</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{ sx(0)+x'(0)}{s^2+bs+c} +  \frac{F(s)}{s^2 +bs+c}\text{.}
+X(s) = \frac{ (s+b)x(0)+x'(0)}{s^2+bs+c} +  \frac{F(s)}{s^2 +bs+c}\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">The denominators contain the characteristic polynomial, whose roots are the eigenvalues of the homogeneous problem. We refer to zeros in the denominator as <dfn class="terminology">poles</dfn> of the transform. Each eigenvalue pole will contribute a term \(1/(s-\lambda)\) to the partial fraction decomposition. Upon inversion, this term contributes \(e^{\lambda t}\text{,}\) which is part of the homogeneous solution. The forcing function will contribute one or more of its own poles in \(F(s)\text{,}\) and they generate new terms in the partial fraction decomposition.</p>
@@ -352,7 +352,7 @@ X(s) = \frac{ sx(0)+x'(0)}{s^2+bs+c} +  \frac{F(s)}{s^2 +bs+c}\text{.}
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-75"><article class="example example-like"><p id="p-513">To solve \(x'' - 4x + 3x = 6\) with \(x(0)=-2\text{,}\) \(x'(0)=4\text{,}\)  we take transforms to obtain</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{-2s + 4}{(s-3)(s-1)} + \frac{6}{s(s-3)(s-1)} .
+X(s) = \frac{-2s + 8 + 4}{(s-3)(s-1)} + \frac{6}{s(s-3)(s-1)} .
 \end{equation*}
 </div>
 <p data-braille="continuation">The PFD of this has the form</p>
@@ -364,16 +364,16 @@ X(s) = \frac{A}{s-3} + \frac{B}{s-1} + \frac{C}{s}.
 <p data-braille="continuation">Equating and clearing the denominators leads to</p>
 <div class="displaymath">
 \begin{equation*}
-(s)(4-2s) + 6 = As(s-1) + Bs(s-3) + C(s-1)(s-3).
+(s)(12-2s) + 6 = As(s-1) + Bs(s-3) + C(s-1)(s-3).
 \end{equation*}
 </div>
-<p data-braille="continuation">The values \(s=0,s=1,s=3\text{,}\) which are simply the poles of \(X\text{,}\) leave especially simple equations: \(6=3C\text{,}\) \(2+6=-2B\text{,}\) and \(-6+6=6A\text{.}\) Hence</p>
+<p data-braille="continuation">The values \(s=0,s=1,s=3\text{,}\) which are simply the poles of \(X\text{,}\) leave especially simple equations: \(6=3C\text{,}\) \(10+6=-2B\text{,}\) and \(18+6=6A\text{.}\) Hence</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = - 4\, \frac{1}{s-1} + 2\, \frac{1}{s}.
+X(s) = 4\, \frac{1}{s-3} - 8\, \frac{1}{s-1} + 2\, \frac{1}{s}.
 \end{equation*}
 </div>
-<p data-braille="continuation">This inverts easily to give \(x(t) = - 4e^t + 2\text{.}\)</p></article></div></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
+<p data-braille="continuation">This inverts easily to give \(x(t) = 4e^{3t} -  8e^t + 2\text{.}\)</p></article></div></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.2</span> <span class="title">Imaginary poles</span>
 </h3>
 <p id="p-514">If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
@@ -391,7 +391,7 @@ X(s) = - 4\, \frac{1}{s-1} + 2\, \frac{1}{s}.
 <p data-braille="continuation">Conversely, a transform \(X(s)\) that has \(s^2+\omega^2\) as a factor in the denominator has poles at \(\pm i\omega\text{.}\) The simplest case is</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x_p(t)=\frac{A}{\omega}\sin(\omega t) + B\cos(\omega t)\text{.}
+X(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x(t)=\frac{A}{\omega}\sin(\omega t) + B\cos(\omega t)\text{.}
 \end{equation*}
 </div>
 <article class="example example-like" id="example-76"><a data-knowl="" class="id-ref original" data-refid="hk-example-76"><h6 class="heading">

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T15:36:09-04:00    *-->
+<!--*    on 2020-04-22T16:24:59-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,7 +14,7 @@
 <body><article class="example example-like"><p>To solve \(x'' - 4x + 3x = 6\) with \(x(0)=-2\text{,}\) \(x'(0)=4\text{,}\)  we take transforms to obtain</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{-2s + 4}{(s-3)(s-1)} + \frac{6}{s(s-3)(s-1)} .
+X(s) = \frac{-2s + 8 + 4}{(s-3)(s-1)} + \frac{6}{s(s-3)(s-1)} .
 \end{equation*}
 </div>
 <p data-braille="continuation">The PFD of this has the form</p>
@@ -26,14 +26,14 @@ X(s) = \frac{A}{s-3} + \frac{B}{s-1} + \frac{C}{s}.
 <p data-braille="continuation">Equating and clearing the denominators leads to</p>
 <div class="displaymath">
 \begin{equation*}
-(s)(4-2s) + 6 = As(s-1) + Bs(s-3) + C(s-1)(s-3).
+(s)(12-2s) + 6 = As(s-1) + Bs(s-3) + C(s-1)(s-3).
 \end{equation*}
 </div>
-<p data-braille="continuation">The values \(s=0,s=1,s=3\text{,}\) which are simply the poles of \(X\text{,}\) leave especially simple equations: \(6=3C\text{,}\) \(2+6=-2B\text{,}\) and \(-6+6=6A\text{.}\) Hence</p>
+<p data-braille="continuation">The values \(s=0,s=1,s=3\text{,}\) which are simply the poles of \(X\text{,}\) leave especially simple equations: \(6=3C\text{,}\) \(10+6=-2B\text{,}\) and \(18+6=6A\text{.}\) Hence</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = - 4\, \frac{1}{s-1} + 2\, \frac{1}{s}.
+X(s) = 4\, \frac{1}{s-3} - 8\, \frac{1}{s-1} + 2\, \frac{1}{s}.
 \end{equation*}
 </div>
-<p data-braille="continuation">This inverts easily to give \(x(t) = - 4e^t + 2\text{.}\)</p></article></body>
+<p data-braille="continuation">This inverts easily to give \(x(t) = 4e^{3t} -  8e^t + 2\text{.}\)</p></article></body>
 </html>
