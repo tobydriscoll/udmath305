@@ -708,7 +708,7 @@ plot3(rhomax,Z,log_g(rhomax,Z),'w','linew',2)
 			</tabular>
 		</table>
 		<p>
-			<xref ref="so-tab-laplace"/> updates our table of Laplace transforms with additional entries. In this section and the next we examine how to use the new entries.
+			<xref ref="so-tab-laplace"/> updates our table of Laplace transforms with additional entries. In this section we examine how to use the new entries.
 		</p>
 
 	</introduction>
@@ -769,65 +769,31 @@ plot3(rhomax,Z,log_g(rhomax,Z),'w','linew',2)
 			</p>
 		</example>
 		<p>
-			If we are after a general solution in which the initial values are unknown or arbitrary, there is a way to use them to shorten the process. 
-		</p>
-		<example>
-			<p>
-				We reconsider <m>x''-x=24 e^{3t}</m> with the goal of finding a general solution. As before, we obtain 
-				<me>
-					X(s) = \frac{sx(0) + x'(0)}{(s-1)(s+1)} + \frac{24}{(s-1)(s+1)(s-3)}.
-				</me>
-				Without manipulating this further for now, we know that we seek a PFD in the form 
-				<me>
-					X(s) = \frac{A}{s-1} + \frac{B}{s+1} + \frac{C}{s-3}.
-				</me>
-				Consider that this inverts to 
-				<me>
-					x(t) = Ae^t + Be^{-t} + Ce^{3t}.
-				</me>
-				The first two terms are due to the eigenvalues and are part of the homogeneous solution. Their coefficients are arbitrary in the general solution. It's the coefficient <m>C</m> that is of interest to us; i.e., a particuar solution. Suppose we chose the initial conditions in a way that zeroed out the homogeneous terms. Then 
-				<me>
-					\frac{sx(0) + x'(0)}{(s-1)(s+1)} + \frac{24}{(s-1)(s+1)(s-3)} = \frac{C}{s-3}.
-				</me>
-				Clearing the denominators leads to 
-				<me>
-					(sx(0)+x'(0))(s-3) + 24 = C(s-1)(s+1). 
-				</me>
-				We don't actually care about the numerical values of the initial conditions. When we set <m>s=3</m>, they disappear and we get <m>24=8C</m>. Right away, then, we know that the general solution is 
-				<me>
-					x(t) = x_h(t) + x_p(t) = c_1 e^{t} + c_2 e^{-t} + 3 e^{3t}. 
-				</me>
-			</p>
-		</example>
-		<p>
 			In light of the last example, let's look again at the general case 
 			<me>
 				X(s) = \frac{ sx(0)+x'(0)}{s^2+bs+c} +  \frac{F(s)}{s^2 +bs+c}
 			</me>.
-			The denominators contain the characteristic polynomial, whose roots are the eigenvalues of the homogeneous problem. We refer to zeros in the denominator as <idx>poles</idx><term>poles</term> of the transform. Each eigenvalue pole will contribute a term <m>1/(s-\lambda)</m> to the partial fraction decomposition. Upon inversion, this term contributes <m>e^{\lambda t}</m>, which is part of the homogeneous solution that we know has an arbitrary coefficient. When chasing any particular solution, we may zero those terms out when finding the decomposition.
+			The denominators contain the characteristic polynomial, whose roots are the eigenvalues of the homogeneous problem. We refer to zeros in the denominator as <idx>poles</idx><term>poles</term> of the transform. Each eigenvalue pole will contribute a term <m>1/(s-\lambda)</m> to the partial fraction decomposition. Upon inversion, this term contributes <m>e^{\lambda t}</m>, which is part of the homogeneous solution. The forcing function will contribute one or more of its own poles in <m>F(s)</m>, and they generate new terms in the partial fraction decomposition. 
 		</p>
-		<p>
-			The forcing function will contribute one or more of its own poles in <m>F(s)</m>. These also generate terms in the partial fraction decomposition, and these terms invert to contribute to a particular solution. The coefficients of these terms are <em>not</em> arbitrary and must be found from the decomposition in transform space. 
-		</p>
-		
 		<example>
 			<p>
-				To find the general soluton of <m>x'' - 4x + 3x = 6</m>, we note that the characteristic polynomial is <m>s^2-4s+3=(s-3)(s-1)</m>. We take transforms to obtain 
+				To solve <m>x'' - 4x + 3x = 6</m> with <m>x(0)=-2</m>, <m>x'(0)=4</m>,  we take transforms to obtain 
 				<me>
-					X(s) = \frac{sx(0)+x'(0)}{(s-3)(s-1)} + \frac{6}{s(s-3)(s-1)} .
+					X(s) = \frac{-2s + 4}{(s-3)(s-1)} + \frac{6}{s(s-3)(s-1)} .
 				</me>
 				The PFD of this has the form 
 				<me>
 					X(s) = \frac{A}{s-3} + \frac{B}{s-1} + \frac{C}{s}.
 				</me>
-				The first two terms constitute the homogeneous solution, and we zero out their coefficients and replace <m>X</m> with <m>X_p</m>. Equating to the earlier expression and clearing denominators gives 
+				Equating and clearing the denominators leads to 
 				<me>
-					(sx(0)+x'(0))(s) + 6 = C(s-3)(s-1).
+					(s)(4-2s) + 6 = As(s-1) + Bs(s-3) + C(s-1)(s-3).
 				</me>
-				We don't care about the initial values, so we choose <m>s=0</m> to find that <m>6=3C</m>. Thus <m>X_p(s)=2/s</m> and <m>x_p(t)=2</m>. Finally, 
+				The values <m>s=0,s=1,s=3</m>, which are simply the poles of <m>X</m>, leave especially simple equations: <m>6=3C</m>, <m>2+6=-2B</m>, and <m>-6+6=6A</m>. Hence  
 				<me>
-					x(t) = c_1 e^{3t} + c_2 t e^{t} + 2. 
+					X(s) = - 4\, \frac{1}{s-1} + 2\, \frac{1}{s}.
 				</me>
+				This inverts easily to give <m>x(t) = - 4e^t + 2</m>. 
 			</p>
 		</example>
 	</subsection>
@@ -863,46 +829,35 @@ plot3(rhomax,Z,log_g(rhomax,Z),'w','linew',2)
 				</me>. 
 			</p>
 		</example>
-		<p>
-			A pair of imaginary poles, plus one real pole, implies the PFD  
-			<me>
-				X(s) = \frac{A+Bs}{s^2+\omega^2} + \frac{C}{s-r} 
-			</me>,
-			corresponding to 
-			<m>
-				x(t) = \frac{A}{\omega}\sin(\omega t) + B\cos(\omega t) + C e^{rt} 
-			</m>. 
-			In an initial-value problem you usually have to find all three constants, whereas for the general solution we may be able to zero out the homogeneous solution. 
-		</p>
 		<example>
 			<p>
-				To find the general soluton of <m>x'' - 4x + 3x = 10\cos(t)</m>, we note that the characteristic polynomial is <m>s^2-4s+3=(s-3)(s-1)</m>. We take transforms to obtain 
+				To find the general soluton of <m>x'' - 4x + 3x = 10\cos(t)</m> with zero initial conditions, we take transforms to obtain 
 				<me>
-					X(s) = \frac{sx(0)+x'(0)}{(s-3)(s-1)} + \frac{10s}{(s^2+1)(s-3)(s-1)} .
+					X(s) =  \frac{10s}{(s^2+1)(s-3)(s-1)} .
 				</me>
 				The PFD of this has the real form 
 				<me>
 					X(s) = \frac{A}{s-3} + \frac{B}{s-1} + \frac{Cs+D}{s^2+1}.
 				</me>
-				The first two terms constitute the homogeneous solution, and we zero out their coefficients and replace <m>X</m> with <m>X_p</m>. Equating to the earlier expression and clearing denominators gives 
+				Equating and clearing denominators gives 
 				<me>
-					(sx(0)+x'(0))(s^2+1) + 10s = (Cs+D)(s-3)(s-1).
+					10s = A(s-1)(s^2+1) + B(s-3)(s^2+1) + (Cs+D)(s-3)(s-1).
 				</me>
+				We could equate powers of <m>s</m> to get four linear equations for the constants. However, life is again easier if we evaluate the identity at the poles. 
 				We don't care about the initial values, so we evaluate both sides at <m>s=i</m>: 
 				<md>
-					<mrow> 10i \amp = (Ci+D)(i-3)(i-1)  = (Ci+D)(2-4i) = (4C+2D) + i(2C-4D)  </mrow>
+					<mrow> s=1 \amp \:\Rightarrow\: 10  = -4B  </mrow>
+					<mrow> s=3 \amp \:\Rightarrow\: 30 = 20A </mrow>
+					<mrow> s=i \amp \:\Rightarrow\: 10i  = (i-1)(i-3)(iC+D) = (2-4i)(iC+D) = (4C+2D) + i(2C-4D)  </mrow>
 				</md>.
-				Equating the real and imaginary parts gives <m>4C+2D=0</m>, <m>2C-4D=10</m>, which are easily solved for <m>C=1,D=-2</m>. Hence our particular solution satisfies
+				Equating the real and imaginary parts in the last line gives <m>4C+2D=0</m>, <m>2C-4D=10</m>, which are easily solved for <m>C=1,D=-2</m>. Hence 
 				<me>
-					X_p(s) = 1 \, \frac{s}{s^2+1} - 2\, \frac{1}{s^2+1}. 
+					X(s) = \frac{3/2}{s-3} + \frac{-5/2}{s-1} + \frac{s-2}{s^2+1},
 				</me>
-				Thus 
-				<me>
-					x_p(t) = \cos(t) - 2 \sin(t),
-				</me>
+				
 				and finally 
 				<me>
-					x(t) = c_1 e^{3t} + c_2 t e^{t} + \cos(t) - 2 \sin(t). 
+					x(t) = \frac{3}{2} e^{3t} -\frac{5}{2} e^{t} + \cos(t) - 2 \sin(t). 
 				</me>
 			</p>
 		</example>
@@ -930,51 +885,17 @@ plot3(rhomax,Z,log_g(rhomax,Z),'w','linew',2)
 				</me>.
 			</p>
 		</example>
-		<p>
-			We may also have to deal with two sets of imaginary poles. 
-		</p>
 		<example>
 			<p>
-				The driven, undamped oscillator <m>x''+\omega_0^2 x = \cos(\omega t)</m> yields 
-				<me> 
-					X(s) = \frac{sx(0)+x'(0)}{(s^2+\omega_0^2)} + \frac{s}{(s^2+\omega_0^2)(s^2+\omega^2)} 
+				To find the general solution of <m>x''+x=5H(t-4)</m> starting from rest, we take transforms to obtain 
+				<me>
+					X(s) = \frac{5e^{-4s}}{s(s^2+1)} = 5e^{-4s}F(s) 
 				</me>, 
-				which has a PFD with four real constants: 
-				<me>
-					X(s) = \frac{As+B}{s^2+\omega_0^2} + \frac{Cs+D}{s^2+\omega^2}. 
-				</me>
-				The first term is homogeneous and tells us nothing new about the general solution. So we zero out <m>A,B</m> for a particular solution and clear the denominators to get
-				<me>
-					(sx(0)+x'(0))(s^2+\omega^2) + s = (Cs+D)(s^2+\omega_0^2). 
-				</me>
-				To avoid dealing with the initial conditions, set <m>s=i\omega</m>: 
-				<me>
-					i\omega = (iC\omega + D)(\omega_0^2-\omega^2). 
-				</me>
-				The real part of this equation tells us that <m>D=0</m>, and the imaginary part tells us <m>C=1/(\omega_0^2-\omega^2)</m>. Hence
-				<me>
-					x_p(t) = \frac{1}{\omega_0^2-\omega^2}  \cos(\omega t). 
-				</me>
-				This is combined with <m>\cos(\omega_0 t)</m> and <m>\sin(\omega_0 t)</m> to get the general solution.
-			</p> 
-		</example>
-		<p>
-			If all this is starting to smell like the method of undetermined coefficients to you, there's good reason. The <m>x_p</m> we targeted in these examples is the same one that that method produces, and the algebra is virually identical, though arrived at differently. 
-		</p>
-		<p>
-			We do have to be aware of when the shortcut of zeroing the homogeneous terms does not apply. When delayed by the Shift Theorem, for example, those terms become geniunely different and have to be accounted for.
-		</p>
-		<example>
-			<p>
-				To find the general solution of <m>x''+x=5H(t-4)</m>, we take transforms to obtain 
-				<me>
-					X(s) = \frac{sx(0)-x'(0)}{s^2+1} + \frac{5e^{-4s}}{s(s^2+1)}. 
-				</me>
-				The first two terms give a combination of <m>\cos(t)</m> and <m>\sin(t)</m> to contribute to the homogeneous solution. The second is in the form <m>5e^{-4s}F(s)</m>, where 
+				where 
 				<me>
 					F(s) = \frac{1}{s(s^2+1)} = \frac{A}{s} + \frac{Bs+C}{s^2+1}. 
 				</me>
-				We would love to discard the second PF term, but because we are going to use the shift theorem on <m>f(t)</m>, we have to keep them all. Clearing denominators we get 
+				Clearing denominators we get 
 				<me>
 					1 = A(s^2+1) + (Bs+C)(s). 
 				</me>
@@ -982,24 +903,17 @@ plot3(rhomax,Z,log_g(rhomax,Z),'w','linew',2)
 				<me>
 					f(t) = 1 -\cos(t). 
 				</me>
-				So by the shift theorem, a particular solution is 
+				So by the shift theorem, the solution is 
 				<me>
-					x_p(t) = 5H(t-4)f(t-4) = 5 H(t-4)[1-\cos(t-4)]. 
+					x(t) = 5H(t-4)f(t-4) = 5 H(t-4)[1-\cos(t-4)]. 
 				</me>
-				The general solution is <m>c_1\cos(t) + c_2\sin(t) + x_p(t)</m>. 
 			</p>
 		</example>
 	</subsection>
-	
-</section>
-
-<section xml:id="so-laplace-repeated">
-	<title>Repeated and complex poles</title>
-
 	<subsection>
 		<title>Complex poles</title>
 		<p> 
-			Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. It can help to use the shift formula 
+			Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. It can help to use the transform-shift formula 
 			<me>
 				\lx[e^{at}f(t)] = F(s-a)
 			</me>.
@@ -1011,71 +925,28 @@ plot3(rhomax,Z,log_g(rhomax,Z),'w','linew',2)
 				<me>
 					X(s) = \frac{6e^{-s}}{s^2+2s+10}
 				</me>.
-				The quadratic formula tells us the homogeneous eigenvalues <m>-1\pm 3i</m>, so we assume a shift of <m>-1</m> and designate <m>X_p(s)=G(s+1)</m>. Thus
+				The quadratic formula tells us the homogeneous eigenvalues <m>-1\pm 3i</m>, which will contribute an amplitude <m>e^{-t}</m> in time. This corresponds to a shift <m>a=-1</m>, so we designate <m>X(s)=F(s+1)</m>. Thus
 				<me>
-					G(s) = X_p(s-1) = 6e \frac{e^{-s}}{s^2-2s+1+2s-2+10} = 6e \frac{e^{-s}}{s^2+9}.
+					F(s) = X(s-1) = 6e \frac{e^{-s}}{s^2-2s+1+2s-2+10} = 6e \frac{e^{-s}}{s^2+9}.
 				</me>
-				Now we can apply the Shift Theorem to <m>G</m> and get 
+				Now we can apply the Shift Theorem to <m>F</m> using the definition <m>V(s)=1/(s^2+9)</m> and get 
 				<me>
-					g(t) = 6e H(t-1) v(t-1),
+					f(t) = 6e H(t-1) v(t-1),
 				</me>
-				where <m>v(t)=\sin(3t)/3</m>. When we unwind the definitions, we get 
+				where <m>v(t)=\frac{1}{3}\sin(3t)</m>. When we unwind the definitions, we get 
 				<me>
-					x_p(t) = e^{-t} g(t) = 2 e^{-t+1} H(t-1)\sin(3t-3).
+					x(t) = e^{-t} f(t) = 2 e^{-t+1} H(t-1)\sin(3t-3).
 				</me>
-				Are we having fun yet?
-			</p>
-			<p>
-				Now consider <m>x''+2x'+10x=40</m>. We get 
-				<me>
-					X_p(s) = \frac{40}{s(s^2+2s+10)} 
-				</me>. 
-				We have the same eigenvalues and so define <m>X_p(s)=G(s+1)</m> to get 
-				<me>
-					G(s) = X_p(s-1) = \frac{40}{(s-1)(s^2+9)}.
-				</me>
-				This is amenable to the PFD 
-				<me>
-					G(s) = \frac{A}{s-1} + \frac{B+Cs}{s^2+9}
-				</me>. 
-				Clearing denominators, we get 
-				<me> 
-					40 = A(s^2+9) + (B+Cs) (s-1)
-				</me>.  
-				If we set <m>s=1</m> we immediately see that <m>A=4</m>. That leaves 
-				<me>
-					40 = (4+C)s^2 +(B-C)s + 36-B
-				</me>. 
-				Now we can read off <m>B=-4</m>, <m>C=-4</m>. Thus 
-				<me>
-					g(t) = 4e^{t} - 4 \cos(3t) - \frac{4}{3}\sin(3t). 
-				</me>
-				Finally, 
-				<me>
-					x_p(t) = e^{-t}g(t) = 4 - 4  e^{-t}\cos(3t) - \frac{4}{3} e^{-t}\sin(3t).
-				</me>
-			</p>
-			<p>
-				For a harmonically forced case such as <m>x''+2x'+10x=\cos(2t)</m>, we have 
-				<me>
-					X_p(s) = \frac{s}{(s^2+4)(s^2+2s+10)}
-				</me>. 
-				The best first step is to decompose 
-				<me> 
-					X_p(s) = \frac{A+Bs}{s^2+4} + \frac{C+Es}{s^2+2s+10}
-				</me>. 
-				The first term leads directly to <m>\sin(2t)</m> and <m>\cos(2t)</m>, while the second would once again be shifted to get <m>s^2+9</m> in the denominator. The details are left to the proverbial reader.
 			</p>
 		</example>
 		<p> 
 			The drawback to Laplace transforms as a one-stop solver is what we observed earlier: the particular solution we find virtually always includes some terms from the homogeneous solution. Mathematically, the poles of <m>X_p(s)</m> include those of the transfer function <em>and</em> the forcing function. This combination makes the partial fraction decompositions lengthier, to say the least. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases, especially if one seeks a general solution without initial conditions to consider at the end.
 		</p>
 	</subsection>
-
 	<subsection>
 		<title>Repeated poles and resonance</title>
 		<p>
-			Repeated poles in the Laplace transform of a solution appear in the form of denominator terms such as <m>(s-a)^k</m> or <m>(s^2+\omega^2)^k</m> with <m>k \gt 1</m>. They can arise in two ways: from repeated eigenvalues in the homogeneous or unforced ODE, or because the forcing function has a pole in common with one of the eigenvalues (e.g., perfect resonance). 
+			Repeated poles in the Laplace transform of a solution appear in the form of denominator terms such as <m>(s-a)^k</m> or <m>(s^2+\omega^2)^k</m> with <m>k \gt 1</m>. They can arise in two ways: from repeated eigenvalues in the homogeneous ODE (e.g., critical damping), or because the forcing function has a pole in common with one of the eigenvalues (e.g., perfect resonance). 
 		</p>
 		<p>
 			Consider inverting the double real pole
@@ -1115,85 +986,30 @@ plot3(rhomax,Z,log_g(rhomax,Z),'w','linew',2)
 		</p>
 		<example>
 			<p>
-				The undamped oscillator <m>x''+9x=\sin(3t)</m> has a perfect resonance. The transform leads to 
+				The undamped oscillator <m>x''+9x=\sin(3t)</m> has a perfect resonance. From zero initial conditions we have
 				<me>
-					X(s) = \frac{sx(0)+x'(0)}{s^2+9} + \frac{3}{(s^2+9)^2}
+					X(s) = \frac{3}{(s^2+9)^2}
 				</me>. 
-				We are close to being able to use 
+				We are going to use  
 				<me>
 					\frac{d}{ds} \left[ \frac{3}{s^2+9} \right] = \frac{-6s}{(s^2+9)^2}.
 				</me>
-				In fact, if we designate <m>G(s)=2sX_p(s)</m>, then we know that  
+				Specifically, if we designate <m>G(s)=2sX(s)</m>, then we know that  
 				<me>
 					\lx[ t \sin(3t) ] = -\frac{d}{ds} \left[ \frac{3}{s^2+9} \right] = G(s),
 				</me>
 				and therefore <m>g(t)=t\sin(3t)</m>. Next, note that 
 				<me>
-					2\lx[x_p'(t)] = 2[sX_p(s)-X_p(0)] = G(s).
+					2\lx[x'(t)] = 2[sX(s)-X(0)] = G(s).
 				</me>
-				Hence <m>x_p'(t) = \frac{1}{2} t \sin(3t)</m>, and integration by parts yields
+				Hence <m>x'(t) = \frac{1}{2} t \sin(3t)</m>, and integration by parts yields
 				<me>
-					x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]
-				</me>.
-			</p>
-		</example>
-		<example>
-			<p>
-				To find the general soluton of <m>x'' - 4x + 4x = 5\cos(t)</m>, we note that the characteristic polynomial is <m>s^2-4s+4=(s-2)^2</m>. We take transforms to obtain 
-				<me>
-					X(s) = \frac{sx(0)+x'(0)}{(s-2)^2} + \frac{5s}{(s^2+1)(s-2)^2} .
-				</me>
-				The PFD of this has the real form 
-				<me>
-					X(s) = \frac{A}{s-2} + \frac{B}{(s-2)^2} + \frac{Cs+D}{s^2+1}.
-				</me>
-				The first two terms constitute the homogeneous solution, and we zero out their coefficients and replace <m>X</m> with <m>X_p</m>. Equating to the earlier expression and clearing denominators gives 
-				<me>
-					(sx(0)+x'(0))(s^2+1) + 5s = (Cs+D)(s-2)^2.
-				</me>
-				We don't care about the initial values and want to make them vanish. So we choose an imaginary value of <m>s</m>: 
-				<md>
-					<mrow> s = i \amp \Rightarrow 5i = (Ci+D)(i-2)^2  = (3-4i)(D+Ci) = (3D+4C) + i(3C-4D)  </mrow>
-				</md>.
-				Equating the real and imaginary parts gives <m>4C+3D=0</m>, <m>3C-4D=5</m>. Now our particular solution satisfies
-				<me>
-					X_p(s) = \frac{3}{5} \frac{s}{s^2+1} - \frac{4}{5} \frac{1}{s^2+1}. 
-				</me>
-				Hence 
-				<me>
-					x_p(t) = \frac{3}{5} \cos(t) - \frac{4}{5} \sin(t)
-				</me>
-				and finally 
-				<me>
-					x(t) = c_1 e^{2t} + c_2 t e^{2t} + \frac{3}{5} \cos(t) - \frac{4}{5} \sin(t). 
-				</me>
-			</p>
-		</example>
-
-		<p>
-			As the preceding example shows, dealing with repeated poles is no easy feat, especially when quadratic factors are in the denominator. Another tactic is to break up those factors as imaginary poles and use standard partial fractions. 
-		</p>
-		<example>
-			<p>
-				Again we consider how to invert
-				<me>
-					X_p(s) = \frac{3}{(s^2+9)^2} = \frac{3}{(s-3i)^2(s+3i)^2} 
-				</me>. 
-				The PFD has four terms that work out as 
-				<me>
-					X_p(s) = \frac{1}{36} \left[ \frac{i}{s+3i} - \frac{i}{s-3i} - \frac{3}{(s+3i)^2} - \frac{3}{(s-3i)^2} \right]. 
-				</me>
-				These easily invert using complex exponentials: 
-				<me>
-					x_p(t) = \frac{1}{36} \left[ i\bigl(e^{-3it}-e^{3it}\bigr) - 3 t \bigl(e^{-3it}+e^{3it}\bigr)  \right]. 
-				</me>
-				Now Euler' formula leads back to the same result,
-				<me>
-					x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]
+					x(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]
 				</me>.
 			</p>
 		</example>
 	</subsection>
+
 </section>
 
 <section xml:id="so-convolutions">

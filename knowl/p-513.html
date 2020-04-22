@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T14:06:54-04:00    *-->
+<!--*    on 2020-04-22T15:25:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,42 +13,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We reconsider \(x''-x=24 e^{3t}\) with the goal of finding a general solution. As before, we obtain</p>
+<p>To solve \(x'' - 4x + 3x = 6\) with \(x(0)=-2\text{,}\) \(x'(0)=4\text{,}\)  we take transforms to obtain</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{sx(0) + x'(0)}{(s-1)(s+1)} + \frac{24}{(s-1)(s+1)(s-3)}.
+X(s) = \frac{-2s + 4}{(s-3)(s-1)} + \frac{6}{s(s-3)(s-1)} .
 \end{equation*}
 </div>
-<p data-braille="continuation">Without manipulating this further for now, we know that we seek a PFD in the form</p>
+<p data-braille="continuation">The PFD of this has the form</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{A}{s-1} + \frac{B}{s+1} + \frac{C}{s-3}.
+X(s) = \frac{A}{s-3} + \frac{B}{s-1} + \frac{C}{s}.
 \end{equation*}
 </div>
-<p data-braille="continuation">Consider that this inverts to</p>
+<p data-braille="continuation">Equating and clearing the denominators leads to</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = Ae^t + Be^{-t} + Ce^{3t}.
+(s)(4-2s) + 6 = As(s-1) + Bs(s-3) + C(s-1)(s-3).
 \end{equation*}
 </div>
-<p data-braille="continuation">The first two terms are due to the eigenvalues and are part of the homogeneous solution. Their coefficients are arbitrary in the general solution. It's the coefficient \(C\) that is of interest to us; i.e., a particuar solution. Suppose we chose the initial conditions in a way that zeroed out the homogeneous terms. Then</p>
+<p data-braille="continuation">The values \(s=0,s=1,s=3\text{,}\) which are simply the poles of \(X\text{,}\) leave especially simple equations: \(6=3C\text{,}\) \(2+6=-2B\text{,}\) and \(-6+6=6A\text{.}\) Hence</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{sx(0) + x'(0)}{(s-1)(s+1)} + \frac{24}{(s-1)(s+1)(s-3)} = \frac{C}{s-3}.
+X(s) = - 4\, \frac{1}{s-1} + 2\, \frac{1}{s}.
 \end{equation*}
 </div>
-<p data-braille="continuation">Clearing the denominators leads to</p>
-<div class="displaymath">
-\begin{equation*}
-(sx(0)+x'(0))(s-3) + 24 = C(s-1)(s+1). 
-\end{equation*}
-</div>
-<p data-braille="continuation">We don't actually care about the numerical values of the initial conditions. When we set \(s=3\text{,}\) they disappear and we get \(24=8C\text{.}\) Right away, then, we know that the general solution is</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = x_h(t) + x_p(t) = c_1 e^{t} + c_2 e^{-t} + 3 e^{3t}. 
-\end{equation*}
-</div>
+<p data-braille="continuation">This inverts easily to give \(x(t) = - 4e^t + 2\text{.}\)</p>
 <span class="incontext"><a href="so-laplace.html#p-513">in-context</a></span>
 </body>
 </html>

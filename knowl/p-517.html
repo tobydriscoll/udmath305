@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T14:06:54-04:00    *-->
+<!--*    on 2020-04-22T15:25:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,22 +13,34 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
+<p>The undamped oscillator \(x''+16x = 40e^{-2t}\) with \(x(0)=x'(0)=0\) has a solution whose transform is</p>
 <div class="displaymath">
 \begin{equation*}
-\lx[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
+X(s) = \frac{40}{(s+2)(s^2+16)} = \frac{A+Bs}{s^2+16^2} + \frac{C}{s+2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">and</p>
+<p data-braille="continuation">Clearing the denominators gives the identity</p>
 <div class="displaymath">
 \begin{equation*}
-\lx[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
+(A+Bs)(s+2) + C(s^2+16) = 40\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Conversely, a transform \(X(s)\) that has \(s^2+\omega^2\) as a factor in the denominator has poles at \(\pm i\omega\text{.}\) The simplest case is</p>
+<p data-braille="continuation">We need three equations to determine the unknown coefficients. Setting \(s=-2\) quickly gives \(20C=40\text{,}\) so \(C=2\text{.}\) Now the identity reads</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x_p(t)=\frac{A}{\omega}\sin(\omega t) + B\cos(\omega t)\text{.}
+Bs^2 + (A+2B)s + 2A = 8 - 2s^2. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Equating the coefficients of \(1\) and \(s^2\) immediately tells us \(2A=8\) and \(B=-2\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} \text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">and finally</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
 \end{equation*}
 </div>
 <span class="incontext"><a href="so-laplace.html#p-517">in-context</a></span>

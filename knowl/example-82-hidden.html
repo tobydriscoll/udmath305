@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T14:06:54-04:00    *-->
+<!--*    on 2020-04-22T15:25:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,16 +11,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>The critically damped oscillator \(x'' + 6x' + 9=0\) has a double eigenvalue at \(-3\text{.}\) To find the solution with \(x(0)=0\text{,}\) \(x'(0)=6\text{,}\) we use the transform to find</p>
+<body><article class="example example-like"><p>The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. From zero initial conditions we have</p>
 <div class="displaymath">
 \begin{equation*}
-[s^2X(s) - 6] + 6[sX(s)] + 9[X(s)] = 0 \quad \Rightarrow \quad X(s) = \frac{6}{(s+3)^2}.
+X(s) = \frac{3}{(s^2+9)^2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence <a class="xref" data-knowl="./knowl/so-eq-repeatedexp.html" title="Equation 4.7.1">(4.7.1)</a> applies with \(n=1\text{,}\) and</p>
+<p data-braille="continuation">We are going to use</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = 6t e^{-3t}\text{.}
+\frac{d}{ds} \left[ \frac{3}{s^2+9} \right] = \frac{-6s}{(s^2+9)^2}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Specifically, if we designate \(G(s)=2sX(s)\text{,}\) then we know that</p>
+<div class="displaymath">
+\begin{equation*}
+\lx[ t \sin(3t) ] = -\frac{d}{ds} \left[ \frac{3}{s^2+9} \right] = G(s),
+\end{equation*}
+</div>
+<p data-braille="continuation">and therefore \(g(t)=t\sin(3t)\text{.}\) Next, note that</p>
+<div class="displaymath">
+\begin{equation*}
+2\lx[x'(t)] = 2[sX(s)-X(0)] = G(s).
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence \(x'(t) = \frac{1}{2} t \sin(3t)\text{,}\) and integration by parts yields</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 \end{equation*}
 </div></article></body>
 </html>

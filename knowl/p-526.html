@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T14:06:54-04:00    *-->
+<!--*    on 2020-04-22T15:25:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,37 +13,36 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To find the general solution of \(x''+x=5H(t-4)\text{,}\) we take transforms to obtain</p>
+<p>The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. From zero initial conditions we have</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{sx(0)-x'(0)}{s^2+1} + \frac{5e^{-4s}}{s(s^2+1)}. 
+X(s) = \frac{3}{(s^2+9)^2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The first two terms give a combination of \(\cos(t)\) and \(\sin(t)\) to contribute to the homogeneous solution. The second is in the form \(5e^{-4s}F(s)\text{,}\) where</p>
+<p data-braille="continuation">We are going to use</p>
 <div class="displaymath">
 \begin{equation*}
-F(s) = \frac{1}{s(s^2+1)} = \frac{A}{s} + \frac{Bs+C}{s^2+1}. 
+\frac{d}{ds} \left[ \frac{3}{s^2+9} \right] = \frac{-6s}{(s^2+9)^2}.
 \end{equation*}
 </div>
-<p data-braille="continuation">We would love to discard the second PF term, but because we are going to use the shift theorem on \(f(t)\text{,}\) we have to keep them all. Clearing denominators we get</p>
+<p data-braille="continuation">Specifically, if we designate \(G(s)=2sX(s)\text{,}\) then we know that</p>
 <div class="displaymath">
 \begin{equation*}
-1 = A(s^2+1) + (Bs+C)(s). 
+\lx[ t \sin(3t) ] = -\frac{d}{ds} \left[ \frac{3}{s^2+9} \right] = G(s),
 \end{equation*}
 </div>
-<p data-braille="continuation">Setting \(s=0\) gives us \(A=1\) right away. Then \(-s^2=Bs^2+Cs\text{,}\) which tells us that \(B=-1\) and \(C=0\text{.}\) Hence</p>
+<p data-braille="continuation">and therefore \(g(t)=t\sin(3t)\text{.}\) Next, note that</p>
 <div class="displaymath">
 \begin{equation*}
-f(t) = 1 -\cos(t). 
+2\lx[x'(t)] = 2[sX(s)-X(0)] = G(s).
 \end{equation*}
 </div>
-<p data-braille="continuation">So by the shift theorem, a particular solution is</p>
+<p data-braille="continuation">Hence \(x'(t) = \frac{1}{2} t \sin(3t)\text{,}\) and integration by parts yields</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = 5H(t-4)f(t-4) = 5 H(t-4)[1-\cos(t-4)]. 
+x(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The general solution is \(c_1\cos(t) + c_2\sin(t) + x_p(t)\text{.}\)</p>
 <span class="incontext"><a href="so-laplace.html#p-526">in-context</a></span>
 </body>
 </html>

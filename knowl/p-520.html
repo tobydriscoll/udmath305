@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T14:06:54-04:00    *-->
+<!--*    on 2020-04-22T15:25:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,46 +13,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To find the general soluton of \(x'' - 4x + 3x = 10\cos(t)\text{,}\) we note that the characteristic polynomial is \(s^2-4s+3=(s-3)(s-1)\text{.}\) We take transforms to obtain</p>
+<p>Suppose \(x''+2x'+10x=6\delta(t-1)\text{,}\) with zero initial conditions. Then</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{sx(0)+x'(0)}{(s-3)(s-1)} + \frac{10s}{(s^2+1)(s-3)(s-1)} .
+X(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The PFD of this has the real form</p>
+<p data-braille="continuation">The quadratic formula tells us the homogeneous eigenvalues \(-1\pm 3i\text{,}\) which will contribute an amplitude \(e^{-t}\) in time. This corresponds to a shift \(a=-1\text{,}\) so we designate \(X(s)=F(s+1)\text{.}\) Thus</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{A}{s-3} + \frac{B}{s-1} + \frac{Cs+D}{s^2+1}.
+F(s) = X(s-1) = 6e \frac{e^{-s}}{s^2-2s+1+2s-2+10} = 6e \frac{e^{-s}}{s^2+9}.
 \end{equation*}
 </div>
-<p data-braille="continuation">The first two terms constitute the homogeneous solution, and we zero out their coefficients and replace \(X\) with \(X_p\text{.}\) Equating to the earlier expression and clearing denominators gives</p>
+<p data-braille="continuation">Now we can apply the Shift Theorem to \(F\) using the definition \(V(s)=1/(s^2+9)\) and get</p>
 <div class="displaymath">
 \begin{equation*}
-(sx(0)+x'(0))(s^2+1) + 10s = (Cs+D)(s-3)(s-1).
+f(t) = 6e H(t-1) v(t-1),
 \end{equation*}
 </div>
-<p data-braille="continuation">We don't care about the initial values, so we evaluate both sides at \(s=i\text{:}\)</p>
-<div class="displaymath">
-\begin{align*}
-10i \amp = (Ci+D)(i-3)(i-1)  = (Ci+D)(2-4i) = (4C+2D) + i(2C-4D)  \text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">Equating the real and imaginary parts gives \(4C+2D=0\text{,}\) \(2C-4D=10\text{,}\) which are easily solved for \(C=1,D=-2\text{.}\) Hence our particular solution satisfies</p>
+<p data-braille="continuation">where \(v(t)=\frac{1}{3}\sin(3t)\text{.}\) When we unwind the definitions, we get</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = 1 \, \frac{s}{s^2+1} - 2\, \frac{1}{s^2+1}. 
-\end{equation*}
-</div>
-<p data-braille="continuation">Thus</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = \cos(t) - 2 \sin(t),
-\end{equation*}
-</div>
-<p data-braille="continuation">and finally</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = c_1 e^{3t} + c_2 t e^{t} + \cos(t) - 2 \sin(t). 
+x(t) = e^{-t} f(t) = 2 e^{-t+1} H(t-1)\sin(3t-3).
 \end{equation*}
 </div>
 <span class="incontext"><a href="so-laplace.html#p-520">in-context</a></span>

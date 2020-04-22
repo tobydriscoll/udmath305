@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T14:06:54-04:00    *-->
+<!--*    on 2020-04-22T15:25:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution with zero initial conditions has</p>
+<p>Why does this matter? Consider finding a particular solution of \(x''+bx'+cx=f(t)\text{.}\) After taking transforms we get</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
+X_p(s) = \frac{1}{s^2+bs+c} F(s) = G(s) F(s)\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">The quadratic formula tells us the homogeneous eigenvalues \(-1\pm 3i\text{,}\) so we assume a shift of \(-1\) and designate \(X_p(s)=G(s+1)\text{.}\) Thus</p>
-<div class="displaymath">
-\begin{equation*}
-G(s) = X_p(s-1) = 6e \frac{e^{-s}}{s^2-2s+1+2s-2+10} = 6e \frac{e^{-s}}{s^2+9}.
-\end{equation*}
-</div>
-<p data-braille="continuation">Now we can apply the Shift Theorem to \(G\) and get</p>
-<div class="displaymath">
-\begin{equation*}
-g(t) = 6e H(t-1) v(t-1),
-\end{equation*}
-</div>
-<p data-braille="continuation">where \(v(t)=\sin(3t)/3\text{.}\) When we unwind the definitions, we get</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = e^{-t} g(t) = 2 e^{-t+1} H(t-1)\sin(3t-3).
-\end{equation*}
-</div>
-<p data-braille="continuation">Are we having fun yet?</p>
-<span class="incontext"><a href="so-laplace-repeated.html#p-536">in-context</a></span>
+<p data-braille="continuation">where \(G(s)\) is the transfer function. Right away then, we know that \(x_p(t)=f(t)*g(t)\) is a particular solution.</p>
+<span class="incontext"><a href="so-convolutions.html#p-536">in-context</a></span>
 </body>
 </html>

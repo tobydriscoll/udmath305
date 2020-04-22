@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T14:06:54-04:00    *-->
+<!--*    on 2020-04-22T15:25:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -15,46 +15,34 @@
 <article class="example example-like"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.6</span><span class="period">.</span>
 </h6>
-<p>To find the general soluton of \(x'' - 4x + 3x = 10\cos(t)\text{,}\) we note that the characteristic polynomial is \(s^2-4s+3=(s-3)(s-1)\text{.}\) We take transforms to obtain</p>
+<p>The undamped oscillator \(x''+16x = 40e^{-2t}\) with \(x(0)=x'(0)=0\) has a solution whose transform is</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{sx(0)+x'(0)}{(s-3)(s-1)} + \frac{10s}{(s^2+1)(s-3)(s-1)} .
+X(s) = \frac{40}{(s+2)(s^2+16)} = \frac{A+Bs}{s^2+16^2} + \frac{C}{s+2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The PFD of this has the real form</p>
+<p data-braille="continuation">Clearing the denominators gives the identity</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{A}{s-3} + \frac{B}{s-1} + \frac{Cs+D}{s^2+1}.
+(A+Bs)(s+2) + C(s^2+16) = 40\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The first two terms constitute the homogeneous solution, and we zero out their coefficients and replace \(X\) with \(X_p\text{.}\) Equating to the earlier expression and clearing denominators gives</p>
+<p data-braille="continuation">We need three equations to determine the unknown coefficients. Setting \(s=-2\) quickly gives \(20C=40\text{,}\) so \(C=2\text{.}\) Now the identity reads</p>
 <div class="displaymath">
 \begin{equation*}
-(sx(0)+x'(0))(s^2+1) + 10s = (Cs+D)(s-3)(s-1).
+Bs^2 + (A+2B)s + 2A = 8 - 2s^2. 
 \end{equation*}
 </div>
-<p data-braille="continuation">We don't care about the initial values, so we evaluate both sides at \(s=i\text{:}\)</p>
-<div class="displaymath">
-\begin{align*}
-10i \amp = (Ci+D)(i-3)(i-1)  = (Ci+D)(2-4i) = (4C+2D) + i(2C-4D)  \text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">Equating the real and imaginary parts gives \(4C+2D=0\text{,}\) \(2C-4D=10\text{,}\) which are easily solved for \(C=1,D=-2\text{.}\) Hence our particular solution satisfies</p>
+<p data-braille="continuation">Equating the coefficients of \(1\) and \(s^2\) immediately tells us \(2A=8\) and \(B=-2\text{.}\) Hence</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = 1 \, \frac{s}{s^2+1} - 2\, \frac{1}{s^2+1}. 
-\end{equation*}
-</div>
-<p data-braille="continuation">Thus</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = \cos(t) - 2 \sin(t),
+X(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} \text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">and finally</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = c_1 e^{3t} + c_2 t e^{t} + \cos(t) - 2 \sin(t). 
+x_p(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
 \end{equation*}
 </div></article><span class="incontext"><a href="so-laplace.html#example-78">in-context</a></span>
 </body>

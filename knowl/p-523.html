@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T14:06:54-04:00    *-->
+<!--*    on 2020-04-22T15:25:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,37 +13,27 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The driven, undamped oscillator \(x''+\omega_0^2 x = \cos(\omega t)\) yields</p>
+<p>Consider inverting the double real pole</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{sx(0)+x'(0)}{(s^2+\omega_0^2)} + \frac{s}{(s^2+\omega_0^2)(s^2+\omega^2)} \text{,}
+X(s) = \frac{1}{(s-a)^2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">which has a PFD with four real constants:</p>
+<p data-braille="continuation">The key is to note that \(X(s)=-F'(s)\text{,}\) where \(F(s) = (s-a)^{-1}\) is the transform of \(e^{at}\text{.}\) From the transform definition we compute</p>
 <div class="displaymath">
-\begin{equation*}
-X(s) = \frac{As+B}{s^2+\omega_0^2} + \frac{Cs+D}{s^2+\omega^2}. 
-\end{equation*}
+\begin{align*}
+-F'(s) \amp = -\frac{d}{ds} \int_0^\infty f(t) e^{-s t}\, dt\\
+\amp = \int_0^\infty t f(t) e^{-s t}\, dt\\
+\amp = \lx[ t f(t) ] = \lx[ t e^{at} ] \text{.}
+\end{align*}
 </div>
-<p data-braille="continuation">The first term is homogeneous and tells us nothing new about the general solution. So we zero out \(A,B\) for a particular solution and clear the denominators to get</p>
+<p data-braille="continuation">If we keep differentiating in \(s\) we find</p>
 <div class="displaymath">
-\begin{equation*}
-(sx(0)+x'(0))(s^2+\omega^2) + s = (Cs+D)(s^2+\omega_0^2). 
-\end{equation*}
+\begin{equation}
+\lx[t^n e^{at} ] = \frac{n!}{(s-a)^{n+1}}.\tag{4.6.1}
+\end{equation}
 </div>
-<p data-braille="continuation">To avoid dealing with the initial conditions, set \(s=i\omega\text{:}\)</p>
-<div class="displaymath">
-\begin{equation*}
-i\omega = (iC\omega + D)(\omega_0^2-\omega^2). 
-\end{equation*}
-</div>
-<p data-braille="continuation">The real part of this equation tells us that \(D=0\text{,}\) and the imaginary part tells us \(C=1/(\omega_0^2-\omega^2)\text{.}\) Hence</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = \frac{1}{\omega_0^2-\omega^2}  \cos(\omega t). 
-\end{equation*}
-</div>
-<p data-braille="continuation">This is combined with \(\cos(\omega_0 t)\) and \(\sin(\omega_0 t)\) to get the general solution.</p>
+<p data-braille="continuation">The special case \(a=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p>
 <span class="incontext"><a href="so-laplace.html#p-523">in-context</a></span>
 </body>
 </html>

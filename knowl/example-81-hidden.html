@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T14:06:54-04:00    *-->
+<!--*    on 2020-04-22T15:25:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,35 +11,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>To find the general solution of \(x''+x=5H(t-4)\text{,}\) we take transforms to obtain</p>
+<body><article class="example example-like"><p>The critically damped oscillator \(x'' + 6x' + 9=0\) has a double eigenvalue at \(-3\text{.}\) To find the solution with \(x(0)=0\text{,}\) \(x'(0)=6\text{,}\) we use the transform to find</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{sx(0)-x'(0)}{s^2+1} + \frac{5e^{-4s}}{s(s^2+1)}. 
+[s^2X(s) - 6] + 6[sX(s)] + 9[X(s)] = 0 \quad \Rightarrow \quad X(s) = \frac{6}{(s+3)^2}.
 \end{equation*}
 </div>
-<p data-braille="continuation">The first two terms give a combination of \(\cos(t)\) and \(\sin(t)\) to contribute to the homogeneous solution. The second is in the form \(5e^{-4s}F(s)\text{,}\) where</p>
+<p data-braille="continuation">Hence <a class="xref" data-knowl="./knowl/so-eq-repeatedexp.html" title="Equation 4.6.1">(4.6.1)</a> applies with \(n=1\text{,}\) and</p>
 <div class="displaymath">
 \begin{equation*}
-F(s) = \frac{1}{s(s^2+1)} = \frac{A}{s} + \frac{Bs+C}{s^2+1}. 
+x(t) = 6t e^{-3t}\text{.}
 \end{equation*}
-</div>
-<p data-braille="continuation">We would love to discard the second PF term, but because we are going to use the shift theorem on \(f(t)\text{,}\) we have to keep them all. Clearing denominators we get</p>
-<div class="displaymath">
-\begin{equation*}
-1 = A(s^2+1) + (Bs+C)(s). 
-\end{equation*}
-</div>
-<p data-braille="continuation">Setting \(s=0\) gives us \(A=1\) right away. Then \(-s^2=Bs^2+Cs\text{,}\) which tells us that \(B=-1\) and \(C=0\text{.}\) Hence</p>
-<div class="displaymath">
-\begin{equation*}
-f(t) = 1 -\cos(t). 
-\end{equation*}
-</div>
-<p data-braille="continuation">So by the shift theorem, a particular solution is</p>
-<div class="displaymath">
-\begin{equation*}
-x_p(t) = 5H(t-4)f(t-4) = 5 H(t-4)[1-\cos(t-4)]. 
-\end{equation*}
-</div>
-<p data-braille="continuation">The general solution is \(c_1\cos(t) + c_2\sin(t) + x_p(t)\text{.}\)</p></article></body>
+</div></article></body>
 </html>

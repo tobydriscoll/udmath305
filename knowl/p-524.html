@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T14:06:54-04:00    *-->
+<!--*    on 2020-04-22T15:25:05-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If all this is starting to smell like the method of undetermined coefficients to you, there's good reason. The \(x_p\) we targeted in these examples is the same one that that method produces, and the algebra is virually identical, though arrived at differently.</p>
+<p>The critically damped oscillator \(x'' + 6x' + 9=0\) has a double eigenvalue at \(-3\text{.}\) To find the solution with \(x(0)=0\text{,}\) \(x'(0)=6\text{,}\) we use the transform to find</p>
+<div class="displaymath">
+\begin{equation*}
+[s^2X(s) - 6] + 6[sX(s)] + 9[X(s)] = 0 \quad \Rightarrow \quad X(s) = \frac{6}{(s+3)^2}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence <a class="xref" data-knowl="./knowl/so-eq-repeatedexp.html" title="Equation 4.6.1">(4.6.1)</a> applies with \(n=1\text{,}\) and</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = 6t e^{-3t}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-laplace.html#p-524">in-context</a></span>
 </body>
 </html>
