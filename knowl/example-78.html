@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:06-04:00    *-->
+<!--*    on 2020-04-22T14:06:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,37 +13,49 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.2</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.6</span><span class="period">.</span>
 </h6>
-<p>The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
+<p>To find the general soluton of \(x'' - 4x + 3x = 10\cos(t)\text{,}\) we note that the characteristic polynomial is \(s^2-4s+3=(s-3)(s-1)\text{.}\) We take transforms to obtain</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{3}{(s^2+9)^2}\text{.}
+X(s) = \frac{sx(0)+x'(0)}{(s-3)(s-1)} + \frac{10s}{(s^2+1)(s-3)(s-1)} .
 \end{equation*}
 </div>
-<p data-braille="continuation">We are close to using the fact that</p>
+<p data-braille="continuation">The PFD of this has the real form</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{d}{ds} \left[ \frac{3}{s^2+9} \right] = \frac{-6s}{(s^2+9)^2}.
+X(s) = \frac{A}{s-3} + \frac{B}{s-1} + \frac{Cs+D}{s^2+1}.
 \end{equation*}
 </div>
-<p data-braille="continuation">In fact, if we designate \(G(s)=2sX_p(s)\text{,}\) then we know that</p>
+<p data-braille="continuation">The first two terms constitute the homogeneous solution, and we zero out their coefficients and replace \(X\) with \(X_p\text{.}\) Equating to the earlier expression and clearing denominators gives</p>
 <div class="displaymath">
 \begin{equation*}
-\lx[ t \sin(3t) ] = -\frac{d}{ds} \left[ \frac{3}{s^2+9} \right] = G(s),
+(sx(0)+x'(0))(s^2+1) + 10s = (Cs+D)(s-3)(s-1).
 \end{equation*}
 </div>
-<p data-braille="continuation">and therefore \(g(t)=t\sin(3t)\text{.}\) Next, note that</p>
+<p data-braille="continuation">We don't care about the initial values, so we evaluate both sides at \(s=i\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+10i \amp = (Ci+D)(i-3)(i-1)  = (Ci+D)(2-4i) = (4C+2D) + i(2C-4D)  \text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Equating the real and imaginary parts gives \(4C+2D=0\text{,}\) \(2C-4D=10\text{,}\) which are easily solved for \(C=1,D=-2\text{.}\) Hence our particular solution satisfies</p>
 <div class="displaymath">
 \begin{equation*}
-2\lx[x_p'(t)] = 2[sX_p(s)-X_p(0)] = G(s).
+X_p(s) = 1 \, \frac{s}{s^2+1} - 2\, \frac{1}{s^2+1}. 
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence \(x_p'(t) = \frac{1}{2} t \sin(3t)\text{,}\) and integration by parts yields</p>
+<p data-braille="continuation">Thus</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
+x_p(t) = \cos(t) - 2 \sin(t),
 \end{equation*}
-</div></article><span class="incontext"><a href="so-laplace-repeated.html#example-78">in-context</a></span>
+</div>
+<p data-braille="continuation">and finally</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 e^{3t} + c_2 t e^{t} + \cos(t) - 2 \sin(t). 
+\end{equation*}
+</div></article><span class="incontext"><a href="so-laplace.html#example-78">in-context</a></span>
 </body>
 </html>

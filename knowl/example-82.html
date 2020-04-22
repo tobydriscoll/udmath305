@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:06-04:00    *-->
+<!--*    on 2020-04-22T14:06:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,19 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.1</span><span class="period">.</span>
 </h6>
-<p>Consider the <a class="xref" data-knowl="./knowl/ex-variable-growth.html" title="Example 2.1.6: Variable growth rate">variable growth archetype 2.1.6</a> \(x'=2tx\text{.}\) We express \(x'\) as \(dx/dt\) and then isolate the variables:</p>
+<p>The critically damped oscillator \(x'' + 6x' + 9=0\) has a double eigenvalue at \(-3\text{.}\) To find the solution with \(x(0)=0\text{,}\) \(x'(0)=6\text{,}\) we use the transform to find</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{dx}{x} = 2t\,dt\text{.}
+[s^2X(s) - 6] + 6[sX(s)] + 9[X(s)] = 0 \quad \Rightarrow \quad X(s) = \frac{6}{(s+3)^2}.
 \end{equation*}
 </div>
-<p data-braille="continuation">Integrating both sides leads to \(\log |x| = t^2 + C\text{,}\) or \(|x|=Ae^{t^2}\) for a positive constant \(A\) (since it is the exponential of a real constant). Taking the absolute value off of \(x\) means that \(A\) can be negative as well. Also, \(A=0\) clearly leads to a solution. Finally, we conclude that \(x=Ce^{t^2}\) for arbitrary \(C\text{.}\)</p></article><span class="incontext"><a href="nl-separable.html#example-82">in-context</a></span>
+<p data-braille="continuation">Hence <a class="xref" data-knowl="./knowl/so-eq-repeatedexp.html" title="Equation 4.7.1">(4.7.1)</a> applies with \(n=1\text{,}\) and</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = 6t e^{-3t}\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="so-laplace-repeated.html#example-82">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:03-04:00    *-->
+<!--*    on 2020-04-22T14:06:52-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -213,8 +213,8 @@ var js_version = 0.13;
 <a href="so-laplace-repeated.html" class="permalink">¶</a><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Repeated poles and resonance</span>
 </h3>
-<p id="p-517">Repeated poles in the Laplace transform of a solution appear in the form of denominator terms such as \((s-a)^k\) or \((s^2+\omega^2)^k\) with \(k \gt 1\text{.}\) They can arise in two ways: from repeated eigenvalues in the homogeneous or unforced ODE, or because the forcing function has a pole in common with one of the eigenvalues (e.g., perfect resonance).</p>
-<p id="p-518">Consider inverting the double real pole</p>
+<p id="p-527">Repeated poles in the Laplace transform of a solution appear in the form of denominator terms such as \((s-a)^k\) or \((s^2+\omega^2)^k\) with \(k \gt 1\text{.}\) They can arise in two ways: from repeated eigenvalues in the homogeneous or unforced ODE, or because the forcing function has a pole in common with one of the eigenvalues (e.g., perfect resonance).</p>
+<p id="p-528">Consider inverting the double real pole</p>
 <div class="displaymath">
 \begin{equation*}
 X(s) = \frac{1}{(s-a)^2}\text{.}
@@ -235,9 +235,9 @@ X(s) = \frac{1}{(s-a)^2}\text{.}
 \end{equation}
 </div>
 <p data-braille="continuation">The special case \(a=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p>
-<article class="example example-like" id="example-77"><a data-knowl="" class="id-ref original" data-refid="hk-example-77"><h6 class="heading">
+<article class="example example-like" id="example-82"><a data-knowl="" class="id-ref original" data-refid="hk-example-82"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-77"><article class="example example-like"><p id="p-519">The critically damped oscillator \(x'' + 6x' + 9=0\) has a double eigenvalue at \(-3\text{.}\) To find the solution with \(x(0)=0\text{,}\) \(x'(0)=6\text{,}\) we use the transform to find</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-82"><article class="example example-like"><p id="p-529">The critically damped oscillator \(x'' + 6x' + 9=0\) has a double eigenvalue at \(-3\text{.}\) To find the solution with \(x(0)=0\text{,}\) \(x'(0)=6\text{,}\) we use the transform to find</p>
 <div class="displaymath">
 \begin{equation*}
 [s^2X(s) - 6] + 6[sX(s)] + 9[X(s)] = 0 \quad \Rightarrow \quad X(s) = \frac{6}{(s+3)^2}.
@@ -249,16 +249,16 @@ X(s) = \frac{1}{(s-a)^2}\text{.}
 x(t) = 6t e^{-3t}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-520">If you look carefully at the derivation of <a class="xref" data-knowl="./knowl/so-eq-repeatedexp.html" title="Equation 4.7.1">(4.7.1)</a>, you will see that the identity of \(f(t)\) played no role in the key steps. As shown in <a class="xref" data-knowl="./knowl/so-tab-laplace.html" title="Table 4.6.1: Laplace transforms (complete)">Table 4.6.1</a>, we can repeat the calculation for a generic \(F(s)\text{:}\)</p>
+<p id="p-530">If you look carefully at the derivation of <a class="xref" data-knowl="./knowl/so-eq-repeatedexp.html" title="Equation 4.7.1">(4.7.1)</a>, you will see that the identity of \(f(t)\) played no role in the key steps. As shown in <a class="xref" data-knowl="./knowl/so-tab-laplace.html" title="Table 4.6.1: Laplace transforms (complete)">Table 4.6.1</a>, we can repeat the calculation for a generic \(F(s)\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[t^n f(t) ] = (-1)^n F^{(n)}(s), \qquad n=1,2,3,\dots.
 \end{equation*}
 </div>
 <p data-braille="continuation">Take a moment to appreciate this. Earlier we found that a derivative in \(t\) essentially corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
-<article class="example example-like" id="example-78"><a data-knowl="" class="id-ref original" data-refid="hk-example-78"><h6 class="heading">
+<article class="example example-like" id="example-83"><a data-knowl="" class="id-ref original" data-refid="hk-example-83"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-78"><article class="example example-like"><p id="p-521">The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-83"><article class="example example-like"><p id="p-531">The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. The transform suggests the particular solution</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{3}{(s^2+9)^2}\text{.}
@@ -288,10 +288,54 @@ X_p(s) = \frac{3}{(s^2+9)^2}\text{.}
 x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-522">As the preceding example shows, dealing with repeated poles is no easy feat, especially when quadratic factors are in the denominator. Another tactic is to break up those factors as imaginary poles and use standard partial fractions.</p>
-<article class="example example-like" id="example-79"><a data-knowl="" class="id-ref original" data-refid="hk-example-79"><h6 class="heading">
+<article class="example example-like" id="example-84"><a data-knowl="" class="id-ref original" data-refid="hk-example-84"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-79"><article class="example example-like"><p id="p-523">Again we consider how to invert</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-84"><article class="example example-like"><p id="p-532">To find the general soluton of \(x'' - 4x + 4x = 5\cos(t)\text{,}\) we note that the characteristic polynomial is \(s^2-4s+4=(s-2)^2\text{.}\) We take transforms to obtain</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = \frac{sx(0)+x'(0)}{(s-2)^2} + \frac{5s}{(s^2+1)(s-2)^2} .
+\end{equation*}
+</div>
+<p data-braille="continuation">The PFD of this has the real form</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = \frac{A}{s-2} + \frac{B}{(s-2)^2} + \frac{Cs+D}{s^2+1}.
+\end{equation*}
+</div>
+<p data-braille="continuation">The first two terms constitute the homogeneous solution, and we zero out their coefficients and replace \(X\) with \(X_p\text{.}\) Equating to the earlier expression and clearing denominators gives</p>
+<div class="displaymath">
+\begin{equation*}
+(sx(0)+x'(0))(s^2+1) + 5s = (Cs+D)(s-2)^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">We don't care about the initial values and want to make them vanish. So we choose an imaginary value of \(s\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+s = i \amp \Rightarrow 5i = (Ci+D)(i-2)^2  = (3-4i)(D+Ci) = (3D+4C) + i(3C-4D)  \text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Equating the real and imaginary parts gives \(4C+3D=0\text{,}\) \(3C-4D=5\text{.}\) Now our particular solution satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{3}{5} \frac{s}{s^2+1} - \frac{4}{5} \frac{1}{s^2+1}. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{3}{5} \cos(t) - \frac{4}{5} \sin(t)
+\end{equation*}
+</div>
+<p data-braille="continuation">and finally</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 e^{2t} + c_2 t e^{2t} + \frac{3}{5} \cos(t) - \frac{4}{5} \sin(t). 
+\end{equation*}
+</div></article></div>
+<p id="p-533">As the preceding example shows, dealing with repeated poles is no easy feat, especially when quadratic factors are in the denominator. Another tactic is to break up those factors as imaginary poles and use standard partial fractions.</p>
+<article class="example example-like" id="example-85"><a data-knowl="" class="id-ref original" data-refid="hk-example-85"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-85"><article class="example example-like"><p id="p-534">Again we consider how to invert</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{3}{(s^2+9)^2} = \frac{3}{(s-3i)^2(s+3i)^2} \text{.}
@@ -317,16 +361,16 @@ x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 </div></article></div></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.2</span> <span class="title">Complex poles</span>
 </h3>
-<p id="p-524">Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. It can help to use the shift formula</p>
+<p id="p-535">Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. It can help to use the shift formula</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[e^{at}f(t)] = F(s-a)\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">We should have enough information from the ODE to know what to choose as the real shift \(a\text{.}\)</p>
-<article class="example example-like" id="example-80"><a data-knowl="" class="id-ref original" data-refid="hk-example-80"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-80"><article class="example example-like"><p id="p-525">Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution with zero initial conditions has</p>
+<article class="example example-like" id="example-86"><a data-knowl="" class="id-ref original" data-refid="hk-example-86"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-86"><article class="example example-like"><p id="p-536">Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution with zero initial conditions has</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
@@ -351,7 +395,7 @@ x_p(t) = e^{-t} g(t) = 2 e^{-t+1} H(t-1)\sin(3t-3).
 \end{equation*}
 </div>
 <p data-braille="continuation">Are we having fun yet?</p>
-<p id="p-526">Now consider \(x''+2x'+10x=40\text{.}\) We get</p>
+<p id="p-537">Now consider \(x''+2x'+10x=40\text{.}\) We get</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{40}{s(s^2+2s+10)} \text{.}
@@ -393,7 +437,7 @@ g(t) = 4e^{t} - 4 \cos(3t) - \frac{4}{3}\sin(3t).
 x_p(t) = e^{-t}g(t) = 4 - 4  e^{-t}\cos(3t) - \frac{4}{3} e^{-t}\sin(3t).
 \end{equation*}
 </div>
-<p id="p-527">For a harmonically forced case such as \(x''+2x'+10x=\cos(2t)\text{,}\) we have</p>
+<p id="p-538">For a harmonically forced case such as \(x''+2x'+10x=\cos(2t)\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{s}{(s^2+4)(s^2+2s+10)}\text{.}
@@ -406,7 +450,7 @@ X_p(s) = \frac{A+Bs}{s^2+4} + \frac{C+Es}{s^2+2s+10}\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">The first term leads directly to \(\sin(2t)\) and \(\cos(2t)\text{,}\) while the second would once again be shifted to get \(s^2+9\) in the denominator. The details are left to the proverbial reader.</p></article></div>
-<p id="p-528">The drawback to Laplace transforms as a one-stop solver is what we observed earlier: the particular solution we find virtually always includes some terms from the homogeneous solution. Mathematically, the poles of \(X_p(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. This combination makes the partial fraction decompositions lengthier, to say the least. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases, especially if one seeks a general solution without initial conditions to consider at the end.</p></section></section></div></main>
+<p id="p-539">The drawback to Laplace transforms as a one-stop solver is what we observed earlier: the particular solution we find virtually always includes some terms from the homogeneous solution. Mathematically, the poles of \(X_p(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. This combination makes the partial fraction decompositions lengthier, to say the least. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases, especially if one seeks a general solution without initial conditions to consider at the end.</p></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

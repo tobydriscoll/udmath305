@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:06-04:00    *-->
+<!--*    on 2020-04-22T14:06:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,35 +11,49 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Let's observe what happens in a fundamental case, \(x''-x=e^{rt}\text{.}\)  Transforming both sides gives</p>
+<body><article class="example example-like"><p>Let's solve \(x''-x=24 e^{3t}\text{,}\) with \(x(0)=4\text{,}\) \(x'(0)=12\text{.}\) Transforming both sides gives</p>
 <div class="displaymath">
 \begin{equation*}
-[s^2X(s) - sx(0)-x'(0)] - X(s) = \frac{1}{s-r}\text{.}
+[s^2X(s) - 4s - 12] - X(s) = \frac{24}{s-3}\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">We easily solve for \(X\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = x'(0)\frac{1}{(s^2-1)} + x(0)\frac{s}{(s^2-1)} + \frac{1}{(s^2-1)(s-r)} \text{.}
+X(s) = \frac{4s+12}{(s^2-1)} + \frac{24}{(s^2-1)(s-3)} \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">This is doable, but we are going to lighten the load a bit. Even before we took the transform, we knew how to find the general homogeneous solution, \(c_1e^t+c_2e^{-t}\text{.}\) So let's use the transform to find any particular solution of the nonhomogeneous problem. Based on the expression above, we're best off with finding the particular solution with \(x(0)=x'(0)=0\text{,}\) leaving us with</p>
+<p data-braille="continuation">In order to avoid multiple uses of partial fractions, we combine everything into a single fraction:</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{1}{(s+1)(s-1)(s-r)} \text{.}
+X(s) = \frac{4s^2-12}{(s-1)(s+1)(s-3)}
 \end{equation*}
 </div>
-<p data-braille="continuation">The partial fraction mneomic gives us</p>
+<p data-braille="continuation">The PFD takes the form</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{1}{(s+1)(s-1)(s-r)} = \frac{1}{(s+1)(-1-1)(-1-r)} + \frac{1}{(1+1)(s-1)(1-r)}  + \frac{1}{(r+1)(r-1)(s-r)} \text{.}
+\frac{4s^2-12}{(s-1)(s+1)(s-3)} = \frac{A}{s-1} + \frac{B}{s+1} + \frac{C}{s-3}, 
 \end{equation*}
 </div>
-<p data-braille="continuation">Note that this requires \(r\neq -1\) and \(r \neq 1\) (i.e., no resonance). From here we get</p>
+<p data-braille="continuation">which is the same as the identity</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = \frac{1}{2(1+r)}e^{-t} + \frac{1}{2(1-r)}e^{t} + \frac{1}{r^2-1}e^{rt}\text{.}
+4s^2-12 = A(s+1)(s-3) + B(s-1)(s-3) + C(s-1)(s+1).
 \end{equation*}
 </div>
-<p data-braille="continuation">With this we can construct a general solution \(x_n+x_p\text{,}\) and then apply initial conditions to solve for the constants, if those are given.</p></article></body>
+<p data-braille="continuation">One way to handle this is to expand the right-hand side and equate the powers of \(s\text{.}\) In this case it's easier to choose three strategic values of \(s\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+s = 1 \amp \:\Rightarrow\: -8 = -4A  \\
+s = -1 \amp\: \Rightarrow\: -8 = 8B \\
+s = 3 \amp\: \Rightarrow\: 24 = 8C \text{,}
+\end{align*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = \frac{2}{s-1} + \frac{-1}{s+1} + \frac{3}{s-3}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Now it's clear that \(x(t) = 2e^t - e^{-t} + 3e^{3t}\text{.}\)</p></article></body>
 </html>

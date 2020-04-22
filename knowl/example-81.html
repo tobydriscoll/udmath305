@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:06-04:00    *-->
+<!--*    on 2020-04-22T14:06:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,9 +13,38 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.9</span><span class="period">.</span>
 </h6>
-<p>Consider the ODE \(x'=x-x^3\text{.}\) The equilibrium solutions are \(x=0\) and \(x=\pm 1\text{.}\) Consider also that \(x'\lt 0\) if \(-1\lt x \lt 0\) or \(x\gt 1\text{;}\) otherwise, \(x' \gt 0\text{.}\) The phase line diagram clarifies that the steady states at \(x=\pm 1\) are stable, while the one at \(x=0\) is unstable.</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/fo_ss_phaseline.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article><span class="incontext"><a href="nl-autonomous.html#example-81">in-context</a></span>
+<p>To find the general solution of \(x''+x=5H(t-4)\text{,}\) we take transforms to obtain</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = \frac{sx(0)-x'(0)}{s^2+1} + \frac{5e^{-4s}}{s(s^2+1)}. 
+\end{equation*}
+</div>
+<p data-braille="continuation">The first two terms give a combination of \(\cos(t)\) and \(\sin(t)\) to contribute to the homogeneous solution. The second is in the form \(5e^{-4s}F(s)\text{,}\) where</p>
+<div class="displaymath">
+\begin{equation*}
+F(s) = \frac{1}{s(s^2+1)} = \frac{A}{s} + \frac{Bs+C}{s^2+1}. 
+\end{equation*}
+</div>
+<p data-braille="continuation">We would love to discard the second PF term, but because we are going to use the shift theorem on \(f(t)\text{,}\) we have to keep them all. Clearing denominators we get</p>
+<div class="displaymath">
+\begin{equation*}
+1 = A(s^2+1) + (Bs+C)(s). 
+\end{equation*}
+</div>
+<p data-braille="continuation">Setting \(s=0\) gives us \(A=1\) right away. Then \(-s^2=Bs^2+Cs\text{,}\) which tells us that \(B=-1\) and \(C=0\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+f(t) = 1 -\cos(t). 
+\end{equation*}
+</div>
+<p data-braille="continuation">So by the shift theorem, a particular solution is</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = 5H(t-4)f(t-4) = 5 H(t-4)[1-\cos(t-4)]. 
+\end{equation*}
+</div>
+<p data-braille="continuation">The general solution is \(c_1\cos(t) + c_2\sin(t) + x_p(t)\text{.}\)</p></article><span class="incontext"><a href="so-laplace.html#example-81">in-context</a></span>
 </body>
 </html>

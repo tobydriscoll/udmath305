@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:06-04:00    *-->
+<!--*    on 2020-04-22T14:06:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,30 +13,37 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Again we consider how to invert</p>
+<p>The driven, undamped oscillator \(x''+\omega_0^2 x = \cos(\omega t)\) yields</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{3}{(s^2+9)^2} = \frac{3}{(s-3i)^2(s+3i)^2} \text{.}
+X(s) = \frac{sx(0)+x'(0)}{(s^2+\omega_0^2)} + \frac{s}{(s^2+\omega_0^2)(s^2+\omega^2)} \text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">The PFD has four terms that work out as</p>
+<p data-braille="continuation">which has a PFD with four real constants:</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{1}{36} \left[ \frac{i}{s+3i} - \frac{i}{s-3i} - \frac{3}{(s+3i)^2} - \frac{3}{(s-3i)^2} \right]. 
+X(s) = \frac{As+B}{s^2+\omega_0^2} + \frac{Cs+D}{s^2+\omega^2}. 
 \end{equation*}
 </div>
-<p data-braille="continuation">These easily invert using complex exponentials:</p>
+<p data-braille="continuation">The first term is homogeneous and tells us nothing new about the general solution. So we zero out \(A,B\) for a particular solution and clear the denominators to get</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = \frac{1}{36} \left[ i\bigl(e^{-3it}-e^{3it}\bigr) - 3 t \bigl(e^{-3it}+e^{3it}\bigr)  \right]. 
+(sx(0)+x'(0))(s^2+\omega^2) + s = (Cs+D)(s^2+\omega_0^2). 
 \end{equation*}
 </div>
-<p data-braille="continuation">Now Euler' formula leads back to the same result,</p>
+<p data-braille="continuation">To avoid dealing with the initial conditions, set \(s=i\omega\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
+i\omega = (iC\omega + D)(\omega_0^2-\omega^2). 
 \end{equation*}
 </div>
-<span class="incontext"><a href="so-laplace-repeated.html#p-523">in-context</a></span>
+<p data-braille="continuation">The real part of this equation tells us that \(D=0\text{,}\) and the imaginary part tells us \(C=1/(\omega_0^2-\omega^2)\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{\omega_0^2-\omega^2}  \cos(\omega t). 
+\end{equation*}
+</div>
+<p data-braille="continuation">This is combined with \(\cos(\omega_0 t)\) and \(\sin(\omega_0 t)\) to get the general solution.</p>
+<span class="incontext"><a href="so-laplace.html#p-523">in-context</a></span>
 </body>
 </html>

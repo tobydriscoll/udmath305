@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:06-04:00    *-->
+<!--*    on 2020-04-22T14:06:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Finally, consider the driven, undamped oscillator \(x''+\omega_0^2 x = \cos(\omega t)\text{.}\) It leads to</p>
+<p>To find the general soluton of \(x'' - 4x + 3x = 6\text{,}\) we note that the characteristic polynomial is \(s^2-4s+3=(s-3)(s-1)\text{.}\) We take transforms to obtain</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{s}{(s^2+\omega_0^2)(s^2+\omega^2)} = \frac{1}{\omega_0^2-\omega^2} \left( \frac{s}{s^2+\omega^2} - \frac{s}{s^2+\omega_0^2} \right)\text{,}
+X(s) = \frac{sx(0)+x'(0)}{(s-3)(s-1)} + \frac{6}{s(s-3)(s-1)} .
 \end{equation*}
 </div>
-<p data-braille="continuation">which is readily inverted into</p>
+<p data-braille="continuation">The PFD of this has the form</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = \frac{1}{\omega_0^2-\omega^2}  \bigl[ \cos(\omega t) - \cos(\omega_0 t) \bigr].
+X(s) = \frac{A}{s-3} + \frac{B}{(s-1)} + \frac{C}{s}.
 \end{equation*}
 </div>
-<p data-braille="continuation">That is a particular solution, but unlike the method of undetermined coefficients we used before, it includes \(\cos(\omega_0 t)\text{,}\) which comes from the homogeneous solution. In the Laplace transform method, we set the initial conditions to zero in order to simplify the algebra, and in general that means the homogeneous terms are needed in order to satisfy them. Undetermined coefficients pays no attention to initial conditions and can therefore ignore the homogeneous terms.</p>
+<p data-braille="continuation">The first two terms constitute the homogeneous solution, and we zero out their coefficients and replace \(X\) with \(X_p\text{.}\) Equating to the earlier expression and clearing denominators gives</p>
+<div class="displaymath">
+\begin{equation*}
+(sx(0)+x'(0))(s) + 6 = C(s-3)(s-1).
+\end{equation*}
+</div>
+<p data-braille="continuation">We don't care about the initial values, so we choose \(s=0\) to find that \(6=3C\text{.}\) Thus \(X_p(s)=2/s\) and \(x_p(t)=2\text{.}\) Finally,</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 e^{3t} + c_2 t e^{t} + 2. 
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-laplace.html#p-516">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-20T09:58:20-04:00    *-->
+<!--*    on 2020-04-22T14:06:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,42 +11,84 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Let's examine the steady states of a pendulum with damping,</p>
+<body><article class="example example-like"><p>Suppose \(x''+2x'+10x=6\delta(t-1)\text{.}\) A particular solution with zero initial conditions has</p>
 <div class="displaymath">
 \begin{equation*}
-\ddd{\theta}{t} + \gamma \theta' + \frac{g}{L} \sin(\theta) = 0\text{,}
+X_p(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">with \(\gamma \gt 0\text{.}\) It transforms into the first-order system</p>
-<div class="displaymath">
-\begin{align*}
-\dd{x}{t} \amp = y \\
-\dd{y}{t} \amp = -\frac{g}{L}\sin(x) - \gamma y\text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">These define \(F(x,y)\) and \(G(x,y)\text{.}\) From here we note all the first partial derivatives:</p>
-<div class="displaymath">
-\begin{align*}
-\pp{F}{x} = 0 \amp \qquad \pp{F}{y} = 1\\
-\pp{G}{x} = - \frac{g}{L}\cos(x) \amp \qquad \pp{G}{y} = -\gamma\text{.}
-\end{align*}
-</div>
-<p>The first steady state we consider is at the origin. Here the Jacobian matrix is</p>
+<p data-braille="continuation">The quadratic formula tells us the homogeneous eigenvalues \(-1\pm 3i\text{,}\) so we assume a shift of \(-1\) and designate \(X_p(s)=G(s+1)\text{.}\) Thus</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{bmatrix} 
-0 \amp 1 \\ -g/L \amp -\gamma
-\end{bmatrix}\text{.}
+G(s) = X_p(s-1) = 6e \frac{e^{-s}}{s^2-2s+1+2s-2+10} = 6e \frac{e^{-s}}{s^2+9}.
 \end{equation*}
 </div>
-<p data-braille="continuation">We get \(T=-\gamma \lt 0\) and \(D=g/L \gt 0\text{,}\) which is a stable sink. That comports with our experience with a pendulum hanging straight down!</p>
-<p>The other steady state is at \((\pi,0)\text{.}\) Now the Jacobian is</p>
+<p data-braille="continuation">Now we can apply the Shift Theorem to \(G\) and get</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{bmatrix} 
-0 \amp 1 \\ g/L \amp -\gamma
-\end{bmatrix}\text{,}
+g(t) = 6e H(t-1) v(t-1),
 \end{equation*}
 </div>
-<p data-braille="continuation">with \(T=-\gamma\) and \(D=-g/L\text{.}\) This implies a saddle point, so the "inverted pendulum" is indeed unstable.</p></article></body>
+<p data-braille="continuation">where \(v(t)=\sin(3t)/3\text{.}\) When we unwind the definitions, we get</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = e^{-t} g(t) = 2 e^{-t+1} H(t-1)\sin(3t-3).
+\end{equation*}
+</div>
+<p data-braille="continuation">Are we having fun yet?</p>
+<p>Now consider \(x''+2x'+10x=40\text{.}\) We get</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{40}{s(s^2+2s+10)} \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We have the same eigenvalues and so define \(X_p(s)=G(s+1)\) to get</p>
+<div class="displaymath">
+\begin{equation*}
+G(s) = X_p(s-1) = \frac{40}{(s-1)(s^2+9)}.
+\end{equation*}
+</div>
+<p data-braille="continuation">This is amenable to the PFD</p>
+<div class="displaymath">
+\begin{equation*}
+G(s) = \frac{A}{s-1} + \frac{B+Cs}{s^2+9}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Clearing denominators, we get</p>
+<div class="displaymath">
+\begin{equation*}
+40 = A(s^2+9) + (B+Cs) (s-1)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">If we set \(s=1\) we immediately see that \(A=4\text{.}\) That leaves</p>
+<div class="displaymath">
+\begin{equation*}
+40 = (4+C)s^2 +(B-C)s + 36-B\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Now we can read off \(B=-4\text{,}\) \(C=-4\text{.}\) Thus</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = 4e^{t} - 4 \cos(3t) - \frac{4}{3}\sin(3t). 
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally,</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = e^{-t}g(t) = 4 - 4  e^{-t}\cos(3t) - \frac{4}{3} e^{-t}\sin(3t).
+\end{equation*}
+</div>
+<p>For a harmonically forced case such as \(x''+2x'+10x=\cos(2t)\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{s}{(s^2+4)(s^2+2s+10)}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The best first step is to decompose</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{A+Bs}{s^2+4} + \frac{C+Es}{s^2+2s+10}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The first term leads directly to \(\sin(2t)\) and \(\cos(2t)\text{,}\) while the second would once again be shifted to get \(s^2+9\) in the denominator. The details are left to the proverbial reader.</p></article></body>
 </html>

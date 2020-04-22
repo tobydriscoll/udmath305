@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:06-04:00    *-->
+<!--*    on 2020-04-22T14:06:55-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,45 +13,14 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Linearization of the pendulum.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
 </h6>
-<p>Let's examine the steady states of a pendulum with damping,</p>
+<p>Consider the <a class="xref" data-knowl="./knowl/ex-variable-growth.html" title="Example 2.1.6: Variable growth rate">variable growth archetype 2.1.6</a> \(x'=2tx\text{.}\) We express \(x'\) as \(dx/dt\) and then isolate the variables:</p>
 <div class="displaymath">
 \begin{equation*}
-\ddd{\theta}{t} + \gamma \theta' + \frac{g}{L} \sin(\theta) = 0\text{,}
+\frac{dx}{x} = 2t\,dt\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">with \(\gamma \gt 0\text{.}\) It transforms into the first-order system</p>
-<div class="displaymath">
-\begin{align*}
-\dd{x}{t} \amp = y \\
-\dd{y}{t} \amp = -\frac{g}{L}\sin(x) - \gamma y\text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">These define \(F(x,y)\) and \(G(x,y)\text{.}\) From here we note all the first partial derivatives:</p>
-<div class="displaymath">
-\begin{align*}
-\pp{F}{x} = 0 \amp \qquad \pp{F}{y} = 1\\
-\pp{G}{x} = - \frac{g}{L}\cos(x) \amp \qquad \pp{G}{y} = -\gamma\text{.}
-\end{align*}
-</div>
-<p>The first steady state we consider is at the origin. Here the Jacobian matrix is</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix} 
-0 \amp 1 \\ -g/L \amp -\gamma
-\end{bmatrix}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">We get \(T=-\gamma \lt 0\) and \(D=g/L \gt 0\text{,}\) which is a stable sink. That comports with our experience with a pendulum hanging straight down!</p>
-<p>The other steady state is at \((\pi,0)\text{.}\) Now the Jacobian is</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix} 
-0 \amp 1 \\ g/L \amp -\gamma
-\end{bmatrix}\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">with \(T=-\gamma\) and \(D=-g/L\text{.}\) This implies a saddle point, so the "inverted pendulum" is indeed unstable.</p></article><span class="incontext"><a href="nl-linearization.html#example-88">in-context</a></span>
+<p data-braille="continuation">Integrating both sides leads to \(\log |x| = t^2 + C\text{,}\) or \(|x|=Ae^{t^2}\) for a positive constant \(A\) (since it is the exponential of a real constant). Taking the absolute value off of \(x\) means that \(A\) can be negative as well. Also, \(A=0\) clearly leads to a solution. Finally, we conclude that \(x=Ce^{t^2}\) for arbitrary \(C\text{.}\)</p></article><span class="incontext"><a href="nl-separable.html#example-88">in-context</a></span>
 </body>
 </html>

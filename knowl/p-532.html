@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:06-04:00    *-->
+<!--*    on 2020-04-22T14:06:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,48 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We might decide, however, to weight the most recent values more heavily. Here's how this might look.</p>
-<span class="incontext"><a href="so-convolutions.html#p-532">in-context</a></span>
+<p>To find the general soluton of \(x'' - 4x + 4x = 5\cos(t)\text{,}\) we note that the characteristic polynomial is \(s^2-4s+4=(s-2)^2\text{.}\) We take transforms to obtain</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = \frac{sx(0)+x'(0)}{(s-2)^2} + \frac{5s}{(s^2+1)(s-2)^2} .
+\end{equation*}
+</div>
+<p data-braille="continuation">The PFD of this has the real form</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = \frac{A}{s-2} + \frac{B}{(s-2)^2} + \frac{Cs+D}{s^2+1}.
+\end{equation*}
+</div>
+<p data-braille="continuation">The first two terms constitute the homogeneous solution, and we zero out their coefficients and replace \(X\) with \(X_p\text{.}\) Equating to the earlier expression and clearing denominators gives</p>
+<div class="displaymath">
+\begin{equation*}
+(sx(0)+x'(0))(s^2+1) + 5s = (Cs+D)(s-2)^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">We don't care about the initial values and want to make them vanish. So we choose an imaginary value of \(s\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+s = i \amp \Rightarrow 5i = (Ci+D)(i-2)^2  = (3-4i)(D+Ci) = (3D+4C) + i(3C-4D)  \text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Equating the real and imaginary parts gives \(4C+3D=0\text{,}\) \(3C-4D=5\text{.}\) Now our particular solution satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{3}{5} \frac{s}{s^2+1} - \frac{4}{5} \frac{1}{s^2+1}. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{3}{5} \cos(t) - \frac{4}{5} \sin(t)
+\end{equation*}
+</div>
+<p data-braille="continuation">and finally</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = c_1 e^{2t} + c_2 t e^{2t} + \frac{3}{5} \cos(t) - \frac{4}{5} \sin(t). 
+\end{equation*}
+</div>
+<span class="incontext"><a href="so-laplace-repeated.html#p-532">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:06-04:00    *-->
+<!--*    on 2020-04-22T14:06:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,30 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The moving average above gave us a certain way to multiply together vectors \(v\) and \(w\) to get a new vector \(z\text{:}\)</p>
+<p>Again we consider how to invert</p>
 <div class="displaymath">
 \begin{equation*}
-z_i =  \sum_{j} w_j v_{i-j} 
+X_p(s) = \frac{3}{(s^2+9)^2} = \frac{3}{(s-3i)^2(s+3i)^2} \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">(although I reindexed the output vector from \(i+1\) to \(i\) compared to the computer code). This is analogous to a different way to multiply two <em class="emphasis">functions</em>, by the <dfn class="terminology">convolution integral</dfn></p>
+<p data-braille="continuation">The PFD has four terms that work out as</p>
 <div class="displaymath">
 \begin{equation*}
-[f*g](t) = \int_0^t f(t-\tau)g(\tau)\, d\tau\text{.}
+X_p(s) = \frac{1}{36} \left[ \frac{i}{s+3i} - \frac{i}{s-3i} - \frac{3}{(s+3i)^2} - \frac{3}{(s-3i)^2} \right]. 
 \end{equation*}
 </div>
-<p data-braille="continuation">This too is like a weighted average, with the values of \(g(\tau)\) being multiplied against different windows of the function \(f\) such that the arguments sum to \(t\text{.}\)</p>
-<span class="incontext"><a href="so-convolutions.html#p-534">in-context</a></span>
+<p data-braille="continuation">These easily invert using complex exponentials:</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{36} \left[ i\bigl(e^{-3it}-e^{3it}\bigr) - 3 t \bigl(e^{-3it}+e^{3it}\bigr)  \right]. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Now Euler' formula leads back to the same result,</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="so-laplace-repeated.html#p-534">in-context</a></span>
 </body>
 </html>

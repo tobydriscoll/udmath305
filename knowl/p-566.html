@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:06-04:00    *-->
+<!--*    on 2020-04-22T14:06:55-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The logistic equation is separable:</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{dx}{x(a-bx)} = dt\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">Hence</p>
-<div class="displaymath">
-\begin{equation*}
-t + C = \int \frac{dx}{x(a-bx)} = \frac{1}{b} \int \frac{dx}{x(K-x)} = \frac{1}{bK} \int \left( \frac{1}{x} + \frac{1}{K-x} \right)\,dx\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">The last step above required converting the single fraction into partial fractions. These are now easily integrated to get logs, and the solution follows from there. Obviously we have to end up with <a class="xref" data-knowl="./knowl/eq-logistic-solution.html" title="Equation 5.3.2">(5.3.2)</a> again.</p>
-<span class="incontext"><a href="nl-logistic.html#p-566">in-context</a></span>
+<p>Even in implicit form, we can solve for the arbitrary constant if given an initial condition. For instance, suppose \(x(0)=4\) is given for this ODE. Then \(4^4/4-2\cdot4 = C+0\text{,}\) so \(C=56\text{.}\)</p>
+<span class="incontext"><a href="nl-separable.html#p-566">in-context</a></span>
 </body>
 </html>

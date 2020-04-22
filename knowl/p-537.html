@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:06-04:00    *-->
+<!--*    on 2020-04-22T14:06:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,48 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose \(\lx[f] = F(s)\text{,}\) \(\lx[g] = G(s)\text{,}\) \(h=f*g\text{,}\) and \(\lx[h] = H(s)\text{.}\) Then \(H(s)=F(s)G(s)\text{.}\)</p>
-<span class="incontext"><a href="so-convolutions.html#p-537">in-context</a></span>
+<p>Now consider \(x''+2x'+10x=40\text{.}\) We get</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{40}{s(s^2+2s+10)} \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We have the same eigenvalues and so define \(X_p(s)=G(s+1)\) to get</p>
+<div class="displaymath">
+\begin{equation*}
+G(s) = X_p(s-1) = \frac{40}{(s-1)(s^2+9)}.
+\end{equation*}
+</div>
+<p data-braille="continuation">This is amenable to the PFD</p>
+<div class="displaymath">
+\begin{equation*}
+G(s) = \frac{A}{s-1} + \frac{B+Cs}{s^2+9}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Clearing denominators, we get</p>
+<div class="displaymath">
+\begin{equation*}
+40 = A(s^2+9) + (B+Cs) (s-1)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">If we set \(s=1\) we immediately see that \(A=4\text{.}\) That leaves</p>
+<div class="displaymath">
+\begin{equation*}
+40 = (4+C)s^2 +(B-C)s + 36-B\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Now we can read off \(B=-4\text{,}\) \(C=-4\text{.}\) Thus</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = 4e^{t} - 4 \cos(3t) - \frac{4}{3}\sin(3t). 
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally,</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = e^{-t}g(t) = 4 - 4  e^{-t}\cos(3t) - \frac{4}{3} e^{-t}\sin(3t).
+\end{equation*}
+</div>
+<span class="incontext"><a href="so-laplace-repeated.html#p-537">in-context</a></span>
 </body>
 </html>

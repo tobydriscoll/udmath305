@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-21T08:00:06-04:00    *-->
+<!--*    on 2020-04-22T14:06:54-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,35 +11,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>The undamped oscillator \(x''+16x=40e^{-2t}\) has a particular solution whose transform is</p>
+<body><article class="example example-like"><p>To find the general soluton of \(x'' - 4x + 3x = 6\text{,}\) we note that the characteristic polynomial is \(s^2-4s+3=(s-3)(s-1)\text{.}\) We take transforms to obtain</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{40}{(s+2)(s^2+16)} = \frac{A+Bs}{s^2+16^2} + \frac{C}{s+2}\text{.}
+X(s) = \frac{sx(0)+x'(0)}{(s-3)(s-1)} + \frac{6}{s(s-3)(s-1)} .
 \end{equation*}
 </div>
-<p data-braille="continuation">Clearing the denominators gives the identity</p>
+<p data-braille="continuation">The PFD of this has the form</p>
 <div class="displaymath">
 \begin{equation*}
-(A+Bs)(s+2) + C(s^2+16) = 40\text{.}
+X(s) = \frac{A}{s-3} + \frac{B}{(s-1)} + \frac{C}{s}.
 \end{equation*}
 </div>
-<p data-braille="continuation">We need three equations to determine the unknown coefficients. Setting \(s=-2\) quickly gives \(20C=40\text{,}\) so \(C=2\text{.}\) Then setting \(s=\pm 4\) gives the system</p>
-<div class="displaymath">
-\begin{align*}
-(A+4B)(6) \amp = 40 - 64 = -24\\
-(A-4B)(-2) \amp = -24\text{,}
-\end{align*}
-</div>
-<p data-braille="continuation">or \(A+4B=-4\) and \(A-4B=12\text{.}\) We can add and subtract these equations to get \(2A=8\text{,}\) \(8B=-16\text{,}\) so finally</p>
+<p data-braille="continuation">The first two terms constitute the homogeneous solution, and we zero out their coefficients and replace \(X\) with \(X_p\text{.}\) Equating to the earlier expression and clearing denominators gives</p>
 <div class="displaymath">
 \begin{equation*}
-X_p(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} \text{.}
+(sx(0)+x'(0))(s) + 6 = C(s-3)(s-1).
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence</p>
+<p data-braille="continuation">We don't care about the initial values, so we choose \(s=0\) to find that \(6=3C\text{.}\) Thus \(X_p(s)=2/s\) and \(x_p(t)=2\text{.}\) Finally,</p>
 <div class="displaymath">
 \begin{equation*}
-x_p(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
+x(t) = c_1 e^{3t} + c_2 t e^{t} + 2. 
 \end{equation*}
 </div></article></body>
 </html>
