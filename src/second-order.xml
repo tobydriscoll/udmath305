@@ -1021,16 +1021,16 @@ plot3(rhomax,Z,log_g(rhomax,Z),'w','linew',2)
 	</introduction>
 	
 	<subsection>
+		<!-- %bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');%data = jsondecode(bc); -->
 		<title>Moving averages</title>
 		<p>
 			The following grabs and plots the closing price of Bitcoin for the last 31 days.
 		</p>
 			<sidebyside>
 			<listing  xml:id="so_conv_bitcoin1">
+				<caption>Raw bitcoin price data</caption>
 	 			<program language="matlab">
 	    			<input>
-%bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
-%data = jsondecode(bc);
 load bitcoindata
 v = struct2cell(data.bpi);
 v = cat(1,v{:});
@@ -1045,16 +1045,15 @@ plot(v,'-o')
 			</p>
 			<sidebyside>
 				<listing  xml:id="so_conv_bitcoin2">
+					<caption>Data with 4-day moving average</caption>
 	 			<program language="matlab">
 	    			<input>
-%bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
-%data = jsondecode(bc);
 load bitcoindata
 v = struct2cell(data.bpi);
 v = cat(1,v{:});
 plot(v,'-ko')
 for i = 4:31
-    z(i) = (v(i) + v(i-1) + v(i-2) + v(i-3)) / 4;
+    z(i) = (v(i)+v(i-1)+v(i-2)+v(i-3))/4;
 end
 z(1:3) = NaN;  % not a number
 hold on, plot(z,'-o')
@@ -1069,17 +1068,17 @@ hold on, plot(z,'-o')
 			</p>
 			<sidebyside>
 				<listing xml:id="so_conv_bitcoin3">
+					<caption>Data with weighted moving average</caption>
 	 			<program language="matlab">
 	    			<input>
-%bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
-%data = jsondecode(bc);
 load bitcoindata
 v = struct2cell(data.bpi);
 v = cat(1,v{:});
 plot(v,'-ko')
 w = [4 3 2 1];
 for i = 4:31
-    z(i) = (w(1)*v(i) + w(2)*v(i-1) + w(3)*v(i-2) + w(4)*v(i-3)) / sum(w);
+	z(i) = (w(1)*v(i) + w(2)*v(i-1)... 
+	  + w(3)*v(i-2) + w(4)*v(i-3)) / sum(w);
 end
 z(1:3) = NaN;  % not a number
 hold on, plot(z,'-o')

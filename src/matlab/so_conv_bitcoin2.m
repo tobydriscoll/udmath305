@@ -1,14 +1,12 @@
 
       close all
       
-%bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
-%data = jsondecode(bc);
 load bitcoindata
 v = struct2cell(data.bpi);
 v = cat(1,v{:});
 plot(v,'-ko')
 for i = 4:31
-    z(i) = (v(i) + v(i-1) + v(i-2) + v(i-3)) / 4;
+    z(i) = (v(i)+v(i-1)+v(i-2)+v(i-3))/4;
 end
 z(1:3) = NaN;  % not a number
 hold on, plot(z,'-o')

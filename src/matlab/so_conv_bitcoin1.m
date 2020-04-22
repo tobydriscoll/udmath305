@@ -1,8 +1,6 @@
 
       close all
       
-%bc = webread('https://api.coindesk.com/v1/bpi/historical/close.json');
-%data = jsondecode(bc);
 load bitcoindata
 v = struct2cell(data.bpi);
 v = cat(1,v{:});
