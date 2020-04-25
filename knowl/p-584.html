@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:25:00-04:00    *-->
+<!--*    on 2020-04-25T16:26:59-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We find fixed points when \(3x-(xy/2)=(xy/4)-y=0\text{,}\) which has two solutions, \((0,0)\) and \((4,6)\text{.}\) The Jacobian matrix of the system is</p>
+<p>First note that we can recast the nonlinear problem as a first-order system in two variables. Define \(x=\theta\) and \(y=\theta'\text{.}\) Then</p>
 <div class="displaymath">
-\begin{equation*}
-\mathbf{A}(x,y) = \begin{bmatrix} F_x \amp F_y  \\ G_x \amp G_y \end{bmatrix} = \begin{bmatrix} 3-y/2 \amp -x/2 \\ y/4 \amp -1+x/4 \end{bmatrix}\text{.}
-\end{equation*}
+\begin{align*}
+\dd{x}{t} \amp = y \\
+\dd{y}{t} \amp = -\frac{g}{L}\sin(x)\text{.}
+\end{align*}
 </div>
-<p data-braille="continuation">At the origin, the Jacobian becomes</p>
+<p data-braille="continuation">This trick works for any nonlinear second-order equation \(\theta''=g(t,\theta,\theta')\text{.}\) Thus we can focus on problems in the general form</p>
 <div class="displaymath">
-\begin{equation*}
-\mathbf{A}(0,0) = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}\text{.}
-\end{equation*}
+\begin{align*}
+\dd{x}{t} \amp = F(x,y) \\
+\dd{y}{t} \amp = G(x,y)\text{,}
+\end{align*}
 </div>
-<p data-braille="continuation">The eigenvalues of a diagonal matrix (in fact, a triangular matrix) are the diagonal entries. Hence the origin is a saddle point.</p>
+<p data-braille="continuation">or \(\bu' = \bff(\bu)\) for 2-vector \(\bu(t)\text{.}\) Note that (as we saw before), the vector \(\bu\) represents the state of the system.</p>
 <span class="incontext"><a href="nl-linearization.html#p-584">in-context</a></span>
 </body>
 </html>

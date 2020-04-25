@@ -1013,7 +1013,7 @@ plot3(rhomax,Z,log_g(rhomax,Z),'w','linew',2)
 </section>
 
 <section xml:id="so-convolutions">
-	<title>Convolutions</title>
+	<title>Convolution</title>
 	<introduction>
 		<p>
 			
@@ -1106,52 +1106,158 @@ hold on, plot(z,'-o')
 			This too is like a weighted average, with the values of <m>g(\tau)</m> being multiplied against different windows of the function <m>f</m> such that the arguments sum to <m>t</m>. 
 		</p>
 		<p> 
-			An interesting fact is that while I interpreted <m>f*g</m> as <m>g</m> acting on <m>f</m>, in fact the operation is symmetric:
+			An interesting fact is that while I interpreted <m>f*g</m> as <m>g</m> acting on <m>f</m>, in fact the operation is commutative:
 			<md>
 				<mrow>[g*f](t) \amp = \int_0^t f(t-\tau)g(\tau)\, d\tau</mrow>
 				<mrow>\amp = \int_t^0 f(u)g(t-u)\, (-du)  </mrow>
 				<mrow>\amp = \int_0^t g(t-u)f(u)\, du = [f*g](t)</mrow>
 			</md>. 
-			We can also easily prove some more properties we really like to have:
-			<md>
-				<mrow>f * ( g * h ) = ( f * g) * h </mrow>
-				<mrow>f * (g+h)=(f * g)+(f*h)</mrow> 
-				<mrow>f * 0=0</mrow>
-			</md>. 
-			It is <em>not</em> true, however, that <m>f*1=f</m>, unless <m>f</m> is the zero function. Instead, the right formula is <m> f * \delta=f</m>: 
-			<me> 
-				[f*\delta](t) = \int_0^t f(t-\tau) \delta(\tau)\, d\tau = f(t)
-			</me>. 
+			There are several other properties that make convolution resemble multiplication. 
+		</p>
+		<fact xml:id="so-fact-convolution">
+			<statement>
+				<p>
+					The following statements are true for functions defined for <m>t\ge 0</m>. 
+					<ol>
+					  <li> <m>f*g = g*f</m></li> 
+					  <li> <m>(f*g)*h = f*(g*h)</m></li>
+					  <li> <m>f*(g+h) = (f*g) + (f*h)</m></li>
+					<li> <m>f*0=0\quad</m> (zero function)</li>
+					<li><m>f*\delta = f</m></li>
+					</ol>
+				</p>
+			</statement>
+		</fact>
+		<p>
+			The last of these facts is the only slight curveball. It says that the delta impulse serves as the identity in convolution operations. 
 		</p>
 	</subsection>
-
+	<subsection>
+		<title>Transfer function and impulse response</title>
+		<p>
+			Following what we did for first-order problems, we make the following definitions. 
+		</p>
+		<definition xml:id="s0-def-impulsetransfer">
+			<statement>
+				<p>
+					For the operator <m>\opA[x]=x'' + bx'+cx</m> with constant coefficients, we define the <idx>impulse response</idx><term>impulse response</term> as the solution of 
+					<me>
+						\opA[x] = \delta(t), \quad x(0)=x'(0)=0.
+					</me>
+					We will use <m>g(t)</m> to denote the impulse response. We also define the <idx>transfer function</idx><term>transfer function</term> of the ODE to be the transform <m>G(s)</m> of the impulse response. 
+				</p>
+			</statement>
+		</definition>
+		<p>
+			Because the transform of delta is one, the immediate consequence of combining these definitions is 
+			<me>
+				s^2 G + bs G + cG  = 1 \quad\Rightarrow\quad G(s) = \frac{1}{s^2+bs+c}.
+			</me>
+			In words, <alert>the transfer function is the recciprocal of the characteristic polynomial.</alert> 
+		</p>
+		<example>
+			<p>
+				The transform of <m>x''-5x'+4x=\delta(t)</m> with zero initial conditions leads to 
+				<me>
+					X(s) = G(s) = \frac{1}{s^2+5s+4} = \frac{A}{s+1} + \frac{B}{s+4}. 
+				</me>
+				Clearing denominators and setting <m>s</m> equal to each pole in turn gives <m>A=-B=1/3</m>, so the impulse response is 
+				<me>
+					g(t) = \frac{1}{3}(e^{-t}-e^{-4t}).
+				</me>
+			</p>
+		</example>
+		<p>
+			It is trivial to generalize the previous example to any distinct eigenvalues <m>\lambda_1,\lambda_2</m>: 
+			<me>
+				g(t) = \frac{1}{\lambda_1-\lambda_2}\bigl(e^{\lambda_1 t}-e^{\lambda_2 t}\bigr). 
+			</me>
+			Since it's a linear combination of the homogeneous exponential solutions, <m>g(t)</m> is equivalent to the solution of a homogeneous problem. You can easily check that <m>g(0)=0</m> and <m>g'(0)=1</m>. Hence:
+		</p>
+		<fact xml:id="so-fact-jump">
+			<statement>
+				<p>
+					In second order problems, an impulse is equivalent to an instantaneous jump in the derivative of the solution.  
+				</p>
+			</statement>
+		</fact>
+		<p>
+			This fact modifies the observation in first-order problems that the delta causes a jump in <em>value</em>.
+		</p>
+	</subsection>
 	<subsection>
 		<title>Convolution theorem</title>
 		<p>
-			Here is what makes convolution a big deal. 
+			Here is what makes convolution a really big deal. 
 		</p>
 		<theorem>
 			<p>
-				Suppose <m>\lx[f] = F(s)</m>, <m>\lx[g] = G(s)</m>, <m>h=f*g</m>, and <m>\lx[h] = H(s)</m>. Then <m>H(s)=F(s)G(s)</m>.
+				Suppose <m>\lx[f] = F(s)</m>, <m>\lx[g] = G(s)</m>, <m>x=f*g</m>, and <m>\lx[x] = X(s)</m>. Then <m>X(s)=F(s)G(s)</m>.
 			</p>
 		</theorem> 
 		<p> 
-			Why does this matter? Consider finding a particular solution of <m>x''+bx'+cx=f(t)</m>. After taking transforms we get  
+			Why does this matter? Consider finding a particular solution of <m>x''+bx'+cx=f(t)</m> with zero initial conditions. After taking transforms we get  
 			<me> 
 				X_p(s) = \frac{1}{s^2+bs+c} F(s) = G(s) F(s)
 			</me>, 
-			where <m>G(s)</m> is the transfer function. Right away then, we know that <m>x_p(t)=f(t)*g(t)</m> is a particular solution. 
+			where <m>G(s)</m> is the transfer function. Right away then, we know that <m>x_p(t)=f(t)*g(t)</m> is that particular solution. In theory, knowing the impulse response is enough to write down the solution of any forced problem. 
 		</p>
+		<example>
+			<p>
+				Above we found the impulse response of <m>x''-5x'+4x</m> to be <m>g(t)=\frac{1}{3}=(e^{-t}-e^{-4t})</m>. Hence a particular solution for forcing function <m>f</m> is 
+				<md>
+				  <mrow>x_p(t) \amp = f*g = \frac{1}{3} \int_0^t ( e^{-t+\tau}-e^{-4t+4\tau})\, f(\tau)\,d\tau </mrow>
+				  <mrow>\amp = \frac{1}{3} e^{-t} \int_0^t e^{\tau}  f(\tau)\,d\tau -  \frac{1}{3} e^{-4t} \int_0^t  e^{4\tau} f(\tau)\,d\tau. </mrow>
+				</md>
+			</p>
+		</example>
+		<example>
+			<p>
+				The undamped oscillator <m>x''+\omega_0^2 x</m> has transfer function 
+				<me>
+					G(s) = \frac{1}{s^2+\omega_0^2}
+				</me>, 
+				so <m>g(t) = \frac{1}{\omega_0}\sin(\omega_0 t)</m>. Note that 
+				<me>
+					g(t-\tau) = \frac{1}{\omega_0} \sin(\omega_0 t)\cos(\omega_0\tau) - \frac{1}{\omega_0} \cos(\omega_0 t)\sin(\omega_0\tau). 
+				</me>
+				Therefore, using convolution with forcing function <m>f</m>,
+				<me>
+					x_p(t) = \frac{1}{\omega_0}  \sin(\omega_0 t) \int_0^t \cos(\omega_0\tau)f(\tau)\,d\tau - \frac{1}{\omega_0}  \cos(\omega_0 t) \int_0^t \sin(\omega_0\tau)f(\tau)\,d\tau.
+				</me>
+				This formula would be another way to derive both the resonant and nonresonant solutions with cosine forcing <m>f(t)=\cos(\omega t)</m>. 
+			</p>
+		</example>
 		<p>
-			But wait, there's more! Consider the problem of an impulse response, <m>x''+bx'+cx=\delta(t)</m>, with zero initial conditions. The solution of this problem has <m>X(s)=G(s)</m>. That is, 
-		</p>
-		<fact>
-			<p>The impulse response of a linear constant-coefficient equation is the inverse Laplace transform of the transfer function.</p>
-		</fact>
-		<p> 
-			Put it all together and you have some important theoretical connections. The solution to any forced problem is a convolution of the forcing function with the impulse response in the time domain, and the product of the forcing and the transfer function in the <m>s</m> domain. Finally, the transfer function is just the reciprocal of the characteristic polynomial. 
+			By now it should not surprise you that linear problems often give you multiple options that converge on the same result. The integral formulas derived from convolution with the impulse response are identical to ones that we would derive by applying variation of parameters to the first-order system form of the ODE. Both examples above express the solution as functions times the homogeneous solutions of the system, which is the starting assumption for deriving that method.
 		</p>
 	</subsection>
+
+	<exercises xml:id="so-exer-convolution">
+		<exercise>
+			<title>Double eigenvalue</title>
+			<statement>
+			  <p>
+				In the impulse response for distinct eigenvalues, take the limit <m>\lambda_2 \to \lambda_1</m> to propose an impulse response <m>g(t)</m> for the case of a double eigenvalue. Then show that <m>g</m> solves the homogeneous problem, and <m>g(0)=0</m>, <m>g'(0)=1</m>. Finally, show that the transform of <m>g</m> does match the transfer function. 
+			  </p>
+			</statement>	
+			<solution>
+				<p>
+					Use L'Hopital's rule to find <m>g(t)=t e^{\lambda t}</m>. Plug it into <m>g''-2\lambda g'+ \lambda^2 g </m> and simplify to get zero. Check the initial conditions. Finally, the transform table says <m>G(s)=F(s-\lambda)</m> where <m>F(s)=1/s^2</m>, which gives the correct transfer function. 
+				</p>
+			</solution>
+		</exercise>
+		<exercise>
+			<title>Damped oscillator</title>
+			<statement>
+			  <p>
+				Use convolution to derive the solution of the damped oscillator <m>x''+2\omega_0 Z x' + \omega_0^2 x = f(t)</m>. Express the formulas in real form in the underdamped case.
+			  </p>
+			</statement>
+		</exercise>
+	</exercises>
+	<solutions divisional="solution"></solutions>
+	
 </section>
 
 

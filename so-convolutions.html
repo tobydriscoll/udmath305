@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:24:57-04:00    *-->
+<!--*    on 2020-04-25T16:26:55-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Convolutions</title>
+<title>Convolution</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/x-mathjax-config">
@@ -189,7 +189,7 @@ var js_version = 0.13;
 <li><a href="so-oscillators.html" data-scroll="so-oscillators">Oscillators</a></li>
 <li><a href="so-expforcing.html" data-scroll="so-expforcing">Driven oscillator</a></li>
 <li><a href="so-laplace.html" data-scroll="so-laplace">Laplace transform methods</a></li>
-<li><a href="so-convolutions.html" data-scroll="so-convolutions" class="active">Convolutions</a></li>
+<li><a href="so-convolutions.html" data-scroll="so-convolutions" class="active">Convolution</a></li>
 </ul>
 </li>
 <li class="link">
@@ -207,7 +207,7 @@ var js_version = 0.13;
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-convolutions"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.7</span> <span class="title">Convolutions</span>
+<span class="type">Section</span> <span class="codenumber">4.7</span> <span class="title">Convolution</span>
 </h2>
 <a href="so-convolutions.html" class="permalink">¶</a><section class="introduction" id="introduction-20"><p id="p-527"></p></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Moving averages</span>
@@ -270,7 +270,7 @@ z_i =  \sum_{j} w_j v_{i-j}
 \end{equation*}
 </div>
 <p data-braille="continuation">This too is like a weighted average, with the values of \(g(\tau)\) being multiplied against different windows of the function \(f\) such that the arguments sum to \(t\text{.}\)</p>
-<p id="p-533">An interesting fact is that while I interpreted \(f*g\) as \(g\) acting on \(f\text{,}\) in fact the operation is symmetric:</p>
+<p id="p-533">An interesting fact is that while I interpreted \(f*g\) as \(g\) acting on \(f\text{,}\) in fact the operation is commutative:</p>
 <div class="displaymath">
 \begin{align*}
 [g*f](t) \amp = \int_0^t f(t-\tau)g(\tau)\, d\tau\\
@@ -278,38 +278,124 @@ z_i =  \sum_{j} w_j v_{i-j}
 \amp = \int_0^t g(t-u)f(u)\, du = [f*g](t)\text{.}
 \end{align*}
 </div>
-<p data-braille="continuation">We can also easily prove some more properties we really like to have:</p>
-<div class="displaymath">
-\begin{gather*}
-f * ( g * h ) = ( f * g) * h \\
-f * (g+h)=(f * g)+(f*h)\\
-f * 0=0\text{.}
-\end{gather*}
-</div>
-<p data-braille="continuation">It is <em class="emphasis">not</em> true, however, that \(f*1=f\text{,}\) unless \(f\) is the zero function. Instead, the right formula is \(f * \delta=f\text{:}\)</p>
+<p data-braille="continuation">There are several other properties that make convolution resemble multiplication.</p>
+<article class="fact theorem-like" id="so-fact-convolution"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.7.4</span><span class="period">.</span>
+</h6>
+<p id="p-534">The following statements are true for functions defined for \(t\ge 0\text{.}\)</p>
+<ol class="decimal">
+<li id="li-68">\(\displaystyle f*g = g*f\)</li>
+<li id="li-69">\(\displaystyle (f*g)*h = f*(g*h)\)</li>
+<li id="li-70">\(\displaystyle f*(g+h) = (f*g) + (f*h)\)</li>
+<li id="li-71">\(f*0=0\quad\) (zero function)</li>
+<li id="li-72">\(\displaystyle f*\delta = f\)</li>
+</ol></article><p id="p-535">The last of these facts is the only slight curveball. It says that the delta impulse serves as the identity in convolution operations.</p></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.3</span> <span class="title">Transfer function and impulse response</span>
+</h3>
+<p id="p-536">Following what we did for first-order problems, we make the following definitions.</p>
+<article class="definition definition-like" id="s0-def-impulsetransfer"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.7.5</span><span class="period">.</span>
+</h6>
+<p id="p-537">For the operator \(\opA[x]=x'' + bx'+cx\) with constant coefficients, we define the <dfn class="terminology">impulse response</dfn> as the solution of</p>
 <div class="displaymath">
 \begin{equation*}
-[f*\delta](t) = \int_0^t f(t-\tau) \delta(\tau)\, d\tau = f(t)\text{.}
+\opA[x] = \delta(t), \quad x(0)=x'(0)=0.
 \end{equation*}
-</div></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.7.3</span> <span class="title">Convolution theorem</span>
-</h3>
-<p id="p-534">Here is what makes convolution a big deal.</p>
-<article class="theorem theorem-like" id="theorem-13"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.4</span><span class="period">.</span>
+</div>
+<p data-braille="continuation">We will use \(g(t)\) to denote the impulse response. We also define the <dfn class="terminology">transfer function</dfn> of the ODE to be the transform \(G(s)\) of the impulse response.</p></article><p id="p-538">Because the transform of delta is one, the immediate consequence of combining these definitions is</p>
+<div class="displaymath">
+\begin{equation*}
+s^2 G + bs G + cG  = 1 \quad\Rightarrow\quad G(s) = \frac{1}{s^2+bs+c}.
+\end{equation*}
+</div>
+<p data-braille="continuation">In words, <em class="alert">the transfer function is the recciprocal of the characteristic polynomial.</em></p>
+<article class="example example-like" id="example-83"><a data-knowl="" class="id-ref original" data-refid="hk-example-83"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-83"><article class="example example-like"><p id="p-539">The transform of \(x''-5x'+4x=\delta(t)\) with zero initial conditions leads to</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = G(s) = \frac{1}{s^2+5s+4} = \frac{A}{s+1} + \frac{B}{s+4}. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Clearing denominators and setting \(s\) equal to each pole in turn gives \(A=-B=1/3\text{,}\) so the impulse response is</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = \frac{1}{3}(e^{-t}-e^{-4t}).
+\end{equation*}
+</div></article></div>
+<p id="p-540">It is trivial to generalize the previous example to any distinct eigenvalues \(\lambda_1,\lambda_2\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = \frac{1}{\lambda_1-\lambda_2}\bigl(e^{\lambda_1 t}-e^{\lambda_2 t}\bigr). 
+\end{equation*}
+</div>
+<p data-braille="continuation">Since it's a linear combination of the homogeneous exponential solutions, \(g(t)\) is equivalent to the solution of a homogeneous problem. You can easily check that \(g(0)=0\) and \(g'(0)=1\text{.}\) Hence:</p>
+<article class="fact theorem-like" id="so-fact-jump"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.7.7</span><span class="period">.</span>
 </h6>
-<p id="p-535">Suppose \(\lx[f] = F(s)\text{,}\) \(\lx[g] = G(s)\text{,}\) \(h=f*g\text{,}\) and \(\lx[h] = H(s)\text{.}\) Then \(H(s)=F(s)G(s)\text{.}\)</p></article><p id="p-536">Why does this matter? Consider finding a particular solution of \(x''+bx'+cx=f(t)\text{.}\) After taking transforms we get</p>
+<p id="p-541">In second order problems, an impulse is equivalent to an instantaneous jump in the derivative of the solution.</p></article><p id="p-542">This fact modifies the observation in first-order problems that the delta causes a jump in <em class="emphasis">value</em>.</p></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.4</span> <span class="title">Convolution theorem</span>
+</h3>
+<p id="p-543">Here is what makes convolution a really big deal.</p>
+<article class="theorem theorem-like" id="theorem-13"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.8</span><span class="period">.</span>
+</h6>
+<p id="p-544">Suppose \(\lx[f] = F(s)\text{,}\) \(\lx[g] = G(s)\text{,}\) \(x=f*g\text{,}\) and \(\lx[x] = X(s)\text{.}\) Then \(X(s)=F(s)G(s)\text{.}\)</p></article><p id="p-545">Why does this matter? Consider finding a particular solution of \(x''+bx'+cx=f(t)\) with zero initial conditions. After taking transforms we get</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{1}{s^2+bs+c} F(s) = G(s) F(s)\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(G(s)\) is the transfer function. Right away then, we know that \(x_p(t)=f(t)*g(t)\) is a particular solution.</p>
-<p id="p-537">But wait, there's more! Consider the problem of an impulse response, \(x''+bx'+cx=\delta(t)\text{,}\) with zero initial conditions. The solution of this problem has \(X(s)=G(s)\text{.}\) That is,</p>
-<article class="fact theorem-like" id="fact-27"><h6 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.7.5</span><span class="period">.</span>
+<p data-braille="continuation">where \(G(s)\) is the transfer function. Right away then, we know that \(x_p(t)=f(t)*g(t)\) is that particular solution. In theory, knowing the impulse response is enough to write down the solution of any forced problem.</p>
+<article class="example example-like" id="example-84"><a data-knowl="" class="id-ref original" data-refid="hk-example-84"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-84"><article class="example example-like"><p id="p-546">Above we found the impulse response of \(x''-5x'+4x\) to be \(g(t)=\frac{1}{3}=(e^{-t}-e^{-4t})\text{.}\) Hence a particular solution for forcing function \(f\) is</p>
+<div class="displaymath">
+\begin{align*}
+x_p(t) \amp = f*g = \frac{1}{3} \int_0^t ( e^{-t+\tau}-e^{-4t+4\tau})\, f(\tau)\,d\tau \\
+\amp = \frac{1}{3} e^{-t} \int_0^t e^{\tau}  f(\tau)\,d\tau -  \frac{1}{3} e^{-4t} \int_0^t  e^{4\tau} f(\tau)\,d\tau. 
+\end{align*}
+</div></article></div>
+<article class="example example-like" id="example-85"><a data-knowl="" class="id-ref original" data-refid="hk-example-85"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-85"><article class="example example-like"><p id="p-547">The undamped oscillator \(x''+\omega_0^2 x\) has transfer function</p>
+<div class="displaymath">
+\begin{equation*}
+G(s) = \frac{1}{s^2+\omega_0^2}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">so \(g(t) = \frac{1}{\omega_0}\sin(\omega_0 t)\text{.}\) Note that</p>
+<div class="displaymath">
+\begin{equation*}
+g(t-\tau) = \frac{1}{\omega_0} \sin(\omega_0 t)\cos(\omega_0\tau) - \frac{1}{\omega_0} \cos(\omega_0 t)\sin(\omega_0\tau). 
+\end{equation*}
+</div>
+<p data-braille="continuation">Therefore, using convolution with forcing function \(f\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{\omega_0}  \sin(\omega_0 t) \int_0^t \cos(\omega_0\tau)f(\tau)\,d\tau - \frac{1}{\omega_0}  \cos(\omega_0 t) \int_0^t \sin(\omega_0\tau)f(\tau)\,d\tau.
+\end{equation*}
+</div>
+<p data-braille="continuation">This formula would be another way to derive both the resonant and nonresonant solutions with cosine forcing \(f(t)=\cos(\omega t)\text{.}\)</p></article></div>
+<p id="p-548">By now it should not surprise you that linear problems give you multiple options that converge on the same results. The integral formulas derived from convolution with the impulse response are identical to ones that we would derive by applying variation of parameters to the first-order system form of the ODE. Both examples above express the solution as functions times the homogeneous solutions of the system, which is the starting assumption for deriving that method.</p></section><section class="exercises" id="so-exer-convolution"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">4.7.5</span> <span class="title">Exercises</span>
+</h3>
+<a href="so-convolutions.html#so-exer-convolution" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-23"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Double eigenvalue.</span>
 </h6>
-<p id="p-538">The impulse response of a linear constant-coefficient equation is the inverse Laplace transform of the transfer function.</p></article><p id="p-539">Put it all together and you have some important theoretical connections. The solution to any forced problem is a convolution of the forcing function with the impulse response in the time domain, and the product of the forcing and the transfer function in the \(s\) domain. Finally, the transfer function is just the reciprocal of the characteristic polynomial.</p></section></section></div></main>
+<p id="p-549">In the impulse response for distinct eigenvalues, take the limit \(\lambda_2 \to \lambda_1\) to propose an impulse response \(g(t)\) for the case of a double eigenvalue. Then show that \(g\) solves the homogeneous problem, and \(g(0)=0\text{,}\) \(g'(0)=1\text{.}\) Finally, show that the transform of \(g\) does match the transfer function.</p></article><article class="exercise exercise-like" id="exercise-24"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Damped oscillator.</span>
+</h6>
+<p id="p-551">Use convolution to derive the solution of the damped oscillator \(x''+2\omega_0 Z x' + \omega_0^2 x = f(t)\text{.}\) Express the formulas in real form in the underdamped case.</p></article></section><section class="solutions" id="solutions-8"><h3 class="heading hide-type">
+<span class="type">Solutions</span> <span class="codenumber">4.7.6</span> <span class="title">Solutions</span>
+</h3>
+<section class="exercises"><h4 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">4.7.5</span> <span class="title">Exercises</span>
+</h4>
+<a href="so-convolutions.html#so-exer-convolution" class="permalink">¶</a><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">4.7.5.1<span class="period">.</span></span><span class="space"> </span><span class="title">Double eigenvalue.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-18-hidden.html" title="Solution 4.7.5.1.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:25:00-04:00    *-->
+<!--*    on 2020-04-25T16:26:59-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,21 +11,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like"><pre class="prettyprint lang-matlab">a = 6; b = 2;
-K = a/b;
-
-f = @(t,x) a*x - b*x^2;
-t = linspace(0,2.5,300);
-for x0 = K*[0.02 0.15 0.4 0.8 1.2 1.5]
-	[t,x] = ode45(f,t,x0);
-	plot(t,x), hold on
-end
-xlabel('t'), ylabel('x(t)')
-set(gca,'ygrid','on',...
-'ytick',K*(0:.25:1),'yticklabel',{'0','','0.5K','','K'})
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.3.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/fn_lo_solutions.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></article></body>
+<body><article class="example example-like"><p>Consider the <a class="xref" data-knowl="./knowl/ex-variable-growth.html" title="Example 2.1.6: Variable growth rate">variable growth archetype 2.1.6</a> \(x'=2tx\text{.}\) We express \(x'\) as \(dx/dt\) and then isolate the variables:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dx}{x} = 2t\,dt\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Integrating both sides leads to \(\log |x| = t^2 + C\text{,}\) or \(|x|=Ae^{t^2}\) for a positive constant \(A\) (since it is the exponential of a real constant). Taking the absolute value off of \(x\) means that \(A\) can be negative as well. Also, \(A=0\) clearly leads to a solution. Finally, we conclude that \(x=Ce^{t^2}\) for arbitrary \(C\text{.}\)</p></article></body>
 </html>
