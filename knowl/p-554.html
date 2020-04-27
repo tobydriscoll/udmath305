@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:10:16-04:00    *-->
+<!--*    on 2020-04-27T15:12:55-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The distinction between these steady states is the property of <dfn class="terminology">stability</dfn>. It's impossible to place the broom in <em class="emphasis">exactly</em> the equilibrium position with no motion whatsoever of your hand. In the real world, a steady state is constantly undergoing small perturbations. If the effects of those perturbations die out with time, the steady state is called stable, but if they grow, it is unstable.</p>
-<span class="incontext"><a href="nl-autonomous.html#p-554">in-context</a></span>
+<p>The undamped oscillator \(x''+\omega_0^2 x\) has transfer function</p>
+<div class="displaymath">
+\begin{equation*}
+G(s) = \frac{1}{s^2+\omega_0^2}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">so \(g(t) = \frac{1}{\omega_0}\sin(\omega_0 t)\text{.}\) Note that</p>
+<div class="displaymath">
+\begin{equation*}
+g(t-\tau) = \frac{1}{\omega_0} \sin(\omega_0 t)\cos(\omega_0\tau) - \frac{1}{\omega_0} \cos(\omega_0 t)\sin(\omega_0\tau). 
+\end{equation*}
+</div>
+<p data-braille="continuation">Therefore, using convolution with forcing function \(f\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{\omega_0}  \sin(\omega_0 t) \int_0^t \cos(\omega_0\tau)f(\tau)\,d\tau - \frac{1}{\omega_0}  \cos(\omega_0 t) \int_0^t \sin(\omega_0\tau)f(\tau)\,d\tau.
+\end{equation*}
+</div>
+<p data-braille="continuation">This formula would be another way to derive both the resonant and nonresonant solutions with cosine forcing \(f(t)=\cos(\omega t)\text{.}\)</p>
+<span class="incontext"><a href="so-convolutions.html#p-554">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:10:16-04:00    *-->
+<!--*    on 2020-04-27T15:12:55-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>First note that we can recast the nonlinear problem as a first-order system in two variables. Define \(x=\theta\) and \(y=\theta'\text{.}\) Then</p>
+<p>We can get creative and show that the halfway value \(x=K/2\) is also special. Still without knowing explicitly what \(x\) is, we can differentiate the ODE and use the chain rule to obtain</p>
 <div class="displaymath">
-\begin{align*}
-\dd{x}{t} \amp = y \\
-\dd{y}{t} \amp = -\frac{g}{L}\sin(x)\text{.}
-\end{align*}
+\begin{equation*}
+x'' = ax'-2bxx' = (a-2bx)(ax-bx^2)\text{.}
+\end{equation*}
 </div>
-<p data-braille="continuation">This trick works for any nonlinear second-order equation \(\theta''=g(t,\theta,\theta')\text{.}\) Thus we can focus on problems in the general form</p>
-<div class="displaymath">
-\begin{align*}
-\dd{x}{t} \amp = F(x,y) \\
-\dd{y}{t} \amp = G(x,y)\text{,}
-\end{align*}
-</div>
-<p data-braille="continuation">or \(\bu' = \bff(\bu)\) for 2-vector \(\bu(t)\text{.}\) Note that (as we saw before), the vector \(\bu\) represents the state of the system.</p>
-<span class="incontext"><a href="nl-linearization.html#p-579">in-context</a></span>
+<p data-braille="continuation">This is zero for \(x=K/2=a/2b\text{,}\) suggesting that it is an inflection point.</p>
+<span class="incontext"><a href="nl-logistic.html#p-579">in-context</a></span>
 </body>
 </html>
