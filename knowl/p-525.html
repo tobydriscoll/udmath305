@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:24:59-04:00    *-->
+<!--*    on 2020-04-27T15:10:16-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,36 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If you look carefully at the derivation of <a class="xref" data-knowl="./knowl/so-eq-repeatedexp.html" title="Equation 4.6.1">(4.6.1)</a>, you will see that the identity of \(f(t)\) played no role in the key steps. As shown in <a class="xref" data-knowl="./knowl/so-tab-laplace.html" title="Table 4.6.1: Laplace transforms (complete)">Table 4.6.1</a>, we can repeat the calculation for a generic \(F(s)\text{:}\)</p>
+<p>To find the general solution of \(x''+x=5H(t-4)\) starting from rest, we take transforms to obtain</p>
 <div class="displaymath">
 \begin{equation*}
-\lx[t^n f(t) ] = (-1)^n F^{(n)}(s), \qquad n=1,2,3,\dots.
+X(s) = \frac{5e^{-4s}}{s(s^2+1)} = 5e^{-4s}F(s) \text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">Take a moment to appreciate this. Earlier we found that a derivative in \(t\) essentially corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
+<p data-braille="continuation">where</p>
+<div class="displaymath">
+\begin{equation*}
+F(s) = \frac{1}{s(s^2+1)} = \frac{A}{s} + \frac{Bs+C}{s^2+1}. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Clearing denominators we get</p>
+<div class="displaymath">
+\begin{equation*}
+1 = A(s^2+1) + (Bs+C)(s). 
+\end{equation*}
+</div>
+<p data-braille="continuation">Setting \(s=0\) gives us \(A=1\) right away. Then \(-s^2=Bs^2+Cs\text{,}\) which tells us that \(B=-1\) and \(C=0\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+f(t) = 1 -\cos(t). 
+\end{equation*}
+</div>
+<p data-braille="continuation">So by the shift theorem, the solution is</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = 5H(t-4)f(t-4) = 5 H(t-4)[1-\cos(t-4)]. 
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-laplace.html#p-525">in-context</a></span>
 </body>
 </html>

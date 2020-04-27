@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:24:59-04:00    *-->
+<!--*    on 2020-04-27T15:10:16-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,30 +13,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose \(x''+2x'+10x=6\delta(t-1)\text{,}\) with zero initial conditions. Then</p>
+<p>To solve \(x'' - 4x + 3x = 6\) with \(x(0)=-2\text{,}\) \(x'(0)=4\text{,}\)  we take transforms to obtain</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
+X(s) = \frac{-2s + 8 + 4}{(s-3)(s-1)} + \frac{6}{s(s-3)(s-1)} .
 \end{equation*}
 </div>
-<p data-braille="continuation">The quadratic formula tells us the homogeneous eigenvalues \(-1\pm 3i\text{,}\) which will contribute an amplitude \(e^{-t}\) in time. This corresponds to a shift \(a=-1\text{,}\) so we designate \(X(s)=F(s+1)\text{.}\) Thus</p>
+<p data-braille="continuation">The PFD of this has the form</p>
 <div class="displaymath">
 \begin{equation*}
-F(s) = X(s-1) = 6e \frac{e^{-s}}{s^2-2s+1+2s-2+10} = 6e \frac{e^{-s}}{s^2+9}.
+X(s) = \frac{A}{s-3} + \frac{B}{s-1} + \frac{C}{s}.
 \end{equation*}
 </div>
-<p data-braille="continuation">Now we can apply the Shift Theorem to \(F\) using the definition \(V(s)=1/(s^2+9)\) and get</p>
+<p data-braille="continuation">Equating and clearing the denominators leads to</p>
 <div class="displaymath">
 \begin{equation*}
-f(t) = 6e H(t-1) v(t-1),
+(s)(12-2s) + 6 = As(s-1) + Bs(s-3) + C(s-1)(s-3).
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(v(t)=\frac{1}{3}\sin(3t)\text{.}\) When we unwind the definitions, we get</p>
+<p data-braille="continuation">The values \(s=0,s=1,s=3\text{,}\) which are simply the poles of \(X\text{,}\) leave especially simple equations: \(6=3C\text{,}\) \(10+6=-2B\text{,}\) and \(18+6=6A\text{.}\) Hence</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = e^{-t} f(t) = 2 e^{-t+1} H(t-1)\sin(3t-3).
+X(s) = 4\, \frac{1}{s-3} - 8\, \frac{1}{s-1} + 2\, \frac{1}{s}.
 \end{equation*}
 </div>
+<p data-braille="continuation">This inverts easily to give \(x(t) = 4e^{3t} -  8e^t + 2\text{.}\)</p>
 <span class="incontext"><a href="so-laplace.html#p-520">in-context</a></span>
 </body>
 </html>

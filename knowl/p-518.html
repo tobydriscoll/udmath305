@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:24:59-04:00    *-->
+<!--*    on 2020-04-27T15:10:16-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,36 +13,51 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To find the general solution of \(x''+x=5H(t-4)\) starting from rest, we take transforms to obtain</p>
+<p>Let's solve \(x''-x=24 e^{3t}\text{,}\) with \(x(0)=4\text{,}\) \(x'(0)=12\text{.}\) Transforming both sides gives</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{5e^{-4s}}{s(s^2+1)} = 5e^{-4s}F(s) \text{,}
+[s^2X(s) - 4s - 12] - X(s) = \frac{24}{s-3}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">where</p>
+<p data-braille="continuation">We easily solve for \(X\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-F(s) = \frac{1}{s(s^2+1)} = \frac{A}{s} + \frac{Bs+C}{s^2+1}. 
+X(s) = \frac{4s+12}{(s^2-1)} + \frac{24}{(s^2-1)(s-3)} \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Clearing denominators we get</p>
+<p data-braille="continuation">In order to avoid multiple uses of partial fractions, we combine everything into a single fraction:</p>
 <div class="displaymath">
 \begin{equation*}
-1 = A(s^2+1) + (Bs+C)(s). 
+X(s) = \frac{4s^2-12}{(s-1)(s+1)(s-3)}
 \end{equation*}
 </div>
-<p data-braille="continuation">Setting \(s=0\) gives us \(A=1\) right away. Then \(-s^2=Bs^2+Cs\text{,}\) which tells us that \(B=-1\) and \(C=0\text{.}\) Hence</p>
+<p data-braille="continuation">The PFD takes the form</p>
 <div class="displaymath">
 \begin{equation*}
-f(t) = 1 -\cos(t). 
+\frac{4s^2-12}{(s-1)(s+1)(s-3)} = \frac{A}{s-1} + \frac{B}{s+1} + \frac{C}{s-3}, 
 \end{equation*}
 </div>
-<p data-braille="continuation">So by the shift theorem, the solution is</p>
+<p data-braille="continuation">which is the same as the identity</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = 5H(t-4)f(t-4) = 5 H(t-4)[1-\cos(t-4)]. 
+4s^2-12 = A(s+1)(s-3) + B(s-1)(s-3) + C(s-1)(s+1).
 \end{equation*}
 </div>
+<p data-braille="continuation">One way to handle this is to expand the right-hand side and equate the powers of \(s\text{.}\) In this case it's easier to choose three strategic values of \(s\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+s = 1 \amp \:\Rightarrow\: -8 = -4A  \\
+s = -1 \amp\: \Rightarrow\: -8 = 8B \\
+s = 3 \amp\: \Rightarrow\: 24 = 8C \text{,}
+\end{align*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = \frac{2}{s-1} + \frac{-1}{s+1} + \frac{3}{s-3}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Now it's clear that \(x(t) = 2e^t - e^{-t} + 3e^{3t}\text{.}\)</p>
 <span class="incontext"><a href="so-laplace.html#p-518">in-context</a></span>
 </body>
 </html>

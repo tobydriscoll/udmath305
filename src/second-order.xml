@@ -69,6 +69,27 @@
 	<p>
 		As a result of the equivalence to a first-order system, we know that the general solution of <xref ref="so-eq-linearmodel"/> consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem: <m>x(t)=x_h(t)+x_p(t)</m>. Our next steps will be to translate the system results for each of these parts to the new situation. 
 	</p>
+	<exercises xml:id="so-exer-dimension">
+		<exercise>
+			<title>Solar system</title>
+			<statement>
+			  <p>
+				  Suppose you want to model the eight planets of the solar system, with the Sun fixed as the origin of the coordinate system. You restrict motion to the the plane of the solar system and apply Newton's laws to derive ODEs for the planets based on gravitation. What is the dimension of the equivalent first-order system? 				
+			  </p>
+			</statement>
+			<answer>
+				<p>
+					32
+				</p>
+			</answer>
+			<solution>
+			  <p>
+					There are 8 planets, with two scalar variables to describe each position, for 16 total variables. These are subjected to second-order equations through <m>F=ma</m>, so the dimension doubles when converting to first order. 
+			  </p>
+			</solution>
+		</exercise>	
+	</exercises>
+	<solutions divisional="solution"></solutions>
 </section>
 
 <section xml:id="so-homogeneous">
@@ -168,6 +189,34 @@
 		</p>
 	</example>
 </subsection>
+<exercises xml:id="so-exer-homog">
+	<exercise>
+		<title>Inverted pendulum</title>
+		<statement>
+		  <p>
+				The nonlinear pendulum equation <m>\theta''+\gamma \theta' + \frac{g}{L}\sin(\theta) = 0</m> has an equilibrium at <m>\theta=0</m>, which is the downward position. But it also has an equilibrium at the upward or inverted position, <m>\theta=\pi</m>. Show that the change of variable <m>\phi=\pi-\theta</m> leads to 
+				<me>
+					\phi'' + \gamma \phi' - \frac{g}{L}\sin(\phi) = 0,
+				</me>
+				which has an equilibrium at <m>\phi=0</m>. Making the small-angle approximation for sin gives the linear equation 
+				<me>
+					\phi'' + \gamma \phi' - \frac{g}{L} \phi = 0.
+				</me>
+				Show that for any <m>\gamma \ge 0</m>, the equilibrium is an unstable saddle. 
+		  </p>
+		</statement>
+		<solution>
+		  <p>
+				The chain rule gives <m>\phi'=-\theta'</m> and <m>\phi''=\theta''</m>. The ODE follows from the identity <m>\sin(\pi-\phi)=\sin(\phi)</m>. The eigenvalues from the characteristic equation are 
+				<me>
+					\frac{-\gamma \pm \sqrt{\gamma^2 + 4(g/L)}}{2}. 
+				</me>
+				The radical gives a real value greater than <m>\gamma</m>, so the plus sign gives a positive real eigenvalue and the minus sign gives a negative one. (If you pull the pendulum a little away from the top and push it <em>just</em> right, it will gently return to the inverted position, in theory!) 
+		  </p>
+		</solution>
+	</exercise>
+</exercises>
+<solutions divisional="solution"></solutions>
 </section>
 
 <section xml:id="so-undetermined">
@@ -260,6 +309,29 @@
 		</md>
 		so that <m>x_p''+x_p=\cos(t)</m> as required.
 	</p>
+	<exercises xml:id="so-exer-muc">
+		<exercise>
+			<title>Driven inverted pendulum</title>
+			<statement>
+			  <p>
+				  Find the general solution of the driven undamped inverted pendulum, 
+				  <me>
+					  \phi'' - \frac{g}{L} \phi = \cos(\omega t).
+				  </me>		
+				  Are there any exceptional (i.e., resonant) values of <m>\omega</m>?
+			  </p>
+			</statement>
+			<answer>
+				<p>
+					<me>
+						\phi(t) = c_1 e^{\alpha t} + c_2 e^{-\alpha t} + \frac{1}{\omega^2 + \alpha^2} \cos(\omega t),
+					</me>
+					where <m>\alpha = \sqrt{g/L}</m>. Resonance is not possible. 
+				</p>
+			</answer>
+		</exercise>	
+	</exercises>
+	<solutions divisional="solution"></solutions>
 </section>
 
 <section xml:id="so-oscillators">
@@ -594,19 +666,15 @@
 			</p>
 		</fact>
 		<p>
-			This formula is a bit easier to parse in terms of the frequency ratio <m>\rho=\omega/\omega_0</m>:
-			<me>
-				g(\rho) =  \frac{1}{\omega_0^2 [(1-\rho^2)^2  + 4 Z^2 \rho^2]^{1/2} }
-			</me>. 
-			In the presence of any damping, the gain always remains finite, and there is no longer a perfect resonance. But as a function of the frequency ratio, the denominator is minimized, and thus the gain is maximized, when 
+			In the presence of any damping, the gain always remains finite, and there is no longer a perfect resonance. But as a function of the driving frequency, the denominator is minimized, and thus the gain is maximized, when 
 			<men xml:id="so-eq-rhomax">
-				\rho_\text{max} = \begin{cases} 
-				\sqrt{1-2Z^2}, \amp \text{ if } 0 \lt Z^2 \le \frac{1}{2},\\ 0, \amp \text{ if } \frac{1}{2} \lt Z^2 \lt 1.
+				\omega_\text{max} = \begin{cases} 
+				\omega_0 \sqrt{1-2Z^2}, \amp \text{ if } 0 \lt Z^2 \le \frac{1}{2},\\ 0, \amp \text{ if } \frac{1}{2} \lt Z^2 \lt 1.
 				\end{cases}
-			</men>,
-			Since <m>\rho_\text{max} \lt 1</m>, the <q>most resonant</q> frequency is always lower than the natural frequency. For <m>Z^2 \le \frac{1}{2}</m> the maximum gain is 
+			</men>.
+			Note that the <q>most resonant</q> frequency is always lower than the natural frequency. For <m>Z^2 \le \frac{1}{2}</m> the maximum gain is 
 			<men xml:id="so-eq-gainmax">
-				g(\rho_\text{max}) = \frac{1}{2Z\omega_0^2\sqrt{1-Z^2}}
+				g(\omega_\text{max}) = \frac{1}{2Z\omega_0^2\sqrt{1-Z^2}}
 			</men>,
 			which is finite but large for <m>Z\approx 0</m>. 
 		</p>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:24:59-04:00    *-->
+<!--*    on 2020-04-27T15:10:16-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Our general form for a first-order scalar ODE is \(x'=f(t,x)\text{.}\) In the special case where \(f\) does not depend explicitly on time, i.e., when \(x'=f(x)\text{,}\) we say the equation is <dfn class="terminology">autonomous</dfn>. These equations are the simplest place to start.</p>
-<span class="incontext"><a href="nl-autonomous.html#p-543">in-context</a></span>
+<p>Why does this matter? Consider finding a particular solution of \(x''+bx'+cx=f(t)\text{.}\) After taking transforms we get</p>
+<div class="displaymath">
+\begin{equation*}
+X_p(s) = \frac{1}{s^2+bs+c} F(s) = G(s) F(s)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(G(s)\) is the transfer function. Right away then, we know that \(x_p(t)=f(t)*g(t)\) is a particular solution.</p>
+<span class="incontext"><a href="so-convolutions.html#p-543">in-context</a></span>
 </body>
 </html>

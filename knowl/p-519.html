@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:24:59-04:00    *-->
+<!--*    on 2020-04-27T15:10:16-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. It can help to use the transform-shift formula</p>
+<p>In light of the last example, let's look again at the general case</p>
 <div class="displaymath">
 \begin{equation*}
-\lx[e^{at}f(t)] = F(s-a)\text{.}
+X(s) = \frac{ (s+b)x(0)+x'(0)}{s^2+bs+c} +  \frac{F(s)}{s^2 +bs+c}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">We should have enough information from the ODE to know what to choose as the real shift \(a\text{.}\)</p>
+<p data-braille="continuation">The denominators contain the characteristic polynomial, whose roots are the eigenvalues of the homogeneous problem. We refer to zeros in the denominator as <dfn class="terminology">poles</dfn> of the transform. Each eigenvalue pole will contribute a term \(1/(s-\lambda)\) to the partial fraction decomposition. Upon inversion, this term contributes \(e^{\lambda t}\text{,}\) which is part of the homogeneous solution. The forcing function will contribute one or more of its own poles in \(F(s)\text{,}\) and they generate new terms in the partial fraction decomposition.</p>
 <span class="incontext"><a href="so-laplace.html#p-519">in-context</a></span>
 </body>
 </html>

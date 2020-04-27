@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:24:59-04:00    *-->
+<!--*    on 2020-04-27T15:10:16-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>At \(Z=1\) the complex eigenvalues collapse to a double eigenvalue at</p>
+<p>The mechanical oscillator \(mx'' + bx' + kx = F(t)\) has, like all linear ODEs, a homogeneous part and a forced part. For now we consider only the homogeneous part, taking up the forcing term in the next section. Ignoring the degenerate case of zero mass, we write</p>
 <div class="displaymath">
 \begin{equation*}
-\lambda_1 = \lambda_2 = -\omega_0\text{,}
+x'' + \frac{b}{m} x' + \frac{k}{m} x = 0\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">with general homogeneous solution</p>
+<p data-braille="continuation">One reason to prefer this form is dimensional analysis: both \(b/m\) and \(\sqrt{k/m}\) have units of inverse time. We introduce new parameters</p>
 <div class="displaymath">
 \begin{equation*}
-x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t)\text{.}
+\omega_0 = \sqrt{\frac{k}{m}} \gt 0, \quad Z = \frac{b/m}{2\omega_0} = \frac{b}{\sqrt{4km}} \ge 0\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">There is no longer any oscillation present, and we have a <dfn class="terminology">critically damped</dfn> system. The linear growth of \(c_2 t\) doesn't make much of a difference against the exponential decay.</p>
+<p data-braille="continuation">\(\omega_0\) is known as the <dfn class="terminology">natural frequency</dfn>, with units of inverse time, and \(Z\) is a dimensionless <dfn class="terminology">damping coefficient</dfn> describing the relative intensity of the damping. Now the unforced ODE becomes</p>
+<div class="displaymath">
+\begin{equation}
+x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = 0\text{.}\tag{4.4.1}
+\end{equation}
+</div>
+<p data-braille="continuation">A similar derivation can be done starting from the electrical circuit equation.</p>
 <span class="incontext"><a href="so-oscillators.html#p-486">in-context</a></span>
 </body>
 </html>

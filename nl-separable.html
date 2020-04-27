@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:24:57-04:00    *-->
+<!--*    on 2020-04-27T15:10:13-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,10 +209,10 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="nl-separable"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Separable equations</span>
 </h2>
-<a href="nl-separable.html" class="permalink">¶</a><p id="p-550">All problems in the autonomous form \(x'=f(x)\text{,}\) and more generally in the form \(x'=f(x)g(t)\text{,}\) are called <dfn class="terminology">separable equations</dfn> and can be solved systematically (up to performing integrations). Rather than deriving a formula for them, it's best to just repeat a straightforward process for each new problem.</p>
+<a href="nl-separable.html" class="permalink">¶</a><p id="p-557">All problems in the autonomous form \(x'=f(x)\text{,}\) and more generally in the form \(x'=f(x)g(t)\text{,}\) are called <dfn class="terminology">separable equations</dfn> and can be solved systematically (up to performing integrations). Rather than deriving a formula for them, it's best to just repeat a straightforward process for each new problem.</p>
 <article class="example example-like" id="example-84"><a data-knowl="" class="id-ref original" data-refid="hk-example-84"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-84"><article class="example example-like"><p id="p-551">Consider the <a class="xref" data-knowl="./knowl/ex-variable-growth.html" title="Example 2.1.6: Variable growth rate">variable growth archetype 2.1.6</a> \(x'=2tx\text{.}\) We express \(x'\) as \(dx/dt\) and then isolate the variables:</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-84"><article class="example example-like"><p id="p-558">Consider the <a class="xref" data-knowl="./knowl/ex-variable-growth.html" title="Example 2.1.6: Variable growth rate">variable growth archetype 2.1.6</a> \(x'=2tx\text{.}\) We express \(x'\) as \(dx/dt\) and then isolate the variables:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dx}{x} = 2t\,dt\text{.}
@@ -221,25 +221,25 @@ var js_version = 0.13;
 <p data-braille="continuation">Integrating both sides leads to \(\log |x| = t^2 + C\text{,}\) or \(|x|=Ae^{t^2}\) for a positive constant \(A\) (since it is the exponential of a real constant). Taking the absolute value off of \(x\) means that \(A\) can be negative as well. Also, \(A=0\) clearly leads to a solution. Finally, we conclude that \(x=Ce^{t^2}\) for arbitrary \(C\text{.}\)</p></article></div>
 <article class="example example-like" id="example-85"><a data-knowl="" class="id-ref original" data-refid="hk-example-85"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-85"><article class="example example-like"><p id="p-552">Suppose \(x'=t^2/(x^3-2)\text{.}\) Separation and integration lead to</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-85"><article class="example example-like"><p id="p-559">Suppose \(x'=t^2/(x^3-2)\text{.}\) Separation and integration lead to</p>
 <div class="displaymath">
 \begin{equation*}
 \int x^3\, dx = \int t^2\, dt\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">or \(\frac{1}{4}x^4 - 2x  = C + \frac{1}{3}t^3\text{.}\) We could work hard to try to solve explicitly for \(y\text{,}\) but it's probably best to leave it in implicit form. This is a common limitation to separable "solutions".</p>
-<p id="p-553">Even in implicit form, we can solve for the arbitrary constant if given an initial condition. For instance, suppose \(x(0)=4\) is given for this ODE. Then \(4^4/4-2\cdot4 = C+0\text{,}\) so \(C=56\text{.}\)</p></article></div>
-<p id="p-554">Sometimes the separable structure isn't immediately apparent, and you have to manipulate the expressions a bit.</p>
+<p id="p-560">Even in implicit form, we can solve for the arbitrary constant if given an initial condition. For instance, suppose \(x(0)=4\) is given for this ODE. Then \(4^4/4-2\cdot4 = C+0\text{,}\) so \(C=56\text{.}\)</p></article></div>
+<p id="p-561">Sometimes the separable structure isn't immediately apparent, and you have to manipulate the expressions a bit.</p>
 <article class="example example-like" id="example-86"><a data-knowl="" class="id-ref original" data-refid="hk-example-86"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-86"><article class="example example-like"><p id="p-555">Suppose \(tx' = x-tx\text{.}\) Nothing happens until you see that you can factor out \(x\) on the right side. Then we have \(dx/dt = x(1-t)/t\text{,}\) or</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-86"><article class="example example-like"><p id="p-562">Suppose \(tx' = x-tx\text{.}\) Nothing happens until you see that you can factor out \(x\) on the right side. Then we have \(dx/dt = x(1-t)/t\text{,}\) or</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dx}{x} = (t^{-1}-1)\,dt\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">Thus \(\ln|x| = \ln|t|-t+C\text{,}\) or \(x=A te^{-t}\text{.}\)</p>
-<p id="p-556">Note that this problem is also linear, so it could be approached that way as well. Of course you must get the same solution in the end!</p></article></div></section></div></main>
+<p id="p-563">Note that this problem is also linear, so it could be approached that way as well. Of course you must get the same solution in the end!</p></article></div></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:24:59-04:00    *-->
+<!--*    on 2020-04-27T15:10:16-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In light of the last example, let's look again at the general case</p>
+<p>In the presence of any damping, the gain always remains finite, and there is no longer a perfect resonance. But as a function of the driving frequency, the denominator is minimized, and thus the gain is maximized, when</p>
 <div class="displaymath">
-\begin{equation*}
-X(s) = \frac{ (s+b)x(0)+x'(0)}{s^2+bs+c} +  \frac{F(s)}{s^2 +bs+c}\text{.}
-\end{equation*}
+\begin{equation}
+\omega_\text{max} = \begin{cases} 
+\omega_0 \sqrt{1-2Z^2}, \amp \text{ if } 0 \lt Z^2 \le \frac{1}{2},\\ 0, \amp \text{ if } \frac{1}{2} \lt Z^2 \lt 1.
+\end{cases}\text{.}\tag{4.5.3}
+\end{equation}
 </div>
-<p data-braille="continuation">The denominators contain the characteristic polynomial, whose roots are the eigenvalues of the homogeneous problem. We refer to zeros in the denominator as <dfn class="terminology">poles</dfn> of the transform. Each eigenvalue pole will contribute a term \(1/(s-\lambda)\) to the partial fraction decomposition. Upon inversion, this term contributes \(e^{\lambda t}\text{,}\) which is part of the homogeneous solution. The forcing function will contribute one or more of its own poles in \(F(s)\text{,}\) and they generate new terms in the partial fraction decomposition.</p>
-<span class="incontext"><a href="so-laplace.html#p-512">in-context</a></span>
+<p data-braille="continuation">Note that the “most resonant” frequency is always lower than the natural frequency. For \(Z^2 \le \frac{1}{2}\) the maximum gain is</p>
+<div class="displaymath">
+\begin{equation}
+g(\omega_\text{max}) = \frac{1}{2Z\omega_0^2\sqrt{1-Z^2}}\text{,}\tag{4.5.4}
+\end{equation}
+</div>
+<p data-braille="continuation">which is finite but large for \(Z\approx 0\text{.}\)</p>
+<span class="incontext"><a href="so-expforcing.html#p-512">in-context</a></span>
 </body>
 </html>

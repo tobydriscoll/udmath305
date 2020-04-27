@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:24:59-04:00    *-->
+<!--*    on 2020-04-27T15:10:15-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,30 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If the companion matrix has a double eigenvalue, then it is defective (unless \(b=c=0\text{,}\) which leaves the truly trivial problem \(x''=0\)). In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) Recalling the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.6.2: Defective matrix">Subsection 3.6.2</a>, we define</p>
-<div class="displaymath">
-\begin{equation*}
-\bB = \bA + \frac{b}{2}\bI = \twomat{b/2}{1}{-c}{-b/2} = \twomat{b/2}{1}{-b^2/4}{-b/2}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">You can easily check that \(\bB^2=\bzero\text{.}\) Hence the power series for the matrix exponential has just two terms:</p>
-<div class="displaymath">
-\begin{equation*}
-e^{t\bA} = e^{-(bt/2)\bI} e^{t\bB} = e^{-bt/2}(\bI + t\bB) \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">The general solution is \(e^{t\bA}\bc\text{,}\) but again we need only the first row to get the solution for the original \(x=u_1\text{:}\)</p>
-<div class="displaymath">
-\begin{equation*}
-x_h(t) = e^{-bt/2} \left[ c_1 + t\left(c_2 + c_1\frac{b}{2}\right) \right] = e^{-bt/2} \left( \tilde{c}_1 + c_2 t\right)\text{,}
-\end{equation*}
-</div>
-<p data-braille="continuation">where \(\tilde{c}_1\) is just a different arbitrary constant. We can rename the constants and express the result as</p>
-<div class="displaymath">
-\begin{equation}
-x_h(t) = e^{-bt/2} \left( c_1 + c_2 t\right) , \qquad \text{if } \lambda_1 = \lambda_2 \neq 0.\tag{4.2.4}
-\end{equation}
-</div>
+<p>Let's find the general solution of \(x''+5x'+6x=0\text{.}\) The characteristic polynomial is \(\lambda^2+5\lambda+6\text{,}\) which has roots \(\lambda_1=-2\text{,}\) \(\lambda_2=-3\text{.}\) Thus \(x(t)=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p>
 <span class="incontext"><a href="so-homogeneous.html#p-462">in-context</a></span>
 </body>
 </html>

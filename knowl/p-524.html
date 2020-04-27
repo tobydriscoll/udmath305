@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T16:24:59-04:00    *-->
+<!--*    on 2020-04-27T15:10:16-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,16 +13,34 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The critically damped oscillator \(x'' + 6x' + 9=0\) has a double eigenvalue at \(-3\text{.}\) To find the solution with \(x(0)=0\text{,}\) \(x'(0)=6\text{,}\) we use the transform to find</p>
+<p>The undamped oscillator \(x''+16x = 40e^{-2t}\) with \(x(0)=x'(0)=0\) has a solution whose transform is</p>
 <div class="displaymath">
 \begin{equation*}
-[s^2X(s) - 6] + 6[sX(s)] + 9[X(s)] = 0 \quad \Rightarrow \quad X(s) = \frac{6}{(s+3)^2}.
+X(s) = \frac{40}{(s+2)(s^2+16)} = \frac{A+Bs}{s^2+16^2} + \frac{C}{s+2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence <a class="xref" data-knowl="./knowl/so-eq-repeatedexp.html" title="Equation 4.6.1">(4.6.1)</a> applies with \(n=1\text{,}\) and</p>
+<p data-braille="continuation">Clearing the denominators gives the identity</p>
 <div class="displaymath">
 \begin{equation*}
-x(t) = 6t e^{-3t}\text{.}
+(A+Bs)(s+2) + C(s^2+16) = 40\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">We need three equations to determine the unknown coefficients. Setting \(s=-2\) quickly gives \(20C=40\text{,}\) so \(C=2\text{.}\) Now the identity reads</p>
+<div class="displaymath">
+\begin{equation*}
+Bs^2 + (A+2B)s + 2A = 8 - 2s^2. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Equating the coefficients of \(1\) and \(s^2\) immediately tells us \(2A=8\) and \(B=-2\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = \frac{4-2s}{s^2+16^2} + \frac{2}{s+2} \text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">and finally</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
 \end{equation*}
 </div>
 <span class="incontext"><a href="so-laplace.html#p-524">in-context</a></span>
