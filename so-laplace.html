@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:51-04:00    *-->
+<!--*    on 2020-04-28T13:41:43-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,7 +209,7 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-laplace"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.6</span> <span class="title">Laplace transform methods</span>
 </h2>
-<a href="so-laplace.html" class="permalink">¶</a><section class="introduction" id="introduction-19"><p id="p-514">We return to our linear, second-order, constant-coefficient problem in the simpler notation</p>
+<a href="so-laplace.html" class="permalink">¶</a><section class="introduction" id="introduction-19"><p id="p-518">We return to our linear, second-order, constant-coefficient problem in the simpler notation</p>
 <div class="displaymath">
 \begin{equation*}
 x'' + bx' + cx = f(t)\text{.}
@@ -270,10 +270,10 @@ x'' + bx' + cx = f(t)\text{.}
 <td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(F(s-a)\)</td>
 </tr>
 </table>
-<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.6.1<span class="period">.</span></span><span class="space"> </span>Laplace transforms (complete)</figcaption></figure><p id="p-515"><a class="xref" data-knowl="./knowl/so-tab-laplace.html" title="Table 4.6.1: Laplace transforms (complete)">Table 4.6.1</a> updates our table of Laplace transforms with additional entries. In this section we examine how to use the new entries.</p></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.6.1<span class="period">.</span></span><span class="space"> </span>Laplace transforms (complete)</figcaption></figure><p id="p-519"><a class="xref" data-knowl="./knowl/so-tab-laplace.html" title="Table 4.6.1: Laplace transforms (complete)">Table 4.6.1</a> updates our table of Laplace transforms with additional entries. In this section we examine how to use the new entries.</p></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.1</span> <span class="title">Second derivatives</span>
 </h3>
-<p id="p-516">Recall that the transform of \(x'(t)\) is \(sX(s)-x(0)\text{.}\) Applying this formula twice shows that</p>
+<p id="p-520">Recall that the transform of \(x'(t)\) is \(sX(s)-x(0)\text{.}\) Applying this formula twice shows that</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[x''(t)] = s \lx[x'(t)] - x'(0) = s^2X(s) - sx(0) - x'(0)\text{.}
@@ -292,10 +292,10 @@ X(s) = \frac{ (s+b)x(0)+x'(0)}{s^2 +bs+c} +  \frac{F(s)}{s^2 +bs+c}\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">The first fraction above is what leads to the free or unforced response, while the second is the effect of the forcing when the initial conditions are zero. The denominator in both cases is simply the characteristic polynomial of the ODE.</p>
-<p id="p-517">If the goal is to solve an initial-value problem with the transform, then it's necessary to find the inverse transform of \(X(s)\text{,}\) which typically involves some partial fraction efforts.</p>
+<p id="p-521">If the goal is to solve an initial-value problem with the transform, then it's necessary to find the inverse transform of \(X(s)\text{,}\) which typically involves some partial fraction efforts.</p>
 <article class="example example-like" id="example-74"><a data-knowl="" class="id-ref original" data-refid="hk-example-74"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-74"><article class="example example-like"><p id="p-518">Let's solve \(x''-x=24 e^{3t}\text{,}\) with \(x(0)=4\text{,}\) \(x'(0)=12\text{.}\) Transforming both sides gives</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-74"><article class="example example-like"><p id="p-522">Let's solve \(x''-x=24 e^{3t}\text{,}\) with \(x(0)=4\text{,}\) \(x'(0)=12\text{.}\) Transforming both sides gives</p>
 <div class="displaymath">
 \begin{equation*}
 [s^2X(s) - 4s - 12] - X(s) = \frac{24}{s-3}\text{.}
@@ -340,7 +340,7 @@ X(s) = \frac{2}{s-1} + \frac{-1}{s+1} + \frac{3}{s-3}.
 \end{equation*}
 </div>
 <p data-braille="continuation">Now it's clear that \(x(t) = 2e^t - e^{-t} + 3e^{3t}\text{.}\)</p></article></div>
-<p id="p-519">In light of the last example, let's look again at the general case</p>
+<p id="p-523">In light of the last example, let's look again at the general case</p>
 <div class="displaymath">
 \begin{equation*}
 X(s) = \frac{ (s+b)x(0)+x'(0)}{s^2+bs+c} +  \frac{F(s)}{s^2 +bs+c}\text{.}
@@ -349,7 +349,7 @@ X(s) = \frac{ (s+b)x(0)+x'(0)}{s^2+bs+c} +  \frac{F(s)}{s^2 +bs+c}\text{.}
 <p data-braille="continuation">The denominators contain the characteristic polynomial, whose roots are the eigenvalues of the homogeneous problem. We refer to zeros in the denominator as <dfn class="terminology">poles</dfn> of the transform. Each eigenvalue pole will contribute a term \(1/(s-\lambda)\) to the partial fraction decomposition. Upon inversion, this term contributes \(e^{\lambda t}\text{,}\) which is part of the homogeneous solution. The forcing function will contribute one or more of its own poles in \(F(s)\text{,}\) and they generate new terms in the partial fraction decomposition.</p>
 <article class="example example-like" id="example-75"><a data-knowl="" class="id-ref original" data-refid="hk-example-75"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-75"><article class="example example-like"><p id="p-520">To solve \(x'' - 4x + 3x = 6\) with \(x(0)=-2\text{,}\) \(x'(0)=4\text{,}\)  we take transforms to obtain</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-75"><article class="example example-like"><p id="p-524">To solve \(x'' - 4x + 3x = 6\) with \(x(0)=-2\text{,}\) \(x'(0)=4\text{,}\)  we take transforms to obtain</p>
 <div class="displaymath">
 \begin{equation*}
 X(s) = \frac{-2s + 8 + 4}{(s-3)(s-1)} + \frac{6}{s(s-3)(s-1)} .
@@ -376,7 +376,7 @@ X(s) = 4\, \frac{1}{s-3} - 8\, \frac{1}{s-1} + 2\, \frac{1}{s}.
 <p data-braille="continuation">This inverts easily to give \(x(t) = 4e^{3t} -  8e^t + 2\text{.}\)</p></article></div></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.2</span> <span class="title">Imaginary poles</span>
 </h3>
-<p id="p-521">If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
+<p id="p-525">If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
@@ -396,7 +396,7 @@ X(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x(t)=\frac{A}{\omega}\
 </div>
 <article class="example example-like" id="example-76"><a data-knowl="" class="id-ref original" data-refid="hk-example-76"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-76"><article class="example example-like"><p id="p-522">Let's solve \(x''+9x=\delta(t-2)\) with \(x(0)=0\text{,}\) \(x'(0)=-3\text{.}\) Taking transforms leads to</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-76"><article class="example example-like"><p id="p-526">Let's solve \(x''+9x=\delta(t-2)\) with \(x(0)=0\text{,}\) \(x'(0)=-3\text{.}\) Taking transforms leads to</p>
 <div class="displaymath">
 \begin{equation*}
 X(s) = \frac{-3}{s^2+9} + \frac{e^{-2s}}{s^2+9} \text{.}
@@ -416,7 +416,7 @@ x(t) = -\sin(3t) + \frac{1}{3} H(t-2) \sin(3t-6)\text{.}
 </div></article></div>
 <article class="example example-like" id="example-77"><a data-knowl="" class="id-ref original" data-refid="hk-example-77"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-77"><article class="example example-like"><p id="p-523">To find the general soluton of \(x'' - 4x' + 3x = 10\cos(t)\) with zero initial conditions, we take transforms to obtain</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-77"><article class="example example-like"><p id="p-527">To find the general soluton of \(x'' - 4x' + 3x = 10\cos(t)\) with zero initial conditions, we take transforms to obtain</p>
 <div class="displaymath">
 \begin{equation*}
 X(s) =  \frac{10s}{(s^2+1)(s-3)(s-1)} .
@@ -456,7 +456,7 @@ x(t) = \frac{3}{2} e^{3t} -\frac{5}{2} e^{t} + \cos(t) - 2 \sin(t).
 </div></article></div>
 <article class="example example-like" id="example-78"><a data-knowl="" class="id-ref original" data-refid="hk-example-78"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-78"><article class="example example-like"><p id="p-524">The undamped oscillator \(x''+16x = 40e^{-2t}\) with \(x(0)=x'(0)=0\) has a solution whose transform is</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-78"><article class="example example-like"><p id="p-528">The undamped oscillator \(x''+16x = 40e^{-2t}\) with \(x(0)=x'(0)=0\) has a solution whose transform is</p>
 <div class="displaymath">
 \begin{equation*}
 X(s) = \frac{40}{(s+2)(s^2+16)} = \frac{A+Bs}{s^2+16^2} + \frac{C}{s+2}\text{.}
@@ -488,7 +488,7 @@ x_p(t) = \sin(4t) - 2\cos(4 t) + 2e^{-2t}\text{.}
 </div></article></div>
 <article class="example example-like" id="example-79"><a data-knowl="" class="id-ref original" data-refid="hk-example-79"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.7</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-79"><article class="example example-like"><p id="p-525">To find the general solution of \(x''+x=5H(t-4)\) starting from rest, we take transforms to obtain</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-79"><article class="example example-like"><p id="p-529">To find the general solution of \(x''+x=5H(t-4)\) starting from rest, we take transforms to obtain</p>
 <div class="displaymath">
 \begin{equation*}
 X(s) = \frac{5e^{-4s}}{s(s^2+1)} = 5e^{-4s}F(s) \text{,}
@@ -520,7 +520,7 @@ x(t) = 5H(t-4)f(t-4) = 5 H(t-4)[1-\cos(t-4)].
 </div></article></div></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.3</span> <span class="title">Complex poles</span>
 </h3>
-<p id="p-526">Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. It can help to use the transform-shift formula</p>
+<p id="p-530">Complex poles in the transform correspond to complex exponentials in the time domain. When they occur in conjugate pairs, the entire expression can be cast in real terms. It can help to use the transform-shift formula</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[e^{at}f(t)] = F(s-a)\text{.}
@@ -529,7 +529,7 @@ x(t) = 5H(t-4)f(t-4) = 5 H(t-4)[1-\cos(t-4)].
 <p data-braille="continuation">We should have enough information from the ODE to know what to choose as the real shift \(a\text{.}\)</p>
 <article class="example example-like" id="example-80"><a data-knowl="" class="id-ref original" data-refid="hk-example-80"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.8</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-80"><article class="example example-like"><p id="p-527">Suppose \(x''+2x'+10x=6\delta(t-1)\text{,}\) with zero initial conditions. Then</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-80"><article class="example example-like"><p id="p-531">Suppose \(x''+2x'+10x=6\delta(t-1)\text{,}\) with zero initial conditions. Then</p>
 <div class="displaymath">
 \begin{equation*}
 X(s) = \frac{6e^{-s}}{s^2+2s+10}\text{.}
@@ -553,11 +553,11 @@ f(t) = 6e H(t-1) v(t-1),
 x(t) = e^{-t} f(t) = 2 e^{-t+1} H(t-1)\sin(3t-3).
 \end{equation*}
 </div></article></div>
-<p id="p-528">The drawback to Laplace transforms as a one-stop solver is what we observed earlier: the particular solution we find virtually always includes some terms from the homogeneous solution. Mathematically, the poles of \(X_p(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. This combination makes the partial fraction decompositions lengthier, to say the least. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases, especially if one seeks a general solution without initial conditions to consider at the end.</p></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
+<p id="p-532">The drawback to Laplace transforms as a one-stop solver is what we observed earlier: the particular solution we find virtually always includes some terms from the homogeneous solution. Mathematically, the poles of \(X_p(s)\) include those of the transfer function <em class="emphasis">and</em> the forcing function. This combination makes the partial fraction decompositions lengthier, to say the least. Undetermined coefficients is a less sexy but simpler way to solve concrete problems in most cases, especially if one seeks a general solution without initial conditions to consider at the end.</p></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.4</span> <span class="title">Repeated poles and resonance</span>
 </h3>
-<p id="p-529">Repeated poles in the Laplace transform of a solution appear in the form of denominator terms such as \((s-a)^k\) or \((s^2+\omega^2)^k\) with \(k \gt 1\text{.}\) They can arise in two ways: from repeated eigenvalues in the homogeneous ODE (e.g., critical damping), or because the forcing function has a pole in common with one of the eigenvalues (e.g., perfect resonance).</p>
-<p id="p-530">Consider inverting the double real pole</p>
+<p id="p-533">Repeated poles in the Laplace transform of a solution appear in the form of denominator terms such as \((s-a)^k\) or \((s^2+\omega^2)^k\) with \(k \gt 1\text{.}\) They can arise in two ways: from repeated eigenvalues in the homogeneous ODE (e.g., critical damping), or because the forcing function has a pole in common with one of the eigenvalues (e.g., perfect resonance).</p>
+<p id="p-534">Consider inverting the double real pole</p>
 <div class="displaymath">
 \begin{equation*}
 X(s) = \frac{1}{(s-a)^2}\text{.}
@@ -580,7 +580,7 @@ X(s) = \frac{1}{(s-a)^2}\text{.}
 <p data-braille="continuation">The special case \(a=0\) allows us to transform any power of \(t\text{,}\) and therefore any polynomial.</p>
 <article class="example example-like" id="example-81"><a data-knowl="" class="id-ref original" data-refid="hk-example-81"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.9</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-81"><article class="example example-like"><p id="p-531">The critically damped oscillator \(x'' + 6x' + 9=0\) has a double eigenvalue at \(-3\text{.}\) To find the solution with \(x(0)=0\text{,}\) \(x'(0)=6\text{,}\) we use the transform to find</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-81"><article class="example example-like"><p id="p-535">The critically damped oscillator \(x'' + 6x' + 9=0\) has a double eigenvalue at \(-3\text{.}\) To find the solution with \(x(0)=0\text{,}\) \(x'(0)=6\text{,}\) we use the transform to find</p>
 <div class="displaymath">
 \begin{equation*}
 [s^2X(s) - 6] + 6[sX(s)] + 9[X(s)] = 0 \quad \Rightarrow \quad X(s) = \frac{6}{(s+3)^2}.
@@ -592,7 +592,7 @@ X(s) = \frac{1}{(s-a)^2}\text{.}
 x(t) = 6t e^{-3t}\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-532">If you look carefully at the derivation of <a class="xref" data-knowl="./knowl/so-eq-repeatedexp.html" title="Equation 4.6.1">(4.6.1)</a>, you will see that the identity of \(f(t)\) played no role in the key steps. As shown in <a class="xref" data-knowl="./knowl/so-tab-laplace.html" title="Table 4.6.1: Laplace transforms (complete)">Table 4.6.1</a>, we can repeat the calculation for a generic \(F(s)\text{:}\)</p>
+<p id="p-536">If you look carefully at the derivation of <a class="xref" data-knowl="./knowl/so-eq-repeatedexp.html" title="Equation 4.6.1">(4.6.1)</a>, you will see that the identity of \(f(t)\) played no role in the key steps. As shown in <a class="xref" data-knowl="./knowl/so-tab-laplace.html" title="Table 4.6.1: Laplace transforms (complete)">Table 4.6.1</a>, we can repeat the calculation for a generic \(F(s)\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \lx[t^n f(t) ] = (-1)^n F^{(n)}(s), \qquad n=1,2,3,\dots.
@@ -601,7 +601,7 @@ x(t) = 6t e^{-3t}\text{.}
 <p data-braille="continuation">Take a moment to appreciate this. Earlier we found that a derivative in \(t\) essentially corresponds to multiplying by \(s\text{.}\) Up to a change in sign, a derivative in \(s\) corresponds to multiplying by \(t\text{!}\)</p>
 <article class="example example-like" id="example-82"><a data-knowl="" class="id-ref original" data-refid="hk-example-82"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.6.10</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-82"><article class="example example-like"><p id="p-533">The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. From zero initial conditions we have</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-82"><article class="example example-like"><p id="p-537">The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. From zero initial conditions we have</p>
 <div class="displaymath">
 \begin{equation*}
 X(s) = \frac{3}{(s^2+9)^2}\text{.}

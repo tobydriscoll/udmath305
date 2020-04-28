@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:50-04:00    *-->
+<!--*    on 2020-04-28T13:41:42-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -417,13 +417,18 @@ e^{t\bA} = e^{t\lambda\bI}e^{t(\bA-\lambda\bI)} = e^{-t}\twomat{1}{t}{0}{1}\text
 <a href="fs-matrix-exp.html#fs-exer-matrixexp" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-19"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Diagonal matrix.</span>
 </h6>
-<p id="p-435">Show that the exponential of a diagonal matrix \(\diag(t\lambda_1,t\lambda_2,\dots,t\lambda_n)\) is the diagonal matrix \(\diag(e^{t\lambda_1},e^{t\lambda_2},\dots,e^{t\lambda_n})\text{.}\)</p>
+<p id="p-435">Show that for a diagonal matrix \(\bD=\diag(\lambda_1,\lambda_2,\dots,\lambda_n)\text{,}\) the exponential is the diagonal matrix</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bD} = \diag(e^{t\lambda_1},e^{t\lambda_2},\dots,e^{t\lambda_n})\text{.}
+\end{equation*}
+</div>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-hint-7" id="hint-7"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like"><p id="p-436">What do the powers of a diagonal matrix look like?</p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-20"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Rotation matrix.</span>
 </h6>
-<p id="p-437">Find \(e^{t\bA}\) if \(\bA=\twomat{0}{-1}{1}{0}\text{.}\) Then show that if the initial condition is expressed in polar form,</p>
+<p id="p-438">Find \(e^{t\bA}\) if \(\bA=\twomat{0}{-1}{1}{0}\text{.}\) Then show that if the initial condition is expressed in polar form,</p>
 <div class="displaymath">
 \begin{equation*}
 \bx(0) = \twovec{r\cos\theta}{r\sin\theta},
@@ -437,11 +442,11 @@ e^{t\bA} = e^{t\lambda\bI}e^{t(\bA-\lambda\bI)} = e^{-t}\twomat{1}{t}{0}{1}\text
 </div>
 <p data-braille="continuation">(In other words, the solution just moves with unit angular velocity around the circle of radius \(r\text{.}\))</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-answer-16" id="answer-16"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-16"><div class="answer solution-like"><p id="p-438">\(e^{t\bA} = \twomat{\cos t}{-\sin t}{\sin t}{\cos t}\)</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-16" id="answer-16"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-16"><div class="answer solution-like"><p id="p-439">\(e^{t\bA} = \twomat{\cos t}{-\sin t}{\sin t}{\cos t}\)</p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-21"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Noncommutative pair.</span>
 </h6>
-<p id="p-439">Calculate \(e^\mathbf{L}\) and \(e^\mathbf{U}\) if</p>
+<p id="p-441">Calculate \(e^\mathbf{L}\) and \(e^\mathbf{U}\) if</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf{U} = \twomat{0}{-1}{0}{0}, \qquad \mathbf{L} = \twomat{0}{0}{1}{0}. 
@@ -450,33 +455,49 @@ e^{t\bA} = e^{t\lambda\bI}e^{t(\bA-\lambda\bI)} = e^{-t}\twomat{1}{t}{0}{1}\text
 <p data-braille="continuation">Then show that</p>
 <div class="displaymath">
 \begin{equation*}
-e^{\mathbf{L}+\mathbf{U}} \neq e^\mathbf{L}\,e^\mathbf{U}.
+e^{t(\mathbf{L}+\mathbf{U})} \neq e^{t\mathbf{L}}\,e^{t\mathbf{U}}.
 \end{equation*}
 </div>
 <p data-braille="continuation">(The result of the “rotation matrix” exercise can provide the left-hand side.) This happens because \(\mathbf{L}\mathbf{U}\neq \mathbf{U}\mathbf{L}\text{.}\)</p>
 <div class="solutions">
 <a data-knowl="" class="id-ref original" data-refid="hk-answer-17" id="answer-17"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-17"><div class="answer solution-like">
-<div class="displaymath" id="p-440">
+<div class="displaymath" id="p-442">
 \begin{equation*}
-e^\mathbf{U} = \twomat{1}{-t}{0}{1}, \qquad e^\mathbf{L} = \twomat{1}{0}{t}{1}
+e^{t\mathbf{U}} = \twomat{1}{-t}{0}{1}, \qquad e^{t\mathbf{L}} = \twomat{1}{0}{t}{1}
 \end{equation*}
 </div>
 <div class="displaymath">
 \begin{equation*}
-e^\mathbf{L}\,e^\mathbf{U} = \twomat{1}{-t}{t}{1-t^2}
+e^{t\mathbf{L}}\,e^{t\mathbf{U}} = \twomat{1}{-t}{t}{1-t^2}
 \end{equation*}
 </div>
 </div></div>
 </div></article><article class="exercise exercise-like" id="exercise-22"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">A 3-by-3 case.</span>
 </h6>
-<p id="p-441">Find \(e^{t\bA}\) if \(\bA=\begin{bmatrix}  0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \\ 0 \amp 0 \amp 0 \end{bmatrix}\text{.}\)</p>
+<p id="p-444">Find \(e^{t\bA}\) if \(\bA=\begin{bmatrix}  0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \\ 0 \amp 0 \amp 0 \end{bmatrix}\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-hint-8" id="hint-8"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-8"><div class="hint solution-like"><p id="p-442">Start taking powers.</p></div></div>
-<a data-knowl="" class="id-ref original" data-refid="hk-answer-18" id="answer-18"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-18"><div class="answer solution-like"><p id="p-443">\(e^{t\bA} =\begin{bmatrix}  1 \amp t \amp t^2/2 \\ 0 \amp 1 \amp t \\ 0 \amp 0 \amp 1 \end{bmatrix}\)</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-8" id="hint-8"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-8"><div class="hint solution-like"><p id="p-445">Start taking powers.</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-18" id="answer-18"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-18"><div class="answer solution-like"><p id="p-446">\(e^{t\bA} =\begin{bmatrix}  1 \amp t \amp t^2/2 \\ 0 \amp 1 \amp t \\ 0 \amp 0 \amp 1 \end{bmatrix}\)</p></div></div>
 </div></article></section><section class="solutions" id="solutions-7"><h3 class="heading hide-type">
 <span class="type">Solutions</span> <span class="codenumber">3.6.4</span> <span class="title">Solutions</span>
-</h3></section></section></div></main>
+</h3>
+<section class="exercises"><h4 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.6.3</span> <span class="title">Challenge problems for matrix exponentials</span>
+</h4>
+<a href="fs-matrix-exp.html#fs-exer-matrixexp" class="permalink">¶</a><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">3.6.3.1<span class="period">.</span></span><span class="space"> </span><span class="title">Diagonal matrix.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-18-hidden.html" title="Solution 3.6.3.1.1"><span class="type">Solution</span></a></div></article><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">3.6.3.2<span class="period">.</span></span><span class="space"> </span><span class="title">Rotation matrix.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-19-hidden.html" title="Solution 3.6.3.2.1"><span class="type">Solution</span></a></div></article><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">3.6.3.3<span class="period">.</span></span><span class="space"> </span><span class="title">Noncommutative pair.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-20-hidden.html" title="Solution 3.6.3.3.1"><span class="type">Solution</span></a></div></article><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">3.6.3.4<span class="period">.</span></span><span class="space"> </span><span class="title">A 3-by-3 case.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-21-hidden.html" title="Solution 3.6.3.4.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

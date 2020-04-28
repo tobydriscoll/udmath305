@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:54-04:00    *-->
+<!--*    on 2020-04-28T13:41:46-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,31 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To solve \(x'' - 4x + 3x = 6\) with \(x(0)=-2\text{,}\) \(x'(0)=4\text{,}\)  we take transforms to obtain</p>
+<p>Recall that the transform of \(x'(t)\) is \(sX(s)-x(0)\text{.}\) Applying this formula twice shows that</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{-2s + 8 + 4}{(s-3)(s-1)} + \frac{6}{s(s-3)(s-1)} .
+\lx[x''(t)] = s \lx[x'(t)] - x'(0) = s^2X(s) - sx(0) - x'(0)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The PFD of this has the form</p>
+<p data-braille="continuation">When we apply this to \(x''+bx'+cx=f(t)\) with constant coefficients, we obtain</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{A}{s-3} + \frac{B}{s-1} + \frac{C}{s}.
+[s^2X(s) - sx(0)-x'(0)] + b[sX(s)-x(0)] + cX(s) = F(s)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Equating and clearing the denominators leads to</p>
+<p data-braille="continuation">It is now trivial to solve for \(X(s)\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-(s)(12-2s) + 6 = As(s-1) + Bs(s-3) + C(s-1)(s-3).
+X(s) = \frac{ (s+b)x(0)+x'(0)}{s^2 +bs+c} +  \frac{F(s)}{s^2 +bs+c}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The values \(s=0,s=1,s=3\text{,}\) which are simply the poles of \(X\text{,}\) leave especially simple equations: \(6=3C\text{,}\) \(10+6=-2B\text{,}\) and \(18+6=6A\text{.}\) Hence</p>
-<div class="displaymath">
-\begin{equation*}
-X(s) = 4\, \frac{1}{s-3} - 8\, \frac{1}{s-1} + 2\, \frac{1}{s}.
-\end{equation*}
-</div>
-<p data-braille="continuation">This inverts easily to give \(x(t) = 4e^{3t} -  8e^t + 2\text{.}\)</p>
+<p data-braille="continuation">The first fraction above is what leads to the free or unforced response, while the second is the effect of the forcing when the initial conditions are zero. The denominator in both cases is simply the characteristic polynomial of the ODE.</p>
 <span class="incontext"><a href="so-laplace.html#p-520">in-context</a></span>
 </body>
 </html>

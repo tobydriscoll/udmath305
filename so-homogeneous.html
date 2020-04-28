@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:51-04:00    *-->
+<!--*    on 2020-04-28T13:41:42-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,14 +209,14 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-homogeneous"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Homogeneous problem</span>
 </h2>
-<a href="so-homogeneous.html" class="permalink">¶</a><section class="introduction" id="introduction-16"><p id="p-459">Referring to <a class="xref" data-knowl="./knowl/so-eq-companion.html" title="Equation 4.1.3">(4.1.3)</a>, the homogeneous equation \(x''+bx'+cx=0\) can be recast as a first-order homogeneous system \(\bu'=\bA\bu\) through the definitions</p>
+<a href="so-homogeneous.html" class="permalink">¶</a><section class="introduction" id="introduction-16"><p id="p-463">Referring to <a class="xref" data-knowl="./knowl/so-eq-companion.html" title="Equation 4.1.3">(4.1.3)</a>, the homogeneous equation \(x''+bx'+cx=0\) can be recast as a first-order homogeneous system \(\bu'=\bA\bu\) through the definitions</p>
 <div class="displaymath">
 \begin{equation*}
 \bu = \twovec{x}{x'},\qquad  \bA = \twomat{0}{1}{-c}{-b}\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">Note that an initial-value problem for the system specifies \(\bu(0)\text{,}\) or equivalently, both \(x(0)\) and \(x'(0)\text{.}\) Hence <em class="alert">a second-order scalar problem requires two initial conditions to have a unique solution.</em></p>
-<p id="p-460">The matrix in this system has the characteristic polynomial</p>
+<p id="p-464">The matrix in this system has the characteristic polynomial</p>
 <div class="displaymath">
 \begin{equation*}
 |\bA-\lambda\bI| = \twodet{-\lambda}{1}{-c}{-b-\lambda} = \lambda^2 + b\lambda + c\text{.}
@@ -225,7 +225,7 @@ var js_version = 0.13;
 <p data-braille="continuation">This is easily remembered in terms of the original ODE \(x'' + bx' + cx=0\text{.}\) The eigenvalues can therefore be found from the quadratic formula.</p></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Distinct eigenvalues</span>
 </h3>
-<p id="p-461">In the nondefective case, we find the eigenvectors from the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{.}\) Thus the general homogeneous solution is</p>
+<p id="p-465">In the nondefective case, we find the eigenvectors from the nullspaces of \(\bA-\lambda_j\bI\) for \(j=1,2\text{.}\) These have the basis vectors \([1,\,\lambda_j]\text{.}\) Thus the general homogeneous solution is</p>
 <div class="displaymath">
 \begin{equation*}
 \bu_h(t) = c_1 e^{\lambda_1 t} \twovec{1}{\lambda_1} + c_2 e^{\lambda_2 t} \twovec{1}{\lambda_2}\text{.}
@@ -276,16 +276,16 @@ R\cos(\theta) = a_1, \qquad R\sin(\theta) = a_2.
 <p data-braille="continuation">More simply, we can think of \((a_1,a_2)\) as Cartesian coordinates and express the same point in polar form to get \((R,\theta)\text{.}\) Usually the amplitude, \(R=\sqrt{a_1^2+a_2^2}\text{,}\) is of the most interest. Whichever form is chosen for the general solution, it has two real constants that can be determined by the initial conditions, if supplied.</p>
 <article class="example example-like" id="example-63"><a data-knowl="" class="id-ref original" data-refid="hk-example-63"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-63"><article class="example example-like"><p id="p-462">Let's find the general solution of \(x''+5x'+6x=0\text{.}\) The characteristic polynomial is \(\lambda^2+5\lambda+6\text{,}\) which has roots \(\lambda_1=-2\text{,}\) \(\lambda_2=-3\text{.}\) Thus \(x(t)=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p></article></div>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-63"><article class="example example-like"><p id="p-466">Let's find the general solution of \(x''+5x'+6x=0\text{.}\) The characteristic polynomial is \(\lambda^2+5\lambda+6\text{,}\) which has roots \(\lambda_1=-2\text{,}\) \(\lambda_2=-3\text{.}\) Thus \(x(t)=c_1 e^{-2t}+c_2e^{-3t}\text{.}\)</p></article></div>
 <article class="example example-like" id="example-64"><a data-knowl="" class="id-ref original" data-refid="hk-example-64"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-64"><article class="example example-like"><p id="p-463">The characteristic polynomial of \(x''-2x'=0\) is \(\lambda^2 - 2\lambda\text{,}\) which has roots \(\lambda_1=0\text{,}\) \(\lambda_2=2\text{.}\) Thus \(x(t)=c_1 + c_2e^{2t}\text{.}\)</p></article></div>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-64"><article class="example example-like"><p id="p-467">The characteristic polynomial of \(x''-2x'=0\) is \(\lambda^2 - 2\lambda\text{,}\) which has roots \(\lambda_1=0\text{,}\) \(\lambda_2=2\text{.}\) Thus \(x(t)=c_1 + c_2e^{2t}\text{.}\)</p></article></div>
 <article class="example example-like" id="example-65"><a data-knowl="" class="id-ref original" data-refid="hk-example-65"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-65"><article class="example example-like"><p id="p-464">To solve \(3x''+6x'+30x=0\text{,}\) we first should divide through by 3 to get the standard form. Then the characteristic polynomial is \(\lambda^2 + 2\lambda + 10\text{,}\) which has roots \(-1\pm 3i\text{.}\) So \(x(t) = e^{-t}[c_1 e^{3it} + \overline{c_1}e^{-3it}]\text{.}\) Equivalently, \(x(t) = e^{-t}[a_1 \cos(3t) + a_2\sin(3t)]\text{,}\) or \(x(t) = R e^{-t}\cos(3t-\theta)\text{.}\)</p></article></div></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-65"><article class="example example-like"><p id="p-468">To solve \(3x''+6x'+30x=0\text{,}\) we first should divide through by 3 to get the standard form. Then the characteristic polynomial is \(\lambda^2 + 2\lambda + 10\text{,}\) which has roots \(-1\pm 3i\text{.}\) So \(x(t) = e^{-t}[c_1 e^{3it} + \overline{c_1}e^{-3it}]\text{.}\) Equivalently, \(x(t) = e^{-t}[a_1 \cos(3t) + a_2\sin(3t)]\text{,}\) or \(x(t) = R e^{-t}\cos(3t-\theta)\text{.}\)</p></article></div></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.2</span> <span class="title">Repeated eigenvalue</span>
 </h3>
-<p id="p-465">If the companion matrix has a double eigenvalue, then it is defective (unless \(b=c=0\text{,}\) which leaves the truly trivial problem \(x''=0\)). In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) Recalling the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.6.2: Defective matrix">Subsection 3.6.2</a>, we define</p>
+<p id="p-469">If the companion matrix has a double eigenvalue, then it is defective (unless \(b=c=0\text{,}\) which leaves the truly trivial problem \(x''=0\)). In terms of the original ODE, this occurs when \(b^2=4c\text{,}\) and then \(\lambda_1=\lambda_2=-b/2\text{.}\) Recalling the trick used in <a href="fs-matrix-exp.html#fs-me-defective" class="internal" title="Subsection 3.6.2: Defective matrix">Subsection 3.6.2</a>, we define</p>
 <div class="displaymath">
 \begin{equation*}
 \bB = \bA + \frac{b}{2}\bI = \twomat{b/2}{1}{-c}{-b/2} = \twomat{b/2}{1}{-b^2/4}{-b/2}\text{.}
@@ -311,13 +311,13 @@ x_h(t) = e^{-bt/2} \left( c_1 + c_2 t\right) , \qquad \text{if } \lambda_1 = \la
 </div>
 <article class="example example-like" id="example-66"><a data-knowl="" class="id-ref original" data-refid="hk-example-66"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-66"><article class="example example-like"><p id="p-466">The characteristic polynomial of \(x''-4x'+4x=0\) is \(\lambda^2 - 4\lambda + 4\text{,}\) which has a double root at 2. Hence \(x(t)=e^{2t}(c_1+c_2 t)\) is the general solution.</p></article></div></section><section class="exercises" id="so-exer-homog"><h3 class="heading hide-type">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-66"><article class="example example-like"><p id="p-470">The characteristic polynomial of \(x''-4x'+4x=0\) is \(\lambda^2 - 4\lambda + 4\text{,}\) which has a double root at 2. Hence \(x(t)=e^{2t}(c_1+c_2 t)\) is the general solution.</p></article></div></section><section class="exercises" id="so-exer-homog"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">4.2.3</span> <span class="title">Exercises</span>
 </h3>
 <a href="so-homogeneous.html#so-exer-homog" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-24"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Inverted pendulum.</span>
 </h6>
-<p id="p-467">The nonlinear pendulum equation \(\theta''+\gamma \theta' + \frac{g}{L}\sin(\theta) = 0\) has an equilibrium at \(\theta=0\text{,}\) which is the downward position. But it also has an equilibrium at the upward or inverted position, \(\theta=\pi\text{.}\) Show that the change of variable \(\phi=\pi-\theta\) leads to</p>
+<p id="p-471">The nonlinear pendulum equation \(\theta''+\gamma \theta' + \frac{g}{L}\sin(\theta) = 0\) has an equilibrium at \(\theta=0\text{,}\) which is the downward position. But it also has an equilibrium at the upward or inverted position, \(\theta=\pi\text{.}\) Show that the change of variable \(\phi=\pi-\theta\) leads to</p>
 <div class="displaymath">
 \begin{equation*}
 \phi'' + \gamma \phi' - \frac{g}{L}\sin(\phi) = 0,
@@ -338,7 +338,7 @@ x_h(t) = e^{-bt/2} \left( c_1 + c_2 t\right) , \qquad \text{if } \lambda_1 = \la
 <a href="so-homogeneous.html#so-exer-homog" class="permalink">¶</a><article class="exercise-like"><h6 class="heading">
 <span class="codenumber">4.2.3.1<span class="period">.</span></span><span class="space"> </span><span class="title">Inverted pendulum.</span>
 </h6>
-<div class="solutions"><a class="original" data-knowl="./knowl/solution-19-hidden.html" title="Solution 4.2.3.1.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-23-hidden.html" title="Solution 4.2.3.1.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

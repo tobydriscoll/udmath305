@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:54-04:00    *-->
+<!--*    on 2020-04-28T13:41:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,10 +14,12 @@
 <body>
 <div class="displaymath">
 \begin{align*}
-u_1' \amp =  u_2\\
-u_2' \amp =  f(t,u_1,u_2).
+e^{t\bA} \amp = \frac{1}{2i} \twomat{1}{1}{-i}{i} \twodiag{e^{it}}{e^{-it}} \twomat{i}{-1}{i}{1} \\
+\amp = -\frac{1}{2} \twomat{i}{i}{1}{-1}  \twomat{ie^{it}}{-e^{it}}{ie^{-it}}{e^{-it}} \\
+\amp = -\frac{1}{2} \twomat{-e^{it}-e^{-it}}{-ie^{it}+ie^{-it}}{ie^{it}-ie^{-it}}{-e^{it}-e^{-it}} \\
+\amp =  \twomat{\cos(t)}{-\sin(t)}{\sin(t)}{\cos(t)} 
 \end{align*}
 </div>
-<span class="incontext"><a href="so-convert.html#mjx-eqn-mrow-112">in-context</a></span>
+<span class="incontext"><a href="fs-matrix-exp.html#mjx-eqn-mrow-112">in-context</a></span>
 </body>
 </html>

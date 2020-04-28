@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:55-04:00    *-->
+<!--*    on 2020-04-28T13:41:46-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,36 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The undamped oscillator \(x''+9x=\sin(3t)\) has a perfect resonance. From zero initial conditions we have</p>
-<div class="displaymath">
-\begin{equation*}
-X(s) = \frac{3}{(s^2+9)^2}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">We are going to use</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{d}{ds} \left[ \frac{3}{s^2+9} \right] = \frac{-6s}{(s^2+9)^2}.
-\end{equation*}
-</div>
-<p data-braille="continuation">Specifically, if we designate \(G(s)=2sX(s)\text{,}\) then we know that</p>
-<div class="displaymath">
-\begin{equation*}
-\lx[ t \sin(3t) ] = -\frac{d}{ds} \left[ \frac{3}{s^2+9} \right] = G(s),
-\end{equation*}
-</div>
-<p data-braille="continuation">and therefore \(g(t)=t\sin(3t)\text{.}\) Next, note that</p>
-<div class="displaymath">
-\begin{equation*}
-2\lx[x'(t)] = 2[sX(s)-X(0)] = G(s).
-\end{equation*}
-</div>
-<p data-braille="continuation">Hence \(x'(t) = \frac{1}{2} t \sin(3t)\text{,}\) and integration by parts yields</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
-\end{equation*}
-</div>
+<p>Repeated poles in the Laplace transform of a solution appear in the form of denominator terms such as \((s-a)^k\) or \((s^2+\omega^2)^k\) with \(k \gt 1\text{.}\) They can arise in two ways: from repeated eigenvalues in the homogeneous ODE (e.g., critical damping), or because the forcing function has a pole in common with one of the eigenvalues (e.g., perfect resonance).</p>
 <span class="incontext"><a href="so-laplace.html#p-533">in-context</a></span>
 </body>
 </html>

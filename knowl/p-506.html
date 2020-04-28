@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:54-04:00    *-->
+<!--*    on 2020-04-28T13:41:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If \(\omega\approx \omega_0\text{,}\) then the amplitude of the particular solution is very large.</p>
+<p>Exponential forcing is particularly important when \(r\) is imaginary. Set \(r=i\omega\) in the above. The particular solution</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = A(i\omega) e^{i\omega t}
+\end{equation*}
+</div>
+<p data-braille="continuation">is complex; say we decompose it as \(x_p(t)=u_p(t)+i\, v_p(t)\text{.}\) Using operator notation to write \(\opA[x_p]=e^{i\omega t}\text{,}\) linearity implies</p>
+<div class="displaymath">
+\begin{equation*}
+\opA[u_p] + i\,\opA[v_p] = \cos(\omega t) + i\sin(\omega t)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Matching real and imaginary parts gives us</p>
+<div class="displaymath">
+\begin{align*}
+\opA[u_p] \amp = \cos(\omega t), \\
+\opA[v_p]  \amp = \sin(\omega t). 
+\end{align*}
+</div>
+<p data-braille="continuation">In words, the particular solution for imaginary-exponential forcing gives us the solutions we need for all cosine and sine forcing. All combinations of such forcing functions can be described as <dfn class="terminology">harmonic forcing</dfn>.</p>
 <span class="incontext"><a href="so-expforcing.html#p-506">in-context</a></span>
 </body>
 </html>

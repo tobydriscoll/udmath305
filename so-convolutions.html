@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:51-04:00    *-->
+<!--*    on 2020-04-28T13:41:43-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,10 +209,10 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-convolutions"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.7</span> <span class="title">Convolution</span>
 </h2>
-<a href="so-convolutions.html" class="permalink">¶</a><section class="introduction" id="introduction-20"><p id="p-534"></p></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
+<a href="so-convolutions.html" class="permalink">¶</a><section class="introduction" id="introduction-20"><p id="p-538"></p></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Moving averages</span>
 </h3>
-<p id="p-535">The following grabs and plots the closing price of Bitcoin for the last 31 days.</p>
+<p id="p-539">The following grabs and plots the closing price of Bitcoin for the last 31 days.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="so_conv_bitcoin1"><pre class="prettyprint lang-matlab">load bitcoindata
 v = struct2cell(data.bpi);
@@ -222,7 +222,7 @@ plot(v,'-o')
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.7.1<span class="period">.</span></span><span class="space"> </span>Raw bitcoin price data</figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/so_conv_bitcoin1.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-536">It's a noisy curve. We can smooth that out by taking 4-day moving averages, for example. I don't claim that this is the best way, but we can do this by:</p>
+<p id="p-540">It's a noisy curve. We can smooth that out by taking 4-day moving averages, for example. I don't claim that this is the best way, but we can do this by:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="so_conv_bitcoin2"><pre class="prettyprint lang-matlab">load bitcoindata
 v = struct2cell(data.bpi);
@@ -237,7 +237,7 @@ hold on, plot(z,'-o')
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.7.2<span class="period">.</span></span><span class="space"> </span>Data with 4-day moving average</figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/so_conv_bitcoin2.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-537">We might decide, however, to weight the most recent values more heavily. Here's how this might look.</p>
+<p id="p-541">We might decide, however, to weight the most recent values more heavily. Here's how this might look.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="so_conv_bitcoin3"><pre class="prettyprint lang-matlab">load bitcoindata
 v = struct2cell(data.bpi);
@@ -254,10 +254,10 @@ hold on, plot(z,'-o')
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">4.7.3<span class="period">.</span></span><span class="space"> </span>Data with weighted moving average</figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/so_conv_bitcoin3.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-538">Note that each new value \(z_i\) is a linear combination of the elements of \(v\text{,}\) weighted by the values in \(w\text{.}\) And we always go forward 1,2,3,4 in \(w\text{,}\) while on \(v\) we have a sliding group going backward: \(i,i-1,i-2,i-3\text{.}\) Put concisely, the indices add up to the constant value \(i+1\text{.}\)</p></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
+<p id="p-542">Note that each new value \(z_i\) is a linear combination of the elements of \(v\text{,}\) weighted by the values in \(w\text{.}\) And we always go forward 1,2,3,4 in \(w\text{,}\) while on \(v\) we have a sliding group going backward: \(i,i-1,i-2,i-3\text{.}\) Put concisely, the indices add up to the constant value \(i+1\text{.}\)</p></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.2</span> <span class="title">Convolution integral</span>
 </h3>
-<p id="p-539">The moving average above gave us a certain way to multiply together vectors \(v\) and \(w\) to get a new vector \(z\text{:}\)</p>
+<p id="p-543">The moving average above gave us a certain way to multiply together vectors \(v\) and \(w\) to get a new vector \(z\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 z_i =  \sum_{j} w_j v_{i-j} 
@@ -270,7 +270,7 @@ z_i =  \sum_{j} w_j v_{i-j}
 \end{equation*}
 </div>
 <p data-braille="continuation">This too is like a weighted average, with the values of \(g(\tau)\) being multiplied against different windows of the function \(f\) such that the arguments sum to \(t\text{.}\)</p>
-<p id="p-540">An interesting fact is that while I interpreted \(f*g\) as \(g\) acting on \(f\text{,}\) in fact the operation is commutative:</p>
+<p id="p-544">An interesting fact is that while I interpreted \(f*g\) as \(g\) acting on \(f\text{,}\) in fact the operation is commutative:</p>
 <div class="displaymath">
 \begin{align*}
 [g*f](t) \amp = \int_0^t f(t-\tau)g(\tau)\, d\tau\\
@@ -282,27 +282,27 @@ z_i =  \sum_{j} w_j v_{i-j}
 <article class="fact theorem-like" id="so-fact-convolution"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.7.4</span><span class="period">.</span>
 </h6>
-<p id="p-541">The following statements are true for functions defined for \(t\ge 0\text{.}\)</p>
+<p id="p-545">The following statements are true for functions defined for \(t\ge 0\text{.}\)</p>
 <ol class="decimal">
 <li id="li-68">\(\displaystyle f*g = g*f\)</li>
 <li id="li-69">\(\displaystyle (f*g)*h = f*(g*h)\)</li>
 <li id="li-70">\(\displaystyle f*(g+h) = (f*g) + (f*h)\)</li>
 <li id="li-71">\(f*0=0\quad\) (zero function)</li>
 <li id="li-72">\(\displaystyle f*\delta = f\)</li>
-</ol></article><p id="p-542">The last of these facts is the only slight curveball. It says that the delta impulse serves as the identity in convolution operations.</p></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+</ol></article><p id="p-546">The last of these facts is the only slight curveball. It says that the delta impulse serves as the identity in convolution operations.</p></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.3</span> <span class="title">Transfer function and impulse response</span>
 </h3>
-<p id="p-543">Following what we did for first-order problems, we make the following definitions.</p>
+<p id="p-547">Following what we did for first-order problems, we make the following definitions.</p>
 <article class="definition definition-like" id="s0-def-impulsetransfer"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.7.5</span><span class="period">.</span>
 </h6>
-<p id="p-544">For the operator \(\opA[x]=x'' + bx'+cx\) with constant coefficients, we define the <dfn class="terminology">impulse response</dfn> as the solution of</p>
+<p id="p-548">For the operator \(\opA[x]=x'' + bx'+cx\) with constant coefficients, we define the <dfn class="terminology">impulse response</dfn> as the solution of</p>
 <div class="displaymath">
 \begin{equation*}
 \opA[x] = \delta(t), \quad x(0)=x'(0)=0.
 \end{equation*}
 </div>
-<p data-braille="continuation">We will use \(g(t)\) to denote the impulse response. We also define the <dfn class="terminology">transfer function</dfn> of the ODE to be the transform \(G(s)\) of the impulse response.</p></article><p id="p-545">Because the transform of delta is one, the immediate consequence of combining these definitions is</p>
+<p data-braille="continuation">We will use \(g(t)\) to denote the impulse response. We also define the <dfn class="terminology">transfer function</dfn> of the ODE to be the transform \(G(s)\) of the impulse response.</p></article><p id="p-549">Because the transform of delta is one, the immediate consequence of combining these definitions is</p>
 <div class="displaymath">
 \begin{equation*}
 s^2 G + bs G + cG  = 1 \quad\Rightarrow\quad G(s) = \frac{1}{s^2+bs+c}.
@@ -311,7 +311,7 @@ s^2 G + bs G + cG  = 1 \quad\Rightarrow\quad G(s) = \frac{1}{s^2+bs+c}.
 <p data-braille="continuation">In words, <em class="alert">the transfer function is the recciprocal of the characteristic polynomial.</em></p>
 <article class="example example-like" id="example-83"><a data-knowl="" class="id-ref original" data-refid="hk-example-83"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-83"><article class="example example-like"><p id="p-546">The transform of \(x''-5x'+4x=\delta(t)\) with zero initial conditions leads to</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-83"><article class="example example-like"><p id="p-550">The transform of \(x''-5x'+4x=\delta(t)\) with zero initial conditions leads to</p>
 <div class="displaymath">
 \begin{equation*}
 X(s) = G(s) = \frac{1}{s^2+5s+4} = \frac{A}{s+1} + \frac{B}{s+4}. 
@@ -323,7 +323,7 @@ X(s) = G(s) = \frac{1}{s^2+5s+4} = \frac{A}{s+1} + \frac{B}{s+4}.
 g(t) = \frac{1}{3}(e^{-t}-e^{-4t}).
 \end{equation*}
 </div></article></div>
-<p id="p-547">It is trivial to generalize the previous example to any distinct eigenvalues \(\lambda_1,\lambda_2\text{:}\)</p>
+<p id="p-551">It is trivial to generalize the previous example to any distinct eigenvalues \(\lambda_1,\lambda_2\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 g(t) = \frac{1}{\lambda_1-\lambda_2}\bigl(e^{\lambda_1 t}-e^{\lambda_2 t}\bigr). 
@@ -333,14 +333,14 @@ g(t) = \frac{1}{\lambda_1-\lambda_2}\bigl(e^{\lambda_1 t}-e^{\lambda_2 t}\bigr).
 <article class="fact theorem-like" id="so-fact-jump"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">4.7.7</span><span class="period">.</span>
 </h6>
-<p id="p-548">In second order problems, an impulse is equivalent to an instantaneous jump in the derivative of the solution.</p></article><p id="p-549">This fact modifies the observation in first-order problems that the delta causes a jump in <em class="emphasis">value</em>.</p></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
+<p id="p-552">In second order problems, an impulse is equivalent to an instantaneous jump in the derivative of the solution.</p></article><p id="p-553">This fact modifies the observation in first-order problems that the delta causes a jump in <em class="emphasis">value</em>.</p></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.4</span> <span class="title">Convolution theorem</span>
 </h3>
-<p id="p-550">Here is what makes convolution a really big deal.</p>
+<p id="p-554">Here is what makes convolution a really big deal.</p>
 <article class="theorem theorem-like" id="theorem-13"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.8</span><span class="period">.</span>
 </h6>
-<p id="p-551">Suppose \(\lx[f] = F(s)\text{,}\) \(\lx[g] = G(s)\text{,}\) \(x=f*g\text{,}\) and \(\lx[x] = X(s)\text{.}\) Then \(X(s)=F(s)G(s)\text{.}\)</p></article><p id="p-552">Why does this matter? Consider finding a particular solution of \(x''+bx'+cx=f(t)\) with zero initial conditions. After taking transforms we get</p>
+<p id="p-555">Suppose \(\lx[f] = F(s)\text{,}\) \(\lx[g] = G(s)\text{,}\) \(x=f*g\text{,}\) and \(\lx[x] = X(s)\text{.}\) Then \(X(s)=F(s)G(s)\text{.}\)</p></article><p id="p-556">Why does this matter? Consider finding a particular solution of \(x''+bx'+cx=f(t)\) with zero initial conditions. After taking transforms we get</p>
 <div class="displaymath">
 \begin{equation*}
 X_p(s) = \frac{1}{s^2+bs+c} F(s) = G(s) F(s)\text{,}
@@ -349,7 +349,7 @@ X_p(s) = \frac{1}{s^2+bs+c} F(s) = G(s) F(s)\text{,}
 <p data-braille="continuation">where \(G(s)\) is the transfer function. Right away then, we know that \(x_p(t)=f(t)*g(t)\) is that particular solution. In theory, knowing the impulse response is enough to write down the solution of any forced problem.</p>
 <article class="example example-like" id="example-84"><a data-knowl="" class="id-ref original" data-refid="hk-example-84"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.9</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-84"><article class="example example-like"><p id="p-553">Above we found the impulse response of \(x''-5x'+4x\) to be \(g(t)=\frac{1}{3}=(e^{-t}-e^{-4t})\text{.}\) Hence a particular solution for forcing function \(f\) is</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-84"><article class="example example-like"><p id="p-557">Above we found the impulse response of \(x''-5x'+4x\) to be \(g(t)=\frac{1}{3}=(e^{-t}-e^{-4t})\text{.}\) Hence a particular solution for forcing function \(f\) is</p>
 <div class="displaymath">
 \begin{align*}
 x_p(t) \amp = f*g = \frac{1}{3} \int_0^t ( e^{-t+\tau}-e^{-4t+4\tau})\, f(\tau)\,d\tau \\
@@ -358,7 +358,7 @@ x_p(t) \amp = f*g = \frac{1}{3} \int_0^t ( e^{-t+\tau}-e^{-4t+4\tau})\, f(\tau)\
 </div></article></div>
 <article class="example example-like" id="example-85"><a data-knowl="" class="id-ref original" data-refid="hk-example-85"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.7.10</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-85"><article class="example example-like"><p id="p-554">The undamped oscillator \(x''+\omega_0^2 x\) has transfer function</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-85"><article class="example example-like"><p id="p-558">The undamped oscillator \(x''+\omega_0^2 x\) has transfer function</p>
 <div class="displaymath">
 \begin{equation*}
 G(s) = \frac{1}{s^2+\omega_0^2}\text{,}
@@ -377,16 +377,16 @@ x_p(t) = \frac{1}{\omega_0}  \sin(\omega_0 t) \int_0^t \cos(\omega_0\tau)f(\tau)
 \end{equation*}
 </div>
 <p data-braille="continuation">This formula would be another way to derive both the resonant and nonresonant solutions with cosine forcing \(f(t)=\cos(\omega t)\text{.}\)</p></article></div>
-<p id="p-555">By now it should not surprise you that linear problems often give you multiple options that converge on the same result. The integral formulas derived from convolution with the impulse response are identical to ones that we would derive by applying variation of parameters to the first-order system form of the ODE. Both examples above express the solution as functions times the homogeneous solutions of the system, which is the starting assumption for deriving that method.</p></section><section class="exercises" id="so-exer-convolution"><h3 class="heading hide-type">
+<p id="p-559">By now it should not surprise you that linear problems often give you multiple options that converge on the same result. The integral formulas derived from convolution with the impulse response are identical to ones that we would derive by applying variation of parameters to the first-order system form of the ODE. Both examples above express the solution as functions times the homogeneous solutions of the system, which is the starting assumption for deriving that method.</p></section><section class="exercises" id="so-exer-convolution"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">4.7.5</span> <span class="title">Exercises</span>
 </h3>
 <a href="so-convolutions.html#so-exer-convolution" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-26"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Double eigenvalue.</span>
 </h6>
-<p id="p-556">In the impulse response for distinct eigenvalues, take the limit \(\lambda_2 \to \lambda_1\) to propose an impulse response \(g(t)\) for the case of a double eigenvalue. Then show that \(g\) solves the homogeneous problem, and \(g(0)=0\text{,}\) \(g'(0)=1\text{.}\) Finally, show that the transform of \(g\) does match the transfer function.</p></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading">
+<p id="p-560">In the impulse response for distinct eigenvalues, take the limit \(\lambda_2 \to \lambda_1\) to propose an impulse response \(g(t)\) for the case of a double eigenvalue. Then show that \(g\) solves the homogeneous problem, and \(g(0)=0\text{,}\) \(g'(0)=1\text{.}\) Finally, show that the transform of \(g\) does match the transfer function.</p></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Damped oscillator.</span>
 </h6>
-<p id="p-558">Use convolution to derive the solution of the damped oscillator \(x''+2\omega_0 Z x' + \omega_0^2 x = f(t)\text{.}\) Express the formulas in real form in the underdamped case.</p></article></section><section class="solutions" id="solutions-11"><h3 class="heading hide-type">
+<p id="p-562">Use convolution to derive the solution of the damped oscillator \(x''+2\omega_0 Z x' + \omega_0^2 x = f(t)\text{.}\) Express the formulas in real form in the underdamped case.</p></article></section><section class="solutions" id="solutions-11"><h3 class="heading hide-type">
 <span class="type">Solutions</span> <span class="codenumber">4.7.6</span> <span class="title">Solutions</span>
 </h3>
 <section class="exercises"><h4 class="heading hide-type">
@@ -395,7 +395,7 @@ x_p(t) = \frac{1}{\omega_0}  \sin(\omega_0 t) \int_0^t \cos(\omega_0\tau)f(\tau)
 <a href="so-convolutions.html#so-exer-convolution" class="permalink">¶</a><article class="exercise-like"><h6 class="heading">
 <span class="codenumber">4.7.5.1<span class="period">.</span></span><span class="space"> </span><span class="title">Double eigenvalue.</span>
 </h6>
-<div class="solutions"><a class="original" data-knowl="./knowl/solution-20-hidden.html" title="Solution 4.7.5.1.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-24-hidden.html" title="Solution 4.7.5.1.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:54-04:00    *-->
+<!--*    on 2020-04-28T13:41:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,27 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>32</p>
+<p>Two pendulums hanging from a bar and swinging in parallel planes are coupled through torsion on the bar, according to</p>
+<div class="displaymath">
+\begin{align*}
+\theta_1''+ b\theta_1' + \frac{g}{L}\sin(\theta_1) + \kappa(\theta_1-\theta_2) \amp = 0 \\
+\theta_2''+ b\theta_2' + \frac{g}{L}\sin(\theta_2) + \kappa(\theta_2-\theta_1) \amp = 0 
+\end{align*}
+</div>
+<p data-braille="continuation">We define</p>
+<div class="displaymath">
+\begin{equation*}
+u_1 = \theta_1, \quad u_2 = \theta_1', \quad u_3 = \theta_2, \quad u_4 = \theta_2'.
+\end{equation*}
+</div>
+<p data-braille="continuation">Two differential equations, \(u_1'=u_2\) and \(u_3'=u_4\text{,}\) follow automatically from the definitions. The remaining two come from substituting into the original ODEs:</p>
+<div class="displaymath">
+\begin{align*}
+u_2' = \theta_1'' \amp = - b u_2 - \frac{g}{L}\sin(u_1) - \kappa(u_1-u_3)\\
+u_4' = \theta_2'' \amp = - b u_4 - \frac{g}{L}\sin(u_3) - \kappa(u_3-u_1)
+\end{align*}
+</div>
+<p data-braille="continuation">The result is a four-dimensional, first-order system \(\bu'=\mathbf{g}(t,\bu)\text{.}\)</p>
 <span class="incontext"><a href="so-convert.html#p-457">in-context</a></span>
 </body>
 </html>

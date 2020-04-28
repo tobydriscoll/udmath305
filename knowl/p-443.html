@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:54-04:00    *-->
+<!--*    on 2020-04-28T13:41:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>\(e^{t\bA} =\begin{bmatrix}  1 \amp t \amp t^2/2 \\ 0 \amp 1 \amp t \\ 0 \amp 0 \amp 1 \end{bmatrix}\)</p>
+<p>Both \(\mathbf{U}\) and \(\mathbf{L}\) are defective with zero eigenvalues. However, \(\mathbf{U}^2=\mathbf{L}^2=\bzero\text{,}\) so</p>
+<div class="displaymath">
+\begin{align*}
+e^\mathbf{U} \amp = \twomat{1}{-t}{0}{1},  \\
+e^\mathbf{L} \amp = \twomat{1}{0}{t}{1}.  
+\end{align*}
+</div>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\mathbf{L}}\,e^{t\mathbf{U}}  = \twomat{1}{-t}{t}{1-t^2}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which is nothing like the rotation matrix from the previous exercise.</p>
 <span class="incontext"><a href="fs-matrix-exp.html#p-443">in-context</a></span>
 </body>
 </html>
