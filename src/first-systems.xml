@@ -1049,7 +1049,8 @@ xlabel('t'), ylabel('x_1(t), x_2(t)')
 			<title>Diagonal matrix</title>
 			<statement>
 			  <p>
-				Show that the exponential of a diagonal matrix <m>\diag(t\lambda_1,t\lambda_2,\dots,t\lambda_n)</m> is the diagonal matrix <m>\diag(e^{t\lambda_1},e^{t\lambda_2},\dots,e^{t\lambda_n})</m>. 
+				Show that for a diagonal matrix <m>\bD=\diag(\lambda_1,\lambda_2,\dots,\lambda_n)</m>, the exponential is the diagonal matrix 
+				<me>e^{t\bD} = \diag(e^{t\lambda_1},e^{t\lambda_2},\dots,e^{t\lambda_n})</me>. 
 			  </p>
 			</statement>
 			<hint>
@@ -1057,6 +1058,20 @@ xlabel('t'), ylabel('x_1(t), x_2(t)')
 				What do the powers of a diagonal matrix look like?
 			  </p>
 			</hint>
+			<solution>
+			  <p>
+				You can easily verify that <m>\bD^2=\diag(\lambda_1^2,\lambda_2^2,\dots,\lambda_n^2)</m>, <m>\bD^3=\diag(\lambda_1^3,\dots,\lambda_n^3)</m>, etc. So the power series becomes
+				<me>
+					e^{t\bD} = \begin{bmatrix} 
+					1 + t\lambda_1 + \frac{1}{2}(t\lambda_1)^2 + \cdots \amp \amp \amp \\ 
+					\amp 1 + t\lambda_2 + \frac{1}{2}(t\lambda_2)^2 + \cdots \amp \amp \\ 
+					\amp \amp \ddots \amp \\ 
+					\amp \amp \amp 1 + t\lambda_n + \frac{1}{2}(t\lambda_n)^2 + \cdots
+					 \end{bmatrix}. 
+				</me>
+				The diagonal terms become <m>e^{t\lambda_i}</m> thanks to the power series of <m>e^x</m>. 
+			  </p>
+			</solution>
 		</exercise>
 		<exercise>
 			<title>Rotation matrix</title>
@@ -1078,6 +1093,22 @@ xlabel('t'), ylabel('x_1(t), x_2(t)')
 				<m>e^{t\bA} = \twomat{\cos t}{-\sin t}{\sin t}{\cos t}</m> 
 			  </p>
 			</answer>
+			<solution>
+			  <p>
+				Eigendecomposition gives <m>\lambda_1=i</m>, <m>\lambda_2=-i</m>, with <m>\bV=\twomat{1}{1}{-i}{i}</m>. Thus 
+				<md>
+				  <mrow> e^{t\bA} \amp = \frac{1}{2i} \twomat{1}{1}{-i}{i} \twodiag{e^{it}}{e^{-it}} \twomat{i}{-1}{i}{1} </mrow>
+				  <mrow> \amp = -\frac{1}{2} \twomat{i}{i}{1}{-1}  \twomat{ie^{it}}{-e^{it}}{ie^{-it}}{e^{-it}} </mrow>
+				  <mrow> \amp = -\frac{1}{2} \twomat{-e^{it}-e^{-it}}{-ie^{it}+ie^{-it}}{ie^{it}-ie^{-it}}{-e^{it}-e^{-it}} </mrow>
+				  <mrow> \amp =  \twomat{\cos(t)}{-\sin(t)}{\sin(t)}{\cos(t)} </mrow>
+				</md>
+				And 
+				<md>
+				  <mrow> e^{t\bA}\bx(0) \amp  = \twovec{r\cos(t)\cos(\theta) -r \sin(t)\sin(\theta)}{r\sin(t)\cos(\theta) + r \cos(t)\sin(\theta)}</mrow>
+				  <mrow>  \amp  = \twovec{r\cos(t+\theta)}{r\sin(t+\theta)}</mrow>
+				</md>
+			  </p>
+			</solution>
 		</exercise>
 		<exercise>
 			<title>Noncommutative pair</title>
@@ -1089,7 +1120,7 @@ xlabel('t'), ylabel('x_1(t), x_2(t)')
 				</me>
 				Then show that 
 				<me>
-					e^{\mathbf{L}+\mathbf{U}} \neq e^\mathbf{L}\,e^\mathbf{U}.
+					e^{t(\mathbf{L}+\mathbf{U})} \neq e^{t\mathbf{L}}\,e^{t\mathbf{U}}.
 				</me>
 				(The result of the <q>rotation matrix</q> exercise can provide the left-hand side.) This happens because <m>\mathbf{L}\mathbf{U}\neq \mathbf{U}\mathbf{L}</m>. 
 			  </p>
@@ -1097,13 +1128,27 @@ xlabel('t'), ylabel('x_1(t), x_2(t)')
 			<answer>
 			  <p>
 				<me>
-					e^\mathbf{U} = \twomat{1}{-t}{0}{1}, \qquad e^\mathbf{L} = \twomat{1}{0}{t}{1}
+					e^{t\mathbf{U}} = \twomat{1}{-t}{0}{1}, \qquad e^{t\mathbf{L}} = \twomat{1}{0}{t}{1}
 				</me>
 				<me>
-					e^\mathbf{L}\,e^\mathbf{U} = \twomat{1}{-t}{t}{1-t^2}
+					e^{t\mathbf{L}}\,e^{t\mathbf{U}} = \twomat{1}{-t}{t}{1-t^2}
 				</me>
 			  </p>
 			</answer>
+			<solution>
+			  <p>
+				Both <m>\mathbf{U}</m> and <m>\mathbf{L}</m> are defective with zero eigenvalues. However, <m>\mathbf{U}^2=\mathbf{L}^2=\bzero</m>, so 
+				<md>
+				  <mrow>e^{t\mathbf{U}} \amp = \twomat{1}{-t}{0}{1},  </mrow>
+				  <mrow>e^{t\mathbf{L}}  \amp = \twomat{1}{0}{t}{1}.  </mrow>
+				</md>
+				Hence 
+				<me>
+					e^{t\mathbf{L}}\,e^{t\mathbf{U}}  = \twomat{1}{-t}{t}{1-t^2}
+				</me>,
+				which is nothing like the rotation matrix from the previous exercise. 
+			  </p>
+			</solution>
 		</exercise>
 		<exercise>
 			<title>A 3-by-3 case</title>
@@ -1122,6 +1167,15 @@ xlabel('t'), ylabel('x_1(t), x_2(t)')
 				<m>e^{t\bA} =\begin{bmatrix}  1 \amp t \amp t^2/2 \\ 0 \amp 1 \amp t \\ 0 \amp 0 \amp 1 \end{bmatrix}</m>
 			  </p>
 			</answer>
+			<solution>
+			  <p>
+				We calculate 
+				<me>
+					\bA^2 =\begin{bmatrix}  0 \amp 0 \amp 1 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix}
+				</me>
+				and <m>\bA^3=\bzero</m>. So the power series has only three nonzero terms. 
+			  </p>
+			</solution>
 		</exercise>
 	</exercises>
 	<solutions divisional="solution"></solutions>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:54-04:00    *-->
+<!--*    on 2020-04-28T13:41:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,28 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In <a class="xref" data-knowl="./knowl/fs-ex-expm1.html" title="Example 3.6.6">Example 3.6.6</a> we worked out a matrix exponential:</p>
+<p>We calculate</p>
 <div class="displaymath">
 \begin{equation*}
-\bA = \twomat{1}{-1}{5}{-3}
-\Rightarrow 
-e^{t \bA} = -e^{-t} \twomat{-\cos(t)-2\sin(t)}{\sin(t)}{-5\sin(t)}{-\cos(t)+2\sin(t)}
+\bA^2 =\begin{bmatrix}  0 \amp 0 \amp 1 \\ 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">If we want to solve</p>
-<div class="displaymath">
-\begin{equation*}
-\bx' = \bA\bx + \twovec{1}{t}, \quad \bx(0)=\bzero,
-\end{equation*}
-</div>
-<p data-braille="continuation">then <a class="xref" data-knowl="./knowl/fs-eq-varparam3.html" title="Equation 3.7.3">(3.7.3)</a> gives</p>
-<div class="displaymath">
-\begin{align*}
-\bx(t) \amp = \int_0^t -e^{s-t} \twomat{-\cos(t-s)-2\sin(t-s)}{\sin(t-s)}{-5\sin(t-s)}{-\cos(t-s)+2\sin(t-s)} \twovec{1}{s} \, ds\\
-\amp = \int_0^t -e^{s-t} \twovec{-\cos(t-s)+(s-2)\sin(t-s)}{-s\cos(t-s)+(2s-5)\sin(t-s)} \, ds.   
-\end{align*}
-</div>
-<p data-braille="continuation">Some computer algebra would be advisable at this point.</p>
-<span class="incontext"><a href="fs-varparam.html#p-447">in-context</a></span>
+<p data-braille="continuation">and \(\bA^3=\bzero\text{.}\) So the power series has only three nonzero terms.</p>
+<span class="incontext"><a href="fs-matrix-exp.html#p-447">in-context</a></span>
 </body>
 </html>

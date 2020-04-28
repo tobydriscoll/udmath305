@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:50-04:00    *-->
+<!--*    on 2020-04-28T13:41:42-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -209,14 +209,14 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="so-convert"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Order equals dimension</span>
 </h2>
-<a href="so-convert.html" class="permalink">¶</a><p id="p-449">We now turn our attention to second-order ODEs of the form</p>
+<a href="so-convert.html" class="permalink">¶</a><p id="p-453">We now turn our attention to second-order ODEs of the form</p>
 <div class="displaymath">
 \begin{equation*}
 x''=f(t,x,x')\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">Most of what we develop extends easily to vector-valued \(u(t)\)  and equations of order higher than two, but we focus on this problem to keep notation simple.</p>
-<p id="p-450">Our first observation is that this problem can always be converted to a first-order problem in two dimensions. Define a vector \(\bu\) by \(u_1=x\text{,}\) \(u_2=x'\text{.}\) By definition, \(u_1'=u_2\text{.}\) Since \(u_2'=x''=f(t,x,x')\text{,}\) we get the system</p>
+<p id="p-454">Our first observation is that this problem can always be converted to a first-order problem in two dimensions. Define a vector \(\bu\) by \(u_1=x\text{,}\) \(u_2=x'\text{.}\) By definition, \(u_1'=u_2\text{.}\) Since \(u_2'=x''=f(t,x,x')\text{,}\) we get the system</p>
 <div class="displaymath">
 \begin{align*}
 u_1' \amp =  u_2\\
@@ -226,17 +226,17 @@ u_2' \amp =  f(t,u_1,u_2).
 <p data-braille="continuation">This is a first-order system \(\bu'=\mathbf{g}(t,\bu)\) of two scalar equations for the two components.</p>
 <article class="example example-like" id="example-61"><a data-knowl="" class="id-ref original" data-refid="hk-example-61"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-61"><article class="example example-like"><p id="p-451">A pendulum is governed by the nonlinear equation \(\theta''+ b\theta' + \frac{g}{L}\sin(\theta)=0\text{,}\) where \(\theta(t)\) is the angle made by the pendulum from the straight-down position. Define \(u_1=\theta\text{,}\) \(u_2=\theta'\text{.}\) Then</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-61"><article class="example example-like"><p id="p-455">A pendulum is governed by the nonlinear equation \(\theta''+ b\theta' + \frac{g}{L}\sin(\theta)=0\text{,}\) where \(\theta(t)\) is the angle made by the pendulum from the straight-down position. Define \(u_1=\theta\text{,}\) \(u_2=\theta'\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 \twovec{u_1'}{u_2'} = \twovec{u_2}{-bu_2 - \frac{g}{L}\sin(u_1)}
 \end{equation*}
 </div>
 <p data-braille="continuation">is an equivalent system.</p></article></div>
-<p id="p-452">The technique above generalizes to any system of equations of any order.</p>
+<p id="p-456">The technique above generalizes to any system of equations of any order.</p>
 <article class="example example-like" id="example-62"><a data-knowl="" class="id-ref original" data-refid="hk-example-62"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-62"><article class="example example-like"><p id="p-453">Two pendulums hanging from a bar and swinging in parallel planes are coupled through torsion on the bar, according to</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-62"><article class="example example-like"><p id="p-457">Two pendulums hanging from a bar and swinging in parallel planes are coupled through torsion on the bar, according to</p>
 <div class="displaymath">
 \begin{align*}
 \theta_1''+ b\theta_1' + \frac{g}{L}\sin(\theta_1) + \kappa(\theta_1-\theta_2) \amp = 0 \\
@@ -257,7 +257,7 @@ u_4' = \theta_2'' \amp = - b u_4 - \frac{g}{L}\sin(u_3) - \kappa(u_3-u_1)
 \end{align*}
 </div>
 <p data-braille="continuation">The result is a four-dimensional, first-order system \(\bu'=\mathbf{g}(t,\bu)\text{.}\)</p></article></div>
-<p id="p-454">Our main item of business in this chapter is the linear, constant-coefficient model problem</p>
+<p id="p-458">Our main item of business in this chapter is the linear, constant-coefficient model problem</p>
 <div class="displaymath">
 \begin{equation}
 x'' + bx' + cx = f(t)\text{,}\label{so-eq-linearmodel}\tag{4.1.1}
@@ -276,16 +276,16 @@ x'' + bx' + cx = f(t)\text{,}\label{so-eq-linearmodel}\tag{4.1.1}
 \end{equation}
 </div>
 <p data-braille="continuation">Thus everything we learned from the last chapter is again in play. However, the applications of <a class="xref" data-knowl="./knowl/so-eq-linearmodel.html" title="Equation 4.1.1">(4.1.1)</a> are important and numerous enough to consider the solutions in detail, and the structure of the companion matrix is such that the conclusions can often be rewritten more simply than in the general case.</p>
-<p id="p-455">As a result of the equivalence to a first-order system, we know that the general solution of <a class="xref" data-knowl="./knowl/so-eq-linearmodel.html" title="Equation 4.1.1">(4.1.1)</a> consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem: \(x(t)=x_h(t)+x_p(t)\text{.}\) Our next steps will be to translate the system results for each of these parts to the new situation.</p>
+<p id="p-459">As a result of the equivalence to a first-order system, we know that the general solution of <a class="xref" data-knowl="./knowl/so-eq-linearmodel.html" title="Equation 4.1.1">(4.1.1)</a> consists of the general solution of the homogeneous (unforced) problem, and a particular solution of the forced problem: \(x(t)=x_h(t)+x_p(t)\text{.}\) Our next steps will be to translate the system results for each of these parts to the new situation.</p>
 <section class="exercises" id="so-exer-dimension"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">4.1.1</span> <span class="title">Exercises</span>
 </h3>
 <a href="so-convert.html#so-exer-dimension" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-23"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Solar system.</span>
 </h6>
-<p id="p-456">Suppose you want to model the eight planets of the solar system, with the Sun fixed as the origin of the coordinate system. You restrict motion to the the plane of the solar system and apply Newton's laws to derive ODEs for the planets based on gravitation. What is the dimension of the equivalent first-order system?</p>
+<p id="p-460">Suppose you want to model the eight planets of the solar system, with the Sun fixed as the origin of the coordinate system. You restrict motion to the the plane of the solar system and apply Newton's laws to derive ODEs for the planets based on gravitation. What is the dimension of the equivalent first-order system?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-answer-19" id="answer-19"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-19"><div class="answer solution-like"><p id="p-457">32</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-19" id="answer-19"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-19"><div class="answer solution-like"><p id="p-461">32</p></div></div>
 </div></article></section><section class="solutions" id="solutions-8"><h3 class="heading hide-type">
 <span class="type">Solutions</span> <span class="codenumber">4.1.2</span> <span class="title">Solutions</span>
 </h3>
@@ -295,7 +295,7 @@ x'' + bx' + cx = f(t)\text{,}\label{so-eq-linearmodel}\tag{4.1.1}
 <a href="so-convert.html#so-exer-dimension" class="permalink">¶</a><article class="exercise-like"><h6 class="heading">
 <span class="codenumber">4.1.1.1<span class="period">.</span></span><span class="space"> </span><span class="title">Solar system.</span>
 </h6>
-<div class="solutions"><a class="original" data-knowl="./knowl/solution-18-hidden.html" title="Solution 4.1.1.1.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-22-hidden.html" title="Solution 4.1.1.1.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

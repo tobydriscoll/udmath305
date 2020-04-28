@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:54-04:00    *-->
+<!--*    on 2020-04-28T13:41:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,27 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The failure of <a class="xref" data-knowl="./knowl/so-ex-noundeter.html" title="Example 4.3.4">Example 4.3.4</a> at \(\omega = 1\) was due to the fact that the \(x_p\) we picked is actually a homogeneous solution. There are additional rules to cover this case, but here is an interesting workaround instead. Suppose we seek a particular solution for \(\omega=1\) as the limit of a particular solution as \(\omega\to 1\text{.}\) We won't use the exact \(x_p\) found in the example, but instead subtract a homogeneous solution from it to get</p>
+<p>For \(x''+x'=\sin(2t)\text{,}\) we use</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{ \cos(\omega t) - \cos(t) } {1-\omega^2},
+x_p = A\cos(2t) + B\sin(2t)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">which is also a particular solution. Then L'Hopital applies in the limit to give us</p>
+<p data-braille="continuation">Inserting this into the ODE leads to</p>
 <div class="displaymath">
-\begin{equation}
-x_p(t) = \frac{ -t \sin(\omega t) }{ -2 \omega } = \frac{1}{2}t\sin(t). \tag{4.3.1}
-\end{equation}
+\begin{equation*}
+[-4A\cos(2t) - 4B\sin(2t)] + [-2A\sin(2t) + 2B\cos(2t)] = \sin(2t)\text{.}
+\end{equation*}
 </div>
-<p data-braille="continuation">Now, to verify that this is a particular solution in the limiting case, we compute</p>
+<p data-braille="continuation">This is true for all time if and only if we match the coefficients of like trig functions:</p>
 <div class="displaymath">
-\begin{align*}
-x_p \amp = \frac{1}{2}t\sin(t) \\
-x_p' \amp = \frac{1}{2}[\sin(t)+t\cos(t)] \\
-x_p'' \amp = \frac{1}{2}[\cos(t) + \cos(t) - t\sin(t)], 
-\end{align*}
+\begin{equation*}
+-4A + 2B = 0, \qquad -4B-2A = 1 \text{.}
+\end{equation*}
 </div>
-<p data-braille="continuation">so that \(x_p''+x_p=\cos(t)\) as required.</p>
+<p data-braille="continuation">The solution of these equations is \(A=-1/10\text{,}\) \(B=-1/5\text{.}\)</p>
 <span class="incontext"><a href="so-undetermined.html#p-477">in-context</a></span>
 </body>
 </html>

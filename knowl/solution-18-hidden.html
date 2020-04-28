@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:54-04:00    *-->
+<!--*    on 2020-04-28T13:41:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,5 +11,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><p>There are 8 planets, with two scalar variables to describe each position, for 16 total variables. These are subjected to second-order equations through \(F=ma\text{,}\) so the dimension doubles when converting to first order.</p></div></body>
+<body><div class="solution solution-like">
+<p>You can easily verify that \(\bD^2=\diag(\lambda_1^2,\lambda_2^2,\dots,\lambda_n^2)\text{,}\) \(\bD^3=\diag(\lambda_1^3,\dots,\lambda_n^3)\text{,}\) etc. So the power series becomes</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\bD} = \begin{bmatrix} 
+1 + t\lambda_1 + \frac{1}{2}(t\lambda_1)^2 + \cdots \amp \amp \amp \\ 
+\amp 1 + t\lambda_2 + \frac{1}{2}(t\lambda_2)^2 + \cdots \amp \amp \\ 
+\amp \amp \ddots \amp \\ 
+\amp \amp \amp 1 + t\lambda_n + \frac{1}{2}(t\lambda_n)^2 + \cdots
+\end{bmatrix}. 
+\end{equation*}
+</div>
+<p data-braille="continuation">The diagonal terms become \(e^{t\lambda_i}\) thanks to the power series of \(e^x\text{.}\)</p>
+</div></body>
 </html>

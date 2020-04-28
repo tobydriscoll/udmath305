@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:54-04:00    *-->
+<!--*    on 2020-04-28T13:41:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Find \(e^{t\bA}\) if \(\bA=\twomat{0}{-1}{1}{0}\text{.}\) Then show that if the initial condition is expressed in polar form,</p>
+<p>You can easily verify that \(\bD^2=\diag(\lambda_1^2,\lambda_2^2,\dots,\lambda_n^2)\text{,}\) \(\bD^3=\diag(\lambda_1^3,\dots,\lambda_n^3)\text{,}\) etc. So the power series becomes</p>
 <div class="displaymath">
 \begin{equation*}
-\bx(0) = \twovec{r\cos\theta}{r\sin\theta},
+e^{t\bD} = \begin{bmatrix} 
+1 + t\lambda_1 + \frac{1}{2}(t\lambda_1)^2 + \cdots \amp \amp \amp \\ 
+\amp 1 + t\lambda_2 + \frac{1}{2}(t\lambda_2)^2 + \cdots \amp \amp \\ 
+\amp \amp \ddots \amp \\ 
+\amp \amp \amp 1 + t\lambda_n + \frac{1}{2}(t\lambda_n)^2 + \cdots
+\end{bmatrix}. 
 \end{equation*}
 </div>
-<p data-braille="continuation">then</p>
-<div class="displaymath">
-\begin{equation*}
-\bx(t) = \twovec{r\cos(\theta+t)}{r\sin(\theta+t)}.
-\end{equation*}
-</div>
-<p data-braille="continuation">(In other words, the solution just moves with unit angular velocity around the circle of radius \(r\text{.}\))</p>
+<p data-braille="continuation">The diagonal terms become \(e^{t\lambda_i}\) thanks to the power series of \(e^x\text{.}\)</p>
 <span class="incontext"><a href="fs-matrix-exp.html#p-437">in-context</a></span>
 </body>
 </html>

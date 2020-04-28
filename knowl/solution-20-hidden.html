@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:55-04:00    *-->
+<!--*    on 2020-04-28T13:41:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,5 +11,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><p>Use L'Hopital's rule to find \(g(t)=t e^{\lambda t}\text{.}\) Plug it into \(g''-2\lambda g'+ \lambda^2 g \) and simplify to get zero. Check the initial conditions. Finally, the transform table says \(G(s)=F(s-\lambda)\) where \(F(s)=1/s^2\text{,}\) which gives the correct transfer function.</p></div></body>
+<body><div class="solution solution-like">
+<p>Both \(\mathbf{U}\) and \(\mathbf{L}\) are defective with zero eigenvalues. However, \(\mathbf{U}^2=\mathbf{L}^2=\bzero\text{,}\) so</p>
+<div class="displaymath">
+\begin{align*}
+e^\mathbf{U} \amp = \twomat{1}{-t}{0}{1},  \\
+e^\mathbf{L} \amp = \twomat{1}{0}{t}{1}.  
+\end{align*}
+</div>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{equation*}
+e^{t\mathbf{L}}\,e^{t\mathbf{U}}  = \twomat{1}{-t}{t}{1-t^2}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which is nothing like the rotation matrix from the previous exercise.</p>
+</div></body>
 </html>

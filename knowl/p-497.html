@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:54-04:00    *-->
+<!--*    on 2020-04-28T13:41:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,26 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The ODE for the mass-spring system is</p>
-<div class="displaymath">
-\begin{align*}
-5 x'' + 8x' + 11 x  \amp = 0 \\
-x'' + 1.6 x' + 2.2 x  \amp = 0, 
-\end{align*}
-</div>
-<p data-braille="continuation">from which we identify the natural frequency</p>
+<p>At \(Z=1\) the complex eigenvalues collapse to a double eigenvalue at</p>
 <div class="displaymath">
 \begin{equation*}
-\omega_0 = \sqrt{2.2} \approx 1.483 \text{s}^{-1}, \qquad 
+\lambda_1 = \lambda_2 = -\omega_0\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">The damping coefficient is therefore</p>
+<p data-braille="continuation">with general homogeneous solution</p>
 <div class="displaymath">
 \begin{equation*}
-Z = \frac{1.6}{2\omega_0} \approx 0.539.
+x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Since this value is less than one, the system is underdamped.</p>
+<p data-braille="continuation">There is no longer any oscillation present, and we have a <dfn class="terminology">critically damped</dfn> system. The linear growth of \(c_2 t\) doesn't make much of a difference against the exponential decay.</p>
 <span class="incontext"><a href="so-oscillators.html#p-497">in-context</a></span>
 </body>
 </html>

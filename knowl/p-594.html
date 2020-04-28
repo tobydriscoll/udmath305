@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:55-04:00    *-->
+<!--*    on 2020-04-28T13:41:46-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The <dfn class="terminology">Jacobian matrix</dfn> of the system \(x'=F(x,y),\, y'=G(x,y)\) is</p>
+<p>A pendulum with length \(L\) and angle of deflection \(\theta(t)\) from the vertical is governed by the nonlinear second-order equation</p>
 <div class="displaymath">
-\begin{equation}
-\bJ(x,y) = \twomat{\pp{F}{x}}{\pp{F}{y}}{\pp{G}{x}}{\pp{G}{y}}\tag{5.5.1}
-\end{equation}
+\begin{equation*}
+\ddd{\theta}{t} + \frac{g}{L} \sin(\theta) = 0\text{,}
+\end{equation*}
 </div>
+<p data-braille="continuation">where \(g\) is gravitational acceleration. It's standard to argue that as long as \(|\theta|\) remains small, a good approximation is the linear problem</p>
+<div class="displaymath">
+\begin{equation*}
+\ddd{\theta}{t} + \frac{g}{L} \theta = 0\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">because \(\sin \theta \approx \theta\text{.}\)  We want to get more systematic with this process.</p>
 <span class="incontext"><a href="nl-linearization.html#p-594">in-context</a></span>
 </body>
 </html>

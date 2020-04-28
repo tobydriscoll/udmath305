@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:55-04:00    *-->
+<!--*    on 2020-04-28T13:41:46-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,34 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To find the general solution of \(x''+x=5H(t-4)\) starting from rest, we take transforms to obtain</p>
+<p>If we transform \(e^{i\omega t}\text{,}\) we can take the real and imaginary parts to get some new formulas:</p>
 <div class="displaymath">
 \begin{equation*}
-X(s) = \frac{5e^{-4s}}{s(s^2+1)} = 5e^{-4s}F(s) \text{,}
+\lx[\cos(\omega t)] = \text{Re}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{s}{s^2+\omega^2}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">where</p>
+<p data-braille="continuation">and</p>
 <div class="displaymath">
 \begin{equation*}
-F(s) = \frac{1}{s(s^2+1)} = \frac{A}{s} + \frac{Bs+C}{s^2+1}. 
+\lx[\sin(\omega t)] = \text{Im}\left( \frac{1}{s-i\omega} \frac{s+i\omega}{s+i\omega} \right) = \frac{\omega}{s^2+\omega^2}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Clearing denominators we get</p>
+<p data-braille="continuation">Conversely, a transform \(X(s)\) that has \(s^2+\omega^2\) as a factor in the denominator has poles at \(\pm i\omega\text{.}\) The simplest case is</p>
 <div class="displaymath">
 \begin{equation*}
-1 = A(s^2+1) + (Bs+C)(s). 
-\end{equation*}
-</div>
-<p data-braille="continuation">Setting \(s=0\) gives us \(A=1\) right away. Then \(-s^2=Bs^2+Cs\text{,}\) which tells us that \(B=-1\) and \(C=0\text{.}\) Hence</p>
-<div class="displaymath">
-\begin{equation*}
-f(t) = 1 -\cos(t). 
-\end{equation*}
-</div>
-<p data-braille="continuation">So by the shift theorem, the solution is</p>
-<div class="displaymath">
-\begin{equation*}
-x(t) = 5H(t-4)f(t-4) = 5 H(t-4)[1-\cos(t-4)]. 
+X(s) = \frac{A+Bs}{s^2+\omega^2}  \quad \Rightarrow \quad x(t)=\frac{A}{\omega}\sin(\omega t) + B\cos(\omega t)\text{.}
 \end{equation*}
 </div>
 <span class="incontext"><a href="so-laplace.html#p-525">in-context</a></span>

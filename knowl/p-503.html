@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-27T15:12:54-04:00    *-->
+<!--*    on 2020-04-28T13:41:45-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It's often useful to rewrite the complex factor \(A(i\omega)\) from <a class="xref" data-knowl="./knowl/so-eq-coeff.html" title="Equation 4.5.2">(4.5.2)</a> in polar form:</p>
+<p>The ODE is, as before, \(x'' + 1.6 x' + 2.2 x = 0\text{.}\) The eigenvalues are the roots of \(\lambda^2 + 1.6\lambda + 2.2\text{,}\) which are found numerically to be</p>
 <div class="displaymath">
 \begin{equation*}
-A(i\omega) = \frac{1}{\omega_0^2-\omega^2  + 2 Z i \omega_0 \omega } = g(\omega) e^{-i\phi(\omega)}\text{,}
+\lambda \approx -0.8000 \pm 1.2490i.
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(g=|A|\) is the <dfn class="terminology">gain</dfn> and \(\phi\) is the <dfn class="terminology">phase lag</dfn>. Note that the particular solution is</p>
+<p data-braille="continuation">Note that the imaginary part is smaller than the natural frequency found in the last example, as it must be. From here I will treat these rounded values as though they are exact. Choosing the sin-cos form of the general solution, we have</p>
 <div class="displaymath">
-\begin{equation*}
-x_p(t) = g(\omega) e^{-i\phi(\omega)} e^{i\omega t} = g e^{i(\omega t-\phi)}\text{.}
-\end{equation*}
+\begin{align*}
+x(t) \amp = a_1 e^{-0.8 t} \cos(1.249 t) + a_2 e^{-0.8 t} \sin(1.249 t).
+\end{align*}
 </div>
-<p data-braille="continuation">This means that as we pass from the input forcing to the output solution, \(g\) is the scaling of the amplitude and \(\phi\) changes the phase of our trip around the complex unit circle.</p>
-<span class="incontext"><a href="so-expforcing.html#p-503">in-context</a></span>
+<p data-braille="continuation">(It is not necessary to use the general formula derived above for this; the solution comes entirely from the eigenvalues.) We apply the initial conditions \(x(0)=0\text{,}\) \(x'(0)=-0.5\) to find</p>
+<div class="displaymath">
+\begin{align*}
+0 \amp = x(0) = a_1, \\
+-0.5 \amp = x'(0) = a_1( -0.8 ) + a_2 (1.249 ), 
+\end{align*}
+</div>
+<p data-braille="continuation">thus \(a_2 = -0.4003\text{.}\) The motion is therefore given by \(x(t)=-0.4003\, e^{-0.8 t} \sin(1.249 t)\text{.}\)</p>
+<span class="incontext"><a href="so-oscillators.html#p-503">in-context</a></span>
 </body>
 </html>
