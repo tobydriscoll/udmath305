@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-28T13:41:43-04:00    *-->
+<!--*    on 2020-04-29T10:19:11-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -194,11 +194,10 @@ var js_version = 0.13;
 </li>
 <li class="link">
 <a href="ch5-nonlinear-ode.html" data-scroll="ch5-nonlinear-ode"><span class="codenumber">5</span> <span class="title">Nonlinear ODEs</span></a><ul>
-<li><a href="nl-autonomous.html" data-scroll="nl-autonomous">Autonomous scalar problems</a></li>
-<li><a href="nl-separable.html" data-scroll="nl-separable">Separable equations</a></li>
+<li><a href="nl-sec-overview.html" data-scroll="nl-sec-overview">Overview of nonlinear problems</a></li>
+<li><a href="nl-autonomous.html" data-scroll="nl-autonomous">Scalar first-order problems</a></li>
 <li><a href="nl-logistic.html" data-scroll="nl-logistic">Case study: Logistic equation</a></li>
-<li><a href="nl-directionfields.html" data-scroll="nl-directionfields">Direction fields</a></li>
-<li><a href="nl-linearization.html" data-scroll="nl-linearization">Linearization</a></li>
+<li><a href="nl-directionfields.html" data-scroll="nl-directionfields">Two-dimensional systems</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -212,11 +211,11 @@ var js_version = 0.13;
 <div class="indexletter" id="indexletter-a">
 <div class="indexitem">augmented matrix<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-21.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">autonomous ODE<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-566.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">autonomous ODE<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-579.html" title="Paragraph">Paragraph</a></span>
 </div>
 </div>
 <div class="indexletter" id="indexletter-c">
-<div class="indexitem">carrying capacity<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-582.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">carrying capacity<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-591.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">center<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-416.html" title="Paragraph">Paragraph</a></span>
 </div>
@@ -241,9 +240,11 @@ var js_version = 0.13;
 </div>
 <div class="indexitem">dimension<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-93.html" title="Paragraph">Paragraph</a></span>
 </div>
+<div class="indexitem">direction field<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-577.html" title="Paragraph">Paragraph</a></span>
+</div>
 </div>
 <div class="indexletter" id="indexletter-e">
-<div class="indexitem">equilibrium<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-402.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">equilibrium<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-402.html" title="Paragraph">Paragraph</a> <a class="xref" data-knowl="./knowl/p-579.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">Euler's identity<span class="indexknowl">, <a class="xref" data-knowl="./knowl/fact-19.html" title="Fact 3.4.1: Euler's identity">Fact</a></span>
 </div>
@@ -253,8 +254,6 @@ var js_version = 0.13;
 </div>
 </div>
 <div class="indexletter" id="indexletter-f">
-<div class="indexitem">fixed point<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-567.html" title="Paragraph">Paragraph</a></span>
-</div>
 <div class="indexitem">forcing function<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-198.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">free column<span class="indexknowl">, <a class="xref" data-knowl="./knowl/definition-3.html" title="Definition 1.2.10: RREF">Definition</a></span>
@@ -301,7 +300,7 @@ var js_version = 0.13;
 <div class="subindexitem">first-order<span class="indexknowl">, <a class="xref" data-knowl="./knowl/fl-df-ivp.html" title="Definition 2.3.2: Initial value problem (IVP)">Definition</a></span>
 </div>
 </div>
-<div class="indexletter" id="indexletter-j"><div class="indexitem">Jacobian matrix<span class="indexknowl">, <a class="xref" data-knowl="./knowl/nl-def-jacobian.html" title="Definition 5.5.1: Jacobian matrix">Definition</a></span>
+<div class="indexletter" id="indexletter-j"><div class="indexitem">Jacobian matrix<span class="indexknowl">, <a class="xref" data-knowl="./knowl/nl-def-jacobian.html" title="Definition 5.4.4: Jacobian matrix">Definition</a></span>
 </div></div>
 <div class="indexletter" id="indexletter-l">
 <div class="indexitem">Laplace transform<span class="indexknowl">, <a class="xref" data-knowl="./knowl/fl-df-laplace.html" title="Definition 2.8.1: Laplace transform">Definition</a></span>
@@ -317,7 +316,7 @@ var js_version = 0.13;
 </div>
 <div class="indexitem">linear operator<span class="indexknowl">, <a class="xref" data-knowl="./knowl/fl-df-operator.html" title="Definition 2.2.2: Linear operator">Definition</a></span>
 </div>
-<div class="indexitem">logistic equation<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-581.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">logistic equation<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-591.html" title="Paragraph">Paragraph</a></span>
 </div>
 </div>
 <div class="indexletter" id="indexletter-m">
@@ -344,7 +343,7 @@ var js_version = 0.13;
 </div>
 <div class="indexitem">phase lag<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-507.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">phase line diagram<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-571.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">phase line diagram<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-580.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">phase plane<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-406.html" title="Paragraph">Paragraph</a></span>
 </div>
@@ -353,6 +352,8 @@ var js_version = 0.13;
 <div class="indexitem">pivot column<span class="indexknowl">, <a class="xref" data-knowl="./knowl/definition-3.html" title="Definition 1.2.10: RREF">Definition</a></span>
 </div>
 <div class="indexitem">poles<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-523.html" title="Paragraph">Paragraph</a></span>
+</div>
+<div class="indexitem">predator-prey model<span class="indexknowl">, <a class="xref" data-knowl="./knowl/example-97.html" title="Example 5.4.8: Linearization of predator-prey">Example</a></span>
 </div>
 </div>
 <div class="indexletter" id="indexletter-r">
@@ -366,7 +367,7 @@ var js_version = 0.13;
 </div>
 <div class="indexitem">scalar<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-36.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">separable ODE<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-573.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">separable ODE<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-583.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">simple harmonic motion<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-493.html" title="Paragraph">Paragraph</a></span>
 </div>
@@ -375,11 +376,9 @@ var js_version = 0.13;
 </div>
 <div class="indexitem">spiral<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-413.html" title="Paragraph">Paragraph</a></span>
 </div>
-<div class="indexitem">stability<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-404.html" title="Paragraph">Paragraph</a> <a class="xref" data-knowl="./knowl/p-570.html" title="Paragraph">Paragraph</a></span>
+<div class="indexitem">stability<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-404.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">stable<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-404.html" title="Paragraph">Paragraph</a></span>
-</div>
-<div class="indexitem">steady state<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-567.html" title="Paragraph">Paragraph</a></span>
 </div>
 <div class="indexitem">steady-state<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-402.html" title="Paragraph">Paragraph</a></span>
 </div>
@@ -402,8 +401,12 @@ var js_version = 0.13;
 <div class="indexitem">unstable<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-404.html" title="Paragraph">Paragraph</a></span>
 </div>
 </div>
-<div class="indexletter" id="indexletter-v"><div class="indexitem">variation of parameters<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-220.html" title="Paragraph">Paragraph</a></span>
-</div></div>
+<div class="indexletter" id="indexletter-v">
+<div class="indexitem">van der Pol equation<span class="indexknowl">, <a class="xref" data-knowl="./knowl/example-96.html" title="Example 5.4.7: van del Pol equation">Example</a></span>
+</div>
+<div class="indexitem">variation of parameters<span class="indexknowl">, <a class="xref" data-knowl="./knowl/p-220.html" title="Paragraph">Paragraph</a></span>
+</div>
+</div>
 <div class="indexletter" id="indexletter-w"><div class="indexitem">Wronskian<span class="indexknowl">, <a class="xref" data-knowl="./knowl/ls-df-wronskian.html" title="Definition 3.2.2: Wronskian">Definition</a></span>
 </div></div></section></div></main>
 </div>

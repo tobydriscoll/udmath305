@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-28T13:41:46-04:00    *-->
+<!--*    on 2020-04-29T10:19:13-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The system</p>
+<p>Let's examine the steady states of a pendulum with damping,</p>
+<div class="displaymath">
+\begin{equation*}
+\ddd{\theta}{t} + \gamma \theta' + \frac{g}{L} \sin(\theta) = 0\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(\gamma \gt 0\text{.}\) It transforms into the first-order system</p>
 <div class="displaymath">
 \begin{align*}
-\frac{dx}{dt} \amp= 3x-\frac{xy}{2}\\
-\frac{dy}{dt} \amp= -y+\frac{xy}{4}
+\dd{x_1}{t} \amp = x_2 \\
+\dd{x_2}{t} \amp = -\frac{g}{L}\sin(x_1) - \gamma x_2\text{.}
 \end{align*}
 </div>
-<p data-braille="continuation">is called a <dfn class="terminology">predator–prey</dfn> equation. If species \(y\) is set to zero, species \(x\) would grow exponentially on its own (the prey). Similarly, species \(y\) would die off on its own (predator). We assume that encounters between the species are jointly proportional to the population of each, and they subtract from the prey and add to the predators.</p>
-<span class="incontext"><a href="nl-linearization.html#p-606">in-context</a></span>
+<p data-braille="continuation">These define \(f_1\) and \(f_2\text{.}\) From here we note all the first partial derivatives:</p>
+<div class="displaymath">
+\begin{align*}
+\pp{f_1}{x_1} = 0 \amp \qquad \pp{f_1}{x_2} = 1\\
+\pp{f_2}{x_1} = - \frac{g}{L}\cos(x_1) \amp \qquad \pp{f_2}{x_2} = -\gamma\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="nl-directionfields.html#p-606">in-context</a></span>
 </body>
 </html>

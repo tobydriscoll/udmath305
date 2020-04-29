@@ -14,42 +14,137 @@
 	</p>
 </introduction>
 
-<section xml:id="nl-autonomous">
-	<title>Autonomous scalar problems</title>
+<section xml:id="nl-sec-overview">
+	<title>Overview of nonlinear problems</title>
 	<p>
-		Our general form for a first-order scalar ODE is <m>x'=f(t,x)</m>. In the special case where <m>f</m> does not depend explicitly on time, i.e., when <m>x'=f(x)</m>, we say the equation is <idx>autonomous ODE</idx><term>autonomous</term>. These equations are the simplest place to start. 
-	</p>
-	<p>
-		First consider a . Even before attempting a full solution of the problem, we can see that a value <m>x_0</m> that satisfies <m>f(x_0)=0</m> is special, because then it's clear that the constant function <m>x(t)\equiv x_0</m> is a solution. Such a value is called a <idx>steady state</idx><term>steady state</term>,  <term>equilibrium solution</term>, or <idx>fixed point</idx><term>fixed point</term>.
-	</p>	
-	<p>
-		Imagine holding a broom with bristles pointed down using two fingers. This is ideally a pendulum with a steady state of the broom pointing straight down. You will have no difficulty holding the broom in approximately that position as long as you want.
-	</p>
-	<p>
-		Now imagine trying to hold the broom using the same two fingers, but with the bristles pointing upward. This is an <em>inverted pendulum</em>, and ideally there is a steady state with the broom pointing straight up. Yet you will find it very difficult to hold the broom in that position for more than a few seconds.
-	</p>
-	<p>
-		The distinction between these steady states is the property of <idx>stability</idx><term>stability</term>. It's impossible to place the broom in <em>exactly</em> the equilibrium position with no motion whatsoever of your hand. In the real world, a steady state is constantly undergoing small perturbations. If the effects of those perturbations die out with time, the steady state is called stable, but if they grow, it is unstable.
-	</p>
-	<p>
-		One tool for discriminating between stable and unstable equilibria is a <idx>phase line diagram</idx><term>phase line diagram</term>. (To be continued.) An equivalent analytical test is that <m>x' \lt 0</m> at a stable equilbrium, and <m>x' \gt 0</m> at an unstable one.
+		Nonlinear problems are not a matter of <q>like linear, but harder</q>. They have less predictable structure; we have to set aside the idea of superposition of homogeneous and particular solutions, for example. Indeed, many nonlinear problems are not solvable even in principle. 
 	</p>
 	<example>
 		<p>
-			Consider the ODE <m>x'=x-x^3</m>. The equilibrium solutions are <m>x=0</m> and <m>x=\pm 1</m>. Consider also that <m>x'\lt 0</m> if <m>-1\lt x \lt 0</m> or <m>x\gt 1</m>; otherwise, <m>x' \gt 0</m>. The phase line diagram clarifies that the steady states at <m>x=\pm 1</m> are stable, while the one at <m>x=0</m> is unstable.
+			In <xref ref="ex-nonlinear-growth"/> it was brought up that the ODE <m>x'=x^2</m> has solutions that blow up in finite time. In fact, the solution with <m>x(0)=x_0</m> is <m>x(t)=x_0/(1-x_0t)</m>, which becomes infinite at <m>t=1/x_0</m>. By contrast, linear problems are guaranteed to have solutions wherever their coefficient and forcing functions are continuous. 
 		</p>
-		<sidebyside>
-			<image source="figures/fo_ss_phaseline.svg"/>
-		</sidebyside>
-	</example>		 
-</section>
-
-<section xml:id="nl-separable">
-	<title>Separable equations</title>
+	</example>
+	<example>
+		<p>
+			One solution of the IVP <m>x'=2\sqrt{x}</m>, <m>x(0)=0</m> is <m>x(t)=t^2</m>. But so is the constant function <m>x(t)\equiv 0</m>. In fact, so is <m>x(t)=H(t-T)(t-T)^2</m> for any positive delay <m>T</m>. Hence we cannot automatically expect unique solutions to nonlinear initial-value problems. 
+		</p>
+	</example>
+	<aside>
+		<p>
+			When time is reversed, <m>x'=2\sqrt{x}</m> is equivalent to <em>Toricelli's Law</em> governing the emptying of a bucket with a small hole in the bottom. An interpretation of the nonuniqueness observation is that if you come across an empty leaky bucket, there is no way to know when, if ever, it held water!
+		</p>
+	</aside>
 	<p>
+		There are some ways to guarantee the existence and uniqueness of solutions, but the conclusions are limited and the circumstances do not apply to all or perhaps even most problems of interest. We do not describe them here.
+	</p>
+	<p>
+		The tools for nonlinear problems are more numerous yet less comprehensive than for linear problems: 
+		<dl>
+		  <li>
+			<title>Special cases</title>
+			<p>
+				There are problem types that allow successful solution strategies. One of these types, <em>separable equations</em>, is likely already familiar to you. Others include <em>exact equations</em> and <em>Ricatti	equations</em>.  
+			</p>
+		  </li>
+		  <li>
+			<title>Change of variables</title>
+			<p>
+				As with integration, a change of variables (independent or dependent) can transform a system from a puzzle to a solvable equation. Occasionally there are reasons behind trying certain substitutions, but they often seem to appear out of nowhere. 
+			</p>
+		  </li>
+		  <li>
+			<title>Approximations</title>
+			<p>
+				The most-often used approximation method is <em>linearization</em>, which lets us call on the methods we have discussed to this point. Other situations are large-time and small-parameter approximations, in the domain of <em>asymptotics</em>. 
+			</p>
+		  </li>
+		  <li>
+			  <title>Qualitative methods</title>
+			<p>
+				Even if it is not possible to write out a solution formula, there are techniques from topology, geometry,  and other areas of mathematics that allow us to deduce some specific major properties of the solutions. A notable example is <em>bifurcation analysis</em>, which studies the effects of a key parameter. 
+			</p>
+		  </li>
+		  <li>
+			<title>Numerical solutions</title>
+			<p>
+				Numerical solutions are the most universally available methods. They are a form of approximation, though for routine practical applications they can usually be much more accurate than other sources of error or uncertainty would allow. There are circumstances, however, such as very long times or chaotic systems, in which there is some subtlety to the interpretation of numerical results. 
+			</p>
+		  </li>
+		</dl>
+	</p>
+	
+</section>
+<section xml:id="nl-autonomous">
+	<title>Scalar first-order problems</title>
+	<introduction>
+		<p>
+			Scalar, first-order nonlinear problems are often more penetrable than more general equations. If nothing else, the problem 
+			<me>
+				x' = f(t,x)
+			</me>
+			is easily visualized. By evaluating <m>f</m> on a grid in the <m>(t,x)</m> plane, we can draw arrows representing the slope <m>dx/dt</m> of the solution curves that pass through the grid points. This picture is known as a <idx>direction field</idx><term>direction field</term>. 
+		</p>
+		<example>
+			<title>Direction field for a scalar problem</title>
+			<p> 
+				Here is a direction field for <m>x'=t-x^2</m>. Note that the arrows are horizontal along the sideways parabola <m>t=x^2</m>. Curves with this property are known as <term>nullclines</term>.
+			</p>
+			<sidebyside>
+				<listing xml:id="nl_dirfield_3">
+				<program language="matlab">
+				<input>
+				f = @(t,x) t-x^2;
+				slopefield(f,[-2 2],[-2 2])
+				</input>
+				</program>
+				</listing>
+				<image source="figures/nl_dirfield_3.svg"/>
+			</sidebyside>
+		</example>
+	</introduction>
+	<subsection xml:id="nl-sec-autonomous">
+		<title>Autonomous equations</title>
+		<p>
+			Problems of the form <m>x'=f(x)</m> are called <idx>autonomous ODE</idx><term>autonomous</term>. In autonomous problems, a root of the function <m>f</m> is an <idx>equilibrium</idx> equilibrium or steady-state solution. As we saw in linear systems, the stability of equilibrium solutions is often important. 
+		</p>
+		<p>
+			One tool for discriminating between stable and unstable equilibria is a <idx>phase line diagram</idx><term>phase line diagram</term>. This is most readily explained with an example. 
+			
+			An equivalent analytical test is that <m>x' \lt 0</m> at a stable equilibrium, and <m>x' \gt 0</m> at an unstable one.
+		</p>
+		<example>
+			<p>
+				Consider the ODE <m>x'=x-x^3</m>. The equilibrium solutions are <m>x=0</m> and <m>x=\pm 1</m>, which is clear in a plot of <m>f(x)</m>. The plot also shows the sign of <m>f(x)</m> and therefore of <m>dx/dt</m>. So between the equilibria we can draw arrows to show whether <m>x</m> is increasing or decreasing with time. The arrows clarify that the steady states at <m>x=\pm 1</m> are stable, while the one at <m>x=0</m> is unstable.
+			</p>
+			<sidebyside>
+				<listing xml:id="nl_phaseline">
+					<caption>Phase-line diagram</caption>
+					<program language="matlab">
+						<input>
+f = @(x) x - x.^3;
+fplot(f,[-1.5,1.5])
+set(gca,'xaxisloc','origin')
+xlabel x, ylabel f(x)
+hold on, ylim([-1 1]), axis equal
+tt = [-1.35 -0.4 0.4 1.35];
+quiver(tt,0*tt,0.15*[1 -1 1 -1],0*tt,.2,'linew',2) 
+						</input>
+					</program>
+				</listing>
+				<image source="figures/nl_phaseline.svg"/>
+			</sidebyside>
+		</example>		 
+		<p>
+			A simple analytical test for the stability of an equilibrium value <m>x_e</m> is that <m>f'(x_e) \lt 0</m> at a stable equilibrium, and <m>f'(x_e) \gt 0</m> at an unstable one. This too is clear from the phase-line diagram. The case <m>f'(x_e)=0</m> requires additional investigation. 
+		</p>
+	</subsection>
+	
+	<subsection xml:id="nl-separable">
+		<title>Separable equations</title>
+		<p>
 		All problems in the autonomous form <m>x'=f(x)</m>, and more generally in the form <m>x'=f(x)g(t)</m>, are called <idx>separable ODE</idx><term>separable equations</term> and can be solved systematically (up to performing integrations). Rather than deriving a formula for them, it's best to just repeat a straightforward process for each new problem.
 	</p>
-
+	
 	<example>
 		<p>
 			Consider the <xref ref="ex-variable-growth">variable growth archetype</xref> <m>x'=2tx</m>. We express <m>x'</m> as <m>dx/dt</m> and then isolate the variables:
@@ -59,7 +154,7 @@
 			Integrating both sides leads to <m>\log |x| = t^2 + C</m>, or <m>|x|=Ae^{t^2}</m> for a positive constant <m>A</m> (since it is the exponential of a real constant). Taking the absolute value off of <m>x</m> means that <m>A</m> can be negative as well. Also, <m>A=0</m> clearly leads to a solution. Finally, we conclude that <m>x=Ce^{t^2}</m> for arbitrary <m>C</m>.
 		</p>
 	</example>
-
+	
 	<example>
 		<p>
 			Suppose <m>x'=t^2/(x^3-2)</m>. Separation and integration lead to
@@ -77,16 +172,17 @@
 	</p>
 	<example>
 		<p>
-			Suppose <m>tx' = x-tx</m>. Nothing happens until you see that you can factor out <m>x</m> on the right side. Then we have <m>dx/dt = x(1-t)/t</m>, or
+			Suppose <m>t x' = x-t x</m>. This does not look separable until you see that you can factor out <m>x</m> on the right side. Then we have <m>dx/dt = x(1-t)/t</m>, or
 			<me> \frac{dx}{x} = (t^{-1}-1)\,dt</me>.
-			Thus <m>\ln|x| = \ln|t|-t+C</m>, or <m>x=A te^{-t}</m>. 
+			Thus <m>\ln|x| = \ln|t|-t+C</m>, or <m>x=A t e^{-t}</m>. 
 		</p>
 		<p>
 			Note that this problem is also linear, so it could be approached that way as well. Of course you must get the same solution in the end!
 		</p>
 	</example>	
+</subsection>
 </section>
-	
+
 <section xml:id="nl-logistic">
 	<title>Case study: Logistic equation</title>
 	<introduction>
@@ -100,24 +196,28 @@
 
 	<p>
 		There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let <m>b\gt 0</m> be another positive parameter, and define
+		<me>
+			\frac{1}{x} \dd{x}{t} = a - bx, \qquad \text{or} \qquad \dd{x}{t} = ax - bx^2 
+		</me>.
+		This is the <idx>logistic equation</idx><term>logistic equation</term>. It's useful to define <m>K=a/b</m> and rewrite the model as 
 		<men xml:id="eq-logistic">
-			\frac{1}{x} \dd{x}{t} = a - bx, \qquad or \dd{x}{t} = ax - bx^2 
+			\dd{x}{t} = ax\left(1 - \frac{x}{K}\right)  
 		</men>.
-		This is the <idx>logistic equation</idx><term>logistic equation</term>.
+		Both parameters are positive. The parameter <m>K</m> is known as the <idx>carrying capacity</idx><term>carrying capacity</term> and plays an important role. 
 	</p>
 	</introduction>
 
 	<subsection xml:id="nl-lo-steady">
 		<title>Steady states</title>
 		<p>
-			We begin with the steady states. We have <m>x'=f(x)=x(a-bx)</m> with roots <m>x=0</m> and <m>x=a/b</m>. Since <m>f'(x)=a-2bx</m>, we conclude that the former steady state is unstable and the latter is stable. The stable equilibrium value <m>K=a/b</m> is important and known as the <idx>carrying capacity</idx><term>carrying capacity</term> of the environment. We will find later that this value is the long-term fate of the system for any positive initial condition.
+			We begin with the steady states, which from <xref ref="eq-logistic"/> are clearly <m>x=0</m> and <m>x=K</m>. Since <m>f'(x)=a-(2ax/K)</m>, we conclude that the former steady state is unstable and the latter is stable. That is, the system has a tendency to hover near the carrying capacity. (Later we will show much more: this value is the long-term fate of the system for any positive initial condition.)
 		</p>
 		<p>
 			We can get creative and show that the halfway value <m>x=K/2</m> is also special. Still without knowing explicitly what <m>x</m> is, we can differentiate the ODE and use the chain rule to obtain
 			<me>
-				x'' = ax'-2bxx' = (a-2bx)(ax-bx^2)
+				x'' = ax'- \frac{2a x x'}{K} = ax'\left( 1 - \frac{2x}{K} \right)
 			</me>.
-			This is zero for <m>x=K/2=a/2b</m>, suggesting that it is an inflection point. 
+			This is zero for <m>x=K/2</m>, suggesting that this solution value is an inflection point. 
 		</p>
 	</subsection>
 
@@ -164,9 +264,6 @@
 		<image source="figures/fn_lo_solutions.svg"/>	  
 		</sidebyside>
 		</example>
-		<p>
-			It's not easy to say why the variable substitution works out so well here. It's also not something you can expect to happen in most problems. The situation is very much like substitutions to solve integration problems: when they work, they're golden, and when they don't, you try something else. 
-		</p>
 	</subsection>
 
 	<subsection xml:id="fn-lo-separate">
@@ -186,142 +283,91 @@
 </section>
 
 <section xml:id="nl-directionfields">
-	<title>Direction fields</title>
-	<p>
-		An autonomous system in two dimensions has the particular form 
-		<md>
-			<mrow> \dd{x_1}{t} \amp = f_1(x_1,x_2), </mrow>
-			<mrow> \dd{x_2}{t} \amp = f_2(x_1,x_2). </mrow>
-		</md>
-		For such a system we can use a simple visualization to suggest solution behavior. 
-	</p>
-	<example xml:id="nl-ex-direction-field-system">
-		<title>Direction field for a system of two equations</title>
-		<p> 
-			Here is a direction field for the linear ODE system
-			<md>
-			<mrow>\dd{x}{t} \amp = -y</mrow>
-			<mrow>\dd{y}{t} \amp = x</mrow>
-			</md>. 
-		</p>
-		<sidebyside>
-			<listing xml:id="nl_dirfield_1">
-			<program language="matlab">
-			<input>
-			F = @(x,y) -y;   G = @(x,y) x;
-
-			slopefield(F,G,[-2 2],[-2 2])
-			</input>
-			</program>
-			</listing>
-			<image source="figures/nl_dirfield_1.svg"/>
-		</sidebyside>
-		<p> 
-			Here is a slope field in the first quadrant for the nonlinear system
-			<md>
-			<mrow>\dd{x}{t} \amp = 3x - \frac{1}{2}xy</mrow>
-			<mrow>\dd{y}{t} \amp = \frac{1}{4}xy - y</mrow>
-			</md>. 
-		</p>
-		<sidebyside>
-			<listing xml:id="nl_dirfield_2">
-			<program language="matlab">
-			<input>
-			F = @(x,y) 3.*x-x.*y/2;
-			G = @(x,y) -y + x.*y/4;
-
-			slopefield(F,G,[0 10],[0 12])
-			</input>
-			</program>
-			</listing>
-			<image source="figures/nl_dirfield_2.svg"/>
-		</sidebyside>
-	</example>	
-	<p>
-		We can use a simple trick to create direction fields for the nonautonomous scalar problem <m>x'=f(t,x)</m> as well. Introducing the variables <m>u_1=t</m> and <m>u_2=x</m>, we have 
-		<md>
-			<mrow> \dd{u_1}{t} \amp = 1, </mrow>
-			<mrow> \dd{u_2}{t} \amp = f(u_1,u_2), </mrow>
-		</md>
-		which has the form of a two-dimensional autonomous system. 
-	</p>
-	<aside>
+	<title>Two-dimensional systems</title>
+	<introduction>
 		<p>
-			Both higher-order and nonautonomous problems can be converted to an autonomous, first-order system of the form <m>\bx'=\bff(\bx)</m> in a higher dimension. Hence those are as general a type as we need to study. 
+			An autonomous system in two dimensions has the particular form 
+			<mdn>
+				<mrow xml:id="nl-eq-system1"> \dd{x_1}{t} \amp = f_1(x_1,x_2), </mrow>
+				<mrow xml:id="nl-eq-system2"> \dd{x_2}{t} \amp = f_2(x_1,x_2). </mrow>
+			</mdn>
+			For such a system we can again use a direction field to visualize the global behavior. At a point in the <m>(x_1,x_2)</m> plane, the vector <m>[f_1(x_1,x_2),f_2(x_1,x_2)]</m> is tangent to the solution curve passing through that point. 
 		</p>
-	</aside>
-	<example>
-		<title>Direction field for a scalar problem</title>
-		<p> 
-			Here is a direction field for <m>x'=t-x^2</m>. Note that the arrows are horizontal along the sideways parabola <m>t=x^2</m>. 
-		</p>
-		<sidebyside>
-			<listing xml:id="nl_dirfield_3">
-			<program language="matlab">
-			<input>
-			f = @(t,x) t-x^2;
-			slopefield(f,[-2 2],[-2 2])
-			</input>
-			</program>
-			</listing>
-			<image source="figures/nl_dirfield_3.svg"/>
-		</sidebyside>
-	</example>
-</section>
-
-<section xml:id="nl-linearization">
+		<example xml:id="nl-ex-direction-field-system">
+			<title>Direction field for a system of two equations</title>
+			<p> 
+				Here is a direction field for the linear ODE system
+				<md>
+					<mrow>\dd{x}{t} \amp = -y</mrow>
+					<mrow>\dd{y}{t} \amp = x</mrow>
+				</md>. 
+			</p>
+			<sidebyside>
+				<listing xml:id="nl_dirfield_1">
+					<program language="matlab">
+						<input>
+							F = @(x,y) -y;   G = @(x,y) x;
+							
+							slopefield(F,G,[-2 2],[-2 2])
+						</input>
+					</program>
+				</listing>
+				<image source="figures/nl_dirfield_1.svg"/>
+			</sidebyside>
+			<p> 
+				Here is a slope field in the first quadrant for the nonlinear system
+				<md>
+					<mrow>\dd{x}{t} \amp = 3x - \frac{1}{2}xy</mrow>
+					<mrow>\dd{y}{t} \amp = \frac{1}{4}xy - y</mrow>
+				</md>. 
+			</p>
+			<sidebyside>
+				<listing xml:id="nl_dirfield_2">
+					<program language="matlab">
+						<input>
+							F = @(x,y) 3.*x-x.*y/2;
+							G = @(x,y) -y + x.*y/4;
+							
+							slopefield(F,G,[0 10],[0 12])
+						</input>
+					</program>
+				</listing>
+				<image source="figures/nl_dirfield_2.svg"/>
+			</sidebyside>
+		</example>	
+	</introduction>
+	
+<subsection xml:id="nl-sec-linearization">
 	<title>Linearization</title>
 	<p>
-		A pendulum with length <m>L</m> and angle of deflection <m>\theta(t)</m> from the vertical is governed by the nonlinear second-order equation
-		<me>
-			\ddd{\theta}{t} + \frac{g}{L} \sin(\theta) = 0
-		</me>,
-		where <m>g</m> is gravitational acceleration. It's standard to argue that as long as <m>|\theta|</m> remains small, a good approximation is the linear problem 
-			<me>
-			\ddd{\theta}{t} + \frac{g}{L} \theta = 0
-		</me>,
-		because <m>\sin \theta \approx \theta</m>.  We want to get more systematic with this process. 
-	</p>
-	<p>
-		First note that we can recast the nonlinear problem as a first-order system in two variables. Define <m>x=\theta</m> and <m>y=\theta'</m>. Then
+		An equilibrium solution of the system <xref ref="nl-eq-system1"/>-<xref ref="nl-eq-system2"/> is a pair of values <m>(x_1^*,x_2^*)</m> such that <m>f_1(x_1^*,x_2^*)=f_2(x_1^*,x_2^*)=0</m>. We can understand the dynamics near an equilibrium point by approximating the nonlinear system with a linear one. Specifically, we use the multivariate linearizations 
 		<md>
-			<mrow>\dd{x}{t} \amp = y </mrow>
-			<mrow>\dd{y}{t} \amp = -\frac{g}{L}\sin(x)</mrow>
-		</md>. 
-		This trick works for any nonlinear second-order equation <m>\theta''=g(t,\theta,\theta')</m>. Thus we can focus on problems in the general form 
-		<md>
-			<mrow>\dd{x}{t} \amp = F(x,y) </mrow>
-			<mrow>\dd{y}{t} \amp = G(x,y)</mrow>
+			<mrow>f_1(x_1,x_2) \amp \approx f_1(x_1^*,x_2^*) + \pp{f_1}{x_1} (x_1-x_1^*) + \pp{f_1}{x_2} (x_2-x_2^*)</mrow>
+			<mrow>f_2(x_1,x_2) \amp \approx f_2(x_1^*,x_2^*) + \pp{f_2}{x_1} (x_1-x_1^*) + \pp{f_2}{x_2} (x_2-x_2^*)</mrow>
 		</md>, 
-		or <m>\bu' = \bff(\bu)</m> for 2-vector <m>\bu(t)</m>. Note that (as we saw before), the vector <m>\bu</m> represents the state of the system.
-	</p>
-	<p>
-		As we did with single scalar equations, we will pay close attention to <term>steady states</term> or <term>fixed points</term> of these systems. Here this means constants <m>(x_p,y_p)</m> such that <m>F(x_p,y_p)=G(x_p,y_p)=0</m>. For the nonlinear pendulum, both <m>(0,0)</m> and <m>(\pi,0)</m> are steady states. 
-	</p>
-	<p>
-		We are interested in the stability of fixed points, that is, the dynamics close to them. We will use linear approximations of the functions <m>F</m> and <m>G</m> near a fixed point:
+		where it is understood for brevity that the partial derivatives are all evaluated at <m>(x_1^*,x_2^*)</m>. The first term in each expansion is zero due to the equilibrium assumption. Now define <m>u_1(t)=x_1(t)-x_1^*</m>, <m>u_2(t)=x_2(t)-x_2^*</m> to arrive at 
 		<md>
-			<mrow>F(x,y) \amp \approx F(x_p,y_p) + \pp{F}{x} (x-x_p) + \pp{F}{y} (y-y_p)</mrow>
-			<mrow>G(x,y) \amp \approx G(x_p,y_p) + \pp{G}{x} (x-x_p) + \pp{G}{y} (y-y_p)</mrow>
-		</md>, 
-		where it is understood for brevity that the partial derivatives are all evaluated at <m>(x_p,y_p)</m>. Given that <m>(x_p,y_p)</m> is a fixed point, two terms above are zero. Finally, define <m>u_1(t)=x(t)-x_p</m>, <m>u_2(t)=y(t)-y_p</m> to arrive at 
-		<md>
-			<mrow>\dd{u_1}{t} \amp \approx \pp{F}{x} u_1 + \pp{F}{y} u_2, </mrow>
-			<mrow>\dd{u_2}{t} \amp \approx \pp{G}{x} u_1 + \pp{G}{y} u_2. </mrow>
+			<mrow>\dd{u_1}{t} \amp \approx \pp{f_1}{x_1} u_1 + \pp{f_1}{x_2} u_2, </mrow>
+			<mrow>\dd{u_2}{t} \amp \approx \pp{f_2}{x_1} u_1 + \pp{f_2}{x_2} u_2. </mrow>
 		</md>
-		This inspires the following definition.
+		This motivates the following definition.
 	</p>
 	<definition xml:id="nl-def-jacobian">
 		<title>Jacobian matrix</title>
 		<statement><p>
-			The <idx>Jacobian matrix</idx><term>Jacobian matrix</term> of the system <m>x'=F(x,y),\, y'=G(x,y)</m> is 
+			The <idx>Jacobian matrix</idx><term>Jacobian matrix</term> of the system <xref ref="nl-eq-system1"/>-<xref ref="nl-eq-system2"/> is 
 			<men xml:id="nl-eq-jacobian">
-				\bJ(x,y) = \twomat{\pp{F}{x}}{\pp{F}{y}}{\pp{G}{x}}{\pp{G}{y}}
-			</men>
+				\bJ(x_1,x_2) = \twomat{\pp{f_1}{x_1}}{\pp{f_1}{x_2}}{\pp{f_2}{x_1}}{\pp{f_2}{x_2}}
+			</men>. 
 		</p></statement>
 	</definition>
+	<aside>
+		<p>
+			Just as a derivative of <m>f(x)</m> is a function of <m>x</m>, a Jacobian matrix is a function of the variables of the system. 
+		</p>
+	</aside>
 	<p>
-		Let's summarize. In the neighborhood of a fixed point <m>(x_p,y_p)</m>, we can define the <q>deviation from equilibrium</q> as the variables <m>u_1(t)=x(t)-x_p</m>, <m>u_2(t)=y(t)-y_p</m>. These variables approximately satisfy <m>\bu'=\bJ(x_p,y_p)\bu</m>, which is a linear, constant-coefficient system in two dimensions. This is a huge revelation: <em>near a steady state, dynamics are mostly linear</em>. 
+		Let's summarize. In the neighborhood of a fixed point <m>(x_1^*,x_2^*)</m>, we can define the <q>deviation from equilibrium</q> as the variables <m>u_i(t)=x_i(t)-x_i^*</m> for <m>i=1,2</m>. These variables approximately satisfy <m>\bu'=\bJ(x_1^*,x_2^*)\bu</m>, which is a linear, constant-coefficient system in two dimensions. This is a huge revelation: <alert>near a steady state, dynamics are mostly linear</alert>. 
 	</p>
 	<p>
 		We are now right back into the situation of <xref ref="fs-phaseplane"/>. In particular: 
@@ -340,13 +386,13 @@
 		</me>,
 		with <m>\gamma \gt 0</m>. It transforms into the first-order system
 		<md>
-			<mrow>\dd{x}{t} \amp = y </mrow>
-			<mrow>\dd{y}{t} \amp = -\frac{g}{L}\sin(x) - \gamma y</mrow>
+			<mrow>\dd{x_1}{t} \amp = x_2 </mrow>
+			<mrow>\dd{x_2}{t} \amp = -\frac{g}{L}\sin(x_1) - \gamma x_2</mrow>
 		</md>. 
-		These define <m>F(x,y)</m> and <m>G(x,y)</m>. From here we note all the first partial derivatives: 
+		These define <m>f_1</m> and <m>f_2</m>. From here we note all the first partial derivatives: 
 		<md>
-			<mrow>\pp{F}{x} = 0 \amp \qquad \pp{F}{y} = 1</mrow>
-			<mrow>\pp{G}{x} = - \frac{g}{L}\cos(x) \amp \qquad \pp{G}{y} = -\gamma</mrow>
+			<mrow>\pp{f_1}{x_1} = 0 \amp \qquad \pp{f_1}{x_2} = 1</mrow>
+			<mrow>\pp{f_2}{x_1} = - \frac{g}{L}\cos(x_1) \amp \qquad \pp{f_2}{x_2} = -\gamma</mrow>
 		</md>.
 		</p>
 		<p>    
@@ -354,22 +400,49 @@
 		<me>
 			\begin{bmatrix} 
 			0 \amp 1 \\ -g/L \amp -\gamma
-			\end{bmatrix}
+			\end{bmatrix} 
 		</me>. 
-		We get <m>T=-\gamma \lt 0</m> and <m>D=g/L \gt 0</m>, which is a stable sink. That comports with our experience with a pendulum hanging straight down!
+		The eigenvalues are 
+		<me>
+			\frac{-\gamma \pm \sqrt{\gamma^2 - 4(g/L)}}{2}. 
+		</me>
+		If the radical is imaginary, then the real part is <m>-\gamma/2 \lt 0</m>. If it is real, then it is in the interval <m>(0,\gamma)</m>, so the eigenvalues are real and negative. Hence the origin is stable, as either a spiral point or a node. That comports with our expectations of a pendulum hanging straight down!
 		</p>
 		<p>
-			The other steady state is at <m>(\pi,0)</m>. Now the Jacobian is
+			The other steady state is at <m>(\pi,0)</m>, the inverted position. Now the Jacobian is
 		<me>
 			\begin{bmatrix} 
 			0 \amp 1 \\ g/L \amp -\gamma
 			\end{bmatrix}
 		</me>, 
-		with <m>T=-\gamma</m> and <m>D=-g/L</m>. This implies a saddle point, so the "inverted pendulum" is indeed unstable. 
+		with eigenvalues 
+		<me>
+			\frac{-\gamma \pm \sqrt{\gamma^2 + 4(g/L)}}{2}. 
+		</me>
+		Now the radical is always real and greater than <m>\gamma</m>, so the eigenvalues are real and of opposite signs. Hence the inverted position is an unstable saddle point. 
+		</p>
+	</example>
+	<example>
+		<title>van del Pol equation</title>
+		<p>
+			The <idx>van der Pol equation</idx><term>van der Pol equation</term> is a nonlinear oscillator in the form <m>y''+\mu(y^2-1)y'+y=0</m> for parameter <m>\mu \gt 0</m>. It is equivalent to the system 
+			<md>
+				<mrow> x_1' \amp = x_2  </mrow>
+				<mrow> x_2' \amp = -x_1 - \mu(x_1^2-1)x_2,  </mrow>
+			</md>
+			which has the sole equilibrium point <m>(0,0)</m>. The Jacobian matrix is 
+			<me>
+				\twomat{0}{1}{-1-2\mu x_1 x_2}{-\mu(x_1^2-1)}, 
+			</me>
+			which at the origin is simply <m>\twomat{0}{1}{-1}{\mu}</m>. This has eigenvalues
+			<me>
+				\frac{1}{2} \left( {\mu} \pm \sqrt{\mu^2-4} \right). 
+			</me>
+			If <m>0\lt \mu \lt 2</m>, the origin is an unstable spiral point. If <m>\mu > 2</m>, the origin is an unstable node, as you can never achieve a negative eigenvalue. 
 		</p>
 	</example>
 	<p>
-		The caveat on using eigenvalues for stability is when they both have zero real part, which is neutrally or weakly stable in the linear sense. In such cases the details of the nonlinear terms of the system can swing the stability either way. 
+		The caveat on using eigenvalues for stability is when they both have zero real part, which is a neutrally stable center in the linear sense. In such cases the details of the nonlinear terms of the system can swing the stability either way. 
 	</p>
 	<example>
 		<title>Linearization of predator-prey</title>
@@ -379,23 +452,23 @@
 			<mrow>\frac{dx}{dt} \amp= 3x-\frac{xy}{2}</mrow>
 			<mrow>\frac{dy}{dt} \amp= -y+\frac{xy}{4}</mrow>
 			</md>
-			is called a <term>predator–prey</term> equation. If species <m>y</m> is set to zero, species <m>x</m> would grow exponentially on its own (the prey). Similarly, species <m>y</m> would die off on its own (predator). We assume that encounters between the species are jointly proportional to the population of each, and they subtract from the prey and add to the predators. 
+			is called a <idx>predator-prey model</idx><term>predator–prey</term> equation. If species <m>y</m> is set to zero, species <m>x</m> would grow exponentially on its own (the prey). Similarly, species <m>y</m> would die off on its own (predator). We assume that encounters between the species are jointly proportional to the population of each, and they subtract from the prey and add to the predators. 
 		</p>
 		<p>
-			We find fixed points when <m>3x-(xy/2)=(xy/4)-y=0</m>, which has two solutions, <m>(0,0)</m> and <m>(4,6)</m>. The Jacobian matrix of the system is 
+			We find fixed points when <m>3x-(x y/2)=(x y/4)-y=0</m>, which has two solutions, <m>(0,0)</m> and <m>(4,6)</m>. The Jacobian matrix of the system is 
 			<me>
-				\mathbf{A}(x,y) = \begin{bmatrix} F_x \amp F_y  \\ G_x \amp G_y \end{bmatrix} = \begin{bmatrix} 3-y/2 \amp -x/2 \\ y/4 \amp -1+x/4 \end{bmatrix}
+				\mathbf{A} =  \begin{bmatrix} 3-y/2 \amp -x/2 \\ y/4 \amp -1+x/4 \end{bmatrix}
 			</me>. 
 			At the origin, the Jacobian becomes
 			<me>
-				\mathbf{A}(0,0) = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}
+				 \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}
 			</me>. 
-			The eigenvalues of a diagonal matrix (in fact, a triangular matrix) are the diagonal entries. Hence the origin is a saddle point. 
+			The eigenvalues of a diagonal matrix are the diagonal entries. Hence the origin is a saddle point. 
 		</p>
 		<p>
-			At the other steady state we have
+			At the other steady state we have the Jacobian
 				<me>
-				\mathbf{A}(4,6) = \twomat{0}{-2}{3/2}{0}
+				\twomat{0}{-2}{3/2}{0}
 			</me>. 
 			The characteristic polynomial is <m>\lambda^2 - 0\lambda + 3</m>, so the eigenvalues are <m>\pm i\sqrt{3}</m>. Hence this fixed point is a center. Close to the point, the orbits are impossible to tell apart from those of a linear center:       
 		</p>
@@ -407,8 +480,12 @@
 		</p>
 			<sidebyside>
 			<image source="figures/linearized_center2.svg"/>
-		</sidebyside>        
+		</sidebyside>
+		<p>
+			In this particular case the solution curves continue to close up, suggesting that all these solutions are periodic. 
+		</p>
 	</example>
+</subsection>
 </section>
 	
 </chapter>

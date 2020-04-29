@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-28T13:41:43-04:00    *-->
+<!--*    on 2020-04-29T10:19:11-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Direction fields</title>
+<title>Two-dimensional systems</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/x-mathjax-config">
@@ -131,11 +131,11 @@ var js_version = 0.13;
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="nl-logistic.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch5-nonlinear-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="nl-linearization.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="nl-logistic.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch5-nonlinear-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="nl-logistic.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch5-nonlinear-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="nl-linearization.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="nl-logistic.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch5-nonlinear-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -194,11 +194,10 @@ var js_version = 0.13;
 </li>
 <li class="link">
 <a href="ch5-nonlinear-ode.html" data-scroll="ch5-nonlinear-ode"><span class="codenumber">5</span> <span class="title">Nonlinear ODEs</span></a><ul>
-<li><a href="nl-autonomous.html" data-scroll="nl-autonomous">Autonomous scalar problems</a></li>
-<li><a href="nl-separable.html" data-scroll="nl-separable">Separable equations</a></li>
+<li><a href="nl-sec-overview.html" data-scroll="nl-sec-overview">Overview of nonlinear problems</a></li>
+<li><a href="nl-autonomous.html" data-scroll="nl-autonomous">Scalar first-order problems</a></li>
 <li><a href="nl-logistic.html" data-scroll="nl-logistic">Case study: Logistic equation</a></li>
-<li><a href="nl-directionfields.html" data-scroll="nl-directionfields" class="active">Direction fields</a></li>
-<li><a href="nl-linearization.html" data-scroll="nl-linearization">Linearization</a></li>
+<li><a href="nl-directionfields.html" data-scroll="nl-directionfields" class="active">Two-dimensional systems</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -207,19 +206,19 @@ var js_version = 0.13;
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="nl-directionfields"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">Direction fields</span>
+<span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">Two-dimensional systems</span>
 </h2>
-<a href="nl-directionfields.html" class="permalink">¶</a><p id="p-588">An autonomous system in two dimensions has the particular form</p>
+<a href="nl-directionfields.html" class="permalink">¶</a><section class="introduction" id="introduction-24"><p id="p-597">An autonomous system in two dimensions has the particular form</p>
 <div class="displaymath">
-\begin{align*}
-\dd{x_1}{t} \amp = f_1(x_1,x_2), \\
-\dd{x_2}{t} \amp = f_2(x_1,x_2). 
-\end{align*}
+\begin{align}
+\dd{x_1}{t} \amp = f_1(x_1,x_2), \label{nl-eq-system1}\tag{5.4.1}\\
+\dd{x_2}{t} \amp = f_2(x_1,x_2). \label{nl-eq-system2}\tag{5.4.2}
+\end{align}
 </div>
-<p data-braille="continuation">For such a system we can use a simple visualization to suggest solution behavior.</p>
+<p data-braille="continuation">For such a system we can again use a direction field to visualize the global behavior. At a point in the \((x_1,x_2)\) plane, the vector \([f_1(x_1,x_2),f_2(x_1,x_2)]\) is tangent to the solution curve passing through that point.</p>
 <article class="example example-like" id="nl-ex-direction-field-system"><a data-knowl="" class="id-ref original" data-refid="hk-nl-ex-direction-field-system"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Direction field for a system of two equations.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-nl-ex-direction-field-system"><article class="example example-like"><p id="p-589">Here is a direction field for the linear ODE system</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-nl-ex-direction-field-system"><article class="example example-like"><p id="p-598">Here is a direction field for the linear ODE system</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = -y\\
@@ -234,7 +233,7 @@ slopefield(F,G,[-2 2],[-2 2])
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.4.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/nl_dirfield_1.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-590">Here is a slope field in the first quadrant for the nonlinear system</p>
+<p id="p-599">Here is a slope field in the first quadrant for the nonlinear system</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = 3x - \frac{1}{2}xy\\
@@ -249,25 +248,146 @@ slopefield(F,G,[0 10],[0 12])
 </pre>
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.4.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/nl_dirfield_2.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></article></div>
-<p id="p-591">We can use a simple trick to create direction fields for the nonautonomous scalar problem \(x'=f(t,x)\) as well. Introducing the variables \(u_1=t\) and \(u_2=x\text{,}\) we have</p>
+</div></div></article></div></section><section class="subsection" id="nl-sec-linearization"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.4.1</span> <span class="title">Linearization</span>
+</h3>
+<a href="nl-directionfields.html#nl-sec-linearization" class="permalink">¶</a><p id="p-600">An equilibrium solution of the system <a class="xref" data-knowl="./knowl/nl-eq-system1.html" title="Equation 5.4.1">(5.4.1)</a>-<a class="xref" data-knowl="./knowl/nl-eq-system2.html" title="Equation 5.4.2">(5.4.2)</a> is a pair of values \((x_1^*,x_2^*)\) such that \(f_1(x_1^*,x_2^*)=f_2(x_1^*,x_2^*)=0\text{.}\) We can understand the dynamics near an equilibrium point by approximating the nonlinear system with a linear one. Specifically, we use the multivariate linearizations</p>
 <div class="displaymath">
 \begin{align*}
-\dd{u_1}{t} \amp = 1, \\
-\dd{u_2}{t} \amp = f(u_1,u_2), 
+f_1(x_1,x_2) \amp \approx f_1(x_1^*,x_2^*) + \pp{f_1}{x_1} (x_1-x_1^*) + \pp{f_1}{x_2} (x_2-x_2^*)\\
+f_2(x_1,x_2) \amp \approx f_2(x_1^*,x_2^*) + \pp{f_2}{x_1} (x_1-x_1^*) + \pp{f_2}{x_2} (x_2-x_2^*)\text{,}
 \end{align*}
 </div>
-<p data-braille="continuation">which has the form of a two-dimensional autonomous system.</p>
-<aside class="aside aside-like" id="aside-20"><p id="p-592">Both higher-order and nonautonomous problems can be converted to an autonomous, first-order system of the form \(\bx'=\bff(\bx)\) in a higher dimension. Hence those are as general a type as we need to study.</p></aside><article class="example example-like" id="example-92"><a data-knowl="" class="id-ref original" data-refid="hk-example-92"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Direction field for a scalar problem.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-92"><article class="example example-like"><p id="p-593">Here is a direction field for \(x'=t-x^2\text{.}\) Note that the arrows are horizontal along the sideways parabola \(t=x^2\text{.}\)</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="nl_dirfield_3"><pre class="prettyprint lang-matlab">f = @(t,x) t-x^2;
-slopefield(f,[-2 2],[-2 2])
-</pre>
-<figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.4.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/nl_dirfield_3.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></article></div></section></div></main>
+<p data-braille="continuation">where it is understood for brevity that the partial derivatives are all evaluated at \((x_1^*,x_2^*)\text{.}\) The first term in each expansion is zero due to the equilibrium assumption. Now define \(u_1(t)=x_1(t)-x_1^*\text{,}\) \(u_2(t)=x_2(t)-x_2^*\) to arrive at</p>
+<div class="displaymath">
+\begin{align*}
+\dd{u_1}{t} \amp \approx \pp{f_1}{x_1} u_1 + \pp{f_1}{x_2} u_2, \\
+\dd{u_2}{t} \amp \approx \pp{f_2}{x_1} u_1 + \pp{f_2}{x_2} u_2. 
+\end{align*}
+</div>
+<p data-braille="continuation">This motivates the following definition.</p>
+<article class="definition definition-like" id="nl-def-jacobian"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Jacobian matrix.</span>
+</h6>
+<p id="p-601">The <dfn class="terminology">Jacobian matrix</dfn> of the system <a class="xref" data-knowl="./knowl/nl-eq-system1.html" title="Equation 5.4.1">(5.4.1)</a>-<a class="xref" data-knowl="./knowl/nl-eq-system2.html" title="Equation 5.4.2">(5.4.2)</a> is</p>
+<div class="displaymath">
+\begin{equation}
+\bJ(x_1,x_2) = \twomat{\pp{f_1}{x_1}}{\pp{f_1}{x_2}}{\pp{f_2}{x_1}}{\pp{f_2}{x_2}}\text{.}\label{nl-eq-jacobian}\tag{5.4.3}
+\end{equation}
+</div></article><aside class="aside aside-like" id="aside-21"><p id="p-602">Just as a derivative of \(f(x)\) is a function of \(x\text{,}\) a Jacobian matrix is a function of the variables of the system.</p></aside><p id="p-603">Let's summarize. In the neighborhood of a fixed point \((x_1^*,x_2^*)\text{,}\) we can define the “deviation from equilibrium” as the variables \(u_i(t)=x_i(t)-x_i^*\) for \(i=1,2\text{.}\) These variables approximately satisfy \(\bu'=\bJ(x_1^*,x_2^*)\bu\text{,}\) which is a linear, constant-coefficient system in two dimensions. This is a huge revelation: <em class="alert">near a steady state, dynamics are mostly linear</em>.</p>
+<p id="p-604">We are now right back into the situation of <a href="fs-phaseplane.html" class="internal" title="Section 3.5: Stability in the phase plane">Section 3.5</a>. In particular:</p>
+<article class="fact theorem-like" id="fact-29"><h6 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.4.5</span><span class="period">.</span>
+</h6>
+<p id="p-605">The stability of a steady state is (usually) determined by the eigenvalues of the Jacobian matrix at the steady state.</p></article><article class="example example-like" id="example-95"><a data-knowl="" class="id-ref original" data-refid="hk-example-95"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Linearization of the pendulum.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-95"><article class="example example-like"><p id="p-606">Let's examine the steady states of a pendulum with damping,</p>
+<div class="displaymath">
+\begin{equation*}
+\ddd{\theta}{t} + \gamma \theta' + \frac{g}{L} \sin(\theta) = 0\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(\gamma \gt 0\text{.}\) It transforms into the first-order system</p>
+<div class="displaymath">
+\begin{align*}
+\dd{x_1}{t} \amp = x_2 \\
+\dd{x_2}{t} \amp = -\frac{g}{L}\sin(x_1) - \gamma x_2\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">These define \(f_1\) and \(f_2\text{.}\) From here we note all the first partial derivatives:</p>
+<div class="displaymath">
+\begin{align*}
+\pp{f_1}{x_1} = 0 \amp \qquad \pp{f_1}{x_2} = 1\\
+\pp{f_2}{x_1} = - \frac{g}{L}\cos(x_1) \amp \qquad \pp{f_2}{x_2} = -\gamma\text{.}
+\end{align*}
+</div>
+<p id="p-607">The first steady state we consider is at the origin. Here the Jacobian matrix is</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} 
+0 \amp 1 \\ -g/L \amp -\gamma
+\end{bmatrix} \text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The eigenvalues are</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{-\gamma \pm \sqrt{\gamma^2 - 4(g/L)}}{2}. 
+\end{equation*}
+</div>
+<p data-braille="continuation">If the radical is imaginary, then the real part is \(-\gamma/2 \lt 0\text{.}\) If it is real, then it is in the interval \((0,\gamma)\text{,}\) so the eigenvalues are real and negative. Hence the origin is stable, as either a spiral point or a node. That comports with our expectations of a pendulum hanging straight down!</p>
+<p id="p-608">The other steady state is at \((\pi,0)\text{,}\) the inverted position. Now the Jacobian is</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} 
+0 \amp 1 \\ g/L \amp -\gamma
+\end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">with eigenvalues</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{-\gamma \pm \sqrt{\gamma^2 + 4(g/L)}}{2}. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Now the radical is always real and greater than \(\gamma\text{,}\) so the eigenvalues are real and of opposite signs. Hence the inverted position is an unstable saddle point.</p></article></div>
+<article class="example example-like" id="example-96"><a data-knowl="" class="id-ref original" data-refid="hk-example-96"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">van del Pol equation.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-96"><article class="example example-like"><p id="p-609">The <dfn class="terminology">van der Pol equation</dfn> is a nonlinear oscillator in the form \(y''+\mu(y^2-1)y'+y=0\) for parameter \(\mu \gt 0\text{.}\) It is equivalent to the system</p>
+<div class="displaymath">
+\begin{align*}
+x_1' \amp = x_2  \\
+x_2' \amp = -x_1 - \mu(x_1^2-1)x_2,  
+\end{align*}
+</div>
+<p data-braille="continuation">which has the sole equilibrium point \((0,0)\text{.}\) The Jacobian matrix is</p>
+<div class="displaymath">
+\begin{equation*}
+\twomat{0}{1}{-1-2\mu x_1 x_2}{-\mu(x_1^2-1)}, 
+\end{equation*}
+</div>
+<p data-braille="continuation">which at the origin is simply \(\twomat{0}{1}{-1}{\mu}\text{.}\) This has eigenvalues</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{2} \left( {\mu} \pm \sqrt{\mu^2-4} \right). 
+\end{equation*}
+</div>
+<p data-braille="continuation">If \(0\lt \mu \lt 2\text{,}\) the origin is an unstable spiral point. If \(\mu &gt; 2\text{,}\) the origin is an unstable node, as you can never achieve a negative eigenvalue.</p></article></div>
+<p id="p-610">The caveat on using eigenvalues for stability is when they both have zero real part, which is a neutrally stable center in the linear sense. In such cases the details of the nonlinear terms of the system can swing the stability either way.</p>
+<article class="example example-like" id="example-97"><a data-knowl="" class="id-ref original" data-refid="hk-example-97"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Linearization of predator-prey.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-97"><article class="example example-like"><p id="p-611">The system</p>
+<div class="displaymath">
+\begin{align*}
+\frac{dx}{dt} \amp= 3x-\frac{xy}{2}\\
+\frac{dy}{dt} \amp= -y+\frac{xy}{4}
+\end{align*}
+</div>
+<p data-braille="continuation">is called a <dfn class="terminology">predator–prey</dfn> equation. If species \(y\) is set to zero, species \(x\) would grow exponentially on its own (the prey). Similarly, species \(y\) would die off on its own (predator). We assume that encounters between the species are jointly proportional to the population of each, and they subtract from the prey and add to the predators.</p>
+<p id="p-612">We find fixed points when \(3x-(x y/2)=(x y/4)-y=0\text{,}\) which has two solutions, \((0,0)\) and \((4,6)\text{.}\) The Jacobian matrix of the system is</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{A} =  \begin{bmatrix} 3-y/2 \amp -x/2 \\ y/4 \amp -1+x/4 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">At the origin, the Jacobian becomes</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The eigenvalues of a diagonal matrix are the diagonal entries. Hence the origin is a saddle point.</p>
+<p id="p-613">At the other steady state we have the Jacobian</p>
+<div class="displaymath">
+\begin{equation*}
+\twomat{0}{-2}{3/2}{0}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The characteristic polynomial is \(\lambda^2 - 0\lambda + 3\text{,}\) so the eigenvalues are \(\pm i\sqrt{3}\text{.}\) Hence this fixed point is a center. Close to the point, the orbits are impossible to tell apart from those of a linear center:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/linearized_center1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-614">However, as we zoom out, the nonlinearity of the system makes its influence felt:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/linearized_center2.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-615">In this particular case the solution curves continue to close up, suggesting that all these solutions are periodic.</p></article></div></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

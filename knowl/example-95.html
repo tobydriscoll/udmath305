@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-22T14:06:55-04:00    *-->
+<!--*    on 2020-04-29T10:19:13-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,38 +13,57 @@
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Linearization of predator-prey.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Linearization of the pendulum.</span>
 </h6>
-<p>The system</p>
+<p>Let's examine the steady states of a pendulum with damping,</p>
+<div class="displaymath">
+\begin{equation*}
+\ddd{\theta}{t} + \gamma \theta' + \frac{g}{L} \sin(\theta) = 0\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(\gamma \gt 0\text{.}\) It transforms into the first-order system</p>
 <div class="displaymath">
 \begin{align*}
-\frac{dx}{dt} \amp= 3x-\frac{xy}{2}\\
-\frac{dy}{dt} \amp= -y+\frac{xy}{4}
+\dd{x_1}{t} \amp = x_2 \\
+\dd{x_2}{t} \amp = -\frac{g}{L}\sin(x_1) - \gamma x_2\text{.}
 \end{align*}
 </div>
-<p data-braille="continuation">is called a <dfn class="terminology">predator–prey</dfn> equation. If species \(y\) is set to zero, species \(x\) would grow exponentially on its own (the prey). Similarly, species \(y\) would die off on its own (predator). We assume that encounters between the species are jointly proportional to the population of each, and they subtract from the prey and add to the predators.</p>
-<p>We find fixed points when \(3x-(xy/2)=(xy/4)-y=0\text{,}\) which has two solutions, \((0,0)\) and \((4,6)\text{.}\) The Jacobian matrix of the system is</p>
+<p data-braille="continuation">These define \(f_1\) and \(f_2\text{.}\) From here we note all the first partial derivatives:</p>
+<div class="displaymath">
+\begin{align*}
+\pp{f_1}{x_1} = 0 \amp \qquad \pp{f_1}{x_2} = 1\\
+\pp{f_2}{x_1} = - \frac{g}{L}\cos(x_1) \amp \qquad \pp{f_2}{x_2} = -\gamma\text{.}
+\end{align*}
+</div>
+<p>The first steady state we consider is at the origin. Here the Jacobian matrix is</p>
 <div class="displaymath">
 \begin{equation*}
-\mathbf{A}(x,y) = \begin{bmatrix} F_x \amp F_y  \\ G_x \amp G_y \end{bmatrix} = \begin{bmatrix} 3-y/2 \amp -x/2 \\ y/4 \amp -1+x/4 \end{bmatrix}\text{.}
+\begin{bmatrix} 
+0 \amp 1 \\ -g/L \amp -\gamma
+\end{bmatrix} \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">At the origin, the Jacobian becomes</p>
+<p data-braille="continuation">The eigenvalues are</p>
 <div class="displaymath">
 \begin{equation*}
-\mathbf{A}(0,0) = \begin{bmatrix} 3 \amp 0 \\ 0 \amp -1 \end{bmatrix}\text{.}
+\frac{-\gamma \pm \sqrt{\gamma^2 - 4(g/L)}}{2}. 
 \end{equation*}
 </div>
-<p data-braille="continuation">The eigenvalues of a diagonal matrix (in fact, a triangular matrix) are the diagonal entries. Hence the origin is a saddle point.</p>
-<p>At the other steady state we have</p>
+<p data-braille="continuation">If the radical is imaginary, then the real part is \(-\gamma/2 \lt 0\text{.}\) If it is real, then it is in the interval \((0,\gamma)\text{,}\) so the eigenvalues are real and negative. Hence the origin is stable, as either a spiral point or a node. That comports with our expectations of a pendulum hanging straight down!</p>
+<p>The other steady state is at \((\pi,0)\text{,}\) the inverted position. Now the Jacobian is</p>
 <div class="displaymath">
 \begin{equation*}
-\mathbf{A}(4,6) = \twomat{0}{-2}{3/2}{0}\text{.}
+\begin{bmatrix} 
+0 \amp 1 \\ g/L \amp -\gamma
+\end{bmatrix}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">The characteristic polynomial is \(\lambda^2 - 0\lambda + 3\text{,}\) so the eigenvalues are \(\pm i\sqrt{3}\text{.}\) Hence this fixed point is a center. Close to the point, the orbits are impossible to tell apart from those of a linear center:</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/linearized_center1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<p>However, as we zoom out, the nonlinearity of the system makes its influence felt:</p>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/linearized_center2.svg" style="width: 100%; height: auto;" alt=""></div></div></div></article><span class="incontext"><a href="nl-linearization.html#example-95">in-context</a></span>
+<p data-braille="continuation">with eigenvalues</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{-\gamma \pm \sqrt{\gamma^2 + 4(g/L)}}{2}. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Now the radical is always real and greater than \(\gamma\text{,}\) so the eigenvalues are real and of opposite signs. Hence the inverted position is an unstable saddle point.</p></article><span class="incontext"><a href="nl-directionfields.html#example-95">in-context</a></span>
 </body>
 </html>
