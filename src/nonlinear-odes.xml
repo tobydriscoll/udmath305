@@ -21,7 +21,7 @@
 	</p>
 	<example>
 		<p>
-			In <xref ref="ex-nonlinear-growth"/> it was brought up that the ODE <m>x'=x^2</m> has solutions that blow up in finite time. In fact, the solution with <m>x(0)=x_0</m> is <m>x(t)=x_0/(1-x_0t)</m>, which becomes infinite at <m>t=1/x_0</m>. By contrast, linear problems are guaranteed to have solutions wherever their coefficient and forcing functions are continuous. 
+			In <xref ref="ex-nonlinear-growth"/> it was brought up that the ODE <m>x'=x^2</m> has solutions that blow up at a finite time. In fact, the solution with <m>x(0)=x_0</m> is <m>x(t)=x_0/(1-x_0t)</m>, which is infinite at <m>t=1/x_0</m>. By contrast, linear problems are guaranteed to have solutions wherever their coefficient and forcing functions are continuous. 
 		</p>
 	</example>
 	<example>
@@ -108,9 +108,7 @@
 			Problems of the form <m>x'=f(x)</m> are called <idx>autonomous ODE</idx><term>autonomous</term>. In autonomous problems, a root of the function <m>f</m> is an <idx>equilibrium</idx> equilibrium or steady-state solution. As we saw in linear systems, the stability of equilibrium solutions is often important. 
 		</p>
 		<p>
-			One tool for discriminating between stable and unstable equilibria is a <idx>phase line diagram</idx><term>phase line diagram</term>. This is most readily explained with an example. 
-			
-			An equivalent analytical test is that <m>x' \lt 0</m> at a stable equilibrium, and <m>x' \gt 0</m> at an unstable one.
+			The direction field of an autonomous equation is independent of <m>t</m>. A different picture known as a <idx>phase line diagram</idx><term>phase line diagram</term> can help to discriminate between stable and unstable equilibria. This is most readily explained with an example. 
 		</p>
 		<example>
 			<p>
@@ -159,7 +157,7 @@ quiver(tt,0*tt,0.15*[1 -1 1 -1],0*tt,.2,'linew',2)
 		<p>
 			Suppose <m>x'=t^2/(x^3-2)</m>. Separation and integration lead to
 			<me>
-				\int x^3\, dx = \int t^2\, dt
+				\int (x^3-2) \, dx = \int t^2\, dt
 			</me>,
 			or <m>\frac{1}{4}x^4 - 2x  = C + \frac{1}{3}t^3</m>. We could work hard to try to solve explicitly for <m>y</m>, but it's probably best to leave it in implicit form. This is a common limitation to separable "solutions".
 		</p>
@@ -230,7 +228,7 @@ quiver(tt,0*tt,0.15*[1 -1 1 -1],0*tt,.2,'linew',2)
 			</me>,
 			or <m>z'=b-az</m>. This is a linear equation! It even has constant coefficients. In terms of <m>z</m>, we can jump right to the solution:
 			<me>
-				z(t) = e^{-at}z(0) - \frac{b}{a} \left( e^{-at}-1 \right) = \frac{e^{-at}(Kz_0-1)+1)}{K}
+				z(t) = e^{-at}z(0) - \frac{b}{a} \left( e^{-at}-1 \right) = \frac{e^{-at}(Kz_0-1)+1}{K}
 			</me>.
 			Finally, with <m>x=1/z</m> we get
 			<men xml:id="eq-logistic-solution">
@@ -239,7 +237,7 @@ quiver(tt,0*tt,0.15*[1 -1 1 -1],0*tt,.2,'linew',2)
 			where <m>x_0=x(0)</m>. 
 		</p>
 		<p>
-			The solution makes it clear that <m>x\to K</m> as <m>t\to \infty</m>, if <m>x_0\gt 0</m>. The logistic curve is an S-shaped or <em>sigmoidal</em> curve. You can think of it as a nice, smooth transition between two states (the two equilibria).
+			The solution formula makes it clear that <m>x\to K</m> as <m>t\to \infty</m>, if <m>x_0\gt 0</m>. If the system starts below the inflection at <m>x=K/2</m>, then the solution is an S-shaped or <em>sigmoidal</em> curve. 
 		</p>
 		<example>
 		<sidebyside>
