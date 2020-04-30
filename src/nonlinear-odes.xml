@@ -14,7 +14,7 @@
 	</p>
 </introduction>
 
-<section xml:id="nl-sec-overview">
+<section xml:id="nl-overview">
 	<title>Overview of nonlinear problems</title>
 	<p>
 		Nonlinear problems are not a matter of <q>like linear, but harder</q>. They have less predictable structure; we have to set aside the idea of superposition of homogeneous and particular solutions, for example. Indeed, many nonlinear problems are not solvable even in principle. 
@@ -74,7 +74,7 @@
 	</p>
 	
 </section>
-<section xml:id="nl-autonomous">
+<section xml:id="nl-scalar">
 	<title>Scalar first-order problems</title>
 	<introduction>
 		<p>
@@ -278,9 +278,40 @@ quiver(tt,0*tt,0.15*[1 -1 1 -1],0*tt,.2,'linew',2)
 			The last step above required converting the single fraction into partial fractions. These are now easily integrated to get logs, and the solution follows from there. Obviously we have to end up with <xref ref="eq-logistic-solution"/> again. 
 		</p>
 	</subsection>
+
+	<subsection xml:id="nl-predation">
+		<title>Predation</title>
+		<p>
+			Suppose we complicate the model by adding in the effect of a predator:
+			<me>
+				\frac{1}{x} \, \dd{x}{t} = a\left(1 - \frac{x}{K}\right) - p(x)
+			</me>,
+			where <m>p(x)</m> predation per capita. A simple model of predation as increasing from zero to a fixed saturation value as <m>x</m> changes from zero to infinity is 
+			<me>
+				\dd{x}{t} = ax\left(1 - \frac{x}{K}\right) - \frac{x^2}{1+x^2}
+			</me>. 
+			There is always a fixed point at <m>x=0</m>. Any others are determined by the intersections of a linear function with <m>p(x)</m>: 
+			<me>
+				a \left(1 - \frac{x}{K}\right) = \frac{x}{1+x^2}
+			</me>. 
+			There are two major possibilities. For small enough <m>K</m>, there is just one fixed point, as shown in <xref ref="nl-fig-logpred_small"/>. The origin is unstable and the other fixed point is stable. When <m>K</m> is sufficiently large, there are three fixed points in addition to the origin, as shown in <xref ref="nl-fig-logpred_large"/>. The origin is still stable, as is the middle of the three positive fixed points. The other two fixed points are stable. The model suggests we might observe either a low-population or high-population steady state in this scenario. 
+		</p>
+		<figure xml:id="nl-fig-logpred_small">
+			<caption>Logistic growth with predation, small carrying capacity. The intersection of the dashed curves leads to a stable fixed point in the phase line diagram.</caption>
+			<image source="figures/nl_logpred_small.svg">
+				<description>diagram</description>
+			</image>
+		</figure>
+		<figure xml:id="nl-fig-logpred_large">
+			<caption>Logistic growth with predation, large carrying capacity. The intersections of the dashed curves lead to three positive fixed points of alternating stability character.</caption>
+			<image source="figures/nl_logpred_large.svg">
+				<description>Logistic growth with predation</description>
+			</image>
+		</figure>
+	</subsection>
 </section>
 
-<section xml:id="nl-directionfields">
+<section xml:id="nl-twodim">
 	<title>Two-dimensional systems</title>
 	<introduction>
 		<p>
@@ -407,7 +438,7 @@ quiver(tt,0*tt,0.15*[1 -1 1 -1],0*tt,.2,'linew',2)
 		If the radical is imaginary, then the real part is <m>-\gamma/2 \lt 0</m>. If it is real, then it is in the interval <m>(0,\gamma)</m>, so the eigenvalues are real and negative. Hence the origin is stable, as either a spiral point or a node. That comports with our expectations of a pendulum hanging straight down!
 		</p>
 		<p>
-			The other steady state is at <m>(\pi,0)</m>, the inverted position. Now the Jacobian is
+			The other physically distinct equilibrium is at <m>(\pi,0)</m>, i.e., the inverted position at rest. Now the Jacobian is
 		<me>
 			\begin{bmatrix} 
 			0 \amp 1 \\ g/L \amp -\gamma

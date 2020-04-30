@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-29T14:53:09-04:00    *-->
+<!--*    on 2020-04-30T15:59:53-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The caveat on using eigenvalues for stability is when they both have zero real part, which is a neutrally stable center in the linear sense. In such cases the details of the nonlinear terms of the system can swing the stability either way.</p>
-<span class="incontext"><a href="nl-directionfields.html#p-610">in-context</a></span>
+<p>The <dfn class="terminology">van der Pol equation</dfn> is a nonlinear oscillator in the form \(y''+\mu(y^2-1)y'+y=0\) for parameter \(\mu \gt 0\text{.}\) It is equivalent to the system</p>
+<div class="displaymath">
+\begin{align*}
+x_1' \amp = x_2  \\
+x_2' \amp = -x_1 - \mu(x_1^2-1)x_2,  
+\end{align*}
+</div>
+<p data-braille="continuation">which has the sole equilibrium point \((0,0)\text{.}\) The Jacobian matrix is</p>
+<div class="displaymath">
+\begin{equation*}
+\twomat{0}{1}{-1-2\mu x_1 x_2}{-\mu(x_1^2-1)}, 
+\end{equation*}
+</div>
+<p data-braille="continuation">which at the origin is simply \(\twomat{0}{1}{-1}{\mu}\text{.}\) This has eigenvalues</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{2} \left( {\mu} \pm \sqrt{\mu^2-4} \right). 
+\end{equation*}
+</div>
+<p data-braille="continuation">If \(0\lt \mu \lt 2\text{,}\) the origin is an unstable spiral point. If \(\mu &gt; 2\text{,}\) the origin is an unstable node, as you can never achieve a negative eigenvalue.</p>
+<span class="incontext"><a href="nl-twodim.html#p-610">in-context</a></span>
 </body>
 </html>

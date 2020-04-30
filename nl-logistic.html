@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-29T14:53:05-04:00    *-->
+<!--*    on 2020-04-30T15:59:50-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -131,11 +131,11 @@ var js_version = 0.13;
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="nl-autonomous.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch5-nonlinear-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="nl-directionfields.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="nl-scalar.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch5-nonlinear-ode.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="nl-twodim.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="nl-autonomous.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch5-nonlinear-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="nl-directionfields.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="nl-scalar.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch5-nonlinear-ode.html" title="Up">Up</a><a class="next-button button toolbar-item" href="nl-twodim.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -194,10 +194,10 @@ var js_version = 0.13;
 </li>
 <li class="link">
 <a href="ch5-nonlinear-ode.html" data-scroll="ch5-nonlinear-ode"><span class="codenumber">5</span> <span class="title">Nonlinear ODEs</span></a><ul>
-<li><a href="nl-sec-overview.html" data-scroll="nl-sec-overview">Overview of nonlinear problems</a></li>
-<li><a href="nl-autonomous.html" data-scroll="nl-autonomous">Scalar first-order problems</a></li>
+<li><a href="nl-overview.html" data-scroll="nl-overview">Overview of nonlinear problems</a></li>
+<li><a href="nl-scalar.html" data-scroll="nl-scalar">Scalar first-order problems</a></li>
 <li><a href="nl-logistic.html" data-scroll="nl-logistic" class="active">Case study: Logistic equation</a></li>
-<li><a href="nl-directionfields.html" data-scroll="nl-directionfields">Two-dimensional systems</a></li>
+<li><a href="nl-twodim.html" data-scroll="nl-twodim">Two-dimensional systems</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -293,7 +293,31 @@ set(gca,'ygrid','on',...
 t + C = \int \frac{dx}{x(a-bx)} = \frac{1}{b} \int \frac{dx}{x(K-x)} = \frac{1}{bK} \int \left( \frac{1}{x} + \frac{1}{K-x} \right)\,dx\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The last step above required converting the single fraction into partial fractions. These are now easily integrated to get logs, and the solution follows from there. Obviously we have to end up with <a class="xref" data-knowl="./knowl/eq-logistic-solution.html" title="Equation 5.3.2">(5.3.2)</a> again.</p></section></section></div></main>
+<p data-braille="continuation">The last step above required converting the single fraction into partial fractions. These are now easily integrated to get logs, and the solution follows from there. Obviously we have to end up with <a class="xref" data-knowl="./knowl/eq-logistic-solution.html" title="Equation 5.3.2">(5.3.2)</a> again.</p></section><section class="subsection" id="nl-predation"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.4</span> <span class="title">Predation</span>
+</h3>
+<a href="nl-logistic.html#nl-predation" class="permalink">¶</a><p id="p-597">Suppose we complicate the model by adding in the effect of a predator:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{x} \, \dd{x}{t} = a\left(1 - \frac{x}{K}\right) - p(x)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(p(x)\) predation per capita. A simple model of predation as increasing from zero to a fixed saturation value as \(x\) changes from zero to infinity is</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{x}{t} = ax\left(1 - \frac{x}{K}\right) - \frac{x^2}{1+x^2}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">There is always a fixed point at \(x=0\text{.}\) Any others are determined by the intersections of a linear function with \(p(x)\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+a \left(1 - \frac{x}{K}\right) = \frac{x}{1+x^2}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">There are two major possibilities. For small enough \(K\text{,}\) there is just one fixed point, as shown in <a class="xref" data-knowl="./knowl/nl-fig-logpred_small.html" title="Figure 5.3.3">Figure 5.3.3</a>. The origin is unstable and the other fixed point is stable. When \(K\) is sufficiently large, there are three fixed points in addition to the origin, as shown in <a class="xref" data-knowl="./knowl/nl-fig-logpred_large.html" title="Figure 5.3.4">Figure 5.3.4</a>. The origin is still stable, as is the middle of the three positive fixed points. The other two fixed points are stable. The model suggests we might observe either a low-population or high-population steady state in this scenario.</p>
+<figure class="figure figure-like" id="nl-fig-logpred_small"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="figures/nl_logpred_small.svg" style="width: 100%; height: auto;" alt="diagram"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.3<span class="period">.</span></span><span class="space"> </span>Logistic growth with predation, small carrying capacity. The intersection of the dashed curves leads to a stable fixed point in the phase line diagram.</figcaption></figure><figure class="figure figure-like" id="nl-fig-logpred_large"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="figures/nl_logpred_large.svg" style="width: 100%; height: auto;" alt="Logistic growth with predation"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.4<span class="period">.</span></span><span class="space"> </span>Logistic growth with predation, large carrying capacity. The intersections of the dashed curves lead to three positive fixed points of alternating stability character.</figcaption></figure></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

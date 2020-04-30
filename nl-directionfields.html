@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-29T14:53:06-04:00    *-->
+<!--*    on 2020-04-29T15:50:46-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -208,7 +208,7 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="nl-directionfields"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">Two-dimensional systems</span>
 </h2>
-<a href="nl-directionfields.html" class="permalink">¶</a><section class="introduction" id="introduction-24"><p id="p-597">An autonomous system in two dimensions has the particular form</p>
+<a href="nl-directionfields.html" class="permalink">¶</a><section class="introduction" id="introduction-24"><p id="p-598">An autonomous system in two dimensions has the particular form</p>
 <div class="displaymath">
 \begin{align}
 \dd{x_1}{t} \amp = f_1(x_1,x_2), \label{nl-eq-system1}\tag{5.4.1}\\
@@ -218,7 +218,7 @@ var js_version = 0.13;
 <p data-braille="continuation">For such a system we can again use a direction field to visualize the global behavior. At a point in the \((x_1,x_2)\) plane, the vector \([f_1(x_1,x_2),f_2(x_1,x_2)]\) is tangent to the solution curve passing through that point.</p>
 <article class="example example-like" id="nl-ex-direction-field-system"><a data-knowl="" class="id-ref original" data-refid="hk-nl-ex-direction-field-system"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Direction field for a system of two equations.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-nl-ex-direction-field-system"><article class="example example-like"><p id="p-598">Here is a direction field for the linear ODE system</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-nl-ex-direction-field-system"><article class="example example-like"><p id="p-599">Here is a direction field for the linear ODE system</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = -y\\
@@ -233,7 +233,7 @@ slopefield(F,G,[-2 2],[-2 2])
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.4.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/nl_dirfield_1.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p id="p-599">Here is a slope field in the first quadrant for the nonlinear system</p>
+<p id="p-600">Here is a slope field in the first quadrant for the nonlinear system</p>
 <div class="displaymath">
 \begin{align*}
 \dd{x}{t} \amp = 3x - \frac{1}{2}xy\\
@@ -251,7 +251,7 @@ slopefield(F,G,[0 10],[0 12])
 </div></div></article></div></section><section class="subsection" id="nl-sec-linearization"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.4.1</span> <span class="title">Linearization</span>
 </h3>
-<a href="nl-directionfields.html#nl-sec-linearization" class="permalink">¶</a><p id="p-600">An equilibrium solution of the system <a class="xref" data-knowl="./knowl/nl-eq-system1.html" title="Equation 5.4.1">(5.4.1)</a>-<a class="xref" data-knowl="./knowl/nl-eq-system2.html" title="Equation 5.4.2">(5.4.2)</a> is a pair of values \((x_1^*,x_2^*)\) such that \(f_1(x_1^*,x_2^*)=f_2(x_1^*,x_2^*)=0\text{.}\) We can understand the dynamics near an equilibrium point by approximating the nonlinear system with a linear one. Specifically, we use the multivariate linearizations</p>
+<a href="nl-directionfields.html#nl-sec-linearization" class="permalink">¶</a><p id="p-601">An equilibrium solution of the system <a class="xref" data-knowl="./knowl/nl-eq-system1.html" title="Equation 5.4.1">(5.4.1)</a>-<a class="xref" data-knowl="./knowl/nl-eq-system2.html" title="Equation 5.4.2">(5.4.2)</a> is a pair of values \((x_1^*,x_2^*)\) such that \(f_1(x_1^*,x_2^*)=f_2(x_1^*,x_2^*)=0\text{.}\) We can understand the dynamics near an equilibrium point by approximating the nonlinear system with a linear one. Specifically, we use the multivariate linearizations</p>
 <div class="displaymath">
 \begin{align*}
 f_1(x_1,x_2) \amp \approx f_1(x_1^*,x_2^*) + \pp{f_1}{x_1} (x_1-x_1^*) + \pp{f_1}{x_2} (x_2-x_2^*)\\
@@ -269,19 +269,19 @@ f_2(x_1,x_2) \amp \approx f_2(x_1^*,x_2^*) + \pp{f_2}{x_1} (x_1-x_1^*) + \pp{f_2
 <article class="definition definition-like" id="nl-def-jacobian"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Jacobian matrix.</span>
 </h6>
-<p id="p-601">The <dfn class="terminology">Jacobian matrix</dfn> of the system <a class="xref" data-knowl="./knowl/nl-eq-system1.html" title="Equation 5.4.1">(5.4.1)</a>-<a class="xref" data-knowl="./knowl/nl-eq-system2.html" title="Equation 5.4.2">(5.4.2)</a> is</p>
+<p id="p-602">The <dfn class="terminology">Jacobian matrix</dfn> of the system <a class="xref" data-knowl="./knowl/nl-eq-system1.html" title="Equation 5.4.1">(5.4.1)</a>-<a class="xref" data-knowl="./knowl/nl-eq-system2.html" title="Equation 5.4.2">(5.4.2)</a> is</p>
 <div class="displaymath">
 \begin{equation}
 \bJ(x_1,x_2) = \twomat{\pp{f_1}{x_1}}{\pp{f_1}{x_2}}{\pp{f_2}{x_1}}{\pp{f_2}{x_2}}\text{.}\label{nl-eq-jacobian}\tag{5.4.3}
 \end{equation}
-</div></article><aside class="aside aside-like" id="aside-21"><p id="p-602">Just as a derivative of \(f(x)\) is a function of \(x\text{,}\) a Jacobian matrix is a function of the variables of the system.</p></aside><p id="p-603">Let's summarize. In the neighborhood of a fixed point \((x_1^*,x_2^*)\text{,}\) we can define the “deviation from equilibrium” as the variables \(u_i(t)=x_i(t)-x_i^*\) for \(i=1,2\text{.}\) These variables approximately satisfy \(\bu'=\bJ(x_1^*,x_2^*)\bu\text{,}\) which is a linear, constant-coefficient system in two dimensions. This is a huge revelation: <em class="alert">near a steady state, dynamics are mostly linear</em>.</p>
-<p id="p-604">We are now right back into the situation of <a href="fs-phaseplane.html" class="internal" title="Section 3.5: Stability in the phase plane">Section 3.5</a>. In particular:</p>
+</div></article><aside class="aside aside-like" id="aside-21"><p id="p-603">Just as a derivative of \(f(x)\) is a function of \(x\text{,}\) a Jacobian matrix is a function of the variables of the system.</p></aside><p id="p-604">Let's summarize. In the neighborhood of a fixed point \((x_1^*,x_2^*)\text{,}\) we can define the “deviation from equilibrium” as the variables \(u_i(t)=x_i(t)-x_i^*\) for \(i=1,2\text{.}\) These variables approximately satisfy \(\bu'=\bJ(x_1^*,x_2^*)\bu\text{,}\) which is a linear, constant-coefficient system in two dimensions. This is a huge revelation: <em class="alert">near a steady state, dynamics are mostly linear</em>.</p>
+<p id="p-605">We are now right back into the situation of <a href="fs-phaseplane.html" class="internal" title="Section 3.5: Stability in the phase plane">Section 3.5</a>. In particular:</p>
 <article class="fact theorem-like" id="fact-29"><h6 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">5.4.5</span><span class="period">.</span>
 </h6>
-<p id="p-605">The stability of a steady state is (usually) determined by the eigenvalues of the Jacobian matrix at the steady state.</p></article><article class="example example-like" id="example-95"><a data-knowl="" class="id-ref original" data-refid="hk-example-95"><h6 class="heading">
+<p id="p-606">The stability of a steady state is (usually) determined by the eigenvalues of the Jacobian matrix at the steady state.</p></article><article class="example example-like" id="example-95"><a data-knowl="" class="id-ref original" data-refid="hk-example-95"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Linearization of the pendulum.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-95"><article class="example example-like"><p id="p-606">Let's examine the steady states of a pendulum with damping,</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-95"><article class="example example-like"><p id="p-607">Let's examine the steady states of a pendulum with damping,</p>
 <div class="displaymath">
 \begin{equation*}
 \ddd{\theta}{t} + \gamma \theta' + \frac{g}{L} \sin(\theta) = 0\text{,}
@@ -301,7 +301,7 @@ f_2(x_1,x_2) \amp \approx f_2(x_1^*,x_2^*) + \pp{f_2}{x_1} (x_1-x_1^*) + \pp{f_2
 \pp{f_2}{x_1} = - \frac{g}{L}\cos(x_1) \amp \qquad \pp{f_2}{x_2} = -\gamma\text{.}
 \end{align*}
 </div>
-<p id="p-607">The first steady state we consider is at the origin. Here the Jacobian matrix is</p>
+<p id="p-608">The first steady state we consider is at the origin. Here the Jacobian matrix is</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 
@@ -316,7 +316,7 @@ f_2(x_1,x_2) \amp \approx f_2(x_1^*,x_2^*) + \pp{f_2}{x_1} (x_1-x_1^*) + \pp{f_2
 \end{equation*}
 </div>
 <p data-braille="continuation">If the radical is imaginary, then the real part is \(-\gamma/2 \lt 0\text{.}\) If it is real, then it is in the interval \((0,\gamma)\text{,}\) so the eigenvalues are real and negative. Hence the origin is stable, as either a spiral point or a node. That comports with our expectations of a pendulum hanging straight down!</p>
-<p id="p-608">The other steady state is at \((\pi,0)\text{,}\) the inverted position. Now the Jacobian is</p>
+<p id="p-609">The other steady state is at \((\pi,0)\text{,}\) the inverted position. Now the Jacobian is</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 
@@ -333,7 +333,7 @@ f_2(x_1,x_2) \amp \approx f_2(x_1^*,x_2^*) + \pp{f_2}{x_1} (x_1-x_1^*) + \pp{f_2
 <p data-braille="continuation">Now the radical is always real and greater than \(\gamma\text{,}\) so the eigenvalues are real and of opposite signs. Hence the inverted position is an unstable saddle point.</p></article></div>
 <article class="example example-like" id="example-96"><a data-knowl="" class="id-ref original" data-refid="hk-example-96"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">van del Pol equation.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-96"><article class="example example-like"><p id="p-609">The <dfn class="terminology">van der Pol equation</dfn> is a nonlinear oscillator in the form \(y''+\mu(y^2-1)y'+y=0\) for parameter \(\mu \gt 0\text{.}\) It is equivalent to the system</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-96"><article class="example example-like"><p id="p-610">The <dfn class="terminology">van der Pol equation</dfn> is a nonlinear oscillator in the form \(y''+\mu(y^2-1)y'+y=0\) for parameter \(\mu \gt 0\text{.}\) It is equivalent to the system</p>
 <div class="displaymath">
 \begin{align*}
 x_1' \amp = x_2  \\
@@ -353,10 +353,10 @@ x_2' \amp = -x_1 - \mu(x_1^2-1)x_2,
 \end{equation*}
 </div>
 <p data-braille="continuation">If \(0\lt \mu \lt 2\text{,}\) the origin is an unstable spiral point. If \(\mu &gt; 2\text{,}\) the origin is an unstable node, as you can never achieve a negative eigenvalue.</p></article></div>
-<p id="p-610">The caveat on using eigenvalues for stability is when they both have zero real part, which is a neutrally stable center in the linear sense. In such cases the details of the nonlinear terms of the system can swing the stability either way.</p>
+<p id="p-611">The caveat on using eigenvalues for stability is when they both have zero real part, which is a neutrally stable center in the linear sense. In such cases the details of the nonlinear terms of the system can swing the stability either way.</p>
 <article class="example example-like" id="example-97"><a data-knowl="" class="id-ref original" data-refid="hk-example-97"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Linearization of predator-prey.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-97"><article class="example example-like"><p id="p-611">The system</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-97"><article class="example example-like"><p id="p-612">The system</p>
 <div class="displaymath">
 \begin{align*}
 \frac{dx}{dt} \amp= 3x-\frac{xy}{2}\\
@@ -364,7 +364,7 @@ x_2' \amp = -x_1 - \mu(x_1^2-1)x_2,
 \end{align*}
 </div>
 <p data-braille="continuation">is called a <dfn class="terminology">predator–prey</dfn> equation. If species \(y\) is set to zero, species \(x\) would grow exponentially on its own (the prey). Similarly, species \(y\) would die off on its own (predator). We assume that encounters between the species are jointly proportional to the population of each, and they subtract from the prey and add to the predators.</p>
-<p id="p-612">We find fixed points when \(3x-(x y/2)=(x y/4)-y=0\text{,}\) which has two solutions, \((0,0)\) and \((4,6)\text{.}\) The Jacobian matrix of the system is</p>
+<p id="p-613">We find fixed points when \(3x-(x y/2)=(x y/4)-y=0\text{,}\) which has two solutions, \((0,0)\) and \((4,6)\text{.}\) The Jacobian matrix of the system is</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf{A} =  \begin{bmatrix} 3-y/2 \amp -x/2 \\ y/4 \amp -1+x/4 \end{bmatrix}\text{.}
@@ -377,7 +377,7 @@ x_2' \amp = -x_1 - \mu(x_1^2-1)x_2,
 \end{equation*}
 </div>
 <p data-braille="continuation">The eigenvalues of a diagonal matrix are the diagonal entries. Hence the origin is a saddle point.</p>
-<p id="p-613">At the other steady state we have the Jacobian</p>
+<p id="p-614">At the other steady state we have the Jacobian</p>
 <div class="displaymath">
 \begin{equation*}
 \twomat{0}{-2}{3/2}{0}\text{.}
@@ -385,9 +385,9 @@ x_2' \amp = -x_1 - \mu(x_1^2-1)x_2,
 </div>
 <p data-braille="continuation">The characteristic polynomial is \(\lambda^2 - 0\lambda + 3\text{,}\) so the eigenvalues are \(\pm i\sqrt{3}\text{.}\) Hence this fixed point is a center. Close to the point, the orbits are impossible to tell apart from those of a linear center:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/linearized_center1.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<p id="p-614">However, as we zoom out, the nonlinearity of the system makes its influence felt:</p>
+<p id="p-615">However, as we zoom out, the nonlinearity of the system makes its influence felt:</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figures/linearized_center2.svg" style="width: 100%; height: auto;" alt=""></div></div></div>
-<p id="p-615">In this particular case the solution curves continue to close up, suggesting that all these solutions are periodic.</p></article></div></section></section></div></main>
+<p id="p-616">In this particular case the solution curves continue to close up, suggesting that all these solutions are periodic.</p></article></div></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>
