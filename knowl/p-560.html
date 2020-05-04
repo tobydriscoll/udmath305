@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-30T15:59:52-04:00    *-->
+<!--*    on 2020-05-04T14:57:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In the impulse response for distinct eigenvalues, take the limit \(\lambda_2 \to \lambda_1\) to propose an impulse response \(g(t)\) for the case of a double eigenvalue. Then show that \(g\) solves the homogeneous problem, and \(g(0)=0\text{,}\) \(g'(0)=1\text{.}\) Finally, show that the transform of \(g\) does match the transfer function.</p>
+<p>The transform of \(x''-5x'+4x=\delta(t)\) with zero initial conditions leads to</p>
+<div class="displaymath">
+\begin{equation*}
+X(s) = G(s) = \frac{1}{s^2+5s+4} = \frac{A}{s+1} + \frac{B}{s+4}. 
+\end{equation*}
+</div>
+<p data-braille="continuation">Clearing denominators and setting \(s\) equal to each pole in turn gives \(A=-B=1/3\text{,}\) so the impulse response is</p>
+<div class="displaymath">
+\begin{equation*}
+g(t) = \frac{1}{3}(e^{-t}-e^{-4t}).
+\end{equation*}
+</div>
 <span class="incontext"><a href="so-convolutions.html#p-560">in-context</a></span>
 </body>
 </html>

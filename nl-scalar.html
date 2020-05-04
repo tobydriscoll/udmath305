@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-30T15:59:50-04:00    *-->
+<!--*    on 2020-05-04T14:57:03-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -208,7 +208,7 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="nl-scalar"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Scalar first-order problems</span>
 </h2>
-<a href="nl-scalar.html" class="permalink">¶</a><section class="introduction" id="introduction-22"><p id="p-577">Scalar, first-order nonlinear problems are often more penetrable than more general equations. If nothing else, the problem</p>
+<a href="nl-scalar.html" class="permalink">¶</a><section class="introduction" id="introduction-22"><p id="p-587">Scalar, first-order nonlinear problems are often more penetrable than more general equations. If nothing else, the problem</p>
 <div class="displaymath">
 \begin{equation*}
 x' = f(t,x)
@@ -217,7 +217,7 @@ x' = f(t,x)
 <p data-braille="continuation">is easily visualized. By evaluating \(f\) on a grid in the \((t,x)\) plane, we can draw arrows representing the slope \(dx/dt\) of the solution curves that pass through the grid points. This picture is known as a <dfn class="terminology">direction field</dfn>.</p>
 <article class="example example-like" id="example-88"><a data-knowl="" class="id-ref original" data-refid="hk-example-88"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Direction field for a scalar problem.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-88"><article class="example example-like"><p id="p-578">Here is a direction field for \(x'=t-x^2\text{.}\) Note that the arrows are horizontal along the sideways parabola \(t=x^2\text{.}\) Curves with this property are known as <dfn class="terminology">nullclines</dfn>.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-88"><article class="example example-like"><p id="p-588">Here is a direction field for \(x'=t-x^2\text{.}\) Note that the arrows are horizontal along the sideways parabola \(t=x^2\text{.}\) Curves with this property are known as <dfn class="terminology">nullclines</dfn>.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="nl_dirfield_3"><pre class="prettyprint lang-matlab">f = @(t,x) t-x^2;
 slopefield(f,[-2 2],[-2 2])
@@ -227,11 +227,11 @@ slopefield(f,[-2 2],[-2 2])
 </div></div></article></div></section><section class="subsection" id="nl-sec-autonomous"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.2.1</span> <span class="title">Autonomous equations</span>
 </h3>
-<a href="nl-scalar.html#nl-sec-autonomous" class="permalink">¶</a><p id="p-579">Problems of the form \(x'=f(x)\) are called <dfn class="terminology">autonomous</dfn>. In autonomous problems, a root of the function \(f\) is an  equilibrium or steady-state solution. As we saw in linear systems, the stability of equilibrium solutions is often important.</p>
-<p id="p-580">The direction field of an autonomous equation is independent of \(t\text{.}\) A different picture known as a <dfn class="terminology">phase line diagram</dfn> can help to discriminate between stable and unstable equilibria. This is most readily explained with an example.</p>
+<a href="nl-scalar.html#nl-sec-autonomous" class="permalink">¶</a><p id="p-589">Problems of the form \(x'=f(x)\) are called <dfn class="terminology">autonomous</dfn>. In autonomous problems, a root of the function \(f\) is an  equilibrium or steady-state solution. As we saw in linear systems, the stability of equilibrium solutions is often important.</p>
+<p id="p-590">The direction field of an autonomous equation is independent of \(t\text{.}\) A different picture known as a <dfn class="terminology">phase line diagram</dfn> can help to discriminate between stable and unstable equilibria. This is most readily explained with an example.</p>
 <article class="example example-like" id="example-89"><a data-knowl="" class="id-ref original" data-refid="hk-example-89"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-89"><article class="example example-like"><p id="p-581">Consider the ODE \(x'=x-x^3\text{.}\) The equilibrium solutions are \(x=0\) and \(x=\pm 1\text{,}\) which is clear in a plot of \(f(x)\text{.}\) The plot also shows the sign of \(f(x)\) and therefore of \(dx/dt\text{.}\) So between the equilibria we can draw arrows to show whether \(x\) is increasing or decreasing with time. The arrows clarify that the steady states at \(x=\pm 1\) are stable, while the one at \(x=0\) is unstable.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-89"><article class="example example-like"><p id="p-591">Consider the ODE \(x'=x-x^3\text{.}\) The equilibrium solutions are \(x=0\) and \(x=\pm 1\text{,}\) which is clear in a plot of \(f(x)\text{.}\) The plot also shows the sign of \(f(x)\) and therefore of \(dx/dt\text{.}\) So between the equilibria we can draw arrows to show whether \(x\) is increasing or decreasing with time. The arrows clarify that the steady states at \(x=\pm 1\) are stable, while the one at \(x=0\) is unstable.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><figure class="listing figure-like" id="nl_phaseline"><pre class="prettyprint lang-matlab">f = @(x) x - x.^3;
 fplot(f,[-1.5,1.5])
@@ -244,13 +244,13 @@ quiver(tt,0*tt,0.15*[1 -1 1 -1],0*tt,.2,'linew',2)
 <figcaption><span class="type">Listing</span><span class="space"> </span><span class="codenumber">5.2.4<span class="period">.</span></span><span class="space"> </span>Phase-line diagram</figcaption></figure></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figures/nl_phaseline.svg" style="width: 100%; height: auto;" alt=""></div>
 </div></div></article></div>
-<p id="p-582">A simple analytical test for the stability of an equilibrium value \(x_e\) is that \(f'(x_e) \lt 0\) at a stable equilibrium, and \(f'(x_e) \gt 0\) at an unstable one. This too is clear from the phase-line diagram. The case \(f'(x_e)=0\) requires additional investigation.</p></section><section class="subsection" id="nl-separable"><h3 class="heading hide-type">
+<p id="p-592">A simple analytical test for the stability of an equilibrium value \(x_e\) is that \(f'(x_e) \lt 0\) at a stable equilibrium, and \(f'(x_e) \gt 0\) at an unstable one. This too is clear from the phase-line diagram. The case \(f'(x_e)=0\) requires additional investigation.</p></section><section class="subsection" id="nl-separable"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.2.2</span> <span class="title">Separable equations</span>
 </h3>
-<a href="nl-scalar.html#nl-separable" class="permalink">¶</a><p id="p-583">All problems in the autonomous form \(x'=f(x)\text{,}\) and more generally in the form \(x'=f(x)g(t)\text{,}\) are called <dfn class="terminology">separable equations</dfn> and can be solved systematically (up to performing integrations). Rather than deriving a formula for them, it's best to just repeat a straightforward process for each new problem.</p>
+<a href="nl-scalar.html#nl-separable" class="permalink">¶</a><p id="p-593">All problems in the autonomous form \(x'=f(x)\text{,}\) and more generally in the form \(x'=f(x)g(t)\text{,}\) are called <dfn class="terminology">separable equations</dfn> and can be solved systematically (up to performing integrations). Rather than deriving a formula for them, it's best to just repeat a straightforward process for each new problem.</p>
 <article class="example example-like" id="example-90"><a data-knowl="" class="id-ref original" data-refid="hk-example-90"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-90"><article class="example example-like"><p id="p-584">Consider the <a class="xref" data-knowl="./knowl/ex-variable-growth.html" title="Example 2.1.6: Variable growth rate">variable growth archetype 2.1.6</a> \(x'=2tx\text{.}\) We express \(x'\) as \(dx/dt\) and then isolate the variables:</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-90"><article class="example example-like"><p id="p-594">Consider the <a class="xref" data-knowl="./knowl/ex-variable-growth.html" title="Example 2.1.6: Variable growth rate">variable growth archetype 2.1.6</a> \(x'=2tx\text{.}\) We express \(x'\) as \(dx/dt\) and then isolate the variables:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dx}{x} = 2t\,dt\text{.}
@@ -259,25 +259,25 @@ quiver(tt,0*tt,0.15*[1 -1 1 -1],0*tt,.2,'linew',2)
 <p data-braille="continuation">Integrating both sides leads to \(\log |x| = t^2 + C\text{,}\) or \(|x|=Ae^{t^2}\) for a positive constant \(A\) (since it is the exponential of a real constant). Taking the absolute value off of \(x\) means that \(A\) can be negative as well. Also, \(A=0\) clearly leads to a solution. Finally, we conclude that \(x=Ce^{t^2}\) for arbitrary \(C\text{.}\)</p></article></div>
 <article class="example example-like" id="example-91"><a data-knowl="" class="id-ref original" data-refid="hk-example-91"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-91"><article class="example example-like"><p id="p-585">Suppose \(x'=t^2/(x^3-2)\text{.}\) Separation and integration lead to</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-91"><article class="example example-like"><p id="p-595">Suppose \(x'=t^2/(x^3-2)\text{.}\) Separation and integration lead to</p>
 <div class="displaymath">
 \begin{equation*}
 \int (x^3-2) \, dx = \int t^2\, dt\text{,}
 \end{equation*}
 </div>
 <p data-braille="continuation">or \(\frac{1}{4}x^4 - 2x  = C + \frac{1}{3}t^3\text{.}\) We could work hard to try to solve explicitly for \(y\text{,}\) but it's probably best to leave it in implicit form. This is a common limitation to separable "solutions".</p>
-<p id="p-586">Even in implicit form, we can solve for the arbitrary constant if given an initial condition. For instance, suppose \(x(0)=4\) is given for this ODE. Then \(4^4/4-2\cdot4 = C+0\text{,}\) so \(C=56\text{.}\)</p></article></div>
-<p id="p-587">Sometimes the separable structure isn't immediately apparent, and you have to manipulate the expressions a bit.</p>
+<p id="p-596">Even in implicit form, we can solve for the arbitrary constant if given an initial condition. For instance, suppose \(x(0)=4\) is given for this ODE. Then \(4^4/4-2\cdot4 = C+0\text{,}\) so \(C=56\text{.}\)</p></article></div>
+<p id="p-597">Sometimes the separable structure isn't immediately apparent, and you have to manipulate the expressions a bit.</p>
 <article class="example example-like" id="example-92"><a data-knowl="" class="id-ref original" data-refid="hk-example-92"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-92"><article class="example example-like"><p id="p-588">Suppose \(t x' = x-t x\text{.}\) This does not look separable until you see that you can factor out \(x\) on the right side. Then we have \(dx/dt = x(1-t)/t\text{,}\) or</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-92"><article class="example example-like"><p id="p-598">Suppose \(t x' = x-t x\text{.}\) This does not look separable until you see that you can factor out \(x\) on the right side. Then we have \(dx/dt = x(1-t)/t\text{,}\) or</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dx}{x} = (t^{-1}-1)\,dt\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">Thus \(\ln|x| = \ln|t|-t+C\text{,}\) or \(x=A t e^{-t}\text{.}\)</p>
-<p id="p-589">Note that this problem is also linear, so it could be approached that way as well. Of course you must get the same solution in the end!</p></article></div></section></section></div></main>
+<p id="p-599">Note that this problem is also linear, so it could be approached that way as well. Of course you must get the same solution in the end!</p></article></div></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

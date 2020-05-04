@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-30T15:59:53-04:00    *-->
+<!--*    on 2020-05-04T14:57:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The first steady state we consider is at the origin. Here the Jacobian matrix is</p>
+<p>An autonomous system in two dimensions has the particular form</p>
 <div class="displaymath">
-\begin{equation*}
-\begin{bmatrix} 
-0 \amp 1 \\ -g/L \amp -\gamma
-\end{bmatrix} \text{.}
-\end{equation*}
+\begin{align}
+\dd{x_1}{t} \amp = f_1(x_1,x_2), \tag{5.4.1}\\
+\dd{x_2}{t} \amp = f_2(x_1,x_2). \tag{5.4.2}
+\end{align}
 </div>
-<p data-braille="continuation">The eigenvalues are</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{-\gamma \pm \sqrt{\gamma^2 - 4(g/L)}}{2}. 
-\end{equation*}
-</div>
-<p data-braille="continuation">If the radical is imaginary, then the real part is \(-\gamma/2 \lt 0\text{.}\) If it is real, then it is in the interval \((0,\gamma)\text{,}\) so the eigenvalues are real and negative. Hence the origin is stable, as either a spiral point or a node. That comports with our expectations of a pendulum hanging straight down!</p>
+<p data-braille="continuation">For such a system we can again use a direction field to visualize the global behavior. At a point in the \((x_1,x_2)\) plane, the vector \([f_1(x_1,x_2),f_2(x_1,x_2)]\) is tangent to the solution curve passing through that point.</p>
 <span class="incontext"><a href="nl-twodim.html#p-608">in-context</a></span>
 </body>
 </html>

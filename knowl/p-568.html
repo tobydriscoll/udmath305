@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-30T15:59:53-04:00    *-->
+<!--*    on 2020-05-04T14:57:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,25 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>One solution of the IVP \(x'=2\sqrt{x}\text{,}\) \(x(0)=0\) is \(x(t)=t^2\text{.}\) But so is the constant function \(x(t)\equiv 0\text{.}\) In fact, so is \(x(t)=H(t-T)(t-T)^2\) for any positive delay \(T\text{.}\) Hence we cannot automatically expect unique solutions to nonlinear initial-value problems.</p>
-<span class="incontext"><a href="nl-overview.html#p-568">in-context</a></span>
+<p>The undamped oscillator \(x''+\omega_0^2 x\) has transfer function</p>
+<div class="displaymath">
+\begin{equation*}
+G(s) = \frac{1}{s^2+\omega_0^2}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">so \(g(t) = \frac{1}{\omega_0}\sin(\omega_0 t)\text{.}\) Note that</p>
+<div class="displaymath">
+\begin{equation*}
+g(t-\tau) = \frac{1}{\omega_0} \sin(\omega_0 t)\cos(\omega_0\tau) - \frac{1}{\omega_0} \cos(\omega_0 t)\sin(\omega_0\tau). 
+\end{equation*}
+</div>
+<p data-braille="continuation">Therefore, using convolution with forcing function \(f\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+x_p(t) = \frac{1}{\omega_0}  \sin(\omega_0 t) \int_0^t \cos(\omega_0\tau)f(\tau)\,d\tau - \frac{1}{\omega_0}  \cos(\omega_0 t) \int_0^t \sin(\omega_0\tau)f(\tau)\,d\tau.
+\end{equation*}
+</div>
+<p data-braille="continuation">This formula would be another way to derive both the resonant and nonresonant solutions with cosine forcing \(f(t)=\cos(\omega t)\text{.}\)</p>
+<span class="incontext"><a href="so-convolutions.html#p-568">in-context</a></span>
 </body>
 </html>

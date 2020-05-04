@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-30T15:59:49-04:00    *-->
+<!--*    on 2020-05-04T14:57:03-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -629,7 +629,67 @@ X(s) = \frac{3}{(s^2+9)^2}\text{.}
 \begin{equation*}
 x(t) = \frac{1}{18} [ \sin(3t) - 3t\cos(3t) ]\text{.}
 \end{equation*}
-</div></article></div></section></section></div></main>
+</div></article></div></section><section class="exercises" id="so-exer-laplace"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">4.6.5</span> <span class="title">Challenge problems for 2nd order Laplace</span>
+</h3>
+<a href="so-laplace.html#so-exer-laplace" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-26"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Exp-harmonic case.</span>
+</h6>
+<p id="p-538">Show that</p>
+<div class="displaymath">
+\begin{equation*}
+\lx\left[ e^{at}\cos(\omega t) \right] = \frac{s-a}{(s-a)^2+\omega^2}, \qquad 
+\lx\left[ e^{at}\sin(\omega t) \right] = \frac{\omega}{(s-a)^2+\omega^2}.
+\end{equation*}
+</div>
+<p data-braille="continuation">(These can be used directly in place of the shift-then-invert strategy in the examples above.)</p></article><article class="exercise exercise-like" id="so-exer-laplace-imag"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Imaginary PFD.</span>
+</h6>
+<p id="p-540">Show that by doing a partial fraction decomposition over linear factors with imaginary poles,</p>
+<div class="displaymath">
+\begin{equation}
+\lx^{-1}\left[\dfrac{As+B}{s^2+\omega^2}\right] =  A\cos(\omega t) + \dfrac{B}{\omega}\sin(\omega t)\text{,}\label{so-eq-laplace-imag}\tag{4.6.2}
+\end{equation}
+</div>
+<p data-braille="continuation">if \(\omega \neq 0\text{.}\) (Of course in practice the transform table tells you this directly.)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-9" id="hint-9"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-9"><div class="hint solution-like">
+<p id="p-541">Start with</p>
+<div class="displaymath">
+\begin{equation*}
+\dfrac{As+B}{s^2+\omega^2} = \frac{C}{s-i\omega} + \frac{D}{s+i\omega}
+\end{equation*}
+</div>
+<p data-braille="continuation">You may <em class="emphasis">not</em> assume that \(C,D\) are real, but they are conjugates of one another.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Sneaking up on the origin.</span>
+</h6>
+<p id="p-543">Show how taking \(\omega\to 0\) in the result <a class="xref" data-knowl="./knowl/so-eq-laplace-imag.html" title="Equation 4.6.2">(4.6.2)</a> can be used to get the inverse transform of \(\dfrac{1}{s^2}\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Higher derivatives.</span>
+</h6>
+<p id="p-545">Find a formula for \(\lx\left[x'''(t)\right]\text{.}\) Then generalize it to \(n\) derivatives.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-21" id="answer-21"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-21"><div class="answer solution-like"><p id="p-546">\({s^n}X\left( s \right) - {s^{n - 1}}x\left( 0 \right) - {s^{n - 2}}x'\left( 0 \right) \cdots  - s{x^{\left( {n - 2} \right)}}\left( 0 \right) - {x^{\left( {n - 1} \right)}}\left( 0 \right)\)</p></div></div>
+</div></article></section><section class="solutions" id="solutions-11"><h3 class="heading hide-type">
+<span class="type">Solutions</span> <span class="codenumber">4.6.6</span> <span class="title">Solutions</span>
+</h3>
+<section class="exercises"><h4 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">4.6.5</span> <span class="title">Challenge problems for 2nd order Laplace</span>
+</h4>
+<a href="so-laplace.html#so-exer-laplace" class="permalink">¶</a><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">4.6.5.1<span class="period">.</span></span><span class="space"> </span><span class="title">Exp-harmonic case.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-24-hidden.html" title="Solution 4.6.5.1.1"><span class="type">Solution</span></a></div></article><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">4.6.5.2<span class="period">.</span></span><span class="space"> </span><span class="title">Imaginary PFD.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-25-hidden.html" title="Solution 4.6.5.2.1"><span class="type">Solution</span></a></div></article><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">4.6.5.3<span class="period">.</span></span><span class="space"> </span><span class="title">Sneaking up on the origin.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-26-hidden.html" title="Solution 4.6.5.3.1"><span class="type">Solution</span></a></div></article><article class="exercise-like"><h6 class="heading">
+<span class="codenumber">4.6.5.4<span class="period">.</span></span><span class="space"> </span><span class="title">Higher derivatives.</span>
+</h6>
+<div class="solutions"><a class="original" data-knowl="./knowl/solution-27-hidden.html" title="Solution 4.6.5.4.1"><span class="type">Solution</span></a></div></article></section></section></section></div></main>
 </div>
 <div class="login-link"><span id="loginlogout" class="login">login</span></div>
 <script src="https://pretextbook.org/js/0.13/login.js"></script>

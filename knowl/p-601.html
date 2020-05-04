@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-30T15:59:53-04:00    *-->
+<!--*    on 2020-05-04T14:57:06-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,21 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>An equilibrium solution of the system <a class="xref" data-knowl="./knowl/nl-eq-system1.html" title="Equation 5.4.1">(5.4.1)</a>-<a class="xref" data-knowl="./knowl/nl-eq-system2.html" title="Equation 5.4.2">(5.4.2)</a> is a pair of values \((x_1^*,x_2^*)\) such that \(f_1(x_1^*,x_2^*)=f_2(x_1^*,x_2^*)=0\text{.}\) We can understand the dynamics near an equilibrium point by approximating the nonlinear system with a linear one. Specifically, we use the multivariate linearizations</p>
+<p>There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
 <div class="displaymath">
-\begin{align*}
-f_1(x_1,x_2) \amp \approx f_1(x_1^*,x_2^*) + \pp{f_1}{x_1} (x_1-x_1^*) + \pp{f_1}{x_2} (x_2-x_2^*)\\
-f_2(x_1,x_2) \amp \approx f_2(x_1^*,x_2^*) + \pp{f_2}{x_1} (x_1-x_1^*) + \pp{f_2}{x_2} (x_2-x_2^*)\text{,}
-\end{align*}
+\begin{equation*}
+\frac{1}{x} \dd{x}{t} = a - bx, \qquad \text{or} \qquad \dd{x}{t} = ax - bx^2 \text{.}
+\end{equation*}
 </div>
-<p data-braille="continuation">where it is understood for brevity that the partial derivatives are all evaluated at \((x_1^*,x_2^*)\text{.}\) The first term in each expansion is zero due to the equilibrium assumption. Now define \(u_1(t)=x_1(t)-x_1^*\text{,}\) \(u_2(t)=x_2(t)-x_2^*\) to arrive at</p>
+<p data-braille="continuation">This is the <dfn class="terminology">logistic equation</dfn>. It's useful to define \(K=a/b\) and rewrite the model as</p>
 <div class="displaymath">
-\begin{align*}
-\dd{u_1}{t} \amp \approx \pp{f_1}{x_1} u_1 + \pp{f_1}{x_2} u_2, \\
-\dd{u_2}{t} \amp \approx \pp{f_2}{x_1} u_1 + \pp{f_2}{x_2} u_2. 
-\end{align*}
+\begin{equation}
+\dd{x}{t} = ax\left(1 - \frac{x}{K}\right)  \text{.}\tag{5.3.1}
+\end{equation}
 </div>
-<p data-braille="continuation">This motivates the following definition.</p>
-<span class="incontext"><a href="nl-twodim.html#p-601">in-context</a></span>
+<p data-braille="continuation">Both parameters are positive. The parameter \(K\) is known as the <dfn class="terminology">carrying capacity</dfn> and plays an important role.</p>
+<span class="incontext"><a href="nl-logistic.html#p-601">in-context</a></span>
 </body>
 </html>

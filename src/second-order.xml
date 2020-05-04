@@ -1077,7 +1077,119 @@ plot3(rhomax,Z,log_g(rhomax,Z),'w','linew',2)
 			</p>
 		</example>
 	</subsection>
-
+	<exercises xml:id="so-exer-laplace">
+		<title>Challenge problems for 2nd order Laplace</title>
+		<exercise>
+			<title>Exp-harmonic case</title>
+			<statement>
+			  <p>
+				Show that 
+				<me>
+					\lx\left[ e^{at}\cos(\omega t) \right] = \frac{s-a}{(s-a)^2+\omega^2}, \qquad 
+					\lx\left[ e^{at}\sin(\omega t) \right] = \frac{\omega}{(s-a)^2+\omega^2}.
+				</me>
+				(These can be used directly in place of the shift-then-invert strategy in the examples above.) 
+			  </p>
+			</statement>
+			<solution>
+			  <p>
+				Both are direct consequences of <m>\lx[e^{at} f(t)] = F(s-a)</m>.
+			  </p>
+			</solution>
+		</exercise>
+		<exercise xml:id="so-exer-laplace-imag">
+			<title>Imaginary PFD</title>
+			<statement>
+			  <p>
+				Show that by doing a partial fraction decomposition over linear factors with imaginary poles, 
+				<men xml:id="so-eq-laplace-imag">
+					\lx^{-1}\left[\dfrac{As+B}{s^2+\omega^2}\right] =  A\cos(\omega t) + \dfrac{B}{\omega}\sin(\omega t)
+				</men>, 
+				if <m>\omega \neq 0</m>. (Of course in practice the transform table tells you this directly.) 
+			  </p>
+			</statement>
+			<hint>
+			  <p>
+				Start with 
+				<me>
+					\dfrac{As+B}{s^2+\omega^2} = \frac{C}{s-i\omega} + \frac{D}{s+i\omega}
+				</me>
+				You may <em>not</em> assume that <m>C,D</m> are real, but they are conjugates of one another.
+			  </p>
+			</hint>
+			<solution>
+			  <p>
+				<me>
+					\dfrac{As+B}{s^2+\omega^2} = \frac{C}{s-i\omega} + \frac{D}{s+i\omega}
+				</me>
+				leads to 
+				<me>
+					As + B = C(s+i\omega) + D(s-i\omega). 
+				</me>
+				Setting <m>s=i\omega</m> gives 
+				<me>
+					B + i\omega A = 2i\omega C
+				</me>, 
+				or
+				<me>
+					C = \frac{1}{2}\,A - \frac{i}{2\omega} \, B
+				</me>. 
+				Using the other pole (or conjugation) gives <m>D=\frac{A}{2} + \frac{iB}{2\omega}</m>. Upon taking the inverse transform we get 
+				<me>
+					\left( \frac{A}{2} - \frac{iB}{2\omega} \right) e^{i\omega t} + \left( \frac{A}{2} + \frac{iB}{2\omega} \right) e^{-i\omega t} 
+				</me>, 
+				which rearranges to 
+				<me>
+					\frac{A}{2} \left( e^{i\omega t} + e^{-i\omega t}\right) - i \frac{B}{2\omega} \left( e^{i\omega t} - e^{-i\omega t}\right)
+				</me>. 
+				Euler's identity finishes the job. 
+			  </p>
+			</solution>
+		</exercise>
+		<exercise>
+			<title>Sneaking up on the origin</title>
+			<statement>
+			  <p>
+				Show how taking <m>\omega\to 0</m> in the result <xref ref="so-eq-laplace-imag"/> can be used to get the inverse transform of <m>\dfrac{1}{s^2}</m>.
+			  </p>
+			</statement>
+			<solution>
+			  <p>
+				<md>
+					<mrow> \lim_{\omega\to 0} \lx^{-1}\left[\dfrac{As+B}{s^2+\omega^2}\right]  \amp =  \lim_{\omega\to 0} \left[ A\cos(\omega t) + \dfrac{B}{\omega}\sin(\omega t) \right] </mrow>
+					<mrow> \lx^{-1}\left[  \frac{A}{s} + \frac{B}{s^2} \right] \amp = A + Bt   </mrow>
+					<mrow> A + B \lx^{-1}\left[ \frac{1}{s^2} \right] \amp = A + Bt   </mrow>
+					<mrow> \lx^{-1}\left[ \frac{1}{s^2} \right] \amp = t.   </mrow>
+				</md>				
+			  </p>
+			</solution>
+		</exercise>
+		<exercise>
+			<title>Higher derivatives</title>
+			<statement>
+			  <p>
+				Find a formula for <m>\lx\left[x'''(t)\right]</m>. Then generalize it to <m>n</m> derivatives.
+			  </p>
+			</statement>
+			<answer>
+			  <p>
+				<m>{s^n}X\left( s \right) - {s^{n - 1}}x\left( 0 \right) - {s^{n - 2}}x'\left( 0 \right) \cdots  - s{x^{\left( {n - 2} \right)}}\left( 0 \right) - {x^{\left( {n - 1} \right)}}\left( 0 \right)</m>
+			  </p>
+			</answer>
+			<solution>
+			  <p>
+				<md>
+				  <mrow> \lx[x'''(t)] \amp = \lx[ (x'')' ] </mrow>
+				  <mrow> \amp = s\lx[x''] - x''(0)  </mrow>
+				  <mrow>  \amp = s[s^2X(s) - s x(0) - s x'(0)] - x''(0) </mrow>
+				  <mrow>  \amp = s^3 X(s) -s^2x(0) - s x'(0) - x''(0)  </mrow>
+				</md>
+				The nth derivative is an exercise in mathematical induction. 
+			  </p>
+			</solution>
+		</exercise>
+	</exercises>
+	<solutions divisional="solution"></solutions>
 </section>
 
 <section xml:id="so-convolutions">
