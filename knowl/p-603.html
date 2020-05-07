@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-04T14:57:06-04:00    *-->
+<!--*    on 2020-05-06T23:21:01-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We can get creative and show that the halfway value \(x=K/2\) is also special. Still without knowing explicitly what \(x\) is, we can differentiate the ODE and use the chain rule to obtain</p>
+<p>There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
 <div class="displaymath">
 \begin{equation*}
-x'' = ax'- \frac{2a x x'}{K} = ax'\left( 1 - \frac{2x}{K} \right)\text{.}
+\frac{1}{x} \dd{x}{t} = a - bx, \qquad \text{or} \qquad \dd{x}{t} = ax - bx^2 \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">This is zero for \(x=K/2\text{,}\) suggesting that this solution value is an inflection point.</p>
+<p data-braille="continuation">This is the <dfn class="terminology">logistic equation</dfn>. It's useful to define \(K=a/b\) and rewrite the model as</p>
+<div class="displaymath">
+\begin{equation}
+\dd{x}{t} = ax\left(1 - \frac{x}{K}\right)  \text{.}\tag{5.3.1}
+\end{equation}
+</div>
+<p data-braille="continuation">Both parameters are positive. The parameter \(K\) is known as the <dfn class="terminology">carrying capacity</dfn> and plays an important role.</p>
 <span class="incontext"><a href="nl-logistic.html#p-603">in-context</a></span>
 </body>
 </html>

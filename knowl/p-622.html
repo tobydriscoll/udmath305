@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-04T14:57:07-04:00    *-->
+<!--*    on 2020-05-06T23:21:01-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The system</p>
+<p>The <dfn class="terminology">van der Pol equation</dfn> is a nonlinear oscillator in the form \(y''+\mu(y^2-1)y'+y=0\) for parameter \(\mu \gt 0\text{.}\) It is equivalent to the system</p>
 <div class="displaymath">
 \begin{align*}
-\frac{dx}{dt} \amp= 3x-\frac{xy}{2}\\
-\frac{dy}{dt} \amp= -y+\frac{xy}{4}
+x_1' \amp = x_2  \\
+x_2' \amp = -x_1 - \mu(x_1^2-1)x_2,  
 \end{align*}
 </div>
-<p data-braille="continuation">is called a <dfn class="terminology">predator–prey</dfn> equation. If species \(y\) is set to zero, species \(x\) would grow exponentially on its own (the prey). Similarly, species \(y\) would die off on its own (predator). We assume that encounters between the species are jointly proportional to the population of each, and they subtract from the prey and add to the predators.</p>
+<p data-braille="continuation">which has the sole equilibrium point \((0,0)\text{.}\) The Jacobian matrix is</p>
+<div class="displaymath">
+\begin{equation*}
+\twomat{0}{1}{-1-2\mu x_1 x_2}{-\mu(x_1^2-1)}, 
+\end{equation*}
+</div>
+<p data-braille="continuation">which at the origin is simply \(\twomat{0}{1}{-1}{\mu}\text{.}\) This has eigenvalues</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{2} \left( {\mu} \pm \sqrt{\mu^2-4} \right). 
+\end{equation*}
+</div>
+<p data-braille="continuation">If \(0\lt \mu \lt 2\text{,}\) the origin is an unstable spiral point. If \(\mu &gt; 2\text{,}\) the origin is an unstable node, as you can never achieve a negative eigenvalue.</p>
 <span class="incontext"><a href="nl-twodim.html#p-622">in-context</a></span>
 </body>
 </html>

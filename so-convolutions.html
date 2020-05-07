@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-04T14:57:03-04:00    *-->
+<!--*    on 2020-05-06T23:20:58-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -385,7 +385,30 @@ x_p(t) = \frac{1}{\omega_0}  \sin(\omega_0 t) \int_0^t \cos(\omega_0\tau)f(\tau)
 <p id="p-570">In the impulse response for distinct eigenvalues, take the limit \(\lambda_2 \to \lambda_1\) to propose an impulse response \(g(t)\) for the case of a double eigenvalue. Then show that \(g\) solves the homogeneous problem, and \(g(0)=0\text{,}\) \(g'(0)=1\text{.}\) Finally, show that the transform of \(g\) does match the transfer function.</p></article><article class="exercise exercise-like" id="exercise-31"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Damped oscillator.</span>
 </h6>
-<p id="p-572">Use convolution to derive the solution of the damped oscillator \(x''+2\omega_0 Z x' + \omega_0^2 x = f(t)\text{.}\) Express the formulas in real form in the underdamped case.</p></article></section><section class="solutions" id="solutions-12"><h3 class="heading hide-type">
+<p id="p-572">Use convolution to derive the solution of the damped oscillator \(x''+2\omega_0 Z x' + \omega_0^2 x = f(t)\text{.}\) Express the formulas in real form in the underdamped case.</p></article><article class="exercise exercise-like" id="exercise-32"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Chained equations.</span>
+</h6>
+<p id="p-573">Suppose we chain together two first-order equations, i.e,</p>
+<div class="displaymath">
+\begin{equation*}
+x_1'-r_1x_1 = f, \qquad x_2' - r_2x_2=x_1\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(x_1(0)=x_2(0)=0\text{.}\) Since</p>
+<div class="displaymath">
+\begin{equation*}
+X_2(s)=G_2(s)X_1(s)=G_2(s)G_1(s)F(s)\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(G_1,G_2\) are the transfer functions of the individual operators, then \(G_2(s)G_1(s)\) serves as a transfer function for the chain. Show without transforms that the ODE chain is indeed equivalent to a 2nd-order equation \(\opA[x_2]=f\text{,}\) where \(\opA\) has eigenvalues \(r_1\) and \(r_2\text{.}\) Then show that the same is true for the chain</p>
+<div class="displaymath">
+\begin{equation*}
+x_1'-r_2x_1 = f, \qquad x_2' - r_1x_2=x_1\text{.}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-10" id="hint-10"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-10"><div class="hint solution-like"><p id="p-574">Start by differentiating the equation for \(x_2\text{,}\) then look to substitute for all references to \(x_1\text{.}\)</p></div></div>
+</div></article></section><section class="solutions" id="solutions-12"><h3 class="heading hide-type">
 <span class="type">Solutions</span> <span class="codenumber">4.7.6</span> <span class="title">Solutions</span>
 </h3>
 <section class="exercises"><h4 class="heading hide-type">

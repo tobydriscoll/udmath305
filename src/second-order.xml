@@ -1435,6 +1435,31 @@ hold on, plot(z,'-o')
 			  </p>
 			</statement>
 		</exercise>
+		<exercise>
+			<title>Chained equations</title>
+			<statement>
+			  <p>
+				Suppose we chain together two first-order equations, i.e,
+				<me>
+					x_1'-r_1x_1 = f, \qquad x_2' - r_2x_2=x_1
+				</me>, 
+				with <m>x_1(0)=x_2(0)=0</m>. Since 
+				<me>
+					X_2(s)=G_2(s)X_1(s)=G_2(s)G_1(s)F(s)
+				</me>,
+				where <m>G_1,G_2</m> are the transfer functions of the individual operators, then <m>G_2(s)G_1(s)</m> serves as a transfer function for the chain.
+				Show without transforms that the ODE chain is indeed equivalent to a 2nd-order equation <m>\opA[x_2]=f</m>, where <m>\opA</m> has eigenvalues <m>r_1</m> and <m>r_2</m>. Then show that the same is true for the chain
+				<me>
+					x_1'-r_2x_1 = f, \qquad x_2' - r_1x_2=x_1
+				</me>. 
+			  </p>
+			</statement>
+			<hint>
+			  <p>
+				Start by differentiating the equation for <m>x_2</m>, then look to substitute for all references to <m>x_1</m>. 
+			  </p>
+			</hint>
+		</exercise>
 	</exercises>
 	<solutions divisional="solution"></solutions>
 	

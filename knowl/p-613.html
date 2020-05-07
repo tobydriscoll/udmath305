@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-04T14:57:06-04:00    *-->
+<!--*    on 2020-05-06T23:21:01-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Just as a derivative of \(f(x)\) is a function of \(x\text{,}\) a Jacobian matrix is a function of the variables of the system.</p>
+<p>An equilibrium solution of the system <a class="xref" data-knowl="./knowl/nl-eq-system1.html" title="Equation 5.4.1">(5.4.1)</a>-<a class="xref" data-knowl="./knowl/nl-eq-system2.html" title="Equation 5.4.2">(5.4.2)</a> is a pair of values \((x_1^*,x_2^*)\) such that \(f_1(x_1^*,x_2^*)=f_2(x_1^*,x_2^*)=0\text{.}\) We can understand the dynamics near an equilibrium point by approximating the nonlinear system with a linear one. Specifically, we use the multivariate linearizations</p>
+<div class="displaymath">
+\begin{align*}
+f_1(x_1,x_2) \amp \approx f_1(x_1^*,x_2^*) + \pp{f_1}{x_1} (x_1-x_1^*) + \pp{f_1}{x_2} (x_2-x_2^*)\\
+f_2(x_1,x_2) \amp \approx f_2(x_1^*,x_2^*) + \pp{f_2}{x_1} (x_1-x_1^*) + \pp{f_2}{x_2} (x_2-x_2^*)\text{,}
+\end{align*}
+</div>
+<p data-braille="continuation">where it is understood for brevity that the partial derivatives are all evaluated at \((x_1^*,x_2^*)\text{.}\) The first term in each expansion is zero due to the equilibrium assumption. Now define \(u_1(t)=x_1(t)-x_1^*\text{,}\) \(u_2(t)=x_2(t)-x_2^*\) to arrive at</p>
+<div class="displaymath">
+\begin{align*}
+\dd{u_1}{t} \amp \approx \pp{f_1}{x_1} u_1 + \pp{f_1}{x_2} u_2, \\
+\dd{u_2}{t} \amp \approx \pp{f_2}{x_1} u_1 + \pp{f_2}{x_2} u_2. 
+\end{align*}
+</div>
+<p data-braille="continuation">This motivates the following definition.</p>
 <span class="incontext"><a href="nl-twodim.html#p-613">in-context</a></span>
 </body>
 </html>

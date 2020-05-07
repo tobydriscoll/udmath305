@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-04T14:57:03-04:00    *-->
+<!--*    on 2020-05-06T23:20:58-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -208,14 +208,14 @@ var js_version = 0.13;
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="nl-logistic"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Case study: Logistic equation</span>
 </h2>
-<a href="nl-logistic.html" class="permalink">¶</a><section class="introduction" id="introduction-23"><p id="p-600">Say \(x(t)\) represents a population of bacteria. (There is always a whole number of bacteria, of course, but we'll allow real values. For large numbers that shouldn't matter.) If we assume that each bacterium produces offspring and ages at a constant rate, the result is a constant <em class="emphasis">net per capita growth rate</em>:</p>
+<a href="nl-logistic.html" class="permalink">¶</a><section class="introduction" id="introduction-23"><p id="p-602">Say \(x(t)\) represents a population of bacteria. (There is always a whole number of bacteria, of course, but we'll allow real values. For large numbers that shouldn't matter.) If we assume that each bacterium produces offspring and ages at a constant rate, the result is a constant <em class="emphasis">net per capita growth rate</em>:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{x} \dd{x}{t} = a\text{.}
 \end{equation*}
 </div>
 <p data-braille="continuation">If \(a\gt 0\text{,}\) then this is a recipe for exponential growth, a la \(x'=ax\text{.}\)</p>
-<p id="p-601">There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
+<p id="p-603">There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{x} \dd{x}{t} = a - bx, \qquad \text{or} \qquad \dd{x}{t} = ax - bx^2 \text{.}
@@ -230,8 +230,8 @@ var js_version = 0.13;
 <p data-braille="continuation">Both parameters are positive. The parameter \(K\) is known as the <dfn class="terminology">carrying capacity</dfn> and plays an important role.</p></section><section class="subsection" id="nl-lo-steady"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">Steady states</span>
 </h3>
-<a href="nl-logistic.html#nl-lo-steady" class="permalink">¶</a><p id="p-602">We begin with the steady states, which from <a class="xref" data-knowl="./knowl/eq-logistic.html" title="Equation 5.3.1">(5.3.1)</a> are clearly \(x=0\) and \(x=K\text{.}\) Since \(f'(x)=a-(2ax/K)\text{,}\) we conclude that the former steady state is unstable and the latter is stable. That is, the system has a tendency to hover near the carrying capacity. (Later we will show much more: this value is the long-term fate of the system for any positive initial condition.)</p>
-<p id="p-603">We can get creative and show that the halfway value \(x=K/2\) is also special. Still without knowing explicitly what \(x\) is, we can differentiate the ODE and use the chain rule to obtain</p>
+<a href="nl-logistic.html#nl-lo-steady" class="permalink">¶</a><p id="p-604">We begin with the steady states, which from <a class="xref" data-knowl="./knowl/eq-logistic.html" title="Equation 5.3.1">(5.3.1)</a> are clearly \(x=0\) and \(x=K\text{.}\) Since \(f'(x)=a-(2ax/K)\text{,}\) we conclude that the former steady state is unstable and the latter is stable. That is, the system has a tendency to hover near the carrying capacity. (Later we will show much more: this value is the long-term fate of the system for any positive initial condition.)</p>
+<p id="p-605">We can get creative and show that the halfway value \(x=K/2\) is also special. Still without knowing explicitly what \(x\) is, we can differentiate the ODE and use the chain rule to obtain</p>
 <div class="displaymath">
 \begin{equation*}
 x'' = ax'- \frac{2a x x'}{K} = ax'\left( 1 - \frac{2x}{K} \right)\text{.}
@@ -240,7 +240,7 @@ x'' = ax'- \frac{2a x x'}{K} = ax'\left( 1 - \frac{2x}{K} \right)\text{.}
 <p data-braille="continuation">This is zero for \(x=K/2\text{,}\) suggesting that this solution value is an inflection point.</p></section><section class="subsection" id="fn-nl-easy"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">First solution method: Substitution</span>
 </h3>
-<a href="nl-logistic.html#fn-nl-easy" class="permalink">¶</a><p id="p-604">When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of “lucky” solutions is the idea of variable substitution, and the logistic equation is a nice case study. Define \(z=1/x\text{.}\) From the chain rule we have \(x'=-x^{-2}x'=-x'z^2\text{.}\) The logistic equation converts to</p>
+<a href="nl-logistic.html#fn-nl-easy" class="permalink">¶</a><p id="p-606">When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of “lucky” solutions is the idea of variable substitution, and the logistic equation is a nice case study. Define \(z=1/x\text{.}\) From the chain rule we have \(x'=-x^{-2}x'=-x'z^2\text{.}\) The logistic equation converts to</p>
 <div class="displaymath">
 \begin{equation*}
 -\frac{z'}{z^2} = \frac{a}{z} - \frac{b}{z^2}\text{,}
@@ -259,7 +259,7 @@ x(t) = \frac{Kx_0}{e^{-at}(K-x_0)+x_0}\text{,}\label{eq-logistic-solution}\tag{5
 \end{equation}
 </div>
 <p data-braille="continuation">where \(x_0=x(0)\text{.}\)</p>
-<p id="p-605">The solution formula makes it clear that \(x\to K\) as \(t\to \infty\text{,}\) if \(x_0\gt 0\text{.}\) If the system starts below the inflection at \(x=K/2\text{,}\) then the solution is an S-shaped or <em class="emphasis">sigmoidal</em> curve.</p>
+<p id="p-607">The solution formula makes it clear that \(x\to K\) as \(t\to \infty\text{,}\) if \(x_0\gt 0\text{.}\) If the system starts below the inflection at \(x=K/2\text{,}\) then the solution is an S-shaped or <em class="emphasis">sigmoidal</em> curve.</p>
 <article class="example example-like" id="example-93"><a data-knowl="" class="id-ref original" data-refid="hk-example-93"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-93"><article class="example example-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
@@ -281,7 +281,7 @@ set(gca,'ygrid','on',...
 </div></div></article></div></section><section class="subsection" id="fn-lo-separate"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.3</span> <span class="title">Second solution method: Separation</span>
 </h3>
-<a href="nl-logistic.html#fn-lo-separate" class="permalink">¶</a><p id="p-606">The logistic equation is separable:</p>
+<a href="nl-logistic.html#fn-lo-separate" class="permalink">¶</a><p id="p-608">The logistic equation is separable:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dx}{x(a-bx)} = dt\text{.}
@@ -296,7 +296,7 @@ t + C = \int \frac{dx}{x(a-bx)} = \frac{1}{b} \int \frac{dx}{x(K-x)} = \frac{1}{
 <p data-braille="continuation">The last step above required converting the single fraction into partial fractions. These are now easily integrated to get logs, and the solution follows from there. Obviously we have to end up with <a class="xref" data-knowl="./knowl/eq-logistic-solution.html" title="Equation 5.3.2">(5.3.2)</a> again.</p></section><section class="subsection" id="nl-predation"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.4</span> <span class="title">Predation</span>
 </h3>
-<a href="nl-logistic.html#nl-predation" class="permalink">¶</a><p id="p-607">Suppose we complicate the model by adding in the effect of a predator:</p>
+<a href="nl-logistic.html#nl-predation" class="permalink">¶</a><p id="p-609">Suppose we complicate the model by adding in the effect of a predator:</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{x} \, \dd{x}{t} = a\left(1 - \frac{x}{K}\right) - p(x)\text{,}
