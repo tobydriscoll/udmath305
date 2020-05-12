@@ -179,6 +179,68 @@ quiver(tt,0*tt,0.15*[1 -1 1 -1],0*tt,.2,'linew',2)
 		</p>
 	</example>	
 </subsection>
+
+<exercises xml:id="nl-exer-separation">
+	<exercise>
+		<title>Change of variable</title>
+		<statement>
+			<p>
+				The equation 
+				<me>
+					x' = x + t x^2 
+				</me>
+				is neither linear nor separable. However, show that the change of variable <m>u=x^{-1}</m> transforms it into 
+				<me>
+					u' + u = -t
+				</me>,
+				which is linear. Solve this equation and then use that to solve the original ODE. 
+			</p>
+		</statement>
+		<answer>
+		  <p>
+			<m>x = \dfrac{1}{c_1 e^{-t} + 1 - t}</m>
+		  </p>
+		</answer>
+		<solution>
+		  <p>
+			With <m>u=x^{-1}</m>, we have 
+			<me>
+				\dd{u}{t} = \dd{u}{x}\,\dd{x}{t} = -x^{-2} \dd{x}{t}.
+			</me>
+			From this the original ODE becomes 
+			<md>
+			  <mrow> -x^2 u' \amp = x + t x^2 </mrow>
+			  <mrow> u' \amp = -x{-1} - t,</mrow>
+			</md>
+			which gives <m>u'+u=-t</m>. This has particular solution <m>u_p=At+B</m>, and we quickly find <m>u_p=1-t</m>. Hence the general solution is 
+			<m>
+				u = c_1 e^{-t} + 1 - t, 
+			</m>
+			and therefore 
+			<me>
+				x = \frac{1}{c_1 e^{-t} + 1 - t}.
+			</me>
+			This is a special case of a <em>Bernoulli equation</em>. 
+		  </p>
+		</solution>
+	</exercise>
+	<exercise>
+		<title>Flames in space</title>
+		<statement>
+		  <p>
+			A simple model for the radius of a ball of flame in zero gravity is <m>r'=r^2-r^3</m>, because oxygen intake is proportional to surface area while fuel consumption is proportional to volume. Find an implicit solution of this equation. 
+		  </p>
+		</statement>
+		<answer>
+		  <p>
+			  <me>
+				  \log\left(\frac{r}{1-r}\right) - \frac{1}{r} = t + c_1
+			  </me>
+		  </p>
+		</answer>
+	</exercise>
+</exercises>
+<solutions divisional="solution"></solutions>
 </section>
 
 <section xml:id="nl-logistic">
@@ -309,6 +371,69 @@ quiver(tt,0*tt,0.15*[1 -1 1 -1],0*tt,.2,'linew',2)
 			</image>
 		</figure>
 	</subsection>
+	<exercises xml:id="nl-exer-logistic">
+		<exercise>
+			<title>Threshold model</title>
+			<statement>
+				<p>
+					An alternative population model is 
+					<me>
+						x' = -ax\left(1-\frac{x}{T}\right),
+					</me>
+					for positive parameters <m>a,T</m>. Show that in this model the origin is a stable equilibrium and <m>x=T</m> is an unstable one. Then find the solution and describe all the possible different behaviors from positive initial conditions as <m>t\to\infty</m>. 
+				</p>
+			</statement>
+			<answer>
+				<p>
+					Either <m>x\to 0</m> or <m>x\to\infty</m> (aka <q>doomsday</q>). 
+				</p>
+			</answer>
+		</exercise>
+		<exercise>
+			<title>Logistic with threshold</title>
+			<statement>
+				<p>
+					The model 
+					<me>
+						x' = -ax\left(1-\frac{x}{T}\right)\left(1-\frac{x}{K}\right)
+					</me>
+					with positive parameters and <m>T \lt K</m> combines logistic and threshold features. Show that the origin and <m>x=K</m> are stable equilibria, while <m>x=T</m> is unstable. 
+				</p>
+			</statement>
+			<hint>
+				<p>
+					This is most easily done by looking at <m>f'</m>, where <m>x'=f(x)</m>, rather than attempting a phase line diagram. 
+				</p>
+			</hint>
+		</exercise>
+		<exercise>
+			<title>Gompertz growth</title>
+			<statement>
+				<p>
+					The logistic model posits a linear decrease in the per capita growth rate as the population increases: 
+					<me>
+						\frac{1}{x} \, \dd{x}{t} = a\left(1 - \frac{x}{K}\right)   
+					</me>.
+					But there are many cases where we might have an even faster decrease in the growth rate. One such case is the <em>Gompertz equation</em>, 
+					<me>
+						\frac{1}{x} \, \dd{x}{t} = a\left(1 - \frac{\log(x)}{\log(K)}\right)  
+					</me>.
+					It has been suggested as a model for the growth of tumors. Show that the solution is 
+					<me>
+						x = K \exp\left[ -c_1 \exp \Bigl( - at/\log(K) \Bigr) \right],
+					</me>
+					for a nonnegative <m>c_1</m>. 
+				</p>
+			</statement>
+			<hint>
+				<p>
+					One approach is to define <m>u=\log(x)</m> and derive a linear ODE for <m>u</m>.
+				</p>
+			</hint>
+		</exercise>
+	</exercises>
+	<solutions divisional="solution"></solutions>
+
 </section>
 
 <section xml:id="nl-twodim">

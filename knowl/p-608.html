@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-07T14:05:59-04:00    *-->
+<!--*    on 2020-05-12T08:41:39-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,19 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The logistic equation is separable:</p>
+<p>There are a lot of assumptions behind that model, but perhaps the most glaringly suspect one is that it supposes an endless supply of food and space, allowing population to grow without bound, forever. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let \(b\gt 0\) be another positive parameter, and define</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{dx}{x(a-bx)} = dt\text{.}
+\frac{1}{x} \dd{x}{t} = a - bx, \qquad \text{or} \qquad \dd{x}{t} = ax - bx^2 \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence</p>
+<p data-braille="continuation">This is the <dfn class="terminology">logistic equation</dfn>. It's useful to define \(K=a/b\) and rewrite the model as</p>
 <div class="displaymath">
-\begin{equation*}
-t + C = \int \frac{dx}{x(a-bx)} = \frac{1}{b} \int \frac{dx}{x(K-x)} = \frac{1}{bK} \int \left( \frac{1}{x} + \frac{1}{K-x} \right)\,dx\text{.}
-\end{equation*}
+\begin{equation}
+\dd{x}{t} = ax\left(1 - \frac{x}{K}\right)  \text{.}\tag{5.3.1}
+\end{equation}
 </div>
-<p data-braille="continuation">The last step above required converting the single fraction into partial fractions. These are now easily integrated to get logs, and the solution follows from there. Obviously we have to end up with <a class="xref" data-knowl="./knowl/eq-logistic-solution.html" title="Equation 5.3.2">(5.3.2)</a> again.</p>
+<p data-braille="continuation">Both parameters are positive. The parameter \(K\) is known as the <dfn class="terminology">carrying capacity</dfn> and plays an important role.</p>
 <span class="incontext"><a href="nl-logistic.html#p-608">in-context</a></span>
 </body>
 </html>

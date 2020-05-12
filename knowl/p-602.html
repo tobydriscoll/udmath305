@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-07T14:05:59-04:00    *-->
+<!--*    on 2020-05-12T08:41:39-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Say \(x(t)\) represents a population of bacteria. (There is always a whole number of bacteria, of course, but we'll allow real values. For large numbers that shouldn't matter.) If we assume that each bacterium produces offspring and ages at a constant rate, the result is a constant <em class="emphasis">net per capita growth rate</em>:</p>
+<p>The equation</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{1}{x} \dd{x}{t} = a\text{.}
+x' = x + t x^2 
 \end{equation*}
 </div>
-<p data-braille="continuation">If \(a\gt 0\text{,}\) then this is a recipe for exponential growth, a la \(x'=ax\text{.}\)</p>
-<span class="incontext"><a href="nl-logistic.html#p-602">in-context</a></span>
+<p data-braille="continuation">is neither linear nor separable. However, show that the change of variable \(u=x^{-1}\) transforms it into</p>
+<div class="displaymath">
+\begin{equation*}
+u' + u = -t\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">which is linear. Solve this equation and then use that to solve the original ODE.</p>
+<span class="incontext"><a href="nl-scalar.html#p-602">in-context</a></span>
 </body>
 </html>

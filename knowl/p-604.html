@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-07T14:05:59-04:00    *-->
+<!--*    on 2020-05-12T08:41:39-04:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,26 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We begin with the steady states, which from <a class="xref" data-knowl="./knowl/eq-logistic.html" title="Equation 5.3.1">(5.3.1)</a> are clearly \(x=0\) and \(x=K\text{.}\) Since \(f'(x)=a-(2ax/K)\text{,}\) we conclude that the former steady state is unstable and the latter is stable. That is, the system has a tendency to hover near the carrying capacity. (Later we will show much more: this value is the long-term fate of the system for any positive initial condition.)</p>
-<span class="incontext"><a href="nl-logistic.html#p-604">in-context</a></span>
+<p>With \(u=x^{-1}\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\dd{u}{t} = \dd{u}{x}\,\dd{x}{t} = -x^{-2} \dd{x}{t}.
+\end{equation*}
+</div>
+<p data-braille="continuation">From this the original ODE becomes</p>
+<div class="displaymath">
+\begin{align*}
+-x^2 u' \amp = x + t x^2 \\
+u' \amp = -x{-1} - t,
+\end{align*}
+</div>
+<p data-braille="continuation">which gives \(u'+u=-t\text{.}\) This has particular solution \(u_p=At+B\text{,}\) and we quickly find \(u_p=1-t\text{.}\) Hence the general solution is \(u = c_1 e^{-t} + 1 - t, \) and therefore</p>
+<div class="displaymath">
+\begin{equation*}
+x = \frac{1}{c_1 e^{-t} + 1 - t}.
+\end{equation*}
+</div>
+<p data-braille="continuation">This is a special case of a <em class="emphasis">Bernoulli equation</em>.</p>
+<span class="incontext"><a href="nl-scalar.html#p-604">in-context</a></span>
 </body>
 </html>
