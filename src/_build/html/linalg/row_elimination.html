@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Row elimination &#8212; Notes on linear algebra and ODEs</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="RREF" href="RREF.html" />
+    <link rel="prev" title="Linear systems" href="linear_systems.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
+   M305 Notes
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Linear algebra
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vectors_matrices.html">
+   Vectors and matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_systems.html">
+   Linear systems
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Row elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RREF.html">
+   RREF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vector_algebra.html">
+   Vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matrix_vector.html">
+   Matrix-vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matrix_matrix.html">
+   Matrix-matrix algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="identity_inverse.html">
+   Identity and inverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="singular.html">
+   Detecting singular matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="general_solutions.html">
+   General solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_numbers.html">
+   Complex numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eigenvalues.html">
+   Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defectiveness.html">
+   Defectiveness
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/linalg/row_elimination.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/linalg/row_elimination.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="row-elimination">
+<h1>Row elimination<a class="headerlink" href="#row-elimination" title="Permalink to this headline">¶</a></h1>
+<p>You’ve probably solved small systems of equations by substitution. In order to solve systems with more equations and variables, we take a slightly different point of view and use <span class="xref std std-term">elimination</span>. The goal of elimination is to transform the system to an equivalent one whose solution(s) we can deduce easily.</p>
+<div class="proof proof-type-example" id="id1">
+<span id="example-gauss-elimination"></span>
+    <div class="proof-title">
+        <span class="proof-type">Example 5</span>
+        
+    </div><div class="proof-content">
+<p>We start with a <span class="math notranslate nohighlight">\(3\times 3\)</span> system</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x_1 - x_2  - x_3 &amp; = 2 \\
+3x_1 - 2x_2 &amp; = 9 \\
+x_1 - 2x_2 - x_3 &amp; = 5.
+\end{align*}\]</div>
+<p>The first step is to use the first equation to eliminate <span class="math notranslate nohighlight">\(x_1\)</span> from the second and third equations. We therefore subtract 3 times equation 1 from equation 2, and 1 times equation 1 from equation 3:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ x_1 - x_2  - x_3  &amp; = 2 &amp; &amp; \\
+(3x_1 - 2x_2) - 3(x_1 - x_2  - x_3) &amp; = 9 - 3(2)\quad  &amp; \Rightarrow \quad  x_2 +3x_3 &amp; = 3\\
+(x_1 - 2x_2 - x_3) - 1(x_1 - x_2  - x_3) &amp; = 5 - 1(2) \quad &amp; \Rightarrow \quad  -x_2 &amp; = 3
+\end{align*}\]</div>
+<!-- <aside><p>I know you want to use that last equation to get rid of $x_2$ everywhere right away. That would be fine for this particular problem, but we are aiming for a systematic process that works every time.</p></aside> -->
+<p>The next step of the recipe is to leave the first equation alone, and use the second to eliminate <span class="math notranslate nohighlight">\(x_2\)</span> from all the others below it—in this case, just the third equation.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+ x_1 - x_2  - x_3  &amp; = 2  &amp; &amp; \\
+x_2 + 3x_3 &amp; = 3 &amp; &amp; \\
+(-x_2) + (x_2+3x_3)  &amp; = 3 + 3 &amp; \quad \Rightarrow \quad 3x_3 &amp; = 6.
+\end{align*}\]</div>
+</div></div><p>The process in <a class="reference internal" href="#example-gauss-elimination"><span class="std std-ref">the preceding example</span></a> is most commonly known as <span class="xref std std-term">Gaussian elimination</span>. (It’s a misnomer, as the process was known in China thousands of years before Gauss, but never mind.) We could solve the system at the end of the example by starting with the last equation to deduce that <span class="math notranslate nohighlight">\(x_3=2\)</span>. We then put that value into the second equation and can solve that for <span class="math notranslate nohighlight">\(x_2\)</span>, etc.</p>
+<p>Instead, though, we are going to continue to manipulate the system to get something even simpler.</p>
+<div class="proof proof-type-example" id="id2">
+<span id="example-gauss-jordan"></span>
+    <div class="proof-title">
+        <span class="proof-type">Example 6</span>
+        
+    </div><div class="proof-content">
+<p>We continue from the end of <span class="xref std std-ref">example-gauss-elimination</span>.  Having reached the last variable and equation, we turn around and eliminate <em>upwards</em> instead:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(x_1 - x_2 - x_3) + \frac{1}{3}(3x_3) &amp; = 2  +\frac{1}{3}(6) &amp; \quad \Rightarrow \quad x_1  -x_2 &amp; = 4\\
+(x_2 + 3x_3) - (3x_3) &amp; = 3 - (6)&amp; \quad \Rightarrow \quad x_2 &amp; = -3\\
+3x_3  &amp; = 6 &amp;  &amp;
+\end{align*}\]</div>
+<p>Continue moving upwards, to the second equation, and use it to eliminate above it:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(x_1 - x_2 ) + (x_2) &amp; = 4  + (-3)  &amp; \quad \Rightarrow \quad x_1  &amp; = 1\\
+x_2 &amp; = -3 &amp; &amp; \\
+3x_3  &amp; = 6 &amp; &amp; 
+\end{align*}\]</div>
+<p>Obviously, the solution is uniquely <span class="math notranslate nohighlight">\(x_1=1\)</span>, <span class="math notranslate nohighlight">\(x_2=-3\)</span>, <span class="math notranslate nohighlight">\(x_3=2\)</span>.</p>
+</div></div><p>That was a mouthful. We can lighten the notational load by using matrices. We start with the <span class="math notranslate nohighlight">\(m\times (n+1)\)</span> <span class="xref std std-term">augmented matrix</span> <span class="math notranslate nohighlight">\(\bfG = [\bfA\:\bfb]\)</span> that contains all the equation coefficients and right-side values. We repeat the previous process in augmented matrix form, starting from</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\bfG = 
+\begin{bmatrix}
+1 &amp; -1 &amp; -1 &amp; 2 \\
+3 &amp; -2 &amp; 0 &amp; 9 \\
+1 &amp; -2 &amp; -1 &amp; 5
+\end{bmatrix}.
+\end{split}\]</div>
+<p>(Observe that when a variable is absent from an equation, its corresponding element in <span class="math notranslate nohighlight">\(\bfG\)</span> is zero.) To ease the arithmetic, we do the elimination in MATLAB.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span> <span class="n">3</span> <span class="s">-2</span> <span class="s">0</span> <span class="s">9</span><span class="p">;</span> <span class="n">1</span> <span class="s">-2</span> <span class="s">-1</span> <span class="s">5]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+     1    -1    -1     2
+     3    -2     0     9
+     1    -2    -1     5
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first elimination step uses multiples of the first row to eliminate below it. Note that in MATLAB, <code class="docutils literal notranslate"><span class="pre">G(1,:)</span></code> refers to the entire first row of <code class="docutils literal notranslate"><span class="pre">G</span></code>, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+     1    -1    -1     2
+     0     1     3     3
+     1    -2    -1     5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+     1    -1    -1     2
+     0     1     3     3
+     0    -1     0     3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we use the second row to eliminate below it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">-</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+     1    -1    -1     2
+     0     1     3     3
+     0     0     3     6
+</pre></div>
+</div>
+</div>
+</div>
+<p>Having reached the last row, we turn around and use it to eliminate above it in column 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+     1    -1    -1     2
+     0     1     0    -3
+     0     0     3     6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span> <span class="o">-</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+     1    -1     0     4
+     0     1     0    -3
+     0     0     3     6
+</pre></div>
+</div>
+</div>
+</div>
+<p>We move up to the second row and eliminate above that in column 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span> <span class="o">-</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+     1     0     0     1
+     0     1     0    -3
+     0     0     3     6
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, to be super pedantic, we normalize the last row by its leading nonzero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span><span class="o">/</span><span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+     1     0     0     1
+     0     1     0    -3
+     0     0     1     2
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is the augmented matrix of the system</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{matrix}
+x_1 &amp; &amp; &amp;= &amp;1 \\
+&amp; x_2 &amp; &amp;= &amp;-3 \\
+&amp; &amp; x_3 &amp;= &amp;2,
+\end{matrix}
+\end{split}\]</div>
+<p>whose solution is obvious.</p>
+<p>The process just demonstrated is best known as <span class="xref std std-term">Gauss–Jordan elimination</span>, or more simply, row elimination. As seen in the examples, row elimination consists of two phases, one downward (Gaussian elimination) and one upward. The goal is to put the augmented matrix into a special form.</p>
+<p>In the next section we get more formal about the process and results. For now, let’s look at an example that works out differently. We solve the system having augmented matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; -1 &amp; 4 \\
+1 &amp; 2 &amp; 2 &amp; 3 \\
+2 &amp; 1 &amp; -5 &amp; 9
+\end{bmatrix}.
+\end{split}\]</div>
+<p>First, we use multiples of the first row to eliminate in the first column below it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">4</span><span class="p">;</span> <span class="n">1</span> <span class="s">2</span> <span class="s">2</span> <span class="s">3</span><span class="p">;</span> <span class="n">2</span> <span class="s">1</span> <span class="s">-5</span> <span class="s">9]</span><span class="p">;</span>
+<span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,:);</span>
+<span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+     1     1    -1     4
+     0     1     3    -1
+     0    -1    -3     1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now use a multiple of the second row to put a zero underneath it in column 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">-</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+     1     1    -1     4
+     0     1     3    -1
+     0     0     0     0
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have reached the last row, and it’s time to turn around and eliminate upwards. But because the last row is entirely zero, it can’t make changes to the rows above it. So we skip that and move up to the second row, eliminating upwards in the second column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
+     1     0    -4     5
+     0     1     3    -1
+     0     0     0     0
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is as simple as we can get things. The last row is telling us the astounding fact that <span class="math notranslate nohighlight">\(0=0\)</span>—i.e., nothing at all. The other two rows imply</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x_1 &amp;= 5 + 4x_3 \\
+x_2 &amp;= -1 - 3x_3.
+\end{align*}\]</div>
+<p>Since the third row gave us no information, we take the attitude that <span class="math notranslate nohighlight">\(x_3\)</span> is unrestricted. That is,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x_1 &amp;= 5 + 4s \\
+x_2 &amp;= -1 - 3s \\
+x_3 &amp;= s
+\end{align*}\]</div>
+<p>is a solution for any value of <span class="math notranslate nohighlight">\(s\)</span>, and we have an infinite family of solutions.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "matlab"
+        },
+        kernelOptions: {
+            kernelName: "matlab",
+            path: "./linalg"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'matlab'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="linear_systems.html" title="previous page">Linear systems</a>
+    <a class='right-next' id="next-link" href="RREF.html" title="next page">RREF</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tobin A. Driscoll<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

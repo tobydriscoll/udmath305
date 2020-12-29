@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Eigenvalues &#8212; Notes on linear algebra and ODEs</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Defectiveness" href="defectiveness.html" />
+    <link rel="prev" title="Complex numbers" href="complex_numbers.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
+   M305 Notes
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Linear algebra
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vectors_matrices.html">
+   Vectors and matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_systems.html">
+   Linear systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="row_elimination.html">
+   Row elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RREF.html">
+   RREF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vector_algebra.html">
+   Vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matrix_vector.html">
+   Matrix-vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matrix_matrix.html">
+   Matrix-matrix algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="identity_inverse.html">
+   Identity and inverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="singular.html">
+   Detecting singular matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="general_solutions.html">
+   General solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_numbers.html">
+   Complex numbers
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defectiveness.html">
+   Defectiveness
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/linalg/eigenvalues.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/linalg/eigenvalues.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenspaces">
+   Eigenspaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matlab">
+   MATLAB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenvectors-for-2-times-2">
+   Eigenvectors for
+   <span class="math notranslate nohighlight">
+    \(2\times 2\)
+   </span>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="eigenvalues">
+<h1>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Permalink to this headline">¶</a></h1>
+<p>The last stop on our whirlwind tour of linear algebra is the hardest to motivate for a little while. However, the topic is important to the differential equations we study in future chapters, in the sense of oxygen being an important part of breathing.</p>
+<p>We are still operating with square matrices only.</p>
+<div class="proof proof-type-definition" id="id1">
+<span id="definition-linalg-eigen"></span>
+    <div class="proof-title">
+        <span class="proof-type">Definition 38</span>
+        
+            <span class="proof-title-name">(Eigenvalue and eigenvector)</span>
+        
+    </div><div class="proof-content">
+<p>Suppose <span class="math notranslate nohighlight">\(\bfA\in\cmn{n}{n}\)</span>. If there exist a scalar <span class="math notranslate nohighlight">\(\lambda\)</span> and a nonzero vector <span class="math notranslate nohighlight">\(\bfv\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\bfA \bfv = \lambda \bfv,\]</div>
+<p>then <span class="math notranslate nohighlight">\(\lambda\)</span> is an <span class="xref std std-term">eigenvalue</span> of <span class="math notranslate nohighlight">\(\bfA\)</span> with associated <span class="xref std std-term">eigenvector</span> <span class="math notranslate nohighlight">\(\bfv\)</span>.</p>
+</div></div><p>If you think of <span class="math notranslate nohighlight">\(\bfA\)</span> as acting on vectors, then an eigenvector is a direction in which the action of <span class="math notranslate nohighlight">\(\bfA\)</span> is the same as a scalar; we have found a little one-dimensional oasis in which the behavior of <span class="math notranslate nohighlight">\(\bfA\)</span> is easy to comprehend.</p>
+<div class="section" id="eigenspaces">
+<h2>Eigenspaces<a class="headerlink" href="#eigenspaces" title="Permalink to this headline">¶</a></h2>
+<p>An eigenvalue is a clean, well-defined target. Eigenvectors are a little slipperier. For starters, if <span class="math notranslate nohighlight">\(\bfA\bfv=\lambda\bfv\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[	\bfA(c\bfv) = c(\bfA\bfv)=c(\lambda\bfv)=\lambda(c\bfv).\]</div>
+<p>Hence <strong>every nonzero multiple of an eigenvector is also an eigenvector for the same <span class="math notranslate nohighlight">\(\lambda\)</span></strong>. But there can be much more ambiguity than that.</p>
+<div class="proof proof-type-example" id="id2">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 39</span>
+        
+    </div><div class="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\meye\)</span> be an identity matrix. Then <span class="math notranslate nohighlight">\(\meye\bfx=\bfx\)</span> for any vector <span class="math notranslate nohighlight">\(\bfx\)</span>, so every nonzero vector is an eigenvector!</p>
+</div></div><p>Fortunately we already have the tools we need to describe a more robust target, based on the very simple reformulation</p>
+<div class="math notranslate nohighlight">
+\[\bfzero=\bfA\bfv-\lambda\bfv=(\bfA-\lambda\meye)\bfv.\]</div>
+<div class="proof proof-type-definition" id="id3">
+<span id="definition-linalg-eigenspace"></span>
+    <div class="proof-title">
+        <span class="proof-type">Definition 40</span>
+        
+            <span class="proof-title-name">(Eigenspace)</span>
+        
+    </div><div class="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\lambda\)</span> be an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span>. The <span class="xref std std-term">eigenspace</span> associated with <span class="math notranslate nohighlight">\(\lambda\)</span> is the general solution of <span class="math notranslate nohighlight">\((\bfA-\lambda\meye)\bfx = \bfzero\)</span>.</p>
+</div></div><p>Eigenspaces, unlike eigenvectors, are unique. We have to be a bit careful, though, because we usually express such spaces using basis vectors, and those bases are not themselves unique.</p>
+<p>Note that if <span class="math notranslate nohighlight">\(\lambda\)</span> is <em>not</em> an eigenvalue, then by definition the only solution of <span class="math notranslate nohighlight">\((\bfA-\lambda\meye)\bfv=\bfzero\)</span> is <span class="math notranslate nohighlight">\(\bfv=\bfzero\)</span>. That requires <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> to be invertible.</p>
+<div class="proof proof-type-theorem" id="id4">
+
+    <div class="proof-title">
+        <span class="proof-type">Theorem 41</span>
+        
+    </div><div class="proof-content">
+<p><span class="math notranslate nohighlight">\(\lambda\)</span> is an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span> if and only if <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> is singular.</p>
+</div></div><p>In practice the most common way to find eigenvalues by hand is through the equivalent condition <span class="math notranslate nohighlight">\(\det(\bfA-\lambda\meye)=0\)</span>.</p>
+<div class="proof proof-type-example" id="id5">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 42</span>
+        
+    </div><div class="proof-content">
+<p>We look for eigenvalues of</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 1 \\ 4 &amp; 1 \end{bmatrix}.\end{split}\]</div>
+<p>Start by computing</p>
+<div class="math notranslate nohighlight">
+\[\left| \twomat{1}{1}{4}{1} - \twomat{\lambda}{0}{0}{\lambda} \right| = \twodet{1-\lambda}{1}{4}{1-\lambda} = (1-\lambda)^2 - 4 = \lambda^2-2\lambda-3.\]</div>
+<p>We find eigenvalues by setting this equal to zero, which means <span class="math notranslate nohighlight">\(\lambda_1=3\)</span> or <span class="math notranslate nohighlight">\(\lambda_2=-1\)</span>. So these are the eigenvalues.</p>
+<p>What about the eigenspaces? First consider <span class="math notranslate nohighlight">\(\lambda_1=3\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\bfA-3 \meye = \twomat{-2}{1}{4}{-2} \overset{\text{RREF}}{\Longrightarrow} \twomat{1}{-1/2}{0}{0}.\]</div>
+<p>The homogeneous solution can be expressed as <span class="math notranslate nohighlight">\(x_1=s/2\)</span>, <span class="math notranslate nohighlight">\(x_2=s\)</span>, or <span class="math notranslate nohighlight">\(s\cdot[1/2;\,1]\)</span>. So <span class="math notranslate nohighlight">\([1/2;\,1]\)</span> is a basis for this eigenspace. Since eigenvectors can be rescaled at will, we prefer to use <span class="math notranslate nohighlight">\(\twovec{1}{2}\)</span> as the basis vector.</p>
+<p>For <span class="math notranslate nohighlight">\(\lambda_2=-1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\bfA+ \meye = \twomat{2}{1}{4}{2} \overset{\text{RREF}}{\Longrightarrow} \twomat{1}{1/2}{0}{0},\]</div>
+<p>leading to the basis <span class="math notranslate nohighlight">\([-1/2;\,1]\)</span> or equivalently, <span class="math notranslate nohighlight">\(\twovec{-1}{2}\)</span>.</p>
+</div></div></div>
+<div class="section" id="matlab">
+<h2>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
+<p>MATLAB computes eigenvalues (through an entirely different process) with the <code class="docutils literal notranslate"><span class="pre">eig</span></code> command. From the preceding example, for instance,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">;</span> <span class="n">4</span> <span class="s">1</span> <span class="s">]</span><span class="p">;</span>
+<span class="n">lambda</span> <span class="p">=</span> <span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lambda =
+
+    3.0000
+   -1.0000
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want eigenvectors as well, use an alternate form for the output:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">V</span><span class="p">,</span><span class="n">D</span><span class="p">]</span> <span class="p">=</span> <span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>V =
+
+    0.4472   -0.4472
+    0.8944    0.8944
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D =
+
+    3.0000         0
+         0   -1.0000
+</pre></div>
+</div>
+</div>
+</div>
+<p>In most cases, column <code class="docutils literal notranslate"><span class="pre">V(:,k)</span></code> is an eigenvector for the eigenvalue <code class="docutils literal notranslate"><span class="pre">D(k,k)</span></code>. Keep in mind that any scalar multiple of an eigenvector is equally valid.</p>
+</div>
+<div class="section" id="eigenvectors-for-2-times-2">
+<h2>Eigenvectors for <span class="math notranslate nohighlight">\(2\times 2\)</span><a class="headerlink" href="#eigenvectors-for-2-times-2" title="Permalink to this headline">¶</a></h2>
+<p>Most of our hand computations will be with <span class="math notranslate nohighlight">\(2\times 2\)</span> matrices. Suppose <span class="math notranslate nohighlight">\(\lambda\)</span> is known to be an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span>. Then <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> must be singular, and its RREF has at least one free column. Hence row elimination will zero out the second row entirely, and we can ignore it.</p>
+<p>Say the first row of <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> is <span class="math notranslate nohighlight">\([\alpha,\beta]\)</span>. If these are both zero, then <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> is a zero matrix, i.e., <span class="math notranslate nohighlight">\(\bfA\)</span> is a multiple of the identity and all of <span class="math notranslate nohighlight">\(\complex^2\)</span> is the eigenspace. Otherwise, the vector <span class="math notranslate nohighlight">\([\beta;\,-\alpha]\)</span> is in the general homogeneous solution, and we can choose it as the basis of the eigenspace.</p>
+<div class="proof proof-type-example" id="id6">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 43</span>
+        
+    </div><div class="proof-content">
+<p>Let’s find the eigenstuff of</p>
+<div class="math notranslate nohighlight">
+\[\bfA = \twomat{1}{1}{-1}{1}.\]</div>
+<p>We start by finding eigenvalues.</p>
+<div class="math notranslate nohighlight">
+\[
+\det(\bfA - \lambda \meye) = \twodet{1-\lambda}{1}{-1}{1-\lambda} = (1-\lambda)^2 + 1.
+\]</div>
+<p>The eigenvalues are therefore roots of <span class="math notranslate nohighlight">\(\lambda^2 - 2\lambda + 2\)</span>, or</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda = 1 \pm \sqrt{1-2} = 1 \pm i.
+\]</div>
+<p>This is our first case of a real matrix that has complex eigenvalues. We just continue as always, only using complex arithmetic.</p>
+<p>The eigenspace for <span class="math notranslate nohighlight">\(\lambda_1=1+i\)</span> is the homogeneous solution of</p>
+<div class="math notranslate nohighlight">
+\[
+\bfA - (1+i) \meye = \twomat{-i}{1}{-1}{-i}.
+\]</div>
+<p>To find a basis we just use the first row as explained above, getting <span class="math notranslate nohighlight">\(\twovec{1}{i}\)</span>.</p>
+<p>Now we get a nice reward for using complex numbers. Since the matrix is real, the other eigenvalue is the conjugate of <span class="math notranslate nohighlight">\(\lambda_1\)</span>, and it turns out that the same is true of the eigenspace as well. So <span class="math notranslate nohighlight">\(\twovec{1}{-i}\)</span> is a basis for the second eigenspace.</p>
+</div></div><div class="proof proof-type-example" id="id7">
+<span id="example-linalg-defective"></span>
+    <div class="proof-title">
+        <span class="proof-type">Example 44</span>
+        
+    </div><div class="proof-content">
+<p>Consider <span class="math notranslate nohighlight">\(\bfA=\twomat{4}{1}{0}{4}\)</span>. The characteristic polynomial is</p>
+<div class="math notranslate nohighlight">
+\[\twodet{4-\lambda}{1}{0}{4-\lambda} = (4-\lambda)^2,\]</div>
+<p>so <span class="math notranslate nohighlight">\(\lambda_1=4\)</span> is the only eigenvalue. Since</p>
+<div class="math notranslate nohighlight">
+\[\bfA - 4\meye = \twomat{0}{1}{0}{0},\]</div>
+<p>the eigenspace has basis <span class="math notranslate nohighlight">\(\twovec{1}{0}\)</span>.</p>
+</div></div><!-- ````{proof:example}
+			
+				We find the eigenvalues and eigenvectors of
+				```{math}
+					\begin{bmatrix} 1 & -1 \\ 5 & -3 \end{bmatrix}
+				```.
+				The characteristic polynomial is $\lambda^2 +2 \lambda +2$, with roots  $\lambda_{1,2} = -1 \pm 1i.$
+			
+			
+				To find an eigenvector for $\lambda_1$, we note that the first row of $ \bfA - \lambda_1 \mathbf{I} $ is $[(2-i),-1]$. Thus a basis for this eigenspace is the single eigenvector $\twovec{1}{2-i}$.
+			
+			
+				We get a benefit here from the complex eigenvalues: the conjugate of an eigenvector for $\lambda_1$ will be an eigenvector for $\lambda_2$. So we have $\spanset\left(\twovec{1}{2+i}\right)$ to go with $\lambda_2$.
+			
+		````
+	 --></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "matlab"
+        },
+        kernelOptions: {
+            kernelName: "matlab",
+            path: "./linalg"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'matlab'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="complex_numbers.html" title="previous page">Complex numbers</a>
+    <a class='right-next' id="next-link" href="defectiveness.html" title="next page">Defectiveness</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tobin A. Driscoll<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

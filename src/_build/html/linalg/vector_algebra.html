@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vector algebra &#8212; Notes on linear algebra and ODEs</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Matrix-vector algebra" href="matrix_vector.html" />
+    <link rel="prev" title="RREF" href="RREF.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
+   M305 Notes
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Linear algebra
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vectors_matrices.html">
+   Vectors and matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_systems.html">
+   Linear systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="row_elimination.html">
+   Row elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RREF.html">
+   RREF
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matrix_vector.html">
+   Matrix-vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matrix_matrix.html">
+   Matrix-matrix algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="identity_inverse.html">
+   Identity and inverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="singular.html">
+   Detecting singular matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="general_solutions.html">
+   General solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_numbers.html">
+   Complex numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eigenvalues.html">
+   Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defectiveness.html">
+   Defectiveness
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/linalg/vector_algebra.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/linalg/vector_algebra.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-combination">
+   Linear combination
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-systems">
+   Linear systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matlab">
+   MATLAB
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="vector-algebra">
+<h1>Vector algebra<a class="headerlink" href="#vector-algebra" title="Permalink to this headline">¶</a></h1>
+<p>Vectors support two basic operations. The first is addition. Two vectors of the same size can be added together elementwise. (The same is true for subtraction.) If the vectors have different sizes, the operation is not defined.</p>
+<div class="proof proof-type-example" id="id1">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 10</span>
+        
+    </div><div class="proof-content">
+<p>If <span class="math notranslate nohighlight">\(\bfx=[1;\: 2;\: 3]\)</span> and <span class="math notranslate nohighlight">\(\bfy=[-2;\: 2;\: 0]\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\bfx + \bfy = \begin{bmatrix} -1\\4\\3 \end{bmatrix}.\end{split}\]</div>
+</div></div><p>Things get a little more interesting with multiplication. We begin with <span class="xref std std-term">scalar multiplication</span>, which is between a number and a vector. Each element is multiplied by the number. In this context we call numbers <span class="xref std std-term">scalars</span>, since they scale all the elements equally.</p>
+<div class="proof proof-type-example" id="id2">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 11</span>
+        
+    </div><div class="proof-content">
+<p>If <span class="math notranslate nohighlight">\(\bfx=[1;\: 2;\: 3]\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}3\bfx = \begin{bmatrix} 3\\6\\9 \end{bmatrix}.\end{split}\]</div>
+</div></div><div class="section" id="linear-combination">
+<h2>Linear combination<a class="headerlink" href="#linear-combination" title="Permalink to this headline">¶</a></h2>
+<p>Vector addition and scalar multiplication combine to give an operation we will use repeatedly for both linear algebra and differential equations.</p>
+<div class="proof proof-type-definition" id="id3">
+<span id="definition-linalg-linear-combination"></span>
+    <div class="proof-title">
+        <span class="proof-type">Definition 12</span>
+        
+            <span class="proof-title-name">(Linear combination)</span>
+        
+    </div><div class="proof-content">
+<p>Given scalars <span class="math notranslate nohighlight">\(c_1,\ldots,c_n\)</span> and the same number of vectors <span class="math notranslate nohighlight">\(\bfx_1,\ldots,\bfx_n\)</span>, all in <span class="math notranslate nohighlight">\(\real^m\)</span> or <span class="math notranslate nohighlight">\(\complex^m\)</span>, a <a class="reference internal" href="overview.html#term-linear-combination"><span class="xref std std-term">linear combination</span></a> of them is</p>
+<div class="math notranslate nohighlight">
+\[c_1 \bfx_1 + c_2 \bfx_2 + \cdots c_n \bfx_n,\]</div>
+<p>where the <span class="math notranslate nohighlight">\(c_j\)</span> are called <strong>coefficients</strong> of the linear combination.</p>
+</div></div><p>Linear combinations interact conveniently with linear functions. If <span class="math notranslate nohighlight">\(L\)</span> is linear, then according to the properties in the <a class="reference internal" href="overview.html#definition-linear"><span class="std std-ref">definition</span></a>,</p>
+<div class="math notranslate nohighlight">
+\[
+L( c_1 \bfx_1 + c_2 \bfx_2 + \cdots c_n \bfx_n ) = c_1 L(\bfx_1) + c_2 L(\bfx_2) + \cdots + c_n L(\bfx_n).
+\]</div>
+<p>This mundane-looking equation is the basis of a lot of important mathematics.</p>
+</div>
+<div class="section" id="linear-systems">
+<h2>Linear systems<a class="headerlink" href="#linear-systems" title="Permalink to this headline">¶</a></h2>
+<p>A linear combination of vectors is equivalent to a linear system of equations. For example, consider the system</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x_1 - x_2  - x_3 &amp; = 2 \\
+3x_1 - 2x_2 &amp; = 9 \\
+x_1 - 2x_2 - x_3 &amp; = 5.
+\end{align*}\]</div>
+<p>Interpreting vector equalities elementwise, this is equivalent to</p>
+<div class="math notranslate nohighlight" id="equation-linsys-lincomb">
+<span class="eqno">(1)<a class="headerlink" href="#equation-linsys-lincomb" title="Permalink to this equation">¶</a></span>\[x_1 \threevec{1}{3}{1} + x_2 \threevec{-1}{-2}{-2} + x_3 \threevec{-1}{0}{-1} = \threevec{2}{9}{5}.\]</div>
+<p>We can identify the three vectors on the left side as the columns of the coefficient matrix <span class="math notranslate nohighlight">\(\bfA\)</span>, and the one on the right is <span class="math notranslate nohighlight">\(\bfb\)</span>. I.e.,</p>
+<div class="math notranslate nohighlight">
+\[x_1 \bfa_1 + x_2 \bfa_2 + x_3 \bfa_3 = \bfb,\]</div>
+<p>where we gave names to the columns. It’s not hard to find the solution <span class="math notranslate nohighlight">\(\bfx=[1;\:-3;\:2]\)</span>. Hence</p>
+<div class="math notranslate nohighlight">
+\[\bfa_1 - 3 \bfa_2 + 2\bfa_3 = \bfb.\]</div>
+<!-- ## Vector multiplication
+
+There are two kinds of multiplication between vectors. One is the {term}`inner product`, which is defined only for vectors of the same size. In the case of $\real^4$, for example,
+
+```{math}
+\bfx^T \bfy = x_1 y_1 + x_2 y_2 + x_3 y_3 + x_4y_4.
+```
+
+```{note}
+The ${}^T$ superscript means **transpose**, which converts matrix and vector rows to columns and vice versa. 
+```
+
+The result is a scalar (i.e., number). This is the same as the dot product of vector calculus in two or three dimensions.
+
+The other method of vector multiplication is *not* the cross product, however. It is the {term}`outer product`, which is defined for vectors of any sizes. It is easiest to demonstrate for small dimensions. If $\bfx\in\real^3$ and $\bfy\in\real^4$, then
+
+$$
+\bfx\bfy^T = \begin{bmatrix}  x_1 y_1 & x_1y_2 & x_1 y_3 & x_1y_4 \\
+x_2 y_1 & x_2y_2 & x_2 y_3 & x_2y_4 \\
+x_3 y_1 & x_3y_2 & x_3 y_3 & x_3y_4  
+\end{bmatrix}.
+$$
+
+In general, if $\bfx$ is an $m$-vector and $\bfy$ is an $n$-vector, then $\bfx\bfy^T$ is an $m\times n$ matrix whose $(i,j)$ element is $x_iy_j$. We will not have a lot of use for outer products, but they have generated renewed interest of late in machine learning methods. -->
+</div>
+<div class="section" id="matlab">
+<h2>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
+<p>If two vectors have the same size, then <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code> work elementwise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">9</span><span class="p">;</span><span class="mi">8</span><span class="p">;</span><span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+    10
+    10
+    10
+</pre></div>
+</div>
+</div>
+</div>
+<p>For column vectors of different sizes, these operations cause errors.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">;</span><span class="mi">4</span><span class="p">]</span> <span class="o">-</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">0</span><span class="p">;</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Matrix dimensions must agree.</span>
+
+
+</pre></div>
+</div>
+</div>
+</div>
+<p>As a convenience, you can add or subtract a scalar to or from a vector, and the scalar will be used with each element.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> 1<span class="nb">i</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+   1.0000 - 1.0000i
+   2.0000 - 1.0000i
+   3.0000 - 1.0000i
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">*</span></code> operator does scalar multiplication.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="p">[</span><span class="mi">4</span><span class="p">;</span><span class="mi">3</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+    -4
+    -3
+    -2
+    -1
+</pre></div>
+</div>
+</div>
+</div>
+<p>So we can express the linear system in <a class="reference internal" href="#equation-linsys-lincomb">(1)</a> using a linear combination of column vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">3</span> <span class="s">-2</span> <span class="s">0</span><span class="p">;</span> <span class="n">1</span> <span class="s">-2</span> <span class="s">-1]</span>    <span class="s">%</span> <span class="s">coefficient</span> <span class="s">matrix</span>
+<span class="n">b</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">;</span><span class="mi">9</span><span class="p">;</span><span class="mi">5</span><span class="p">]</span>    <span class="c">% right-side vector</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =
+
+     1    -1    -1
+     3    -2     0
+     1    -2    -1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b =
+
+     2
+     9
+     5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">*</span><span class="n">A</span><span class="p">(:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">A</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+     2
+     9
+     5
+</pre></div>
+</div>
+</div>
+</div>
+<!-- 
+Inner and outer products on column vectors are achieved with `x'*y` and `x*y'`, respectively.
+
+```{code-cell}
+x = [3;2;1];    % semicolon suppresses output
+y = [-1;1;-2];
+innerprod1 = x'*y
+innerprod2 = y'*x
+```
+
+As the output above suggests, the inner product is commutative. The same is not true of outer products:
+
+```{code-cell}
+outerprod1 = x*y'
+outerprod2 = y*x'
+``` --></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "matlab"
+        },
+        kernelOptions: {
+            kernelName: "matlab",
+            path: "./linalg"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'matlab'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="RREF.html" title="previous page">RREF</a>
+    <a class='right-next' id="next-link" href="matrix_vector.html" title="next page">Matrix-vector algebra</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tobin A. Driscoll<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

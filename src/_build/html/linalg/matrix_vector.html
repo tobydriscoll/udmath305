@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Matrix-vector algebra &#8212; Notes on linear algebra and ODEs</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Matrix-matrix algebra" href="matrix_matrix.html" />
+    <link rel="prev" title="Vector algebra" href="vector_algebra.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
+   M305 Notes
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Linear algebra
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vectors_matrices.html">
+   Vectors and matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_systems.html">
+   Linear systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="row_elimination.html">
+   Row elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RREF.html">
+   RREF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vector_algebra.html">
+   Vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Matrix-vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matrix_matrix.html">
+   Matrix-matrix algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="identity_inverse.html">
+   Identity and inverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="singular.html">
+   Detecting singular matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="general_solutions.html">
+   General solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_numbers.html">
+   Complex numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eigenvalues.html">
+   Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defectiveness.html">
+   Defectiveness
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/linalg/matrix_vector.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/linalg/matrix_vector.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-times-vector">
+   Matrix times vector
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connection-to-linear-systems">
+   Connection to linear systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matlab">
+   MATLAB
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="matrix-vector-algebra">
+<h1>Matrix-vector algebra<a class="headerlink" href="#matrix-vector-algebra" title="Permalink to this headline">¶</a></h1>
+<p>Matrices support addition/subtraction and scalar multiplication just as vectors do, by acting elementwise. But things get more complicated when we start considering how to multiply matrices and vectors together.</p>
+<div class="section" id="matrix-times-vector">
+<h2>Matrix times vector<a class="headerlink" href="#matrix-times-vector" title="Permalink to this headline">¶</a></h2>
+<p>The linear combination definition <a class="reference internal" href="vector_algebra.html#definition-linalg-linear-combination"><span class="std std-ref">Linear combination</span></a> serves as the foundation of multiplication between a matrix and a vector.</p>
+<div class="proof proof-type-definition" id="id1">
+
+    <div class="proof-title">
+        <span class="proof-type">Definition 13</span>
+        
+            <span class="proof-title-name">(Matrix times vector)</span>
+        
+    </div><div class="proof-content">
+<p>Given <span class="math notranslate nohighlight">\(\bfA\in\cmn{m}{n}\)</span> and <span class="math notranslate nohighlight">\(\bfx\in\complex^{n}\)</span>, the product <span class="math notranslate nohighlight">\(\bfA\bfx\)</span> is defined as</p>
+<div class="math notranslate nohighlight" id="equation-matrix-vector-mult">
+<span class="eqno">(2)<a class="headerlink" href="#equation-matrix-vector-mult" title="Permalink to this equation">¶</a></span>\[\bfA\bfx = x_1 \bfa_1 + x_2 \bfa_2 + \cdots + x_n \bfa_n = \sum_{j=1}^n x_j \bfa_j,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bfa_j\)</span> refers to the <span class="math notranslate nohighlight">\(j\)</span>th column of <span class="math notranslate nohighlight">\(\bfA\)</span>.</p>
+</div></div><p>In order for the definition to work, the number of columns in <span class="math notranslate nohighlight">\(\bfA\)</span> has to be the same as the number of elements in <span class="math notranslate nohighlight">\(\bfx\)</span>. Otherwise, the product is not defined. Note also that the result is a member of <span class="math notranslate nohighlight">\(\complex^m\)</span>.</p>
+<div class="proof proof-type-example" id="id2">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 14</span>
+        
+    </div><div class="proof-content">
+<p>The product</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} 
+1 &amp; -1 &amp; -1 \\ 3 &amp; -2 &amp; 0 \\ 1 &amp; -2 &amp; -1 \end{bmatrix} \threevec{-1}{2}{-1} \end{split}\]</div>
+<p>is equivalent to</p>
+<div class="math notranslate nohighlight">
+\[(-1) \threevec{1}{3}{1} + (2) \threevec{-1}{-2}{-2} + (-1) \threevec{-1}{0}{-1} = \threevec{-2}{-7}{-4}.\]</div>
+<p>We often don’t write out the product in this much detail just to calculate an example. Instead we “zip together” the rows of the matrix with the entries of the vector:</p>
+<div class="math notranslate nohighlight">
+\[\threevec{(-1)(1)+(2)(-1)+(-1)(-1)}{(-1)(3)+(2)(-2)+(-1)(0)}{(-1)(1)+(2)(-2)+(-1)(-1)}  = \threevec{-2}{-7}{-4}.\]</div>
+<p>You might recognize the “zip” expressions in this vector as dot products from vector calculus.</p>
+</div></div><p>What justifies calling this operation multiplication? In large part, it’s the natural distributive properties</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\bfA(\bfx+\bfy) &amp; =  \bfA\bfx + \bfA\bfy,\\
+(\bfA+\bfB)\bfx &amp; =  \bfA\bfx + \bfB\bfx,
+\end{align*}\]</div>
+<p>which can be checked with a little effort. It’s also true that <span class="math notranslate nohighlight">\(\bfA(c\bfx)=c(\bfA\bfx)\)</span> for any scalar <span class="math notranslate nohighlight">\(c\)</span>. However, there is a big departure from multiplication as we usually know it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Matrix-vector products are not commutative. In fact, <span class="math notranslate nohighlight">\(\bfx\bfA\)</span> is not defined even when <span class="math notranslate nohighlight">\(\bfA\bfx\)</span> is.</p>
+</div>
+</div>
+<div class="section" id="connection-to-linear-systems">
+<h2>Connection to linear systems<a class="headerlink" href="#connection-to-linear-systems" title="Permalink to this headline">¶</a></h2>
+<p>Earlier we said that a linear system is equivalent to a statement about a linear combination of vectors. Now we have said that a linear combination of vectors is equivalent to a matrix-vector multiplication. Putting these together,</p>
+<div class="proof proof-type-observation">
+
+    <div class="proof-title">
+        <span class="proof-type">Observation </span>
+        
+    </div><div class="proof-content">
+<p>The linear system with coefficient matrix <span class="math notranslate nohighlight">\(\bfA\)</span>, right-side vector <span class="math notranslate nohighlight">\(\bfb\)</span>, and solution <span class="math notranslate nohighlight">\(\bfx\)</span> is equivalent to the equation <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span>.</p>
+</div></div><p>This observation finally brings us back around to the introduction of linear systems through the insultingly simple scalar equation <span class="math notranslate nohighlight">\(ax=b\)</span>. But to fully solve it in the vector case, we need a bit more preparation.</p>
+</div>
+<div class="section" id="matlab">
+<h2>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
+<p>We can now connect solving linear systems with backslash to matrix-vector multiplication. The system defined by</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span> <span class="n">2</span> <span class="s">2</span> <span class="s">-3</span><span class="p">;</span> <span class="n">4</span> <span class="s">0</span> <span class="s">1</span> <span class="s">]</span><span class="p">;</span>
+<span class="n">b</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">3</span><span class="p">;</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">1</span> <span class="s">]</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>is solved via</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="n">A</span> <span class="o">\</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x =
+
+    0.5000
+   -2.5000
+   -1.0000
+</pre></div>
+</div>
+</div>
+</div>
+<p>We check the result:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">-</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+     0
+     0
+     0
+</pre></div>
+</div>
+</div>
+</div>
+<p>In general, we cannot expect all the entries of the vector to be exactly zero, due to rounding errors.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "matlab"
+        },
+        kernelOptions: {
+            kernelName: "matlab",
+            path: "./linalg"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'matlab'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="vector_algebra.html" title="previous page">Vector algebra</a>
+    <a class='right-next' id="next-link" href="matrix_matrix.html" title="next page">Matrix-matrix algebra</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tobin A. Driscoll<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
