@@ -4,51 +4,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>M305 Notes &#8212; Notes on linear algebra and ODEs</title>
+    <title>Overview &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
   <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
   <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/proof.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -57,10 +57,11 @@
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Overview" href="linalg/overview.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Vectors and matrices" href="vectors_matrices.html" />
+    <link rel="prev" title="M305 Notes" href="../frontmatter.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -77,20 +78,20 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
+<a class="navbar-brand text-wrap" href="../index.html">
   
   
   <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
   
 </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
    M305 Notes
   </a>
  </li>
@@ -100,74 +101,74 @@
   Linear algebra
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="linalg/overview.html">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/vectors_matrices.html">
+  <a class="reference internal" href="vectors_matrices.html">
    Vectors and matrices
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/linear_systems.html">
+  <a class="reference internal" href="linear_systems.html">
    Linear systems
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/row_elimination.html">
+  <a class="reference internal" href="row_elimination.html">
    Row elimination
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/RREF.html">
+  <a class="reference internal" href="RREF.html">
    RREF
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/vector_algebra.html">
+  <a class="reference internal" href="vector_algebra.html">
    Vector algebra
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/matrix_vector.html">
+  <a class="reference internal" href="matrix_vector.html">
    Matrix-vector algebra
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/matrix_matrix.html">
+  <a class="reference internal" href="matrix_matrix.html">
    Matrix-matrix algebra
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/identity_inverse.html">
+  <a class="reference internal" href="identity_inverse.html">
    Identity and inverse
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/singular.html">
+  <a class="reference internal" href="singular.html">
    Detecting singular matrices
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/general_solutions.html">
+  <a class="reference internal" href="general_solutions.html">
    General solutions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/complex_numbers.html">
+  <a class="reference internal" href="complex_numbers.html">
    Complex numbers
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/eigenvalues.html">
+  <a class="reference internal" href="eigenvalues.html">
    Eigenvalues
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="linalg/defectiveness.html">
+  <a class="reference internal" href="defectiveness.html">
    Defectiveness
   </a>
  </li>
@@ -211,7 +212,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/frontmatter.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/linalg/overview.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -243,11 +244,34 @@
         
               <div>
                 
-  <div class="section" id="m305-notes">
-<h1>M305 Notes<a class="headerlink" href="#m305-notes" title="Permalink to this headline">¶</a></h1>
-<p>These are notes on MATH 305 by Toby Driscoll. All rights reserved.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>Linear algebra provides a convenient and general way to pose and analyze problems in multiple dimensions. The most tractable and universal such problems involve linear transformations.</p>
+<div class="proof proof-type-definition" id="id1">
+<span id="definition-linear"></span>
+    <div class="proof-title">
+        <span class="proof-type">Definition 1</span>
+        
+            <span class="proof-title-name">(Linear function)</span>
+        
+    </div><div class="proof-content">
+<p>A function <span class="math notranslate nohighlight">\(L\)</span> on domain <span class="math notranslate nohighlight">\(D\)</span> is <a class="reference internal" href="#term-linear"><span class="xref std std-term">linear</span></a> if it satisfies both of these rules:</p>
+<div class="math notranslate nohighlight">
+\[L(cx) = c \cdot L(x) \quad \text{for all numbers $c$ and $x\in D$,}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[L(x+y) = L(x) + L(y) \quad \text{for all $x\in D$, $y\in D$}.\]</div>
+</div></div><p>I’ve been deliberately vague about the domain and range of <span class="math notranslate nohighlight">\(L\)</span> in this definition, because it can be adapted to multiple contexts.</p>
+<dl class="glossary simple">
+<dt id="term-linear">linear</dt><dd><p>Type of function or operator that satisfies two basic properties.</p>
+</dd>
+<dt id="term-linear-combination">linear combination</dt><dd><p>Simultaneous multiplication of vectors by coefficients, followed by summation to a single vector.</p>
+</dd>
+<dt id="term-matrix">matrix</dt><dd><p>Array of numbers obeying certain algebraic rules.</p>
+</dd>
+<dt id="term-vector">vector</dt><dd><p>Finite collection of numbers obeying certain algebraic rules.</p>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">
@@ -263,7 +287,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./linalg"
         },
         predefinedOutput: true
     }
@@ -278,7 +302,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="linalg/overview.html" title="next page">Overview</a>
+    <a class='left-prev' id="prev-link" href="../frontmatter.html" title="previous page">M305 Notes</a>
+    <a class='right-next' id="next-link" href="vectors_matrices.html" title="next page">Vectors and matrices</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -298,7 +323,7 @@
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     
