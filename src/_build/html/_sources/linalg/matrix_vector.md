@@ -34,7 +34,7 @@ where $\bfa_j$ refers to the $j$th column of $\bfA$.
 
 In order for the definition to work, the number of columns in $\bfA$ has to be the same as the number of elements in $\bfx$. Otherwise, the product is not defined. Note also that the result is a member of $\complex^m$.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 
 The product
 
@@ -56,7 +56,7 @@ We often don't write out the product in this much detail just to calculate an ex
 
 You might recognize the "zip" expressions in this vector as dot products from vector calculus.
 
-````
+::::
 
 What justifies calling this operation multiplication? In large part, it's the natural distributive properties
 

@@ -47,7 +47,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
-    <script src="../_static/proof.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -314,7 +313,7 @@
 <div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 13</span>
+        <span class="proof-type">Definition 8</span>
         
             <span class="proof-title-name">(Matrix times vector)</span>
         
@@ -324,12 +323,8 @@
 <span class="eqno">(2)<a class="headerlink" href="#equation-matrix-vector-mult" title="Permalink to this equation">¶</a></span>\[\bfA\bfx = x_1 \bfa_1 + x_2 \bfa_2 + \cdots + x_n \bfa_n = \sum_{j=1}^n x_j \bfa_j,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\bfa_j\)</span> refers to the <span class="math notranslate nohighlight">\(j\)</span>th column of <span class="math notranslate nohighlight">\(\bfA\)</span>.</p>
 </div></div><p>In order for the definition to work, the number of columns in <span class="math notranslate nohighlight">\(\bfA\)</span> has to be the same as the number of elements in <span class="math notranslate nohighlight">\(\bfx\)</span>. Otherwise, the product is not defined. Note also that the result is a member of <span class="math notranslate nohighlight">\(\complex^m\)</span>.</p>
-<div class="proof proof-type-example" id="id2">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 14</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>The product</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix} 
@@ -341,7 +336,8 @@
 <div class="math notranslate nohighlight">
 \[\threevec{(-1)(1)+(2)(-1)+(-1)(-1)}{(-1)(3)+(2)(-2)+(-1)(0)}{(-1)(1)+(2)(-2)+(-1)(-1)}  = \threevec{-2}{-7}{-4}.\]</div>
 <p>You might recognize the “zip” expressions in this vector as dot products from vector calculus.</p>
-</div></div><p>What justifies calling this operation multiplication? In large part, it’s the natural distributive properties</p>
+</div>
+<p>What justifies calling this operation multiplication? In large part, it’s the natural distributive properties</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \bfA(\bfx+\bfy) &amp; =  \bfA\bfx + \bfA\bfy,\\

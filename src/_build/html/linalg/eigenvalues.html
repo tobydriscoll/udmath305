@@ -47,7 +47,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
-    <script src="../_static/proof.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -315,7 +314,7 @@
 <div class="proof proof-type-definition" id="id1">
 <span id="definition-linalg-eigen"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 37</span>
+        <span class="proof-type">Definition 24</span>
         
             <span class="proof-title-name">(Eigenvalue and eigenvector)</span>
         
@@ -331,20 +330,17 @@
 <div class="math notranslate nohighlight">
 \[	\bfA(c\bfv) = c(\bfA\bfv)=c(\lambda\bfv)=\lambda(c\bfv).\]</div>
 <p>Hence <strong>every nonzero multiple of an eigenvector is also an eigenvector for the same <span class="math notranslate nohighlight">\(\lambda\)</span></strong>. But there can be much more ambiguity than that.</p>
-<div class="proof proof-type-example" id="id2">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 38</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>Let <span class="math notranslate nohighlight">\(\meye\)</span> be an identity matrix. Then <span class="math notranslate nohighlight">\(\meye\bfx=\bfx\)</span> for any vector <span class="math notranslate nohighlight">\(\bfx\)</span>, so every nonzero vector is an eigenvector!</p>
-</div></div><p>Fortunately we already have the tools we need to describe a more robust target, based on the very simple reformulation</p>
+</div>
+<p>Fortunately we already have the tools we need to describe a more robust target, based on the very simple reformulation</p>
 <div class="math notranslate nohighlight">
 \[\bfzero=\bfA\bfv-\lambda\bfv=(\bfA-\lambda\meye)\bfv.\]</div>
-<div class="proof proof-type-definition" id="id3">
+<div class="proof proof-type-definition" id="id2">
 <span id="definition-linalg-eigenspace"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 39</span>
+        <span class="proof-type">Definition 25</span>
         
             <span class="proof-title-name">(Eigenspace)</span>
         
@@ -352,20 +348,16 @@
 <p>Let <span class="math notranslate nohighlight">\(\lambda\)</span> be an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span>. The <span class="xref std std-term">eigenspace</span> associated with <span class="math notranslate nohighlight">\(\lambda\)</span> is the general solution of <span class="math notranslate nohighlight">\((\bfA-\lambda\meye)\bfx = \bfzero\)</span>.</p>
 </div></div><p>Eigenspaces, unlike eigenvectors, are unique. We have to be a bit careful, though, because we usually express such spaces using basis vectors, and those bases are not themselves unique.</p>
 <p>Note that if <span class="math notranslate nohighlight">\(\lambda\)</span> is <em>not</em> an eigenvalue, then by definition the only solution of <span class="math notranslate nohighlight">\((\bfA-\lambda\meye)\bfv=\bfzero\)</span> is <span class="math notranslate nohighlight">\(\bfv=\bfzero\)</span>. That requires <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> to be invertible.</p>
-<div class="proof proof-type-theorem" id="id4">
+<div class="proof proof-type-theorem" id="id3">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem 40</span>
+        <span class="proof-type">Theorem 26</span>
         
     </div><div class="proof-content">
 <p><span class="math notranslate nohighlight">\(\lambda\)</span> is an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span> if and only if <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> is singular.</p>
 </div></div><p>In practice the most common way to find eigenvalues by hand is through the equivalent condition <span class="math notranslate nohighlight">\(\det(\bfA-\lambda\meye)=0\)</span>.</p>
-<div class="proof proof-type-example" id="id5">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 41</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>We look for eigenvalues of</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 1 \\ 4 &amp; 1 \end{bmatrix}.\end{split}\]</div>
@@ -381,7 +373,8 @@
 <div class="math notranslate nohighlight">
 \[\bfA+ \meye = \twomat{2}{1}{4}{2} \overset{\text{RREF}}{\Longrightarrow} \twomat{1}{1/2}{0}{0},\]</div>
 <p>leading to the basis <span class="math notranslate nohighlight">\([-1/2;\,1]\)</span> or equivalently, <span class="math notranslate nohighlight">\(\twovec{-1}{2}\)</span>.</p>
-</div></div></div>
+</div>
+</div>
 <div class="section" id="matlab">
 <h2>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
 <p>MATLAB computes eigenvalues (through an entirely different process) with the <code class="docutils literal notranslate"><span class="pre">eig</span></code> command. From the preceding example, for instance,</p>
@@ -429,12 +422,8 @@
 <h2>Eigenvectors for <span class="math notranslate nohighlight">\(2\times 2\)</span><a class="headerlink" href="#eigenvectors-for-2-times-2" title="Permalink to this headline">¶</a></h2>
 <p>Most of our hand computations will be with <span class="math notranslate nohighlight">\(2\times 2\)</span> matrices. Suppose <span class="math notranslate nohighlight">\(\lambda\)</span> is known to be an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span>. Then <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> must be singular, and its RREF has at least one free column. Hence row elimination will zero out the second row entirely, and we can ignore it.</p>
 <p>Say the first row of <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> is <span class="math notranslate nohighlight">\([\alpha,\beta]\)</span>. If these are both zero, then <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> is a zero matrix, i.e., <span class="math notranslate nohighlight">\(\bfA\)</span> is a multiple of the identity and all of <span class="math notranslate nohighlight">\(\complex^2\)</span> is the eigenspace. Otherwise, the vector <span class="math notranslate nohighlight">\([\beta;\,-\alpha]\)</span> is in the general homogeneous solution, and we can choose it as the basis of the eigenspace.</p>
-<div class="proof proof-type-example" id="id6">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 42</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>Let’s find the eigenstuff of</p>
 <div class="math notranslate nohighlight">
 \[\bfA = \twomat{1}{1}{-1}{1}.\]</div>
@@ -456,12 +445,9 @@
 \]</div>
 <p>To find a basis we just use the first row as explained above, getting <span class="math notranslate nohighlight">\(\twovec{1}{i}\)</span>.</p>
 <p>Now we get a nice reward for using complex numbers. Since the matrix is real, the other eigenvalue is the conjugate of <span class="math notranslate nohighlight">\(\lambda_1\)</span>, and it turns out that the same is true of the eigenspace as well. So <span class="math notranslate nohighlight">\(\twovec{1}{-i}\)</span> is a basis for the second eigenspace.</p>
-</div></div><div class="proof proof-type-example" id="id7">
-<span id="example-linalg-defective"></span>
-    <div class="proof-title">
-        <span class="proof-type">Example 43</span>
-        
-    </div><div class="proof-content">
+</div>
+<div class="dropdown tip admonition" id="example-linalg-defective">
+<p class="admonition-title"> Example</p>
 <p>Consider <span class="math notranslate nohighlight">\(\bfA=\twomat{4}{1}{0}{4}\)</span>. The characteristic polynomial is</p>
 <div class="math notranslate nohighlight">
 \[\twodet{4-\lambda}{1}{0}{4-\lambda} = (4-\lambda)^2,\]</div>
@@ -469,7 +455,8 @@
 <div class="math notranslate nohighlight">
 \[\bfA - 4\meye = \twomat{0}{1}{0}{0},\]</div>
 <p>the eigenspace has basis <span class="math notranslate nohighlight">\(\twovec{1}{0}\)</span>.</p>
-</div></div><!-- ````{proof:example}
+</div>
+<!-- ::::{admonition,dropdown,tip} Example
 			
 				We find the eigenvalues and eigenvectors of
 				```{math}
@@ -483,7 +470,7 @@
 			
 				We get a benefit here from the complex eigenvalues: the conjugate of an eigenvector for $\lambda_1$ will be an eigenvector for $\lambda_2$. So we have $\spanset\left(\twovec{1}{2+i}\right)$ to go with $\lambda_2$.
 			
-		````
+		::::
 	 --></div>
 </div>
 

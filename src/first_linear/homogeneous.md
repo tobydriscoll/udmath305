@@ -41,7 +41,7 @@ x(t) &= \exp[q(t)].
 \end{align*}
 ````
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 To solve $x'=\sin(t) x$, we integrate $a(t)=\sin(t)$ to get 
 
 $$
@@ -53,13 +53,13 @@ The general solution is thus $\exp[q(t)]$, or
 ```{math}
 x_h(t) = e^C \exp[ -\cos(t) ] = c_1 \exp[ -\cos(t) ].
 ```
-````
+::::
 
 ```{tip}
 As seen in the example, the integration constant pops up additively in $q$ and then multiplicatively in $x$. You can ignore the integration constant until the end and then just tack it on.
 ```
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 To solve the homogeneous IVP
 
 $$
@@ -79,7 +79,7 @@ $$
 $$
 
 Hence $x(t) = 3t^2$.
-````
+::::
 
 ## Initial-value formula
 
@@ -103,7 +103,7 @@ x(t) = x_0 \exp\left[ \int_{t_0}^t a(s)\, ds \right].
 $$
 ````
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 We revisit
 
 $$
@@ -119,7 +119,7 @@ x(t) &= 12 \exp\left[ \int_2^t 2s^{-1}\, ds \right] \\
 \end{align*}
 
 which the same result as before.
-````
+::::
 
 ## Integration factor (optional)
 

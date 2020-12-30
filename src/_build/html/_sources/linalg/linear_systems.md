@@ -57,7 +57,7 @@ It's not hard to turn those statements into algebraic conditions. The slopes of 
    1. If one line's equation is a multiple of the other, there are infinitely many solutions.
    2. Otherwise, there are no solutions.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 If we look at the equations
 
 \begin{align*}
@@ -73,7 +73,7 @@ x - 3y & = -1.
 \end{align*}
 
 It's now clear that there is no way to satisfy both equations simultaneously.
-````
+::::
 
 ## General case 
 

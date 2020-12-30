@@ -47,7 +47,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
-    <script src="../_static/proof.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -359,12 +358,8 @@ cx + dy &amp;= g.
 </ol>
 </li>
 </ol>
-<div class="proof proof-type-example" id="id1">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 4</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>If we look at the equations</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -378,7 +373,8 @@ x - 3y &amp; = 1, \\
 x - 3y &amp; = -1.
 \end{align*}\]</div>
 <p>It’s now clear that there is no way to satisfy both equations simultaneously.</p>
-</div></div></div>
+</div>
+</div>
 <div class="section" id="general-case">
 <h2>General case<a class="headerlink" href="#general-case" title="Permalink to this headline">¶</a></h2>
 <p>Time to put on our big-kid pants. For <span class="math notranslate nohighlight">\(m\)</span> equations in <span class="math notranslate nohighlight">\( \)</span> variables, we need to use subscripts rather than different letters for everything:</p>

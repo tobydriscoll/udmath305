@@ -47,7 +47,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
-    <script src="../_static/proof.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -323,7 +322,7 @@ x(t_0) = x_0,
 <div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 58</span>
+        <span class="proof-type">Definition 34</span>
         
             <span class="proof-title-name">(Initial-value problem)</span>
         
@@ -332,12 +331,8 @@ x(t_0) = x_0,
 \[\dd{x}{t} = f(t,x), \quad x(t_0) = x_0.\]</div>
 </div></div><p>In this case the constraint <span class="math notranslate nohighlight">\(x(t_0)=x_0\)</span> is called an <span class="xref std std-term">initial condition</span>, and it’s typically implied that the problem is to be solved for <span class="math notranslate nohighlight">\(t&gt;t_0\)</span>.</p>
 <p>A solution of an IVP has to satisfy both the ODE and the initial condition. This is enough to specify the solution uniquely.</p>
-<div class="proof proof-type-example" id="id2">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 59</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>In the previous section we said that the general solution of <span class="math notranslate nohighlight">\(x'=ax\)</span> is <span class="math notranslate nohighlight">\(x(t)=Ce^{at}\)</span>. If we are supplied with the initial value <span class="math notranslate nohighlight">\(x(2)=5\)</span>, then we require</p>
 <div class="math notranslate nohighlight">
 \[
@@ -348,7 +343,8 @@ x(t_0) = x_0,
 \[
 x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 \]</div>
-</div></div><p>A graphical interpretation of the role of an initial condition is that the general solution is a family of curves in the <span class="math notranslate nohighlight">\((t,x)\)</span> plane, and the initial condition is a point that the particular solution of interest must pass through.</p>
+</div>
+<p>A graphical interpretation of the role of an initial condition is that the general solution is a family of curves in the <span class="math notranslate nohighlight">\((t,x)\)</span> plane, and the initial condition is a point that the particular solution of interest must pass through.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">set</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span><span class="s">&#39;defaultaxesfontsize&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>

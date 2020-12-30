@@ -17,21 +17,21 @@ kernelspec:
 
 Vectors support two basic operations. The first is addition. Two vectors of the same size can be added together elementwise. (The same is true for subtraction.) If the vectors have different sizes, the operation is not defined.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 If $\bfx=[1;\: 2;\: 3]$ and $\bfy=[-2;\: 2;\: 0]$, then 
 ```{math}
 \bfx + \bfy = \begin{bmatrix} -1\\4\\3 \end{bmatrix}.
 ```
-````
+::::
 
 Things get a little more interesting with multiplication. We begin with {term}`scalar multiplication`, which is between a number and a vector. Each element is multiplied by the number. In this context we call numbers {term}`scalars`, since they scale all the elements equally.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 If $\bfx=[1;\: 2;\: 3]$, then
 ```{math}
 3\bfx = \begin{bmatrix} 3\\6\\9 \end{bmatrix}.
 ```
-````
+::::
 
 ## Linear combination
 

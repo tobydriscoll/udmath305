@@ -83,13 +83,13 @@ If $\bfA\in\cmn{n}{n}$ has $n$ distinct eigenvalues, then $\bfA$ is not defectiv
 
 For $n=2$, either there is a double eigenvalue or two distinct eigenvalues. Only the case with a double eigenvalue may be defective. Here are the two canonical archetypes.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 If $\bfA=\twomat{c}{0}{0}{c}$, then the characteristic polynomial is $p(\lambda)=(\lambda-c)^2$. Thus $\lambda=c$ is the only eigenvalue, with algebraic multiplicity 2. All nonzero vectors are eigenvectors, so we can represent the eigenspace as a linear combination of $\twovec{1}{0}$ and $\twovec{0}{1}$. Hence the geometric multiplicity is also equal to 2, and $\bfA$ is nondefective.
 
-````
+::::
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 A [previous example](example-linalg-defective) showed that the matrix $\bfA=\twomat{4}{1}{0}{4}$ has eigenvalue $\lambda=4$ with algebraic multiplicity equal to 2 and geometric multiplicity equal to 1. Hence this matrix is defective.
-````
+::::
 
 The situation for $n>2$ can be more complicated. We will stop here and move on to dynamics.

@@ -47,7 +47,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
-    <script src="../_static/proof.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -332,7 +331,7 @@
 <div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 17</span>
+        <span class="proof-type">Definition 10</span>
         
             <span class="proof-title-name">(Identity matrix)</span>
         
@@ -353,7 +352,7 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
 <div class="proof proof-type-theorem" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem 18</span>
+        <span class="proof-type">Theorem 11</span>
         
             <span class="proof-title-name">(Multiplicative identity)</span>
         
@@ -371,7 +370,7 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
 <div class="proof proof-type-definition" id="id3">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 19</span>
+        <span class="proof-type">Definition 12</span>
         
             <span class="proof-title-name">(Inverse)</span>
         
@@ -381,7 +380,7 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
 <div class="proof proof-type-property" id="id4">
 
     <div class="proof-title">
-        <span class="proof-type">Property 20</span>
+        <span class="proof-type">Property 13</span>
         
     </div><div class="proof-content">
 <ol class="simple">
@@ -392,7 +391,7 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
 <div class="proof proof-type-theorem" id="id5">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem 21</span>
+        <span class="proof-type">Theorem 14</span>
         
     </div><div class="proof-content">
 <p>If <span class="math notranslate nohighlight">\(\bfA\)</span> is <span class="math notranslate nohighlight">\(n\times n\)</span> and has an inverse, then the linear system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> has the unique solution <span class="math notranslate nohighlight">\(\bfx=\bfA^{-1}\bfb\)</span>.</p>
@@ -413,7 +412,7 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
 <div class="proof proof-type-formula" id="id6">
 <span id="formula-linalg-inverse2by2"></span>
     <div class="proof-title">
-        <span class="proof-type">Formula 22</span>
+        <span class="proof-type">Formula 15</span>
         
             <span class="proof-title-name">(Inverse of <span class="math notranslate nohighlight">\(2\times 2\)</span>)</span>
         
@@ -423,12 +422,8 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
 <p>This formula breaks down if <span class="math notranslate nohighlight">\(ad=bc\)</span>, in which case the matrix is singular.</p>
 </div></div><p>Beyond <span class="math notranslate nohighlight">\(2\times 2\)</span> we won’t worry about computing inverses; row elimination is a better computational method for solving linear systems. More fundamentally, though, we have not even established which matrices might be expected to have an inverse in the first place.</p>
 <p>A matrix of all zeros can’t have an inverse, because <span class="math notranslate nohighlight">\(\bfzero\bfA\)</span> is zero for all matrices <span class="math notranslate nohighlight">\(\bfA\)</span>. That conclusion extends what we know about a scalar <span class="math notranslate nohighlight">\(a\)</span>. Unlike the scalar case, though, there are other matrices that have no inverse.</p>
-<div class="proof proof-type-example" id="id7">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 23</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>Suppose, for example, that</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{Z} \twomat{0}{0}{0}{1} = \meye = \twomat{1}{0}{0}{1}.\]</div>
@@ -439,10 +434,11 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
 <div class="math notranslate nohighlight">
 \[\twomat{0}{0}{0}{1}\]</div>
 <p>has no inverse.</p>
-</div></div><div class="proof proof-type-definition" id="id8">
+</div>
+<div class="proof proof-type-definition" id="id7">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 24</span>
+        <span class="proof-type">Definition 16</span>
         
             <span class="proof-title-name">(Singular matrix)</span>
         

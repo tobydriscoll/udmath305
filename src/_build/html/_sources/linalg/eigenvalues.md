@@ -44,10 +44,10 @@ An eigenvalue is a clean, well-defined target. Eigenvectors are a little slipper
 
 Hence **every nonzero multiple of an eigenvector is also an eigenvector for the same $\lambda$**. But there can be much more ambiguity than that.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 
 Let $\meye$ be an identity matrix. Then $\meye\bfx=\bfx$ for any vector $\bfx$, so every nonzero vector is an eigenvector!
-````
+::::
 
 Fortunately we already have the tools we need to describe a more robust target, based on the very simple reformulation
 
@@ -71,7 +71,7 @@ $\lambda$ is an eigenvalue of $\bfA$ if and only if $\bfA-\lambda\meye$ is singu
 
 In practice the most common way to find eigenvalues by hand is through the equivalent condition $\det(\bfA-\lambda\meye)=0$.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 We look for eigenvalues of
 
 ```{math}
@@ -102,7 +102,7 @@ For $\lambda_2=-1$,
 ```
 
 leading to the basis $[-1/2;\,1]$ or equivalently, $\twovec{-1}{2}$.
-````
+::::
 
 ## MATLAB
 
@@ -127,7 +127,7 @@ Most of our hand computations will be with $2\times 2$ matrices. Suppose $\lambd
 
 Say the first row of $\bfA-\lambda\meye$ is $[\alpha,\beta]$. If these are both zero, then $\bfA-\lambda\meye$ is a zero matrix, i.e., $\bfA$ is a multiple of the identity and all of $\complex^2$ is the eigenspace. Otherwise, the vector $[\beta;\,-\alpha]$ is in the general homogeneous solution, and we can choose it as the basis of the eigenspace.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 Let's find the eigenstuff of 
 
 ```{math}
@@ -157,11 +157,11 @@ $$
 To find a basis we just use the first row as explained above, getting $\twovec{1}{i}$. 
 
 Now we get a nice reward for using complex numbers. Since the matrix is real, the other eigenvalue is the conjugate of $\lambda_1$, and it turns out that the same is true of the eigenspace as well. So $\twovec{1}{-i}$ is a basis for the second eigenspace.
-````
+::::
 
 (example-linalg-defective)=
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 Consider $\bfA=\twomat{4}{1}{0}{4}$. The characteristic polynomial is
 
 ```{math}
@@ -175,9 +175,9 @@ so $\lambda_1=4$ is the only eigenvalue. Since
 ```
 
 the eigenspace has basis $\twovec{1}{0}$.
-````
+::::
 
-<!-- ````{proof:example}
+<!-- ::::{admonition,dropdown,tip} Example
 			
 				We find the eigenvalues and eigenvectors of
 				```{math}
@@ -191,6 +191,6 @@ the eigenspace has basis $\twovec{1}{0}$.
 			
 				We get a benefit here from the complex eigenvalues: the conjugate of an eigenvector for $\lambda_1$ will be an eigenvector for $\lambda_2$. So we have $\spanset\left(\twovec{1}{2+i}\right)$ to go with $\lambda_2$.
 			
-		````
+		::::
 	 -->
    

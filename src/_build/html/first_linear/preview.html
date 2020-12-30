@@ -47,7 +47,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
-    <script src="../_static/proof.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -288,20 +287,15 @@
 <span class="eqno">(7)<a class="headerlink" href="#equation-firstlin-ode" title="Permalink to this equation">¶</a></span>\[\dd{x}{t} = f(t,x),\]</div>
 <span class="target" id="index-0"></span><p id="index-1">in which the goal is to find the unknown function <span class="math notranslate nohighlight">\(x(t)\)</span>. We call <span class="math notranslate nohighlight">\(x\)</span> the <span class="xref std std-term">dependent variable</span> and <span class="math notranslate nohighlight">\(t\)</span> the <span class="xref std std-term">independent variable</span>. We use these particular variables for theoretical discussion, but in practice the variables could be named anything. The term <em>first-order</em> indicates that only the first derivative appears and not <span class="math notranslate nohighlight">\(x''\)</span>, <span class="math notranslate nohighlight">\(x'''\)</span>, etc.</p>
 <p>A <span class="xref std std-term">solution</span> to the ODE is a function <span class="math notranslate nohighlight">\(x(t)\)</span> that makes <a class="reference internal" href="#equation-firstlin-ode">(7)</a> a true equation when inserted. Finding solutions usually takes some effort (and for most realistic problems it cannot be done at all). However, if someone proposes a solution to you, it’s easy to check whether that is the case: substitute it into the ODE and manipulate it until you can ascertain whether the equation holds.</p>
-<div class="proof proof-type-example" id="id1">
-<span id="archetype-constant-change"></span>
-    <div class="proof-title">
-        <span class="proof-type">Example 53</span>
-        
-            <span class="proof-title-name">(Archetype: Constant change)</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition" id="archetype-constant-change">
+<p class="admonition-title"> Example Archetype: Constant change</p>
 <p>You won’t find an ODE easier than</p>
 <div class="math notranslate nohighlight">
 \[\dd{x}{t} = a, \]</div>
 <p>where <span class="math notranslate nohighlight">\(a\)</span> is a constant. What kind of function has a constant derivative? A linear function. The solution is <span class="math notranslate nohighlight">\(x(t) = at + C\)</span>, where <span class="math notranslate nohighlight">\(C\)</span> is an arbitrary constant.</p>
 <p>In words, the ODE says the solution has a constant rate of change, and therefore the solution must have a constant slope.</p>
-</div></div><p>The <a class="reference internal" href="#archetype-constant-change"><span class="std std-ref">constant change archetype</span></a> is a special case of</p>
+</div>
+<p>The <a class="reference internal" href="#archetype-constant-change"><span class="std std-ref">constant change archetype</span></a> is a special case of</p>
 <div class="math notranslate nohighlight">
 \[
 \dd{x}{t} = f(t).
@@ -312,14 +306,8 @@
 <p>Solutions of ODEs are not necessarily unique.</p>
 </div>
 <p>Let’s move one rung up the ladder of complexity.</p>
-<div class="proof proof-type-example" id="id2">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 54</span>
-        
-            <span class="proof-title-name">(Archetype: Constant growth)</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example Archetype: Constant growth</p>
 <p>Suppose <span class="math notranslate nohighlight">\(x(t)\)</span> represents a quantity of something that reproduces itself at a constant rate. In addition to biological agents such as bacteria and infected individuals, this could be upvoted memes on a social network. Mathematically we have a fixed growth rate per capita, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -334,19 +322,14 @@
 x(t) = C e^{at}
 \]</div>
 <p>is a solution for any constant <span class="math notranslate nohighlight">\(C\)</span>. This reveals unbounded exponential growth in the solution as <span class="math notranslate nohighlight">\(t\to\infty\)</span>.</p>
-</div></div><p>Again in this example we got an integration constant, although this time it appears multiplicatively rather than additively. That is, the <span class="xref std std-term">general solution</span> of the ODE is an entire family of functions describing many particular solutions.</p>
+</div>
+<p>Again in this example we got an integration constant, although this time it appears multiplicatively rather than additively. That is, the <span class="xref std std-term">general solution</span> of the ODE is an entire family of functions describing many particular solutions.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>A named quantity such as <span class="math notranslate nohighlight">\(a\)</span> that is neither the independent nor the dependent variable is often called a <span class="xref std std-term">parameter</span>. A parameter is assumed to be constant unless it is written, e.g., as <span class="math notranslate nohighlight">\(a(t)\)</span> to show the dependence on <span class="math notranslate nohighlight">\(t\)</span>. A convention is to make parameters be positive where reasonable, a negative value would include an explicit sign such as in <span class="math notranslate nohighlight">\(-a\)</span>.</p>
 </div>
-<div class="proof proof-type-example" id="id3">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 55</span>
-        
-            <span class="proof-title-name">(Archetype: Constant decay)</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example Archetype: Constant decay</p>
 <p>In this case we have</p>
 <div class="math notranslate nohighlight">
 \[\dd{x}{t} = -ax,  \quad a &gt; 0. \]</div>
@@ -356,16 +339,11 @@ x(t) = C e^{at}
 x(t) = C e^{-at},
 \]</div>
 <p>which is exponential decay to zero as <span class="math notranslate nohighlight">\(t\to\infty\)</span>.</p>
-</div></div><p>In both of the preceding two examples, the function <span class="math notranslate nohighlight">\(f\)</span> in <a class="reference internal" href="#equation-firstlin-ode">(7)</a> depends only on the solution <span class="math notranslate nohighlight">\(x\)</span> and not explicitly on the independent variable <span class="math notranslate nohighlight">\(t\)</span>. Such an ODE is called <span class="xref std std-term">autonomous</span> or time-invariant.</p>
+</div>
+<p>In both of the preceding two examples, the function <span class="math notranslate nohighlight">\(f\)</span> in <a class="reference internal" href="#equation-firstlin-ode">(7)</a> depends only on the solution <span class="math notranslate nohighlight">\(x\)</span> and not explicitly on the independent variable <span class="math notranslate nohighlight">\(t\)</span>. Such an ODE is called <span class="xref std std-term">autonomous</span> or time-invariant.</p>
 <p>Our next example is not an autonomous equation.</p>
-<div class="proof proof-type-example" id="id4">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 56</span>
-        
-            <span class="proof-title-name">(Archetype: Variable growth/decay)</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example Archetype: Variable growth/decay</p>
 <p>Compare</p>
 <div class="math notranslate nohighlight">
 \[\dd{x}{t} = 2tx\]</div>
@@ -375,20 +353,15 @@ x(t) = C e^{-at},
 x(t) = C e^{t^2},
 \]</div>
 <p>which indeed grows superexponentially as <span class="math notranslate nohighlight">\(t\to\infty\)</span>.</p>
-</div></div><p>More general variable growth looks like <span class="math notranslate nohighlight">\(x'=a(t)x\)</span>. If <span class="math notranslate nohighlight">\(a\)</span> changes sign, the character of the equation flips between momentary growth and decay.</p>
+</div>
+<p>More general variable growth looks like <span class="math notranslate nohighlight">\(x'=a(t)x\)</span>. If <span class="math notranslate nohighlight">\(a\)</span> changes sign, the character of the equation flips between momentary growth and decay.</p>
 <p>All of the examples so far have had an ODE in the form</p>
 <div class="math notranslate nohighlight" id="equation-firstlin-linear">
 <span class="eqno">(8)<a class="headerlink" href="#equation-firstlin-linear" title="Permalink to this equation">¶</a></span>\[\dd{x}{t} = a(t) x + b(t),\]</div>
 <p>in which the dependent variable appears just as itself to the first power (if at all). This is called a <em>linear</em> first-order ODE.</p>
 <p>Our final archetype breaks this mold.</p>
-<div class="proof proof-type-example" id="id5">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 57</span>
-        
-            <span class="proof-title-name">(Archetype: Nonlinear growth)</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example Archetype: Nonlinear growth</p>
 <p>Comparing</p>
 <div class="math notranslate nohighlight">
 \[
@@ -406,7 +379,8 @@ x(t) = \frac{1}{C-t},
 \dd{x}{t} = -(C-t)^{-2}\cdot \dd{}{t}(C-t) = (C-t)^{-2} = x^2.
 \]</div>
 <p>Note that for <span class="math notranslate nohighlight">\(C&gt;0\)</span>, <span class="math notranslate nohighlight">\(x\to \infty\)</span> as <span class="math notranslate nohighlight">\(t\to C^{-}\)</span>. This is a finite-time blowup, which we did not observe in any of the linear growth processes.</p>
-</div></div><div class="admonition note">
+</div>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You might rightly wonder about the validity of a mathematical model that leads to an infinite result in finite time. But this particular ODE describes, for instance, the evolution of the slope of the line of sight to an airplane flying straight over you. When the airplane is directly overhead, the slope is infinite. So while the model becomes mathematically invalid at that moment, it does describe a concrete physical situation.</p>
 </div>

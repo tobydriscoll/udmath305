@@ -47,7 +47,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
-    <script src="../_static/proof.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -312,12 +311,8 @@
 </div>
 <p>To be clear, nonzero homogeneous solutions can occur only when <span class="math notranslate nohighlight">\(\bfA\)</span> is singular, because otherwise the solution <span class="math notranslate nohighlight">\(\bfx=\bfA^{-1}\bfzero=\bfzero\)</span> is unique.</p>
 <p>A nice feature of zero is that adding multiples of zero to zero is still zero. So, if <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> is the RREF of <span class="math notranslate nohighlight">\(\bfA\)</span>, then the RREF of the augmented matrix <span class="math notranslate nohighlight">\([\bfA;\,\bfzero]\)</span> is just <span class="math notranslate nohighlight">\([\mathbf{R};\,\bfzero]\)</span>. Each free column of <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> therefore introduces a free variable in the homogeneous solution.</p>
-<div class="proof proof-type-example" id="id1">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 31</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>The RREF of</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\end{split}\]</div>
@@ -334,12 +329,9 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-</div></div><div class="proof proof-type-example" id="id2">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 32</span>
-        
-    </div><div class="proof-content">
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>The RREF of</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 2 &amp; 0 &amp; -4 \\
@@ -361,14 +353,15 @@
 <p>Note that we can also write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfx = s \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + t \begin{bmatrix} 4 \\ 0 \\ -1 \\ 1 \end{bmatrix}.\end{split}\]</div>
-</div></div><p>The preceding examples are typical in that the homogeneous solution always takes the form</p>
+</div>
+<p>The preceding examples are typical in that the homogeneous solution always takes the form</p>
 <div class="math notranslate nohighlight" id="equation-linalg-general-homog">
 <span class="eqno">(6)<a class="headerlink" href="#equation-linalg-general-homog" title="Permalink to this equation">¶</a></span>\[\bfx = c_1 \bfu_1 + c_2 \bfu_2 + \cdots + c_k \bfu_k,\]</div>
 <p>where the <span class="math notranslate nohighlight">\(c_j\)</span> are aribtrary, one for each free column of the RREF, and the vectors are constant. It’s no accident that this has the form of a linear combination!</p>
-<div class="proof proof-type-definition" id="id3">
+<div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 33</span>
+        <span class="proof-type">Definition 21</span>
         
     </div><div class="proof-content">
 <p>The formula <a class="reference internal" href="#equation-linalg-general-homog">(6)</a> is called the <span class="xref std std-term">general solution</span> of the homogeneous problem <span class="math notranslate nohighlight">\(\bfA\bfx=\bfzero\)</span>. We say that <span class="math notranslate nohighlight">\(\bfu_1,\ldots,\bfu_k\)</span> form a <span class="xref std std-term">basis</span> for the general solution.</p>
@@ -377,10 +370,10 @@
 <div class="section" id="particular-solution">
 <h2>Particular solution<a class="headerlink" href="#particular-solution" title="Permalink to this headline">¶</a></h2>
 <p>Now we consider the nonhomogeneous system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span>. We introduce one of the simplest yet most confusing terms in the course. A <span class="xref std std-term">particular solution</span> of the linear system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> is just any one solution of the problem. The only reason the term exists is to distinguish it from the <em>general</em> solution, which (as above) is an expression for <em>every possible</em> solution of the system.</p>
-<div class="proof proof-type-theorem" id="id4">
+<div class="proof proof-type-theorem" id="id2">
 <span id="theorem-linalg-general"></span>
     <div class="proof-title">
-        <span class="proof-type">Theorem 34</span>
+        <span class="proof-type">Theorem 22</span>
         
             <span class="proof-title-name">(General solution of a linear system)</span>
         
@@ -400,12 +393,8 @@
 \[\bfA(\bfv-\bfx_p)=\bfA\bfv - \bfA\bfx_p = \bfb - \bfb = \bfzero.\]</div>
 <p>Hence <span class="math notranslate nohighlight">\(\bfv-\bfx_p\)</span> is a homogeneous solution, which means that we can write it as <span class="math notranslate nohighlight">\(\bfx_h\)</span>.</p>
 </div></div><p>Hence every linear system is closely tied to its homogeneous counterpart. The general solution of <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> requires just one solution, plus the general homogeneous solution.</p>
-<div class="proof proof-type-example" id="id5">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 35</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>Suppose</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix}
@@ -427,7 +416,8 @@
 <p>The basis vectors and <span class="math notranslate nohighlight">\(\bfx_p\)</span> aren’t unique, so it’s quite possible to write down two forms of the solution that look quite different but are equivalent.</p>
 </div>
 <p>The particular/homogeneous approach will come up again, and often, for differential equations in future chapters.</p>
-</div></div></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

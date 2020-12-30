@@ -29,7 +29,7 @@ To be clear, nonzero homogeneous solutions can occur only when $\bfA$ is singula
 
 A nice feature of zero is that adding multiples of zero to zero is still zero. So, if $\mathbf{R}$ is the RREF of $\bfA$, then the RREF of the augmented matrix $[\bfA;\,\bfzero]$ is just $[\mathbf{R};\,\bfzero]$. Each free column of $\mathbf{R}$ therefore introduces a free variable in the homogeneous solution.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 The RREF of 
 
 ```{math}
@@ -56,9 +56,9 @@ x_1 = s, \quad x_2 = -2s, \quad x_3 = s,
 
 or $s[1;\,-2;\,1]$ for any value of $s$.
 ```
-````
+::::
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 The RREF of 
 
 ```{math}
@@ -90,7 +90,7 @@ Note that we can also write
 ```{math}
 \bfx = s \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + t \begin{bmatrix} 4 \\ 0 \\ -1 \\ 1 \end{bmatrix}.
 ```
-````
+::::
 
 The preceding examples are typical in that the homogeneous solution always takes the form
 
@@ -135,7 +135,7 @@ Hence $\bfv-\bfx_p$ is a homogeneous solution, which means that we can write it 
 
 Hence every linear system is closely tied to its homogeneous counterpart. The general solution of $\bfA\bfx=\bfb$ requires just one solution, plus the general homogeneous solution.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 Suppose
 
 ```{math}

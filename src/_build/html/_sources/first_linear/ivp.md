@@ -50,7 +50,7 @@ In this case the constraint $x(t_0)=x_0$ is called an {term}`initial condition`,
 
 A solution of an IVP has to satisfy both the ODE and the initial condition. This is enough to specify the solution uniquely.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 In the previous section we said that the general solution of $x'=ax$ is $x(t)=Ce^{at}$. If we are supplied with the initial value $x(2)=5$, then we require
 
 $$
@@ -62,7 +62,7 @@ in which case $C=5e^{-2a}$. Thus the solution to this IVP is
 $$
 x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 $$
-````
+::::
 
 A graphical interpretation of the role of an initial condition is that the general solution is a family of curves in the $(t,x)$ plane, and the initial condition is a point that the particular solution of interest must pass through.
 

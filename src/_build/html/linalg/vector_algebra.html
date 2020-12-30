@@ -47,7 +47,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
-    <script src="../_static/proof.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -308,32 +307,26 @@
   <div class="section" id="vector-algebra">
 <h1>Vector algebra<a class="headerlink" href="#vector-algebra" title="Permalink to this headline">¶</a></h1>
 <p>Vectors support two basic operations. The first is addition. Two vectors of the same size can be added together elementwise. (The same is true for subtraction.) If the vectors have different sizes, the operation is not defined.</p>
-<div class="proof proof-type-example" id="id1">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 10</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>If <span class="math notranslate nohighlight">\(\bfx=[1;\: 2;\: 3]\)</span> and <span class="math notranslate nohighlight">\(\bfy=[-2;\: 2;\: 0]\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfx + \bfy = \begin{bmatrix} -1\\4\\3 \end{bmatrix}.\end{split}\]</div>
-</div></div><p>Things get a little more interesting with multiplication. We begin with <span class="xref std std-term">scalar multiplication</span>, which is between a number and a vector. Each element is multiplied by the number. In this context we call numbers <span class="xref std std-term">scalars</span>, since they scale all the elements equally.</p>
-<div class="proof proof-type-example" id="id2">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 11</span>
-        
-    </div><div class="proof-content">
+</div>
+<p>Things get a little more interesting with multiplication. We begin with <span class="xref std std-term">scalar multiplication</span>, which is between a number and a vector. Each element is multiplied by the number. In this context we call numbers <span class="xref std std-term">scalars</span>, since they scale all the elements equally.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>If <span class="math notranslate nohighlight">\(\bfx=[1;\: 2;\: 3]\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}3\bfx = \begin{bmatrix} 3\\6\\9 \end{bmatrix}.\end{split}\]</div>
-</div></div><div class="section" id="linear-combination">
+</div>
+<div class="section" id="linear-combination">
 <h2>Linear combination<a class="headerlink" href="#linear-combination" title="Permalink to this headline">¶</a></h2>
 <p>Vector addition and scalar multiplication combine to give an operation we will use repeatedly for both linear algebra and differential equations.</p>
-<div class="proof proof-type-definition" id="id3">
+<div class="proof proof-type-definition" id="id1">
 <span id="definition-linalg-linear-combination"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 12</span>
+        <span class="proof-type">Definition 7</span>
         
             <span class="proof-title-name">(Linear combination)</span>
         

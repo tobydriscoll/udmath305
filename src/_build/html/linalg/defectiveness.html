@@ -47,7 +47,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
-    <script src="../_static/proof.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -309,7 +308,7 @@
 <div class="proof proof-type-definition" id="id1">
 <span id="definition-linalg-characteristic-polynomial"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 44</span>
+        <span class="proof-type">Definition 27</span>
         
             <span class="proof-title-name">(Characteristic polynomial)</span>
         
@@ -319,7 +318,7 @@
 <div class="proof proof-type-property" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Property 45</span>
+        <span class="proof-type">Property 28</span>
         
             <span class="proof-title-name">(Eigenvalue properties)</span>
         
@@ -339,7 +338,7 @@
 <div class="proof proof-type-definition" id="id3">
 <span id="definition-linalg-algmult"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 46</span>
+        <span class="proof-type">Definition 29</span>
         
             <span class="proof-title-name">(Algebraic multiplicity)</span>
         
@@ -349,7 +348,7 @@
 <div class="proof proof-type-definition" id="id4">
 <span id="definition-linalg-geomult"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 47</span>
+        <span class="proof-type">Definition 30</span>
         
             <span class="proof-title-name">(Geometric multiplicity)</span>
         
@@ -359,7 +358,7 @@
 <div class="proof proof-type-property" id="id5">
 
     <div class="proof-title">
-        <span class="proof-type">Property 48</span>
+        <span class="proof-type">Property 31</span>
         
     </div><div class="proof-content">
 <p>The geometric multiplicity of an eigenvalue is at least one and less than or equal to its algebraic multiplicity.</p>
@@ -367,7 +366,7 @@
 <div class="proof proof-type-definition" id="id6">
 <span id="index-0"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 49</span>
+        <span class="proof-type">Definition 32</span>
         
             <span class="proof-title-name">(Defectiveness)</span>
         
@@ -377,28 +376,22 @@
 <div class="proof proof-type-theorem" id="id7">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem 50</span>
+        <span class="proof-type">Theorem 33</span>
         
             <span class="proof-title-name">(Distinct eigenvalues imply nondefectiveness)</span>
         
     </div><div class="proof-content">
 <p>If <span class="math notranslate nohighlight">\(\bfA\in\cmn{n}{n}\)</span> has <span class="math notranslate nohighlight">\(n\)</span> distinct eigenvalues, then <span class="math notranslate nohighlight">\(\bfA\)</span> is not defective.</p>
 </div></div><p>For <span class="math notranslate nohighlight">\(n=2\)</span>, either there is a double eigenvalue or two distinct eigenvalues. Only the case with a double eigenvalue may be defective. Here are the two canonical archetypes.</p>
-<div class="proof proof-type-example" id="id8">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 51</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>If <span class="math notranslate nohighlight">\(\bfA=\twomat{c}{0}{0}{c}\)</span>, then the characteristic polynomial is <span class="math notranslate nohighlight">\(p(\lambda)=(\lambda-c)^2\)</span>. Thus <span class="math notranslate nohighlight">\(\lambda=c\)</span> is the only eigenvalue, with algebraic multiplicity 2. All nonzero vectors are eigenvectors, so we can represent the eigenspace as a linear combination of <span class="math notranslate nohighlight">\(\twovec{1}{0}\)</span> and <span class="math notranslate nohighlight">\(\twovec{0}{1}\)</span>. Hence the geometric multiplicity is also equal to 2, and <span class="math notranslate nohighlight">\(\bfA\)</span> is nondefective.</p>
-</div></div><div class="proof proof-type-example" id="id9">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 52</span>
-        
-    </div><div class="proof-content">
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>A <a class="reference internal" href="eigenvalues.html#example-linalg-defective"><span class="std std-ref">previous example</span></a> showed that the matrix <span class="math notranslate nohighlight">\(\bfA=\twomat{4}{1}{0}{4}\)</span> has eigenvalue <span class="math notranslate nohighlight">\(\lambda=4\)</span> with algebraic multiplicity equal to 2 and geometric multiplicity equal to 1. Hence this matrix is defective.</p>
-</div></div><p>The situation for <span class="math notranslate nohighlight">\(n&gt;2\)</span> can be more complicated. We will stop here and move on to dynamics.</p>
+</div>
+<p>The situation for <span class="math notranslate nohighlight">\(n&gt;2\)</span> can be more complicated. We will stop here and move on to dynamics.</p>
 </div>
 </div>
 

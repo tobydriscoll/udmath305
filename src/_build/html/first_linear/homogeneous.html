@@ -47,7 +47,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
-    <script src="../_static/proof.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -320,7 +319,7 @@ x'(t) = q'(t) \exp[q(t)] = q'(t) x.
 <div class="proof proof-type-formula" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Formula 65</span>
+        <span class="proof-type">Formula 40</span>
         
             <span class="proof-title-name">(Solution of <span class="math notranslate nohighlight">\(x'=a(t)x\)</span>)</span>
         
@@ -330,12 +329,8 @@ x'(t) = q'(t) \exp[q(t)] = q'(t) x.
 q(t) &amp;= \int a(t) \, dt, \\
 x(t) &amp;= \exp[q(t)].
 \end{align*}\]</div>
-</div></div><div class="proof proof-type-example" id="id2">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 66</span>
-        
-    </div><div class="proof-content">
+</div></div><div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>To solve <span class="math notranslate nohighlight">\(x'=\sin(t) x\)</span>, we integrate <span class="math notranslate nohighlight">\(a(t)=\sin(t)\)</span> to get</p>
 <div class="math notranslate nohighlight">
 \[
@@ -344,16 +339,13 @@ q(t) = -\cos(t)+C.
 <p>The general solution is thus <span class="math notranslate nohighlight">\(\exp[q(t)]\)</span>, or</p>
 <div class="math notranslate nohighlight">
 \[x_h(t) = e^C \exp[ -\cos(t) ] = c_1 \exp[ -\cos(t) ].\]</div>
-</div></div><div class="admonition tip">
+</div>
+<div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>As seen in the example, the integration constant pops up additively in <span class="math notranslate nohighlight">\(q\)</span> and then multiplicatively in <span class="math notranslate nohighlight">\(x\)</span>. You can ignore the integration constant until the end and then just tack it on.</p>
 </div>
-<div class="proof proof-type-example" id="id3">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 67</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>To solve the homogeneous IVP</p>
 <div class="math notranslate nohighlight">
 \[
@@ -370,7 +362,8 @@ x_h(t) = c_1 \exp\left[ \int 2t^{-1}\, dt \right] = c_1 \exp[2\ln(t)] = c_1 t^2.
 12 = x_h(2) = c_1\cdot 2^2.
 \]</div>
 <p>Hence <span class="math notranslate nohighlight">\(x(t) = 3t^2\)</span>.</p>
-</div></div><div class="section" id="initial-value-formula">
+</div>
+<div class="section" id="initial-value-formula">
 <h2>Initial-value formula<a class="headerlink" href="#initial-value-formula" title="Permalink to this headline">¶</a></h2>
 <p>We can take a shortcut in the case of a homogeneous IVP. The trick is to use a definite integral to compute <span class="math notranslate nohighlight">\(q\)</span>, as in</p>
 <div class="math notranslate nohighlight">
@@ -383,10 +376,10 @@ x_h(t) = c_1 \exp\left[ \int 2t^{-1}\, dt \right] = c_1 \exp[2\ln(t)] = c_1 t^2.
 x_h(t)= c_1\exp[\tilde{q}(t)],
 \]</div>
 <p>we find that <span class="math notranslate nohighlight">\(x(t_0)=c_1\exp(0)=c_1\)</span>.</p>
-<div class="proof proof-type-formula" id="id4">
+<div class="proof proof-type-formula" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Formula 68</span>
+        <span class="proof-type">Formula 41</span>
         
             <span class="proof-title-name">(Solution of <span class="math notranslate nohighlight">\(x' = a(t)x\)</span>, <span class="math notranslate nohighlight">\(x(t_0)=x_0\)</span>)</span>
         
@@ -395,12 +388,8 @@ x_h(t)= c_1\exp[\tilde{q}(t)],
 \[
 x(t) = x_0 \exp\left[ \int_{t_0}^t a(s)\, ds \right].
 \]</div>
-</div></div><div class="proof proof-type-example" id="id5">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 69</span>
-        
-    </div><div class="proof-content">
+</div></div><div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>We revisit</p>
 <div class="math notranslate nohighlight">
 \[
@@ -414,7 +403,8 @@ x(t) &amp;= 12 \exp\left[ \int_2^t 2s^{-1}\, ds \right] \\
 &amp;= \frac{12t^2}{4},
 \end{align*}\]</div>
 <p>which the same result as before.</p>
-</div></div></div>
+</div>
+</div>
 <div class="section" id="integration-factor-optional">
 <h2>Integration factor (optional)<a class="headerlink" href="#integration-factor-optional" title="Permalink to this headline">¶</a></h2>
 <p>There’s an alternate way to derive the homogeneous solution above.</p>

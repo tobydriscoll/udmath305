@@ -125,7 +125,7 @@ Beyond $2\times 2$ we won't worry about computing inverses; row elimination is a
 
 A matrix of all zeros can't have an inverse, because $\bfzero\bfA$ is zero for all matrices $\bfA$. That conclusion extends what we know about a scalar $a$. Unlike the scalar case, though, there are other matrices that have no inverse.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 Suppose, for example, that
 
 ```{math}
@@ -145,7 +145,7 @@ which is impossible for any choice of $\mathbf{Z}$. We conclude that the origina
 ```
 
 has no inverse.
-````
+::::
 
 ````{proof:definition} Singular matrix
 A square matrix that does not have an inverse is called {term}`singular`. A matrix that does have an inverse is called {term}`invertible`, or nonsingular.
