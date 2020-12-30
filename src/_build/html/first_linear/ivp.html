@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Initial-value problems &#8212; Notes on linear algebra and ODEs</title>
+    <title>3. Initial-value problems &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -61,8 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Operators" href="operators.html" />
-    <link rel="prev" title="Preview of first-order equations" href="preview.html" />
+    <link rel="next" title="4. Operators" href="operators.html" />
+    <link rel="prev" title="2. Quick tour" href="preview.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -99,110 +99,125 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Linear algebra
+  I. Linear algebra
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/vectors_matrices.html">
-   Vectors and matrices
+   2. Vectors and matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/linear_systems.html">
-   Linear systems
+   3. Linear systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/row_elimination.html">
-   Row elimination
+   4. Row elimination
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/RREF.html">
-   RREF
+   5. RREF
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/vector_algebra.html">
-   Vector algebra
+   6. Vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_vector.html">
-   Matrix-vector algebra
+   7. Matrix-vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   Matrix-matrix algebra
+   8. Matrix-matrix algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/identity_inverse.html">
-   Identity and inverse
+   9. Identity and inverse
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/singular.html">
-   Detecting singular matrices
+   10. Detecting singular matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/general_solutions.html">
-   General solutions
+   11. General solutions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/complex_numbers.html">
-   Complex numbers
+   12. Complex numbers
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/eigenvalues.html">
-   Eigenvalues
+   13. Eigenvalues
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/defectiveness.html">
-   Defectiveness
+   14. Defectiveness
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  First-order linear
+  II. First-order linear ODE
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="preview.html">
-   Preview of first-order equations
+   2. Quick tour
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Initial-value problems
+   3. Initial-value problems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="operators.html">
-   Operators
+   4. Operators
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="homogeneous.html">
-   Homogeneous solutions
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="undetermined_coeffs.html">
+   8. Undetermined coefficients
   </a>
  </li>
 </ul>
@@ -280,7 +295,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numerical-solutions">
-   Numerical solutions
+   3.1. Numerical solutions
   </a>
  </li>
 </ul>
@@ -295,7 +310,7 @@
               <div>
                 
   <div class="section" id="initial-value-problems">
-<h1>Initial-value problems<a class="headerlink" href="#initial-value-problems" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Initial-value problems<a class="headerlink" href="#initial-value-problems" title="Permalink to this headline">¶</a></h1>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">restoredefaultpath</span>
@@ -322,7 +337,7 @@ x(t_0) = x_0,
 <div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 34</span>
+        <span class="proof-type">Definition 3.1</span>
         
             <span class="proof-title-name">(Initial-value problem)</span>
         
@@ -375,7 +390,7 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 </div>
 </div>
 <div class="section" id="numerical-solutions">
-<h2>Numerical solutions<a class="headerlink" href="#numerical-solutions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Numerical solutions<a class="headerlink" href="#numerical-solutions" title="Permalink to this headline">¶</a></h2>
 <p>Because an initial-value problem has a unique solution, it’s a suitable target for a numerical simulation. We will use the function <code class="docutils literal notranslate"><span class="pre">ode45</span></code> to provide such numerics in MATLAB. For example, here is constant growth subject to the initial condition <span class="math notranslate nohighlight">\(x(1)=3\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -471,8 +486,8 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="preview.html" title="previous page">Preview of first-order equations</a>
-    <a class='right-next' id="next-link" href="operators.html" title="next page">Operators</a>
+    <a class='left-prev' id="prev-link" href="preview.html" title="previous page"><span class="section-number">2. </span>Quick tour</a>
+    <a class='right-next' id="next-link" href="operators.html" title="next page"><span class="section-number">4. </span>Operators</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

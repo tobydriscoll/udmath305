@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Eigenvalues &#8212; Notes on linear algebra and ODEs</title>
+    <title>13. Eigenvalues &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -61,8 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Defectiveness" href="defectiveness.html" />
-    <link rel="prev" title="Complex numbers" href="complex_numbers.html" />
+    <link rel="next" title="14. Defectiveness" href="defectiveness.html" />
+    <link rel="prev" title="12. Complex numbers" href="complex_numbers.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -99,110 +99,125 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Linear algebra
+  I. Linear algebra
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vectors_matrices.html">
-   Vectors and matrices
+   2. Vectors and matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="linear_systems.html">
-   Linear systems
+   3. Linear systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="row_elimination.html">
-   Row elimination
+   4. Row elimination
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="RREF.html">
-   RREF
+   5. RREF
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vector_algebra.html">
-   Vector algebra
+   6. Vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_vector.html">
-   Matrix-vector algebra
+   7. Matrix-vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_matrix.html">
-   Matrix-matrix algebra
+   8. Matrix-matrix algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="identity_inverse.html">
-   Identity and inverse
+   9. Identity and inverse
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="singular.html">
-   Detecting singular matrices
+   10. Detecting singular matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="general_solutions.html">
-   General solutions
+   11. General solutions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="complex_numbers.html">
-   Complex numbers
+   12. Complex numbers
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Eigenvalues
+   13. Eigenvalues
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="defectiveness.html">
-   Defectiveness
+   14. Defectiveness
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  First-order linear
+  II. First-order linear ODE
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/preview.html">
-   Preview of first-order equations
+   2. Quick tour
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/ivp.html">
-   Initial-value problems
+   3. Initial-value problems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/operators.html">
-   Operators
+   4. Operators
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/homogeneous.html">
-   Homogeneous solutions
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
   </a>
  </li>
 </ul>
@@ -280,17 +295,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#eigenspaces">
-   Eigenspaces
+   13.1. Eigenspaces
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matlab">
-   MATLAB
+   13.2. MATLAB
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#eigenvectors-for-2-times-2">
-   Eigenvectors for
+   13.3. Eigenvectors for
    <span class="math notranslate nohighlight">
     \(2\times 2\)
    </span>
@@ -308,13 +323,13 @@
               <div>
                 
   <div class="section" id="eigenvalues">
-<h1>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">13. </span>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Permalink to this headline">¶</a></h1>
 <p>The last stop on our whirlwind tour of linear algebra is the hardest to motivate for a little while. However, the topic is important to the differential equations we study in future chapters, in the sense of oxygen being an important part of breathing.</p>
 <p>We are still operating with square matrices only.</p>
 <div class="proof proof-type-definition" id="id1">
 <span id="definition-linalg-eigen"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 24</span>
+        <span class="proof-type">Definition 13.1</span>
         
             <span class="proof-title-name">(Eigenvalue and eigenvector)</span>
         
@@ -322,13 +337,13 @@
 <p>Suppose <span class="math notranslate nohighlight">\(\bfA\in\cmn{n}{n}\)</span>. If there exist a scalar <span class="math notranslate nohighlight">\(\lambda\)</span> and a nonzero vector <span class="math notranslate nohighlight">\(\bfv\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[\bfA \bfv = \lambda \bfv,\]</div>
-<p>then <span class="math notranslate nohighlight">\(\lambda\)</span> is an <span class="xref std std-term">eigenvalue</span> of <span class="math notranslate nohighlight">\(\bfA\)</span> with associated <span class="xref std std-term">eigenvector</span> <span class="math notranslate nohighlight">\(\bfv\)</span>.</p>
+<p>then <span class="math notranslate nohighlight">\(\lambda\)</span> is an <a class="reference internal" href="overview.html#term-eigenvalue"><span class="xref std std-term">eigenvalue</span></a> of <span class="math notranslate nohighlight">\(\bfA\)</span> with associated <a class="reference internal" href="overview.html#term-eigenvector"><span class="xref std std-term">eigenvector</span></a> <span class="math notranslate nohighlight">\(\bfv\)</span>.</p>
 </div></div><p>If you think of <span class="math notranslate nohighlight">\(\bfA\)</span> as acting on vectors, then an eigenvector is a direction in which the action of <span class="math notranslate nohighlight">\(\bfA\)</span> is the same as a scalar; we have found a little one-dimensional oasis in which the behavior of <span class="math notranslate nohighlight">\(\bfA\)</span> is easy to comprehend.</p>
 <div class="section" id="eigenspaces">
-<h2>Eigenspaces<a class="headerlink" href="#eigenspaces" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.1. </span>Eigenspaces<a class="headerlink" href="#eigenspaces" title="Permalink to this headline">¶</a></h2>
 <p>An eigenvalue is a clean, well-defined target. Eigenvectors are a little slipperier. For starters, if <span class="math notranslate nohighlight">\(\bfA\bfv=\lambda\bfv\)</span>, then</p>
 <div class="math notranslate nohighlight">
-\[	\bfA(c\bfv) = c(\bfA\bfv)=c(\lambda\bfv)=\lambda(c\bfv).\]</div>
+\[\bfA(c\bfv) = c(\bfA\bfv)=c(\lambda\bfv)=\lambda(c\bfv).\]</div>
 <p>Hence <strong>every nonzero multiple of an eigenvector is also an eigenvector for the same <span class="math notranslate nohighlight">\(\lambda\)</span></strong>. But there can be much more ambiguity than that.</p>
 <div class="dropdown tip admonition">
 <p class="admonition-title"> Example</p>
@@ -340,18 +355,18 @@
 <div class="proof proof-type-definition" id="id2">
 <span id="definition-linalg-eigenspace"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 25</span>
+        <span class="proof-type">Definition 13.2</span>
         
             <span class="proof-title-name">(Eigenspace)</span>
         
     </div><div class="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(\lambda\)</span> be an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span>. The <span class="xref std std-term">eigenspace</span> associated with <span class="math notranslate nohighlight">\(\lambda\)</span> is the general solution of <span class="math notranslate nohighlight">\((\bfA-\lambda\meye)\bfx = \bfzero\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(\lambda\)</span> be an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span>. The <a class="reference internal" href="overview.html#term-eigenspace"><span class="xref std std-term">eigenspace</span></a> associated with <span class="math notranslate nohighlight">\(\lambda\)</span> is the general solution of <span class="math notranslate nohighlight">\((\bfA-\lambda\meye)\bfx = \bfzero\)</span>.</p>
 </div></div><p>Eigenspaces, unlike eigenvectors, are unique. We have to be a bit careful, though, because we usually express such spaces using basis vectors, and those bases are not themselves unique.</p>
 <p>Note that if <span class="math notranslate nohighlight">\(\lambda\)</span> is <em>not</em> an eigenvalue, then by definition the only solution of <span class="math notranslate nohighlight">\((\bfA-\lambda\meye)\bfv=\bfzero\)</span> is <span class="math notranslate nohighlight">\(\bfv=\bfzero\)</span>. That requires <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> to be invertible.</p>
 <div class="proof proof-type-theorem" id="id3">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem 26</span>
+        <span class="proof-type">Theorem 13.3</span>
         
     </div><div class="proof-content">
 <p><span class="math notranslate nohighlight">\(\lambda\)</span> is an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span> if and only if <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> is singular.</p>
@@ -376,7 +391,7 @@
 </div>
 </div>
 <div class="section" id="matlab">
-<h2>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.2. </span>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
 <p>MATLAB computes eigenvalues (through an entirely different process) with the <code class="docutils literal notranslate"><span class="pre">eig</span></code> command. From the preceding example, for instance,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -419,7 +434,7 @@
 <p>In most cases, column <code class="docutils literal notranslate"><span class="pre">V(:,k)</span></code> is an eigenvector for the eigenvalue <code class="docutils literal notranslate"><span class="pre">D(k,k)</span></code>. Keep in mind that any scalar multiple of an eigenvector is equally valid.</p>
 </div>
 <div class="section" id="eigenvectors-for-2-times-2">
-<h2>Eigenvectors for <span class="math notranslate nohighlight">\(2\times 2\)</span><a class="headerlink" href="#eigenvectors-for-2-times-2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">13.3. </span>Eigenvectors for <span class="math notranslate nohighlight">\(2\times 2\)</span><a class="headerlink" href="#eigenvectors-for-2-times-2" title="Permalink to this headline">¶</a></h2>
 <p>Most of our hand computations will be with <span class="math notranslate nohighlight">\(2\times 2\)</span> matrices. Suppose <span class="math notranslate nohighlight">\(\lambda\)</span> is known to be an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span>. Then <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> must be singular, and its RREF has at least one free column. Hence row elimination will zero out the second row entirely, and we can ignore it.</p>
 <p>Say the first row of <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> is <span class="math notranslate nohighlight">\([\alpha,\beta]\)</span>. If these are both zero, then <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> is a zero matrix, i.e., <span class="math notranslate nohighlight">\(\bfA\)</span> is a multiple of the identity and all of <span class="math notranslate nohighlight">\(\complex^2\)</span> is the eigenspace. Otherwise, the vector <span class="math notranslate nohighlight">\([\beta;\,-\alpha]\)</span> is in the general homogeneous solution, and we can choose it as the basis of the eigenspace.</p>
 <div class="dropdown tip admonition">
@@ -502,8 +517,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="complex_numbers.html" title="previous page">Complex numbers</a>
-    <a class='right-next' id="next-link" href="defectiveness.html" title="next page">Defectiveness</a>
+    <a class='left-prev' id="prev-link" href="complex_numbers.html" title="previous page"><span class="section-number">12. </span>Complex numbers</a>
+    <a class='right-next' id="next-link" href="defectiveness.html" title="next page"><span class="section-number">14. </span>Defectiveness</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

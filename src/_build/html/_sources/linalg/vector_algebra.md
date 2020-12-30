@@ -24,7 +24,7 @@ If $\bfx=[1;\: 2;\: 3]$ and $\bfy=[-2;\: 2;\: 0]$, then
 ```
 ::::
 
-Things get a little more interesting with multiplication. We begin with {term}`scalar multiplication`, which is between a number and a vector. Each element is multiplied by the number. In this context we call numbers {term}`scalars`, since they scale all the elements equally.
+Things get a little more interesting with multiplication. We begin with {term}`scalar multiplication`, which is between a number and a vector. Each element is multiplied by the number. In this context we call a number a {term}`scalar`, since it scales all the elements equally.
 
 ::::{admonition,dropdown,tip} Example
 If $\bfx=[1;\: 2;\: 3]$, then

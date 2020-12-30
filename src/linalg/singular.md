@@ -66,7 +66,7 @@ This definition can be extended to create a real-valued function for square matr
 (definition-linalg-determinant)=
 
 ````{proof:definition} Determinant
-If $\bfA$ is $n\times n$, then
+If $\bfA$ is $n\times n$, then its {term}`determinant` is
 ```{math}
 \det(\bfA) = \sum (-1)^{i+j} a_{ij} \det( \mathbf{M}_{ij} )
 ```,
@@ -106,7 +106,7 @@ It's the third property above that we will be using. The determinant is often th
 
 ### Cramer's Rule
 
-Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system $\bfA\bfx=\bfb$ by hand. There is an even faster equivalent shortcut known as *Cramer's Rule* {term}`Cramer's Rule`:
+Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system $\bfA\bfx=\bfb$ by hand. There is an even faster equivalent shortcut known as {term}`Cramer's Rule`:
 
 \begin{align*}
 x_1 & = \frac{ \twodet{b_1}{a_{12}}{b_2}{a_{22}} }{ \det(\bfA) }\\

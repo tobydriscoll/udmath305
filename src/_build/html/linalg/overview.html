@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Overview &#8212; Notes on linear algebra and ODEs</title>
+    <title>1. Overview &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -47,7 +47,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
-    <script src="../_static/proof.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -62,7 +61,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Vectors and matrices" href="vectors_matrices.html" />
+    <link rel="next" title="2. Vectors and matrices" href="vectors_matrices.html" />
     <link rel="prev" title="M305 Notes" href="../frontmatter.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -100,110 +99,125 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Linear algebra
+  I. Linear algebra
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vectors_matrices.html">
-   Vectors and matrices
+   2. Vectors and matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="linear_systems.html">
-   Linear systems
+   3. Linear systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="row_elimination.html">
-   Row elimination
+   4. Row elimination
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="RREF.html">
-   RREF
+   5. RREF
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vector_algebra.html">
-   Vector algebra
+   6. Vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_vector.html">
-   Matrix-vector algebra
+   7. Matrix-vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_matrix.html">
-   Matrix-matrix algebra
+   8. Matrix-matrix algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="identity_inverse.html">
-   Identity and inverse
+   9. Identity and inverse
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="singular.html">
-   Detecting singular matrices
+   10. Detecting singular matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="general_solutions.html">
-   General solutions
+   11. General solutions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="complex_numbers.html">
-   Complex numbers
+   12. Complex numbers
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="eigenvalues.html">
-   Eigenvalues
+   13. Eigenvalues
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="defectiveness.html">
-   Defectiveness
+   14. Defectiveness
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  First-order linear
+  II. First-order linear ODE
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/preview.html">
-   Preview of first-order equations
+   2. Quick tour
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/ivp.html">
-   Initial-value problems
+   3. Initial-value problems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/operators.html">
-   Operators
+   4. Operators
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/homogeneous.html">
-   Homogeneous solutions
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
   </a>
  </li>
 </ul>
@@ -271,6 +285,20 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#glossary">
+   1.1. Glossary
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -279,12 +307,12 @@
               <div>
                 
   <div class="section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <p>Linear algebra provides a convenient and general way to pose and analyze problems in multiple dimensions. The most tractable and universal such problems involve linear transformations.</p>
 <div class="proof proof-type-definition" id="id1">
 <span id="definition-linear"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 1</span>
+        <span class="proof-type">Definition 1.1</span>
         
             <span class="proof-title-name">(Linear function)</span>
         
@@ -296,16 +324,85 @@
 <div class="math notranslate nohighlight">
 \[L(x+y) = L(x) + L(y) \quad \text{for all $x\in D$, $y\in D$}.\]</div>
 </div></div><p>I’ve been deliberately vague about the domain and range of <span class="math notranslate nohighlight">\(L\)</span> in this definition, because it can be adapted to multiple contexts.</p>
+<div class="section" id="glossary">
+<h2><span class="section-number">1.1. </span>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
 <dl class="glossary simple">
+<dt id="term-algebraic-multiplicity">algebraic multiplicity</dt><dd><p>For an eigenvalue, its multiplicity in the sense of its appearance in the factorization of the characteristic polynomial.</p>
+</dd>
+<dt id="term-augmented-matrix">augmented matrix</dt><dd><p>Result of horizontally concatenating the coefficient matrix of a linear system with the right-side vector.</p>
+</dd>
+<dt id="term-basis">basis</dt><dd><p>Minimal set of constant vectors needed to describe the general solution of a homogeneous linear system.</p>
+</dd>
+<dt id="term-charcteristic-polynomial">charcteristic polynomial</dt><dd><p>Polynomial of degree <span class="math notranslate nohighlight">\(n\)</span> whose roots are the eigenvalues of an <span class="math notranslate nohighlight">\(n\times n\)</span> matrix.</p>
+</dd>
+<dt id="term-coefficient-matrix">coefficient matrix</dt><dd><p>Matrix of all coefficients multiplying unknowns in a linear algebraic system of equations.</p>
+</dd>
+<dt id="term-cofactor-expansion">cofactor expansion</dt><dd><p>Definition and/or computational method for finding the determinant of a matrix through recursive size reduction.</p>
+</dd>
+<dt id="term-conjugate">conjugate</dt><dd><p>Replacement of each occurence of <span class="math notranslate nohighlight">\(i\)</span> by <span class="math notranslate nohighlight">\(-i\)</span> in any representation of a complex number, i.e., reflection about the real axis in the complex plane.</p>
+</dd>
+<dt id="term-cramer-s-rule">Cramer’s Rule</dt><dd><p>Algorithm to compute the solution of a linear algebraic system using only determinant calculations.</p>
+</dd>
+<dt id="term-defective">defective</dt><dd><p>For an eigenvalue, having geometric multiplicity less than the algebraic multiplicity; for a matrix, having one or more defective eigenvalues.</p>
+</dd>
+<dt id="term-determinant">determinant</dt><dd><p>Scalar value computed from a square matrix that is zero if and only if the matrix is singular.</p>
+</dd>
+<dt id="term-eigenspace">eigenspace</dt><dd><p>General solution of <span class="math notranslate nohighlight">\((\bfA-\lambda\meye)\bfv=\bfzero\)</span> for a given square matrix <span class="math notranslate nohighlight">\(\bfA\)</span> and some nonzero vector <span class="math notranslate nohighlight">\(\bfv\)</span>.</p>
+</dd>
+<dt id="term-eigenvalue">eigenvalue</dt><dd><p>Scalar value <span class="math notranslate nohighlight">\(\lambda\)</span> satsifying <span class="math notranslate nohighlight">\(\bfA\bfv=\lambda\bfv\)</span> for a given square matrix <span class="math notranslate nohighlight">\(\bfA\)</span> and some nonzero vector <span class="math notranslate nohighlight">\(\bfv\)</span>.</p>
+</dd>
+<dt id="term-eigenvector">eigenvector</dt><dd><p>Nonzero vector <span class="math notranslate nohighlight">\(\bfv\)</span> satsifying <span class="math notranslate nohighlight">\(\bfA\bfv=\lambda\bfv\)</span> for a given square matrix <span class="math notranslate nohighlight">\(\bfA\)</span> and some scalar <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</dd>
+<dt id="term-free-column">free column</dt><dd><p>Column of a RREF matrix that contains no leading ones.</p>
+</dd>
+<dt id="term-gaussian-elimination">Gaussian elimination</dt><dd><p>Use of row operations to transform an augmented matrix to a triangular form.</p>
+</dd>
+<dt id="term-geometric-multiplicity">geometric multiplicity</dt><dd><p>For an eigenvalue, the number of basis vectors in its associated eigenspace.</p>
+</dd>
+<dt id="term-general-solution">general solution</dt><dd><p>Representation of all possible solutions to a linear algebraic system of equations.</p>
+</dd>
+<dt id="term-homogeneous">homogeneous</dt><dd><p>Linear system of equations with zero right side, i.e., <span class="math notranslate nohighlight">\(\bfA\bfx=\bfzero\)</span>.</p>
+</dd>
+<dt id="term-identity-matrix">identity matrix</dt><dd><p>Square diagonal matrix with ones on the diagonal, serving as the multiplicative identity.</p>
+</dd>
+<dt id="term-imaginary-part">imaginary part</dt><dd><p>Component of a complex number that multiplies the imaginary unit <span class="math notranslate nohighlight">\(i\)</span> when the number is written in standard rectangular form.</p>
+</dd>
+<dt id="term-inconsistent">inconsistent</dt><dd><p>Linear algebraic system of equations that has no solution.</p>
+</dd>
+<dt id="term-invertible">invertible</dt><dd><p>Matrix that has an inverse and which gives a unique solution for every linear algebraic system.</p>
+</dd>
+<dt id="term-inverse">inverse</dt><dd><p>Unique matrix that multiplies a given square invertible matrix to produce the identity matrix.</p>
+</dd>
+<dt id="term-leading-nonzero">leading nonzero</dt><dd><p>First (i.e., leftmost) nonzero element of a matrix row.</p>
+</dd>
 <dt id="term-linear">linear</dt><dd><p>Type of function or operator that satisfies two basic properties.</p>
 </dd>
 <dt id="term-linear-combination">linear combination</dt><dd><p>Simultaneous multiplication of vectors by coefficients, followed by summation to a single vector.</p>
 </dd>
 <dt id="term-matrix">matrix</dt><dd><p>Array of numbers obeying certain algebraic rules.</p>
 </dd>
+<dt id="term-modulus">modulus</dt><dd><p>Extension of absolute value to complex numbers, representing the distance between values in the complex plane.</p>
+</dd>
+<dt id="term-particular-solution">particular solution</dt><dd><p>Any one solution of linear algebraic system, as opposed to the general solution.</p>
+</dd>
+<dt id="term-pivot-column">pivot column</dt><dd><p>Column of an RREF matrix that contains a leading one.</p>
+</dd>
+<dt id="term-real-part">real part</dt><dd><p>Component of a complex number that does not multiply the imaginary unit <span class="math notranslate nohighlight">\(i\)</span> when the number is written in standard rectangular form.</p>
+</dd>
+<dt id="term-rref">RREF</dt><dd><p>Matrix meeting certain requirements that expose all necessary information about solving a linear algebraic system; stands for “reduced row echelon form.”</p>
+</dd>
+<dt id="term-scalar">scalar</dt><dd><p>Real or complex number, as distinguished from a vector or matrix.</p>
+</dd>
+<dt id="term-scalar-multiplication">scalar multiplication</dt><dd><p>Multiplication of each element of a vector or matrix by a given number.</p>
+</dd>
+<dt id="term-singular">singular</dt><dd><p>Matrix that does not have an inverse and for which homogeneous linear equations have infinitely many solutions.</p>
+</dd>
+<dt id="term-square">square</dt><dd><p>Matrix with the same number of rows as columns.</p>
+</dd>
 <dt id="term-vector">vector</dt><dd><p>Finite collection of numbers obeying certain algebraic rules.</p>
 </dd>
 </dl>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -337,7 +434,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../frontmatter.html" title="previous page">M305 Notes</a>
-    <a class='right-next' id="next-link" href="vectors_matrices.html" title="next page">Vectors and matrices</a>
+    <a class='right-next' id="next-link" href="vectors_matrices.html" title="next page"><span class="section-number">2. </span>Vectors and matrices</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -57,7 +57,7 @@ Yet something amazing happens if you do accept imaginary numbers, and their expa
 
 ## Basic arithmetic
 
-We can write a complex number $z\in \complex$ as $z=x+iy$, where $i^2=-1$ and $x$ and $y$ are real numbers known as the {term}`real` and {term}`imaginary` parts of $z$,
+We can write a complex number $z\in \complex$ as $z=x+iy$, where $i^2=-1$ and $x$ and $y$ are real numbers known as the {term}`real part` and {term}`imaginary part` of $z$,
 
 ```{math}
 z = x + i y \quad \Leftrightarrow \quad x = \Re(z), \quad y = \Im(z).

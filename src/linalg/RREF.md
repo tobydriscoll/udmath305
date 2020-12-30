@@ -22,7 +22,7 @@ It's time to get more formal and precise about row elimination. We separate it i
 
 (definition-linalg-phase1)=
 
-````{proof:definition}  Row elimination downward phase
+````{proof:algorithm}  Row elimination downward phase
 1. Set $i=1$.
 2. Find the leftmost leading nonzero in rows $i$ and below. The column of this leading nonzero is known as the {term}`pivot column`. If no such column exists, stop.
 3. As necessary, swap rows and/or multiply a row by a constant to put a 1 in the pivot column of row $i$.
@@ -34,7 +34,7 @@ At the end of the downward phase, the augmented matrix has a pretty simple form.
 
 (definition-linalg-phase2)=
 
-````{proof:definition} Row elimination upward phase
+````{proof:algorithm} Row elimination upward phase
 1. Set $i=m$ (the number of equations).
 2. Use multiples of row $i$ to put zeros above the leading 1 in that row.
 3. Decrement $i$. If $i> 1$, return to step 2.

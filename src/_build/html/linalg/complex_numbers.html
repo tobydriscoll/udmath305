@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Complex numbers &#8212; Notes on linear algebra and ODEs</title>
+    <title>12. Complex numbers &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -61,8 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Eigenvalues" href="eigenvalues.html" />
-    <link rel="prev" title="General solutions" href="general_solutions.html" />
+    <link rel="next" title="13. Eigenvalues" href="eigenvalues.html" />
+    <link rel="prev" title="11. General solutions" href="general_solutions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -99,110 +99,125 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Linear algebra
+  I. Linear algebra
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vectors_matrices.html">
-   Vectors and matrices
+   2. Vectors and matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="linear_systems.html">
-   Linear systems
+   3. Linear systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="row_elimination.html">
-   Row elimination
+   4. Row elimination
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="RREF.html">
-   RREF
+   5. RREF
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vector_algebra.html">
-   Vector algebra
+   6. Vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_vector.html">
-   Matrix-vector algebra
+   7. Matrix-vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_matrix.html">
-   Matrix-matrix algebra
+   8. Matrix-matrix algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="identity_inverse.html">
-   Identity and inverse
+   9. Identity and inverse
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="singular.html">
-   Detecting singular matrices
+   10. Detecting singular matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="general_solutions.html">
-   General solutions
+   11. General solutions
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Complex numbers
+   12. Complex numbers
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="eigenvalues.html">
-   Eigenvalues
+   13. Eigenvalues
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="defectiveness.html">
-   Defectiveness
+   14. Defectiveness
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  First-order linear
+  II. First-order linear ODE
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/preview.html">
-   Preview of first-order equations
+   2. Quick tour
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/ivp.html">
-   Initial-value problems
+   3. Initial-value problems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/operators.html">
-   Operators
+   4. Operators
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/homogeneous.html">
-   Homogeneous solutions
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
   </a>
  </li>
 </ul>
@@ -280,12 +295,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-reality-of-imaginary-numbers-optional">
-   The reality of imaginary numbers (optional)
+   12.1. The reality of imaginary numbers (optional)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-arithmetic">
-   Basic arithmetic
+   12.2. Basic arithmetic
   </a>
  </li>
 </ul>
@@ -300,13 +315,13 @@
               <div>
                 
   <div class="section" id="complex-numbers">
-<h1>Complex numbers<a class="headerlink" href="#complex-numbers" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">12. </span>Complex numbers<a class="headerlink" href="#complex-numbers" title="Permalink to this headline">¶</a></h1>
 <p><em>For a really smart and entertaining introduction to complex numbers, I recommend <a class="reference external" href="https://youtu.be/T647CGsuOVU">this video series</a>.</em></p>
 <p>We need to take a short but highly relevant detour to talk about complex numbers.</p>
 <p>There’s often a lot of uneasiness about complex numbers. Terminology is part of the reason. Using “real” and “imaginary” to label numbers is the residue of a value judgment that ruled mathematics for centuries. But complex numbers are actually just as “real” as so-called real numbers. If anything, they are actually <em>more</em> fundamental to the universe.</p>
 <p>As a practical matter, you can pretty much always replace a complex value with two real ones, and vice versa. But sometimes the manipulations are a lot easier in the complex form. In particular, you may be able to replace trigonometry with algebra.</p>
 <div class="section" id="the-reality-of-imaginary-numbers-optional">
-<h2>The reality of imaginary numbers (optional)<a class="headerlink" href="#the-reality-of-imaginary-numbers-optional" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.1. </span>The reality of imaginary numbers (optional)<a class="headerlink" href="#the-reality-of-imaginary-numbers-optional" title="Permalink to this headline">¶</a></h2>
 <p>Let’s rewind a bit. We can probably take for granted the positive integers 1, 2, 3, and so on, and we’ll throw in zero as well, though this too was controversial for centuries. It’s not long before we want to solve a problem like <span class="math notranslate nohighlight">\(x+1=0\)</span>. Annoyingly, we can pose the problem using just nonnegative integers, but we can’t solve it. So we accept the existence of the negative integers.</p>
 <p>I can imagine quite a bit of skepticism about this historically. (“Sure, Wei. Ever seen a negative goat?”) But if you’ve ever taken out a loan, you know that negative numbers can have very real consequences.</p>
 <p>Eventually, the negative integers seem “obvious” and perfectly natural. But then we run into a problem like</p>
@@ -324,16 +339,16 @@
 <p>Yet something amazing happens if you do accept imaginary numbers, and their expansion to the complex numbers. Namely, <em>The Fundamental Theorem of Algebra</em>, which states that if you write down a polynomial using complex numbers, it will have only complex numbers as solutions. So there’s no infinite ladder of hypercomplex numbers that we have to ascend–just one rung past the “real” one is all we need to tidy things up perfectly.</p>
 </div>
 <div class="section" id="basic-arithmetic">
-<h2>Basic arithmetic<a class="headerlink" href="#basic-arithmetic" title="Permalink to this headline">¶</a></h2>
-<p>We can write a complex number <span class="math notranslate nohighlight">\(z\in \complex\)</span> as <span class="math notranslate nohighlight">\(z=x+iy\)</span>, where <span class="math notranslate nohighlight">\(i^2=-1\)</span> and <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are real numbers known as the <span class="xref std std-term">real</span> and <span class="xref std std-term">imaginary</span> parts of <span class="math notranslate nohighlight">\(z\)</span>,</p>
+<h2><span class="section-number">12.2. </span>Basic arithmetic<a class="headerlink" href="#basic-arithmetic" title="Permalink to this headline">¶</a></h2>
+<p>We can write a complex number <span class="math notranslate nohighlight">\(z\in \complex\)</span> as <span class="math notranslate nohighlight">\(z=x+iy\)</span>, where <span class="math notranslate nohighlight">\(i^2=-1\)</span> and <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are real numbers known as the <a class="reference internal" href="overview.html#term-real-part"><span class="xref std std-term">real part</span></a> and <a class="reference internal" href="overview.html#term-imaginary-part"><span class="xref std std-term">imaginary part</span></a> of <span class="math notranslate nohighlight">\(z\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[z = x + i y \quad \Leftrightarrow \quad x = \Re(z), \quad y = \Im(z).\]</div>
 <p>Writing a complex number this way is equivalent to using rectangular or Cartesian coordinates in the plane to specify a point <span class="math notranslate nohighlight">\((x,y)\)</span>. Thus complex numbers are on a number <em>plane</em> rather than a number line.</p>
-<p>There is a generalization of absolute value to complex numbers known as the <span class="xref std std-term">modulus</span>, a real nonnegative quantity easily computed via</p>
+<p>There is a generalization of absolute value to complex numbers known as the <a class="reference internal" href="overview.html#term-modulus"><span class="xref std std-term">modulus</span></a>, a real nonnegative quantity easily computed via</p>
 <div class="math notranslate nohighlight">
 \[|z|^2 = [\text{Re}(z)]^2 + [\text{Im}(z)]^2.\]</div>
 <p>Like the absolute value, <span class="math notranslate nohighlight">\(|z|\)</span> is the distance from <span class="math notranslate nohighlight">\(z\)</span> to the origin, and <span class="math notranslate nohighlight">\(|w-z|\)</span> is the distance between two complex numbers. Here, though, the distances are in the plane rather than on a line.</p>
-<p>An important operation on complex numbers that has no real counterpart is the <span class="xref std std-term">conjugate</span>,</p>
+<p>An important operation on complex numbers that has no real counterpart is the <a class="reference internal" href="overview.html#term-conjugate"><span class="xref std std-term">conjugate</span></a>,</p>
 <div class="math notranslate nohighlight">
 \[\bfar{z} =\text{Re}(z) - i \,\text{Im}(z).\]</div>
 <p>Geometrically this is a reflection across the real axis of the plane. No matter how complicated an expression is, you just replace <span class="math notranslate nohighlight">\(i\)</span> by <span class="math notranslate nohighlight">\(-i\)</span> everywhere to get the conjugate.</p>
@@ -345,7 +360,7 @@
 <div class="proof proof-type-property" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Property 23</span>
+        <span class="proof-type">Property 12.1</span>
         
             <span class="proof-title-name">(Complex arithmetic)</span>
         
@@ -393,8 +408,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="general_solutions.html" title="previous page">General solutions</a>
-    <a class='right-next' id="next-link" href="eigenvalues.html" title="next page">Eigenvalues</a>
+    <a class='left-prev' id="prev-link" href="general_solutions.html" title="previous page"><span class="section-number">11. </span>General solutions</a>
+    <a class='right-next' id="next-link" href="eigenvalues.html" title="next page"><span class="section-number">13. </span>Eigenvalues</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

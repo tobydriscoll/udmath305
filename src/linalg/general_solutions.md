@@ -105,6 +105,10 @@ where the $c_j$ are aribtrary, one for each free column of the RREF, and the vec
 The formula {eq}`linalg-general-homog` is called the {term}`general solution` of the homogeneous problem $\bfA\bfx=\bfzero$. We say that $\bfu_1,\ldots,\bfu_k$ form a {term}`basis` for the general solution.
 ````
 
+```{margin}
+The general solution of a homogeneous system is really a set of vectors. Other names for this set are *nullspace* and *kernel*.
+```
+
 In the new terminology, we can unify the case of an invertible $\bfA$ by saying that it has an empty basis, with a general solution of just $\bfzero$.
 
 ## Particular solution

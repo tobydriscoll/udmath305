@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>8. Undetermined coefficients &#8212; Notes on linear algebra and ODEs</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="7. Integrating factor" href="integrating_factor.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
+   M305 Notes
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  I. Linear algebra
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vectors_matrices.html">
+   2. Vectors and matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/linear_systems.html">
+   3. Linear systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/row_elimination.html">
+   4. Row elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/RREF.html">
+   5. RREF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vector_algebra.html">
+   6. Vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_vector.html">
+   7. Matrix-vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_matrix.html">
+   8. Matrix-matrix algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/identity_inverse.html">
+   9. Identity and inverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/singular.html">
+   10. Detecting singular matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/general_solutions.html">
+   11. General solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/complex_numbers.html">
+   12. Complex numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/eigenvalues.html">
+   13. Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/defectiveness.html">
+   14. Defectiveness
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  II. First-order linear ODE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="preview.html">
+   2. Quick tour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ivp.html">
+   3. Initial-value problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="operators.html">
+   4. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homogeneous.html">
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   8. Undetermined coefficients
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/first_linear/undetermined_coeffs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/first_linear/undetermined_coeffs.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additive-forcing-terms">
+   8.1. Additive forcing terms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#breakdown">
+   8.2. Breakdown
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="undetermined-coefficients">
+<h1><span class="section-number">8. </span>Undetermined coefficients<a class="headerlink" href="#undetermined-coefficients" title="Permalink to this headline">¶</a></h1>
+<p>Variation of parameters is all that we need for linear first-order problems, but as we have seen in some examples, it requires a fair amount of grunt work–in particular, two integrals. There is an easier path in the important special case when</p>
+<ol class="simple">
+<li><p>The growth/decay rate coefficient <span class="math notranslate nohighlight">\(a(t)\)</span> is constant, and</p></li>
+<li><p>The forcing function <span class="math notranslate nohighlight">\(f(t)\)</span> is a polynomial, exponential, sin, or cos, or a combination of these.</p></li>
+</ol>
+<p>In this situation, we go through the same work as before to get the homogeneous part <span class="math notranslate nohighlight">\(x_h\)</span>, but a valid <span class="math notranslate nohighlight">\(x_p\)</span> can be found without integration.</p>
+<p>The correct form of <span class="math notranslate nohighlight">\(x_p\)</span> for various manifestations of <span class="math notranslate nohighlight">\(f\)</span> are given in <a class="reference internal" href="#table-firstlin-muc"><span class="std std-ref">the table below</span></a>. The capital letters are considered unknown constants that have to be determined by plugging <span class="math notranslate nohighlight">\(x_p\)</span> into the ODE. This is what gives the method its name, the <span class="xref std std-term">method of undetermined coefficients</span>.</p>
+<table class="table" id="table-firstlin-muc">
+<caption><span class="caption-number">Table 8.1 </span><span class="caption-text">Particular solutions for the method of undetermined coefficients.</span><a class="headerlink" href="#table-firstlin-muc" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\underline{f(t)}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\underline{x_p(t)}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(b_n t^n + \cdots b_0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(B_n t^n + \cdots + B_0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(e^{rt}(b_n t^n + \cdots b_0)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{rt}(B_n t^n + \cdots B_0)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cos(\omega t)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A \cos(\omega t) + B \sin(\omega t)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sin(\omega t)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A \cos(\omega t) + B \sin(\omega t)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<p>We have seen before that the homogeneous solution of <span class="math notranslate nohighlight">\(x'-4x=8t\)</span> is <span class="math notranslate nohighlight">\(x_h=c_1 e^{4t}\)</span>. The <a class="reference internal" href="#table-firstlin-muc"><span class="std std-ref">MUC table</span></a> suggests that we choose <span class="math notranslate nohighlight">\(x_p=B_1t + B_0\)</span>. Plugging this into the ODE yields</p>
+<div class="math notranslate nohighlight">
+\[
+(B_1) - 4(B_1t + B_0) = 8t.
+\]</div>
+<p>This must be an identity for all <span class="math notranslate nohighlight">\(t\)</span>. Equating coefficients of like powers of <span class="math notranslate nohighlight">\(t\)</span> on the two sides leads to the system</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+-4B_0 + B_1 &amp;= 0, \\ 
+-4B_1 &amp;= 8,
+\end{align*}\]</div>
+<p>whose solution is <span class="math notranslate nohighlight">\(B_1=-2\)</span>, <span class="math notranslate nohighlight">\(B_0=-1/2\)</span>. Hence the general solution is</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = x_h(t) + x_p(t) = c_1 e^{4t} - 2t -\frac{1}{2}.
+\]</div>
+<p>This is the third time we have derived this solution.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As seen in the preceding example, the forcing function <span class="math notranslate nohighlight">\(f(t)=8t\)</span> caused us to introduce <span class="math notranslate nohighlight">\(x_p(t) = B_1t + B_0\)</span>. We cannot assume that the constant term in <span class="math notranslate nohighlight">\(x_p\)</span> is absent like it is in <span class="math notranslate nohighlight">\(f\)</span>, and indeed it is not in the final result.</p>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<p>We solve</p>
+<div class="math notranslate nohighlight">
+\[
+x' = x - 6 \sin(t), \qquad x(\pi) = 0.
+\]</div>
+<p>We quickly see that the general solution of <span class="math notranslate nohighlight">\(x'-x=0\)</span> is <span class="math notranslate nohighlight">\(x_h(t)=c_1e^t\)</span>. For the particular solution, <a class="reference internal" href="#table-firstlin-muc"><span class="std std-ref">MUC table</span></a> suggests</p>
+<div class="math notranslate nohighlight">
+\[
+x_p(t) = A \cos(t) + B \sin(t).
+\]</div>
+<p>Substitution into the ODE leads to</p>
+<div class="math notranslate nohighlight">
+\[
+(-A\sin(t) + B\cos(t)) - (A\cos(t) + B\sin(t)) = -6\sin(t).
+\]</div>
+<p>We could equate the coefficients of cos and sin to get a linear system. Or we can exploit the fact that this identity must be true at <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(t=\pi/2\)</span>. The latter course gives us</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+B - A &amp;= 0, \\ 
+-A - B &amp;= -6.
+\end{align*}\]</div>
+<p>This implies <span class="math notranslate nohighlight">\(A=B=3\)</span>, and therefore</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = c_1 e^t + 3\cos(t) + 3\sin(t).
+\]</div>
+<p>Finally, the initial condition yields</p>
+<div class="math notranslate nohighlight">
+\[
+0 = x(\pi) = c_1 e^\pi - 3 \quad \Rightarrow \quad c_1 = 3 e^{-\pi},
+\]</div>
+<p>hence</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = 3 e^{t-\pi} + 3\cos(t) + 3\sin(t).
+\]</div>
+</div>
+<p>The benefit of the MUC over our previous formulas is avoiding a second integral that often requires integration by parts when <span class="math notranslate nohighlight">\(f\)</span> is a polynomial or trig function.</p>
+<div class="section" id="additive-forcing-terms">
+<h2><span class="section-number">8.1. </span>Additive forcing terms<a class="headerlink" href="#additive-forcing-terms" title="Permalink to this headline">¶</a></h2>
+<p>If the forcing function includes multiple different types of functions added together, then you can find particular solutions for the different terms separately and add them together to get the overall particular solution.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<p>To find a particular solution of  <span class="math notranslate nohighlight">\(x'+3x=6t-4e^{-t}\)</span>, we can separately find them for the cases <span class="math notranslate nohighlight">\(x'+3x=6t\)</span> and <span class="math notranslate nohighlight">\(x'+3x=-4e^{-t}\)</span>. In the first case we use <span class="math notranslate nohighlight">\(x_p(t) = B_1t + B_0\)</span>, and it works out that <span class="math notranslate nohighlight">\(B_1=2\)</span>, <span class="math notranslate nohighlight">\(B_0=-2/3\)</span>. For the second case we choose <span class="math notranslate nohighlight">\(x_p=A e^{-t}\)</span> and plug in:</p>
+<div class="math notranslate nohighlight">
+\[-4e^{-t} = x'+3x = -A e^{-t} + 3A e^{-t},\]</div>
+<p>which tells us that <span class="math notranslate nohighlight">\(A=-2\)</span>. Finally, a particular solution of the original equation is</p>
+<div class="math notranslate nohighlight">
+\[x_p(t) = 2t-\frac{2}{3}-2e^{-t}.\]</div>
+</div>
+</div>
+<div class="section" id="breakdown">
+<h2><span class="section-number">8.2. </span>Breakdown<a class="headerlink" href="#breakdown" title="Permalink to this headline">¶</a></h2>
+<p>The suggestions in the <a class="reference internal" href="#table-firstlin-muc"><span class="std std-ref">MUC table</span></a> can fail if the forcing function includes the homogeneous solution <span class="math notranslate nohighlight">\(e^{at}\)</span>.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<p>Consider <span class="math notranslate nohighlight">\(x'-ax=e^{at}\)</span>. We get <span class="math notranslate nohighlight">\(x_h=c_1e^{at}\)</span>, and the table suggests</p>
+<div class="math notranslate nohighlight">
+\[x_p = B_0 e^{at}.\]</div>
+<p>Hence If we substitute it into the ODE, we get</p>
+<div class="math notranslate nohighlight">
+\[
+(aB_0 e^{at}) - a(B_0e^{at}) = e^{at},
+\]</div>
+<p>or <span class="math notranslate nohighlight">\(0=e^{at}\)</span> for all <span class="math notranslate nohighlight">\(t\)</span>, which is impossible. The failure stems from the fact that <span class="math notranslate nohighlight">\(x_p\)</span> is actually a solution of the homogeneous problem.</p>
+</div>
+<p>The example above is a failure of the method, not a statement about the existence of the solution. There are advanced rules for fixing the method of undetermined coefficients in this circumstance, but it’s simpler to fall back to variation of parameters than to muck around with them.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "matlab"
+        },
+        kernelOptions: {
+            kernelName: "matlab",
+            path: "./first_linear"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'matlab'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="integrating_factor.html" title="previous page"><span class="section-number">7. </span>Integrating factor</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tobin A. Driscoll<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

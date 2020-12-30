@@ -34,6 +34,8 @@ $$
 
 If this is to be a solution of $x'=ax$, all we need is that $q'(t)=a(t)$. This is solved by simple integration. To summarize:
 
+(formula-firstlin-homogeneous)=
+
 ````{proof:formula} Solution of $x'=a(t)x$
 \begin{align*}
 q(t) &= \int a(t) \, dt, \\
@@ -45,7 +47,7 @@ x(t) &= \exp[q(t)].
 To solve $x'=\sin(t) x$, we integrate $a(t)=\sin(t)$ to get 
 
 $$
-q(t) = -\cos(t)+C. 
+q(t) = -\cos(t)+C.
 $$
 
 The general solution is thus $\exp[q(t)]$, or 
@@ -96,6 +98,8 @@ x_h(t)= c_1\exp[\tilde{q}(t)],
 $$
 
 we find that $x(t_0)=c_1\exp(0)=c_1$.
+
+(formula-firstlin-homogeneous-ivp)=
 
 ````{proof:formula} Solution of $x' = a(t)x$, $x(t_0)=x_0$
 $$

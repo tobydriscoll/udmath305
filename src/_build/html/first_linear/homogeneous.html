@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Homogeneous solutions &#8212; Notes on linear algebra and ODEs</title>
+    <title>5. Homogeneous solutions &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -61,7 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Operators" href="operators.html" />
+    <link rel="next" title="6. Variation of parameters" href="variation_parameters.html" />
+    <link rel="prev" title="4. Operators" href="operators.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -98,110 +99,125 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Linear algebra
+  I. Linear algebra
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/vectors_matrices.html">
-   Vectors and matrices
+   2. Vectors and matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/linear_systems.html">
-   Linear systems
+   3. Linear systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/row_elimination.html">
-   Row elimination
+   4. Row elimination
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/RREF.html">
-   RREF
+   5. RREF
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/vector_algebra.html">
-   Vector algebra
+   6. Vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_vector.html">
-   Matrix-vector algebra
+   7. Matrix-vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   Matrix-matrix algebra
+   8. Matrix-matrix algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/identity_inverse.html">
-   Identity and inverse
+   9. Identity and inverse
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/singular.html">
-   Detecting singular matrices
+   10. Detecting singular matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/general_solutions.html">
-   General solutions
+   11. General solutions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/complex_numbers.html">
-   Complex numbers
+   12. Complex numbers
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/eigenvalues.html">
-   Eigenvalues
+   13. Eigenvalues
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/defectiveness.html">
-   Defectiveness
+   14. Defectiveness
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  First-order linear
+  II. First-order linear ODE
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="preview.html">
-   Preview of first-order equations
+   2. Quick tour
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ivp.html">
-   Initial-value problems
+   3. Initial-value problems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="operators.html">
-   Operators
+   4. Operators
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Homogeneous solutions
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="undetermined_coeffs.html">
+   8. Undetermined coefficients
   </a>
  </li>
 </ul>
@@ -279,12 +295,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#initial-value-formula">
-   Initial-value formula
+   5.1. Initial-value formula
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#integration-factor-optional">
-   Integration factor (optional)
+   5.2. Integration factor (optional)
   </a>
  </li>
 </ul>
@@ -299,7 +315,7 @@
               <div>
                 
   <div class="section" id="homogeneous-solutions">
-<h1>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h1>
 <p>Step one of our <a class="reference internal" href="operators.html#algorithm-firstlin-solve"><span class="std std-ref">overall solution strategy</span></a> is to solve the homogeneous problem <span class="math notranslate nohighlight">\(\opA[x]=0\)</span>, or</p>
 <div class="math notranslate nohighlight">
 \[
@@ -317,9 +333,9 @@ x'(t) = q'(t) \exp[q(t)] = q'(t) x.
 \]</div>
 <p>If this is to be a solution of <span class="math notranslate nohighlight">\(x'=ax\)</span>, all we need is that <span class="math notranslate nohighlight">\(q'(t)=a(t)\)</span>. This is solved by simple integration. To summarize:</p>
 <div class="proof proof-type-formula" id="id1">
-
+<span id="formula-firstlin-homogeneous"></span>
     <div class="proof-title">
-        <span class="proof-type">Formula 40</span>
+        <span class="proof-type">Formula 5.4</span>
         
             <span class="proof-title-name">(Solution of <span class="math notranslate nohighlight">\(x'=a(t)x\)</span>)</span>
         
@@ -334,7 +350,7 @@ x(t) &amp;= \exp[q(t)].
 <p>To solve <span class="math notranslate nohighlight">\(x'=\sin(t) x\)</span>, we integrate <span class="math notranslate nohighlight">\(a(t)=\sin(t)\)</span> to get</p>
 <div class="math notranslate nohighlight">
 \[
-q(t) = -\cos(t)+C. 
+q(t) = -\cos(t)+C.
 \]</div>
 <p>The general solution is thus <span class="math notranslate nohighlight">\(\exp[q(t)]\)</span>, or</p>
 <div class="math notranslate nohighlight">
@@ -364,7 +380,7 @@ x_h(t) = c_1 \exp\left[ \int 2t^{-1}\, dt \right] = c_1 \exp[2\ln(t)] = c_1 t^2.
 <p>Hence <span class="math notranslate nohighlight">\(x(t) = 3t^2\)</span>.</p>
 </div>
 <div class="section" id="initial-value-formula">
-<h2>Initial-value formula<a class="headerlink" href="#initial-value-formula" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>Initial-value formula<a class="headerlink" href="#initial-value-formula" title="Permalink to this headline">¶</a></h2>
 <p>We can take a shortcut in the case of a homogeneous IVP. The trick is to use a definite integral to compute <span class="math notranslate nohighlight">\(q\)</span>, as in</p>
 <div class="math notranslate nohighlight">
 \[
@@ -377,9 +393,9 @@ x_h(t)= c_1\exp[\tilde{q}(t)],
 \]</div>
 <p>we find that <span class="math notranslate nohighlight">\(x(t_0)=c_1\exp(0)=c_1\)</span>.</p>
 <div class="proof proof-type-formula" id="id2">
-
+<span id="formula-firstlin-homogeneous-ivp"></span>
     <div class="proof-title">
-        <span class="proof-type">Formula 41</span>
+        <span class="proof-type">Formula 5.5</span>
         
             <span class="proof-title-name">(Solution of <span class="math notranslate nohighlight">\(x' = a(t)x\)</span>, <span class="math notranslate nohighlight">\(x(t_0)=x_0\)</span>)</span>
         
@@ -406,7 +422,7 @@ x(t) &amp;= 12 \exp\left[ \int_2^t 2s^{-1}\, ds \right] \\
 </div>
 </div>
 <div class="section" id="integration-factor-optional">
-<h2>Integration factor (optional)<a class="headerlink" href="#integration-factor-optional" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Integration factor (optional)<a class="headerlink" href="#integration-factor-optional" title="Permalink to this headline">¶</a></h2>
 <p>There’s an alternate way to derive the homogeneous solution above.</p>
 </div>
 </div>
@@ -439,7 +455,8 @@ x(t) &amp;= 12 \exp\left[ \int_2^t 2s^{-1}\, ds \right] \\
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="operators.html" title="previous page">Operators</a>
+    <a class='left-prev' id="prev-link" href="operators.html" title="previous page"><span class="section-number">4. </span>Operators</a>
+    <a class='right-next' id="next-link" href="variation_parameters.html" title="next page"><span class="section-number">6. </span>Variation of parameters</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

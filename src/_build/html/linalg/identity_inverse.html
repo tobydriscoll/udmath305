@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Identity and inverse &#8212; Notes on linear algebra and ODEs</title>
+    <title>9. Identity and inverse &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -61,8 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Detecting singular matrices" href="singular.html" />
-    <link rel="prev" title="Matrix-matrix algebra" href="matrix_matrix.html" />
+    <link rel="next" title="10. Detecting singular matrices" href="singular.html" />
+    <link rel="prev" title="8. Matrix-matrix algebra" href="matrix_matrix.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -99,110 +99,125 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Linear algebra
+  I. Linear algebra
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vectors_matrices.html">
-   Vectors and matrices
+   2. Vectors and matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="linear_systems.html">
-   Linear systems
+   3. Linear systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="row_elimination.html">
-   Row elimination
+   4. Row elimination
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="RREF.html">
-   RREF
+   5. RREF
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vector_algebra.html">
-   Vector algebra
+   6. Vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_vector.html">
-   Matrix-vector algebra
+   7. Matrix-vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_matrix.html">
-   Matrix-matrix algebra
+   8. Matrix-matrix algebra
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Identity and inverse
+   9. Identity and inverse
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="singular.html">
-   Detecting singular matrices
+   10. Detecting singular matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="general_solutions.html">
-   General solutions
+   11. General solutions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="complex_numbers.html">
-   Complex numbers
+   12. Complex numbers
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="eigenvalues.html">
-   Eigenvalues
+   13. Eigenvalues
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="defectiveness.html">
-   Defectiveness
+   14. Defectiveness
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  First-order linear
+  II. First-order linear ODE
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/preview.html">
-   Preview of first-order equations
+   2. Quick tour
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/ivp.html">
-   Initial-value problems
+   3. Initial-value problems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/operators.html">
-   Operators
+   4. Operators
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/homogeneous.html">
-   Homogeneous solutions
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
   </a>
  </li>
 </ul>
@@ -280,17 +295,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matrix-identity">
-   Matrix identity
+   9.1. Matrix identity
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#inverse">
-   Inverse
+   9.2. Inverse
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#singular-matrices">
-   Singular matrices
+   9.3. Singular matrices
   </a>
  </li>
 </ul>
@@ -305,10 +320,10 @@
               <div>
                 
   <div class="section" id="identity-and-inverse">
-<h1>Identity and inverse<a class="headerlink" href="#identity-and-inverse" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>Identity and inverse<a class="headerlink" href="#identity-and-inverse" title="Permalink to this headline">¶</a></h1>
 <p>You solve <span class="math notranslate nohighlight">\(ax=b\)</span> for nonzero <span class="math notranslate nohighlight">\(a\)</span> without thinking about it: <span class="math notranslate nohighlight">\(x=b/a\)</span>. If we do break it down a little, we can see that when we multiply both sides of <span class="math notranslate nohighlight">\(ax=b\)</span> by the number <span class="math notranslate nohighlight">\(1/a\)</span>, then on the left the terms <span class="math notranslate nohighlight">\(1/a\)</span> and <span class="math notranslate nohighlight">\(a\)</span> combine to give <span class="math notranslate nohighlight">\(1\)</span>, and <span class="math notranslate nohighlight">\(1x=x\)</span>. That is, the key to the solution is the presence of a <em>multiplicative identity</em> value <span class="math notranslate nohighlight">\(1\)</span>, and the existence of the <em>multiplicative inverse</em> <span class="math notranslate nohighlight">\(1/a\)</span> when <span class="math notranslate nohighlight">\(a\neq 0\)</span>. These two items are the key to unlocking the vector case <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span>, too.</p>
 <div class="section" id="matrix-identity">
-<h2>Matrix identity<a class="headerlink" href="#matrix-identity" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>Matrix identity<a class="headerlink" href="#matrix-identity" title="Permalink to this headline">¶</a></h2>
 <p>Let’s start with some obvious observations about an arbitrary <span class="math notranslate nohighlight">\(m\times n\)</span> matrix <span class="math notranslate nohighlight">\(\bfA\)</span>. As usual, we write its columns as the vectors <span class="math notranslate nohighlight">\(\bfa_1,\ldots,\bfa_n\)</span>.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -331,12 +346,12 @@
 <div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 10</span>
+        <span class="proof-type">Definition 9.1</span>
         
             <span class="proof-title-name">(Identity matrix)</span>
         
     </div><div class="proof-content">
-<p>The <span class="math notranslate nohighlight">\(n\times n\)</span> <span class="xref std std-term">identity matrix</span> is</p>
+<p>The <span class="math notranslate nohighlight">\(n\times n\)</span> <a class="reference internal" href="overview.html#term-identity-matrix"><span class="xref std std-term">identity matrix</span></a> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\meye = \begin{bmatrix} \bfe_1 &amp; \bfe_2 &amp; \cdots &amp; \bfe_n \end{bmatrix} = 
 	\begin{bmatrix}
@@ -352,7 +367,7 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
 <div class="proof proof-type-theorem" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem 11</span>
+        <span class="proof-type">Theorem 9.2</span>
         
             <span class="proof-title-name">(Multiplicative identity)</span>
         
@@ -360,27 +375,27 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
 <p>If <span class="math notranslate nohighlight">\(\bfA\)</span> is <span class="math notranslate nohighlight">\(m\times n\)</span>, then <span class="math notranslate nohighlight">\(\bfA = \meye_m \bfA = \bfA \meye_n\)</span>.</p>
 </div></div></div>
 <div class="section" id="inverse">
-<h2>Inverse<a class="headerlink" href="#inverse" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2. </span>Inverse<a class="headerlink" href="#inverse" title="Permalink to this headline">¶</a></h2>
 <p>We are now going to introduce a major simplification by narrowing focus to the case we are most interested in.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>From now on, all matrices are assumed to be <span class="xref std std-term">square</span>, meaning they have the same number of rows as columns.</p>
+<p>From now on, all matrices are assumed to be <a class="reference internal" href="overview.html#term-square"><span class="xref std std-term">square</span></a>, meaning they have the same number of rows as columns.</p>
 </div>
 <p>Here is what we seek from a multiplicative identity.</p>
 <div class="proof proof-type-definition" id="id3">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 12</span>
+        <span class="proof-type">Definition 9.3</span>
         
             <span class="proof-title-name">(Inverse)</span>
         
     </div><div class="proof-content">
-<p>Suppose <span class="math notranslate nohighlight">\(\bfA\)</span> is <span class="math notranslate nohighlight">\(n\times n\)</span>. An <span class="math notranslate nohighlight">\(n\times n\)</span> matrix <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> such that <span class="math notranslate nohighlight">\(\mathbf{Z}\bfA = \meye\)</span> and <span class="math notranslate nohighlight">\(\bfA\mathbf{Z}=\meye\)</span> is called the <span class="xref std std-term">inverse</span> of <span class="math notranslate nohighlight">\(\bfA\)</span>, written <span class="math notranslate nohighlight">\(\mathbf{Z} = \bfA^{-1}\)</span>.</p>
+<p>Suppose <span class="math notranslate nohighlight">\(\bfA\)</span> is <span class="math notranslate nohighlight">\(n\times n\)</span>. An <span class="math notranslate nohighlight">\(n\times n\)</span> matrix <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> such that <span class="math notranslate nohighlight">\(\mathbf{Z}\bfA = \meye\)</span> and <span class="math notranslate nohighlight">\(\bfA\mathbf{Z}=\meye\)</span> is called the <a class="reference internal" href="overview.html#term-inverse"><span class="xref std std-term">inverse</span></a> of <span class="math notranslate nohighlight">\(\bfA\)</span>, written <span class="math notranslate nohighlight">\(\mathbf{Z} = \bfA^{-1}\)</span>.</p>
 </div></div><p>There are some facts about inverses that we will take for granted without justification.</p>
 <div class="proof proof-type-property" id="id4">
 
     <div class="proof-title">
-        <span class="proof-type">Property 13</span>
+        <span class="proof-type">Property 9.4</span>
         
     </div><div class="proof-content">
 <ol class="simple">
@@ -391,7 +406,7 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
 <div class="proof proof-type-theorem" id="id5">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem 14</span>
+        <span class="proof-type">Theorem 9.5</span>
         
     </div><div class="proof-content">
 <p>If <span class="math notranslate nohighlight">\(\bfA\)</span> is <span class="math notranslate nohighlight">\(n\times n\)</span> and has an inverse, then the linear system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> has the unique solution <span class="math notranslate nohighlight">\(\bfx=\bfA^{-1}\bfb\)</span>.</p>
@@ -407,18 +422,18 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
 <p>Since the inverse is unique, <span class="math notranslate nohighlight">\(\bfx\)</span> is unique as well.</p>
 </div></div></div>
 <div class="section" id="singular-matrices">
-<h2>Singular matrices<a class="headerlink" href="#singular-matrices" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.3. </span>Singular matrices<a class="headerlink" href="#singular-matrices" title="Permalink to this headline">¶</a></h2>
 <p>The solution <span class="math notranslate nohighlight">\(\bfx=\bfA^{-1}\bfb\)</span> is a bit incomplete. One unresolved issue is how to compute the inverse of a given matrix. In the <span class="math notranslate nohighlight">\(2\times 2\)</span> case it’s so easy that it’s worth committing to memory.</p>
 <div class="proof proof-type-formula" id="id6">
 <span id="formula-linalg-inverse2by2"></span>
     <div class="proof-title">
-        <span class="proof-type">Formula 15</span>
+        <span class="proof-type">Formula 9.6</span>
         
             <span class="proof-title-name">(Inverse of <span class="math notranslate nohighlight">\(2\times 2\)</span>)</span>
         
     </div><div class="proof-content">
 <div class="math notranslate nohighlight" id="equation-linalg-inverse2by2">
-<span class="eqno">(5)<a class="headerlink" href="#equation-linalg-inverse2by2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d &amp; -b \\ -c &amp; a \end{bmatrix}.\end{split}\]</div>
+<span class="eqno">(9.1)<a class="headerlink" href="#equation-linalg-inverse2by2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d &amp; -b \\ -c &amp; a \end{bmatrix}.\end{split}\]</div>
 <p>This formula breaks down if <span class="math notranslate nohighlight">\(ad=bc\)</span>, in which case the matrix is singular.</p>
 </div></div><p>Beyond <span class="math notranslate nohighlight">\(2\times 2\)</span> we won’t worry about computing inverses; row elimination is a better computational method for solving linear systems. More fundamentally, though, we have not even established which matrices might be expected to have an inverse in the first place.</p>
 <p>A matrix of all zeros can’t have an inverse, because <span class="math notranslate nohighlight">\(\bfzero\bfA\)</span> is zero for all matrices <span class="math notranslate nohighlight">\(\bfA\)</span>. That conclusion extends what we know about a scalar <span class="math notranslate nohighlight">\(a\)</span>. Unlike the scalar case, though, there are other matrices that have no inverse.</p>
@@ -438,12 +453,12 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
 <div class="proof proof-type-definition" id="id7">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 16</span>
+        <span class="proof-type">Definition 9.7</span>
         
             <span class="proof-title-name">(Singular matrix)</span>
         
     </div><div class="proof-content">
-<p>A square matrix that does not have an inverse is called <span class="xref std std-term">singular</span>. A matrix that does have an inverse is called <span class="xref std std-term">invertible</span>, or nonsingular.</p>
+<p>A square matrix that does not have an inverse is called <a class="reference internal" href="overview.html#term-singular"><span class="xref std std-term">singular</span></a>. A matrix that does have an inverse is called <a class="reference internal" href="overview.html#term-invertible"><span class="xref std std-term">invertible</span></a>, or nonsingular.</p>
 </div></div><p>The statement “<span class="math notranslate nohighlight">\(\bfA\)</span> is singular” is the multidimensional equivalent of “<span class="math notranslate nohighlight">\(a\)</span> is zero” in the scalar problem <span class="math notranslate nohighlight">\(ax=b\)</span>. For a singular matrix, the linear system <span class="math notranslate nohighlight">\(\bfA\bfx = \bfb\)</span> has either no solution or infinitely many of them.</p>
 <p>The next two questions for us are now clear. How do we know when a given matrix is singular? And what happens in a linear system with a singular matrix?</p>
 </div>
@@ -477,8 +492,8 @@ MATLAB has the command <code class="docutils literal notranslate"><span class="p
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="matrix_matrix.html" title="previous page">Matrix-matrix algebra</a>
-    <a class='right-next' id="next-link" href="singular.html" title="next page">Detecting singular matrices</a>
+    <a class='left-prev' id="prev-link" href="matrix_matrix.html" title="previous page"><span class="section-number">8. </span>Matrix-matrix algebra</a>
+    <a class='right-next' id="next-link" href="singular.html" title="next page"><span class="section-number">10. </span>Detecting singular matrices</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

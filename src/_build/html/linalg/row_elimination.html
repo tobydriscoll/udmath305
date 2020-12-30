@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Row elimination &#8212; Notes on linear algebra and ODEs</title>
+    <title>4. Row elimination &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -61,8 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="RREF" href="RREF.html" />
-    <link rel="prev" title="Linear systems" href="linear_systems.html" />
+    <link rel="next" title="5. RREF" href="RREF.html" />
+    <link rel="prev" title="3. Linear systems" href="linear_systems.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -99,110 +99,125 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Linear algebra
+  I. Linear algebra
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vectors_matrices.html">
-   Vectors and matrices
+   2. Vectors and matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="linear_systems.html">
-   Linear systems
+   3. Linear systems
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Row elimination
+   4. Row elimination
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="RREF.html">
-   RREF
+   5. RREF
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vector_algebra.html">
-   Vector algebra
+   6. Vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_vector.html">
-   Matrix-vector algebra
+   7. Matrix-vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_matrix.html">
-   Matrix-matrix algebra
+   8. Matrix-matrix algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="identity_inverse.html">
-   Identity and inverse
+   9. Identity and inverse
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="singular.html">
-   Detecting singular matrices
+   10. Detecting singular matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="general_solutions.html">
-   General solutions
+   11. General solutions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="complex_numbers.html">
-   Complex numbers
+   12. Complex numbers
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="eigenvalues.html">
-   Eigenvalues
+   13. Eigenvalues
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="defectiveness.html">
-   Defectiveness
+   14. Defectiveness
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  First-order linear
+  II. First-order linear ODE
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/preview.html">
-   Preview of first-order equations
+   2. Quick tour
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/ivp.html">
-   Initial-value problems
+   3. Initial-value problems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/operators.html">
-   Operators
+   4. Operators
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/homogeneous.html">
-   Homogeneous solutions
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
   </a>
  </li>
 </ul>
@@ -281,8 +296,8 @@
               <div>
                 
   <div class="section" id="row-elimination">
-<h1>Row elimination<a class="headerlink" href="#row-elimination" title="Permalink to this headline">¶</a></h1>
-<p>You’ve probably solved small systems of equations by substitution. In order to solve systems with more equations and variables, we take a slightly different point of view and use <span class="xref std std-term">elimination</span>. The goal of elimination is to transform the system to an equivalent one whose solution(s) we can deduce easily.</p>
+<h1><span class="section-number">4. </span>Row elimination<a class="headerlink" href="#row-elimination" title="Permalink to this headline">¶</a></h1>
+<p>You’ve probably solved small systems of equations by substitution. In order to solve systems with more equations and variables, we systematize the idea as an elimination process. The goal of elimination is to transform the system to an equivalent one whose solution(s) we can deduce easily.</p>
 <div class="dropdown tip admonition" id="example-gauss-elimination">
 <p class="admonition-title"> Example</p>
 <p>We start with a <span class="math notranslate nohighlight">\(3\times 3\)</span> system</p>
@@ -308,7 +323,7 @@ x_2 + 3x_3 &amp; = 3 &amp; &amp; \\
 (-x_2) + (x_2+3x_3)  &amp; = 3 + 3 &amp; \quad \Rightarrow \quad 3x_3 &amp; = 6.
 \end{align*}\]</div>
 </div>
-<p>The process in <a class="reference internal" href="#example-gauss-elimination"><span class="std std-ref">the preceding example</span></a> is most commonly known as <span class="xref std std-term">Gaussian elimination</span>. (It’s a misnomer, as the process was known in China thousands of years before Gauss, but never mind.) We could solve the system at the end of the example by starting with the last equation to deduce that <span class="math notranslate nohighlight">\(x_3=2\)</span>. We then put that value into the second equation and can solve that for <span class="math notranslate nohighlight">\(x_2\)</span>, etc.</p>
+<p>The process in <a class="reference internal" href="#example-gauss-elimination"><span class="std std-ref">the preceding example</span></a> is most commonly known as <a class="reference internal" href="overview.html#term-gaussian-elimination"><span class="xref std std-term">Gaussian elimination</span></a>. (It’s a misnomer, as the process was known in China thousands of years before Gauss, but never mind.) We could solve the system at the end of the example by starting with the last equation to deduce that <span class="math notranslate nohighlight">\(x_3=2\)</span>. We then put that value into the second equation and can solve that for <span class="math notranslate nohighlight">\(x_2\)</span>, etc.</p>
 <p>Instead, though, we are going to continue to manipulate the system to get something even simpler.</p>
 <div class="dropdown tip admonition" id="example-gauss-jordan">
 <p class="admonition-title"> Example</p>
@@ -328,7 +343,7 @@ x_2 &amp; = -3 &amp; &amp; \\
 \end{align*}\]</div>
 <p>Obviously, the solution is uniquely <span class="math notranslate nohighlight">\(x_1=1\)</span>, <span class="math notranslate nohighlight">\(x_2=-3\)</span>, <span class="math notranslate nohighlight">\(x_3=2\)</span>.</p>
 </div>
-<p>That was a mouthful. We can lighten the notational load by using matrices. We start with the <span class="math notranslate nohighlight">\(m\times (n+1)\)</span> <span class="xref std std-term">augmented matrix</span> <span class="math notranslate nohighlight">\(\bfG = [\bfA\:\bfb]\)</span> that contains all the equation coefficients and right-side values. We repeat the previous process in augmented matrix form, starting from</p>
+<p>That was a mouthful. We can lighten the notational load by using matrices. We start with the <span class="math notranslate nohighlight">\(m\times (n+1)\)</span> <a class="reference internal" href="overview.html#term-augmented-matrix"><span class="xref std std-term">augmented matrix</span></a> <span class="math notranslate nohighlight">\(\bfG = [\bfA\:\bfb]\)</span> that contains all the equation coefficients and right-side values. We repeat the previous process in augmented matrix form, starting from</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \bfG = 
@@ -474,7 +489,7 @@ x_1 &amp; &amp; &amp;= &amp;1 \\
 \end{matrix}
 \end{split}\]</div>
 <p>whose solution is obvious.</p>
-<p>The process just demonstrated is best known as <span class="xref std std-term">Gauss–Jordan elimination</span>, or more simply, row elimination. As seen in the examples, row elimination consists of two phases, one downward (Gaussian elimination) and one upward. The goal is to put the augmented matrix into a special form.</p>
+<p>The process just demonstrated is best known as <em>Gauss–Jordan elimination</em>, or more simply, row elimination. As seen in the examples, row elimination consists of two phases, one downward (Gaussian elimination) and one upward. The goal is to put the augmented matrix into a special form.</p>
 <p>In the next section we get more formal about the process and results. For now, let’s look at an example that works out differently. We solve the system having augmented matrix</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -578,8 +593,8 @@ x_3 &amp;= s
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="linear_systems.html" title="previous page">Linear systems</a>
-    <a class='right-next' id="next-link" href="RREF.html" title="next page">RREF</a>
+    <a class='left-prev' id="prev-link" href="linear_systems.html" title="previous page"><span class="section-number">3. </span>Linear systems</a>
+    <a class='right-next' id="next-link" href="RREF.html" title="next page"><span class="section-number">5. </span>RREF</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

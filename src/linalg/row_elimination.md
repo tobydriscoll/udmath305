@@ -15,7 +15,7 @@ kernelspec:
 
 # Row elimination
 
-You've probably solved small systems of equations by substitution. In order to solve systems with more equations and variables, we take a slightly different point of view and use {term}`elimination`. The goal of elimination is to transform the system to an equivalent one whose solution(s) we can deduce easily.
+You've probably solved small systems of equations by substitution. In order to solve systems with more equations and variables, we systematize the idea as an elimination process. The goal of elimination is to transform the system to an equivalent one whose solution(s) we can deduce easily.
 
 (example-gauss-elimination)=
 
@@ -142,7 +142,7 @@ $$
 
 whose solution is obvious.
 
-The process just demonstrated is best known as {term}`Gauss–Jordan elimination`, or more simply, row elimination. As seen in the examples, row elimination consists of two phases, one downward (Gaussian elimination) and one upward. The goal is to put the augmented matrix into a special form.
+The process just demonstrated is best known as *Gauss–Jordan elimination*, or more simply, row elimination. As seen in the examples, row elimination consists of two phases, one downward (Gaussian elimination) and one upward. The goal is to put the augmented matrix into a special form.
 
 In the next section we get more formal about the process and results. For now, let's look at an example that works out differently. We solve the system having augmented matrix
 

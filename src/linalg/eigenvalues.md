@@ -39,7 +39,7 @@ If you think of $\bfA$ as acting on vectors, then an eigenvector is a direction 
 An eigenvalue is a clean, well-defined target. Eigenvectors are a little slipperier. For starters, if $\bfA\bfv=\lambda\bfv$, then
 
 ```{math}
-	\bfA(c\bfv) = c(\bfA\bfv)=c(\lambda\bfv)=\lambda(c\bfv).
+\bfA(c\bfv) = c(\bfA\bfv)=c(\lambda\bfv)=\lambda(c\bfv).
 ```
 
 Hence **every nonzero multiple of an eigenvector is also an eigenvector for the same $\lambda$**. But there can be much more ambiguity than that.
