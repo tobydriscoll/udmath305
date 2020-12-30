@@ -49,7 +49,12 @@
   padding: 1em 1em 1ex 1em;
 }
 
-/* Toggle proof */
+.proof-type-example > .proof-title {
+  background-color: var(--ud-white);
+  }
+
+
+/* Toggle proof - requires proof.js*/
 /* .proof-type-proof > .proof-title {
     display: block;
     clear: both;
@@ -63,30 +68,3 @@
     content: " ▲";
 } */
 
-/* Toggle example */
-/* .proof-type-example > .proof-title {
-  display: block;
-  clear: both;
-}
-
-.proof-type-example > .proof-title:after {
-  content: " ▼";
-}
-
-.proof-type-example > .proof-title.open:after {
-  content: " ▲";
-} */
-
-/* Toggle function */
-/* .proof-type-function > .proof-title {
-  display: block;
-  clear: both;
-}
-
-.proof-type-function > .proof-title:after {
-  content: " ▼";
-}
-
-.proof-type-function > .proof-title.open:after {
-  content: " ▲";
-} */

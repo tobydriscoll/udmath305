@@ -37,8 +37,8 @@ The contrapositive observation is that if $\bfA$ is singular, then it must have 
 A square matrix is singular if and only if its RREF has at least one pivot column and at least one row of zeros.
 ````
 
-````{proof:example}
-It's always tempting to reach for 
+::::{admonition,dropdown,tip} Example
+It's always tempting to reach for
 
 ```{math}
 \bfA = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix}
@@ -51,7 +51,7 @@ as a simple, arbitrary $3\times 3$ matrix. Its RREF is
 ```
 
 Hence this matrix is singular, which makes it not so simple from the standpoint of a linear system.
-````
+::::
 
 ## Determinant
 
@@ -76,7 +76,6 @@ where the sum is taken over any row or column of $\bfA$ and $\mathbf{M}_{ij}$ is
 The definition, which is called {term}`cofactor expansion`, is recursive: the $n\times n$ case is defined in terms of the $(n-1)\times (n-1)$ case, and so on all the way back down to $2\times 2$. Since expanding along any row or column gives the same result, it can be advantageous to choose one with lots of zeros to cut down on the total computation.
 
 ````{proof:example}
-
 Using cofactor expansion along the first row,
 
 \begin{align*}
@@ -94,14 +93,14 @@ In this case it might have been a tad easier to exploit the zeros by expanding a
 
 There are a few facts about determinants that are good to know.
 
-````{proof:property}
+::::{proof:property}
 Let $\bfA$ and $\bfB$ be $n\times n$, and let $c$ be a scalar. Then
 
 1. $\det(c\bfA) = c^n \det(\bfA)$,
 1. $\det(\bfA\bfB) = \det(\bfA)\det(\bfB)$,
 1. $\det(\bfA)=0$ if and only if $\bfA$ is singular, and
 1. If $\bfA$ is nonsingular, $\det(\bfA^{-1})=\bigl[\det(\bfA)\bigr]^{-1}$.
-````
+::::
 
 It's the third property above that we will be using. The determinant is often the easiest way to check for singularity of a small matrix by hand.
 

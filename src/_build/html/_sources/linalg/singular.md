@@ -37,7 +37,7 @@ The contrapositive observation is that if $\bfA$ is singular, then it must have 
 A square matrix is singular if and only if its RREF has at least one pivot column and at least one row of zeros.
 ````
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 It's always tempting to reach for 
 
 ```{math}
@@ -51,7 +51,7 @@ as a simple, arbitrary $3\times 3$ matrix. Its RREF is
 ```
 
 Hence this matrix is singular, which makes it not so simple from the standpoint of a linear system.
-````
+::::
 
 ## Determinant
 

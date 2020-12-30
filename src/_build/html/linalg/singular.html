@@ -47,10 +47,12 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -170,6 +172,38 @@
  <li class="toctree-l1">
   <a class="reference internal" href="defectiveness.html">
    Defectiveness
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  First-order linear
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/preview.html">
+   Preview of first-order equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp.html">
+   Initial-value problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/operators.html">
+   Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/homogeneous.html">
+   Homogeneous solutions
   </a>
  </li>
 </ul>
@@ -299,12 +333,8 @@
         
     </div><div class="proof-content">
 <p>A square matrix is singular if and only if its RREF has at least one pivot column and at least one row of zeros.</p>
-</div></div><div class="proof proof-type-example" id="id3">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 27</span>
-        
-    </div><div class="proof-content">
+</div></div><div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>It’s always tempting to reach for</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\end{split}\]</div>
@@ -312,17 +342,18 @@
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix} 1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}.\end{split}\]</div>
 <p>Hence this matrix is singular, which makes it not so simple from the standpoint of a linear system.</p>
-</div></div></div>
+</div>
+</div>
 <div class="section" id="determinant">
 <h2>Determinant<a class="headerlink" href="#determinant" title="Permalink to this headline">¶</a></h2>
 <p>You should have seen some <span class="math notranslate nohighlight">\(2\times 2\)</span> and <span class="math notranslate nohighlight">\(3\times 3\)</span> determinants before now in vector calculus. The <span class="math notranslate nohighlight">\(2\times 2\)</span> case is easy to describe:</p>
 <div class="math notranslate nohighlight">
 \[\det\left( \twomat{a}{b}{c}{d} \right) = \twodet{a}{b}{c}{d} = ad-bc.\]</div>
 <p>This definition can be extended to create a real-valued function for square matrices of any size. The formalities can be complicated, but we are going to use a practical approach.</p>
-<div class="proof proof-type-definition" id="id4">
+<div class="proof proof-type-definition" id="id3">
 <span id="definition-linalg-determinant"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 28</span>
+        <span class="proof-type">Definition 27</span>
         
             <span class="proof-title-name">(Determinant)</span>
         
@@ -333,10 +364,10 @@
 ```,
 where the sum is taken over any row or column of $\bfA$ and $\mathbf{M}_{ij}$ is the matrix that results from deleting row $i$ and column $j$ from $\bfA$.\]</div>
 </div></div><p>The definition, which is called <span class="xref std std-term">cofactor expansion</span>, is recursive: the <span class="math notranslate nohighlight">\(n\times n\)</span> case is defined in terms of the <span class="math notranslate nohighlight">\((n-1)\times (n-1)\)</span> case, and so on all the way back down to <span class="math notranslate nohighlight">\(2\times 2\)</span>. Since expanding along any row or column gives the same result, it can be advantageous to choose one with lots of zeros to cut down on the total computation.</p>
-<div class="proof proof-type-example" id="id5">
+<div class="proof proof-type-example" id="id4">
 
     <div class="proof-title">
-        <span class="proof-type">Example 29</span>
+        <span class="proof-type">Example 28</span>
         
     </div><div class="proof-content">
 <p>Using cofactor expansion along the first row,</p>
@@ -352,10 +383,10 @@ where the sum is taken over any row or column of $\bfA$ and $\mathbf{M}_{ij}$ is
 &amp; = 3(2+2) = 12. \\
 \end{align*}\]</div>
 </div></div><p>There are a few facts about determinants that are good to know.</p>
-<div class="proof proof-type-property" id="id6">
+<div class="proof proof-type-property" id="id5">
 
     <div class="proof-title">
-        <span class="proof-type">Property 30</span>
+        <span class="proof-type">Property 29</span>
         
     </div><div class="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\bfA\)</span> and <span class="math notranslate nohighlight">\(\bfB\)</span> be <span class="math notranslate nohighlight">\(n\times n\)</span>, and let <span class="math notranslate nohighlight">\(c\)</span> be a scalar. Then</p>
@@ -375,10 +406,10 @@ x_1 &amp; = \frac{ \twodet{b_1}{a_{12}}{b_2}{a_{22}} }{ \det(\bfA) }\\
 x_2 &amp; = \frac{ \twodet{a_{11}}{b_1}{a_{21}}{b_2} }{ \det(\bfA) }.
 \end{align*}\]</div>
 <p>Obviously this does not work if <span class="math notranslate nohighlight">\(\det(\bfA)=0\)</span>, i.e., when the matrix is singular. Instead you have to fall back on our other methods.</p>
-<div class="proof proof-type-example" id="id7">
+<div class="proof proof-type-example" id="id6">
 
     <div class="proof-title">
-        <span class="proof-type">Example 31</span>
+        <span class="proof-type">Example 30</span>
         
     </div><div class="proof-content">
 <p>For</p>

@@ -111,15 +111,16 @@ In the new terminology, we can unify the case of an invertible $\bfA$ by saying 
 
 Now we consider the nonhomogeneous system $\bfA\bfx=\bfb$. We introduce one of the simplest yet most confusing terms in the course. A {term}`particular solution` of the linear system $\bfA\bfx=\bfb$ is just any one solution of the problem. The only reason the term exists is to distinguish it from the *general* solution, which (as above) is an expression for *every possible* solution of the system.
 
-````{proof:theorem} General solution of a linear system
+(theorem-linalg-general)=
 
+````{proof:theorem} General solution of a linear system
 All solutions of $\bfA\bfx=\bfb$ may be written as
 
 ```{math}
-\bfx = \bfx_h + \bfx_p
-```,
+\bfx = \bfx_h + \bfx_p,
+```
 
-where $\bfx_h$ is the general solution of $\bfA\bfx=\bfzero$ and $\bfx_p$ is any particular solution of $\bfA\bfx=\bfb$. We call this the {term}`general solution` of a linear system of $\bfA\bfx=\bfb$.
+where $\bfx_h$ is the general solution of $\bfA\bfx=\bfzero$ and $\bfx_p$ is any particular solution of $\bfA\bfx=\bfb$. We call this the {term}`general solution` of the linear system $\bfA\bfx=\bfb$.
 ````
 
 ````{proof:proof}
