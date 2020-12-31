@@ -70,7 +70,7 @@ As seen in the preceding example, the forcing function $f(t)=8t$ caused us to in
 We solve
 
 $$
-x' = x - 6 \sin(t), \qquad x(\pi) = 0.
+x' = x - 6 \sin(t), \quad x(\pi) = 0.
 $$
 
 We quickly see that the general solution of $x'-x=0$ is $x_h(t)=c_1e^t$. For the particular solution, [MUC table](table-firstlin-MUC) suggests

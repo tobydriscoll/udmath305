@@ -65,7 +65,7 @@ As seen in the example, the integration constant pops up additively in $q$ and t
 To solve the homogeneous IVP
 
 $$
-x' = \frac{2x}{t}, \qquad x(2) = 12,
+x' = \frac{2x}{t}, \quad x(2) = 12,
 $$
 
 we first find the general solution by integration:
@@ -111,7 +111,7 @@ $$
 We revisit
 
 $$
-x' = \frac{2x}{t}, \qquad x(2) = 12
+x' = \frac{2x}{t}, \quad x(2) = 12
 $$
 
 and apply the new formula:
@@ -124,7 +124,3 @@ x(t) &= 12 \exp\left[ \int_2^t 2s^{-1}\, ds \right] \\
 
 which the same result as before.
 ::::
-
-## Integration factor (optional)
-
-There's an alternate way to derive the homogeneous solution above. 

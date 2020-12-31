@@ -34,6 +34,9 @@ subs = [
 	"<proof>" => "````{proof:proof}",
 	"</proof>" => "````",
 
+	"\\gt" => ">",
+	"\\lt" => "<",
+
 	"\\bI" => "\\meye",
 	r"\\b([abuvxyzABG])" => s"\\bf\1",
 ]

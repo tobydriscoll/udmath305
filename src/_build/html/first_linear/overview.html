@@ -220,6 +220,11 @@
    8. Undetermined coefficients
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling.html">
+   9. Modeling
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -285,6 +290,20 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#glossary">
+   1.1. Glossary
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -305,8 +324,29 @@
 </ol>
 <p>In this course we spend most of our time on step 2. In fact, we focus on symbolic methods for finding and applying solution formulas to certain canonical problems. These problems are not nearly as complex as models of most real-world phenomena, but the seeds of the full behavior can be found in the simpler cases. Understanding them is a useful step toward getting the most from numerical simulations that are necessary for just about every realistic model.</p>
 <p>Our starting point will be differential equations that include only the first derivative of the unknown. We will rapidly see that these equations are all about growth and decay processes.</p>
+<div class="section" id="glossary">
+<h2><span class="section-number">1.1. </span>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
 <dl class="glossary simple">
+<dt id="term-continuously-stirred-tank-reactor">continuously stirred tank reactor</dt><dd><p>Chamber in which the contents are stirred so rapidly that perfect instantaneous mixing is assumed.</p>
+</dd>
+<dt id="term-doubling-time">doubling time</dt><dd><p>In a linear growth problem, the time taken for the solution to double.</p>
+</dd>
+<dt id="term-half-life">half-life</dt><dd><p>In a linear decay process, the time taken for half of the solution to decay away.</p>
+</dd>
+<dt id="term-initial-condition">initial condition</dt><dd><p>Given value of the solution at a particular time.</p>
+</dd>
+<dt id="term-initial-value-problem">initial-value problem</dt><dd><p>Combination of a first-order ODE and an initial condition.</p>
+</dd>
+<dt id="term-integrating-factor">integrating factor</dt><dd><p>Multiplicative factor that transforms one side of a first-order linear ODE into an exact derivative of a product.</p>
+</dd>
+<dt id="term-method-of-undetermined-coefficients">method of undetermined coefficients</dt><dd><p>In a linear problem with contant coefficient and simple forcing, a method to find a particular solution without integration.</p>
+</dd>
+<dt id="term-relaxation-time">relaxation time</dt><dd><p>In a linear decay process, the reciprocal of the absolute value of the rate constant.</p>
+</dd>
+<dt id="term-variation-of-parameters">variation of parameters</dt><dd><p>Method for finding a particular solution in a linear ODE, given a homogeneous solution.</p>
+</dd>
 </dl>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

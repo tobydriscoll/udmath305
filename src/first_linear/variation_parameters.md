@@ -105,7 +105,7 @@ and the general solution is $x(t)=c_1 e^{t^2}-3$.
 We solve
 
 $$
-(2+t) x'= x - 1, \qquad x(0) = -5.
+(2+t) x'= x - 1, \quad x(0) = -5.
 $$
 
 First we put the ODE into our standard form,
