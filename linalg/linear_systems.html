@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Linear systems &#8212; Notes on linear algebra and ODEs</title>
+    <title>3. Linear systems &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -47,10 +47,11 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -60,8 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Row elimination" href="row_elimination.html" />
-    <link rel="prev" title="Vectors and matrices" href="vectors_matrices.html" />
+    <link rel="next" title="4. Row elimination" href="row_elimination.html" />
+    <link rel="prev" title="2. Vectors and matrices" href="vectors_matrices.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -98,78 +99,130 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Linear algebra
+  I. Linear algebra
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vectors_matrices.html">
-   Vectors and matrices
+   2. Vectors and matrices
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Linear systems
+   3. Linear systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="row_elimination.html">
-   Row elimination
+   4. Row elimination
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="RREF.html">
-   RREF
+   5. RREF
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vector_algebra.html">
-   Vector algebra
+   6. Vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_vector.html">
-   Matrix-vector algebra
+   7. Matrix-vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_matrix.html">
-   Matrix-matrix algebra
+   8. Matrix-matrix algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="identity_inverse.html">
-   Identity and inverse
+   9. Identity and inverse
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="singular.html">
-   Detecting singular matrices
+   10. Detecting singular matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="general_solutions.html">
-   General solutions
+   11. General solutions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="complex_numbers.html">
-   Complex numbers
+   12. Complex numbers
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="eigenvalues.html">
-   Eigenvalues
+   13. Eigenvalues
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="defectiveness.html">
-   Defectiveness
+   14. Defectiveness
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  II. First-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/preview.html">
+   2. Quick tour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp.html">
+   3. Initial-value problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/operators.html">
+   4. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/homogeneous.html">
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   9. Modeling
   </a>
  </li>
 </ul>
@@ -247,22 +300,22 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#one-variable">
-   One variable
+   3.1. One variable
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#two-variables">
-   Two variables
+   3.2. Two variables
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#general-case">
-   General case
+   3.3. General case
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matlab">
-   MATLAB
+   3.4. MATLAB
   </a>
  </li>
 </ul>
@@ -277,10 +330,10 @@
               <div>
                 
   <div class="section" id="linear-systems">
-<h1>Linear systems<a class="headerlink" href="#linear-systems" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Linear systems<a class="headerlink" href="#linear-systems" title="Permalink to this headline">¶</a></h1>
 <p>When you first learned algebra, there was a lot of focus on solving equations. It’s very likely that you started with linear equations, because these are the easiest ones.</p>
 <div class="section" id="one-variable">
-<h2>One variable<a class="headerlink" href="#one-variable" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>One variable<a class="headerlink" href="#one-variable" title="Permalink to this headline">¶</a></h2>
 <p>It might feel silly, but let’s review what it means to solve the linear equation</p>
 <div class="math notranslate nohighlight">
 \[ax = b\]</div>
@@ -294,11 +347,11 @@
 </ol>
 </li>
 </ol>
-<p>To summarize, for nonzero <span class="math notranslate nohighlight">\(a\)</span> there is exactly one solution, and otherwise, depending on <span class="math notranslate nohighlight">\(b\)</span>, there are either infinitely many or zero solutions. A linear system with no solutions is called <span class="xref std std-term">inconsistent</span>, with the opposite being <em>consistent</em>.</p>
+<p>To summarize, for nonzero <span class="math notranslate nohighlight">\(a\)</span> there is exactly one solution, and otherwise, depending on <span class="math notranslate nohighlight">\(b\)</span>, there are either infinitely many or zero solutions. A linear system with no solutions is called <a class="reference internal" href="overview.html#term-inconsistent"><span class="xref std std-term">inconsistent</span></a>, with the opposite being <em>consistent</em>.</p>
 <p>Our goal is to understand equations that depend linearly on multiple variables. But before even writing out what that means, let me give away the punch line: <em>the only possibilities are exactly the same three outcomes described above</em>. The main difference is that the condition “<span class="math notranslate nohighlight">\(a=0\)</span>” is modified to something else.</p>
 </div>
 <div class="section" id="two-variables">
-<h2>Two variables<a class="headerlink" href="#two-variables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Two variables<a class="headerlink" href="#two-variables" title="Permalink to this headline">¶</a></h2>
 <p>Going one more baby step to two equations in two variables, we want to solve</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -325,12 +378,8 @@ cx + dy &amp;= g.
 </ol>
 </li>
 </ol>
-<div class="proof proof-type-example" id="id1">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 4</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>If we look at the equations</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -344,9 +393,10 @@ x - 3y &amp; = 1, \\
 x - 3y &amp; = -1.
 \end{align*}\]</div>
 <p>It’s now clear that there is no way to satisfy both equations simultaneously.</p>
-</div></div></div>
+</div>
+</div>
 <div class="section" id="general-case">
-<h2>General case<a class="headerlink" href="#general-case" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3. </span>General case<a class="headerlink" href="#general-case" title="Permalink to this headline">¶</a></h2>
 <p>Time to put on our big-kid pants. For <span class="math notranslate nohighlight">\(m\)</span> equations in <span class="math notranslate nohighlight">\( \)</span> variables, we need to use subscripts rather than different letters for everything:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -355,7 +405,7 @@ A_{21} x_1 + A_{22} x_2 + \cdots + A_{2n} x_n &amp; = b_2 \\
 &amp; \vdots \\
 A_{m1} x_1 + A_{m2} x_2 + \cdots + A_{mn} x_n &amp; = b_m.
 \end{align*}\]</div>
-<p>The first index on <span class="math notranslate nohighlight">\(A_{ij}\)</span> is the equation number, and the second is the variable number. It now seems obvious that we want to collect these numbers into an <span class="math notranslate nohighlight">\(m\times n\)</span> matrix <span class="math notranslate nohighlight">\(\bfA\)</span>. We can similarly identify the two vectors</p>
+<p>The first index on <span class="math notranslate nohighlight">\(A_{ij}\)</span> is the equation number, and the second is the variable number. It now seems obvious that we want to collect these numbers into an <span class="math notranslate nohighlight">\(m\times n\)</span> matrix <span class="math notranslate nohighlight">\(\bfA\)</span>, called the <a class="reference internal" href="overview.html#term-coefficient-matrix"><span class="xref std std-term">coefficient matrix</span></a> of the system. We can similarly identify the two vectors</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \bfx = \begin{bmatrix}
@@ -368,7 +418,7 @@ b_1 \\ b_2 \\ \vdots \\ b_m
 <p>Now <span class="math notranslate nohighlight">\(\bfA\)</span> and <span class="math notranslate nohighlight">\(\bfb\)</span> are the data of the linear system, and <span class="math notranslate nohighlight">\(\bfx\)</span> is the solution.</p>
 </div>
 <div class="section" id="matlab">
-<h2>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4. </span>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
 <p>There is a syntax dedicated to solving linear systems. For example, here’s the data for a <span class="math notranslate nohighlight">\(3\times 3\)</span> linear system.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -446,8 +496,8 @@ x =
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="vectors_matrices.html" title="previous page">Vectors and matrices</a>
-    <a class='right-next' id="next-link" href="row_elimination.html" title="next page">Row elimination</a>
+    <a class='left-prev' id="prev-link" href="vectors_matrices.html" title="previous page"><span class="section-number">2. </span>Vectors and matrices</a>
+    <a class='right-next' id="next-link" href="row_elimination.html" title="next page"><span class="section-number">4. </span>Row elimination</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

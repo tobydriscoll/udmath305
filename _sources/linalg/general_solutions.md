@@ -29,7 +29,7 @@ To be clear, nonzero homogeneous solutions can occur only when $\bfA$ is singula
 
 A nice feature of zero is that adding multiples of zero to zero is still zero. So, if $\mathbf{R}$ is the RREF of $\bfA$, then the RREF of the augmented matrix $[\bfA;\,\bfzero]$ is just $[\mathbf{R};\,\bfzero]$. Each free column of $\mathbf{R}$ therefore introduces a free variable in the homogeneous solution.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 The RREF of 
 
 ```{math}
@@ -56,9 +56,9 @@ x_1 = s, \quad x_2 = -2s, \quad x_3 = s,
 
 or $s[1;\,-2;\,1]$ for any value of $s$.
 ```
-````
+::::
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 The RREF of 
 
 ```{math}
@@ -90,7 +90,7 @@ Note that we can also write
 ```{math}
 \bfx = s \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + t \begin{bmatrix} 4 \\ 0 \\ -1 \\ 1 \end{bmatrix}.
 ```
-````
+::::
 
 The preceding examples are typical in that the homogeneous solution always takes the form
 
@@ -105,21 +105,26 @@ where the $c_j$ are aribtrary, one for each free column of the RREF, and the vec
 The formula {eq}`linalg-general-homog` is called the {term}`general solution` of the homogeneous problem $\bfA\bfx=\bfzero$. We say that $\bfu_1,\ldots,\bfu_k$ form a {term}`basis` for the general solution.
 ````
 
+```{margin}
+The general solution of a homogeneous system is really a set of vectors. Other names for this set are *nullspace* and *kernel*.
+```
+
 In the new terminology, we can unify the case of an invertible $\bfA$ by saying that it has an empty basis, with a general solution of just $\bfzero$.
 
 ## Particular solution
 
 Now we consider the nonhomogeneous system $\bfA\bfx=\bfb$. We introduce one of the simplest yet most confusing terms in the course. A {term}`particular solution` of the linear system $\bfA\bfx=\bfb$ is just any one solution of the problem. The only reason the term exists is to distinguish it from the *general* solution, which (as above) is an expression for *every possible* solution of the system.
 
-````{proof:theorem} General solution of a linear system
+(theorem-linalg-general)=
 
+````{proof:theorem} General solution of a linear system
 All solutions of $\bfA\bfx=\bfb$ may be written as
 
 ```{math}
-\bfx = \bfx_h + \bfx_p
-```,
+\bfx = \bfx_h + \bfx_p,
+```
 
-where $\bfx_h$ is the general solution of $\bfA\bfx=\bfzero$ and $\bfx_p$ is any particular solution of $\bfA\bfx=\bfb$. We call this the {term}`general solution` of a linear system of $\bfA\bfx=\bfb$.
+where $\bfx_h$ is the general solution of $\bfA\bfx=\bfzero$ and $\bfx_p$ is any particular solution of $\bfA\bfx=\bfb$. We call this the {term}`general solution` of the linear system $\bfA\bfx=\bfb$.
 ````
 
 ````{proof:proof}
@@ -134,7 +139,7 @@ Hence $\bfv-\bfx_p$ is a homogeneous solution, which means that we can write it 
 
 Hence every linear system is closely tied to its homogeneous counterpart. The general solution of $\bfA\bfx=\bfb$ requires just one solution, plus the general homogeneous solution.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 Suppose
 
 ```{math}

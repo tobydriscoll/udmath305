@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>General solutions &#8212; Notes on linear algebra and ODEs</title>
+    <title>11. General solutions &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -47,10 +47,11 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -60,8 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Complex numbers" href="complex_numbers.html" />
-    <link rel="prev" title="Detecting singular matrices" href="singular.html" />
+    <link rel="next" title="12. Complex numbers" href="complex_numbers.html" />
+    <link rel="prev" title="10. Detecting singular matrices" href="singular.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -98,78 +99,130 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Linear algebra
+  I. Linear algebra
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vectors_matrices.html">
-   Vectors and matrices
+   2. Vectors and matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="linear_systems.html">
-   Linear systems
+   3. Linear systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="row_elimination.html">
-   Row elimination
+   4. Row elimination
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="RREF.html">
-   RREF
+   5. RREF
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vector_algebra.html">
-   Vector algebra
+   6. Vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_vector.html">
-   Matrix-vector algebra
+   7. Matrix-vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_matrix.html">
-   Matrix-matrix algebra
+   8. Matrix-matrix algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="identity_inverse.html">
-   Identity and inverse
+   9. Identity and inverse
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="singular.html">
-   Detecting singular matrices
+   10. Detecting singular matrices
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   General solutions
+   11. General solutions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="complex_numbers.html">
-   Complex numbers
+   12. Complex numbers
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="eigenvalues.html">
-   Eigenvalues
+   13. Eigenvalues
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="defectiveness.html">
-   Defectiveness
+   14. Defectiveness
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  II. First-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/preview.html">
+   2. Quick tour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp.html">
+   3. Initial-value problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/operators.html">
+   4. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/homogeneous.html">
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   9. Modeling
   </a>
  </li>
 </ul>
@@ -247,12 +300,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homogeneous-systems">
-   Homogeneous systems
+   11.1. Homogeneous systems
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#particular-solution">
-   Particular solution
+   11.2. Particular solution
   </a>
  </li>
 </ul>
@@ -267,23 +320,19 @@
               <div>
                 
   <div class="section" id="general-solutions">
-<h1>General solutions<a class="headerlink" href="#general-solutions" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">11. </span>General solutions<a class="headerlink" href="#general-solutions" title="Permalink to this headline">¶</a></h1>
 <p>Let’s focus on the linear system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> for an <span class="math notranslate nohighlight">\(n\times n\)</span> coefficient matrix <span class="math notranslate nohighlight">\(\bfA\)</span>. If <span class="math notranslate nohighlight">\(\bfA\)</span> is invertible, then <span class="math notranslate nohighlight">\(\bfx=\bfA^{-1}\bfb\)</span> is the unique solution. What about when <span class="math notranslate nohighlight">\(\bfA\)</span> is singular? All we know at the moment is that there are no solutions, or infinitely many of them.</p>
 <div class="section" id="homogeneous-systems">
-<h2>Homogeneous systems<a class="headerlink" href="#homogeneous-systems" title="Permalink to this headline">¶</a></h2>
-<p>We say that the linear system is <span class="xref std std-term">homogeneous</span> if <span class="math notranslate nohighlight">\(\bfb=\bfzero\)</span>, that is, the system is <span class="math notranslate nohighlight">\(\bfA\bfx = \bfzero\)</span>. Here is one of those old habits you must learn to break.</p>
+<h2><span class="section-number">11.1. </span>Homogeneous systems<a class="headerlink" href="#homogeneous-systems" title="Permalink to this headline">¶</a></h2>
+<p>We say that the linear system is <a class="reference internal" href="overview.html#term-homogeneous"><span class="xref std std-term">homogeneous</span></a> if <span class="math notranslate nohighlight">\(\bfb=\bfzero\)</span>, that is, the system is <span class="math notranslate nohighlight">\(\bfA\bfx = \bfzero\)</span>. Here is one of those old habits you must learn to break.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>A homogeneous system <span class="math notranslate nohighlight">\(\bfA\bfx = \bfzero\)</span> can have nonzero solutions for <span class="math notranslate nohighlight">\(\bfx\)</span>, even if <span class="math notranslate nohighlight">\(\bfA\)</span> is not the zero matrix.</p>
 </div>
 <p>To be clear, nonzero homogeneous solutions can occur only when <span class="math notranslate nohighlight">\(\bfA\)</span> is singular, because otherwise the solution <span class="math notranslate nohighlight">\(\bfx=\bfA^{-1}\bfzero=\bfzero\)</span> is unique.</p>
 <p>A nice feature of zero is that adding multiples of zero to zero is still zero. So, if <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> is the RREF of <span class="math notranslate nohighlight">\(\bfA\)</span>, then the RREF of the augmented matrix <span class="math notranslate nohighlight">\([\bfA;\,\bfzero]\)</span> is just <span class="math notranslate nohighlight">\([\mathbf{R};\,\bfzero]\)</span>. Each free column of <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> therefore introduces a free variable in the homogeneous solution.</p>
-<div class="proof proof-type-example" id="id1">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 32</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>The RREF of</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\end{split}\]</div>
@@ -300,12 +349,9 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-</div></div><div class="proof proof-type-example" id="id2">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 33</span>
-        
-    </div><div class="proof-content">
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>The RREF of</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 2 &amp; 0 &amp; -4 \\
@@ -327,34 +373,39 @@
 <p>Note that we can also write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfx = s \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + t \begin{bmatrix} 4 \\ 0 \\ -1 \\ 1 \end{bmatrix}.\end{split}\]</div>
-</div></div><p>The preceding examples are typical in that the homogeneous solution always takes the form</p>
+</div>
+<p>The preceding examples are typical in that the homogeneous solution always takes the form</p>
 <div class="math notranslate nohighlight" id="equation-linalg-general-homog">
-<span class="eqno">(6)<a class="headerlink" href="#equation-linalg-general-homog" title="Permalink to this equation">¶</a></span>\[\bfx = c_1 \bfu_1 + c_2 \bfu_2 + \cdots + c_k \bfu_k,\]</div>
+<span class="eqno">(11.1)<a class="headerlink" href="#equation-linalg-general-homog" title="Permalink to this equation">¶</a></span>\[\bfx = c_1 \bfu_1 + c_2 \bfu_2 + \cdots + c_k \bfu_k,\]</div>
 <p>where the <span class="math notranslate nohighlight">\(c_j\)</span> are aribtrary, one for each free column of the RREF, and the vectors are constant. It’s no accident that this has the form of a linear combination!</p>
-<div class="proof proof-type-definition" id="id3">
+<div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 34</span>
+        <span class="proof-type">Definition 11.1</span>
         
     </div><div class="proof-content">
-<p>The formula <a class="reference internal" href="#equation-linalg-general-homog">(6)</a> is called the <span class="xref std std-term">general solution</span> of the homogeneous problem <span class="math notranslate nohighlight">\(\bfA\bfx=\bfzero\)</span>. We say that <span class="math notranslate nohighlight">\(\bfu_1,\ldots,\bfu_k\)</span> form a <span class="xref std std-term">basis</span> for the general solution.</p>
-</div></div><p>In the new terminology, we can unify the case of an invertible <span class="math notranslate nohighlight">\(\bfA\)</span> by saying that it has an empty basis, with a general solution of just <span class="math notranslate nohighlight">\(\bfzero\)</span>.</p>
+<p>The formula <a class="reference internal" href="#equation-linalg-general-homog">(11.1)</a> is called the <a class="reference internal" href="overview.html#term-general-solution"><span class="xref std std-term">general solution</span></a> of the homogeneous problem <span class="math notranslate nohighlight">\(\bfA\bfx=\bfzero\)</span>. We say that <span class="math notranslate nohighlight">\(\bfu_1,\ldots,\bfu_k\)</span> form a <a class="reference internal" href="overview.html#term-basis"><span class="xref std std-term">basis</span></a> for the general solution.</p>
+</div></div><div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>The general solution of a homogeneous system is really a set of vectors. Other names for this set are <em>nullspace</em> and <em>kernel</em>.</p>
+</div>
+<p>In the new terminology, we can unify the case of an invertible <span class="math notranslate nohighlight">\(\bfA\)</span> by saying that it has an empty basis, with a general solution of just <span class="math notranslate nohighlight">\(\bfzero\)</span>.</p>
 </div>
 <div class="section" id="particular-solution">
-<h2>Particular solution<a class="headerlink" href="#particular-solution" title="Permalink to this headline">¶</a></h2>
-<p>Now we consider the nonhomogeneous system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span>. We introduce one of the simplest yet most confusing terms in the course. A <span class="xref std std-term">particular solution</span> of the linear system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> is just any one solution of the problem. The only reason the term exists is to distinguish it from the <em>general</em> solution, which (as above) is an expression for <em>every possible</em> solution of the system.</p>
-<div class="proof proof-type-theorem" id="id4">
-
+<h2><span class="section-number">11.2. </span>Particular solution<a class="headerlink" href="#particular-solution" title="Permalink to this headline">¶</a></h2>
+<p>Now we consider the nonhomogeneous system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span>. We introduce one of the simplest yet most confusing terms in the course. A <a class="reference internal" href="overview.html#term-particular-solution"><span class="xref std std-term">particular solution</span></a> of the linear system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> is just any one solution of the problem. The only reason the term exists is to distinguish it from the <em>general</em> solution, which (as above) is an expression for <em>every possible</em> solution of the system.</p>
+<div class="proof proof-type-theorem" id="id2">
+<span id="theorem-linalg-general"></span>
     <div class="proof-title">
-        <span class="proof-type">Theorem 35</span>
+        <span class="proof-type">Theorem 11.2</span>
         
             <span class="proof-title-name">(General solution of a linear system)</span>
         
     </div><div class="proof-content">
 <p>All solutions of <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> may be written as</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\bfx = \bfx_h + \bfx_p
-```,\\where $\bfx_h$ is the general solution of $\bfA\bfx=\bfzero$ and $\bfx_p$ is any particular solution of $\bfA\bfx=\bfb$. We call this the {term}`general solution` of a linear system of $\bfA\bfx=\bfb$.\end{aligned}\end{align} \]</div>
+\[\bfx = \bfx_h + \bfx_p,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bfx_h\)</span> is the general solution of <span class="math notranslate nohighlight">\(\bfA\bfx=\bfzero\)</span> and <span class="math notranslate nohighlight">\(\bfx_p\)</span> is any particular solution of <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span>. We call this the <a class="reference internal" href="overview.html#term-general-solution"><span class="xref std std-term">general solution</span></a> of the linear system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span>.</p>
 </div></div><div class="proof proof-type-proof">
 
     <div class="proof-title">
@@ -366,12 +417,8 @@
 \[\bfA(\bfv-\bfx_p)=\bfA\bfv - \bfA\bfx_p = \bfb - \bfb = \bfzero.\]</div>
 <p>Hence <span class="math notranslate nohighlight">\(\bfv-\bfx_p\)</span> is a homogeneous solution, which means that we can write it as <span class="math notranslate nohighlight">\(\bfx_h\)</span>.</p>
 </div></div><p>Hence every linear system is closely tied to its homogeneous counterpart. The general solution of <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> requires just one solution, plus the general homogeneous solution.</p>
-<div class="proof proof-type-example" id="id5">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 36</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>Suppose</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix}
@@ -393,7 +440,8 @@
 <p>The basis vectors and <span class="math notranslate nohighlight">\(\bfx_p\)</span> aren’t unique, so it’s quite possible to write down two forms of the solution that look quite different but are equivalent.</p>
 </div>
 <p>The particular/homogeneous approach will come up again, and often, for differential equations in future chapters.</p>
-</div></div></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -424,8 +472,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="singular.html" title="previous page">Detecting singular matrices</a>
-    <a class='right-next' id="next-link" href="complex_numbers.html" title="next page">Complex numbers</a>
+    <a class='left-prev' id="prev-link" href="singular.html" title="previous page"><span class="section-number">10. </span>Detecting singular matrices</a>
+    <a class='right-next' id="next-link" href="complex_numbers.html" title="next page"><span class="section-number">12. </span>Complex numbers</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

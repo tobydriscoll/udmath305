@@ -47,7 +47,7 @@ C_{ij} = \sum_{k=1}^n a_{ik}b_{kj}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p.
 
 The sum to get a single $C_{ij}$ is what we called a "zip", or essentially a dot product, of row $i$ from $\bfA$ with column $j$ from $\bfB$.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 
 Let
 
@@ -81,7 +81,7 @@ Observe that
 = \begin{bmatrix} 1 \\ 2 \\ -5 \end{bmatrix}
 ```,
 and so on.
-````
+::::
 
 MATLAB interprets the `*` operator to mean multiplication in the sense of matrices.
 

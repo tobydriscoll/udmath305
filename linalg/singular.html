@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Detecting singular matrices &#8212; Notes on linear algebra and ODEs</title>
+    <title>10. Detecting singular matrices &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -47,10 +47,11 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/proof.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -60,8 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="General solutions" href="general_solutions.html" />
-    <link rel="prev" title="Identity and inverse" href="identity_inverse.html" />
+    <link rel="next" title="11. General solutions" href="general_solutions.html" />
+    <link rel="prev" title="9. Identity and inverse" href="identity_inverse.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -98,78 +99,130 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Linear algebra
+  I. Linear algebra
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
-   Overview
+   1. Overview
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vectors_matrices.html">
-   Vectors and matrices
+   2. Vectors and matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="linear_systems.html">
-   Linear systems
+   3. Linear systems
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="row_elimination.html">
-   Row elimination
+   4. Row elimination
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="RREF.html">
-   RREF
+   5. RREF
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vector_algebra.html">
-   Vector algebra
+   6. Vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_vector.html">
-   Matrix-vector algebra
+   7. Matrix-vector algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_matrix.html">
-   Matrix-matrix algebra
+   8. Matrix-matrix algebra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="identity_inverse.html">
-   Identity and inverse
+   9. Identity and inverse
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Detecting singular matrices
+   10. Detecting singular matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="general_solutions.html">
-   General solutions
+   11. General solutions
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="complex_numbers.html">
-   Complex numbers
+   12. Complex numbers
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="eigenvalues.html">
-   Eigenvalues
+   13. Eigenvalues
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="defectiveness.html">
-   Defectiveness
+   14. Defectiveness
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  II. First-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/preview.html">
+   2. Quick tour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp.html">
+   3. Initial-value problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/operators.html">
+   4. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/homogeneous.html">
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   9. Modeling
   </a>
  </li>
 </ul>
@@ -247,17 +300,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rref">
-   RREF
+   10.1. RREF
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#determinant">
-   Determinant
+   10.2. Determinant
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cramer-s-rule">
-     Cramer’s Rule
+     10.2.1. Cramer’s Rule
     </a>
    </li>
   </ul>
@@ -274,15 +327,15 @@
               <div>
                 
   <div class="section" id="detecting-singular-matrices">
-<h1>Detecting singular matrices<a class="headerlink" href="#detecting-singular-matrices" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">10. </span>Detecting singular matrices<a class="headerlink" href="#detecting-singular-matrices" title="Permalink to this headline">¶</a></h1>
 <p>There are many ways to characterize singular matrices, some of which are computationally attractive. We focus on just two of them.</p>
 <div class="section" id="rref">
-<h2>RREF<a class="headerlink" href="#rref" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.1. </span>RREF<a class="headerlink" href="#rref" title="Permalink to this headline">¶</a></h2>
 <p>Here is a simple criterion based on something we already know how to do.</p>
 <div class="proof proof-type-theorem" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem 25</span>
+        <span class="proof-type">Theorem 10.1</span>
         
     </div><div class="proof-content">
 <p>A square matrix is invertible if and only if its RREF is an identity matrix.</p>
@@ -295,16 +348,12 @@
 <div class="proof proof-type-theorem" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem 26</span>
+        <span class="proof-type">Theorem 10.2</span>
         
     </div><div class="proof-content">
 <p>A square matrix is singular if and only if its RREF has at least one pivot column and at least one row of zeros.</p>
-</div></div><div class="proof proof-type-example" id="id3">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 27</span>
-        
-    </div><div class="proof-content">
+</div></div><div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>It’s always tempting to reach for</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\end{split}\]</div>
@@ -312,33 +361,30 @@
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix} 1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}.\end{split}\]</div>
 <p>Hence this matrix is singular, which makes it not so simple from the standpoint of a linear system.</p>
-</div></div></div>
+</div>
+</div>
 <div class="section" id="determinant">
-<h2>Determinant<a class="headerlink" href="#determinant" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.2. </span>Determinant<a class="headerlink" href="#determinant" title="Permalink to this headline">¶</a></h2>
 <p>You should have seen some <span class="math notranslate nohighlight">\(2\times 2\)</span> and <span class="math notranslate nohighlight">\(3\times 3\)</span> determinants before now in vector calculus. The <span class="math notranslate nohighlight">\(2\times 2\)</span> case is easy to describe:</p>
 <div class="math notranslate nohighlight">
 \[\det\left( \twomat{a}{b}{c}{d} \right) = \twodet{a}{b}{c}{d} = ad-bc.\]</div>
 <p>This definition can be extended to create a real-valued function for square matrices of any size. The formalities can be complicated, but we are going to use a practical approach.</p>
-<div class="proof proof-type-definition" id="id4">
+<div class="proof proof-type-definition" id="id3">
 <span id="definition-linalg-determinant"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 28</span>
+        <span class="proof-type">Definition 10.3</span>
         
             <span class="proof-title-name">(Determinant)</span>
         
     </div><div class="proof-content">
-<p>If <span class="math notranslate nohighlight">\(\bfA\)</span> is <span class="math notranslate nohighlight">\(n\times n\)</span>, then</p>
+<p>If <span class="math notranslate nohighlight">\(\bfA\)</span> is <span class="math notranslate nohighlight">\(n\times n\)</span>, then its <a class="reference internal" href="overview.html#term-determinant"><span class="xref std std-term">determinant</span></a> is</p>
 <div class="math notranslate nohighlight">
 \[\det(\bfA) = \sum (-1)^{i+j} a_{ij} \det( \mathbf{M}_{ij} )
 ```,
 where the sum is taken over any row or column of $\bfA$ and $\mathbf{M}_{ij}$ is the matrix that results from deleting row $i$ and column $j$ from $\bfA$.\]</div>
-</div></div><p>The definition, which is called <span class="xref std std-term">cofactor expansion</span>, is recursive: the <span class="math notranslate nohighlight">\(n\times n\)</span> case is defined in terms of the <span class="math notranslate nohighlight">\((n-1)\times (n-1)\)</span> case, and so on all the way back down to <span class="math notranslate nohighlight">\(2\times 2\)</span>. Since expanding along any row or column gives the same result, it can be advantageous to choose one with lots of zeros to cut down on the total computation.</p>
-<div class="proof proof-type-example" id="id5">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 29</span>
-        
-    </div><div class="proof-content">
+</div></div><p>The definition, which is called <a class="reference internal" href="overview.html#term-cofactor-expansion"><span class="xref std std-term">cofactor expansion</span></a>, is recursive: the <span class="math notranslate nohighlight">\(n\times n\)</span> case is defined in terms of the <span class="math notranslate nohighlight">\((n-1)\times (n-1)\)</span> case, and so on all the way back down to <span class="math notranslate nohighlight">\(2\times 2\)</span>. Since expanding along any row or column gives the same result, it can be advantageous to choose one with lots of zeros to cut down on the total computation.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>Using cofactor expansion along the first row,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -351,11 +397,12 @@ where the sum is taken over any row or column of $\bfA$ and $\mathbf{M}_{ij}$ is
 \begin{vmatrix} 2 &amp; 0 &amp; -1 \\ -2 &amp; 3 &amp; -1 \\ 2 &amp; 0 &amp;  1 \end{vmatrix} &amp; =  -(0) \begin{vmatrix} \cdots \end{vmatrix} + (3) \twodet{2}{-1}{2}{1} - (0)\begin{vmatrix} \cdots \end{vmatrix}    \\
 &amp; = 3(2+2) = 12. \\
 \end{align*}\]</div>
-</div></div><p>There are a few facts about determinants that are good to know.</p>
-<div class="proof proof-type-property" id="id6">
+</div>
+<p>There are a few facts about determinants that are good to know.</p>
+<div class="proof proof-type-property" id="id4">
 
     <div class="proof-title">
-        <span class="proof-type">Property 30</span>
+        <span class="proof-type">Property 10.4</span>
         
     </div><div class="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\bfA\)</span> and <span class="math notranslate nohighlight">\(\bfB\)</span> be <span class="math notranslate nohighlight">\(n\times n\)</span>, and let <span class="math notranslate nohighlight">\(c\)</span> be a scalar. Then</p>
@@ -367,20 +414,16 @@ where the sum is taken over any row or column of $\bfA$ and $\mathbf{M}_{ij}$ is
 </ol>
 </div></div><p>It’s the third property above that we will be using. The determinant is often the easiest way to check for singularity of a small matrix by hand.</p>
 <div class="section" id="cramer-s-rule">
-<h3>Cramer’s Rule<a class="headerlink" href="#cramer-s-rule" title="Permalink to this headline">¶</a></h3>
-<p>Even though a 2x2 inverse is easy, it’s still not the most convenient way to solve a linear system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> by hand. There is an even faster equivalent shortcut known as <em>Cramer’s Rule</em> <span class="xref std std-term">Cramer’s Rule</span>:</p>
+<h3><span class="section-number">10.2.1. </span>Cramer’s Rule<a class="headerlink" href="#cramer-s-rule" title="Permalink to this headline">¶</a></h3>
+<p>Even though a 2x2 inverse is easy, it’s still not the most convenient way to solve a linear system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> by hand. There is an even faster equivalent shortcut known as <a class="reference internal" href="overview.html#term-cramer-s-rule"><span class="xref std std-term">Cramer’s Rule</span></a>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 x_1 &amp; = \frac{ \twodet{b_1}{a_{12}}{b_2}{a_{22}} }{ \det(\bfA) }\\
 x_2 &amp; = \frac{ \twodet{a_{11}}{b_1}{a_{21}}{b_2} }{ \det(\bfA) }.
 \end{align*}\]</div>
 <p>Obviously this does not work if <span class="math notranslate nohighlight">\(\det(\bfA)=0\)</span>, i.e., when the matrix is singular. Instead you have to fall back on our other methods.</p>
-<div class="proof proof-type-example" id="id7">
-
-    <div class="proof-title">
-        <span class="proof-type">Example 31</span>
-        
-    </div><div class="proof-content">
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
 <p>For</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -393,7 +436,8 @@ x_2 &amp; = \frac{ \twodet{a_{11}}{b_1}{a_{21}}{b_2} }{ \det(\bfA) }.
 x &amp; = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bfA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} = 2 \\
 y &amp; = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bfA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10} = 1\\
 \end{align*}\]</div>
-</div></div></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -425,8 +469,8 @@ y &amp; = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bfA) } = \frac{ \twodet{-1}{1}{3}
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="identity_inverse.html" title="previous page">Identity and inverse</a>
-    <a class='right-next' id="next-link" href="general_solutions.html" title="next page">General solutions</a>
+    <a class='left-prev' id="prev-link" href="identity_inverse.html" title="previous page"><span class="section-number">9. </span>Identity and inverse</a>
+    <a class='right-next' id="next-link" href="general_solutions.html" title="next page"><span class="section-number">11. </span>General solutions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

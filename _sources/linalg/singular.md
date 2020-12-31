@@ -37,8 +37,8 @@ The contrapositive observation is that if $\bfA$ is singular, then it must have 
 A square matrix is singular if and only if its RREF has at least one pivot column and at least one row of zeros.
 ````
 
-````{proof:example}
-It's always tempting to reach for 
+::::{admonition,dropdown,tip} Example
+It's always tempting to reach for
 
 ```{math}
 \bfA = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix}
@@ -51,7 +51,7 @@ as a simple, arbitrary $3\times 3$ matrix. Its RREF is
 ```
 
 Hence this matrix is singular, which makes it not so simple from the standpoint of a linear system.
-````
+::::
 
 ## Determinant
 
@@ -66,7 +66,7 @@ This definition can be extended to create a real-valued function for square matr
 (definition-linalg-determinant)=
 
 ````{proof:definition} Determinant
-If $\bfA$ is $n\times n$, then
+If $\bfA$ is $n\times n$, then its {term}`determinant` is
 ```{math}
 \det(\bfA) = \sum (-1)^{i+j} a_{ij} \det( \mathbf{M}_{ij} )
 ```,
@@ -75,8 +75,7 @@ where the sum is taken over any row or column of $\bfA$ and $\mathbf{M}_{ij}$ is
 
 The definition, which is called {term}`cofactor expansion`, is recursive: the $n\times n$ case is defined in terms of the $(n-1)\times (n-1)$ case, and so on all the way back down to $2\times 2$. Since expanding along any row or column gives the same result, it can be advantageous to choose one with lots of zeros to cut down on the total computation.
 
-````{proof:example}
-
+::::{admonition,dropdown,tip} Example
 Using cofactor expansion along the first row,
 
 \begin{align*}
@@ -90,7 +89,7 @@ In this case it might have been a tad easier to exploit the zeros by expanding a
 \begin{vmatrix} 2 & 0 & -1 \\ -2 & 3 & -1 \\ 2 & 0 &  1 \end{vmatrix} & =  -(0) \begin{vmatrix} \cdots \end{vmatrix} + (3) \twodet{2}{-1}{2}{1} - (0)\begin{vmatrix} \cdots \end{vmatrix}    \\
 & = 3(2+2) = 12. \\
 \end{align*}
-````
+::::
 
 There are a few facts about determinants that are good to know.
 
@@ -107,7 +106,7 @@ It's the third property above that we will be using. The determinant is often th
 
 ### Cramer's Rule
 
-Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system $\bfA\bfx=\bfb$ by hand. There is an even faster equivalent shortcut known as *Cramer's Rule* {term}`Cramer's Rule`:
+Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system $\bfA\bfx=\bfb$ by hand. There is an even faster equivalent shortcut known as {term}`Cramer's Rule`:
 
 \begin{align*}
 x_1 & = \frac{ \twodet{b_1}{a_{12}}{b_2}{a_{22}} }{ \det(\bfA) }\\
@@ -116,7 +115,7 @@ x_2 & = \frac{ \twodet{a_{11}}{b_1}{a_{21}}{b_2} }{ \det(\bfA) }.
 
 Obviously this does not work if $\det(\bfA)=0$, i.e., when the matrix is singular. Instead you have to fall back on our other methods.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 For
 
 \begin{align*}
@@ -130,4 +129,4 @@ Cramer's Rule says
 x & = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bfA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} = 2 \\
 y & = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bfA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10} = 1\\
 \end{align*}.
-````
+::::

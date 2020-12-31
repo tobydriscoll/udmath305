@@ -57,7 +57,7 @@ It's not hard to turn those statements into algebraic conditions. The slopes of 
    1. If one line's equation is a multiple of the other, there are infinitely many solutions.
    2. Otherwise, there are no solutions.
 
-````{proof:example}
+::::{admonition,dropdown,tip} Example
 If we look at the equations
 
 \begin{align*}
@@ -73,7 +73,7 @@ x - 3y & = -1.
 \end{align*}
 
 It's now clear that there is no way to satisfy both equations simultaneously.
-````
+::::
 
 ## General case 
 
@@ -86,7 +86,7 @@ A_{21} x_1 + A_{22} x_2 + \cdots + A_{2n} x_n & = b_2 \\
 A_{m1} x_1 + A_{m2} x_2 + \cdots + A_{mn} x_n & = b_m.
 \end{align*}
 
-The first index on $A_{ij}$ is the equation number, and the second is the variable number. It now seems obvious that we want to collect these numbers into an $m\times n$ matrix $\bfA$. We can similarly identify the two vectors
+The first index on $A_{ij}$ is the equation number, and the second is the variable number. It now seems obvious that we want to collect these numbers into an $m\times n$ matrix $\bfA$, called the {term}`coefficient matrix` of the system. We can similarly identify the two vectors
 
 $$
 \bfx = \begin{bmatrix}
