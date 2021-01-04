@@ -94,7 +94,7 @@ As a result, $x(0)=x_0+0+\cdots+0=x_0$, so $x$ satisfies the initial condition. 
         & = 0         & + & \,  k_1H(t-T_t) + & \cdots   + & \, k_mH(t-T_m),  
 \end{align*}
 
-which shows that $x$ solves the original ODE {eq}`steps-pwc-forcing`. This technique of adding together solutions to linear equations is called ```{term}`superposition`.
+which shows that $x$ solves the original ODE {eq}`steps-pwc-forcing`. This technique of adding together solutions to linear equations is called {term}`superposition`.
 
 Really there are only two unique subproblems to solve. One of these is the homogeneous case with nonzero initial condition:
 

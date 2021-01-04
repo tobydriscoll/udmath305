@@ -1,10 +1,9 @@
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2. Unit step functions &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
@@ -51,7 +50,7 @@
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
@@ -221,6 +220,11 @@
    8. Undetermined coefficients
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   9. Modeling
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -358,7 +362,7 @@
             <span class="proof-title-name">(Unit step function)</span>
         
     </div><div class="proof-content">
-<p>The <span class="xref std std-term">unit step function</span>or <span class="xref std std-term">Heaviside function</span> <span class="math notranslate nohighlight">\(H(t)\)</span> is defined to have zero for <span class="math notranslate nohighlight">\(t&lt; 0\)</span> and one for <span class="math notranslate nohighlight">\(t\ge 0\)</span>. That is, if <span class="math notranslate nohighlight">\(T\)</span> is any nonnegative constant, then</p>
+<p>The <a class="reference internal" href="overview.html#term-unit-step-function"><span class="xref std std-term">unit step function</span></a>or <a class="reference internal" href="overview.html#term-heaviside-function"><span class="xref std std-term">Heaviside function</span></a> <span class="math notranslate nohighlight">\(H(t)\)</span> is defined to have zero for <span class="math notranslate nohighlight">\(t&lt; 0\)</span> and one for <span class="math notranslate nohighlight">\(t\ge 0\)</span>. That is, if <span class="math notranslate nohighlight">\(T\)</span> is any nonnegative constant, then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 H(t-T) = \begin{cases}  
@@ -385,7 +389,7 @@ f(t-T)H(t-T).
             <span class="proof-title-name">(Window function)</span>
         
     </div><div class="proof-content">
-<p>A <span class="xref std std-term">window function</span> is the function that is one within a given interval and zero outside of it. Specifically, the function</p>
+<p>A <a class="reference internal" href="overview.html#term-window-function"><span class="xref std std-term">window function</span></a> is the function that is one within a given interval and zero outside of it. Specifically, the function</p>
 <div class="math notranslate nohighlight">
 \[
 H(t-S) - H(t-T)
@@ -427,7 +431,7 @@ x(t)=x_h(t)+k_1 x_1(t) + \cdots +k_m x_m(t)$.
 \opA[x] &amp; = \opA[x_h] &amp; + &amp; \,  k_1 \opA[x_1] + &amp; \cdots   + &amp; \, k_m \opA[x_m] \\
         &amp; = 0         &amp; + &amp; \,  k_1H(t-T_t) + &amp; \cdots   + &amp; \, k_mH(t-T_m),  
 \end{align*}\]</div>
-<p>which shows that <span class="math notranslate nohighlight">\(x\)</span> solves the original ODE <a class="reference internal" href="#equation-steps-pwc-forcing">(2.3)</a>. This technique of adding together solutions to linear equations is called ```<span class="xref std std-term">superposition</span>.</p>
+<p>which shows that <span class="math notranslate nohighlight">\(x\)</span> solves the original ODE <a class="reference internal" href="#equation-steps-pwc-forcing">(2.3)</a>. This technique of adding together solutions to linear equations is called <a class="reference internal" href="overview.html#term-superposition"><span class="xref std std-term">superposition</span></a>.</p>
 <p>Really there are only two unique subproblems to solve. One of these is the homogeneous case with nonzero initial condition:</p>
 <div class="math notranslate nohighlight">
 \[

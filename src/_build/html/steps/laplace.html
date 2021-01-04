@@ -1,10 +1,9 @@
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4. Laplace transforms &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
@@ -51,7 +50,7 @@
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
@@ -221,6 +220,11 @@
    8. Undetermined coefficients
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   9. Modeling
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -373,7 +377,7 @@
             <span class="proof-title-name">(Laplace transform)</span>
         
     </div><div class="proof-content">
-<p>The <span class="xref std std-term">Laplace transform</span> of a function <span class="math notranslate nohighlight">\(f(t)\)</span> is defined as</p>
+<p>The <a class="reference internal" href="overview.html#term-laplace-transform"><span class="xref std std-term">Laplace transform</span></a> of a function <span class="math notranslate nohighlight">\(f(t)\)</span> is defined as</p>
 <div class="math notranslate nohighlight" id="equation-steps-laplace-def">
 <span class="eqno">(4.3)<a class="headerlink" href="#equation-steps-laplace-def" title="Permalink to this equation">¶</a></span>\[\lx[f(t)] = F(s) = \int_0^\infty f(t) e^{-st}\, dt.\]</div>
 </div></div><p>For the rest of this part of the text, time starts at <span class="math notranslate nohighlight">\(t=0\)</span>, and any reference to <span class="math notranslate nohighlight">\(f(t)\)</span> for negative <span class="math notranslate nohighlight">\(t\)</span> is defined to be zero.</p>
@@ -448,14 +452,7 @@
 \[
 \lx[x'(t)] = s X(s) - x(0)
 \]</div>
-</div></div><p>Here is the plan of attack. Given an ODE <span class="math notranslate nohighlight">\(x'-ax=f(t)\)</span>, we transform everything in sight to get</p>
-<div class="math notranslate nohighlight">
-\[sX(s)-x(0) - a X(s) =  F(s).\]</div>
-<p>Now solve for the transform of the solution:</p>
-<div class="math notranslate nohighlight">
-\[X(s) = \frac{ F(s) + x(0)}{s-a}.\]</div>
-<p>The last step is to compute the inverse transform, that is, find <span class="math notranslate nohighlight">\(x(t)\)</span> given a known <span class="math notranslate nohighlight">\(X(s)\)</span>. This is a lot less straightforward than computing the forward transform, unfortunately. But we can make it manageable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns.</p>
-<div class="dropdown tip admonition">
+</div></div><div class="dropdown tip admonition">
 <p class="admonition-title"> Example</p>
 <blockquote>
 <div><p>Find the Laplace transform of the second derivative of a function: <span class="math notranslate nohighlight">\(\lx[x''(t)]\)</span>.</p>
@@ -470,6 +467,13 @@
 <div class="math notranslate nohighlight">
 \[\lx[x''(t)] = s[sX(s)-x(0)] - u(0) = s^2X(s) - s x(0) - x'(0). \]</div>
 </div>
+<p>Here is the plan of attack. Given an ODE <span class="math notranslate nohighlight">\(x'-ax=f(t)\)</span>, we transform everything in sight to get</p>
+<div class="math notranslate nohighlight">
+\[sX(s)-x(0) - a X(s) =  F(s).\]</div>
+<p>Now solve for the transform of the solution:</p>
+<div class="math notranslate nohighlight">
+\[X(s) = \frac{ F(s) + x(0)}{s-a}.\]</div>
+<p>The last step is to compute the inverse transform, that is, find <span class="math notranslate nohighlight">\(x(t)\)</span> given a known <span class="math notranslate nohighlight">\(X(s)\)</span>. This is a lot less straightforward than computing the forward transform, unfortunately. But we can make it manageable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns.</p>
 </div>
 <div class="section" id="basic-transforms">
 <h2><span class="section-number">4.2. </span>Basic transforms<a class="headerlink" href="#basic-transforms" title="Permalink to this headline">¶</a></h2>

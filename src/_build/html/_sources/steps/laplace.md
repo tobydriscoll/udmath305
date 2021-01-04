@@ -83,20 +83,6 @@ $$
 $$
 ````
 
-Here is the plan of attack. Given an ODE $x'-ax=f(t)$, we transform everything in sight to get
-
-```{math}
-sX(s)-x(0) - a X(s) =  F(s).
-```
-
-Now solve for the transform of the solution:
-
-```{math}
-X(s) = \frac{ F(s) + x(0)}{s-a}.
-```
-
-The last step is to compute the inverse transform, that is, find $x(t)$ given a known $X(s)$. This is a lot less straightforward than computing the forward transform, unfortunately. But we can make it manageable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns.
-
 ::::{admonition,dropdown,tip} Example
 > Find the Laplace transform of the second derivative of a function: $\lx[x''(t)]$.
 
@@ -119,6 +105,20 @@ Thus,
 ```
 
 ::::
+
+Here is the plan of attack. Given an ODE $x'-ax=f(t)$, we transform everything in sight to get
+
+```{math}
+sX(s)-x(0) - a X(s) =  F(s).
+```
+
+Now solve for the transform of the solution:
+
+```{math}
+X(s) = \frac{ F(s) + x(0)}{s-a}.
+```
+
+The last step is to compute the inverse transform, that is, find $x(t)$ given a known $X(s)$. This is a lot less straightforward than computing the forward transform, unfortunately. But we can make it manageable in much the same way you learned indefinite integration, by learning some canonical cases and then matching patterns.
 
 ## Basic transforms
 

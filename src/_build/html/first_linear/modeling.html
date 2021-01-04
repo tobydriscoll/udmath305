@@ -1,11 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modeling &#8212; Notes on linear algebra and ODEs</title>
+    <title>9. Modeling &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -51,7 +50,7 @@
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
@@ -62,6 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Overview" href="../steps/overview.html" />
+    <link rel="prev" title="8. Undetermined coefficients" href="undetermined_coeffs.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -178,7 +179,7 @@
   II. First-order linear ODE
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="overview.html">
    1. Overview
@@ -217,6 +218,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="undetermined_coeffs.html">
    8. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   9. Modeling
   </a>
  </li>
 </ul>
@@ -326,17 +332,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#first-order-pharmacokinetics">
-   First-order pharmacokinetics
+   9.1. First-order pharmacokinetics
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tank-reactors">
-   Tank reactors
+   9.2. Tank reactors
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cooling-and-heating">
-   Cooling and heating
+   9.3. Cooling and heating
   </a>
  </li>
 </ul>
@@ -351,7 +357,7 @@
               <div>
                 
   <div class="section" id="modeling">
-<h1>Modeling<a class="headerlink" href="#modeling" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>Modeling<a class="headerlink" href="#modeling" title="Permalink to this headline">¶</a></h1>
 <p>First-order ODEs are often used to model situations of growth and decay. The linear problem <span class="math notranslate nohighlight">\(x'=ax+f(t)\)</span> is a prototype for many important problems:</p>
 <dl class="simple myst">
 <dt>Population</dt><dd><p>Number <span class="math notranslate nohighlight">\(x(t)\)</span> of organisms has a constant net per-capita birth (or death) rate.</p>
@@ -377,7 +383,7 @@
 <li><p>Similarly, in population or another growth situation with <span class="math notranslate nohighlight">\(a &gt; 0\)</span>, the time <span class="math notranslate nohighlight">\(t_D=\ln(2)/a\)</span> is the <a class="reference internal" href="overview.html#term-doubling-time"><span class="xref std std-term">doubling time</span></a>. Note that populations and interest don’t grow arithmetically over fixed time intervals, like in <span class="math notranslate nohighlight">\(1,2,3,4,\ldots\)</span>, but geometrically, like <span class="math notranslate nohighlight">\(1,2,4,8,\ldots\)</span>.</p></li>
 </ul>
 <div class="section" id="first-order-pharmacokinetics">
-<h2>First-order pharmacokinetics<a class="headerlink" href="#first-order-pharmacokinetics" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>First-order pharmacokinetics<a class="headerlink" href="#first-order-pharmacokinetics" title="Permalink to this headline">¶</a></h2>
 <div class="dropdown tip admonition">
 <p class="admonition-title"> Example</p>
 <p>According to <em>R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52</em>, caffeine in the bloodstream approximately satisfies first-order kinetics, though the half-life varies a great deal from one person to the next.</p>
@@ -420,7 +426,7 @@ y_p(t)=B e^{-k_1 t}
 </div>
 </div>
 <div class="section" id="tank-reactors">
-<h2>Tank reactors<a class="headerlink" href="#tank-reactors" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2. </span>Tank reactors<a class="headerlink" href="#tank-reactors" title="Permalink to this headline">¶</a></h2>
 <p>A <a class="reference internal" href="overview.html#term-continuously-stirred-tank-reactor"><span class="xref std std-term">continuously stirred tank reactor</span></a> (CSTR) appears often in chemical engineering. One ideally assumes that the contents of the tank are mixed perfectly and instantaneously at all times. Then one writes an ODE that expresses mass balance.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -504,7 +510,7 @@ x(t) &amp; = c_1(3t+1000)^{-2/3} + 7(3t+1000).
 </div>
 </div>
 <div class="section" id="cooling-and-heating">
-<h2>Cooling and heating<a class="headerlink" href="#cooling-and-heating" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.3. </span>Cooling and heating<a class="headerlink" href="#cooling-and-heating" title="Permalink to this headline">¶</a></h2>
 <p>There are formulas to plug and play for this type of problem, but these are not hard to solve directly if you understand how to interpret them.</p>
 <p>Suppose an object is put into an environment that is held at constant tempertature <span class="math notranslate nohighlight">\(E\)</span>. Let <span class="math notranslate nohighlight">\(T(t)\)</span> be the temperature of the object. The Newton Cooling Law (which applies equally to heating) states that the difference between <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(E\)</span> decreases at a constant decay rate. Mathematically, if we define <span class="math notranslate nohighlight">\(x(t) = T(t) - E\)</span>, then</p>
 <div class="math notranslate nohighlight">
@@ -593,6 +599,8 @@ y(t) = 60 \bigl( e^{-kt} \bigr)^2 = 60 \bigl( x(t)/60 \bigr)^2 = \frac{x(t)^2}{6
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="undetermined_coeffs.html" title="previous page"><span class="section-number">8. </span>Undetermined coefficients</a>
+    <a class='right-next' id="next-link" href="../steps/overview.html" title="next page"><span class="section-number">1. </span>Overview</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

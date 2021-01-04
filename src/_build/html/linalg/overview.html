@@ -1,10 +1,9 @@
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1. Overview &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
@@ -51,7 +50,7 @@
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
@@ -221,6 +220,11 @@
    8. Undetermined coefficients
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   9. Modeling
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -374,7 +378,7 @@
 </dd>
 <dt id="term-conjugate">conjugate</dt><dd><p>Replacement of each occurence of <span class="math notranslate nohighlight">\(i\)</span> by <span class="math notranslate nohighlight">\(-i\)</span> in any representation of a complex number, i.e., reflection about the real axis in the complex plane.</p>
 </dd>
-<dt id="term-Cramer-s-Rule">Cramer’s Rule</dt><dd><p>Algorithm to compute the solution of a linear algebraic system using only determinant calculations.</p>
+<dt id="term-cramer-s-rule">Cramer’s Rule</dt><dd><p>Algorithm to compute the solution of a linear algebraic system using only determinant calculations.</p>
 </dd>
 <dt id="term-defective">defective</dt><dd><p>For an eigenvalue, having geometric multiplicity less than the algebraic multiplicity; for a matrix, having one or more defective eigenvalues.</p>
 </dd>
@@ -388,7 +392,7 @@
 </dd>
 <dt id="term-free-column">free column</dt><dd><p>Column of a RREF matrix that contains no leading ones.</p>
 </dd>
-<dt id="term-Gaussian-elimination">Gaussian elimination</dt><dd><p>Use of row operations to transform an augmented matrix to a triangular form.</p>
+<dt id="term-gaussian-elimination">Gaussian elimination</dt><dd><p>Use of row operations to transform an augmented matrix to a triangular form.</p>
 </dd>
 <dt id="term-geometric-multiplicity">geometric multiplicity</dt><dd><p>For an eigenvalue, the number of basis vectors in its associated eigenspace.</p>
 </dd>
@@ -422,7 +426,7 @@
 </dd>
 <dt id="term-real-part">real part</dt><dd><p>Component of a complex number that does not multiply the imaginary unit <span class="math notranslate nohighlight">\(i\)</span> when the number is written in standard rectangular form.</p>
 </dd>
-<dt id="term-RREF">RREF</dt><dd><p>Matrix meeting certain requirements that expose all necessary information about solving a linear algebraic system; stands for “reduced row echelon form.”</p>
+<dt id="term-rref">RREF</dt><dd><p>Matrix meeting certain requirements that expose all necessary information about solving a linear algebraic system; stands for “reduced row echelon form.”</p>
 </dd>
 <dt id="term-scalar">scalar</dt><dd><p>Real or complex number, as distinguished from a vector or matrix.</p>
 </dd>

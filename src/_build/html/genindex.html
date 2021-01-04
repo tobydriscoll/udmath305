@@ -1,10 +1,10 @@
 
+
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
@@ -51,7 +51,7 @@
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
@@ -219,6 +219,11 @@
    8. Undetermined coefficients
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_linear/modeling.html">
+   9. Modeling
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -324,7 +329,10 @@
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
  | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
  
 </div>
 <h2 id="A">A</h2>
@@ -362,7 +370,7 @@
 </li>
       <li><a href="first_linear/overview.html#term-continuously-stirred-tank-reactor"><strong>continuously stirred tank reactor</strong></a>
 </li>
-      <li><a href="linalg/overview.html#term-Cramer-s-Rule"><strong>Cramer&#39;s Rule</strong></a>
+      <li><a href="linalg/overview.html#term-cramer-s-rule"><strong>Cramer&#39;s Rule</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -373,6 +381,8 @@
       <li><a href="linalg/overview.html#term-defective"><strong>defective</strong></a>
 </li>
       <li><a href="linalg/defectiveness.html#index-0">defective eigenvalue</a>
+</li>
+      <li><a href="steps/overview.html#term-delta-function"><strong>delta function</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -410,7 +420,7 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="linalg/overview.html#term-Gaussian-elimination"><strong>Gaussian elimination</strong></a>
+      <li><a href="linalg/overview.html#term-gaussian-elimination"><strong>Gaussian elimination</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -428,6 +438,8 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="steps/overview.html#term-heaviside-function"><strong>Heaviside function</strong></a>
+</li>
       <li><a href="linalg/overview.html#term-homogeneous"><strong>homogeneous</strong></a>
 </li>
   </ul></td>
@@ -440,12 +452,16 @@
 </li>
       <li><a href="linalg/overview.html#term-imaginary-part"><strong>imaginary part</strong></a>
 </li>
-      <li><a href="linalg/overview.html#term-inconsistent"><strong>inconsistent</strong></a>
+      <li><a href="steps/overview.html#term-impulse"><strong>impulse</strong></a>
 </li>
-      <li><a href="first_linear/preview.html#index-1">independent variable</a>
+      <li><a href="steps/overview.html#term-impulse-response"><strong>impulse response</strong></a>
+</li>
+      <li><a href="linalg/overview.html#term-inconsistent"><strong>inconsistent</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="first_linear/preview.html#index-1">independent variable</a>
+</li>
       <li><a href="first_linear/overview.html#term-initial-condition"><strong>initial condition</strong></a>
 </li>
       <li><a href="first_linear/overview.html#term-initial-value-problem"><strong>initial-value problem</strong></a>
@@ -462,6 +478,8 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="steps/overview.html#term-laplace-transform"><strong>Laplace transform</strong></a>
+</li>
       <li><a href="linalg/overview.html#term-leading-nonzero"><strong>leading nonzero</strong></a>
 </li>
   </ul></td>
@@ -496,6 +514,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="linalg/overview.html#term-pivot-column"><strong>pivot column</strong></a>
 </li>
+      <li><a href="steps/overview.html#term-pole"><strong>pole</strong></a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -508,7 +528,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="first_linear/overview.html#term-relaxation-time"><strong>relaxation time</strong></a>
 </li>
-      <li><a href="linalg/overview.html#term-RREF"><strong>RREF</strong></a>
+      <li><a href="linalg/overview.html#term-rref"><strong>RREF</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -526,6 +546,24 @@
 </li>
       <li><a href="linalg/overview.html#term-square"><strong>square</strong></a>
 </li>
+      <li><a href="steps/overview.html#term-superposition"><strong>superposition</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="steps/overview.html#term-transfer-function"><strong>transfer function</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="steps/overview.html#term-unit-step-function"><strong>unit step function</strong></a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -537,6 +575,14 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="linalg/overview.html#term-vector"><strong>vector</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="steps/overview.html#term-window-function"><strong>window function</strong></a>
 </li>
   </ul></td>
 </tr></table>
