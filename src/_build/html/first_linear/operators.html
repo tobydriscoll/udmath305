@@ -365,10 +365,14 @@
 <p>A <span class="xref std std-term">first-order linear ODE</span> is an equation of the form</p>
 <div class="math notranslate nohighlight" id="equation-firstlin-linear-repeat">
 <span class="eqno">(4.1)<a class="headerlink" href="#equation-firstlin-linear-repeat" title="Permalink to this equation">¶</a></span>\[\dd{x}{t} = a(t) x + f(t).\]</div>
-<p>We call <span class="math notranslate nohighlight">\(a(t)\)</span> the <span class="xref std std-term">coefficient function</span> and <span class="math notranslate nohighlight">\(f(t)\)</span> the <code class="docutils literal notranslate"><span class="pre">{term}</span></code>forcing function`.</p>
-</div></div><div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p>We call <span class="math notranslate nohighlight">\(a(t)\)</span> the <a class="reference internal" href="overview.html#term-coefficient-function"><span class="xref std std-term">coefficient function</span></a> and <span class="math notranslate nohighlight">\(f(t)\)</span> the <code class="docutils literal notranslate"><span class="pre">{term}</span></code>forcing function`.</p>
+</div></div><div class="admonition attention">
+<p class="admonition-title">Attention</p>
 <p>A linear ODE has a linear dependence on the unknown (dependent) variable <span class="math notranslate nohighlight">\(x\)</span>. It may have arbitrary dependence on the independent variable <span class="math notranslate nohighlight">\(t\)</span>. Also, the solution <span class="math notranslate nohighlight">\(x\)</span> is <em>not</em> necessarily a linear function of <span class="math notranslate nohighlight">\(t\)</span>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If presented with a linear ODE in the form <span class="math notranslate nohighlight">\(b(t)x' + c(t)x = g(t)\)</span>, you should divide through by <span class="math notranslate nohighlight">\(b\)</span> and rearrange so that the equation is in standard form <a class="reference internal" href="#equation-firstlin-linear-repeat">(4.1)</a>.</p>
 </div>
 <p>There are some strong analogies between <a class="reference internal" href="#equation-firstlin-linear-repeat">(4.1)</a> and the linear algebraic system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span>. Some new notation helps to clarify the similarities.</p>
 <div class="proof proof-type-definition" id="id2">
@@ -379,7 +383,7 @@
             <span class="proof-title-name">(Linear operator)</span>
         
     </div><div class="proof-content">
-<p>A <span class="xref std std-term">linear operator</span> <span class="math notranslate nohighlight">\(\opA\)</span> is a rule for transforming functions to other functions, such that</p>
+<p>A <a class="reference internal" href="overview.html#term-linear-operator"><span class="xref std std-term">linear operator</span></a> <span class="math notranslate nohighlight">\(\opA\)</span> is a rule for transforming functions to other functions, such that</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \opA[cx(t)] &amp; =c\opA[x(t)], \\
@@ -400,7 +404,7 @@
 \]</div>
 <div class="section" id="homogeneous-solutions">
 <h2><span class="section-number">4.1. </span>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h2>
-<p>As with linear systems, we have a special role for the <a class="reference internal" href="../linalg/overview.html#term-homogeneous"><span class="xref std std-term">homogeneous</span></a> linear ODE <span class="math notranslate nohighlight">\(\opA[x]=0\)</span>, or</p>
+<p>As with linear systems, we have a special role for the <a class="reference internal" href="overview.html#term-homogeneous"><span class="xref std std-term">homogeneous</span></a> linear ODE <span class="math notranslate nohighlight">\(\opA[x]=0\)</span>, or</p>
 <div class="math notranslate nohighlight">
 \[
 \dd{x}{t} = a(t)x,
@@ -438,7 +442,7 @@
 <p>All solutions of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> may be written as</p>
 <div class="math notranslate nohighlight">
 \[x(t) = x_h(t) + x_p(t),\]</div>
-<p>where <span class="math notranslate nohighlight">\(x_h\)</span> is the general solution of <span class="math notranslate nohighlight">\(\opA[x]=0\)</span> and <span class="math notranslate nohighlight">\(x_p\)</span> is any particular solution of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span>. We call this the <a class="reference internal" href="../linalg/overview.html#term-general-solution"><span class="xref std std-term">general solution</span></a> of the linear ODE.</p>
+<p>where <span class="math notranslate nohighlight">\(x_h\)</span> is the general solution of <span class="math notranslate nohighlight">\(\opA[x]=0\)</span> and <span class="math notranslate nohighlight">\(x_p\)</span> is any particular solution of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span>. We call this the <a class="reference internal" href="overview.html#term-general-solution"><span class="xref std std-term">general solution</span></a> of the linear ODE.</p>
 </div></div><p>We have arrived at a solution strategy for <span class="math notranslate nohighlight">\(\opA[x]=f\)</span>.</p>
 <div class="proof proof-type-algorithm" id="id5">
 <span id="algorithm-firstlin-solve"></span>
