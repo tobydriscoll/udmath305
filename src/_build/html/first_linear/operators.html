@@ -258,6 +258,48 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
+   7. Method of undetermined coefficients
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -362,7 +404,7 @@
             <span class="proof-title-name">(First-order linear ODE)</span>
         
     </div><div class="proof-content">
-<p>A <span class="xref std std-term">first-order linear ODE</span> is an equation of the form</p>
+<p>A <a class="reference internal" href="overview.html#term-first-order-linear-ode"><span class="xref std std-term">first-order linear ODE</span></a> is an equation of the form</p>
 <div class="math notranslate nohighlight" id="equation-firstlin-linear-repeat">
 <span class="eqno">(4.1)<a class="headerlink" href="#equation-firstlin-linear-repeat" title="Permalink to this equation">¶</a></span>\[\dd{x}{t} = a(t) x + f(t).\]</div>
 <p>We call <span class="math notranslate nohighlight">\(a(t)\)</span> the <a class="reference internal" href="overview.html#term-coefficient-function"><span class="xref std std-term">coefficient function</span></a> and <span class="math notranslate nohighlight">\(f(t)\)</span> the <code class="docutils literal notranslate"><span class="pre">{term}</span></code>forcing function`.</p>
@@ -404,7 +446,7 @@
 \]</div>
 <div class="section" id="homogeneous-solutions">
 <h2><span class="section-number">4.1. </span>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h2>
-<p>As with linear systems, we have a special role for the <a class="reference internal" href="overview.html#term-homogeneous"><span class="xref std std-term">homogeneous</span></a> linear ODE <span class="math notranslate nohighlight">\(\opA[x]=0\)</span>, or</p>
+<p>As with linear systems, we have a special role for the <a class="reference internal" href="../linalg/overview.html#term-homogeneous"><span class="xref std std-term">homogeneous</span></a> linear ODE <span class="math notranslate nohighlight">\(\opA[x]=0\)</span>, or</p>
 <div class="math notranslate nohighlight">
 \[
 \dd{x}{t} = a(t)x,
@@ -442,7 +484,7 @@
 <p>All solutions of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> may be written as</p>
 <div class="math notranslate nohighlight">
 \[x(t) = x_h(t) + x_p(t),\]</div>
-<p>where <span class="math notranslate nohighlight">\(x_h\)</span> is the general solution of <span class="math notranslate nohighlight">\(\opA[x]=0\)</span> and <span class="math notranslate nohighlight">\(x_p\)</span> is any particular solution of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span>. We call this the <a class="reference internal" href="overview.html#term-general-solution"><span class="xref std std-term">general solution</span></a> of the linear ODE.</p>
+<p>where <span class="math notranslate nohighlight">\(x_h\)</span> is the general solution of <span class="math notranslate nohighlight">\(\opA[x]=0\)</span> and <span class="math notranslate nohighlight">\(x_p\)</span> is any particular solution of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span>. We call this the <a class="reference internal" href="../linalg/overview.html#term-general-solution"><span class="xref std std-term">general solution</span></a> of the linear ODE.</p>
 </div></div><p>We have arrived at a solution strategy for <span class="math notranslate nohighlight">\(\opA[x]=f\)</span>.</p>
 <div class="proof proof-type-algorithm" id="id5">
 <span id="algorithm-firstlin-solve"></span>

@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>7. Method of undetermined coefficients &#8212; Notes on linear algebra and ODEs</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="6. Free oscillations" href="free_oscillations.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
+   M305 Notes
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  I. Linear algebra
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vectors_matrices.html">
+   2. Vectors and matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/linear_systems.html">
+   3. Linear systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/row_elimination.html">
+   4. Row elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/RREF.html">
+   5. RREF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vector_algebra.html">
+   6. Vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_vector.html">
+   7. Matrix-vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_matrix.html">
+   8. Matrix-matrix algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/identity_inverse.html">
+   9. Identity and inverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/singular.html">
+   10. Detecting singular matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/general_solutions.html">
+   11. General solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/complex_numbers.html">
+   12. Complex numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/eigenvalues.html">
+   13. Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/defectiveness.html">
+   14. Defectiveness
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  II. First-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/preview.html">
+   2. Quick tour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp.html">
+   3. Initial-value problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/operators.html">
+   4. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/homogeneous.html">
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   9. Modeling
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  III. Steps and impulses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/unit_step.html">
+   2. Unit step functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/impulse.html">
+   3. Impulses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/laplace.html">
+   4. Laplace transforms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/transform_solutions.html">
+   5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   7. Method of undetermined coefficients
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/second_linear/undetermined_coeffs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/second_linear/undetermined_coeffs.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="method-of-undetermined-coefficients">
+<h1><span class="section-number">7. </span>Method of undetermined coefficients<a class="headerlink" href="#method-of-undetermined-coefficients" title="Permalink to this headline">¶</a></h1>
+<p>We now tackle the ODE</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-forced-ode">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-secondlin-forced-ode" title="Permalink to this equation">¶</a></span>\[x'' + bx' + cx = f(t),\]</div>
+<p>where <span class="math notranslate nohighlight">\(f(t)\)</span> is a nonzero forcing function. The first step is to find the general homogeneous solution <span class="math notranslate nohighlight">\(x_h(t)\)</span>. To finish the problem we must find a particular solution <span class="math notranslate nohighlight">\(x_p(t)\)</span> in the forced case. The method of undetermined coefficients is the simplest strategy, when it is applicable: forcing in the form of a polynomial, exponential, or sin/cos.</p>
+<p>The procedure is the same as for first-order problems. Using <a class="reference internal" href="../first_linear/undetermined_coeffs.html#table-firstlin-muc"><span class="std std-ref">Particular solutions for the method of undetermined coefficients.</span></a>, we make an educated guess at <span class="math notranslate nohighlight">\(x_p\)</span> with some unknown coefficients that are determined through substitution into <a class="reference internal" href="#equation-secondlin-forced-ode">(7.2)</a>.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<blockquote>
+<div><p>Find a particular solution of <span class="math notranslate nohighlight">\(x'' +4x'+4x=8t^2\)</span>.</p>
+</div></blockquote>
+<p>The correct form of <span class="math notranslate nohighlight">\(x_p\)</span> is a quadratic polynomial, i.e.,</p>
+<div class="math notranslate nohighlight">
+\[x_p(t) = A + Bt + Ct^2.\]</div>
+<p>Plugging that into the ODE yields</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+2C + 4(B+2Ct) + 4(A+Bt+Ct^2) &amp; = 8t^2,\\
+4C t^2 + (8C+4B) + (2C+4B+4A) &amp; = 8t^2.
+\end{align*}\]</div>
+<p>This has to be an identity for all <span class="math notranslate nohighlight">\(t\)</span>. Matching like powers, we get a <span class="math notranslate nohighlight">\(3\times 3\)</span> linear system for the coefficients. Fortunately, it can be solved easily if we go in order: first we read off <span class="math notranslate nohighlight">\(C=2\)</span>, then <span class="math notranslate nohighlight">\(B=-2C=-4\)</span>, and finally <span class="math notranslate nohighlight">\(A=-B-C/2=3\)</span>. This provides us with</p>
+<div class="math notranslate nohighlight">
+\[
+x_p(t) =2t^2+4t+3.
+\]</div>
+</div>
+<!--example>
+Let's try for $y'' -2y'-3y=10te^{4t}$. For much the same reasons as in the last case, we try 
+```{math}y_p = (A + Bt)e^{4t}```. There's nothing to do now except grind out some derivatives. 
+\begin{align*}
+8(2A+B+2Bt)e^{4t} - 2(4A+B+4Bt)e^{4t} -3 (A + Bt)e^{4t} & =10t e^{4t}\\
+	8(2A+B) - 2(4A+B) -3A + t(16B-8B-3B) =  10t\\
+\end{align*}. From this, by matching powers, we deduce $B=2$ and then $5A+12=0$. So $y_p = [2t - (12/5)]e^{4t}$.
+
+</example-->
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<blockquote>
+<div><p>Find a particular solution of <span class="math notranslate nohighlight">\(x'' - 2x'-3x=10e^{4t}\)</span>.</p>
+</div></blockquote>
+<p>The proper choice is</p>
+<div class="math notranslate nohighlight">
+\[x_p(t) = Ae^{4t}.\]</div>
+<p>Everything else is algebra.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+16A e^{4t} - 2 (4A e^{4t}) - 3 (Ae^{4t}) &amp; =10 e^{4t},\\
+16A -8A -3A &amp;=  10.
+\end{align*}\]</div>
+<p>From this it’s clear that <span class="math notranslate nohighlight">\(A=2\)</span>.</p>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<blockquote>
+<div><p>Find the general solution of <span class="math notranslate nohighlight">\(x''+x'=\sin(2t)\)</span>.</p>
+</div></blockquote>
+<p>The homogeneous problem <span class="math notranslate nohighlight">\(x''+x'=0\)</span> has eigenvalues <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(-1\)</span>, hence</p>
+<div class="math notranslate nohighlight">
+\[
+x_h(t) = c_1 + c_2 e^{-t}.
+\]</div>
+<p>For the particular solution we must choose</p>
+<div class="math notranslate nohighlight">
+\[x_p(t) = A\cos(2t) + B\sin(2t).\]</div>
+<p>Inserting this into the original ODE leads to</p>
+<div class="math notranslate nohighlight">
+\[[-4A\cos(2t) - 4B\sin(2t)] + [-2A\sin(2t) + 2B\cos(2t)] = \sin(2t).\]</div>
+<p>This is identically true for all time if and only if we match the coefficients of like trig functions:</p>
+<div class="math notranslate nohighlight">
+\[-4A + 2B = 0, \qquad -4B-2A = 1.\]</div>
+<p>The solution of these equations is <span class="math notranslate nohighlight">\(A=-1/10\)</span>, <span class="math notranslate nohighlight">\(B=-1/5\)</span>. Thus</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = c_1 + c_2 e^{-t} - \frac{1}{10}\cos(2t) - \frac{1}{5}\sin(2t).
+\]</div>
+</div>
+<p>The examples above are the fundamental ones. There are rules for more intricate combinations of the same functions, but we won’t go into them here.</p>
+<p>We have to repeat the warning from the first time we saw this method: occasionally it fails, given our rules.</p>
+<div class="dropdown tip admonition" id="secondlin-example-nomuc">
+<p class="admonition-title"> Example</p>
+<p>The equation <span class="math notranslate nohighlight">\(x''+x=\cos(\omega t)\)</span> suggests the particular solution <span class="math notranslate nohighlight">\(x_p(t)=A\cos(\omega t)+B\sin(\omega t)\)</span>. Upon substitution,</p>
+<div class="math notranslate nohighlight">
+\[
+[-\omega^2 A\cos(\omega t) - \omega^2 B\sin(\omega t) ] + [ A\cos(\omega t) + B\sin(\omega t)] =\cos(\omega t),
+\]</div>
+<p>which leads to the conclusion that <span class="math notranslate nohighlight">\(B=0\)</span> and, if <span class="math notranslate nohighlight">\(\omega^2 \neq 1\)</span>, <span class="math notranslate nohighlight">\(A=1/(1-\omega^2)\)</span>. However, if <span class="math notranslate nohighlight">\(\omega = 1\)</span>, the substitution would leave us with <span class="math notranslate nohighlight">\(0=\cos(t)\)</span>, which is impossible to satisfy for all <span class="math notranslate nohighlight">\(t\)</span>.</p>
+</div>
+<p>The failure of <a class="reference internal" href="#secondlin-example-nomuc"><span class="std std-ref">the example above</span></a> at <span class="math notranslate nohighlight">\(\omega = 1\)</span> was due to the fact that the <span class="math notranslate nohighlight">\(x_p\)</span> we picked is actually a homogeneous solution. There are additional rules to cover this case, but we will resort to alternatives instead.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<p>Here is one interesting workaround. Since the method works for all <span class="math notranslate nohighlight">\(\omega\neq 1\)</span>, we try taking a limiting value as <span class="math notranslate nohighlight">\(\omega\to 1\)</span>.</p>
+<p>That won’t work for the <span class="math notranslate nohighlight">\(x_p\)</span> above, but we can subtract a homogeneous solution and still have a particular solution:</p>
+<div class="math notranslate nohighlight">
+\[\frac{ \cos(\omega t) - \cos(t) } {1-\omega^2}.\]</div>
+<p>Then L’Hopital applies in the limit to give us</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-secular">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-secondlin-secular" title="Permalink to this equation">¶</a></span>\[x_p(t) = \frac{ -t \sin(\omega t) }{ -2 \omega } = \frac{1}{2}t\sin(t). \]</div>
+<p>This is easy to verify as a particular solution for <span class="math notranslate nohighlight">\(\omega=1\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x_p &amp; = \frac{1}{2}t\sin(t), \\
+x_p' &amp; = \frac{1}{2}[\sin(t)+t\cos(t)], \\
+x_p'' &amp; = \frac{1}{2}[\cos(t) + \cos(t) - t\sin(t)],
+\end{align*}\]</div>
+<p>so that <span class="math notranslate nohighlight">\(x_p''+x_p=\cos(t)\)</span> as required.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "matlab"
+        },
+        kernelOptions: {
+            kernelName: "matlab",
+            path: "./second_linear"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'matlab'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="free_oscillations.html" title="previous page"><span class="section-number">6. </span>Free oscillations</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tobin A. Driscoll<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
