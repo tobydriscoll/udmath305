@@ -1,0 +1,726 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>4. Complex exponentials &#8212; Notes on linear algebra and ODEs</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Amplitude and phase" href="phase_amplitude.html" />
+    <link rel="prev" title="3. Homogeneous solutions" href="homogeneous.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
+   M305 Notes
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  I. Linear algebra
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vectors_matrices.html">
+   2. Vectors and matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/linear_systems.html">
+   3. Linear systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/row_elimination.html">
+   4. Row elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/RREF.html">
+   5. RREF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vector_algebra.html">
+   6. Vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_vector.html">
+   7. Matrix-vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_matrix.html">
+   8. Matrix-matrix algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/identity_inverse.html">
+   9. Identity and inverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/singular.html">
+   10. Detecting singular matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/general_solutions.html">
+   11. General solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/complex_numbers.html">
+   12. Complex numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/eigenvalues.html">
+   13. Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/defectiveness.html">
+   14. Defectiveness
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  II. First-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/preview.html">
+   2. Quick tour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp.html">
+   3. Initial-value problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/operators.html">
+   4. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/homogeneous.html">
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   9. Modeling
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  III. Steps and impulses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/unit_step.html">
+   2. Unit step functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/impulse.html">
+   3. Impulses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/laplace.html">
+   4. Laplace transforms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/transform_solutions.html">
+   5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="undetermined_coeffs.html">
+   7. Method of undetermined coefficients
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/second_linear/complex_exp.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/second_linear/complex_exp.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#polar-form">
+   4.1. Polar form
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complex-exponents">
+   4.2. Complex exponents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#growing">
+     4.2.1. Growing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neutral">
+     4.2.2. Neutral
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decaying">
+     4.2.3. Decaying
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#homogeneous-solutions">
+   4.3. Homogeneous solutions
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="complex-exponentials">
+<h1><span class="section-number">4. </span>Complex exponentials<a class="headerlink" href="#complex-exponentials" title="Permalink to this headline">¶</a></h1>
+<p>For second-order equations we need to make sense of <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span> when <span class="math notranslate nohighlight">\(\lambda\)</span> is complex. The key is one of the most famous equations in mathematics.</p>
+<div class="proof proof-type-formula" id="id1">
+
+    <div class="proof-title">
+        <span class="proof-type">Formula 4.13</span>
+        
+            <span class="proof-title-name">(Euler’s identity)</span>
+        
+    </div><div class="proof-content">
+<div class="math notranslate nohighlight" id="equation-secondlin-euler">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-secondlin-euler" title="Permalink to this equation">¶</a></span>\[e^{it} = \cos(t) + i \sin(t)\]</div>
+</div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>“Euler” is a German name, and as such, it rhymes with “boiler,” not “Bueller.”</p>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Explanation</p>
+<p>Consider the first-order IVP <span class="math notranslate nohighlight">\(w'=i w\)</span>, <span class="math notranslate nohighlight">\(w(0)=1\)</span>, where <span class="math notranslate nohighlight">\(i^2=-1\)</span>. Assume that the solution <span class="math notranslate nohighlight">\(w(t)=e^{it}\)</span> takes on complex values at all times. We can write it in real and imaginary parts as <span class="math notranslate nohighlight">\(w(t) = u(t) + iv(t)\)</span>. Then the ODE becomes</p>
+<div class="math notranslate nohighlight">
+\[
+(u+iv)'=i u - v,
+\]</div>
+<p>which, on taking real and imaginary parts, is a coupled <em>real</em> system:</p>
+<div class="math notranslate nohighlight">
+\[
+u' = -v, \quad v' = u,
+\]</div>
+<p>along with <span class="math notranslate nohighlight">\(u(0)=1\)</span> and <span class="math notranslate nohighlight">\(v(0)=0\)</span>. It should not take you long to confirm that <span class="math notranslate nohighlight">\(u(t)=\cos(t)\)</span>, <span class="math notranslate nohighlight">\(v(t)=\sin(t)\)</span> is the result.</p>
+</div>
+<p>Euler’s identity shows that imaginary exponents produce oscillation, rather than the growth/decay of real exponents.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="p">=</span> <span class="p">@(</span><span class="n">t</span><span class="p">)</span> <span class="nb">real</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">t</span><span class="p">));</span>
+<span class="n">s</span> <span class="p">=</span> <span class="p">@(</span><span class="n">t</span><span class="p">)</span> <span class="nb">imag</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">t</span><span class="p">));</span>
+<span class="n">fplot</span><span class="p">({</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">},[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;e^{it}&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Complex exponential&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="s">&#39;Re part&#39;</span><span class="p">,</span><span class="s">&#39;Im part&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/complex_exp_4_0.png" src="../_images/complex_exp_4_0.png" />
+</div>
+</div>
+<p>Alternatively, if we take <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> to be the real and imaginary parts of <span class="math notranslate nohighlight">\(z=e^{it}\)</span>, then they parametrically describe a unit circle in the complex plane.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="p">=</span> <span class="p">@(</span><span class="n">t</span><span class="p">)</span> <span class="nb">real</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">t</span><span class="p">));</span>
+<span class="n">s</span> <span class="p">=</span> <span class="p">@(</span><span class="n">t</span><span class="p">)</span> <span class="nb">imag</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">t</span><span class="p">));</span>
+<span class="n">fplot</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
+<span class="n">axis</span> <span class="s">equal,</span> <span class="s">axis(1.05*[-1</span> <span class="s">1</span> <span class="s">-1</span> <span class="s">1])</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Re z&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Im z&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Complex exponential = Unit circle&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/complex_exp_6_0.png" src="../_images/complex_exp_6_0.png" />
+</div>
+</div>
+<div class="section" id="polar-form">
+<h2><span class="section-number">4.1. </span>Polar form<a class="headerlink" href="#polar-form" title="Permalink to this headline">¶</a></h2>
+<p>Suppose <span class="math notranslate nohighlight">\(z\)</span> is any nonzero complex value. We can write it in the form</p>
+<div class="math notranslate nohighlight">
+\[
+z = |z|\cdot \frac{z}{|z|},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(|z|\)</span> is the modulus (distance from origin in the plane). Since \frac{z}{|z|} has modulus equal to 1, it must lie on the unit circle. Hence there is a real <span class="math notranslate nohighlight">\(\theta\)</span> such that</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-polar">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-secondlin-polar" title="Permalink to this equation">¶</a></span>\[z = |z| e^{i\theta}.\]</div>
+<p>We call <a class="reference internal" href="#equation-secondlin-polar">(4.9)</a> the <span class="xref std std-term">polar form</span> of a complex number, because it expresses <span class="math notranslate nohighlight">\(z\)</span> as a distance from zero and an angle from the positive Re axis. Just as with any point in the plane, we can express a complex number either in Cartesian form using Re and Im parts, or in polar form using modulus and Euler’s identity.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<p>Suppose <span class="math notranslate nohighlight">\(r\)</span> is a positive real number. Then <span class="math notranslate nohighlight">\(-r\)</span> lies at a distance <span class="math notranslate nohighlight">\(r\)</span> from the origin along the negative real axis. Hence</p>
+<div class="math notranslate nohighlight">
+\[
+-r = |r| e^{i\pi}.
+\]</div>
+<p>Supposing that we may take the log of both sides, we get</p>
+<div class="math notranslate nohighlight">
+\[
+\ln(-r) = \ln |r| + i\pi.
+\]</div>
+<p>Using complex numbers, then, we can take the log of a negative number. You will find that this is the case in MATLAB.</p>
+</div>
+</div>
+<div class="section" id="complex-exponents">
+<h2><span class="section-number">4.2. </span>Complex exponents<a class="headerlink" href="#complex-exponents" title="Permalink to this headline">¶</a></h2>
+<p>Exponential functions still obey the properties you already know, even when the exponents are imaginary or complex numbers. This allows us to handle the exponential of any complex number. Writing <span class="math notranslate nohighlight">\(a+i \omega\)</span> for real <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>, we have the function</p>
+<div class="proof proof-type-formula" id="id2">
+
+    <div class="proof-title">
+        <span class="proof-type">Formula 4.14</span>
+        
+            <span class="proof-title-name">(Complex exponential function)</span>
+        
+    </div><div class="proof-content">
+<div class="math notranslate nohighlight" id="equation-secondlin-complex-exp">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-secondlin-complex-exp" title="Permalink to this equation">¶</a></span>\[e^{(a+i \omega)t} = e^{at} \cdot e^{i\omega t} = e^{at} \bigl[ \cos(\omega t) + i \sin(\omega t)\bigr].\]</div>
+</div></div><p>Thus in the function <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span>, the real part of <span class="math notranslate nohighlight">\(\lambda\)</span> controls growth or decay in time, as we are familiar with, and the imaginary part of <span class="math notranslate nohighlight">\(\lambda\)</span> controls a frequency of oscillation around a circle in the complex plane.</p>
+<div class="section" id="growing">
+<h3><span class="section-number">4.2.1. </span>Growing<a class="headerlink" href="#growing" title="Permalink to this headline">¶</a></h3>
+<p>If <span class="math notranslate nohighlight">\(\text{Re} \lambda &gt; 0\)</span>, the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of <span class="math notranslate nohighlight">\(\lambda\)</span> controls the frequency or pitch of the spiral. The real and imaginary parts of <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span> oscillate between two growing real exponentials.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="mf">0.02</span><span class="p">;</span>  <span class="n">om</span> <span class="p">=</span> <span class="mf">0.75</span><span class="p">;</span>
+<span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+<span class="n">f</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">((</span><span class="n">a</span><span class="o">+</span>1<span class="nb">i</span><span class="o">*</span><span class="n">om</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+
+<span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+<span class="n">hold</span> <span class="s">on</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+<span class="n">plot3</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">30</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">axis</span><span class="p">([</span><span class="mi">0</span> <span class="mi">30</span> <span class="o">-</span><span class="mi">2</span>  <span class="mi">2</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">title</span><span class="p">(</span><span class="n">sprintf</span><span class="p">(</span><span class="s">&#39;a = %.2f, \\omega = %.2f&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">om</span><span class="p">))</span>
+<span class="n">grid</span> <span class="s">on,</span> <span class="s">xlabel(&#39;Time&#39;)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Re part&#39;</span><span class="p">)</span>
+<span class="n">zlabel</span><span class="p">(</span><span class="s">&#39;Im part&#39;</span><span class="p">)</span>
+<span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="s">&#39;dataaspect&#39;</span><span class="p">,[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/complex_exp_8_0.png" src="../_images/complex_exp_8_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="neutral">
+<h3><span class="section-number">4.2.2. </span>Neutral<a class="headerlink" href="#neutral" title="Permalink to this headline">¶</a></h3>
+<p>When <span class="math notranslate nohighlight">\(\lambda\)</span> is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span> gives cosine and sine, respectively.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="n">om</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+<span class="n">f</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">((</span><span class="n">a</span><span class="o">+</span>1<span class="nb">i</span><span class="o">*</span><span class="n">om</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+
+<span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+<span class="n">hold</span> <span class="s">on</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+<span class="n">plot3</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">30</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">axis</span><span class="p">([</span><span class="mi">0</span> <span class="mi">30</span> <span class="o">-</span><span class="mi">2</span>  <span class="mi">2</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">title</span><span class="p">(</span><span class="n">sprintf</span><span class="p">(</span><span class="s">&#39;a = 0, \\omega = %.1f&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">om</span><span class="p">))</span>
+<span class="n">grid</span> <span class="s">on,</span> <span class="s">xlabel(&#39;Time&#39;)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Re part&#39;</span><span class="p">)</span>
+<span class="n">zlabel</span><span class="p">(</span><span class="s">&#39;Im part&#39;</span><span class="p">)</span>
+<span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="s">&#39;dataaspect&#39;</span><span class="p">,[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/complex_exp_10_0.png" src="../_images/complex_exp_10_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="decaying">
+<h3><span class="section-number">4.2.3. </span>Decaying<a class="headerlink" href="#decaying" title="Permalink to this headline">¶</a></h3>
+<p>Finally, if <span class="math notranslate nohighlight">\(\text{Re} \lambda &lt; 0\)</span>, the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="o">-</span><span class="mf">0.07</span><span class="p">;</span>  <span class="n">om</span> <span class="p">=</span> <span class="mf">2.4</span><span class="p">;</span>
+<span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+<span class="n">f</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">((</span><span class="n">a</span><span class="o">+</span>1<span class="nb">i</span><span class="o">*</span><span class="n">om</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+
+<span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+<span class="n">hold</span> <span class="s">on</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+<span class="n">plot3</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">30</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">axis</span><span class="p">([</span><span class="mi">0</span> <span class="mi">30</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">2</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">title</span><span class="p">(</span><span class="n">sprintf</span><span class="p">(</span><span class="s">&#39;a = %.2f, \\omega = %.1f&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">om</span><span class="p">))</span>
+<span class="n">grid</span> <span class="s">on,</span> <span class="s">xlabel(&#39;Time&#39;)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Re part&#39;</span><span class="p">)</span>
+<span class="n">zlabel</span><span class="p">(</span><span class="s">&#39;Im part&#39;</span><span class="p">)</span>
+<span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="s">&#39;dataaspect&#39;</span><span class="p">,[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/complex_exp_12_0.png" src="../_images/complex_exp_12_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="homogeneous-solutions">
+<h2><span class="section-number">4.3. </span>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h2>
+<p>Now we can finish the story of computing solutions to homogeneous ODEs.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<blockquote>
+<div><p>Solve the IVP <span class="math notranslate nohighlight">\(x''+9x=0\)</span>, <span class="math notranslate nohighlight">\(x(0)=2\)</span>, <span class="math notranslate nohighlight">\(x'(0)=-12\)</span>.</p>
+</div></blockquote>
+<p>The characteristic polynomial is <span class="math notranslate nohighlight">\(s^2+9\)</span>, giving the eigenvalues <span class="math notranslate nohighlight">\(\pm 3i\)</span>. Hence the general solution is <span class="math notranslate nohighlight">\(x_h(t) = c_1e^{3it} + c_2e^{-3it}\)</span>.</p>
+<p>The initial conditions require</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+2 &amp;= x(0) = c_1e^0 + c_2e^0 = c_1 +c_2,\\ 
+-12 &amp;= x'(0) = 3i c_1e^0 - 3i c_2e^0 = 3i c_1 - 3i c_2.
+\end{align*}\]</div>
+<p>This system is easy to solve for <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span>, for example by <span class="xref std std-ref">Cramer’s Rule</span>, to get <span class="math notranslate nohighlight">\(c_1=1+2i\)</span>, <span class="math notranslate nohighlight">\(c_2=1-2i\)</span>.</p>
+</div>
+<p>There are some helpful nuances to point out about the preceding example.</p>
+<div class="proof proof-type-observation">
+
+    <div class="proof-title">
+        <span class="proof-type">Observation </span>
+        
+    </div><div class="proof-content">
+<p>If a real second-order IVP has complex conjugate eigenvalues, then the integration constants satisfy <span class="math notranslate nohighlight">\(c_2=\overline{c_1}\)</span>.</p>
+</div></div><p>This can simplify the algebra a bit. If we set <span class="math notranslate nohighlight">\(c_1=\alpha + i\beta\)</span>, then</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-add-subtract">
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-secondlin-add-subtract" title="Permalink to this equation">¶</a></span>\[c_1 + c_2 = 2\alpha, \quad c_1-c_2 = 2i\beta.\]</div>
+<p>In the example above, this would have led us right to <span class="math notranslate nohighlight">\(2\alpha=2\)</span> and <span class="math notranslate nohighlight">\(3i(2i\beta)=-12\)</span>, which are trivial.</p>
+<p>It might seem odd to use complex numbers to represent what we know must be a real-valued solution. There’s nothing wrong with doing so, but we can also convert it to an explicitly real form. The following is easily proved using Euler’s identity.</p>
+<div class="proof proof-type-observation">
+
+    <div class="proof-title">
+        <span class="proof-type">Observation </span>
+        
+    </div><div class="proof-content">
+<p>The general homogeneous solution</p>
+<div class="math notranslate nohighlight">
+\[
+x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda_{1,2} = a \pm i\omega\)</span> are complex, is equivalent to the real expression</p>
+<div class="math notranslate nohighlight">
+\[
+x_h(t) = e^{at} \bigl[ \tilde{c}_1 \cos(\omega t) + \tilde{c}_2 \sin(\omega t) \bigr],
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tilde{c}_1,\tilde{c}_2\)</span> are real constants.</p>
+</div></div><div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<p>In the preceding example, the eigenvalues were <span class="math notranslate nohighlight">\(0 \pm 3i\)</span>. Thus another expression for the general solution is</p>
+<div class="math notranslate nohighlight">
+\[
+x_h(t) = c_1\cos(3t) + c_2\sin(3t).
+\]</div>
+<p>The initial conditions now yield</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+2 &amp;= x(0) = c_1\cos(0) + c_2\sin(0) = c_1,\\
+-12 &amp;= x'(0) = -3 c_1 \sin(0) + 3 c_2 \cos(0) = 3c_2.
+\end{align*}\]</div>
+<p>Hence the IVP solution is <span class="math notranslate nohighlight">\(2\cos(3t) - 4\sin(3t).\)</span></p>
+</div>
+<p>Since complex exponentials are much less familiar to you than sin and cos, the real form might seem more appealing to you. The complex form gives an equivalent result and is the point of view that unifies all the second-order linear problems we solve under the exponential umbrella.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "matlab"
+        },
+        kernelOptions: {
+            kernelName: "matlab",
+            path: "./second_linear"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'matlab'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="homogeneous.html" title="previous page"><span class="section-number">3. </span>Homogeneous solutions</a>
+    <a class='right-next' id="next-link" href="phase_amplitude.html" title="next page"><span class="section-number">5. </span>Amplitude and phase</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tobin A. Driscoll<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

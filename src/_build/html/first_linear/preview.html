@@ -258,6 +258,48 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
+   7. Method of undetermined coefficients
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -368,11 +410,11 @@
                 
   <div class="section" id="quick-tour">
 <h1><span class="section-number">2. </span>Quick tour<a class="headerlink" href="#quick-tour" title="Permalink to this headline">¶</a></h1>
-<p>For this part of the course we will be concerned with a <span class="xref std std-term">first-order ODE</span> (ordinary differential equation) given in the form</p>
+<p>For this part of the course we will be concerned with a <a class="reference internal" href="overview.html#term-first-order-ode"><span class="xref std std-term">first-order ODE</span></a> (ordinary differential equation) given in the form</p>
 <div class="math notranslate nohighlight" id="equation-firstlin-ode">
 <span class="eqno">(2.1)<a class="headerlink" href="#equation-firstlin-ode" title="Permalink to this equation">¶</a></span>\[\dd{x}{t} = f(t,x),\]</div>
-<span class="target" id="index-0"></span><p id="index-1">in which the goal is to find the unknown function <span class="math notranslate nohighlight">\(x(t)\)</span>. We call <span class="math notranslate nohighlight">\(x\)</span> the <span class="xref std std-term">dependent variable</span> and <span class="math notranslate nohighlight">\(t\)</span> the <span class="xref std std-term">independent variable</span>. We use these particular variables for theoretical discussion, but in practice the variables could be named anything. The term <em>first-order</em> indicates that only the first derivative appears and not <span class="math notranslate nohighlight">\(x''\)</span>, <span class="math notranslate nohighlight">\(x'''\)</span>, etc.</p>
-<p>A <span class="xref std std-term">solution</span> to the ODE is a function <span class="math notranslate nohighlight">\(x(t)\)</span> that makes <a class="reference internal" href="#equation-firstlin-ode">(2.1)</a> a true equation when inserted. Finding solutions usually takes some effort (and for most realistic problems it cannot be done at all). However, if someone proposes a solution to you, it’s easy to check whether that is the case: substitute it into the ODE and manipulate it until you can ascertain whether the equation holds.</p>
+<span class="target" id="index-0"></span><p id="index-1">in which the goal is to find the unknown function <span class="math notranslate nohighlight">\(x(t)\)</span>. We call <span class="math notranslate nohighlight">\(x\)</span> the <a class="reference internal" href="overview.html#term-dependent-variable"><span class="xref std std-term">dependent variable</span></a> and <span class="math notranslate nohighlight">\(t\)</span> the <a class="reference internal" href="overview.html#term-independent-variable"><span class="xref std std-term">independent variable</span></a>. We use these particular variables for theoretical discussion, but in practice the variables could be named anything. The term <em>first-order</em> indicates that only the first derivative appears and not <span class="math notranslate nohighlight">\(x''\)</span>, <span class="math notranslate nohighlight">\(x'''\)</span>, etc.</p>
+<p>A <a class="reference internal" href="overview.html#term-solution"><span class="xref std std-term">solution</span></a> to the ODE is a function <span class="math notranslate nohighlight">\(x(t)\)</span> that makes <a class="reference internal" href="#equation-firstlin-ode">(2.1)</a> a true equation when inserted. Finding solutions usually takes some effort (and for most realistic problems it cannot be done at all). However, if someone proposes a solution to you, it’s easy to check whether that is the case: substitute it into the ODE and manipulate it until you can ascertain whether the equation holds.</p>
 <div class="section" id="constant-change">
 <span id="archetype-constant-change"></span><h2><span class="section-number">2.1. </span>Constant change<a class="headerlink" href="#constant-change" title="Permalink to this headline">¶</a></h2>
 <p>You won’t find an ODE easier than</p>
@@ -411,7 +453,7 @@ x(t) = C e^{at}
 <p>Again in this case we got an integration constant, although this time it appears multiplicatively rather than additively. That is, the <a class="reference internal" href="../linalg/overview.html#term-general-solution"><span class="xref std std-term">general solution</span></a> of the ODE is an entire family of functions describing many particular solutions.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>A named quantity such as <span class="math notranslate nohighlight">\(a\)</span> that is neither the independent nor the dependent variable is often called a <span class="xref std std-term">parameter</span>. A parameter is assumed to be constant unless it is written, e.g., as <span class="math notranslate nohighlight">\(a(t)\)</span> to show the dependence on <span class="math notranslate nohighlight">\(t\)</span>. A convention is to make parameters be positive where reasonable, a negative value would include an explicit sign such as in <span class="math notranslate nohighlight">\(-a\)</span>.</p>
+<p>A named quantity such as <span class="math notranslate nohighlight">\(a\)</span> that is neither the independent nor the dependent variable is often called a <a class="reference internal" href="overview.html#term-parameter"><span class="xref std std-term">parameter</span></a>. A parameter is assumed to be constant unless it is written, e.g., as <span class="math notranslate nohighlight">\(a(t)\)</span> to show the dependence on <span class="math notranslate nohighlight">\(t\)</span>. A convention is to make parameters be positive where reasonable, a negative value would include an explicit sign such as in <span class="math notranslate nohighlight">\(-a\)</span>.</p>
 </div>
 </div>
 <div class="section" id="constant-decay">
@@ -425,7 +467,7 @@ x(t) = C e^{at}
 x(t) = C e^{-at},
 \]</div>
 <p>which is exponential decay to zero as <span class="math notranslate nohighlight">\(t\to\infty\)</span>.</p>
-<p>In this and the preceding archetype, the function <span class="math notranslate nohighlight">\(f\)</span> in <a class="reference internal" href="#equation-firstlin-ode">(2.1)</a> depends only on the solution <span class="math notranslate nohighlight">\(x\)</span> and not explicitly on the independent variable <span class="math notranslate nohighlight">\(t\)</span>. Such an ODE is called <span class="xref std std-term">autonomous</span> or time-invariant.</p>
+<p>In this and the preceding archetype, the function <span class="math notranslate nohighlight">\(f\)</span> in <a class="reference internal" href="#equation-firstlin-ode">(2.1)</a> depends only on the solution <span class="math notranslate nohighlight">\(x\)</span> and not explicitly on the independent variable <span class="math notranslate nohighlight">\(t\)</span>. Such an ODE is called <a class="reference internal" href="overview.html#term-autonomous"><span class="xref std std-term">autonomous</span></a> or time-invariant.</p>
 <p>Our next case study is not an autonomous equation.</p>
 </div>
 <div class="section" id="variable-growth-decay">
