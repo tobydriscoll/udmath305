@@ -12,7 +12,7 @@ kernelspec:
   language: matlab
   name: matlab
 ---
-# Method of undetermined coefficients
+# Undetermined coefficients
 
 We now tackle the ODE
 

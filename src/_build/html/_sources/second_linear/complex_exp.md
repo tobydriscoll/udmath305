@@ -30,7 +30,6 @@ tags: [remove-cell]
 %plot -s 800,400 -r 160 -f png
 ```
 
-
 For second-order equations we need to make sense of $e^{\lambda t}$ when $\lambda$ is complex. The key is one of the most famous equations in mathematics.
 
 ````{proof:formula} Euler's identity
