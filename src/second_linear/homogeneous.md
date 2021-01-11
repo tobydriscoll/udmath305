@@ -56,6 +56,8 @@ x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}.
 ```
 ````
 
+By analogy with linear algebra, we may say that $e^{\lambda_1 t}$ and $e^{\lambda_2 t}$ form a basis for the homogeneous solution, as all such solutions are a linear combination of them and neither can be omitted.
+
 We have to handle the case $\lambda_1=\lambda_2$ separately. (You might recall that a double eigenvalue was a hassle for matrices as well.) Without fuss, we jump to the result, which is easy to verify by substitution.
 
 (theorem-secondlin-homogeneous-repeated)=

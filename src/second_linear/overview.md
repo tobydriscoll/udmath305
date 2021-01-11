@@ -7,5 +7,61 @@ First-order ODEs are all about growth and decay. Second-order ODEs add oscillati
 ## Glossary
 
 ```{glossary}
+amplitude-phase form
+  Expression of a sum of sin-cos or complex exponentials as an amplitude times a cosine with phase shift.
+
+angular frequency
+  Expression of frequency as radians per second, as opposed to cycles per second; mathematical default sense of frequency.
+
+beating
+  Slow modulation of amplitude, characteristic of an oscillator being forced at a frequency near its natural one.
+
+characteristic polynomial
+  For a second-order linear ODE with constant coefficients, a quadratic polynomial whose roots indicate two exponential functions that form a basis for solutions.
+
+critically damped
+  Free oscillator at the level of damping between underdamped and fully exponentially decaying solutions.
+
+damping coefficient
+  Nondimensional, nonnegative value indicating the relative amount of damping present in an oscillator. Denoted $Z$.
+
+eigenvalues
+  For a second-order linear ODE with constant coefficients, the roots of the characteristic polynomial.
+
+free oscillator
+  Naturally oscillating system not subjected to any external forces.
+
+gain
+  Ratio of the amplitudes of a particular solution and the harmonic forcing that produces it.
+
+natural frequency
+  Frequency at which an undamped free oscillator oscillates. Denoted $\omega_0$.
+
+overdamped
+  Free oscillator with sufficiently large damping that solutions are purely exponentially decaying, i.e., having no oscillations.
+
+polar form
+  Expression of a complex number as its magnitude times a value on the unit circle, as expressed by Euler's identity.
+
+pseudoresonance
+  Damped oscillator being forced at the frequency that produces maximal gain.
+
+resonance
+  Undamped oscillator being forced at its natural frequency, resulting in boundless linear growth in the amplitude of the solution.
+
+second-order IVP
+  Second order ODE plus initial conditions on the solution and its first derivative.
+
+second-order ODE
+  Ordinary differential equation that includes a second derivative (and no higher) of the unknown, dependent variable.
+
+simple harmonic motion
+  Pure sinusoidal motion of an undamped free oscillator.
+
+spring constant
+  Ratio of the restoring force of an ideal spring to the amount by which it is stretched from its neutral position.
+
+underdamped oscillator
+  Free oscillator with nonzero damping that forces the solution to zero, but not so large that it prevents all oscillation.
 
 ```
