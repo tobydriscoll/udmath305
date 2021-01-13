@@ -305,6 +305,33 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -444,13 +471,13 @@
                 
   <div class="section" id="free-oscillations">
 <h1><span class="section-number">6. </span>Free oscillations<a class="headerlink" href="#free-oscillations" title="Permalink to this headline">¶</a></h1>
-<p>The most common use of second-order equations is the modeling of oscillatory or other periodic behavior. This behavior occurs in myriad contexts. When an oscillating system is not subjected to any external forces, we call it an unforced oscillator or <span class="xref std std-term">free oscillator</span>.</p>
+<p>The most common use of second-order equations is the modeling of oscillatory or other periodic behavior. This behavior occurs in myriad contexts. When an oscillating system is not subjected to any external forces, we call it an unforced oscillator or <a class="reference internal" href="overview.html#term-free-oscillator"><span class="xref std std-term">free oscillator</span></a>.</p>
 <div class="section" id="mechanical-oscillator">
 <h2><span class="section-number">6.1. </span>Mechanical oscillator<a class="headerlink" href="#mechanical-oscillator" title="Permalink to this headline">¶</a></h2>
 <p>An object attached to an ideal spring satisfies the ODE</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-massspring-free">
 <span class="eqno">(6.2)<a class="headerlink" href="#equation-secondlin-massspring-free" title="Permalink to this equation">¶</a></span>\[mx'' + b x' + kx = 0,\]</div>
-<p>where <span class="math notranslate nohighlight">\(x(t)\)</span> is the displacement from the natural resting position, <span class="math notranslate nohighlight">\(m\)</span> is the mass of the object, <span class="math notranslate nohighlight">\(b\)</span> is an attenuation coefficient due to friction or mechanical damping, and <span class="math notranslate nohighlight">\(k\)</span> is a property of the spring called the <span class="xref std std-term">spring constant</span>. This constant is the ratio of the restoring force of the spring to the amount by which it is stretched.</p>
+<p>where <span class="math notranslate nohighlight">\(x(t)\)</span> is the displacement from the natural resting position, <span class="math notranslate nohighlight">\(m\)</span> is the mass of the object, <span class="math notranslate nohighlight">\(b\)</span> is an attenuation coefficient due to friction or mechanical damping, and <span class="math notranslate nohighlight">\(k\)</span> is a property of the spring called the <a class="reference internal" href="overview.html#term-spring-constant"><span class="xref std std-term">spring constant</span></a>. This constant is the ratio of the restoring force of the spring to the amount by which it is stretched.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Remember, all named parameters such as <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(k\)</span>, and <span class="math notranslate nohighlight">\(b\)</span> are assumed to be nonnegative unless stated otherwise.</p>
@@ -490,10 +517,10 @@
 <p>Right away this suggests that we only need two parameters, not three, to express the full range of behavior. (An added convenience is that both <span class="math notranslate nohighlight">\(b/m\)</span> and <span class="math notranslate nohighlight">\(\sqrt{k/m}\)</span> have units of inverse time.) Accordingly, we introduce</p>
 <div class="math notranslate nohighlight">
 \[\omega_0 = \sqrt{\frac{k}{m}}, \qquad Z = \frac{b/m}{2\omega_0} = \frac{b}{\sqrt{4km}}.\]</div>
-<p>The parameter <span class="math notranslate nohighlight">\(\omega_0\)</span> is known as the <span class="xref std std-term">natural frequency</span>, with units of inverse time, and <span class="math notranslate nohighlight">\(Z\)</span> is a dimensionless <span class="xref std std-term">damping coefficient</span> describing the relative intensity of the damping.</p>
+<p>The parameter <span class="math notranslate nohighlight">\(\omega_0\)</span> is known as the <a class="reference internal" href="overview.html#term-natural-frequency"><span class="xref std std-term">natural frequency</span></a>, with units of inverse time, and <span class="math notranslate nohighlight">\(Z\)</span> is a dimensionless <a class="reference internal" href="overview.html#term-damping-coefficient"><span class="xref std std-term">damping coefficient</span></a> describing the relative intensity of the damping.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>In math we usually use <em>frequency</em> to mean the multiplier of <span class="math notranslate nohighlight">\(t\)</span> in a sin or cos function. That is our usage. In some fields this is called <span class="xref std std-term">angular frequency</span> and <em>frequency</em> is used to mean the number of cycles per time unit, as in Hz.</p>
+<p>In math we usually use <em>frequency</em> to mean the multiplier of <span class="math notranslate nohighlight">\(t\)</span> in a sin or cos function. That is our usage. In some fields this is called <a class="reference internal" href="overview.html#term-angular-frequency"><span class="xref std std-term">angular frequency</span></a> and <em>frequency</em> is used to mean the number of cycles per time unit, as in Hz.</p>
 </div>
 <p>Now the ODE of a free oscillator becomes</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-unified-free">
@@ -516,7 +543,7 @@ x_h(t) &amp; = \Re \left[  c_1 e^{i\omega_0 t} \right], \\
 &amp; = a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t), \\
 &amp; =  R \cos(\omega_0 t + \theta).
 \end{align*}\]</div>
-<p>Thus the undamped case results in pure oscillation at frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>. This is known as <span class="xref std std-term">simple harmonic motion</span>.</p>
+<p>Thus the undamped case results in pure oscillation at frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>. This is known as <a class="reference internal" href="overview.html#term-simple-harmonic-motion"><span class="xref std std-term">simple harmonic motion</span></a>.</p>
 <div class="dropdown tip admonition">
 <p class="admonition-title"> Example</p>
 <blockquote>
@@ -567,7 +594,7 @@ x'' + 4g x   = 0.
 <p>Defining <span class="math notranslate nohighlight">\(\omega_d=\omega_0 \sqrt{1-Z^2}\)</span>, the general homogeneous solution is therefore</p>
 <div class="math notranslate nohighlight">
 \[x_h(t) = R e^{-Z\omega_0 t} \cos( \omega_d t + \theta),\]</div>
-<p>or an equivalent form. This solution is pseudoperiodic, combining oscillation at frequency <span class="math notranslate nohighlight">\(\omega_d &lt; \omega_0\)</span> inside an exponential decay envelope. This situation is called an <span class="xref std std-term">underdamped oscillator</span>.</p>
+<p>or an equivalent form. This solution is pseudoperiodic, combining oscillation at frequency <span class="math notranslate nohighlight">\(\omega_d &lt; \omega_0\)</span> inside an exponential decay envelope. This situation is called an <span class="xref std std-term">underdamped</span> oscillator.</p>
 </div>
 <div class="section" id="critically-damped-oscillator-z-1">
 <h3><span class="section-number">6.4.3. </span>Critically damped oscillator, <span class="math notranslate nohighlight">\(z=1\)</span><a class="headerlink" href="#critically-damped-oscillator-z-1" title="Permalink to this headline">¶</a></h3>
@@ -577,14 +604,14 @@ x'' + 4g x   = 0.
 <p>with general homogeneous solution</p>
 <div class="math notranslate nohighlight">
 \[x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t).\]</div>
-<p>There is no longer any oscillation present, and we have a <span class="xref std std-term">critically damped</span> system. The linear growth of <span class="math notranslate nohighlight">\(c_2 t\)</span> doesn’t make much of a difference against the exponential decay, and <span class="math notranslate nohighlight">\(x_h\to0\)</span> as <span class="math notranslate nohighlight">\(t\to\infty\)</span>.</p>
+<p>There is no longer any oscillation present, and we have a <a class="reference internal" href="overview.html#term-critically-damped"><span class="xref std std-term">critically damped</span></a> system. The linear growth of <span class="math notranslate nohighlight">\(c_2 t\)</span> doesn’t make much of a difference against the exponential decay, and <span class="math notranslate nohighlight">\(x_h\to0\)</span> as <span class="math notranslate nohighlight">\(t\to\infty\)</span>.</p>
 </div>
 <div class="section" id="overdamped-z-1">
 <h3><span class="section-number">6.4.4. </span>Overdamped, <span class="math notranslate nohighlight">\(Z&gt;1\)</span><a class="headerlink" href="#overdamped-z-1" title="Permalink to this headline">¶</a></h3>
 <p>For <span class="math notranslate nohighlight">\(Z&gt;1\)</span> the eigenvalues are</p>
 <div class="math notranslate nohighlight">
 \[\lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1},\]</div>
-<p>which are negative and real. This gives an exponentially decaying homogeneous solution. In this case we have an <span class="xref std std-term">overdamped oscillator</span>.</p>
+<p>which are negative and real. This gives an exponentially decaying homogeneous solution. In this case we have an <a class="reference internal" href="overview.html#term-overdamped"><span class="xref std std-term">overdamped</span></a> oscillator.</p>
 <table class="table" id="table-secondlin-oscillators">
 <caption><span class="caption-number">Table 6.1 </span><span class="caption-text">Damping coefficient and eigenvalues</span><a class="headerlink" href="#table-secondlin-oscillators" title="Permalink to this table">¶</a></caption>
 <colgroup>

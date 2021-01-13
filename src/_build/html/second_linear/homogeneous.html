@@ -305,6 +305,33 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -426,12 +453,12 @@ x_h(t) = e^{\lambda t}
             <span class="proof-title-name">(Characteristic polynomial of a linear ODE)</span>
         
     </div><div class="proof-content">
-<p>The <span class="xref std std-term">characteristic polynomial</span> of the linear operator <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx\)</span> is</p>
+<p>The <a class="reference internal" href="overview.html#term-characteristic-polynomial"><span class="xref std std-term">characteristic polynomial</span></a> of the linear operator <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
 p(s) = s^2 + b s + k.
 \]</div>
-<p>Its roots are called the <span class="xref std std-term">eigenvalues</span> of <span class="math notranslate nohighlight">\(\opA\)</span>.</p>
+<p>Its roots are called the <a class="reference internal" href="overview.html#term-eigenvalues"><span class="xref std std-term">eigenvalues</span></a> of <span class="math notranslate nohighlight">\(\opA\)</span>.</p>
 </div></div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We earlier used the terms <em>characteristic polynomial</em> and <em>eigenvalues</em> with matrices. The connections go way beyond the names, as we will see in the future.</p>
@@ -450,8 +477,9 @@ p(s) = s^2 + b s + k.
     </div><div class="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\lambda_1,\lambda_2\)</span> be the eigenvalues of <span class="math notranslate nohighlight">\(\opA\)</span>, where <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx.\)</span> If  <span class="math notranslate nohighlight">\(\lambda_1\neq \lambda_2\)</span>, then the general solution of <span class="math notranslate nohighlight">\(\opA[x]= 0\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-homogeneous-distinct">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-secondlin-homogeneous-distinct" title="Permalink to this equation">¶</a></span>\[x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}.\]</div>
-</div></div><p>We have to handle the case <span class="math notranslate nohighlight">\(\lambda_1=\lambda_2\)</span> separately. (You might recall that a double eigenvalue was a hassle for matrices as well.) Without fuss, we jump to the result, which is easy to verify by substitution.</p>
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-secondlin-homogeneous-distinct" title="Permalink to this equation">¶</a></span>\[x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}.\]</div>
+</div></div><p>By analogy with linear algebra, we may say that <span class="math notranslate nohighlight">\(e^{\lambda_1 t}\)</span> and <span class="math notranslate nohighlight">\(e^{\lambda_2 t}\)</span> form a basis for the homogeneous solution, as all such solutions are a linear combination of them and neither can be omitted.</p>
+<p>We have to handle the case <span class="math notranslate nohighlight">\(\lambda_1=\lambda_2\)</span> separately. (You might recall that a double eigenvalue was a hassle for matrices as well.) Without fuss, we jump to the result, which is easy to verify by substitution.</p>
 <div class="proof proof-type-theorem" id="id3">
 <span id="theorem-secondlin-homogeneous-repeated"></span>
     <div class="proof-title">
@@ -462,7 +490,7 @@ p(s) = s^2 + b s + k.
     </div><div class="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\lambda\)</span> be a double eigenvalue of <span class="math notranslate nohighlight">\(\opA\)</span>, where <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx.\)</span> The general solution of <span class="math notranslate nohighlight">\(\opA[x]= 0\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-homogeneous-repeated">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-secondlin-homogeneous-repeated" title="Permalink to this equation">¶</a></span>\[x_h(t) = e^{\lambda t} \bigl( c_1 t + c_2 \bigr).\]</div>
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-secondlin-homogeneous-repeated" title="Permalink to this equation">¶</a></span>\[x_h(t) = e^{\lambda t} \bigl( c_1 t + c_2 \bigr).\]</div>
 </div></div><div class="dropdown tip admonition">
 <p class="admonition-title"> Example</p>
 <blockquote>
@@ -500,7 +528,7 @@ x(t) = c_1 e^{\sqrt{5}\, t} + c_2 e^{-\sqrt{5}\, t}.
 </div>
 <div class="section" id="complex-eigenvalues">
 <h2><span class="section-number">3.2. </span>Complex eigenvalues<a class="headerlink" href="#complex-eigenvalues" title="Permalink to this headline">¶</a></h2>
-<p>All seems well, until you remember that the roots of a real quadratic may come as a complex conjugate pair. What then are we to make of <a class="reference internal" href="#equation-secondlin-homogeneous-distinct">(3.1)</a> or <a class="reference internal" href="#equation-secondlin-homogeneous-repeated">(3.2)</a>? That’s the next task.</p>
+<p>All seems well, until you remember that the roots of a real quadratic may come as a complex conjugate pair. What then are we to make of <a class="reference internal" href="#equation-secondlin-homogeneous-distinct">(3.2)</a> or <a class="reference internal" href="#equation-secondlin-homogeneous-repeated">(3.3)</a>? That’s the next task.</p>
 </div>
 </div>
 

@@ -18,10 +18,11 @@ A step function in the forcing represents an effect that turns on and stays on. 
 
 If the forcing amplitude remains constant in this limit, then the total effect size must also go to zero. But if we let the forcing amplitude grow to keep the area under the curve constant, we simulate a fixed effect size acting at over an infinitesimally small window, i.e., a single instant. That reasoning motivates the following definition.
 
-````{proof:definition} Impulse response
-Let
+````{proof:definition} Impulse response, 1st order
+Define
 
 ```{math}
+:label: steps-spike
 \delta_\epsilon(t) = \frac{1 - H(t -\epsilon)}{\epsilon},
 ```
 
@@ -50,6 +51,8 @@ where $\delta(t)$ is called an {term}`impulse` or a {term}`delta function`.
 A math pedant will never fail to remind you that $\delta(t)$ is not a true function, but rather something called a *distribution*. Just nod and edge away slowly.
 ```
 
+(section-steps-jump)=
+
 ## Impulse equals jump in value
 
 It's not difficult to derive a formula for the impulse response when the coefficient $a$ in $\opA$ is constant. The solution to the window problem $x'-ax=\delta_\epsilon(t)$, $x(0)=0$ is
@@ -73,7 +76,7 @@ Using L'Hôpital's Rule,
 This result, which generalizes to the case where $a$ depends on $t$, is worth stating in words as well as a formula.
 
 ```{proof:rule}
-in a first-order linear ODE, the effect of an impulse is the same as an instantaneous increase by 1 in the value of the solution.
+In a first-order linear ODE, the effect of an impulse is the same as an instantaneous increase by 1 in the value of the solution.
 ```
 
 ```{note}

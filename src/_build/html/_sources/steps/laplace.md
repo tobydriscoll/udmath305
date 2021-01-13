@@ -77,6 +77,8 @@ Applying integration by parts to the definition of $\lx[x'(t)]$ reveals the main
 & = -x(0) + s X(s).
 \end{align*}
 
+(formula-steps-laplace-diff)=
+
 ````{proof:formula} Transform of a derivative
 $$
 \lx[x'(t)] = s X(s) - x(0)

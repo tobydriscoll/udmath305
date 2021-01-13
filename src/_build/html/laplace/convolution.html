@@ -1,0 +1,681 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>4. Convolution &#8212; Notes on linear algebra and ODEs</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="3. Steps and impulses (2nd order)" href="steps_impulses.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
+   M305 Notes
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  I. Linear algebra
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vectors_matrices.html">
+   2. Vectors and matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/linear_systems.html">
+   3. Linear systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/row_elimination.html">
+   4. Row elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/RREF.html">
+   5. RREF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vector_algebra.html">
+   6. Vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_vector.html">
+   7. Matrix-vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_matrix.html">
+   8. Matrix-matrix algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/identity_inverse.html">
+   9. Identity and inverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/singular.html">
+   10. Detecting singular matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/general_solutions.html">
+   11. General solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/complex_numbers.html">
+   12. Complex numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/eigenvalues.html">
+   13. Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/defectiveness.html">
+   14. Defectiveness
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  II. First-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/preview.html">
+   2. Quick tour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp.html">
+   3. Initial-value problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/operators.html">
+   4. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/homogeneous.html">
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   9. Modeling
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  III. Steps and impulses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/unit_step.html">
+   2. Unit step functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/impulse.html">
+   3. Impulses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/laplace.html">
+   4. Laplace transforms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/transform_solutions.html">
+   5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Convolution
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/laplace/convolution.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/laplace/convolution.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#moving-averages">
+   4.1. Moving averages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convolution-integral">
+   4.2. Convolution integral
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convolution-theorem">
+   4.3. Convolution theorem
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="convolution">
+<h1><span class="section-number">4. </span>Convolution<a class="headerlink" href="#convolution" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="moving-averages">
+<h2><span class="section-number">4.1. </span>Moving averages<a class="headerlink" href="#moving-averages" title="Permalink to this headline">¶</a></h2>
+<p>The following grabs and plots the closing price of Bitcoin for the last 31 days.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">bc</span> <span class="p">=</span> <span class="n">webread</span><span class="p">(</span><span class="s">&#39;https://api.coindesk.com/v1/bpi/historical/close.json&#39;</span><span class="p">);</span>
+<span class="n">data</span> <span class="p">=</span> <span class="n">jsondecode</span><span class="p">(</span><span class="n">bc</span><span class="p">);</span>
+<span class="n">v</span> <span class="p">=</span> <span class="n">struct2cell</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">bpi</span><span class="p">);</span>
+<span class="n">v</span> <span class="p">=</span> <span class="nb">cat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">v</span><span class="p">{:});</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="s">&#39;-ko&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/convolution_4_0.png" src="../_images/convolution_4_0.png" />
+</div>
+</div>
+<p>It’s a noisy curve. We can smooth that out by taking 4-day moving averages, for example. There are slick ways to do that, but here is brute force.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="s">&#39;-ko&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">4</span><span class="p">:</span><span class="mi">31</span>
+    <span class="n">z</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">end</span>
+<span class="s">z(1:3)</span> <span class="s">=</span> <span class="s">NaN</span><span class="p">;</span>  <span class="c">% not a number</span>
+<span class="n">hold</span> <span class="s">on</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/convolution_6_0.png" src="../_images/convolution_6_0.png" />
+</div>
+</div>
+<p>We might decide, however, to weight the most recent values more heavily. Here’s how this might look.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="s">&#39;-ko&#39;</span><span class="p">)</span>
+<span class="n">w</span> <span class="p">=</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">];</span>
+<span class="n">for</span> <span class="s">i</span> <span class="s">=</span> <span class="s">4:31</span>
+    <span class="n">z</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="n">w</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span> <span class="o">/</span> <span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+<span class="n">end</span>
+<span class="s">z(1:3)</span> <span class="s">=</span> <span class="s">NaN</span><span class="p">;</span>  <span class="c">% not a number</span>
+<span class="n">hold</span> <span class="s">on</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/convolution_8_0.png" src="../_images/convolution_8_0.png" />
+</div>
+</div>
+<p>Note that each new value <span class="math notranslate nohighlight">\(z_i\)</span> is a linear combination of the elements of <span class="math notranslate nohighlight">\(v\)</span>, weighted by the values in <span class="math notranslate nohighlight">\(w\)</span>. And we always go forward 1,2,3,4 in <span class="math notranslate nohighlight">\(w\)</span>, while on <span class="math notranslate nohighlight">\(v\)</span> we have a sliding window going backward: <span class="math notranslate nohighlight">\(i,i-1,i-2,i-3\)</span>. Put concisely, the indices of <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(w\)</span> for each term in the sum add up to <span class="math notranslate nohighlight">\(i+1\)</span>, which indexes <span class="math notranslate nohighlight">\(z\)</span>.</p>
+</div>
+<div class="section" id="convolution-integral">
+<h2><span class="section-number">4.2. </span>Convolution integral<a class="headerlink" href="#convolution-integral" title="Permalink to this headline">¶</a></h2>
+<p>The moving average above gave us a certain way to multiply together vectors <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(w\)</span> to get a new vector <span class="math notranslate nohighlight">\(z\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[z_i =  \sum_{j} w_j v_{i-j} \]</div>
+<p>(although I reindexed the output vector from <span class="math notranslate nohighlight">\(i+1\)</span> to <span class="math notranslate nohighlight">\(i\)</span> compared to the computer code). This is analogous to a particular way to multiply two <em>functions</em>.</p>
+<div class="proof proof-type-definition" id="id1">
+
+    <div class="proof-title">
+        <span class="proof-type">Definition 4.15</span>
+        
+            <span class="proof-title-name">(Convolution integral)</span>
+        
+    </div><div class="proof-content">
+<div class="math notranslate nohighlight">
+\[[f*g](t) = \int_0^t f(t-\tau)g(\tau)\, d\tau\]</div>
+</div></div><p>This too is a weighted average, with the values of <span class="math notranslate nohighlight">\(g(\tau)\)</span> being multiplied against different windows of the function <span class="math notranslate nohighlight">\(f\)</span> extending backward, such that the arguments of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> sum to <span class="math notranslate nohighlight">\(t\)</span>, which is the argument of the result function.</p>
+<p>An interesting fact is that while I presented <span class="math notranslate nohighlight">\(f*g\)</span> as <span class="math notranslate nohighlight">\(g\)</span> acting on <span class="math notranslate nohighlight">\(f\)</span>, in fact the operation is symmetric:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+[g*f](t) &amp; = \int_0^t f(t-\tau)g(\tau)\, d\tau\\
+&amp; = \int_t^0 f(u)g(t-u)\, (-du)  \\
+&amp; = \int_0^t g(t-u)f(u)\, du = [f*g](t)
+\end{align*}\]</div>
+<p>We can also easily prove some other properties we really like to have with multiplication:</p>
+<div class="proof proof-type-property" id="id2">
+
+    <div class="proof-title">
+        <span class="proof-type">Property 4.16</span>
+        
+            <span class="proof-title-name">(Convolution)</span>
+        
+    </div><div class="proof-content">
+<p>For functions <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(g\)</span> and <span class="math notranslate nohighlight">\(h\)</span>, all defined for <span class="math notranslate nohighlight">\(t&gt;0\)</span>,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+f*g &amp;= g*f, \\
+f * ( g * h ) &amp;= ( f * g) * h, \\
+f * (g+h) &amp;= (f * g)+(f*h),\\ 
+f * 0 &amp;=0, \\ 
+f*\delta &amp;= f,
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(0\)</span> represents the zero function, and <span class="math notranslate nohighlight">\(\delta\)</span> is an impulse.</p>
+</div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The last property above may look odd, as we have not discussed impulses in the context of integrals. The property can be confirmed in detail by using the “spike function” <span class="math notranslate nohighlight">\(\delta_\epsilon\)</span> in <a class="reference internal" href="../steps/impulse.html#equation-steps-spike">(3.1)</a> and taking the limit of <span class="math notranslate nohighlight">\(f*\delta_\epsilon\)</span> as <span class="math notranslate nohighlight">\(\epsilon\to 0\)</span>.</p>
+</div>
+<p>In particular, if we regard convolution as a sort of multiplication, then the identity element is the impulse <span class="math notranslate nohighlight">\(\delta\)</span>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is <em>not</em> true that <span class="math notranslate nohighlight">\(f*1=f\)</span>, unless <span class="math notranslate nohighlight">\(f\)</span> is the zero function.</p>
+</div>
+</div>
+<div class="section" id="convolution-theorem">
+<h2><span class="section-number">4.3. </span>Convolution theorem<a class="headerlink" href="#convolution-theorem" title="Permalink to this headline">¶</a></h2>
+<p>Convolution is intimately connected to Laplace transforms.</p>
+<div class="proof proof-type-theorem" id="id3">
+
+    <div class="proof-title">
+        <span class="proof-type">Theorem 4.17</span>
+        
+            <span class="proof-title-name">(Convolution Theorem)</span>
+        
+    </div><div class="proof-content">
+<p>Suppose <span class="math notranslate nohighlight">\(\lx[f] = F(s)\)</span>, <span class="math notranslate nohighlight">\(\lx[g] = G(s)\)</span>, <span class="math notranslate nohighlight">\(h=f*g\)</span>, and <span class="math notranslate nohighlight">\(\lx[h] = H(s)\)</span>. Then <span class="math notranslate nohighlight">\(H(s)=F(s)G(s)\)</span>.</p>
+</div></div><p>In words, convolution in time is equivalent to multiplication in transform space.</p>
+<p>We now extend some definitions we applied earlier to first-order ODEs.</p>
+<div class="proof proof-type-definition" id="id4">
+
+    <div class="proof-title">
+        <span class="proof-type">Definition 4.18</span>
+        
+            <span class="proof-title-name">(Impulse response, 2nd order)</span>
+        
+    </div><div class="proof-content">
+<p>Suppose <span class="math notranslate nohighlight">\(\mathcal{A}[x]=x''+bx'+cx\)</span> is a linear, 2nd-order operator. Define <span class="math notranslate nohighlight">\(\delta_\epsilon(t)\)</span> as in <a class="reference internal" href="../steps/impulse.html#equation-steps-spike">(3.1)</a>. Let <span class="math notranslate nohighlight">\(x_\epsilon(t)\)</span> be the solution of <span class="math notranslate nohighlight">\(\opA[x]=\delta_\epsilon\)</span>, <span class="math notranslate nohighlight">\(x(0)=x'(0)=0\)</span>. Then the <a class="reference internal" href="../steps/overview.html#term-impulse-response"><span class="xref std std-term">impulse response</span></a> of the linear operator is the function</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\epsilon \to 0} x_\epsilon(t).\]</div>
+</div></div><div class="proof proof-type-definition" id="id5">
+
+    <div class="proof-title">
+        <span class="proof-type">Definition 4.19</span>
+        
+            <span class="proof-title-name">(Transfer function, 2nd order)</span>
+        
+    </div><div class="proof-content">
+<p>For the second-order linear operator <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+cx\)</span> with constants <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, the function <span class="math notranslate nohighlight">\(1/(s^2+bs+c)\)</span> is called the <a class="reference internal" href="../steps/overview.html#term-transfer-function"><span class="xref std std-term">transfer function</span></a> of the operator.</p>
+</div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The transfer function is the reciprocal of the characteristic polynomial, and its poles are the eigenvalues of the ODE.</p>
+</div>
+<p>All of these ideas come together. The impulse response is the solution of <span class="math notranslate nohighlight">\(\opA[x]=\delta\)</span> with zero initial conditions. Taking transforms gives</p>
+<div class="math notranslate nohighlight">
+\[
+s^2 X(s) + b s X(s) + c X(s) = 1,
+\]</div>
+<p>which means that <span class="math notranslate nohighlight">\(X(s)\)</span> is the transfer function.</p>
+<div class="proof proof-type-theorem" id="id6">
+
+    <div class="proof-title">
+        <span class="proof-type">Theorem 4.20</span>
+        
+    </div><div class="proof-content">
+<p>The impulse response of a linear constant-coefficient equation is the inverse Laplace transform of the transfer function.</p>
+</div></div><p>Now consider <span class="math notranslate nohighlight">\(\opA[x]=f\)</span>, again with zero initial conditions. Transforms imply that</p>
+<div class="math notranslate nohighlight">
+\[
+X(s) = \frac{F(s)}{s^2+b s+c} = F(s)G(s),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(G(s)\)</span> is the transfer function. Thus <span class="math notranslate nohighlight">\(x=f*g\)</span> by the convolution theorem.</p>
+<div class="proof proof-type-theorem" id="id7">
+
+    <div class="proof-title">
+        <span class="proof-type">Theorem 4.21</span>
+        
+    </div><div class="proof-content">
+<p>The solution <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> with zero initial conditions is the convolution of <span class="math notranslate nohighlight">\(f\)</span> with the impulse response.</p>
+</div></div><div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<blockquote>
+<div><p>Find the general solution of <span class="math notranslate nohighlight">\(x''+36x=\sin(t)\)</span>.</p>
+</div></blockquote>
+<p>Note that the homogeneous solution is <span class="math notranslate nohighlight">\(R\cos(6t+\theta)\)</span>, using amplitude-phase form. The transfer function is <span class="math notranslate nohighlight">\(G(s)=1/(s^2+36)\)</span>, and the impulse response is therefore</p>
+<div class="math notranslate nohighlight">
+\[
+g(t) = \frac{1}{6} \sin(6t).
+\]</div>
+<p>Hence a particular solution is <span class="math notranslate nohighlight">\(f*g\)</span>, i.e.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x_p(t) &amp;= \frac{1}{6}\int_0^t \sin(6(t-\tau))\sin(\tau) \,d\tau \\
+&amp;= \frac{1}{6}\int_0^t \sin(6t)\cos(6\tau)\sin(\tau) \,d\tau - \frac{1}{6}\int_0^t \cos(6t)\sin(6\tau)\sin(\tau) \,d\tau \\ 
+&amp;= \frac{1}{6}\sin(6t) \int_0^t \cos(6\tau)\sin(\tau) \,d\tau - \frac{1}{6}\cos(6t) \int_0^t \sin(6\tau)\sin(\tau) \,d\tau.
+\end{align*}\]</div>
+<p>The integrals yield to standard trig tricks, if you care to finish them.</p>
+</div>
+<p>In the end, we can avoid Laplace transforms altogether! The impulse response is equivalent to the solution of <span class="math notranslate nohighlight">\(\opA[x]=0\)</span> with <span class="math notranslate nohighlight">\(x(0)=0\)</span>, <span class="math notranslate nohighlight">\(x'(0)=1\)</span>, which is a homogeneous problem we can easily solve. Then a particular solution is just a convolution integral away. It turns out that this process is equivalent to a 2nd-order version of the method of <a class="reference internal" href="../first_linear/variation_parameters.html"><span class="doc std std-doc">variation of parameters</span></a>. For linear problems, all roads lead to the same destination.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "matlab"
+        },
+        kernelOptions: {
+            kernelName: "matlab",
+            path: "./laplace"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'matlab'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="steps_impulses.html" title="previous page"><span class="section-number">3. </span>Steps and impulses (2nd order)</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tobin A. Driscoll<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

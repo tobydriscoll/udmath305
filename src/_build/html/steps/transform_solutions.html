@@ -305,6 +305,33 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -406,22 +433,25 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(x'(t)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(x(t)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(X(s)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x'(t)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(sX(s)-x(0)\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p>1</p></td>
+<tr class="row-even"><td><p>1</p></td>
 <td><p><span class="math notranslate nohighlight">\(\dfrac{1}{s}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(e^{at}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(e^{at}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\dfrac{1}{s-a}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(H(t-T)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(H(t-T)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\dfrac{e^{-sT}}{s}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(H(t-T)f(t-T)\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(H(t-T)f(t-T)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(e^{-sT}F(s)\)</span> (shift theorem)</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\delta(t-T)\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\delta(t-T)\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(e^{-sT}\)</span></p></td>
 </tr>
 </tbody>
@@ -480,7 +510,7 @@ X(s) = \frac{1}{s-a}\cdot F(s)
     <div class="proof-title">
         <span class="proof-type">Definition 5.6</span>
         
-            <span class="proof-title-name">(Transfer function)</span>
+            <span class="proof-title-name">(Transfer function, 1st order)</span>
         
     </div><div class="proof-content">
 <p>For the first-order operator <span class="math notranslate nohighlight">\(\opA[x]=x'-ax\)</span> with constant <span class="math notranslate nohighlight">\(a\)</span>, the function <span class="math notranslate nohighlight">\(1/(s-a)\)</span> is called the <a class="reference internal" href="overview.html#term-transfer-function"><span class="xref std std-term">transfer function</span></a> of the operator. The value <span class="math notranslate nohighlight">\(s=a\)</span> is called a <a class="reference internal" href="overview.html#term-pole"><span class="xref std std-term">pole</span></a> of the transfer function.</p>

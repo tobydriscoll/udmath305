@@ -305,6 +305,33 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -395,22 +422,6 @@
                 
   <div class="section" id="initial-value-problems">
 <h1><span class="section-number">3. </span>Initial-value problems<a class="headerlink" href="#initial-value-problems" title="Permalink to this headline">¶</a></h1>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">restoredefaultpath</span>
-<span class="s">set(0,&#39;defaultlinelinewidth&#39;,1)</span>
-<span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;defaultaxesfontsize&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%plot -s 800,400 -r 160 -f png</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>A consistent theme so far about first-order ODEs is that solutions are not unique. There is a general solution that describes a family of functions that provide all possible solutions. The manifestation of the nonuniqueness is an integration constant.</p>
 <p>In scientific and engineering problems we typically have an additional constraint that picks out a single member of the solution family, i.e., a particular solution. Usually that constraint takes the form of a specified value,</p>
 <div class="math notranslate nohighlight">

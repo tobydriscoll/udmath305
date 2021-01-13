@@ -305,6 +305,33 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -412,12 +439,12 @@
     <div class="proof-title">
         <span class="proof-type">Definition 3.2</span>
         
-            <span class="proof-title-name">(Impulse response)</span>
+            <span class="proof-title-name">(Impulse response, 1st order)</span>
         
     </div><div class="proof-content">
-<p>Let</p>
-<div class="math notranslate nohighlight">
-\[\delta_\epsilon(t) = \frac{1 - H(t -\epsilon)}{\epsilon},\]</div>
+<p>Define</p>
+<div class="math notranslate nohighlight" id="equation-steps-spike">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-steps-spike" title="Permalink to this equation">¶</a></span>\[\delta_\epsilon(t) = \frac{1 - H(t -\epsilon)}{\epsilon},\]</div>
 <p>and let <span class="math notranslate nohighlight">\(x_\epsilon(t)\)</span> be the solution of</p>
 <div class="math notranslate nohighlight">
 \[x' - a x = \delta_\epsilon(t), \quad x(0)=0.\]</div>
@@ -433,7 +460,7 @@
 <p>A math pedant will never fail to remind you that <span class="math notranslate nohighlight">\(\delta(t)\)</span> is not a true function, but rather something called a <em>distribution</em>. Just nod and edge away slowly.</p>
 </div>
 <div class="section" id="impulse-equals-jump-in-value">
-<h2><span class="section-number">3.1. </span>Impulse equals jump in value<a class="headerlink" href="#impulse-equals-jump-in-value" title="Permalink to this headline">¶</a></h2>
+<span id="section-steps-jump"></span><h2><span class="section-number">3.1. </span>Impulse equals jump in value<a class="headerlink" href="#impulse-equals-jump-in-value" title="Permalink to this headline">¶</a></h2>
 <p>It’s not difficult to derive a formula for the impulse response when the coefficient <span class="math notranslate nohighlight">\(a\)</span> in <span class="math notranslate nohighlight">\(\opA\)</span> is constant. The solution to the window problem <span class="math notranslate nohighlight">\(x'-ax=\delta_\epsilon(t)\)</span>, <span class="math notranslate nohighlight">\(x(0)=0\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[x_\epsilon(t) = \frac{1}{a \epsilon} \left[  (e^{at}-1) - H(t-\epsilon) (e^{a(t-\epsilon)}-1) \right].\]</div>
@@ -450,7 +477,7 @@
         <span class="proof-type">Rule </span>
         
     </div><div class="proof-content">
-<p>in a first-order linear ODE, the effect of an impulse is the same as an instantaneous increase by 1 in the value of the solution.</p>
+<p>In a first-order linear ODE, the effect of an impulse is the same as an instantaneous increase by 1 in the value of the solution.</p>
 </div></div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>With step forcing, we stated that <span class="math notranslate nohighlight">\(x(t)\)</span> is continuous while <span class="math notranslate nohighlight">\(x'(t)\)</span> has jumps. For impulses, it’s <span class="math notranslate nohighlight">\(x(t)\)</span> itself that jumps.</p>

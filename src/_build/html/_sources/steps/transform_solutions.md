@@ -10,6 +10,8 @@ Faced with an initial-value problem, we can take the Laplace transform of the OD
 
 * - Function
   - Transform
+* - $x(t)$
+  - $X(s)$
 * - $x'(t)$
   - $sX(s)-x(0)$
 * - 1
@@ -98,7 +100,7 @@ $$
 
 as a particular solution. The term $1/(s-a)$ has a special name.
 
-````{proof:definition} Transfer function
+````{proof:definition} Transfer function, 1st order
 For the first-order operator $\opA[x]=x'-ax$ with constant $a$, the function $1/(s-a)$ is called the {term}`transfer function` of the operator. The value $s=a$ is called a {term}`pole` of the transfer function.
 ````
 

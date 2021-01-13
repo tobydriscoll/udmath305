@@ -201,7 +201,7 @@ Defining $\omega_d=\omega_0 \sqrt{1-Z^2}$, the general homogeneous solution is t
 x_h(t) = R e^{-Z\omega_0 t} \cos( \omega_d t + \theta),
 ```
 
-or an equivalent form. This solution is pseudoperiodic, combining oscillation at frequency $\omega_d < \omega_0$ inside an exponential decay envelope. This situation is called an {term}`underdamped oscillator`.
+or an equivalent form. This solution is pseudoperiodic, combining oscillation at frequency $\omega_d < \omega_0$ inside an exponential decay envelope. This situation is called an {term}`underdamped` oscillator.
 
 ### Critically damped oscillator, $z=1$
 		
@@ -227,7 +227,7 @@ For $Z>1$ the eigenvalues are
 \lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1},
 ```
 
-which are negative and real. This gives an exponentially decaying homogeneous solution. In this case we have an {term}`overdamped oscillator`.
+which are negative and real. This gives an exponentially decaying homogeneous solution. In this case we have an {term}`overdamped` oscillator.
 
 ```{list-table} Damping coefficient and eigenvalues
 :header-rows: 1

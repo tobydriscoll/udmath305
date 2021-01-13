@@ -159,7 +159,7 @@ The gain is the ratio of the amplitudes of the particular solution and the forci
 \end{cases}
 ```
 
-When $0 < Z^2 < 1/2$, this value satisfies $0 < \rho_\text{max}<1$, i.e., the gain is maximized at a nonzero forcing frequency smaller than the natural frequency. We can consider this to be a "pseudoresonance," though it is what is always observed in physical systems. The peak value of the gain in this case is found to be
+When $0 < Z^2 < 1/2$, this value satisfies $0 < \rho_\text{max}<1$, i.e., the gain is maximized at a nonzero forcing frequency smaller than the natural frequency. We can consider this to be a {term}`pseudoresonance`, though, since this is all that can be observed in physical systems, one often still says simply "resonance." The peak value of the gain at pseudoresonance is found to be
 
 ```{math}
 :label: secondlin-gainmax
