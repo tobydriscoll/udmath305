@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>10. Detecting singular matrices &#8212; Notes on linear algebra and ODEs</title>
+    <title>10. Detecting singularity &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -51,7 +51,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -150,7 +150,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   10. Detecting singular matrices
+   10. Detecting singularity
   </a>
  </li>
  <li class="toctree-l1">
@@ -169,8 +169,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="defectiveness.html">
-   14. Defectiveness
+  <a class="reference internal" href="multiplicity.html">
+   14. Multiplicity
   </a>
  </li>
 </ul>
@@ -432,8 +432,8 @@
         
               <div>
                 
-  <div class="section" id="detecting-singular-matrices">
-<h1><span class="section-number">10. </span>Detecting singular matrices<a class="headerlink" href="#detecting-singular-matrices" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="detecting-singularity">
+<h1><span class="section-number">10. </span>Detecting singularity<a class="headerlink" href="#detecting-singularity" title="Permalink to this headline">¶</a></h1>
 <p>There are many ways to characterize singular matrices, some of which are computationally attractive. We focus on just two of them.</p>
 <div class="section" id="rref">
 <h2><span class="section-number">10.1. </span>RREF<a class="headerlink" href="#rref" title="Permalink to this headline">¶</a></h2>
@@ -449,15 +449,15 @@
 <p class="admonition-title">Note</p>
 <p>In this section we are referring to the RREF of just the coefficient matrix, not the augmented matrix.</p>
 </div>
-<p>In lieu of a proof, let’s consider how limited the options are for the RREF of a square matrix. There are just as many rows as there are columns. So if each row is to have a leading one, then they must march along the diagonal of the matrix, i.e., the leading one of row <span class="math notranslate nohighlight">\(i\)</span> is in column <span class="math notranslate nohighlight">\(i\)</span>. But those are the only nonzeros in their columns, so they are the only nonzeros in the entire matrix. Voila, an identity matrix!</p>
-<p>The contrapositive observation is that if <span class="math notranslate nohighlight">\(\bfA\)</span> is singular, then it must have one or more rows, and therefore one or more columns, without a leading one. That is,</p>
+<p>In lieu of a formal proof, let’s consider how limited the options are for the RREF of a square matrix. There are just as many rows as there are columns. So if each row is to have a leading one, then they must march along the diagonal of the matrix, i.e., the leading one of row <span class="math notranslate nohighlight">\(i\)</span> is in column <span class="math notranslate nohighlight">\(i\)</span>. But those are the only nonzeros in their columns, so they are the only nonzeros in the entire matrix. Voila, an identity matrix!</p>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Contraposition">contrapositive</a> observation is that if <span class="math notranslate nohighlight">\(\bfA\)</span> is singular, then it must have one or more rows, and therefore one or more columns, without a leading one. That is,</p>
 <div class="proof proof-type-theorem" id="id2">
 
     <div class="proof-title">
         <span class="proof-type">Theorem 10.2</span>
         
     </div><div class="proof-content">
-<p>A square matrix is singular if and only if its RREF has at least one pivot column and at least one row of zeros.</p>
+<p>A square matrix is singular if and only if its RREF has at least one row of zeros.</p>
 </div></div><div class="dropdown tip admonition">
 <p class="admonition-title"> Example</p>
 <p>It’s always tempting to reach for</p>
@@ -471,7 +471,7 @@
 </div>
 <div class="section" id="determinant">
 <h2><span class="section-number">10.2. </span>Determinant<a class="headerlink" href="#determinant" title="Permalink to this headline">¶</a></h2>
-<p>You should have seen some <span class="math notranslate nohighlight">\(2\times 2\)</span> and <span class="math notranslate nohighlight">\(3\times 3\)</span> determinants before now in vector calculus. The <span class="math notranslate nohighlight">\(2\times 2\)</span> case is easy to describe:</p>
+<p>You probably saw some <span class="math notranslate nohighlight">\(2\times 2\)</span> and <span class="math notranslate nohighlight">\(3\times 3\)</span> determinants in vector calculus. The <span class="math notranslate nohighlight">\(2\times 2\)</span> case is easy to describe:</p>
 <div class="math notranslate nohighlight">
 \[\det\left( \twomat{a}{b}{c}{d} \right) = \twodet{a}{b}{c}{d} = ad-bc.\]</div>
 <p>This definition can be extended to create a real-valued function for square matrices of any size. The formalities can be complicated, but we are going to use a practical approach.</p>
@@ -485,16 +485,15 @@
     </div><div class="proof-content">
 <p>If <span class="math notranslate nohighlight">\(\bfA\)</span> is <span class="math notranslate nohighlight">\(n\times n\)</span>, then its <a class="reference internal" href="overview.html#term-determinant"><span class="xref std std-term">determinant</span></a> is</p>
 <div class="math notranslate nohighlight">
-\[\det(\bfA) = \sum (-1)^{i+j} a_{ij} \det( \mathbf{M}_{ij} )
-```,
-where the sum is taken over any row or column of $\bfA$ and $\mathbf{M}_{ij}$ is the matrix that results from deleting row $i$ and column $j$ from $\bfA$.\]</div>
+\[\det(\bfA) = \sum (-1)^{i+j} a_{ij} \det\bigl( \mathbf{M}_{ij} \bigr),\]</div>
+<p>where the sum is taken over any row or column of <span class="math notranslate nohighlight">\(\bfA\)</span> and <span class="math notranslate nohighlight">\(\mathbf{M}_{ij}\)</span> is the matrix that results from deleting row <span class="math notranslate nohighlight">\(i\)</span> and column <span class="math notranslate nohighlight">\(j\)</span> from <span class="math notranslate nohighlight">\(\bfA\)</span>.</p>
 </div></div><p>The definition, which is called <a class="reference internal" href="overview.html#term-cofactor-expansion"><span class="xref std std-term">cofactor expansion</span></a>, is recursive: the <span class="math notranslate nohighlight">\(n\times n\)</span> case is defined in terms of the <span class="math notranslate nohighlight">\((n-1)\times (n-1)\)</span> case, and so on all the way back down to <span class="math notranslate nohighlight">\(2\times 2\)</span>. Since expanding along any row or column gives the same result, it can be advantageous to choose one with lots of zeros to cut down on the total computation.</p>
 <div class="dropdown tip admonition">
 <p class="admonition-title"> Example</p>
 <p>Using cofactor expansion along the first row,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-\begin{vmatrix} 2 &amp; 0 &amp; -1 \\ -2 &amp; 3 &amp; -1 \\ 2 &amp; 0 &amp;  1 \end{vmatrix} &amp; =  (2) \twodet{3}{-1}{0}{1} - (0) \twodet{-2}{-1}{2}{1} + (-1)\twodet{-2}{3}{2}{0}    \\
+\begin{vmatrix} 2 &amp; 0 &amp; -1 \\ -2 &amp; 3 &amp; -1 \\ 2 &amp; 0 &amp; 1 \end{vmatrix} &amp; =  (2) \twodet{3}{-1}{0}{1} - (0) \twodet{-2}{-1}{2}{1} + (-1)\twodet{-2}{3}{2}{0}    \\
 &amp; = 2(3-0) + (-1)(0-6) = 12. \\
 \end{align*}\]</div>
 <p>In this case it might have been a tad easier to exploit the zeros by expanding along the second column instead:</p>
@@ -524,24 +523,28 @@ where the sum is taken over any row or column of $\bfA$ and $\mathbf{M}_{ij}$ is
 <p>Even though a 2x2 inverse is easy, it’s still not the most convenient way to solve a linear system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> by hand. There is an even faster equivalent shortcut known as <a class="reference internal" href="overview.html#term-cramer-s-rule"><span class="xref std std-term">Cramer’s Rule</span></a>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-x_1 &amp; = \frac{ \twodet{b_1}{a_{12}}{b_2}{a_{22}} }{ \det(\bfA) }\\
-x_2 &amp; = \frac{ \twodet{a_{11}}{b_1}{a_{21}}{b_2} }{ \det(\bfA) }.
+x_1 &amp; = \frac{ \twodet{b_1}{A_{12}}{b_2}{A_{22}} }{ \det(\bfA) }\\
+x_2 &amp; = \frac{ \twodet{A_{11}}{b_1}{A_{21}}{b_2} }{ \det(\bfA) }.
 \end{align*}\]</div>
 <p>Obviously this does not work if <span class="math notranslate nohighlight">\(\det(\bfA)=0\)</span>, i.e., when the matrix is singular. Instead you have to fall back on our other methods.</p>
 <div class="dropdown tip admonition">
 <p class="admonition-title"> Example</p>
-<p>For</p>
+<p>Solve</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 -x + 3y &amp; = 1 \\
 3x + y &amp; = 7
 \end{align*}\]</div>
-<p>Cramer’s Rule says</p>
+<p>by Cramer’s Rule.</p>
+<div class="dropdown note solution admonition">
+<p class="admonition-title"></p>
+<p>Plug and play (or is it plug and pray?):</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-x &amp; = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bfA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} = 2 \\
-y &amp; = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bfA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10} = 1\\
+x &amp; = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bfA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} = 2, \\
+y &amp; = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bfA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10} = 1.\\
 \end{align*}\]</div>
+</div>
 </div>
 </div>
 </div>

@@ -193,4 +193,4 @@ x_p(t) &= \frac{1}{6}\int_0^t \sin(6(t-\tau))\sin(\tau) \,d\tau \\
 The integrals yield to standard trig tricks, if you care to finish them.
 ::::
 
-In the end, we can avoid Laplace transforms altogether! The impulse response is equivalent to the solution of $\opA[x]=0$ with $x(0)=0$, $x'(0)=1$, which is a homogeneous problem we can easily solve. Then a particular solution is just a convolution integral away. It turns out that this process is equivalent to a 2nd-order version of the method of [variation of parameters](../first_linear/variation_parameters.md). For linear problems, all roads lead to the same destination.
+In the end, we can avoid Laplace transforms altogether! The impulse response is equivalent to the solution of $\opA[x]=0$ with $x(0)=0$, $x'(0)=1$, which is a homogeneous problem we can easily solve. Then a particular solution is "only" a convolution integral away. It turns out that this process is equivalent to a 2nd-order version of the method of [variation of parameters](../first_linear/variation_parameters.md). For linear problems, all roads lead to the same destination.

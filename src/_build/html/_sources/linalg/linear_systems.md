@@ -57,25 +57,28 @@ It's not hard to turn those statements into algebraic conditions. The slopes of 
    1. If one line's equation is a multiple of the other, there are infinitely many solutions.
    2. Otherwise, there are no solutions.
 
-::::{admonition,dropdown,tip} Example
-If we look at the equations
+::::{admonition,tip} Example
+Find all solutions to the equations
 
 \begin{align*}
 x - 3y & = 1, \\
--2x + 6y & = 2,
+-2x + 6y & = 2.
 \end{align*}
 
-then we identify $(a,b,c,d)=(1,-3,-2,6)$, and $ad-bc=6-6=0$. So we know there is not a  unique solution (parallel lines). Dividing the second equation by $-2$ leads to the equivalent system
+:::{admonition,dropdown,note,solution}
+
+We identify $(a,b,c,d)=(1,-3,-2,6)$, and $ad-bc=6-6=0$. So we know there is not a unique solution (i.e., the lines are parallel). Dividing the second equation by $-2$ leads to the equivalent system
 
 \begin{align*}
 x - 3y & = 1, \\
 x - 3y & = -1.
 \end{align*}
 
-It's now clear that there is no way to satisfy both equations simultaneously.
+It's now clear that there is no way to satisfy both equations simultaneously. The system is inconsistent.
+:::
 ::::
 
-## General case 
+## General case
 
 Time to put on our big-kid pants. For $m$ equations in $ $ variables, we need to use subscripts rather than different letters for everything:
 
@@ -98,6 +101,26 @@ b_1 \\ b_2 \\ \vdots \\ b_m
 $$
 
 Now $\bfA$ and $\bfb$ are the data of the linear system, and $\bfx$ is the solution.
+
+::::{admonition,tip} Example
+Sometimes zeros are needed as placeholders in the coefficient matrix. In the linear system
+
+\begin{align*}
+  x_1 - x_2 + 3 x_3 &= 4,\\
+  2x_2 + 5x_4 &= -1,
+\end{align*}
+
+the coefficient matrix is $2\times 4$, 
+
+$$
+\bfA =
+\begin{bmatrix}
+1 & -1 & 3 & 0 \\ 0 & 2 & 0 & 5
+\end{bmatrix},
+$$
+
+and the right-side vector is $\twovec{4}{-1}$.
+::::
 
 ## MATLAB
 

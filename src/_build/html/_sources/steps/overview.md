@@ -29,7 +29,7 @@ superposition
   Addition of partial solutions to a linear problem to get the complete solution.
 
 transfer function
-  Multiplier of the transform of a forcing function that equals the transform of a particular solution.
+  Multiplier of the transform of a forcing function that produces the transform of a particular solution.
 
 unit step function
   Function that is zero up to a specified time, then one thereafter.

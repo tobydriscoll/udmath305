@@ -76,7 +76,7 @@ Like the absolute value, $|z|$ is the distance from $z$ to the origin, and $|w-z
 An important operation on complex numbers that has no real counterpart is the {term}`conjugate`,
 
 ```{math}
-\bfar{z} =\text{Re}(z) - i \,\text{Im}(z).
+\bar{z} =\text{Re}(z) - i \,\text{Im}(z).
 ```
 
 Geometrically this is a reflection across the real axis of the plane. No matter how complicated an expression is, you just replace $i$ by $-i$ everywhere to get the conjugate.
@@ -84,24 +84,43 @@ Geometrically this is a reflection across the real axis of the plane. No matter 
 You add, subtract, and multiply complex numbers by applying the usual algebraic rules, applying $i^2=-1$ as needed. They should give little trouble. Division can be a little trickier, even though the rules are always the same. One trick is to give a complex ratio a purely real denominator:
 
 ```{math}
-\frac{w}{z} = \frac{w \bfar{z}}{z \bfar{z}} = \frac{w \bfar{z}}{|z|^2}.
+\frac{w}{z} = \frac{w \bar{z}}{z \bar{z}} = \frac{w \bar{z}}{|z|^2}.
 ```
 
-This is a lot like rationalizing a denominator with square roots. Memorize the special case $1/i = -i$.
+This is a lot like rationalizing a denominator with square roots. 
+
+::::{admonition,tip} Example
+$$
+\frac{2-i}{3+2i} = \frac{2-i}{3+2i}\cdot \frac{3-2i}{3-2i}
+= \frac{6-4i-3i+2i^2}{3^2+2^2} = \frac{4-7i}{13}.
+$$
+::::
+
+::::{admonition,tip} Example
+Suppose that $|z|=1$. Then 
+
+$$
+\frac{1}{z} = \frac{1}{z}\cdot \frac{\bar{z}}{\bar{z}} = \frac{\bar{z}}{|z|^2} = \bar{z}.
+$$
+::::
+
+```{tip}
+Memorize the special case $\dfrac{1}{i} = -i$.
+```
 
 Here are some more simple rules to know:
 
 ````{proof:property} Complex arithmetic
 For complex numbers $w$ and $z$,
 
-1. $|\bfar{z}| = |z|$
+1. $|\bar{z}| = |z|$
 1. $|wz| = |w|\cdot |z|$
 1. $|w+z|\le |w| + |z|$ (triangle inequality)
-1. $\left| \frac{1}{z} \right| = \frac{1}{|z|}$
-1. $\overline{wz}=\bfar{w}\cdot \bfar{z}$
-1. $\overline{w+z}=\bfar{w}+\bfar{z}$
-1. $\overline{\left(\frac{1}{z} \right)} = \frac{1}{\bfar{z}}$
-1. $|z|^2 = z\cdot \bfar{z}$
+1. $\left| \dfrac{1}{z} \right| = \dfrac{1}{|z|}$
+1. $\overline{wz}=\bar{w}\cdot \bar{z}$
+1. $\overline{w+z}=\bar{w}+\bar{z}$
+1. $\overline{\left(\dfrac{1}{z} \right)} = \dfrac{1}{\bar{z}}$
+1. $|z|^2 = z\cdot \bar{z}$
 ````
 
 More to come later on complex numbers, but this will be enough for now.

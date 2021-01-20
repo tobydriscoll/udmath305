@@ -34,16 +34,18 @@ where $\bfa_j$ refers to the $j$th column of $\bfA$.
 
 In order for the definition to work, the number of columns in $\bfA$ has to be the same as the number of elements in $\bfx$. Otherwise, the product is not defined. Note also that the result is a member of $\complex^m$.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 
-The product
+Calculate the product
 
 ```{math}
 \begin{bmatrix} 
-1 & -1 & -1 \\ 3 & -2 & 0 \\ 1 & -2 & -1 \end{bmatrix} \threevec{-1}{2}{-1} 
+1 & -1 & -1 \\ 3 & -2 & 0 \\ 1 & -2 & -1 \end{bmatrix} \threevec{-1}{2}{-1}.
 ```
 
-is equivalent to 
+:::{admonition,dropdown,note,solution}
+The product is equivalent to
+
 ```{math}
 (-1) \threevec{1}{3}{1} + (2) \threevec{-1}{-2}{-2} + (-1) \threevec{-1}{0}{-1} = \threevec{-2}{-7}{-4}.
 ```
@@ -55,7 +57,7 @@ We often don't write out the product in this much detail just to calculate an ex
 ```
 
 You might recognize the "zip" expressions in this vector as dot products from vector calculus.
-
+:::
 ::::
 
 What justifies calling this operation multiplication? In large part, it's the natural distributive properties

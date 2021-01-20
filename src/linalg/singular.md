@@ -13,7 +13,7 @@ kernelspec:
   name: matlab
 ---
 
-# Detecting singular matrices
+# Detecting singularity
 
 There are many ways to characterize singular matrices, some of which are computationally attractive. We focus on just two of them.
 
@@ -29,12 +29,12 @@ A square matrix is invertible if and only if its RREF is an identity matrix.
 In this section we are referring to the RREF of just the coefficient matrix, not the augmented matrix.
 ```
 
-In lieu of a proof, let's consider how limited the options are for the RREF of a square matrix. There are just as many rows as there are columns. So if each row is to have a leading one, then they must march along the diagonal of the matrix, i.e., the leading one of row $i$ is in column $i$. But those are the only nonzeros in their columns, so they are the only nonzeros in the entire matrix. Voila, an identity matrix!
+In lieu of a formal proof, let's consider how limited the options are for the RREF of a square matrix. There are just as many rows as there are columns. So if each row is to have a leading one, then they must march along the diagonal of the matrix, i.e., the leading one of row $i$ is in column $i$. But those are the only nonzeros in their columns, so they are the only nonzeros in the entire matrix. Voila, an identity matrix!
 
-The contrapositive observation is that if $\bfA$ is singular, then it must have one or more rows, and therefore one or more columns, without a leading one. That is,
+The [contrapositive](https://en.wikipedia.org/wiki/Contraposition) observation is that if $\bfA$ is singular, then it must have one or more rows, and therefore one or more columns, without a leading one. That is,
 
 ````{proof:theorem}
-A square matrix is singular if and only if its RREF has at least one pivot column and at least one row of zeros.
+A square matrix is singular if and only if its RREF has at least one row of zeros.
 ````
 
 ::::{admonition,dropdown,tip} Example
@@ -55,7 +55,7 @@ Hence this matrix is singular, which makes it not so simple from the standpoint 
 
 ## Determinant
 
-You should have seen some $2\times 2$ and $3\times 3$ determinants before now in vector calculus. The $2\times 2$ case is easy to describe:
+You probably saw some $2\times 2$ and $3\times 3$ determinants in vector calculus. The $2\times 2$ case is easy to describe:
 
 ```{math}
 \det\left( \twomat{a}{b}{c}{d} \right) = \twodet{a}{b}{c}{d} = ad-bc.
@@ -67,9 +67,11 @@ This definition can be extended to create a real-valued function for square matr
 
 ````{proof:definition} Determinant
 If $\bfA$ is $n\times n$, then its {term}`determinant` is
+
 ```{math}
-\det(\bfA) = \sum (-1)^{i+j} a_{ij} \det( \mathbf{M}_{ij} )
-```,
+\det(\bfA) = \sum (-1)^{i+j} a_{ij} \det\bigl( \mathbf{M}_{ij} \bigr),
+```
+
 where the sum is taken over any row or column of $\bfA$ and $\mathbf{M}_{ij}$ is the matrix that results from deleting row $i$ and column $j$ from $\bfA$.
 ````
 
@@ -79,7 +81,7 @@ The definition, which is called {term}`cofactor expansion`, is recursive: the $n
 Using cofactor expansion along the first row,
 
 \begin{align*}
-\begin{vmatrix} 2 & 0 & -1 \\ -2 & 3 & -1 \\ 2 & 0 &  1 \end{vmatrix} & =  (2) \twodet{3}{-1}{0}{1} - (0) \twodet{-2}{-1}{2}{1} + (-1)\twodet{-2}{3}{2}{0}    \\
+\begin{vmatrix} 2 & 0 & -1 \\ -2 & 3 & -1 \\ 2 & 0 & 1 \end{vmatrix} & =  (2) \twodet{3}{-1}{0}{1} - (0) \twodet{-2}{-1}{2}{1} + (-1)\twodet{-2}{3}{2}{0}    \\
 & = 2(3-0) + (-1)(0-6) = 12. \\
 \end{align*}
 
@@ -97,9 +99,9 @@ There are a few facts about determinants that are good to know.
 Let $\bfA$ and $\bfB$ be $n\times n$, and let $c$ be a scalar. Then
 
 1. $\det(c\bfA) = c^n \det(\bfA)$,
-1. $\det(\bfA\bfB) = \det(\bfA)\det(\bfB)$,
-1. $\det(\bfA)=0$ if and only if $\bfA$ is singular, and
-1. If $\bfA$ is nonsingular, $\det(\bfA^{-1})=\bigl[\det(\bfA)\bigr]^{-1}$.
+2. $\det(\bfA\bfB) = \det(\bfA)\det(\bfB)$,
+3. $\det(\bfA)=0$ if and only if $\bfA$ is singular, and
+4. If $\bfA$ is nonsingular, $\det(\bfA^{-1})=\bigl[\det(\bfA)\bigr]^{-1}$.
 ````
 
 It's the third property above that we will be using. The determinant is often the easiest way to check for singularity of a small matrix by hand.
@@ -109,24 +111,28 @@ It's the third property above that we will be using. The determinant is often th
 Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system $\bfA\bfx=\bfb$ by hand. There is an even faster equivalent shortcut known as {term}`Cramer's Rule`:
 
 \begin{align*}
-x_1 & = \frac{ \twodet{b_1}{a_{12}}{b_2}{a_{22}} }{ \det(\bfA) }\\
-x_2 & = \frac{ \twodet{a_{11}}{b_1}{a_{21}}{b_2} }{ \det(\bfA) }.
+x_1 & = \frac{ \twodet{b_1}{A_{12}}{b_2}{A_{22}} }{ \det(\bfA) }\\
+x_2 & = \frac{ \twodet{A_{11}}{b_1}{A_{21}}{b_2} }{ \det(\bfA) }.
 \end{align*}
 
 Obviously this does not work if $\det(\bfA)=0$, i.e., when the matrix is singular. Instead you have to fall back on our other methods.
 
 ::::{admonition,dropdown,tip} Example
-For
+Solve
 
 \begin{align*}
 -x + 3y & = 1 \\
 3x + y & = 7
-\end{align*},
+\end{align*}
 
-Cramer's Rule says
+by Cramer's Rule.
+
+:::{admonition,dropdown,note,solution}
+Plug and play (or is it plug and pray?):
 
 \begin{align*}
-x & = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bfA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} = 2 \\
-y & = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bfA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10} = 1\\
+x & = \frac{ \twodet{1}{3}{7}{1} }{ \det(\bfA) }=  \frac{ \twodet{1}{3}{7}{1} }{ \twodet{-1}{3}{3}{1} } = \frac{-20}{-10} = 2, \\
+y & = \frac{ \twodet{-1}{1}{3}{7} }{ \det(\bfA) } = \frac{ \twodet{-1}{1}{3}{7} }{ \twodet{-1}{3}{3}{1} } = \frac{-10}{-10} = 1.\\
 \end{align*}.
+:::
 ::::
