@@ -27,9 +27,9 @@ A homogeneous system $\bfA\bfx = \bfzero$ can have nonzero solutions for $\bfx$,
 
 To be clear, nonzero homogeneous solutions can occur only when $\bfA$ is singular, because otherwise the solution $\bfx=\bfA^{-1}\bfzero=\bfzero$ is unique.
 
-A nice feature of zero is that adding multiples of zero to zero is still zero. So, if $\mathbf{R}$ is the RREF of $\bfA$, then the RREF of the augmented matrix $[\bfA;\,\bfzero]$ is just $[\mathbf{R};\,\bfzero]$. Each free column of $\mathbf{R}$ therefore introduces a free variable in the homogeneous solution.
+A nice feature of zero is that adding multiples of zero to it is still zero. So, if $\mathbf{R}$ is the RREF of $\bfA$, then the RREF of the augmented matrix $[\bfA;\,\bfzero]$ is just $[\mathbf{R};\,\bfzero]$. Each free column of $\mathbf{R}$ therefore introduces a free variable in the homogeneous solution.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 The RREF of 
 
 ```{math}
@@ -42,24 +42,28 @@ is
 \begin{bmatrix} 1 & 0 & -1 \\ 0 & 1 & 2 \\ 0 & 0 & 0 \end{bmatrix}.
 ```
 
-Therefore, solutions of the homogeneous system $\bfA\bfx=\bfzero$ can be read off from the augmented matrix
+Find all solutions of the homogeneous system $\bfA\bfx=\bfzero$.
+
+:::{admonition,dropdown,note,solution}
+
+The RREF of the augmented matrix is
 
 ```{math}
 \begin{bmatrix} 1 & 0 & -1 & 0\\ 0 & 1 & 2 & 0 \\ 0 & 0 & 0 & 0\end{bmatrix}.
 ```
 
-Column 3 is free, so the solution is
+Column 3 is free, so the solution starts with $x_3=s$. Rows 1 and 2 then yield
 
 ```{math}
-x_1 = s, \quad x_2 = -2s, \quad x_3 = s,
+x_1 = s, \quad x_2 = -2s,
 ```
 
-or $s[1;\,-2;\,1]$ for any value of $s$.
-```
+so $\bfx =\threevec{1}{-2}{1}$ for any value of $s$.
+:::
 ::::
 
-::::{admonition,dropdown,tip} Example
-The RREF of 
+::::{admonition,tip} Example
+Given the equivalence  
 
 ```{math}
 \bfA = \begin{bmatrix} 1 & 2 & 0 & -4 \\
@@ -67,26 +71,25 @@ The RREF of
 -3 & -6 & 1 & 13 \\
 -2 & -4 & 0 & 8   
  \end{bmatrix}
-```
-
-is
-
-```{math}
+ \quad \overset{\text{RREF}}{\Longrightarrow} \quad 
 \begin{bmatrix} 
 1 & 2 & 0 & -4 \\
 0 & 0 & 1 & 1 \\
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0   
- \end{bmatrix}.
+ \end{bmatrix},
 ```
+find all solutions of the homogeneous system $\bfA\bfx=\bfzero$.
 
-Hence columns 2 and 4 are free, so we set $x_2=s$, $x_4=t$. The rest of the solution is
+:::{admonition,dropdown,note,solution}
+The RREF of the augmented matrix just tacks on a column of zeros. Hence columns 2 and 4 are free, so we set $x_2=s$, $x_4=t$. The rest of the solution is
 
 ```{math}
 x_1 = -2s+4t, \quad x_3 = -t.
 ```
 
 Note that we can also write 
+
 ```{math}
 \bfx = s \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + t \begin{bmatrix} 4 \\ 0 \\ -1 \\ 1 \end{bmatrix}.
 ```
@@ -99,21 +102,21 @@ The preceding examples are typical in that the homogeneous solution always takes
 \bfx = c_1 \bfu_1 + c_2 \bfu_2 + \cdots + c_k \bfu_k,
 ```
 
-where the $c_j$ are aribtrary, one for each free column of the RREF, and the vectors are constant. It's no accident that this has the form of a linear combination!
+where the $c_j$ are arbitrary, one for each free column of the RREF, and the vectors are constant. It's no accident that this has the form of a linear combination!
 
 ````{proof:definition}
 The formula {eq}`linalg-general-homog` is called the {term}`general solution` of the homogeneous problem $\bfA\bfx=\bfzero$. We say that $\bfu_1,\ldots,\bfu_k$ form a {term}`basis` for the general solution.
 ````
 
-```{margin}
-The general solution of a homogeneous system is really a set of vectors. Other names for this set are *nullspace* and *kernel*.
+```{note}
+The general homogeneous solution is actually a set of vectors. In linear algebra, more common names for this set are *nullspace* and *kernel*. We use "general homogeneous solution" because that terminology appears in differential equations for an analogous situation.
 ```
 
-In the new terminology, we can unify the case of an invertible $\bfA$ by saying that it has an empty basis, with a general solution of just $\bfzero$.
+In the new terminology, we can unify the case of an invertible $\bfA$ by saying that it has an empty basis, and a general solution of the single vector $\bfzero$.
 
 ## Particular solution
 
-Now we consider the nonhomogeneous system $\bfA\bfx=\bfb$. We introduce one of the simplest yet most confusing terms in the course. A {term}`particular solution` of the linear system $\bfA\bfx=\bfb$ is just any one solution of the problem. The only reason the term exists is to distinguish it from the *general* solution, which (as above) is an expression for *every possible* solution of the system.
+Now, let's consider the nonhomogeneous system $\bfA\bfx=\bfb$. We introduce here one of the simplest yet most confusing terms in the course. A {term}`particular solution` of the linear system $\bfA\bfx=\bfb$ is just any one solution of the problem. The only reason the term exists is to distinguish it from the *general* solution, which (as above) is an expression for *every possible* solution of the system.
 
 (theorem-linalg-general)=
 
@@ -139,8 +142,8 @@ Hence $\bfv-\bfx_p$ is a homogeneous solution, which means that we can write it 
 
 Hence every linear system is closely tied to its homogeneous counterpart. The general solution of $\bfA\bfx=\bfb$ requires just one solution, plus the general homogeneous solution.
 
-::::{admonition,dropdown,tip} Example
-Suppose
+::::{admonition,tip} Example
+Find the general solution of
 
 ```{math}
 \begin{bmatrix}
@@ -148,6 +151,7 @@ Suppose
 \end{bmatrix} \bfx = \threevec{-8}{4}{12}.
 ```
 
+:::{admonition,dropdown,note,solution}
 The RREF of the augmented matrix is found to be
 
 ```{math}
@@ -162,14 +166,16 @@ If we replace the last column with zeros, we get the RREF of the associated homo
 \bfx_h = \threevec{s}{2t}{t} = s \threevec{1}{0}{0} + t \threevec{0}{2}{1}.
 ```
 
-Returning to the original nonhomogeneous problem, we only need to find one particular $\bfx_p$. It's easiest for us if we set all the free variables to be zero, in which case we get $x_1=x_3=0$ and $x_2 = 4$. Thus the general solution is
+Returning to the original nonhomogeneous problem, we only need to find any one particular $\bfx_p$. It's easiest for us if we set all the free variables to be zero, in which case we get $x_1=x_3=0$ and $x_2 = 4$. Thus the general solution is
 
 ```{math}
 \bfx = \bfx_p + \bfx_h = \threevec{0}{4}{0} + c_1 \threevec{1}{2}{1} + c_2 \threevec{0}{0}{1}.
 ```
+:::
+::::
 
-```{tip}
-The basis vectors and $\bfx_p$ aren't unique, so it's quite possible to write down two forms of the solution that look quite different but are equivalent.
+```{note}
+The basis vectors in $\bfx_h$ and the particular solution $\bfx_p$ aren't unique, so it's possible to write down two equivalent forms of the solution that look rather different.
 ```
 
-The particular/homogeneous approach will come up again, and often, for differential equations in future chapters.
+The homogeneous $+$ particular approach will come up again, and often, for differential equations.

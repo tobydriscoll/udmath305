@@ -16,7 +16,7 @@ kernelspec:
 
 ```{code-cell}
 ---
-tags: [hide-cell]
+tags: [remove-cell]
 ---
 restoredefaultpath
 set(0,'defaultlinelinewidth',1)
@@ -25,7 +25,7 @@ set(0,'defaultaxesfontsize',6)
 
 ```{code-cell}
 ---
-tags: [hide-cell]
+tags: [remove-cell]
 ---
 %plot -s 800,400 -r 160 -f png
 ```

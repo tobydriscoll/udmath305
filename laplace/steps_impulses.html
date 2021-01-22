@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>3. Steps and impulses (2nd order) &#8212; Notes on linear algebra and ODEs</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Convolution" href="convolution.html" />
+    <link rel="prev" title="2. Solutions to 2nd-order ODEs" href="basic_solutions.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
+   M305 Notes
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  I. Linear algebra
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vectors_matrices.html">
+   2. Vectors and matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/linear_systems.html">
+   3. Linear systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/row_elimination.html">
+   4. Row elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/RREF.html">
+   5. RREF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vector_algebra.html">
+   6. Vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_vector.html">
+   7. Matrix-vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_matrix.html">
+   8. Matrix-matrix algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/identity_inverse.html">
+   9. Identity and inverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/singular.html">
+   10. Detecting singularity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/general_solutions.html">
+   11. General solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/complex_numbers.html">
+   12. Complex numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/eigenvalues.html">
+   13. Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/multiplicity.html">
+   14. Multiplicity
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  II. First-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/preview.html">
+   2. Quick tour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp.html">
+   3. Initial-value problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/operators.html">
+   4. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/homogeneous.html">
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   9. Modeling
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  III. Steps and impulses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/unit_step.html">
+   2. Unit step functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/impulse.html">
+   3. Impulses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/laplace.html">
+   4. Laplace transforms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/transform_solutions.html">
+   5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/laplace/steps_impulses.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#impulse-forcing">
+   3.1. Impulse forcing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-forcing">
+   3.2. Step forcing
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="steps-and-impulses-2nd-order">
+<h1><span class="section-number">3. </span>Steps and impulses (2nd order)<a class="headerlink" href="#steps-and-impulses-2nd-order" title="Permalink to this headline">¶</a></h1>
+<p>The key transforms that apply when the forcing contains steps or impulses are</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{gather*}
+H(t-T) \Longleftrightarrow \dfrac{e^{-sT}}{s}, \\
+H(t-T)f(t-T) \Longleftrightarrow e^{-sT}F(s), \\
+\delta(t-T) \Longleftrightarrow e^{-sT}.
+\end{gather*}\]</div>
+<p>Keep in mind that <em>both steps and impulses in forcing produce steps in the solution</em>. The impulses are the simpler case.</p>
+<div class="section" id="impulse-forcing">
+<h2><span class="section-number">3.1. </span>Impulse forcing<a class="headerlink" href="#impulse-forcing" title="Permalink to this headline">¶</a></h2>
+<p>For illustration, let’s start with an impulse on an undamped oscillator,</p>
+<div class="math notranslate nohighlight">
+\[
+x''+x = \delta(t-T), \quad x(0)=x'(0)=0 \qquad (T \ge 0).
+\]</div>
+<p>Taking the transform of everything and solving for <span class="math notranslate nohighlight">\(X\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[
+X(s) = \frac{e^{-sT}}{s^2+1} = e^{-sT} Y(s),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(Y(s)=1/(s^2+1)\)</span>. We chose to write <span class="math notranslate nohighlight">\(X\)</span> this way so that we can apply the shift theorem,</p>
+<div class="math notranslate nohighlight">
+\[
+\lx\bigl[H(t-T)y(t-T)\bigr] = e^{-sT}Y(s).
+\]</div>
+<p>In this case we have that <span class="math notranslate nohighlight">\(y(t)=\sin(t)\)</span>, hence</p>
+<div class="math notranslate nohighlight">
+\[
+\lx\bigl[H(t-T)\sin(t-T)\bigr] = e^{-sT}Y(s) = X(s).
+\]</div>
+<p>That is, the solution is <span class="math notranslate nohighlight">\(x(t)=H(t-T)\sin(t-T)\)</span>. Writing it piecewise,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+x(t) = \begin{cases} 0, &amp; 0\le t &lt; T, \\ \sin(t-T), &amp; t \ge T. \end{cases}
+\end{split}\]</div>
+<p>Since the system starts at rest, it remains at rest until the impulse at time <span class="math notranslate nohighlight">\(T\)</span>. Note that <span class="math notranslate nohighlight">\(x\)</span> remains continuous at <span class="math notranslate nohighlight">\(t=T\)</span>, but <span class="math notranslate nohighlight">\(x'\)</span> does not. In fact, <span class="math notranslate nohighlight">\(x'(T^+)=\cos(0)=1\)</span>. This modifies the impulse response <a class="reference internal" href="../steps/impulse.html#section-steps-jump"><span class="std std-ref">we observed</span></a> for first-order problems.</p>
+<div class="proof proof-type-rule">
+
+    <div class="proof-title">
+        <span class="proof-type">Rule </span>
+        
+    </div><div class="proof-content">
+<p>In a second-order linear ODE, the effect of a unit impulse is the same as an instantaneous increase by 1 in the derivative of the solution.</p>
+</div></div><div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<blockquote>
+<div><p>Find the solution of <span class="math notranslate nohighlight">\(x''+2x'+10x=6\delta(t-5)\)</span>, <span class="math notranslate nohighlight">\(x(0)=x'(0)=0\)</span>.</p>
+</div></blockquote>
+<p>Solving for the transform leads to</p>
+<div class="math notranslate nohighlight">
+\[X_p(s) = \frac{6e^{-5s}}{s^2+2s+10}.\]</div>
+<p>The shift theorem applied to <span class="math notranslate nohighlight">\(e^{-5s}Y(s)\)</span> requires us to define</p>
+<div class="math notranslate nohighlight">
+\[
+Y(s) = \frac{6}{s^2+2s+10},
+\]</div>
+<p>and then find <span class="math notranslate nohighlight">\(y(t)\)</span>. This <span class="math notranslate nohighlight">\(Y\)</span> is already in PFD form. One way to invert it is to complete the square in the denominator:</p>
+<div class="math notranslate nohighlight">
+\[
+Y(s) = \frac{6}{(s+1)^2+9}.
+\]</div>
+<p>We now want to apply the transform pair</p>
+<div class="math notranslate nohighlight">
+\[
+e^{at} f(t) \Longleftrightarrow F(s-a),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(a=-1\)</span>, because then <span class="math notranslate nohighlight">\(Y(s)=F(s+1)\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[
+F(s) = \frac{6}{s^2+9}.
+\]</div>
+<p>Finally we can begin to unravel the tapestry. We see that <span class="math notranslate nohighlight">\(f(t)=2\sin(3t)\)</span>. Our definitions and transform rules imply that <span class="math notranslate nohighlight">\(y(t)=e^{-t}f(t)\)</span> and <span class="math notranslate nohighlight">\(x_p(t)=H(t-5)y(t-5)\)</span>. Hence</p>
+<div class="math notranslate nohighlight">
+\[
+x_p(t) = 2 H(t-5)e^{-(t-5)} \sin[3(t-5)].
+\]</div>
+</div>
+</div>
+<div class="section" id="step-forcing">
+<h2><span class="section-number">3.2. </span>Step forcing<a class="headerlink" href="#step-forcing" title="Permalink to this headline">¶</a></h2>
+<p>As a warm-up, let’s consider</p>
+<div class="math notranslate nohighlight">
+\[
+x''+x = H(t-T), \quad x(0)=x'(0)=0.
+\]</div>
+<p>Solving for the transform of the solution gives</p>
+<div class="math notranslate nohighlight">
+\[
+X(s) = \frac{e^{-sT}}{s(s^2+1)}.
+\]</div>
+<p>This is in the form <span class="math notranslate nohighlight">\(e^{-sT}Y(s)\)</span>, where <span class="math notranslate nohighlight">\(Y(s)=1/[s(s^2+1)]\)</span>. An appropriate real PFD is</p>
+<div class="math notranslate nohighlight">
+\[
+Y(s) = \frac{1}{s(s^2+1)} = \frac{A}{s} + \frac{Bs+C}{s^2+1},
+\]</div>
+<p>leading to the identity</p>
+<div class="math notranslate nohighlight">
+\[
+1 = A(s^2+1) + (Bs+C)s = (A+B)s^2 + Cs + A.
+\]</div>
+<p>From here it’s clear that <span class="math notranslate nohighlight">\(A=1\)</span>, <span class="math notranslate nohighlight">\(B=-1\)</span>, <span class="math notranslate nohighlight">\(C=0\)</span>. Hence <span class="math notranslate nohighlight">\(y(t)=1-\cos(t)\)</span>. Finally,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+x(t) = H(t-T)y(t-T) = H(t-T)[1 - \cos(t-T)] =
+\begin{cases} 0, &amp; 0 \le t &lt; T, \\ 1-\cos(t-T), &amp; t\ge T. \end{cases}
+\end{split}\]</div>
+<p>It only takes a moment to see that both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x'\)</span> are continuous at <span class="math notranslate nohighlight">\(t=T\)</span>, which is the general situation with step forcing.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<blockquote>
+<div><p>Find a particular solution of <span class="math notranslate nohighlight">\(x''-x=f(t)\)</span>, where <span class="math notranslate nohighlight">\(f(t) = \begin{cases} 0, &amp; 0 \le t &lt; 3, \\ t, &amp; t\ge 4. \end{cases}\)</span></p>
+</div></blockquote>
+<p>The forcing function is <span class="math notranslate nohighlight">\(f(t)=tH(t-3)\)</span>. This is not yet quite in a form we know how to transform. What we need is</p>
+<div class="math notranslate nohighlight">
+\[
+f(t) = H(t-3)g(t-3),
+\]</div>
+<p>in order to get</p>
+<div class="math notranslate nohighlight">
+\[
+F(s) = e^{-3s}G(s).
+\]</div>
+<p>This requires the definition <span class="math notranslate nohighlight">\(g(t-3)=t\)</span>, which means that <span class="math notranslate nohighlight">\(g(t)=t+3\)</span>. Hence</p>
+<div class="math notranslate nohighlight">
+\[
+F(s) = e^{-3s} \left[ \frac{1}{s^2} + \frac{3}{s}\right].
+\]</div>
+<p>Now we can solve for <span class="math notranslate nohighlight">\(X_p\)</span> to get</p>
+<div class="math notranslate nohighlight">
+\[
+X_p(s) = e^{-3s} \left[ \frac{3s+1}{s^2(s^2-1)} = e^{-3s} Y(s) \right],
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+Y(s) = \frac{As+B}{s^2} + \frac{C}{s-1} + \frac{D}{s+1}.
+\]</div>
+<p>From here,</p>
+<div class="math notranslate nohighlight">
+\[
+3s+1 = (As+B)(s^2-1) + Cs^2(s+1) + Ds^2(s-1).
+\]</div>
+<p>At <span class="math notranslate nohighlight">\(s=0\)</span> we get <span class="math notranslate nohighlight">\(1=-B\)</span>. From <span class="math notranslate nohighlight">\(s=1\)</span> and <span class="math notranslate nohighlight">\(s=-1\)</span> we get <span class="math notranslate nohighlight">\(2C=4\)</span> and <span class="math notranslate nohighlight">\(-2D=-2\)</span>. The coefficient of <span class="math notranslate nohighlight">\(s^3\)</span> on the right side is <span class="math notranslate nohighlight">\(A+C+D\)</span>, which must be zero, so <span class="math notranslate nohighlight">\(A=-3\)</span>. Thus</p>
+<div class="math notranslate nohighlight">
+\[
+Y(s) = \frac{-3}{s} + \frac{-1}{s^2} + \frac{2}{s-1} + \frac{1}{s+1},
+\]</div>
+<p>and <span class="math notranslate nohighlight">\(y(t)=-3-t+2e^t + e^{-t}\)</span>. Finally, <span class="math notranslate nohighlight">\(x_p(t) = H(t-3)y(t-3)\)</span>.</p>
+</div>
+<p>As you can see, the Laplace transform systematizes the algebra needed to solve the kinds of linear ODEs we have encountered, but that does not mean that the algebra is simple. It’s an ideal situation for computer solutions.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./laplace"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="basic_solutions.html" title="previous page"><span class="section-number">2. </span>Solutions to 2nd-order ODEs</a>
+    <a class='right-next' id="next-link" href="convolution.html" title="next page"><span class="section-number">4. </span>Convolution</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tobin A. Driscoll<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

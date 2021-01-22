@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>8. Matrix-matrix algebra &#8212; Notes on linear algebra and ODEs</title>
+    <title>8. Matrix multiplication &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -51,7 +51,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -150,7 +150,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="singular.html">
-   10. Detecting singular matrices
+   10. Detecting singularity
   </a>
  </li>
  <li class="toctree-l1">
@@ -169,8 +169,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="defectiveness.html">
-   14. Defectiveness
+  <a class="reference internal" href="multiplicity.html">
+   14. Multiplicity
   </a>
  </li>
 </ul>
@@ -223,6 +223,112 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/modeling.html">
    9. Modeling
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  III. Steps and impulses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/unit_step.html">
+   2. Unit step functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/impulse.html">
+   3. Impulses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/laplace.html">
+   4. Laplace transforms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/transform_solutions.html">
+   5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
   </a>
  </li>
 </ul>
@@ -314,8 +420,8 @@
         
               <div>
                 
-  <div class="section" id="matrix-matrix-algebra">
-<h1><span class="section-number">8. </span>Matrix-matrix algebra<a class="headerlink" href="#matrix-matrix-algebra" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="matrix-multiplication">
+<h1><span class="section-number">8. </span>Matrix multiplication<a class="headerlink" href="#matrix-multiplication" title="Permalink to this headline">¶</a></h1>
 <p>We can think of vectors as a special kind of matrix, and accordingly we can generalize matrix-vector products to matrix-matrix products. There are many equivalent ways to define these products. Here is the one we start with.</p>
 <div class="proof proof-type-definition" id="id1">
 
@@ -335,17 +441,17 @@
 \bfA\mathbf{b}_1 &amp; \bfA\mathbf{b}_2 &amp; \cdots &amp; \bfA\mathbf{b}_p.
 \end{bmatrix}\]</div>
 </div></div><p>In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>In order to define <span class="math notranslate nohighlight">\(\bfA\bfB\)</span>, we require that the number of columns in <span class="math notranslate nohighlight">\(\bfA\)</span> is the same as the number of rows in <span class="math notranslate nohighlight">\(\bfB\)</span>. That is, the <em>inner dimensions</em> must agree. The result has size determined by the <em>outer dimensions</em> of the original matrices.</p>
 </div>
 <p>When we compute a matrix product by hand, we usually don’t write out the above. Instead we use a more compact definition for the individual entries of <span class="math notranslate nohighlight">\(\mathbf{C} = \bfA\bfB\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-matrix-mult-element">
 <span class="eqno">(8.2)<a class="headerlink" href="#equation-matrix-mult-element" title="Permalink to this equation">¶</a></span>\[C_{ij} = \sum_{k=1}^n a_{ik}b_{kj}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p.\]</div>
 <p>The sum to get a single <span class="math notranslate nohighlight">\(C_{ij}\)</span> is what we called a “zip”, or essentially a dot product, of row <span class="math notranslate nohighlight">\(i\)</span> from <span class="math notranslate nohighlight">\(\bfA\)</span> with column <span class="math notranslate nohighlight">\(j\)</span> from <span class="math notranslate nohighlight">\(\bfB\)</span>.</p>
-<div class="dropdown tip admonition">
+<div class="tip admonition">
 <p class="admonition-title"> Example</p>
-<p>Let</p>
+<p>Find <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{B}\)</span> if</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix}
 1 &amp; -1 \\ 0 &amp; 2 \\ -3 &amp; 1
@@ -353,7 +459,9 @@
 \mathbf{B} = \begin{bmatrix}
 2 &amp; -1 &amp; 0 &amp; 4 \\ 1 &amp; 1 &amp; 3 &amp; 2
 \end{bmatrix}.\end{split}\]</div>
-<p>Then</p>
+<div class="dropdown note solution admonition">
+<p class="admonition-title"></p>
+<p>Using <a class="reference internal" href="#equation-matrix-mult-element">(8.2)</a>,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \bfA\mathbf{B} &amp;= \begin{bmatrix}
@@ -369,9 +477,9 @@
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA \begin{bmatrix} 2 \\ 1 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ 0 \\ -3
 \end{bmatrix} + 1 \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
-= \begin{bmatrix} 1 \\ 2 \\ -5 \end{bmatrix}
-```,
-and so on.\end{split}\]</div>
+= \begin{bmatrix} 1 \\ 2 \\ -5 \end{bmatrix},\end{split}\]</div>
+<p>and so on.</p>
+</div>
 </div>
 <p>MATLAB interprets the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator to mean multiplication in the sense of matrices.</p>
 <div class="cell docutils container">
@@ -397,9 +505,9 @@ and so on.\end{split}\]</div>
 
      2    -1     0     4
      1     1     3     2
-
-
-ans =
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
 
      1    -2    -3     2
      2     2     6     4
@@ -450,13 +558,13 @@ ans =
 <p>First, the bad news. We sort of knew this was coming, from matrix-vector multiplication.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Matrix multiplication is not commutative. If <span class="math notranslate nohighlight">\(\bfA\bfB\)</span> is defined, then <span class="math notranslate nohighlight">\(\bfB\bfA\)</span> may not be, and even if it is, it may not equal <span class="math notranslate nohighlight">\(\bfA\bfB\)</span>. Put another way, you cannot simply change the order of the terms in a matrix product without some justification.</p>
+<p>Matrix multiplication is not commutative. If <span class="math notranslate nohighlight">\(\bfA\bfB\)</span> is defined, then <span class="math notranslate nohighlight">\(\bfB\bfA\)</span> may not be, and even if it is, it may not equal <span class="math notranslate nohighlight">\(\bfA\bfB\)</span>. Put another way, you cannot simply change the order of the terms in a matrix product without some explicit justification.</p>
 </div>
 <p>Fortunately, other familiar and handy properties of multiplication do come along for the ride:</p>
 <ol class="simple">
-<li><p><span class="math notranslate nohighlight">\((\bfA\bfB)\mathbf{C}=\bfA(\bfB \mathbf{C})\)</span>  (association)</p></li>
-<li><p><span class="math notranslate nohighlight">\(\bfA(\bfB+\mathbf{C}) = \bfA\bfB + \bfA\mathbf{C}\)</span>  (right distribution)</p></li>
-<li><p><span class="math notranslate nohighlight">\((\bfA+\bfB)\mathbf{C} = \bfA\mathbf{C} + \bfB\mathbf{C}\)</span>   (left distribution)</p></li>
+<li><p><span class="math notranslate nohighlight">\((\bfA\bfB)\mathbf{C}=\bfA(\bfB \mathbf{C})\qquad\)</span>  (association)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bfA(\bfB+\mathbf{C}) = \bfA\bfB + \bfA\mathbf{C}\qquad\)</span>  (right distribution)</p></li>
+<li><p><span class="math notranslate nohighlight">\((\bfA+\bfB)\mathbf{C} = \bfA\mathbf{C} + \bfB\mathbf{C}\qquad\)</span>   (left distribution)</p></li>
 </ol>
 <p>These properties are easy to demonstrate (but not prove!) in MATLAB.</p>
 <div class="cell docutils container">
@@ -514,9 +622,9 @@ ans =
 <span class="n">B</span> <span class="p">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="nb">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">C</span> <span class="p">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="nb">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 
-<span class="p">(</span> <span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">B</span><span class="o">+</span><span class="n">C</span><span class="p">)</span> <span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="n">A</span><span class="o">*</span><span class="n">B</span> <span class="o">+</span> <span class="n">A</span><span class="o">*</span><span class="n">C</span> <span class="p">)</span>    <span class="c">% should be zero</span>
+<span class="n">ident1</span> <span class="p">=</span> <span class="p">(</span> <span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">B</span><span class="o">+</span><span class="n">C</span><span class="p">)</span> <span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="n">A</span><span class="o">*</span><span class="n">B</span> <span class="o">+</span> <span class="n">A</span><span class="o">*</span><span class="n">C</span> <span class="p">)</span>    <span class="c">% should be zero</span>
 
-<span class="p">(</span> <span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="p">)</span><span class="o">*</span><span class="n">C</span> <span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="n">A</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">C</span> <span class="p">)</span>    <span class="c">% should be zero</span>
+<span class="n">ident2</span> <span class="p">=</span> <span class="p">(</span> <span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="p">)</span><span class="o">*</span><span class="n">C</span> <span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="n">A</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">C</span> <span class="p">)</span>    <span class="c">% should be zero</span>
 </pre></div>
 </div>
 </div>
@@ -545,7 +653,7 @@ ans =
      8     0     8     6
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ident1 =
 
      0     0     0     0
      0     0     0     0
@@ -553,7 +661,7 @@ ans =
      0     0     0     0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ident2 =
 
      0     0     0     0
      0     0     0     0

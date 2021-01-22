@@ -18,31 +18,67 @@ Our starting point will be differential equations that include only the first de
 ## Glossary
 
 ```{glossary}
+autonomous
+  ODE that does not contain an explicit dependence on time (e.g., in the coefficient or forcing functions); also called time-invariant.
+
+coefficient function
+  Term in a first-order linear ODE that multiplies the solution.
+
 continuously stirred tank reactor
-    Chamber in which the contents are stirred so rapidly that perfect instantaneous mixing is assumed.
+  Chamber in which the contents are stirred so rapidly that perfect instantaneous mixing is assumed.
+
+dependent variable
+  Unknown quantity to be solved for in an ODE.
 
 doubling time
-    In a linear growth problem, the time taken for the solution to double.
+  In a linear growth problem, the time taken for the solution to double.
+
+first-order ODE
+  An ordinary differential equation in which only the first derivative of the dependent variable appears.
+
+first-order linear ODE
+  A first-order ODE described by a linear operator, i.e., in which the dependent variable appears only linearly.
+
+forcing function
+  Term in a first-order linear ODE that does not multiply the solution.
+
+general solution
+  Formula that expresses every possible solution to an ODE.
 
 half-life
-    In a linear decay process, the time taken for half of the solution to decay away.
+  In a linear decay process, the time taken for half of the solution to decay away.
+
+homogeneous
+  A linear ODE with zero forcing.
+
+independent variable
+  Quantity on which the dependent variable in an ODE depends.
 
 initial condition
-    Given value of the solution at a particular time.
+  Given value of the solution at a particular time.
 
 initial-value problem
-    Combination of a first-order ODE and an initial condition.
+  Combination of a first-order ODE and an initial condition.
 
 integrating factor
-    Multiplicative factor that transforms one side of a first-order linear ODE into an exact derivative of a product.
+  Multiplicative factor that transforms one side of a first-order linear ODE into an exact derivative of a product.
+
+linear operator
+  Map from functions to functions that obeys the properties of a linear operation.
 
 method of undetermined coefficients
-    In a linear problem with contant coefficient and simple forcing, a method to find a particular solution without integration.
+  In a linear problem with contant coefficient and simple forcing, a method to find a particular solution without integration.
+
+parameter
+  Quantity that affects the solution of an ODE but remains fixed throughout the solution.
 
 relaxation time
-    In a linear decay process, the reciprocal of the absolute value of the rate constant.
+  In a linear decay process, the reciprocal of the absolute value of the rate constant.
+
+solution
+  Function that makes an ODE (and possible initial condition) true when used to replace the dependent variable.
 
 variation of parameters
-    Method for finding a particular solution in a linear ODE, given a homogeneous solution.
+  Method for finding a particular solution in a linear ODE, given a homogeneous solution.
 
 ```

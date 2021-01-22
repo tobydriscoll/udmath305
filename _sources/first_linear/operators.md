@@ -25,12 +25,16 @@ A {term}`first-order linear ODE` is an equation of the form
 :label: firstlin-linear-repeat
 \dd{x}{t} = a(t) x + f(t).
 ```
-We call $a(t)$ the {term}`coefficient function` and $f(t)$ the `{term}`forcing function`.
+We call $a(t)$ the {term}`coefficient function` and $f(t)$ the `{term}`forcing function`. 
 
 ````
 
-```{tip}
+```{attention}
 A linear ODE has a linear dependence on the unknown (dependent) variable $x$. It may have arbitrary dependence on the independent variable $t$. Also, the solution $x$ is *not* necessarily a linear function of $t$.
+```
+
+```{warning}
+If presented with a linear ODE in the form $b(t)x' + c(t)x = g(t)$, you should divide through by $b$ and rearrange so that the equation is in standard form {eq}`firstlin-linear-repeat`.
 ```
 
 There are some strong analogies between {eq}`firstlin-linear-repeat` and the linear algebraic system $\bfA\bfx=\bfb$. Some new notation helps to clarify the similarities.

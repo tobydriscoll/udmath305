@@ -113,6 +113,9 @@ pivot column
 real part
   Component of a complex number that does not multiply the imaginary unit $i$ when the number is written in standard rectangular form.
 
+row elimination
+  Use of elementary operations on the rows of a matrix to transform it to a simpler one, such as its RREF equivalent.
+
 RREF
   Matrix meeting certain requirements that expose all necessary information about solving a linear algebraic system; stands for "reduced row echelon form."
 

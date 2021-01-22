@@ -2,3 +2,37 @@
 	background-color: rgb(253, 253, 186);
 	padding: 0.5ex 1ex;
 }
+
+.table tbody {
+	background-color: rgb(210,210,210);
+}
+
+.table thead {
+	background-color: rgb(95,95,95);
+	color:rgb(253, 253, 186);
+}
+
+.term {
+	font-weight: bolder;
+}
+
+/* .admonition.tip > .admonition-title:before {
+    color: #ffc107;
+    content: "";
+} */
+
+/* .solution .admonition-title {
+    background-color: #c7c0ac;
+} */
+
+.solution > .admonition-title:before {
+	content: "" !important;
+}
+
+.solution > .admonition-title:after {
+	content: "Solution" !important;
+}
+
+.math {
+	overflow-y: visible;
+}

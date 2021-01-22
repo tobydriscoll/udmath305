@@ -24,6 +24,7 @@ There's often a lot of uneasiness about complex numbers. Terminology is part of 
 As a practical matter, you can pretty much always replace a complex value with two real ones, and vice versa. But sometimes the manipulations are a lot easier in the complex form. In particular, you may be able to replace trigonometry with algebra.
 
 ## The reality of imaginary numbers (optional)
+`````{toggle}
 
 Let's rewind a bit. We can probably take for granted the positive integers 1, 2, 3, and so on, and we'll throw in zero as well, though this too was controversial for centuries. It's not long before we want to solve a problem like $x+1=0$. Annoyingly, we can pose the problem using just nonnegative integers, but we can't solve it. So we accept the existence of the negative integers.
 
@@ -54,7 +55,7 @@ x^2 + 1 = 0,
 which is purely "real" but insolvable. Solutions to this equation were widely resisted for a very long time (say, the 18th century), to the point they were called "imaginary" (looking at you here, Descartes).
 
 Yet something amazing happens if you do accept imaginary numbers, and their expansion to the complex numbers. Namely, *The Fundamental Theorem of Algebra*, which states that if you write down a polynomial using complex numbers, it will have only complex numbers as solutions. So there's no infinite ladder of hypercomplex numbers that we have to ascend--just one rung past the "real" one is all we need to tidy things up perfectly.
-
+`````
 ## Basic arithmetic
 
 We can write a complex number $z\in \complex$ as $z=x+iy$, where $i^2=-1$ and $x$ and $y$ are real numbers known as the {term}`real part` and {term}`imaginary part` of $z$,
@@ -76,7 +77,7 @@ Like the absolute value, $|z|$ is the distance from $z$ to the origin, and $|w-z
 An important operation on complex numbers that has no real counterpart is the {term}`conjugate`,
 
 ```{math}
-\bfar{z} =\text{Re}(z) - i \,\text{Im}(z).
+\bar{z} =\text{Re}(z) - i \,\text{Im}(z).
 ```
 
 Geometrically this is a reflection across the real axis of the plane. No matter how complicated an expression is, you just replace $i$ by $-i$ everywhere to get the conjugate.
@@ -84,24 +85,43 @@ Geometrically this is a reflection across the real axis of the plane. No matter 
 You add, subtract, and multiply complex numbers by applying the usual algebraic rules, applying $i^2=-1$ as needed. They should give little trouble. Division can be a little trickier, even though the rules are always the same. One trick is to give a complex ratio a purely real denominator:
 
 ```{math}
-\frac{w}{z} = \frac{w \bfar{z}}{z \bfar{z}} = \frac{w \bfar{z}}{|z|^2}.
+\frac{w}{z} = \frac{w \bar{z}}{z \bar{z}} = \frac{w \bar{z}}{|z|^2}.
 ```
 
-This is a lot like rationalizing a denominator with square roots. Memorize the special case $1/i = -i$.
+This is a lot like rationalizing a denominator with square roots. 
+
+::::{admonition,tip} Example
+$$
+\frac{2-i}{3+2i} = \frac{2-i}{3+2i}\cdot \frac{3-2i}{3-2i}
+= \frac{6-4i-3i+2i^2}{3^2+2^2} = \frac{4-7i}{13}.
+$$
+::::
+
+::::{admonition,tip} Example
+Suppose that $|z|=1$. Then 
+
+$$
+\frac{1}{z} = \frac{1}{z}\cdot \frac{\bar{z}}{\bar{z}} = \frac{\bar{z}}{|z|^2} = \bar{z}.
+$$
+::::
+
+```{tip}
+Memorize the special case $\dfrac{1}{i} = -i$.
+```
 
 Here are some more simple rules to know:
 
 ````{proof:property} Complex arithmetic
 For complex numbers $w$ and $z$,
 
-1. $|\bfar{z}| = |z|$
+1. $|\bar{z}| = |z|$
 1. $|wz| = |w|\cdot |z|$
 1. $|w+z|\le |w| + |z|$ (triangle inequality)
-1. $\left| \frac{1}{z} \right| = \frac{1}{|z|}$
-1. $\overline{wz}=\bfar{w}\cdot \bfar{z}$
-1. $\overline{w+z}=\bfar{w}+\bfar{z}$
-1. $\overline{\left(\frac{1}{z} \right)} = \frac{1}{\bfar{z}}$
-1. $|z|^2 = z\cdot \bfar{z}$
+1. $\left| \dfrac{1}{z} \right| = \dfrac{1}{|z|}$
+1. $\overline{wz}=\bar{w}\cdot \bar{z}$
+1. $\overline{w+z}=\bar{w}+\bar{z}$
+1. $\overline{\left(\dfrac{1}{z} \right)} = \dfrac{1}{\bar{z}}$
+1. $|z|^2 = z\cdot \bar{z}$
 ````
 
 More to come later on complex numbers, but this will be enough for now.

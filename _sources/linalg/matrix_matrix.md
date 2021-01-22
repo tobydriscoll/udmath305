@@ -13,7 +13,7 @@ kernelspec:
   name: matlab
 ---
 
-# Matrix-matrix algebra
+# Matrix multiplication
 
 We can think of vectors as a special kind of matrix, and accordingly we can generalize matrix-vector products to matrix-matrix products. There are many equivalent ways to define these products. Here is the one we start with.
 
@@ -34,7 +34,7 @@ If $\bfA$ is $m\times n$ and $\bfB$ is $n\times p$, then the product $\bfA\bfB$ 
 
 In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix.
 
-```{note}
+```{warning}
 In order to define $\bfA\bfB$, we require that the number of columns in $\bfA$ is the same as the number of rows in $\bfB$. That is, the *inner dimensions* must agree. The result has size determined by the *outer dimensions* of the original matrices.
 ```
 
@@ -47,9 +47,9 @@ C_{ij} = \sum_{k=1}^n a_{ik}b_{kj}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p.
 
 The sum to get a single $C_{ij}$ is what we called a "zip", or essentially a dot product, of row $i$ from $\bfA$ with column $j$ from $\bfB$.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 
-Let
+Find $\mathbf{A}\mathbf{B}$ if
 
 ```{math}
 \bfA = \begin{bmatrix}
@@ -60,7 +60,9 @@ Let
 \end{bmatrix}.
 ```
 
-Then
+:::{admonition,dropdown,note,solution}
+
+Using {eq}`matrix-mult-element`,
 
 \begin{align*}
 \bfA\mathbf{B} &= \begin{bmatrix}
@@ -73,14 +75,16 @@ Then
 \end{bmatrix}
 \end{align*}.
 
-
 Observe that
+
 ```{math}
 \bfA \begin{bmatrix} 2 \\ 1 \end{bmatrix} = 2 \begin{bmatrix} 1 \\ 0 \\ -3
 \end{bmatrix} + 1 \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
-= \begin{bmatrix} 1 \\ 2 \\ -5 \end{bmatrix}
-```,
+= \begin{bmatrix} 1 \\ 2 \\ -5 \end{bmatrix},
+```
+
 and so on.
+:::
 ::::
 
 MATLAB interprets the `*` operator to mean multiplication in the sense of matrices.
@@ -111,14 +115,14 @@ A*B
 First, the bad news. We sort of knew this was coming, from matrix-vector multiplication.
 
 ```{warning}
-Matrix multiplication is not commutative. If $\bfA\bfB$ is defined, then $\bfB\bfA$ may not be, and even if it is, it may not equal $\bfA\bfB$. Put another way, you cannot simply change the order of the terms in a matrix product without some justification.
+Matrix multiplication is not commutative. If $\bfA\bfB$ is defined, then $\bfB\bfA$ may not be, and even if it is, it may not equal $\bfA\bfB$. Put another way, you cannot simply change the order of the terms in a matrix product without some explicit justification.
 ```
 
 Fortunately, other familiar and handy properties of multiplication do come along for the ride:
 
-1. $(\bfA\bfB)\mathbf{C}=\bfA(\bfB \mathbf{C})$  (association)
-2. $\bfA(\bfB+\mathbf{C}) = \bfA\bfB + \bfA\mathbf{C}$  (right distribution)
-3. $(\bfA+\bfB)\mathbf{C} = \bfA\mathbf{C} + \bfB\mathbf{C}$   (left distribution)
+1. $(\bfA\bfB)\mathbf{C}=\bfA(\bfB \mathbf{C})\qquad$  (association)
+2. $\bfA(\bfB+\mathbf{C}) = \bfA\bfB + \bfA\mathbf{C}\qquad$  (right distribution)
+3. $(\bfA+\bfB)\mathbf{C} = \bfA\mathbf{C} + \bfB\mathbf{C}\qquad$   (left distribution)
 
 These properties are easy to demonstrate (but not prove!) in MATLAB. 
 
@@ -138,7 +142,7 @@ A = round(10*rand(4,4))
 B = round(10*rand(4,4))
 C = round(10*rand(4,4))
 
-( A*(B+C) ) - ( A*B + A*C )    % should be zero
+ident1 = ( A*(B+C) ) - ( A*B + A*C )    % should be zero
 
-( (A+B)*C ) - ( A*C + B*C )    % should be zero
+ident2 = ( (A+B)*C ) - ( A*C + B*C )    % should be zero
 ```

@@ -13,21 +13,9 @@ kernelspec:
   name: matlab
 ---
 
-# Defectiveness
+# Multiplicity
 
-Although we will mostly work with $2\times 2$ matrices, eigenvalues are so important that it's worth getting to know more about the general case.
-
-## Characteristic polynomial
-
-In the $n\times n$ case, cofactor expansion of $\det(\bfA-\lambda\meye)$ leads to the following definition.
-
-(definition-linalg-characteristic-polynomial)=
-
-````{proof:definition} Characteristic polynomial
-Suppose $\bfA$ is $n\times n$. The {term}`characteristic polynomial` of $\bfA$ is $\det(\bfA-\lambda\meye)$. It is of degree $n$ in $\lambda$, with a leading coefficient of $(-1)^n$.
-````
-
-The roots of the characteristic polynomial are the eigenvalues of the matrix. Given what we know about roots of polynomials, there are some conclusions it's worth stating clearly.
+The eigenvalues of a matrix are the roots of its characteristic polynomial. Given what we know about polynomials, there are some conclusions it's worth stating clearly.
 
 ````{proof:property} Eigenvalue properties
 Suppose $\bfA$ is an $n\times n$ matrix. Then
@@ -36,60 +24,75 @@ Suppose $\bfA$ is an $n\times n$ matrix. Then
 2. If $\bfA$ is real, then any complex eigenvalues occur in conjugate pairs, as do their associated eigenvectors.
 ````
 
-## Defective eigenvalues
-
-We can factor a characteristic polynomial $p$ to get
+In general, we can factor a characteristic polynomial $p$ to get
 
 ```{math}
-p(\lambda) = (z-\lambda_1)^{m_1}(z-\lambda_2)^{m_2}\dots(z-\lambda_k)^{m_k}
+p(\lambda) = (z-\lambda_1)^{m_1}(z-\lambda_2)^{m_2}\dots(z-\lambda_k)^{m_k},
 ```
 
 for nonnegative integer exponents such that $m_1+\cdots+m_k=n$. These exponents are the multiplicities of the roots, and that idea carries to the eigenvalues as well.
 
 (definition-linalg-algmult)=
-
 ````{proof:definition} Algebraic multiplicity
 The {term}`algebraic multiplicity` of an eigenvalue is its multiplicity as a root of the characteristic polynomial.
 ````
 
-But eigenvalues have another significant notion of multiplicity as well.
+## Geometric multiplicity
+
+The following example illustrates a possibility unique to eigenvalues of algebraic multiplicity greater than 1.
+
+(example-linalg-defective)=
+::::{admonition,dropdown,tip} Example
+The characteristic polynomial of $\bfA=\twomat{4}{1}{0}{4}$ is
+
+```{math}
+\twodet{4-\lambda}{1}{0}{4-\lambda} = (4-\lambda)^2,
+```
+
+so the double root $\lambda_1=4$ is the only eigenvalue. Since
+
+```{math}
+\bfA - 4\meye = \twomat{0}{1}{0}{0},
+```
+
+the eigenspace has basis $\twovec{1}{0}$.
+::::
+
+This leads us to define a second notion of multiplicity for an eigenvalue. 
 
 (definition-linalg-geomult)=
-
 ````{proof:definition} Geometric multiplicity
 The {term}`geometric multiplicity` of an eigenvalue is the number of basis vectors in its associated eigenspace.
 ````
 
-Here is a fact we won't try to prove.
+Here is an important fact we won't try to prove.
 
 ````{proof:property}
 The geometric multiplicity of an eigenvalue is at least one and less than or equal to its algebraic multiplicity.
 ````
 
-This fact spurs another definition.
+## Defectiveness
 
-```{index} defective eigenvalue
-```
+In the [above example](example-linalg-defective) we found a lone eigenvalue $\lambda_1=4$ of algebraic multiplicity 2 whose geometric multiplicity, we now see, is 1. The identity matrix is a different sort of example.
+
+::::{admonition,tip} Example
+The $2\times 2$ identity matrix $\meye$ has a lone eigenvalue $\lambda_1=1$ of algebraic multiplicity 2. The system $(\meye - \meye)\bfv=\bfzero$ has an RREF that is the zero matrix, so there are two free variables and two basis vectors. Hence the geometric multiplicity of $\lambda_1$ is also 2.
+::::
+
+The distinction between these cases is significant enough to warrant yet another definition and name.
 
 ````{proof:definition} Defectiveness
 An eigenvalue $\lambda$ whose geometric multiplicity is strictly less than its algebraic multiplicity is said to be {term}`defective`. A matrix is called defective if any of its eigenvalues are defective.
 ````
 
-Since multiplicities are always at least one, there is a simple and common case in which we are certain that there are no defective eigenvalues.
+As we will see later on, defective matrices often complicate the application of eigenvalue analysis. They are rare in the sense that a random matrix has zero probability of being defective, but they do come up. Since multiplicities are always at least one, there is a simple and common case in which we are certain that a matrix is not defective.
 
-````{proof:theorem} Distinct eigenvalues imply nondefectiveness
+````{proof:theorem} Distinct eigenvalues
 If $\bfA\in\cmn{n}{n}$ has $n$ distinct eigenvalues, then $\bfA$ is not defective.
 ````
 
-For $n=2$, either there is a double eigenvalue or two distinct eigenvalues. Only the case with a double eigenvalue may be defective. Here are the two canonical archetypes.
+For $n=2$, the possibilities in the case of algebraic multiplicity equal to 2 are easy to pin down. 
 
-::::{admonition,dropdown,tip} Example
-If $\bfA=\twomat{c}{0}{0}{c}$, then the characteristic polynomial is $p(\lambda)=(\lambda-c)^2$. Thus $\lambda=c$ is the only eigenvalue, with algebraic multiplicity 2. All nonzero vectors are eigenvectors, so we can represent the eigenspace as a linear combination of $\twovec{1}{0}$ and $\twovec{0}{1}$. Hence the geometric multiplicity is also equal to 2, and $\bfA$ is nondefective.
-
-::::
-
-::::{admonition,dropdown,tip} Example
-A [previous example](example-linalg-defective) showed that the matrix $\bfA=\twomat{4}{1}{0}{4}$ has eigenvalue $\lambda=4$ with algebraic multiplicity equal to 2 and geometric multiplicity equal to 1. Hence this matrix is defective.
-::::
-
-The situation for $n>2$ can be more complicated. We will stop here and move on to dynamics.
+````{proof:theorem} $2\times 2$ defectivenss
+Any $\bfA\in\cmn{2}{2}$ that has a single repeated eigenvalue is either defective or a multiple of the identity matrix. 
+````

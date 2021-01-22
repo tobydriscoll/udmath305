@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>14. Defectiveness &#8212; Notes on linear algebra and ODEs</title>
+    <title>14. Multiplicity &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -51,7 +51,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Gyre-Termes"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -150,7 +150,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="singular.html">
-   10. Detecting singular matrices
+   10. Detecting singularity
   </a>
  </li>
  <li class="toctree-l1">
@@ -170,7 +170,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   14. Defectiveness
+   14. Multiplicity
   </a>
  </li>
 </ul>
@@ -223,6 +223,112 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/modeling.html">
    9. Modeling
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  III. Steps and impulses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/unit_step.html">
+   2. Unit step functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/impulse.html">
+   3. Impulses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/laplace.html">
+   4. Laplace transforms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/transform_solutions.html">
+   5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
   </a>
  </li>
 </ul>
@@ -299,13 +405,13 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#characteristic-polynomial">
-   14.1. Characteristic polynomial
+  <a class="reference internal nav-link" href="#geometric-multiplicity">
+   14.1. Geometric multiplicity
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#defective-eigenvalues">
-   14.2. Defective eigenvalues
+  <a class="reference internal nav-link" href="#defectiveness">
+   14.2. Defectiveness
   </a>
  </li>
 </ul>
@@ -319,26 +425,13 @@
         
               <div>
                 
-  <div class="section" id="defectiveness">
-<h1><span class="section-number">14. </span>Defectiveness<a class="headerlink" href="#defectiveness" title="Permalink to this headline">¶</a></h1>
-<p>Although we will mostly work with <span class="math notranslate nohighlight">\(2\times 2\)</span> matrices, eigenvalues are so important that it’s worth getting to know more about the general case.</p>
-<div class="section" id="characteristic-polynomial">
-<h2><span class="section-number">14.1. </span>Characteristic polynomial<a class="headerlink" href="#characteristic-polynomial" title="Permalink to this headline">¶</a></h2>
-<p>In the <span class="math notranslate nohighlight">\(n\times n\)</span> case, cofactor expansion of <span class="math notranslate nohighlight">\(\det(\bfA-\lambda\meye)\)</span> leads to the following definition.</p>
-<div class="proof proof-type-definition" id="id1">
-<span id="definition-linalg-characteristic-polynomial"></span>
-    <div class="proof-title">
-        <span class="proof-type">Definition 14.1</span>
-        
-            <span class="proof-title-name">(Characteristic polynomial)</span>
-        
-    </div><div class="proof-content">
-<p>Suppose <span class="math notranslate nohighlight">\(\bfA\)</span> is <span class="math notranslate nohighlight">\(n\times n\)</span>. The <span class="xref std std-term">characteristic polynomial</span> of <span class="math notranslate nohighlight">\(\bfA\)</span> is <span class="math notranslate nohighlight">\(\det(\bfA-\lambda\meye)\)</span>. It is of degree <span class="math notranslate nohighlight">\(n\)</span> in <span class="math notranslate nohighlight">\(\lambda\)</span>, with a leading coefficient of <span class="math notranslate nohighlight">\((-1)^n\)</span>.</p>
-</div></div><p>The roots of the characteristic polynomial are the eigenvalues of the matrix. Given what we know about roots of polynomials, there are some conclusions it’s worth stating clearly.</p>
-<div class="proof proof-type-property" id="id2">
+  <div class="section" id="multiplicity">
+<h1><span class="section-number">14. </span>Multiplicity<a class="headerlink" href="#multiplicity" title="Permalink to this headline">¶</a></h1>
+<p>The eigenvalues of a matrix are the roots of its characteristic polynomial. Given what we know about polynomials, there are some conclusions it’s worth stating clearly.</p>
+<div class="proof proof-type-property" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Property 14.2</span>
+        <span class="proof-type">Property 14.1</span>
         
             <span class="proof-title-name">(Eigenvalue properties)</span>
         
@@ -348,71 +441,89 @@
 <li><p><span class="math notranslate nohighlight">\(\bfA\)</span> has at least one and at most <span class="math notranslate nohighlight">\(n\)</span> distinct complex eigenvalues, and</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(\bfA\)</span> is real, then any complex eigenvalues occur in conjugate pairs, as do their associated eigenvectors.</p></li>
 </ol>
-</div></div></div>
-<div class="section" id="defective-eigenvalues">
-<h2><span class="section-number">14.2. </span>Defective eigenvalues<a class="headerlink" href="#defective-eigenvalues" title="Permalink to this headline">¶</a></h2>
-<p>We can factor a characteristic polynomial <span class="math notranslate nohighlight">\(p\)</span> to get</p>
+</div></div><p>In general, we can factor a characteristic polynomial <span class="math notranslate nohighlight">\(p\)</span> to get</p>
 <div class="math notranslate nohighlight">
-\[p(\lambda) = (z-\lambda_1)^{m_1}(z-\lambda_2)^{m_2}\dots(z-\lambda_k)^{m_k}\]</div>
+\[p(\lambda) = (z-\lambda_1)^{m_1}(z-\lambda_2)^{m_2}\dots(z-\lambda_k)^{m_k},\]</div>
 <p>for nonnegative integer exponents such that <span class="math notranslate nohighlight">\(m_1+\cdots+m_k=n\)</span>. These exponents are the multiplicities of the roots, and that idea carries to the eigenvalues as well.</p>
-<div class="proof proof-type-definition" id="id3">
+<div class="proof proof-type-definition" id="id2">
 <span id="definition-linalg-algmult"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 14.3</span>
+        <span class="proof-type">Definition 14.2</span>
         
             <span class="proof-title-name">(Algebraic multiplicity)</span>
         
     </div><div class="proof-content">
 <p>The <a class="reference internal" href="overview.html#term-algebraic-multiplicity"><span class="xref std std-term">algebraic multiplicity</span></a> of an eigenvalue is its multiplicity as a root of the characteristic polynomial.</p>
-</div></div><p>But eigenvalues have another significant notion of multiplicity as well.</p>
-<div class="proof proof-type-definition" id="id4">
+</div></div><div class="section" id="geometric-multiplicity">
+<h2><span class="section-number">14.1. </span>Geometric multiplicity<a class="headerlink" href="#geometric-multiplicity" title="Permalink to this headline">¶</a></h2>
+<p>The following example illustrates a possibility unique to eigenvalues of algebraic multiplicity greater than 1.</p>
+<div class="dropdown tip admonition" id="example-linalg-defective">
+<p class="admonition-title"> Example</p>
+<p>The characteristic polynomial of <span class="math notranslate nohighlight">\(\bfA=\twomat{4}{1}{0}{4}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\twodet{4-\lambda}{1}{0}{4-\lambda} = (4-\lambda)^2,\]</div>
+<p>so the double root <span class="math notranslate nohighlight">\(\lambda_1=4\)</span> is the only eigenvalue. Since</p>
+<div class="math notranslate nohighlight">
+\[\bfA - 4\meye = \twomat{0}{1}{0}{0},\]</div>
+<p>the eigenspace has basis <span class="math notranslate nohighlight">\(\twovec{1}{0}\)</span>.</p>
+</div>
+<p>This leads us to define a second notion of multiplicity for an eigenvalue.</p>
+<div class="proof proof-type-definition" id="id3">
 <span id="definition-linalg-geomult"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition 14.4</span>
+        <span class="proof-type">Definition 14.3</span>
         
             <span class="proof-title-name">(Geometric multiplicity)</span>
         
     </div><div class="proof-content">
 <p>The <a class="reference internal" href="overview.html#term-geometric-multiplicity"><span class="xref std std-term">geometric multiplicity</span></a> of an eigenvalue is the number of basis vectors in its associated eigenspace.</p>
-</div></div><p>Here is a fact we won’t try to prove.</p>
-<div class="proof proof-type-property" id="id5">
+</div></div><p>Here is an important fact we won’t try to prove.</p>
+<div class="proof proof-type-property" id="id4">
 
     <div class="proof-title">
-        <span class="proof-type">Property 14.5</span>
+        <span class="proof-type">Property 14.4</span>
         
     </div><div class="proof-content">
 <p>The geometric multiplicity of an eigenvalue is at least one and less than or equal to its algebraic multiplicity.</p>
-</div></div><p>This fact spurs another definition.</p>
-<div class="proof proof-type-definition" id="id6">
-<span id="index-0"></span>
+</div></div></div>
+<div class="section" id="defectiveness">
+<h2><span class="section-number">14.2. </span>Defectiveness<a class="headerlink" href="#defectiveness" title="Permalink to this headline">¶</a></h2>
+<p>In the <a class="reference internal" href="#example-linalg-defective"><span class="std std-ref">above example</span></a> we found a lone eigenvalue <span class="math notranslate nohighlight">\(\lambda_1=4\)</span> of algebraic multiplicity 2 whose geometric multiplicity, we now see, is 1. The identity matrix is a different sort of example.</p>
+<div class="tip admonition">
+<p class="admonition-title"> Example</p>
+<p>The <span class="math notranslate nohighlight">\(2\times 2\)</span> identity matrix <span class="math notranslate nohighlight">\(\meye\)</span> has a lone eigenvalue <span class="math notranslate nohighlight">\(\lambda_1=1\)</span> of algebraic multiplicity 2. The system <span class="math notranslate nohighlight">\((\meye - \meye)\bfv=\bfzero\)</span> has an RREF that is the zero matrix, so there are two free variables and two basis vectors. Hence the geometric multiplicity of <span class="math notranslate nohighlight">\(\lambda_1\)</span> is also 2.</p>
+</div>
+<p>The distinction between these cases is significant enough to warrant yet another definition and name.</p>
+<div class="proof proof-type-definition" id="id5">
+
     <div class="proof-title">
-        <span class="proof-type">Definition 14.6</span>
+        <span class="proof-type">Definition 14.5</span>
         
             <span class="proof-title-name">(Defectiveness)</span>
         
     </div><div class="proof-content">
 <p>An eigenvalue <span class="math notranslate nohighlight">\(\lambda\)</span> whose geometric multiplicity is strictly less than its algebraic multiplicity is said to be <a class="reference internal" href="overview.html#term-defective"><span class="xref std std-term">defective</span></a>. A matrix is called defective if any of its eigenvalues are defective.</p>
-</div></div><p>Since multiplicities are always at least one, there is a simple and common case in which we are certain that there are no defective eigenvalues.</p>
+</div></div><p>As we will see later on, defective matrices often complicate the application of eigenvalue analysis. They are rare in the sense that a random matrix has zero probability of being defective, but they do come up. Since multiplicities are always at least one, there is a simple and common case in which we are certain that a matrix is not defective.</p>
+<div class="proof proof-type-theorem" id="id6">
+
+    <div class="proof-title">
+        <span class="proof-type">Theorem 14.6</span>
+        
+            <span class="proof-title-name">(Distinct eigenvalues)</span>
+        
+    </div><div class="proof-content">
+<p>If <span class="math notranslate nohighlight">\(\bfA\in\cmn{n}{n}\)</span> has <span class="math notranslate nohighlight">\(n\)</span> distinct eigenvalues, then <span class="math notranslate nohighlight">\(\bfA\)</span> is not defective.</p>
+</div></div><p>For <span class="math notranslate nohighlight">\(n=2\)</span>, the possibilities in the case of algebraic multiplicity equal to 2 are easy to pin down.</p>
 <div class="proof proof-type-theorem" id="id7">
 
     <div class="proof-title">
         <span class="proof-type">Theorem 14.7</span>
         
-            <span class="proof-title-name">(Distinct eigenvalues imply nondefectiveness)</span>
+            <span class="proof-title-name">(<span class="math notranslate nohighlight">\(2\times 2\)</span> defectivenss)</span>
         
     </div><div class="proof-content">
-<p>If <span class="math notranslate nohighlight">\(\bfA\in\cmn{n}{n}\)</span> has <span class="math notranslate nohighlight">\(n\)</span> distinct eigenvalues, then <span class="math notranslate nohighlight">\(\bfA\)</span> is not defective.</p>
-</div></div><p>For <span class="math notranslate nohighlight">\(n=2\)</span>, either there is a double eigenvalue or two distinct eigenvalues. Only the case with a double eigenvalue may be defective. Here are the two canonical archetypes.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
-<p>If <span class="math notranslate nohighlight">\(\bfA=\twomat{c}{0}{0}{c}\)</span>, then the characteristic polynomial is <span class="math notranslate nohighlight">\(p(\lambda)=(\lambda-c)^2\)</span>. Thus <span class="math notranslate nohighlight">\(\lambda=c\)</span> is the only eigenvalue, with algebraic multiplicity 2. All nonzero vectors are eigenvectors, so we can represent the eigenspace as a linear combination of <span class="math notranslate nohighlight">\(\twovec{1}{0}\)</span> and <span class="math notranslate nohighlight">\(\twovec{0}{1}\)</span>. Hence the geometric multiplicity is also equal to 2, and <span class="math notranslate nohighlight">\(\bfA\)</span> is nondefective.</p>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
-<p>A <a class="reference internal" href="eigenvalues.html#example-linalg-defective"><span class="std std-ref">previous example</span></a> showed that the matrix <span class="math notranslate nohighlight">\(\bfA=\twomat{4}{1}{0}{4}\)</span> has eigenvalue <span class="math notranslate nohighlight">\(\lambda=4\)</span> with algebraic multiplicity equal to 2 and geometric multiplicity equal to 1. Hence this matrix is defective.</p>
-</div>
-<p>The situation for <span class="math notranslate nohighlight">\(n&gt;2\)</span> can be more complicated. We will stop here and move on to dynamics.</p>
-</div>
+<p>Any <span class="math notranslate nohighlight">\(\bfA\in\cmn{2}{2}\)</span> that has a single repeated eigenvalue is either defective or a multiple of the identity matrix.</p>
+</div></div></div>
 </div>
 
     <script type="text/x-thebe-config">

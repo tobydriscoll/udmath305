@@ -1,0 +1,629 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>5. Amplitude and phase &#8212; Notes on linear algebra and ODEs</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Free oscillations" href="free_oscillations.html" />
+    <link rel="prev" title="4. Complex exponentials" href="complex_exp.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
+   M305 Notes
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  I. Linear algebra
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vectors_matrices.html">
+   2. Vectors and matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/linear_systems.html">
+   3. Linear systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/row_elimination.html">
+   4. Row elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/RREF.html">
+   5. RREF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vector_algebra.html">
+   6. Vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_vector.html">
+   7. Matrix-vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_matrix.html">
+   8. Matrix-matrix algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/identity_inverse.html">
+   9. Identity and inverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/singular.html">
+   10. Detecting singularity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/general_solutions.html">
+   11. General solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/complex_numbers.html">
+   12. Complex numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/eigenvalues.html">
+   13. Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/multiplicity.html">
+   14. Multiplicity
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  II. First-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/preview.html">
+   2. Quick tour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp.html">
+   3. Initial-value problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/operators.html">
+   4. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/homogeneous.html">
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   7. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   8. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   9. Modeling
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  III. Steps and impulses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/unit_step.html">
+   2. Unit step functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/impulse.html">
+   3. Impulses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/laplace.html">
+   4. Laplace transforms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/transform_solutions.html">
+   5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/second_linear/phase_amplitude.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/second_linear/phase_amplitude.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conversion-between-forms">
+   5.1. Conversion between forms
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="amplitude-and-phase">
+<h1><span class="section-number">5. </span>Amplitude and phase<a class="headerlink" href="#amplitude-and-phase" title="Permalink to this headline">¶</a></h1>
+<p>The exponential form of the general solution of a homogeneous second-order linear ODE is</p>
+<div class="math notranslate nohighlight">
+\[x(t) = c_1 e^{\lambda t} + c_2 e^{\overline{\lambda} t}, \qquad \lambda = a + i\omega, \, c_2=\overline{c_1}.\]</div>
+<p>As before, we will appeal to the fact that <span class="math notranslate nohighlight">\((\alpha+i\beta) + \overline{(\alpha+i\beta)} = 2\alpha\)</span> to write this as</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-combine-exp">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-secondlin-combine-exp" title="Permalink to this equation">¶</a></span>\[x(t) = \Re \Bigl[ c_1 e^{(a+i\omega) t} \Bigr], \quad c_1 \in\complex, \]</div>
+<p>where we also absorbed the factor of 2 into <span class="math notranslate nohighlight">\(c_1\)</span>. In the <a class="reference internal" href="complex_exp.html"><span class="doc std std-doc">preceding section</span></a> we claimed that there is a complete equivalence between this form and combinations of enveloped cosine and sine,</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-combine-sincos">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-secondlin-combine-sincos" title="Permalink to this equation">¶</a></span>\[x(t) = e^{at} \bigl[ a_1\cos(\omega t) + a_2\sin(\omega t) \bigr].\]</div>
+<p>Equivalence in this context means that for every choice of complex <span class="math notranslate nohighlight">\(c_1\)</span>, you can find some <span class="math notranslate nohighlight">\(a_1\)</span> and <span class="math notranslate nohighlight">\(a_2\)</span> so that the expressions are identically equal, and vice versa.</p>
+<!-- There is a third equivalent form that might be the most readily interpreted. Let us write the complex value $c_1$ in polar form,
+
+$$
+c_1 = R e^{-i\theta}, \qquad R > 0,\, \theta \in [-\pi,pi).
+$$
+
+We introduced an extra minus sign here for future convenience, but it's not important. Now {eq}`secondlin-combine-exp` is in the form
+
+$$
+x(t) = R e^{-i\theta} e^{\lambda t} + \bigl[ \text{complex conjugate of the same thing} \bigr].
+$$
+
+As we saw before, adding $\alpha+i\beta$ to its conjugate gives $2\alpha$, so we may write
+
+$$
+x(t) = 2 \Re \Bigl[ R e^{-i\theta} e^{\lambda t} \Bigr].
+$$
+
+We manipulate the exponentials to get
+
+$$
+x(t) = 2 \Re \Bigl[ R e^{at} e^{i(\omega t -\theta)} \Bigr].
+$$
+
+The first two terms inside the brackets are real, and Euler's formula then implies
+
+$$
+x(t) = 2 R e^{at} \cos(\omega t -\theta).
+$$
+
+This is a cosine with exponentially changing amplitude and an arbitrary phase shift.  -->
+<p>There is a third equivalent form that can be useful in many contexts. Consider <a class="reference internal" href="#equation-secondlin-combine-sincos">(5.2)</a> with the new definitions</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-combine-polar">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-secondlin-combine-polar" title="Permalink to this equation">¶</a></span>\[a_1 = R \cos(\theta), \quad a_2 = R\sin(\theta) \qquad (R\ge 0),\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight">
+\[x(t) = e^{at} \bigl[ R \cos(\theta) \cos(\omega t) + R\sin(\theta) \sin(\omega t) \bigr].\]</div>
+<p>Using a sum-of-angles formula, we get</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-combine-ampphase">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-secondlin-combine-ampphase" title="Permalink to this equation">¶</a></span>\[x(t) = R e^{at} \cos(\omega t - \theta),\]</div>
+<p>which we call the <a class="reference internal" href="overview.html#term-amplitude-phase-form"><span class="xref std std-term">amplitude-phase form</span></a> of the solution. We collect all three forms together here.</p>
+<div class="proof proof-type-formula" id="id1">
+
+    <div class="proof-title">
+        <span class="proof-type">Formula 5.8</span>
+        
+            <span class="proof-title-name">(Equivalent forms for 2nd order solutions)</span>
+        
+    </div><div class="proof-content">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x(t) &amp;= \Re \Bigl[ c_1 e^{(a+i\omega) t} \Bigr], \quad c_1 \in\complex, \\
+x(t) &amp;= e^{at} \bigl[ a_1\cos(\omega t) + a_2\sin(\omega t) \bigr], \quad a_1,a_2 \in \real, \\
+x(t) &amp;= R e^{at} \cos(\omega t + \theta), \quad R \ge 0, \: \theta \in (-\pi,\pi].
+\end{align*}\]</div>
+</div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It doesn’t matter whether we use <span class="math notranslate nohighlight">\(+\theta\)</span> or <span class="math notranslate nohighlight">\(-\theta\)</span> as the phase term. Switching just flips the sign of the numerical value of <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+</div>
+<p>Each form has two real arbitrary constants that can be uniquely determined by initial conditions.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<blockquote>
+<div><p>Find a solution to <span class="math notranslate nohighlight">\(x''-2x'+5x=0\)</span>, <span class="math notranslate nohighlight">\(x(0)=5\)</span>, <span class="math notranslate nohighlight">\(x'(0)=-5\)</span> in amplitude-phase form.</p>
+</div></blockquote>
+<p>The characteristic polynomial <span class="math notranslate nohighlight">\(s^2-2s+5\)</span> gives the eigenvalues <span class="math notranslate nohighlight">\(1\pm 2i\)</span>. We can write the solution as <span class="math notranslate nohighlight">\(x(t) = R e^{t} \cos(2 t + \theta)\)</span> and apply the initial conditions to get</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+5 &amp;= x(0) = R\cos(\theta), \\
+-5 &amp;= x'(0) = R[-2\sin(\theta) + \cos(\theta)].
+\end{align*}\]</div>
+<p>We can substitute from the first into the second and get</p>
+<div class="math notranslate nohighlight">
+\[
+-5 = -2R\sin(\theta) + 5,
+\]</div>
+<p>or <span class="math notranslate nohighlight">\(R\sin(\theta) =5\)</span>. Taking ratios with the first equation gives</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{R\sin(\theta)}{R\cos(\theta)}  = \frac{5}{5} \quad \Rightarrow \quad \tan(\theta)=1,
+\]</div>
+<p>so we get <span class="math notranslate nohighlight">\(\theta=\pi/4\)</span>. Then <span class="math notranslate nohighlight">\(R=5/\cos(\pi/4)=5\sqrt{2}\)</span>. The final answer is</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = 5\sqrt{2} e^{t} \cos\left(2 t + \tfrac{\pi}{4}\right).
+\]</div>
+</div>
+<div class="section" id="conversion-between-forms">
+<h2><span class="section-number">5.1. </span>Conversion between forms<a class="headerlink" href="#conversion-between-forms" title="Permalink to this headline">¶</a></h2>
+<p>Each form of the solution has its own advantages. Sometimes, it’s useful to be able to convert between them. We already have that <a class="reference internal" href="#equation-secondlin-combine-polar">(5.3)</a> connects <a class="reference internal" href="#equation-secondlin-combine-sincos">(5.2)</a> and <a class="reference internal" href="#equation-secondlin-combine-ampphase">(5.4)</a>, so we just need to connect the third form.</p>
+<p>Say we are given <a class="reference internal" href="#equation-secondlin-combine-exp">(5.1)</a> and we use the polar form
+<span class="math notranslate nohighlight">\(c_1 = \rho e^{i\phi}\)</span>. Then by Euler’s identity,</p>
+<!-- 
+```{note}
+This equation uses the Greek letters $\rho$ (rho) and $\phi$ (phi).
+``` 
+-->
+<div class="math notranslate nohighlight">
+\[
+\Re \left[ c_1 e^{(a+i\omega) t}  \right] = \rho e^{at} \Re \left[ e^{i\phi} e^{i\omega t}  \right] = \rho e^{at} \cos(\omega t + \phi).
+\]</div>
+<p>This is the amplitude-phase form, so in fact,</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-combine-c1">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-secondlin-combine-c1" title="Permalink to this equation">¶</a></span>\[c_1 = R e^{i\theta}\]</div>
+<p>connects <a class="reference internal" href="#equation-secondlin-combine-exp">(5.1)</a> and <a class="reference internal" href="#equation-secondlin-combine-ampphase">(5.4)</a>.</p>
+<p>Both <a class="reference internal" href="#equation-secondlin-combine-polar">(5.3)</a> and <a class="reference internal" href="#equation-secondlin-combine-c1">(5.5)</a> amount to the same thing, conversion between rectangular coordinates, like <span class="math notranslate nohighlight">\(c_1=\alpha+i\beta\)</span> and <span class="math notranslate nohighlight">\((a_1,a_2)\)</span>, and polar coordinates, <span class="math notranslate nohighlight">\((R,\theta)\)</span>.</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<p>In the preceding example we found the solution</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = 5\sqrt{2} e^{t} \cos\left(2 t + \tfrac{\pi}{4}\right).
+\]</div>
+<p>This has <span class="math notranslate nohighlight">\(R=5\sqrt{2}\)</span> and <span class="math notranslate nohighlight">\(\theta=\pi/4\)</span>, which corresponds to the point <span class="math notranslate nohighlight">\((5,5)\)</span> in rectangular coordinates. Therefore we may also write</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = e^{t} \bigl[ 5 \cos(2 t) + 5 \sin(2t) \bigr],
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = \Re \Bigl[ (5+5i)  e^{(1+2i)t}  \Bigr].
+\]</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"> Example</p>
+<blockquote>
+<div><p>Find the amplitude-phase form of <span class="math notranslate nohighlight">\(x(t)=-4\cos(3t) + 2 \sin(3t)\)</span>.</p>
+</div></blockquote>
+<p>The polar form of the point <span class="math notranslate nohighlight">\((-4,2)\)</span> satisfies</p>
+<div class="math notranslate nohighlight">
+\[
+R^2 = 16+4=20, \qquad \tan(\theta) = \frac{2}{-4}.
+\]</div>
+<p>We see that <span class="math notranslate nohighlight">\(R=2\sqrt{5}\)</span>, and <span class="math notranslate nohighlight">\(\theta = \arctan(-1/2)\)</span> should be in the second quadrant. It would have to be found numerically.</p>
+</div>
+<p>It’s more common that we want to know the amplitude than the phase. If you do need a numerical value of <span class="math notranslate nohighlight">\(\theta\)</span>, make sure you use the “four-quadrant arctangent” on a calculator or computer.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "matlab"
+        },
+        kernelOptions: {
+            kernelName: "matlab",
+            path: "./second_linear"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'matlab'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="complex_exp.html" title="previous page"><span class="section-number">4. </span>Complex exponentials</a>
+    <a class='right-next' id="next-link" href="free_oscillations.html" title="next page"><span class="section-number">6. </span>Free oscillations</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tobin A. Driscoll<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

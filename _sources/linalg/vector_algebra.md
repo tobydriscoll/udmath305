@@ -17,7 +17,7 @@ kernelspec:
 
 Vectors support two basic operations. The first is addition. Two vectors of the same size can be added together elementwise. (The same is true for subtraction.) If the vectors have different sizes, the operation is not defined.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 If $\bfx=[1;\: 2;\: 3]$ and $\bfy=[-2;\: 2;\: 0]$, then 
 ```{math}
 \bfx + \bfy = \begin{bmatrix} -1\\4\\3 \end{bmatrix}.
@@ -26,7 +26,7 @@ If $\bfx=[1;\: 2;\: 3]$ and $\bfy=[-2;\: 2;\: 0]$, then
 
 Things get a little more interesting with multiplication. We begin with {term}`scalar multiplication`, which is between a number and a vector. Each element is multiplied by the number. In this context we call a number a {term}`scalar`, since it scales all the elements equally.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 If $\bfx=[1;\: 2;\: 3]$, then
 ```{math}
 3\bfx = \begin{bmatrix} 3\\6\\9 \end{bmatrix}.
@@ -47,7 +47,7 @@ c_1 \bfx_1 + c_2 \bfx_2 + \cdots c_n \bfx_n,
 where the $c_j$ are called **coefficients** of the linear combination.
 ````
 
-Linear combinations interact conveniently with linear functions. If $L$ is linear, then according to the properties in the [definition](definition-linear),
+Linear combinations interact conveniently with linear functions. If $L$ is linear, then according to the properties in the [definition of linearity](definition-linear),
 
 $$
 L( c_1 \bfx_1 + c_2 \bfx_2 + \cdots c_n \bfx_n ) = c_1 L(\bfx_1) + c_2 L(\bfx_2) + \cdots + c_n L(\bfx_n).
@@ -55,9 +55,9 @@ $$
 
 This mundane-looking equation is the basis of a lot of important mathematics.
 
-## Linear systems
+## Linear combinations and systems
 
-A linear combination of vectors is equivalent to a linear system of equations. For example, consider the system
+An equation about linear combination of vectors is equivalent to a linear system of equations. For example, consider the system
 
 \begin{align*}
 x_1 - x_2  - x_3 & = 2 \\

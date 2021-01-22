@@ -35,8 +35,7 @@ A {term}`matrix` is an $m\times n$ array of numbers called its elements. The set
 
 I use boldfaced uppercase letters to represent vectors, and a pair of subscripts to refer to an individual element within one. For instance, $A_{23}$ is the element in row 2, column 3 of the matrix $\bfA$.
 
-```{tip}
-:class: dropdown
+```{note}
 Matrix subscripts are always in the order row first, column second. (This is the opposite of Excel, which is just one of myriad reasons that Excel is evil.)
 ```
 
@@ -54,14 +53,13 @@ y = [10; 20; 30]
 A = [ 1 2 3; -4 -5 -6; pi sqrt(2) exp(1) ]
 ```
 
-```{sidebar} Mathematical constants
-:class: dropdown
+:::{admonition,note} Mathematical constants
 The constant $\pi$ is defined automatically as `pi`. The constant `e` is not defined, and expressions like $e^{-2}$ causes an error if you have not previously defined `e`. Instead, use the exponential function `exp`; note that $e=\exp(1)$.
-```
+:::
 
 As you can see from this output, MATLAB allows two kinds of vector: a row vector, which has a single row, and a column vector, which has a single column. The distinction doesn't always matter, but when it does, it really does. We are going to make a blanket assumption that serves well most of the time.
 
-```{tip}
+```{note}
 All vectors are assumed to have a column shape.
 ```
 
@@ -73,7 +71,7 @@ sizes = [ size(x); size(y); size(A) ]
 
 You can see from the above that we can concatenate vectors and matrices inside square brackets. Also:
 
-```{tip}
+```{note}
 MATLAB makes no distinction between a column vector in $\real^n$ and an $n\times 1$ matrix in $\rmn{n}{1}$.
 ```
 

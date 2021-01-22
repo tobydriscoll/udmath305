@@ -19,7 +19,7 @@ Matrices support addition/subtraction and scalar multiplication just as vectors 
 
 ## Matrix times vector
 
-The linear combination definition {ref}`definition-linalg-linear-combination` serves as the foundation of multiplication between a matrix and a vector.
+The [linear combination definition](definition-linalg-linear-combination) serves as the foundation of multiplication between a matrix and a vector.
 
 ````{proof:definition} Matrix times vector
 Given $\bfA\in\cmn{m}{n}$ and $\bfx\in\complex^{n}$, the product $\bfA\bfx$ is defined as
@@ -32,30 +32,36 @@ Given $\bfA\in\cmn{m}{n}$ and $\bfx\in\complex^{n}$, the product $\bfA\bfx$ is d
 where $\bfa_j$ refers to the $j$th column of $\bfA$.
 ````
 
-In order for the definition to work, the number of columns in $\bfA$ has to be the same as the number of elements in $\bfx$. Otherwise, the product is not defined. Note also that the result is a member of $\complex^m$.
+```{warning}
+In order for $\bfA\bfx$ to be defined, the number of columns in $\bfA$ has to be the same as the number of elements in (dimension of) $\bfx$. 
+```
 
-::::{admonition,dropdown,tip} Example
+Note that when $\bfA$ is $m\times n$, then $\bfx$ must have dimension $n$ and $\bfA\bfx$  has dimension $m$. 
 
-The product
+::::{admonition,tip} Example
+
+Calculate the product
 
 ```{math}
 \begin{bmatrix} 
-1 & -1 & -1 \\ 3 & -2 & 0 \\ 1 & -2 & -1 \end{bmatrix} \threevec{-1}{2}{-1} 
+1 & -1 & -1 \\ 3 & -2 & 0 \\ 1 & -2 & -1 \end{bmatrix} \threevec{-1}{2}{-1}.
 ```
 
-is equivalent to 
+:::{admonition,dropdown,note,solution}
+The product is equivalent to
+
 ```{math}
 (-1) \threevec{1}{3}{1} + (2) \threevec{-1}{-2}{-2} + (-1) \threevec{-1}{0}{-1} = \threevec{-2}{-7}{-4}.
 ```
 
-We often don't write out the product in this much detail just to calculate an example. Instead we "zip together" the rows of the matrix with the entries of the vector:
+We often don't write out the product in this much detail just to calculate an instance. Instead we "zip together" the rows of the matrix with the entries of the vector:
 
 ```{math}
 \threevec{(-1)(1)+(2)(-1)+(-1)(-1)}{(-1)(3)+(2)(-2)+(-1)(0)}{(-1)(1)+(2)(-2)+(-1)(-1)}  = \threevec{-2}{-7}{-4}.
 ```
 
 You might recognize the "zip" expressions in this vector as dot products from vector calculus.
-
+:::
 ::::
 
 What justifies calling this operation multiplication? In large part, it's the natural distributive properties
