@@ -47,7 +47,7 @@ c_1 \bfx_1 + c_2 \bfx_2 + \cdots c_n \bfx_n,
 where the $c_j$ are called **coefficients** of the linear combination.
 ````
 
-Linear combinations interact conveniently with linear functions. If $L$ is linear, then according to the properties in the [definition](definition-linear),
+Linear combinations interact conveniently with linear functions. If $L$ is linear, then according to the properties in the [definition of linearity](definition-linear),
 
 $$
 L( c_1 \bfx_1 + c_2 \bfx_2 + \cdots c_n \bfx_n ) = c_1 L(\bfx_1) + c_2 L(\bfx_2) + \cdots + c_n L(\bfx_n).
@@ -55,9 +55,9 @@ $$
 
 This mundane-looking equation is the basis of a lot of important mathematics.
 
-## Linear systems
+## Linear combinations and systems
 
-A linear combination of vectors is equivalent to a linear system of equations. For example, consider the system
+An equation about linear combination of vectors is equivalent to a linear system of equations. For example, consider the system
 
 \begin{align*}
 x_1 - x_2  - x_3 & = 2 \\

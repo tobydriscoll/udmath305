@@ -465,10 +465,11 @@
 <ol class="simple">
 <li><p>Any rows of all zeros appear below all nonzero rows.</p></li>
 <li><p>The leading nonzero of any row is a one.</p></li>
-<li><p>Every leading one is the only nonzero in its column.</p></li>
+<li><p>Every leading 1 that is lower than another leading 1 is also to the right of it.</p></li>
+<li><p>Every leading 1 is the only nonzero in its column.</p></li>
 </ol>
 <p>The columns that have leading ones are called <span class="xref std std-term">pivot columns</span>. The other columns are called <span class="xref std std-term">free columns</span>.</p>
-</div></div><p>Here is an example using MATLAB to do the row operations for us. The linear system is characterized by</p>
+</div></div><p>Here is an example, using MATLAB to do the row operations for us. The linear system is characterized by</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \bfA = \begin{bmatrix}

@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -460,7 +460,11 @@
 <p>An eigenvalue is a clean, well-defined target. Eigenvectors are a little slipperier. For starters, if <span class="math notranslate nohighlight">\(\bfA\bfv=\lambda\bfv\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[\bfA(c\bfv) = c(\bfA\bfv)=c(\lambda\bfv)=\lambda(c\bfv).\]</div>
-<p>Hence <strong>every nonzero multiple of an eigenvector is also an eigenvector for the same <span class="math notranslate nohighlight">\(\lambda\)</span></strong>. But there can be much more ambiguity than that.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Every nonzero multiple of an eigenvector is also an eigenvector for the same eigenvalue.</p>
+</div>
+<p>But there can be even more ambiguity than scalar multiples.</p>
 <div class="tip admonition">
 <p class="admonition-title"> Example</p>
 <p>Let <span class="math notranslate nohighlight">\(\meye\)</span> be an identity matrix. Then <span class="math notranslate nohighlight">\(\meye\bfx=\bfx\)</span> for any vector <span class="math notranslate nohighlight">\(\bfx\)</span>, so every nonzero vector is an eigenvector!</p>
@@ -580,9 +584,25 @@
 </div>
 <div class="section" id="eigenvectors-for-2-times-2">
 <h2><span class="section-number">13.4. </span>Eigenvectors for <span class="math notranslate nohighlight">\(2\times 2\)</span><a class="headerlink" href="#eigenvectors-for-2-times-2" title="Permalink to this headline">¶</a></h2>
-<p>Finding the exact roots of a cubic polynomial is not an easy matter unless the polynomial is special. Thus most of our hand computations will be with <span class="math notranslate nohighlight">\(2\times 2\)</span> matrices. Suppose <span class="math notranslate nohighlight">\(\lambda\)</span> is known to be an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span>. Then <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> must be singular, and its RREF has at least one free column. Hence row elimination will zero out the second row entirely, and we can ignore it.</p>
-<p>Say the first row of <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> is <span class="math notranslate nohighlight">\([\alpha,\beta]\)</span>. If these are both zero, then <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> is a zero matrix, i.e., <span class="math notranslate nohighlight">\(\bfA\)</span> is a multiple of the identity and all of <span class="math notranslate nohighlight">\(\complex^2\)</span> is the eigenspace. Otherwise, the vector <span class="math notranslate nohighlight">\([\beta;\,-\alpha]\)</span> is in the general homogeneous solution, and we can choose it as the basis of the eigenspace.</p>
-<div class="tip admonition">
+<p>Finding the exact roots of a cubic polynomial is not an easy matter unless the polynomial is special. Thus most of our hand computations will be with <span class="math notranslate nohighlight">\(2\times 2\)</span> matrices. Suppose <span class="math notranslate nohighlight">\(\lambda\)</span> is known to be an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span>. Then <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> must be singular, and its RREF has at least one free column. Hence row elimination will zero out the second row entirely, and we can ignore it. That allows us to deduce the following.</p>
+<div class="proof proof-type-algorithm" id="id6">
+
+    <div class="proof-title">
+        <span class="proof-type">Algorithm 13.6</span>
+        
+            <span class="proof-title-name">(Eigenvectors for <span class="math notranslate nohighlight">\(2\times 2\)</span>)</span>
+        
+    </div><div class="proof-content">
+<ol class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(\lambda\)</span> be an eigenvalue of <span class="math notranslate nohighlight">\(\bfA\)</span>.</p></li>
+<li><p>Let the first row of <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> be designated by <span class="math notranslate nohighlight">\([\alpha,\beta]\)</span>.</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\alpha=\beta=0\)</span>, then <span class="math notranslate nohighlight">\(\bfA-\lambda\meye\)</span> is a zero matrix and all of <span class="math notranslate nohighlight">\(\complex^2\)</span> is the eigenspace of <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
+<li><p>Otherwise, the vector <span class="math notranslate nohighlight">\([\beta;\,-\alpha]\)</span> is a basis of the eigenspace of <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+</div></div><div class="tip admonition">
 <p class="admonition-title"> Example</p>
 <p>Find the eigenstuff of</p>
 <div class="math notranslate nohighlight">

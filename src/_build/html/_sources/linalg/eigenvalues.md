@@ -42,7 +42,11 @@ An eigenvalue is a clean, well-defined target. Eigenvectors are a little slipper
 \bfA(c\bfv) = c(\bfA\bfv)=c(\lambda\bfv)=\lambda(c\bfv).
 ```
 
-Hence **every nonzero multiple of an eigenvector is also an eigenvector for the same $\lambda$**. But there can be much more ambiguity than that.
+```{note}
+Every nonzero multiple of an eigenvector is also an eigenvector for the same eigenvalue.
+```
+
+But there can be even more ambiguity than scalar multiples.
 
 ::::{admonition,tip} Example
 
@@ -138,9 +142,14 @@ In most cases, column `V(:,k)` is an eigenvector for the eigenvalue `D(k,k)`. (F
 
 ## Eigenvectors for $2\times 2$
 
-Finding the exact roots of a cubic polynomial is not an easy matter unless the polynomial is special. Thus most of our hand computations will be with $2\times 2$ matrices. Suppose $\lambda$ is known to be an eigenvalue of $\bfA$. Then $\bfA-\lambda\meye$ must be singular, and its RREF has at least one free column. Hence row elimination will zero out the second row entirely, and we can ignore it.
+Finding the exact roots of a cubic polynomial is not an easy matter unless the polynomial is special. Thus most of our hand computations will be with $2\times 2$ matrices. Suppose $\lambda$ is known to be an eigenvalue of $\bfA$. Then $\bfA-\lambda\meye$ must be singular, and its RREF has at least one free column. Hence row elimination will zero out the second row entirely, and we can ignore it. That allows us to deduce the following.
 
-Say the first row of $\bfA-\lambda\meye$ is $[\alpha,\beta]$. If these are both zero, then $\bfA-\lambda\meye$ is a zero matrix, i.e., $\bfA$ is a multiple of the identity and all of $\complex^2$ is the eigenspace. Otherwise, the vector $[\beta;\,-\alpha]$ is in the general homogeneous solution, and we can choose it as the basis of the eigenspace.
+```{proof:algorithm} Eigenvectors for $2\times 2$
+1. Let $\lambda$ be an eigenvalue of $\bfA$.
+2. Let the first row of $\bfA-\lambda\meye$ be designated by $[\alpha,\beta]$. 
+    - If $\alpha=\beta=0$, then $\bfA-\lambda\meye$ is a zero matrix and all of $\complex^2$ is the eigenspace of $\lambda$.
+    - Otherwise, the vector $[\beta;\,-\alpha]$ is a basis of the eigenspace of $\lambda$.
+```
 
 ::::{admonition,tip} Example
 Find the eigenstuff of 

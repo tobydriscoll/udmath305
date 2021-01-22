@@ -42,8 +42,11 @@ The {term}`algebraic multiplicity` of an eigenvalue is its multiplicity as a roo
 The following example illustrates a possibility unique to eigenvalues of algebraic multiplicity greater than 1.
 
 (example-linalg-defective)=
-::::{admonition,dropdown,tip} Example
-The characteristic polynomial of $\bfA=\twomat{4}{1}{0}{4}$ is
+::::{admonition,tip} Example
+Find the eigenspaces of $\bfA=\twomat{4}{1}{0}{4}$.
+
+:::{admonition,note,dropdown,solution}
+The characteristic polynomial is 
 
 ```{math}
 \twodet{4-\lambda}{1}{0}{4-\lambda} = (4-\lambda)^2,
@@ -56,6 +59,7 @@ so the double root $\lambda_1=4$ is the only eigenvalue. Since
 ```
 
 the eigenspace has basis $\twovec{1}{0}$.
+:::
 ::::
 
 This leads us to define a second notion of multiplicity for an eigenvalue. 
@@ -91,7 +95,7 @@ As we will see later on, defective matrices often complicate the application of 
 If $\bfA\in\cmn{n}{n}$ has $n$ distinct eigenvalues, then $\bfA$ is not defective.
 ````
 
-For $n=2$, the possibilities in the case of algebraic multiplicity equal to 2 are easy to pin down. 
+For $n=2$, the possibilities in the case of algebraic multiplicity equal to 2 are easy to pin down even further. 
 
 ````{proof:theorem} $2\times 2$ defectivenss
 Any $\bfA\in\cmn{2}{2}$ that has a single repeated eigenvalue is either defective or a multiple of the identity matrix. 

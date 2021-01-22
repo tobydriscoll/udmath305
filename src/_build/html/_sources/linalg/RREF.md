@@ -57,13 +57,14 @@ free column
 A matrix is in {term}`RREF` (reduced row echelon form) if it meets all of these requirements:
 
 1. Any rows of all zeros appear below all nonzero rows.
-1. The leading nonzero of any row is a one.
-1. Every leading one is the only nonzero in its column.
+2. The leading nonzero of any row is a one.
+3. Every leading 1 that is lower than another leading 1 is also to the right of it.
+4. Every leading 1 is the only nonzero in its column.
 
 The columns that have leading ones are called {term}`pivot columns`. The other columns are called {term}`free columns`.
 ````
 
-Here is an example using MATLAB to do the row operations for us. The linear system is characterized by
+Here is an example, using MATLAB to do the row operations for us. The linear system is characterized by
 
 $$
 \bfA = \begin{bmatrix}

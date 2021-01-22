@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -437,7 +437,7 @@
 </div>
 <p>To be clear, nonzero homogeneous solutions can occur only when <span class="math notranslate nohighlight">\(\bfA\)</span> is singular, because otherwise the solution <span class="math notranslate nohighlight">\(\bfx=\bfA^{-1}\bfzero=\bfzero\)</span> is unique.</p>
 <p>A nice feature of zero is that adding multiples of zero to it is still zero. So, if <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> is the RREF of <span class="math notranslate nohighlight">\(\bfA\)</span>, then the RREF of the augmented matrix <span class="math notranslate nohighlight">\([\bfA;\,\bfzero]\)</span> is just <span class="math notranslate nohighlight">\([\mathbf{R};\,\bfzero]\)</span>. Each free column of <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> therefore introduces a free variable in the homogeneous solution.</p>
-<div class="dropdown tip admonition">
+<div class="tip admonition">
 <p class="admonition-title"> Example</p>
 <p>The RREF of</p>
 <div class="math notranslate nohighlight">
@@ -457,24 +457,23 @@
 <p>so <span class="math notranslate nohighlight">\(\bfx =\threevec{1}{-2}{1}\)</span> for any value of <span class="math notranslate nohighlight">\(s\)</span>.</p>
 </div>
 </div>
-<div class="dropdown tip admonition">
+<div class="tip admonition">
 <p class="admonition-title"> Example</p>
-<p>The RREF of</p>
+<p>Given the equivalence</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 2 &amp; 0 &amp; -4 \\
 -2 &amp; -4 &amp; 1 &amp; 9 \\
 -3 &amp; -6 &amp; 1 &amp; 13 \\
 -2 &amp; -4 &amp; 0 &amp; 8   
- \end{bmatrix}\end{split}\]</div>
-<p>is</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{bmatrix} 
+ \end{bmatrix}
+ \quad \overset{\text{RREF}}{\Longrightarrow} \quad 
+\begin{bmatrix} 
 1 &amp; 2 &amp; 0 &amp; -4 \\
 0 &amp; 0 &amp; 1 &amp; 1 \\
 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0   
- \end{bmatrix}.\end{split}\]</div>
-<p>Find all solutions of the homogeneous system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfzero\)</span>.</p>
+ \end{bmatrix},\end{split}\]</div>
+<p>find all solutions of the homogeneous system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfzero\)</span>.</p>
 <div class="dropdown note solution admonition">
 <p class="admonition-title"></p>
 <p>The RREF of the augmented matrix just tacks on a column of zeros. Hence columns 2 and 4 are free, so we set <span class="math notranslate nohighlight">\(x_2=s\)</span>, <span class="math notranslate nohighlight">\(x_4=t\)</span>. The rest of the solution is</p>
@@ -498,7 +497,7 @@
 <p>The formula <a class="reference internal" href="#equation-linalg-general-homog">(11.1)</a> is called the <a class="reference internal" href="overview.html#term-general-solution"><span class="xref std std-term">general solution</span></a> of the homogeneous problem <span class="math notranslate nohighlight">\(\bfA\bfx=\bfzero\)</span>. We say that <span class="math notranslate nohighlight">\(\bfu_1,\ldots,\bfu_k\)</span> form a <a class="reference internal" href="overview.html#term-basis"><span class="xref std std-term">basis</span></a> for the general solution.</p>
 </div></div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The general homogeneous solution is actually a set of vectors. In linear algebra, more common names for this set are <em>nullspace</em> and <em>kernel</em>. We use “general homogeneous solution” because that terminology appears in differential equations.</p>
+<p>The general homogeneous solution is actually a set of vectors. In linear algebra, more common names for this set are <em>nullspace</em> and <em>kernel</em>. We use “general homogeneous solution” because that terminology appears in differential equations for an analogous situation.</p>
 </div>
 <p>In the new terminology, we can unify the case of an invertible <span class="math notranslate nohighlight">\(\bfA\)</span> by saying that it has an empty basis, and a general solution of the single vector <span class="math notranslate nohighlight">\(\bfzero\)</span>.</p>
 </div>
@@ -528,7 +527,7 @@
 \[\bfA(\bfv-\bfx_p)=\bfA\bfv - \bfA\bfx_p = \bfb - \bfb = \bfzero.\]</div>
 <p>Hence <span class="math notranslate nohighlight">\(\bfv-\bfx_p\)</span> is a homogeneous solution, which means that we can write it as <span class="math notranslate nohighlight">\(\bfx_h\)</span>.</p>
 </div></div><p>Hence every linear system is closely tied to its homogeneous counterpart. The general solution of <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> requires just one solution, plus the general homogeneous solution.</p>
-<div class="dropdown tip admonition">
+<div class="tip admonition">
 <p class="admonition-title"> Example</p>
 <p>Find the general solution of</p>
 <div class="math notranslate nohighlight">
@@ -550,11 +549,11 @@
 \[\bfx = \bfx_p + \bfx_h = \threevec{0}{4}{0} + c_1 \threevec{1}{2}{1} + c_2 \threevec{0}{0}{1}.\]</div>
 </div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The basis vectors in <span class="math notranslate nohighlight">\(\bfx_h\)</span> and the particular solution <span class="math notranslate nohighlight">\(\bfx_p\)</span> aren’t unique, so it’s possible to write down two equivalent forms of the solution that look rather different.</p>
 </div>
-<p>The homogeneous/particular approach will come up again, and often, for differential equations in future chapters.</p>
+<p>The homogeneous <span class="math notranslate nohighlight">\(+\)</span> particular approach will come up again, and often, for differential equations.</p>
 </div>
 </div>
 

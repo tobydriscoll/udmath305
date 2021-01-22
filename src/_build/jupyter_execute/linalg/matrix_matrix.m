@@ -21,6 +21,6 @@ A = round(10*rand(4,4))
 B = round(10*rand(4,4))
 C = round(10*rand(4,4))
 
-( A*(B+C) ) - ( A*B + A*C )    % should be zero
+ident1 = ( A*(B+C) ) - ( A*B + A*C )    % should be zero
 
-( (A+B)*C ) - ( A*C + B*C )    % should be zero
+ident2 = ( (A+B)*C ) - ( A*C + B*C )    % should be zero

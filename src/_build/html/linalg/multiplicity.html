@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -457,15 +457,19 @@
 </div></div><div class="section" id="geometric-multiplicity">
 <h2><span class="section-number">14.1. </span>Geometric multiplicity<a class="headerlink" href="#geometric-multiplicity" title="Permalink to this headline">¶</a></h2>
 <p>The following example illustrates a possibility unique to eigenvalues of algebraic multiplicity greater than 1.</p>
-<div class="dropdown tip admonition" id="example-linalg-defective">
+<div class="tip admonition" id="example-linalg-defective">
 <p class="admonition-title"> Example</p>
-<p>The characteristic polynomial of <span class="math notranslate nohighlight">\(\bfA=\twomat{4}{1}{0}{4}\)</span> is</p>
+<p>Find the eigenspaces of <span class="math notranslate nohighlight">\(\bfA=\twomat{4}{1}{0}{4}\)</span>.</p>
+<div class="note dropdown solution admonition">
+<p class="admonition-title"></p>
+<p>The characteristic polynomial is</p>
 <div class="math notranslate nohighlight">
 \[\twodet{4-\lambda}{1}{0}{4-\lambda} = (4-\lambda)^2,\]</div>
 <p>so the double root <span class="math notranslate nohighlight">\(\lambda_1=4\)</span> is the only eigenvalue. Since</p>
 <div class="math notranslate nohighlight">
 \[\bfA - 4\meye = \twomat{0}{1}{0}{0},\]</div>
 <p>the eigenspace has basis <span class="math notranslate nohighlight">\(\twovec{1}{0}\)</span>.</p>
+</div>
 </div>
 <p>This leads us to define a second notion of multiplicity for an eigenvalue.</p>
 <div class="proof proof-type-definition" id="id3">
@@ -513,7 +517,7 @@
         
     </div><div class="proof-content">
 <p>If <span class="math notranslate nohighlight">\(\bfA\in\cmn{n}{n}\)</span> has <span class="math notranslate nohighlight">\(n\)</span> distinct eigenvalues, then <span class="math notranslate nohighlight">\(\bfA\)</span> is not defective.</p>
-</div></div><p>For <span class="math notranslate nohighlight">\(n=2\)</span>, the possibilities in the case of algebraic multiplicity equal to 2 are easy to pin down.</p>
+</div></div><p>For <span class="math notranslate nohighlight">\(n=2\)</span>, the possibilities in the case of algebraic multiplicity equal to 2 are easy to pin down even further.</p>
 <div class="proof proof-type-theorem" id="id7">
 
     <div class="proof-title">

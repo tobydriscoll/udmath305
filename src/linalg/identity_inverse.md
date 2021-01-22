@@ -242,6 +242,8 @@ which is impossible. We conclude that $\mathbf{Z}$ cannot exist.
 A square matrix that does not have an inverse is called {term}`singular`. A matrix that does have an inverse is called {term}`invertible`, or nonsingular.
 ````
 
-The statement "$\bfA$ is singular" is the multidimensional equivalent of "$a$ is zero" in the scalar problem $ax=b$. For a singular matrix, the linear system $\bfA\bfx = \bfb$ has either no solution or infinitely many of them.
+```{note}
+The statement "$\bfA$ is singular" for the linear system $\bfA\bfx = \bfb$ is the multidimensional equivalent of "$a$ is zero" in the scalar problem $ax=b$. For a singular matrix, a unique solution is impossible–the system has either no solution or infinitely many of them.
+```
 
-The next two questions for us are now clear. How do we know when a given matrix is singular? And what happens in a linear system with a singular matrix?
+The next two questions for us are: How do we know when a given matrix is singular? And what happens in a linear system with a singular matrix?

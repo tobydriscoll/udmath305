@@ -444,15 +444,15 @@
 <div class="math notranslate nohighlight">
 \[ax = b\]</div>
 <p>for <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<ol class="simple">
+<ul class="simple">
 <li><p>If <span class="math notranslate nohighlight">\(a\neq 0\)</span>, there is a unique solution, <span class="math notranslate nohighlight">\(x=b/a\)</span>.</p></li>
 <li><p>Otherwise,</p>
-<ol class="simple">
+<ul>
 <li><p>If also <span class="math notranslate nohighlight">\(b=0\)</span>, then every value of <span class="math notranslate nohighlight">\(x\)</span> is a valid solution.</p></li>
 <li><p>Otherwise, there are no solutions.</p></li>
-</ol>
+</ul>
 </li>
-</ol>
+</ul>
 <p>To summarize, for nonzero <span class="math notranslate nohighlight">\(a\)</span> there is exactly one solution, and otherwise, depending on <span class="math notranslate nohighlight">\(b\)</span>, there are either infinitely many or zero solutions. A linear system with no solutions is called <a class="reference internal" href="overview.html#term-inconsistent"><span class="xref std std-term">inconsistent</span></a>, with the opposite being <em>consistent</em>.</p>
 <p>Our goal is to understand equations that depend linearly on multiple variables. But before even writing out what that means, let me give away the punch line: <em>the only possibilities are exactly the same three outcomes described above</em>. The main difference is that the condition “<span class="math notranslate nohighlight">\(a=0\)</span>” is modified to something else.</p>
 </div>
@@ -465,25 +465,25 @@ ax + by &amp;= f, \\
 cx + dy &amp;= g.
 \end{align*}\]</div>
 <p>There is some easy geometric intuition here. Each equation represents a straight line in the plane, and solving both equations simultaneously means finding an intersection of these lines. Our cases above translate directly into:</p>
-<ol class="simple">
+<ul class="simple">
 <li><p>If the lines are not parallel, there is a unique solution.</p></li>
 <li><p>Otherwise,</p>
-<ol class="simple">
+<ul>
 <li><p>If the lines are identical, there are infinitely many solutions.</p></li>
 <li><p>Otherwise, there are no solutions.</p></li>
-</ol>
+</ul>
 </li>
-</ol>
+</ul>
 <p>It’s not hard to turn those statements into algebraic conditions. The slopes of the two lines are (ignoring infinities for a moment) <span class="math notranslate nohighlight">\(-a/b\)</span> and <span class="math notranslate nohighlight">\(-c/d\)</span>, and we can say the slopes are equal if and only if <span class="math notranslate nohighlight">\(ad=bc\)</span>.</p>
-<ol class="simple">
+<ul class="simple">
 <li><p>If <span class="math notranslate nohighlight">\(ad\neq bc\)</span>, there is a single solution.</p></li>
 <li><p>Otherwise,</p>
-<ol class="simple">
-<li><p>If one line’s equation is a multiple of the other, there are infinitely many solutions.</p></li>
+<ul>
+<li><p>If one equation is a multiple of the other, there are infinitely many solutions.</p></li>
 <li><p>Otherwise, there are no solutions.</p></li>
-</ol>
+</ul>
 </li>
-</ol>
+</ul>
 <div class="tip admonition">
 <p class="admonition-title"> Example</p>
 <p>Find all solutions to the equations</p>

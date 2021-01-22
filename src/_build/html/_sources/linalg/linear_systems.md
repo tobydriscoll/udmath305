@@ -25,10 +25,10 @@ $$ax = b$$
 
 for $x$.
 
-1. If $a\neq 0$, there is a unique solution, $x=b/a$.
-2. Otherwise,
-   1. If also $b=0$, then every value of $x$ is a valid solution.
-   2. Otherwise, there are no solutions.
+- If $a\neq 0$, there is a unique solution, $x=b/a$.
+- Otherwise,
+   - If also $b=0$, then every value of $x$ is a valid solution.
+   - Otherwise, there are no solutions.
 
 To summarize, for nonzero $a$ there is exactly one solution, and otherwise, depending on $b$, there are either infinitely many or zero solutions. A linear system with no solutions is called {term}`inconsistent`, with the opposite being *consistent*.
 
@@ -45,17 +45,17 @@ cx + dy &= g.
 
 There is some easy geometric intuition here. Each equation represents a straight line in the plane, and solving both equations simultaneously means finding an intersection of these lines. Our cases above translate directly into:
 
-1. If the lines are not parallel, there is a unique solution.
-2. Otherwise,
-   1. If the lines are identical, there are infinitely many solutions.
-   2. Otherwise, there are no solutions.
+- If the lines are not parallel, there is a unique solution.
+- Otherwise,
+   - If the lines are identical, there are infinitely many solutions.
+   - Otherwise, there are no solutions.
 
 It's not hard to turn those statements into algebraic conditions. The slopes of the two lines are (ignoring infinities for a moment) $-a/b$ and $-c/d$, and we can say the slopes are equal if and only if $ad=bc$.
 
-1. If $ad\neq bc$, there is a single solution.
-2. Otherwise,
-   1. If one line's equation is a multiple of the other, there are infinitely many solutions.
-   2. Otherwise, there are no solutions.
+- If $ad\neq bc$, there is a single solution.
+- Otherwise,
+   - If one equation is a multiple of the other, there are infinitely many solutions.
+   - Otherwise, there are no solutions.
 
 ::::{admonition,tip} Example
 Find all solutions to the equations

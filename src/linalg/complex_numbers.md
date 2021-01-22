@@ -24,6 +24,7 @@ There's often a lot of uneasiness about complex numbers. Terminology is part of 
 As a practical matter, you can pretty much always replace a complex value with two real ones, and vice versa. But sometimes the manipulations are a lot easier in the complex form. In particular, you may be able to replace trigonometry with algebra.
 
 ## The reality of imaginary numbers (optional)
+`````{toggle}
 
 Let's rewind a bit. We can probably take for granted the positive integers 1, 2, 3, and so on, and we'll throw in zero as well, though this too was controversial for centuries. It's not long before we want to solve a problem like $x+1=0$. Annoyingly, we can pose the problem using just nonnegative integers, but we can't solve it. So we accept the existence of the negative integers.
 
@@ -54,7 +55,7 @@ x^2 + 1 = 0,
 which is purely "real" but insolvable. Solutions to this equation were widely resisted for a very long time (say, the 18th century), to the point they were called "imaginary" (looking at you here, Descartes).
 
 Yet something amazing happens if you do accept imaginary numbers, and their expansion to the complex numbers. Namely, *The Fundamental Theorem of Algebra*, which states that if you write down a polynomial using complex numbers, it will have only complex numbers as solutions. So there's no infinite ladder of hypercomplex numbers that we have to ascend--just one rung past the "real" one is all we need to tidy things up perfectly.
-
+`````
 ## Basic arithmetic
 
 We can write a complex number $z\in \complex$ as $z=x+iy$, where $i^2=-1$ and $x$ and $y$ are real numbers known as the {term}`real part` and {term}`imaginary part` of $z$,

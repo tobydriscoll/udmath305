@@ -29,7 +29,7 @@ To be clear, nonzero homogeneous solutions can occur only when $\bfA$ is singula
 
 A nice feature of zero is that adding multiples of zero to it is still zero. So, if $\mathbf{R}$ is the RREF of $\bfA$, then the RREF of the augmented matrix $[\bfA;\,\bfzero]$ is just $[\mathbf{R};\,\bfzero]$. Each free column of $\mathbf{R}$ therefore introduces a free variable in the homogeneous solution.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 The RREF of 
 
 ```{math}
@@ -62,8 +62,8 @@ so $\bfx =\threevec{1}{-2}{1}$ for any value of $s$.
 :::
 ::::
 
-::::{admonition,dropdown,tip} Example
-The RREF of 
+::::{admonition,tip} Example
+Given the equivalence  
 
 ```{math}
 \bfA = \begin{bmatrix} 1 & 2 & 0 & -4 \\
@@ -71,19 +71,15 @@ The RREF of
 -3 & -6 & 1 & 13 \\
 -2 & -4 & 0 & 8   
  \end{bmatrix}
-```
-
-is
-
-```{math}
+ \quad \overset{\text{RREF}}{\Longrightarrow} \quad 
 \begin{bmatrix} 
 1 & 2 & 0 & -4 \\
 0 & 0 & 1 & 1 \\
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0   
- \end{bmatrix}.
+ \end{bmatrix},
 ```
-Find all solutions of the homogeneous system $\bfA\bfx=\bfzero$.
+find all solutions of the homogeneous system $\bfA\bfx=\bfzero$.
 
 :::{admonition,dropdown,note,solution}
 The RREF of the augmented matrix just tacks on a column of zeros. Hence columns 2 and 4 are free, so we set $x_2=s$, $x_4=t$. The rest of the solution is
@@ -113,7 +109,7 @@ The formula {eq}`linalg-general-homog` is called the {term}`general solution` of
 ````
 
 ```{note}
-The general homogeneous solution is actually a set of vectors. In linear algebra, more common names for this set are *nullspace* and *kernel*. We use "general homogeneous solution" because that terminology appears in differential equations.
+The general homogeneous solution is actually a set of vectors. In linear algebra, more common names for this set are *nullspace* and *kernel*. We use "general homogeneous solution" because that terminology appears in differential equations for an analogous situation.
 ```
 
 In the new terminology, we can unify the case of an invertible $\bfA$ by saying that it has an empty basis, and a general solution of the single vector $\bfzero$.
@@ -146,7 +142,7 @@ Hence $\bfv-\bfx_p$ is a homogeneous solution, which means that we can write it 
 
 Hence every linear system is closely tied to its homogeneous counterpart. The general solution of $\bfA\bfx=\bfb$ requires just one solution, plus the general homogeneous solution.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 Find the general solution of
 
 ```{math}
@@ -178,8 +174,8 @@ Returning to the original nonhomogeneous problem, we only need to find any one p
 :::
 ::::
 
-```{tip}
+```{note}
 The basis vectors in $\bfx_h$ and the particular solution $\bfx_p$ aren't unique, so it's possible to write down two equivalent forms of the solution that look rather different.
 ```
 
-The homogeneous/particular approach will come up again, and often, for differential equations in future chapters.
+The homogeneous $+$ particular approach will come up again, and often, for differential equations.

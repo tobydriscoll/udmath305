@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -458,15 +458,19 @@
         
     </div><div class="proof-content">
 <p>A square matrix is singular if and only if its RREF has at least one row of zeros.</p>
-</div></div><div class="dropdown tip admonition">
+</div></div><div class="tip admonition">
 <p class="admonition-title"> Example</p>
-<p>It’s always tempting to reach for</p>
+<p>Determine whether</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\end{split}\]</div>
-<p>as a simple, arbitrary <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix. Its RREF is</p>
+<p>is singular.</p>
+<div class="dropdown note solution admonition">
+<p class="admonition-title"></p>
+<p>Its RREF is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix} 1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}.\end{split}\]</div>
-<p>Hence this matrix is singular, which makes it not so simple from the standpoint of a linear system.</p>
+<p>Hence this matrix is singular.</p>
+</div>
 </div>
 </div>
 <div class="section" id="determinant">
@@ -488,8 +492,17 @@
 \[\det(\bfA) = \sum (-1)^{i+j} a_{ij} \det\bigl( \mathbf{M}_{ij} \bigr),\]</div>
 <p>where the sum is taken over any row or column of <span class="math notranslate nohighlight">\(\bfA\)</span> and <span class="math notranslate nohighlight">\(\mathbf{M}_{ij}\)</span> is the matrix that results from deleting row <span class="math notranslate nohighlight">\(i\)</span> and column <span class="math notranslate nohighlight">\(j\)</span> from <span class="math notranslate nohighlight">\(\bfA\)</span>.</p>
 </div></div><p>The definition, which is called <a class="reference internal" href="overview.html#term-cofactor-expansion"><span class="xref std std-term">cofactor expansion</span></a>, is recursive: the <span class="math notranslate nohighlight">\(n\times n\)</span> case is defined in terms of the <span class="math notranslate nohighlight">\((n-1)\times (n-1)\)</span> case, and so on all the way back down to <span class="math notranslate nohighlight">\(2\times 2\)</span>. Since expanding along any row or column gives the same result, it can be advantageous to choose one with lots of zeros to cut down on the total computation.</p>
-<div class="dropdown tip admonition">
+<div class="tip admonition">
 <p class="admonition-title"> Example</p>
+<p>Compute the determinant of</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} 
+2 &amp; 0 &amp; -1 \\ -2 &amp; 3 &amp; -1 \\ 2 &amp; 0 &amp; 1
+\end{bmatrix}.
+\end{split}\]</div>
+<div class="note dropdown solution admonition">
+<p class="admonition-title"></p>
 <p>Using cofactor expansion along the first row,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -502,6 +515,7 @@
 \begin{vmatrix} 2 &amp; 0 &amp; -1 \\ -2 &amp; 3 &amp; -1 \\ 2 &amp; 0 &amp;  1 \end{vmatrix} &amp; =  -(0) \begin{vmatrix} \cdots \end{vmatrix} + (3) \twodet{2}{-1}{2}{1} - (0)\begin{vmatrix} \cdots \end{vmatrix}    \\
 &amp; = 3(2+2) = 12. \\
 \end{align*}\]</div>
+</div>
 </div>
 <p>There are a few facts about determinants that are good to know.</p>
 <div class="proof proof-type-property" id="id4">
@@ -523,11 +537,11 @@
 <p>Even though a 2x2 inverse is easy, it’s still not the most convenient way to solve a linear system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> by hand. There is an even faster equivalent shortcut known as <a class="reference internal" href="overview.html#term-cramer-s-rule"><span class="xref std std-term">Cramer’s Rule</span></a>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-x_1 &amp; = \frac{ \twodet{b_1}{A_{12}}{b_2}{A_{22}} }{ \det(\bfA) }\\
+x_1 &amp; = \frac{ \twodet{b_1}{A_{12}}{b_2}{A_{22}} }{ \det(\bfA) }\\[1ex]
 x_2 &amp; = \frac{ \twodet{A_{11}}{b_1}{A_{21}}{b_2} }{ \det(\bfA) }.
 \end{align*}\]</div>
 <p>Obviously this does not work if <span class="math notranslate nohighlight">\(\det(\bfA)=0\)</span>, i.e., when the matrix is singular. Instead you have to fall back on our other methods.</p>
-<div class="dropdown tip admonition">
+<div class="tip admonition">
 <p class="admonition-title"> Example</p>
 <p>Solve</p>
 <div class="amsmath math notranslate nohighlight">

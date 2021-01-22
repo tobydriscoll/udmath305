@@ -37,20 +37,23 @@ The [contrapositive](https://en.wikipedia.org/wiki/Contraposition) observation i
 A square matrix is singular if and only if its RREF has at least one row of zeros.
 ````
 
-::::{admonition,dropdown,tip} Example
-It's always tempting to reach for
+::::{admonition,tip} Example
+Determine whether 
 
 ```{math}
 \bfA = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix}
 ```
 
-as a simple, arbitrary $3\times 3$ matrix. Its RREF is
+is singular. 
+:::{admonition,dropdown,note,solution}
+Its RREF is
 
 ```{math}
 \begin{bmatrix} 1 & 0 & -1 \\ 0 & 1 & 2 \\ 0 & 0 & 0 \end{bmatrix}.
 ```
 
-Hence this matrix is singular, which makes it not so simple from the standpoint of a linear system.
+Hence this matrix is singular.
+:::
 ::::
 
 ## Determinant
@@ -77,7 +80,16 @@ where the sum is taken over any row or column of $\bfA$ and $\mathbf{M}_{ij}$ is
 
 The definition, which is called {term}`cofactor expansion`, is recursive: the $n\times n$ case is defined in terms of the $(n-1)\times (n-1)$ case, and so on all the way back down to $2\times 2$. Since expanding along any row or column gives the same result, it can be advantageous to choose one with lots of zeros to cut down on the total computation.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
+Compute the determinant of 
+
+$$
+\begin{bmatrix} 
+2 & 0 & -1 \\ -2 & 3 & -1 \\ 2 & 0 & 1
+\end{bmatrix}.
+$$
+
+:::{admonition,note,dropdown,solution}
 Using cofactor expansion along the first row,
 
 \begin{align*}
@@ -91,6 +103,7 @@ In this case it might have been a tad easier to exploit the zeros by expanding a
 \begin{vmatrix} 2 & 0 & -1 \\ -2 & 3 & -1 \\ 2 & 0 &  1 \end{vmatrix} & =  -(0) \begin{vmatrix} \cdots \end{vmatrix} + (3) \twodet{2}{-1}{2}{1} - (0)\begin{vmatrix} \cdots \end{vmatrix}    \\
 & = 3(2+2) = 12. \\
 \end{align*}
+:::
 ::::
 
 There are a few facts about determinants that are good to know.
@@ -111,13 +124,13 @@ It's the third property above that we will be using. The determinant is often th
 Even though a 2x2 inverse is easy, it's still not the most convenient way to solve a linear system $\bfA\bfx=\bfb$ by hand. There is an even faster equivalent shortcut known as {term}`Cramer's Rule`:
 
 \begin{align*}
-x_1 & = \frac{ \twodet{b_1}{A_{12}}{b_2}{A_{22}} }{ \det(\bfA) }\\
+x_1 & = \frac{ \twodet{b_1}{A_{12}}{b_2}{A_{22}} }{ \det(\bfA) }\\[1ex]
 x_2 & = \frac{ \twodet{A_{11}}{b_1}{A_{21}}{b_2} }{ \det(\bfA) }.
 \end{align*}
 
 Obviously this does not work if $\det(\bfA)=0$, i.e., when the matrix is singular. Instead you have to fall back on our other methods.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 Solve
 
 \begin{align*}

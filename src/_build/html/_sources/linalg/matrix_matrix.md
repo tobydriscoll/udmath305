@@ -13,7 +13,7 @@ kernelspec:
   name: matlab
 ---
 
-# Matrix-matrix algebra
+# Matrix multiplication
 
 We can think of vectors as a special kind of matrix, and accordingly we can generalize matrix-vector products to matrix-matrix products. There are many equivalent ways to define these products. Here is the one we start with.
 
@@ -34,7 +34,7 @@ If $\bfA$ is $m\times n$ and $\bfB$ is $n\times p$, then the product $\bfA\bfB$ 
 
 In words, a matrix-matrix product is the horizontal concatenation of matrix-vector products involving the columns of the right-hand matrix.
 
-```{note}
+```{warning}
 In order to define $\bfA\bfB$, we require that the number of columns in $\bfA$ is the same as the number of rows in $\bfB$. That is, the *inner dimensions* must agree. The result has size determined by the *outer dimensions* of the original matrices.
 ```
 
@@ -115,7 +115,7 @@ A*B
 First, the bad news. We sort of knew this was coming, from matrix-vector multiplication.
 
 ```{warning}
-Matrix multiplication is not commutative. If $\bfA\bfB$ is defined, then $\bfB\bfA$ may not be, and even if it is, it may not equal $\bfA\bfB$. Put another way, you cannot simply change the order of the terms in a matrix product without some justification.
+Matrix multiplication is not commutative. If $\bfA\bfB$ is defined, then $\bfB\bfA$ may not be, and even if it is, it may not equal $\bfA\bfB$. Put another way, you cannot simply change the order of the terms in a matrix product without some explicit justification.
 ```
 
 Fortunately, other familiar and handy properties of multiplication do come along for the ride:
@@ -142,7 +142,7 @@ A = round(10*rand(4,4))
 B = round(10*rand(4,4))
 C = round(10*rand(4,4))
 
-( A*(B+C) ) - ( A*B + A*C )    % should be zero
+ident1 = ( A*(B+C) ) - ( A*B + A*C )    % should be zero
 
-( (A+B)*C ) - ( A*C + B*C )    % should be zero
+ident2 = ( (A+B)*C ) - ( A*C + B*C )    % should be zero
 ```
