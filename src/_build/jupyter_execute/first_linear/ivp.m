@@ -22,9 +22,11 @@ t = linspace(1,5,300);
 [t,x] = ode45(f,t,3);
 clf
 plot(t,x)
+title('Constant growth')
 xlabel('t'), ylabel('x')
 
 semilogy(t,x)
+title('Constant growth (log scale)')
 xlabel('t'), ylabel('x')
 
 f = @(t,x) 2*t*x;
@@ -32,10 +34,12 @@ t = linspace(0,5,300);
 [t,x] = ode45(f,t,1);
 clf
 semilogy(t,x)
+title('Growing growth rate')
 xlabel('t'), ylabel('x')
 
 f = @(t,x) x^2;
 t = linspace(0,4,300);
 [t,x] = ode45(f,t,0.5);
 semilogy(t,x)
+title('Nonlinear (feedback) growth')
 xlabel('t'), ylabel('x')
