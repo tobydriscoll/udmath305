@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -494,6 +494,7 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 <span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="n">ode45</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
 <span class="n">clf</span>
 <span class="s">plot(t,x)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Constant growth&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -506,6 +507,7 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">semilogy</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Constant growth (log scale)&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -522,6 +524,7 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 <span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="n">ode45</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 <span class="n">clf</span>
 <span class="s">semilogy(t,x)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Growing growth rate&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -537,6 +540,7 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 <span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">300</span><span class="p">);</span>
 <span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="n">ode45</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mf">0.5</span><span class="p">);</span>
 <span class="n">semilogy</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Nonlinear (feedback) growth&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
