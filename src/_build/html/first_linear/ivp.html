@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -441,7 +441,7 @@ x(t_0) = x_0,
 \[\dd{x}{t} = f(t,x), \quad x(t_0) = x_0.\]</div>
 </div></div><p>In this case the constraint <span class="math notranslate nohighlight">\(x(t_0)=x_0\)</span> is called an <a class="reference internal" href="overview.html#term-initial-condition"><span class="xref std std-term">initial condition</span></a>, and it’s typically implied that the problem is to be solved for <span class="math notranslate nohighlight">\(t&gt;t_0\)</span>.</p>
 <p>A solution of an IVP has to satisfy both the ODE and the initial condition. This is enough to specify the solution uniquely.</p>
-<div class="dropdown tip admonition">
+<div class="tip admonition">
 <p class="admonition-title"> Example</p>
 <p>In the previous section we said that the general solution of <span class="math notranslate nohighlight">\(x'=ax\)</span> is <span class="math notranslate nohighlight">\(x(t)=Ce^{at}\)</span>. If we are supplied with the initial value <span class="math notranslate nohighlight">\(x(2)=5\)</span>, then we require</p>
 <div class="math notranslate nohighlight">
@@ -455,16 +455,6 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 \]</div>
 </div>
 <p>A graphical interpretation of the role of an initial condition is that the general solution is a family of curves in the <span class="math notranslate nohighlight">\((t,x)\)</span> plane, and the initial condition is a point that the particular solution of interest must pass through.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">set</span><span class="p">(</span><span class="n">gcf</span><span class="p">,</span><span class="s">&#39;defaultaxesfontsize&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/ivp_4_0.png" src="../_images/ivp_4_0.png" />
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="mf">1.25</span><span class="p">;</span>
@@ -473,15 +463,16 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
     <span class="n">hold</span> <span class="s">on</span>
 <span class="k">end</span>
 
-<span class="n">plot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s">&#39;k.&#39;</span><span class="p">,</span><span class="s">&#39;markersize&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">fplot</span><span class="p">(@(</span><span class="n">t</span><span class="p">)</span> <span class="mi">5</span><span class="o">*</span><span class="nb">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">)),[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="s">&#39;linew&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span> <span class="mi">100</span><span class="p">])</span>
+<span class="n">plot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s">&#39;k.&#39;</span><span class="p">,</span><span class="s">&#39;markersize&#39;</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">fplot</span><span class="p">(@(</span><span class="n">t</span><span class="p">)</span> <span class="mi">20</span><span class="o">*</span><span class="nb">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">3</span><span class="p">)),[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="s">&#39;linew&#39;</span><span class="p">,</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">60</span> <span class="mi">60</span><span class="p">])</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Picking the solution with x(3)=20&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ivp_5_0.png" src="../_images/ivp_5_0.png" />
+<img alt="../_images/ivp_4_0.png" src="../_images/ivp_4_0.png" />
 </div>
 </div>
 <div class="section" id="numerical-solutions">
@@ -494,26 +485,26 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 <span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="n">ode45</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
 <span class="n">clf</span>
 <span class="s">plot(t,x)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Constant growth&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Constant growth rate&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ivp_7_0.png" src="../_images/ivp_7_0.png" />
+<img alt="../_images/ivp_6_0.png" src="../_images/ivp_6_0.png" />
 </div>
 </div>
 <p>Exponential growth or decay is best plotted on a log-linear scale, where the solution becomes a straight line.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">semilogy</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Constant growth (log scale)&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Constant growth rate (log scale)&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ivp_9_0.png" src="../_images/ivp_9_0.png" />
+<img alt="../_images/ivp_8_0.png" src="../_images/ivp_8_0.png" />
 </div>
 </div>
 <p>Here’s our example of variable growth. Note that we are not using the known exact solution, but just letting MATLAB create a numerical approximation by other means.</p>
@@ -530,7 +521,7 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ivp_11_0.png" src="../_images/ivp_11_0.png" />
+<img alt="../_images/ivp_10_0.png" src="../_images/ivp_10_0.png" />
 </div>
 </div>
 <p>Even on the log scale, the solution bends upward, showing superexponential growth. Finally, here is the nonlinear feedback problem.</p>
@@ -540,7 +531,7 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 <span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">300</span><span class="p">);</span>
 <span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="n">ode45</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mf">0.5</span><span class="p">);</span>
 <span class="n">semilogy</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Nonlinear (feedback) growth&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Nonlinear growth&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -550,7 +541,7 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 &gt; In ode45 (line 360)
 </pre></div>
 </div>
-<img alt="../_images/ivp_13_1.png" src="../_images/ivp_13_1.png" />
+<img alt="../_images/ivp_12_1.png" src="../_images/ivp_12_1.png" />
 </div>
 </div>
 <p>The warning issued here can mean that there is a bug in the code, but in this case, it’s just MATLAB noticing the finite-time blowup. In fact, it gets the true blowup time rather accurately.</p>

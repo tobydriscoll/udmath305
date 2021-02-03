@@ -46,7 +46,7 @@ The units of $dx/dt$ are those of $x$ divided by those of $t$. Let's write these
 
 ## First-order pharmacokinetics
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 According to *R. Newton et al., “Plasma and salivary pharmacokinetics of caffeine in man,” European Journal of Clinical Pharmacology 21 (1981), pp. 45–52*, caffeine in the bloodstream approximately satisfies first-order kinetics, though the half-life varies a great deal from one person to the next.
 
 Suppose $t_h=6$ hours. We can calculate $a=-\ln(2)/t_h\approx -0.116$ per hour, and then the predicted effects of one cup of coffee are $x(t) = e^{-0.116t}x(0)$. You can check that an equivalent, more direct expression is
@@ -54,15 +54,15 @@ Suppose $t_h=6$ hours. We can calculate $a=-\ln(2)/t_h\approx -0.116$ per hour, 
 ```{math}
 x(t) = 2^{-t/t_h} x(0).
 ```
-
 ::::
 
 Pharmaceutical companies need to track the concentration of certain drugs throughout the body in order to determine dosage, toxicity, etc.  This is usually done via a *compartment model*, in which the body is divided into compartments and a balance law is formulated in each compartment to account for the transport, ingestion, and elimination of the drug.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 
-> Consider a simple pill of antihistamine taken by a person.  The pill goes to the GI tract where it dissolves and the antihistamine diffuses through to the bloodstream, and it is then eliminated by chemical reactions or through the kidneys. Let $x(t)$  and $y(t)$ be the concentrations of the drug in the GI tract and the bloodstream, respectively.  Assume the rate of clearance from each compartment is proportional to the drug concentration in that compartment (i.e., first-order kinetics). Assuming the initial concentrations are $x(0)=\alpha$ and $y(0)=0$, find expressions for $x(t)$ and $y(t)$.
+Consider a simple pill of antihistamine taken by a person.  The pill goes to the GI tract where it dissolves and the antihistamine diffuses through to the bloodstream, and it is then eliminated by chemical reactions or through the kidneys. Let $x(t)$  and $y(t)$ be the concentrations of the drug in the GI tract and the bloodstream, respectively.  Assume the rate of clearance from each compartment is proportional to the drug concentration in that compartment (i.e., first-order kinetics). Assuming the initial concentrations are $x(0)=\alpha$ and $y(0)=0$, find expressions for $x(t)$ and $y(t)$.
 
+:::{admonition,dropdown,note,solution}
 Using the given assumptions and mass balances we obtain the system
 
 \begin{align*}
@@ -105,7 +105,7 @@ and finally
 ```{math}
 y(t) = \frac{k_1 \alpha}{k_2-k_1} \left( e^{-k_1 t} - e^{-k_2 t} \right).
 ```
-
+:::
 ::::
 
 ## Tank reactors
@@ -116,9 +116,10 @@ A {term}`continuously stirred tank reactor` (CSTR) appears often in chemical eng
 In CSTR problems the dependent variable can be either mass or concentration. Either is fine, so long as you are consistent. It's much better to understand how to apply the principle of mass conservation than to memorize formulas that might not work for how every problem is presented.
 ```
 
-::::{admonition,dropdown,tip} Example
-> A 200 L tank contains 10 kg of dye. Pure water is added at a rate of 4 L per minute, while the mixture is drained at the same rate. How much dye is in the tank after 10 minutes?
+::::{admonition,tip} Example
+A 200 L tank contains 10 kg of dye. Pure water is added at a rate of 4 L per minute, while the mixture is drained at the same rate. How much dye is in the tank after 10 minutes?
 
+:::{admonition,dropdown,note,solution}
 Let $x(t)$ be the mass of dye in the tank. The trick is to realize how rapidly it is being removed, and that depends on the time-varying concentration, $x(t)/200$. Specifically,
 
 ```{math}
@@ -126,11 +127,13 @@ Let $x(t)$ be the mass of dye in the tank. The trick is to realize how rapidly i
 ```
 
 So $x(t)=e^{-0.02 t}x(0)$ and $x(10)=10 e^{-0.2}$ kg.
+:::
 ::::
 
-::::{admonition,dropdown,tip} Example
-> A 300 gal capacity tank initially holds 100 gal of a brine solution at 1 lb/gal.  A stream of brine at 2 lb/gal is poured into the tank at 3 gal/min, and an exit stream of the well-mixed solution leaves the tank at 2 gal/min.  Find the amount of salt in the tank at the time it is about to overflow.
+::::{admonition,tip} Example
+A 300 gal capacity tank initially holds 100 gal of a brine solution at 1 lb/gal.  A stream of brine at 2 lb/gal is poured into the tank at 3 gal/min, and an exit stream of the well-mixed solution leaves the tank at 2 gal/min.  Find the amount of salt in the tank at the time it is about to overflow.
 
+:::{admonition,dropdown,note,solution}
 To write a rate equation for the amount $x(t)$ of salt in the tank at time $t$, we use the principle of conservation of mass. We assume no reaction takes place in the tank, so that up to the moment of overflow we have
 
 ```{math}
@@ -184,13 +187,14 @@ Using the initial condition, we obtain $c_1=-100^3$. The time of overflow is $t=
 ```{math}
 x(200)=2(200+100)-\frac{100^3}{(200+100)^2}=\frac{5300}{9}\approx 589 \text{ lb.}
 ```
-
+:::
 ::::
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 
-> A well-circulated lake contains 1000 kL of water that is initially at a concentration of 2 kg/kL of a pollutant.  Water from the effluent of a factory enters the lake at the rate of 5 kL/h with a concentration of 7 kg/kL of the pollutant.  Polluted water flows out of the lake through an outlet at the rate of 2 kL/h.  Determine the amount of pollutant in the lake as a function of time. (Ignore the fact that the lake may eventually overflow, as we are interested in a relatively short time.)
+A well-circulated lake contains 1000 kL of water that is initially at a concentration of 2 kg/kL of a pollutant.  Water from the effluent of a factory enters the lake at the rate of 5 kL/h with a concentration of 7 kg/kL of the pollutant.  Polluted water flows out of the lake through an outlet at the rate of 2 kL/h.  Determine the amount of pollutant in the lake as a function of time. (Ignore the fact that the lake may eventually overflow, as we are interested in a relatively short time.)
 
+:::{admonition,dropdown,note,solution}
 It's clear that given the net fluid inflow rate of 3 kL/h, the lake volume is given by $V(t)=1000 + 3t$ kL at time $t$ hours. Let $x(t)$ be the mass of pollutant in the lake at $t$ hours in kg/kL. Mass conservation implies
 
 ```{math}
@@ -222,7 +226,7 @@ which implies $c_1=-5(1000)^{5/3}=-5\times 10^5$. Thus
 ```{math}
 x(t)=7(3t+1000) - \frac{5\times 10^5}{(3t+1000)^{2/3}} \; \text{kg/kL.}
 ```
-
+:::
 ::::
 
 ## Cooling and heating
@@ -239,9 +243,10 @@ The usual assumption is that $k$ is constant, so the general solution is $x(t)=c
 
 Numerically you need to know three things to completely know the solution: the initial temperature, the decay rate $k$, and the environmental temperature $E$. If a word problem gives you any three pieces of relevant information, you need to convert them into these three values.
 
-::::{admonition,dropdown,tip} Example
-> A mug of coffee at 90 C is put in a room kept at 20 C. After 10 minutes the coffee has cooled by $7$ C. When will the coffee reach 60 C?
+::::{admonition,tip} Example
+A mug of coffee at 90 C is put in a room kept at 20 C. After 10 minutes the coffee has cooled by $7$ C. When will the coffee reach 60 C?
 
+:::{admonition,dropdown,note,solution}
 In terms of the notation above, we have $E=20$, $T(0)=90$, and $T(10)=90-7=83$. The cooling rate is not yet known. So we have $x(t)=T(t)-20$ and the IVP
 
 ```{math}
@@ -273,14 +278,15 @@ Finally,
 $$
 s = 10 \frac{\ln(7/4)}{\ln(10/9)} \approx 53.1 \text{ min}.
 $$
-
+:::
 ::::
 
 Sometimes you don't need to find the rate constant explicitly because you can manipulate expressions to substitute for it.
 
-::::{admonition,dropdown,tip} Example
-> Suppose Fred and Wilma each pour out a mug of coffee that is at 85 degrees C. Assume that the cooling rate in a mug is proportional to the cross-section of the mug's top.Wilma's mug has a diameter that is $\sqrt{2}$ times as large as Fred's. Both mugs are left sitting out for 30 minutes in a room that is at 25${}^\circ$ C, at which point Fred's coffee is at 60 degrees. What is the temperature of Wilma's coffee at the same moment?
+::::{admonition,tip} Example
+Suppose Fred and Wilma each pour out a mug of coffee that is at 85 degrees C. Assume that the cooling rate in a mug is proportional to the cross-section of the mug's top.Wilma's mug has a diameter that is $\sqrt{2}$ times as large as Fred's. Both mugs are left sitting out for 30 minutes in a room that is at 25${}^\circ$ C, at which point Fred's coffee is at 60 degrees. What is the temperature of Wilma's coffee at the same moment?
 
+:::{admonition,dropdown,note,solution}
 Suppose Fred's mug has cooling rate $k$. Since area is proportional to diameter squared, Wilma's mug has a cooling rate $2k$. Define $F(t)$ and $W(t)$ to be the temperatures of the two coffees, and let $x(t)=F(t)-25$, $y(t)=W(t)-25$. We know that $F(0) = W(0) = 85$, or
 
 $$
@@ -296,5 +302,5 @@ y(t) = 60 \bigl( e^{-kt} \bigr)^2 = 60 \bigl( x(t)/60 \bigr)^2 = \frac{x(t)^2}{6
 $$
 
 Since we know that $x(30)=60-25$, we conclude that $y(30)=35^2/60 \approx 20.4$ C, so $W(30) = 25 + y(30) \approx 45.4$ degrees.
-
+:::
 ::::

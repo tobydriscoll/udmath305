@@ -50,7 +50,7 @@ In this case the constraint $x(t_0)=x_0$ is called an {term}`initial condition`,
 
 A solution of an IVP has to satisfy both the ODE and the initial condition. This is enough to specify the solution uniquely.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 In the previous section we said that the general solution of $x'=ax$ is $x(t)=Ce^{at}$. If we are supplied with the initial value $x(2)=5$, then we require
 
 $$
@@ -67,23 +67,17 @@ $$
 A graphical interpretation of the role of an initial condition is that the general solution is a family of curves in the $(t,x)$ plane, and the initial condition is a point that the particular solution of interest must pass through.
 
 ```{code-cell}
----
-tags: [hide-cell]
----
-set(gcf,'defaultaxesfontsize',6)
-```
-
-```{code-cell}
 a = 1.25;
 for C = [-1 -0.67 -0.33 0 0.33 0.67 1]
     fplot(@(t) C*exp(a*t),[1,4])
     hold on
 end
 
-plot(2,5,'k.','markersize',14)
-fplot(@(t) 5*exp(a*(t-2)),[1,4],'k','linew',2)
-ylim([-100 100])
+plot(3,20,'k.','markersize',11)
+fplot(@(t) 20*exp(a*(t-3)),[1,4],'k','linew',1.5)
+ylim([-60 60])
 xlabel('t'), ylabel('x')
+title('Picking the solution with x(3)=20')
 ```
 
 ## Numerical solutions
@@ -96,7 +90,7 @@ t = linspace(1,5,300);
 [t,x] = ode45(f,t,3);
 clf
 plot(t,x)
-title('Constant growth')
+title('Constant growth rate')
 xlabel('t'), ylabel('x')
 ```
 
@@ -104,7 +98,7 @@ Exponential growth or decay is best plotted on a log-linear scale, where the sol
 
 ```{code-cell}
 semilogy(t,x)
-title('Constant growth (log scale)')
+title('Constant growth rate (log scale)')
 xlabel('t'), ylabel('x')
 ```
 
@@ -127,7 +121,7 @@ f = @(t,x) x^2;
 t = linspace(0,4,300);
 [t,x] = ode45(f,t,0.5);
 semilogy(t,x)
-title('Nonlinear (feedback) growth')
+title('Nonlinear growth')
 xlabel('t'), ylabel('x')
 ```
 

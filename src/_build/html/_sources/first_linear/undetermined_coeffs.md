@@ -27,8 +27,8 @@ The correct form of $x_p$ for various manifestations of $f$ are given in [the ta
 :header-rows: 1
 :name: table-firstlin-MUC
 
-* - $\underline{f(t)}$
-  - $\underline{x_p(t)}$
+* - $f(t)$
+  - $x_p(t)$
 * - $b_n t^n + \cdots b_0$
   - $B_n t^n + \cdots + B_0$
 * - $e^{rt}(b_n t^n + \cdots b_0)$
@@ -39,8 +39,11 @@ The correct form of $x_p$ for various manifestations of $f$ are given in [the ta
   - $A \cos(\omega t) + B \sin(\omega t)$
 ```
 
-::::{admonition,dropdown,tip} Example
-We have seen before that the homogeneous solution of $x'-4x=8t$ is $x_h=c_1 e^{4t}$. The [MUC table](table-firstlin-MUC) suggests that we choose $x_p=B_1t + B_0$. Plugging this into the ODE yields
+::::{admonition,tip} Example
+Find the general solution of $x'-4x=8t$.
+:::{admonition,dropdown,note,solution}
+
+The homogeneous solution of $x'-4x=0$ is $x_h=c_1 e^{4t}$. The [MUC table](table-firstlin-MUC) suggests that we choose $x_p=B_1t + B_0$. Plugging this into the ODE yields
 
 $$
 (B_1) - 4(B_1t + B_0) = 8t.
@@ -59,19 +62,21 @@ $$
 x(t) = x_h(t) + x_p(t) = c_1 e^{4t} - 2t -\frac{1}{2}.
 $$
 
-This is the third time we have derived this solution.
+This is the third time we have derived this solution!
+:::
 ::::
 
 ::::{warning}
 As seen in the preceding example, the forcing function $f(t)=8t$ caused us to introduce $x_p(t) = B_1t + B_0$. We cannot assume that the constant term in $x_p$ is absent like it is in $f$, and indeed it is not in the final result.
 ::::
 
-::::{admonition,dropdown,tip} Example
-We solve
+::::{admonition,tip} Example
+Solve the IVP
 
 $$
 x' = x - 6 \sin(t), \quad x(\pi) = 0.
 $$
+:::{admonition,dropdown,note,solution}
 
 We quickly see that the general solution of $x'-x=0$ is $x_h(t)=c_1e^t$. For the particular solution, [MUC table](table-firstlin-MUC) suggests
 
@@ -109,16 +114,21 @@ hence
 $$
 x(t) = 3 e^{t-\pi} + 3\cos(t) + 3\sin(t).
 $$
+:::
 ::::
 
-The benefit of the MUC over our previous formulas is avoiding a second integral that often requires integration by parts when $f$ is a polynomial or trig function.
+The benefit of the MUC over our previous methods is avoiding a second integral that often requires integration by parts when $f$ is a polynomial or trig function.
 
 ## Additive forcing terms
 
 If the forcing function includes multiple different types of functions added together, then you can find particular solutions for the different terms separately and add them together to get the overall particular solution.
 
-::::{admonition,dropdown,tip} Example
-To find a particular solution of  $x'+3x=6t-4e^{-t}$, we can separately find them for the cases $x'+3x=6t$ and $x'+3x=-4e^{-t}$. In the first case we use $x_p(t) = B_1t + B_0$, and it works out that $B_1=2$, $B_0=-2/3$. For the second case we choose $x_p=A e^{-t}$ and plug in:
+::::{admonition,tip} Example
+Find a particular solution of  $x'+3x=6t-4e^{-t}$.
+:::{admonition,dropdown,note,solution}
+We can separately find particular solutions for the cases $x'+3x=6t$ and $x'+3x=-4e^{-t}$. 
+
+In the first case we use $x_p(t) = B_1t + B_0$, and it works out that $B_1=2$, $B_0=-2/3$. For the second case we choose $x_p=A e^{-t}$ and plug in:
 
 ```{math}
 -4e^{-t} = x'+3x = -A e^{-t} + 3A e^{-t},
@@ -129,14 +139,14 @@ which tells us that $A=-2$. Finally, a particular solution of the original equat
 ```{math}
 x_p(t) = 2t-\frac{2}{3}-2e^{-t}.
 ```
-
+:::
 ::::
 
 ## Breakdown
 
 The suggestions in the [MUC table](table-firstlin-MUC) can fail if the forcing function includes the homogeneous solution $e^{at}$.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition,tip} Example
 Consider $x'-ax=e^{at}$. We get $x_h=c_1e^{at}$, and the table suggests
 
 ```{math}
