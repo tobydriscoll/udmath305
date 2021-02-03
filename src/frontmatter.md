@@ -1,3 +1,3 @@
-# M305 Notes
+# Applied Math for Engineers
 
-These are notes on MATH 305 by Toby Driscoll. All rights reserved.
+These are notes on MATH 305 at UD by Toby Driscoll. All rights reserved.
