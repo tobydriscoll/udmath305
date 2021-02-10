@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>5. RREF &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -258,80 +258,6 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
-  </a>
- </li>
-</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -482,12 +408,12 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span>
-     <span class="n">2</span>    <span class="s">0</span>    <span class="s">4</span>    <span class="s">3</span> 
+<span class="n">     2    </span><span class="s">0    4    3 </span><span class="p"></span>
     <span class="o">-</span><span class="mi">2</span>    <span class="mi">0</span>    <span class="mi">2</span>  <span class="o">-</span><span class="mi">13</span>
     <span class="o">-</span><span class="mi">4</span>    <span class="mi">5</span>   <span class="o">-</span><span class="mi">7</span>  <span class="o">-</span><span class="mi">10</span> 
-     <span class="n">1</span>   <span class="s">15</span>    <span class="s">2</span>   <span class="s">-4.5</span>
+<span class="n">     1   </span><span class="s">15    2   -4.5</span><span class="p"></span>
     <span class="p">];</span>
-<span class="n">b</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">40</span><span class="p">;</span> <span class="mi">9</span><span class="p">;</span> <span class="n">29</span> <span class="s">]</span><span class="p">;</span>
+<span class="n">b</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">40</span><span class="p">;</span> <span class="mi">9</span><span class="p">;</span><span class="n"> 29 </span><span class="s">]</span><span class="p">;</span>
 
 <span class="n">S</span> <span class="p">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span>
 </pre></div>
@@ -700,7 +626,7 @@ x_1 &amp;= -3,\\ x_2 &amp;= 1,\\ x_3 &amp;= 4, \\ x_4 &amp;= -2.
 <li><p>Use the pivot columns to solve for their corresponding variables in terms of the free parameters.</p></li>
 </ol>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>A linear system has an augmented matrix equivalent to the RREF</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -712,9 +638,14 @@ x_1 &amp;= -3,\\ x_2 &amp;= 1,\\ x_3 &amp;= 4, \\ x_4 &amp;= -2.
 \end{bmatrix}.
 \end{split}\]</div>
 <p>Find all solutions to the linear system.</p>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>The last two rows have no information and can be ignored. Columns 2 and 4 are pivot columns. We give variables from the other columns arbitrary values, <span class="math notranslate nohighlight">\(x_1=s\)</span> and <span class="math notranslate nohighlight">\(x_3=t\)</span>. The pivot variables are solved in terms of these to get <span class="math notranslate nohighlight">\(x_2=2-3t\)</span> and <span class="math notranslate nohighlight">\(x_4=-4\)</span>. All solutions are expressed as the vector</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The last two rows have no information and can be ignored. Columns 2 and 4 are pivot columns. We give variables from the other columns arbitrary values, <span class="math notranslate nohighlight">\(x_1=s\)</span> and <span class="math notranslate nohighlight">\(x_3=t\)</span>. The pivot variables are solved in terms of these to get <span class="math notranslate nohighlight">\(x_2=2-3t\)</span> and <span class="math notranslate nohighlight">\(x_4=-4\)</span>. All solutions are expressed as the vector</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \bfx = \begin{bmatrix}
@@ -722,9 +653,9 @@ s \\ 2-3t \\ t \\ -4
 \end{bmatrix}, \qquad s,t\in \real.
 \end{split}\]</div>
 </div>
-</div>
+</details></div>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>A linear system has an augmented matrix equivalent to the RREF</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -736,11 +667,16 @@ s \\ 2-3t \\ t \\ -4
 \end{bmatrix}.
 \end{split}\]</div>
 <p>Find all solutions to the linear system.</p>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>Look at the last row of the system. It expresses the equation <span class="math notranslate nohighlight">\(0=1\)</span>, which is impossible to satisfy. Thus the system is inconsistent.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Look at the last row of the system. It expresses the equation <span class="math notranslate nohighlight">\(0=1\)</span>, which is impossible to satisfy. Thus the system is inconsistent.</p>
 </div>
-</div>
+</details></div>
 <p>There are only three possible outcomes for a linear system, all deducible from the RREF of the augmented matrix:</p>
 <ol class="simple">
 <li><p>There is a leading 1 in the last column, in which case there are no solutions.</p></li>
@@ -799,7 +735,7 @@ s \\ 2-3t \\ t \\ -4
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

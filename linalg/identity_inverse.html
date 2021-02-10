@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>9. Identity and inverse &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -255,80 +255,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/transform_solutions.html">
    5. Solutions by transform
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
   </a>
  </li>
 </ul>
@@ -501,7 +427,7 @@
     </div><div class="proof-content">
 <p>If <span class="math notranslate nohighlight">\(\bfA\)</span> is <span class="math notranslate nohighlight">\(m\times n\)</span>, then <span class="math notranslate nohighlight">\(\bfA = \meye_m \bfA = \bfA \meye_n\)</span>.</p>
 </div></div><div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Compute</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -512,9 +438,14 @@
 2 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 2
 \end{bmatrix}.
 \end{split}\]</div>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>You can grind through the definition, of course, but there is a shortcut:</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">You can grind through the definition, of course, but there is a shortcut:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{bmatrix}
@@ -539,7 +470,7 @@
 \end{bmatrix}.
 \end{split}\]</div>
 </div>
-</div>
+</details></div>
 </div>
 <div class="section" id="inverse">
 <h2><span class="section-number">9.2. </span>Inverse<a class="headerlink" href="#inverse" title="Permalink to this headline">¶</a></h2>
@@ -570,14 +501,19 @@
 <li><p>If either <span class="math notranslate nohighlight">\(\mathbf{Z}\bfA = \meye\)</span> or <span class="math notranslate nohighlight">\(\bfA\mathbf{Z}=\meye\)</span> is true, then both are true and <span class="math notranslate nohighlight">\(\mathbf{Z}=\bfA^{-1}\)</span>.</p></li>
 </ol>
 </div></div><div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>The matrix <span class="math notranslate nohighlight">\(\mathbf{R}(\theta) = \begin{bmatrix}
 \cos(\theta) &amp; -\sin(\theta) \\ \sin(\theta) &amp; \cos(\theta) 
 \end{bmatrix}\)</span>
 performs rotation in the plane around the origin by angle <span class="math notranslate nohighlight">\(\theta\)</span>. Show that <span class="math notranslate nohighlight">\(\mathbf{R}(-\theta)\)</span> is the inverse of <span class="math notranslate nohighlight">\(\mathbf{R}(\theta)\)</span>.</p>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>All we need to do is to check that the product (in either order) is the identity matrix:</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">All we need to do is to check that the product (in either order) is the identity matrix:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mathbf{R}(-\theta)\mathbf{R}(\theta) &amp;= \begin{bmatrix}
@@ -596,7 +532,7 @@ performs rotation in the plane around the origin by angle <span class="math notr
 \end{bmatrix} = \meye.
 \end{align*}\]</div>
 </div>
-</div>
+</details></div>
 <p>Having laid all the groundwork, a general statement about solving linear systems is now possible.</p>
 <div class="proof proof-type-theorem" id="id6">
 
@@ -633,24 +569,29 @@ performs rotation in the plane around the origin by angle <span class="math notr
 </div></div><p>Beyond <span class="math notranslate nohighlight">\(2\times 2\)</span> we won’t worry about computing inverses; row elimination is a better computational method for solving linear systems. More fundamentally, though, we have not even established which matrices might be expected to have an inverse in the first place.</p>
 <p>A matrix of all zeros can’t have an inverse, because <span class="math notranslate nohighlight">\(\bfzero\bfA\)</span> is zero for all matrices <span class="math notranslate nohighlight">\(\bfA\)</span>. That conclusion extends what we know about a scalar <span class="math notranslate nohighlight">\(a\)</span>. Unlike the scalar case, though, there are other matrices that have no inverse.</p>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Show that</p>
 <div class="math notranslate nohighlight">
 \[
 \bfA = \twomat{0}{0}{0}{1}
 \]</div>
 <p>has no inverse.</p>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>Suppose that <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> is the inverse of <span class="math notranslate nohighlight">\(\bfA\)</span>, Then it would have to follow that</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Suppose that <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> is the inverse of <span class="math notranslate nohighlight">\(\bfA\)</span>, Then it would have to follow that</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{Z} \twomat{0}{0}{0}{1} = \meye = \twomat{1}{0}{0}{1}.\]</div>
-<p>Matching the first columns of both sides then implies</p>
+<p class="card-text">Matching the first columns of both sides then implies</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{Z} \twovec{0}{0} = \twovec{1}{0},\]</div>
-<p>which is impossible. We conclude that <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> cannot exist.</p>
+<p class="card-text">which is impossible. We conclude that <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> cannot exist.</p>
 </div>
-</div>
+</details></div>
 <div class="proof proof-type-definition" id="id8">
 
     <div class="proof-title">
@@ -717,7 +658,7 @@ performs rotation in the plane around the origin by angle <span class="math notr
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

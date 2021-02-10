@@ -37,7 +37,8 @@ The [contrapositive](https://en.wikipedia.org/wiki/Contraposition) observation i
 A square matrix is singular if and only if its RREF has at least one row of zeros.
 ````
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Determine whether 
 
 ```{math}
@@ -45,7 +46,7 @@ Determine whether
 ```
 
 is singular. 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 Its RREF is
 
 ```{math}
@@ -80,7 +81,8 @@ where the sum is taken over any row or column of $\bfA$ and $\mathbf{M}_{ij}$ is
 
 The definition, which is called {term}`cofactor expansion`, is recursive: the $n\times n$ case is defined in terms of the $(n-1)\times (n-1)$ case, and so on all the way back down to $2\times 2$. Since expanding along any row or column gives the same result, it can be advantageous to choose one with lots of zeros to cut down on the total computation.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Compute the determinant of 
 
 $$
@@ -89,7 +91,7 @@ $$
 \end{bmatrix}.
 $$
 
-:::{admonition,note,dropdown,solution}
+:::{dropdown} Solution
 Using cofactor expansion along the first row,
 
 \begin{align*}
@@ -130,7 +132,8 @@ x_2 & = \frac{ \twodet{A_{11}}{b_1}{A_{21}}{b_2} }{ \det(\bfA) }.
 
 Obviously this does not work if $\det(\bfA)=0$, i.e., when the matrix is singular. Instead you have to fall back on our other methods.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Solve
 
 \begin{align*}
@@ -140,7 +143,7 @@ Solve
 
 by Cramer's Rule.
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 Plug and play (or is it plug and pray?):
 
 \begin{align*}

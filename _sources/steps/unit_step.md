@@ -18,8 +18,8 @@ Here is one of our basic building blocks for discontinuous phenomena.
 
 (definition-firstlin-unitstep)=
 
-````{proof:definition} Unit step function 
-The {term}`unit step function`or {term}`Heaviside function` $H(t)$ is defined to have zero for $t< 0$ and one for $t\ge 0$. That is, if $T$ is any nonnegative constant, then
+::::{proof:definition} Unit step function 
+The {term}`unit step function` or {term}`Heaviside function` $H(t)$ is defined to have zero for $t< 0$ and one for $t\ge 0$. That is, if $T$ is any nonnegative constant, then
 
 $$
 H(t-T) = \begin{cases}  
@@ -27,7 +27,11 @@ H(t-T) = \begin{cases}
 1, & \text{if $t\ge T$.}
 \end{cases}
 $$
-````
+::::
+
+:::{note}
+Another common notation for the unit step function is $u(t)$. You will also sometimes see $u_T(t)$ to mean $u(t-T)$.
+:::
 
 :::{note}
 In this part of the course we will be considering problems with initial condition given at $t=0$. In that context there is really no difference between $H(t)$ and the constant function 1. It's mostly $H(t-T)$ for $T>0$ that is of interest.
@@ -55,7 +59,7 @@ is equal to 1 for $S\le t < T$ and 0 elsewhere.
 
 Here is a key fact about step forcing in a first-order ODE.
 
-``` {proof:rule}
+``` {proof:property}
 If $x(t)$ solves $x'-a(t)x=H(t-T)f(t-T)$, where $a(t)$ and $f(t)$ are continuous, then $x(t)$ is continuous.
 ```
 
@@ -122,7 +126,7 @@ x_j(t) = \frac{1}{a} H(t-T_j)\cdot  \bigl(e^{a(t-T_j)} - 1\bigr).
 
 Putting all this together, we get a complete formula.
 
-````{proof:formula} Piecewise constant forcing
+````{proof:formula} Piecewise constant forcing, 1st order
 The solution of {eq}`steps-pwc-forcing` is
 
 ``` {math}
@@ -132,9 +136,11 @@ x(t) = e^{a t}x_0 + \frac{1}{a} \sum_{j=1}^m H(t-T_j)\cdot \bigl(e^{a(t-T_j)} - 
 
 ````
 
-::::{admonition,dropdown,tip} Example
-> Solve $x'-\frac{1}{10}x=w(t)$, $x(0)=-2$, where $w(t)$ is a window function that is 5 for $3 < t \le 6$ and zero elsewhere.
+::::{admonition} Example
+:class: tip
+Solve $x'-\frac{1}{10}x=w(t)$, $x(0)=-2$, where $w(t)$ is a function that is 5 for $3 < t \le 6$ and zero elsewhere.
 
+:::{dropdown} Solution
 We can write the problem as
 
 ``` {math}
@@ -156,19 +162,21 @@ x(t) = \begin{cases}
 -2e^{t/10} + 50(e^{(t-3)/10}-e^{(t-6)/10}), & 5 \le t.
 \end{cases}
 ```
-
+:::
 ::::
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: tip
 
-> Let the serum drug concentration in a patient be $x(t)$. Suppose this is initially zero when an IV is given at a constant rate of 12 units per hour for 30 minutes. An IVP that models this case is
+Let the serum drug concentration in a patient be $x(t)$. Suppose this is initially zero when an IV is given at a constant rate of 12 units per hour for 30 minutes. An IVP that models this case is
 
 ```{math}
 x'=-r x + 12 \left[ 1-H(t-0.5) \right], \quad x(0)=0,
 ```
 
-> where $t$ is measured in hours. Solve it to find the concentration of the drug over time.
+where $t$ is measured in hours. Solve it to find the concentration of the drug over time.
 
+:::{dropdown} Solution
 We can solve this IVP using three pieces. The homogeneous solution with initial condition is $x_h(t)=0$, so it contributes nothing. The other two are due to the forcing terms:
 
 \begin{align*}
@@ -181,7 +189,7 @@ Hence we arrive at
 ```{math}
 x(t) = 12x_1(t) - 12 x_2(t) = \frac{12}{r}\left[ 1-e^{-r t} - H(t-0.5)\bigl(1-e^{-r(t-0.5)} \bigr)\right].
 ```
-
+:::
 ::::
 
 ## Numerical solution
@@ -191,7 +199,7 @@ MATLAB can handle problems with piecewise constant inputs straightforwardly, if 
 ```{code-cell}
 step = @(t) double(t>0);
 dxdt = @(t,x) 0.1*x + 5*(step(t-3) - step(t-6));
-[t,x] = ode45(dxdt,[0,8],-2);
+[t,x] = ode23(dxdt,linspace(0,8,401),-2);
 plot(t,x)
 xlabel('t'), ylabel('x(t)')
 title('Window forcing')

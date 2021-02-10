@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>2. Vectors and matrices &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -258,80 +258,6 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
-  </a>
- </li>
-</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -461,7 +387,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="p">]</span>
 <span class="n">y</span> <span class="p">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">;</span> <span class="mi">20</span><span class="p">;</span> <span class="mi">30</span><span class="p">]</span>
-<span class="n">A</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="o">-</span><span class="mi">4</span> <span class="o">-</span><span class="mi">5</span> <span class="o">-</span><span class="mi">6</span><span class="p">;</span> <span class="n">pi</span> <span class="s">sqrt(2)</span> <span class="s">exp(1)</span> <span class="s">]</span>
+<span class="n">A</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="o">-</span><span class="mi">4</span> <span class="o">-</span><span class="mi">5</span> <span class="o">-</span><span class="mi">6</span><span class="p">;</span><span class="n"> pi </span><span class="s">sqrt(2) exp(1) ]</span><span class="p"></span>
 </pre></div>
 </div>
 </div>
@@ -485,7 +411,7 @@
 </div>
 </div>
 <div class="note admonition">
-<p class="admonition-title"> Mathematical constants</p>
+<p class="admonition-title">Mathematical constants</p>
 <p>The constant <span class="math notranslate nohighlight">\(\pi\)</span> is defined automatically as <code class="docutils literal notranslate"><span class="pre">pi</span></code>. The constant <code class="docutils literal notranslate"><span class="pre">e</span></code> is not defined, and expressions like <span class="math notranslate nohighlight">\(e^{-2}\)</span> causes an error if you have not previously defined <code class="docutils literal notranslate"><span class="pre">e</span></code>. Instead, use the exponential function <code class="docutils literal notranslate"><span class="pre">exp</span></code>; note that <span class="math notranslate nohighlight">\(e=\exp(1)\)</span>.</p>
 </div>
 <p>As you can see from this output, MATLAB allows two kinds of vector: a row vector, which has a single row, and a column vector, which has a single column. The distinction doesn’t always matter, but when it does, it really does. We are going to make a blanket assumption that serves well most of the time.</p>
@@ -605,7 +531,7 @@ y_last =
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

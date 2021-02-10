@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>5. Homogeneous solutions &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -258,80 +258,6 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
-  </a>
- </li>
-</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -430,12 +356,12 @@
 <p>Let’s riff on the exponential solution we found with constant <span class="math notranslate nohighlight">\(a\)</span> by guessing that</p>
 <div class="math notranslate nohighlight">
 \[
-x(t) = \exp[q(t)],
+x(t) = \exp\bigl[q(t)\bigr],
 \]</div>
-<p>for a <span class="math notranslate nohighlight">\(q(t)\)</span> to be determined. Note that</p>
+<p>for some <span class="math notranslate nohighlight">\(q(t)\)</span> yet to be determined. Note that</p>
 <div class="math notranslate nohighlight">
 \[
-x'(t) = q'(t) \exp[q(t)] = q'(t) x.
+x'(t) = q'(t) e^{\,q(t)} = q'(t) x.
 \]</div>
 <p>If this is to be a solution of <span class="math notranslate nohighlight">\(x'=ax\)</span>, all we need is that <span class="math notranslate nohighlight">\(q'(t)=a(t)\)</span>. This is solved by simple integration. To summarize:</p>
 <div class="proof proof-type-formula" id="id1">
@@ -446,56 +372,80 @@ x'(t) = q'(t) \exp[q(t)] = q'(t) x.
             <span class="proof-title-name">(Solution of <span class="math notranslate nohighlight">\(x'=a(t)x\)</span>)</span>
         
     </div><div class="proof-content">
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
 q(t) &amp;= \int a(t) \, dt, \\
-x(t) &amp;= \exp[q(t)].
-\end{align*}\]</div>
-</div></div><div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
-<p>To solve <span class="math notranslate nohighlight">\(x'=\sin(t) x\)</span>, we integrate <span class="math notranslate nohighlight">\(a(t)=\sin(t)\)</span> to get</p>
+x(t) &amp;= \exp\bigl[q(t)\bigr].
+\end{align*}
+\end{split}\]</div>
+</div></div><div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Solve <span class="math notranslate nohighlight">\(x'=\sin(t) x\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We integrate <span class="math notranslate nohighlight">\(a(t)=\sin(t)\)</span> to get</p>
 <div class="math notranslate nohighlight">
 \[
 q(t) = -\cos(t)+C.
 \]</div>
-<p>The general solution is thus <span class="math notranslate nohighlight">\(\exp[q(t)]\)</span>, or</p>
+<p class="card-text">The general solution is thus <span class="math notranslate nohighlight">\(e^{\,q(t)}\)</span>, or</p>
 <div class="math notranslate nohighlight">
 \[x_h(t) = e^C \exp[ -\cos(t) ] = c_1 \exp[ -\cos(t) ].\]</div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>As seen in the example, the integration constant pops up additively in <span class="math notranslate nohighlight">\(q\)</span> and then multiplicatively in <span class="math notranslate nohighlight">\(x\)</span>. You can ignore the integration constant until the end and then just tack it on.</p>
+</details></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As seen in the preceding example, the integration constant pops up additively in <span class="math notranslate nohighlight">\(q\)</span> and then multiplicatively in <span class="math notranslate nohighlight">\(x\)</span>. You can ignore the integration constant until the end and then just tack it on; remember that by linearity, any constant multiple of a homogeneous solution is also a solution.</p>
 </div>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
-<p>To solve the homogeneous IVP</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Solve the homogeneous IVP</p>
 <div class="math notranslate nohighlight">
 \[
-x' = \frac{2x}{t}, \quad x(2) = 12,
+t x' = 2x, \quad x(2) = 12.
 \]</div>
-<p>we first find the general solution by integration:</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">First we rewrite the ODE as</p>
 <div class="math notranslate nohighlight">
 \[
-x_h(t) = c_1 \exp\left[ \int 2t^{-1}\, dt \right] = c_1 \exp[2\ln(t)] = c_1 t^2.
+x' = \frac{2x}{t},
 \]</div>
-<p>Then (since there is no forcing function, hence no particular solution to worry about) we apply the initial condition:</p>
+<p class="card-text">from which we see that <span class="math notranslate nohighlight">\(a(t)=2/t\)</span>. We first find the general solution by integration:</p>
+<div class="math notranslate nohighlight">
+\[
+x_h(t) = c_1 \exp\left[ \int 2t^{-1}\, dt \right] = c_1 \exp\bigl[2\ln(t)\bigr] = c_1 t^2.
+\]</div>
+<p class="card-text">This is the general solution. To eliminate the integration constant, we apply the initial condition:</p>
 <div class="math notranslate nohighlight">
 \[
 12 = x_h(2) = c_1\cdot 2^2.
 \]</div>
-<p>Hence <span class="math notranslate nohighlight">\(x(t) = 3t^2\)</span>.</p>
+<p class="card-text">Hence <span class="math notranslate nohighlight">\(x(t) = 3t^2\)</span>.</p>
 </div>
+</details></div>
 <div class="section" id="initial-value-formula">
 <h2><span class="section-number">5.1. </span>Initial-value formula<a class="headerlink" href="#initial-value-formula" title="Permalink to this headline">¶</a></h2>
-<p>We can take a shortcut in the case of a homogeneous IVP. The trick is to use a definite integral to compute <span class="math notranslate nohighlight">\(q\)</span>, as in</p>
+<p>We can take a shortcut in the case of a homogeneous IVP that avoids introducing an integration constant and then eliminating it. The trick is to use a definite integral to compute <span class="math notranslate nohighlight">\(q\)</span>, as in</p>
 <div class="math notranslate nohighlight">
 \[
 \tilde{q}(t) = \int_{t_0}^t a(s)\, ds.
 \]</div>
-<p>The advantage of doing so is that by construction, <span class="math notranslate nohighlight">\(\tilde{q}(t_0)=0\)</span>. Therefore if we define</p>
+<p>The advantage of doing so is that by its construction, <span class="math notranslate nohighlight">\(\tilde{q}(t_0)=0\)</span>. Therefore if we define</p>
 <div class="math notranslate nohighlight">
 \[
-x_h(t)= c_1\exp[\tilde{q}(t)],
+x_h(t)= c_1\exp\bigl[\tilde{q}(t)\bigr],
 \]</div>
 <p>we find that <span class="math notranslate nohighlight">\(x(t_0)=c_1\exp(0)=c_1\)</span>.</p>
 <div class="proof proof-type-formula" id="id2">
@@ -503,28 +453,28 @@ x_h(t)= c_1\exp[\tilde{q}(t)],
     <div class="proof-title">
         <span class="proof-type">Formula 5.5</span>
         
-            <span class="proof-title-name">(Solution of <span class="math notranslate nohighlight">\(x' = a(t)x\)</span>, <span class="math notranslate nohighlight">\(x(t_0)=x_0\)</span>)</span>
+            <span class="proof-title-name">(Solution of <span class="math notranslate nohighlight">\(x' = a(t)x,\)</span> <span class="math notranslate nohighlight">\(x(t_0)=x_0\)</span>)</span>
         
     </div><div class="proof-content">
 <div class="math notranslate nohighlight">
 \[
 x(t) = x_0 \exp\left[ \int_{t_0}^t a(s)\, ds \right].
 \]</div>
-</div></div><div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
-<p>We revisit</p>
+</div></div><div class="tip admonition">
+<p class="admonition-title">Example (continued)</p>
+<p>We revisit the preceding example of</p>
 <div class="math notranslate nohighlight">
 \[
-x' = \frac{2x}{t}, \quad x(2) = 12
+x' = \frac{2x}{t}, \quad x(2) = 12,
 \]</div>
-<p>and apply the new formula:</p>
+<p>and apply the new formula to solve it:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 x(t) &amp;= 12 \exp\left[ \int_2^t 2s^{-1}\, ds \right] \\ 
-&amp;= 12 \exp[ 2\ln(t) - 2\ln(2) ] \\ 
-&amp;= \frac{12t^2}{4},
+&amp;= 12 \exp\bigl[ 2\ln(t) - 2\ln(2) \bigr] \\ 
+&amp;= \frac{12t^2}{4}.
 \end{align*}\]</div>
-<p>which the same result as before.</p>
+<p>This is the same result as before.</p>
 </div>
 </div>
 </div>
@@ -578,7 +528,7 @@ x(t) &amp;= 12 \exp\left[ \int_2^t 2s^{-1}\, ds \right] \\
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

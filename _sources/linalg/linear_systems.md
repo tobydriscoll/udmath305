@@ -57,7 +57,8 @@ It's not hard to turn those statements into algebraic conditions. The slopes of 
    - If one equation is a multiple of the other, there are infinitely many solutions.
    - Otherwise, there are no solutions.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Find all solutions to the equations
 
 \begin{align*}
@@ -65,7 +66,7 @@ x - 3y & = 1, \\
 -2x + 6y & = 2.
 \end{align*}
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 
 We identify $(a,b,c,d)=(1,-3,-2,6)$, and $ad-bc=6-6=0$. So we know there is not a unique solution (i.e., the lines are parallel). Dividing the second equation by $-2$ leads to the equivalent system
 
@@ -102,7 +103,8 @@ $$
 
 Now $\bfA$ and $\bfb$ are the data of the linear system, and $\bfx$ is the solution.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Sometimes zeros are needed as placeholders in the coefficient matrix. In the linear system
 
 \begin{align*}

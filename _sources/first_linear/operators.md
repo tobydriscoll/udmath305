@@ -25,18 +25,17 @@ A {term}`first-order linear ODE` is an equation of the form
 :label: firstlin-linear-repeat
 \dd{x}{t} = a(t) x + f(t).
 ```
-We call $a(t)$ the {term}`coefficient function` and $f(t)$ the `{term}`forcing function`. 
+We call $a(t)$ the {term}`coefficient function` and $f(t)$ the {term}`forcing function`. 
 
 ````
 
 ```{attention}
-A linear ODE has a linear dependence on the unknown (dependent) variable $x$. It may have arbitrary dependence on the independent variable $t$. Also, the solution $x$ is *not* necessarily a linear function of $t$.
+A linear ODE has a linear dependence on the unknown (dependent) variable $x$. It may have arbitrary dependence on the independent variable $t$. Also, the solution $x$ is usually not a linear function of $t$.
 ```
 
 ```{warning}
-If presented with a linear ODE in the form $b(t)x' + c(t)x = g(t)$, you should divide through by $b$ and rearrange so that the equation is in standard form {eq}`firstlin-linear-repeat`.
+If presented with a linear ODE in the form $b(t)x' + c(t)x = g(t)$, you should divide through by $b$ and rearrange so that the equation is in standard form {eq}`firstlin-linear-repeat` if you want to apply one of our formulas.
 ```
-
 There are some strong analogies between {eq}`firstlin-linear-repeat` and the linear algebraic system $\bfA\bfx=\bfb$. Some new notation helps to clarify the similarities.
 
 (definition-firstlin-operator)=
@@ -53,7 +52,7 @@ for all functions $x,y$ and numbers $c$.
 ````
 
 ```{note}
-You may recognize the two conditions in this definition as restatements of the [properties of a linear function](definition-linear). That is no coincidence.
+You may recognize the two conditions in this definition as restatements of the [properties of a linear function](definition-linear). 
 ```
 
 In this context we are interested in the operator
@@ -68,6 +67,28 @@ whose linearity you can easily check for yourself against the definition. We can
 $$
 \opA[x]=f.
 $$
+
+::::{admonition} Example
+:class: tip
+The equation
+
+$$
+t x' = \sin(t) - x
+$$
+
+is linear. To write it in operator form, we rearrange to
+
+$$
+x' + \frac{1}{t}x = \frac{\sin(t)}{t}.
+$$
+
+Thus the linear operator for this ODE is $\opA[x]=x' + \tfrac{1}{t}x$, and the ODE is 
+
+$$
+\opA[x] =  \frac{\sin(t)}{t}.
+$$
+::::
+
 
 ## Homogeneous solutions
 
@@ -118,3 +139,5 @@ We have arrived at a solution strategy for $\opA[x]=f$.
 3. Add them.
 4. If an initial condition is given, solve for the integration constant.
 ````
+
+We elaborate on steps 1 and 2 in the next several sections.

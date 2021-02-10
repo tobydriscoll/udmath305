@@ -90,14 +90,16 @@ You add, subtract, and multiply complex numbers by applying the usual algebraic 
 
 This is a lot like rationalizing a denominator with square roots. 
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 $$
 \frac{2-i}{3+2i} = \frac{2-i}{3+2i}\cdot \frac{3-2i}{3-2i}
 = \frac{6-4i-3i+2i^2}{3^2+2^2} = \frac{4-7i}{13}.
 $$
 ::::
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Suppose that $|z|=1$. Then 
 
 $$

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>7. Integrating factor &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -258,80 +258,6 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
-  </a>
- </li>
-</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -413,14 +339,14 @@
 <p>This is an optional section.</p>
 </div>
 <p>There’s a well-known alternate way to derive the general solution of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span>. We lead with an example.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
 <p>Consider <span class="math notranslate nohighlight">\(x'=4x+8t\)</span>, which we rewrite as <span class="math notranslate nohighlight">\(x'-4x=8t\)</span>. We multiply both sides of this equation by <span class="math notranslate nohighlight">\(e^{-4t}\)</span> to get</p>
 <div class="math notranslate nohighlight">
 \[
 e^{-4t}x' - 4e^{-4t}x = 8te^{-4t}.
 \]</div>
-<p>The reason for doing this is that we can now apply the product rule for derivatives on the left side of the equation:</p>
+<p>The reason for doing this is that we can now apply the product rule for derivatives <em>in reverse</em> on the left side of the equation:</p>
 <div class="math notranslate nohighlight">
 \[
 \dd{}{t} \bigl[ e^{-4t} x(t) \bigr] = 8te^{-4t}.
@@ -446,13 +372,16 @@ x(t) = c_1 e^{4t} - \frac{1}{2} (4t+1).
             <span class="proof-title-name">(Integrating factor)</span>
         
     </div><div class="proof-content">
-<p>\mu(t) = \exp \left[ \int -a(t), dt \right]</p>
+<div class="math notranslate nohighlight">
+\[
+\mu(t) = \exp \left[ \int -a(t)\, dt \right]
+\]</div>
 </div></div><p>The reason this recipe works is that, by the chain rule and fundamental theorem of calculus,</p>
 <div class="math notranslate nohighlight">
 \[
 \mu'(t) = \mu(t) \cdot \dd{}{t} \left[ \int -a(t)\, dt \right] = -a(t) \mu(t).
 \]</div>
-<p>Therefore, we transform the orignal problem as follows:</p>
+<p>Therefore, we transform the original problem as follows:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \mu  x' - a \mu x &amp;= \mu f, \\ 
@@ -460,8 +389,8 @@ x(t) = c_1 e^{4t} - \frac{1}{2} (4t+1).
 \dd{}{t} \bigl[ \mu(t) x(t) \bigr] &amp;= \mu(t) f(t), \\ 
 \mu(t) x(t) &amp;= \int \mu(t) f(t)\, dt.
 \end{align*}\]</div>
-<p>In this setup you must include the integration constant <span class="math notranslate nohighlight">\(c_1\)</span> before you divide the last line by <span class="math notranslate nohighlight">\(\mu(t)\)</span> to get the answer.</p>
-<p>Integration by parts is not different from our previous method in any important mathematical way. In particular, both methods lead to the same two integrals, which are the hardest part to handle. You might find that the integrating factor involves less rote memorization, but the homogeneous/particular method is what we extend and use in future chapters.</p>
+<p>In this setup, you must include the indefinite integration constant <span class="math notranslate nohighlight">\(c_1\)</span> before you divide the last line by <span class="math notranslate nohighlight">\(\mu(t)\)</span> to get the answer.</p>
+<p>Integration by parts is not much different from applying variation of parameters. In particular, both methods lead to the same two integrals, which are the hardest part to handle. You might find that the integrating factor involves less rote memorization, but the homogeneous/particular method is what we extend and use in future chapters.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -513,7 +442,7 @@ x(t) = c_1 e^{4t} - \frac{1}{2} (4t+1).
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

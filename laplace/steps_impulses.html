@@ -4,9 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>3. Steps and impulses (2nd order) &#8212; Notes on linear algebra and ODEs</title>
+    <title>Steps and impulses (2nd order) &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -61,8 +61,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Convolution" href="convolution.html" />
-    <link rel="prev" title="2. Solutions to 2nd-order ODEs" href="basic_solutions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,7 +91,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -140,7 +138,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -258,80 +256,6 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="convolution.html">
-   4. Convolution
-  </a>
- </li>
-</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -403,12 +327,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#impulse-forcing">
-   3.1. Impulse forcing
+   Impulse forcing
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-forcing">
-   3.2. Step forcing
+   Step forcing
   </a>
  </li>
 </ul>
@@ -423,7 +347,7 @@
               <div>
                 
   <div class="section" id="steps-and-impulses-2nd-order">
-<h1><span class="section-number">3. </span>Steps and impulses (2nd order)<a class="headerlink" href="#steps-and-impulses-2nd-order" title="Permalink to this headline">¶</a></h1>
+<h1>Steps and impulses (2nd order)<a class="headerlink" href="#steps-and-impulses-2nd-order" title="Permalink to this headline">¶</a></h1>
 <p>The key transforms that apply when the forcing contains steps or impulses are</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{gather*}
@@ -433,7 +357,7 @@ H(t-T)f(t-T) \Longleftrightarrow e^{-sT}F(s), \\
 \end{gather*}\]</div>
 <p>Keep in mind that <em>both steps and impulses in forcing produce steps in the solution</em>. The impulses are the simpler case.</p>
 <div class="section" id="impulse-forcing">
-<h2><span class="section-number">3.1. </span>Impulse forcing<a class="headerlink" href="#impulse-forcing" title="Permalink to this headline">¶</a></h2>
+<h2>Impulse forcing<a class="headerlink" href="#impulse-forcing" title="Permalink to this headline">¶</a></h2>
 <p>For illustration, let’s start with an impulse on an undamped oscillator,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -467,8 +391,8 @@ x(t) = \begin{cases} 0, &amp; 0\le t &lt; T, \\ \sin(t-T), &amp; t \ge T. \end{c
         
     </div><div class="proof-content">
 <p>In a second-order linear ODE, the effect of a unit impulse is the same as an instantaneous increase by 1 in the derivative of the solution.</p>
-</div></div><div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+</div></div><div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Find the solution of <span class="math notranslate nohighlight">\(x''+2x'+10x=6\delta(t-5)\)</span>, <span class="math notranslate nohighlight">\(x(0)=x'(0)=0\)</span>.</p>
 </div></blockquote>
@@ -503,7 +427,7 @@ x_p(t) = 2 H(t-5)e^{-(t-5)} \sin[3(t-5)].
 </div>
 </div>
 <div class="section" id="step-forcing">
-<h2><span class="section-number">3.2. </span>Step forcing<a class="headerlink" href="#step-forcing" title="Permalink to this headline">¶</a></h2>
+<h2>Step forcing<a class="headerlink" href="#step-forcing" title="Permalink to this headline">¶</a></h2>
 <p>As a warm-up, let’s consider</p>
 <div class="math notranslate nohighlight">
 \[
@@ -531,8 +455,8 @@ x(t) = H(t-T)y(t-T) = H(t-T)[1 - \cos(t-T)] =
 \begin{cases} 0, &amp; 0 \le t &lt; T, \\ 1-\cos(t-T), &amp; t\ge T. \end{cases}
 \end{split}\]</div>
 <p>It only takes a moment to see that both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x'\)</span> are continuous at <span class="math notranslate nohighlight">\(t=T\)</span>, which is the general situation with step forcing.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Find a particular solution of <span class="math notranslate nohighlight">\(x''-x=f(t)\)</span>, where <span class="math notranslate nohighlight">\(f(t) = \begin{cases} 0, &amp; 0 \le t &lt; 3, \\ t, &amp; t\ge 4. \end{cases}\)</span></p>
 </div></blockquote>
@@ -605,8 +529,6 @@ Y(s) = \frac{-3}{s} + \frac{-1}{s^2} + \frac{2}{s-1} + \frac{1}{s+1},
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="basic_solutions.html" title="previous page"><span class="section-number">2. </span>Solutions to 2nd-order ODEs</a>
-    <a class='right-next' id="next-link" href="convolution.html" title="next page"><span class="section-number">4. </span>Convolution</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -626,7 +548,7 @@ Y(s) = \frac{-3}{s} + \frac{-1}{s^2} + \frac{2}{s-1} + \frac{1}{s+1},
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

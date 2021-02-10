@@ -75,7 +75,7 @@ Using L'Hôpital's Rule,
 
 This result, which generalizes to the case where $a$ depends on $t$, is worth stating in words as well as a formula.
 
-```{proof:rule}
+```{proof:property}
 In a first-order linear ODE, the effect of an impulse is the same as an instantaneous increase by 1 in the value of the solution.
 ```
 
@@ -85,7 +85,7 @@ With step forcing, we stated that $x(t)$ is continuous while $x'(t)$ has jumps. 
 
 Applying superposition, we get the following.
 
-````{proof:theorem} Impulse forcing
+````{proof:theorem} Impulse forcing, 1st order
 The solution of 
 
 $$
@@ -138,9 +138,11 @@ Finally, $x(t)=x_h(t)+x_p(t)$.
 
 It's awkward to write out all the pieces as one big formula, so it's better to think about using the process.
 
-::::{admonition,dropdown,tip} Example
-> Solve $x'+5x=3\delta(t-2)$, with $x(0)=1$.
+::::{admonition} Example
+:class: tip
+Solve $x'+5x=3\delta(t-2)$, with $x(0)=1$.
 
+:::{dropdown} Solution
 The homogeneous solution is $x_h(t)=e^{-5t}$. For the particular part we have
 
 \begin{align*}
@@ -159,6 +161,7 @@ Finally, the solution is $x_h+x_p$, or
 $$
 x(t) = e^{-5t} + 0 + H(t-2) [x_2(t)-0] = e^{-5t} + 3 H(t-2) e^{-5(t-2)}.
 $$
+:::
 ::::
 
 ## Numerical solution

@@ -29,7 +29,8 @@ To be clear, nonzero homogeneous solutions can occur only when $\bfA$ is singula
 
 A nice feature of zero is that adding multiples of zero to it is still zero. So, if $\mathbf{R}$ is the RREF of $\bfA$, then the RREF of the augmented matrix $[\bfA;\,\bfzero]$ is just $[\mathbf{R};\,\bfzero]$. Each free column of $\mathbf{R}$ therefore introduces a free variable in the homogeneous solution.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 The RREF of 
 
 ```{math}
@@ -44,7 +45,7 @@ is
 
 Find all solutions of the homogeneous system $\bfA\bfx=\bfzero$.
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 
 The RREF of the augmented matrix is
 
@@ -62,7 +63,8 @@ so $\bfx =\threevec{1}{-2}{1}$ for any value of $s$.
 :::
 ::::
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Given the equivalence  
 
 ```{math}
@@ -81,7 +83,7 @@ Given the equivalence
 ```
 find all solutions of the homogeneous system $\bfA\bfx=\bfzero$.
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 The RREF of the augmented matrix just tacks on a column of zeros. Hence columns 2 and 4 are free, so we set $x_2=s$, $x_4=t$. The rest of the solution is
 
 ```{math}
@@ -142,7 +144,8 @@ Hence $\bfv-\bfx_p$ is a homogeneous solution, which means that we can write it 
 
 Hence every linear system is closely tied to its homogeneous counterpart. The general solution of $\bfA\bfx=\bfb$ requires just one solution, plus the general homogeneous solution.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Find the general solution of
 
 ```{math}
@@ -151,7 +154,7 @@ Find the general solution of
 \end{bmatrix} \bfx = \threevec{-8}{4}{12}.
 ```
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 The RREF of the augmented matrix is found to be
 
 ```{math}

@@ -46,13 +46,16 @@ x(t) &= c_1g(t) + x_p(t).
 ````
 
 :::{note}
-The integration constants in the [VoP formula](formula-firstlin-homogeneous) can be ignored (i.e., set to zero), as they make no meaningful difference in the final result.
+The integration constants you would normally get from the indefinite integrals in the [VoP formula](formula-firstlin-homogeneous) can be ignored (i.e., set to zero), as they make no meaningful difference in the final result. They are "absorbed" into $c_1$.
 :::
 
 (example-firstlin-nonhomog)=
 
-::::{admonition,dropdown,tip} Example
-Consider $3x'=12x+24t$. Rewriting it as $x'-4x=8t$, we identify $a(t)=4$ and $f(t)=8t$. Then
+::::{admonition} Example
+:class: tip
+Solve $3x'=12x+24t$. 
+:::{dropdown} Solution
+Rewriting the ODE as $x'-4x=8t$, we identify $a(t)=4$ and $f(t)=8t$. Then
 
 ```{math}
 g(t) = \exp\left[ \int 4\,dt \right] = e^{4t},
@@ -75,10 +78,16 @@ and the general solution is
 ```{math}
 x(t) = x_h(t) + x_p(t) = c_1 e^{4t} - \frac{1}{2} (4t+1).
 ```
+
+:::
 ::::
 
-::::{admonition,dropdown,tip} Example
-To find a particular solution of $x'=2tx + 6t$, we start with
+::::{admonition} Example
+:class: tip
+Find a particular solution of $x'=2t x + 6t$. 
+
+:::{dropdown} Solution
+We start with
 
 ```{math}
 g(t) = \exp\left[ \int 2t\, dt \right] = e^{t^2}.
@@ -98,16 +107,18 @@ x_p(t) = k(t) g(t) = -3,
 
 and the general solution is $x(t)=c_1 e^{t^2}-3$.
 
-(It should be clear that we needed a very special $f$ to make the second integral feasible. If not, try reworking it for $f(t)=6$ and you will quickly find yourself stuck, at least using only familiar functions.)
+:::
 ::::
 
-::::{admonition,dropdown,tip} Example
-We solve
+
+::::{admonition} Example
+:class: tip
+Solve the IVP
 
 $$
 (2+t) x'= x - 1, \quad x(0) = -5.
 $$
-
+:::{dropdown} Solution
 First we put the ODE into our standard form,
 
 ```{math}
@@ -135,13 +146,13 @@ x(t) = c_1 (2+t) + (2+t)^{-1} (2+t) = c_1(2+t)+1.
 Finally, we apply the initial condition to solve for $c_1$:
 
 $$
--5 = x(0) = 2c_1+1 \quad \Rightarrow c_1=-3.
+-5 = x(0) = 2c_1+1 \quad \implies \quad c_1=-3.
 $$
 
-Hence $x(t) = 1-3(2+t) = -5-3t.
+Hence $x(t) = 1-3(2+t) = -5-3t.$
+:::
 ::::
 
-<!-- ## Initial-value problem
-
-When $x(t_0)=x_0$ is given, the process of solving for $c_1$ in the general solution can be avoided. As with deriving [the formula for the homogeneous IVP](formula-firstlin-homogeneous), we use a definite inte
- -->
+```{attention}
+It takes a pretty special relationship between $a(t)$ and $f(t)$ to make the integrals in the VoP formula reasonable to do by hand. Consequently, if you are asked in an exercise to produce a solution and make a mistake, you will likely wind up with an integral that is virually impossible to evaluate.
+```

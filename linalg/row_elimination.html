@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>4. Row elimination &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -258,80 +258,6 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
-  </a>
- </li>
-</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -410,7 +336,7 @@
 <h1><span class="section-number">4. </span>Row elimination<a class="headerlink" href="#row-elimination" title="Permalink to this headline">¶</a></h1>
 <p>You’ve probably solved small systems of equations by substitution. In order to solve systems with more equations and variables, we systematize the idea as an elimination process. The goal of elimination is to transform the system to an equivalent one whose solution(s) we can deduce easily.</p>
 <div class="tip admonition" id="example-gauss-elimination">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Use elimination to solve the <span class="math notranslate nohighlight">\(3\times 3\)</span> system</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -418,31 +344,36 @@ x_1 - x_2  - x_3 &amp; = 2, \\
 3x_1 - 2x_2 &amp; = 9, \\
 x_1 - 2x_2 - x_3 &amp; = 5.
 \end{align*}\]</div>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>The first step is to use the first equation to eliminate <span class="math notranslate nohighlight">\(x_1\)</span> from the second and third equations. We therefore subtract 3 times equation 1 from equation 2, and 1 times equation 1 from equation 3:</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The first step is to use the first equation to eliminate <span class="math notranslate nohighlight">\(x_1\)</span> from the second and third equations. We therefore subtract 3 times equation 1 from equation 2, and 1 times equation 1 from equation 3:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
  x_1 - x_2  - x_3  &amp; = 2, \\
 (3x_1 - 2x_2) - 3(x_1 - x_2  - x_3) &amp; = 9 - 3(2),\\
 (x_1 - 2x_2 - x_3) - 1(x_1 - x_2  - x_3) &amp; = 5 - 1(2) .
 \end{align*}\]</div>
-<p>This takes us to</p>
+<p class="card-text">This takes us to</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
  x_1 - x_2  - x_3  &amp; = 2,  \\
 x_2 + 3x_3 &amp; = 3, \\
 -x_2 &amp;= 3.
 \end{align*}\]</div>
-<p>It’s tempting to grab that last equation and use it to remove <span class="math notranslate nohighlight">\(x_2\)</span> from everything else. That certainly works, and it’s what you want to do by hand. But we are aiming for a fully automatic system that works every time, so we will act as though the last equation still contains <span class="math notranslate nohighlight">\(x_3\)</span> and is not so trivial.</p>
-<p>The next step of the recipe is to leave the first equation alone, and use the second to eliminate <span class="math notranslate nohighlight">\(x_2\)</span> from all the others below it; in this case, it’s just the third equation.</p>
+<p class="card-text">It’s tempting to grab that last equation and use it to remove <span class="math notranslate nohighlight">\(x_2\)</span> from everything else. That certainly works, and it’s what you want to do by hand. But we are aiming for a fully automatic system that works every time, so we will act as though the last equation still contains <span class="math notranslate nohighlight">\(x_3\)</span> and is not so trivial.</p>
+<p class="card-text">The next step of the recipe is to leave the first equation alone, and use the second to eliminate <span class="math notranslate nohighlight">\(x_2\)</span> from all the others below it; in this case, it’s just the third equation.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
  x_1 - x_2  - x_3  &amp; = 2, \\
 x_2 + 3x_3 &amp; = 3, \\
 (-x_2) + (x_2+3x_3)  &amp; = 3 + 3.
 \end{align*}\]</div>
-<p>We now have a system in so-called <em>triangular</em> form,</p>
+<p class="card-text">We now have a system in so-called <em>triangular</em> form,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
  x_1 - x_2  - x_3  &amp; = 2, \\
@@ -450,11 +381,11 @@ x_2 + 3x_3 &amp; = 3, \\
 3x_3  &amp; = 6.
 \end{align*}\]</div>
 </div>
-</div>
+</details></div>
 <p>The process in <a class="reference internal" href="#example-gauss-elimination"><span class="std std-ref">the preceding example</span></a> is most commonly known as <a class="reference internal" href="overview.html#term-gaussian-elimination"><span class="xref std std-term">Gaussian elimination</span></a>. (It’s a misnomer, as the process was known in China thousands of years before Gauss, but never mind.) We could solve the triangular system at the end of the example by starting with the last equation to deduce that <span class="math notranslate nohighlight">\(x_3=2\)</span>. We then put that value into the second equation and can solve that for <span class="math notranslate nohighlight">\(x_2\)</span>, etc.</p>
 <p>Instead, though, we are going to continue to manipulate the system to get something even simpler.</p>
-<div class="dropdown tip admonition" id="example-gauss-jordan">
-<p class="admonition-title"> Example (continued)</p>
+<div class="tip admonition" id="example-gauss-jordan">
+<p class="admonition-title">Example (continued)</p>
 <p>We continue from the end of <a class="reference internal" href="#example-gauss-elimination"><span class="std std-ref">the preceding example</span></a>.  Having reached the last variable and equation, we turn around and eliminate <em>upwards</em> instead:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -491,7 +422,7 @@ x_2 &amp; = -3,\\
 <p>(Observe that when a variable is absent from an equation, its corresponding element in <span class="math notranslate nohighlight">\(\bfG\)</span> is zero.) To ease the arithmetic, we do the elimination in MATLAB.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span> <span class="n">3</span> <span class="s">-2</span> <span class="s">0</span> <span class="s">9</span><span class="p">;</span> <span class="n">1</span> <span class="s">-2</span> <span class="s">-1</span> <span class="s">5]</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span><span class="n"> 3 </span><span class="s">-2 0 9</span><span class="p">;</span><span class="n"> 1 </span><span class="s">-2 -1 5]</span><span class="p"></span>
 </pre></div>
 </div>
 </div>
@@ -637,7 +568,7 @@ x_1 &amp; &amp; &amp;= &amp;1 \\
 <p>First, we use multiples of the first row to eliminate in the first column below it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">4</span><span class="p">;</span> <span class="n">1</span> <span class="s">2</span> <span class="s">2</span> <span class="s">3</span><span class="p">;</span> <span class="n">2</span> <span class="s">1</span> <span class="s">-5</span> <span class="s">9]</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">4</span><span class="p">;</span><span class="n"> 1 </span><span class="s">2 2 3</span><span class="p">;</span><span class="n"> 2 </span><span class="s">1 -5 9]</span><span class="p">;</span>
 <span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,:);</span>
 <span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span>
 </pre></div>
@@ -749,7 +680,7 @@ x_3 &amp;= s.
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

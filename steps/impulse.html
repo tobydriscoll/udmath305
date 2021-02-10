@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>3. Impulses &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -255,80 +255,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="transform_solutions.html">
    5. Solutions by transform
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
   </a>
  </li>
 </ul>
@@ -471,10 +397,10 @@
 <div class="math notranslate nohighlight">
 \[\lim_{\epsilon\to 0} x_\epsilon(t) =e^{at} \left[ \lim_{\epsilon\to 0}  \frac{1 - e^{-a\epsilon}}{a \epsilon}\right] = e^{at}, \quad (t &gt; 0).\]</div>
 <p>This result, which generalizes to the case where <span class="math notranslate nohighlight">\(a\)</span> depends on <span class="math notranslate nohighlight">\(t\)</span>, is worth stating in words as well as a formula.</p>
-<div class="proof proof-type-rule">
+<div class="proof proof-type-property" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Rule </span>
+        <span class="proof-type">Property 3.3</span>
         
     </div><div class="proof-content">
 <p>In a first-order linear ODE, the effect of an impulse is the same as an instantaneous increase by 1 in the value of the solution.</p>
@@ -483,12 +409,12 @@
 <p>With step forcing, we stated that <span class="math notranslate nohighlight">\(x(t)\)</span> is continuous while <span class="math notranslate nohighlight">\(x'(t)\)</span> has jumps. For impulses, it’s <span class="math notranslate nohighlight">\(x(t)\)</span> itself that jumps.</p>
 </div>
 <p>Applying superposition, we get the following.</p>
-<div class="proof proof-type-theorem" id="id2">
+<div class="proof proof-type-theorem" id="id3">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem 3.3</span>
+        <span class="proof-type">Theorem 3.4</span>
         
-            <span class="proof-title-name">(Impulse forcing)</span>
+            <span class="proof-title-name">(Impulse forcing, 1st order)</span>
         
     </div><div class="proof-content">
 <p>The solution of</p>
@@ -531,28 +457,34 @@ x_p(t) = x_1(t) [1-H(t-T)] + x_2(t) [H(t-T)] = x_1(t) + H(t-T) [ x_2(t)-x_1(t) ]
 \]</div>
 <p>Finally, <span class="math notranslate nohighlight">\(x(t)=x_h(t)+x_p(t)\)</span>.</p>
 <p>It’s awkward to write out all the pieces as one big formula, so it’s better to think about using the process.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
-<blockquote>
-<div><p>Solve <span class="math notranslate nohighlight">\(x'+5x=3\delta(t-2)\)</span>, with <span class="math notranslate nohighlight">\(x(0)=1\)</span>.</p>
-</div></blockquote>
-<p>The homogeneous solution is <span class="math notranslate nohighlight">\(x_h(t)=e^{-5t}\)</span>. For the particular part we have</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Solve <span class="math notranslate nohighlight">\(x'+5x=3\delta(t-2)\)</span>, with <span class="math notranslate nohighlight">\(x(0)=1\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The homogeneous solution is <span class="math notranslate nohighlight">\(x_h(t)=e^{-5t}\)</span>. For the particular part we have</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \opA[x_1] &amp;= 0, \quad x_1(0) = 0, \qquad (t&lt;2),\\
 \opA[x_2] &amp;= 0, \quad x_2(2) = x_1(2)+3, \qquad (t&gt;2).
 \end{align*}\]</div>
-<p>It’s clear that <span class="math notranslate nohighlight">\(x_1(t)=0\)</span> and thus <span class="math notranslate nohighlight">\(x_2\)</span> solves <span class="math notranslate nohighlight">\(x'+5x=0,\)</span> <span class="math notranslate nohighlight">\(x(2)=3\)</span>. Hence</p>
+<p class="card-text">It’s clear that <span class="math notranslate nohighlight">\(x_1(t)=0\)</span> and thus <span class="math notranslate nohighlight">\(x_2\)</span> solves <span class="math notranslate nohighlight">\(x'+5x=0,\)</span> <span class="math notranslate nohighlight">\(x(2)=3\)</span>. Hence</p>
 <div class="math notranslate nohighlight">
 \[
 x_2(t) = 3e^{-5(t-2)}, \qquad (t&gt;2).
 \]</div>
-<p>Finally, the solution is <span class="math notranslate nohighlight">\(x_h+x_p\)</span>, or</p>
+<p class="card-text">Finally, the solution is <span class="math notranslate nohighlight">\(x_h+x_p\)</span>, or</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = e^{-5t} + 0 + H(t-2) [x_2(t)-0] = e^{-5t} + 3 H(t-2) e^{-5(t-2)}.
 \]</div>
 </div>
+</details></div>
 </div>
 <div class="section" id="numerical-solution">
 <h2><span class="section-number">3.3. </span>Numerical solution<a class="headerlink" href="#numerical-solution" title="Permalink to this headline">¶</a></h2>
@@ -627,7 +559,7 @@ x(t) = e^{-5t} + 0 + H(t-2) [x_2(t)-0] = e^{-5t} + 3 H(t-2) e^{-5(t-2)}.
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

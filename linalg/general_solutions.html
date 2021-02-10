@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>11. General solutions &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -258,80 +258,6 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
-  </a>
- </li>
-</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -438,7 +364,7 @@
 <p>To be clear, nonzero homogeneous solutions can occur only when <span class="math notranslate nohighlight">\(\bfA\)</span> is singular, because otherwise the solution <span class="math notranslate nohighlight">\(\bfx=\bfA^{-1}\bfzero=\bfzero\)</span> is unique.</p>
 <p>A nice feature of zero is that adding multiples of zero to it is still zero. So, if <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> is the RREF of <span class="math notranslate nohighlight">\(\bfA\)</span>, then the RREF of the augmented matrix <span class="math notranslate nohighlight">\([\bfA;\,\bfzero]\)</span> is just <span class="math notranslate nohighlight">\([\mathbf{R};\,\bfzero]\)</span>. Each free column of <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> therefore introduces a free variable in the homogeneous solution.</p>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>The RREF of</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\end{split}\]</div>
@@ -446,19 +372,24 @@
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix} 1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 \end{bmatrix}.\end{split}\]</div>
 <p>Find all solutions of the homogeneous system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfzero\)</span>.</p>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>The RREF of the augmented matrix is</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The RREF of the augmented matrix is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix} 1 &amp; 0 &amp; -1 &amp; 0\\ 0 &amp; 1 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{bmatrix}.\end{split}\]</div>
-<p>Column 3 is free, so the solution starts with <span class="math notranslate nohighlight">\(x_3=s\)</span>. Rows 1 and 2 then yield</p>
+<p class="card-text">Column 3 is free, so the solution starts with <span class="math notranslate nohighlight">\(x_3=s\)</span>. Rows 1 and 2 then yield</p>
 <div class="math notranslate nohighlight">
 \[x_1 = s, \quad x_2 = -2s,\]</div>
-<p>so <span class="math notranslate nohighlight">\(\bfx =\threevec{1}{-2}{1}\)</span> for any value of <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<p class="card-text">so <span class="math notranslate nohighlight">\(\bfx =\threevec{1}{-2}{1}\)</span> for any value of <span class="math notranslate nohighlight">\(s\)</span>.</p>
 </div>
-</div>
+</details></div>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Given the equivalence</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 2 &amp; 0 &amp; -4 \\
@@ -474,16 +405,21 @@
 0 &amp; 0 &amp; 0 &amp; 0   
  \end{bmatrix},\end{split}\]</div>
 <p>find all solutions of the homogeneous system <span class="math notranslate nohighlight">\(\bfA\bfx=\bfzero\)</span>.</p>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>The RREF of the augmented matrix just tacks on a column of zeros. Hence columns 2 and 4 are free, so we set <span class="math notranslate nohighlight">\(x_2=s\)</span>, <span class="math notranslate nohighlight">\(x_4=t\)</span>. The rest of the solution is</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The RREF of the augmented matrix just tacks on a column of zeros. Hence columns 2 and 4 are free, so we set <span class="math notranslate nohighlight">\(x_2=s\)</span>, <span class="math notranslate nohighlight">\(x_4=t\)</span>. The rest of the solution is</p>
 <div class="math notranslate nohighlight">
 \[x_1 = -2s+4t, \quad x_3 = -t.\]</div>
-<p>Note that we can also write</p>
+<p class="card-text">Note that we can also write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfx = s \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + t \begin{bmatrix} 4 \\ 0 \\ -1 \\ 1 \end{bmatrix}.\end{split}\]</div>
 </div>
-</div>
+</details></div>
 <p>The preceding examples are typical in that the homogeneous solution always takes the form</p>
 <div class="math notranslate nohighlight" id="equation-linalg-general-homog">
 <span class="eqno">(11.1)<a class="headerlink" href="#equation-linalg-general-homog" title="Permalink to this equation">¶</a></span>\[\bfx = c_1 \bfu_1 + c_2 \bfu_2 + \cdots + c_k \bfu_k,\]</div>
@@ -528,27 +464,32 @@
 <p>Hence <span class="math notranslate nohighlight">\(\bfv-\bfx_p\)</span> is a homogeneous solution, which means that we can write it as <span class="math notranslate nohighlight">\(\bfx_h\)</span>.</p>
 </div></div><p>Hence every linear system is closely tied to its homogeneous counterpart. The general solution of <span class="math notranslate nohighlight">\(\bfA\bfx=\bfb\)</span> requires just one solution, plus the general homogeneous solution.</p>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Find the general solution of</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix}
 0 &amp; -2 &amp; 4 \\ 0 &amp; 1 &amp; -2 \\ 0 &amp; 3 &amp; -6
 \end{bmatrix} \bfx = \threevec{-8}{4}{12}.\end{split}\]</div>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>The RREF of the augmented matrix is found to be</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The RREF of the augmented matrix is found to be</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix}
 0 &amp; 1 &amp; -2 &amp; 4 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0
 \end{bmatrix}. \end{split}\]</div>
-<p>If we replace the last column with zeros, we get the RREF of the associated homogeneous problem. Columns 1 and 3 are free, so we would get the homogeneous solution</p>
+<p class="card-text">If we replace the last column with zeros, we get the RREF of the associated homogeneous problem. Columns 1 and 3 are free, so we would get the homogeneous solution</p>
 <div class="math notranslate nohighlight">
 \[\bfx_h = \threevec{s}{2t}{t} = s \threevec{1}{0}{0} + t \threevec{0}{2}{1}.\]</div>
-<p>Returning to the original nonhomogeneous problem, we only need to find any one particular <span class="math notranslate nohighlight">\(\bfx_p\)</span>. It’s easiest for us if we set all the free variables to be zero, in which case we get <span class="math notranslate nohighlight">\(x_1=x_3=0\)</span> and <span class="math notranslate nohighlight">\(x_2 = 4\)</span>. Thus the general solution is</p>
+<p class="card-text">Returning to the original nonhomogeneous problem, we only need to find any one particular <span class="math notranslate nohighlight">\(\bfx_p\)</span>. It’s easiest for us if we set all the free variables to be zero, in which case we get <span class="math notranslate nohighlight">\(x_1=x_3=0\)</span> and <span class="math notranslate nohighlight">\(x_2 = 4\)</span>. Thus the general solution is</p>
 <div class="math notranslate nohighlight">
 \[\bfx = \bfx_p + \bfx_h = \threevec{0}{4}{0} + c_1 \threevec{1}{2}{1} + c_2 \threevec{0}{0}{1}.\]</div>
 </div>
-</div>
+</details></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The basis vectors in <span class="math notranslate nohighlight">\(\bfx_h\)</span> and the particular solution <span class="math notranslate nohighlight">\(\bfx_p\)</span> aren’t unique, so it’s possible to write down two equivalent forms of the solution that look rather different.</p>
@@ -606,7 +547,7 @@
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

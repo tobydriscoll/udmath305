@@ -42,10 +42,11 @@ The {term}`algebraic multiplicity` of an eigenvalue is its multiplicity as a roo
 The following example illustrates a possibility unique to eigenvalues of algebraic multiplicity greater than 1.
 
 (example-linalg-defective)=
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Find the eigenspaces of $\bfA=\twomat{4}{1}{0}{4}$.
 
-:::{admonition,note,dropdown,solution}
+:::{dropdown} Solution
 The characteristic polynomial is 
 
 ```{math}
@@ -79,7 +80,8 @@ The geometric multiplicity of an eigenvalue is at least one and less than or equ
 
 In the [above example](example-linalg-defective) we found a lone eigenvalue $\lambda_1=4$ of algebraic multiplicity 2 whose geometric multiplicity, we now see, is 1. The identity matrix is a different sort of example.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 The $2\times 2$ identity matrix $\meye$ has a lone eigenvalue $\lambda_1=1$ of algebraic multiplicity 2. The system $(\meye - \meye)\bfv=\bfzero$ has an RREF that is the zero matrix, so there are two free variables and two basis vectors. Hence the geometric multiplicity of $\lambda_1$ is also 2.
 ::::
 

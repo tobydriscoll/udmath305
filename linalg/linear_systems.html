@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>3. Linear systems &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -258,80 +258,6 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
-  </a>
- </li>
-</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -485,24 +411,29 @@ cx + dy &amp;= g.
 </li>
 </ul>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Find all solutions to the equations</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 x - 3y &amp; = 1, \\
 -2x + 6y &amp; = 2.
 \end{align*}\]</div>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>We identify <span class="math notranslate nohighlight">\((a,b,c,d)=(1,-3,-2,6)\)</span>, and <span class="math notranslate nohighlight">\(ad-bc=6-6=0\)</span>. So we know there is not a unique solution (i.e., the lines are parallel). Dividing the second equation by <span class="math notranslate nohighlight">\(-2\)</span> leads to the equivalent system</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We identify <span class="math notranslate nohighlight">\((a,b,c,d)=(1,-3,-2,6)\)</span>, and <span class="math notranslate nohighlight">\(ad-bc=6-6=0\)</span>. So we know there is not a unique solution (i.e., the lines are parallel). Dividing the second equation by <span class="math notranslate nohighlight">\(-2\)</span> leads to the equivalent system</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 x - 3y &amp; = 1, \\
 x - 3y &amp; = -1.
 \end{align*}\]</div>
-<p>It’s now clear that there is no way to satisfy both equations simultaneously. The system is inconsistent.</p>
+<p class="card-text">It’s now clear that there is no way to satisfy both equations simultaneously. The system is inconsistent.</p>
 </div>
-</div>
+</details></div>
 </div>
 <div class="section" id="general-case">
 <h2><span class="section-number">3.3. </span>General case<a class="headerlink" href="#general-case" title="Permalink to this headline">¶</a></h2>
@@ -526,7 +457,7 @@ b_1 \\ b_2 \\ \vdots \\ b_m
 \end{split}\]</div>
 <p>Now <span class="math notranslate nohighlight">\(\bfA\)</span> and <span class="math notranslate nohighlight">\(\bfb\)</span> are the data of the linear system, and <span class="math notranslate nohighlight">\(\bfx\)</span> is the solution.</p>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Sometimes zeros are needed as placeholders in the coefficient matrix. In the linear system</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -549,8 +480,8 @@ b_1 \\ b_2 \\ \vdots \\ b_m
 <p>There is a syntax dedicated to solving linear systems. For example, here’s the data for a <span class="math notranslate nohighlight">\(3\times 3\)</span> linear system.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span> <span class="n">2</span> <span class="s">2</span> <span class="s">-3</span><span class="p">;</span> <span class="n">4</span> <span class="s">0</span> <span class="s">1</span> <span class="s">]</span><span class="p">;</span>
-<span class="n">b</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">3</span><span class="p">;</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">1</span> <span class="s">]</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span><span class="n"> 2 </span><span class="s">2 -3</span><span class="p">;</span><span class="n"> 4 </span><span class="s">0 1 ]</span><span class="p">;</span>
+<span class="n">b</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">3</span><span class="p">;</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n"> 1 </span><span class="s">]</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -574,7 +505,7 @@ b_1 \\ b_2 \\ \vdots \\ b_m
 <p>In the other circumstances, the result is less clear.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="n">4</span> <span class="s">5</span> <span class="s">6</span><span class="p">;</span> <span class="n">7</span> <span class="s">8</span> <span class="s">9</span> <span class="s">]</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span><span class="n"> 4 </span><span class="s">5 6</span><span class="p">;</span><span class="n"> 7 </span><span class="s">8 9 ]</span><span class="p">;</span>
 <span class="n">x</span> <span class="p">=</span> <span class="n">A</span> <span class="o">\</span> <span class="n">b</span>
 </pre></div>
 </div>
@@ -644,7 +575,7 @@ x =
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

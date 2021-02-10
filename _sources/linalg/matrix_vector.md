@@ -38,7 +38,8 @@ In order for $\bfA\bfx$ to be defined, the number of columns in $\bfA$ has to be
 
 Note that when $\bfA$ is $m\times n$, then $\bfx$ must have dimension $n$ and $\bfA\bfx$  has dimension $m$. 
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 
 Calculate the product
 
@@ -47,7 +48,7 @@ Calculate the product
 1 & -1 & -1 \\ 3 & -2 & 0 \\ 1 & -2 & -1 \end{bmatrix} \threevec{-1}{2}{-1}.
 ```
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 The product is equivalent to
 
 ```{math}

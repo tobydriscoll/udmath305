@@ -48,7 +48,8 @@ Every nonzero multiple of an eigenvector is also an eigenvector for the same eig
 
 But there can be even more ambiguity than scalar multiples.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 
 Let $\meye$ be an identity matrix. Then $\meye\bfx=\bfx$ for any vector $\bfx$, so every nonzero vector is an eigenvector!
 ::::
@@ -89,14 +90,15 @@ Given an $n\times n$ matrix $\bfA$:
 3. For each $\lambda_j$, find the general solution of $(\bfA-\lambda_j\meye)\bfv=\bfzero$. This is the eigenspace associated with $\lambda_j$.
 ````
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Find the eigenvalues and eigenspaces of
 
 ```{math}
 \bfA = \begin{bmatrix} 1 & 1 \\ 4 & 1 \end{bmatrix}.
 ```
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 
 Start by computing the characteristic polynomial:
 
@@ -151,13 +153,15 @@ Finding the exact roots of a cubic polynomial is not an easy matter unless the p
     - Otherwise, the vector $[\beta;\,-\alpha]$ is a basis of the eigenspace of $\lambda$.
 ```
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Find the eigenstuff of 
 
 ```{math}
 \bfA = \twomat{1}{1}{-1}{1}.
 ```
-:::{admonition,dropdown,note,solution} 
+:::{admonition} Solution
+:class: note,dropdown,solution 
 
 We start by finding eigenvalues. 
 

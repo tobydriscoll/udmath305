@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>4. Laplace transforms &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -255,80 +255,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="transform_solutions.html">
    5. Solutions by transform
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
   </a>
  </li>
 </ul>
@@ -459,12 +385,17 @@
 <p class="admonition-title">Attention</p>
 <p>A common convention is that a lowercase function of <span class="math notranslate nohighlight">\(t\)</span> transforms to its uppercase namesake as a function of <span class="math notranslate nohighlight">\(s\)</span>. You should assume this unless told otherwise.</p>
 </div>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
-<blockquote>
-<div><p>Use the definition of the Laplace transform to find <span class="math notranslate nohighlight">\(\lx[t]\)</span>. (Assume that <span class="math notranslate nohighlight">\(s\)</span> is constrained in any way needed to make the integral converge.)</p>
-</div></blockquote>
-<p>Using integration by parts,</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Use the definition of the Laplace transform to find <span class="math notranslate nohighlight">\(\lx[t]\)</span>. (Assume that <span class="math notranslate nohighlight">\(s\)</span> is constrained in any way needed to make the integral converge.)</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Using integration by parts,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \lx[t] &amp; = \int_0^\infty t e^{-s t}\, dt  \\
@@ -473,6 +404,7 @@
 &amp; = \frac{1}{s^2}.
 \end{align*}\]</div>
 </div>
+</details></div>
 <p>The following important fact is easily proved using familiar properties of integrals.</p>
 <div class="proof proof-type-theorem" id="id2">
 
@@ -489,15 +421,20 @@
 \lx[ c f(t) ] = c F(s),
 \end{align*}\]</div>
 <p>where <span class="math notranslate nohighlight">\(c\)</span> is any constant.</p>
-</div></div><div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
-<blockquote>
-<div><p>Find the Laplace transform of the function <span class="math notranslate nohighlight">\(\sinh(t)\)</span>.</p>
-</div></blockquote>
-<p>This is easy if we use linearity on the identity</p>
+</div></div><div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Find the Laplace transform of the function <span class="math notranslate nohighlight">\(\sinh(t)\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">This is easy if we use linearity on the identity</p>
 <div class="math notranslate nohighlight">
 \[\sinh(t)=\frac{1}{2}(e^t-e^{-t}).\]</div>
-<p>We calculate</p>
+<p class="card-text">We calculate</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \lx\left[ \tfrac{1}{2}\bigl( e^t - e^{-t} \bigr) \right]  &amp; = \frac{1}{2} \left( \lx[e^t] - \lx[e^{-t}] \right) \\
@@ -505,6 +442,7 @@
   &amp; = \frac{1}{s^2-1}.
 \end{align*}\]</div>
 </div>
+</details></div>
 <div class="section" id="derivatives">
 <h2><span class="section-number">4.1. </span>Derivatives<a class="headerlink" href="#derivatives" title="Permalink to this headline">¶</a></h2>
 <p>Applying integration by parts to the definition of <span class="math notranslate nohighlight">\(\lx[x'(t)]\)</span> reveals the main reason Laplace transforms are useful in ODEs:</p>
@@ -526,21 +464,27 @@
 \[
 \lx[x'(t)] = s X(s) - x(0)
 \]</div>
-</div></div><div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
-<blockquote>
-<div><p>Find the Laplace transform of the second derivative of a function: <span class="math notranslate nohighlight">\(\lx[x''(t)]\)</span>.</p>
-</div></blockquote>
-<p>It’s possible to do this by applying the integral definition of the Laplace transform. However, it’s a lot easier to do by twice applying the known transform formula of the first derivative. Suppose we let <span class="math notranslate nohighlight">\(u(t)=x'(t)\)</span>. Then</p>
+</div></div><div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Find the Laplace transform of the second derivative of a function: <span class="math notranslate nohighlight">\(\lx[x''(t)]\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">It’s possible to do this by applying the integral definition of the Laplace transform. However, it’s a lot easier to do by twice applying the known transform formula of the first derivative. Suppose we let <span class="math notranslate nohighlight">\(u(t)=x'(t)\)</span>. Then</p>
 <div class="math notranslate nohighlight">
 \[  \lx[x''(t)] = \lx[u'(t)] = sU(s) - u(0).\]</div>
-<p>Also</p>
+<p class="card-text">Also</p>
 <div class="math notranslate nohighlight">
 \[  U(s) = \lx[u(t)] = \lx[x'(t)] = sX(s) - x(0). \]</div>
-<p>Thus,</p>
+<p class="card-text">Thus,</p>
 <div class="math notranslate nohighlight">
 \[\lx[x''(t)] = s[sX(s)-x(0)] - u(0) = s^2X(s) - s x(0) - x'(0). \]</div>
 </div>
+</details></div>
 <p>Here is the plan of attack. Given an ODE <span class="math notranslate nohighlight">\(x'-ax=f(t)\)</span>, we transform everything in sight to get</p>
 <div class="math notranslate nohighlight">
 \[sX(s)-x(0) - a X(s) =  F(s).\]</div>
@@ -600,19 +544,25 @@
     </div><div class="proof-content">
 <div class="math notranslate nohighlight" id="equation-steps-lt-shift">
 <span class="eqno">(4.6)<a class="headerlink" href="#equation-steps-lt-shift" title="Permalink to this equation">¶</a></span>\[\lx[H(t-T)f(t-T)] = e^{-sT} \lx[f(t)].\]</div>
-</div></div><div class="dropdown tip admonition" id="example-steps-shift">
-<p class="admonition-title"> Example</p>
-<blockquote>
-<div><p>Find the inverse transform of</p>
-</div></blockquote>
+</div></div><div class="tip admonition" id="example-steps-shift">
+<p class="admonition-title">Example</p>
+<p>Find the inverse transform of</p>
 <div class="math notranslate nohighlight">
 \[
 X(s) = \frac{e^{-sT}}{s-a}.
 \]</div>
-<p>Notice that <span class="math notranslate nohighlight">\(X(s) = e^{-sT} Y(s)\)</span>, where <span class="math notranslate nohighlight">\(Y(s)=1/(s-a)\)</span>. We see that <span class="math notranslate nohighlight">\(y(t)=e^{at}\)</span>. By the shift theorem,</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Notice that <span class="math notranslate nohighlight">\(X(s) = e^{-sT} Y(s)\)</span>, where <span class="math notranslate nohighlight">\(Y(s)=1/(s-a)\)</span>. We see that <span class="math notranslate nohighlight">\(y(t)=e^{at}\)</span>. By the shift theorem,</p>
 <div class="math notranslate nohighlight">
 \[x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}.\]</div>
 </div>
+</details></div>
 </div>
 <div class="section" id="impulse">
 <h3><span class="section-number">4.2.3. </span>Impulse<a class="headerlink" href="#impulse" title="Permalink to this headline">¶</a></h3>
@@ -686,7 +636,7 @@ X(s) = \frac{e^{-sT}}{s-a}.
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

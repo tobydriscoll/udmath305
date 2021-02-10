@@ -4,9 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4. Complex exponentials &#8212; Notes on linear algebra and ODEs</title>
+    <title>Complex exponentials &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -61,8 +61,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Amplitude and phase" href="phase_amplitude.html" />
-    <link rel="prev" title="3. Homogeneous solutions" href="homogeneous.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,7 +91,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -140,7 +138,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -258,80 +256,6 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
-  </a>
- </li>
-</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -406,34 +330,34 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#polar-form">
-   4.1. Polar form
+   Polar form
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#complex-exponents">
-   4.2. Complex exponents
+   Complex exponents
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#growing">
-     4.2.1. Growing
+     Growing
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#neutral">
-     4.2.2. Neutral
+     Neutral
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#decaying">
-     4.2.3. Decaying
+     Decaying
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homogeneous-solutions">
-   4.3. Homogeneous solutions
+   Homogeneous solutions
   </a>
  </li>
 </ul>
@@ -448,24 +372,24 @@
               <div>
                 
   <div class="section" id="complex-exponentials">
-<h1><span class="section-number">4. </span>Complex exponentials<a class="headerlink" href="#complex-exponentials" title="Permalink to this headline">¶</a></h1>
+<h1>Complex exponentials<a class="headerlink" href="#complex-exponentials" title="Permalink to this headline">¶</a></h1>
 <p>For second-order equations we need to make sense of <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span> when <span class="math notranslate nohighlight">\(\lambda\)</span> is complex. The key is one of the most famous equations in mathematics.</p>
 <div class="proof proof-type-formula" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Formula 4.13</span>
+        <span class="proof-type">Formula </span>
         
             <span class="proof-title-name">(Euler’s identity)</span>
         
     </div><div class="proof-content">
 <div class="math notranslate nohighlight" id="equation-secondlin-euler">
-<span class="eqno">(4.8)<a class="headerlink" href="#equation-secondlin-euler" title="Permalink to this equation">¶</a></span>\[e^{it} = \cos(t) + i \sin(t)\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-secondlin-euler" title="Permalink to this equation">¶</a></span>\[e^{it} = \cos(t) + i \sin(t)\]</div>
 </div></div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>“Euler” is a German name, and as such, it rhymes with “boiler,” not “Bueller.”</p>
 </div>
 <div class="dropdown tip admonition">
-<p class="admonition-title"> Explanation</p>
+<p class="admonition-title">Explanation</p>
 <p>Consider the first-order IVP <span class="math notranslate nohighlight">\(w'=i w\)</span>, <span class="math notranslate nohighlight">\(w(0)=1\)</span>, where <span class="math notranslate nohighlight">\(i^2=-1\)</span>. Assume that the solution <span class="math notranslate nohighlight">\(w(t)=e^{it}\)</span> takes on complex values at all times. We can write it in real and imaginary parts as <span class="math notranslate nohighlight">\(w(t) = u(t) + iv(t)\)</span>. Then the ODE becomes</p>
 <div class="math notranslate nohighlight">
 \[
@@ -500,7 +424,7 @@ u' = -v, \quad v' = u,
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="p">=</span> <span class="p">@(</span><span class="n">t</span><span class="p">)</span> <span class="nb">real</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">t</span><span class="p">));</span>
 <span class="n">s</span> <span class="p">=</span> <span class="p">@(</span><span class="n">t</span><span class="p">)</span> <span class="nb">imag</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">t</span><span class="p">));</span>
 <span class="n">fplot</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
-<span class="n">axis</span> <span class="s">equal,</span> <span class="s">axis(1.05*[-1</span> <span class="s">1</span> <span class="s">-1</span> <span class="s">1])</span>
+<span class="n">axis </span><span class="s">equal, axis(1.05*[-1 1 -1 1])</span><span class="p"></span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Re z&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Im z&#39;</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s">&#39;Complex exponential = Unit circle&#39;</span><span class="p">)</span>
 </pre></div>
@@ -511,7 +435,7 @@ u' = -v, \quad v' = u,
 </div>
 </div>
 <div class="section" id="polar-form">
-<h2><span class="section-number">4.1. </span>Polar form<a class="headerlink" href="#polar-form" title="Permalink to this headline">¶</a></h2>
+<h2>Polar form<a class="headerlink" href="#polar-form" title="Permalink to this headline">¶</a></h2>
 <p>Suppose <span class="math notranslate nohighlight">\(z\)</span> is any nonzero complex value. We can write it in the form</p>
 <div class="math notranslate nohighlight">
 \[
@@ -519,10 +443,10 @@ z = |z|\cdot \frac{z}{|z|},
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(|z|\)</span> is the modulus (distance from origin in the plane). Since \frac{z}{|z|} has modulus equal to 1, it must lie on the unit circle. Hence there is a real <span class="math notranslate nohighlight">\(\theta\)</span> such that</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-polar">
-<span class="eqno">(4.9)<a class="headerlink" href="#equation-secondlin-polar" title="Permalink to this equation">¶</a></span>\[z = |z| e^{i\theta}.\]</div>
-<p>We call <a class="reference internal" href="#equation-secondlin-polar">(4.9)</a> the <a class="reference internal" href="overview.html#term-polar-form"><span class="xref std std-term">polar form</span></a> of a complex number, because it expresses <span class="math notranslate nohighlight">\(z\)</span> as a distance from zero and an angle from the positive Re axis. Just as with any point in the plane, we can express a complex number either in Cartesian form using Re and Im parts, or in polar form using modulus and Euler’s identity.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<span class="eqno">()<a class="headerlink" href="#equation-secondlin-polar" title="Permalink to this equation">¶</a></span>\[z = |z| e^{i\theta}.\]</div>
+<p>We call <a class="reference internal" href="#equation-secondlin-polar">()</a> the <a class="reference internal" href="overview.html#term-polar-form"><span class="xref std std-term">polar form</span></a> of a complex number, because it expresses <span class="math notranslate nohighlight">\(z\)</span> as a distance from zero and an angle from the positive Re axis. Just as with any point in the plane, we can express a complex number either in Cartesian form using Re and Im parts, or in polar form using modulus and Euler’s identity.</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <p>Suppose <span class="math notranslate nohighlight">\(r\)</span> is a positive real number. Then <span class="math notranslate nohighlight">\(-r\)</span> lies at a distance <span class="math notranslate nohighlight">\(r\)</span> from the origin along the negative real axis. Hence</p>
 <div class="math notranslate nohighlight">
 \[
@@ -537,21 +461,21 @@ z = |z|\cdot \frac{z}{|z|},
 </div>
 </div>
 <div class="section" id="complex-exponents">
-<h2><span class="section-number">4.2. </span>Complex exponents<a class="headerlink" href="#complex-exponents" title="Permalink to this headline">¶</a></h2>
+<h2>Complex exponents<a class="headerlink" href="#complex-exponents" title="Permalink to this headline">¶</a></h2>
 <p>Exponential functions still obey the properties you already know, even when the exponents are imaginary or complex numbers. This allows us to handle the exponential of any complex number. Writing <span class="math notranslate nohighlight">\(a+i \omega\)</span> for real <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>, we have the function</p>
 <div class="proof proof-type-formula" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Formula 4.14</span>
+        <span class="proof-type">Formula </span>
         
             <span class="proof-title-name">(Complex exponential function)</span>
         
     </div><div class="proof-content">
 <div class="math notranslate nohighlight" id="equation-secondlin-complex-exp">
-<span class="eqno">(4.10)<a class="headerlink" href="#equation-secondlin-complex-exp" title="Permalink to this equation">¶</a></span>\[e^{(a+i \omega)t} = e^{at} \cdot e^{i\omega t} = e^{at} \bigl[ \cos(\omega t) + i \sin(\omega t)\bigr].\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-secondlin-complex-exp" title="Permalink to this equation">¶</a></span>\[e^{(a+i \omega)t} = e^{at} \cdot e^{i\omega t} = e^{at} \bigl[ \cos(\omega t) + i \sin(\omega t)\bigr].\]</div>
 </div></div><p>Thus in the function <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span>, the real part of <span class="math notranslate nohighlight">\(\lambda\)</span> controls growth or decay in time, as we are familiar with, and the imaginary part of <span class="math notranslate nohighlight">\(\lambda\)</span> controls a frequency of oscillation around a circle in the complex plane.</p>
 <div class="section" id="growing">
-<h3><span class="section-number">4.2.1. </span>Growing<a class="headerlink" href="#growing" title="Permalink to this headline">¶</a></h3>
+<h3>Growing<a class="headerlink" href="#growing" title="Permalink to this headline">¶</a></h3>
 <p>If <span class="math notranslate nohighlight">\(\text{Re} \lambda &gt; 0\)</span>, the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of <span class="math notranslate nohighlight">\(\lambda\)</span> controls the frequency or pitch of the spiral. The real and imaginary parts of <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span> oscillate between two growing real exponentials.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -560,13 +484,13 @@ z = |z|\cdot \frac{z}{|z|},
 <span class="n">f</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">((</span><span class="n">a</span><span class="o">+</span>1<span class="nb">i</span><span class="o">*</span><span class="n">om</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
 
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
-<span class="n">hold</span> <span class="s">on</span>
+<span class="n">hold </span><span class="s">on</span><span class="p"></span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mf">1.5</span><span class="p">)</span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
 <span class="n">plot3</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">30</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">axis</span><span class="p">([</span><span class="mi">0</span> <span class="mi">30</span> <span class="o">-</span><span class="mi">2</span>  <span class="mi">2</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">2</span><span class="p">])</span>
 <span class="n">title</span><span class="p">(</span><span class="n">sprintf</span><span class="p">(</span><span class="s">&#39;a = %.2f, \\omega = %.2f&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">om</span><span class="p">))</span>
-<span class="n">grid</span> <span class="s">on,</span> <span class="s">xlabel(&#39;Time&#39;)</span>
+<span class="n">grid </span><span class="s">on, xlabel(&#39;Time&#39;)</span><span class="p"></span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Re part&#39;</span><span class="p">)</span>
 <span class="n">zlabel</span><span class="p">(</span><span class="s">&#39;Im part&#39;</span><span class="p">)</span>
 <span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="s">&#39;dataaspect&#39;</span><span class="p">,[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
@@ -579,7 +503,7 @@ z = |z|\cdot \frac{z}{|z|},
 </div>
 </div>
 <div class="section" id="neutral">
-<h3><span class="section-number">4.2.2. </span>Neutral<a class="headerlink" href="#neutral" title="Permalink to this headline">¶</a></h3>
+<h3>Neutral<a class="headerlink" href="#neutral" title="Permalink to this headline">¶</a></h3>
 <p>When <span class="math notranslate nohighlight">\(\lambda\)</span> is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span> gives cosine and sine, respectively.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -588,13 +512,13 @@ z = |z|\cdot \frac{z}{|z|},
 <span class="n">f</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">((</span><span class="n">a</span><span class="o">+</span>1<span class="nb">i</span><span class="o">*</span><span class="n">om</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
 
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
-<span class="n">hold</span> <span class="s">on</span>
+<span class="n">hold </span><span class="s">on</span><span class="p"></span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mf">1.5</span><span class="p">)</span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
 <span class="n">plot3</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">30</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">axis</span><span class="p">([</span><span class="mi">0</span> <span class="mi">30</span> <span class="o">-</span><span class="mi">2</span>  <span class="mi">2</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">2</span><span class="p">])</span>
 <span class="n">title</span><span class="p">(</span><span class="n">sprintf</span><span class="p">(</span><span class="s">&#39;a = 0, \\omega = %.1f&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">om</span><span class="p">))</span>
-<span class="n">grid</span> <span class="s">on,</span> <span class="s">xlabel(&#39;Time&#39;)</span>
+<span class="n">grid </span><span class="s">on, xlabel(&#39;Time&#39;)</span><span class="p"></span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Re part&#39;</span><span class="p">)</span>
 <span class="n">zlabel</span><span class="p">(</span><span class="s">&#39;Im part&#39;</span><span class="p">)</span>
 <span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="s">&#39;dataaspect&#39;</span><span class="p">,[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
@@ -607,7 +531,7 @@ z = |z|\cdot \frac{z}{|z|},
 </div>
 </div>
 <div class="section" id="decaying">
-<h3><span class="section-number">4.2.3. </span>Decaying<a class="headerlink" href="#decaying" title="Permalink to this headline">¶</a></h3>
+<h3>Decaying<a class="headerlink" href="#decaying" title="Permalink to this headline">¶</a></h3>
 <p>Finally, if <span class="math notranslate nohighlight">\(\text{Re} \lambda &lt; 0\)</span>, the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -616,13 +540,13 @@ z = |z|\cdot \frac{z}{|z|},
 <span class="n">f</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">((</span><span class="n">a</span><span class="o">+</span>1<span class="nb">i</span><span class="o">*</span><span class="n">om</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
 
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
-<span class="n">hold</span> <span class="s">on</span>
+<span class="n">hold </span><span class="s">on</span><span class="p"></span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mf">1.5</span><span class="p">)</span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
 <span class="n">plot3</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">30</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">axis</span><span class="p">([</span><span class="mi">0</span> <span class="mi">30</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">2</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">2</span><span class="p">])</span>
 <span class="n">title</span><span class="p">(</span><span class="n">sprintf</span><span class="p">(</span><span class="s">&#39;a = %.2f, \\omega = %.1f&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">om</span><span class="p">))</span>
-<span class="n">grid</span> <span class="s">on,</span> <span class="s">xlabel(&#39;Time&#39;)</span>
+<span class="n">grid </span><span class="s">on, xlabel(&#39;Time&#39;)</span><span class="p"></span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Re part&#39;</span><span class="p">)</span>
 <span class="n">zlabel</span><span class="p">(</span><span class="s">&#39;Im part&#39;</span><span class="p">)</span>
 <span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="s">&#39;dataaspect&#39;</span><span class="p">,[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
@@ -636,10 +560,10 @@ z = |z|\cdot \frac{z}{|z|},
 </div>
 </div>
 <div class="section" id="homogeneous-solutions">
-<h2><span class="section-number">4.3. </span>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h2>
+<h2>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h2>
 <p>Now we can finish the story of computing solutions to homogeneous ODEs.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Solve the IVP <span class="math notranslate nohighlight">\(x''+9x=0\)</span>, <span class="math notranslate nohighlight">\(x(0)=2\)</span>, <span class="math notranslate nohighlight">\(x'(0)=-12\)</span>.</p>
 </div></blockquote>
@@ -662,7 +586,7 @@ z = |z|\cdot \frac{z}{|z|},
 <p>If a real second-order IVP has complex conjugate eigenvalues, then the integration constants satisfy <span class="math notranslate nohighlight">\(c_2=\overline{c_1}\)</span>.</p>
 </div></div><p>This can simplify the algebra a bit. If we set <span class="math notranslate nohighlight">\(c_1=\alpha + i\beta\)</span>, then</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-add-subtract">
-<span class="eqno">(4.11)<a class="headerlink" href="#equation-secondlin-add-subtract" title="Permalink to this equation">¶</a></span>\[c_1 + c_2 = 2\alpha, \quad c_1-c_2 = 2i\beta.\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-secondlin-add-subtract" title="Permalink to this equation">¶</a></span>\[c_1 + c_2 = 2\alpha, \quad c_1-c_2 = 2i\beta.\]</div>
 <p>In the example above, this would have led us right to <span class="math notranslate nohighlight">\(2\alpha=2\)</span> and <span class="math notranslate nohighlight">\(3i(2i\beta)=-12\)</span>, which are trivial.</p>
 <p>It might seem odd to use complex numbers to represent what we know must be a real-valued solution. There’s nothing wrong with doing so, but we can also convert it to an explicitly real form. The following is easily proved using Euler’s identity.</p>
 <div class="proof proof-type-observation">
@@ -682,8 +606,8 @@ x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t},
 x_h(t) = e^{at} \bigl[ \tilde{c}_1 \cos(\omega t) + \tilde{c}_2 \sin(\omega t) \bigr],
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\tilde{c}_1,\tilde{c}_2\)</span> are real constants.</p>
-</div></div><div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+</div></div><div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <p>In the preceding example, the eigenvalues were <span class="math notranslate nohighlight">\(0 \pm 3i\)</span>. Thus another expression for the general solution is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -729,8 +653,6 @@ x_h(t) = c_1\cos(3t) + c_2\sin(3t).
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="homogeneous.html" title="previous page"><span class="section-number">3. </span>Homogeneous solutions</a>
-    <a class='right-next' id="next-link" href="phase_amplitude.html" title="next page"><span class="section-number">5. </span>Amplitude and phase</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -750,7 +672,7 @@ x_h(t) = c_1\cos(3t) + c_2\sin(3t).
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

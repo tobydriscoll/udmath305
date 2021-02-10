@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>2. Unit step functions &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -258,80 +258,6 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
-  </a>
- </li>
-</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -436,7 +362,7 @@
             <span class="proof-title-name">(Unit step function)</span>
         
     </div><div class="proof-content">
-<p>The <a class="reference internal" href="overview.html#term-unit-step-function"><span class="xref std std-term">unit step function</span></a>or <a class="reference internal" href="overview.html#term-heaviside-function"><span class="xref std std-term">Heaviside function</span></a> <span class="math notranslate nohighlight">\(H(t)\)</span> is defined to have zero for <span class="math notranslate nohighlight">\(t&lt; 0\)</span> and one for <span class="math notranslate nohighlight">\(t\ge 0\)</span>. That is, if <span class="math notranslate nohighlight">\(T\)</span> is any nonnegative constant, then</p>
+<p>The <a class="reference internal" href="overview.html#term-unit-step-function"><span class="xref std std-term">unit step function</span></a> or <a class="reference internal" href="overview.html#term-heaviside-function"><span class="xref std std-term">Heaviside function</span></a> <span class="math notranslate nohighlight">\(H(t)\)</span> is defined to have zero for <span class="math notranslate nohighlight">\(t&lt; 0\)</span> and one for <span class="math notranslate nohighlight">\(t\ge 0\)</span>. That is, if <span class="math notranslate nohighlight">\(T\)</span> is any nonnegative constant, then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 H(t-T) = \begin{cases}  
@@ -445,6 +371,10 @@ H(t-T) = \begin{cases}
 \end{cases}
 \end{split}\]</div>
 </div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Another common notation for the unit step function is <span class="math notranslate nohighlight">\(u(t)\)</span>. You will also sometimes see <span class="math notranslate nohighlight">\(u_T(t)\)</span> to mean <span class="math notranslate nohighlight">\(u(t-T)\)</span>.</p>
+</div>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In this part of the course we will be considering problems with initial condition given at <span class="math notranslate nohighlight">\(t=0\)</span>. In that context there is really no difference between <span class="math notranslate nohighlight">\(H(t)\)</span> and the constant function 1. It’s mostly <span class="math notranslate nohighlight">\(H(t-T)\)</span> for <span class="math notranslate nohighlight">\(T&gt;0\)</span> that is of interest.</p>
 </div>
@@ -470,10 +400,10 @@ H(t-S) - H(t-T)
 \]</div>
 <p>is equal to 1 for <span class="math notranslate nohighlight">\(S\le t &lt; T\)</span> and 0 elsewhere.</p>
 </div></div><p>Here is a key fact about step forcing in a first-order ODE.</p>
-<div class="proof proof-type-rule">
+<div class="proof proof-type-property" id="id3">
 
     <div class="proof-title">
-        <span class="proof-type">Rule </span>
+        <span class="proof-type">Property 2.5</span>
         
     </div><div class="proof-content">
 <p>If <span class="math notranslate nohighlight">\(x(t)\)</span> solves <span class="math notranslate nohighlight">\(x'-a(t)x=H(t-T)f(t-T)\)</span>, where <span class="math notranslate nohighlight">\(a(t)\)</span> and <span class="math notranslate nohighlight">\(f(t)\)</span> are continuous, then <span class="math notranslate nohighlight">\(x(t)\)</span> is continuous.</p>
@@ -523,29 +453,34 @@ x(t)=x_h(t)+k_1 x_1(t) + \cdots +k_m x_m(t)$.
 <div class="math notranslate nohighlight">
 \[x_j(t) = \frac{1}{a} H(t-T_j)\cdot  \bigl(e^{a(t-T_j)} - 1\bigr).\]</div>
 <p>Putting all this together, we get a complete formula.</p>
-<div class="proof proof-type-formula" id="id3">
+<div class="proof proof-type-formula" id="id4">
 
     <div class="proof-title">
-        <span class="proof-type">Formula 2.5</span>
+        <span class="proof-type">Formula 2.6</span>
         
-            <span class="proof-title-name">(Piecewise constant forcing)</span>
+            <span class="proof-title-name">(Piecewise constant forcing, 1st order)</span>
         
     </div><div class="proof-content">
 <p>The solution of <a class="reference internal" href="#equation-steps-pwc-forcing">(2.3)</a> is</p>
 <div class="math notranslate nohighlight" id="equation-steps-pwc-solution">
 <span class="eqno">(2.4)<a class="headerlink" href="#equation-steps-pwc-solution" title="Permalink to this equation">¶</a></span>\[x(t) = e^{a t}x_0 + \frac{1}{a} \sum_{j=1}^m H(t-T_j)\cdot \bigl(e^{a(t-T_j)} - 1\bigr).\]</div>
-</div></div><div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
-<blockquote>
-<div><p>Solve <span class="math notranslate nohighlight">\(x'-\frac{1}{10}x=w(t)\)</span>, <span class="math notranslate nohighlight">\(x(0)=-2\)</span>, where <span class="math notranslate nohighlight">\(w(t)\)</span> is a window function that is 5 for <span class="math notranslate nohighlight">\(3 &lt; t \le 6\)</span> and zero elsewhere.</p>
-</div></blockquote>
-<p>We can write the problem as</p>
+</div></div><div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Solve <span class="math notranslate nohighlight">\(x'-\frac{1}{10}x=w(t)\)</span>, <span class="math notranslate nohighlight">\(x(0)=-2\)</span>, where <span class="math notranslate nohighlight">\(w(t)\)</span> is a function that is 5 for <span class="math notranslate nohighlight">\(3 &lt; t \le 6\)</span> and zero elsewhere.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We can write the problem as</p>
 <div class="math notranslate nohighlight">
 \[x' - \frac{1}{10}x = 5[H(t-3) - H(t-6)] = 5H(t-3) - 5H(t-6), \quad x(0)=-2.\]</div>
-<p>The solution therefore consists of three terms,</p>
+<p class="card-text">The solution therefore consists of three terms,</p>
 <div class="math notranslate nohighlight">
 \[x(t) = -2 e^{t/10} + 50 \left[ H(t-3) (e^{(t-3)/10}-1) - H(t-6)(e^{(t-6)/10}-1) \right].\]</div>
-<p>A more traditional piecewise expression of the solution is</p>
+<p class="card-text">A more traditional piecewise expression of the solution is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}x(t) = \begin{cases} 
 -2e^{t/10}, &amp; 0 \le t &lt; 3, \\ 
@@ -553,26 +488,31 @@ x(t)=x_h(t)+k_1 x_1(t) + \cdots +k_m x_m(t)$.
 -2e^{t/10} + 50(e^{(t-3)/10}-e^{(t-6)/10}), &amp; 5 \le t.
 \end{cases}\end{split}\]</div>
 </div>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
-<blockquote>
-<div><p>Let the serum drug concentration in a patient be <span class="math notranslate nohighlight">\(x(t)\)</span>. Suppose this is initially zero when an IV is given at a constant rate of 12 units per hour for 30 minutes. An IVP that models this case is</p>
-</div></blockquote>
+</details></div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let the serum drug concentration in a patient be <span class="math notranslate nohighlight">\(x(t)\)</span>. Suppose this is initially zero when an IV is given at a constant rate of 12 units per hour for 30 minutes. An IVP that models this case is</p>
 <div class="math notranslate nohighlight">
 \[x'=-r x + 12 \left[ 1-H(t-0.5) \right], \quad x(0)=0,\]</div>
-<blockquote>
-<div><p>where <span class="math notranslate nohighlight">\(t\)</span> is measured in hours. Solve it to find the concentration of the drug over time.</p>
-</div></blockquote>
-<p>We can solve this IVP using three pieces. The homogeneous solution with initial condition is <span class="math notranslate nohighlight">\(x_h(t)=0\)</span>, so it contributes nothing. The other two are due to the forcing terms:</p>
+<p>where <span class="math notranslate nohighlight">\(t\)</span> is measured in hours. Solve it to find the concentration of the drug over time.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We can solve this IVP using three pieces. The homogeneous solution with initial condition is <span class="math notranslate nohighlight">\(x_h(t)=0\)</span>, so it contributes nothing. The other two are due to the forcing terms:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 x_1(t) &amp; = \frac{1}{-r} H(t-0) \bigl(e^{-r(t-0)} - 1\bigr) = \frac{1}{r} \bigl(1- e^{-r t}\bigr), \\
 x_2(t) &amp; = \frac{1}{r} H(t-0.5) \bigl(1 - e^{-r(t-0.5)}\bigr). 
 \end{align*}\]</div>
-<p>Hence we arrive at</p>
+<p class="card-text">Hence we arrive at</p>
 <div class="math notranslate nohighlight">
 \[x(t) = 12x_1(t) - 12 x_2(t) = \frac{12}{r}\left[ 1-e^{-r t} - H(t-0.5)\bigl(1-e^{-r(t-0.5)} \bigr)\right].\]</div>
 </div>
+</details></div>
 </div>
 <div class="section" id="numerical-solution">
 <h2><span class="section-number">2.2. </span>Numerical solution<a class="headerlink" href="#numerical-solution" title="Permalink to this headline">¶</a></h2>
@@ -581,7 +521,7 @@ x_2(t) &amp; = \frac{1}{r} H(t-0.5) \bigl(1 - e^{-r(t-0.5)}\bigr).
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">step</span> <span class="p">=</span> <span class="p">@(</span><span class="n">t</span><span class="p">)</span> <span class="n">double</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">);</span>
 <span class="n">dxdt</span> <span class="p">=</span> <span class="p">@(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="n">step</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">step</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">6</span><span class="p">));</span>
-<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="n">ode45</span><span class="p">(</span><span class="n">dxdt</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="n">ode23</span><span class="p">(</span><span class="n">dxdt</span><span class="p">,</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">401</span><span class="p">),</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;x(t)&#39;</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s">&#39;Window forcing&#39;</span><span class="p">)</span>
@@ -589,7 +529,12 @@ x_2(t) &amp; = \frac{1}{r} H(t-0.5) \bigl(1 - e^{-r(t-0.5)}\bigr).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/unit_step_1_0.png" src="../_images/unit_step_1_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+    &#39;9.7.0.1296695 (R2019b) Update 4&#39;
+</pre></div>
+</div>
+<img alt="../_images/unit_step_1_1.png" src="../_images/unit_step_1_1.png" />
 </div>
 </div>
 <p>You can clearly see the jumps in <span class="math notranslate nohighlight">\(x'(t)\)</span>; at <span class="math notranslate nohighlight">\(t=3\)</span>, the slope increases by 1, and at <span class="math notranslate nohighlight">\(t=6\)</span>, it decreases by 1.</p>
@@ -645,7 +590,7 @@ x_2(t) &amp; = \frac{1}{r} H(t-0.5) \bigl(1 - e^{-r(t-0.5)}\bigr).
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     
