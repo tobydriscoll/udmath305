@@ -45,7 +45,7 @@ is equal to 1 for $S\le t < T$ and 0 elsewhere.
 
 Here is a key fact about step forcing in a first-order ODE.
 
-``` {proof:property}
+``` {proof:rule}
 If $x(t)$ solves $x'-a(t)x=H(t-T)f(t-T)$, where $a(t)$ and $f(t)$ are continuous, then $x(t)$ is continuous.
 ```
 
@@ -112,7 +112,7 @@ x_j(t) = \frac{1}{a} H(t-T_j)\cdot  \bigl(e^{a(t-T_j)} - 1\bigr).
 
 Putting all this together, we get a complete formula.
 
-````{proof:formula} Piecewise constant forcing, 1st order
+````{proof:formula} Piecewise constant forcing
 The solution of {eq}`steps-pwc-forcing` is
 
 ``` {math}
@@ -184,7 +184,7 @@ MATLAB can handle problems with piecewise constant inputs straightforwardly, if 
 
 step = @(t) double(t>0);
 dxdt = @(t,x) 0.1*x + 5*(step(t-3) - step(t-6));
-[t,x] = ode23(dxdt,linspace(0,8,401),-2);
+[t,x] = ode45(dxdt,linspace(0,8,401),-2);
 plot(t,x)
 xlabel('t'), ylabel('x(t)')
 title('Window forcing')

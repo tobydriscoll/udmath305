@@ -23,10 +23,11 @@ A common convention is that a lowercase function of $t$ transforms to its upperc
 ```
 
 ::::{admonition} Example
-:class: dropdown,tip
+:class: tip
 
-> Use the definition of the Laplace transform to find $\lx[t]$. (Assume that $s$ is constrained in any way needed to make the integral converge.)
+Use the definition of the Laplace transform to find $\lx[t]$. (Assume that $s$ is constrained in any way needed to make the integral converge.)
 
+:::{dropdown} Solution
 Using integration by parts,
 \begin{align*}
 \lx[t] & = \int_0^\infty t e^{-s t}\, dt  \\
@@ -34,7 +35,7 @@ Using integration by parts,
 & = [0 - 0] + \frac{1}{s} \lx[1] \\
 & = \frac{1}{s^2}.
 \end{align*}
-
+:::
 ::::
 
 The following important fact is easily proved using familiar properties of integrals.
@@ -51,9 +52,10 @@ where $c$ is any constant.
 ````
 
 ::::{admonition} Example
-:class: dropdown,tip
-> Find the Laplace transform of the function $\sinh(t)$.
+:class: tip
+Find the Laplace transform of the function $\sinh(t)$.
 
+:::{dropdown} Solution
 This is easy if we use linearity on the identity
 
 ```{math}
@@ -67,6 +69,7 @@ We calculate
   & = \frac{1}{2} \left( \frac{1}{s-1} - \frac{1}{s+1} \right) \\
   & = \frac{1}{s^2-1}.
 \end{align*}
+:::
 ::::
 
 ## Derivatives
@@ -88,9 +91,10 @@ $$
 ````
 
 ::::{admonition} Example
-:class: dropdown,tip
-> Find the Laplace transform of the second derivative of a function: $\lx[x''(t)]$.
+:class: tip
+Find the Laplace transform of the second derivative of a function: $\lx[x''(t)]$.
 
+:::{dropdown} Solution
 It's possible to do this by applying the integral definition of the Laplace transform. However, it's a lot easier to do by twice applying the known transform formula of the first derivative. Suppose we let $u(t)=x'(t)$. Then
 
 ```{math}
@@ -108,7 +112,7 @@ Thus,
 ```{math}
 \lx[x''(t)] = s[sX(s)-x(0)] - u(0) = s^2X(s) - s x(0) - x'(0). 
 ```
-
+:::
 ::::
 
 Here is the plan of attack. Given an ODE $x'-ax=f(t)$, we transform everything in sight to get
@@ -182,19 +186,20 @@ A generalization of the same calculation results in a very important rule.
 (example-steps-shift)=
 
 ::::{admonition} Example
-:class: dropdown,tip
-> Find the inverse transform of
+:class: tip
+Find the inverse transform of
 
 $$
 X(s) = \frac{e^{-sT}}{s-a}.
 $$
 
+:::{dropdown} Solution
 Notice that $X(s) = e^{-sT} Y(s)$, where $Y(s)=1/(s-a)$. We see that $y(t)=e^{at}$. By the shift theorem,
 
 ```{math}
 x(t) = H(t-T)y(t-T) = H(t-T)e^{a(t-T)}.
 ```
-
+:::
 ::::
 
 ### Impulse

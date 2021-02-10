@@ -110,7 +110,7 @@ x(t) = x_0 \exp\left[ \int_{t_0}^t a(s)\, ds \right].
 $$
 ````
 
-::::{admonition} Example
+::::{admonition} Example (continued)
 :class: tip
 We revisit the preceding example of
 

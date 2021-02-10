@@ -457,41 +457,53 @@
 </tbody>
 </table>
 <p>One major tool at our disposal is the <em>partial fraction decomposition</em> you probably learned for integrating rational functions.</p>
-<div class="dropdown-tip admonition">
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Solve <span class="math notranslate nohighlight">\(x'-ax=e^{c t}\)</span>, where <span class="math notranslate nohighlight">\(a\neq c\)</span> are constants.</p>
-</div></blockquote>
-<p>Transforming both sides, we get</p>
+<p>Solve <span class="math notranslate nohighlight">\(x'-ax=e^{c t}\)</span>, where <span class="math notranslate nohighlight">\(a\neq c\)</span> are constants.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Transforming both sides, we get</p>
 <div class="math notranslate nohighlight">
 \[[sX(s)-x(0)] - aX(s) =\frac{1}{s-c},\]</div>
-<p>and thus</p>
+<p class="card-text">and thus</p>
 <div class="math notranslate nohighlight">
 \[X(s) = \frac{x_0}{s-a} + \frac{1}{(s-c)(s-a)}.\]</div>
-<p>We can immediately recognize the first term as the transform of <span class="math notranslate nohighlight">\(e^{at}x_0\)</span>. To invert the transform of the second term, we need to express it using partial fractions. There is a general procedure for this, but it’s worth knowing a simple mnemonic for this particular form:</p>
+<p class="card-text">We can immediately recognize the first term as the transform of <span class="math notranslate nohighlight">\(e^{at}x_0\)</span>. To invert the transform of the second term, we need to express it using partial fractions. There is a general procedure for this, but it’s worth knowing a simple mnemonic for this particular form:</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{(s-c)(s-a)} = \frac{1}{(a-c)(s-a)} + \frac{1}{(s-c)(c-a)}.\]</div>
-<p>Thus the inverse transform of this fraction is a sum of two exponentials,</p>
+<p class="card-text">Thus the inverse transform of this fraction is a sum of two exponentials,</p>
 <div class="math notranslate nohighlight">
 \[x_p(t) = \frac{1}{c-a}\left( e^{ct}-e^{at} \right).\]</div>
-<p>This is a particular solution that has <span class="math notranslate nohighlight">\(x_p(0)=0\)</span>. The general solution is <span class="math notranslate nohighlight">\(e^{at}x_0 + x_p(t)\)</span>.</p>
+<p class="card-text">This is a particular solution that has <span class="math notranslate nohighlight">\(x_p(0)=0\)</span>. The general solution is <span class="math notranslate nohighlight">\(e^{at}x_0 + x_p(t)\)</span>.</p>
 </div>
+</details></div>
 <p>We saw before that both steps and impulses in the forcing term lead to step functions in the solution. The next example shows how that fact fits with the <span class="xref myst">shift theorem</span>.</p>
-<div class="dropdown-tip admonition">
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Solve <span class="math notranslate nohighlight">\(x'=ax + \delta(t-T)\)</span>, with <span class="math notranslate nohighlight">\(x(0)=0\)</span>.</p>
-</div></blockquote>
-<p>Transform the ODE to get</p>
+<p>Solve <span class="math notranslate nohighlight">\(x'=ax + \delta(t-T)\)</span>, with <span class="math notranslate nohighlight">\(x(0)=0\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Transform the ODE to get</p>
 <div class="math notranslate nohighlight">
 \[[sX(s)-x(0)] - aX(s) = e^{-sT},\]</div>
-<p>thus</p>
+<p class="card-text">thus</p>
 <div class="math notranslate nohighlight">
 \[X(s) = \frac{e^{-sT}}{s-a}.\]</div>
-<p>In a <a class="reference internal" href="laplace.html#example-steps-shift"><span class="std std-ref">previous example</span></a> we showed that the inverse transform of this is</p>
+<p class="card-text">In a <a class="reference internal" href="laplace.html#example-steps-shift"><span class="std std-ref">previous example</span></a> we showed that the inverse transform of this is</p>
 <div class="math notranslate nohighlight">
 \[x(t) = H(t-T)e^{a(t-T)}.\]</div>
 </div>
+</details></div>
 <div class="section" id="transfer-function">
 <h2><span class="section-number">5.1. </span>Transfer function<a class="headerlink" href="#transfer-function" title="Permalink to this headline">¶</a></h2>
 <p>Perhaps it’s clear by now that</p>
