@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>2. Unit step functions &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -534,8 +534,8 @@ x(t)=x_h(t)+k_1 x_1(t) + \cdots +k_m x_m(t)$.
 <p>The solution of <a class="reference internal" href="#equation-steps-pwc-forcing">(2.3)</a> is</p>
 <div class="math notranslate nohighlight" id="equation-steps-pwc-solution">
 <span class="eqno">(2.4)<a class="headerlink" href="#equation-steps-pwc-solution" title="Permalink to this equation">¶</a></span>\[x(t) = e^{a t}x_0 + \frac{1}{a} \sum_{j=1}^m H(t-T_j)\cdot \bigl(e^{a(t-T_j)} - 1\bigr).\]</div>
-</div></div><div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+</div></div><div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Solve <span class="math notranslate nohighlight">\(x'-\frac{1}{10}x=w(t)\)</span>, <span class="math notranslate nohighlight">\(x(0)=-2\)</span>, where <span class="math notranslate nohighlight">\(w(t)\)</span> is a window function that is 5 for <span class="math notranslate nohighlight">\(3 &lt; t \le 6\)</span> and zero elsewhere.</p>
 </div></blockquote>
@@ -553,8 +553,8 @@ x(t)=x_h(t)+k_1 x_1(t) + \cdots +k_m x_m(t)$.
 -2e^{t/10} + 50(e^{(t-3)/10}-e^{(t-6)/10}), &amp; 5 \le t.
 \end{cases}\end{split}\]</div>
 </div>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Let the serum drug concentration in a patient be <span class="math notranslate nohighlight">\(x(t)\)</span>. Suppose this is initially zero when an IV is given at a constant rate of 12 units per hour for 30 minutes. An IVP that models this case is</p>
 </div></blockquote>
@@ -645,7 +645,7 @@ x_2(t) &amp; = \frac{1}{r} H(t-0.5) \bigl(1 - e^{-r(t-0.5)}\bigr).
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

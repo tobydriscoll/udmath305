@@ -71,7 +71,8 @@ $$
 
 Here is an example to get us started.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find a particular solution of $x''-x=e^{-4 t}$.
 
 Transforming both sides of the ODE leads directly to
@@ -167,7 +168,8 @@ X_p(s) = \frac{F(s)}{s^2+bs+c}.
 
 The eigenvalues of the ODE are therefore poles of $X_p$, and the forcing function contributes one or more of its own poles.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find a particular solution of $x''+9x = 15\sin(2t)$.
 
 Taking the transform and solving for $X$ gives
@@ -216,7 +218,8 @@ $$
 The first term on the right side leads to a combination of $\cos(2t)$ and $\sin(2t)$, while the second leads to a combination of $\cos(3t)$ and $\sin(3t)$. Since $\cos(3t)$ and $\sin(3t)$ form a basis of the homogeneous solution, we can leave them out of the inverse transform and still get a particular solution, $3\sin(2t)$. We still have to keep the second term around in order to set up correct equations for $A,B,C,D$; we just don't need to solve for $C$ and $D$ or include their corresponding terms in $x_p$. This can save a lot of algebra, though it basically returns us to the method of undetermined coefficients.
 
 
-<!-- ::::{admonition,dropdown,tip} Example
+<!-- ::::{admonition} Example
+:class: dropdown,tip
 > Find a particular solution of $x''+2x'+10x=1$.
 
 Solving for the transform of the solution gives
@@ -255,7 +258,8 @@ $$
 e^{at} f(t) \Longleftrightarrow F(s-a).
 $$
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find a particular solution of $x''-4x=24e^{-t}\cos(2t)$.
 
 The forcing function is $e^{-t}f(t)$, where $f(t)=24\cos(2t)$. Hence its transform is $F(s+1)$, where $F(s)=24s/(s^2+4)$. The result is

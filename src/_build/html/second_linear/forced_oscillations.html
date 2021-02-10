@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>8. Forced oscillations &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -557,7 +557,7 @@ g(\rho) = \frac{1}{\omega_0 \bigl[ (1-\rho^2)^2 + 4\rho^2 Z^2 ]^{1/2}}.
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;driving frequency&#39;</span><span class="p">)</span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;damping coefficient&#39;</span><span class="p">)</span>
 <span class="n">zlabel</span><span class="p">(</span><span class="s">&#39;log_{10}(gain)&#39;</span><span class="p">)</span>
-<span class="n">hold</span> <span class="s">on</span>
+<span class="n">hold </span><span class="s">on</span><span class="p"></span>
 <span class="n">Z</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mf">1e-3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">300</span><span class="p">);</span>
 <span class="n">rhomax</span> <span class="p">=</span> <span class="nb">real</span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">Z</span><span class="o">.^</span><span class="mi">2</span><span class="p">));</span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">rhomax</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span><span class="mf">1e-2</span><span class="o">+</span><span class="n">log_g</span><span class="p">(</span><span class="n">rhomax</span><span class="p">,</span><span class="n">Z</span><span class="p">),</span><span class="s">&#39;w&#39;</span><span class="p">,</span><span class="s">&#39;linew&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
@@ -624,7 +624,7 @@ g(\rho) = \frac{1}{\omega_0 \bigl[ (1-\rho^2)^2 + 4\rho^2 Z^2 ]^{1/2}}.
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

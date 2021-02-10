@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>2. Solutions to 2nd-order ODEs &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -511,8 +511,8 @@
 <div class="section" id="solving-2nd-order-odes">
 <h2><span class="section-number">2.1. </span>Solving 2nd-order ODEs<a class="headerlink" href="#solving-2nd-order-odes" title="Permalink to this headline">¶</a></h2>
 <p>Here is an example to get us started.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Find a particular solution of <span class="math notranslate nohighlight">\(x''-x=e^{-4 t}\)</span>.</p>
 </div></blockquote>
@@ -595,8 +595,8 @@ X(s) = \frac{F(s)}{(s-z)^k}
 <div class="math notranslate nohighlight">
 \[X_p(s) = \frac{F(s)}{s^2+bs+c}.\]</div>
 <p>The eigenvalues of the ODE are therefore poles of <span class="math notranslate nohighlight">\(X_p\)</span>, and the forcing function contributes one or more of its own poles.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Find a particular solution of <span class="math notranslate nohighlight">\(x''+9x = 15\sin(2t)\)</span>.</p>
 </div></blockquote>
@@ -637,7 +637,8 @@ x_p(t) = 3\sin(2t) - 2\sin(3t).
 \frac{30}{s^2(s^2+9)} = \frac{As+B}{s^2+4} + \frac{Cs+D}{s^2+9}.
 \]</div>
 <p>The first term on the right side leads to a combination of <span class="math notranslate nohighlight">\(\cos(2t)\)</span> and <span class="math notranslate nohighlight">\(\sin(2t)\)</span>, while the second leads to a combination of <span class="math notranslate nohighlight">\(\cos(3t)\)</span> and <span class="math notranslate nohighlight">\(\sin(3t)\)</span>. Since <span class="math notranslate nohighlight">\(\cos(3t)\)</span> and <span class="math notranslate nohighlight">\(\sin(3t)\)</span> form a basis of the homogeneous solution, we can leave them out of the inverse transform and still get a particular solution, <span class="math notranslate nohighlight">\(3\sin(2t)\)</span>. We still have to keep the second term around in order to set up correct equations for <span class="math notranslate nohighlight">\(A,B,C,D\)</span>; we just don’t need to solve for <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(D\)</span> or include their corresponding terms in <span class="math notranslate nohighlight">\(x_p\)</span>. This can save a lot of algebra, though it basically returns us to the method of undetermined coefficients.</p>
-<!-- ::::{admonition,dropdown,tip} Example
+<!-- ::::{admonition} Example
+:class: dropdown,tip
 > Find a particular solution of $x''+2x'+10x=1$.
 
 Solving for the transform of the solution gives
@@ -675,7 +676,8 @@ $$
 e^{at} f(t) \Longleftrightarrow F(s-a).
 $$
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find a particular solution of $x''-4x=24e^{-t}\cos(2t)$.
 
 The forcing function is $e^{-t}f(t)$, where $f(t)=24\cos(2t)$. Hence its transform is $F(s+1)$, where $F(s)=24s/(s^2+4)$. The result is
@@ -786,7 +788,7 @@ We choose $s=0$ and get $A=1/10$.
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

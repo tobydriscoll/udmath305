@@ -20,7 +20,8 @@ This is an optional section.
 
 There's a well-known alternate way to derive the general solution of $\opA[x]=f$. We lead with an example.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Consider $x'=4x+8t$, which we rewrite as $x'-4x=8t$. We multiply both sides of this equation by $e^{-4t}$ to get
 
 $$

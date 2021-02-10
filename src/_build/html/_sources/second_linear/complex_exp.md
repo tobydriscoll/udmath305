@@ -98,7 +98,8 @@ z = |z| e^{i\theta}.
 
 We call {eq}`secondlin-polar` the {term}`polar form` of a complex number, because it expresses $z$ as a distance from zero and an angle from the positive Re axis. Just as with any point in the plane, we can express a complex number either in Cartesian form using Re and Im parts, or in polar form using modulus and Euler's identity.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 Suppose $r$ is a positive real number. Then $-r$ lies at a distance $r$ from the origin along the negative real axis. Hence
 
 $$
@@ -206,7 +207,8 @@ set(gca,'dataaspect',[6,1,1])
 
 Now we can finish the story of computing solutions to homogeneous ODEs.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Solve the IVP $x''+9x=0$, $x(0)=2$, $x'(0)=-12$.
 
 The characteristic polynomial is $s^2+9$, giving the eigenvalues $\pm 3i$. Hence the general solution is $x_h(t) = c_1e^{3it} + c_2e^{-3it}$.
@@ -254,7 +256,8 @@ $$
 where $\tilde{c}_1,\tilde{c}_2$ are real constants.
 ````
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 In the preceding example, the eigenvalues were $0 \pm 3i$. Thus another expression for the general solution is
 
 $$

@@ -81,7 +81,8 @@ We'll state the identity's key property now.
 If $\bfA$ is $m\times n$, then $\bfA = \meye_m \bfA = \bfA \meye_n$.
 ````
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 
 Compute
 
@@ -94,7 +95,7 @@ $$
 \end{bmatrix}.
 $$
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 You can grind through the definition, of course, but there is a shortcut:
 
 $$
@@ -144,13 +145,14 @@ There are some facts about inverses that we will take for granted without justif
 2. If either $\mathbf{Z}\bfA = \meye$ or $\bfA\mathbf{Z}=\meye$ is true, then both are true and $\mathbf{Z}=\bfA^{-1}$.
 ````
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 The matrix $\mathbf{R}(\theta) = \begin{bmatrix}
 \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) 
 \end{bmatrix}$
 performs rotation in the plane around the origin by angle $\theta$. Show that $\mathbf{R}(-\theta)$ is the inverse of $\mathbf{R}(\theta)$.
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 All we need to do is to check that the product (in either order) is the identity matrix:
 
 \begin{align*}
@@ -210,7 +212,8 @@ Beyond $2\times 2$ we won't worry about computing inverses; row elimination is a
 
 A matrix of all zeros can't have an inverse, because $\bfzero\bfA$ is zero for all matrices $\bfA$. That conclusion extends what we know about a scalar $a$. Unlike the scalar case, though, there are other matrices that have no inverse.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 
 Show that
 
@@ -220,7 +223,7 @@ $$
 
 has no inverse.
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 
 Suppose that $\mathbf{Z}$ is the inverse of $\bfA$, Then it would have to follow that
 

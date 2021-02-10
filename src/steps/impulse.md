@@ -138,7 +138,8 @@ Finally, $x(t)=x_h(t)+x_p(t)$.
 
 It's awkward to write out all the pieces as one big formula, so it's better to think about using the process.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Solve $x'+5x=3\delta(t-2)$, with $x(0)=1$.
 
 The homogeneous solution is $x_h(t)=e^{-5t}$. For the particular part we have

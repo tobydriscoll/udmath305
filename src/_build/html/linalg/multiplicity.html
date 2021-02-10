@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>14. Multiplicity &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -458,19 +458,24 @@
 <h2><span class="section-number">14.1. </span>Geometric multiplicity<a class="headerlink" href="#geometric-multiplicity" title="Permalink to this headline">¶</a></h2>
 <p>The following example illustrates a possibility unique to eigenvalues of algebraic multiplicity greater than 1.</p>
 <div class="tip admonition" id="example-linalg-defective">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Find the eigenspaces of <span class="math notranslate nohighlight">\(\bfA=\twomat{4}{1}{0}{4}\)</span>.</p>
-<div class="note dropdown solution admonition">
-<p class="admonition-title"></p>
-<p>The characteristic polynomial is</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The characteristic polynomial is</p>
 <div class="math notranslate nohighlight">
 \[\twodet{4-\lambda}{1}{0}{4-\lambda} = (4-\lambda)^2,\]</div>
-<p>so the double root <span class="math notranslate nohighlight">\(\lambda_1=4\)</span> is the only eigenvalue. Since</p>
+<p class="card-text">so the double root <span class="math notranslate nohighlight">\(\lambda_1=4\)</span> is the only eigenvalue. Since</p>
 <div class="math notranslate nohighlight">
 \[\bfA - 4\meye = \twomat{0}{1}{0}{0},\]</div>
-<p>the eigenspace has basis <span class="math notranslate nohighlight">\(\twovec{1}{0}\)</span>.</p>
+<p class="card-text">the eigenspace has basis <span class="math notranslate nohighlight">\(\twovec{1}{0}\)</span>.</p>
 </div>
-</div>
+</details></div>
 <p>This leads us to define a second notion of multiplicity for an eigenvalue.</p>
 <div class="proof proof-type-definition" id="id3">
 <span id="definition-linalg-geomult"></span>
@@ -494,7 +499,7 @@
 <h2><span class="section-number">14.2. </span>Defectiveness<a class="headerlink" href="#defectiveness" title="Permalink to this headline">¶</a></h2>
 <p>In the <a class="reference internal" href="#example-linalg-defective"><span class="std std-ref">above example</span></a> we found a lone eigenvalue <span class="math notranslate nohighlight">\(\lambda_1=4\)</span> of algebraic multiplicity 2 whose geometric multiplicity, we now see, is 1. The identity matrix is a different sort of example.</p>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>The <span class="math notranslate nohighlight">\(2\times 2\)</span> identity matrix <span class="math notranslate nohighlight">\(\meye\)</span> has a lone eigenvalue <span class="math notranslate nohighlight">\(\lambda_1=1\)</span> of algebraic multiplicity 2. The system <span class="math notranslate nohighlight">\((\meye - \meye)\bfv=\bfzero\)</span> has an RREF that is the zero matrix, so there are two free variables and two basis vectors. Hence the geometric multiplicity of <span class="math notranslate nohighlight">\(\lambda_1\)</span> is also 2.</p>
 </div>
 <p>The distinction between these cases is significant enough to warrant yet another definition and name.</p>
@@ -579,7 +584,7 @@
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

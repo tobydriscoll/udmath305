@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>4. Complex exponentials &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -465,7 +465,7 @@
 <p>“Euler” is a German name, and as such, it rhymes with “boiler,” not “Bueller.”</p>
 </div>
 <div class="dropdown tip admonition">
-<p class="admonition-title"> Explanation</p>
+<p class="admonition-title">Explanation</p>
 <p>Consider the first-order IVP <span class="math notranslate nohighlight">\(w'=i w\)</span>, <span class="math notranslate nohighlight">\(w(0)=1\)</span>, where <span class="math notranslate nohighlight">\(i^2=-1\)</span>. Assume that the solution <span class="math notranslate nohighlight">\(w(t)=e^{it}\)</span> takes on complex values at all times. We can write it in real and imaginary parts as <span class="math notranslate nohighlight">\(w(t) = u(t) + iv(t)\)</span>. Then the ODE becomes</p>
 <div class="math notranslate nohighlight">
 \[
@@ -500,7 +500,7 @@ u' = -v, \quad v' = u,
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="p">=</span> <span class="p">@(</span><span class="n">t</span><span class="p">)</span> <span class="nb">real</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">t</span><span class="p">));</span>
 <span class="n">s</span> <span class="p">=</span> <span class="p">@(</span><span class="n">t</span><span class="p">)</span> <span class="nb">imag</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">t</span><span class="p">));</span>
 <span class="n">fplot</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">])</span>
-<span class="n">axis</span> <span class="s">equal,</span> <span class="s">axis(1.05*[-1</span> <span class="s">1</span> <span class="s">-1</span> <span class="s">1])</span>
+<span class="n">axis </span><span class="s">equal, axis(1.05*[-1 1 -1 1])</span><span class="p"></span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Re z&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Im z&#39;</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s">&#39;Complex exponential = Unit circle&#39;</span><span class="p">)</span>
 </pre></div>
@@ -521,8 +521,8 @@ z = |z|\cdot \frac{z}{|z|},
 <div class="math notranslate nohighlight" id="equation-secondlin-polar">
 <span class="eqno">(4.9)<a class="headerlink" href="#equation-secondlin-polar" title="Permalink to this equation">¶</a></span>\[z = |z| e^{i\theta}.\]</div>
 <p>We call <a class="reference internal" href="#equation-secondlin-polar">(4.9)</a> the <a class="reference internal" href="overview.html#term-polar-form"><span class="xref std std-term">polar form</span></a> of a complex number, because it expresses <span class="math notranslate nohighlight">\(z\)</span> as a distance from zero and an angle from the positive Re axis. Just as with any point in the plane, we can express a complex number either in Cartesian form using Re and Im parts, or in polar form using modulus and Euler’s identity.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <p>Suppose <span class="math notranslate nohighlight">\(r\)</span> is a positive real number. Then <span class="math notranslate nohighlight">\(-r\)</span> lies at a distance <span class="math notranslate nohighlight">\(r\)</span> from the origin along the negative real axis. Hence</p>
 <div class="math notranslate nohighlight">
 \[
@@ -560,13 +560,13 @@ z = |z|\cdot \frac{z}{|z|},
 <span class="n">f</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">((</span><span class="n">a</span><span class="o">+</span>1<span class="nb">i</span><span class="o">*</span><span class="n">om</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
 
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
-<span class="n">hold</span> <span class="s">on</span>
+<span class="n">hold </span><span class="s">on</span><span class="p"></span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mf">1.5</span><span class="p">)</span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
 <span class="n">plot3</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">30</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">axis</span><span class="p">([</span><span class="mi">0</span> <span class="mi">30</span> <span class="o">-</span><span class="mi">2</span>  <span class="mi">2</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">2</span><span class="p">])</span>
 <span class="n">title</span><span class="p">(</span><span class="n">sprintf</span><span class="p">(</span><span class="s">&#39;a = %.2f, \\omega = %.2f&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">om</span><span class="p">))</span>
-<span class="n">grid</span> <span class="s">on,</span> <span class="s">xlabel(&#39;Time&#39;)</span>
+<span class="n">grid </span><span class="s">on, xlabel(&#39;Time&#39;)</span><span class="p"></span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Re part&#39;</span><span class="p">)</span>
 <span class="n">zlabel</span><span class="p">(</span><span class="s">&#39;Im part&#39;</span><span class="p">)</span>
 <span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="s">&#39;dataaspect&#39;</span><span class="p">,[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
@@ -588,13 +588,13 @@ z = |z|\cdot \frac{z}{|z|},
 <span class="n">f</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">((</span><span class="n">a</span><span class="o">+</span>1<span class="nb">i</span><span class="o">*</span><span class="n">om</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
 
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
-<span class="n">hold</span> <span class="s">on</span>
+<span class="n">hold </span><span class="s">on</span><span class="p"></span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mf">1.5</span><span class="p">)</span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
 <span class="n">plot3</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">30</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">axis</span><span class="p">([</span><span class="mi">0</span> <span class="mi">30</span> <span class="o">-</span><span class="mi">2</span>  <span class="mi">2</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">2</span><span class="p">])</span>
 <span class="n">title</span><span class="p">(</span><span class="n">sprintf</span><span class="p">(</span><span class="s">&#39;a = 0, \\omega = %.1f&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">om</span><span class="p">))</span>
-<span class="n">grid</span> <span class="s">on,</span> <span class="s">xlabel(&#39;Time&#39;)</span>
+<span class="n">grid </span><span class="s">on, xlabel(&#39;Time&#39;)</span><span class="p"></span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Re part&#39;</span><span class="p">)</span>
 <span class="n">zlabel</span><span class="p">(</span><span class="s">&#39;Im part&#39;</span><span class="p">)</span>
 <span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="s">&#39;dataaspect&#39;</span><span class="p">,[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
@@ -616,13 +616,13 @@ z = |z|\cdot \frac{z}{|z|},
 <span class="n">f</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">((</span><span class="n">a</span><span class="o">+</span>1<span class="nb">i</span><span class="o">*</span><span class="n">om</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
 
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
-<span class="n">hold</span> <span class="s">on</span>
+<span class="n">hold </span><span class="s">on</span><span class="p"></span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="mf">1.5</span><span class="p">)</span>
 <span class="n">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
 <span class="n">plot3</span><span class="p">(</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">30</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">axis</span><span class="p">([</span><span class="mi">0</span> <span class="mi">30</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">2</span> <span class="o">-</span><span class="mi">2</span> <span class="mi">2</span><span class="p">])</span>
 <span class="n">title</span><span class="p">(</span><span class="n">sprintf</span><span class="p">(</span><span class="s">&#39;a = %.2f, \\omega = %.1f&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">om</span><span class="p">))</span>
-<span class="n">grid</span> <span class="s">on,</span> <span class="s">xlabel(&#39;Time&#39;)</span>
+<span class="n">grid </span><span class="s">on, xlabel(&#39;Time&#39;)</span><span class="p"></span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Re part&#39;</span><span class="p">)</span>
 <span class="n">zlabel</span><span class="p">(</span><span class="s">&#39;Im part&#39;</span><span class="p">)</span>
 <span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="s">&#39;dataaspect&#39;</span><span class="p">,[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
@@ -638,8 +638,8 @@ z = |z|\cdot \frac{z}{|z|},
 <div class="section" id="homogeneous-solutions">
 <h2><span class="section-number">4.3. </span>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h2>
 <p>Now we can finish the story of computing solutions to homogeneous ODEs.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Solve the IVP <span class="math notranslate nohighlight">\(x''+9x=0\)</span>, <span class="math notranslate nohighlight">\(x(0)=2\)</span>, <span class="math notranslate nohighlight">\(x'(0)=-12\)</span>.</p>
 </div></blockquote>
@@ -682,8 +682,8 @@ x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t},
 x_h(t) = e^{at} \bigl[ \tilde{c}_1 \cos(\omega t) + \tilde{c}_2 \sin(\omega t) \bigr],
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\tilde{c}_1,\tilde{c}_2\)</span> are real constants.</p>
-</div></div><div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+</div></div><div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <p>In the preceding example, the eigenvalues were <span class="math notranslate nohighlight">\(0 \pm 3i\)</span>. Thus another expression for the general solution is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -750,7 +750,7 @@ x_h(t) = c_1\cos(3t) + c_2\sin(3t).
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

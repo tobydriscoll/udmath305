@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>3. Steps and impulses (2nd order) &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -467,8 +467,8 @@ x(t) = \begin{cases} 0, &amp; 0\le t &lt; T, \\ \sin(t-T), &amp; t \ge T. \end{c
         
     </div><div class="proof-content">
 <p>In a second-order linear ODE, the effect of a unit impulse is the same as an instantaneous increase by 1 in the derivative of the solution.</p>
-</div></div><div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+</div></div><div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Find the solution of <span class="math notranslate nohighlight">\(x''+2x'+10x=6\delta(t-5)\)</span>, <span class="math notranslate nohighlight">\(x(0)=x'(0)=0\)</span>.</p>
 </div></blockquote>
@@ -531,8 +531,8 @@ x(t) = H(t-T)y(t-T) = H(t-T)[1 - \cos(t-T)] =
 \begin{cases} 0, &amp; 0 \le t &lt; T, \\ 1-\cos(t-T), &amp; t\ge T. \end{cases}
 \end{split}\]</div>
 <p>It only takes a moment to see that both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x'\)</span> are continuous at <span class="math notranslate nohighlight">\(t=T\)</span>, which is the general situation with step forcing.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Find a particular solution of <span class="math notranslate nohighlight">\(x''-x=f(t)\)</span>, where <span class="math notranslate nohighlight">\(f(t) = \begin{cases} 0, &amp; 0 \le t &lt; 3, \\ t, &amp; t\ge 4. \end{cases}\)</span></p>
 </div></blockquote>
@@ -626,7 +626,7 @@ Y(s) = \frac{-3}{s} + \frac{-1}{s^2} + \frac{2}{s-1} + \frac{1}{s+1},
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

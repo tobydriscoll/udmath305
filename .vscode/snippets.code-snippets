@@ -19,7 +19,8 @@
 		"scope": "markdown",
 		"prefix": ":exa",
 		"body": [
-		"::::{admonition,dropdown,tip} Example",
+		"::::{admonition} Example",
+		":class: dropdown,tip",
 		"$0",
 		"::::"
 		],
@@ -29,9 +30,11 @@
 		"scope": "markdown",
 		"prefix": ":exs",
 		"body": [
-		"::::{admonition,tip} Example",
+		"::::{admonition} Example",
+		":class: tip",
 		"$0",
-		":::{admonition,dropdown,note,solution}",
+		":::{admonition} Solution",
+		":class: note,dropdown,solution",
 		"",
 		":::",
 		"::::"

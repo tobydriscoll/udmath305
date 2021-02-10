@@ -22,7 +22,8 @@ For the rest of this part of the text, time starts at $t=0$, and any reference t
 A common convention is that a lowercase function of $t$ transforms to its uppercase namesake as a function of $s$. You should assume this unless told otherwise.
 ```
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 
 > Use the definition of the Laplace transform to find $\lx[t]$. (Assume that $s$ is constrained in any way needed to make the integral converge.)
 
@@ -49,7 +50,8 @@ The Laplace transform is a linear operator. That is,
 where $c$ is any constant.
 ````
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find the Laplace transform of the function $\sinh(t)$.
 
 This is easy if we use linearity on the identity
@@ -85,7 +87,8 @@ $$
 $$
 ````
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find the Laplace transform of the second derivative of a function: $\lx[x''(t)]$.
 
 It's possible to do this by applying the integral definition of the Laplace transform. However, it's a lot easier to do by twice applying the known transform formula of the first derivative. Suppose we let $u(t)=x'(t)$. Then
@@ -178,7 +181,8 @@ A generalization of the same calculation results in a very important rule.
 
 (example-steps-shift)=
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find the inverse transform of
 
 $$

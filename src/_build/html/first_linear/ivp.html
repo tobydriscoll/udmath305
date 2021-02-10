@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>3. Initial-value problems &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -442,7 +442,7 @@ x(t_0) = x_0,
 </div></div><p>In this case the constraint <span class="math notranslate nohighlight">\(x(t_0)=x_0\)</span> is called an <a class="reference internal" href="overview.html#term-initial-condition"><span class="xref std std-term">initial condition</span></a>, and it’s typically implied that the problem is to be solved for <span class="math notranslate nohighlight">\(t&gt;t_0\)</span>.</p>
 <p>A solution of an IVP has to satisfy both the ODE and the initial condition. This is enough to specify the solution uniquely.</p>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>In the previous section we said that the general solution of <span class="math notranslate nohighlight">\(x'=ax\)</span> is <span class="math notranslate nohighlight">\(x(t)=Ce^{at}\)</span>. If we are supplied with the initial value <span class="math notranslate nohighlight">\(x(2)=5\)</span>, then we require</p>
 <div class="math notranslate nohighlight">
 \[
@@ -457,10 +457,10 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 <p>A graphical interpretation of the role of an initial condition is that the general solution is a family of curves in the <span class="math notranslate nohighlight">\((t,x)\)</span> plane, and the initial condition is a point that the particular solution of interest must pass through.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="mf">1.25</span><span class="p">;</span>
-<span class="n">for</span> <span class="s">C</span> <span class="s">=</span> <span class="s">[-1</span> <span class="s">-0.67</span> <span class="s">-0.33</span> <span class="s">0</span> <span class="s">0.33</span> <span class="s">0.67</span> <span class="s">1]</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="mf">1.25</span><span class="p">;</span><span class="n"></span>
+<span class="n">for </span><span class="s">C = [-1 -0.67 -0.33 0 0.33 0.67 1]</span><span class="p"></span>
     <span class="n">fplot</span><span class="p">(@(</span><span class="n">t</span><span class="p">)</span> <span class="n">C</span><span class="o">*</span><span class="nb">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="p">),[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
-    <span class="n">hold</span> <span class="s">on</span>
+<span class="n">    hold </span><span class="s">on</span><span class="p"></span>
 <span class="k">end</span>
 
 <span class="n">plot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s">&#39;k.&#39;</span><span class="p">,</span><span class="s">&#39;markersize&#39;</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
@@ -482,9 +482,9 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="p">=</span> <span class="p">@(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
 <span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">300</span><span class="p">);</span>
-<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="n">ode45</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="n">ode45</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span><span class="n"></span>
 <span class="n">clf</span>
-<span class="s">plot(t,x)</span>
+<span class="s">plot(t,x)</span><span class="p"></span>
 <span class="n">title</span><span class="p">(</span><span class="s">&#39;Constant growth rate&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
 </pre></div>
@@ -512,9 +512,9 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="p">=</span> <span class="p">@(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
 <span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">300</span><span class="p">);</span>
-<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="n">ode45</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="n">ode45</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="n"></span>
 <span class="n">clf</span>
-<span class="s">semilogy(t,x)</span>
+<span class="s">semilogy(t,x)</span><span class="p"></span>
 <span class="n">title</span><span class="p">(</span><span class="s">&#39;Growing growth rate&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">),</span> <span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
 </pre></div>
@@ -597,7 +597,7 @@ x(t) = 5e^{-2a}\cdot e^{at} = 5e^{a(t-2)}.
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

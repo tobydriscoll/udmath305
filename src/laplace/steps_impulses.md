@@ -48,7 +48,8 @@ Since the system starts at rest, it remains at rest until the impulse at time $T
 In a second-order linear ODE, the effect of a unit impulse is the same as an instantaneous increase by 1 in the derivative of the solution.
 ```
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find the solution of $x''+2x'+10x=6\delta(t-5)$, $x(0)=x'(0)=0$.
 
 Solving for the transform leads to
@@ -123,7 +124,8 @@ $$
 
 It only takes a moment to see that both $x$ and $x'$ are continuous at $t=T$, which is the general situation with step forcing.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find a particular solution of $x''-x=f(t)$, where $f(t) = \begin{cases} 0, & 0 \le t < 3, \\ t, & t\ge 4. \end{cases}$
 
 The forcing function is $f(t)=tH(t-3)$. This is not yet quite in a form we know how to transform. What we need is

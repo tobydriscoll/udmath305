@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>4. Convolution &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -92,7 +92,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -139,7 +139,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -453,10 +453,10 @@
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="s">&#39;-ko&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">4</span><span class="p">:</span><span class="mi">31</span>
-    <span class="n">z</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="n">z</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span><span class="n"></span>
 <span class="n">end</span>
-<span class="s">z(1:3)</span> <span class="s">=</span> <span class="s">NaN</span><span class="p">;</span>  <span class="c">% not a number</span>
-<span class="n">hold</span> <span class="s">on</span>
+<span class="s">z(1:3) = NaN</span><span class="p">;</span>  <span class="c">% not a number</span>
+<span class="n">hold </span><span class="s">on</span><span class="p"></span>
 <span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -469,12 +469,12 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="s">&#39;-ko&#39;</span><span class="p">)</span>
-<span class="n">w</span> <span class="p">=</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">];</span>
-<span class="n">for</span> <span class="s">i</span> <span class="s">=</span> <span class="s">4:31</span>
-    <span class="n">z</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="n">w</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span> <span class="o">/</span> <span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+<span class="n">w</span> <span class="p">=</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">];</span><span class="n"></span>
+<span class="n">for </span><span class="s">i = 4:31</span><span class="p"></span>
+    <span class="n">z</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="n">w</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span> <span class="o">/</span> <span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">);</span><span class="n"></span>
 <span class="n">end</span>
-<span class="s">z(1:3)</span> <span class="s">=</span> <span class="s">NaN</span><span class="p">;</span>  <span class="c">% not a number</span>
-<span class="n">hold</span> <span class="s">on</span>
+<span class="s">z(1:3) = NaN</span><span class="p">;</span>  <span class="c">% not a number</span>
+<span class="n">hold </span><span class="s">on</span><span class="p"></span>
 <span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -602,8 +602,8 @@ X(s) = \frac{F(s)}{s^2+b s+c} = F(s)G(s),
         
     </div><div class="proof-content">
 <p>The solution <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> with zero initial conditions is the convolution of <span class="math notranslate nohighlight">\(f\)</span> with the impulse response.</p>
-</div></div><div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+</div></div><div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Find the general solution of <span class="math notranslate nohighlight">\(x''+36x=\sin(t)\)</span>.</p>
 </div></blockquote>
@@ -673,7 +673,7 @@ x_p(t) &amp;= \frac{1}{6}\int_0^t \sin(6(t-\tau))\sin(\tau) \,d\tau \\
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>8. Undetermined coefficients &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -461,99 +461,114 @@
 </tbody>
 </table>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Find the general solution of <span class="math notranslate nohighlight">\(x'-4x=8t\)</span>.</p>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>The homogeneous solution of <span class="math notranslate nohighlight">\(x'-4x=0\)</span> is <span class="math notranslate nohighlight">\(x_h=c_1 e^{4t}\)</span>. The <a class="reference internal" href="#table-firstlin-muc"><span class="std std-ref">MUC table</span></a> suggests that we choose <span class="math notranslate nohighlight">\(x_p=B_1t + B_0\)</span>. Plugging this into the ODE yields</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The homogeneous solution of <span class="math notranslate nohighlight">\(x'-4x=0\)</span> is <span class="math notranslate nohighlight">\(x_h=c_1 e^{4t}\)</span>. The <a class="reference internal" href="#table-firstlin-muc"><span class="std std-ref">MUC table</span></a> suggests that we choose <span class="math notranslate nohighlight">\(x_p=B_1t + B_0\)</span>. Plugging this into the ODE yields</p>
 <div class="math notranslate nohighlight">
 \[
 (B_1) - 4(B_1t + B_0) = 8t.
 \]</div>
-<p>This must be an identity for all <span class="math notranslate nohighlight">\(t\)</span>. Equating coefficients of like powers of <span class="math notranslate nohighlight">\(t\)</span> on the two sides leads to the system</p>
+<p class="card-text">This must be an identity for all <span class="math notranslate nohighlight">\(t\)</span>. Equating coefficients of like powers of <span class="math notranslate nohighlight">\(t\)</span> on the two sides leads to the system</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 -4B_0 + B_1 &amp;= 0, \\ 
 -4B_1 &amp;= 8,
 \end{align*}\]</div>
-<p>whose solution is <span class="math notranslate nohighlight">\(B_1=-2\)</span>, <span class="math notranslate nohighlight">\(B_0=-1/2\)</span>. Hence the general solution is</p>
+<p class="card-text">whose solution is <span class="math notranslate nohighlight">\(B_1=-2\)</span>, <span class="math notranslate nohighlight">\(B_0=-1/2\)</span>. Hence the general solution is</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = x_h(t) + x_p(t) = c_1 e^{4t} - 2t -\frac{1}{2}.
 \]</div>
-<p>This is the third time we have derived this solution!</p>
+<p class="card-text">This is the third time we have derived this solution!</p>
 </div>
-</div>
+</details></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>As seen in the preceding example, the forcing function <span class="math notranslate nohighlight">\(f(t)=8t\)</span> caused us to introduce <span class="math notranslate nohighlight">\(x_p(t) = B_1t + B_0\)</span>. We cannot assume that the constant term in <span class="math notranslate nohighlight">\(x_p\)</span> is absent like it is in <span class="math notranslate nohighlight">\(f\)</span>, and indeed it is not in the final result.</p>
 </div>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Solve the IVP</p>
 <div class="math notranslate nohighlight">
 \[
 x' = x - 6 \sin(t), \quad x(\pi) = 0.
 \]</div>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>We quickly see that the general solution of <span class="math notranslate nohighlight">\(x'-x=0\)</span> is <span class="math notranslate nohighlight">\(x_h(t)=c_1e^t\)</span>. For the particular solution, <a class="reference internal" href="#table-firstlin-muc"><span class="std std-ref">MUC table</span></a> suggests</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We quickly see that the general solution of <span class="math notranslate nohighlight">\(x'-x=0\)</span> is <span class="math notranslate nohighlight">\(x_h(t)=c_1e^t\)</span>. For the particular solution, <a class="reference internal" href="#table-firstlin-muc"><span class="std std-ref">MUC table</span></a> suggests</p>
 <div class="math notranslate nohighlight">
 \[
 x_p(t) = A \cos(t) + B \sin(t).
 \]</div>
-<p>Substitution into the ODE leads to</p>
+<p class="card-text">Substitution into the ODE leads to</p>
 <div class="math notranslate nohighlight">
 \[
 (-A\sin(t) + B\cos(t)) - (A\cos(t) + B\sin(t)) = -6\sin(t).
 \]</div>
-<p>We could equate the coefficients of cos and sin to get a linear system. Or we can exploit the fact that this identity must be true at <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(t=\pi/2\)</span>. The latter course gives us</p>
+<p class="card-text">We could equate the coefficients of cos and sin to get a linear system. Or we can exploit the fact that this identity must be true at <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(t=\pi/2\)</span>. The latter course gives us</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 B - A &amp;= 0, \\ 
 -A - B &amp;= -6.
 \end{align*}\]</div>
-<p>This implies <span class="math notranslate nohighlight">\(A=B=3\)</span>, and therefore</p>
+<p class="card-text">This implies <span class="math notranslate nohighlight">\(A=B=3\)</span>, and therefore</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = c_1 e^t + 3\cos(t) + 3\sin(t).
 \]</div>
-<p>Finally, the initial condition yields</p>
+<p class="card-text">Finally, the initial condition yields</p>
 <div class="math notranslate nohighlight">
 \[
 0 = x(\pi) = c_1 e^\pi - 3 \quad \Rightarrow \quad c_1 = 3 e^{-\pi},
 \]</div>
-<p>hence</p>
+<p class="card-text">hence</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = 3 e^{t-\pi} + 3\cos(t) + 3\sin(t).
 \]</div>
 </div>
-</div>
+</details></div>
 <p>The benefit of the MUC over our previous methods is avoiding a second integral that often requires integration by parts when <span class="math notranslate nohighlight">\(f\)</span> is a polynomial or trig function.</p>
 <div class="section" id="additive-forcing-terms">
 <h2><span class="section-number">8.1. </span>Additive forcing terms<a class="headerlink" href="#additive-forcing-terms" title="Permalink to this headline">¶</a></h2>
 <p>If the forcing function includes multiple different types of functions added together, then you can find particular solutions for the different terms separately and add them together to get the overall particular solution.</p>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Find a particular solution of  <span class="math notranslate nohighlight">\(x'+3x=6t-4e^{-t}\)</span>.</p>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>We can separately find particular solutions for the cases <span class="math notranslate nohighlight">\(x'+3x=6t\)</span> and <span class="math notranslate nohighlight">\(x'+3x=-4e^{-t}\)</span>.</p>
-<p>In the first case we use <span class="math notranslate nohighlight">\(x_p(t) = B_1t + B_0\)</span>, and it works out that <span class="math notranslate nohighlight">\(B_1=2\)</span>, <span class="math notranslate nohighlight">\(B_0=-2/3\)</span>. For the second case we choose <span class="math notranslate nohighlight">\(x_p=A e^{-t}\)</span> and plug in:</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We can separately find particular solutions for the cases <span class="math notranslate nohighlight">\(x'+3x=6t\)</span> and <span class="math notranslate nohighlight">\(x'+3x=-4e^{-t}\)</span>.</p>
+<p class="card-text">In the first case we use <span class="math notranslate nohighlight">\(x_p(t) = B_1t + B_0\)</span>, and it works out that <span class="math notranslate nohighlight">\(B_1=2\)</span>, <span class="math notranslate nohighlight">\(B_0=-2/3\)</span>. For the second case we choose <span class="math notranslate nohighlight">\(x_p=A e^{-t}\)</span> and plug in:</p>
 <div class="math notranslate nohighlight">
 \[-4e^{-t} = x'+3x = -A e^{-t} + 3A e^{-t},\]</div>
-<p>which tells us that <span class="math notranslate nohighlight">\(A=-2\)</span>. Finally, a particular solution of the original equation is</p>
+<p class="card-text">which tells us that <span class="math notranslate nohighlight">\(A=-2\)</span>. Finally, a particular solution of the original equation is</p>
 <div class="math notranslate nohighlight">
 \[x_p(t) = 2t-\frac{2}{3}-2e^{-t}.\]</div>
 </div>
-</div>
+</details></div>
 </div>
 <div class="section" id="breakdown">
 <h2><span class="section-number">8.2. </span>Breakdown<a class="headerlink" href="#breakdown" title="Permalink to this headline">¶</a></h2>
 <p>The suggestions in the <a class="reference internal" href="#table-firstlin-muc"><span class="std std-ref">MUC table</span></a> can fail if the forcing function includes the homogeneous solution <span class="math notranslate nohighlight">\(e^{at}\)</span>.</p>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Consider <span class="math notranslate nohighlight">\(x'-ax=e^{at}\)</span>. We get <span class="math notranslate nohighlight">\(x_h=c_1e^{at}\)</span>, and the table suggests</p>
 <div class="math notranslate nohighlight">
 \[x_p = B_0 e^{at}.\]</div>
@@ -617,7 +632,7 @@ x(t) = 3 e^{t-\pi} + 3\cos(t) + 3\sin(t).
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

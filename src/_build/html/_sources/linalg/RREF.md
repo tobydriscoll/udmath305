@@ -173,7 +173,8 @@ The RREF of an augmented matrix represents a linear system that we can solve by 
 3. Otherwise, each variable associated with a free column is assigned to a free parameter (e.g., $s$, $t$, etc.).
 4. Use the pivot columns to solve for their corresponding variables in terms of the free parameters.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 A linear system has an augmented matrix equivalent to the RREF
 
 $$
@@ -187,7 +188,7 @@ $$
 
 Find all solutions to the linear system.
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 The last two rows have no information and can be ignored. Columns 2 and 4 are pivot columns. We give variables from the other columns arbitrary values, $x_1=s$ and $x_3=t$. The pivot variables are solved in terms of these to get $x_2=2-3t$ and $x_4=-4$. All solutions are expressed as the vector
 
 $$
@@ -198,7 +199,8 @@ $$
 :::
 ::::
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 A linear system has an augmented matrix equivalent to the RREF
 
 $$
@@ -212,7 +214,7 @@ $$
 
 Find all solutions to the linear system.
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 Look at the last row of the system. It expresses the equation $0=1$, which is impossible to satisfy. Thus the system is inconsistent.
 :::
 ::::

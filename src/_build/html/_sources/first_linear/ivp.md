@@ -50,7 +50,8 @@ In this case the constraint $x(t_0)=x_0$ is called an {term}`initial condition`,
 
 A solution of an IVP has to satisfy both the ODE and the initial condition. This is enough to specify the solution uniquely.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 In the previous section we said that the general solution of $x'=ax$ is $x(t)=Ce^{at}$. If we are supplied with the initial value $x(2)=5$, then we require
 
 $$

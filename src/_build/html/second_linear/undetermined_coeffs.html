@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>7. Undetermined coefficients &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -140,7 +140,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../linalg/matrix_matrix.html">
-   8. Matrix-matrix algebra
+   8. Matrix multiplication
   </a>
  </li>
  <li class="toctree-l1">
@@ -413,8 +413,8 @@
 <span class="eqno">(7.2)<a class="headerlink" href="#equation-secondlin-forced-ode" title="Permalink to this equation">¶</a></span>\[x'' + bx' + cx = f(t),\]</div>
 <p>where <span class="math notranslate nohighlight">\(f(t)\)</span> is a nonzero forcing function. The first step is to find the general homogeneous solution <span class="math notranslate nohighlight">\(x_h(t)\)</span>. To finish the problem we must find a particular solution <span class="math notranslate nohighlight">\(x_p(t)\)</span> in the forced case. The method of undetermined coefficients is the simplest strategy, when it is applicable: forcing in the form of a polynomial, exponential, or sin/cos.</p>
 <p>The procedure is the same as for first-order problems. Using <a class="reference internal" href="../first_linear/undetermined_coeffs.html#table-firstlin-muc"><span class="std std-ref">Particular solutions for the method of undetermined coefficients.</span></a>, we make an educated guess at <span class="math notranslate nohighlight">\(x_p\)</span> with some unknown coefficients that are determined through substitution into <a class="reference internal" href="#equation-secondlin-forced-ode">(7.2)</a>.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Find a particular solution of <span class="math notranslate nohighlight">\(x'' +4x'+4x=8t^2\)</span>.</p>
 </div></blockquote>
@@ -442,8 +442,8 @@ Let's try for $y'' -2y'-3y=10te^{4t}$. For much the same reasons as in the last 
 \end{align*}. From this, by matching powers, we deduce $B=2$ and then $5A+12=0$. So $y_p = [2t - (12/5)]e^{4t}$.
 
 </example-->
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Find a particular solution of <span class="math notranslate nohighlight">\(x'' - 2x'-3x=10e^{4t}\)</span>.</p>
 </div></blockquote>
@@ -458,8 +458,8 @@ Let's try for $y'' -2y'-3y=10te^{4t}$. For much the same reasons as in the last 
 \end{align*}\]</div>
 <p>From this it’s clear that <span class="math notranslate nohighlight">\(A=2\)</span>.</p>
 </div>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <blockquote>
 <div><p>Find the general solution of <span class="math notranslate nohighlight">\(x''+x'=\sin(2t)\)</span>.</p>
 </div></blockquote>
@@ -485,8 +485,8 @@ x(t) = c_1 + c_2 e^{-t} - \frac{1}{10}\cos(2t) - \frac{1}{5}\sin(2t).
 </div>
 <p>The examples above are the fundamental ones. There are rules for more intricate combinations of the same functions, but we won’t go into them here.</p>
 <p>We have to repeat the warning from the first time we saw this method: occasionally it fails, given our rules.</p>
-<div class="dropdown tip admonition" id="secondlin-example-nomuc">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition" id="secondlin-example-nomuc">
+<p class="admonition-title">Example</p>
 <p>The equation <span class="math notranslate nohighlight">\(x''+x=\cos(\omega t)\)</span> suggests the particular solution <span class="math notranslate nohighlight">\(x_p(t)=A\cos(\omega t)+B\sin(\omega t)\)</span>. Upon substitution,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -495,8 +495,8 @@ x(t) = c_1 + c_2 e^{-t} - \frac{1}{10}\cos(2t) - \frac{1}{5}\sin(2t).
 <p>which leads to the conclusion that <span class="math notranslate nohighlight">\(B=0\)</span> and, if <span class="math notranslate nohighlight">\(\omega^2 \neq 1\)</span>, <span class="math notranslate nohighlight">\(A=1/(1-\omega^2)\)</span>. However, if <span class="math notranslate nohighlight">\(\omega = 1\)</span>, the substitution would leave us with <span class="math notranslate nohighlight">\(0=\cos(t)\)</span>, which is impossible to satisfy for all <span class="math notranslate nohighlight">\(t\)</span>.</p>
 </div>
 <p>The failure of <a class="reference internal" href="#secondlin-example-nomuc"><span class="std std-ref">the example above</span></a> at <span class="math notranslate nohighlight">\(\omega = 1\)</span> was due to the fact that the <span class="math notranslate nohighlight">\(x_p\)</span> we picked is actually a homogeneous solution. There are additional rules to cover this case, but we will resort to alternatives instead.</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"> Example</p>
+<div class="dropdown-tip admonition">
+<p class="admonition-title">Example</p>
 <p>Here is one interesting workaround. Since the method works for all <span class="math notranslate nohighlight">\(\omega\neq 1\)</span>, we try taking a limiting value as <span class="math notranslate nohighlight">\(\omega\to 1\)</span>.</p>
 <p>That won’t work for the <span class="math notranslate nohighlight">\(x_p\)</span> above, but we can subtract a homogeneous solution and still have a particular solution:</p>
 <div class="math notranslate nohighlight">
@@ -564,7 +564,7 @@ x_p'' &amp; = \frac{1}{2}[\cos(t) + \cos(t) - t\sin(t)],
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

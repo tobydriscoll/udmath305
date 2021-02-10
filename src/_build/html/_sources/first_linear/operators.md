@@ -68,7 +68,8 @@ $$
 \opA[x]=f.
 $$
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 The equation
 
 $$

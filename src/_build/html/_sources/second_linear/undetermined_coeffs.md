@@ -25,7 +25,8 @@ where $f(t)$ is a nonzero forcing function. The first step is to find the genera
 
 The procedure is the same as for first-order problems. Using {ref}`table-firstlin-MUC`, we make an educated guess at $x_p$ with some unknown coefficients that are determined through substitution into {eq}`secondlin-forced-ode`.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find a particular solution of $x'' +4x'+4x=8t^2$. 
 
 The correct form of $x_p$ is a quadratic polynomial, i.e.,
@@ -58,7 +59,8 @@ Let's try for $y'' -2y'-3y=10te^{4t}$. For much the same reasons as in the last 
 
 </example-->
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find a particular solution of $x'' - 2x'-3x=10e^{4t}$. 
 
 The proper choice is
@@ -77,7 +79,8 @@ Everything else is algebra.
 From this it's clear that $A=2$.
 ::::
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find the general solution of $x''+x'=\sin(2t)$.
 
 The homogeneous problem $x''+x'=0$ has eigenvalues $0$ and $-1$, hence
@@ -116,7 +119,8 @@ The examples above are the fundamental ones. There are rules for more intricate 
 We have to repeat the warning from the first time we saw this method: occasionally it fails, given our rules.
 
 (secondlin-example-noMUC)=
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 
 The equation $x''+x=\cos(\omega t)$ suggests the particular solution $x_p(t)=A\cos(\omega t)+B\sin(\omega t)$. Upon substitution,
 
@@ -129,7 +133,8 @@ which leads to the conclusion that $B=0$ and, if $\omega^2 \neq 1$, $A=1/(1-\ome
 
 The failure of [the example above](secondlin-example-noMUC) at $\omega = 1$ was due to the fact that the $x_p$ we picked is actually a homogeneous solution. There are additional rules to cover this case, but we will resort to alternatives instead.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 Here is one interesting workaround. Since the method works for all $\omega\neq 1$, we try taking a limiting value as $\omega\to 1$.
 
 That won't work for the $x_p$ above, but we can subtract a homogeneous solution and still have a particular solution:

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>5. Homogeneous solutions &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -446,57 +446,69 @@ x'(t) = q'(t) e^{\,q(t)} = q'(t) x.
             <span class="proof-title-name">(Solution of <span class="math notranslate nohighlight">\(x'=a(t)x\)</span>)</span>
         
     </div><div class="proof-content">
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
 q(t) &amp;= \int a(t) \, dt, \\
 x(t) &amp;= \exp\bigl[q(t)\bigr].
-\end{align*}\]</div>
+\end{align*}
+\end{split}\]</div>
 </div></div><div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Solve <span class="math notranslate nohighlight">\(x'=\sin(t) x\)</span>.</p>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>We integrate <span class="math notranslate nohighlight">\(a(t)=\sin(t)\)</span> to get</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We integrate <span class="math notranslate nohighlight">\(a(t)=\sin(t)\)</span> to get</p>
 <div class="math notranslate nohighlight">
 \[
 q(t) = -\cos(t)+C.
 \]</div>
-<p>The general solution is thus <span class="math notranslate nohighlight">\(e^{\,q(t)}\)</span>, or</p>
+<p class="card-text">The general solution is thus <span class="math notranslate nohighlight">\(e^{\,q(t)}\)</span>, or</p>
 <div class="math notranslate nohighlight">
 \[x_h(t) = e^C \exp[ -\cos(t) ] = c_1 \exp[ -\cos(t) ].\]</div>
 </div>
-</div>
+</details></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>As seen in the preceding example, the integration constant pops up additively in <span class="math notranslate nohighlight">\(q\)</span> and then multiplicatively in <span class="math notranslate nohighlight">\(x\)</span>. You can ignore the integration constant until the end and then just tack it on; remember that by linearity, any constant multiple of a homogeneous solution is also a solution.</p>
 </div>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Solve the homogeneous IVP</p>
 <div class="math notranslate nohighlight">
 \[
 t x' = 2x, \quad x(2) = 12.
 \]</div>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>First we rewrite the ODE as</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">First we rewrite the ODE as</p>
 <div class="math notranslate nohighlight">
 \[
 x' = \frac{2x}{t},
 \]</div>
-<p>from which we see that <span class="math notranslate nohighlight">\(a(t)=2/t\)</span>. We first find the general solution by integration:</p>
+<p class="card-text">from which we see that <span class="math notranslate nohighlight">\(a(t)=2/t\)</span>. We first find the general solution by integration:</p>
 <div class="math notranslate nohighlight">
 \[
 x_h(t) = c_1 \exp\left[ \int 2t^{-1}\, dt \right] = c_1 \exp\bigl[2\ln(t)\bigr] = c_1 t^2.
 \]</div>
-<p>This is the general solution. To eliminate the integration constant, we apply the initial condition:</p>
+<p class="card-text">This is the general solution. To eliminate the integration constant, we apply the initial condition:</p>
 <div class="math notranslate nohighlight">
 \[
 12 = x_h(2) = c_1\cdot 2^2.
 \]</div>
-<p>Hence <span class="math notranslate nohighlight">\(x(t) = 3t^2\)</span>.</p>
+<p class="card-text">Hence <span class="math notranslate nohighlight">\(x(t) = 3t^2\)</span>.</p>
 </div>
-</div>
+</details></div>
 <div class="section" id="initial-value-formula">
 <h2><span class="section-number">5.1. </span>Initial-value formula<a class="headerlink" href="#initial-value-formula" title="Permalink to this headline">¶</a></h2>
 <p>We can take a shortcut in the case of a homogeneous IVP that avoids introducing an integration constant and then eliminating it. The trick is to use a definite integral to compute <span class="math notranslate nohighlight">\(q\)</span>, as in</p>
@@ -523,7 +535,7 @@ x_h(t)= c_1\exp\bigl[\tilde{q}(t)\bigr],
 x(t) = x_0 \exp\left[ \int_{t_0}^t a(s)\, ds \right].
 \]</div>
 </div></div><div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>We revisit the preceding example of</p>
 <div class="math notranslate nohighlight">
 \[
@@ -590,7 +602,7 @@ x(t) &amp;= 12 \exp\left[ \int_2^t 2s^{-1}\, ds \right] \\
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

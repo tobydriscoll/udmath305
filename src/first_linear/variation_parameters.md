@@ -51,9 +51,10 @@ The integration constants you would normally get from the indefinite integrals i
 
 (example-firstlin-nonhomog)=
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Solve $3x'=12x+24t$. 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 Rewriting the ODE as $x'-4x=8t$, we identify $a(t)=4$ and $f(t)=8t$. Then
 
 ```{math}
@@ -81,10 +82,11 @@ x(t) = x_h(t) + x_p(t) = c_1 e^{4t} - \frac{1}{2} (4t+1).
 :::
 ::::
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Find a particular solution of $x'=2t x + 6t$. 
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 We start with
 
 ```{math}
@@ -109,13 +111,14 @@ and the general solution is $x(t)=c_1 e^{t^2}-3$.
 ::::
 
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Solve the IVP
 
 $$
 (2+t) x'= x - 1, \quad x(0) = -5.
 $$
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 First we put the ODE into our standard form,
 
 ```{math}

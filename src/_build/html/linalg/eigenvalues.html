@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>13. Eigenvalues &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -466,7 +466,7 @@
 </div>
 <p>But there can be even more ambiguity than scalar multiples.</p>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Let <span class="math notranslate nohighlight">\(\meye\)</span> be an identity matrix. Then <span class="math notranslate nohighlight">\(\meye\bfx=\bfx\)</span> for any vector <span class="math notranslate nohighlight">\(\bfx\)</span>, so every nonzero vector is an eigenvector!</p>
 </div>
 <p>Fortunately we already have the tools we need to describe a more robust target, based on the very simple reformulation</p>
@@ -518,33 +518,38 @@
 <li><p>For each <span class="math notranslate nohighlight">\(\lambda_j\)</span>, find the general solution of <span class="math notranslate nohighlight">\((\bfA-\lambda_j\meye)\bfv=\bfzero\)</span>. This is the eigenspace associated with <span class="math notranslate nohighlight">\(\lambda_j\)</span>.</p></li>
 </ol>
 </div></div><div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Find the eigenvalues and eigenspaces of</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfA = \begin{bmatrix} 1 &amp; 1 \\ 4 &amp; 1 \end{bmatrix}.\end{split}\]</div>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
-<p>Start by computing the characteristic polynomial:</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Start by computing the characteristic polynomial:</p>
 <div class="math notranslate nohighlight">
 \[\det \left(\twomat{1}{1}{4}{1} - \twomat{\lambda}{0}{0}{\lambda} \right) = \twodet{1-\lambda}{1}{4}{1-\lambda} = (1-\lambda)^2 - 4 = \lambda^2-2\lambda-3.\]</div>
-<p>We find eigenvalues by finding its roots, in this case <span class="math notranslate nohighlight">\(\lambda_1=3\)</span> and <span class="math notranslate nohighlight">\(\lambda_2=-1\)</span>.</p>
-<p>For <span class="math notranslate nohighlight">\(\lambda_1=3\)</span>,</p>
+<p class="card-text">We find eigenvalues by finding its roots, in this case <span class="math notranslate nohighlight">\(\lambda_1=3\)</span> and <span class="math notranslate nohighlight">\(\lambda_2=-1\)</span>.</p>
+<p class="card-text">For <span class="math notranslate nohighlight">\(\lambda_1=3\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\bfA-3 \meye = \twomat{-2}{1}{4}{-2} \quad \overset{\text{RREF}}{\Longrightarrow} \quad \twomat{1}{-1/2}{0}{0}.\]</div>
-<p>The homogeneous solution can be expressed as <span class="math notranslate nohighlight">\(x_1=s/2\)</span>, <span class="math notranslate nohighlight">\(x_2=s\)</span>, or <span class="math notranslate nohighlight">\(\bfx=s\cdot[1/2;\,1]\)</span>. So <span class="math notranslate nohighlight">\([1/2;\,1]\)</span> is a basis for this eigenspace. Since eigenvectors can be rescaled at will, we prefer to use <span class="math notranslate nohighlight">\(\twovec{1}{2}\)</span> as the basis vector.</p>
-<p>For <span class="math notranslate nohighlight">\(\lambda_2=-1\)</span>,</p>
+<p class="card-text">The homogeneous solution can be expressed as <span class="math notranslate nohighlight">\(x_1=s/2\)</span>, <span class="math notranslate nohighlight">\(x_2=s\)</span>, or <span class="math notranslate nohighlight">\(\bfx=s\cdot[1/2;\,1]\)</span>. So <span class="math notranslate nohighlight">\([1/2;\,1]\)</span> is a basis for this eigenspace. Since eigenvectors can be rescaled at will, we prefer to use <span class="math notranslate nohighlight">\(\twovec{1}{2}\)</span> as the basis vector.</p>
+<p class="card-text">For <span class="math notranslate nohighlight">\(\lambda_2=-1\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\bfA+ \meye = \twomat{2}{1}{4}{2} \quad \overset{\text{RREF}}{\Longrightarrow} \quad \twomat{1}{1/2}{0}{0},\]</div>
-<p>leading to the eigenspace basis <span class="math notranslate nohighlight">\([-1/2;\,1]\)</span> or equivalently, <span class="math notranslate nohighlight">\(\twovec{-1}{2}\)</span>.</p>
+<p class="card-text">leading to the eigenspace basis <span class="math notranslate nohighlight">\([-1/2;\,1]\)</span> or equivalently, <span class="math notranslate nohighlight">\(\twovec{-1}{2}\)</span>.</p>
 </div>
-</div>
+</details></div>
 </div>
 <div class="section" id="matlab">
 <h2><span class="section-number">13.3. </span>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
 <p>MATLAB computes eigenvalues (through an entirely different process) with the <code class="docutils literal notranslate"><span class="pre">eig</span></code> command. From the preceding example, for instance,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">;</span> <span class="n">4</span> <span class="s">1</span> <span class="s">]</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">;</span><span class="n"> 4 </span><span class="s">1 ]</span><span class="p">;</span>
 <span class="n">lambda</span> <span class="p">=</span> <span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -603,12 +608,12 @@
 </li>
 </ol>
 </div></div><div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>Find the eigenstuff of</p>
 <div class="math notranslate nohighlight">
 \[\bfA = \twomat{1}{1}{-1}{1}.\]</div>
-<div class="dropdown note solution admonition">
-<p class="admonition-title"></p>
+<div class="note-dropdown-solution admonition">
+<p class="admonition-title">Solution</p>
 <p>We start by finding eigenvalues.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -681,7 +686,7 @@
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

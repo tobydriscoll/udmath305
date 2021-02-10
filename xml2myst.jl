@@ -22,8 +22,10 @@ subs = [
 	"</men>" => "```",
 	"<input>" => "```{code-cell}",
 	"</input>" => "```",
-	r"<example xml:id=\"([^\"]*)\">" => s"(\1)=\n::::{admonition,dropdown,tip} Example",
-	"<example>" => "::::{admonition,dropdown,tip} Example",
+	r"<example xml:id=\"([^\"]*)\">" => s"(\1)=\n::::{admonition} Example
+:class: dropdown,tip",
+	"<example>" => "::::{admonition} Example
+:class: dropdown,tip",
 	"</example>" => "::::",
 	r"<definition xml:id=\"([^\"]*)\">" => s"(\1)=\n````{proof:definition}",
 	"<definition>" => "````{proof:definition}",

@@ -104,7 +104,8 @@ It doesn't matter whether we use $+\theta$ or $-\theta$ as the phase term. Switc
 
 Each form has two real arbitrary constants that can be uniquely determined by initial conditions.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find a solution to $x''-2x'+5x=0$, $x(0)=5$, $x'(0)=-5$ in amplitude-phase form.
 
 The characteristic polynomial $s^2-2s+5$ gives the eigenvalues $1\pm 2i$. We can write the solution as $x(t) = R e^{t} \cos(2 t + \theta)$ and apply the initial conditions to get
@@ -162,7 +163,8 @@ connects {eq}`secondlin-combine-exp` and {eq}`secondlin-combine-ampphase`.
 
 Both {eq}`secondlin-combine-polar` and {eq}`secondlin-combine-c1` amount to the same thing, conversion between rectangular coordinates, like $c_1=\alpha+i\beta$ and $(a_1,a_2)$, and polar coordinates, $(R,\theta)$.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 In the preceding example we found the solution
 
 $$
@@ -183,7 +185,8 @@ $$
 
 ::::
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find the amplitude-phase form of $x(t)=-4\cos(3t) + 2 \sin(3t)$.
 
 The polar form of the point $(-4,2)$ satisfies

@@ -19,7 +19,8 @@ You've probably solved small systems of equations by substitution. In order to s
 
 (example-gauss-elimination)=
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 
 Use elimination to solve the $3\times 3$ system
 
@@ -29,7 +30,7 @@ x_1 - x_2  - x_3 & = 2, \\
 x_1 - 2x_2 - x_3 & = 5.
 \end{align*}
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 
 The first step is to use the first equation to eliminate $x_1$ from the second and third equations. We therefore subtract 3 times equation 1 from equation 2, and 1 times equation 1 from equation 3:
 
@@ -72,7 +73,8 @@ Instead, though, we are going to continue to manipulate the system to get someth
 
 (example-gauss-jordan)=
 
-::::{admonition,dropdown,tip} Example (continued)
+::::{admonition} Example (continued)
+:class: tip 
 
 We continue from the end of [the preceding example](example-gauss-elimination).  Having reached the last variable and equation, we turn around and eliminate *upwards* instead:
 

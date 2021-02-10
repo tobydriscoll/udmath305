@@ -132,7 +132,8 @@ x(t) = e^{a t}x_0 + \frac{1}{a} \sum_{j=1}^m H(t-T_j)\cdot \bigl(e^{a(t-T_j)} - 
 
 ````
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Solve $x'-\frac{1}{10}x=w(t)$, $x(0)=-2$, where $w(t)$ is a window function that is 5 for $3 < t \le 6$ and zero elsewhere.
 
 We can write the problem as
@@ -159,7 +160,8 @@ x(t) = \begin{cases}
 
 ::::
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 
 > Let the serum drug concentration in a patient be $x(t)$. Suppose this is initially zero when an IV is given at a constant rate of 12 units per hour for 30 minutes. An IVP that models this case is
 

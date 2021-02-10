@@ -71,13 +71,15 @@ x_h(t) = e^{\lambda t} \bigl( c_1 t + c_2 \bigr).
 ```
 ````
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find the general solution of $x''-x'-2x=0$.
 
 The characteristic polynomial is $s^2-s-2$, which has roots $\lambda_1=-1$, $\lambda_2=2$. This gives the general solution $x_h(t)=c_1 e^{-t} + c_2 e^{2t}$.
 ::::
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 We could think of the trivial problem $x''=0$ as being linear with $b=k=0$. The characteristic polynomial is $s^2$, which make zero a double eigenvalue. So the general solution is
 
 $$
@@ -87,7 +89,8 @@ $$
 as we already know.
 ::::
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Solve the IVP $x'' - 5 x = 0$, $x(0)=6$, $x'(0)=0$.
 
 The eigenvalues are the roots of $s^2-5$, hence $\lambda_1=\sqrt{5}$, $\lambda_2=-\sqrt{5}$. The general solution is

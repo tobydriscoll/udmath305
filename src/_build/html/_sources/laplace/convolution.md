@@ -173,7 +173,8 @@ where $G(s)$ is the transfer function. Thus $x=f*g$ by the convolution theorem.
 The solution $\opA[x]=f$ with zero initial conditions is the convolution of $f$ with the impulse response.
 ```
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Find the general solution of $x''+36x=\sin(t)$.
 
 Note that the homogeneous solution is $R\cos(6t+\theta)$, using amplitude-phase form. The transfer function is $G(s)=1/(s^2+36)$, and the impulse response is therefore

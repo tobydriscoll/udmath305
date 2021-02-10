@@ -28,7 +28,8 @@ Faced with an initial-value problem, we can take the Laplace transform of the OD
 
 One major tool at our disposal is the *partial fraction decomposition* you probably learned for integrating rational functions.
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 
 > Solve $x'-ax=e^{c t}$, where $a\neq c$ are constants.
 
@@ -61,7 +62,8 @@ This is a particular solution that has $x_p(0)=0$. The general solution is $e^{a
 
 We saw before that both steps and impulses in the forcing term lead to step functions in the solution. The next example shows how that fact fits with the [shift theorem](theorem-steps=shift).
 
-::::{admonition,dropdown,tip} Example
+::::{admonition} Example
+:class: dropdown,tip
 > Solve $x'=ax + \delta(t-T)$, with $x(0)=0$.
 
 Transform the ODE to get

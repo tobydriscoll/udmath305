@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>6. Vector algebra &#8212; Notes on linear algebra and ODEs</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -93,7 +93,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../frontmatter.html">
-   M305 Notes
+   Applied Math for Engineers
   </a>
  </li>
 </ul>
@@ -434,14 +434,14 @@
 <h1><span class="section-number">6. </span>Vector algebra<a class="headerlink" href="#vector-algebra" title="Permalink to this headline">¶</a></h1>
 <p>Vectors support two basic operations. The first is addition. Two vectors of the same size can be added together elementwise. (The same is true for subtraction.) If the vectors have different sizes, the operation is not defined.</p>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>If <span class="math notranslate nohighlight">\(\bfx=[1;\: 2;\: 3]\)</span> and <span class="math notranslate nohighlight">\(\bfy=[-2;\: 2;\: 0]\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bfx + \bfy = \begin{bmatrix} -1\\4\\3 \end{bmatrix}.\end{split}\]</div>
 </div>
 <p>Things get a little more interesting with multiplication. We begin with <a class="reference internal" href="overview.html#term-scalar-multiplication"><span class="xref std std-term">scalar multiplication</span></a>, which is between a number and a vector. Each element is multiplied by the number. In this context we call a number a <a class="reference internal" href="overview.html#term-scalar"><span class="xref std std-term">scalar</span></a>, since it scales all the elements equally.</p>
 <div class="tip admonition">
-<p class="admonition-title"> Example</p>
+<p class="admonition-title">Example</p>
 <p>If <span class="math notranslate nohighlight">\(\bfx=[1;\: 2;\: 3]\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}3\bfx = \begin{bmatrix} 3\\6\\9 \end{bmatrix}.\end{split}\]</div>
@@ -583,7 +583,7 @@ In general, if $\bfx$ is an $m$-vector and $\bfy$ is an $n$-vector, then $\bfx\b
 <p>So we can express the linear system in <a class="reference internal" href="#equation-linsys-lincomb">(6.1)</a> using a linear combination of column vectors:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">3</span> <span class="s">-2</span> <span class="s">0</span><span class="p">;</span> <span class="n">1</span> <span class="s">-2</span> <span class="s">-1]</span>    <span class="s">%</span> <span class="s">coefficient</span> <span class="s">matrix</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n"> 3 </span><span class="s">-2 0</span><span class="p">;</span><span class="n"> 1 </span><span class="s">-2 -1]    % coefficient matrix</span><span class="p"></span>
 <span class="n">b</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">;</span><span class="mi">9</span><span class="p">;</span><span class="mi">5</span><span class="p">]</span>    <span class="c">% right-side vector</span>
 </pre></div>
 </div>
@@ -673,7 +673,7 @@ In general, if $\bfx$ is an $m$-vector and $\bfy$ is an $n$-vector, then $\bfx\b
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

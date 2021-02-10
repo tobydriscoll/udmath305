@@ -4,7 +4,14 @@ author: Tobin A. Driscoll
 logo: logo.png
 
 parse:
-  myst_extended_syntax: true
+  myst_enable_extensions:
+  - amsmath
+  - colon_fence
+  - deflist
+  - dollarmath
+  - html_image
+  - linkify
+  - replacements
 
 latex:
   latex_documents:

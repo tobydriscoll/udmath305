@@ -47,7 +47,8 @@ C_{ij} = \sum_{k=1}^n a_{ik}b_{kj}, \qquad i=1,\ldots,m, \quad j=1,\ldots,p.
 
 The sum to get a single $C_{ij}$ is what we called a "zip", or essentially a dot product, of row $i$ from $\bfA$ with column $j$ from $\bfB$.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 
 Find $\mathbf{A}\mathbf{B}$ if
 
@@ -60,7 +61,7 @@ Find $\mathbf{A}\mathbf{B}$ if
 \end{bmatrix}.
 ```
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 
 Using {eq}`matrix-mult-element`,
 

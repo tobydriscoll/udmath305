@@ -39,9 +39,10 @@ The correct form of $x_p$ for various manifestations of $f$ are given in [the ta
   - $A \cos(\omega t) + B \sin(\omega t)$
 ```
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Find the general solution of $x'-4x=8t$.
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 
 The homogeneous solution of $x'-4x=0$ is $x_h=c_1 e^{4t}$. The [MUC table](table-firstlin-MUC) suggests that we choose $x_p=B_1t + B_0$. Plugging this into the ODE yields
 
@@ -70,13 +71,14 @@ This is the third time we have derived this solution!
 As seen in the preceding example, the forcing function $f(t)=8t$ caused us to introduce $x_p(t) = B_1t + B_0$. We cannot assume that the constant term in $x_p$ is absent like it is in $f$, and indeed it is not in the final result.
 ::::
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Solve the IVP
 
 $$
 x' = x - 6 \sin(t), \quad x(\pi) = 0.
 $$
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 
 We quickly see that the general solution of $x'-x=0$ is $x_h(t)=c_1e^t$. For the particular solution, [MUC table](table-firstlin-MUC) suggests
 
@@ -123,9 +125,10 @@ The benefit of the MUC over our previous methods is avoiding a second integral t
 
 If the forcing function includes multiple different types of functions added together, then you can find particular solutions for the different terms separately and add them together to get the overall particular solution.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Find a particular solution of  $x'+3x=6t-4e^{-t}$.
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 We can separately find particular solutions for the cases $x'+3x=6t$ and $x'+3x=-4e^{-t}$. 
 
 In the first case we use $x_p(t) = B_1t + B_0$, and it works out that $B_1=2$, $B_0=-2/3$. For the second case we choose $x_p=A e^{-t}$ and plug in:
@@ -146,7 +149,8 @@ x_p(t) = 2t-\frac{2}{3}-2e^{-t}.
 
 The suggestions in the [MUC table](table-firstlin-MUC) can fail if the forcing function includes the homogeneous solution $e^{at}$.
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Consider $x'-ax=e^{at}$. We get $x_h=c_1e^{at}$, and the table suggests
 
 ```{math}

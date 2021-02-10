@@ -37,17 +37,19 @@ If this is to be a solution of $x'=ax$, all we need is that $q'(t)=a(t)$. This i
 (formula-firstlin-homogeneous)=
 
 ````{proof:formula} Solution of $x'=a(t)x$
+$$
 \begin{align*}
 q(t) &= \int a(t) \, dt, \\
 x(t) &= \exp\bigl[q(t)\bigr].
 \end{align*}
+$$
 ````
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Solve $x'=\sin(t) x$. 
 
-
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 We integrate $a(t)=\sin(t)$ to get 
 
 $$
@@ -60,20 +62,22 @@ The general solution is thus $e^{\,q(t)}$, or
 x_h(t) = e^C \exp[ -\cos(t) ] = c_1 \exp[ -\cos(t) ].
 ```
 :::
+
 ::::
 
 ```{note}
 As seen in the preceding example, the integration constant pops up additively in $q$ and then multiplicatively in $x$. You can ignore the integration constant until the end and then just tack it on; remember that by linearity, any constant multiple of a homogeneous solution is also a solution.
 ```
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 Solve the homogeneous IVP
 
 $$
 t x' = 2x, \quad x(2) = 12.
 $$
 
-:::{admonition,dropdown,note,solution}
+:::{dropdown} Solution
 First we rewrite the ODE as 
 
 $$
@@ -120,7 +124,8 @@ x(t) = x_0 \exp\left[ \int_{t_0}^t a(s)\, ds \right].
 $$
 ````
 
-::::{admonition,tip} Example
+::::{admonition} Example
+:class: tip
 We revisit the preceding example of
 
 $$
