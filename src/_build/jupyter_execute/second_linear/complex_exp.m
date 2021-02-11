@@ -19,7 +19,7 @@ e^{it} = \cos(t) + i \sin(t)
 "Euler" is a German name, and as such, it rhymes with "boiler," not "Bueller."
 ```
 
-::::{admonition,dropdown,tip} Explanation
+::::{dropdown} Explanation
 Consider the first-order IVP $w'=i w$, $w(0)=1$, where $i^2=-1$. Assume that the solution $w(t)=e^{it}$ takes on complex values at all times. We can write it in real and imaginary parts as $w(t) = u(t) + iv(t)$. Then the ODE becomes 
 
 $$

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Undetermined coefficients &#8212; Notes on linear algebra and ODEs</title>
+    <title>7. Undetermined coefficients &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,6 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8. Forced oscillations" href="forced_oscillations.html" />
+    <link rel="prev" title="6. Free oscillations" href="free_oscillations.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -256,6 +258,80 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -331,12 +407,12 @@
               <div>
                 
   <div class="section" id="undetermined-coefficients">
-<h1>Undetermined coefficients<a class="headerlink" href="#undetermined-coefficients" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">7. </span>Undetermined coefficients<a class="headerlink" href="#undetermined-coefficients" title="Permalink to this headline">¶</a></h1>
 <p>We now tackle the ODE</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-forced-ode">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-forced-ode" title="Permalink to this equation">¶</a></span>\[x'' + bx' + cx = f(t),\]</div>
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-secondlin-forced-ode" title="Permalink to this equation">¶</a></span>\[x'' + bx' + cx = f(t),\]</div>
 <p>where <span class="math notranslate nohighlight">\(f(t)\)</span> is a nonzero forcing function. The first step is to find the general homogeneous solution <span class="math notranslate nohighlight">\(x_h(t)\)</span>. To finish the problem we must find a particular solution <span class="math notranslate nohighlight">\(x_p(t)\)</span> in the forced case. The method of undetermined coefficients is the simplest strategy, when it is applicable: forcing in the form of a polynomial, exponential, or sin/cos.</p>
-<p>The procedure is the same as for first-order problems. Using <a class="reference internal" href="../first_linear/undetermined_coeffs.html#table-firstlin-muc"><span class="std std-ref">Particular solutions for the method of undetermined coefficients.</span></a>, we make an educated guess at <span class="math notranslate nohighlight">\(x_p\)</span> with some unknown coefficients that are determined through substitution into <a class="reference internal" href="#equation-secondlin-forced-ode">()</a>.</p>
+<p>The procedure is the same as for first-order problems. Using <a class="reference internal" href="../first_linear/undetermined_coeffs.html#table-firstlin-muc"><span class="std std-ref">Particular solutions for the method of undetermined coefficients.</span></a>, we make an educated guess at <span class="math notranslate nohighlight">\(x_p\)</span> with some unknown coefficients that are determined through substitution into <a class="reference internal" href="#equation-secondlin-forced-ode">(7.2)</a>.</p>
 <div class="dropdown-tip admonition">
 <p class="admonition-title">Example</p>
 <blockquote>
@@ -427,7 +503,7 @@ x(t) = c_1 + c_2 e^{-t} - \frac{1}{10}\cos(2t) - \frac{1}{5}\sin(2t).
 \[\frac{ \cos(\omega t) - \cos(t) } {1-\omega^2}.\]</div>
 <p>Then L’Hopital applies in the limit to give us</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-secular">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-secular" title="Permalink to this equation">¶</a></span>\[x_p(t) = \frac{ -t \sin(\omega t) }{ -2 \omega } = \frac{1}{2}t\sin(t). \]</div>
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-secondlin-secular" title="Permalink to this equation">¶</a></span>\[x_p(t) = \frac{ -t \sin(\omega t) }{ -2 \omega } = \frac{1}{2}t\sin(t). \]</div>
 <p>This is easy to verify as a particular solution for <span class="math notranslate nohighlight">\(\omega=1\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -467,6 +543,8 @@ x_p'' &amp; = \frac{1}{2}[\cos(t) + \cos(t) - t\sin(t)],
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="free_oscillations.html" title="previous page"><span class="section-number">6. </span>Free oscillations</a>
+    <a class='right-next' id="next-link" href="forced_oscillations.html" title="next page"><span class="section-number">8. </span>Forced oscillations</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

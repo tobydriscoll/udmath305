@@ -53,7 +53,8 @@ y = [10; 20; 30]
 A = [ 1 2 3; -4 -5 -6; pi sqrt(2) exp(1) ]
 ```
 
-:::{admonition,note} Mathematical constants
+:::{admonition} Mathematical constants
+:class: note
 The constant $\pi$ is defined automatically as `pi`. The constant `e` is not defined, and expressions like $e^{-2}$ causes an error if you have not previously defined `e`. Instead, use the exponential function `exp`; note that $e=\exp(1)$.
 :::
 
