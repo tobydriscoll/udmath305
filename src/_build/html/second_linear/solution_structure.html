@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>2. Structure of solutions &#8212; Notes on linear algebra and ODEs</title>
+    <title>Structure of solutions &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,8 +61,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Homogeneous solutions" href="homogeneous.html" />
-    <link rel="prev" title="1. Overview" href="overview.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -258,80 +256,6 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="homogeneous.html">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
-  </a>
- </li>
-</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -403,7 +327,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#linear-problems">
-   2.1. Linear problems
+   Linear problems
   </a>
  </li>
 </ul>
@@ -418,11 +342,11 @@
               <div>
                 
   <div class="section" id="structure-of-solutions">
-<h1><span class="section-number">2. </span>Structure of solutions<a class="headerlink" href="#structure-of-solutions" title="Permalink to this headline">¶</a></h1>
+<h1>Structure of solutions<a class="headerlink" href="#structure-of-solutions" title="Permalink to this headline">¶</a></h1>
 <div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 2.7</span>
+        <span class="proof-type">Definition </span>
         
             <span class="proof-title-name">(Second-order ODE)</span>
         
@@ -446,7 +370,7 @@ x'' = F(t,x,x'),
 <div class="proof proof-type-definition" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 2.8</span>
+        <span class="proof-type">Definition </span>
         
             <span class="proof-title-name">(Second-order IVP)</span>
         
@@ -455,16 +379,16 @@ x'' = F(t,x,x'),
 <div class="math notranslate nohighlight">
 \[x'' = F(t,x,x'), \quad x(a) = x_0,\, x'(a) = v_0.\]</div>
 </div></div><div class="section" id="linear-problems">
-<h2><span class="section-number">2.1. </span>Linear problems<a class="headerlink" href="#linear-problems" title="Permalink to this headline">¶</a></h2>
+<h2>Linear problems<a class="headerlink" href="#linear-problems" title="Permalink to this headline">¶</a></h2>
 <p>We will focus on the linear problem</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-linear-cc">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-secondlin-linear-cc" title="Permalink to this equation">¶</a></span>\[x'' + bx' + k x = f(t),\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-secondlin-linear-cc" title="Permalink to this equation">¶</a></span>\[x'' + bx' + k x = f(t),\]</div>
 <p>in which the coefficients <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are constant, and <span class="math notranslate nohighlight">\(f(t)\)</span> is a forcing function.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In <a class="reference internal" href="#equation-secondlin-linear-cc">(2.5)</a> the coefficient <span class="math notranslate nohighlight">\(b\)</span> has units <span class="math notranslate nohighlight">\(1/T\)</span>, the coefficient <span class="math notranslate nohighlight">\(k\)</span> has units <span class="math notranslate nohighlight">\(1/T^2\)</span>, and <span class="math notranslate nohighlight">\(f(t)\)</span> has units <span class="math notranslate nohighlight">\(X/T^2\)</span>, where <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(T\)</span> are the units of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, respectively.</p>
+<p>In <a class="reference internal" href="#equation-secondlin-linear-cc">()</a> the coefficient <span class="math notranslate nohighlight">\(b\)</span> has units <span class="math notranslate nohighlight">\(1/T\)</span>, the coefficient <span class="math notranslate nohighlight">\(k\)</span> has units <span class="math notranslate nohighlight">\(1/T^2\)</span>, and <span class="math notranslate nohighlight">\(f(t)\)</span> has units <span class="math notranslate nohighlight">\(X/T^2\)</span>, where <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(T\)</span> are the units of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, respectively.</p>
 </div>
-<p>Equation <a class="reference internal" href="#equation-secondlin-linear-cc">(2.5)</a> is in the form of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> for the linear operator</p>
+<p>Equation <a class="reference internal" href="#equation-secondlin-linear-cc">()</a> is in the form of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> for the linear operator</p>
 <div class="math notranslate nohighlight">
 \[\opA[x] = \ddd{x}{t} + b \dd{x}{t} + k x.\]</div>
 <p>We now get some payoff for using the abstract language of operators with first-order problems, because the connections between general solutions and homogeneous solutions is <em>exactly the same</em> as before. In particular, we still have a <a class="reference internal" href="../first_linear/operators.html#theorem-firstlin-general"><span class="std std-ref">theorem</span></a> and an <a class="reference internal" href="../first_linear/operators.html#algorithm-firstlin-solve"><span class="std std-ref">algorithm</span></a> that provide a blueprint for the solution:</p>
@@ -506,8 +430,6 @@ x'' = F(t,x,x'),
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="overview.html" title="previous page"><span class="section-number">1. </span>Overview</a>
-    <a class='right-next' id="next-link" href="homogeneous.html" title="next page"><span class="section-number">3. </span>Homogeneous solutions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
