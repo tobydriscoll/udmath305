@@ -91,8 +91,10 @@ It doesn't matter whether we use $+\theta$ or $-\theta$ as the phase term. Switc
 Each form has two real arbitrary constants that can be uniquely determined by initial conditions.
 
 ::::{admonition} Example
-:class: dropdown,tip
-> Find a solution to $x''-2x'+5x=0$, $x(0)=5$, $x'(0)=-5$ in amplitude-phase form.
+:class: tip
+Find a solution to $x''-2x'+5x=0$, $x(0)=5$, $x'(0)=-5$ in amplitude-phase form.
+
+:::{dropdown} Solution
 
 The characteristic polynomial $s^2-2s+5$ gives the eigenvalues $1\pm 2i$. We can write the solution as $x(t) = R e^{t} \cos(2 t + \theta)$ and apply the initial conditions to get
 
@@ -118,7 +120,7 @@ so we get $\theta=\pi/4$. Then $R=5/\cos(\pi/4)=5\sqrt{2}$. The final answer is
 $$
 x(t) = 5\sqrt{2} e^{t} \cos\left(2 t + \tfrac{\pi}{4}\right).
 $$
-
+:::
 ::::
 
 ## Conversion between forms
@@ -149,8 +151,8 @@ connects {eq}`secondlin-combine-exp` and {eq}`secondlin-combine-ampphase`.
 
 Both {eq}`secondlin-combine-polar` and {eq}`secondlin-combine-c1` amount to the same thing, conversion between rectangular coordinates, like $c_1=\alpha+i\beta$ and $(a_1,a_2)$, and polar coordinates, $(R,\theta)$.
 
-::::{admonition} Example
-:class: dropdown,tip
+::::{admonition} Example (continued)
+:class: tip
 In the preceding example we found the solution
 
 $$
@@ -172,9 +174,10 @@ $$
 ::::
 
 ::::{admonition} Example
-:class: dropdown,tip
-> Find the amplitude-phase form of $x(t)=-4\cos(3t) + 2 \sin(3t)$.
+:class: tip
+Find the amplitude-phase form of $x(t)=-4\cos(3t) + 2 \sin(3t)$.
 
+:::{dropdown} Solution
 The polar form of the point $(-4,2)$ satisfies
 
 $$
@@ -182,7 +185,7 @@ R^2 = 16+4=20, \qquad \tan(\theta) = \frac{2}{-4}.
 $$
 
 We see that $R=2\sqrt{5}$, and $\theta = \arctan(-1/2)$ should be in the second quadrant. It would have to be found numerically.
-
+:::
 ::::
 
 It's more common that we want to know the amplitude than the phase. If you do need a numerical value of $\theta$, make sure you use the "four-quadrant arctangent" on a calculator or computer.

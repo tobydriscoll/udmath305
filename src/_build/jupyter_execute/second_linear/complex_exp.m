@@ -19,7 +19,7 @@ e^{it} = \cos(t) + i \sin(t)
 "Euler" is a German name, and as such, it rhymes with "boiler," not "Bueller."
 ```
 
-::::{dropdown} Explanation
+::::{dropdown} Explanation (optional, but easy)
 Consider the first-order IVP $w'=i w$, $w(0)=1$, where $i^2=-1$. Assume that the solution $w(t)=e^{it}$ takes on complex values at all times. We can write it in real and imaginary parts as $w(t) = u(t) + iv(t)$. Then the ODE becomes 
 
 $$
@@ -71,7 +71,7 @@ z = |z| e^{i\theta}.
 We call {eq}`secondlin-polar` the {term}`polar form` of a complex number, because it expresses $z$ as a distance from zero and an angle from the positive Re axis. Just as with any point in the plane, we can express a complex number either in Cartesian form using Re and Im parts, or in polar form using modulus and Euler's identity.
 
 ::::{admonition} Example
-:class: dropdown,tip
+:class: tip
 Suppose $r$ is a positive real number. Then $-r$ lies at a distance $r$ from the origin along the negative real axis. Hence
 
 $$
@@ -87,6 +87,20 @@ $$
 Using complex numbers, then, we can take the log of a negative number. You will find that this is the case in MATLAB.
 ::::
 
+::::{admonition} Example
+:class: tip
+What's the square root of $i$?
+
+:::{dropdown} Solution
+Since $i$ lies at a distance 1 from the origin along the positive imaginary axis, its polar form is $e^{i\pi/2}$. Then the square root is
+
+$$
+\bigl( e^{i\pi/2} \bigr)^{1/2} = e^{i\pi/4}.
+$$
+
+Appealing to Euler's formula, this is equivalent to $\frac{1}{\sqrt{2}}(1+i)$. We should note that of course, the negative of this value is also a square root.
+:::
+::::
 ## Complex exponents
 
 Exponential functions still obey the properties you already know, even when the exponents are imaginary or complex numbers. This allows us to handle the exponential of any complex number. Writing $a+i \omega$ for real $a$ and $\omega$, we have the function
@@ -165,8 +179,10 @@ set(gca,'dataaspect',[6,1,1])
 Now we can finish the story of computing solutions to homogeneous ODEs.
 
 ::::{admonition} Example
-:class: dropdown,tip
-> Solve the IVP $x''+9x=0$, $x(0)=2$, $x'(0)=-12$.
+:class: tip
+Solve the IVP $x''+9x=0$, $x(0)=2$, $x'(0)=-12$.
+
+:::{dropdown} Solution
 
 The characteristic polynomial is $s^2+9$, giving the eigenvalues $\pm 3i$. Hence the general solution is $x_h(t) = c_1e^{3it} + c_2e^{-3it}$.
 
@@ -178,6 +194,7 @@ The initial conditions require
 \end{align*}
 
 This system is easy to solve for $c_1$ and $c_2$, for example by {ref}`Cramer's Rule`, to get $c_1=1+2i$, $c_2=1-2i$.
+:::
 ::::
 
 There are some helpful nuances to point out about the preceding example.
@@ -207,14 +224,14 @@ $$
 where $\lambda_{1,2} = a \pm i\omega$ are complex, is equivalent to the real expression
 
 $$
-x_h(t) = e^{at} \bigl[ \tilde{c}_1 \cos(\omega t) + \tilde{c}_2 \sin(\omega t) \bigr],
+x_h(t) = e^{at} \bigl[ b_1 \cos(\omega t) + b_2 \sin(\omega t) \bigr],
 $$
 
-where $\tilde{c}_1,\tilde{c}_2$ are real constants.
+where $b_1,b_2$ are real constants.
 ````
 
-::::{admonition} Example
-:class: dropdown,tip
+::::{admonition} Example (continued)
+:class: tip
 In the preceding example, the eigenvalues were $0 \pm 3i$. Thus another expression for the general solution is
 
 $$
@@ -231,4 +248,4 @@ The initial conditions now yield
 Hence the IVP solution is $2\cos(3t) - 4\sin(3t).$
 ::::
 
-Since complex exponentials are much less familiar to you than sin and cos, the real form might seem more appealing to you. The complex form gives an equivalent result and is the point of view that unifies all the second-order linear problems we solve under the exponential umbrella.
+Since complex exponentials are much less familiar to you than sin and cos, the real form might seem more appealing to you. Don't be so quick to jump back there. Not only is the complex form the point of view that unifies all the second-order linear problems we solve under the exponential umbrella, but in some cases it greatly simplifies expressions and algebra.
