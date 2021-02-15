@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>3. Homogeneous solutions &#8212; Notes on linear algebra and ODEs</title>
+    <title>Homogeneous solutions &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,8 +61,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Complex exponentials" href="complex_exp.html" />
-    <link rel="prev" title="2. Structure of solutions" href="solution_structure.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -213,18 +211,23 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp_formula.html">
+   7. IVP formula
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/integrating_factor.html">
-   7. Integrating factor
+   8. Integrating factor
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
-   8. Undetermined coefficients
+   9. Undetermined coefficients
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/modeling.html">
-   9. Modeling
+   10. Modeling
   </a>
  </li>
 </ul>
@@ -257,80 +260,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/transform_solutions.html">
    5. Solutions by transform
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  IV. Second-order linear ODE
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="solution_structure.html">
-   2. Structure of solutions
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   3. Homogeneous solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="complex_exp.html">
-   4. Complex exponentials
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="phase_amplitude.html">
-   5. Amplitude and phase
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="free_oscillations.html">
-   6. Free oscillations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="undetermined_coeffs.html">
-   7. Undetermined coefficients
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="forced_oscillations.html">
-   8. Forced oscillations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  V. Laplace transforms
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/overview.html">
-   1. Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/basic_solutions.html">
-   2. Solutions to 2nd-order ODEs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/steps_impulses.html">
-   3. Steps and impulses (2nd order)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../laplace/convolution.html">
-   4. Convolution
   </a>
  </li>
 </ul>
@@ -405,12 +334,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#characteristic-polynomial">
-   3.1. Characteristic polynomial
+   Characteristic polynomial
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#complex-eigenvalues">
-   3.2. Complex eigenvalues
+   Complex eigenvalues
   </a>
  </li>
 </ul>
@@ -425,7 +354,7 @@
               <div>
                 
   <div class="section" id="homogeneous-solutions">
-<h1><span class="section-number">3. </span>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h1>
+<h1>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h1>
 <p>We now look for solutions of the homogeneous equation</p>
 <div class="math notranslate nohighlight">
 \[
@@ -434,7 +363,7 @@ x'' + b x' +  k x = 0,
 <p>where <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are constants. We will use <span class="math notranslate nohighlight">\(x_h\)</span> to name the solution, as a reminder that the ODE is homogeneous.</p>
 <p>All the solutions to first-order linear ODEs were exponential functions. The same is true for second-order linear problems, though with a significant caveat.</p>
 <div class="section" id="characteristic-polynomial">
-<h2><span class="section-number">3.1. </span>Characteristic polynomial<a class="headerlink" href="#characteristic-polynomial" title="Permalink to this headline">¶</a></h2>
+<h2>Characteristic polynomial<a class="headerlink" href="#characteristic-polynomial" title="Permalink to this headline">¶</a></h2>
 <p>The king of ODE solution methods is to guess the answer and then show that it works. In that tradition, we try</p>
 <div class="math notranslate nohighlight">
 \[
@@ -450,7 +379,7 @@ x_h(t) = e^{\lambda t}
 <div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition 3.5</span>
+        <span class="proof-type">Definition </span>
         
             <span class="proof-title-name">(Characteristic polynomial of a linear ODE)</span>
         
@@ -472,27 +401,27 @@ p(s) = s^2 + b s + k.
 <div class="proof proof-type-theorem" id="id2">
 <span id="theorem-secondlin-homogeneous-distinct"></span>
     <div class="proof-title">
-        <span class="proof-type">Theorem 3.6</span>
+        <span class="proof-type">Theorem </span>
         
             <span class="proof-title-name">(Homogeneous solution, distinct eigenvalues)</span>
         
     </div><div class="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\lambda_1,\lambda_2\)</span> be the eigenvalues of <span class="math notranslate nohighlight">\(\opA\)</span>, where <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx.\)</span> If  <span class="math notranslate nohighlight">\(\lambda_1\neq \lambda_2\)</span>, then the general solution of <span class="math notranslate nohighlight">\(\opA[x]= 0\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-homogeneous-distinct">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-secondlin-homogeneous-distinct" title="Permalink to this equation">¶</a></span>\[x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}.\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-secondlin-homogeneous-distinct" title="Permalink to this equation">¶</a></span>\[x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}.\]</div>
 </div></div><p>By analogy with linear algebra, we may say that <span class="math notranslate nohighlight">\(e^{\lambda_1 t}\)</span> and <span class="math notranslate nohighlight">\(e^{\lambda_2 t}\)</span> form a basis for the homogeneous solution, as all such solutions are a linear combination of them and neither can be omitted.</p>
 <p>We have to handle the case <span class="math notranslate nohighlight">\(\lambda_1=\lambda_2\)</span> separately. (You might recall that a double eigenvalue was a hassle for matrices as well.) Without fuss, we jump to the result, which is easy to verify by substitution.</p>
 <div class="proof proof-type-theorem" id="id3">
 <span id="theorem-secondlin-homogeneous-repeated"></span>
     <div class="proof-title">
-        <span class="proof-type">Theorem 3.7</span>
+        <span class="proof-type">Theorem </span>
         
             <span class="proof-title-name">(Homogeneous solution, repeated eigenvalue)</span>
         
     </div><div class="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\lambda\)</span> be a double eigenvalue of <span class="math notranslate nohighlight">\(\opA\)</span>, where <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx.\)</span> The general solution of <span class="math notranslate nohighlight">\(\opA[x]= 0\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-homogeneous-repeated">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-secondlin-homogeneous-repeated" title="Permalink to this equation">¶</a></span>\[x_h(t) = e^{\lambda t} \bigl( c_1 t + c_2 \bigr).\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-secondlin-homogeneous-repeated" title="Permalink to this equation">¶</a></span>\[x_h(t) = e^{\lambda t} \bigl( c_1 t + c_2 \bigr).\]</div>
 </div></div><div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Find the general solution of <span class="math notranslate nohighlight">\(x''-x'-2x=0\)</span>.</p>
@@ -541,8 +470,8 @@ x(t) = c_1 e^{\sqrt{5}\, t} + c_2 e^{-\sqrt{5}\, t}.
 </details></div>
 </div>
 <div class="section" id="complex-eigenvalues">
-<h2><span class="section-number">3.2. </span>Complex eigenvalues<a class="headerlink" href="#complex-eigenvalues" title="Permalink to this headline">¶</a></h2>
-<p>All seems well, until you remember that the roots of a real quadratic may come as a complex conjugate pair. What then are we to make of <a class="reference internal" href="#equation-secondlin-homogeneous-distinct">(3.2)</a> or <a class="reference internal" href="#equation-secondlin-homogeneous-repeated">(3.3)</a>? That’s next.</p>
+<h2>Complex eigenvalues<a class="headerlink" href="#complex-eigenvalues" title="Permalink to this headline">¶</a></h2>
+<p>All seems well, until you remember that the roots of a real quadratic may come as a complex conjugate pair. What then are we to make of <a class="reference internal" href="#equation-secondlin-homogeneous-distinct">()</a> or <a class="reference internal" href="#equation-secondlin-homogeneous-repeated">()</a>? That’s next.</p>
 </div>
 </div>
 
@@ -574,8 +503,6 @@ x(t) = c_1 e^{\sqrt{5}\, t} + c_2 e^{-\sqrt{5}\, t}.
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="solution_structure.html" title="previous page"><span class="section-number">2. </span>Structure of solutions</a>
-    <a class='right-next' id="next-link" href="complex_exp.html" title="next page"><span class="section-number">4. </span>Complex exponentials</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -33,6 +33,7 @@ These are notes on MATH 305 at UD by Toby Driscoll. All rights reserved.
 | Mar. 16 | [Operators](first_linear/operators)                                | 2.3          |                 |
 | Mar. 23 | [Homogeneous solutions](first_linear/homogeneous)                  | 2.4          |                 |
 | Mar. 23 | [Variation of parameters](first_linear/variation_parameters)       | 2.5.1, 2.5.2 |                 |
+| Mar. 23 | [IVP formula](first_linear/ivp_formula)                            | --           |                 |
 | Mar. 23 | *(optional)* [Integrating factor](first_linear/integrating_factor) | --           | 2.1             |
 | Mar. 23 | [Undetermined coefficients](first_linear/undetermined_coeffs)      | 2.5.3        |                 |
 | Mar. 30 | [Modeling](first_linear/modeling)                                  | 2.6.1        | 2.3             |
@@ -51,7 +52,7 @@ These are notes on MATH 305 at UD by Toby Driscoll. All rights reserved.
 
 <!-- | Date | Section | Kapitula | Boyce & DiPrima | Webassign |
 | -----   | --------                                                           | -------- | --------------- | --------- |
-| A-----6 | [----------------------------------------------------------------) | -------- | undefined------------- | undefined------- |
+| A-----6 | [----------------------------------------------------------------) | -------- | u-------------- | u-------- |
 | Apr. 6  | [Structure of solutions](second_linear/solution_structure.html)    | --       |                 |           |
 | Apr. 13 | [Homogeneous solutions](second_linear/homogeneous.html)            | --       |                 |           |
 | Apr. 13 | [Complex exponentials](second_linear/complex_exp.html)             | --       |                 |           |

@@ -23,7 +23,7 @@ x'' + bx' + cx = f(t),
 
 where $f(t)$ is a nonzero forcing function. The first step is to find the general homogeneous solution $x_h(t)$. To finish the problem we must find a particular solution $x_p(t)$ in the forced case. The method of undetermined coefficients is the simplest strategy, when it is applicable: forcing in the form of a polynomial, exponential, or sin/cos.
 
-The procedure is the same as for first-order problems. Using {ref}`table-firstlin-MUC`, we make an educated guess at $x_p$ with some unknown coefficients that are determined through substitution into {eq}`secondlin-forced-ode`.
+The procedure is the same as for first-order problems. Using [our earlier table](`table-firstlin-MUC`), we make an educated guess at $x_p$ with some unknown coefficients that are determined through substitution into {eq}`secondlin-forced-ode`.
 
 ::::{admonition} Example
 :class: tip
