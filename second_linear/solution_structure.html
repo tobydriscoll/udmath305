@@ -79,6 +79,8 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
   
+  <img src="../_static/butterfly128.png" class="logo" alt="logo">
+  
   
   <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
   
@@ -209,18 +211,23 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp_formula.html">
+   7. IVP formula
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/integrating_factor.html">
-   7. Integrating factor
+   8. Integrating factor
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
-   8. Undetermined coefficients
+   9. Undetermined coefficients
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/modeling.html">
-   9. Modeling
+   10. Modeling
   </a>
  </li>
 </ul>
@@ -330,6 +337,11 @@
    Linear problems
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constant-coefficients">
+   Constant coefficients
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -380,24 +392,96 @@ x'' = F(t,x,x'),
 \[x'' = F(t,x,x'), \quad x(a) = x_0,\, x'(a) = v_0.\]</div>
 </div></div><div class="section" id="linear-problems">
 <h2>Linear problems<a class="headerlink" href="#linear-problems" title="Permalink to this headline">¶</a></h2>
-<p>We will focus on the linear problem</p>
-<div class="math notranslate nohighlight" id="equation-secondlin-linear-cc">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-linear-cc" title="Permalink to this equation">¶</a></span>\[x'' + bx' + k x = f(t),\]</div>
-<p>in which the coefficients <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are constant, and <span class="math notranslate nohighlight">\(f(t)\)</span> is a forcing function.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In <a class="reference internal" href="#equation-secondlin-linear-cc">()</a> the coefficient <span class="math notranslate nohighlight">\(b\)</span> has units <span class="math notranslate nohighlight">\(1/T\)</span>, the coefficient <span class="math notranslate nohighlight">\(k\)</span> has units <span class="math notranslate nohighlight">\(1/T^2\)</span>, and <span class="math notranslate nohighlight">\(f(t)\)</span> has units <span class="math notranslate nohighlight">\(X/T^2\)</span>, where <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(T\)</span> are the units of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, respectively.</p>
-</div>
-<p>Equation <a class="reference internal" href="#equation-secondlin-linear-cc">()</a> is in the form of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> for the linear operator</p>
+<p>We will focus on linear problems,</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-linear">
+<span class="eqno">()<a class="headerlink" href="#equation-secondlin-linear" title="Permalink to this equation">¶</a></span>\[x'' + p(t)x' + q(t) x = f(t).\]</div>
+<p>Equation <a class="reference internal" href="#equation-secondlin-linear">()</a> is in the form of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> for the linear operator</p>
 <div class="math notranslate nohighlight">
-\[\opA[x] = \ddd{x}{t} + b \dd{x}{t} + k x.\]</div>
-<p>We now get some payoff for using the abstract language of operators with first-order problems, because the connections between general solutions and homogeneous solutions is <em>exactly the same</em> as before. In particular, we still have a <a class="reference internal" href="../first_linear/operators.html#theorem-firstlin-general"><span class="std std-ref">theorem</span></a> and an <a class="reference internal" href="../first_linear/operators.html#algorithm-firstlin-solve"><span class="std std-ref">algorithm</span></a> that provide a blueprint for the solution:</p>
+\[\opA[x] = \ddd{x}{t} + p \dd{x}{t} + q x.\]</div>
+<p>We now reap more rewards for using the abstract language of operators with first-order problems, because the connections between general solutions and homogeneous solutions is <em>exactly the same</em> as before. In particular, we still have a <a class="reference internal" href="../first_linear/operators.html#theorem-firstlin-general"><span class="std std-ref">theorem</span></a> and an <a class="reference internal" href="../first_linear/operators.html#algorithm-firstlin-solve"><span class="std std-ref">algorithm</span></a> that provide a blueprint for the solution:</p>
 <ol class="simple">
 <li><p>Find the general solution <span class="math notranslate nohighlight">\(x_h\)</span> of the associated homogeneous problem <span class="math notranslate nohighlight">\(\opA[x]=0\)</span>.</p></li>
 <li><p>Find any particular solution <span class="math notranslate nohighlight">\(x_p\)</span> of the original <span class="math notranslate nohighlight">\(\opA[x]=f\)</span>.</p></li>
 <li><p>Add them.</p></li>
 <li><p>If given, use initial conditions to solve for the integration constants.</p></li>
 </ol>
+<p>However, there is a new wrinkle regarding the homogeneous part of the solution. Suppose that <span class="math notranslate nohighlight">\(x_1(t)\)</span> is one homogeneous solution, and we set <span class="math notranslate nohighlight">\(x_2(t)=v(t)x_1(t)\)</span> for an undetermined <span class="math notranslate nohighlight">\(v(t)\)</span>. A little elbow grease shows that</p>
+<div class="math notranslate nohighlight">
+\[
+\opA[vx_1] = x_1 v'' + 2 x_1' v' + p x_1 v' + \opA[x_1].
+\]</div>
+<p>We assumed that <span class="math notranslate nohighlight">\(\opA[x_1]=0\)</span>. So we will also get <span class="math notranslate nohighlight">\(\opA[x_2]=0\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[
+x_1 v'' + 2x_1' v' + p x_1 v' = 0.
+\]</div>
+<p>This might not look important until we make one more definition, <span class="math notranslate nohighlight">\(w=v'\)</span>, and rearrange:</p>
+<div class="math notranslate nohighlight">
+\[
+w' + \left( 2 \frac{x_1'}{x_1} + p\right) w = 0.
+\]</div>
+<p>That is a linear, first-order equation for <span class="math notranslate nohighlight">\(w\)</span>! We can solve that for <span class="math notranslate nohighlight">\(w\)</span>, then find <span class="math notranslate nohighlight">\(v\)</span> by integrating <span class="math notranslate nohighlight">\(w\)</span>, and then we have a new homogeneous solution, <span class="math notranslate nohighlight">\(x_2\)</span>. This technique is called <strong>reduction of order</strong>, because we pulled a first-order equation out of a second-order one.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>One solution of</p>
+<div class="math notranslate nohighlight">
+\[
+t^2 x'' + 2t x' + 2x = 0
+\]</div>
+<p>is <span class="math notranslate nohighlight">\(x_1(t)=t\)</span>. Find another solution.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Rather than going through the entire process again, let’s plug into the formulas. We have <span class="math notranslate nohighlight">\(p(t)=2/t\)</span> and <span class="math notranslate nohighlight">\(q(t)=2/t^2\)</span>. The equation for <span class="math notranslate nohighlight">\(w\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+w' + \left( 2 \frac{1}{t} + \frac{2}{t} \right)w = 0.
+\]</div>
+<p class="card-text">Hence</p>
+<div class="math notranslate nohighlight">
+\[
+w(t) = \exp \left[ \int -\frac{4}{t}\, dt \right] = Ct^{-4}.
+\]</div>
+<p class="card-text">Then we get</p>
+<div class="math notranslate nohighlight">
+\[
+v(t) = C\int t^{-4}\, dt = k_1 t^{-3} + k_2.
+\]</div>
+<p class="card-text">We only need to get some example of <span class="math notranslate nohighlight">\(x_2\)</span>, so let’s go easy on ourselves and choose <span class="math notranslate nohighlight">\(v(t)=t^{-3}\)</span>. We finally get</p>
+<div class="math notranslate nohighlight">
+\[
+x_2(t) = v(t) x_1(t) = t^{-2}.
+\]</div>
+<p class="card-text">You can check that this is indeed a solution to the original homogeneous ODE.</p>
+</div>
+</details></div>
+<p>The practical value of reduction of order is rather limited. But it does suggest an important fact.</p>
+<div class="proof proof-type-theorem" id="id3">
+
+    <div class="proof-title">
+        <span class="proof-type">Theorem </span>
+        
+    </div><div class="proof-content">
+<p>The general solution of a homogeneous, linear, second-order ODE is of the form</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-genhomog">
+<span class="eqno">()<a class="headerlink" href="#equation-secondlin-genhomog" title="Permalink to this equation">¶</a></span>\[x_h(t) = c_1 x_1(t) + c_2 x_2(t),\]</div>
+<p>for arbitrary constants <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span>.</p>
+</div></div><p>(You might be tempted to do another reduction of order starting from <span class="math notranslate nohighlight">\(x_2\)</span>. Nice try, but you don’t get any new terms that change <a class="reference internal" href="#equation-secondlin-genhomog">()</a>.)</p>
+</div>
+<div class="section" id="constant-coefficients">
+<h2>Constant coefficients<a class="headerlink" href="#constant-coefficients" title="Permalink to this headline">¶</a></h2>
+<p>The linear second-order problem <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> has a nice structure, but only a few such problems are straightforward to solve. We will now, and for the rest of the chapter, limit ourselves to the <strong>constant-coefficient</strong> problem</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-linear-cc">
+<span class="eqno">()<a class="headerlink" href="#equation-secondlin-linear-cc" title="Permalink to this equation">¶</a></span>\[x'' + bx' + k x = f(t),\]</div>
+<p>in which <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are constant, and <span class="math notranslate nohighlight">\(f(t)\)</span> is a forcing function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In <a class="reference internal" href="#equation-secondlin-linear-cc">()</a> the coefficient <span class="math notranslate nohighlight">\(b\)</span> has units <span class="math notranslate nohighlight">\(1/T\)</span>, the coefficient <span class="math notranslate nohighlight">\(k\)</span> has units <span class="math notranslate nohighlight">\(1/T^2\)</span>, and <span class="math notranslate nohighlight">\(f(t)\)</span> has units <span class="math notranslate nohighlight">\(X/T^2\)</span>, where <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(T\)</span> are the units of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, respectively.</p>
+</div>
 <p>We will deal with the homogeneous and particular parts in turn. Each is a direct extension of what we did for first-order problems, but there are some hurdles we must clear to make that transparent.</p>
 </div>
 </div>

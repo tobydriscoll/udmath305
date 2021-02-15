@@ -79,6 +79,8 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
   
+  <img src="../_static/butterfly128.png" class="logo" alt="logo">
+  
   
   <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
   
@@ -209,18 +211,23 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp_formula.html">
+   7. IVP formula
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/integrating_factor.html">
-   7. Integrating factor
+   8. Integrating factor
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
-   8. Undetermined coefficients
+   9. Undetermined coefficients
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/modeling.html">
-   9. Modeling
+   10. Modeling
   </a>
  </li>
 </ul>
@@ -368,7 +375,7 @@
     <a class="reference internal nav-link" href="#critically-damped-oscillator-z-1">
      Critically damped oscillator,
      <span class="math notranslate nohighlight">
-      \(z=1\)
+      \(Z=1\)
      </span>
     </a>
    </li>
@@ -468,47 +475,59 @@ x_h(t) &amp; = \Re \left[  c_1 e^{i\omega_0 t} \right], \\
 &amp; =  R \cos(\omega_0 t + \theta).
 \end{align*}\]</div>
 <p>Thus the undamped case results in pure oscillation at frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>. This is known as <a class="reference internal" href="overview.html#term-simple-harmonic-motion"><span class="xref std std-term">simple harmonic motion</span></a>.</p>
-<div class="dropdown-tip admonition">
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Find the solution in amplitude-phase form of <span class="math notranslate nohighlight">\(2x''+32x=0\)</span> with <span class="math notranslate nohighlight">\(x(0)=1\)</span>, <span class="math notranslate nohighlight">\(x'(0)=-8\)</span>.</p>
-</div></blockquote>
-<p>First divide through by 2 to get the standard form, <span class="math notranslate nohighlight">\(x''+16x=0\)</span>. Then we have <span class="math notranslate nohighlight">\(\omega_0=\sqrt{16}=4\)</span>, so</p>
+<p>Find the solution in amplitude-phase form of <span class="math notranslate nohighlight">\(2x''+32x=0\)</span> with <span class="math notranslate nohighlight">\(x(0)=1\)</span>, <span class="math notranslate nohighlight">\(x'(0)=-8\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">First divide through by 2 to get the standard form, <span class="math notranslate nohighlight">\(x''+16x=0\)</span>. Then we have <span class="math notranslate nohighlight">\(\omega_0=\sqrt{16}=4\)</span>, so</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = a_1 \cos(4 t) + a_2 \sin(4 t).
 \]</div>
-<p>We then derive <span class="math notranslate nohighlight">\(1=x(0)=a_1\)</span> and <span class="math notranslate nohighlight">\(-8=x'(0)=4a_2\)</span>, so</p>
+<p class="card-text">We then derive <span class="math notranslate nohighlight">\(1=x(0)=a_1\)</span> and <span class="math notranslate nohighlight">\(-8=x'(0)=4a_2\)</span>, so</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = \cos(4 t) -2 \sin(4 t).
 \]</div>
-<p>Converting <span class="math notranslate nohighlight">\((1,-2)\)</span> to polar form gives <span class="math notranslate nohighlight">\(R=\sqrt{5}\)</span> and <span class="math notranslate nohighlight">\(\theta = \arctan(-2/1)\)</span>.</p>
+<p class="card-text">Converting <span class="math notranslate nohighlight">\((1,-2)\)</span> to polar form gives <span class="math notranslate nohighlight">\(R=\sqrt{5}\)</span> and <span class="math notranslate nohighlight">\(\theta = \arctan(-2/1)\)</span>.</p>
 </div>
-<div class="dropdown-tip admonition">
+</details></div>
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>When a 2 kg mass is hung on a spring, the spring stretches by 0.25 m. What is the natural frequency of the mass-spring system? Suppose the mass is pulled down 0.2 m past equilibrium and then thrown upward at 1 m/s. What is the amplitude of the motion?</p>
-</div></blockquote>
-<p>Hooke’s Law for a spring states that <span class="math notranslate nohighlight">\(F=k x\)</span>, so we find the spring constant from <span class="math notranslate nohighlight">\(k=F/x=2g/0.25=8g\)</span>, where <span class="math notranslate nohighlight">\(g=9.8\)</span> m per second squared. The ODE for free motion of the system is thus <span class="math notranslate nohighlight">\(2 x'' + 8g x = 0\)</span>, or</p>
+<p>When a 2 kg mass is hung on a spring, the spring stretches by 0.25 m. What is the natural frequency of the mass-spring system? Suppose the mass is pulled down 0.2 m past equilibrium and then thrown upward at 1 m/s. What is the amplitude of the motion?</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Hooke’s Law for a spring states that <span class="math notranslate nohighlight">\(F=k x\)</span>, so we find the spring constant from <span class="math notranslate nohighlight">\(k=F/x=2g/0.25=8g\)</span>, where <span class="math notranslate nohighlight">\(g=9.8\)</span> m per second squared. The ODE for free motion of the system is thus <span class="math notranslate nohighlight">\(2 x'' + 8g x = 0\)</span>, or</p>
 <div class="math notranslate nohighlight">
 \[
 x'' + 4g x   = 0.
 \]</div>
-<p>From this we identify the natural frequency</p>
+<p class="card-text">From this we identify the natural frequency</p>
 <div class="math notranslate nohighlight">
 \[\omega_0 = \sqrt{4g} = 2\sqrt{g} \approx 6.26 \text{s}^{-1}. \]</div>
-<p>We can apply the initial conditions directly to the amplitude-phase form:</p>
+<p class="card-text">We can apply the initial conditions directly to the amplitude-phase form:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 -0.2 &amp; = x(0) = R\cos(\theta) \\
 1 &amp; = x'(0) = -\omega_0 R\sin(\theta).
 \end{align*}\]</div>
-<p>Therefore,</p>
+<p class="card-text">Therefore,</p>
 <div class="math notranslate nohighlight">
 \[R^2 = [R\cos(\theta)]^2 + [R\sin(\theta)]^2 =  0.04 + \omega_0^{-2},\]</div>
-<p>which works out to <span class="math notranslate nohighlight">\(R \approx 0.256 \text{m}\)</span>.</p>
+<p class="card-text">which works out to <span class="math notranslate nohighlight">\(R \approx 0.256 \text{m}\)</span>.</p>
 </div>
+</details></div>
 </div>
 <div class="section" id="underdamped-oscillator-0-z-1">
 <h3>Underdamped oscillator, <span class="math notranslate nohighlight">\(0&lt;Z&lt;1\)</span><a class="headerlink" href="#underdamped-oscillator-0-z-1" title="Permalink to this headline">¶</a></h3>
@@ -521,7 +540,7 @@ x'' + 4g x   = 0.
 <p>or an equivalent form. This solution is pseudoperiodic, combining oscillation at frequency <span class="math notranslate nohighlight">\(\omega_d &lt; \omega_0\)</span> inside an exponential decay envelope. This situation is called an <span class="xref std std-term">underdamped</span> oscillator.</p>
 </div>
 <div class="section" id="critically-damped-oscillator-z-1">
-<h3>Critically damped oscillator, <span class="math notranslate nohighlight">\(z=1\)</span><a class="headerlink" href="#critically-damped-oscillator-z-1" title="Permalink to this headline">¶</a></h3>
+<h3>Critically damped oscillator, <span class="math notranslate nohighlight">\(Z=1\)</span><a class="headerlink" href="#critically-damped-oscillator-z-1" title="Permalink to this headline">¶</a></h3>
 <p>At <span class="math notranslate nohighlight">\(Z=1\)</span> the complex eigenvalues collapse to a double real eigenvalue,</p>
 <div class="math notranslate nohighlight">
 \[\lambda_1 = \lambda_2 = -\omega_0,\]</div>
@@ -568,46 +587,58 @@ x'' + 4g x   = 0.
 </tr>
 </tbody>
 </table>
-<div class="dropdown-tip admonition">
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>A 5 kg mass is hung on a spring with constant <span class="math notranslate nohighlight">\(11\)</span> N per m and connected to a dashpot that provides 8 N-sec per meter of resistance. Is this system underdamped, overdamped, or critically damped?</p>
-</div></blockquote>
-<p>The ODE for the mass-spring system is</p>
+<p>A 5 kg mass is hung on a spring with constant <span class="math notranslate nohighlight">\(11\)</span> N per m and connected to a dashpot that provides 8 N-sec per meter of resistance. Is this system underdamped, overdamped, or critically damped?</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The ODE for the mass-spring system is</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
     5 x'' + 8x' + 11 x  &amp; = 0 ,\\
     x'' + 1.6 x' + 2.2 x  &amp; = 0, 
 \end{align*}\]</div>
-<p>from which we identify the natural frequency</p>
+<p class="card-text">from which we identify the natural frequency</p>
 <div class="math notranslate nohighlight">
 \[  \omega_0 = \sqrt{2.2} \approx 1.483 \text{s}^{-1}.\]</div>
-<p>The damping coefficient is therefore</p>
+<p class="card-text">The damping coefficient is therefore</p>
 <div class="math notranslate nohighlight">
 \[  Z = \frac{1.6}{2\omega_0} \approx 0.539.\]</div>
-<p>Since this value is less than one, the system is underdamped.</p>
+<p class="card-text">Since this value is less than one, the system is underdamped.</p>
 </div>
-<div class="dropdown-tip admonition">
-<p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Suppose the system from the previous example is initially at equilibrium when the mass is suddenly pushed downward at 0.5 m/sec. Find the motion of the mass.</p>
-</div></blockquote>
-<p>We derived the governing ODE <span class="math notranslate nohighlight">\(x'' + 1.6 x' + 2.2 x = 0\)</span>. The eigenvalues are the roots of <span class="math notranslate nohighlight">\(\lambda^2 + 1.6\lambda + 2.2\)</span>, which are found numerically to be</p>
+</details></div>
+<div class="tip admonition">
+<p class="admonition-title">Example (continued)</p>
+<p>Suppose the system from the previous example is initially at equilibrium when the mass is suddenly pushed downward at 0.5 m/sec. Find the motion of the mass.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We derived the governing ODE <span class="math notranslate nohighlight">\(x'' + 1.6 x' + 2.2 x = 0\)</span>. The eigenvalues are the roots of <span class="math notranslate nohighlight">\(\lambda^2 + 1.6\lambda + 2.2\)</span>, which are found numerically to be</p>
 <div class="math notranslate nohighlight">
 \[  \lambda \approx -0.8000 \pm 1.2490i.\]</div>
-<p>(The imaginary part is smaller than the natural frequency found in the last example, as it must be.) Choosing the sin-cos form of the general solution, we have</p>
+<p class="card-text">(The imaginary part is smaller than the natural frequency found in the last example, as it must be.) Choosing the sin-cos form of the general solution, we have</p>
 <div class="math notranslate nohighlight">
 \[
 x_h(t) = a_1 e^{-0.8 t} \cos(1.249 t) + a_2 e^{-0.8 t} \sin(1.249 t).
 \]</div>
-<p>We apply the initial conditions <span class="math notranslate nohighlight">\(x(0)=0\)</span>, <span class="math notranslate nohighlight">\(x'(0)=-0.5\)</span> to find</p>
+<p class="card-text">We apply the initial conditions <span class="math notranslate nohighlight">\(x(0)=0\)</span>, <span class="math notranslate nohighlight">\(x'(0)=-0.5\)</span> to find</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 0 &amp; = x_h(0) = a_1, \\ 
 -0.5 &amp; = x_h'(0) = a_1( -0.8 ) + a_2 (1.249 ),
 \end{align*}\]</div>
-<p>thus <span class="math notranslate nohighlight">\(a_2 = -0.4003\)</span>. The motion is therefore given by <span class="math notranslate nohighlight">\(x(t)=-0.4003\, e^{-0.8 t} \sin(1.249 t)\)</span>.</p>
+<p class="card-text">thus <span class="math notranslate nohighlight">\(a_2 = -0.4003\)</span>. The motion is therefore given by <span class="math notranslate nohighlight">\(x(t)=-0.4003\, e^{-0.8 t} \sin(1.249 t)\)</span>.</p>
 </div>
+</details></div>
 <p>Here is a short video showing how solutions of
 $<span class="math notranslate nohighlight">\(
 x'' + bx' + cx = 0

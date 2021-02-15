@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>8. Undetermined coefficients &#8212; Notes on linear algebra and ODEs</title>
+    <title>9. Undetermined coefficients &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,8 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9. Modeling" href="modeling.html" />
-    <link rel="prev" title="7. Integrating factor" href="integrating_factor.html" />
+    <link rel="next" title="10. Modeling" href="modeling.html" />
+    <link rel="prev" title="8. Integrating factor" href="integrating_factor.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -80,6 +80,8 @@
     
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/butterfly128.png" class="logo" alt="logo">
   
   
   <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
@@ -211,18 +213,23 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="ivp_formula.html">
+   7. IVP formula
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="integrating_factor.html">
-   7. Integrating factor
+   8. Integrating factor
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   8. Undetermined coefficients
+   9. Undetermined coefficients
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="modeling.html">
-   9. Modeling
+   10. Modeling
   </a>
  </li>
 </ul>
@@ -332,12 +339,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#additive-forcing-terms">
-   8.1. Additive forcing terms
+   9.1. Additive forcing terms
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#breakdown">
-   8.2. Breakdown
+   9.2. Breakdown
   </a>
  </li>
 </ul>
@@ -352,7 +359,7 @@
               <div>
                 
   <div class="section" id="undetermined-coefficients">
-<h1><span class="section-number">8. </span>Undetermined coefficients<a class="headerlink" href="#undetermined-coefficients" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>Undetermined coefficients<a class="headerlink" href="#undetermined-coefficients" title="Permalink to this headline">¶</a></h1>
 <p>Variation of parameters is all that we need for linear first-order problems, but as we have seen in some examples, it requires a fair amount of grunt work–in particular, two integrals. There is an easier path in the important special case when</p>
 <ol class="simple">
 <li><p>The growth/decay rate coefficient <span class="math notranslate nohighlight">\(a(t)\)</span> is constant, and</p></li>
@@ -361,7 +368,7 @@
 <p>In this situation, we go through the same work as before to get the homogeneous part <span class="math notranslate nohighlight">\(x_h\)</span>, but a valid <span class="math notranslate nohighlight">\(x_p\)</span> can be found without integration.</p>
 <p>The correct form of <span class="math notranslate nohighlight">\(x_p\)</span> for various manifestations of <span class="math notranslate nohighlight">\(f\)</span> are given in <a class="reference internal" href="#table-firstlin-muc"><span class="std std-ref">the table below</span></a>. The capital letters are considered unknown constants that have to be determined by plugging <span class="math notranslate nohighlight">\(x_p\)</span> into the ODE. This is what gives the method its name, the <a class="reference internal" href="overview.html#term-method-of-undetermined-coefficients"><span class="xref std std-term">method of undetermined coefficients</span></a>.</p>
 <table class="table" id="table-firstlin-muc">
-<caption><span class="caption-number">Table 8.1 </span><span class="caption-text">Particular solutions for the method of undetermined coefficients.</span><a class="headerlink" href="#table-firstlin-muc" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 9.1 </span><span class="caption-text">Particular solutions for the method of undetermined coefficients.</span><a class="headerlink" href="#table-firstlin-muc" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -468,7 +475,7 @@ x(t) = 3 e^{t-\pi} + 3\cos(t) + 3\sin(t).
 </details></div>
 <p>The benefit of the MUC over our previous methods is avoiding a second integral that often requires integration by parts when <span class="math notranslate nohighlight">\(f\)</span> is a polynomial or trig function.</p>
 <div class="section" id="additive-forcing-terms">
-<h2><span class="section-number">8.1. </span>Additive forcing terms<a class="headerlink" href="#additive-forcing-terms" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>Additive forcing terms<a class="headerlink" href="#additive-forcing-terms" title="Permalink to this headline">¶</a></h2>
 <p>If the forcing function includes multiple different types of functions added together, then you can find particular solutions for the different terms separately and add them together to get the overall particular solution.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
@@ -491,7 +498,7 @@ Solution<div class="summary-down docutils">
 </details></div>
 </div>
 <div class="section" id="breakdown">
-<h2><span class="section-number">8.2. </span>Breakdown<a class="headerlink" href="#breakdown" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2. </span>Breakdown<a class="headerlink" href="#breakdown" title="Permalink to this headline">¶</a></h2>
 <p>The suggestions in the <a class="reference internal" href="#table-firstlin-muc"><span class="std std-ref">MUC table</span></a> can fail if the forcing function includes the homogeneous solution <span class="math notranslate nohighlight">\(e^{at}\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
@@ -537,8 +544,8 @@ Solution<div class="summary-down docutils">
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="integrating_factor.html" title="previous page"><span class="section-number">7. </span>Integrating factor</a>
-    <a class='right-next' id="next-link" href="modeling.html" title="next page"><span class="section-number">9. </span>Modeling</a>
+    <a class='left-prev' id="prev-link" href="integrating_factor.html" title="previous page"><span class="section-number">8. </span>Integrating factor</a>
+    <a class='right-next' id="next-link" href="modeling.html" title="next page"><span class="section-number">10. </span>Modeling</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

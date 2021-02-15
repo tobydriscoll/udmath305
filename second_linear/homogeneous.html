@@ -79,6 +79,8 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
   
+  <img src="../_static/butterfly128.png" class="logo" alt="logo">
+  
   
   <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
   
@@ -209,18 +211,23 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp_formula.html">
+   7. IVP formula
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/integrating_factor.html">
-   7. Integrating factor
+   8. Integrating factor
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
-   8. Undetermined coefficients
+   9. Undetermined coefficients
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/modeling.html">
-   9. Modeling
+   10. Modeling
   </a>
  </li>
 </ul>
@@ -415,44 +422,56 @@ p(s) = s^2 + b s + k.
 <p>Let <span class="math notranslate nohighlight">\(\lambda\)</span> be a double eigenvalue of <span class="math notranslate nohighlight">\(\opA\)</span>, where <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx.\)</span> The general solution of <span class="math notranslate nohighlight">\(\opA[x]= 0\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-homogeneous-repeated">
 <span class="eqno">()<a class="headerlink" href="#equation-secondlin-homogeneous-repeated" title="Permalink to this equation">¶</a></span>\[x_h(t) = e^{\lambda t} \bigl( c_1 t + c_2 \bigr).\]</div>
-</div></div><div class="dropdown-tip admonition">
+</div></div><div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Find the general solution of <span class="math notranslate nohighlight">\(x''-x'-2x=0\)</span>.</p>
-</div></blockquote>
-<p>The characteristic polynomial is <span class="math notranslate nohighlight">\(s^2-s-2\)</span>, which has roots <span class="math notranslate nohighlight">\(\lambda_1=-1\)</span>, <span class="math notranslate nohighlight">\(\lambda_2=2\)</span>. This gives the general solution <span class="math notranslate nohighlight">\(x_h(t)=c_1 e^{-t} + c_2 e^{2t}\)</span>.</p>
+<p>Find the general solution of <span class="math notranslate nohighlight">\(x''-x'-2x=0\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The characteristic polynomial is <span class="math notranslate nohighlight">\(s^2-s-2\)</span>, which has roots <span class="math notranslate nohighlight">\(\lambda_1=-1\)</span>, <span class="math notranslate nohighlight">\(\lambda_2=2\)</span>. This gives the general solution <span class="math notranslate nohighlight">\(x_h(t)=c_1 e^{-t} + c_2 e^{2t}\)</span>.</p>
 </div>
-<div class="dropdown-tip admonition">
+</details></div>
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
-<p>We could think of the trivial problem <span class="math notranslate nohighlight">\(x''=0\)</span> as being linear with <span class="math notranslate nohighlight">\(b=k=0\)</span>. The characteristic polynomial is <span class="math notranslate nohighlight">\(s^2\)</span>, which make zero a double eigenvalue. So the general solution is</p>
+<p>We could think of the trivial problem <span class="math notranslate nohighlight">\(x''=0\)</span> as being linear with <span class="math notranslate nohighlight">\(b=k=0\)</span>. The characteristic polynomial is <span class="math notranslate nohighlight">\(s^2\)</span>, which makes zero a double eigenvalue. So the general solution is</p>
 <div class="math notranslate nohighlight">
 \[
 x_h(t) = e^{0t} (c_1 t + c_2) = c_1 t + c_2,
 \]</div>
 <p>as we already know.</p>
 </div>
-<div class="dropdown-tip admonition">
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Solve the IVP <span class="math notranslate nohighlight">\(x'' - 5 x = 0\)</span>, <span class="math notranslate nohighlight">\(x(0)=6\)</span>, <span class="math notranslate nohighlight">\(x'(0)=0\)</span>.</p>
-</div></blockquote>
-<p>The eigenvalues are the roots of <span class="math notranslate nohighlight">\(s^2-5\)</span>, hence <span class="math notranslate nohighlight">\(\lambda_1=\sqrt{5}\)</span>, <span class="math notranslate nohighlight">\(\lambda_2=-\sqrt{5}\)</span>. The general solution is</p>
+<p>Solve the IVP <span class="math notranslate nohighlight">\(x'' - 5 x = 0\)</span>, <span class="math notranslate nohighlight">\(x(0)=6\)</span>, <span class="math notranslate nohighlight">\(x'(0)=0\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The eigenvalues are the roots of <span class="math notranslate nohighlight">\(s^2-5\)</span>, hence <span class="math notranslate nohighlight">\(\lambda_1=\sqrt{5}\)</span>, <span class="math notranslate nohighlight">\(\lambda_2=-\sqrt{5}\)</span>. The general solution is</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = c_1 e^{\sqrt{5}\, t} + c_2 e^{-\sqrt{5}\, t}.
 \]</div>
-<p>The initial conditions lead to</p>
+<p class="card-text">The initial conditions lead to</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 6 &amp;= x(0) = c_1 e^0 + c_2 e^0 = c_1 + c_2, \\ 
 0 &amp;= x'(0) = \sqrt{5} c_1 e^0 - \sqrt{5} c_2 e^0 = \sqrt{5}(c_1-c_2).
 \end{align*}\]</div>
-<p>It’s easy to conclude from here that <span class="math notranslate nohighlight">\(c_1=c_2=3\)</span>. In general we might have to solve a <span class="math notranslate nohighlight">\(2\times 2\)</span> linear algebraic system for the constants.</p>
+<p class="card-text">It’s easy to conclude from here that <span class="math notranslate nohighlight">\(c_1=c_2=3\)</span>. In general we might have to solve a <span class="math notranslate nohighlight">\(2\times 2\)</span> linear algebraic system for the constants.</p>
 </div>
+</details></div>
 </div>
 <div class="section" id="complex-eigenvalues">
 <h2>Complex eigenvalues<a class="headerlink" href="#complex-eigenvalues" title="Permalink to this headline">¶</a></h2>
-<p>All seems well, until you remember that the roots of a real quadratic may come as a complex conjugate pair. What then are we to make of <a class="reference internal" href="#equation-secondlin-homogeneous-distinct">()</a> or <a class="reference internal" href="#equation-secondlin-homogeneous-repeated">()</a>? That’s the next task.</p>
+<p>All seems well, until you remember that the roots of a real quadratic may come as a complex conjugate pair. What then are we to make of <a class="reference internal" href="#equation-secondlin-homogeneous-distinct">()</a> or <a class="reference internal" href="#equation-secondlin-homogeneous-repeated">()</a>? That’s next.</p>
 </div>
 </div>
 

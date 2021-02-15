@@ -79,6 +79,8 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
   
+  <img src="../_static/butterfly128.png" class="logo" alt="logo">
+  
   
   <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
   
@@ -209,18 +211,23 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp_formula.html">
+   7. IVP formula
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/integrating_factor.html">
-   7. Integrating factor
+   8. Integrating factor
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
-   8. Undetermined coefficients
+   9. Undetermined coefficients
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../first_linear/modeling.html">
-   9. Modeling
+   10. Modeling
   </a>
  </li>
 </ul>
@@ -416,33 +423,39 @@ x(t) &amp;= R e^{at} \cos(\omega t + \theta), \quad R \ge 0, \: \theta \in (-\pi
 <p>It doesn’t matter whether we use <span class="math notranslate nohighlight">\(+\theta\)</span> or <span class="math notranslate nohighlight">\(-\theta\)</span> as the phase term. Switching just flips the sign of the numerical value of <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 </div>
 <p>Each form has two real arbitrary constants that can be uniquely determined by initial conditions.</p>
-<div class="dropdown-tip admonition">
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Find a solution to <span class="math notranslate nohighlight">\(x''-2x'+5x=0\)</span>, <span class="math notranslate nohighlight">\(x(0)=5\)</span>, <span class="math notranslate nohighlight">\(x'(0)=-5\)</span> in amplitude-phase form.</p>
-</div></blockquote>
-<p>The characteristic polynomial <span class="math notranslate nohighlight">\(s^2-2s+5\)</span> gives the eigenvalues <span class="math notranslate nohighlight">\(1\pm 2i\)</span>. We can write the solution as <span class="math notranslate nohighlight">\(x(t) = R e^{t} \cos(2 t + \theta)\)</span> and apply the initial conditions to get</p>
+<p>Find a solution to <span class="math notranslate nohighlight">\(x''-2x'+5x=0\)</span>, <span class="math notranslate nohighlight">\(x(0)=5\)</span>, <span class="math notranslate nohighlight">\(x'(0)=-5\)</span> in amplitude-phase form.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The characteristic polynomial <span class="math notranslate nohighlight">\(s^2-2s+5\)</span> gives the eigenvalues <span class="math notranslate nohighlight">\(1\pm 2i\)</span>. We can write the solution as <span class="math notranslate nohighlight">\(x(t) = R e^{t} \cos(2 t + \theta)\)</span> and apply the initial conditions to get</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 5 &amp;= x(0) = R\cos(\theta), \\
 -5 &amp;= x'(0) = R[-2\sin(\theta) + \cos(\theta)].
 \end{align*}\]</div>
-<p>We can substitute from the first into the second and get</p>
+<p class="card-text">We can substitute from the first into the second and get</p>
 <div class="math notranslate nohighlight">
 \[
 -5 = -2R\sin(\theta) + 5,
 \]</div>
-<p>or <span class="math notranslate nohighlight">\(R\sin(\theta) =5\)</span>. Taking ratios with the first equation gives</p>
+<p class="card-text">or <span class="math notranslate nohighlight">\(R\sin(\theta) =5\)</span>. Taking ratios with the first equation gives</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{R\sin(\theta)}{R\cos(\theta)}  = \frac{5}{5} \quad \Rightarrow \quad \tan(\theta)=1,
 \]</div>
-<p>so we get <span class="math notranslate nohighlight">\(\theta=\pi/4\)</span>. Then <span class="math notranslate nohighlight">\(R=5/\cos(\pi/4)=5\sqrt{2}\)</span>. The final answer is</p>
+<p class="card-text">so we get <span class="math notranslate nohighlight">\(\theta=\pi/4\)</span>. Then <span class="math notranslate nohighlight">\(R=5/\cos(\pi/4)=5\sqrt{2}\)</span>. The final answer is</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = 5\sqrt{2} e^{t} \cos\left(2 t + \tfrac{\pi}{4}\right).
 \]</div>
 </div>
+</details></div>
 <div class="section" id="conversion-between-forms">
 <h2>Conversion between forms<a class="headerlink" href="#conversion-between-forms" title="Permalink to this headline">¶</a></h2>
 <p>Each form of the solution has its own advantages. Sometimes, it’s useful to be able to convert between them. We already have that <a class="reference internal" href="#equation-secondlin-combine-polar">()</a> connects <a class="reference internal" href="#equation-secondlin-combine-sincos">()</a> and <a class="reference internal" href="#equation-secondlin-combine-ampphase">()</a>, so we just need to connect the third form.</p>
@@ -462,8 +475,8 @@ This equation uses the Greek letters $\rho$ (rho) and $\phi$ (phi).
 <span class="eqno">()<a class="headerlink" href="#equation-secondlin-combine-c1" title="Permalink to this equation">¶</a></span>\[c_1 = R e^{i\theta}\]</div>
 <p>connects <a class="reference internal" href="#equation-secondlin-combine-exp">()</a> and <a class="reference internal" href="#equation-secondlin-combine-ampphase">()</a>.</p>
 <p>Both <a class="reference internal" href="#equation-secondlin-combine-polar">()</a> and <a class="reference internal" href="#equation-secondlin-combine-c1">()</a> amount to the same thing, conversion between rectangular coordinates, like <span class="math notranslate nohighlight">\(c_1=\alpha+i\beta\)</span> and <span class="math notranslate nohighlight">\((a_1,a_2)\)</span>, and polar coordinates, <span class="math notranslate nohighlight">\((R,\theta)\)</span>.</p>
-<div class="dropdown-tip admonition">
-<p class="admonition-title">Example</p>
+<div class="tip admonition">
+<p class="admonition-title">Example (continued)</p>
 <p>In the preceding example we found the solution</p>
 <div class="math notranslate nohighlight">
 \[
@@ -480,18 +493,24 @@ x(t) = e^{t} \bigl[ 5 \cos(2 t) + 5 \sin(2t) \bigr],
 x(t) = \Re \Bigl[ (5+5i)  e^{(1+2i)t}  \Bigr].
 \]</div>
 </div>
-<div class="dropdown-tip admonition">
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Find the amplitude-phase form of <span class="math notranslate nohighlight">\(x(t)=-4\cos(3t) + 2 \sin(3t)\)</span>.</p>
-</div></blockquote>
-<p>The polar form of the point <span class="math notranslate nohighlight">\((-4,2)\)</span> satisfies</p>
+<p>Find the amplitude-phase form of <span class="math notranslate nohighlight">\(x(t)=-4\cos(3t) + 2 \sin(3t)\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The polar form of the point <span class="math notranslate nohighlight">\((-4,2)\)</span> satisfies</p>
 <div class="math notranslate nohighlight">
 \[
 R^2 = 16+4=20, \qquad \tan(\theta) = \frac{2}{-4}.
 \]</div>
-<p>We see that <span class="math notranslate nohighlight">\(R=2\sqrt{5}\)</span>, and <span class="math notranslate nohighlight">\(\theta = \arctan(-1/2)\)</span> should be in the second quadrant. It would have to be found numerically.</p>
+<p class="card-text">We see that <span class="math notranslate nohighlight">\(R=2\sqrt{5}\)</span>, and <span class="math notranslate nohighlight">\(\theta = \arctan(-1/2)\)</span> should be in the second quadrant. It would have to be found numerically.</p>
 </div>
+</details></div>
 <p>It’s more common that we want to know the amplitude than the phase. If you do need a numerical value of <span class="math notranslate nohighlight">\(\theta\)</span>, make sure you use the “four-quadrant arctangent” on a calculator or computer.</p>
 </div>
 </div>
