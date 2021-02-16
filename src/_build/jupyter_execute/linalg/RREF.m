@@ -153,11 +153,11 @@ $$
 Find all solutions to the linear system.
 
 :::{dropdown} Solution
-The last two rows have no information and can be ignored. Columns 2 and 4 are pivot columns. We give variables from the other columns arbitrary values, $x_1=s$ and $x_3=t$. The pivot variables are solved in terms of these to get $x_2=2-3t$ and $x_4=-4$. All solutions are expressed as the vector
+The last two rows have no information and can be ignored. Columns 2 and 4 are pivot columns. We give variables from the other columns arbitrary values, $x_1=s$ and $x_3=t$. The pivot variables are solved in terms of these to get $x_2=2+3t$ and $x_4=-4$. All solutions are expressed as the vector
 
 $$
 \bfx = \begin{bmatrix}
-s \\ 2-3t \\ t \\ -4
+s \\ 2+3t \\ t \\ -4
 \end{bmatrix}, \qquad s,t\in \real.
 $$
 :::
