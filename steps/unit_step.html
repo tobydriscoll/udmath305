@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>2. Unit step functions &#8212; Notes on linear algebra and ODEs</title>
+    <title>2. Step forcing &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -246,7 +246,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Unit step functions
+   2. Step forcing
   </a>
  </li>
  <li class="toctree-l1">
@@ -358,8 +358,8 @@
         
               <div>
                 
-  <div class="section" id="unit-step-functions">
-<h1><span class="section-number">2. </span>Unit step functions<a class="headerlink" href="#unit-step-functions" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="step-forcing">
+<h1><span class="section-number">2. </span>Step forcing<a class="headerlink" href="#step-forcing" title="Permalink to this headline">¶</a></h1>
 <p>Here is one of our basic building blocks for discontinuous phenomena.</p>
 <div class="proof proof-type-definition" id="id1">
 <span id="definition-firstlin-unitstep"></span>
@@ -406,11 +406,46 @@ f(t-T)H(t-T).
 H(t-S) - H(t-T)
 \]</div>
 <p>is equal to 1 for <span class="math notranslate nohighlight">\(S\le t &lt; T\)</span> and 0 elsewhere.</p>
-</div></div><p>Here is a key fact about step forcing in a first-order ODE.</p>
+</div></div><div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Use step functions to express</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(t) = \begin{cases}
+7, &amp; 0 \le t &lt; 2, \\
+\sin(t), &amp; 2 \le t \lt 5, \\
+e^t, &amp; t \ge 5.
+\end{cases}
+\end{split}\]</div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The key is to multiply each piecewise part of the definition of <span class="math notranslate nohighlight">\(f\)</span> by its corresponding window function:</p>
+<div class="math notranslate nohighlight">
+\[
+f(t) = 7 \left[ H(t-0) - H(t-2) \right] + \sin(t)\, [ H(t-2)-H(t-5) ] + e^t\, [H(t-5)].
+\]</div>
+<p class="card-text">Note that the last “window,” which extends to infinity, never actually closes, so it’s just a lone step up. Keeping in mind that <span class="math notranslate nohighlight">\(H(t)=1\)</span> for all <span class="math notranslate nohighlight">\(t\ge 0\)</span>,this expression can be rearranged into</p>
+<div class="math notranslate nohighlight">
+\[
+f(t) = 7 + H(t-2)\, [\sin(t)-7] + H(t-5)\, [e^t - \sin(t)].
+\]</div>
+<p class="card-text">For material that is coming, this later form is usually more convenient.</p>
+</div>
+</details></div>
+<div class="section" id="piecewise-constant-forcing">
+<h2><span class="section-number">2.1. </span>Piecewise constant forcing<a class="headerlink" href="#piecewise-constant-forcing" title="Permalink to this headline">¶</a></h2>
+<p>Here is a key fact about step forcing in a first-order ODE.</p>
 <div class="proof proof-type-property" id="id3">
 
     <div class="proof-title">
         <span class="proof-type">Property 2.5</span>
+        
+            <span class="proof-title-name">(1st order ODE with step forcing)</span>
         
     </div><div class="proof-content">
 <p>If <span class="math notranslate nohighlight">\(x(t)\)</span> solves <span class="math notranslate nohighlight">\(x'-a(t)x=H(t-T)f(t-T)\)</span>, where <span class="math notranslate nohighlight">\(a(t)\)</span> and <span class="math notranslate nohighlight">\(f(t)\)</span> are continuous, then <span class="math notranslate nohighlight">\(x(t)\)</span> is continuous.</p>
@@ -418,8 +453,6 @@ H(t-S) - H(t-T)
 <p class="admonition-title">Note</p>
 <p>While <span class="math notranslate nohighlight">\(x(t)\)</span> is continuous, <span class="math notranslate nohighlight">\(x'(t)\)</span> is not. The ODE itself tells us that <span class="math notranslate nohighlight">\(x'\)</span> has a jump discontinuity at <span class="math notranslate nohighlight">\(t=T\)</span>.</p>
 </div>
-<div class="section" id="piecewise-constant-forcing">
-<h2><span class="section-number">2.1. </span>Piecewise constant forcing<a class="headerlink" href="#piecewise-constant-forcing" title="Permalink to this headline">¶</a></h2>
 <p>Consider problems <span class="math notranslate nohighlight">\(x'-ax=f(t)\)</span> with <span class="math notranslate nohighlight">\(x(0)=x_0\)</span>, in which <span class="math notranslate nohighlight">\(a\)</span> is constant and the forcing is piecewise constant. That is,</p>
 <div class="math notranslate nohighlight" id="equation-steps-pwc-forcing">
 <span class="eqno">(2.3)<a class="headerlink" href="#equation-steps-pwc-forcing" title="Permalink to this equation">¶</a></span>\[x'-ax = k_1 H(t-T_1) + k_2 H(t-T_2) + \cdots + k_m H(t-T_m),\]</div>
