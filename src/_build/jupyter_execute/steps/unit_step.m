@@ -1,4 +1,4 @@
-# Unit step functions
+# Step forcing
 
 Here is one of our basic building blocks for discontinuous phenomena.
 
@@ -43,17 +43,48 @@ $$
 is equal to 1 for $S\le t < T$ and 0 elsewhere.
 ````
 
+::::{admonition} Example
+:class: tip
+
+Use step functions to express 
+
+$$
+f(t) = \begin{cases}
+7, & 0 \le t < 2, \\
+\sin(t), & 2 \le t \lt 5, \\
+e^t, & t \ge 5.
+\end{cases}
+$$
+
+:::{dropdown} Solution
+The key is to multiply each piecewise part of the definition of $f$ by its corresponding window function:
+
+$$
+f(t) = 7 \left[ H(t-0) - H(t-2) \right] + \sin(t)\, [ H(t-2)-H(t-5) ] + e^t\, [H(t-5)].
+$$
+
+Note that the last "window," which extends to infinity, never actually closes, so it's just a lone step up. Keeping in mind that $H(t)=1$ for all $t\ge 0$,this expression can be rearranged into
+
+$$
+f(t) = 7 + H(t-2)\, [\sin(t)-7] + H(t-5)\, [e^t - \sin(t)].
+$$
+
+For material that is coming, this later form is usually more convenient.
+:::
+::::
+
+
+## Piecewise constant forcing
+
 Here is a key fact about step forcing in a first-order ODE.
 
-``` {proof:property}
+``` {proof:property} 1st order ODE with step forcing
 If $x(t)$ solves $x'-a(t)x=H(t-T)f(t-T)$, where $a(t)$ and $f(t)$ are continuous, then $x(t)$ is continuous.
 ```
 
 :::{note}
 While $x(t)$ is continuous, $x'(t)$ is not. The ODE itself tells us that $x'$ has a jump discontinuity at $t=T$.
 :::
-
-## Piecewise constant forcing
 
 Consider problems $x'-ax=f(t)$ with $x(0)=x_0$, in which $a$ is constant and the forcing is piecewise constant. That is,
 
