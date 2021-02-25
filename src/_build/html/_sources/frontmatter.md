@@ -31,7 +31,7 @@ These are notes on MATH 305 at UD by Toby Driscoll. All rights reserved.
 | Mar. 16 | [Quick tour](first_linear/preview)                                 | --           |                 |
 | Mar. 16 | [Initial-value problems](first_linear/ivp)                         | --           |                 |
 | Mar. 16 | [Operators](first_linear/operators)                                | 2.3          |                 |
-| Mar. 23 | [Homogeneous solutions](first_linear/homogeneous)                  | 2.4          |                 |
+| Mar. 16 | [Homogeneous solutions](first_linear/homogeneous)                  | 2.4          |                 |
 | Mar. 23 | [Variation of parameters](first_linear/variation_parameters)       | 2.5.1, 2.5.2 |                 |
 | Mar. 23 | [IVP formula](first_linear/ivp_formula)                            | --           |                 |
 | Mar. 23 | *(optional)* [Integrating factor](first_linear/integrating_factor) | --           | 2.1             |
