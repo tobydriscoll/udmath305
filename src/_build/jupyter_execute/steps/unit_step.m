@@ -105,7 +105,7 @@ where the subscripted quantities are constants. Returning to our operator notati
 Then we set
 
 $$
-x(t)=x_h(t)+k_1 x_1(t) + \cdots +k_m x_m(t)$.
+x(t)=x_h(t)+k_1 x_1(t) + \cdots +k_m x_m(t).
 $$
 
 As a result, $x(0)=x_0+0+\cdots+0=x_0$, so $x$ satisfies the initial condition. Furthermore,

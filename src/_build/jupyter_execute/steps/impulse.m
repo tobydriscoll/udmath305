@@ -1,5 +1,11 @@
 # Impulses
 
+restoredefaultpath
+set(0,'defaultlinelinewidth',1)
+set(0,'defaultaxesfontsize',6)
+
+%plot -s 800,400 -r 160 -f png
+
 A step function in the forcing represents an effect that turns on and stays on. If we use a window function, the duration of the effect is limited. Now consider what happens if the window interval is $[T,T+\epsilon]$ and we let $\epsilon\to 0$.
 
 If the forcing amplitude remains constant in this limit, then the total effect size must also go to zero. But if we let the forcing amplitude grow to keep the area under the curve constant, we simulate a fixed effect size acting at over an infinitesimally small window, i.e., a single instant. That reasoning motivates the following definition.
@@ -9,10 +15,10 @@ Define
 
 ```{math}
 :label: steps-spike
-\delta_\epsilon(t) = \frac{1 - H(t -\epsilon)}{\epsilon},
+\delta_\epsilon(t-T) = \frac{H(t-T) - H(t - (T + \epsilon))}{\epsilon}.
 ```
 
-and let $x_\epsilon(t)$ be the solution of
+As $\epsilon\to 0$, this becomes a tall, narrow spike at time $T$. Also let $x_\epsilon(t)$ be the solution of
 
 ```{math}
 x' - a x = \delta_\epsilon(t), \quad x(0)=0.
@@ -34,7 +40,7 @@ x' - a x = \delta(t), \quad x(0)=0,
 where $\delta(t)$ is called an {term}`impulse` or a {term}`delta function`. 
 
 ```{note}
-A math pedant will never fail to remind you that $\delta(t)$ is not a true function, but rather something called a *distribution*. Just nod and edge away slowly.
+A math pedant will never fail to remind you that $\delta(t)$ is not a true function, but rather something called a *distribution*. Just nod at them and edge away slowly.
 ```
 
 (section-steps-jump)=
@@ -66,7 +72,7 @@ In a first-order linear ODE, the effect of an impulse is the same as an instanta
 ```
 
 ```{note}
-With step forcing, we stated that $x(t)$ is continuous while $x'(t)$ has jumps. For impulses, it's $x(t)$ itself that jumps.
+With step forcing, we stated that $x(t)$ is continuous while $x'(t)$ has jumps. For impulses, it's $x(t)$ itself that jumps. (These observations will be modified when we look at second-order problems.)
 ```
 
 Applying superposition, we get the following.
@@ -87,66 +93,43 @@ x'-a(t)x=f(t), \quad x(0)=x_0+k,
 for $t>0$. 
 ````
 
-## Delayed impulse
+## Solution method
 
-A forcing function of the form $\delta(t-T)$ for $T>0$ has no effect for $t<T$, then causes a jump in value at $t=T$. That makes it relatively straightforward to apply superposition to solve particular examples. To solve
+It is relatively straightforward to apply superposition to solve particular examples with impulse forcing. To solve a problem in the form
 
 $$
 x'-a(t)x = f(t) + k \delta(t-T), \quad x(0)=x_0,
 $$
 
-where $T>0$ and $a(t)$ and $f(t)$ are continuous, we first break the problem into homogeneous and particular solutions,
+where $T>0$ and $a(t)$ and $f(t)$ are continuous, we break the problem into manageable subproblems:
 
 \begin{align*}
 \opA[x_h] &= 0, \quad x_h(0)=x_0, \\
-\opA[x_p] & = f(t) + k \delta(t-T),\quad x_p(0)=0.
+\opA[x_p] & = f(t), \quad x_p(0)=0,
+\opA[x_i] & = \delta(t-T), \quad x_i(0)=0.
 \end{align*}
 
-Now we find $x_p$ as different expressions before and after the impulse. For $t<T$, we have
+By linearity, then, the solution we seek is $x=x_h+x_p+k x_i$. The problems for $x_h$ and $x_p$ are familiar and need no new commentary. As for $x_i$, for $0\le t < T$ we have $x'-ax = 0$, $x(0)=0$. The solution is clearly just $x_i(t)=0$ up to time $T$. At time $T$ the value jumps up by 1, and then the forcing is again zero. Thus, $x_i(t)=e^{a(t-T)}$ for $t\ge T$. We can express $x_i$ for all time as
 
-$$
-\opA[x_1]  = f(t), \quad x_1(0)=0.
-$$
+:::{math}
+:label: impulse-1st-solution
+x_i(t) = H(t-T) e^{a(t-T)}.
+:::
 
-Then at $t=T the solution jumps and continues, so
-
-$$
-\opA[x_2]  = f(t), \quad x_2(T)=x_1(T)+k.
-$$
-
-We write $x_p$ using window and step functions as
-
-$$
-x_p(t) = x_1(t) [1-H(t-T)] + x_2(t) [H(t-T)] = x_1(t) + H(t-T) [ x_2(t)-x_1(t) ].
-$$
-
-Finally, $x(t)=x_h(t)+x_p(t)$.
-
-It's awkward to write out all the pieces as one big formula, so it's better to think about using the process.
+If the forcing of an IVP includes additional impulses, each contributes something like {eq}`impulse-1st-solution` to the solution.
 
 ::::{admonition} Example
 :class: tip
-Solve $x'+5x=3\delta(t-2)$, with $x(0)=1$.
+Solve $x'+2x=3\delta(t-1)$, with $x(0)=-4$.
 
 :::{dropdown} Solution
-The homogeneous solution is $x_h(t)=e^{-5t}$. For the particular part we have
-
-\begin{align*}
-\opA[x_1] &= 0, \quad x_1(0) = 0, \qquad (t<2),\\
-\opA[x_2] &= 0, \quad x_2(2) = x_1(2)+3, \qquad (t>2).
-\end{align*}
-
-It's clear that $x_1(t)=0$ and thus $x_2$ solves $x'+5x=0,$ $x(2)=3$. Hence
+The homogeneous solution of $x'+2x=0$, $x(0)=-4$ is $x_h(t)=-4e^{-2t}$. From the impulse we get
 
 $$
-x_2(t) = 3e^{-5(t-2)}, \qquad (t>2).
+x' + 2x = \delta(t-1), \quad x(0)=0 \qquad \implies \qquad x_i(t) = H(t-1) e^{-2(t-1)}.
 $$
 
-Finally, the solution is $x_h+x_p$, or
-
-$$
-x(t) = e^{-5t} + 0 + H(t-2) [x_2(t)-0] = e^{-5t} + 3 H(t-2) e^{-5(t-2)}.
-$$
+Therefore, $x(t) = -4e^{-2t} + 3 H(t-1) e^{-2(t-1)}.$
 :::
 ::::
 
@@ -154,13 +137,16 @@ $$
 
 The easiest way to solve these problems numerically is to solve the system first for $t<T$ and then for $t>T$, with the second solution having initial condition coming from the first. For the preceding example, we use:
 
-dxdt = @(t,x) -5*x;      % ODE without the delta
-[t1,x1] = ode45(dxdt,[0,2],1);
-x2init = 3+x1(end);      % uses the final value for x1
-[t2,x2] = ode45(dxdt,[2,5],x2init);
+dxdt = @(t,x) -2*x;      % ODE without the delta
+[t1,x1] = ode45(dxdt,[0,1],-4);
+x2init = 3+x1(end);      % jump from the final value for x1
+[t2,x2] = ode45(dxdt,[1,5],x2init);
 
-semilogy([t1;t2],[x1;x2])     % stack the time and solution vectors
+t = [t1;t2];  x = [x1;x2];   % stack the time and solution vectors
+x_exact = -4*exp(-2*t) + 3*(t>=1).*exp(-2*(t-1));
+plot(t,x,'-',t,x_exact,'o','markersize',3)     
 xlabel('t'), ylabel('x(t)')
+legend('numerical','exact')
 title('Impulse forcing')
 
-Because of the log scale on the $y$-axis, the graph has two straight lines with a jump increase at $t=2$.
+The jump increase by 3 at $t=1$ is the only interruption to pure exponential decay.
