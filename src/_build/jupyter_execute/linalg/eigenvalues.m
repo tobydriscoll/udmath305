@@ -84,7 +84,6 @@ Find the eigenvalues and eigenspaces of
 ```
 
 :::{dropdown} Solution
-
 Start by computing the characteristic polynomial:
 
 ```{math}
@@ -108,6 +107,7 @@ For $\lambda_2=-1$,
 ```
 
 leading to the eigenspace basis $[-1/2;\,1]$ or equivalently, $\twovec{-1}{2}$.
+:::
 ::::
 
 ## MATLAB
@@ -141,9 +141,7 @@ Find the eigenstuff of
 ```{math}
 \bfA = \twomat{1}{1}{-1}{1}.
 ```
-:::{admonition} Solution
-:class: note,dropdown,solution 
-
+:::{dropdown} Solution
 We start by finding eigenvalues. 
 
 $$
@@ -167,6 +165,7 @@ $$
 To find a basis we just use the first row as explained above, getting $\twovec{1}{i}$. 
 
 Now we get a nice reward for using complex numbers. Since the matrix is real, the other eigenvalue is the conjugate of $\lambda_1$, and it turns out that the same is true of the eigenspace as well. So $\twovec{1}{-i}$ is a basis for the second eigenspace.
+:::
 ::::
 
    <div style="max-width:608px"><div style="position:relative;padding-bottom:66.118421052632%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_2wzgw5dv&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_e9ee2yk9" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>

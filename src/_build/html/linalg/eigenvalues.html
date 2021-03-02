@@ -246,7 +246,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/unit_step.html">
-   2. Unit step functions
+   2. Step forcing
   </a>
  </li>
  <li class="toctree-l1">
@@ -545,28 +545,33 @@ Solution<div class="summary-down docutils">
 <p>Find the eigenstuff of</p>
 <div class="math notranslate nohighlight">
 \[\bfA = \twomat{1}{1}{-1}{1}.\]</div>
-<div class="note-dropdown-solution admonition">
-<p class="admonition-title">Solution</p>
-<p>We start by finding eigenvalues.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">We start by finding eigenvalues.</p>
 <div class="math notranslate nohighlight">
 \[
 \det(\bfA - \lambda \meye) = \twodet{1-\lambda}{1}{-1}{1-\lambda} = (1-\lambda)^2 + 1.
 \]</div>
-<p>The eigenvalues are therefore roots of <span class="math notranslate nohighlight">\(\lambda^2 - 2\lambda + 2\)</span>, or</p>
+<p class="card-text">The eigenvalues are therefore roots of <span class="math notranslate nohighlight">\(\lambda^2 - 2\lambda + 2\)</span>, or</p>
 <div class="math notranslate nohighlight">
 \[
 \lambda = 1 \pm \sqrt{1-2} = 1 \pm i.
 \]</div>
-<p>This is our first case of a real matrix that has complex eigenvalues. We continue as always, only using complex arithmetic.</p>
-<p>The eigenspace for <span class="math notranslate nohighlight">\(\lambda_1=1+i\)</span> is the homogeneous solution of</p>
+<p class="card-text">This is our first case of a real matrix that has complex eigenvalues. We continue as always, only using complex arithmetic.</p>
+<p class="card-text">The eigenspace for <span class="math notranslate nohighlight">\(\lambda_1=1+i\)</span> is the homogeneous solution of</p>
 <div class="math notranslate nohighlight">
 \[
 \bfA - (1+i) \meye = \twomat{-i}{1}{-1}{-i}.
 \]</div>
-<p>To find a basis we just use the first row as explained above, getting <span class="math notranslate nohighlight">\(\twovec{1}{i}\)</span>.</p>
-<p>Now we get a nice reward for using complex numbers. Since the matrix is real, the other eigenvalue is the conjugate of <span class="math notranslate nohighlight">\(\lambda_1\)</span>, and it turns out that the same is true of the eigenspace as well. So <span class="math notranslate nohighlight">\(\twovec{1}{-i}\)</span> is a basis for the second eigenspace.</p>
+<p class="card-text">To find a basis we just use the first row as explained above, getting <span class="math notranslate nohighlight">\(\twovec{1}{i}\)</span>.</p>
+<p class="card-text">Now we get a nice reward for using complex numbers. Since the matrix is real, the other eigenvalue is the conjugate of <span class="math notranslate nohighlight">\(\lambda_1\)</span>, and it turns out that the same is true of the eigenspace as well. So <span class="math notranslate nohighlight">\(\twovec{1}{-i}\)</span> is a basis for the second eigenspace.</p>
 </div>
-</div>
+</details></div>
    <div style="max-width:608px"><div style="position:relative;padding-bottom:66.118421052632%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_2wzgw5dv&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_e9ee2yk9" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div></div>
 </div>
 

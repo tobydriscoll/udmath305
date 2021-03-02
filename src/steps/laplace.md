@@ -51,27 +51,6 @@ The Laplace transform is a linear operator. That is,
 where $c$ is any constant.
 ````
 
-::::{admonition} Example
-:class: tip
-Find the Laplace transform of the function $\sinh(t)$.
-
-:::{dropdown} Solution
-This is easy if we use linearity on the identity
-
-```{math}
-\sinh(t)=\frac{1}{2}(e^t-e^{-t}).
-```
-
-We calculate
-
-\begin{align*}
-\lx\left[ \tfrac{1}{2}\bigl( e^t - e^{-t} \bigr) \right]  & = \frac{1}{2} \left( \lx[e^t] - \lx[e^{-t}] \right) \\
-  & = \frac{1}{2} \left( \frac{1}{s-1} - \frac{1}{s+1} \right) \\
-  & = \frac{1}{s^2-1}.
-\end{align*}
-:::
-::::
-
 ## Derivatives
 
 Applying integration by parts to the definition of $\lx[x'(t)]$ reveals the main reason Laplace transforms are useful in ODEs:
@@ -155,6 +134,26 @@ An important special case is $c=0$,
 ```
 ````
 
+::::{admonition} Example
+:class: tip
+Find the Laplace transform of the function $\sinh(t)$.
+
+:::{dropdown} Solution
+This is easy if we use the linearity of $\lx$ on the identity
+
+```{math}
+\sinh(t)=\frac{1}{2}(e^t-e^{-t}).
+```
+
+We calculate
+
+\begin{align*}
+\lx\left[ \tfrac{1}{2}\bigl( e^t - e^{-t} \bigr) \right]  & = \frac{1}{2} \left( \lx[e^t] - \lx[e^{-t}] \right) \\
+  & = \frac{1}{2} \left( \frac{1}{s-1} - \frac{1}{s+1} \right) \\
+  & = \frac{1}{s^2-1}.
+\end{align*}
+:::
+::::
 ### Step
 
 Finding the transform of a step is also pretty easy:
