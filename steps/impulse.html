@@ -444,13 +444,13 @@ x'-a(t)x = f(t) + k \delta(t-T), \quad x(0)=x_0,
 <p>where <span class="math notranslate nohighlight">\(T&gt;0\)</span> and <span class="math notranslate nohighlight">\(a(t)\)</span> and <span class="math notranslate nohighlight">\(f(t)\)</span> are continuous, we break the problem into manageable subproblems:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-\opA[x_h] &amp;= 0, \quad x_h(0)=x_0, \\
-\opA[x_p] &amp; = f(t), \quad x_p(0)=0,
-\opA[x_i] &amp; = \delta(t-T), \quad x_i(0)=0.
+\opA[x_1] &amp;= 0, \quad x_1(0)=x_0, \\
+\opA[x_2] &amp; = f(t), \quad x_2(0)=0,
+\opA[x_3] &amp; = \delta(t-T), \quad x_3(0)=0.
 \end{align*}\]</div>
-<p>By linearity, then, the solution we seek is <span class="math notranslate nohighlight">\(x=x_h+x_p+k x_i\)</span>. The problems for <span class="math notranslate nohighlight">\(x_h\)</span> and <span class="math notranslate nohighlight">\(x_p\)</span> are familiar and need no new commentary. As for <span class="math notranslate nohighlight">\(x_i\)</span>, for <span class="math notranslate nohighlight">\(0\le t &lt; T\)</span> we have <span class="math notranslate nohighlight">\(x'-ax = 0\)</span>, <span class="math notranslate nohighlight">\(x(0)=0\)</span>. The solution is clearly just <span class="math notranslate nohighlight">\(x_i(t)=0\)</span> up to time <span class="math notranslate nohighlight">\(T\)</span>. At time <span class="math notranslate nohighlight">\(T\)</span> the value jumps up by 1, and then the forcing is again zero. Thus, <span class="math notranslate nohighlight">\(x_i(t)=e^{a(t-T)}\)</span> for <span class="math notranslate nohighlight">\(t\ge T\)</span>. We can express <span class="math notranslate nohighlight">\(x_i\)</span> for all time as</p>
+<p>By linearity, then, the solution we seek is <span class="math notranslate nohighlight">\(x=x_1+x_2+k x_3\)</span>. The problems for <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> are familiar and need no new commentary. As for <span class="math notranslate nohighlight">\(x_3\)</span>, for <span class="math notranslate nohighlight">\(0\le t &lt; T\)</span> we have <span class="math notranslate nohighlight">\(x'-ax = 0\)</span>, <span class="math notranslate nohighlight">\(x(0)=0\)</span>. The solution is clearly just <span class="math notranslate nohighlight">\(x_3(t)=0\)</span> up to time <span class="math notranslate nohighlight">\(T\)</span>. At time <span class="math notranslate nohighlight">\(T\)</span> the value jumps up by 1, and then the forcing is again zero. Thus, <span class="math notranslate nohighlight">\(x_3(t)=e^{a(t-T)}\)</span> for <span class="math notranslate nohighlight">\(t\ge T\)</span>. We can express <span class="math notranslate nohighlight">\(x_3\)</span> for all time as</p>
 <div class="math notranslate nohighlight" id="equation-impulse-1st-solution">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-impulse-1st-solution" title="Permalink to this equation">¶</a></span>\[x_i(t) = H(t-T) e^{a(t-T)}.\]</div>
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-impulse-1st-solution" title="Permalink to this equation">¶</a></span>\[x_3(t) = H(t-T) e^{a(t-T)}.\]</div>
 <p>If the forcing of an IVP includes additional impulses, each contributes something like <a class="reference internal" href="#equation-impulse-1st-solution">(3.2)</a> to the solution.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
@@ -462,10 +462,10 @@ Solution<div class="summary-down docutils">
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
-<p class="card-text">The homogeneous solution of <span class="math notranslate nohighlight">\(x'+2x=0\)</span>, <span class="math notranslate nohighlight">\(x(0)=-4\)</span> is <span class="math notranslate nohighlight">\(x_h(t)=-4e^{-2t}\)</span>. From the impulse we get</p>
+<p class="card-text">The homogeneous solution of <span class="math notranslate nohighlight">\(x'+2x=0\)</span>, <span class="math notranslate nohighlight">\(x(0)=-4\)</span> is <span class="math notranslate nohighlight">\(x_1(t)=-4e^{-2t}\)</span>. From the impulse we get</p>
 <div class="math notranslate nohighlight">
 \[
-x' + 2x = \delta(t-1), \quad x(0)=0 \qquad \implies \qquad x_i(t) = H(t-1) e^{-2(t-1)}.
+x' + 2x = \delta(t-1), \quad x(0)=0 \qquad \implies \qquad x_2(t) = H(t-1) e^{-2(t-1)}.
 \]</div>
 <p class="card-text">Therefore, <span class="math notranslate nohighlight">\(x(t) = -4e^{-2t} + 3 H(t-1) e^{-2(t-1)}.\)</span></p>
 </div>
@@ -495,7 +495,7 @@ x' + 2x = \delta(t-1), \quad x(0)=0 \qquad \implies \qquad x_i(t) = H(t-1) e^{-2
 </div>
 </div>
 <p>The jump increase by 3 at <span class="math notranslate nohighlight">\(t=1\)</span> is the only interruption to pure exponential decay.</p>
-</div>
+<div style="max-width:608px"><div style="position:relative;padding-bottom:66.118421052632%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_3xo4ss2x&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_xrbf6nad" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div></div>
 </div>
 
     <script type="text/x-thebe-config">

@@ -128,16 +128,16 @@ $$
 where $T>0$ and $a(t)$ and $f(t)$ are continuous, we break the problem into manageable subproblems:
 
 \begin{align*}
-\opA[x_h] &= 0, \quad x_h(0)=x_0, \\
-\opA[x_p] & = f(t), \quad x_p(0)=0,
-\opA[x_i] & = \delta(t-T), \quad x_i(0)=0.
+\opA[x_1] &= 0, \quad x_1(0)=x_0, \\
+\opA[x_2] & = f(t), \quad x_2(0)=0,
+\opA[x_3] & = \delta(t-T), \quad x_3(0)=0.
 \end{align*}
 
-By linearity, then, the solution we seek is $x=x_h+x_p+k x_i$. The problems for $x_h$ and $x_p$ are familiar and need no new commentary. As for $x_i$, for $0\le t < T$ we have $x'-ax = 0$, $x(0)=0$. The solution is clearly just $x_i(t)=0$ up to time $T$. At time $T$ the value jumps up by 1, and then the forcing is again zero. Thus, $x_i(t)=e^{a(t-T)}$ for $t\ge T$. We can express $x_i$ for all time as
+By linearity, then, the solution we seek is $x=x_1+x_2+k x_3$. The problems for $x_1$ and $x_2$ are familiar and need no new commentary. As for $x_3$, for $0\le t < T$ we have $x'-ax = 0$, $x(0)=0$. The solution is clearly just $x_3(t)=0$ up to time $T$. At time $T$ the value jumps up by 1, and then the forcing is again zero. Thus, $x_3(t)=e^{a(t-T)}$ for $t\ge T$. We can express $x_3$ for all time as
 
 :::{math}
 :label: impulse-1st-solution
-x_i(t) = H(t-T) e^{a(t-T)}.
+x_3(t) = H(t-T) e^{a(t-T)}.
 :::
 
 If the forcing of an IVP includes additional impulses, each contributes something like {eq}`impulse-1st-solution` to the solution.
@@ -147,10 +147,10 @@ If the forcing of an IVP includes additional impulses, each contributes somethin
 Solve $x'+2x=3\delta(t-1)$, with $x(0)=-4$.
 
 :::{dropdown} Solution
-The homogeneous solution of $x'+2x=0$, $x(0)=-4$ is $x_h(t)=-4e^{-2t}$. From the impulse we get
+The homogeneous solution of $x'+2x=0$, $x(0)=-4$ is $x_1(t)=-4e^{-2t}$. From the impulse we get
 
 $$
-x' + 2x = \delta(t-1), \quad x(0)=0 \qquad \implies \qquad x_i(t) = H(t-1) e^{-2(t-1)}.
+x' + 2x = \delta(t-1), \quad x(0)=0 \qquad \implies \qquad x_2(t) = H(t-1) e^{-2(t-1)}.
 $$
 
 Therefore, $x(t) = -4e^{-2t} + 3 H(t-1) e^{-2(t-1)}.$
@@ -176,3 +176,5 @@ title('Impulse forcing')
 ```
 
 The jump increase by 3 at $t=1$ is the only interruption to pure exponential decay.
+
+<div style="max-width:608px"><div style="position:relative;padding-bottom:66.118421052632%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_3xo4ss2x&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_xrbf6nad" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>

@@ -246,7 +246,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="unit_step.html">
-   2. Unit step functions
+   2. Step forcing
   </a>
  </li>
  <li class="toctree-l1">
@@ -428,29 +428,7 @@ Solution<div class="summary-down docutils">
 \lx[ c f(t) ] = c F(s),
 \end{align*}\]</div>
 <p>where <span class="math notranslate nohighlight">\(c\)</span> is any constant.</p>
-</div></div><div class="tip admonition">
-<p class="admonition-title">Example</p>
-<p>Find the Laplace transform of the function <span class="math notranslate nohighlight">\(\sinh(t)\)</span>.</p>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Solution<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text">This is easy if we use linearity on the identity</p>
-<div class="math notranslate nohighlight">
-\[\sinh(t)=\frac{1}{2}(e^t-e^{-t}).\]</div>
-<p class="card-text">We calculate</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\lx\left[ \tfrac{1}{2}\bigl( e^t - e^{-t} \bigr) \right]  &amp; = \frac{1}{2} \left( \lx[e^t] - \lx[e^{-t}] \right) \\
-  &amp; = \frac{1}{2} \left( \frac{1}{s-1} - \frac{1}{s+1} \right) \\
-  &amp; = \frac{1}{s^2-1}.
-\end{align*}\]</div>
-</div>
-</details></div>
-<div class="section" id="derivatives">
+</div></div><div class="section" id="derivatives">
 <h2><span class="section-number">4.1. </span>Derivatives<a class="headerlink" href="#derivatives" title="Permalink to this headline">¶</a></h2>
 <p>Applying integration by parts to the definition of <span class="math notranslate nohighlight">\(\lx[x'(t)]\)</span> reveals the main reason Laplace transforms are useful in ODEs:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -521,7 +499,29 @@ Solution<div class="summary-down docutils">
 <p>An important special case is <span class="math notranslate nohighlight">\(c=0\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\lx[1]=\frac{1}{s}.\]</div>
-</div></div></div>
+</div></div><div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Find the Laplace transform of the function <span class="math notranslate nohighlight">\(\sinh(t)\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">This is easy if we use the linearity of <span class="math notranslate nohighlight">\(\lx\)</span> on the identity</p>
+<div class="math notranslate nohighlight">
+\[\sinh(t)=\frac{1}{2}(e^t-e^{-t}).\]</div>
+<p class="card-text">We calculate</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\lx\left[ \tfrac{1}{2}\bigl( e^t - e^{-t} \bigr) \right]  &amp; = \frac{1}{2} \left( \lx[e^t] - \lx[e^{-t}] \right) \\
+  &amp; = \frac{1}{2} \left( \frac{1}{s-1} - \frac{1}{s+1} \right) \\
+  &amp; = \frac{1}{s^2-1}.
+\end{align*}\]</div>
+</div>
+</details></div>
+</div>
 <div class="section" id="step">
 <h3><span class="section-number">4.2.2. </span>Step<a class="headerlink" href="#step" title="Permalink to this headline">¶</a></h3>
 <p>Finding the transform of a step is also pretty easy:</p>
@@ -590,7 +590,8 @@ Solution<div class="summary-down docutils">
 <p>An important special case is <span class="math notranslate nohighlight">\(T=0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\lx[\delta(t)] = 1.\]</div>
-</div></div></div>
+</div></div><div style="max-width:608px"><div style="position:relative;padding-bottom:66.118421052632%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_covjpa71&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_tg93ddqr" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
+</div>
 </div>
 </div>
 
