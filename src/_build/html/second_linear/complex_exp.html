@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Complex exponentials &#8212; Notes on linear algebra and ODEs</title>
+    <title>4. Complex exponentials &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,6 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Amplitude and phase" href="phase_amplitude.html" />
+    <link rel="prev" title="3. Homogeneous solutions" href="homogeneous.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -244,7 +246,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/unit_step.html">
-   2. Unit step functions
+   2. Step forcing
   </a>
  </li>
  <li class="toctree-l1">
@@ -260,6 +262,53 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/transform_solutions.html">
    5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forced_oscillations.html">
+   8. Forced oscillations
   </a>
  </li>
 </ul>
@@ -337,34 +386,34 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#polar-form">
-   Polar form
+   4.1. Polar form
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#complex-exponents">
-   Complex exponents
+   4.2. Complex exponents
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#growing">
-     Growing
+     4.2.1. Growing
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#neutral">
-     Neutral
+     4.2.2. Neutral
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#decaying">
-     Decaying
+     4.2.3. Decaying
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#homogeneous-solutions">
-   Homogeneous solutions
+   4.3. Homogeneous solutions
   </a>
  </li>
 </ul>
@@ -379,21 +428,21 @@
               <div>
                 
   <div class="section" id="complex-exponentials">
-<h1>Complex exponentials<a class="headerlink" href="#complex-exponentials" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>Complex exponentials<a class="headerlink" href="#complex-exponentials" title="Permalink to this headline">¶</a></h1>
 <p>For second-order equations we need to make sense of <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span> when <span class="math notranslate nohighlight">\(\lambda\)</span> is complex. The key is one of the most famous equations in mathematics.</p>
 <div class="proof proof-type-formula" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Formula </span>
+        <span class="proof-type">Formula 4.13</span>
         
             <span class="proof-title-name">(Euler’s identity)</span>
         
     </div><div class="proof-content">
 <div class="math notranslate nohighlight" id="equation-secondlin-euler">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-euler" title="Permalink to this equation">¶</a></span>\[e^{it} = \cos(t) + i \sin(t)\]</div>
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-secondlin-euler" title="Permalink to this equation">¶</a></span>\[e^{it} = \cos(t) + i \sin(t)\]</div>
 </div></div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>“Euler” is a German name, and as such, it rhymes with “boiler,” not “Bueller.”</p>
+<p>Euler is a German name, and as such, it rhymes with “boiler,” not “Bueller.”</p>
 </div>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
@@ -447,7 +496,7 @@ u' = -v, \quad v' = u,
 </div>
 </div>
 <div class="section" id="polar-form">
-<h2>Polar form<a class="headerlink" href="#polar-form" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Polar form<a class="headerlink" href="#polar-form" title="Permalink to this headline">¶</a></h2>
 <p>Suppose <span class="math notranslate nohighlight">\(z\)</span> is any nonzero complex value. We can write it in the form</p>
 <div class="math notranslate nohighlight">
 \[
@@ -455,8 +504,8 @@ z = |z|\cdot \frac{z}{|z|},
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(|z|\)</span> is the modulus (distance from origin in the plane). Since \frac{z}{|z|} has modulus equal to 1, it must lie on the unit circle. Hence there is a real <span class="math notranslate nohighlight">\(\theta\)</span> such that</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-polar">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-polar" title="Permalink to this equation">¶</a></span>\[z = |z| e^{i\theta}.\]</div>
-<p>We call <a class="reference internal" href="#equation-secondlin-polar">()</a> the <a class="reference internal" href="overview.html#term-polar-form"><span class="xref std std-term">polar form</span></a> of a complex number, because it expresses <span class="math notranslate nohighlight">\(z\)</span> as a distance from zero and an angle from the positive Re axis. Just as with any point in the plane, we can express a complex number either in Cartesian form using Re and Im parts, or in polar form using modulus and Euler’s identity.</p>
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-secondlin-polar" title="Permalink to this equation">¶</a></span>\[z = |z| e^{i\theta}.\]</div>
+<p>We call <a class="reference internal" href="#equation-secondlin-polar">(4.9)</a> the <a class="reference internal" href="overview.html#term-polar-form"><span class="xref std std-term">polar form</span></a> of a complex number, because it expresses <span class="math notranslate nohighlight">\(z\)</span> as a distance from zero and an angle from the positive Re axis. Just as with any point in the plane, we can express a complex number either in Cartesian form using Re and Im parts, or in polar form using modulus and Euler’s identity.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Suppose <span class="math notranslate nohighlight">\(r\)</span> is a positive real number. Then <span class="math notranslate nohighlight">\(-r\)</span> lies at a distance <span class="math notranslate nohighlight">\(r\)</span> from the origin along the negative real axis. Hence</p>
@@ -491,21 +540,21 @@ Solution<div class="summary-down docutils">
 </details></div>
 </div>
 <div class="section" id="complex-exponents">
-<h2>Complex exponents<a class="headerlink" href="#complex-exponents" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>Complex exponents<a class="headerlink" href="#complex-exponents" title="Permalink to this headline">¶</a></h2>
 <p>Exponential functions still obey the properties you already know, even when the exponents are imaginary or complex numbers. This allows us to handle the exponential of any complex number. Writing <span class="math notranslate nohighlight">\(a+i \omega\)</span> for real <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>, we have the function</p>
 <div class="proof proof-type-formula" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Formula </span>
+        <span class="proof-type">Formula 4.14</span>
         
             <span class="proof-title-name">(Complex exponential function)</span>
         
     </div><div class="proof-content">
 <div class="math notranslate nohighlight" id="equation-secondlin-complex-exp">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-complex-exp" title="Permalink to this equation">¶</a></span>\[e^{(a+i \omega)t} = e^{at} \cdot e^{i\omega t} = e^{at} \bigl[ \cos(\omega t) + i \sin(\omega t)\bigr].\]</div>
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-secondlin-complex-exp" title="Permalink to this equation">¶</a></span>\[e^{(a+i \omega)t} = e^{at} \cdot e^{i\omega t} = e^{at} \bigl[ \cos(\omega t) + i \sin(\omega t)\bigr].\]</div>
 </div></div><p>Thus in the function <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span>, the real part of <span class="math notranslate nohighlight">\(\lambda\)</span> controls growth or decay in time, as we are familiar with, and the imaginary part of <span class="math notranslate nohighlight">\(\lambda\)</span> controls a frequency of oscillation around a circle in the complex plane.</p>
 <div class="section" id="growing">
-<h3>Growing<a class="headerlink" href="#growing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1. </span>Growing<a class="headerlink" href="#growing" title="Permalink to this headline">¶</a></h3>
 <p>If <span class="math notranslate nohighlight">\(\text{Re} \lambda &gt; 0\)</span>, the magnitude of the function grows exponentially. The result is an outward spiral. The imaginary part of <span class="math notranslate nohighlight">\(\lambda\)</span> controls the frequency or pitch of the spiral. The real and imaginary parts of <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span> oscillate between two growing real exponentials.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -533,7 +582,7 @@ Solution<div class="summary-down docutils">
 </div>
 </div>
 <div class="section" id="neutral">
-<h3>Neutral<a class="headerlink" href="#neutral" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.2. </span>Neutral<a class="headerlink" href="#neutral" title="Permalink to this headline">¶</a></h3>
 <p>When <span class="math notranslate nohighlight">\(\lambda\)</span> is purely imaginary, the function values stay on the unit circle in the complex plane. Taking the real and imaginary parts of <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span> gives cosine and sine, respectively.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -561,7 +610,7 @@ Solution<div class="summary-down docutils">
 </div>
 </div>
 <div class="section" id="decaying">
-<h3>Decaying<a class="headerlink" href="#decaying" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3. </span>Decaying<a class="headerlink" href="#decaying" title="Permalink to this headline">¶</a></h3>
 <p>Finally, if <span class="math notranslate nohighlight">\(\text{Re} \lambda &lt; 0\)</span>, the spiral is a decaying one. The real and imaginary parts are attenuated oscillations.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -590,7 +639,7 @@ Solution<div class="summary-down docutils">
 </div>
 </div>
 <div class="section" id="homogeneous-solutions">
-<h2>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h2>
 <p>Now we can finish the story of computing solutions to homogeneous ODEs.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
@@ -602,7 +651,7 @@ Solution<div class="summary-down docutils">
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
-<p class="card-text">The characteristic polynomial is <span class="math notranslate nohighlight">\(s^2+9\)</span>, giving the eigenvalues <span class="math notranslate nohighlight">\(\pm 3i\)</span>. Hence the general solution is <span class="math notranslate nohighlight">\(x_h(t) = c_1e^{3it} + c_2e^{-3it}\)</span>.</p>
+<p class="card-text">The characteristic polynomial is <span class="math notranslate nohighlight">\(s^2+9\)</span>, giving the roots <span class="math notranslate nohighlight">\(\pm 3i\)</span>. Hence the general solution is <span class="math notranslate nohighlight">\(x_h(t) = c_1e^{3it} + c_2e^{-3it}\)</span>.</p>
 <p class="card-text">The initial conditions require</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -619,10 +668,10 @@ Solution<div class="summary-down docutils">
         <span class="proof-type">Observation </span>
         
     </div><div class="proof-content">
-<p>If a real second-order IVP has complex conjugate eigenvalues, then the integration constants satisfy <span class="math notranslate nohighlight">\(c_2=\overline{c_1}\)</span>.</p>
+<p>If a real second-order IVP has complex conjugate characteristic values, then the integration constants satisfy <span class="math notranslate nohighlight">\(c_2=\overline{c_1}\)</span>.</p>
 </div></div><p>This can simplify the algebra a bit. If we set <span class="math notranslate nohighlight">\(c_1=\alpha + i\beta\)</span>, then</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-add-subtract">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-add-subtract" title="Permalink to this equation">¶</a></span>\[c_1 + c_2 = 2\alpha, \quad c_1-c_2 = 2i\beta.\]</div>
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-secondlin-add-subtract" title="Permalink to this equation">¶</a></span>\[c_1 + c_2 = 2\alpha, \quad c_1-c_2 = 2i\beta.\]</div>
 <p>In the example above, this would have led us right to <span class="math notranslate nohighlight">\(2\alpha=2\)</span> and <span class="math notranslate nohighlight">\(3i(2i\beta)=-12\)</span>, which are trivial.</p>
 <p>It might seem odd to use complex numbers to represent what we know must be a real-valued solution. There’s nothing wrong with doing so, but we can also convert it to an explicitly real form. The following is easily proved using Euler’s identity.</p>
 <div class="proof proof-type-observation">
@@ -644,7 +693,7 @@ x_h(t) = e^{at} \bigl[ b_1 \cos(\omega t) + b_2 \sin(\omega t) \bigr],
 <p>where <span class="math notranslate nohighlight">\(b_1,b_2\)</span> are real constants.</p>
 </div></div><div class="tip admonition">
 <p class="admonition-title">Example (continued)</p>
-<p>In the preceding example, the eigenvalues were <span class="math notranslate nohighlight">\(0 \pm 3i\)</span>. Thus another expression for the general solution is</p>
+<p>In the preceding example, the roots were <span class="math notranslate nohighlight">\(0 \pm 3i\)</span>. Thus another expression for the general solution is</p>
 <div class="math notranslate nohighlight">
 \[
 x_h(t) = c_1\cos(3t) + c_2\sin(3t).
@@ -689,6 +738,8 @@ x_h(t) = c_1\cos(3t) + c_2\sin(3t).
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="homogeneous.html" title="previous page"><span class="section-number">3. </span>Homogeneous solutions</a>
+    <a class='right-next' id="next-link" href="phase_amplitude.html" title="next page"><span class="section-number">5. </span>Amplitude and phase</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

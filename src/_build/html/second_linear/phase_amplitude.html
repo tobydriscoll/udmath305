@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Amplitude and phase &#8212; Notes on linear algebra and ODEs</title>
+    <title>5. Amplitude and phase &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,6 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Free oscillations" href="free_oscillations.html" />
+    <link rel="prev" title="4. Complex exponentials" href="complex_exp.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -244,7 +246,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/unit_step.html">
-   2. Unit step functions
+   2. Step forcing
   </a>
  </li>
  <li class="toctree-l1">
@@ -260,6 +262,53 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/transform_solutions.html">
    5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forced_oscillations.html">
+   8. Forced oscillations
   </a>
  </li>
 </ul>
@@ -337,7 +386,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conversion-between-forms">
-   Conversion between forms
+   5.1. Conversion between forms
   </a>
  </li>
 </ul>
@@ -352,62 +401,31 @@
               <div>
                 
   <div class="section" id="amplitude-and-phase">
-<h1>Amplitude and phase<a class="headerlink" href="#amplitude-and-phase" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>Amplitude and phase<a class="headerlink" href="#amplitude-and-phase" title="Permalink to this headline">¶</a></h1>
 <p>The exponential form of the general solution of a homogeneous second-order linear ODE is</p>
 <div class="math notranslate nohighlight">
 \[x(t) = c_1 e^{\lambda t} + c_2 e^{\overline{\lambda} t}, \qquad \lambda = a + i\omega, \, c_2=\overline{c_1}.\]</div>
 <p>As before, we will appeal to the fact that <span class="math notranslate nohighlight">\((\alpha+i\beta) + \overline{(\alpha+i\beta)} = 2\alpha\)</span> to write this as</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-combine-exp">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-combine-exp" title="Permalink to this equation">¶</a></span>\[x(t) = \Re \Bigl[ c_1 e^{(a+i\omega) t} \Bigr], \quad c_1 \in\complex, \]</div>
-<p>where we also absorbed the factor of 2 into <span class="math notranslate nohighlight">\(c_1\)</span>. In the <a class="reference internal" href="complex_exp.html"><span class="doc std std-doc">preceding section</span></a> we claimed that there is a complete equivalence between this form and combinations of enveloped cosine and sine,</p>
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-secondlin-combine-exp" title="Permalink to this equation">¶</a></span>\[x(t) = \Re \Bigl[ c_1 e^{(a+i\omega) t} \Bigr], \quad c_1 \in\complex, \]</div>
+<p>where we also absorbed the factor of 2 into <span class="math notranslate nohighlight">\(c_1\)</span>. In the <a class="reference internal" href="complex_exp.html"><span class="doc std std-doc">preceding section</span></a> we claimed that there is an equivalence between this form and combinations of enveloped cosine and sine,</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-combine-sincos">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-combine-sincos" title="Permalink to this equation">¶</a></span>\[x(t) = e^{at} \bigl[ a_1\cos(\omega t) + a_2\sin(\omega t) \bigr].\]</div>
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-secondlin-combine-sincos" title="Permalink to this equation">¶</a></span>\[x(t) = e^{at} \bigl[ a_1\cos(\omega t) + a_2\sin(\omega t) \bigr].\]</div>
 <p>Equivalence in this context means that for every choice of complex <span class="math notranslate nohighlight">\(c_1\)</span>, you can find some <span class="math notranslate nohighlight">\(a_1\)</span> and <span class="math notranslate nohighlight">\(a_2\)</span> so that the expressions are identically equal, and vice versa.</p>
-<!-- There is a third equivalent form that might be the most readily interpreted. Let us write the complex value $c_1$ in polar form,
-
-$$
-c_1 = R e^{-i\theta}, \qquad R > 0,\, \theta \in [-\pi,pi).
-$$
-
-We introduced an extra minus sign here for future convenience, but it's not important. Now {eq}`secondlin-combine-exp` is in the form
-
-$$
-x(t) = R e^{-i\theta} e^{\lambda t} + \bigl[ \text{complex conjugate of the same thing} \bigr].
-$$
-
-As we saw before, adding $\alpha+i\beta$ to its conjugate gives $2\alpha$, so we may write
-
-$$
-x(t) = 2 \Re \Bigl[ R e^{-i\theta} e^{\lambda t} \Bigr].
-$$
-
-We manipulate the exponentials to get
-
-$$
-x(t) = 2 \Re \Bigl[ R e^{at} e^{i(\omega t -\theta)} \Bigr].
-$$
-
-The first two terms inside the brackets are real, and Euler's formula then implies
-
-$$
-x(t) = 2 R e^{at} \cos(\omega t -\theta).
-$$
-
-This is a cosine with exponentially changing amplitude and an arbitrary phase shift.  -->
-<p>There is a third equivalent form that can be useful in many contexts. Consider <a class="reference internal" href="#equation-secondlin-combine-sincos">()</a> with the new definitions</p>
+<p>There is a third equivalent form that can be useful as well. Consider <a class="reference internal" href="#equation-secondlin-combine-sincos">(5.2)</a> with the new definitions</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-combine-polar">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-combine-polar" title="Permalink to this equation">¶</a></span>\[a_1 = R \cos(\theta), \quad a_2 = R\sin(\theta) \qquad (R\ge 0),\]</div>
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-secondlin-combine-polar" title="Permalink to this equation">¶</a></span>\[a_1 = R \cos(\theta), \quad a_2 = R\sin(\theta) \qquad (R\ge 0),\]</div>
 <p>so that</p>
 <div class="math notranslate nohighlight">
 \[x(t) = e^{at} \bigl[ R \cos(\theta) \cos(\omega t) + R\sin(\theta) \sin(\omega t) \bigr].\]</div>
 <p>Using a sum-of-angles formula, we get</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-combine-ampphase">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-combine-ampphase" title="Permalink to this equation">¶</a></span>\[x(t) = R e^{at} \cos(\omega t - \theta),\]</div>
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-secondlin-combine-ampphase" title="Permalink to this equation">¶</a></span>\[x(t) = R e^{at} \cos(\omega t - \theta),\]</div>
 <p>which we call the <a class="reference internal" href="overview.html#term-amplitude-phase-form"><span class="xref std std-term">amplitude-phase form</span></a> of the solution. We collect all three forms together here.</p>
 <div class="proof proof-type-formula" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Formula </span>
+        <span class="proof-type">Formula 5.8</span>
         
             <span class="proof-title-name">(Equivalent forms for 2nd order solutions)</span>
         
@@ -433,7 +451,7 @@ Solution<div class="summary-down docutils">
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
-<p class="card-text">The characteristic polynomial <span class="math notranslate nohighlight">\(s^2-2s+5\)</span> gives the eigenvalues <span class="math notranslate nohighlight">\(1\pm 2i\)</span>. We can write the solution as <span class="math notranslate nohighlight">\(x(t) = R e^{t} \cos(2 t + \theta)\)</span> and apply the initial conditions to get</p>
+<p class="card-text">The characteristic polynomial <span class="math notranslate nohighlight">\(s^2-2s+5\)</span> gives the roots <span class="math notranslate nohighlight">\(1\pm 2i\)</span>. We can write the solution as <span class="math notranslate nohighlight">\(x(t) = R e^{t} \cos(2 t + \theta)\)</span> and apply the initial conditions to get</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 5 &amp;= x(0) = R\cos(\theta), \\
@@ -457,9 +475,9 @@ x(t) = 5\sqrt{2} e^{t} \cos\left(2 t + \tfrac{\pi}{4}\right).
 </div>
 </details></div>
 <div class="section" id="conversion-between-forms">
-<h2>Conversion between forms<a class="headerlink" href="#conversion-between-forms" title="Permalink to this headline">¶</a></h2>
-<p>Each form of the solution has its own advantages. Sometimes, it’s useful to be able to convert between them. We already have that <a class="reference internal" href="#equation-secondlin-combine-polar">()</a> connects <a class="reference internal" href="#equation-secondlin-combine-sincos">()</a> and <a class="reference internal" href="#equation-secondlin-combine-ampphase">()</a>, so we just need to connect the third form.</p>
-<p>Say we are given <a class="reference internal" href="#equation-secondlin-combine-exp">()</a> and we use the polar form
+<h2><span class="section-number">5.1. </span>Conversion between forms<a class="headerlink" href="#conversion-between-forms" title="Permalink to this headline">¶</a></h2>
+<p>Each form of the solution has its own advantages. Sometimes, it’s useful to be able to convert between them. We already have that <a class="reference internal" href="#equation-secondlin-combine-polar">(5.3)</a> connects <a class="reference internal" href="#equation-secondlin-combine-sincos">(5.2)</a> and <a class="reference internal" href="#equation-secondlin-combine-ampphase">(5.4)</a>, so we just need to connect the third form.</p>
+<p>Say we are given <a class="reference internal" href="#equation-secondlin-combine-exp">(5.1)</a> and we use the polar form
 <span class="math notranslate nohighlight">\(c_1 = \rho e^{i\phi}\)</span>. Then by Euler’s identity,</p>
 <!-- 
 ```{note}
@@ -472,9 +490,9 @@ This equation uses the Greek letters $\rho$ (rho) and $\phi$ (phi).
 \]</div>
 <p>This is the amplitude-phase form, so in fact,</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-combine-c1">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-combine-c1" title="Permalink to this equation">¶</a></span>\[c_1 = R e^{i\theta}\]</div>
-<p>connects <a class="reference internal" href="#equation-secondlin-combine-exp">()</a> and <a class="reference internal" href="#equation-secondlin-combine-ampphase">()</a>.</p>
-<p>Both <a class="reference internal" href="#equation-secondlin-combine-polar">()</a> and <a class="reference internal" href="#equation-secondlin-combine-c1">()</a> amount to the same thing, conversion between rectangular coordinates, like <span class="math notranslate nohighlight">\(c_1=\alpha+i\beta\)</span> and <span class="math notranslate nohighlight">\((a_1,a_2)\)</span>, and polar coordinates, <span class="math notranslate nohighlight">\((R,\theta)\)</span>.</p>
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-secondlin-combine-c1" title="Permalink to this equation">¶</a></span>\[c_1 = R e^{i\theta}\]</div>
+<p>connects <a class="reference internal" href="#equation-secondlin-combine-exp">(5.1)</a> and <a class="reference internal" href="#equation-secondlin-combine-ampphase">(5.4)</a>.</p>
+<p>Both <a class="reference internal" href="#equation-secondlin-combine-polar">(5.3)</a> and <a class="reference internal" href="#equation-secondlin-combine-c1">(5.5)</a> amount to the same thing, conversion between rectangular coordinates, like <span class="math notranslate nohighlight">\(c_1=\alpha+i\beta\)</span> and <span class="math notranslate nohighlight">\((a_1,a_2)\)</span>, and polar coordinates, <span class="math notranslate nohighlight">\((R,\theta)\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example (continued)</p>
 <p>In the preceding example we found the solution</p>
@@ -511,7 +529,7 @@ R^2 = 16+4=20, \qquad \tan(\theta) = \frac{2}{-4}.
 <p class="card-text">We see that <span class="math notranslate nohighlight">\(R=2\sqrt{5}\)</span>, and <span class="math notranslate nohighlight">\(\theta = \arctan(-1/2)\)</span> should be in the second quadrant. It would have to be found numerically.</p>
 </div>
 </details></div>
-<p>It’s more common that we want to know the amplitude than the phase. If you do need a numerical value of <span class="math notranslate nohighlight">\(\theta\)</span>, make sure you use the “four-quadrant arctangent” on a calculator or computer.</p>
+<p>It’s more common that we want to know the amplitude than the phase. If you do need a numerical value of <span class="math notranslate nohighlight">\(\theta\)</span>, make sure you use the <a class="reference external" href="https://www.mathworks.com/help/matlab/ref/atan2.html#buct8h0-4">four-quadrant arctangent</a> on a calculator or computer.</p>
 </div>
 </div>
 
@@ -543,6 +561,8 @@ R^2 = 16+4=20, \qquad \tan(\theta) = \frac{2}{-4}.
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="complex_exp.html" title="previous page"><span class="section-number">4. </span>Complex exponentials</a>
+    <a class='right-next' id="next-link" href="free_oscillations.html" title="next page"><span class="section-number">6. </span>Free oscillations</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

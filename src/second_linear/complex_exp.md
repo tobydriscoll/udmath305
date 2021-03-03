@@ -40,7 +40,7 @@ e^{it} = \cos(t) + i \sin(t)
 ````
 
 ```{note}
-"Euler" is a German name, and as such, it rhymes with "boiler," not "Bueller."
+Euler is a German name, and as such, it rhymes with "boiler," not "Bueller."
 ```
 
 ::::{dropdown} Explanation (optional, but easy)
@@ -227,7 +227,7 @@ Solve the IVP $x''+9x=0$, $x(0)=2$, $x'(0)=-12$.
 
 :::{dropdown} Solution
 
-The characteristic polynomial is $s^2+9$, giving the eigenvalues $\pm 3i$. Hence the general solution is $x_h(t) = c_1e^{3it} + c_2e^{-3it}$.
+The characteristic polynomial is $s^2+9$, giving the roots $\pm 3i$. Hence the general solution is $x_h(t) = c_1e^{3it} + c_2e^{-3it}$.
 
 The initial conditions require
 
@@ -243,7 +243,7 @@ This system is easy to solve for $c_1$ and $c_2$, for example by {ref}`Cramer's 
 There are some helpful nuances to point out about the preceding example.
 
 ````{proof:observation}
-If a real second-order IVP has complex conjugate eigenvalues, then the integration constants satisfy $c_2=\overline{c_1}$.
+If a real second-order IVP has complex conjugate characteristic values, then the integration constants satisfy $c_2=\overline{c_1}$.
 ````
 
 This can simplify the algebra a bit. If we set $c_1=\alpha + i\beta$, then
@@ -275,7 +275,7 @@ where $b_1,b_2$ are real constants.
 
 ::::{admonition} Example (continued)
 :class: tip
-In the preceding example, the eigenvalues were $0 \pm 3i$. Thus another expression for the general solution is
+In the preceding example, the roots were $0 \pm 3i$. Thus another expression for the general solution is
 
 $$
 x_h(t) = c_1\cos(3t) + c_2\sin(3t).

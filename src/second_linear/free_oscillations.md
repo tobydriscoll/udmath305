@@ -41,10 +41,10 @@ An object attached to an ideal spring satisfies the ODE
 mx'' + b x' + kx = 0,
 ```
 
-where $x(t)$ is the displacement from the natural resting position, $m$ is the mass of the object, $b$ is an attenuation coefficient due to friction or mechanical damping, and $k$ is a property of the spring called the {term}`spring constant`. This constant is the ratio of the restoring force of the spring to the amount by which it is stretched.
+where $x(t)$ is the displacement from the natural resting position, $m$ is the mass of the object, $b$ is an attenuation coefficient due to friction or mechanical damping, and $k$ is a property of the spring called the {term}`spring constant`. This constant is the ratio of the restoring force of the spring to the amount by which it is stretched or compressed.
 
 ```{attention}
-Remember, all named parameters such as $m$, $k$, and $b$ are assumed to be nonnegative unless stated otherwise.
+All named parameters such as $m$, $k$, and $b$ are assumed to be nonnegative unless stated otherwise.
 ```
 
 ```{note}
@@ -116,7 +116,7 @@ A similar derivation can be done starting from the pendulum or AC circuit equati
 
 ## Range of oscillatory behavior
 
-The eigenvalues of the homogeneous equation are  
+The roots of the homogeneous equation are  
 
 ```{math}
 \lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1}.
@@ -128,7 +128,7 @@ The discussion now splits into four cases, marked by increasing values of $Z$.
 
 The first case for {eq}`secondlin-unified-free` is $Z=0$, which is the idealization of no mechanical damping or friction (or resistance, in a circuit). A key characteristic of this case is that energy is conserved.
 
-The eigenvalues are $\pm i\omega_0$, and a general solution can be expressed three equivalent ways:
+The roots are $\pm i\omega_0$, and a general solution can be expressed three equivalent ways:
 
 \begin{align*}
 x_h(t) & = \Re \left[  c_1 e^{i\omega_0 t} \right], \\
@@ -195,7 +195,7 @@ which works out to $R \approx 0.256 \text{m}$.
 
 ### Underdamped oscillator, $0<Z<1$
 
-For $0< Z < 1$ the eigenvalues of {eq}`secondlin-unified-free` are complex, with negative real part:
+For $0< Z < 1$ the roots of {eq}`secondlin-unified-free` are complex, with negative real part:
 
 ```{math}
 \lambda_{1,2} = -Z \omega_0 \pm i \omega_0 \sqrt{1-Z^2}.
@@ -211,7 +211,7 @@ or an equivalent form. This solution is pseudoperiodic, combining oscillation at
 
 ### Critically damped oscillator, $Z=1$
 		
-At $Z=1$ the complex eigenvalues collapse to a double real eigenvalue,
+At $Z=1$ the complex roots collapse to a double real root,
 
 ```{math}
 \lambda_1 = \lambda_2 = -\omega_0,
@@ -227,7 +227,7 @@ There is no longer any oscillation present, and we have a {term}`critically damp
 
 ### Overdamped, $Z>1$
 
-For $Z>1$ the eigenvalues are
+For $Z>1$ the roots are
 
 ```{math}
 \lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1},
@@ -235,12 +235,12 @@ For $Z>1$ the eigenvalues are
 
 which are negative and real. This gives an exponentially decaying homogeneous solution. In this case we have an {term}`overdamped` oscillator.
 
-```{list-table} Damping coefficient and eigenvalues
+```{list-table} Damping coefficient and characteristic values
 :header-rows: 1
 :name: table-secondlin-oscillators
 
 * - Damping coefficient 
-  - Eigenvalue property
+  - Root property
   - Description
 * - $Z=0$
   - imaginary
@@ -291,7 +291,7 @@ Since this value is less than one, the system is underdamped.
 Suppose the system from the previous example is initially at equilibrium when the mass is suddenly pushed downward at 0.5 m/sec. Find the motion of the mass.
 
 :::{dropdown} Solution
-We derived the governing ODE $x'' + 1.6 x' + 2.2 x = 0$. The eigenvalues are the roots of $\lambda^2 + 1.6\lambda + 2.2$, which are found numerically to be
+We derived the governing ODE $x'' + 1.6 x' + 2.2 x = 0$. The roots are the roots of $\lambda^2 + 1.6\lambda + 2.2$, which are found numerically to be
 
 ```{math}
   \lambda \approx -0.8000 \pm 1.2490i.
@@ -315,11 +315,12 @@ thus $a_2 = -0.4003$. The motion is therefore given by $x(t)=-0.4003\, e^{-0.8 t
 ::::
 
 Here is a short video showing how solutions of 
+
 $$
 x'' + bx' + cx = 0
 $$
 
-vary with the parameters $b$ and $c$ (equivalently, $\omega_0$ and $Z$).
+vary with the parameters $b$ and $c$, or equivalently, $\omega_0$ and $Z$. (I use the term "eigenvalues" to mean characteristic values here.) 
 
 <div>
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_qa9wnwpt&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_eyxlu0a8" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe>

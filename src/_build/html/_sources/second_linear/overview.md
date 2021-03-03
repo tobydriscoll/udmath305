@@ -19,14 +19,17 @@ beating
 characteristic polynomial
   For a second-order linear ODE with constant coefficients, a quadratic polynomial whose roots indicate two exponential functions that form a basis for solutions.
 
+characteristic values
+  For a second-order linear ODE with constant coefficients, the roots of the characteristic polynomial.
+
+constant-coefficient
+  Linear ODE in which the multipliers of the dependent variable and its derivatives are constants.
+
 critically damped
   Free oscillator at the level of damping between underdamped and fully exponentially decaying solutions.
 
 damping coefficient
   Nondimensional, nonnegative value indicating the relative amount of damping present in an oscillator. Denoted $Z$.
-
-eigenvalues
-  For a second-order linear ODE with constant coefficients, the roots of the characteristic polynomial.
 
 free oscillator
   Naturally oscillating system not subjected to any external forces.

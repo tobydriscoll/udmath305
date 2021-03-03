@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Homogeneous solutions &#8212; Notes on linear algebra and ODEs</title>
+    <title>3. Homogeneous solutions &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,6 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Complex exponentials" href="complex_exp.html" />
+    <link rel="prev" title="2. Structure of solutions" href="solution_structure.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -244,7 +246,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/unit_step.html">
-   2. Unit step functions
+   2. Step forcing
   </a>
  </li>
  <li class="toctree-l1">
@@ -260,6 +262,53 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/transform_solutions.html">
    5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forced_oscillations.html">
+   8. Forced oscillations
   </a>
  </li>
 </ul>
@@ -334,12 +383,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#characteristic-polynomial">
-   Characteristic polynomial
+   3.1. Characteristic polynomial
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#complex-eigenvalues">
-   Complex eigenvalues
+  <a class="reference internal nav-link" href="#complex-characteristic-values">
+   3.2. Complex characteristic values
   </a>
  </li>
 </ul>
@@ -354,7 +403,7 @@
               <div>
                 
   <div class="section" id="homogeneous-solutions">
-<h1>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h1>
 <p>We now look for solutions of the homogeneous equation</p>
 <div class="math notranslate nohighlight">
 \[
@@ -363,7 +412,7 @@ x'' + b x' +  k x = 0,
 <p>where <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are constants. We will use <span class="math notranslate nohighlight">\(x_h\)</span> to name the solution, as a reminder that the ODE is homogeneous.</p>
 <p>All the solutions to first-order linear ODEs were exponential functions. The same is true for second-order linear problems, though with a significant caveat.</p>
 <div class="section" id="characteristic-polynomial">
-<h2>Characteristic polynomial<a class="headerlink" href="#characteristic-polynomial" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Characteristic polynomial<a class="headerlink" href="#characteristic-polynomial" title="Permalink to this headline">¶</a></h2>
 <p>The king of ODE solution methods is to guess the answer and then show that it works. In that tradition, we try</p>
 <div class="math notranslate nohighlight">
 \[
@@ -379,7 +428,7 @@ x_h(t) = e^{\lambda t}
 <div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition </span>
+        <span class="proof-type">Definition 3.5</span>
         
             <span class="proof-title-name">(Characteristic polynomial of a linear ODE)</span>
         
@@ -389,40 +438,45 @@ x_h(t) = e^{\lambda t}
 \[
 p(s) = s^2 + b s + k.
 \]</div>
-<p>Its roots are called the <a class="reference internal" href="overview.html#term-eigenvalues"><span class="xref std std-term">eigenvalues</span></a> of <span class="math notranslate nohighlight">\(\opA\)</span>.</p>
+<p>Its roots are called the <a class="reference internal" href="overview.html#term-characteristic-values"><span class="xref std std-term">characteristic values</span></a> of <span class="math notranslate nohighlight">\(\opA\)</span>. For brevity, we will often refer to these as simply the <strong>roots</strong> of <span class="math notranslate nohighlight">\(\opA\)</span>, although this usage is not standard.</p>
 </div></div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We earlier used the terms <em>characteristic polynomial</em> and <em>eigenvalues</em> with matrices. The connections go way beyond the names, as we will see in the future.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The term “eigenvalue” for a linear operator or homogeneous ODE is not common in textbooks, but it seems irresistable to me.</p>
+<p>We earlier used the term <em>characteristic polynomial</em> with matrices. The connection goes way beyond the name, as we will see in the future.</p>
 </div>
 <div class="proof proof-type-theorem" id="id2">
 <span id="theorem-secondlin-homogeneous-distinct"></span>
     <div class="proof-title">
-        <span class="proof-type">Theorem </span>
+        <span class="proof-type">Theorem 3.6</span>
         
-            <span class="proof-title-name">(Homogeneous solution, distinct eigenvalues)</span>
+            <span class="proof-title-name">(Homogeneous solution, distinct roots)</span>
         
     </div><div class="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(\lambda_1,\lambda_2\)</span> be the eigenvalues of <span class="math notranslate nohighlight">\(\opA\)</span>, where <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx.\)</span> If  <span class="math notranslate nohighlight">\(\lambda_1\neq \lambda_2\)</span>, then the general solution of <span class="math notranslate nohighlight">\(\opA[x]= 0\)</span> is</p>
+<p>Let <span class="math notranslate nohighlight">\(\lambda_1,\lambda_2\)</span> be the characteristic values of <span class="math notranslate nohighlight">\(\opA\)</span>, where <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx.\)</span> If  <span class="math notranslate nohighlight">\(\lambda_1\neq \lambda_2\)</span>, then the general solution of <span class="math notranslate nohighlight">\(\opA[x]= 0\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-homogeneous-distinct">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-homogeneous-distinct" title="Permalink to this equation">¶</a></span>\[x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}.\]</div>
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-secondlin-homogeneous-distinct" title="Permalink to this equation">¶</a></span>\[x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}.\]</div>
 </div></div><p>By analogy with linear algebra, we may say that <span class="math notranslate nohighlight">\(e^{\lambda_1 t}\)</span> and <span class="math notranslate nohighlight">\(e^{\lambda_2 t}\)</span> form a basis for the homogeneous solution, as all such solutions are a linear combination of them and neither can be omitted.</p>
 <p>We have to handle the case <span class="math notranslate nohighlight">\(\lambda_1=\lambda_2\)</span> separately. (You might recall that a double eigenvalue was a hassle for matrices as well.) Without fuss, we jump to the result, which is easy to verify by substitution.</p>
 <div class="proof proof-type-theorem" id="id3">
 <span id="theorem-secondlin-homogeneous-repeated"></span>
     <div class="proof-title">
-        <span class="proof-type">Theorem </span>
+        <span class="proof-type">Theorem 3.7</span>
         
-            <span class="proof-title-name">(Homogeneous solution, repeated eigenvalue)</span>
+            <span class="proof-title-name">(Homogeneous solution, repeated root)</span>
         
     </div><div class="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(\lambda\)</span> be a double eigenvalue of <span class="math notranslate nohighlight">\(\opA\)</span>, where <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx.\)</span> The general solution of <span class="math notranslate nohighlight">\(\opA[x]= 0\)</span> is</p>
+<p>Let <span class="math notranslate nohighlight">\(\lambda\)</span> be a double root of <span class="math notranslate nohighlight">\(\opA\)</span>, where <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx.\)</span> The general solution of <span class="math notranslate nohighlight">\(\opA[x]= 0\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-homogeneous-repeated">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-homogeneous-repeated" title="Permalink to this equation">¶</a></span>\[x_h(t) = e^{\lambda t} \bigl( c_1 t + c_2 \bigr).\]</div>
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-secondlin-homogeneous-repeated" title="Permalink to this equation">¶</a></span>\[x_h(t) = e^{\lambda t} \bigl( c_1 t + c_2 \bigr).\]</div>
 </div></div><div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>We could think of the trivial problem <span class="math notranslate nohighlight">\(x''=0\)</span> as being linear with <span class="math notranslate nohighlight">\(b=k=0\)</span>. The characteristic polynomial is <span class="math notranslate nohighlight">\(s^2\)</span>, which makes zero a double root. So the general solution is</p>
+<div class="math notranslate nohighlight">
+\[
+x_h(t) = e^{0t} (c_1 t + c_2) = c_1 t + c_2,
+\]</div>
+<p>which is obvious in retrospect.</p>
+</div>
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Find the general solution of <span class="math notranslate nohighlight">\(x''-x'-2x=0\)</span>.</p>
 <details class="sphinx-bs dropdown card mb-3">
@@ -437,15 +491,6 @@ Solution<div class="summary-down docutils">
 </details></div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
-<p>We could think of the trivial problem <span class="math notranslate nohighlight">\(x''=0\)</span> as being linear with <span class="math notranslate nohighlight">\(b=k=0\)</span>. The characteristic polynomial is <span class="math notranslate nohighlight">\(s^2\)</span>, which makes zero a double eigenvalue. So the general solution is</p>
-<div class="math notranslate nohighlight">
-\[
-x_h(t) = e^{0t} (c_1 t + c_2) = c_1 t + c_2,
-\]</div>
-<p>as we already know.</p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Example</p>
 <p>Solve the IVP <span class="math notranslate nohighlight">\(x'' - 5 x = 0\)</span>, <span class="math notranslate nohighlight">\(x(0)=6\)</span>, <span class="math notranslate nohighlight">\(x'(0)=0\)</span>.</p>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
@@ -454,7 +499,7 @@ Solution<div class="summary-down docutils">
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
-<p class="card-text">The eigenvalues are the roots of <span class="math notranslate nohighlight">\(s^2-5\)</span>, hence <span class="math notranslate nohighlight">\(\lambda_1=\sqrt{5}\)</span>, <span class="math notranslate nohighlight">\(\lambda_2=-\sqrt{5}\)</span>. The general solution is</p>
+<p class="card-text">The roots of <span class="math notranslate nohighlight">\(s^2-5\)</span> are <span class="math notranslate nohighlight">\(\lambda_1=\sqrt{5}\)</span>, <span class="math notranslate nohighlight">\(\lambda_2=-\sqrt{5}\)</span>. The general solution is</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = c_1 e^{\sqrt{5}\, t} + c_2 e^{-\sqrt{5}\, t}.
@@ -469,9 +514,9 @@ x(t) = c_1 e^{\sqrt{5}\, t} + c_2 e^{-\sqrt{5}\, t}.
 </div>
 </details></div>
 </div>
-<div class="section" id="complex-eigenvalues">
-<h2>Complex eigenvalues<a class="headerlink" href="#complex-eigenvalues" title="Permalink to this headline">¶</a></h2>
-<p>All seems well, until you remember that the roots of a real quadratic may come as a complex conjugate pair. What then are we to make of <a class="reference internal" href="#equation-secondlin-homogeneous-distinct">()</a> or <a class="reference internal" href="#equation-secondlin-homogeneous-repeated">()</a>? That’s next.</p>
+<div class="section" id="complex-characteristic-values">
+<h2><span class="section-number">3.2. </span>Complex characteristic values<a class="headerlink" href="#complex-characteristic-values" title="Permalink to this headline">¶</a></h2>
+<p>All seems well, until you remember that the roots of a real quadratic polynomial may come as a complex conjugate pair. What then are we to make of <a class="reference internal" href="#equation-secondlin-homogeneous-distinct">(3.3)</a> or <a class="reference internal" href="#equation-secondlin-homogeneous-repeated">(3.4)</a>? That’s what makes second-order problems really different from first-order ones, and we tackle it next.</p>
 </div>
 </div>
 
@@ -503,6 +548,8 @@ x(t) = c_1 e^{\sqrt{5}\, t} + c_2 e^{-\sqrt{5}\, t}.
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="solution_structure.html" title="previous page"><span class="section-number">2. </span>Structure of solutions</a>
+    <a class='right-next' id="next-link" href="complex_exp.html" title="next page"><span class="section-number">4. </span>Complex exponentials</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Forced oscillations &#8212; Notes on linear algebra and ODEs</title>
+    <title>8. Forced oscillations &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,6 +61,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="7. Undetermined coefficients" href="undetermined_coeffs.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -244,7 +245,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/unit_step.html">
-   2. Unit step functions
+   2. Step forcing
   </a>
  </li>
  <li class="toctree-l1">
@@ -260,6 +261,53 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/transform_solutions.html">
    5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   8. Forced oscillations
   </a>
  </li>
 </ul>
@@ -337,22 +385,22 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#undamped">
-   Undamped
+   8.1. Undamped
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#beats">
-     Beats
+     8.1.1. Beats
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#resonance">
-     Resonance
+     8.1.2. Resonance
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#damped">
-     Damped
+     8.1.3. Damped
     </a>
    </li>
   </ul>
@@ -369,10 +417,10 @@
               <div>
                 
   <div class="section" id="forced-oscillations">
-<h1>Forced oscillations<a class="headerlink" href="#forced-oscillations" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">8. </span>Forced oscillations<a class="headerlink" href="#forced-oscillations" title="Permalink to this headline">¶</a></h1>
 <p>Our standard form for oscillators is</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-unified-forced">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-unified-forced" title="Permalink to this equation">¶</a></span>\[x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = f(t),\]</div>
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-secondlin-unified-forced" title="Permalink to this equation">¶</a></span>\[x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = f(t),\]</div>
 <p>where again <span class="math notranslate nohighlight">\(\omega_0\)</span> is the natural frequency, <span class="math notranslate nohighlight">\(Z\)</span> is the nonnegative damping coefficient, and <span class="math notranslate nohighlight">\(f\)</span> is a forcing function.</p>
 <p>The most important type of forcing in applications is harmonic, as exemplified by <span class="math notranslate nohighlight">\(f(t) = \cos(\omega t)\)</span>. Let’s start by using a trick of linearity. Define <span class="math notranslate nohighlight">\(g(t)=\sin(\omega t)\)</span>, and suppose that <span class="math notranslate nohighlight">\(w\)</span> solves the ODE with forcing <span class="math notranslate nohighlight">\(f(t)+i g(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -392,10 +440,10 @@ A e^{i\omega t} \bigl[ (i\omega)^2 + 2Z\omega_0(i\omega) + \omega_0^2 \bigr] = e
 \]</div>
 <p>so that</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-coeff-complex">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-coeff-complex" title="Permalink to this equation">¶</a></span>\[A = \frac{1}{\omega_0^2-\omega^2 + 2iZ\omega_0\omega}.\]</div>
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-secondlin-coeff-complex" title="Permalink to this equation">¶</a></span>\[A = \frac{1}{\omega_0^2-\omega^2 + 2iZ\omega_0\omega}.\]</div>
 <p>In the last step above we multiplied numerator and denominator by the conjugate of the denominator. As we work through detailed cases below, bear in mind that none of this affects the homogeneous solution <span class="math notranslate nohighlight">\(x_h\)</span>, which has natural oscillation at natural frequency <span class="math notranslate nohighlight">\(\omega_0\)</span> with some level of damping.</p>
 <div class="section" id="undamped">
-<h2>Undamped<a class="headerlink" href="#undamped" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.1. </span>Undamped<a class="headerlink" href="#undamped" title="Permalink to this headline">¶</a></h2>
 <p>Things are beginning to get algebraically intense. We can ease off a bit by considering the undamped case, <span class="math notranslate nohighlight">\(Z=0\)</span>. Then the particular solution for complexified forcing <span class="math notranslate nohighlight">\(e^{i\omega t}\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -405,7 +453,7 @@ A e^{i\omega t} \bigl[ (i\omega)^2 + 2Z\omega_0(i\omega) + \omega_0^2 \bigr] = e
 <div class="proof proof-type-formula" id="id1">
 <span id="formula-secondlin-nonresonant"></span>
     <div class="proof-title">
-        <span class="proof-type">Formula </span>
+        <span class="proof-type">Formula 8.3</span>
         
             <span class="proof-title-name">(Undamped oscillator with <span class="math notranslate nohighlight">\(f(t)=\cos(\omega t)\)</span>)</span>
         
@@ -417,7 +465,7 @@ x_p(t) = \frac{1}{\omega_0^2-\omega^2} \cos(\omega t), \qquad \omega \neq \omega
 </div></div><p>(More on the exceptional case <span class="math notranslate nohighlight">\(\omega=\omega_0\)</span> in a moment.) The amplitude of <span class="math notranslate nohighlight">\(x_p\)</span> grows without bound as <span class="math notranslate nohighlight">\(\omega\to \omega_0\)</span>.</p>
 <p>The general solution is a combination of <span class="math notranslate nohighlight">\(x_h\)</span>, which oscillates at the natural frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>, and <span class="math notranslate nohighlight">\(x_p\)</span>, which oscillates at the driving frequency <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
 <div class="section" id="beats">
-<h3>Beats<a class="headerlink" href="#beats" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.1.1. </span>Beats<a class="headerlink" href="#beats" title="Permalink to this headline">¶</a></h3>
 <p>A concrete case reveals a little more structure. Suppose the initial conditions are chosen so that the complete solution <span class="math notranslate nohighlight">\(x_h+x_p\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -430,18 +478,18 @@ x(t) = \frac{1}{\omega_0^2-\omega^2} \bigl[ -\cos(\omega_0 t) + \cos(\omega t)\b
 \]</div>
 <p>Some trig identity manipulation leads to</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-beats">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-beats" title="Permalink to this equation">¶</a></span>\[x(t) = \frac{1}{4\epsilon\hat{\omega}} \bigl[ 2 \sin(\epsilon t) \sin(\hat{\omega} t) \bigr] 
+<span class="eqno">(8.5)<a class="headerlink" href="#equation-secondlin-beats" title="Permalink to this equation">¶</a></span>\[x(t) = \frac{1}{4\epsilon\hat{\omega}} \bigl[ 2 \sin(\epsilon t) \sin(\hat{\omega} t) \bigr] 
 = \frac{\sin(\epsilon t)}{2\epsilon \hat{\omega}} \sin(\hat{\omega} t).\]</div>
 <p>If <span class="math notranslate nohighlight">\(\epsilon\)</span> is small, we can interpret this solution as an oscillation at the average frequency inside an envelope that oscillates at the much lower frequency <span class="math notranslate nohighlight">\(\epsilon\)</span>. This phenomenon is called <a class="reference internal" href="overview.html#term-beating"><span class="xref std std-term">beating</span></a> and is audible as a modulating change in volume when two instruments slightly out of tune play together.</p>
 </div>
 <div class="section" id="resonance">
-<h3>Resonance<a class="headerlink" href="#resonance" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.1.2. </span>Resonance<a class="headerlink" href="#resonance" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="#formula-secondlin-nonresonant"><span class="std std-ref">particular solution formula above</span></a> cannot account for the case <span class="math notranslate nohighlight">\(\omega=\omega_0\)</span>. This situation is known as <a class="reference internal" href="overview.html#term-resonance"><span class="xref std std-term">resonance</span></a>. It’s an idealization of pushing someone on a swing at <em>just</em> the right moment in each cycle.</p>
-<p>We can obtain the resonant solution by taking the limit <span class="math notranslate nohighlight">\(\epsilon\to 0\)</span> in <a class="reference internal" href="#equation-secondlin-beats">()</a>. Since <span class="math notranslate nohighlight">\(\sin(\theta)/\theta \to 1\)</span>, we get the following.</p>
+<p>We can obtain the resonant solution by taking the limit <span class="math notranslate nohighlight">\(\epsilon\to 0\)</span> in <a class="reference internal" href="#equation-secondlin-beats">(8.5)</a>. Since <span class="math notranslate nohighlight">\(\sin(\theta)/\theta \to 1\)</span>, we get the following.</p>
 <div class="proof proof-type-formula" id="id2">
 <span id="formula-secondlin-resonant"></span>
     <div class="proof-title">
-        <span class="proof-type">Formula </span>
+        <span class="proof-type">Formula 8.4</span>
         
             <span class="proof-title-name">(Undamped oscillator at resonance$)</span>
         
@@ -453,8 +501,8 @@ x_p(t) = \frac{t}{2\omega_0} \sin(\omega_0 t).
 </div></div><p>We see that the amplitude of oscillations grows linearly forever. This physically unrealistic situation will be ruled out when we put some damping back into the system.</p>
 </div>
 <div class="section" id="damped">
-<h3>Damped<a class="headerlink" href="#damped" title="Permalink to this headline">¶</a></h3>
-<p>We now must deal with <span class="math notranslate nohighlight">\(Z&gt;0\)</span> in the MUC coefficient found in <a class="reference internal" href="#equation-secondlin-coeff-complex">()</a>. To soften up the notation a bit, we define the frequency ratio <span class="math notranslate nohighlight">\(\rho\)</span> as</p>
+<h3><span class="section-number">8.1.3. </span>Damped<a class="headerlink" href="#damped" title="Permalink to this headline">¶</a></h3>
+<p>We now must deal with <span class="math notranslate nohighlight">\(Z&gt;0\)</span> in the MUC coefficient found in <a class="reference internal" href="#equation-secondlin-coeff-complex">(8.4)</a>. To soften up the notation a bit, we define the frequency ratio <span class="math notranslate nohighlight">\(\rho\)</span> as</p>
 <div class="math notranslate nohighlight">
 \[
 \rho = \frac{\omega}{\omega_0}.
@@ -471,12 +519,12 @@ g(\rho) = \frac{1}{\omega_0 \bigl[ (1-\rho^2)^2 + 4\rho^2 Z^2 ]^{1/2}}.
 \]</div>
 <p>The gain is the ratio of the amplitudes of the particular solution and the forcing. A little calculus shows that as a function of <span class="math notranslate nohighlight">\(\rho\)</span>, the gain is maximized at</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-rhomax">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-rhomax" title="Permalink to this equation">¶</a></span>\[\begin{split}\rho_\text{max} = \begin{cases} 
+<span class="eqno">(8.6)<a class="headerlink" href="#equation-secondlin-rhomax" title="Permalink to this equation">¶</a></span>\[\begin{split}\rho_\text{max} = \begin{cases} 
 \sqrt{1-2Z^2}, &amp; \text{ if } 0 &lt; Z^2 &lt; \frac{1}{2},\\ 0, &amp; \text{ if } \frac{1}{2} \le Z^2.
 \end{cases}\end{split}\]</div>
 <p>When <span class="math notranslate nohighlight">\(0 &lt; Z^2 &lt; 1/2\)</span>, this value satisfies <span class="math notranslate nohighlight">\(0 &lt; \rho_\text{max}&lt;1\)</span>, i.e., the gain is maximized at a nonzero forcing frequency smaller than the natural frequency. We can consider this to be a <a class="reference internal" href="overview.html#term-pseudoresonance"><span class="xref std std-term">pseudoresonance</span></a>, though, since this is all that can be observed in physical systems, one often still says simply “resonance.” The peak value of the gain at pseudoresonance is found to be</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-gainmax">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-gainmax" title="Permalink to this equation">¶</a></span>\[g_\text{max} = g(\rho_\text{max}) = \frac{1}{2Z\omega_0^2\sqrt{1-Z^2}}.\]</div>
+<span class="eqno">(8.7)<a class="headerlink" href="#equation-secondlin-gainmax" title="Permalink to this equation">¶</a></span>\[g_\text{max} = g(\rho_\text{max}) = \frac{1}{2Z\omega_0^2\sqrt{1-Z^2}}.\]</div>
 <p>It remains finite for all <span class="math notranslate nohighlight">\(\rho\)</span> when <span class="math notranslate nohighlight">\(Z&gt;0\)</span>, but it becomes proportional to <span class="math notranslate nohighlight">\(1/Z\)</span> as <span class="math notranslate nohighlight">\(Z\to 0\)</span>. The following graph shows the gain as a function of the damping <span class="math notranslate nohighlight">\(Z\)</span> and forcing frequency <span class="math notranslate nohighlight">\(\omega\)</span> when <span class="math notranslate nohighlight">\(\omega_0=1\)</span>. The white curve shows the path of maximum gain.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -534,6 +582,7 @@ g(\rho) = \frac{1}{\omega_0 \bigl[ (1-\rho^2)^2 + 4\rho^2 Z^2 ]^{1/2}}.
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="undetermined_coeffs.html" title="previous page"><span class="section-number">7. </span>Undetermined coefficients</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

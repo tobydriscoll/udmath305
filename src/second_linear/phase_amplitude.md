@@ -27,7 +27,7 @@ As before, we will appeal to the fact that $(\alpha+i\beta) + \overline{(\alpha+
 x(t) = \Re \Bigl[ c_1 e^{(a+i\omega) t} \Bigr], \quad c_1 \in\complex, 
 ```
 
-where we also absorbed the factor of 2 into $c_1$. In the [preceding section](complex_exp.md) we claimed that there is a complete equivalence between this form and combinations of enveloped cosine and sine,
+where we also absorbed the factor of 2 into $c_1$. In the [preceding section](complex_exp.md) we claimed that there is an equivalence between this form and combinations of enveloped cosine and sine,
 
 ```{math}
 :label: secondlin-combine-sincos
@@ -36,39 +36,7 @@ x(t) = e^{at} \bigl[ a_1\cos(\omega t) + a_2\sin(\omega t) \bigr].
 
 Equivalence in this context means that for every choice of complex $c_1$, you can find some $a_1$ and $a_2$ so that the expressions are identically equal, and vice versa.
 
-<!-- There is a third equivalent form that might be the most readily interpreted. Let us write the complex value $c_1$ in polar form,
-
-$$
-c_1 = R e^{-i\theta}, \qquad R > 0,\, \theta \in [-\pi,pi).
-$$
-
-We introduced an extra minus sign here for future convenience, but it's not important. Now {eq}`secondlin-combine-exp` is in the form
-
-$$
-x(t) = R e^{-i\theta} e^{\lambda t} + \bigl[ \text{complex conjugate of the same thing} \bigr].
-$$
-
-As we saw before, adding $\alpha+i\beta$ to its conjugate gives $2\alpha$, so we may write
-
-$$
-x(t) = 2 \Re \Bigl[ R e^{-i\theta} e^{\lambda t} \Bigr].
-$$
-
-We manipulate the exponentials to get
-
-$$
-x(t) = 2 \Re \Bigl[ R e^{at} e^{i(\omega t -\theta)} \Bigr].
-$$
-
-The first two terms inside the brackets are real, and Euler's formula then implies
-
-$$
-x(t) = 2 R e^{at} \cos(\omega t -\theta).
-$$
-
-This is a cosine with exponentially changing amplitude and an arbitrary phase shift.  -->
-
-There is a third equivalent form that can be useful in many contexts. Consider {eq}`secondlin-combine-sincos` with the new definitions
+There is a third equivalent form that can be useful as well. Consider {eq}`secondlin-combine-sincos` with the new definitions
 
 ```{math}
 :label: secondlin-combine-polar
@@ -110,7 +78,7 @@ Find a solution to $x''-2x'+5x=0$, $x(0)=5$, $x'(0)=-5$ in amplitude-phase form.
 
 :::{dropdown} Solution
 
-The characteristic polynomial $s^2-2s+5$ gives the eigenvalues $1\pm 2i$. We can write the solution as $x(t) = R e^{t} \cos(2 t + \theta)$ and apply the initial conditions to get
+The characteristic polynomial $s^2-2s+5$ gives the roots $1\pm 2i$. We can write the solution as $x(t) = R e^{t} \cos(2 t + \theta)$ and apply the initial conditions to get
 
 \begin{align*}
 5 &= x(0) = R\cos(\theta), \\
@@ -202,4 +170,4 @@ We see that $R=2\sqrt{5}$, and $\theta = \arctan(-1/2)$ should be in the second 
 :::
 ::::
 
-It's more common that we want to know the amplitude than the phase. If you do need a numerical value of $\theta$, make sure you use the "four-quadrant arctangent" on a calculator or computer.
+It's more common that we want to know the amplitude than the phase. If you do need a numerical value of $\theta$, make sure you use the [four-quadrant arctangent](https://www.mathworks.com/help/matlab/ref/atan2.html#buct8h0-4) on a calculator or computer.
