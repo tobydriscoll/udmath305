@@ -2,22 +2,31 @@
 
 The key transforms that apply when the forcing contains steps or impulses are
 
-\begin{gather*}
-H(t-T) \Longleftrightarrow \dfrac{e^{-sT}}{s}, \\
-H(t-T)f(t-T) \Longleftrightarrow e^{-sT}F(s), \\
-\delta(t-T) \Longleftrightarrow e^{-sT}.
-\end{gather*}
+\begin{align*}
+H(t-T) & \Longleftrightarrow \dfrac{e^{-sT}}{s}, \\
+H(t-T)f(t-T) & \Longleftrightarrow e^{-sT}F(s), \\
+\delta(t-T) & \Longleftrightarrow e^{-sT}.
+\end{align*}
 
-Keep in mind that *both steps and impulses in forcing produce steps in the solution*. The impulses are the simpler case.
+:::{note}
+Steps and impulses in forcing both produce steps in the solution.
+:::
 
 ## Impulse forcing
 
-For illustration, let's start with an impulse on an undamped oscillator,
+For illustration, let's start with an impulse on an undamped oscillator.
+
+::::{admonition} Example
+:class: tip
+Solve
 
 $$
-x''+x = \delta(t-T), \quad x(0)=x'(0)=0 \qquad (T \ge 0).
+x''+x = \delta(t-T), \quad x(0)=x'(0)=0,
 $$
 
+for fixed $T\ge 0$. 
+
+:::{dropdown} Solution
 Taking the transform of everything and solving for $X$ gives
 
 $$
@@ -41,17 +50,20 @@ That is, the solution is $x(t)=H(t-T)\sin(t-T)$. Writing it piecewise,
 $$
 x(t) = \begin{cases} 0, & 0\le t < T, \\ \sin(t-T), & t \ge T. \end{cases}
 $$
+:::
+::::
 
-Since the system starts at rest, it remains at rest until the impulse at time $T$. Note that $x$ remains continuous at $t=T$, but $x'$ does not. In fact, $x'(T^+)=\cos(0)=1$. This modifies the impulse response [we observed](section-steps-jump) for first-order problems.
+Since the system in the previous example starts at rest, it remains at rest until the impulse at time $T$. Note that $x$ remains continuous at $t=T$, but $x'$ does not. In fact, $x'(T^+)=\cos(0)=1$. This modifies in a basic way the impulse response [we observed](section-steps-jump) for first-order problems.
 
 ```{proof:rule}
 In a second-order linear ODE, the effect of a unit impulse is the same as an instantaneous increase by 1 in the derivative of the solution.
 ```
 
 ::::{admonition} Example
-:class: dropdown,tip
-> Find the solution of $x''+2x'+10x=6\delta(t-5)$, $x(0)=x'(0)=0$.
+:class: tip
+Find the solution of $x''+2x'+10x=6\delta(t-5)$, $x(0)=x'(0)=0$.
 
+:::{dropdown} Solution
 Solving for the transform leads to
 
 ```{math}
@@ -87,6 +99,7 @@ Finally we can begin to unravel the tapestry. We see that $f(t)=2\sin(3t)$. Our 
 $$
 x_p(t) = 2 H(t-5)e^{-(t-5)} \sin[3(t-5)].
 $$
+:::
 ::::
 
 ## Step forcing
@@ -125,8 +138,10 @@ $$
 It only takes a moment to see that both $x$ and $x'$ are continuous at $t=T$, which is the general situation with step forcing.
 
 ::::{admonition} Example
-:class: dropdown,tip
-> Find a particular solution of $x''-x=f(t)$, where $f(t) = \begin{cases} 0, & 0 \le t < 3, \\ t, & t\ge 4. \end{cases}$
+:class: tip
+Find a particular solution of $x''-x=f(t)$, where $f(t) = \begin{cases} 0, & 0 \le t < 3, \\ t, & t\ge 4. \end{cases}$
+
+:::{dropdown} Solution
 
 The forcing function is $f(t)=tH(t-3)$. This is not yet quite in a form we know how to transform. What we need is
 
@@ -171,6 +186,7 @@ Y(s) = \frac{-3}{s} + \frac{-1}{s^2} + \frac{2}{s-1} + \frac{1}{s+1},
 $$
 
 and $y(t)=-3-t+2e^t + e^{-t}$. Finally, $x_p(t) = H(t-3)y(t-3)$.
+:::
 ::::
 
-As you can see, the Laplace transform systematizes the algebra needed to solve the kinds of linear ODEs we have encountered, but that does not mean that the algebra is simple. It's an ideal situation for computer solutions. 
+The Laplace transform systematizes the algebra needed to solve the kinds of linear ODEs we have encountered, but that does not mean that the algebra is simple. It's an ideal setup for computer solutions. Most of the time, though, the method of undetermined coefficients is easier for hand computation.

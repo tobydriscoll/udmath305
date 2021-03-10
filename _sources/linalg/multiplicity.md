@@ -99,6 +99,7 @@ If $\bfA\in\cmn{n}{n}$ has $n$ distinct eigenvalues, then $\bfA$ is not defectiv
 
 For $n=2$, the possibilities in the case of algebraic multiplicity equal to 2 are easy to pin down even further. 
 
+(thm-la-2x2defective)=
 ````{proof:theorem} $2\times 2$ defectivenss
 Any $\bfA\in\cmn{2}{2}$ that has a single repeated eigenvalue is either defective or a multiple of the identity matrix. 
 ````

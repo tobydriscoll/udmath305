@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Free oscillations &#8212; Notes on linear algebra and ODEs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. Free oscillations &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -24,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -42,7 +43,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -50,8 +50,6 @@
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -59,8 +57,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. Undetermined coefficients" href="undetermined_coeffs.html" />
+    <link rel="prev" title="5. Amplitude and phase" href="phase_amplitude.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -244,7 +246,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/unit_step.html">
-   2. Unit step functions
+   2. Step forcing
   </a>
  </li>
  <li class="toctree-l1">
@@ -260,6 +262,127 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/transform_solutions.html">
    5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VI. Linear ODE systems
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/order_dimension.html">
+   2. Conversion of higher-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/structure.html">
+   3. Solution structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/homogeneous.html">
+   4. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/const_coeff.html">
+   5. Constant-coefficient problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/phase_plane.html">
+   6. Stability and the phase plane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/matrix_exp.html">
+   7. The matrix exponential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/variation_parameters.html">
+   8. Variation of parameters
   </a>
  </li>
 </ul>
@@ -337,27 +460,27 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mechanical-oscillator">
-   Mechanical oscillator
+   6.1. Mechanical oscillator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#electrical-oscillators">
-   Electrical oscillators
+   6.2. Electrical oscillators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#unifying-notation">
-   Unifying notation
+   6.3. Unifying notation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#range-of-oscillatory-behavior">
-   Range of oscillatory behavior
+   6.4. Range of oscillatory behavior
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#undamped-oscillator-z-0">
-     Undamped oscillator,
+     6.4.1. Undamped oscillator,
      <span class="math notranslate nohighlight">
       \(Z=0\)
      </span>
@@ -365,7 +488,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#underdamped-oscillator-0-z-1">
-     Underdamped oscillator,
+     6.4.2. Underdamped oscillator,
      <span class="math notranslate nohighlight">
       \(0&lt;Z&lt;1\)
      </span>
@@ -373,7 +496,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#critically-damped-oscillator-z-1">
-     Critically damped oscillator,
+     6.4.3. Critically damped oscillator,
      <span class="math notranslate nohighlight">
       \(Z=1\)
      </span>
@@ -381,7 +504,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#overdamped-z-1">
-     Overdamped,
+     6.4.4. Overdamped,
      <span class="math notranslate nohighlight">
       \(Z&gt;1\)
      </span>
@@ -401,23 +524,23 @@
               <div>
                 
   <div class="section" id="free-oscillations">
-<h1>Free oscillations<a class="headerlink" href="#free-oscillations" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6. </span>Free oscillations<a class="headerlink" href="#free-oscillations" title="Permalink to this headline">¶</a></h1>
 <p>The most common use of second-order equations is the modeling of oscillatory or other periodic behavior. This behavior occurs in myriad contexts. When an oscillating system is not subjected to any external forces, we call it an unforced oscillator or <a class="reference internal" href="overview.html#term-free-oscillator"><span class="xref std std-term">free oscillator</span></a>.</p>
 <div class="section" id="mechanical-oscillator">
-<h2>Mechanical oscillator<a class="headerlink" href="#mechanical-oscillator" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.1. </span>Mechanical oscillator<a class="headerlink" href="#mechanical-oscillator" title="Permalink to this headline">¶</a></h2>
 <p>An object attached to an ideal spring satisfies the ODE</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-massspring-free">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-massspring-free" title="Permalink to this equation">¶</a></span>\[mx'' + b x' + kx = 0,\]</div>
-<p>where <span class="math notranslate nohighlight">\(x(t)\)</span> is the displacement from the natural resting position, <span class="math notranslate nohighlight">\(m\)</span> is the mass of the object, <span class="math notranslate nohighlight">\(b\)</span> is an attenuation coefficient due to friction or mechanical damping, and <span class="math notranslate nohighlight">\(k\)</span> is a property of the spring called the <a class="reference internal" href="overview.html#term-spring-constant"><span class="xref std std-term">spring constant</span></a>. This constant is the ratio of the restoring force of the spring to the amount by which it is stretched.</p>
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-secondlin-massspring-free" title="Permalink to this equation">¶</a></span>\[mx'' + b x' + kx = 0,\]</div>
+<p>where <span class="math notranslate nohighlight">\(x(t)\)</span> is the displacement from the natural resting position, <span class="math notranslate nohighlight">\(m\)</span> is the mass of the object, <span class="math notranslate nohighlight">\(b\)</span> is an attenuation coefficient due to friction or mechanical damping, and <span class="math notranslate nohighlight">\(k\)</span> is a property of the spring called the <a class="reference internal" href="overview.html#term-spring-constant"><span class="xref std std-term">spring constant</span></a>. This constant is the ratio of the restoring force of the spring to the amount by which it is stretched or compressed.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Remember, all named parameters such as <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(k\)</span>, and <span class="math notranslate nohighlight">\(b\)</span> are assumed to be nonnegative unless stated otherwise.</p>
+<p>All named parameters such as <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(k\)</span>, and <span class="math notranslate nohighlight">\(b\)</span> are assumed to be nonnegative unless stated otherwise.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Equation <a class="reference internal" href="#equation-secondlin-massspring-free">()</a> applies equally well to horizontal and vertical oscillations. Gravity does not appear in the vertical case because it is accounted for by measuring <span class="math notranslate nohighlight">\(x\)</span> from the static equilibrium position.</p>
+<p>Equation <a class="reference internal" href="#equation-secondlin-massspring-free">(6.2)</a> applies equally well to horizontal and vertical oscillations. Gravity does not appear in the vertical case because it is accounted for by measuring <span class="math notranslate nohighlight">\(x\)</span> from the static equilibrium position.</p>
 </div>
-<p>If given, initial values for <a class="reference internal" href="#equation-secondlin-massspring-free">()</a> supply the initial position and initial velocity, which determine the solution uniquely.</p>
+<p>If given, initial values for <a class="reference internal" href="#equation-secondlin-massspring-free">(6.2)</a> supply the initial position and initial velocity, which determine the solution uniquely.</p>
 <p>A pendulum is a different type of mechanical oscillator. The proper ODE is</p>
 <div class="math notranslate nohighlight">
 \[\theta'' + \gamma \theta + \frac{g}{L}\sin (\theta) = 0,\]</div>
@@ -427,14 +550,14 @@
 <p>which is a linear oscillator with constant coefficients.</p>
 </div>
 <div class="section" id="electrical-oscillators">
-<h2>Electrical oscillators<a class="headerlink" href="#electrical-oscillators" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.2. </span>Electrical oscillators<a class="headerlink" href="#electrical-oscillators" title="Permalink to this headline">¶</a></h2>
 <p>An AC circuit typically has elements of resistance, capacitance, and inductance. These analogize perfectly to friction/damping, spring constant, and mass. If these elements are wired in series, the governing ODE is</p>
 <div class="math notranslate nohighlight">
 \[LI'' + RI' + \frac{1}{C}I = 0,\]</div>
 <p>where <span class="math notranslate nohighlight">\(I(t)\)</span> is the current flowing through the circuit, <span class="math notranslate nohighlight">\(L\)</span> is inductance, <span class="math notranslate nohighlight">\(R\)</span> is resistance, and <span class="math notranslate nohighlight">\(C\)</span> is capacitance.</p>
 </div>
 <div class="section" id="unifying-notation">
-<h2>Unifying notation<a class="headerlink" href="#unifying-notation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3. </span>Unifying notation<a class="headerlink" href="#unifying-notation" title="Permalink to this headline">¶</a></h2>
 <p>When you have many versions of the same root problem, each using different symbols and units, you have three options.</p>
 <ol class="simple">
 <li><p>Solve each new problem from scratch.</p></li>
@@ -455,19 +578,19 @@
 </div>
 <p>Now the ODE of a free oscillator becomes</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-unified-free">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-unified-free" title="Permalink to this equation">¶</a></span>\[x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = 0.\]</div>
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-secondlin-unified-free" title="Permalink to this equation">¶</a></span>\[x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = 0.\]</div>
 <p>A similar derivation can be done starting from the pendulum or AC circuit equations.</p>
 </div>
 <div class="section" id="range-of-oscillatory-behavior">
-<h2>Range of oscillatory behavior<a class="headerlink" href="#range-of-oscillatory-behavior" title="Permalink to this headline">¶</a></h2>
-<p>The eigenvalues of the homogeneous equation are</p>
+<h2><span class="section-number">6.4. </span>Range of oscillatory behavior<a class="headerlink" href="#range-of-oscillatory-behavior" title="Permalink to this headline">¶</a></h2>
+<p>The roots of the homogeneous equation are</p>
 <div class="math notranslate nohighlight">
 \[\lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1}.\]</div>
 <p>The discussion now splits into four cases, marked by increasing values of <span class="math notranslate nohighlight">\(Z\)</span>.</p>
 <div class="section" id="undamped-oscillator-z-0">
-<h3>Undamped oscillator, <span class="math notranslate nohighlight">\(Z=0\)</span><a class="headerlink" href="#undamped-oscillator-z-0" title="Permalink to this headline">¶</a></h3>
-<p>The first case for <a class="reference internal" href="#equation-secondlin-unified-free">()</a> is <span class="math notranslate nohighlight">\(Z=0\)</span>, which is the idealization of no mechanical damping or friction (or resistance, in a circuit). A key characteristic of this case is that energy is conserved.</p>
-<p>The eigenvalues are <span class="math notranslate nohighlight">\(\pm i\omega_0\)</span>, and a general solution can be expressed three equivalent ways:</p>
+<h3><span class="section-number">6.4.1. </span>Undamped oscillator, <span class="math notranslate nohighlight">\(Z=0\)</span><a class="headerlink" href="#undamped-oscillator-z-0" title="Permalink to this headline">¶</a></h3>
+<p>The first case for <a class="reference internal" href="#equation-secondlin-unified-free">(6.3)</a> is <span class="math notranslate nohighlight">\(Z=0\)</span>, which is the idealization of no mechanical damping or friction (or resistance, in a circuit). A key characteristic of this case is that energy is conserved.</p>
+<p>The roots are <span class="math notranslate nohighlight">\(\pm i\omega_0\)</span>, and a general solution can be expressed three equivalent ways:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 x_h(t) &amp; = \Re \left[  c_1 e^{i\omega_0 t} \right], \\
@@ -530,8 +653,8 @@ x'' + 4g x   = 0.
 </details></div>
 </div>
 <div class="section" id="underdamped-oscillator-0-z-1">
-<h3>Underdamped oscillator, <span class="math notranslate nohighlight">\(0&lt;Z&lt;1\)</span><a class="headerlink" href="#underdamped-oscillator-0-z-1" title="Permalink to this headline">¶</a></h3>
-<p>For <span class="math notranslate nohighlight">\(0&lt; Z &lt; 1\)</span> the eigenvalues of <a class="reference internal" href="#equation-secondlin-unified-free">()</a> are complex, with negative real part:</p>
+<h3><span class="section-number">6.4.2. </span>Underdamped oscillator, <span class="math notranslate nohighlight">\(0&lt;Z&lt;1\)</span><a class="headerlink" href="#underdamped-oscillator-0-z-1" title="Permalink to this headline">¶</a></h3>
+<p>For <span class="math notranslate nohighlight">\(0&lt; Z &lt; 1\)</span> the roots of <a class="reference internal" href="#equation-secondlin-unified-free">(6.3)</a> are complex, with negative real part:</p>
 <div class="math notranslate nohighlight">
 \[\lambda_{1,2} = -Z \omega_0 \pm i \omega_0 \sqrt{1-Z^2}.\]</div>
 <p>Defining <span class="math notranslate nohighlight">\(\omega_d=\omega_0 \sqrt{1-Z^2}\)</span>, the general homogeneous solution is therefore</p>
@@ -540,8 +663,8 @@ x'' + 4g x   = 0.
 <p>or an equivalent form. This solution is pseudoperiodic, combining oscillation at frequency <span class="math notranslate nohighlight">\(\omega_d &lt; \omega_0\)</span> inside an exponential decay envelope. This situation is called an <span class="xref std std-term">underdamped</span> oscillator.</p>
 </div>
 <div class="section" id="critically-damped-oscillator-z-1">
-<h3>Critically damped oscillator, <span class="math notranslate nohighlight">\(Z=1\)</span><a class="headerlink" href="#critically-damped-oscillator-z-1" title="Permalink to this headline">¶</a></h3>
-<p>At <span class="math notranslate nohighlight">\(Z=1\)</span> the complex eigenvalues collapse to a double real eigenvalue,</p>
+<h3><span class="section-number">6.4.3. </span>Critically damped oscillator, <span class="math notranslate nohighlight">\(Z=1\)</span><a class="headerlink" href="#critically-damped-oscillator-z-1" title="Permalink to this headline">¶</a></h3>
+<p>At <span class="math notranslate nohighlight">\(Z=1\)</span> the complex roots collapse to a double real root,</p>
 <div class="math notranslate nohighlight">
 \[\lambda_1 = \lambda_2 = -\omega_0,\]</div>
 <p>with general homogeneous solution</p>
@@ -550,13 +673,13 @@ x'' + 4g x   = 0.
 <p>There is no longer any oscillation present, and we have a <a class="reference internal" href="overview.html#term-critically-damped"><span class="xref std std-term">critically damped</span></a> system. The linear growth of <span class="math notranslate nohighlight">\(c_2 t\)</span> doesn’t make much of a difference against the exponential decay, and <span class="math notranslate nohighlight">\(x_h\to0\)</span> as <span class="math notranslate nohighlight">\(t\to\infty\)</span>.</p>
 </div>
 <div class="section" id="overdamped-z-1">
-<h3>Overdamped, <span class="math notranslate nohighlight">\(Z&gt;1\)</span><a class="headerlink" href="#overdamped-z-1" title="Permalink to this headline">¶</a></h3>
-<p>For <span class="math notranslate nohighlight">\(Z&gt;1\)</span> the eigenvalues are</p>
+<h3><span class="section-number">6.4.4. </span>Overdamped, <span class="math notranslate nohighlight">\(Z&gt;1\)</span><a class="headerlink" href="#overdamped-z-1" title="Permalink to this headline">¶</a></h3>
+<p>For <span class="math notranslate nohighlight">\(Z&gt;1\)</span> the roots are</p>
 <div class="math notranslate nohighlight">
 \[\lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1},\]</div>
 <p>which are negative and real. This gives an exponentially decaying homogeneous solution. In this case we have an <a class="reference internal" href="overview.html#term-overdamped"><span class="xref std std-term">overdamped</span></a> oscillator.</p>
 <table class="table" id="table-secondlin-oscillators">
-<caption><span class="caption-text">Damping coefficient and eigenvalues</span><a class="headerlink" href="#table-secondlin-oscillators" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.1 </span><span class="caption-text">Damping coefficient and characteristic values</span><a class="headerlink" href="#table-secondlin-oscillators" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -564,7 +687,7 @@ x'' + 4g x   = 0.
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Damping coefficient</p></th>
-<th class="head"><p>Eigenvalue property</p></th>
+<th class="head"><p>Root property</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
@@ -622,7 +745,7 @@ Solution<div class="summary-down docutils">
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
-<p class="card-text">We derived the governing ODE <span class="math notranslate nohighlight">\(x'' + 1.6 x' + 2.2 x = 0\)</span>. The eigenvalues are the roots of <span class="math notranslate nohighlight">\(\lambda^2 + 1.6\lambda + 2.2\)</span>, which are found numerically to be</p>
+<p class="card-text">We derived the governing ODE <span class="math notranslate nohighlight">\(x'' + 1.6 x' + 2.2 x = 0\)</span>. The roots are the roots of <span class="math notranslate nohighlight">\(\lambda^2 + 1.6\lambda + 2.2\)</span>, which are found numerically to be</p>
 <div class="math notranslate nohighlight">
 \[  \lambda \approx -0.8000 \pm 1.2490i.\]</div>
 <p class="card-text">(The imaginary part is smaller than the natural frequency found in the last example, as it must be.) Choosing the sin-cos form of the general solution, we have</p>
@@ -639,11 +762,12 @@ x_h(t) = a_1 e^{-0.8 t} \cos(1.249 t) + a_2 e^{-0.8 t} \sin(1.249 t).
 <p class="card-text">thus <span class="math notranslate nohighlight">\(a_2 = -0.4003\)</span>. The motion is therefore given by <span class="math notranslate nohighlight">\(x(t)=-0.4003\, e^{-0.8 t} \sin(1.249 t)\)</span>.</p>
 </div>
 </details></div>
-<p>Here is a short video showing how solutions of
-$<span class="math notranslate nohighlight">\(
+<p>Here is a short video showing how solutions of</p>
+<div class="math notranslate nohighlight">
+\[
 x'' + bx' + cx = 0
-\)</span>$</p>
-<p>vary with the parameters <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span> (equivalently, <span class="math notranslate nohighlight">\(\omega_0\)</span> and <span class="math notranslate nohighlight">\(Z\)</span>).</p>
+\]</div>
+<p>vary with the parameters <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, or equivalently, <span class="math notranslate nohighlight">\(\omega_0\)</span> and <span class="math notranslate nohighlight">\(Z\)</span>. (I use the term “eigenvalues” to mean characteristic values here.)</p>
 <div>
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_qa9wnwpt&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_eyxlu0a8" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe>
 </div></div>
@@ -678,6 +802,8 @@ x'' + bx' + cx = 0
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="phase_amplitude.html" title="previous page"><span class="section-number">5. </span>Amplitude and phase</a>
+    <a class='right-next' id="next-link" href="undetermined_coeffs.html" title="next page"><span class="section-number">7. </span>Undetermined coefficients</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

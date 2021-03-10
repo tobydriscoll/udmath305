@@ -34,21 +34,18 @@ $$
 p(s) = s^2 + b s + k.
 $$
 
-Its roots are called the {term}`eigenvalues` of $\opA$.
+Its roots are called the {term}`characteristic values` of $\opA$. For brevity, we will often refer to these as simply the **roots** of $\opA$, although this usage is not standard.
 ````
 
 :::{note}
-We earlier used the terms *characteristic polynomial* and *eigenvalues* with matrices. The connections go way beyond the names, as we will see in the future.
-:::
+We earlier used the term *characteristic polynomial* with matrices. The connection goes way beyond the name, as we will see in the future.
+::: 
 
-```{warning}
-The term "eigenvalue" for a linear operator or homogeneous ODE is not common in textbooks, but it seems irresistable to me.
-```
 
 (theorem-secondlin-homogeneous-distinct)=
 
-````{proof:theorem} Homogeneous solution, distinct eigenvalues
-Let $\lambda_1,\lambda_2$ be the eigenvalues of $\opA$, where $\opA[x]=x''+bx'+kx.$ If  $\lambda_1\neq \lambda_2$, then the general solution of $\opA[x]= 0$ is
+````{proof:theorem} Homogeneous solution, distinct roots
+Let $\lambda_1,\lambda_2$ be the characteristic values of $\opA$, where $\opA[x]=x''+bx'+kx.$ If  $\lambda_1\neq \lambda_2$, then the general solution of $\opA[x]= 0$ is
 
 ```{math}
 :label: secondlin-homogeneous-distinct
@@ -62,14 +59,25 @@ We have to handle the case $\lambda_1=\lambda_2$ separately. (You might recall t
 
 (theorem-secondlin-homogeneous-repeated)=
 
-````{proof:theorem} Homogeneous solution, repeated eigenvalue
-Let $\lambda$ be a double eigenvalue of $\opA$, where $\opA[x]=x''+bx'+kx.$ The general solution of $\opA[x]= 0$ is
+````{proof:theorem} Homogeneous solution, repeated root
+Let $\lambda$ be a double root of $\opA$, where $\opA[x]=x''+bx'+kx.$ The general solution of $\opA[x]= 0$ is
 
 ```{math}
 :label: secondlin-homogeneous-repeated
 x_h(t) = e^{\lambda t} \bigl( c_1 t + c_2 \bigr).
 ```
 ````
+
+::::{admonition} Example
+:class: tip
+We could think of the trivial problem $x''=0$ as being linear with $b=k=0$. The characteristic polynomial is $s^2$, which makes zero a double root. So the general solution is
+
+$$
+x_h(t) = e^{0t} (c_1 t + c_2) = c_1 t + c_2,
+$$
+
+which is obvious in retrospect.
+::::
 
 ::::{admonition} Example
 :class: tip
@@ -82,21 +90,10 @@ The characteristic polynomial is $s^2-s-2$, which has roots $\lambda_1=-1$, $\la
 
 ::::{admonition} Example
 :class: tip
-We could think of the trivial problem $x''=0$ as being linear with $b=k=0$. The characteristic polynomial is $s^2$, which makes zero a double eigenvalue. So the general solution is
-
-$$
-x_h(t) = e^{0t} (c_1 t + c_2) = c_1 t + c_2,
-$$
-
-as we already know.
-::::
-
-::::{admonition} Example
-:class: tip
 Solve the IVP $x'' - 5 x = 0$, $x(0)=6$, $x'(0)=0$.
 
 :::{dropdown} Solution
-The eigenvalues are the roots of $s^2-5$, hence $\lambda_1=\sqrt{5}$, $\lambda_2=-\sqrt{5}$. The general solution is
+The roots of $s^2-5$ are $\lambda_1=\sqrt{5}$, $\lambda_2=-\sqrt{5}$. The general solution is
 
 $$
 x(t) = c_1 e^{\sqrt{5}\, t} + c_2 e^{-\sqrt{5}\, t}.
@@ -113,6 +110,6 @@ It's easy to conclude from here that $c_1=c_2=3$. In general we might have to so
 :::
 ::::
 
-## Complex eigenvalues
+## Complex characteristic values
 
-All seems well, until you remember that the roots of a real quadratic may come as a complex conjugate pair. What then are we to make of {eq}`secondlin-homogeneous-distinct` or {eq}`secondlin-homogeneous-repeated`? That's next.
+All seems well, until you remember that the roots of a real quadratic polynomial may come as a complex conjugate pair. What then are we to make of {eq}`secondlin-homogeneous-distinct` or {eq}`secondlin-homogeneous-repeated`? That's what makes second-order problems really different from first-order ones, and we tackle it next.

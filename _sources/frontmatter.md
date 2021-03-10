@@ -6,22 +6,22 @@ These are notes on MATH 305 at UD by Toby Driscoll. All rights reserved.
 
 ### Linear Algebra
 
-| Date    | Section                                           | Kapitula       |
-| ------- | ------------------------------------------------- | -------------- |
-| Feb. 23 | [Overview](linalg/overview)                       | --             |
-| Feb. 23 | [Vectors and matrices](linalg/vectors_matrices)   | --             |
-| Feb. 23 | [Linear algebraic systems](linalg/linear_systems) | 1.1.1, 1.1.2   |
-| Feb. 23 | [Row elimination](linalg/row_elimination)         | 1.1.3          |
-| Feb. 23 | [RREF](linalg/RREF)                               | 1.1.3          |
-| Mar. 2  | [Vector algebra](linalg/vector_algebra)           | 1.2.1          |
-| Mar. 2  | [Matrix-vector algebra](linalg/matrix_vector)     | 1.2.2          |
-| Mar. 2  | [Matrix multiplication](linalg/matrix_matrix)     | 1.3            |
-| Mar. 2  | [Identity and inverse](linalg/identity_inverse)   | 1.4            |
-| Mar. 9  | [Singularity](linalg/singular)                    | 1.10           |
-| Mar. 9  | [General solutions](linalg/general_solutions)     | 1.5            |
-| Mar. 9  | [Complex numbers](linalg/complex_numbers)         | 1.11           |
-| Mar. 9  | [Eigenvalues](linalg/eigenvalues)                 | 1.12.1, 1.12.2 |
-| Mar. 9  | [Multiplicity](linalg/multiplicity)               | --             |
+| Date    | Section                                           | Kapitula       | Suggested practice |
+| ------- | ------------------------------------------------- | -------------- |---|
+| Feb. 23 | [Overview](linalg/overview)                       | --             |  |
+| Feb. 23 | [Vectors and matrices](linalg/vectors_matrices)   | --             |  |
+| Feb. 23 | [Linear algebraic systems](linalg/linear_systems) | 1.1.1, 1.1.2   | 1.1.1 |
+| Feb. 23 | [Row elimination](linalg/row_elimination)         | 1.1.3          |   |
+| Feb. 23 | [RREF](linalg/RREF)                               | 1.1.3          | 1.1.2, 1.1.3, 1.1.5 |
+| Mar. 2  | [Vector algebra](linalg/vector_algebra)           | 1.2.1          |  
+| Mar. 2  | [Matrix-vector algebra](linalg/matrix_vector)     | 1.2.2          |  1.2.1, 1.2.2 | 
+| Mar. 2  | [Matrix multiplication](linalg/matrix_matrix)     | 1.3            | 1.3.1 |
+| Mar. 2  | [Identity and inverse](linalg/identity_inverse)   | 1.4            | 1.4.1(a,b), 1.4.3 |
+| Mar. 9  | [Singularity](linalg/singular)                    | 1.10           | 1.10.1, 1.10.2 |
+| Mar. 9  | [General solutions](linalg/general_solutions)     | 1.5            | 1.5.1, 1.5.3 |
+| Mar. 9  | [Complex numbers](linalg/complex_numbers)         | 1.11           | 1.11.1, 1.11.3, 1.11.6 |
+| Mar. 9  | [Eigenvalues](linalg/eigenvalues)                 | 1.12.1, 1.12.2 | 1.12.2 (a-d), 1.12.3, 1.12.8(a) |
+| Mar. 9  | [Multiplicity](linalg/multiplicity)               | --             |  |
 
 ### 1st-order linear ODE
 

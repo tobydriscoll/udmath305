@@ -53,7 +53,9 @@ We now reap more rewards for using the abstract language of operators with first
 4. If given, use initial conditions to solve for the integration constants.
 
 
-However, there is a new wrinkle regarding the homogeneous part of the solution. Suppose that $x_1(t)$ is one homogeneous solution, and we set $x_2(t)=v(t)x_1(t)$ for an undetermined $v(t)$. A little elbow grease shows that 
+## Reduction of order
+
+There is, however, a major new wrinkle regarding the homogeneous part of the solution. Suppose that $x_1(t)$ is one homogeneous solution, and we set $x_2(t)=v(t)x_1(t)$ for an undetermined $v(t)$. A little elbow grease shows that 
 
 $$
 \opA[vx_1] = x_1 v'' + 2 x_1' v' + p x_1 v' + \opA[x_1].
@@ -111,7 +113,7 @@ You can check that this is indeed a solution to the original homogeneous ODE.
 :::
 ::::
 
-The practical value of reduction of order is rather limited. But it does suggest an important fact.
+The reduction of order technique suggests an important fact. 
 
 :::{proof:theorem}
 The general solution of a homogeneous, linear, second-order ODE is of the form
@@ -123,11 +125,11 @@ x_h(t) = c_1 x_1(t) + c_2 x_2(t),
 for arbitrary constants $c_1$ and $c_2$. 
 :::
 
-(You might be tempted to do another reduction of order starting from $x_2$. Nice try, but you don't get any new terms that change {eq}`secondlin-genhomog`.)
+It's too deep for us to go into a true proof of this theorem. You might be tempted to do another reduction of order starting from $x_2$ in order to get a third solution. Nice try, but you don't get any new terms that change {eq}`secondlin-genhomog`.
 
 ## Constant coefficients
 
-The linear second-order problem $\opA[x]=f$ has a nice structure, but only a few such problems are straightforward to solve. We will now, and for the rest of the chapter, limit ourselves to the **constant-coefficient** problem
+The linear second-order problem $\opA[x]=f$ has a nice structure, but only a few such problems are straightforward to solve. We will now, and for the rest of the chapter, limit ourselves to the {term}`constant-coefficient` problem
 
 ```{math}
 :label: secondlin-linear-cc
@@ -140,4 +142,4 @@ in which $b$ and $k$ are constant, and $f(t)$ is a forcing function.
 In {eq}`secondlin-linear-cc` the coefficient $b$ has units $1/T$, the coefficient $k$ has units $1/T^2$, and $f(t)$ has units $X/T^2$, where $X$ and $T$ are the units of $x$ and $t$, respectively.
 :::
 
-We will deal with the homogeneous and particular parts in turn. Each is a direct extension of what we did for first-order problems, but there are some hurdles we must clear to make that transparent.
+We will deal with the homogeneous and particular parts in turn. Each is a direct extension of what we did for first-order problems, but there are some hurdles we must clear to make that fact transparent.

@@ -1,0 +1,709 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5. Constant-coefficient problems &#8212; Notes on linear algebra and ODEs</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Stability and the phase plane" href="phase_plane.html" />
+    <link rel="prev" title="4. Homogeneous solutions" href="homogeneous.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/butterfly128.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
+   Applied Math for Engineers
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  I. Linear algebra
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vectors_matrices.html">
+   2. Vectors and matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/linear_systems.html">
+   3. Linear systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/row_elimination.html">
+   4. Row elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/RREF.html">
+   5. RREF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vector_algebra.html">
+   6. Vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_vector.html">
+   7. Matrix-vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_matrix.html">
+   8. Matrix multiplication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/identity_inverse.html">
+   9. Identity and inverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/singular.html">
+   10. Detecting singularity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/general_solutions.html">
+   11. General solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/complex_numbers.html">
+   12. Complex numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/eigenvalues.html">
+   13. Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/multiplicity.html">
+   14. Multiplicity
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  II. First-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/preview.html">
+   2. Quick tour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp.html">
+   3. Initial-value problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/operators.html">
+   4. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/homogeneous.html">
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp_formula.html">
+   7. IVP formula
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   8. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   9. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   10. Modeling
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  III. Steps and impulses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/unit_step.html">
+   2. Step forcing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/impulse.html">
+   3. Impulses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/laplace.html">
+   4. Laplace transforms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/transform_solutions.html">
+   5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VI. Linear ODE systems
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="order_dimension.html">
+   2. Conversion of higher-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="structure.html">
+   3. Solution structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homogeneous.html">
+   4. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Constant-coefficient problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="phase_plane.html">
+   6. Stability and the phase plane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matrix_exp.html">
+   7. The matrix exponential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="variation_parameters.html">
+   8. Variation of parameters
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/first_system/const_coeff.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-solution">
+   5.1. General solution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complex-eigenvalues">
+   5.2. Complex eigenvalues
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-oscillator-reloaded">
+   5.3. The oscillator reloaded
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="constant-coefficient-problems">
+<h1><span class="section-number">5. </span>Constant-coefficient problems<a class="headerlink" href="#constant-coefficient-problems" title="Permalink to this headline">¶</a></h1>
+<p>While the theory of homogeneous linear ODE systems is straightforward, the good news for the general case pretty much ends there. In most problems we cannot get a reasonably simple expression for a fundamental matrix. But there is a very important special case in which we can say a lot: when the coefficient matrix is constant.</p>
+<p>Accordingly, we now specialize to</p>
+<div class="math notranslate nohighlight">
+\[
+\bfx' = \bfA \bfx,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bfA\)</span> is an <span class="math notranslate nohighlight">\(n\times n\)</span> constant matrix. We are finally ready to see the significance of the eigenvalue condition</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{A} \mathbf{v} = \lambda \mathbf{v}.\]</div>
+<p>If we seek a solution in the form <span class="math notranslate nohighlight">\(\mathbf{x}(t)=g(t)\mathbf{v}\)</span> for this eigenvector, then</p>
+<div class="math notranslate nohighlight">
+\[
+g'\mathbf{v} = \mathbf{A}(g\mathbf{v}) = g\cdot (\mathbf{A}\mathbf{v}) = (g\lambda) \mathbf{v},
+\]</div>
+<p>which can be satisfied if <span class="math notranslate nohighlight">\(g'=\lambda g\)</span>. That is, we have a solution,</p>
+<div class="math notranslate nohighlight">
+\[
+\bfx(t) = e^{\lambda t} \bfv.
+\]</div>
+<div class="section" id="general-solution">
+<h2><span class="section-number">5.1. </span>General solution<a class="headerlink" href="#general-solution" title="Permalink to this headline">¶</a></h2>
+<p>Counting algebraic multiplicities, we know that <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> has eigenvalues <span class="math notranslate nohighlight">\(\lambda_1,\ldots,\lambda_n\)</span>. Say that we have eigenvectors <span class="math notranslate nohighlight">\(\mathbf{v}_1,\ldots,\mathbf{v}_n\)</span> to go with them. Then we have <span class="math notranslate nohighlight">\(n\)</span> homogeneous solutions</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}_j(t) = e^{t \lambda_j} \mathbf{v}_j, \quad j=1,\ldots,n.\]</div>
+<p>Our next move is to form</p>
+<div class="math notranslate nohighlight">
+\[
+\bfX(t) = \bigl[ \mathbf{x}_1(t) \; \mathbf{x}_2(t) \; \cdots \; \mathbf{x}_m(t)  \bigr]
+\]</div>
+<p>and determine whether this is a fundamental matrix. According to <a class="reference internal" href="homogeneous.html#theorem-fs-abel"><span class="std std-ref">Abel’s theorem</span></a>, we can ask that question at any value of <span class="math notranslate nohighlight">\(t\)</span>, including <span class="math notranslate nohighlight">\(t=0\)</span>. So the key issue is whether</p>
+<div class="math notranslate nohighlight" id="equation-eigenmat">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-eigenmat" title="Permalink to this equation">¶</a></span>\[\bfV = \bigl[ \mathbf{v}_1 \; \mathbf{v}_2 \; \cdots \; \mathbf{v}_m  \bigr]\]</div>
+<p>is invertible. If so, then we have the ingredients of the general homogeneous solution.</p>
+<div class="proof proof-type-theorem" id="id1">
+<span id="theorem-fs-eigensolution"></span>
+    <div class="proof-title">
+        <span class="proof-type">Theorem 5.9</span>
+        
+            <span class="proof-title-name">(Solution by eigenvectors)</span>
+        
+    </div><div class="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> have eigenvalues <span class="math notranslate nohighlight">\(\lambda_1,\ldots,\lambda_n\)</span> and corresponding eigenvectors <span class="math notranslate nohighlight">\(\mathbf{v}_1,\ldots,\mathbf{v}_n\)</span>. If the matrix <span class="math notranslate nohighlight">\(\bfV\)</span> in <a class="reference internal" href="#equation-eigenmat">(5.6)</a> is invertible, then</p>
+<div class="math notranslate nohighlight" id="equation-fs-eq-eigenfundamental">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-fs-eq-eigenfundamental" title="Permalink to this equation">¶</a></span>\[\bfX(t) = \begin{bmatrix} 
+e^{t \lambda_1} \mathbf{v}_1 &amp; \cdots &amp; e^{t \lambda_n} \mathbf{v}_n
+\end{bmatrix}\]</div>
+<p>is a fundamental matrix for <span class="math notranslate nohighlight">\(\mathbf{x}'=\mathbf{A}\mathbf{x}\)</span>. Hence the general solution can be expressed as</p>
+<div class="math notranslate nohighlight" id="equation-fs-eq-eigengeneral">
+<span class="eqno">(5.8)<a class="headerlink" href="#equation-fs-eq-eigengeneral" title="Permalink to this equation">¶</a></span>\[\mathbf{x}(t) = \bfX(t)\mathbf{c} = c_1 e^{t \lambda_1} \mathbf{v}_1 + \cdots + c_n e^{t \lambda_n} \mathbf{v}_n.\]</div>
+</div></div><div class="tip admonition" id="fs-ex-eigen-real">
+<p class="admonition-title">Example</p>
+<p>Given that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{A} = \begin{bmatrix} 1 &amp; 1 \\ 4 &amp; 1 \end{bmatrix}\end{split}\]</div>
+<p>has eigenpairs</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_1=3,\: \mathbf{v}_1 = \twovec{1}{2}, \quad \lambda_2=-1,\: \mathbf{v}_2=\twovec{1}{-2},\]</div>
+<p>find the general solution of <span class="math notranslate nohighlight">\(\bfx'=\bfA\bfx\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The determinant of</p>
+<div class="math notranslate nohighlight">
+\[
+\bfV = \twomat{1}{1}{2}{-2}
+\]</div>
+<p class="card-text">is <span class="math notranslate nohighlight">\(-4\)</span>, so this matrix is not singular. Hence a general solution is</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}(t) =  c_1 e^{3t} \twovec{1}{2} + c_2 e^{-t} \twovec{1}{-2} 
+= \twovec{ c_1 e^{3t} + c_2 e^{-t}}{2c_1 e^{3t} - 2 c_2e^{-t}}. \]</div>
+</div>
+</details></div>
+<p>We can often skip the singularity check in the previous example.</p>
+<div class="proof proof-type-theorem" id="id2">
+
+    <div class="proof-title">
+        <span class="proof-type">Theorem 5.10</span>
+        
+    </div><div class="proof-content">
+<p>If the eigenvalues of <span class="math notranslate nohighlight">\(\bfA\)</span> are distinct, then their corresponding eigenvectors are the columns of an invertible matrix.</p>
+</div></div><p>We will return later to the situation of a repeated eigenvalue.</p>
+</div>
+<div class="section" id="complex-eigenvalues">
+<h2><span class="section-number">5.2. </span>Complex eigenvalues<a class="headerlink" href="#complex-eigenvalues" title="Permalink to this headline">¶</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Find the general solution of</p>
+<div class="math notranslate nohighlight">
+\[\bfx' = \twomat{1}{1}{-1}{1} \bfx.\]</div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">In the first chapter <a class="reference internal" href="../linalg/eigenvalues.html"><span class="doc std std-doc">we found</span></a> the eigenvalues <span class="math notranslate nohighlight">\(1\pm i\)</span> and corresponding eigenvectors <span class="math notranslate nohighlight">\(\twovec{1}{\pm i}\)</span>. This leads to the solution</p>
+<div class="math notranslate nohighlight">
+\[
+\bfx(t) = c_1 e^{(1+i)t} \twovec{1}{i} + c_2 e^{(1-i)t} \twovec{1}{-i}.
+\]</div>
+<p class="card-text">If we expect a real solution (because of real initial values, say), then <span class="math notranslate nohighlight">\(c_2 = \overline{c_1}\)</span> and we can instead write</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+\bfx(t) &amp;= \Re \left[ c_1 e^{(1+i)t} \twovec{1}{i} \right] \\
+&amp;= e^t \Re \left[ c_1 e^{it} \twovec{1}{i} \right].
+\end{split}
+\end{split}\]</div>
+<p class="card-text">Heading toward a completely real form, decompose <span class="math notranslate nohighlight">\(c_1= a + i b\)</span> and note that</p>
+<div class="math notranslate nohighlight">
+\[
+e^{it} \twovec{1}{i} = \twovec{\cos t + i \sin t}{i\cos t - \sin t} 
+= \twovec{\cos t}{-\sin t} + i \twovec{\sin t}{\cos t}.
+\]</div>
+<p class="card-text">Then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+c_1 &amp;= (a+i b)\left(\twovec{\cos t}{-\sin t} + i \twovec{\sin t}{\cos t} \right) \\
+&amp;= a \twovec{\cos t}{-\sin t} + i^2 b \twovec{\sin t}{\cos t} + \cdots,
+\end{split}
+\end{split}\]</div>
+<p class="card-text">where everything omitted is purely imaginary. Since we only want the real part, we get</p>
+<div class="math notranslate nohighlight">
+\[
+\bfx(t) = a e^t \twovec{\cos t}{-\sin t} + b e^{t} \twovec{\sin t}{\cos t}
+\]</div>
+<p class="card-text">for arbitrary real <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> (we absorbed a negative sign into <span class="math notranslate nohighlight">\(b\)</span>).</p>
+</div>
+</details></div>
+<p>The essence of the example is that to convert the solution to an entirely real expression, decompose the complex eigensolution into real and imaginary parts. If <span class="math notranslate nohighlight">\(\lambda = r + i\omega\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+e^{\lambda t} \bfv = e^{rt} (\cos(\omega t) + i\sin(\omega t) ) \bfv  \bfu(t) + \mathbf{w}(t).
+\]</div>
+<p>Then the general solution in real form is</p>
+<div class="math notranslate nohighlight">
+\[
+\bfx(t) = a \bfu(t) + b \mathbf{w}(t),
+\]</div>
+<p>for arbitrary <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p>
+</div>
+<div class="section" id="the-oscillator-reloaded">
+<h2><span class="section-number">5.3. </span>The oscillator reloaded<a class="headerlink" href="#the-oscillator-reloaded" title="Permalink to this headline">¶</a></h2>
+<p>In an <a class="reference internal" href="order_dimension.html"><span class="doc std std-doc">earlier section</span></a> we showed that the harmonic oscillator</p>
+<div class="math notranslate nohighlight">
+\[
+u'' + 2 Z \omega_0 u' + \omega_0^2 u = 0
+\]</div>
+<p>can be converted to the constant-coefficient system</p>
+<div class="math notranslate nohighlight">
+\[
+\bfx' = \twomat{0}{1}{-\omega_0^2}{-2Z\omega_0} \bfx.
+\]</div>
+<p>via <span class="math notranslate nohighlight">\(x_1=u\)</span>, <span class="math notranslate nohighlight">\(x_2=u'\)</span>. The eigenvalues of the coefficient matrix are the roots of the characteristic polynomial</p>
+<div class="math notranslate nohighlight">
+\[
+\twodet{-\lambda}{1}{-\omega_0^2}{-2 Z\omega_0-\lambda} = \lambda^2 + 2 Z\omega_0 \lambda + \omega_0^2.
+\]</div>
+<p>This is also what we called the characteristic polynomial of the oscillator ODE! That is, the characteristic values we used there are the eigenvalues here. The exponential solutions we saw before also come from the first component of the general vector solution. To repeat, all second-order problems are really first-order systems in a cheap disguise.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./first_system"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="homogeneous.html" title="previous page"><span class="section-number">4. </span>Homogeneous solutions</a>
+    <a class='right-next' id="next-link" href="phase_plane.html" title="next page"><span class="section-number">6. </span>Stability and the phase plane</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tobin A. Driscoll<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

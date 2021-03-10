@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Overview &#8212; Notes on linear algebra and ODEs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Overview &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -24,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -42,7 +43,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -50,8 +50,6 @@
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -59,8 +57,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Structure of solutions" href="solution_structure.html" />
+    <link rel="prev" title="5. Solutions by transform" href="../steps/transform_solutions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -244,7 +246,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/unit_step.html">
-   2. Unit step functions
+   2. Step forcing
   </a>
  </li>
  <li class="toctree-l1">
@@ -260,6 +262,127 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/transform_solutions.html">
    5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VI. Linear ODE systems
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/order_dimension.html">
+   2. Conversion of higher-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/structure.html">
+   3. Solution structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/homogeneous.html">
+   4. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/const_coeff.html">
+   5. Constant-coefficient problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/phase_plane.html">
+   6. Stability and the phase plane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/matrix_exp.html">
+   7. The matrix exponential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/variation_parameters.html">
+   8. Variation of parameters
   </a>
  </li>
 </ul>
@@ -334,7 +457,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#glossary">
-   Glossary
+   1.1. Glossary
   </a>
  </li>
 </ul>
@@ -349,49 +472,51 @@
               <div>
                 
   <div class="section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <p>We now introduce a new wrinkle into our ODEs: second derivatives. Together, first- and second-order ODEs comprise the overwhelming majority of differential equations used in mathematical models. To some degree this traces back to Newton’s laws of motion; in <span class="math notranslate nohighlight">\(F=ma\)</span>, acceleration is the second derivative of position. In fact, <span class="math notranslate nohighlight">\(F=ma\)</span> is the original justification for the term “forcing function” that we have used for a while, as it plays the role of an actual external force acting on a system.</p>
 <p>First-order ODEs are all about growth and decay. Second-order ODEs add oscillation to the party. They also require us to update some of our theoretical understanding of the structure of solutions.</p>
 <div class="section" id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
 <dl class="glossary simple">
-<dt id="term-amplitude-phase-form">amplitude-phase form</dt><dd><p>Expression of a sum of sin-cos or complex exponentials as an amplitude times a cosine with phase shift.</p>
+<dt id="term-amplitude-phase-form">amplitude-phase form<a class="headerlink" href="#term-amplitude-phase-form" title="Permalink to this term">¶</a></dt><dd><p>Expression of a sum of sin-cos or complex exponentials as an amplitude times a cosine with phase shift.</p>
 </dd>
-<dt id="term-angular-frequency">angular frequency</dt><dd><p>Expression of frequency as radians per second, as opposed to cycles per second; mathematical default sense of frequency.</p>
+<dt id="term-angular-frequency">angular frequency<a class="headerlink" href="#term-angular-frequency" title="Permalink to this term">¶</a></dt><dd><p>Expression of frequency as radians per second, as opposed to cycles per second; mathematical default sense of frequency.</p>
 </dd>
-<dt id="term-beating">beating</dt><dd><p>Slow modulation of amplitude, characteristic of an oscillator being forced at a frequency near its natural one.</p>
+<dt id="term-beating">beating<a class="headerlink" href="#term-beating" title="Permalink to this term">¶</a></dt><dd><p>Slow modulation of amplitude, characteristic of an oscillator being forced at a frequency near its natural one.</p>
 </dd>
-<dt id="term-characteristic-polynomial">characteristic polynomial</dt><dd><p>For a second-order linear ODE with constant coefficients, a quadratic polynomial whose roots indicate two exponential functions that form a basis for solutions.</p>
+<dt id="term-characteristic-polynomial">characteristic polynomial<a class="headerlink" href="#term-characteristic-polynomial" title="Permalink to this term">¶</a></dt><dd><p>For a second-order linear ODE with constant coefficients, a quadratic polynomial whose roots indicate two exponential functions that form a basis for solutions.</p>
 </dd>
-<dt id="term-critically-damped">critically damped</dt><dd><p>Free oscillator at the level of damping between underdamped and fully exponentially decaying solutions.</p>
+<dt id="term-characteristic-values">characteristic values<a class="headerlink" href="#term-characteristic-values" title="Permalink to this term">¶</a></dt><dd><p>For a second-order linear ODE with constant coefficients, the roots of the characteristic polynomial.</p>
 </dd>
-<dt id="term-damping-coefficient">damping coefficient</dt><dd><p>Nondimensional, nonnegative value indicating the relative amount of damping present in an oscillator. Denoted <span class="math notranslate nohighlight">\(Z\)</span>.</p>
+<dt id="term-constant-coefficient">constant-coefficient<a class="headerlink" href="#term-constant-coefficient" title="Permalink to this term">¶</a></dt><dd><p>Linear ODE in which the multipliers of the dependent variable and its derivatives are constants.</p>
 </dd>
-<dt id="term-eigenvalues">eigenvalues</dt><dd><p>For a second-order linear ODE with constant coefficients, the roots of the characteristic polynomial.</p>
+<dt id="term-critically-damped">critically damped<a class="headerlink" href="#term-critically-damped" title="Permalink to this term">¶</a></dt><dd><p>Free oscillator at the level of damping between underdamped and fully exponentially decaying solutions.</p>
 </dd>
-<dt id="term-free-oscillator">free oscillator</dt><dd><p>Naturally oscillating system not subjected to any external forces.</p>
+<dt id="term-damping-coefficient">damping coefficient<a class="headerlink" href="#term-damping-coefficient" title="Permalink to this term">¶</a></dt><dd><p>Nondimensional, nonnegative value indicating the relative amount of damping present in an oscillator. Denoted <span class="math notranslate nohighlight">\(Z\)</span>.</p>
 </dd>
-<dt id="term-gain">gain</dt><dd><p>Ratio of the amplitudes of a particular solution and the harmonic forcing that produces it.</p>
+<dt id="term-free-oscillator">free oscillator<a class="headerlink" href="#term-free-oscillator" title="Permalink to this term">¶</a></dt><dd><p>Naturally oscillating system not subjected to any external forces.</p>
 </dd>
-<dt id="term-natural-frequency">natural frequency</dt><dd><p>Frequency at which an undamped free oscillator oscillates. Denoted <span class="math notranslate nohighlight">\(\omega_0\)</span>.</p>
+<dt id="term-gain">gain<a class="headerlink" href="#term-gain" title="Permalink to this term">¶</a></dt><dd><p>Ratio of the amplitudes of a particular solution and the harmonic forcing that produces it.</p>
 </dd>
-<dt id="term-overdamped">overdamped</dt><dd><p>Free oscillator with sufficiently large damping that solutions are purely exponentially decaying, i.e., having no oscillations.</p>
+<dt id="term-natural-frequency">natural frequency<a class="headerlink" href="#term-natural-frequency" title="Permalink to this term">¶</a></dt><dd><p>Frequency at which an undamped free oscillator oscillates. Denoted <span class="math notranslate nohighlight">\(\omega_0\)</span>.</p>
 </dd>
-<dt id="term-polar-form">polar form</dt><dd><p>Expression of a complex number as its magnitude times a value on the unit circle, as expressed by Euler’s identity.</p>
+<dt id="term-overdamped">overdamped<a class="headerlink" href="#term-overdamped" title="Permalink to this term">¶</a></dt><dd><p>Free oscillator with sufficiently large damping that solutions are purely exponentially decaying, i.e., having no oscillations.</p>
 </dd>
-<dt id="term-pseudoresonance">pseudoresonance</dt><dd><p>Damped oscillator being forced at the frequency that produces maximal gain.</p>
+<dt id="term-polar-form">polar form<a class="headerlink" href="#term-polar-form" title="Permalink to this term">¶</a></dt><dd><p>Expression of a complex number as its magnitude times a value on the unit circle, as expressed by Euler’s identity.</p>
 </dd>
-<dt id="term-resonance">resonance</dt><dd><p>Undamped oscillator being forced at its natural frequency, resulting in boundless linear growth in the amplitude of the solution.</p>
+<dt id="term-pseudoresonance">pseudoresonance<a class="headerlink" href="#term-pseudoresonance" title="Permalink to this term">¶</a></dt><dd><p>Damped oscillator being forced at the frequency that produces maximal gain.</p>
 </dd>
-<dt id="term-second-order-ivp">second-order IVP</dt><dd><p>Second order ODE plus initial conditions on the solution and its first derivative.</p>
+<dt id="term-resonance">resonance<a class="headerlink" href="#term-resonance" title="Permalink to this term">¶</a></dt><dd><p>Undamped oscillator being forced at its natural frequency, resulting in boundless linear growth in the amplitude of the solution.</p>
 </dd>
-<dt id="term-second-order-ode">second-order ODE</dt><dd><p>Ordinary differential equation that includes a second derivative (and no higher) of the unknown, dependent variable.</p>
+<dt id="term-second-order-IVP">second-order IVP<a class="headerlink" href="#term-second-order-IVP" title="Permalink to this term">¶</a></dt><dd><p>Second order ODE plus initial conditions on the solution and its first derivative.</p>
 </dd>
-<dt id="term-simple-harmonic-motion">simple harmonic motion</dt><dd><p>Pure sinusoidal motion of an undamped free oscillator.</p>
+<dt id="term-second-order-ODE">second-order ODE<a class="headerlink" href="#term-second-order-ODE" title="Permalink to this term">¶</a></dt><dd><p>Ordinary differential equation that includes a second derivative (and no higher) of the unknown, dependent variable.</p>
 </dd>
-<dt id="term-spring-constant">spring constant</dt><dd><p>Ratio of the restoring force of an ideal spring to the amount by which it is stretched from its neutral position.</p>
+<dt id="term-simple-harmonic-motion">simple harmonic motion<a class="headerlink" href="#term-simple-harmonic-motion" title="Permalink to this term">¶</a></dt><dd><p>Pure sinusoidal motion of an undamped free oscillator.</p>
 </dd>
-<dt id="term-underdamped-oscillator">underdamped oscillator</dt><dd><p>Free oscillator with nonzero damping that forces the solution to zero, but not so large that it prevents all oscillation.</p>
+<dt id="term-spring-constant">spring constant<a class="headerlink" href="#term-spring-constant" title="Permalink to this term">¶</a></dt><dd><p>Ratio of the restoring force of an ideal spring to the amount by which it is stretched from its neutral position.</p>
+</dd>
+<dt id="term-underdamped-oscillator">underdamped oscillator<a class="headerlink" href="#term-underdamped-oscillator" title="Permalink to this term">¶</a></dt><dd><p>Free oscillator with nonzero damping that forces the solution to zero, but not so large that it prevents all oscillation.</p>
 </dd>
 </dl>
 </div>
@@ -425,6 +550,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="../steps/transform_solutions.html" title="previous page"><span class="section-number">5. </span>Solutions by transform</a>
+    <a class='right-next' id="next-link" href="solution_structure.html" title="next page"><span class="section-number">2. </span>Structure of solutions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

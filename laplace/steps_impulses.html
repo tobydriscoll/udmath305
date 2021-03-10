@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Steps and impulses (2nd order) &#8212; Notes on linear algebra and ODEs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Steps and impulses (2nd order) &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -24,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -42,7 +43,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -50,8 +50,6 @@
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -59,8 +57,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Convolution" href="convolution.html" />
+    <link rel="prev" title="2. Solutions to 2nd-order ODEs" href="basic_solutions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -244,7 +246,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/unit_step.html">
-   2. Unit step functions
+   2. Step forcing
   </a>
  </li>
  <li class="toctree-l1">
@@ -260,6 +262,127 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/transform_solutions.html">
    5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VI. Linear ODE systems
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/order_dimension.html">
+   2. Conversion of higher-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/structure.html">
+   3. Solution structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/homogeneous.html">
+   4. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/const_coeff.html">
+   5. Constant-coefficient problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/phase_plane.html">
+   6. Stability and the phase plane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/matrix_exp.html">
+   7. The matrix exponential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/variation_parameters.html">
+   8. Variation of parameters
   </a>
  </li>
 </ul>
@@ -334,12 +457,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#impulse-forcing">
-   Impulse forcing
+   3.1. Impulse forcing
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-forcing">
-   Step forcing
+   3.2. Step forcing
   </a>
  </li>
 </ul>
@@ -354,43 +477,59 @@
               <div>
                 
   <div class="section" id="steps-and-impulses-2nd-order">
-<h1>Steps and impulses (2nd order)<a class="headerlink" href="#steps-and-impulses-2nd-order" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Steps and impulses (2nd order)<a class="headerlink" href="#steps-and-impulses-2nd-order" title="Permalink to this headline">¶</a></h1>
 <p>The key transforms that apply when the forcing contains steps or impulses are</p>
 <div class="amsmath math notranslate nohighlight">
-\[\begin{gather*}
-H(t-T) \Longleftrightarrow \dfrac{e^{-sT}}{s}, \\
-H(t-T)f(t-T) \Longleftrightarrow e^{-sT}F(s), \\
-\delta(t-T) \Longleftrightarrow e^{-sT}.
-\end{gather*}\]</div>
-<p>Keep in mind that <em>both steps and impulses in forcing produce steps in the solution</em>. The impulses are the simpler case.</p>
+\[\begin{align*}
+H(t-T) &amp; \Longleftrightarrow \dfrac{e^{-sT}}{s}, \\
+H(t-T)f(t-T) &amp; \Longleftrightarrow e^{-sT}F(s), \\
+\delta(t-T) &amp; \Longleftrightarrow e^{-sT}.
+\end{align*}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Steps and impulses in forcing both produce steps in the solution.</p>
+</div>
 <div class="section" id="impulse-forcing">
-<h2>Impulse forcing<a class="headerlink" href="#impulse-forcing" title="Permalink to this headline">¶</a></h2>
-<p>For illustration, let’s start with an impulse on an undamped oscillator,</p>
+<h2><span class="section-number">3.1. </span>Impulse forcing<a class="headerlink" href="#impulse-forcing" title="Permalink to this headline">¶</a></h2>
+<p>For illustration, let’s start with an impulse on an undamped oscillator.</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Solve</p>
 <div class="math notranslate nohighlight">
 \[
-x''+x = \delta(t-T), \quad x(0)=x'(0)=0 \qquad (T \ge 0).
+x''+x = \delta(t-T), \quad x(0)=x'(0)=0,
 \]</div>
-<p>Taking the transform of everything and solving for <span class="math notranslate nohighlight">\(X\)</span> gives</p>
+<p>for fixed <span class="math notranslate nohighlight">\(T\ge 0\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Taking the transform of everything and solving for <span class="math notranslate nohighlight">\(X\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[
 X(s) = \frac{e^{-sT}}{s^2+1} = e^{-sT} Y(s),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(Y(s)=1/(s^2+1)\)</span>. We chose to write <span class="math notranslate nohighlight">\(X\)</span> this way so that we can apply the shift theorem,</p>
+<p class="card-text">where <span class="math notranslate nohighlight">\(Y(s)=1/(s^2+1)\)</span>. We chose to write <span class="math notranslate nohighlight">\(X\)</span> this way so that we can apply the shift theorem,</p>
 <div class="math notranslate nohighlight">
 \[
 \lx\bigl[H(t-T)y(t-T)\bigr] = e^{-sT}Y(s).
 \]</div>
-<p>In this case we have that <span class="math notranslate nohighlight">\(y(t)=\sin(t)\)</span>, hence</p>
+<p class="card-text">In this case we have that <span class="math notranslate nohighlight">\(y(t)=\sin(t)\)</span>, hence</p>
 <div class="math notranslate nohighlight">
 \[
 \lx\bigl[H(t-T)\sin(t-T)\bigr] = e^{-sT}Y(s) = X(s).
 \]</div>
-<p>That is, the solution is <span class="math notranslate nohighlight">\(x(t)=H(t-T)\sin(t-T)\)</span>. Writing it piecewise,</p>
+<p class="card-text">That is, the solution is <span class="math notranslate nohighlight">\(x(t)=H(t-T)\sin(t-T)\)</span>. Writing it piecewise,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 x(t) = \begin{cases} 0, &amp; 0\le t &lt; T, \\ \sin(t-T), &amp; t \ge T. \end{cases}
 \end{split}\]</div>
-<p>Since the system starts at rest, it remains at rest until the impulse at time <span class="math notranslate nohighlight">\(T\)</span>. Note that <span class="math notranslate nohighlight">\(x\)</span> remains continuous at <span class="math notranslate nohighlight">\(t=T\)</span>, but <span class="math notranslate nohighlight">\(x'\)</span> does not. In fact, <span class="math notranslate nohighlight">\(x'(T^+)=\cos(0)=1\)</span>. This modifies the impulse response <a class="reference internal" href="../steps/impulse.html#section-steps-jump"><span class="std std-ref">we observed</span></a> for first-order problems.</p>
+</div>
+</details></div>
+<p>Since the system in the previous example starts at rest, it remains at rest until the impulse at time <span class="math notranslate nohighlight">\(T\)</span>. Note that <span class="math notranslate nohighlight">\(x\)</span> remains continuous at <span class="math notranslate nohighlight">\(t=T\)</span>, but <span class="math notranslate nohighlight">\(x'\)</span> does not. In fact, <span class="math notranslate nohighlight">\(x'(T^+)=\cos(0)=1\)</span>. This modifies in a basic way the impulse response <a class="reference internal" href="../steps/impulse.html#section-steps-jump"><span class="std std-ref">we observed</span></a> for first-order problems.</p>
 <div class="proof proof-type-rule">
 
     <div class="proof-title">
@@ -398,43 +537,49 @@ x(t) = \begin{cases} 0, &amp; 0\le t &lt; T, \\ \sin(t-T), &amp; t \ge T. \end{c
         
     </div><div class="proof-content">
 <p>In a second-order linear ODE, the effect of a unit impulse is the same as an instantaneous increase by 1 in the derivative of the solution.</p>
-</div></div><div class="dropdown-tip admonition">
+</div></div><div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Find the solution of <span class="math notranslate nohighlight">\(x''+2x'+10x=6\delta(t-5)\)</span>, <span class="math notranslate nohighlight">\(x(0)=x'(0)=0\)</span>.</p>
-</div></blockquote>
-<p>Solving for the transform leads to</p>
+<p>Find the solution of <span class="math notranslate nohighlight">\(x''+2x'+10x=6\delta(t-5)\)</span>, <span class="math notranslate nohighlight">\(x(0)=x'(0)=0\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Solving for the transform leads to</p>
 <div class="math notranslate nohighlight">
 \[X_p(s) = \frac{6e^{-5s}}{s^2+2s+10}.\]</div>
-<p>The shift theorem applied to <span class="math notranslate nohighlight">\(e^{-5s}Y(s)\)</span> requires us to define</p>
+<p class="card-text">The shift theorem applied to <span class="math notranslate nohighlight">\(e^{-5s}Y(s)\)</span> requires us to define</p>
 <div class="math notranslate nohighlight">
 \[
 Y(s) = \frac{6}{s^2+2s+10},
 \]</div>
-<p>and then find <span class="math notranslate nohighlight">\(y(t)\)</span>. This <span class="math notranslate nohighlight">\(Y\)</span> is already in PFD form. One way to invert it is to complete the square in the denominator:</p>
+<p class="card-text">and then find <span class="math notranslate nohighlight">\(y(t)\)</span>. This <span class="math notranslate nohighlight">\(Y\)</span> is already in PFD form. One way to invert it is to complete the square in the denominator:</p>
 <div class="math notranslate nohighlight">
 \[
 Y(s) = \frac{6}{(s+1)^2+9}.
 \]</div>
-<p>We now want to apply the transform pair</p>
+<p class="card-text">We now want to apply the transform pair</p>
 <div class="math notranslate nohighlight">
 \[
 e^{at} f(t) \Longleftrightarrow F(s-a),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(a=-1\)</span>, because then <span class="math notranslate nohighlight">\(Y(s)=F(s+1)\)</span> if</p>
+<p class="card-text">where <span class="math notranslate nohighlight">\(a=-1\)</span>, because then <span class="math notranslate nohighlight">\(Y(s)=F(s+1)\)</span> if</p>
 <div class="math notranslate nohighlight">
 \[
 F(s) = \frac{6}{s^2+9}.
 \]</div>
-<p>Finally we can begin to unravel the tapestry. We see that <span class="math notranslate nohighlight">\(f(t)=2\sin(3t)\)</span>. Our definitions and transform rules imply that <span class="math notranslate nohighlight">\(y(t)=e^{-t}f(t)\)</span> and <span class="math notranslate nohighlight">\(x_p(t)=H(t-5)y(t-5)\)</span>. Hence</p>
+<p class="card-text">Finally we can begin to unravel the tapestry. We see that <span class="math notranslate nohighlight">\(f(t)=2\sin(3t)\)</span>. Our definitions and transform rules imply that <span class="math notranslate nohighlight">\(y(t)=e^{-t}f(t)\)</span> and <span class="math notranslate nohighlight">\(x_p(t)=H(t-5)y(t-5)\)</span>. Hence</p>
 <div class="math notranslate nohighlight">
 \[
 x_p(t) = 2 H(t-5)e^{-(t-5)} \sin[3(t-5)].
 \]</div>
 </div>
+</details></div>
 </div>
 <div class="section" id="step-forcing">
-<h2>Step forcing<a class="headerlink" href="#step-forcing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Step forcing<a class="headerlink" href="#step-forcing" title="Permalink to this headline">¶</a></h2>
 <p>As a warm-up, let’s consider</p>
 <div class="math notranslate nohighlight">
 \[
@@ -462,49 +607,55 @@ x(t) = H(t-T)y(t-T) = H(t-T)[1 - \cos(t-T)] =
 \begin{cases} 0, &amp; 0 \le t &lt; T, \\ 1-\cos(t-T), &amp; t\ge T. \end{cases}
 \end{split}\]</div>
 <p>It only takes a moment to see that both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x'\)</span> are continuous at <span class="math notranslate nohighlight">\(t=T\)</span>, which is the general situation with step forcing.</p>
-<div class="dropdown-tip admonition">
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Find a particular solution of <span class="math notranslate nohighlight">\(x''-x=f(t)\)</span>, where <span class="math notranslate nohighlight">\(f(t) = \begin{cases} 0, &amp; 0 \le t &lt; 3, \\ t, &amp; t\ge 4. \end{cases}\)</span></p>
-</div></blockquote>
-<p>The forcing function is <span class="math notranslate nohighlight">\(f(t)=tH(t-3)\)</span>. This is not yet quite in a form we know how to transform. What we need is</p>
+<p>Find a particular solution of <span class="math notranslate nohighlight">\(x''-x=f(t)\)</span>, where <span class="math notranslate nohighlight">\(f(t) = \begin{cases} 0, &amp; 0 \le t &lt; 3, \\ t, &amp; t\ge 4. \end{cases}\)</span></p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The forcing function is <span class="math notranslate nohighlight">\(f(t)=tH(t-3)\)</span>. This is not yet quite in a form we know how to transform. What we need is</p>
 <div class="math notranslate nohighlight">
 \[
 f(t) = H(t-3)g(t-3),
 \]</div>
-<p>in order to get</p>
+<p class="card-text">in order to get</p>
 <div class="math notranslate nohighlight">
 \[
 F(s) = e^{-3s}G(s).
 \]</div>
-<p>This requires the definition <span class="math notranslate nohighlight">\(g(t-3)=t\)</span>, which means that <span class="math notranslate nohighlight">\(g(t)=t+3\)</span>. Hence</p>
+<p class="card-text">This requires the definition <span class="math notranslate nohighlight">\(g(t-3)=t\)</span>, which means that <span class="math notranslate nohighlight">\(g(t)=t+3\)</span>. Hence</p>
 <div class="math notranslate nohighlight">
 \[
 F(s) = e^{-3s} \left[ \frac{1}{s^2} + \frac{3}{s}\right].
 \]</div>
-<p>Now we can solve for <span class="math notranslate nohighlight">\(X_p\)</span> to get</p>
+<p class="card-text">Now we can solve for <span class="math notranslate nohighlight">\(X_p\)</span> to get</p>
 <div class="math notranslate nohighlight">
 \[
 X_p(s) = e^{-3s} \left[ \frac{3s+1}{s^2(s^2-1)} = e^{-3s} Y(s) \right],
 \]</div>
-<p>where</p>
+<p class="card-text">where</p>
 <div class="math notranslate nohighlight">
 \[
 Y(s) = \frac{As+B}{s^2} + \frac{C}{s-1} + \frac{D}{s+1}.
 \]</div>
-<p>From here,</p>
+<p class="card-text">From here,</p>
 <div class="math notranslate nohighlight">
 \[
 3s+1 = (As+B)(s^2-1) + Cs^2(s+1) + Ds^2(s-1).
 \]</div>
-<p>At <span class="math notranslate nohighlight">\(s=0\)</span> we get <span class="math notranslate nohighlight">\(1=-B\)</span>. From <span class="math notranslate nohighlight">\(s=1\)</span> and <span class="math notranslate nohighlight">\(s=-1\)</span> we get <span class="math notranslate nohighlight">\(2C=4\)</span> and <span class="math notranslate nohighlight">\(-2D=-2\)</span>. The coefficient of <span class="math notranslate nohighlight">\(s^3\)</span> on the right side is <span class="math notranslate nohighlight">\(A+C+D\)</span>, which must be zero, so <span class="math notranslate nohighlight">\(A=-3\)</span>. Thus</p>
+<p class="card-text">At <span class="math notranslate nohighlight">\(s=0\)</span> we get <span class="math notranslate nohighlight">\(1=-B\)</span>. From <span class="math notranslate nohighlight">\(s=1\)</span> and <span class="math notranslate nohighlight">\(s=-1\)</span> we get <span class="math notranslate nohighlight">\(2C=4\)</span> and <span class="math notranslate nohighlight">\(-2D=-2\)</span>. The coefficient of <span class="math notranslate nohighlight">\(s^3\)</span> on the right side is <span class="math notranslate nohighlight">\(A+C+D\)</span>, which must be zero, so <span class="math notranslate nohighlight">\(A=-3\)</span>. Thus</p>
 <div class="math notranslate nohighlight">
 \[
 Y(s) = \frac{-3}{s} + \frac{-1}{s^2} + \frac{2}{s-1} + \frac{1}{s+1},
 \]</div>
-<p>and <span class="math notranslate nohighlight">\(y(t)=-3-t+2e^t + e^{-t}\)</span>. Finally, <span class="math notranslate nohighlight">\(x_p(t) = H(t-3)y(t-3)\)</span>.</p>
+<p class="card-text">and <span class="math notranslate nohighlight">\(y(t)=-3-t+2e^t + e^{-t}\)</span>. Finally, <span class="math notranslate nohighlight">\(x_p(t) = H(t-3)y(t-3)\)</span>.</p>
 </div>
-<p>As you can see, the Laplace transform systematizes the algebra needed to solve the kinds of linear ODEs we have encountered, but that does not mean that the algebra is simple. It’s an ideal situation for computer solutions.</p>
+</details></div>
+<p>The Laplace transform systematizes the algebra needed to solve the kinds of linear ODEs we have encountered, but that does not mean that the algebra is simple. It’s an ideal setup for computer solutions. Most of the time, though, the method of undetermined coefficients is easier for hand computation.</p>
 </div>
 </div>
 
@@ -536,6 +687,8 @@ Y(s) = \frac{-3}{s} + \frac{-1}{s^2} + \frac{2}{s-1} + \frac{1}{s+1},
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="basic_solutions.html" title="previous page"><span class="section-number">2. </span>Solutions to 2nd-order ODEs</a>
+    <a class='right-next' id="next-link" href="convolution.html" title="next page"><span class="section-number">4. </span>Convolution</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

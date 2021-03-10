@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Structure of solutions &#8212; Notes on linear algebra and ODEs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Structure of solutions &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -24,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -42,7 +43,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -50,8 +50,6 @@
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -59,8 +57,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Homogeneous solutions" href="homogeneous.html" />
+    <link rel="prev" title="1. Overview" href="overview.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -244,7 +246,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/unit_step.html">
-   2. Unit step functions
+   2. Step forcing
   </a>
  </li>
  <li class="toctree-l1">
@@ -260,6 +262,127 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/transform_solutions.html">
    5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VI. Linear ODE systems
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/order_dimension.html">
+   2. Conversion of higher-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/structure.html">
+   3. Solution structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/homogeneous.html">
+   4. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/const_coeff.html">
+   5. Constant-coefficient problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/phase_plane.html">
+   6. Stability and the phase plane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/matrix_exp.html">
+   7. The matrix exponential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/variation_parameters.html">
+   8. Variation of parameters
   </a>
  </li>
 </ul>
@@ -334,12 +457,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#linear-problems">
-   Linear problems
+   2.1. Linear problems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reduction-of-order">
+   2.2. Reduction of order
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#constant-coefficients">
-   Constant coefficients
+   2.3. Constant coefficients
   </a>
  </li>
 </ul>
@@ -354,16 +482,16 @@
               <div>
                 
   <div class="section" id="structure-of-solutions">
-<h1>Structure of solutions<a class="headerlink" href="#structure-of-solutions" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>Structure of solutions<a class="headerlink" href="#structure-of-solutions" title="Permalink to this headline">¶</a></h1>
 <div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition </span>
+        <span class="proof-type">Definition 2.7</span>
         
             <span class="proof-title-name">(Second-order ODE)</span>
         
     </div><div class="proof-content">
-<p>A <a class="reference internal" href="overview.html#term-second-order-ode"><span class="xref std std-term">second-order ODE</span></a> is an equation of the form</p>
+<p>A <a class="reference internal" href="overview.html#term-second-order-ODE"><span class="xref std std-term">second-order ODE</span></a> is an equation of the form</p>
 <div class="math notranslate nohighlight">
 \[
 x'' = F(t,x,x'),
@@ -382,20 +510,20 @@ x'' = F(t,x,x'),
 <div class="proof proof-type-definition" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Definition </span>
+        <span class="proof-type">Definition 2.8</span>
         
             <span class="proof-title-name">(Second-order IVP)</span>
         
     </div><div class="proof-content">
-<p>A <a class="reference internal" href="overview.html#term-second-order-ivp"><span class="xref std std-term">second-order IVP</span></a> (initial-value problem) is</p>
+<p>A <a class="reference internal" href="overview.html#term-second-order-IVP"><span class="xref std std-term">second-order IVP</span></a> (initial-value problem) is</p>
 <div class="math notranslate nohighlight">
 \[x'' = F(t,x,x'), \quad x(a) = x_0,\, x'(a) = v_0.\]</div>
 </div></div><div class="section" id="linear-problems">
-<h2>Linear problems<a class="headerlink" href="#linear-problems" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Linear problems<a class="headerlink" href="#linear-problems" title="Permalink to this headline">¶</a></h2>
 <p>We will focus on linear problems,</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-linear">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-linear" title="Permalink to this equation">¶</a></span>\[x'' + p(t)x' + q(t) x = f(t).\]</div>
-<p>Equation <a class="reference internal" href="#equation-secondlin-linear">()</a> is in the form of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> for the linear operator</p>
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-secondlin-linear" title="Permalink to this equation">¶</a></span>\[x'' + p(t)x' + q(t) x = f(t).\]</div>
+<p>Equation <a class="reference internal" href="#equation-secondlin-linear">(2.5)</a> is in the form of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> for the linear operator</p>
 <div class="math notranslate nohighlight">
 \[\opA[x] = \ddd{x}{t} + p \dd{x}{t} + q x.\]</div>
 <p>We now reap more rewards for using the abstract language of operators with first-order problems, because the connections between general solutions and homogeneous solutions is <em>exactly the same</em> as before. In particular, we still have a <a class="reference internal" href="../first_linear/operators.html#theorem-firstlin-general"><span class="std std-ref">theorem</span></a> and an <a class="reference internal" href="../first_linear/operators.html#algorithm-firstlin-solve"><span class="std std-ref">algorithm</span></a> that provide a blueprint for the solution:</p>
@@ -405,7 +533,10 @@ x'' = F(t,x,x'),
 <li><p>Add them.</p></li>
 <li><p>If given, use initial conditions to solve for the integration constants.</p></li>
 </ol>
-<p>However, there is a new wrinkle regarding the homogeneous part of the solution. Suppose that <span class="math notranslate nohighlight">\(x_1(t)\)</span> is one homogeneous solution, and we set <span class="math notranslate nohighlight">\(x_2(t)=v(t)x_1(t)\)</span> for an undetermined <span class="math notranslate nohighlight">\(v(t)\)</span>. A little elbow grease shows that</p>
+</div>
+<div class="section" id="reduction-of-order">
+<h2><span class="section-number">2.2. </span>Reduction of order<a class="headerlink" href="#reduction-of-order" title="Permalink to this headline">¶</a></h2>
+<p>There is, however, a major new wrinkle regarding the homogeneous part of the solution. Suppose that <span class="math notranslate nohighlight">\(x_1(t)\)</span> is one homogeneous solution, and we set <span class="math notranslate nohighlight">\(x_2(t)=v(t)x_1(t)\)</span> for an undetermined <span class="math notranslate nohighlight">\(v(t)\)</span>. A little elbow grease shows that</p>
 <div class="math notranslate nohighlight">
 \[
 \opA[vx_1] = x_1 v'' + 2 x_1' v' + p x_1 v' + \opA[x_1].
@@ -459,30 +590,30 @@ x_2(t) = v(t) x_1(t) = t^{-2}.
 <p class="card-text">You can check that this is indeed a solution to the original homogeneous ODE.</p>
 </div>
 </details></div>
-<p>The practical value of reduction of order is rather limited. But it does suggest an important fact.</p>
+<p>The reduction of order technique suggests an important fact.</p>
 <div class="proof proof-type-theorem" id="id3">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem </span>
+        <span class="proof-type">Theorem 2.9</span>
         
     </div><div class="proof-content">
 <p>The general solution of a homogeneous, linear, second-order ODE is of the form</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-genhomog">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-genhomog" title="Permalink to this equation">¶</a></span>\[x_h(t) = c_1 x_1(t) + c_2 x_2(t),\]</div>
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-secondlin-genhomog" title="Permalink to this equation">¶</a></span>\[x_h(t) = c_1 x_1(t) + c_2 x_2(t),\]</div>
 <p>for arbitrary constants <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span>.</p>
-</div></div><p>(You might be tempted to do another reduction of order starting from <span class="math notranslate nohighlight">\(x_2\)</span>. Nice try, but you don’t get any new terms that change <a class="reference internal" href="#equation-secondlin-genhomog">()</a>.)</p>
+</div></div><p>It’s too deep for us to go into a true proof of this theorem. You might be tempted to do another reduction of order starting from <span class="math notranslate nohighlight">\(x_2\)</span> in order to get a third solution. Nice try, but you don’t get any new terms that change <a class="reference internal" href="#equation-secondlin-genhomog">(2.6)</a>.</p>
 </div>
 <div class="section" id="constant-coefficients">
-<h2>Constant coefficients<a class="headerlink" href="#constant-coefficients" title="Permalink to this headline">¶</a></h2>
-<p>The linear second-order problem <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> has a nice structure, but only a few such problems are straightforward to solve. We will now, and for the rest of the chapter, limit ourselves to the <strong>constant-coefficient</strong> problem</p>
+<h2><span class="section-number">2.3. </span>Constant coefficients<a class="headerlink" href="#constant-coefficients" title="Permalink to this headline">¶</a></h2>
+<p>The linear second-order problem <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> has a nice structure, but only a few such problems are straightforward to solve. We will now, and for the rest of the chapter, limit ourselves to the <a class="reference internal" href="overview.html#term-constant-coefficient"><span class="xref std std-term">constant-coefficient</span></a> problem</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-linear-cc">
-<span class="eqno">()<a class="headerlink" href="#equation-secondlin-linear-cc" title="Permalink to this equation">¶</a></span>\[x'' + bx' + k x = f(t),\]</div>
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-secondlin-linear-cc" title="Permalink to this equation">¶</a></span>\[x'' + bx' + k x = f(t),\]</div>
 <p>in which <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are constant, and <span class="math notranslate nohighlight">\(f(t)\)</span> is a forcing function.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In <a class="reference internal" href="#equation-secondlin-linear-cc">()</a> the coefficient <span class="math notranslate nohighlight">\(b\)</span> has units <span class="math notranslate nohighlight">\(1/T\)</span>, the coefficient <span class="math notranslate nohighlight">\(k\)</span> has units <span class="math notranslate nohighlight">\(1/T^2\)</span>, and <span class="math notranslate nohighlight">\(f(t)\)</span> has units <span class="math notranslate nohighlight">\(X/T^2\)</span>, where <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(T\)</span> are the units of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, respectively.</p>
+<p>In <a class="reference internal" href="#equation-secondlin-linear-cc">(2.7)</a> the coefficient <span class="math notranslate nohighlight">\(b\)</span> has units <span class="math notranslate nohighlight">\(1/T\)</span>, the coefficient <span class="math notranslate nohighlight">\(k\)</span> has units <span class="math notranslate nohighlight">\(1/T^2\)</span>, and <span class="math notranslate nohighlight">\(f(t)\)</span> has units <span class="math notranslate nohighlight">\(X/T^2\)</span>, where <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(T\)</span> are the units of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, respectively.</p>
 </div>
-<p>We will deal with the homogeneous and particular parts in turn. Each is a direct extension of what we did for first-order problems, but there are some hurdles we must clear to make that transparent.</p>
+<p>We will deal with the homogeneous and particular parts in turn. Each is a direct extension of what we did for first-order problems, but there are some hurdles we must clear to make that fact transparent.</p>
 </div>
 </div>
 
@@ -514,6 +645,8 @@ x_2(t) = v(t) x_1(t) = t^{-2}.
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page"><span class="section-number">1. </span>Overview</a>
+    <a class='right-next' id="next-link" href="homogeneous.html" title="next page"><span class="section-number">3. </span>Homogeneous solutions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Solutions to 2nd-order ODEs &#8212; Notes on linear algebra and ODEs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Solutions to 2nd-order ODEs &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -24,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -42,7 +43,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -50,8 +50,6 @@
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -59,8 +57,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Steps and impulses (2nd order)" href="steps_impulses.html" />
+    <link rel="prev" title="1. Overview" href="overview.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -244,7 +246,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/unit_step.html">
-   2. Unit step functions
+   2. Step forcing
   </a>
  </li>
  <li class="toctree-l1">
@@ -260,6 +262,127 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../steps/transform_solutions.html">
    5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/phase_amplitude.html">
+   5. Amplitude and phase
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VI. Linear ODE systems
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/order_dimension.html">
+   2. Conversion of higher-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/structure.html">
+   3. Solution structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/homogeneous.html">
+   4. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/const_coeff.html">
+   5. Constant-coefficient problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/phase_plane.html">
+   6. Stability and the phase plane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/matrix_exp.html">
+   7. The matrix exponential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/variation_parameters.html">
+   8. Variation of parameters
   </a>
  </li>
 </ul>
@@ -334,12 +457,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#solving-2nd-order-odes">
-   Solving 2nd-order ODEs
+   2.1. Solving 2nd-order ODEs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#poles">
-   Poles
+   2.2. Poles
   </a>
  </li>
 </ul>
@@ -354,13 +477,13 @@
               <div>
                 
   <div class="section" id="solutions-to-2nd-order-odes">
-<h1>Solutions to 2nd-order ODEs<a class="headerlink" href="#solutions-to-2nd-order-odes" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>Solutions to 2nd-order ODEs<a class="headerlink" href="#solutions-to-2nd-order-odes" title="Permalink to this headline">¶</a></h1>
 <p>For first-order ODEs we <a class="reference internal" href="../steps/laplace.html"><span class="doc std std-doc">introduced</span></a> the Laplace transform, which converts a function of time <span class="math notranslate nohighlight">\(t\ge 0\)</span> to a function of an abstract <span class="math notranslate nohighlight">\(s\)</span>. There’s no need for us to repeat <a class="reference internal" href="../steps/laplace.html#definition-steps-laplace"><span class="std std-ref">its definition</span></a> here, as we are more interested in applying its properties than deriving them.</p>
-<p>First, we generalize the <a class="reference internal" href="../steps/laplace.html#formula-steps-laplace-diff"><span class="std std-ref">derivative property</span></a> to the second derivative (by applying the original formula twice).</p>
+<p>First, we generalize the <a class="reference internal" href="../steps/laplace.html#formula-steps-laplace-diff"><span class="std std-ref">derivative property</span></a> to the second derivative, which can be done by applying the original formula twice.</p>
 <div class="proof proof-type-formula" id="id1">
 <span id="formula-laplace-diff"></span>
     <div class="proof-title">
-        <span class="proof-type">Formula </span>
+        <span class="proof-type">Formula 2.10</span>
         
             <span class="proof-title-name">(Transforms of derivatives)</span>
         
@@ -372,7 +495,7 @@
 \end{align*}\]</div>
 </div></div><p>We collect the transforms in our <a class="reference internal" href="../steps/transform_solutions.html#table-steps-lt"><span class="std std-ref">earlier table</span></a> and add a few new ones in the following table.</p>
 <table class="table" id="table-laplace-transforms">
-<caption><span class="caption-text">Laplace transforms (complete)</span><a class="headerlink" href="#table-laplace-transforms" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">Laplace transforms (complete)</span><a class="headerlink" href="#table-laplace-transforms" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -440,56 +563,62 @@
 \frac{s}{s^2 + 1 } + \frac{i}{s^2 + 1 } = \frac{s+i}{(s+i)(s-i) } = \frac{1}{s-i}.
 \]</div>
 <div class="section" id="solving-2nd-order-odes">
-<h2>Solving 2nd-order ODEs<a class="headerlink" href="#solving-2nd-order-odes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Solving 2nd-order ODEs<a class="headerlink" href="#solving-2nd-order-odes" title="Permalink to this headline">¶</a></h2>
 <p>Here is an example to get us started.</p>
-<div class="dropdown-tip admonition">
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Find a particular solution of <span class="math notranslate nohighlight">\(x''-x=e^{-4 t}\)</span>.</p>
-</div></blockquote>
-<p>Transforming both sides of the ODE leads directly to</p>
+<p>Find a particular solution of <span class="math notranslate nohighlight">\(x''-x=e^{-4 t}\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Transforming both sides of the ODE leads directly to</p>
 <div class="math notranslate nohighlight">
 \[
 s^2X(s) - s x(0) - x'(0) - X(s) = \frac{1}{s+4},
 \]</div>
-<p>so that</p>
+<p class="card-text">so that</p>
 <div class="math notranslate nohighlight">
 \[
 X(s) = x'(0)\frac{1}{(s^2-1)} + x(0)\frac{s}{(s^2-1)} + \frac{1}{(s^2-1)(s+4)}.
 \]</div>
-<p>Since the goal is to find any particular solution, we are clearly happiest choosing one with <span class="math notranslate nohighlight">\(x(0)=x'(0)=0\)</span>. Then</p>
+<p class="card-text">Since the goal is to find any particular solution, we are clearly happiest choosing one with <span class="math notranslate nohighlight">\(x(0)=x'(0)=0\)</span>. Then</p>
 <div class="math notranslate nohighlight">
 \[
 X_p(s) = \frac{1}{(s-1)(s+1)(s+4)}.
 \]</div>
-<p>The method of partial fractions says that we can express this as</p>
+<p class="card-text">The method of partial fractions says that we can express this as</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{1}{(s-1)(s+1)(s+4)} = \frac{A}{s-1} + \frac{B}{s+1} + \frac{C}{s+4}
 \]</div>
-<p>for constants <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>. The easiest way to find them is to clear the denominators, yielding</p>
+<p class="card-text">for constants <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>. The easiest way to find them is to clear the denominators, yielding</p>
 <div class="math notranslate nohighlight">
 \[
 1 = A(s+1)(s+4) + B(s-1)(s+4) + C(s-1)(s+1).
 \]</div>
-<p>The hard way to proceed is to multiply out the left side, then equate coefficients of like powers of <span class="math notranslate nohighlight">\(s\)</span>. The easy way is to drop in <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(-1\)</span>, and <span class="math notranslate nohighlight">\(4\)</span> for <span class="math notranslate nohighlight">\(s\)</span>:</p>
+<p class="card-text">The hard way to proceed is to multiply out the left side, then equate coefficients of like powers of <span class="math notranslate nohighlight">\(s\)</span>. The easy way is to drop in <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(-1\)</span>, and <span class="math notranslate nohighlight">\(4\)</span> for <span class="math notranslate nohighlight">\(s\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 1 &amp;= A(2)(5) + B(0)(5) + C(0)(2) = 10A, \\ 
 1 &amp;= A(0)(3) + B(-2)(3) + C(-2)(0) = -6B, \\ 
 1 &amp;= A(-3)(0) + B(-5)(0) + C(-5)(-3) = 15C.
 \end{align*}\]</div>
-<p>We put this all together and find</p>
+<p class="card-text">We put this all together and find</p>
 <div class="math notranslate nohighlight">
 \[
 X_p(s) = \frac{1/10}{s-1} + \frac{-1/6}{s+1} + \frac{1/15}{s+4}.
 \]</div>
-<p>Each of these terms is easy to invert, giving an exponential in each case:</p>
+<p class="card-text">Each of these terms is easy to invert, giving an exponential in each case:</p>
 <div class="math notranslate nohighlight">
 \[
 x_p(t) = \frac{1}{10}e^t - \frac{1}{6} e^{-t} + \frac{1}{15}e^{-4t}.
 \]</div>
 </div>
+</details></div>
 <p>Let’s pause for a moment. If we apply the method of undetermined coefficients to <span class="math notranslate nohighlight">\(x''-x=e^{-4 t}\)</span>, we get <span class="math notranslate nohighlight">\(x_p(t)=e^{-4t}/15\)</span>. The solution in the example was</p>
 <div class="math notranslate nohighlight">
 \[
@@ -500,15 +629,15 @@ x_p(t) = \frac{1}{10}e^t - \frac{1}{6} e^{-t} + \frac{1}{15}e^{-4t}.
 \[
 x_h(t) = c_1 e^t + c_2 e^{-t},
 \]</div>
-<p>and the two methods get different values for <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span>. Frankly, the MUC is a lot simpler for this problem.</p>
+<p>and the two methods get different values for <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span>. Frankly, the MUC is simpler for this problem.</p>
 </div>
 <div class="section" id="poles">
-<h2>Poles<a class="headerlink" href="#poles" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>Poles<a class="headerlink" href="#poles" title="Permalink to this headline">¶</a></h2>
 <p>The basic transform <span class="math notranslate nohighlight">\(\lx[e^{at}] = 1/(s-a)\)</span>, including for complex values of <span class="math notranslate nohighlight">\(a\)</span>, leads us to look for roots of the denominator in a transform.</p>
 <div class="proof proof-type-definition" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Definition </span>
+        <span class="proof-type">Definition 2.11</span>
         
             <span class="proof-title-name">(Pole of a transform)</span>
         
@@ -525,43 +654,49 @@ X(s) = \frac{F(s)}{(s-z)^k}
 <p>If we choose to find a particular solution with zero initial conditions, then</p>
 <div class="math notranslate nohighlight">
 \[X_p(s) = \frac{F(s)}{s^2+bs+c}.\]</div>
-<p>The eigenvalues of the ODE are therefore poles of <span class="math notranslate nohighlight">\(X_p\)</span>, and the forcing function contributes one or more of its own poles.</p>
-<div class="dropdown-tip admonition">
+<p>The characteristic values of the ODE are therefore poles of <span class="math notranslate nohighlight">\(X_p\)</span>, and the forcing function contributes one or more of its own poles.</p>
+<div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Find a particular solution of <span class="math notranslate nohighlight">\(x''+9x = 15\sin(2t)\)</span>.</p>
-</div></blockquote>
-<p>Taking the transform and solving for <span class="math notranslate nohighlight">\(X\)</span> gives</p>
+<p>Find a particular solution of <span class="math notranslate nohighlight">\(x''+9x = 15\sin(2t)\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Taking the transform and solving for <span class="math notranslate nohighlight">\(X\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[
 X_p(s) = \frac{30}{(s^2+4)(s^2+9)}.
 \]</div>
-<p>This has conjugate poles at <span class="math notranslate nohighlight">\(\pm 2i\)</span> and <span class="math notranslate nohighlight">\(\pm 3i\)</span>. We can do the partial fraction decomposition two ways. If we allow complex poles, then we have</p>
+<p class="card-text">This has conjugate poles at <span class="math notranslate nohighlight">\(\pm 2i\)</span> and <span class="math notranslate nohighlight">\(\pm 3i\)</span>. We can do the partial fraction decomposition two ways. If we allow complex poles, then we have</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{30}{s^2(s^2+9)}= \frac{A+iB}{s+2i} + \frac{A-iB}{s-2i} + \frac{C+iD}{s+3i} + \frac{{C-iD}}{s-3i}.
 \]</div>
-<p>If we want to keep everything real, it’s</p>
+<p class="card-text">If we want to keep everything real, it’s</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{30}{s^2(s^2+9)} = \frac{As+B}{s^2+4} + \frac{Cs+D}{s^2+9}.
 \]</div>
-<p>Taking the second approach, we clear denominators to get</p>
+<p class="card-text">Taking the second approach, we clear denominators to get</p>
 <div class="math notranslate nohighlight">
 \[
 30 = (As+B)(s^2+9) + (Cs+D)(s^2+4) = (9B+4D) + (9A+4C)s + (B+D)s^2 + (A+C)s^3.
 \]</div>
-<p>Equating like powers leads to <span class="math notranslate nohighlight">\(A+C=B+D=9A+4C=0\)</span> and <span class="math notranslate nohighlight">\(9B+4D=30\)</span>. These imply <span class="math notranslate nohighlight">\(A=C=0\)</span>, <span class="math notranslate nohighlight">\(B=6\)</span>, <span class="math notranslate nohighlight">\(D=-6\)</span>. Hence</p>
+<p class="card-text">Equating like powers leads to <span class="math notranslate nohighlight">\(A+C=B+D=9A+4C=0\)</span> and <span class="math notranslate nohighlight">\(9B+4D=30\)</span>. These imply <span class="math notranslate nohighlight">\(A=C=0\)</span>, <span class="math notranslate nohighlight">\(B=6\)</span>, <span class="math notranslate nohighlight">\(D=-6\)</span>. Hence</p>
 <div class="math notranslate nohighlight">
 \[
 X_p(s) = \frac{3\cdot 2}{s^2+4} + \frac{-2\cdot 3}{s^2+9}.
 \]</div>
-<p>Inverting the transform gives</p>
+<p class="card-text">Inverting the transform gives</p>
 <div class="math notranslate nohighlight">
 \[
 x_p(t) = 3\sin(2t) - 2\sin(3t).
 \]</div>
 </div>
+</details></div>
 <p>In the previous example, we had</p>
 <div class="math notranslate nohighlight">
 \[
@@ -584,7 +719,7 @@ $$
 \frac{1}{s(s^2+2s+10)} = \frac{A}{s} + \frac{Bs+C}{s^2+2s+10}.
 $$
 
-However, the second term above results from the eigenvalues of the ODE, and its contributions to the particular solution can be ignored. Thus we only need to solve for $A$.
+However, the second term above results from the roots of the ODE, and its contributions to the particular solution can be ignored. Thus we only need to solve for $A$.
 
 Clearing denominators gives
 
@@ -635,7 +770,7 @@ $$
 24(s+1) = (As+B)(s^2-4) + C[(s+1)^2+4](s+2) + C[(s+1)^2+4](s-2).
 $$
 
-Before proceeding, we look for a shortcut. The terms with poles at $\pm 2$ come from the eigenvalues of the ODE and will contribute exponentials that are part of the homogeneous solution. So we don't need to find the constants $C$ and $D$, though this changes the particular solution we will find.
+Before proceeding, we look for a shortcut. The terms with poles at $\pm 2$ come from the roots of the ODE and will contribute exponentials that are part of the homogeneous solution. So we don't need to find the constants $C$ and $D$, though this changes the particular solution we will find.
 
 We insert each of the poles at $-1\pm 2i$ to get equations for $A$ and $B$ only:
 
@@ -698,6 +833,8 @@ We choose $s=0$ and get $A=1/10$.
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page"><span class="section-number">1. </span>Overview</a>
+    <a class='right-next' id="next-link" href="steps_impulses.html" title="next page"><span class="section-number">3. </span>Steps and impulses (2nd order)</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
