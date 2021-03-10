@@ -75,7 +75,7 @@ From this it's clear that $A=2$.
 Find the general solution of $x''+x'=\sin(2t)$.
 
 :::{dropdown} Solution
-The homogeneous problem $x''+x'=0$ has eigenvalues $0$ and $-1$, hence
+The homogeneous problem $x''+x'=0$ has roots $0$ and $-1$, hence
 
 $$
 x_h(t) = c_1 + c_2 e^{-t}.
@@ -109,7 +109,7 @@ $$
 
 The examples above are the fundamental ones. There are rules for more intricate combinations of the same functions, but we won't go into them here.
 
-We have to repeat the warning from the first time we saw this method: occasionally it fails, given our rules.
+We have to repeat the warning from the first time we saw this method: we have only used a subset of the complete rules, and thus occasionally it fails.
 
 (secondlin-example-noMUC)=
 ::::{admonition} Example
@@ -136,7 +136,7 @@ That won't work for the $x_p$ above, but we can subtract a homogeneous solution 
 \frac{ \cos(\omega t) - \cos(t) } {1-\omega^2}.
 ```
 
-Then L'Hopital applies in the limit to give us
+Then L'Hôpital applies in the limit to give us
 
 ```{math}
 :label: secondlin-secular

@@ -2,7 +2,7 @@
 
 For first-order ODEs we [introduced](../steps/laplace.md) the Laplace transform, which converts a function of time $t\ge 0$ to a function of an abstract $s$. There's no need for us to repeat [its definition](definition-steps-laplace) here, as we are more interested in applying its properties than deriving them.
 
-First, we generalize the [derivative property](formula-steps-laplace-diff) to the second derivative (by applying the original formula twice).
+First, we generalize the [derivative property](formula-steps-laplace-diff) to the second derivative, which can be done by applying the original formula twice.
 
 (formula-laplace-diff)=
 
@@ -72,9 +72,10 @@ $$
 Here is an example to get us started.
 
 ::::{admonition} Example
-:class: dropdown,tip
-> Find a particular solution of $x''-x=e^{-4 t}$.
+:class: tip
+Find a particular solution of $x''-x=e^{-4 t}$.
 
+:::{dropdown} Solution
 Transforming both sides of the ODE leads directly to
 
 $$
@@ -124,6 +125,7 @@ Each of these terms is easy to invert, giving an exponential in each case:
 $$
 x_p(t) = \frac{1}{10}e^t - \frac{1}{6} e^{-t} + \frac{1}{15}e^{-4t}.
 $$
+:::
 ::::
 
 Let's pause for a moment. If we apply the method of undetermined coefficients to $x''-x=e^{-4 t}$, we get $x_p(t)=e^{-4t}/15$. The solution in the example was
@@ -138,7 +140,7 @@ $$
 x_h(t) = c_1 e^t + c_2 e^{-t},
 $$
 
-and the two methods get different values for $c_1$ and $c_2$. Frankly, the MUC is a lot simpler for this problem.
+and the two methods get different values for $c_1$ and $c_2$. Frankly, the MUC is simpler for this problem.
 
 ## Poles
 
@@ -166,12 +168,13 @@ If we choose to find a particular solution with zero initial conditions, then
 X_p(s) = \frac{F(s)}{s^2+bs+c}.
 ```
 
-The eigenvalues of the ODE are therefore poles of $X_p$, and the forcing function contributes one or more of its own poles.
+The characteristic values of the ODE are therefore poles of $X_p$, and the forcing function contributes one or more of its own poles.
 
 ::::{admonition} Example
-:class: dropdown,tip
-> Find a particular solution of $x''+9x = 15\sin(2t)$.
+:class: tip
+Find a particular solution of $x''+9x = 15\sin(2t)$.
 
+:::{dropdown} Solution
 Taking the transform and solving for $X$ gives
 
 $$
@@ -207,6 +210,7 @@ Inverting the transform gives
 $$
 x_p(t) = 3\sin(2t) - 2\sin(3t).
 $$
+:::
 ::::
 
 In the previous example, we had
@@ -234,7 +238,7 @@ $$
 \frac{1}{s(s^2+2s+10)} = \frac{A}{s} + \frac{Bs+C}{s^2+2s+10}.
 $$
 
-However, the second term above results from the eigenvalues of the ODE, and its contributions to the particular solution can be ignored. Thus we only need to solve for $A$.
+However, the second term above results from the roots of the ODE, and its contributions to the particular solution can be ignored. Thus we only need to solve for $A$.
 
 Clearing denominators gives
 
@@ -286,7 +290,7 @@ $$
 24(s+1) = (As+B)(s^2-4) + C[(s+1)^2+4](s+2) + C[(s+1)^2+4](s-2).
 $$
 
-Before proceeding, we look for a shortcut. The terms with poles at $\pm 2$ come from the eigenvalues of the ODE and will contribute exponentials that are part of the homogeneous solution. So we don't need to find the constants $C$ and $D$, though this changes the particular solution we will find.
+Before proceeding, we look for a shortcut. The terms with poles at $\pm 2$ come from the roots of the ODE and will contribute exponentials that are part of the homogeneous solution. So we don't need to find the constants $C$ and $D$, though this changes the particular solution we will find.
 
 We insert each of the poles at $-1\pm 2i$ to get equations for $A$ and $B$ only:
 

@@ -1,10 +1,10 @@
 
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -25,8 +25,8 @@
     href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -43,7 +43,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -51,8 +50,6 @@
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -311,6 +308,80 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VI. Linear ODE systems
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_system/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_system/order_dimension.html">
+   2. Conversion of higher-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_system/structure.html">
+   3. Solution structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_system/homogeneous.html">
+   4. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_system/const_coeff.html">
+   5. Constant-coefficient problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_system/phase_plane.html">
+   6. Stability and the phase plane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_system/matrix_exp.html">
+   7. The matrix exponential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_system/variation_parameters.html">
+   8. Variation of parameters
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -424,6 +495,8 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="first_system/overview.html#term-center"><strong>center</strong></a>
+</li>
       <li><a href="second_linear/overview.html#term-characteristic-polynomial"><strong>characteristic polynomial</strong></a>
 </li>
       <li><a href="second_linear/overview.html#term-characteristic-values"><strong>characteristic values</strong></a>
@@ -432,7 +505,7 @@
 </li>
       <li><a href="first_linear/overview.html#term-coefficient-function"><strong>coefficient function</strong></a>
 </li>
-      <li><a href="linalg/overview.html#term-coefficient-matrix"><strong>coefficient matrix</strong></a>
+      <li><a href="first_system/overview.html#term-coefficient-matrix"><strong>coefficient matrix</strong></a>, <a href="linalg/overview.html#term-coefficient-matrix"><strong>[1]</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -440,11 +513,11 @@
 </li>
       <li><a href="linalg/overview.html#term-conjugate"><strong>conjugate</strong></a>
 </li>
-      <li><a href="second_linear/overview.html#term-constant-coefficient"><strong>constant-coefficient</strong></a>
+      <li><a href="first_system/overview.html#term-constant-coefficient"><strong>constant-coefficient</strong></a>, <a href="second_linear/overview.html#term-constant-coefficient"><strong>[1]</strong></a>
 </li>
       <li><a href="first_linear/overview.html#term-continuously-stirred-tank-reactor"><strong>continuously stirred tank reactor</strong></a>
 </li>
-      <li><a href="linalg/overview.html#term-cramer-s-rule"><strong>Cramer&#39;s Rule</strong></a>
+      <li><a href="linalg/overview.html#term-Cramer-s-Rule"><strong>Cramer&#39;s Rule</strong></a>
 </li>
       <li><a href="second_linear/overview.html#term-critically-damped"><strong>critically damped</strong></a>
 </li>
@@ -462,7 +535,7 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="first_linear/preview.html#index-0">dependent variable</a>, <a href="first_linear/overview.html#term-dependent-variable"><strong>[1]</strong></a>
+      <li><a href="first_linear/overview.html#term-dependent-variable"><strong>dependent variable</strong></a>, <a href="first_linear/preview.html#index-0">[1]</a>
 </li>
       <li><a href="linalg/overview.html#term-determinant"><strong>determinant</strong></a>
 </li>
@@ -476,11 +549,13 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="linalg/overview.html#term-eigenspace"><strong>eigenspace</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="linalg/overview.html#term-eigenvalue"><strong>eigenvalue</strong></a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="linalg/overview.html#term-eigenvector"><strong>eigenvector</strong></a>
+</li>
+      <li><a href="first_system/overview.html#term-equilibrium-solution"><strong>equilibrium solution</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -488,17 +563,19 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="first_linear/overview.html#term-first-order-linear-ode"><strong>first-order linear ODE</strong></a>
+      <li><a href="first_linear/overview.html#term-first-order-linear-ODE"><strong>first-order linear ODE</strong></a>
 </li>
-      <li><a href="first_linear/overview.html#term-first-order-ode"><strong>first-order ODE</strong></a>
+      <li><a href="first_linear/overview.html#term-first-order-ODE"><strong>first-order ODE</strong></a>
+</li>
+      <li><a href="first_linear/overview.html#term-forcing-function"><strong>forcing function</strong></a>, <a href="first_system/overview.html#term-forcing-function"><strong>[1]</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="first_linear/overview.html#term-forcing-function"><strong>forcing function</strong></a>
-</li>
       <li><a href="linalg/overview.html#term-free-column"><strong>free column</strong></a>
 </li>
       <li><a href="second_linear/overview.html#term-free-oscillator"><strong>free oscillator</strong></a>
+</li>
+      <li><a href="first_system/overview.html#term-fundamental-matrix"><strong>fundamental matrix</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -508,7 +585,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="second_linear/overview.html#term-gain"><strong>gain</strong></a>
 </li>
-      <li><a href="linalg/overview.html#term-gaussian-elimination"><strong>Gaussian elimination</strong></a>
+      <li><a href="linalg/overview.html#term-Gaussian-elimination"><strong>Gaussian elimination</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -526,7 +603,7 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="steps/overview.html#term-heaviside-function"><strong>Heaviside function</strong></a>
+      <li><a href="steps/overview.html#term-Heaviside-function"><strong>Heaviside function</strong></a>
 </li>
       <li><a href="first_linear/overview.html#term-homogeneous"><strong>homogeneous</strong></a>, <a href="linalg/overview.html#term-homogeneous"><strong>[1]</strong></a>
 </li>
@@ -548,9 +625,9 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="first_linear/preview.html#index-1">independent variable</a>, <a href="first_linear/overview.html#term-independent-variable"><strong>[1]</strong></a>
+      <li><a href="first_linear/overview.html#term-independent-variable"><strong>independent variable</strong></a>, <a href="first_linear/preview.html#index-1">[1]</a>
 </li>
-      <li><a href="first_linear/overview.html#term-initial-condition"><strong>initial condition</strong></a>
+      <li><a href="first_linear/overview.html#term-initial-condition"><strong>initial condition</strong></a>, <a href="first_system/overview.html#term-initial-condition"><strong>[1]</strong></a>
 </li>
       <li><a href="first_linear/overview.html#term-initial-value-problem"><strong>initial-value problem</strong></a>
 </li>
@@ -566,15 +643,17 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="steps/overview.html#term-laplace-transform"><strong>Laplace transform</strong></a>
+      <li><a href="steps/overview.html#term-Laplace-transform"><strong>Laplace transform</strong></a>
 </li>
       <li><a href="linalg/overview.html#term-leading-nonzero"><strong>leading nonzero</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="linalg/overview.html#term-linear"><strong>linear</strong></a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="linalg/overview.html#term-linear-combination"><strong>linear combination</strong></a>
+</li>
+      <li><a href="first_system/overview.html#term-linear-ODE-system"><strong>linear ODE system</strong></a>
 </li>
       <li><a href="first_linear/overview.html#term-linear-operator"><strong>linear operator</strong></a>
 </li>
@@ -601,6 +680,10 @@
       <li><a href="second_linear/overview.html#term-natural-frequency"><strong>natural frequency</strong></a>
 </li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="first_system/overview.html#term-node"><strong>node</strong></a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="O">O</h2>
@@ -618,10 +701,12 @@
 </li>
       <li><a href="linalg/overview.html#term-particular-solution"><strong>particular solution</strong></a>
 </li>
-      <li><a href="linalg/overview.html#term-pivot-column"><strong>pivot column</strong></a>
+      <li><a href="first_system/overview.html#term-phase-plane"><strong>phase plane</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="linalg/overview.html#term-pivot-column"><strong>pivot column</strong></a>
+</li>
       <li><a href="second_linear/overview.html#term-polar-form"><strong>polar form</strong></a>
 </li>
       <li><a href="laplace/overview.html#term-pole"><strong>pole</strong></a>, <a href="steps/overview.html#term-pole"><strong>[1]</strong></a>
@@ -644,7 +729,7 @@
 </li>
       <li><a href="linalg/overview.html#term-row-elimination"><strong>row elimination</strong></a>
 </li>
-      <li><a href="linalg/overview.html#term-rref"><strong>RREF</strong></a>
+      <li><a href="linalg/overview.html#term-RREF"><strong>RREF</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -652,13 +737,15 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="first_system/overview.html#term-saddle"><strong>saddle</strong></a>
+</li>
       <li><a href="linalg/overview.html#term-scalar"><strong>scalar</strong></a>
 </li>
       <li><a href="linalg/overview.html#term-scalar-multiplication"><strong>scalar multiplication</strong></a>
 </li>
-      <li><a href="second_linear/overview.html#term-second-order-ivp"><strong>second-order IVP</strong></a>
+      <li><a href="second_linear/overview.html#term-second-order-IVP"><strong>second-order IVP</strong></a>
 </li>
-      <li><a href="second_linear/overview.html#term-second-order-ode"><strong>second-order ODE</strong></a>
+      <li><a href="second_linear/overview.html#term-second-order-ODE"><strong>second-order ODE</strong></a>
 </li>
       <li><a href="second_linear/overview.html#term-simple-harmonic-motion"><strong>simple harmonic motion</strong></a>
 </li>
@@ -668,9 +755,13 @@
 </li>
       <li><a href="first_linear/overview.html#term-solution"><strong>solution</strong></a>
 </li>
+      <li><a href="first_system/overview.html#term-spiral"><strong>spiral</strong></a>
+</li>
       <li><a href="second_linear/overview.html#term-spring-constant"><strong>spring constant</strong></a>
 </li>
       <li><a href="linalg/overview.html#term-square"><strong>square</strong></a>
+</li>
+      <li><a href="first_system/overview.html#term-stable"><strong>stable</strong></a>
 </li>
       <li><a href="steps/overview.html#term-superposition"><strong>superposition</strong></a>
 </li>
@@ -693,6 +784,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="steps/overview.html#term-unit-step-function"><strong>unit step function</strong></a>
+</li>
+      <li><a href="first_system/overview.html#term-unstable"><strong>unstable</strong></a>
 </li>
   </ul></td>
 </tr></table>

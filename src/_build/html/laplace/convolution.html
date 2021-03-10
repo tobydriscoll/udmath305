@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Convolution &#8212; Notes on linear algebra and ODEs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Convolution &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -24,8 +25,8 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -42,7 +43,6 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -50,8 +50,6 @@
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfG": ["\\mathbf{G}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -59,8 +57,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Overview" href="../first_system/overview.html" />
+    <link rel="prev" title="3. Steps and impulses (2nd order)" href="steps_impulses.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -310,6 +312,80 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Convolution
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VI. Linear ODE systems
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/order_dimension.html">
+   2. Conversion of higher-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/structure.html">
+   3. Solution structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/homogeneous.html">
+   4. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/const_coeff.html">
+   5. Constant-coefficient problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/phase_plane.html">
+   6. Stability and the phase plane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/matrix_exp.html">
+   7. The matrix exponential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/variation_parameters.html">
+   8. Variation of parameters
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -384,17 +460,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#moving-averages">
-   Moving averages
+   4.1. Moving averages
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#convolution-integral">
-   Convolution integral
+   4.2. Convolution integral
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#convolution-theorem">
-   Convolution theorem
+   4.3. Convolution theorem
   </a>
  </li>
 </ul>
@@ -409,17 +485,17 @@
               <div>
                 
   <div class="section" id="convolution">
-<h1>Convolution<a class="headerlink" href="#convolution" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>Convolution<a class="headerlink" href="#convolution" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="moving-averages">
-<h2>Moving averages<a class="headerlink" href="#moving-averages" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Moving averages<a class="headerlink" href="#moving-averages" title="Permalink to this headline">¶</a></h2>
 <p>The following grabs and plots the closing price of Bitcoin for the last 31 days.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">bc</span> <span class="p">=</span> <span class="n">webread</span><span class="p">(</span><span class="s">&#39;https://api.coindesk.com/v1/bpi/historical/close.json&#39;</span><span class="p">);</span>
-<span class="n">data</span> <span class="p">=</span> <span class="n">jsondecode</span><span class="p">(</span><span class="n">bc</span><span class="p">);</span>
-<span class="n">v</span> <span class="p">=</span> <span class="n">struct2cell</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">bpi</span><span class="p">);</span>
-<span class="n">v</span> <span class="p">=</span> <span class="nb">cat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">v</span><span class="p">{:});</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="s">&#39;-ko&#39;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">bc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">webread</span><span class="p">(</span><span class="s">&#39;https://api.coindesk.com/v1/bpi/historical/close.json&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">data</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">jsondecode</span><span class="p">(</span><span class="n">bc</span><span class="p">);</span><span class="w"></span>
+<span class="n">v</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">struct2cell</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">bpi</span><span class="p">);</span><span class="w"></span>
+<span class="n">v</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">v</span><span class="p">{:});</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="s">&#39;-ko&#39;</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -430,13 +506,13 @@
 <p>It’s a noisy curve. We can smooth that out by taking 4-day moving averages, for example. There are slick ways to do that, but here is brute force.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="s">&#39;-ko&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">4</span><span class="p">:</span><span class="mi">31</span>
-    <span class="n">z</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span><span class="n"></span>
-<span class="n">end</span>
-<span class="s">z(1:3) = NaN</span><span class="p">;</span>  <span class="c">% not a number</span>
-<span class="n">hold </span><span class="s">on</span><span class="p"></span>
-<span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="s">&#39;-ko&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span><span class="mi">31</span><span class="w"></span>
+<span class="w">    </span><span class="n">z</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="n">z</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">NaN</span><span class="p">;</span><span class="w">  </span><span class="c">% not a number</span><span class="w"></span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -447,14 +523,14 @@
 <p>We might decide, however, to weight the most recent values more heavily. Here’s how this might look.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="s">&#39;-ko&#39;</span><span class="p">)</span>
-<span class="n">w</span> <span class="p">=</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">];</span><span class="n"></span>
-<span class="n">for </span><span class="s">i = 4:31</span><span class="p"></span>
-    <span class="n">z</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="n">w</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span> <span class="o">/</span> <span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">);</span><span class="n"></span>
-<span class="n">end</span>
-<span class="s">z(1:3) = NaN</span><span class="p">;</span>  <span class="c">% not a number</span>
-<span class="n">hold </span><span class="s">on</span><span class="p"></span>
-<span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="s">&#39;-ko&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="n">w</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span><span class="mi">31</span><span class="w"></span>
+<span class="w">    </span><span class="n">z</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">w</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">v</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="n">w</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="n">z</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">NaN</span><span class="p">;</span><span class="w">  </span><span class="c">% not a number</span><span class="w"></span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -465,7 +541,7 @@
 <p>Note that each new value <span class="math notranslate nohighlight">\(z_i\)</span> is a linear combination of the elements of <span class="math notranslate nohighlight">\(v\)</span>, weighted by the values in <span class="math notranslate nohighlight">\(w\)</span>. And we always go forward 1,2,3,4 in <span class="math notranslate nohighlight">\(w\)</span>, while on <span class="math notranslate nohighlight">\(v\)</span> we have a sliding window going backward: <span class="math notranslate nohighlight">\(i,i-1,i-2,i-3\)</span>. Put concisely, the indices of <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(w\)</span> for each term in the sum add up to <span class="math notranslate nohighlight">\(i+1\)</span>, which indexes <span class="math notranslate nohighlight">\(z\)</span>.</p>
 </div>
 <div class="section" id="convolution-integral">
-<h2>Convolution integral<a class="headerlink" href="#convolution-integral" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>Convolution integral<a class="headerlink" href="#convolution-integral" title="Permalink to this headline">¶</a></h2>
 <p>The moving average above gave us a certain way to multiply together vectors <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(w\)</span> to get a new vector <span class="math notranslate nohighlight">\(z\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[z_i =  \sum_{j} w_j v_{i-j} \]</div>
@@ -473,7 +549,7 @@
 <div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition </span>
+        <span class="proof-type">Definition 4.15</span>
         
             <span class="proof-title-name">(Convolution integral)</span>
         
@@ -492,7 +568,7 @@
 <div class="proof proof-type-property" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Property </span>
+        <span class="proof-type">Property 4.16</span>
         
             <span class="proof-title-name">(Convolution)</span>
         
@@ -514,16 +590,16 @@ f*\delta &amp;= f,
 <p>In particular, if we regard convolution as a sort of multiplication, then the identity element is the impulse <span class="math notranslate nohighlight">\(\delta\)</span>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>It is <em>not</em> true that <span class="math notranslate nohighlight">\(f*1=f\)</span>, unless <span class="math notranslate nohighlight">\(f\)</span> is the zero function.</p>
+<p>It is <em>not</em> true that <span class="math notranslate nohighlight">\(f*1=f\)</span>, unless <span class="math notranslate nohighlight">\(f\)</span> is the zero function. A consequence of the next theorem is that the identity for convolution is <span class="math notranslate nohighlight">\(\delta(t)\)</span>.</p>
 </div>
 </div>
 <div class="section" id="convolution-theorem">
-<h2>Convolution theorem<a class="headerlink" href="#convolution-theorem" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Convolution theorem<a class="headerlink" href="#convolution-theorem" title="Permalink to this headline">¶</a></h2>
 <p>Convolution is intimately connected to Laplace transforms.</p>
 <div class="proof proof-type-theorem" id="id3">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem </span>
+        <span class="proof-type">Theorem 4.17</span>
         
             <span class="proof-title-name">(Convolution Theorem)</span>
         
@@ -534,7 +610,7 @@ f*\delta &amp;= f,
 <div class="proof proof-type-definition" id="id4">
 
     <div class="proof-title">
-        <span class="proof-type">Definition </span>
+        <span class="proof-type">Definition 4.18</span>
         
             <span class="proof-title-name">(Impulse response, 2nd order)</span>
         
@@ -545,15 +621,15 @@ f*\delta &amp;= f,
 </div></div><div class="proof proof-type-definition" id="id5">
 
     <div class="proof-title">
-        <span class="proof-type">Definition </span>
+        <span class="proof-type">Definition 4.19</span>
         
             <span class="proof-title-name">(Transfer function, 2nd order)</span>
         
     </div><div class="proof-content">
-<p>For the second-order linear operator <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+cx\)</span> with constants <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, the function <span class="math notranslate nohighlight">\(1/(s^2+bs+c)\)</span> is called the <a class="reference internal" href="../steps/overview.html#term-transfer-function"><span class="xref std std-term">transfer function</span></a> of the operator.</p>
+<p>For the second-order linear operator <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+cx\)</span> with constants <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, the function <span class="math notranslate nohighlight">\(\dfrac{1}{s^2+bs+c}\)</span> is called the <a class="reference internal" href="../steps/overview.html#term-transfer-function"><span class="xref std std-term">transfer function</span></a> of the operator.</p>
 </div></div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The transfer function is the reciprocal of the characteristic polynomial, and its poles are the eigenvalues of the ODE.</p>
+<p>The transfer function is the reciprocal of the characteristic polynomial, and its poles are the characteristic values of the ODE.</p>
 </div>
 <p>All of these ideas come together. The impulse response is the solution of <span class="math notranslate nohighlight">\(\opA[x]=\delta\)</span> with zero initial conditions. Taking transforms gives</p>
 <div class="math notranslate nohighlight">
@@ -564,7 +640,7 @@ s^2 X(s) + b s X(s) + c X(s) = 1,
 <div class="proof proof-type-theorem" id="id6">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem </span>
+        <span class="proof-type">Theorem 4.20</span>
         
     </div><div class="proof-content">
 <p>The impulse response of a linear constant-coefficient equation is the inverse Laplace transform of the transfer function.</p>
@@ -577,30 +653,38 @@ X(s) = \frac{F(s)}{s^2+b s+c} = F(s)G(s),
 <div class="proof proof-type-theorem" id="id7">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem </span>
+        <span class="proof-type">Theorem 4.21</span>
         
     </div><div class="proof-content">
 <p>The solution <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> with zero initial conditions is the convolution of <span class="math notranslate nohighlight">\(f\)</span> with the impulse response.</p>
-</div></div><div class="dropdown-tip admonition">
+</div></div><div class="tip admonition">
 <p class="admonition-title">Example</p>
-<blockquote>
-<div><p>Find the general solution of <span class="math notranslate nohighlight">\(x''+36x=\sin(t)\)</span>.</p>
-</div></blockquote>
-<p>Note that the homogeneous solution is <span class="math notranslate nohighlight">\(R\cos(6t+\theta)\)</span>, using amplitude-phase form. The transfer function is <span class="math notranslate nohighlight">\(G(s)=1/(s^2+36)\)</span>, and the impulse response is therefore</p>
+<p>Find the general solution of <span class="math notranslate nohighlight">\(x''+36x=\sin(t)\)</span>.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Example<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Note that the homogeneous solution is <span class="math notranslate nohighlight">\(R\cos(6t+\theta)\)</span>, using amplitude-phase form. The transfer function is <span class="math notranslate nohighlight">\(G(s)=1/(s^2+36)\)</span>, and the impulse response is therefore</p>
 <div class="math notranslate nohighlight">
 \[
 g(t) = \frac{1}{6} \sin(6t).
 \]</div>
-<p>Hence a particular solution is <span class="math notranslate nohighlight">\(f*g\)</span>, i.e.,</p>
+<p class="card-text">Hence a particular solution is <span class="math notranslate nohighlight">\(f*g\)</span>, i.e.,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 x_p(t) &amp;= \frac{1}{6}\int_0^t \sin(6(t-\tau))\sin(\tau) \,d\tau \\
 &amp;= \frac{1}{6}\int_0^t \sin(6t)\cos(6\tau)\sin(\tau) \,d\tau - \frac{1}{6}\int_0^t \cos(6t)\sin(6\tau)\sin(\tau) \,d\tau \\ 
 &amp;= \frac{1}{6}\sin(6t) \int_0^t \cos(6\tau)\sin(\tau) \,d\tau - \frac{1}{6}\cos(6t) \int_0^t \sin(6\tau)\sin(\tau) \,d\tau.
 \end{align*}\]</div>
-<p>The integrals yield to standard trig tricks, if you care to finish them.</p>
+<p class="card-text">The integrals yield to standard trig tricks, if you care to finish them.</p>
 </div>
-<p>In the end, we can avoid Laplace transforms altogether! The impulse response is equivalent to the solution of <span class="math notranslate nohighlight">\(\opA[x]=0\)</span> with <span class="math notranslate nohighlight">\(x(0)=0\)</span>, <span class="math notranslate nohighlight">\(x'(0)=1\)</span>, which is a homogeneous problem we can easily solve. Then a particular solution is “only” a convolution integral away. It turns out that this process is equivalent to a 2nd-order version of the method of <a class="reference internal" href="../first_linear/variation_parameters.html"><span class="doc std std-doc">variation of parameters</span></a>. For linear problems, all roads lead to the same destination.</p>
+</details></div>
+<p>In the end, we can avoid Laplace transforms altogether!</p>
+<p>The impulse response is equivalent to the solution of <span class="math notranslate nohighlight">\(\opA[x]=0\)</span> with <span class="math notranslate nohighlight">\(x(0)=0\)</span>, <span class="math notranslate nohighlight">\(x'(0)=1\)</span>, which is a homogeneous problem we can readily solve. Then a particular solution of <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> is only a convolution integral away — although admittedly, the integral might be daunting. It turns out that this process is equivalent to a 2nd-order version of the method of <a class="reference internal" href="../first_linear/variation_parameters.html"><span class="doc std std-doc">variation of parameters</span></a>.</p>
+<p>For linear problems, all roads lead to the same destination.</p>
 </div>
 </div>
 
@@ -632,6 +716,8 @@ x_p(t) &amp;= \frac{1}{6}\int_0^t \sin(6(t-\tau))\sin(\tau) \,d\tau \\
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="steps_impulses.html" title="previous page"><span class="section-number">3. </span>Steps and impulses (2nd order)</a>
+    <a class='right-next' id="next-link" href="../first_system/overview.html" title="next page"><span class="section-number">1. </span>Overview</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

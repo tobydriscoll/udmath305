@@ -88,7 +88,7 @@ The last property above may look odd, as we have not discussed impulses in the c
 In particular, if we regard convolution as a sort of multiplication, then the identity element is the impulse $\delta$.
 
 ````{warning}
-It is *not* true that $f*1=f$, unless $f$ is the zero function. 
+It is *not* true that $f*1=f$, unless $f$ is the zero function. A consequence of the next theorem is that the identity for convolution is $\delta(t)$. 
 ````
 
 ## Convolution theorem
@@ -112,11 +112,11 @@ Suppose $\mathcal{A}[x]=x''+bx'+cx$ is a linear, 2nd-order operator. Define $\de
 ````
 
 ````{proof:definition} Transfer function, 2nd order
-For the second-order linear operator $\opA[x]=x''+bx'+cx$ with constants $b$ and $c$, the function $1/(s^2+bs+c)$ is called the {term}`transfer function` of the operator.
+For the second-order linear operator $\opA[x]=x''+bx'+cx$ with constants $b$ and $c$, the function $\dfrac{1}{s^2+bs+c}$ is called the {term}`transfer function` of the operator.
 ````
 
 ```{note}
-The transfer function is the reciprocal of the characteristic polynomial, and its poles are the eigenvalues of the ODE.
+The transfer function is the reciprocal of the characteristic polynomial, and its poles are the characteristic values of the ODE.
 ```
 
 All of these ideas come together. The impulse response is the solution of $\opA[x]=\delta$ with zero initial conditions. Taking transforms gives
@@ -144,9 +144,10 @@ The solution $\opA[x]=f$ with zero initial conditions is the convolution of $f$ 
 ```
 
 ::::{admonition} Example
-:class: dropdown,tip
-> Find the general solution of $x''+36x=\sin(t)$.
+:class: tip
+Find the general solution of $x''+36x=\sin(t)$.
 
+:::{dropdown} Example
 Note that the homogeneous solution is $R\cos(6t+\theta)$, using amplitude-phase form. The transfer function is $G(s)=1/(s^2+36)$, and the impulse response is therefore
 
 $$
@@ -162,6 +163,11 @@ x_p(t) &= \frac{1}{6}\int_0^t \sin(6(t-\tau))\sin(\tau) \,d\tau \\
 \end{align*}
 
 The integrals yield to standard trig tricks, if you care to finish them.
+:::
 ::::
 
-In the end, we can avoid Laplace transforms altogether! The impulse response is equivalent to the solution of $\opA[x]=0$ with $x(0)=0$, $x'(0)=1$, which is a homogeneous problem we can easily solve. Then a particular solution is "only" a convolution integral away. It turns out that this process is equivalent to a 2nd-order version of the method of [variation of parameters](../first_linear/variation_parameters.md). For linear problems, all roads lead to the same destination.
+In the end, we can avoid Laplace transforms altogether! 
+
+The impulse response is equivalent to the solution of $\opA[x]=0$ with $x(0)=0$, $x'(0)=1$, which is a homogeneous problem we can readily solve. Then a particular solution of $\opA[x]=f$ is only a convolution integral away — although admittedly, the integral might be daunting. It turns out that this process is equivalent to a 2nd-order version of the method of [variation of parameters](../first_linear/variation_parameters.md). 
+
+For linear problems, all roads lead to the same destination.
