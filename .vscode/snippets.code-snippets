@@ -20,11 +20,11 @@
 		"prefix": ":exa",
 		"body": [
 		"::::{admonition} Example",
-		":class: dropdown,tip",
+		":class: tip",
 		"$0",
 		"::::"
 		],
-		"description": "Example with toggle"
+		"description": "Example enviro"
 	},
 	"Example w/solution": {
 		"scope": "markdown",
@@ -33,8 +33,7 @@
 		"::::{admonition} Example",
 		":class: tip",
 		"$0",
-		":::{admonition} Solution",
-		":class: note,dropdown,solution",
+		":::{dropdown} Solution",
 		"",
 		":::",
 		"::::"
@@ -55,9 +54,11 @@
 		"scope": "markdown",
 		"prefix": ":al*",
 		"body": [
-		"\\begin{align*}",
+		":::{math}",
+		"\\begin{split}",
 		"$0",
-		"\\end{align*}"
+		"\\end{split}",
+		":::"
 		],
 		"description": "Aligned equations, no number"
 	}
