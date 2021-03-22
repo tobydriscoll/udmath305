@@ -1,159 +1,134 @@
-# Amplitude and phase
+# Undamped oscillations
 
-The exponential form of the general solution of a homogeneous second-order linear ODE is
+The equation 
 
-```{math}
-x(t) = c_1 e^{\lambda t} + c_2 e^{\overline{\lambda} t}, \qquad \lambda = a + i\omega, \, c_2=\overline{c_1}.
-```
+$$
+x'' +  \omega_0^2 x = 0 
+$$
 
-As before, we will appeal to the fact that $(\alpha+i\beta) + \overline{(\alpha+i\beta)} = 2\alpha$ to write this as
+has characteristic roots that are purely imaginary: 
 
-```{math}
-:label: secondlin-combine-exp
-x(t) = \Re \Bigl[ c_1 e^{(a+i\omega) t} \Bigr], \quad c_1 \in\complex, 
-```
+$$
+\lambda = \pm i\, \omega_0. 
+$$
 
-where we also absorbed the factor of 2 into $c_1$. In the [preceding section](complex_exp.md) we claimed that there is an equivalence between this form and combinations of enveloped cosine and sine,
+One option is to express the solution using complex exponentials,
 
-```{math}
-:label: secondlin-combine-sincos
-x(t) = e^{at} \bigl[ a_1\cos(\omega t) + a_2\sin(\omega t) \bigr].
-```
+$$
+x(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t},
+$$
 
-Equivalence in this context means that for every choice of complex $c_1$, you can find some $a_1$ and $a_2$ so that the expressions are identically equal, and vice versa.
+where $c_1$ is complex, and $c_2=\overline{c_1}$ to ensure a real-valued solution. For any complex $z=u+iv$, 
 
-There is a third equivalent form that can be useful as well. Consider {eq}`secondlin-combine-sincos` with the new definitions
+$$
+z+\overline{z} = u + iv + u - iv = 2u = 2\Re(z).
+$$
 
-```{math}
-:label: secondlin-combine-polar
-a_1 = R \cos(\theta), \quad a_2 = R\sin(\theta) \qquad (R\ge 0),
-```
+Hence we can also write 
 
-so that
+:::{math}
+:label: second-undamped-complex
+x(t) = \Re \left( c_1 e^{i\omega_0 t} \right), \qquad c_1 \in \mathbb{C},
+:::
 
-```{math}
-x(t) = e^{at} \bigl[ R \cos(\theta) \cos(\omega t) + R\sin(\theta) \sin(\omega t) \bigr].
-```
+having absorbed a factor of 2 into the arbitrary constant. 
 
-Using a sum-of-angles formula, we get
+Suppose we define
 
-```{math}
-:label: secondlin-combine-ampphase
-x(t) = R e^{at} \cos(\omega t - \theta),
-```
+$$
+a_1 = \Re(c_1), \; a_2=-\Re(c_1) \quad \Longleftrightarrow \quad c_1 = a_1 - i a_2.
+$$
 
-which we call the {term}`amplitude-phase form` of the solution. We collect all three forms together here.
+Then by Euler's identity,
 
-````{proof:formula} Equivalent forms for 2nd order solutions
+$$
+c_1 e^{i\omega_0 t} = (a_1 - i a_2)[ \cos(\omega_0 t) + i \sin(\omega_0 t) ] = a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t) + i[\cdots],
+$$
+
+and the stuff in the final brackets disappears upon taking the real part. So equivalently to {eq}`second-undamped-complex`, we can write
+
+:::{math} 
+:label: second-undamped-sincos
+x(t) = a_1\cos(\omega_0 t) + a_2 \sin(\omega_0 t), \qquad a_1,a_2 \in \mathbb{R}.
+:::
+
+There is an important *third* equivalent form.
+
+## Amplitude–phase form
+
+Returning to {eq}`second-undamped-complex`, let us write $c_1$ in polar form:
+
+$$
+c_1 = R e^{i\theta} \Leftrightarrow R = |c_1|, \, e^{i \theta} = \frac{c_1}{|c_1|}.
+$$
+
+Then
+
 \begin{align*}
-x(t) &= \Re \Bigl[ c_1 e^{(a+i\omega) t} \Bigr], \quad c_1 \in\complex, \\
-x(t) &= e^{at} \bigl[ a_1\cos(\omega t) + a_2\sin(\omega t) \bigr], \quad a_1,a_2 \in \real, \\
-x(t) &= R e^{at} \cos(\omega t + \theta), \quad R \ge 0, \: \theta \in (-\pi,\pi].
+x(t) & = \Re \left( c_1 e^{i\omega_0 t} \right)\\
+& = \Re \left( R e^{i\theta} e^{i\omega_0 t} \right) \\
+& = R\, \Re \left( e^{i(\omega_0 t+\theta)} \right) \\
+& = R \cos(\omega_0 t+\theta),
 \end{align*}
-````
 
-```{note}
-It doesn't matter whether we use $+\theta$ or $-\theta$ as the phase term. Switching just flips the sign of the numerical value of $\theta$.
-```
+where the last line follow's from Euler's identity. This is the {term}`amplitude–phase` form,
 
-Each form has two real arbitrary constants that can be uniquely determined by initial conditions.
+:::{math}
+:label: second-undamped-ampphase
+x(t) = R \cos(\omega_0 t+\theta), \qquad R,\theta \in \mathbb{R}.
+:::
+
+A useful aspect of this form is that the solution oscillates between $\pm R$, which is the {term}`amplitude` of the oscillation. 
+
+Equations {eq}`second-undamped-complex`, {eq}`second-undamped-sincos`, and {eq}`second-undamped-ampphase` are all equivalent expressions of the general solution. We can convert between them using the identities
+
+$$
+a_1 - i a_2 = c_1 = R e^{i\theta},
+$$
+
+which amounts to simple polar/Cartesian conversions.
 
 ::::{admonition} Example
 :class: tip
-Find a solution to $x''-2x'+5x=0$, $x(0)=5$, $x'(0)=-5$ in amplitude-phase form.
+Find the solution in amplitude-phase form of $2x''+32x=0$ with $x(0)=1$, $x'(0)=-8$.
 
 :::{dropdown} Solution
 
-The characteristic polynomial $s^2-2s+5$ gives the roots $1\pm 2i$. We can write the solution as $x(t) = R e^{t} \cos(2 t + \theta)$ and apply the initial conditions to get
-
-\begin{align*}
-5 &= x(0) = R\cos(\theta), \\
--5 &= x'(0) = R[-2\sin(\theta) + \cos(\theta)].
-\end{align*}
-
-We can substitute from the first into the second and get
+First divide through by 2 to get the standard form, $x''+16x=0$. Then we have $\omega_0=\sqrt{16}=4$, so
 
 $$
--5 = -2R\sin(\theta) + 5,
+x(t) = a_1 \cos(4 t) + a_2 \sin(4 t).
 $$
 
-or $R\sin(\theta) =5$. Taking ratios with the first equation gives
+We then derive $1=x(0)=a_1$ and $-8=x'(0)=4a_2$, so
 
 $$
-\frac{R\sin(\theta)}{R\cos(\theta)}  = \frac{5}{5} \quad \Rightarrow \quad \tan(\theta)=1,
+x(t) = \cos(4 t) -2 \sin(4 t).
 $$
 
-so we get $\theta=\pi/4$. Then $R=5/\cos(\pi/4)=5\sqrt{2}$. The final answer is
-
-$$
-x(t) = 5\sqrt{2} e^{t} \cos\left(2 t + \tfrac{\pi}{4}\right).
-$$
+Converting $(1,-2)$ to polar form gives $R=\sqrt{5}$ and $\tan \theta = -2/1$. In order to find $\theta$ numerically, you need to use a [four-quadrant arctangent](https://www.mathworks.com/help/matlab/ref/atan2.html#buct8h0-4). In MATLAB it would be `atan2(-2,1)`. 
 :::
-::::
-
-## Conversion between forms
-
-Each form of the solution has its own advantages. Sometimes, it's useful to be able to convert between them. We already have that {eq}`secondlin-combine-polar` connects {eq}`secondlin-combine-sincos` and {eq}`secondlin-combine-ampphase`, so we just need to connect the third form.
-
-Say we are given {eq}`secondlin-combine-exp` and we use the polar form
-$c_1 = \rho e^{i\phi}$. Then by Euler's identity,
-
-<!-- 
-```{note}
-This equation uses the Greek letters $\rho$ (rho) and $\phi$ (phi).
-``` 
--->
-
-$$
-\Re \left[ c_1 e^{(a+i\omega) t}  \right] = \rho e^{at} \Re \left[ e^{i\phi} e^{i\omega t}  \right] = \rho e^{at} \cos(\omega t + \phi).
-$$
-
-This is the amplitude-phase form, so in fact,
-
-```{math}
-:label: secondlin-combine-c1
-c_1 = R e^{i\theta}
-```
-
-connects {eq}`secondlin-combine-exp` and {eq}`secondlin-combine-ampphase`.
-
-Both {eq}`secondlin-combine-polar` and {eq}`secondlin-combine-c1` amount to the same thing, conversion between rectangular coordinates, like $c_1=\alpha+i\beta$ and $(a_1,a_2)$, and polar coordinates, $(R,\theta)$.
-
-::::{admonition} Example (continued)
-:class: tip
-In the preceding example we found the solution
-
-$$
-x(t) = 5\sqrt{2} e^{t} \cos\left(2 t + \tfrac{\pi}{4}\right).
-$$
-
-This has $R=5\sqrt{2}$ and $\theta=\pi/4$, which corresponds to the point $(5,5)$ in rectangular coordinates. Therefore we may also write
-
-$$
-x(t) = e^{t} \bigl[ 5 \cos(2 t) + 5 \sin(2t) \bigr],
-$$
-
-and
-
-$$
-x(t) = \Re \Bigl[ (5+5i)  e^{(1+2i)t}  \Bigr].
-$$
-
 ::::
 
 ::::{admonition} Example
 :class: tip
-Find the amplitude-phase form of $x(t)=-4\cos(3t) + 2 \sin(3t)$.
+Find the amplitude of the solution to $x''+9x=0$, $x(0)=-4$, $x'(0)=6$.
 
 :::{dropdown} Solution
-The polar form of the point $(-4,2)$ satisfies
+
+The characteristic polynomial $\lambda^2+9$ gives the roots $\pm 3i$. We can write the solution as $x(t) = R \cos(3 t + \theta)$ and apply the initial conditions to get
+
+\begin{align*}
+-4 &= x(0) = R \cos(\theta), \\
+6 &= x'(0) = -3R \sin(\theta).
+\end{align*}
+
+We are asked only for the amplitude, so there is no need to solve for $\theta$. It's clear that
 
 $$
-R^2 = 16+4=20, \qquad \tan(\theta) = \frac{2}{-4}.
+[R \cos(\theta)]^2 + [R \sin(\theta)]^2 = (-4)^2 + (-2)^2 = 20,
 $$
 
-We see that $R=2\sqrt{5}$, and $\theta = \arctan(-1/2)$ should be in the second quadrant. It would have to be found numerically.
+which gives $R=\sqrt{20}=2\sqrt{5}$. 
 :::
 ::::
-
-It's more common that we want to know the amplitude than the phase. If you do need a numerical value of $\theta$, make sure you use the [four-quadrant arctangent](https://www.mathworks.com/help/matlab/ref/atan2.html#buct8h0-4) on a calculator or computer.

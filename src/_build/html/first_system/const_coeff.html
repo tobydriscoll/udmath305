@@ -292,8 +292,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../second_linear/phase_amplitude.html">
-   5. Amplitude and phase
+  <a class="reference internal" href="../second_linear/undamped.html">
+   5. Undamped oscillations
   </a>
  </li>
  <li class="toctree-l1">
@@ -514,24 +514,24 @@ g'\mathbf{v} = \mathbf{A}(g\mathbf{v}) = g\cdot (\mathbf{A}\mathbf{v}) = (g\lamb
 \]</div>
 <p>and determine whether this is a fundamental matrix. According to <a class="reference internal" href="homogeneous.html#theorem-fs-abel"><span class="std std-ref">Abel’s theorem</span></a>, we can ask that question at any value of <span class="math notranslate nohighlight">\(t\)</span>, including <span class="math notranslate nohighlight">\(t=0\)</span>. So the key issue is whether</p>
 <div class="math notranslate nohighlight" id="equation-eigenmat">
-<span class="eqno">(5.6)<a class="headerlink" href="#equation-eigenmat" title="Permalink to this equation">¶</a></span>\[\bfV = \bigl[ \mathbf{v}_1 \; \mathbf{v}_2 \; \cdots \; \mathbf{v}_m  \bigr]\]</div>
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-eigenmat" title="Permalink to this equation">¶</a></span>\[\bfV = \bigl[ \mathbf{v}_1 \; \mathbf{v}_2 \; \cdots \; \mathbf{v}_m  \bigr]\]</div>
 <p>is invertible. If so, then we have the ingredients of the general homogeneous solution.</p>
 <div class="proof proof-type-theorem" id="id1">
 <span id="theorem-fs-eigensolution"></span>
     <div class="proof-title">
-        <span class="proof-type">Theorem 5.9</span>
+        <span class="proof-type">Theorem 5.8</span>
         
             <span class="proof-title-name">(Solution by eigenvectors)</span>
         
     </div><div class="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> have eigenvalues <span class="math notranslate nohighlight">\(\lambda_1,\ldots,\lambda_n\)</span> and corresponding eigenvectors <span class="math notranslate nohighlight">\(\mathbf{v}_1,\ldots,\mathbf{v}_n\)</span>. If the matrix <span class="math notranslate nohighlight">\(\bfV\)</span> in <a class="reference internal" href="#equation-eigenmat">(5.6)</a> is invertible, then</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> have eigenvalues <span class="math notranslate nohighlight">\(\lambda_1,\ldots,\lambda_n\)</span> and corresponding eigenvectors <span class="math notranslate nohighlight">\(\mathbf{v}_1,\ldots,\mathbf{v}_n\)</span>. If the matrix <span class="math notranslate nohighlight">\(\bfV\)</span> in <a class="reference internal" href="#equation-eigenmat">(5.4)</a> is invertible, then</p>
 <div class="math notranslate nohighlight" id="equation-fs-eq-eigenfundamental">
-<span class="eqno">(5.7)<a class="headerlink" href="#equation-fs-eq-eigenfundamental" title="Permalink to this equation">¶</a></span>\[\bfX(t) = \begin{bmatrix} 
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-fs-eq-eigenfundamental" title="Permalink to this equation">¶</a></span>\[\bfX(t) = \begin{bmatrix} 
 e^{t \lambda_1} \mathbf{v}_1 &amp; \cdots &amp; e^{t \lambda_n} \mathbf{v}_n
 \end{bmatrix}\]</div>
 <p>is a fundamental matrix for <span class="math notranslate nohighlight">\(\mathbf{x}'=\mathbf{A}\mathbf{x}\)</span>. Hence the general solution can be expressed as</p>
 <div class="math notranslate nohighlight" id="equation-fs-eq-eigengeneral">
-<span class="eqno">(5.8)<a class="headerlink" href="#equation-fs-eq-eigengeneral" title="Permalink to this equation">¶</a></span>\[\mathbf{x}(t) = \bfX(t)\mathbf{c} = c_1 e^{t \lambda_1} \mathbf{v}_1 + \cdots + c_n e^{t \lambda_n} \mathbf{v}_n.\]</div>
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-fs-eq-eigengeneral" title="Permalink to this equation">¶</a></span>\[\mathbf{x}(t) = \bfX(t)\mathbf{c} = c_1 e^{t \lambda_1} \mathbf{v}_1 + \cdots + c_n e^{t \lambda_n} \mathbf{v}_n.\]</div>
 </div></div><div class="tip admonition" id="fs-ex-eigen-real">
 <p class="admonition-title">Example</p>
 <p>Given that</p>
@@ -564,7 +564,7 @@ Solution<div class="summary-down docutils">
 <div class="proof proof-type-theorem" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem 5.10</span>
+        <span class="proof-type">Theorem 5.9</span>
         
     </div><div class="proof-content">
 <p>If the eigenvalues of <span class="math notranslate nohighlight">\(\bfA\)</span> are distinct, then their corresponding eigenvectors are the columns of an invertible matrix.</p>

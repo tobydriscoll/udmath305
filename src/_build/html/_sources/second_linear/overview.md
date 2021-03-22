@@ -7,8 +7,8 @@ First-order ODEs are all about growth and decay. Second-order ODEs add oscillati
 ## Glossary
 
 ```{glossary}
-amplitude-phase form
-  Expression of a sum of sin-cos or complex exponentials as an amplitude times a cosine with phase shift.
+amplitude–phase form
+  Expression of a sum of sin-cos or onjugate complex exponentials as an amplitude times a cosine with phase shift.
 
 angular frequency
   Expression of frequency as radians per second, as opposed to cycles per second; mathematical default sense of frequency.

@@ -1,18 +1,5 @@
----
-jupytext:
-  cell_metadata_filter: -all
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: '0.12'
-    jupytext_version: 1.5.1
-kernelspec:
-  display_name: Matlab
-  language: matlab
-  name: matlab
----
-# Undamped oscillations
+(section-second-undamped)=
+# Pure oscillation
 
 The equation 
 
@@ -32,7 +19,7 @@ $$
 x(t) = c_1 e^{i\omega_0 t} + c_2 e^{-i\omega_0 t},
 $$
 
-where $c_1$ is complex, and $c_2=\overline{c_1}$ to ensure a real-valued solution. For any complex $z=u+iv$, 
+where $c_1$ is complex, and $c_2=\overline{c_1}$ ensures a real-valued solution. For any complex $z=u+iv$, 
 
 $$
 z+\overline{z} = u + iv + u - iv = 2u = 2\Re(z).
@@ -50,13 +37,13 @@ having absorbed a factor of 2 into the arbitrary constant.
 Suppose we define
 
 $$
-a_1 = \Re(c_1), \; a_2=-\Re(c_1) \quad \Longleftrightarrow \quad c_1 = a_1 - i a_2.
+a_1 = \Re(c_1), \; a_2=-\Im(c_1) \quad \Longleftrightarrow \quad c_1 = a_1 - i a_2.
 $$
 
 Then by Euler's identity,
 
 $$
-c_1 e^{i\omega_0 t} = (a_1 - i a_2)[ \cos(\omega_0 t) + i \sin(\omega_0 t) ] = a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t) + i[\cdots],
+c_1 e^{i\omega_0 t} = (a_1 - i a_2)[ \cos(\omega_0 t) + i \sin(\omega_0 t) ] = a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t) + i\,[\cdots],
 $$
 
 and the stuff in the final brackets disappears upon taking the real part. So equivalently to {eq}`second-undamped-complex`, we can write
@@ -73,7 +60,7 @@ There is an important *third* equivalent form.
 Returning to {eq}`second-undamped-complex`, let us write $c_1$ in polar form:
 
 $$
-c_1 = R e^{i\theta} \Leftrightarrow R = |c_1|, \, e^{i \theta} = \frac{c_1}{|c_1|}.
+c_1 = R e^{i\theta} \quad \Longleftrightarrow \quad  R = |c_1|, \: e^{i \theta} = \frac{c_1}{|c_1|}.
 $$
 
 Then
@@ -85,14 +72,14 @@ x(t) & = \Re \left( c_1 e^{i\omega_0 t} \right)\\
 & = R \cos(\omega_0 t+\theta),
 \end{align*}
 
-where the last line follow's from Euler's identity. This is the {term}`amplitude–phase` form,
+where the last line follows from Euler's identity. This is the {term}`amplitude–phase form`,
 
 :::{math}
 :label: second-undamped-ampphase
 x(t) = R \cos(\omega_0 t+\theta), \qquad R,\theta \in \mathbb{R}.
 :::
 
-A useful aspect of this form is that the solution oscillates between $\pm R$, which is the {term}`amplitude` of the oscillation. 
+A useful aspect of this form is that the solution oscillates between $\pm R$, which is the **amplitude** of the oscillation. 
 
 Equations {eq}`second-undamped-complex`, {eq}`second-undamped-sincos`, and {eq}`second-undamped-ampphase` are all equivalent expressions of the general solution. We can convert between them using the identities
 

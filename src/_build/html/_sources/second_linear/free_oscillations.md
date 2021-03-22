@@ -114,9 +114,7 @@ x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = 0.
 
 A similar derivation can be done starting from the pendulum or AC circuit equations.
 
-## Range of oscillatory behavior
-
-The roots of the homogeneous equation are  
+The characteristic roots of the ODE are  
 
 ```{math}
 \lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1}.
@@ -124,41 +122,9 @@ The roots of the homogeneous equation are
 
 The discussion now splits into four cases, marked by increasing values of $Z$.
 
-### Undamped oscillator, $Z=0$
+## Undamped oscillator, $Z=0$
 
-The first case for {eq}`secondlin-unified-free` is $Z=0$, which is the idealization of no mechanical damping or friction (or resistance, in a circuit). A key characteristic of this case is that energy is conserved.
-
-The roots are $\pm i\omega_0$, and a general solution can be expressed three equivalent ways:
-
-\begin{align*}
-x_h(t) & = \Re \left[  c_1 e^{i\omega_0 t} \right], \\
-& = a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t), \\
-& =  R \cos(\omega_0 t + \theta).
-\end{align*}
-
-Thus the undamped case results in pure oscillation at frequency $\omega_0$. This is known as {term}`simple harmonic motion`.
-
-::::{admonition} Example
-:class: tip
-Find the solution in amplitude-phase form of $2x''+32x=0$ with $x(0)=1$, $x'(0)=-8$.
-
-:::{dropdown} Solution
-
-First divide through by 2 to get the standard form, $x''+16x=0$. Then we have $\omega_0=\sqrt{16}=4$, so
-
-$$
-x(t) = a_1 \cos(4 t) + a_2 \sin(4 t).
-$$
-
-We then derive $1=x(0)=a_1$ and $-8=x'(0)=4a_2$, so
-
-$$
-x(t) = \cos(4 t) -2 \sin(4 t).
-$$
-
-Converting $(1,-2)$ to polar form gives $R=\sqrt{5}$ and $\theta = \arctan(-2/1)$.
-:::
-::::
+The case $x'' + \omega_0^2x = 0$ was discussed in {numref}`section-second-undamped`. It results in pure oscillation at frequency $\omega_0$. This is known as {term}`simple harmonic motion`.
 
 ::::{admonition} Example
 :class: tip
@@ -191,9 +157,10 @@ R^2 = [R\cos(\theta)]^2 + [R\sin(\theta)]^2 =  0.04 + \omega_0^{-2},
 ```
 
 which works out to $R \approx 0.256 \text{m}$.
+:::
 ::::
 
-### Underdamped oscillator, $0<Z<1$
+## Underdamped oscillator, $0<Z<1$
 
 For $0< Z < 1$ the roots of {eq}`secondlin-unified-free` are complex, with negative real part:
 
@@ -201,17 +168,17 @@ For $0< Z < 1$ the roots of {eq}`secondlin-unified-free` are complex, with negat
 \lambda_{1,2} = -Z \omega_0 \pm i \omega_0 \sqrt{1-Z^2}.
 ```
 
-Defining $\omega_d=\omega_0 \sqrt{1-Z^2}$, the general homogeneous solution is therefore
+Define the damped frequency $\omega_d=\omega_0 \sqrt{1-Z^2}$. The amplitude–phase form easily generalizes to
 
 ```{math}
-x_h(t) = R e^{-Z\omega_0 t} \cos( \omega_d t + \theta),
+x_h(t) = R\, e^{-Z\omega_0 t} \cos( \omega_d t + \theta),
 ```
 
-or an equivalent form. This solution is pseudoperiodic, combining oscillation at frequency $\omega_d < \omega_0$ inside an exponential decay envelope. This situation is called an {term}`underdamped` oscillator.
+where $R$ and $\theta$ are determined by the initial conditions. This solution is pseudoperiodic, combining oscillation at frequency $\omega_d < \omega_0$ inside an exponential decay envelope. We call this an {term}`underdamped oscillator`.
 
-### Critically damped oscillator, $Z=1$
+## Critically damped oscillator, $Z=1$
 		
-At $Z=1$ the complex roots collapse to a double real root,
+At $Z=1$ the complex roots coalesce into a double real root,
 
 ```{math}
 \lambda_1 = \lambda_2 = -\omega_0,
@@ -225,7 +192,7 @@ x_h(t) = e^{-\omega_0 t} (c_1 + c_2 t).
 
 There is no longer any oscillation present, and we have a {term}`critically damped` system. The linear growth of $c_2 t$ doesn't make much of a difference against the exponential decay, and $x_h\to0$ as $t\to\infty$.
 
-### Overdamped, $Z>1$
+## Overdamped, $Z>1$
 
 For $Z>1$ the roots are
 
@@ -317,10 +284,10 @@ thus $a_2 = -0.4003$. The motion is therefore given by $x(t)=-0.4003\, e^{-0.8 t
 Here is a short video showing how solutions of 
 
 $$
-x'' + bx' + cx = 0
+x'' + bx' + c x = 0
 $$
 
-vary with the parameters $b$ and $c$, or equivalently, $\omega_0$ and $Z$. (I use the term "eigenvalues" to mean characteristic values here.) 
+vary with the parameters $b$ and $c$, or equivalently, $\omega_0$ and $Z$. (I use the term "eigenvalues" to mean characteristic values of the ODE.) 
 
 <div>
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_qa9wnwpt&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_eyxlu0a8" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe>
