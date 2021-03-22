@@ -75,13 +75,13 @@ These are notes on MATH 305 at UD by Toby Driscoll. All rights reserved.
 | Date    | Section                                       | Kapitula | Boyce & DiPrima | Suggested practice |
 | ------- | --------------------------------------------- | -------- | --------------- | ------------------ |
 | Apr. 27 | [Overview](first_system/overview)             | --       |                 |                    |
-| Apr. 27 | [Overview](first_system/order_dimension)      | --       |                 |                    |
-| Apr. 27 | [Overview](first_system/structure)            | --       |                 |                    |
-| Apr. 27 | [Overview](first_system/homogeneous)          | --       |                 |                    |
-| May 4   | [Overview](first_system/const_coeff)          | --       |                 |                    |
-| May 4   | [Overview](first_system/phase_plane)          | --       |                 |                    |
-| N/A     | [Overview](first_system/matrix_exp)           | --       |                 |                    |
-| N/A     | [Overview](first_system/variation_parameters) | --       |                 |                    |
+| Apr. 27 | [Order & dimension](first_system/order_dimension)      | --       |                 |                    |
+| Apr. 27 | [Solution structure](first_system/structure)            | --       |                 |                    |
+| Apr. 27 | [Homogeneous solutions](first_system/homogeneous)          | --       |                 |                    |
+| May 4   | [Constant coefficients](first_system/const_coeff)          | --       |                 |                    |
+| May 4   | [Phase plane](first_system/phase_plane)          | --       |                 |                    |
+| N/A     | ~~[Matrix exponential](first_system/matrix_exp)~~           | --       |                 |                    |
+| N/A     | ~~[Variation of parameters](first_system/variation_parameters)~~ | --       |                 |                    |
 
 ### Nonlinear ODEs
 
