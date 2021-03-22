@@ -478,12 +478,20 @@
                 
   <div class="section" id="homogeneous-solutions">
 <h1><span class="section-number">3. </span>Homogeneous solutions<a class="headerlink" href="#homogeneous-solutions" title="Permalink to this headline">¶</a></h1>
-<p>We now look for solutions of the homogeneous equation</p>
+<p>The linear second-order problem <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> has a nice structure, but only a few such problems are straightforward to solve. We will now, and for the rest of the chapter, limit ourselves to the <a class="reference internal" href="overview.html#term-constant-coefficient"><span class="xref std std-term">constant-coefficient</span></a> problem</p>
+<div class="math notranslate nohighlight" id="equation-secondlin-linear-cc">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-secondlin-linear-cc" title="Permalink to this equation">¶</a></span>\[x'' + bx' + k x = f(t),\]</div>
+<p>in which <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are constant, and <span class="math notranslate nohighlight">\(f(t)\)</span> is a forcing function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In <a class="reference internal" href="#equation-secondlin-linear-cc">(3.3)</a> the coefficient <span class="math notranslate nohighlight">\(b\)</span> has units <span class="math notranslate nohighlight">\(1/T\)</span>, the coefficient <span class="math notranslate nohighlight">\(k\)</span> has units <span class="math notranslate nohighlight">\(1/T^2\)</span>, and <span class="math notranslate nohighlight">\(f(t)\)</span> has units <span class="math notranslate nohighlight">\(X/T^2\)</span>, where <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(T\)</span> are the units of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(t\)</span>, respectively.</p>
+</div>
+<p>We start with solutions of the homogeneous equation</p>
 <div class="math notranslate nohighlight">
 \[
-x'' + b x' +  k x = 0,
+x'' + b x' +  k x = 0.
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are constants. We will use <span class="math notranslate nohighlight">\(x_h\)</span> to name the solution, as a reminder that the ODE is homogeneous.</p>
+<p>We will use <span class="math notranslate nohighlight">\(x_h\)</span> to name the general solution, as a reminder that the ODE is homogeneous.</p>
 <p>All the solutions to first-order linear ODEs were exponential functions. The same is true for second-order linear problems, though with a significant caveat.</p>
 <div class="section" id="characteristic-polynomial">
 <h2><span class="section-number">3.1. </span>Characteristic polynomial<a class="headerlink" href="#characteristic-polynomial" title="Permalink to this headline">¶</a></h2>
@@ -527,9 +535,9 @@ p(s) = s^2 + b s + k.
     </div><div class="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\lambda_1,\lambda_2\)</span> be the characteristic values of <span class="math notranslate nohighlight">\(\opA\)</span>, where <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx.\)</span> If  <span class="math notranslate nohighlight">\(\lambda_1\neq \lambda_2\)</span>, then the general solution of <span class="math notranslate nohighlight">\(\opA[x]= 0\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-homogeneous-distinct">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-secondlin-homogeneous-distinct" title="Permalink to this equation">¶</a></span>\[x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}.\]</div>
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-secondlin-homogeneous-distinct" title="Permalink to this equation">¶</a></span>\[x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}.\]</div>
 </div></div><p>By analogy with linear algebra, we may say that <span class="math notranslate nohighlight">\(e^{\lambda_1 t}\)</span> and <span class="math notranslate nohighlight">\(e^{\lambda_2 t}\)</span> form a basis for the homogeneous solution, as all such solutions are a linear combination of them and neither can be omitted.</p>
-<p>We have to handle the case <span class="math notranslate nohighlight">\(\lambda_1=\lambda_2\)</span> separately. (You might recall that a double eigenvalue was a hassle for matrices as well.) Without fuss, we jump to the result, which is easy to verify by substitution.</p>
+<p>We have to handle the case <span class="math notranslate nohighlight">\(\lambda_1=\lambda_2\)</span> separately. (You might recall that a double eigenvalue was a hassle for matrices as well.) Without fuss, we jump to the result, which is easy to derive via reduction of order.</p>
 <div class="proof proof-type-theorem" id="id3">
 <span id="theorem-secondlin-homogeneous-repeated"></span>
     <div class="proof-title">
@@ -540,7 +548,7 @@ p(s) = s^2 + b s + k.
     </div><div class="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\lambda\)</span> be a double root of <span class="math notranslate nohighlight">\(\opA\)</span>, where <span class="math notranslate nohighlight">\(\opA[x]=x''+bx'+kx.\)</span> The general solution of <span class="math notranslate nohighlight">\(\opA[x]= 0\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-homogeneous-repeated">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-secondlin-homogeneous-repeated" title="Permalink to this equation">¶</a></span>\[x_h(t) = e^{\lambda t} \bigl( c_1 t + c_2 \bigr).\]</div>
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-secondlin-homogeneous-repeated" title="Permalink to this equation">¶</a></span>\[x_h(t) = e^{\lambda t} \bigl( c_1 t + c_2 \bigr).\]</div>
 </div></div><div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>We could think of the trivial problem <span class="math notranslate nohighlight">\(x''=0\)</span> as being linear with <span class="math notranslate nohighlight">\(b=k=0\)</span>. The characteristic polynomial is <span class="math notranslate nohighlight">\(s^2\)</span>, which makes zero a double root. So the general solution is</p>
@@ -590,8 +598,8 @@ x(t) = c_1 e^{\sqrt{5}\, t} + c_2 e^{-\sqrt{5}\, t}.
 </div>
 <div class="section" id="complex-characteristic-values">
 <h2><span class="section-number">3.2. </span>Complex characteristic values<a class="headerlink" href="#complex-characteristic-values" title="Permalink to this headline">¶</a></h2>
-<p>All seems well, until you remember that the roots of a real quadratic polynomial may come as a complex conjugate pair. What then are we to make of <a class="reference internal" href="#equation-secondlin-homogeneous-distinct">(3.3)</a> or <a class="reference internal" href="#equation-secondlin-homogeneous-repeated">(3.4)</a>? That’s what makes second-order problems really different from first-order ones, and we tackle it next.</p>
-</div>
+<p>All seems well, until you remember that the roots of a real quadratic polynomial may come as a complex conjugate pair. What then are we to make of <a class="reference internal" href="#equation-secondlin-homogeneous-distinct">(3.4)</a> or <a class="reference internal" href="#equation-secondlin-homogeneous-repeated">(3.5)</a>? That’s what makes second-order problems really different from first-order ones, and we tackle it next.</p>
+<div style="max-width:608px"><div style="position:relative;padding-bottom:66.118421052632%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_bfvpfc0l&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_k2ba9qa3" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div></div>
 </div>
 
     <script type="text/x-thebe-config">

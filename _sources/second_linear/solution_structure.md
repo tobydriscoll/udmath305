@@ -127,19 +127,4 @@ for arbitrary constants $c_1$ and $c_2$.
 
 It's too deep for us to go into a true proof of this theorem. You might be tempted to do another reduction of order starting from $x_2$ in order to get a third solution. Nice try, but you don't get any new terms that change {eq}`secondlin-genhomog`.
 
-## Constant coefficients
-
-The linear second-order problem $\opA[x]=f$ has a nice structure, but only a few such problems are straightforward to solve. We will now, and for the rest of the chapter, limit ourselves to the {term}`constant-coefficient` problem
-
-```{math}
-:label: secondlin-linear-cc
-x'' + bx' + k x = f(t),
-```
-
-in which $b$ and $k$ are constant, and $f(t)$ is a forcing function.
-
-:::{note}
-In {eq}`secondlin-linear-cc` the coefficient $b$ has units $1/T$, the coefficient $k$ has units $1/T^2$, and $f(t)$ has units $X/T^2$, where $X$ and $T$ are the units of $x$ and $t$, respectively.
-:::
-
-We will deal with the homogeneous and particular parts in turn. Each is a direct extension of what we did for first-order problems, but there are some hurdles we must clear to make that fact transparent.
+<div style="max-width:608px"><div style="position:relative;padding-bottom:66.118421052632%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_kehj3fgn&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_qyirc924" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
