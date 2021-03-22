@@ -1,12 +1,25 @@
 # Homogeneous solutions
 
-We now look for solutions of the homogeneous equation
+The linear second-order problem $\opA[x]=f$ has a nice structure, but only a few such problems are straightforward to solve. We will now, and for the rest of the chapter, limit ourselves to the {term}`constant-coefficient` problem
+
+```{math}
+:label: secondlin-linear-cc
+x'' + bx' + k x = f(t),
+```
+
+in which $b$ and $k$ are constant, and $f(t)$ is a forcing function.
+
+:::{note}
+In {eq}`secondlin-linear-cc` the coefficient $b$ has units $1/T$, the coefficient $k$ has units $1/T^2$, and $f(t)$ has units $X/T^2$, where $X$ and $T$ are the units of $x$ and $t$, respectively.
+:::
+
+We start with solutions of the homogeneous equation
 
 $$
-x'' + b x' +  k x = 0,
+x'' + b x' +  k x = 0.
 $$
 
-where $b$ and $k$ are constants. We will use $x_h$ to name the solution, as a reminder that the ODE is homogeneous.
+We will use $x_h$ to name the general solution, as a reminder that the ODE is homogeneous.
 
 All the solutions to first-order linear ODEs were exponential functions. The same is true for second-order linear problems, though with a significant caveat.
 
@@ -55,7 +68,7 @@ x_h(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}.
 
 By analogy with linear algebra, we may say that $e^{\lambda_1 t}$ and $e^{\lambda_2 t}$ form a basis for the homogeneous solution, as all such solutions are a linear combination of them and neither can be omitted.
 
-We have to handle the case $\lambda_1=\lambda_2$ separately. (You might recall that a double eigenvalue was a hassle for matrices as well.) Without fuss, we jump to the result, which is easy to verify by substitution.
+We have to handle the case $\lambda_1=\lambda_2$ separately. (You might recall that a double eigenvalue was a hassle for matrices as well.) Without fuss, we jump to the result, which is easy to derive via reduction of order.
 
 (theorem-secondlin-homogeneous-repeated)=
 
@@ -113,3 +126,5 @@ It's easy to conclude from here that $c_1=c_2=3$. In general we might have to so
 ## Complex characteristic values
 
 All seems well, until you remember that the roots of a real quadratic polynomial may come as a complex conjugate pair. What then are we to make of {eq}`secondlin-homogeneous-distinct` or {eq}`secondlin-homogeneous-repeated`? That's what makes second-order problems really different from first-order ones, and we tackle it next.
+
+<div style="max-width:608px"><div style="position:relative;padding-bottom:66.118421052632%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_bfvpfc0l&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_k2ba9qa3" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>

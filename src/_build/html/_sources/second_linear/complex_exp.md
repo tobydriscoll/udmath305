@@ -93,7 +93,7 @@ where $|z|$ is the modulus (distance from origin in the plane). Since \frac{z}{|
 
 ```{math}
 :label: secondlin-polar
-z = |z| e^{i\theta}.
+z = |z|\, e^{i\theta}.
 ```
 
 We call {eq}`secondlin-polar` the {term}`polar form` of a complex number, because it expresses $z$ as a distance from zero and an angle from the positive Re axis. Just as with any point in the plane, we can express a complex number either in Cartesian form using Re and Im parts, or in polar form using modulus and Euler's identity.
@@ -103,7 +103,7 @@ We call {eq}`secondlin-polar` the {term}`polar form` of a complex number, becaus
 Suppose $r$ is a positive real number. Then $-r$ lies at a distance $r$ from the origin along the negative real axis. Hence
 
 $$
--r = |r| e^{i\pi}.
+-r = |r|\, e^{i\pi}.
 $$
 
 Supposing that we may take the log of both sides, we get
@@ -292,3 +292,5 @@ Hence the IVP solution is $2\cos(3t) - 4\sin(3t).$
 ::::
 
 Since complex exponentials are much less familiar to you than sin and cos, the real form might seem more appealing to you. Don't be so quick to jump back there. Not only is the complex form the point of view that unifies all the second-order linear problems we solve under the exponential umbrella, but in some cases it greatly simplifies expressions and algebra.
+
+<div style="max-width:608px"><div style="position:relative;padding-bottom:66.118421052632%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_k38u7wfb&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_3wvcsazj" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
