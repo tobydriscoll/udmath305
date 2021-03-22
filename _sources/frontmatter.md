@@ -56,7 +56,7 @@ These are notes on MATH 305 at UD by Toby Driscoll. All rights reserved.
 | Apr. 6  | [Solution structure](second_linear/solution_structure)         | --       |                 |                                          |
 | Apr. 6  | [Homogeneous solutions](second_linear/homogeneous)             | --       | 3.1,3.4         | BD 3.1: 1-6, 9-12; 3.4: 1-2, 11-12, 18   |
 | Apr. 13 | [Complex exponentials](second_linear/complex_exp)              | 1.11     | 3.3             | BD 3.3: 1-4, 7-9, 17-19                  |
-| Apr. 13 | [Amplitude and phase](second_linear/phase_amplitude)           | --       |                 | BD 3.7: 1-3, 16                          |
+| Apr. 13 | [Pure oscillation](second_linear/undamped)           | --       |                 | BD 3.7: 1-3, 16                          |
 | Apr. 13 | [Free oscillations](second_linear/free_oscillations)           | 4.3.2    | 3.7             | BD 3.7: 6, 7, 13, 17                     |
 | Apr. 13 | [Undetermined coefficients](second_linear/undetermined_coeffs) | 4.2.2    |                 | K4.2: 1(a-c), 2(a-c); BD 3.5: 1-3, 15-16 |
 | Apr. 13 | [Forced oscillations](second_linear/forced_oscillations)       | 4.3.3    | 3.8             | BD 3.8: 5, 9, 10, 12                     |

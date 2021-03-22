@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7. Undetermined coefficients" href="undetermined_coeffs.html" />
-    <link rel="prev" title="5. Amplitude and phase" href="phase_amplitude.html" />
+    <link rel="prev" title="5. Undamped oscillations" href="undamped.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -292,8 +292,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="phase_amplitude.html">
-   5. Amplitude and phase
+  <a class="reference internal" href="undamped.html">
+   5. Undamped oscillations
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -474,43 +474,36 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#range-of-oscillatory-behavior">
-   6.4. Range of oscillatory behavior
+  <a class="reference internal nav-link" href="#undamped-oscillator-z-0">
+   6.4. Undamped oscillator,
+   <span class="math notranslate nohighlight">
+    \(Z=0\)
+   </span>
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#undamped-oscillator-z-0">
-     6.4.1. Undamped oscillator,
-     <span class="math notranslate nohighlight">
-      \(Z=0\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#underdamped-oscillator-0-z-1">
-     6.4.2. Underdamped oscillator,
-     <span class="math notranslate nohighlight">
-      \(0&lt;Z&lt;1\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#critically-damped-oscillator-z-1">
-     6.4.3. Critically damped oscillator,
-     <span class="math notranslate nohighlight">
-      \(Z=1\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#overdamped-z-1">
-     6.4.4. Overdamped,
-     <span class="math notranslate nohighlight">
-      \(Z&gt;1\)
-     </span>
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#underdamped-oscillator-0-z-1">
+   6.5. Underdamped oscillator,
+   <span class="math notranslate nohighlight">
+    \(0&lt;Z&lt;1\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#critically-damped-oscillator-z-1">
+   6.6. Critically damped oscillator,
+   <span class="math notranslate nohighlight">
+    \(Z=1\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overdamped-z-1">
+   6.7. Overdamped,
+   <span class="math notranslate nohighlight">
+    \(Z&gt;1\)
+   </span>
+  </a>
  </li>
 </ul>
 
@@ -580,47 +573,14 @@
 <div class="math notranslate nohighlight" id="equation-secondlin-unified-free">
 <span class="eqno">(6.3)<a class="headerlink" href="#equation-secondlin-unified-free" title="Permalink to this equation">¶</a></span>\[x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = 0.\]</div>
 <p>A similar derivation can be done starting from the pendulum or AC circuit equations.</p>
-</div>
-<div class="section" id="range-of-oscillatory-behavior">
-<h2><span class="section-number">6.4. </span>Range of oscillatory behavior<a class="headerlink" href="#range-of-oscillatory-behavior" title="Permalink to this headline">¶</a></h2>
-<p>The roots of the homogeneous equation are</p>
+<p>The characteristic roots of the ODE are</p>
 <div class="math notranslate nohighlight">
 \[\lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1}.\]</div>
 <p>The discussion now splits into four cases, marked by increasing values of <span class="math notranslate nohighlight">\(Z\)</span>.</p>
-<div class="section" id="undamped-oscillator-z-0">
-<h3><span class="section-number">6.4.1. </span>Undamped oscillator, <span class="math notranslate nohighlight">\(Z=0\)</span><a class="headerlink" href="#undamped-oscillator-z-0" title="Permalink to this headline">¶</a></h3>
-<p>The first case for <a class="reference internal" href="#equation-secondlin-unified-free">(6.3)</a> is <span class="math notranslate nohighlight">\(Z=0\)</span>, which is the idealization of no mechanical damping or friction (or resistance, in a circuit). A key characteristic of this case is that energy is conserved.</p>
-<p>The roots are <span class="math notranslate nohighlight">\(\pm i\omega_0\)</span>, and a general solution can be expressed three equivalent ways:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-x_h(t) &amp; = \Re \left[  c_1 e^{i\omega_0 t} \right], \\
-&amp; = a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t), \\
-&amp; =  R \cos(\omega_0 t + \theta).
-\end{align*}\]</div>
-<p>Thus the undamped case results in pure oscillation at frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>. This is known as <a class="reference internal" href="overview.html#term-simple-harmonic-motion"><span class="xref std std-term">simple harmonic motion</span></a>.</p>
-<div class="tip admonition">
-<p class="admonition-title">Example</p>
-<p>Find the solution in amplitude-phase form of <span class="math notranslate nohighlight">\(2x''+32x=0\)</span> with <span class="math notranslate nohighlight">\(x(0)=1\)</span>, <span class="math notranslate nohighlight">\(x'(0)=-8\)</span>.</p>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Solution<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text">First divide through by 2 to get the standard form, <span class="math notranslate nohighlight">\(x''+16x=0\)</span>. Then we have <span class="math notranslate nohighlight">\(\omega_0=\sqrt{16}=4\)</span>, so</p>
-<div class="math notranslate nohighlight">
-\[
-x(t) = a_1 \cos(4 t) + a_2 \sin(4 t).
-\]</div>
-<p class="card-text">We then derive <span class="math notranslate nohighlight">\(1=x(0)=a_1\)</span> and <span class="math notranslate nohighlight">\(-8=x'(0)=4a_2\)</span>, so</p>
-<div class="math notranslate nohighlight">
-\[
-x(t) = \cos(4 t) -2 \sin(4 t).
-\]</div>
-<p class="card-text">Converting <span class="math notranslate nohighlight">\((1,-2)\)</span> to polar form gives <span class="math notranslate nohighlight">\(R=\sqrt{5}\)</span> and <span class="math notranslate nohighlight">\(\theta = \arctan(-2/1)\)</span>.</p>
 </div>
-</details></div>
+<div class="section" id="undamped-oscillator-z-0">
+<h2><span class="section-number">6.4. </span>Undamped oscillator, <span class="math notranslate nohighlight">\(Z=0\)</span><a class="headerlink" href="#undamped-oscillator-z-0" title="Permalink to this headline">¶</a></h2>
+<p>The case <span class="math notranslate nohighlight">\(x'' + \omega_0^2x = 0\)</span> was discussed in <a class="reference internal" href="undamped.html#section-second-undamped"><span class="std std-numref">Section 5</span></a>. It results in pure oscillation at frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>. This is known as <a class="reference internal" href="overview.html#term-simple-harmonic-motion"><span class="xref std std-term">simple harmonic motion</span></a>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>When a 2 kg mass is hung on a spring, the spring stretches by 0.25 m. What is the natural frequency of the mass-spring system? Suppose the mass is pulled down 0.2 m past equilibrium and then thrown upward at 1 m/s. What is the amplitude of the motion?</p>
@@ -653,18 +613,18 @@ x'' + 4g x   = 0.
 </details></div>
 </div>
 <div class="section" id="underdamped-oscillator-0-z-1">
-<h3><span class="section-number">6.4.2. </span>Underdamped oscillator, <span class="math notranslate nohighlight">\(0&lt;Z&lt;1\)</span><a class="headerlink" href="#underdamped-oscillator-0-z-1" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">6.5. </span>Underdamped oscillator, <span class="math notranslate nohighlight">\(0&lt;Z&lt;1\)</span><a class="headerlink" href="#underdamped-oscillator-0-z-1" title="Permalink to this headline">¶</a></h2>
 <p>For <span class="math notranslate nohighlight">\(0&lt; Z &lt; 1\)</span> the roots of <a class="reference internal" href="#equation-secondlin-unified-free">(6.3)</a> are complex, with negative real part:</p>
 <div class="math notranslate nohighlight">
 \[\lambda_{1,2} = -Z \omega_0 \pm i \omega_0 \sqrt{1-Z^2}.\]</div>
-<p>Defining <span class="math notranslate nohighlight">\(\omega_d=\omega_0 \sqrt{1-Z^2}\)</span>, the general homogeneous solution is therefore</p>
+<p>Define the damped frequency <span class="math notranslate nohighlight">\(\omega_d=\omega_0 \sqrt{1-Z^2}\)</span>. The amplitude–phase form easily generalizes to</p>
 <div class="math notranslate nohighlight">
-\[x_h(t) = R e^{-Z\omega_0 t} \cos( \omega_d t + \theta),\]</div>
-<p>or an equivalent form. This solution is pseudoperiodic, combining oscillation at frequency <span class="math notranslate nohighlight">\(\omega_d &lt; \omega_0\)</span> inside an exponential decay envelope. This situation is called an <span class="xref std std-term">underdamped</span> oscillator.</p>
+\[x_h(t) = R\, e^{-Z\omega_0 t} \cos( \omega_d t + \theta),\]</div>
+<p>where <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> are determined by the initial conditions. This solution is pseudoperiodic, combining oscillation at frequency <span class="math notranslate nohighlight">\(\omega_d &lt; \omega_0\)</span> inside an exponential decay envelope. We call this an <a class="reference internal" href="overview.html#term-underdamped-oscillator"><span class="xref std std-term">underdamped oscillator</span></a>.</p>
 </div>
 <div class="section" id="critically-damped-oscillator-z-1">
-<h3><span class="section-number">6.4.3. </span>Critically damped oscillator, <span class="math notranslate nohighlight">\(Z=1\)</span><a class="headerlink" href="#critically-damped-oscillator-z-1" title="Permalink to this headline">¶</a></h3>
-<p>At <span class="math notranslate nohighlight">\(Z=1\)</span> the complex roots collapse to a double real root,</p>
+<h2><span class="section-number">6.6. </span>Critically damped oscillator, <span class="math notranslate nohighlight">\(Z=1\)</span><a class="headerlink" href="#critically-damped-oscillator-z-1" title="Permalink to this headline">¶</a></h2>
+<p>At <span class="math notranslate nohighlight">\(Z=1\)</span> the complex roots coalesce into a double real root,</p>
 <div class="math notranslate nohighlight">
 \[\lambda_1 = \lambda_2 = -\omega_0,\]</div>
 <p>with general homogeneous solution</p>
@@ -673,7 +633,7 @@ x'' + 4g x   = 0.
 <p>There is no longer any oscillation present, and we have a <a class="reference internal" href="overview.html#term-critically-damped"><span class="xref std std-term">critically damped</span></a> system. The linear growth of <span class="math notranslate nohighlight">\(c_2 t\)</span> doesn’t make much of a difference against the exponential decay, and <span class="math notranslate nohighlight">\(x_h\to0\)</span> as <span class="math notranslate nohighlight">\(t\to\infty\)</span>.</p>
 </div>
 <div class="section" id="overdamped-z-1">
-<h3><span class="section-number">6.4.4. </span>Overdamped, <span class="math notranslate nohighlight">\(Z&gt;1\)</span><a class="headerlink" href="#overdamped-z-1" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">6.7. </span>Overdamped, <span class="math notranslate nohighlight">\(Z&gt;1\)</span><a class="headerlink" href="#overdamped-z-1" title="Permalink to this headline">¶</a></h2>
 <p>For <span class="math notranslate nohighlight">\(Z&gt;1\)</span> the roots are</p>
 <div class="math notranslate nohighlight">
 \[\lambda_{1,2} = -Z \omega_0 \pm \omega_0 \sqrt{Z^2-1},\]</div>
@@ -765,13 +725,12 @@ x_h(t) = a_1 e^{-0.8 t} \cos(1.249 t) + a_2 e^{-0.8 t} \sin(1.249 t).
 <p>Here is a short video showing how solutions of</p>
 <div class="math notranslate nohighlight">
 \[
-x'' + bx' + cx = 0
+x'' + bx' + c x = 0
 \]</div>
-<p>vary with the parameters <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, or equivalently, <span class="math notranslate nohighlight">\(\omega_0\)</span> and <span class="math notranslate nohighlight">\(Z\)</span>. (I use the term “eigenvalues” to mean characteristic values here.)</p>
+<p>vary with the parameters <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>, or equivalently, <span class="math notranslate nohighlight">\(\omega_0\)</span> and <span class="math notranslate nohighlight">\(Z\)</span>. (I use the term “eigenvalues” to mean characteristic values of the ODE.)</p>
 <div>
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_qa9wnwpt&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_eyxlu0a8" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe>
 </div></div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -802,7 +761,7 @@ x'' + bx' + cx = 0
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="phase_amplitude.html" title="previous page"><span class="section-number">5. </span>Amplitude and phase</a>
+    <a class='left-prev' id="prev-link" href="undamped.html" title="previous page"><span class="section-number">5. </span>Undamped oscillations</a>
     <a class='right-next' id="next-link" href="undetermined_coeffs.html" title="next page"><span class="section-number">7. </span>Undetermined coefficients</a>
 
     </div>
