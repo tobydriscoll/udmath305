@@ -45,22 +45,51 @@ These are notes on MATH 305 at UD by Toby Driscoll. All rights reserved.
 | Mar. 30 | [Overview](steps/overview)                          | --       |                      |                                        |
 | Mar. 30 | [Unit step](steps/unit_step)                        | 5.1      | 6.3                  | K5.1.1, BD6.3: 11,13,15,20,22,33(hard) |
 | Mar. 30 | [Impulse](steps/impulse)                            | 5.1      | 6.5 (skip 2nd order) |                                        |
-| Apr. 6  | [Laplace transform](steps/laplace)                  | 5.2      |                      | K5.2: 2,3                              |
+| Apr. 6  | [Laplace transform](steps/laplace)                  | 5.2      | 6.1                  | K5.2: 2,3                              |
 | Apr. 6  | [Solutions by transform](steps/transform_solutions) | --       |                      |                                        |
 
 ### 2nd-order linear ODE
 
-<!-- | Date | Section | Kapitula | Boyce & DiPrima | Webassign |
-| -----   | --------                                                           | -------- | --------------- | --------- |
-| A-----6 | [----------------------------------------------------------------) | -------- | u-------------- | u-------- |
-| Apr. 6  | [Structure of solutions](second_linear/solution_structure.html)    | --       |                 |           |
-| Apr. 13 | [Homogeneous solutions](second_linear/homogeneous.html)            | --       |                 |           |
-| Apr. 13 | [Complex exponentials](second_linear/complex_exp.html)             | --       |                 |           |
-| Apr. 13 | [Amplitude and phase](second_linear/phase_amplitude.html)          | --       |                 |           |
-| Apr. 13 | [Free oscillations](second_linear/free_oscillations.html)          | --       |                 |           |
-| Apr. 20 | [Undetermined coefficients](second_linear/undetermined_coeff.html) | --       |                 |           |
-| Apr. 20 | [Forced oscillations](second_linear/forced_oscillations.html)      | --       |                 |           |  -->
+| Date    | Section                                                        | Kapitula | Boyce & DiPrima | Suggested practice                       |
+| ------- | -------------------------------------------------------------- | -------- | --------------- | ---------------------------------------- |
+| Apr. 6  | [Overview](second_linear/overview)                             | --       | --              |                                          |
+| Apr. 6  | [Solution structure](second_linear/solution_structure)         | --       |                 |                                          |
+| Apr. 6  | [Homogeneous solutions](second_linear/homogeneous)             | --       | 3.1,3.4         | BD 3.1: 1-6, 9-12; 3.4: 1-2, 11-12, 18   |
+| Apr. 13 | [Complex exponentials](second_linear/complex_exp)              | 1.11     | 3.3             | BD 3.3: 1-4, 7-9, 17-19                  |
+| Apr. 13 | [Amplitude and phase](second_linear/phase_amplitude)           | --       |                 | BD 3.7: 1-3, 16                          |
+| Apr. 13 | [Free oscillations](second_linear/free_oscillations)           | 4.3.2    | 3.7             | BD 3.7: 6, 7, 13, 17                     |
+| Apr. 13 | [Undetermined coefficients](second_linear/undetermined_coeffs) | 4.2.2    |                 | K4.2: 1(a-c), 2(a-c); BD 3.5: 1-3, 15-16 |
+| Apr. 13 | [Forced oscillations](second_linear/forced_oscillations)       | 4.3.3    | 3.8             | BD 3.8: 5, 9, 10, 12                     |
+
+### Laplace transforms
+
+| Date    | Section                                      | Kapitula | Boyce & DiPrima | Suggested practice                                          |
+| ------- | -------------------------------------------- | -------- | --------------- | ----------------------------------------------------------- |
+| Apr. 20 | [Overview](laplace/overview)                 | --       |                 |                                                             |
+| Apr. 20 | [2nd order ODEs](laplace/basic_solutions)    | 5.3      | 6.2             | K 5.3: 1(a),2(a), 3(a); 6.2: 1-4, 11-12                     |
+| Apr. 20 | [Steps and impulses](laplace/steps_impulses) | 5.3      | 6.3, 6.5        | K 5.3: 1(b-c),2(b-c); BD 6.3: 7,11,15,20-21; 6.5: 3(a)-6(a) |
+| Apr. 20 | [Convolution](laplace/convolution)           | 5.5      | 6.6             | K 5.5: 1(a-c), 2(a-c), 3(a-b) ; BD 6.6: 13-15               |
 
 ### Linear ODE systems
 
+| Date    | Section                                       | Kapitula | Boyce & DiPrima | Suggested practice |
+| ------- | --------------------------------------------- | -------- | --------------- | ------------------ |
+| Apr. 27 | [Overview](first_system/overview)             | --       |                 |                    |
+| Apr. 27 | [Overview](first_system/order_dimension)      | --       |                 |                    |
+| Apr. 27 | [Overview](first_system/structure)            | --       |                 |                    |
+| Apr. 27 | [Overview](first_system/homogeneous)          | --       |                 |                    |
+| May 4   | [Overview](first_system/const_coeff)          | --       |                 |                    |
+| May 4   | [Overview](first_system/phase_plane)          | --       |                 |                    |
+| N/A     | [Overview](first_system/matrix_exp)           | --       |                 |                    |
+| N/A     | [Overview](first_system/variation_parameters) | --       |                 |                    |
+
 ### Nonlinear ODEs
+
+| Date   | Section                                       | Kapitula | Boyce & DiPrima | Suggested practice |
+| ------ | --------------------------------------------- | -------- | --------------- | ------------------ |
+| May 4  | [Overview](nonlinear/overview)                | --       |                 |                    |
+| May 4  | [Autonomous equations](nonlinear/autonomous)  | --       |                 |                    |
+| May 11 | [Separable equations](nonlinear/separable)    | --       |                 |                    |
+| May 11 | [The logistic equation](nonlinear/logistic)   | --       |                 |                    |
+| May 11 | [Direction fields](nonlinear/directionfields) | --       |                 |                    |
+| May 11 | [Linearization](nonlinear/linearization)      | --       |                 |                    |
