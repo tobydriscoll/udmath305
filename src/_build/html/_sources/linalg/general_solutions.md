@@ -172,7 +172,7 @@ If we replace the last column with zeros, we get the RREF of the associated homo
 Returning to the original nonhomogeneous problem, we only need to find any one particular $\bfx_p$. It's easiest for us if we set all the free variables to be zero, in which case we get $x_1=x_3=0$ and $x_2 = 4$. Thus the general solution is
 
 ```{math}
-\bfx = \bfx_p + \bfx_h = \threevec{0}{4}{0} + c_1 \threevec{1}{2}{1} + c_2 \threevec{0}{0}{1}.
+\bfx = \bfx_p + \bfx_h = \threevec{0}{4}{0} + c_1 \threevec{1}{0}{0} + c_2 \threevec{0}{2}{1}.
 ```
 :::
 ::::
