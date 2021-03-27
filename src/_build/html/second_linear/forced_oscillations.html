@@ -473,9 +473,16 @@
      8.1.2. Resonance
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#damped">
+   8.2. Damped
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#damped">
-     8.1.3. Damped
+    <a class="reference internal nav-link" href="#pseudoresonance">
+     8.2.1. Pseudoresonance
     </a>
    </li>
   </ul>
@@ -497,19 +504,23 @@
 <p>Our standard form for oscillators is</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-unified-forced">
 <span class="eqno">(8.3)<a class="headerlink" href="#equation-secondlin-unified-forced" title="Permalink to this equation">¶</a></span>\[x'' + 2 Z \omega_0\, x' + \omega_0^2\, x = f(t),\]</div>
-<p>where again <span class="math notranslate nohighlight">\(\omega_0\)</span> is the natural frequency, <span class="math notranslate nohighlight">\(Z\)</span> is the nonnegative damping coefficient, and <span class="math notranslate nohighlight">\(f\)</span> is a forcing function.</p>
-<p>The most important type of forcing in applications is harmonic, as exemplified by <span class="math notranslate nohighlight">\(f(t) = \cos(\omega t)\)</span>. Let’s start by using a trick of linearity. Define <span class="math notranslate nohighlight">\(g(t)=\sin(\omega t)\)</span>, and suppose that <span class="math notranslate nohighlight">\(w\)</span> solves the ODE with forcing <span class="math notranslate nohighlight">\(f(t)+i g(t)\)</span>:</p>
+<p>where again <span class="math notranslate nohighlight">\(\omega_0\)</span> is the natural frequency, <span class="math notranslate nohighlight">\(Z\)</span> is the nonnegative damping coefficient, and <span class="math notranslate nohighlight">\(f\)</span> is a forcing function. The most important type of forcing in applications is harmonic, as exemplified by</p>
 <div class="math notranslate nohighlight">
 \[
-\opA[w] = f + i g.
+f(t) = \cos(\omega t).
 \]</div>
-<p>We should expect <span class="math notranslate nohighlight">\(w\)</span> to be complex-valued. If we break it into real and imaginary parts, so that <span class="math notranslate nohighlight">\(w(t)=x(t)+i y(t)\)</span>, then linearity tell us that</p>
+<p>Let’s start by using a trick of linearity. Define <span class="math notranslate nohighlight">\(g(t)=\sin(\omega t)\)</span>, and suppose that <span class="math notranslate nohighlight">\(u\)</span> solves the ODE with forcing <span class="math notranslate nohighlight">\(f(t)+i g(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\opA[u] = f + i g.
+\]</div>
+<p>We should expect <span class="math notranslate nohighlight">\(z\)</span> to be complex-valued. If we break it into real and imaginary parts, so that <span class="math notranslate nohighlight">\(u(t)=x(t)+i y(t)\)</span>, then linearity tell us that</p>
 <div class="math notranslate nohighlight">
 \[
 f+i g = \opA[x+i y] = \opA[x] + i \opA[y].
 \]</div>
-<p>The only way to make these identically true is if <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> and <span class="math notranslate nohighlight">\(\opA[y]=g\)</span>. In summary, we can “complexify” the original forcing <span class="math notranslate nohighlight">\(f\)</span> to be <span class="math notranslate nohighlight">\(e^{i\omega t}\)</span>, solve the ODE, and then take the real part of that solution at the end to get a particular solution for the original <span class="math notranslate nohighlight">\(f\)</span>.</p>
-<p>A justification for doing this is that exponential forcing is the easiest kind to solve for. Using undetermined coefficients, we let <span class="math notranslate nohighlight">\(x_p(t)=Ae^{i\omega t}\)</span> and insert it into the ODE with complexified forcing to get</p>
+<p>The only way to make these identically true is if <span class="math notranslate nohighlight">\(\opA[x]=f\)</span> and <span class="math notranslate nohighlight">\(\opA[y]=g\)</span>. In summary, we can (1) <em>complexify</em> the original forcing <span class="math notranslate nohighlight">\(\cos(\omega t)\)</span> to be <span class="math notranslate nohighlight">\(e^{i\omega t}\)</span>, (2) solve the ODE, and then (3) take the real part of that solution at the end to get a particular solution for the original forcing.</p>
+<p>A justification for this roundabout procedure is that exponential forcing is by far the easiest kind to solve for. Using undetermined coefficients, we let <span class="math notranslate nohighlight">\(x_p(t)=Ae^{i\omega t}\)</span> and insert it into the ODE with complexified forcing to get</p>
 <div class="math notranslate nohighlight">
 \[
 A e^{i\omega t} \bigl[ (i\omega)^2 + 2Z\omega_0(i\omega) + \omega_0^2 \bigr] = e^{i\omega t},
@@ -517,16 +528,16 @@ A e^{i\omega t} \bigl[ (i\omega)^2 + 2Z\omega_0(i\omega) + \omega_0^2 \bigr] = e
 <p>so that</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-coeff-complex">
 <span class="eqno">(8.4)<a class="headerlink" href="#equation-secondlin-coeff-complex" title="Permalink to this equation">¶</a></span>\[A = \frac{1}{\omega_0^2-\omega^2 + 2iZ\omega_0\omega}.\]</div>
-<p>In the last step above we multiplied numerator and denominator by the conjugate of the denominator. As we work through detailed cases below, bear in mind that none of this affects the homogeneous solution <span class="math notranslate nohighlight">\(x_h\)</span>, which has natural oscillation at natural frequency <span class="math notranslate nohighlight">\(\omega_0\)</span> with some level of damping.</p>
+<p>As we work through detailed cases below, bear in mind that none of this affects the homogeneous solution <span class="math notranslate nohighlight">\(x_h\)</span>, which has natural oscillation at natural frequency <span class="math notranslate nohighlight">\(\omega_0\)</span> with some level of damping.</p>
 <div class="section" id="undamped">
 <h2><span class="section-number">8.1. </span>Undamped<a class="headerlink" href="#undamped" title="Permalink to this headline">¶</a></h2>
-<p>Things are beginning to get algebraically intense. We can ease off a bit by considering the undamped case, <span class="math notranslate nohighlight">\(Z=0\)</span>. Then the particular solution for complexified forcing <span class="math notranslate nohighlight">\(e^{i\omega t}\)</span> is</p>
+<p>Things are simplest in the undamped case, <span class="math notranslate nohighlight">\(Z=0\)</span>. Then the particular solution for complexified forcing <span class="math notranslate nohighlight">\(e^{i\omega t}\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{1}{\omega_0^2-\omega^2} e^{i\omega t}.
+u_p(t) = \frac{1}{\omega_0^2-\omega^2} e^{i\omega t}.
 \]</div>
-<p>The real part of this gives an <span class="math notranslate nohighlight">\(x_p\)</span> for <span class="math notranslate nohighlight">\(f(t)=\cos(\omega t)\)</span>, and the imaginary part gives <span class="math notranslate nohighlight">\(x_p\)</span> for <span class="math notranslate nohighlight">\(f(t)=\sin(\omega t)\)</span>. We’ll record just the cosine case for reference.</p>
-<div class="proof proof-type-formula" id="id1">
+<p>The real part of this gives an <span class="math notranslate nohighlight">\(x_p\)</span> for <span class="math notranslate nohighlight">\(f(t)=\cos(\omega t)\)</span>, which is our standard for harmonic forcing.</p>
+<div class="proof proof-type-formula" id="id2">
 <span id="formula-secondlin-nonresonant"></span>
     <div class="proof-title">
         <span class="proof-type">Formula 8.3</span>
@@ -539,10 +550,14 @@ A e^{i\omega t} \bigl[ (i\omega)^2 + 2Z\omega_0(i\omega) + \omega_0^2 \bigr] = e
 x_p(t) = \frac{1}{\omega_0^2-\omega^2} \cos(\omega t), \qquad \omega \neq \omega_0.
 \]</div>
 </div></div><p>(More on the exceptional case <span class="math notranslate nohighlight">\(\omega=\omega_0\)</span> in a moment.) The amplitude of <span class="math notranslate nohighlight">\(x_p\)</span> grows without bound as <span class="math notranslate nohighlight">\(\omega\to \omega_0\)</span>.</p>
-<p>The general solution is a combination of <span class="math notranslate nohighlight">\(x_h\)</span>, which oscillates at the natural frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>, and <span class="math notranslate nohighlight">\(x_p\)</span>, which oscillates at the driving frequency <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
+<p>The general solution is a combination of <span class="math notranslate nohighlight">\(x_h\)</span>, which oscillates at the natural frequency <span class="math notranslate nohighlight">\(\omega_0\)</span>, and <span class="math notranslate nohighlight">\(x_p\)</span>, which oscillates at the driving frequency <span class="math notranslate nohighlight">\(\omega\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = a_1 \cos(\omega_0 t) + a_2 \sin(\omega_0 t) + \frac{1}{\omega_0^2-\omega^2} \bigl[ -\cos(\omega_0 t) + \cos(\omega t)\bigr].
+\]</div>
 <div class="section" id="beats">
 <h3><span class="section-number">8.1.1. </span>Beats<a class="headerlink" href="#beats" title="Permalink to this headline">¶</a></h3>
-<p>A concrete case reveals a little more structure. Suppose the initial conditions are chosen so that the complete solution <span class="math notranslate nohighlight">\(x_h+x_p\)</span> is</p>
+<p>Things get interesting when <span class="math notranslate nohighlight">\(\omega \approx \omega_0\)</span>. Suppose the initial conditions are chosen so that the complete solution is</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = \frac{1}{\omega_0^2-\omega^2} \bigl[ -\cos(\omega_0 t) + \cos(\omega t)\bigr].
@@ -560,24 +575,25 @@ x(t) = \frac{1}{\omega_0^2-\omega^2} \bigl[ -\cos(\omega_0 t) + \cos(\omega t)\b
 </div>
 <div class="section" id="resonance">
 <h3><span class="section-number">8.1.2. </span>Resonance<a class="headerlink" href="#resonance" title="Permalink to this headline">¶</a></h3>
-<p>The <a class="reference internal" href="#formula-secondlin-nonresonant"><span class="std std-ref">particular solution formula above</span></a> cannot account for the case <span class="math notranslate nohighlight">\(\omega=\omega_0\)</span>. This situation is known as <a class="reference internal" href="overview.html#term-resonance"><span class="xref std std-term">resonance</span></a>. It’s an idealization of pushing someone on a swing at <em>just</em> the right moment in each cycle.</p>
-<p>We can obtain the resonant solution by taking the limit <span class="math notranslate nohighlight">\(\epsilon\to 0\)</span> in <a class="reference internal" href="#equation-secondlin-beats">(8.5)</a>. Since <span class="math notranslate nohighlight">\(\sin(\theta)/\theta \to 1\)</span>, we get the following.</p>
-<div class="proof proof-type-formula" id="id2">
+<p><a class="reference internal" href="#formula-secondlin-nonresonant"><span class="std std-numref">Formula 8.3</span></a> cannot account for the case <span class="math notranslate nohighlight">\(\omega=\omega_0\)</span>. This situation is known as <a class="reference internal" href="overview.html#term-resonance"><span class="xref std std-term">resonance</span></a>. It’s an idealization of pushing someone on a swing at <em>exactly</em> the right moment in each cycle.</p>
+<p>We can obtain the resonant solution by taking the limit <span class="math notranslate nohighlight">\(\epsilon\to 0\)</span> in <a class="reference internal" href="#equation-secondlin-beats">(8.5)</a>. (Alternatively, we can start from scratch and use an enhanced form of the method of undetermined coefficients.) Since <span class="math notranslate nohighlight">\(\sin(\theta)/\theta \to 1\)</span>, we get the following.</p>
+<div class="proof proof-type-formula" id="id3">
 <span id="formula-secondlin-resonant"></span>
     <div class="proof-title">
         <span class="proof-type">Formula 8.4</span>
         
-            <span class="proof-title-name">(Undamped oscillator at resonance$)</span>
+            <span class="proof-title-name">(Undamped oscillator at resonance)</span>
         
     </div><div class="proof-content">
 <div class="math notranslate nohighlight">
 \[
 x_p(t) = \frac{t}{2\omega_0} \sin(\omega_0 t).
 \]</div>
-</div></div><p>We see that the amplitude of oscillations grows linearly forever. This physically unrealistic situation will be ruled out when we put some damping back into the system.</p>
+</div></div><p>We see that the amplitude of oscillations grows linearly forever. This physically impossible situation will be ruled out when we put some damping back into the system.</p>
+</div>
 </div>
 <div class="section" id="damped">
-<h3><span class="section-number">8.1.3. </span>Damped<a class="headerlink" href="#damped" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">8.2. </span>Damped<a class="headerlink" href="#damped" title="Permalink to this headline">¶</a></h2>
 <p>We now must deal with <span class="math notranslate nohighlight">\(Z&gt;0\)</span> in the MUC coefficient found in <a class="reference internal" href="#equation-secondlin-coeff-complex">(8.4)</a>. To soften up the notation a bit, we define the frequency ratio <span class="math notranslate nohighlight">\(\rho\)</span> as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -591,17 +607,20 @@ A = \frac{1}{\omega_0^2} \cdot \frac{1}{1-\rho^2 + 2i\rho Z}.
 <p>Taking the modulus of <span class="math notranslate nohighlight">\(A\)</span> gives a quantity called the <a class="reference internal" href="overview.html#term-gain"><span class="xref std std-term">gain</span></a>,</p>
 <div class="math notranslate nohighlight">
 \[
-g(\rho) = \frac{1}{\omega_0 \bigl[ (1-\rho^2)^2 + 4\rho^2 Z^2 ]^{1/2}}.
+g(\rho) = \frac{1}{\rule{0pt}{1em} \omega_0 \sqrt{\rule{0pt}{0.8em}(1-\rho^2)^2 + 4\rho^2 Z^2 } }.
 \]</div>
-<p>The gain is the ratio of the amplitudes of the particular solution and the forcing. A little calculus shows that as a function of <span class="math notranslate nohighlight">\(\rho\)</span>, the gain is maximized at</p>
+<p>The gain is the ratio of the amplitudes of the particular solution and the forcing. i.e., the factor by which the forcing is amplified in the response.</p>
+<div class="section" id="pseudoresonance">
+<h3><span class="section-number">8.2.1. </span>Pseudoresonance<a class="headerlink" href="#pseudoresonance" title="Permalink to this headline">¶</a></h3>
+<p>A little calculus shows that as a function of <span class="math notranslate nohighlight">\(\rho\)</span>, the gain is maximized at</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-rhomax">
 <span class="eqno">(8.6)<a class="headerlink" href="#equation-secondlin-rhomax" title="Permalink to this equation">¶</a></span>\[\begin{split}\rho_\text{max} = \begin{cases} 
 \sqrt{1-2Z^2}, &amp; \text{ if } 0 &lt; Z^2 &lt; \frac{1}{2},\\ 0, &amp; \text{ if } \frac{1}{2} \le Z^2.
 \end{cases}\end{split}\]</div>
-<p>When <span class="math notranslate nohighlight">\(0 &lt; Z^2 &lt; 1/2\)</span>, this value satisfies <span class="math notranslate nohighlight">\(0 &lt; \rho_\text{max}&lt;1\)</span>, i.e., the gain is maximized at a nonzero forcing frequency smaller than the natural frequency. We can consider this to be a <a class="reference internal" href="overview.html#term-pseudoresonance"><span class="xref std std-term">pseudoresonance</span></a>, though, since this is all that can be observed in physical systems, one often still says simply “resonance.” The peak value of the gain at pseudoresonance is found to be</p>
+<p>When <span class="math notranslate nohighlight">\(0 &lt; Z^2 &lt; 1/2\)</span>, this value satisfies <span class="math notranslate nohighlight">\(0 &lt; \rho_\text{max}&lt;1\)</span>, i.e., the gain is maximized at a nonzero forcing frequency smaller than the natural frequency. We can consider this to be a <a class="reference internal" href="overview.html#term-pseudoresonance"><span class="xref std std-term">pseudoresonance</span></a>.<a class="footnote-reference brackets" href="#pseudo" id="id1">1</a> The peak value of the gain at pseudoresonance is found to be</p>
 <div class="math notranslate nohighlight" id="equation-secondlin-gainmax">
 <span class="eqno">(8.7)<a class="headerlink" href="#equation-secondlin-gainmax" title="Permalink to this equation">¶</a></span>\[g_\text{max} = g(\rho_\text{max}) = \frac{1}{2Z\omega_0^2\sqrt{1-Z^2}}.\]</div>
-<p>It remains finite for all <span class="math notranslate nohighlight">\(\rho\)</span> when <span class="math notranslate nohighlight">\(Z&gt;0\)</span>, but it becomes proportional to <span class="math notranslate nohighlight">\(1/Z\)</span> as <span class="math notranslate nohighlight">\(Z\to 0\)</span>. The following graph shows the gain as a function of the damping <span class="math notranslate nohighlight">\(Z\)</span> and forcing frequency <span class="math notranslate nohighlight">\(\omega\)</span> when <span class="math notranslate nohighlight">\(\omega_0=1\)</span>. The white curve shows the path of maximum gain.</p>
+<p>The gain remains finite for all <span class="math notranslate nohighlight">\(\rho\)</span> when <span class="math notranslate nohighlight">\(Z&gt;0\)</span>, but it becomes proportional to <span class="math notranslate nohighlight">\(1/Z\)</span> as <span class="math notranslate nohighlight">\(Z\to 0\)</span>. The following graph shows the gain as a function of the damping <span class="math notranslate nohighlight">\(Z\)</span> and forcing frequency <span class="math notranslate nohighlight">\(\omega\)</span> when <span class="math notranslate nohighlight">\(\omega_0=1\)</span>. The white curve shows the path of maximum gain.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">omega</span><span class="p">,</span><span class="n">Z</span><span class="p">)</span><span class="w"> </span><span class="mi">1</span><span class="o">./</span><span class="p">(</span><span class="o">-</span><span class="n">omega</span><span class="o">.^</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>2<span class="nb">i</span><span class="o">*</span><span class="n">Z</span><span class="o">.*</span><span class="n">omega</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
@@ -626,7 +645,13 @@ g(\rho) = \frac{1}{\omega_0 \bigl[ (1-\rho^2)^2 + 4\rho^2 Z^2 ]^{1/2}}.
 <p>Here’s a short video showing how the gain of an oscillator varies with the forcing frequency <span class="math notranslate nohighlight">\(\omega\)</span>. (I use the term “eigenvalues” to mean characteristic values here.)</p>
 <div>
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_izrey0ty&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_s72ikzpz" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe>
-</div></div>
+</div><hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="pseudo"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Since pure resonance cannot be observed in real physical systems, one usually refers to pseudoresonance as simply resonance in practice.</p>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 
