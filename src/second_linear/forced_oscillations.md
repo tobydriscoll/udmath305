@@ -164,7 +164,7 @@ The gain is the ratio of the amplitudes of the particular solution and the forci
 
 ### Pseudoresonance 
 
-A little calculus shows that as a function of frequency ratio $\rho$, the gain is maximized at
+A little calculus shows that as a function of $\rho$, the gain is maximized at
 
 ```{math}
 :label: secondlin-rhomax
@@ -182,7 +182,7 @@ When $0 < Z^2 < 1/2$, this value satisfies $0 < \rho_\text{max}<1$, i.e., the ga
 g_\text{max} = g(\rho_\text{max}) = \frac{1}{2Z\omega_0^2\sqrt{1-Z^2}}.
 ```
 
-The gain remains finite for all $\rho$ when $Z>0$, but it becomes proportional to $1/Z$ as $Z\to 0$. The following graph shows the gain as a function of the damping $Z$ and forcing frequency $\omega$ when $\omega_0=1$. The white curve shows the path of pseudoresonance.
+The gain remains finite for all $\rho$ when $Z>0$, but it becomes proportional to $1/Z$ as $Z\to 0$. The following graph shows the gain as a function of the damping $Z$ and forcing frequency $\omega$ when $\omega_0=1$. The white curve shows the path of maximum gain.
 
 ```{code-cell}
 ---
