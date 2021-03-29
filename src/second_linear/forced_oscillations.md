@@ -120,7 +120,7 @@ x(t) = \frac{1}{4\epsilon\hat{\omega}} \bigl[ 2 \sin(\epsilon t) \sin(\hat{\omeg
 = \frac{\sin(\epsilon t)}{2\epsilon \hat{\omega}} \sin(\hat{\omega} t).
 ```
 
-If $\epsilon$ is small, we can interpret this solution as an oscillation at the average frequency inside an envelope that oscillates at the much lower frequency $\epsilon$. This phenomenon is called {term}`beating` and is audible as a modulating change in volume when two instruments slightly out of tune play together.
+If $\epsilon$ is small, we can interpret this solution as an oscillation at the average frequency inside an envelope that oscillates at the much lower frequency $\epsilon$. This phenomenon is called {term}`beating` and is audible as a modulating change in volume when two instruments slightly out of tune play together. You can hear this phenomenon demonstrated in [this video](https://youtu.be/rmvDu6EY2lE?t=10), among many others.
 
 ### Resonance
 
@@ -162,6 +162,14 @@ $$
 
 The gain is the ratio of the amplitudes of the particular solution and the forcing. i.e., the factor by which the forcing is amplified in the response. 
 
+The particular or steady solution in modified amplitude-phase form is
+
+$$
+x_p(t) = g(\rho) \cos\bigl(\omega t + \theta(\rho)\bigr),
+$$
+
+with the phase $\theta$ determined by the polar angle of $A$.
+
 ### Pseudoresonance 
 
 A little calculus shows that as a function of $\rho$, the gain is maximized at
@@ -182,7 +190,7 @@ When $0 < Z^2 < 1/2$, this value satisfies $0 < \rho_\text{max}<1$, i.e., the ga
 g_\text{max} = g(\rho_\text{max}) = \frac{1}{2Z\omega_0^2\sqrt{1-Z^2}}.
 ```
 
-The gain remains finite for all $\rho$ when $Z>0$, but it becomes proportional to $1/Z$ as $Z\to 0$. The following graph shows the gain as a function of the damping $Z$ and forcing frequency $\omega$ when $\omega_0=1$. The white curve shows the path of maximum gain.
+The gain remains finite for all $\rho$ when $Z>0$, but it becomes proportional to $1/Z$ as $Z\to 0$. The following graph shows the gain as a function of the damping $Z$ and forcing frequency $\omega$ when $\omega_0=1$. The white curve shows the path of pseudoresonance.
 
 ```{code-cell}
 ---
@@ -207,3 +215,6 @@ Here's a short video showing how the gain of an oscillator varies with the forci
 <div>
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_izrey0ty&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_s72ikzpz" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player"></iframe>
 </div>
+
+
+<div style="max-width:608px"><div style="position:relative;padding-bottom:66.118421052632%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_gqgsjn37&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_3nv8hl6e" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
