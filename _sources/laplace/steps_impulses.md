@@ -139,7 +139,7 @@ It only takes a moment to see that both $x$ and $x'$ are continuous at $t=T$, wh
 
 ::::{admonition} Example
 :class: tip
-Find a particular solution of $x''-x=f(t)$, where $f(t) = \begin{cases} 0, & 0 \le t < 3, \\ t, & t\ge 4. \end{cases}$
+Find a particular solution of $x''-x=f(t)$, where $f(t) = \begin{cases} 0, & 0 \le t < 3, \\ t, & t\ge 3. \end{cases}$
 
 :::{dropdown} Solution
 

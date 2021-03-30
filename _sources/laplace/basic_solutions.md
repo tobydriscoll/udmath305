@@ -181,19 +181,15 @@ $$
 X_p(s) = \frac{30}{(s^2+4)(s^2+9)}.
 $$
 
-This has conjugate poles at $\pm 2i$ and $\pm 3i$. We can do the partial fraction decomposition two ways. If we allow complex poles, then we have
+This has conjugate poles at $\pm 2i$ and $\pm 3i$. 
+
+If we want to keep everything real, the PFD is
 
 $$
-\frac{30}{s^2(s^2+9)}= \frac{A+iB}{s+2i} + \frac{A-iB}{s-2i} + \frac{C+iD}{s+3i} + \frac{{C-iD}}{s-3i}.
+\frac{30}{(s^2+4)(s^2+9)} = \frac{As+B}{s^2+4} + \frac{Cs+D}{s^2+9}.
 $$
 
-If we want to keep everything real, it's
-
-$$
-\frac{30}{s^2(s^2+9)} = \frac{As+B}{s^2+4} + \frac{Cs+D}{s^2+9}.
-$$
-
-Taking the second approach, we clear denominators to get
+We clear denominators to get
 
 $$
 30 = (As+B)(s^2+9) + (Cs+D)(s^2+4) = (9B+4D) + (9A+4C)s + (B+D)s^2 + (A+C)s^3.
@@ -210,6 +206,32 @@ Inverting the transform gives
 $$
 x_p(t) = 3\sin(2t) - 2\sin(3t).
 $$
+
+<!-- Alternatively, we can do the partial fraction decomposition using the complex poles: 
+
+$$
+\frac{30}{(s^2+4)(s^2+9)}= \frac{A+iB}{s-2i} + \frac{C+iD}{s-3i} + \text{(conjugate)},
+$$
+
+which leads to 
+
+$$
+30 = (A+iB)(s+2i)(s^2+9) + (C+iD)(s+3i)(s^2+4) + \text{(conjugate)}.
+$$
+
+If we set $s=2i$, then the second term drops out, and
+
+$$
+30 = (A+iB)(4i)(5) + \text{(conjugate)} = 2\Re \bigl[ 20i(A+iB) \bigr] = -40B
+$$
+
+If we set $s=3i$, then 
+
+$$
+30 = (C+iD)(6i)(-5) + \text{(conjugate)} = 2\Re \bigl[ -30i(C+iD) \bigr] = -60D
+$$ -->
+
+
 :::
 ::::
 

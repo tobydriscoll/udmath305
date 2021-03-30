@@ -670,17 +670,13 @@ Solution<div class="summary-down docutils">
 \[
 X_p(s) = \frac{30}{(s^2+4)(s^2+9)}.
 \]</div>
-<p class="card-text">This has conjugate poles at <span class="math notranslate nohighlight">\(\pm 2i\)</span> and <span class="math notranslate nohighlight">\(\pm 3i\)</span>. We can do the partial fraction decomposition two ways. If we allow complex poles, then we have</p>
+<p class="card-text">This has conjugate poles at <span class="math notranslate nohighlight">\(\pm 2i\)</span> and <span class="math notranslate nohighlight">\(\pm 3i\)</span>.</p>
+<p class="card-text">If we want to keep everything real, the PFD is</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{30}{s^2(s^2+9)}= \frac{A+iB}{s+2i} + \frac{A-iB}{s-2i} + \frac{C+iD}{s+3i} + \frac{{C-iD}}{s-3i}.
+\frac{30}{(s^2+4)(s^2+9)} = \frac{As+B}{s^2+4} + \frac{Cs+D}{s^2+9}.
 \]</div>
-<p class="card-text">If we want to keep everything real, it’s</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{30}{s^2(s^2+9)} = \frac{As+B}{s^2+4} + \frac{Cs+D}{s^2+9}.
-\]</div>
-<p class="card-text">Taking the second approach, we clear denominators to get</p>
+<p class="card-text">We clear denominators to get</p>
 <div class="math notranslate nohighlight">
 \[
 30 = (As+B)(s^2+9) + (Cs+D)(s^2+4) = (9B+4D) + (9A+4C)s + (B+D)s^2 + (A+C)s^3.
@@ -695,6 +691,29 @@ X_p(s) = \frac{3\cdot 2}{s^2+4} + \frac{-2\cdot 3}{s^2+9}.
 \[
 x_p(t) = 3\sin(2t) - 2\sin(3t).
 \]</div>
+<!-- Alternatively, we can do the partial fraction decomposition using the complex poles: 
+
+$$
+\frac{30}{(s^2+4)(s^2+9)}= \frac{A+iB}{s-2i} + \frac{C+iD}{s-3i} + \text{(conjugate)},
+$$
+
+which leads to 
+
+$$
+30 = (A+iB)(s+2i)(s^2+9) + (C+iD)(s+3i)(s^2+4) + \text{(conjugate)}.
+$$
+
+If we set $s=2i$, then the second term drops out, and
+
+$$
+30 = (A+iB)(4i)(5) + \text{(conjugate)} = 2\Re \bigl[ 20i(A+iB) \bigr] = -40B
+$$
+
+If we set $s=3i$, then 
+
+$$
+30 = (C+iD)(6i)(-5) + \text{(conjugate)} = 2\Re \bigl[ -30i(C+iD) \bigr] = -60D
+$$ -->
 </div>
 </details></div>
 <p>In the previous example, we had</p>
