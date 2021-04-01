@@ -122,25 +122,36 @@ for $t>0$.
 It is relatively straightforward to apply superposition to solve particular examples with impulse forcing. To solve a problem in the form
 
 $$
-x'-a(t)x = f(t) + k \delta(t-T), \quad x(0)=x_0,
+x'-a x = k_1 \delta(t-T_1)+ \cdots + k_m \delta(t-T_m), \quad x(0)=x_0,
 $$
 
-where $T>0$ and $a(t)$ and $f(t)$ are continuous, we break the problem into manageable subproblems:
+we break the problem into manageable subproblems:
 
 \begin{align*}
-\opA[x_1] &= 0, \quad x_1(0)=x_0, \\
-\opA[x_2] & = f(t), \quad x_2(0)=0,
-\opA[x_3] & = \delta(t-T), \quad x_3(0)=0.
+\opA[x_h] &= 0, \quad x_h(0)=x_0, \\
+\opA[x_1] &= \delta(t-T_1), \quad x_1(0)=0, \\
+&\vdots \\
+\opA[x_m] &= \delta(t-T_m), \quad x_m(0)=0. \\
 \end{align*}
 
-By linearity, then, the solution we seek is $x=x_1+x_2+k x_3$. The problems for $x_1$ and $x_2$ are familiar and need no new commentary. As for $x_3$, for $0\le t < T$ we have $x'-ax = 0$, $x(0)=0$. The solution is clearly just $x_3(t)=0$ up to time $T$. At time $T$ the value jumps up by 1, and then the forcing is again zero. Thus, $x_3(t)=e^{a(t-T)}$ for $t\ge T$. We can express $x_3$ for all time as
+By linearity, the solution we seek is 
+
+$$
+x= x_h + k_1 x_1 + \cdots + k_m x_m.
+$$
+
+The problem for $x_h$ is familiar and needs no new commentary. Assuming $a$ is constant,
+
+$$
+x_h(t) = e^{at}x_0.
+$$
+
+For each $x_j$, the solution is zero up to the time of the impulse, $T_j$. Then $x_j$ jumps in value by 1, followed by homogeneous exponential evolution. Hence (again for constant $a$)
 
 :::{math}
 :label: impulse-1st-solution
-x_3(t) = H(t-T) e^{a(t-T)}.
+x_j(t) = H(t-T_j) e^{a(t-T_j)}.
 :::
-
-If the forcing of an IVP includes additional impulses, each contributes something like {eq}`impulse-1st-solution` to the solution.
 
 ::::{admonition} Example
 :class: tip
@@ -157,6 +168,27 @@ Therefore, $x(t) = -4e^{-2t} + 3 H(t-1) e^{-2(t-1)}.$
 :::
 ::::
 
+::::{admonition} Example
+:class: tip
+Solve $x' - x = H(t-1) - \delta(t-3) + 4t$, with $x(0)=2$.
+
+:::{dropdown} Solution
+We modify the superposition method and decompose into the following subproblems:
+
+\begin{align*}
+\opA[x_s] &= 4t, \quad x_s(0)=x_0, \\
+\opA[x_1] &= H(t-1), \quad x_1(0)=0, \\
+\opA[x_2] &= \delta(t-3), \quad x_2(0)=0.
+\end{align*}
+
+In the first case, we use undetermined coefficients to set $x_p=At+B$, then find that $A=-4$, $B=-4$. Then $x_s(t) = c_1e^t - 4(t+1)$, and the initial value gives us $c_1-4=2$. Finally,
+
+$$
+x(t) = 6e^t - 4 (t+1) + H(t-1)\bigl[ e^{t-1}-1 \bigr] - H(t-3) e^{t-3}.
+$$
+
+:::
+::::
 ## Numerical solution
 
 The easiest way to solve these problems numerically is to solve the system first for $t<T$ and then for $t>T$, with the second solution having initial condition coming from the first. For the preceding example, we use:
