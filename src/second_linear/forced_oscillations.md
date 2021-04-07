@@ -157,7 +157,7 @@ $$
 Taking the modulus of $A$ gives a quantity called the {term}`gain`,
 
 $$
-g(\rho) = \frac{1}{\rule{0pt}{1em} \omega_0 \sqrt{\rule{0pt}{0.8em}(1-\rho^2)^2 + 4\rho^2 Z^2 } }.
+g(\rho) = \frac{1}{\rule{0pt}{1em} \omega_0^2 \sqrt{\rule{0pt}{0.8em}(1-\rho^2)^2 + 4\rho^2 Z^2 } }.
 $$
 
 The gain is the ratio of the amplitudes of the particular solution and the forcing. i.e., the factor by which the forcing is amplified in the response. 
