@@ -560,29 +560,19 @@ x'-a(t)x=f(t) + k \delta(t), \quad x(0)=x_0,
 <p>It is relatively straightforward to apply superposition to solve particular examples with impulse forcing. To solve a problem in the form</p>
 <div class="math notranslate nohighlight">
 \[
-x'-a x = k_1 \delta(t-T_1)+ \cdots + k_m \delta(t-T_m), \quad x(0)=x_0,
+x'-a(t)x = f(t) + k \delta(t-T), \quad x(0)=x_0,
 \]</div>
-<p>we break the problem into manageable subproblems:</p>
+<p>where <span class="math notranslate nohighlight">\(T&gt;0\)</span> and <span class="math notranslate nohighlight">\(a(t)\)</span> and <span class="math notranslate nohighlight">\(f(t)\)</span> are continuous, we break the problem into manageable subproblems:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-\opA[x_h] &amp;= 0, \quad x_h(0)=x_0, \\
-\opA[x_1] &amp;= \delta(t-T_1), \quad x_1(0)=0, \\
-&amp;\vdots \\
-\opA[x_m] &amp;= \delta(t-T_m), \quad x_m(0)=0. \\
+\opA[x_1] &amp;= 0, \quad x_1(0)=x_0, \\
+\opA[x_2] &amp; = f(t), \quad x_2(0)=0,
+\opA[x_3] &amp; = \delta(t-T), \quad x_3(0)=0.
 \end{align*}\]</div>
-<p>By linearity, the solution we seek is</p>
-<div class="math notranslate nohighlight">
-\[
-x= x_h + k_1 x_1 + \cdots + k_m x_m.
-\]</div>
-<p>The problem for <span class="math notranslate nohighlight">\(x_h\)</span> is familiar and needs no new commentary. Assuming <span class="math notranslate nohighlight">\(a\)</span> is constant,</p>
-<div class="math notranslate nohighlight">
-\[
-x_h(t) = e^{at}x_0.
-\]</div>
-<p>For each <span class="math notranslate nohighlight">\(x_j\)</span>, the solution is zero up to the time of the impulse, <span class="math notranslate nohighlight">\(T_j\)</span>. Then <span class="math notranslate nohighlight">\(x_j\)</span> jumps in value by 1, followed by homogeneous exponential evolution. Hence (again for constant <span class="math notranslate nohighlight">\(a\)</span>)</p>
+<p>By linearity, then, the solution we seek is <span class="math notranslate nohighlight">\(x=x_1+x_2+k x_3\)</span>. The problems for <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> are familiar and need no new commentary. As for <span class="math notranslate nohighlight">\(x_3\)</span>, for <span class="math notranslate nohighlight">\(0\le t &lt; T\)</span> we have <span class="math notranslate nohighlight">\(x'-ax = 0\)</span>, <span class="math notranslate nohighlight">\(x(0)=0\)</span>. The solution is clearly just <span class="math notranslate nohighlight">\(x_3(t)=0\)</span> up to time <span class="math notranslate nohighlight">\(T\)</span>. At time <span class="math notranslate nohighlight">\(T\)</span> the value jumps up by 1, and then the forcing is again zero. Thus, <span class="math notranslate nohighlight">\(x_3(t)=e^{a(t-T)}\)</span> for <span class="math notranslate nohighlight">\(t\ge T\)</span>. We can express <span class="math notranslate nohighlight">\(x_3\)</span> for all time as</p>
 <div class="math notranslate nohighlight" id="equation-impulse-1st-solution">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-impulse-1st-solution" title="Permalink to this equation">¶</a></span>\[x_j(t) = H(t-T_j) e^{a(t-T_j)}.\]</div>
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-impulse-1st-solution" title="Permalink to this equation">¶</a></span>\[x_3(t) = H(t-T) e^{a(t-T)}.\]</div>
+<p>If the forcing of an IVP includes additional impulses, each contributes something like <a class="reference internal" href="#equation-impulse-1st-solution">(3.2)</a> to the solution.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Solve <span class="math notranslate nohighlight">\(x'+2x=3\delta(t-1)\)</span>, with <span class="math notranslate nohighlight">\(x(0)=-4\)</span>.</p>
@@ -599,30 +589,6 @@ Solution<div class="summary-down docutils">
 x' + 2x = \delta(t-1), \quad x(0)=0 \qquad \implies \qquad x_2(t) = H(t-1) e^{-2(t-1)}.
 \]</div>
 <p class="card-text">Therefore, <span class="math notranslate nohighlight">\(x(t) = -4e^{-2t} + 3 H(t-1) e^{-2(t-1)}.\)</span></p>
-</div>
-</details></div>
-<div class="tip admonition">
-<p class="admonition-title">Example</p>
-<p>Solve <span class="math notranslate nohighlight">\(x' - x = H(t-1) - \delta(t-3) + 4t\)</span>, with <span class="math notranslate nohighlight">\(x(0)=2\)</span>.</p>
-<details class="sphinx-bs dropdown card mb-3">
-<summary class="summary-title card-header">
-Solution<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text">We modify the superposition method and decompose into the following subproblems:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\opA[x_s] &amp;= 4t, \quad x_s(0)=x_0, \\
-\opA[x_1] &amp;= H(t-1), \quad x_1(0)=0, \\
-\opA[x_2] &amp;= \delta(t-3), \quad x_2(0)=0.
-\end{align*}\]</div>
-<p class="card-text">In the first case, we use undetermined coefficients to set <span class="math notranslate nohighlight">\(x_p=At+B\)</span>, then find that <span class="math notranslate nohighlight">\(A=-4\)</span>, <span class="math notranslate nohighlight">\(B=-4\)</span>. Then <span class="math notranslate nohighlight">\(x_s(t) = c_1e^t - 4(t+1)\)</span>, and the initial value gives us <span class="math notranslate nohighlight">\(c_1-4=2\)</span>. Finally,</p>
-<div class="math notranslate nohighlight">
-\[
-x(t) = 6e^t - 4 (t+1) + H(t-1)\bigl[ e^{t-1}-1 \bigr] - H(t-3) e^{t-3}.
-\]</div>
 </div>
 </details></div>
 </div>
