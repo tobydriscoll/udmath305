@@ -134,7 +134,7 @@ $$
 \end{split}
 $$
 
-Heading toward a completely real form, decompose $c_1= a + i b$ and note that
+Heading toward a completely real form, decompose $c_1= a_1 - i a_2$ and note that
 
 $$
 e^{it} \twovec{1}{i} = \twovec{\cos t + i \sin t}{i\cos t - \sin t} 
@@ -145,34 +145,41 @@ Then
 
 $$
 \begin{split}
-c_1 &= (a+i b)\left(\twovec{\cos t}{-\sin t} + i \twovec{\sin t}{\cos t} \right) \\
-&= a \twovec{\cos t}{-\sin t} + i^2 b \twovec{\sin t}{\cos t} + \cdots,
+c_1 &= (a_1 -i a_2)\left(\twovec{\cos t}{-\sin t} + i \twovec{\sin t}{\cos t} \right) \\
+&= a_1 \twovec{\cos t}{-\sin t} + a_2 \twovec{\sin t}{\cos t} + \cdots,
 \end{split}
 $$
 
 where everything omitted is purely imaginary. Since we only want the real part, we get
 
 $$
-\bfx(t) = a e^t \twovec{\cos t}{-\sin t} + b e^{t} \twovec{\sin t}{\cos t}
+\bfx(t) = a_1 \twovec{\cos t}{-\sin t} + a_2 \twovec{\sin t}{\cos t}
 $$
 
-for arbitrary real $a$ and $b$ (we absorbed a negative sign into $b$).
+for arbitrary real $a_1$ and $a_2$.
 :::
 ::::
 
-The essence of the example is that to convert the solution to an entirely real expression, decompose the complex eigensolution into real and imaginary parts. If $\lambda = r + i\omega$, then 
+The essence of the example is that to convert the solution to an entirely real expression, decompose the complex eigensolution into real and imaginary parts. Suppose that 
 
 $$
-e^{\lambda t} \bfv = e^{rt} (\cos(\omega t) + i\sin(\omega t) ) \bfv  \bfu(t) + \mathbf{w}(t).
+\lambda = r + i\omega, \qquad \bfv = \bfu_1 + i\, \bfu_2.
 $$
 
-Then the general solution in real form is
+Then 
 
 $$
-\bfx(t) = a \bfu(t) + b \mathbf{w}(t),
+e^{\lambda t} \bfv = e^{rt} (\cos(\omega t) + i\sin(\omega t) ) (\bfu_1 + i\, \bfu_2).
 $$
 
-for arbitrary $a$ and $b$.
+The real and imaginary parts of the above product form the basis of the real solution. Specifically,
+
+:::{math}
+:label: sys-complex-real-form
+\bfx(t) = a_1 e^{rt} \Bigl( \cos(\omega t)\,\bfu_1 - \sin(\omega t) \,\bfu_2(t) \Bigr) + a_2 e^{rt} \Bigl( \cos(\omega t)\,\bfu_2 + \sin(\omega t) \,\bfu_1(t) \Bigr),
+:::
+
+for arbitrary real $a_1$ and $a_2$.
 
 ## The oscillator reloaded
 
