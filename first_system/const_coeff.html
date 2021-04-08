@@ -597,7 +597,7 @@ Solution<div class="summary-down docutils">
 &amp;= e^t \Re \left[ c_1 e^{it} \twovec{1}{i} \right].
 \end{split}
 \end{split}\]</div>
-<p class="card-text">Heading toward a completely real form, decompose <span class="math notranslate nohighlight">\(c_1= a + i b\)</span> and note that</p>
+<p class="card-text">Heading toward a completely real form, decompose <span class="math notranslate nohighlight">\(c_1= a_1 - i a_2\)</span> and note that</p>
 <div class="math notranslate nohighlight">
 \[
 e^{it} \twovec{1}{i} = \twovec{\cos t + i \sin t}{i\cos t - \sin t} 
@@ -607,29 +607,32 @@ e^{it} \twovec{1}{i} = \twovec{\cos t + i \sin t}{i\cos t - \sin t}
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-c_1 &amp;= (a+i b)\left(\twovec{\cos t}{-\sin t} + i \twovec{\sin t}{\cos t} \right) \\
-&amp;= a \twovec{\cos t}{-\sin t} + i^2 b \twovec{\sin t}{\cos t} + \cdots,
+c_1 &amp;= (a_1 -i a_2)\left(\twovec{\cos t}{-\sin t} + i \twovec{\sin t}{\cos t} \right) \\
+&amp;= a_1 \twovec{\cos t}{-\sin t} + a_2 \twovec{\sin t}{\cos t} + \cdots,
 \end{split}
 \end{split}\]</div>
 <p class="card-text">where everything omitted is purely imaginary. Since we only want the real part, we get</p>
 <div class="math notranslate nohighlight">
 \[
-\bfx(t) = a e^t \twovec{\cos t}{-\sin t} + b e^{t} \twovec{\sin t}{\cos t}
+\bfx(t) = a_1 \twovec{\cos t}{-\sin t} + a_2 \twovec{\sin t}{\cos t}
 \]</div>
-<p class="card-text">for arbitrary real <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> (we absorbed a negative sign into <span class="math notranslate nohighlight">\(b\)</span>).</p>
+<p class="card-text">for arbitrary real <span class="math notranslate nohighlight">\(a_1\)</span> and <span class="math notranslate nohighlight">\(a_2\)</span>.</p>
 </div>
 </details></div>
-<p>The essence of the example is that to convert the solution to an entirely real expression, decompose the complex eigensolution into real and imaginary parts. If <span class="math notranslate nohighlight">\(\lambda = r + i\omega\)</span>, then</p>
+<p>The essence of the example is that to convert the solution to an entirely real expression, decompose the complex eigensolution into real and imaginary parts. Suppose that</p>
 <div class="math notranslate nohighlight">
 \[
-e^{\lambda t} \bfv = e^{rt} (\cos(\omega t) + i\sin(\omega t) ) \bfv  \bfu(t) + \mathbf{w}(t).
+\lambda = r + i\omega, \qquad \bfv = \bfu_1 + i\, \bfu_2.
 \]</div>
-<p>Then the general solution in real form is</p>
+<p>Then</p>
 <div class="math notranslate nohighlight">
 \[
-\bfx(t) = a \bfu(t) + b \mathbf{w}(t),
+e^{\lambda t} \bfv = e^{rt} (\cos(\omega t) + i\sin(\omega t) ) (\bfu_1 + i\, \bfu_2).
 \]</div>
-<p>for arbitrary <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p>The real and imaginary parts of the above product form the basis of the real solution. Specifically,</p>
+<div class="math notranslate nohighlight" id="equation-sys-complex-real-form">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-sys-complex-real-form" title="Permalink to this equation">¶</a></span>\[\bfx(t) = a_1 e^{rt} \Bigl( \cos(\omega t)\,\bfu_1 - \sin(\omega t) \,\bfu_2(t) \Bigr) + a_2 e^{rt} \Bigl( \cos(\omega t)\,\bfu_2 + \sin(\omega t) \,\bfu_1(t) \Bigr),\]</div>
+<p>for arbitrary real <span class="math notranslate nohighlight">\(a_1\)</span> and <span class="math notranslate nohighlight">\(a_2\)</span>.</p>
 </div>
 <div class="section" id="the-oscillator-reloaded">
 <h2><span class="section-number">5.3. </span>The oscillator reloaded<a class="headerlink" href="#the-oscillator-reloaded" title="Permalink to this headline">¶</a></h2>

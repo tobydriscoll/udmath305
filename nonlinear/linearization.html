@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linearization &#8212; Notes on linear algebra and ODEs</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/proof.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/butterfly128.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Notes on linear algebra and ODEs</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../frontmatter.html">
+   Applied Math for Engineers
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  I. Linear algebra
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vectors_matrices.html">
+   2. Vectors and matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/linear_systems.html">
+   3. Linear systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/row_elimination.html">
+   4. Row elimination
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/RREF.html">
+   5. RREF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/vector_algebra.html">
+   6. Vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_vector.html">
+   7. Matrix-vector algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/matrix_matrix.html">
+   8. Matrix multiplication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/identity_inverse.html">
+   9. Identity and inverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/singular.html">
+   10. Detecting singularity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/general_solutions.html">
+   11. General solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/complex_numbers.html">
+   12. Complex numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/eigenvalues.html">
+   13. Eigenvalues
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalg/multiplicity.html">
+   14. Multiplicity
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  II. First-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/preview.html">
+   2. Quick tour
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp.html">
+   3. Initial-value problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/operators.html">
+   4. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/homogeneous.html">
+   5. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/variation_parameters.html">
+   6. Variation of parameters
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/ivp_formula.html">
+   7. IVP formula
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/integrating_factor.html">
+   8. Integrating factor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/undetermined_coeffs.html">
+   9. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_linear/modeling.html">
+   10. Modeling
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  III. Steps and impulses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/unit_step.html">
+   2. Step forcing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/impulse.html">
+   3. Impulses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/laplace.html">
+   4. Laplace transforms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../steps/transform_solutions.html">
+   5. Solutions by transform
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  IV. Second-order linear ODE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/solution_structure.html">
+   2. Structure of solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/homogeneous.html">
+   3. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/complex_exp.html">
+   4. Complex exponentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/undamped.html">
+   5. Pure oscillation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/free_oscillations.html">
+   6. Free oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/undetermined_coeffs.html">
+   7. Undetermined coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../second_linear/forced_oscillations.html">
+   8. Forced oscillations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  V. Laplace transforms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/basic_solutions.html">
+   2. Solutions to 2nd-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/steps_impulses.html">
+   3. Steps and impulses (2nd order)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/convolution.html">
+   4. Convolution
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VI. Linear ODE systems
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/overview.html">
+   1. Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/order_dimension.html">
+   2. Conversion of higher-order ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/structure.html">
+   3. Solution structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/homogeneous.html">
+   4. Homogeneous solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/const_coeff.html">
+   5. Constant-coefficient problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/phase_plane.html">
+   6. Stability and the phase plane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/matrix_exp.html">
+   7. The matrix exponential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../first_system/variation_parameters.html">
+   8. Variation of parameters
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/nonlinear/linearization.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability">
+   Stability
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="linearization">
+<h1>Linearization<a class="headerlink" href="#linearization" title="Permalink to this headline">¶</a></h1>
+<p>A pendulum with length <span class="math notranslate nohighlight">\(L\)</span> and angle of deflection <span class="math notranslate nohighlight">\(\theta(t)\)</span> from the vertical is governed by the nonlinear second-order equation</p>
+<div class="math notranslate nohighlight">
+\[\ddd{\theta}{t} + \frac{g}{L} \sin(\theta) = 0,\]</div>
+<p>where <span class="math notranslate nohighlight">\(g\)</span> is gravitational acceleration. It’s standard to argue that as long as <span class="math notranslate nohighlight">\(|\theta|\)</span> remains small, a good approximation is the linear problem</p>
+<div class="math notranslate nohighlight">
+\[\ddd{\theta}{t} + \frac{g}{L} \theta = 0,\]</div>
+<p>because <span class="math notranslate nohighlight">\(\sin \theta \approx \theta\)</span>.  We want to get more systematic with this process.</p>
+<p>First note that we can recast the nonlinear second-order problem as a first-order system in two variables, just as we did for linear equations. Define <span class="math notranslate nohighlight">\(x=\theta\)</span> and <span class="math notranslate nohighlight">\(y=\theta'\)</span>. Then</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	\dd{x}{t} &amp; = y, \\
+	\dd{y}{t} &amp; = -\frac{g}{L}\sin(x).
+\end{align*}\]</div>
+<p>This trick works for any nonlinear second-order equation <span class="math notranslate nohighlight">\(\theta''=g(t,\theta,\theta')\)</span>. Thus we can focus on problems in the general form</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	\dd{x}{t} &amp; = F(x,y), \\
+	\dd{y}{t} &amp; = G(x,y).
+\end{align*}\]</div>
+<p>As we did with single scalar equations, we will pay close attention to steady states or fixed points of these systems. Here this means finding constants <span class="math notranslate nohighlight">\((x_*,y_*)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+F(x_*,y_*)=G(x_*,y_*)=0.
+\]</div>
+<p>For the nonlinear pendulum, both <span class="math notranslate nohighlight">\((0,0)\)</span> (straight down, at rest) and <span class="math notranslate nohighlight">\((\pi,0)\)</span> (straight up, at rest) are steady states.</p>
+<p>We are interested in the stability of fixed points, i.e., the dynamics close to them. We will use linear approximations of the functions <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(G\)</span> near a fixed point:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	F(x,y) &amp; \approx F(x_*,y_*) + \pp{F}{x}\cdot (x-x_*) + \pp{F}{y} \cdot (y-y_*),\\
+	G(x,y) &amp; \approx G(x_*,y_*) + \pp{G}{x} \cdot (x-x_*) + \pp{G}{y} \cdot (y-y_*),\\
+\end{align*}\]</div>
+<p>where it is understood for brevity that the partial derivatives are all evaluated at <span class="math notranslate nohighlight">\((x_*,y_*)\)</span>. Given that <span class="math notranslate nohighlight">\((x_*,y_*)\)</span> is a fixed point, <span class="math notranslate nohighlight">\(F(x_*,y_*)=G(x_*,y_*)=0\)</span>.</p>
+<p>Now define</p>
+<div class="math notranslate nohighlight">
+\[
+u_1(t)=x(t)-x_*,\quad u_2(t)=y(t)-y_*.
+\]</div>
+<p>Then</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	\dd{u_1}{t} = \dd{x}{t} &amp; \approx \pp{F}{x} u_1 + \pp{F}{y} u_2, \\
+	\dd{u_2}{t} = \dd{y}{t} &amp; \approx \pp{G}{x} u_1 + \pp{G}{y} u_2. 
+\end{align*}\]</div>
+<p>This inspires the following definition.</p>
+<div class="proof proof-type-definition" id="id1">
+<span id="nl-def-jacobian"></span><span id="index-0"></span>
+    <div class="proof-title">
+        <span class="proof-type">Definition </span>
+        
+            <span class="proof-title-name">(Jacobian matrix)</span>
+        
+    </div><div class="proof-content">
+<p>The <span class="xref std std-term">Jacobian matrix</span> of the system <span class="math notranslate nohighlight">\(x'=F(x,y),\, y'=G(x,y)\)</span> is</p>
+<div class="math notranslate nohighlight" id="equation-nl-eq-jacobian">
+<span class="eqno">()<a class="headerlink" href="#equation-nl-eq-jacobian" title="Permalink to this equation">¶</a></span>\[\mathbf{J}(x,y) = \twomat{\displaystyle \pp{F}{x}}{\displaystyle \pp{F}{y}}{\displaystyle \pp{G}{x}}{\displaystyle \pp{G}{y}}.\]</div>
+</div></div><p>The Jacobian matrix is essentially the derivative of a 2D vector field. As such, it is also a function of the variables <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<div class="section" id="stability">
+<h2>Stability<a class="headerlink" href="#stability" title="Permalink to this headline">¶</a></h2>
+<p>Let’s summarize. In the neighborhood of a fixed point <span class="math notranslate nohighlight">\((x_*,y_*)\)</span>, we can define the <em>deviation from equilibrium</em> by the variables <span class="math notranslate nohighlight">\(u_1(t)=x(t)-x_*\)</span>, <span class="math notranslate nohighlight">\(u_2(t)=y(t)-y_*\)</span>. These variables approximately satisfy <span class="math notranslate nohighlight">\(\mathbf{u}'=\mathbf{J}(x_*,y_*)\mathbf{u}\)</span>, which is a linear, constant-coefficient system in two dimensions. Thus, <strong>near a steady state, dynamics are mostly linear.</strong></p>
+<p>We are now right back into the phase plane we studied earlier. In particular:</p>
+<div class="proof proof-type-observation">
+
+    <div class="proof-title">
+        <span class="proof-type">Observation </span>
+        
+    </div><div class="proof-content">
+<p>The stability of a steady state is (usually) determined by the eigenvalues of the Jacobian matrix at the steady state.</p>
+</div></div><div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let’s examine the steady states of a pendulum with damping,</p>
+<div class="math notranslate nohighlight">
+\[\ddd{\theta}{t} + \gamma \theta' + \frac{g}{L} \sin(\theta) = 0,\]</div>
+<p>with <span class="math notranslate nohighlight">\(\gamma &gt; 0\)</span>. It transforms into the first-order system</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	\dd{x}{t} &amp; = y, \\
+	\dd{y}{t} &amp; = -\frac{g}{L}\sin(x) - \gamma y\.
+\end{align*}\]</div>
+<p>These define <span class="math notranslate nohighlight">\(F(x,y)\)</span> and <span class="math notranslate nohighlight">\(G(x,y)\)</span>. From here we note all the first partial derivatives:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\pp{F}{x} = 0, &amp; \qquad \pp{F}{y} = 1,\\
+\pp{G}{x} = - \frac{g}{L}\cos(x), &amp; \qquad \pp{G}{y} = -\gamma.
+\end{align*}\]</div>
+<p>The first steady state we consider is at the origin. Here the Jacobian matrix is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} 
+0 &amp; 1 \\ -g/L &amp; -\gamma
+\end{bmatrix}.\end{split}\]</div>
+<p>We get <span class="math notranslate nohighlight">\(T=-\gamma &lt; 0\)</span> and <span class="math notranslate nohighlight">\(D=g/L &gt; 0\)</span>, which is a stable sink. That comports with our experience with a pendulum hanging straight down!</p>
+<p>The other steady state is at <span class="math notranslate nohighlight">\((\pi,0)\)</span>. Now the Jacobian is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} 
+0 &amp; 1 \\ g/L &amp; -\gamma
+\end{bmatrix},\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(T=-\gamma\)</span> and <span class="math notranslate nohighlight">\(D=-g/L\)</span>. This implies a saddle point, so the inverted pendulum is indeed unstable.</p>
+</div>
+<p>The caveat on using eigenvalues for stability is when they both have zero real part, which is weakly stable in the linear sense. In such cases the details of the nonlinear terms of the system can swing the stability either way.</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>The system</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{dx}{dt} &amp;= 3x-\frac{xy}{2}\\
+\frac{dy}{dt} &amp;= -y+\frac{xy}{4}\\
+\end{align*}\]</div>
+<p>is called a <span class="xref std std-term">predator–prey</span> equation. If species <span class="math notranslate nohighlight">\(y\)</span> is set to zero, species <span class="math notranslate nohighlight">\(x\)</span> would grow exponentially on its own (the prey). Similarly, species <span class="math notranslate nohighlight">\(y\)</span> would die off on its own (predator). We assume that encounters between the species are jointly proportional to the population of each, and they subtract from the prey and add to the predators.</p>
+<p>We find fixed points when <span class="math notranslate nohighlight">\(3x-(x y/2)=(x y/4)-y=0\)</span>, which has two solutions, <span class="math notranslate nohighlight">\((0,0)\)</span> and <span class="math notranslate nohighlight">\((4,6)\)</span>. The Jacobian matrix of the system is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{J}(x,y) = \begin{bmatrix} F_x &amp; F_y  \\ G_x &amp; G_y \end{bmatrix} = \begin{bmatrix} 3-y/2 &amp; -x/2 \\ y/4 &amp; -1+x/4 \end{bmatrix}.\end{split}\]</div>
+<p>At the origin, the Jacobian becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{J}(0,0) = \begin{bmatrix} 3 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}.\end{split}\]</div>
+<p>The eigenvalues of a diagonal matrix (in fact, any triangular matrix) are the diagonal entries. Hence the origin is a saddle point.</p>
+<p>At the other steady state we have</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{J}(4,6) = \twomat{0}{-2}{3/2}{0}.\]</div>
+<p>The characteristic polynomial is <span class="math notranslate nohighlight">\(\lambda^2 + 3\)</span>, so the eigenvalues are <span class="math notranslate nohighlight">\(\pm i\sqrt{3}\)</span>. Close to the point, the orbits are impossible to tell apart from those of a linear center:</p>
+<p><img alt="linear center" src="../_images/linearized_center1.svg" /></p>
+<p>However, as we zoom out, the nonlinearity of the system makes its influence felt:</p>
+<p><img alt="nonlinear center" src="../_images/linearized_center2.svg" /></p>
+<p>For a different system, however, the nonlinearity could cause this point to be asymptotically stable or unstable.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nonlinear"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Tobin A. Driscoll<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
