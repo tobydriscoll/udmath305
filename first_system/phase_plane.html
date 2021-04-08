@@ -459,28 +459,33 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability">
+   6.1. Stability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#phase-plane">
-   6.1. Phase plane
+   6.2. Phase plane
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#node">
-     6.1.1. Node
+     6.2.1. Node
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#saddle">
-     6.1.2. Saddle
+     6.2.2. Saddle
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#spiral">
-     6.1.3. Spiral
+     6.2.3. Spiral
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#center">
-     6.1.4. Center
+     6.2.4. Center
     </a>
    </li>
   </ul>
@@ -498,10 +503,14 @@
                 
   <div class="section" id="stability-and-the-phase-plane">
 <h1><span class="section-number">6. </span>Stability and the phase plane<a class="headerlink" href="#stability-and-the-phase-plane" title="Permalink to this headline">¶</a></h1>
-<p>The homogeneous system <span class="math notranslate nohighlight">\(\mathbf{x}'=\mathbf{A}\mathbf{x}\)</span> for a constant matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> clearly has the constant function <span class="math notranslate nohighlight">\(\mathbf{x}(t)\equiv \boldsymbol{zero}\)</span> as a solution. We call this an <span class="xref std std-term">equilibrium</span> or steady-state solution. Not all equilibria are the same, however.</p>
-<p>Imagine holding a broom by two fingers, with the bristles pointing straight down at the floor. You will not have much difficulty keeping the broom in approximately this position for a long time, even if an annoying friend comes by and jostles you a bit. Now imagine holding it inverted, with the bristles pointing toward the ceiling. If you were able to <em>perfectly</em> balance the center of gravity of a symmetric broom above your fingers, then in principle it ought to stay there. But the broom is not perfect, and your arm and fingers can’t stay perfectly still. You might keep the broom upright for a few seconds, but it will soon crash to the floor.</p>
-<p>Both the downward and upward positions of the broom are equilibria. The property that differentiates them is <span class="xref std std-term">stability</span>. Stability refers to the response of the system to a perturbation (small change) of its state away from an equilibrium. If the system stays arbitrarily close to the equilibrium after an infinitesimal perturbation, we say the equilibrium is <a class="reference internal" href="overview.html#term-stable"><span class="xref std std-term">stable</span></a>. (What happens near equilibrium, stays near equilibrium.) Otherwise it is <a class="reference internal" href="overview.html#term-unstable"><span class="xref std std-term">unstable</span></a>.</p>
-<p>Stability of the origin depends on the eigenvalues of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>. This is most easily summarized in the special case of a <span class="math notranslate nohighlight">\(2\times 2\)</span> real matrix with eigenvalues <span class="math notranslate nohighlight">\(\lambda_1,\lambda_2\)</span>. The major cases to be considered are summarized in the following table, leaving out some subtle edge cases when things are zero or exactly equal. The other column of the table is to be explained next.</p>
+<p>The homogeneous system <span class="math notranslate nohighlight">\(\mathbf{x}'=\mathbf{A}\mathbf{x}\)</span> for a constant matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> clearly has the constant function <span class="math notranslate nohighlight">\(\mathbf{x}(t)\equiv \boldsymbol{0}\)</span> as a solution. We call this an <span class="xref std std-term">equilibrium</span> or steady-state solution. (If <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is singular, then there are other equilibrium points as well, but we are not interested in that peculiar case.)</p>
+<div class="section" id="stability">
+<h2><span class="section-number">6.1. </span>Stability<a class="headerlink" href="#stability" title="Permalink to this headline">¶</a></h2>
+<p>Not all equilibria are alike.</p>
+<p>Imagine holding a broom by two fingers, with the bristles pointing straight down at the floor. You will not have much difficulty keeping the broom in approximately this position for a long time, even if an annoying friend comes by and jostles you a bit.</p>
+<p>Now imagine holding the broom inverted, with the bristles pointing toward the ceiling. If you were able to <em>perfectly</em> balance the center of gravity of a <em>perfectly</em> symmetric broom above your fingers, then in principle it ought to stay there. However, the broom is not perfect, and your arm and fingers can’t stay perfectly still. With effort, you might keep the broom upright for a few seconds, but not for a long time. Both the downward and upward positions of the broom are equilibria. The property that differentiates them is <span class="xref std std-term">stability</span>.</p>
+<p>Stability refers to the response of the system to a perturbation (tiny change) of its state away from an equilibrium. If the system eventually returns to the equilibrium point (in the sense of the limit <span class="math notranslate nohighlight">\(t\to\infty\)</span>), we say the equilibrium is <a class="reference internal" href="overview.html#term-asymptotically-stable"><span class="xref std std-term">asymptotically stable</span></a>. That is, the perturbation decays away, like with a damped linear oscillator. A weaker form of stability is explained in <code class="xref std std-numref docutils literal notranslate"><span class="pre">Center</span></code> below. If the system has tiny perturbations that grow without bound, then the equilibrium is <a class="reference internal" href="overview.html#term-unstable"><span class="xref std std-term">unstable</span></a>.</p>
+<p>Stability of the origin depends on the eigenvalues of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>. This is most easily summarized in the special case of a <span class="math notranslate nohighlight">\(2\times 2\)</span> real matrix with eigenvalues <span class="math notranslate nohighlight">\(\lambda_1,\lambda_2\)</span>. The major cases to be considered are summarized in the following table, leaving out some trickier edge cases when things are zero or exactly equal. The other column of the table is to be explained next.</p>
 <table class="table" id="table-fs-stability">
 <caption><span class="caption-number">Table 6.2 </span><span class="caption-text">Eigenvalues and stability</span><a class="headerlink" href="#table-fs-stability" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -517,7 +526,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\lambda_1 &lt; \lambda_2 &lt; 0\)</span></p></td>
-<td><p>stable</p></td>
+<td><p>asymptotically stable</p></td>
 <td><p>node</p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\lambda_1 &lt; 0 &lt; \lambda_2 \)</span></p></td>
@@ -529,11 +538,11 @@
 <td><p>node</p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\lambda = a\pm i b,\: a&lt; 0\)</span></p></td>
-<td><p>stable</p></td>
+<td><p>asymptotically stable</p></td>
 <td><p>spiral</p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\lambda = \pm i b\)</span></p></td>
-<td><p>stable</p></td>
+<td><p>stable, not asymptotically stable</p></td>
 <td><p>center</p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\lambda = a\pm i b,\: a&gt; 0\)</span></p></td>
@@ -542,12 +551,12 @@
 </tr>
 </tbody>
 </table>
+</div>
 <div class="section" id="phase-plane">
-<h2><span class="section-number">6.1. </span>Phase plane<a class="headerlink" href="#phase-plane" title="Permalink to this headline">¶</a></h2>
-<p>In the two-dimensional case, the solutions of <span class="math notranslate nohighlight">\(\mathbf{x}'=\mathbf{A}\mathbf{x}\)</span> can be plotted as trajectories parameterized by time in the <span class="math notranslate nohighlight">\((x_1,x_2)\)</span> plane, often called the
-<a class="reference internal" href="overview.html#term-phase-plane"><span class="xref std std-term">phase plane</span></a>. Each of the cases in the <a class="reference internal" href="#table-fs-stability"><span class="std std-ref">stability table</span></a> has a phase plane portrait that shares certain general characteristics that clarify the major aspects of possible solution behaviors.</p>
+<h2><span class="section-number">6.2. </span>Phase plane<a class="headerlink" href="#phase-plane" title="Permalink to this headline">¶</a></h2>
+<p>In the two-dimensional case, the solutions of <span class="math notranslate nohighlight">\(\mathbf{x}'=\mathbf{A}\mathbf{x}\)</span> can be plotted as trajectories parameterized by time in the <span class="math notranslate nohighlight">\((x_1,x_2)\)</span> plane, often called the <a class="reference internal" href="overview.html#term-phase-plane"><span class="xref std std-term">phase plane</span></a>. Each of the cases in the <a class="reference internal" href="#table-fs-stability"><span class="std std-ref">stability table</span></a> has a characteristic type of phase plane portrait that illustrates major aspects of solution behaviors.</p>
 <div class="section" id="node">
-<h3><span class="section-number">6.1.1. </span>Node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.1. </span>Node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h3>
 <p>When the eigenvalues are real and have the same sign, the steady state is called a <a class="reference internal" href="overview.html#term-node"><span class="xref std std-term">node</span></a>. If the sign is negative, all trajectories head into the steady state and it is stable; conversely, in the positive case it is unstable.</p>
 <p>Here is a phase plane plot for <span class="math notranslate nohighlight">\(\mathbf{A}=\twomat{-4}{-1}{-2}{-5}\)</span>, which has eigenvalues <span class="math notranslate nohighlight">\(-3\)</span> and <span class="math notranslate nohighlight">\(-6\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
@@ -594,7 +603,7 @@
 <p>The black lines show the directions of the eigenvectors. An initial state on one of those lines stays on it forever. Other initial conditions follow a path tending to become parallel to eigenvector <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span>, since the other component decays out more quickly. The plot for <span class="math notranslate nohighlight">\(-\mathbf{A}\)</span> would just reverse all of the arrows and show an unstable steady state.</p>
 </div>
 <div class="section" id="saddle">
-<h3><span class="section-number">6.1.2. </span>Saddle<a class="headerlink" href="#saddle" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.2. </span>Saddle<a class="headerlink" href="#saddle" title="Permalink to this headline">¶</a></h3>
 <p>When the eigenvalues are real and of different signs, the steady state is called a
 <a class="reference internal" href="overview.html#term-saddle"><span class="xref std std-term">saddle</span></a>. A saddle point is always unstable. The part of the solution along the negative eigenvector decays away, but the contribution from the positive eigenvector grows with time.</p>
 <p>Here is a phase plane plot for <span class="math notranslate nohighlight">\(\mathbf{A}=\twomat{-2}{-3}{-6}{-5}\)</span>, which has eigenvalues <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(-8\)</span>.</p>
@@ -642,7 +651,7 @@
 <p>An initial condition exactly on the stable black line (eigenvector) will approach the origin, but anything else ends up shooting away more or less in the direction of the unstable eigenvector.</p>
 </div>
 <div class="section" id="spiral">
-<h3><span class="section-number">6.1.3. </span>Spiral<a class="headerlink" href="#spiral" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.3. </span>Spiral<a class="headerlink" href="#spiral" title="Permalink to this headline">¶</a></h3>
 <p>When the eigenvalues are complex conjugates with nonzero real part, the steady state is called a <a class="reference internal" href="overview.html#term-spiral"><span class="xref std std-term">spiral</span></a>. If the eigenvalues are <span class="math notranslate nohighlight">\(a \pm i b\)</span>, then all solutions contain <span class="math notranslate nohighlight">\(e^{at}e^{\pm i b t}\)</span>, or equivalently, <span class="math notranslate nohighlight">\(e^{at}\cos{b t}\)</span> and <span class="math notranslate nohighlight">\(e^{at}\sin{b t}\)</span>. The real part causes growth and instability if <span class="math notranslate nohighlight">\(a&gt; 0\)</span>, or decay and stability if <span class="math notranslate nohighlight">\(a &lt; 0\)</span>. The imaginary part determines the angular speed of the spiral.</p>
 <p>Here is a phase plane plot for <span class="math notranslate nohighlight">\(\mathbf{A}=\twomat{1}{-2}{4}{-3}\)</span>, which has eigenvalues <span class="math notranslate nohighlight">\(-1\pm 2i\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
@@ -686,7 +695,7 @@
 <p>The eigenvectors are complex and don’t show up on the plot; there are no purely linear trajectories as in the other cases.</p>
 </div>
 <div class="section" id="center">
-<h3><span class="section-number">6.1.4. </span>Center<a class="headerlink" href="#center" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.4. </span>Center<a class="headerlink" href="#center" title="Permalink to this headline">¶</a></h3>
 <p>The special case of imaginary eigenvalues, <span class="math notranslate nohighlight">\(\lambda=\pm i b\)</span>, is called a <a class="reference internal" href="overview.html#term-center"><span class="xref std std-term">center</span></a>. You can think of the trajectories as spirals that are perfectly neutral — that is, circles or ellipses. These equilibria are often associated with conservation principles, such as conservation of energy.</p>
 <p>Here is a phase plane plot for <span class="math notranslate nohighlight">\(\mathbf{A}=\twomat{0}{-1}{4}{0}\)</span>, which has eigenvalues <span class="math notranslate nohighlight">\(\pm 2i\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
@@ -727,6 +736,7 @@
 <img alt="../_images/phase_plane_10_0.png" src="../_images/phase_plane_10_0.png" />
 </div>
 </div>
+<p>A center is on a knife edge between asymptotically stable and unstable: small perturbations do not decay away, but they also can grow only by a bounded amount. This situation might be called <em>weakly stable</em>, <em>neutrally stable</em>, or simply <a class="reference internal" href="overview.html#term-stable"><span class="xref std std-term">stable</span></a> but not asymptotically stable.</p>
 </div>
 </div>
 </div>
