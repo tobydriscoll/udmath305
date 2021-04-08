@@ -1,3 +1,4 @@
+(section-nl-linearization)=
 # Linearization
 
 A pendulum with length $L$ and angle of deflection $\theta(t)$ from the vertical is governed by the nonlinear second-order equation

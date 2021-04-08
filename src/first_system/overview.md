@@ -63,6 +63,9 @@ This is neatly expressed using linear algebra:
 
 :::{glossary}
 
+asymptotically stable
+  Equilibrium to which small enough perturbations always return as $t\to\infty$.
+
 center
   Equilibrium for which the coefficient matrix has pure imaginary eigenvalues.
 

@@ -30,23 +30,29 @@ tags: [remove-cell]
 %plot -s 800,400 -r 160 -f png
 ```
 
-The homogeneous system $\mathbf{x}'=\mathbf{A}\mathbf{x}$ for a constant matrix $\mathbf{A}$ clearly has the constant function $\mathbf{x}(t)\equiv \boldsymbol{zero}$ as a solution. We call this an {term}`equilibrium` or steady-state solution. Not all equilibria are the same, however. 
+The homogeneous system $\mathbf{x}'=\mathbf{A}\mathbf{x}$ for a constant matrix $\mathbf{A}$ clearly has the constant function $\mathbf{x}(t)\equiv \boldsymbol{0}$ as a solution. We call this an {term}`equilibrium` or steady-state solution. (If $\mathbf{A}$ is singular, then there are other equilibrium points as well, but we are not interested in that peculiar case.)
 
-Imagine holding a broom by two fingers, with the bristles pointing straight down at the floor. You will not have much difficulty keeping the broom in approximately this position for a long time, even if an annoying friend comes by and jostles you a bit. Now imagine holding it inverted, with the bristles pointing toward the ceiling. If you were able to *perfectly* balance the center of gravity of a symmetric broom above your fingers, then in principle it ought to stay there. But the broom is not perfect, and your arm and fingers can't stay perfectly still. You might keep the broom upright for a few seconds, but it will soon crash to the floor. 
+## Stability
 
-Both the downward and upward positions of the broom are equilibria. The property that differentiates them is {term}`stability`. Stability refers to the response of the system to a perturbation (small change) of its state away from an equilibrium. If the system stays arbitrarily close to the equilibrium after an infinitesimal perturbation, we say the equilibrium is {term}`stable`. (What happens near equilibrium, stays near equilibrium.) Otherwise it is {term}`unstable`. 
+Not all equilibria are alike. 
 
-Stability of the origin depends on the eigenvalues of $\mathbf{A}$. This is most easily summarized in the special case of a $2\times 2$ real matrix with eigenvalues $\lambda_1,\lambda_2$. The major cases to be considered are summarized in the following table, leaving out some subtle edge cases when things are zero or exactly equal. The other column of the table is to be explained next.
+Imagine holding a broom by two fingers, with the bristles pointing straight down at the floor. You will not have much difficulty keeping the broom in approximately this position for a long time, even if an annoying friend comes by and jostles you a bit. 
+
+Now imagine holding the broom inverted, with the bristles pointing toward the ceiling. If you were able to *perfectly* balance the center of gravity of a *perfectly* symmetric broom above your fingers, then in principle it ought to stay there. However, the broom is not perfect, and your arm and fingers can't stay perfectly still. With effort, you might keep the broom upright for a few seconds, but not for a long time. Both the downward and upward positions of the broom are equilibria. The property that differentiates them is {term}`stability`. (We will return to the nonlinear pendulum in {numref}`section-nl-linearization`.)
+
+Stability refers to the response of the system to a perturbation (tiny change) of its state away from an equilibrium. If the system eventually returns to the equilibrium point (in the sense of the limit $t\to\infty$), we say the equilibrium is {term}`asymptotically stable`. That is, the perturbation decays away, like with a damped linear oscillator. A weaker form of stability is explained in {numref}`section-fs-pp-center` below. If the system has tiny perturbations that grow without bound, then the equilibrium is {term}`unstable`.
+
+Stability of the origin depends on the eigenvalues of $\mathbf{A}$. This is most easily summarized in the special case of a $2\times 2$ real matrix with eigenvalues $\lambda_1,\lambda_2$. The major cases to be considered are summarized in the following table, leaving out some trickier edge cases when things are zero or exactly equal. The other column of the table is to be explained next.
 	
 :::{list-table} Eigenvalues and stability
-:header-rows: 1
+:header-rows: 1 
 :name: table-fs-stability
 
 * - Eigenvalues
   - Stability
   - Type
 * - $\lambda_1 < \lambda_2 < 0$
-  - stable
+  - asymptotically stable
   - node
 * - $\lambda_1 < 0 < \lambda_2 $
   - unstable
@@ -55,10 +61,10 @@ Stability of the origin depends on the eigenvalues of $\mathbf{A}$. This is most
   - unstable
   - node
 * - $\lambda = a\pm i b,\: a< 0$
-  - stable
+  - asymptotically stable
   - spiral
 * - $\lambda = \pm i b$
-  - stable
+  - stable, not asymptotically stable
   - center
 * - $\lambda = a\pm i b,\: a> 0$
   - unstable
@@ -67,8 +73,7 @@ Stability of the origin depends on the eigenvalues of $\mathbf{A}$. This is most
 
 ## Phase plane
 
-In the two-dimensional case, the solutions of $\mathbf{x}'=\mathbf{A}\mathbf{x}$ can be plotted as trajectories parameterized by time in the $(x_1,x_2)$ plane, often called the 
-{term}`phase plane`. Each of the cases in the [stability table](table-fs-stability) has a phase plane portrait that shares certain general characteristics that clarify the major aspects of possible solution behaviors.  
+In the two-dimensional case, the solutions of $\mathbf{x}'=\mathbf{A}\mathbf{x}$ can be plotted as trajectories parameterized by time in the $(x_1,x_2)$ plane, often called the {term}`phase plane`. Each of the cases in the [stability table](table-fs-stability) has a characteristic type of phase plane portrait that illustrates major aspects of solution behaviors.  
 
 ### Node
 
@@ -164,6 +169,7 @@ ylabel('x_2')
 
 An initial condition exactly on the stable black line (eigenvector) will approach the origin, but anything else ends up shooting away more or less in the direction of the unstable eigenvector.  
 
+(section-fs-pp-center)=
 ### Spiral
 
 When the eigenvalues are complex conjugates with nonzero real part, the steady state is called a {term}`spiral`. If the eigenvalues are $a \pm i b$, then all solutions contain $e^{at}e^{\pm i b t}$, or equivalently, $e^{at}\cos{b t}$ and $e^{at}\sin{b t}$. The real part causes growth and instability if $a> 0$, or decay and stability if $a < 0$. The imaginary part determines the angular speed of the spiral. 
@@ -247,3 +253,5 @@ title('center')
 xlabel('x_1')
 ylabel('x_2')
 ```
+
+A center is on a knife edge between asymptotically stable and unstable: small perturbations do not decay away, but they also can grow only by a bounded amount. This situation might be called *weakly stable*, *neutrally stable*, or simply {term}`stable` but not asymptotically stable.
