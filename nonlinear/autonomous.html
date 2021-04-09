@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autonomous scalar problems &#8212; Notes on linear algebra and ODEs</title>
+    <title>2. Autonomous scalar problems &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -58,9 +58,11 @@
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "pp": ["\\frac{\\partial #1}{\\partial #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Separable equations" href="separable.html" />
+    <link rel="prev" title="1. Nonlinear ODEs" href="overview.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -384,6 +386,43 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VII. Nonlinear ODEs
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Nonlinear ODEs
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Autonomous scalar problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="separable.html">
+   3. Separable equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic.html">
+   4. The logistic equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="direction.html">
+   5. Direction fields
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linearization.html">
+   6. Linearization
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -456,18 +495,21 @@
               <div>
                 
   <div class="section" id="autonomous-scalar-problems">
-<h1>Autonomous scalar problems<a class="headerlink" href="#autonomous-scalar-problems" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>Autonomous scalar problems<a class="headerlink" href="#autonomous-scalar-problems" title="Permalink to this headline">¶</a></h1>
 <p>Our general form for a first-order scalar ODE is <span class="math notranslate nohighlight">\(x'=f(t,x)\)</span>. In the special case where <span class="math notranslate nohighlight">\(f\)</span> does not depend explicitly on time, i.e., when</p>
 <div class="math notranslate nohighlight">
 \[
 x'=f(x),
 \]</div>
 <p>we say the equation is <a class="reference internal" href="../first_linear/overview.html#term-autonomous"><span class="xref std std-term">autonomous</span></a>. These equations are the simplest place to start.</p>
-<span class="target" id="index-0"></span><p id="index-1">Even before attempting a full solution of the problem, we can see that a value <span class="math notranslate nohighlight">\(x_*\)</span> that satisfies <span class="math notranslate nohighlight">\(f(x_*)=0\)</span> is special: the constant function <span class="math notranslate nohighlight">\(x(t)\equiv x_*\)</span> is a solution. Such a value is called a
-<span class="xref std std-term">steady state</span>,  <a class="reference internal" href="../first_system/overview.html#term-equilibrium-solution"><span class="xref std std-term">equilibrium solution</span></a>, or <span class="xref std std-term">fixed point</span>.</p>
-<p>Imagine holding a broom with bristles pointed down using two fingers. This is ideally a pendulum with a steady state of the broom pointing straight down. You will have no difficulty holding the broom in approximately that position as long as you want.</p>
-<p>Now imagine trying to hold the broom using the same two fingers, but with the bristles pointing upward. This is an <em>inverted pendulum</em>, and ideally there is a steady state with the broom pointing straight up. Yet you will find it difficult to hold the broom in that position for more than a few seconds.</p>
-<p id="index-2">The distinction between these steady states is the property of <span class="xref std std-term">stability</span>. It’s impossible to place the broom in <em>exactly</em> the equilibrium position with no motion whatsoever of your hand. In the real world, a steady state is constantly undergoing small perturbations. If the effects of those perturbations die out with time, the steady state is stable, but if they grow, it is unstable.</p>
+<span class="target" id="index-0"></span><p id="index-1">Even before attempting a full solution of the problem, we can see that a value <span class="math notranslate nohighlight">\(x_*\)</span> that satisfies <span class="math notranslate nohighlight">\(f(x_*)=0\)</span> is special: the constant function <span class="math notranslate nohighlight">\(x(t)\equiv x_*\)</span> is a solution. Such a value is called a <span class="xref std std-term">steady state</span>,  <a class="reference internal" href="../first_system/overview.html#term-equilibrium-solution"><span class="xref std std-term">equilibrium solution</span></a>, or <span class="xref std std-term">fixed point</span>. One of the most important characteristics of each steady state is its <strong>stability</strong>, as we first encountered in the phase plane. Here we use some definitions to formalize the idea a bit more.</p>
+<!-- Imagine holding a broom with bristles pointed down using two fingers. This is ideally a pendulum with a steady state of the broom pointing straight down. You will have no difficulty holding the broom in approximately that position as long as you want.
+
+Now imagine trying to hold the broom using the same two fingers, but with the bristles pointing upward. This is an *inverted pendulum*, and ideally there is a steady state with the broom pointing straight up. Yet you will find it difficult to hold the broom in that position for more than a few seconds.
+
+:::{index} stability
+:::
+The distinction between these steady states is the property of {term}`stability`. It's impossible to place the broom in *exactly* the equilibrium position with no motion whatsoever of your hand. In the real world, a steady state is constantly undergoing small perturbations. If the effects of those perturbations die out with time, the steady state is stable, but if they grow, it is unstable. -->
 <p>We will use a shorthand to help pin down these properties. Let <span class="math notranslate nohighlight">\(x(t,X)\)</span> be the solution of the initial-value problem</p>
 <div class="math notranslate nohighlight">
 \[
@@ -476,12 +518,12 @@ x'=f(x),
 <div class="proof proof-type-definition" id="id1">
 
     <div class="proof-title">
-        <span class="proof-type">Definition </span>
+        <span class="proof-type">Definition 2.12</span>
         
             <span class="proof-title-name">(Asymptotic stability)</span>
         
     </div><div class="proof-content">
-<p>The steady state <span class="math notranslate nohighlight">\(x_*\)</span> is said to be <span class="xref std std-term">asymptotically stable</span> if there is a positive number <span class="math notranslate nohighlight">\(\delta\)</span> such that</p>
+<p>The steady state <span class="math notranslate nohighlight">\(x_*\)</span> is said to be <a class="reference internal" href="../first_system/overview.html#term-asymptotically-stable"><span class="xref std std-term">asymptotically stable</span></a> if there is a positive number <span class="math notranslate nohighlight">\(\delta\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{t\to\infty} x(t,X) = x_*
@@ -491,14 +533,14 @@ x'=f(x),
 <div class="proof proof-type-definition" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Definition </span>
+        <span class="proof-type">Definition 2.13</span>
         
             <span class="proof-title-name">(Stability)</span>
         
     </div><div class="proof-content">
 <p>The steady state <span class="math notranslate nohighlight">\(x_*\)</span> is said to be <a class="reference internal" href="../first_system/overview.html#term-stable"><span class="xref std std-term">stable</span></a> if, for any <span class="math notranslate nohighlight">\(\epsilon&gt;0\)</span>, you can ensure that <span class="math notranslate nohighlight">\(|x(t,X)-x_*|&lt;\epsilon\)</span> for all time whenever <span class="math notranslate nohighlight">\(|X-x_*|&lt;\delta\)</span>, where <span class="math notranslate nohighlight">\(\delta\)</span> depends on <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
 </div></div><p>Stability means that you can stay as close as you like to <span class="math notranslate nohighlight">\(x_*\)</span> by starting off close enough to it. Any point that is asymptotically stable is stable by this definition as well. We will call this <strong>weak stability</strong> to highlight the contrast with asymptotic stability. Finally, a steady state that is not at least weakly stable is called <strong>unstable</strong>.</p>
-<p id="index-3">One tool for discriminating between stable and unstable equilibria is a <a class="reference internal" href="overview.html#term-phase-line-diagram"><span class="xref std std-term">phase line diagram</span></a>.</p>
+<p id="index-2">One tool for discriminating between stable and unstable equilibria is a <a class="reference internal" href="overview.html#term-phase-line-diagram"><span class="xref std std-term">phase line diagram</span></a>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Consider the ODE <span class="math notranslate nohighlight">\(x'=x-x^3\)</span>. We will start by graphing <span class="math notranslate nohighlight">\(f(x)=x-x^3\)</span>.</p>
@@ -549,6 +591,8 @@ x'=f(x),
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page"><span class="section-number">1. </span>Nonlinear ODEs</a>
+    <a class='right-next' id="next-link" href="separable.html" title="next page"><span class="section-number">3. </span>Separable equations</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

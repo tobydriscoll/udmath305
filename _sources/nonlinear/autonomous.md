@@ -10,18 +10,17 @@ we say the equation is {term}`autonomous`. These equations are the simplest plac
 
 :::{index} steady state
 :::
-:::{index} fixed point
+:::{index} equilibrium
 :::
-Even before attempting a full solution of the problem, we can see that a value $x_*$ that satisfies $f(x_*)=0$ is special: the constant function $x(t)\equiv x_*$ is a solution. Such a value is called a 
-{term}`steady state`,  {term}`equilibrium solution`, or {term}`fixed point`.
+Even before attempting a full solution of the problem, we can see that a value $x_*$ that satisfies $f(x_*)=0$ is special: the constant function $x(t)\equiv x_*$ is a solution. Such a value is called a {term}`steady state`,  {term}`equilibrium solution`, or {term}`fixed point`. One of the most important characteristics of each steady state is its **stability**, as we first encountered in the phase plane. Here we use some definitions to formalize the idea a bit more.
 
-Imagine holding a broom with bristles pointed down using two fingers. This is ideally a pendulum with a steady state of the broom pointing straight down. You will have no difficulty holding the broom in approximately that position as long as you want.
+<!-- Imagine holding a broom with bristles pointed down using two fingers. This is ideally a pendulum with a steady state of the broom pointing straight down. You will have no difficulty holding the broom in approximately that position as long as you want.
 
 Now imagine trying to hold the broom using the same two fingers, but with the bristles pointing upward. This is an *inverted pendulum*, and ideally there is a steady state with the broom pointing straight up. Yet you will find it difficult to hold the broom in that position for more than a few seconds.
 
 :::{index} stability
 :::
-The distinction between these steady states is the property of {term}`stability`. It's impossible to place the broom in *exactly* the equilibrium position with no motion whatsoever of your hand. In the real world, a steady state is constantly undergoing small perturbations. If the effects of those perturbations die out with time, the steady state is stable, but if they grow, it is unstable.
+The distinction between these steady states is the property of {term}`stability`. It's impossible to place the broom in *exactly* the equilibrium position with no motion whatsoever of your hand. In the real world, a steady state is constantly undergoing small perturbations. If the effects of those perturbations die out with time, the steady state is stable, but if they grow, it is unstable. -->
 
 We will use a shorthand to help pin down these properties. Let $x(t,X)$ be the solution of the initial-value problem
 

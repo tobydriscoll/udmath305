@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Linearization &#8212; Notes on linear algebra and ODEs</title>
+    <title>6. Linearization &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -58,9 +58,10 @@
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "pp": ["\\frac{\\partial #1}{\\partial #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="5. Direction fields" href="direction.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -384,6 +385,43 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VII. Nonlinear ODEs
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Nonlinear ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="autonomous.html">
+   2. Autonomous scalar problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="separable.html">
+   3. Separable equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic.html">
+   4. The logistic equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="direction.html">
+   5. Direction fields
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6. Linearization
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -455,7 +493,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stability">
-   Stability
+   6.1. Stability
   </a>
  </li>
 </ul>
@@ -470,7 +508,7 @@
               <div>
                 
   <div class="section" id="linearization">
-<h1>Linearization<a class="headerlink" href="#linearization" title="Permalink to this headline">¶</a></h1>
+<span id="section-nl-linearization"></span><h1><span class="section-number">6. </span>Linearization<a class="headerlink" href="#linearization" title="Permalink to this headline">¶</a></h1>
 <p>A pendulum with length <span class="math notranslate nohighlight">\(L\)</span> and angle of deflection <span class="math notranslate nohighlight">\(\theta(t)\)</span> from the vertical is governed by the nonlinear second-order equation</p>
 <div class="math notranslate nohighlight">
 \[\ddd{\theta}{t} + \frac{g}{L} \sin(\theta) = 0,\]</div>
@@ -518,17 +556,17 @@ u_1(t)=x(t)-x_*,\quad u_2(t)=y(t)-y_*.
 <div class="proof proof-type-definition" id="id1">
 <span id="nl-def-jacobian"></span><span id="index-0"></span>
     <div class="proof-title">
-        <span class="proof-type">Definition </span>
+        <span class="proof-type">Definition 6.3</span>
         
             <span class="proof-title-name">(Jacobian matrix)</span>
         
     </div><div class="proof-content">
 <p>The <span class="xref std std-term">Jacobian matrix</span> of the system <span class="math notranslate nohighlight">\(x'=F(x,y),\, y'=G(x,y)\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-nl-eq-jacobian">
-<span class="eqno">()<a class="headerlink" href="#equation-nl-eq-jacobian" title="Permalink to this equation">¶</a></span>\[\mathbf{J}(x,y) = \twomat{\displaystyle \pp{F}{x}}{\displaystyle \pp{F}{y}}{\displaystyle \pp{G}{x}}{\displaystyle \pp{G}{y}}.\]</div>
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-nl-eq-jacobian" title="Permalink to this equation">¶</a></span>\[\mathbf{J}(x,y) = \twomat{\displaystyle \pp{F}{x}}{\displaystyle \pp{F}{y}}{\displaystyle \pp{G}{x}}{\displaystyle \pp{G}{y}}.\]</div>
 </div></div><p>The Jacobian matrix is essentially the derivative of a 2D vector field. As such, it is also a function of the variables <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <div class="section" id="stability">
-<h2>Stability<a class="headerlink" href="#stability" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.1. </span>Stability<a class="headerlink" href="#stability" title="Permalink to this headline">¶</a></h2>
 <p>Let’s summarize. In the neighborhood of a fixed point <span class="math notranslate nohighlight">\((x_*,y_*)\)</span>, we can define the <em>deviation from equilibrium</em> by the variables <span class="math notranslate nohighlight">\(u_1(t)=x(t)-x_*\)</span>, <span class="math notranslate nohighlight">\(u_2(t)=y(t)-y_*\)</span>. These variables approximately satisfy <span class="math notranslate nohighlight">\(\mathbf{u}'=\mathbf{J}(x_*,y_*)\mathbf{u}\)</span>, which is a linear, constant-coefficient system in two dimensions. Thus, <strong>near a steady state, dynamics are mostly linear.</strong></p>
 <p>We are now right back into the phase plane we studied earlier. In particular:</p>
 <div class="proof proof-type-observation">
@@ -625,6 +663,7 @@ u_1(t)=x(t)-x_*,\quad u_2(t)=y(t)-y_*.
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="direction.html" title="previous page"><span class="section-number">5. </span>Direction fields</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Direction fields &#8212; Notes on linear algebra and ODEs</title>
+    <title>5. Direction fields &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -58,9 +58,11 @@
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "pp": ["\\frac{\\partial #1}{\\partial #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Linearization" href="linearization.html" />
+    <link rel="prev" title="4. The logistic equation" href="logistic.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -384,6 +386,43 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VII. Nonlinear ODEs
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Nonlinear ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="autonomous.html">
+   2. Autonomous scalar problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="separable.html">
+   3. Separable equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic.html">
+   4. The logistic equation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Direction fields
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linearization.html">
+   6. Linearization
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -458,7 +497,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nonautonomous-scalar-problems">
-   Nonautonomous scalar problems
+   5.1. Nonautonomous scalar problems
   </a>
  </li>
 </ul>
@@ -487,7 +526,7 @@
 </div>
 </div>
 <div class="section" id="direction-fields">
-<h1>Direction fields<a class="headerlink" href="#direction-fields" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>Direction fields<a class="headerlink" href="#direction-fields" title="Permalink to this headline">¶</a></h1>
 <p>An autonomous system in two dimensions has the particular form</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -500,7 +539,85 @@
 \dd{x}{t} &amp; = -y,\\
 \dd{y}{t} &amp; = x.
 \end{align*}\]</div>
-<p>We will use a function <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">slopefield.m</span></code></span> provided separately.</p>
+<p>We will use a custom function <code class="docutils literal notranslate"><span class="pre">slopefield.m</span></code>.</p>
+<div class="toggle docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">slopefield</span><span class="p">(</span>varargin<span class="p">)</span><span class="w"></span>
+<span class="c">% SLOPEFIELD Plot a slope field (aka direction field).</span><span class="w"></span>
+<span class="c">%    SLOPEFIELD(F,TLIM,YLIM) plots arrows in the (t,y) plane that represent</span><span class="w"></span>
+<span class="c">%    the slope field of the ODE dydt = F(t,y). The function F must accept</span><span class="w"></span>
+<span class="c">%    both arguments. The vectors TLIM and</span><span class="w"></span>
+<span class="c">%    YLIM define the bounds of the plot in their respective directions.</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">%    SLOPEFIELD(F,G,XLIM,YLIM) plots arrows in the (x,y) plane that</span><span class="w"></span>
+<span class="c">%    represent the slope field of the ODE system </span><span class="w"></span>
+<span class="c">% </span><span class="w"></span>
+<span class="c">%       dx/dt = f(x,y),  dy/dt = g(x,y). </span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">%    Functions F and G must accept (x,y) as arguments. The vectors XLIM and</span><span class="w"></span>
+<span class="c">%    YLIM define the bounds of the plot in their respective directions.</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">%    If an additional input argument is present at the end, the direction</span><span class="w"></span>
+<span class="c">%    vectors are all normalized to have unit length, so speed information</span><span class="w"></span>
+<span class="c">%    is taken out of the picture. This might be better when some arrows</span><span class="w"></span>
+<span class="c">%    would otherwise get too small.</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">%    Examples:</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">%       slopefield(@(t,y) y,[0 3],[-1 1])</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">%       slopefield(@(t,y) t^2-y,[0 2],[-1 1])</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">%       f = @(x,y) 3*x - x*y/2;</span><span class="w"></span>
+<span class="c">%       g = @(x,y) -y + x*y/4;</span><span class="w"></span>
+<span class="c">%       slopefield(f,g,[0 10],[0 12])</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">%    See also QUIVER.</span><span class="w"></span>
+
+<span class="c">% Copyright 2019 by Toby Driscoll. Free for non-commerical use. </span><span class="w"></span>
+
+<span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">varargin</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">};</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="nb">isnumeric</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="w">    </span><span class="c">% y&#39;=f(t,y)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">xlim</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">g</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nb">ylim</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">varargin</span><span class="p">{</span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">denorm</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="nb">nargin</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">drawfield</span><span class="p">(@(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="nb">xlim</span><span class="p">,</span><span class="nb">ylim</span><span class="p">,</span><span class="n">denorm</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">xlabel</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
+<span class="w">    </span><span class="nb">title</span><span class="p">([</span><span class="s">&#39;Slope field for y&#39;&#39;=&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">func2str</span><span class="p">(</span><span class="n">f</span><span class="p">)])</span><span class="w"></span>
+
+<span class="k">else</span><span class="w">               </span><span class="c">% x&#39;=f(x,y), y&#39;=g(x,y)</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="nb">xlim</span><span class="p">,</span><span class="nb">ylim</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">varargin</span><span class="p">{</span><span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">denorm</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="nb">nargin</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">drawfield</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="nb">xlim</span><span class="p">,</span><span class="nb">ylim</span><span class="p">,</span><span class="n">denorm</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">xlabel</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
+<span class="w">    </span><span class="nb">title</span><span class="p">([</span><span class="s">&#39;Slope field for x&#39;&#39;=&#39;</span><span class="p">,</span><span class="nb">func2str</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s">&#39;, y&#39;&#39;=&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">func2str</span><span class="p">(</span><span class="n">g</span><span class="p">)])</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+
+<span class="k">function</span><span class="w"> </span><span class="nf">drawfield</span><span class="p">(</span>dxdt,dydt,xlim,ylim,denorm<span class="p">)</span><span class="w"></span>
+
+<span class="c">% Set up grid in (x,y) plane </span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="nb">xlim</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="nb">xlim</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">25</span><span class="p">);</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="nb">ylim</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="nb">ylim</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">25</span><span class="p">);</span><span class="w"></span>
+<span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% This is safer than assuming the user vectorizes the inputs.</span><span class="w"></span>
+<span class="n">U</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">X</span><span class="p">));</span><span class="w">  </span><span class="n">V</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">U</span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">numel</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">U</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dxdt</span><span class="p">(</span><span class="n">X</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">Y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w">  </span><span class="n">V</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dydt</span><span class="p">(</span><span class="n">X</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">Y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+
+<span class="k">if</span><span class="w"> </span><span class="n">denorm</span><span class="w"> </span>
+<span class="w">    </span><span class="n">U</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">U</span><span class="o">./</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">U</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">V</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="n">V</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">V</span><span class="o">./</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">U</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">V</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+
+<span class="c">% Make the plot and pretty it up</span><span class="w"></span>
+<span class="nb">quiver</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">)</span><span class="w"></span>
+<span class="nb">axis</span><span class="w"> </span><span class="n">tight</span><span class="w"></span>
+
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="p">;</span><span class="w">   </span><span class="n">G</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
@@ -533,7 +650,7 @@
 </div>
 </div>
 <div class="section" id="nonautonomous-scalar-problems">
-<h2>Nonautonomous scalar problems<a class="headerlink" href="#nonautonomous-scalar-problems" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>Nonautonomous scalar problems<a class="headerlink" href="#nonautonomous-scalar-problems" title="Permalink to this headline">¶</a></h2>
 <p>We can use a simple trick to create direction fields for the nonautonomous scalar problem</p>
 <div class="math notranslate nohighlight">
 \[
@@ -590,6 +707,8 @@ x'=f(t,x)
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="logistic.html" title="previous page"><span class="section-number">4. </span>The logistic equation</a>
+    <a class='right-next' id="next-link" href="linearization.html" title="next page"><span class="section-number">6. </span>Linearization</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

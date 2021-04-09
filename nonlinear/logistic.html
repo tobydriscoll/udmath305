@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The logistic equation &#8212; Notes on linear algebra and ODEs</title>
+    <title>4. The logistic equation &#8212; Notes on linear algebra and ODEs</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -58,9 +58,11 @@
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"real": ["\\mathbb{R}"], "complex": ["\\mathbb{C}"], "nat": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rmn": ["\\mathbb{R}^{#1 \\times #2}", 2], "cmn": ["\\complex^{#1 \\times #2}", 2], "dd": ["\\frac{d #1}{d #2}", 2], "pp": ["\\frac{\\partial #1}{\\partial #2}", 2], "ddd": ["\\frac{d^2 #1}{d #2^2}", 2], "norm": ["\\| #1 \\|", 1], "twonorm": ["\\| #1 \\|_2", 1], "onenorm": ["\\| #1 \\|_1", 1], "infnorm": ["\\| #1 \\|_\\infty", 1], "innerprod": ["\\langle #1,#2 \\rangle", 2], "twovec": ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2], "threevec": ["\\begin{bmatrix} #1 \\\\ #2 \\\\ #3 \\end{bmatrix}", 3], "twomat": ["\\begin{bmatrix} #1 & #2 \\\\ #3 & #4 \\end{bmatrix}", 4], "twodet": ["\\begin{vmatrix} #1 & #2 \\\\ #3 & #4 \\end{vmatrix}", 4], "pr": ["^{(#1)}", 1], "eye": ["\\mathbf{e}_#1", 1], "meye": ["\\mathbf{I}"], "bff": ["\\mathbf{f}"], "bfx": ["\\mathbf{x}"], "bfy": ["\\mathbf{y}"], "bfz": ["\\mathbf{z}"], "bfu": ["\\mathbf{u}"], "bfv": ["\\mathbf{v}"], "bfa": ["\\mathbf{a}"], "bfb": ["\\mathbf{b}"], "bfe": ["\\mathbf{e}"], "bfA": ["\\mathbf{A}"], "bfB": ["\\mathbf{B}"], "bfX": ["\\mathbf{X}"], "bfV": ["\\mathbf{V}"], "opA": ["\\mathcal{A}"], "lx": ["\\mathcal{L}"], "bfalpha": ["\\mathbf{alpha}"], "bfdelta": ["\\mathbf{delta}"], "bfzero": ["\\boldsymbol{0}"], "diag": ["\\operatorname{diag}"], "sign": ["\\operatorname{sign}"], "Re": ["\\operatorname{Re}"], "Im": ["\\operatorname{Im}"], "ee": ["\\times 10^"]}}, "HTML-CSS": {"availableFonts": [], "preferredFont": null, "webFont": "Asana-Math"}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Direction fields" href="direction.html" />
+    <link rel="prev" title="3. Separable equations" href="separable.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -384,6 +386,43 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  VII. Nonlinear ODEs
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   1. Nonlinear ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="autonomous.html">
+   2. Autonomous scalar problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="separable.html">
+   3. Separable equations
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. The logistic equation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="direction.html">
+   5. Direction fields
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linearization.html">
+   6. Linearization
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -458,17 +497,17 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#steady-states">
-   Steady states
+   4.1. Steady states
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#first-solution-method-substitution">
-   First solution method: Substitution
+   4.2. First solution method: Substitution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#second-solution-method-separation">
-   Second solution method: Separation
+   4.3. Second solution method: Separation
   </a>
  </li>
 </ul>
@@ -483,7 +522,7 @@
               <div>
                 
   <div class="section" id="the-logistic-equation">
-<h1>The logistic equation<a class="headerlink" href="#the-logistic-equation" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>The logistic equation<a class="headerlink" href="#the-logistic-equation" title="Permalink to this headline">¶</a></h1>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% nothing</span><span class="w"></span>
@@ -504,10 +543,10 @@
 <p>If <span class="math notranslate nohighlight">\(a&gt; 0\)</span>, then this is a recipe for exponential growth, à la <span class="math notranslate nohighlight">\(x'=ax\)</span>.</p>
 <p>There are a lot of assumptions behind that model, but one of the most glaringly suspect is that it supposes an endless supply of food and space. An improved model would decrease the per capita rate as the population increases. The simplest way to do so is to let <span class="math notranslate nohighlight">\(b&gt; 0\)</span> be another positive parameter, and define</p>
 <div class="math notranslate nohighlight" id="equation-eq-logistic">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-logistic" title="Permalink to this equation">¶</a></span>\[\frac{1}{x} \dd{x}{t} = a - bx \quad \Longrightarrow \quad \dd{x}{t} = ax - bx^2.\]</div>
+<span class="eqno">(4.13)<a class="headerlink" href="#equation-eq-logistic" title="Permalink to this equation">¶</a></span>\[\frac{1}{x} \dd{x}{t} = a - bx \quad \Longrightarrow \quad \dd{x}{t} = ax - bx^2.\]</div>
 <p id="index-0">This is the <span class="xref std std-term">logistic equation</span>.</p>
 <div class="section" id="steady-states">
-<h2>Steady states<a class="headerlink" href="#steady-states" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Steady states<a class="headerlink" href="#steady-states" title="Permalink to this headline">¶</a></h2>
 <p>We begin with the steady states. We have <span class="math notranslate nohighlight">\(x'=f(x)=x(a-bx)\)</span>, with roots <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=a/b\)</span>. Since <span class="math notranslate nohighlight">\(f'(x)=a-2bx\)</span>, we conclude:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -536,7 +575,7 @@ K=\frac{a}{b}
 <p>This is zero for <span class="math notranslate nohighlight">\(x=K/2=a/2b\)</span>, suggesting that it is an inflection point in the graph of <span class="math notranslate nohighlight">\(x(t)\)</span> against <span class="math notranslate nohighlight">\(t\)</span>.</p>
 </div>
 <div class="section" id="first-solution-method-substitution">
-<h2>First solution method: Substitution<a class="headerlink" href="#first-solution-method-substitution" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>First solution method: Substitution<a class="headerlink" href="#first-solution-method-substitution" title="Permalink to this headline">¶</a></h2>
 <p>When it comes to solving nonlinear ODEs, we take success wherever we can find it. One source of serendipitous solutions is the idea of <strong>variable substitution</strong>, and the logistic equation is a nice case study.</p>
 <p>Define <span class="math notranslate nohighlight">\(z=1/x\)</span>. From the chain rule we have</p>
 <div class="math notranslate nohighlight">
@@ -552,7 +591,7 @@ K=\frac{a}{b}
 \[z(t) = e^{-at}z(0) - \frac{b}{a} \left( e^{-at}-1 \right) = \frac{e^{-at}(Kz_0-1)+1)}{K}.\]</div>
 <p>Finally, from <span class="math notranslate nohighlight">\(x=1/z\)</span> we get</p>
 <div class="math notranslate nohighlight" id="equation-eq-logistic-solution">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-logistic-solution" title="Permalink to this equation">¶</a></span>\[x(t) = \frac{K x_0}{e^{-at}(K-x_0)+x_0},\]</div>
+<span class="eqno">(4.14)<a class="headerlink" href="#equation-eq-logistic-solution" title="Permalink to this equation">¶</a></span>\[x(t) = \frac{K x_0}{e^{-at}(K-x_0)+x_0},\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_0=x(0)\)</span>.</p>
 <p>The solution makes it clear that if <span class="math notranslate nohighlight">\(x_0&gt; 0\)</span>, then <span class="math notranslate nohighlight">\(x\to K\)</span> as <span class="math notranslate nohighlight">\(t\to \infty\)</span>. The logistic curve is an S-shaped or <strong>sigmoidal</strong> curve. You can think of it as a nice, smooth transition between two states (the two equilibria). For example, suppose <span class="math notranslate nohighlight">\(a=6\)</span> and <span class="math notranslate nohighlight">\(b=2\)</span>.</p>
 <div class="cell docutils container">
@@ -579,7 +618,7 @@ K=\frac{a}{b}
 <p>It’s not easy to say why this variable substitution works out well here. It’s not something you can expect to happen in every problem. The situation is very much like substitutions to solve integration problems: when they work, they’re golden, and when they don’t, you try something else.</p>
 </div>
 <div class="section" id="second-solution-method-separation">
-<h2>Second solution method: Separation<a class="headerlink" href="#second-solution-method-separation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Second solution method: Separation<a class="headerlink" href="#second-solution-method-separation" title="Permalink to this headline">¶</a></h2>
 <p>The logistic equation is separable:</p>
 <div class="math notranslate nohighlight">
 \[\frac{dx}{x(a-bx)} = dt.\]</div>
@@ -624,6 +663,8 @@ K=\frac{a}{b}
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="separable.html" title="previous page"><span class="section-number">3. </span>Separable equations</a>
+    <a class='right-next' id="next-link" href="direction.html" title="next page"><span class="section-number">5. </span>Direction fields</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
