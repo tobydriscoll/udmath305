@@ -78,9 +78,9 @@ These are notes on MATH 305 at UD by Toby Driscoll. All rights reserved.
 | Apr. 27 | [Order & dimension](first_system/order_dimension)      | 3.2       |                 |  K 3.2: 1                  |
 | Apr. 27 | [Solution structure](first_system/structure)            | 3.4 (part)       |                 |                    |
 | Apr. 27 | [Homogeneous solutions](first_system/homogeneous)          | 3.4 (part), 3.5 (part)       |                |     K 3.4: 1                |
-| May 4   | [Constant coefficients](first_system/const_coeff)          | 3.5 (part), 3.5.4 (part)      |                |   K 3.5: 7, 8(a,c), 12, 20                  |
+| Apr. 27  | [Constant coefficients](first_system/const_coeff)          | 3.5 (part), 3.5.4 (part)      |                |   K 3.5: 7, 8(a,c), 12, 20                  |
 | May 4   | [Phase plane](first_system/phase_plane)          | 3.5.1–3.5.5       |                 |   K 3.5: 1, 2, 6, 14, 15                 |
-| N/A     | ~~Matrix exponential~~           | --       |                 |                    |
+| May 4     | [Matrix exponential](first_system/matrix_exp)         | --       |                 |                    |
 | N/A     | ~~Variation of parameters~~ | 3.6.1       |                 |                    |
 
 <!-- | N/A     | [~~Matrix exponential~~](first_system/matrix_exp)           | --       |                 |                    | -->

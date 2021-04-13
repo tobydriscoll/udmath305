@@ -12,9 +12,15 @@ $$
 \bfx = \mathbf{X}(t) \mathbf{X}(0)^{-1} \bfx_0.
 $$
 
-The matrix $\mathbf{Y}(t) = \mathbf{X}(t) \mathbf{X}(0)^{-1}$ is interesting. First, it also satisfies $\mathbf{Y}'=\bfA \mathbf{Y}$, so it is also a fundamental matrix. Second, it has the property that $\mathbf{Y}(0)=\mathbf{I}$, which is what makes it useful for the initial-value problem. 
+The matrix $\mathbf{Y}(t) = \mathbf{X}(t) \mathbf{X}(0)^{-1}$ is interesting. First, it also satisfies $\mathbf{Y}'=\bfA \mathbf{Y}$:
 
-If we think back to scalar problems, the function $g(t)$ that satisfies $g'=ag$ and $g(0)=1$ is $g(t)=e^{at}$. Amazingly, this exponential function can also be extended to constant matrices.
+$$
+\mathbf{Y}' = \bigl[ \mathbf{X}(t) \mathbf{X}(0)^{-1} \bigr]\,' =  \mathbf{X}(t)' \mathbf{X}(0)^{-1} = \bfA \mathbf{X}(t) \mathbf{X}(0)^{-1} = \bfA \mathbf{Y}.
+$$
+
+Hence $\mathbf{Y}(t)$ is also a fundamental matrix. Second, it has the property that $\mathbf{Y}(0)=\mathbf{I}$, which is what makes it especially useful for the initial-value problem. 
+
+Thinking back to scalar problems, the function $g(t)$ that satisfies $g'=a g$ and $g(0)=1$ is $g(t)=e^{at}$. Amazingly, this exponential function can also be extended to having matrix arguments.
 
 ## Power series
 
@@ -24,7 +30,7 @@ We know the Taylor series
 e^{at} = 1 + at + \frac{1}{2!}(at)^2 + \frac{1}{3!} (at)^3 + \cdots.
 :::
 
-This series can directly be adapted to a square matrix $\mathbf{A}$, for which integer powers are possible:
+This series can be generalized directly to a square matrix $\mathbf{A}$, for which integer powers are possible:
 
 :::{math}
 :label: fs-eq-matrixexp
@@ -38,12 +44,22 @@ Let's not worry too much about whether this converges (it does). What are its pr
 Let $\mathbf{A},\mathbf{B}$ be $n\times n$ matrices. Then 
 
 1. $e^{t\mathbf{A}}=\mathbf{I}$ if $t=0$,
-2. $\dd{}{t}e^{t\mathbf{A}} = \mathbf{A} e^{t\mathbf{A}} = e^{t\mathbf{A}}\mathbf{A}$,
+2. $\displaystyle \dd{}{t}e^{t\mathbf{A}} = \mathbf{A} e^{t\mathbf{A}} = e^{t\mathbf{A}}\mathbf{A}$,
 3. $[e^{t\mathbf{A}}]^{-1} = e^{-t\mathbf{A}}$, and
-4. If $\mathbf{A}\mathbf{B}=\mathbf{B}\mathbf{A}$, then $e^{\mathbf{A}+\mathbf{B}} = e^{t\mathbf{A}}e^{t\mathbf{B}} = e^{t\mathbf{B}}e^{t\mathbf{A}}$.
+4. If $\mathbf{A}\mathbf{B}=\mathbf{B}\mathbf{A}$, then $e^{t(\mathbf{A}+\mathbf{B})} = e^{t\mathbf{A}}e^{t\mathbf{B}} = e^{t\mathbf{B}}e^{t\mathbf{A}}$.
 ::::
 
-These conclusions follow pretty easily from the series definition {eq}`fs-eq-matrixexp`. Furthermore, the matrix $\mathbf{Y}$ above is equal to $e^{t\mathbf{A}}$. This is one way to avoid the rather daunting prospect of having to sum an infinite series of matrices.
+These conclusions follow pretty easily from the series definition {eq}`fs-eq-matrixexp`. Furthermore, the matrix $\mathbf{Y}(t)$ above is equal to $e^{t\mathbf{A}}$. 
+
+::::{proof:formula} Matrix exponential
+If $\mathbf{X}(t)$ is any fundamental matrix for $\bfx'=\bfA\bfx$, then 
+
+$$
+e^{t\bfA} = \mathbf{X}(t) \mathbf{X}(0)^{-1}.
+$$
+::::
+
+This formula is one way to avoid the rather daunting prospect of having to sum an infinite series of matrices.
 
 ::::{admonition} Example
 :class: tip
@@ -93,11 +109,41 @@ has the eigenpairs
 \lambda = -1\pm i, \; \mathbf{v} = \twovec{1}{2\mp i},
 :::
 
-find the solution of the IVP $\bfx'=\mathbf{A}\bfx$, $\bfx(0)=\twovec{2}{1}$.
+find $e^{t\bfA}$ and the solution of the IVP $\bfx'=\mathbf{A}\bfx$, $\bfx(0)=\twovec{2}{1}$.
 
 :::{dropdown} Solution
+For $\lambda=-1+ i$, an eigenvector is
 
-Begin with 
+$$
+\twovec{1}{2} + i\,\twovec{0}{-1}.
+$$
+
+Therefore we can construct a fundamental matrix from the columns
+
+$$
+\bfx_1(t) = e^{-t} \left(\cos(t) \twovec{1}{2} - \sin(t) \twovec{0}{-1}\right), \qquad \bfx_2(t) = e^{-t} \left(\cos(t) \twovec{0}{-1} + \sin(t) \twovec{1}{2}\right).
+$$
+
+Hence
+
+$$
+\mathbf{X}(0)^{-1} = \twomat{1}{0}{2}{-1}^{\,-1} = -1 \twomat{-1}{0}{-2}{1} = \twomat{1}{0}{2}{-1}.
+$$
+
+We can now compute
+
+\begin{align*}
+e^{t\bfA} &= e^{-t}\twomat{\cos(t)}{\sin(t)}{2\cos(t)+\sin(t)}{2\sin(t)-\cos(t)} \twomat{1}{0}{2}{-1}\\[0.5ex]
+& = e^{-t}\twomat{\cos(t)+2\sin(t)}{-\sin(t)}{5\sin(t)}{\cos(t)-2\sin(t)}.
+\end{align*}
+
+Finally, then,
+
+$$
+\bfx(t) = e^{t\bfA} \bfx(0) = e^{-t}\twomat{\cos(t)+2\sin(t)}{-\sin(t)}{5\sin(t)}{\cos(t)-2\sin(t)} \twovec{2}{1} = e^{-t} \twovec{2\cos(t)+2\sin(t)}{\cos(t)+8\sin(t)}. 
+$$
+
+<!-- Begin with 
 
 $$
 \mathbf{X}(t) = e^{-t} \twomat{e^{it}}{e^{-it}}{(2-i)e^{it}}{(2+i)e^{-it}},
@@ -143,18 +189,18 @@ $$
 \end{split}
 $$
 
-Whee!
+Whee! -->
 :::
 ::::
 
 ## Defective matrix case
 
-There is one situation for which we have not yet produced a fundamental matrix in the constant-coefficient case: a defective matrix. It's complicated to spell out what happens in full generality, but it's easily managed for the $2\times 2$ case.
+There is one situation in $\bfx'=\bfA \bfx$ for which we have not yet produced a fundamental matrix in the constant-coefficient case: when $\bfA$ is defective. It's complicated to spell out what happens in full generality, but it's easily managed for the $2\times 2$ case.
 
-[Recall](thm-la-2x2defective) that for a $2\times 2$ matrix with a repeated eigenvalue, the matrix is either a multiple of the identity, or defective. In the latter case, something useful happens, which we state without proof.
+{numref}`Theorem {number}<thm-la-2x2defective>` states that for a $2\times 2$ matrix with a repeated eigenvalue, the matrix is either a multiple of the identity, or defective. In the latter case, something useful happens, which we state without proof.
 
 :::{proof:theorem}
-If $\mathbf{A}$ is a defective $2\times 2$ matrix with eigenvalue $\lambda$, then $(\mathbf{A}-\lambda \mathbf{I})^2= \boldsymbol{0}$.
+If $\mathbf{A}$ is a defective $2\times 2$ matrix with double eigenvalue $\lambda$, then $(\mathbf{A}-\lambda \mathbf{I})^2= \boldsymbol{0}$.
 :::
 
 Note that by part 4 of the matrix exponential theorem above,
@@ -176,11 +222,16 @@ $$
 e^{t(\mathbf{A}-\lambda \mathbf{I})} = \mathbf{I} + t(\mathbf{A}-\lambda \mathbf{I}) + \frac{1}{2!}t^2 (\mathbf{A}-\lambda \mathbf{I})^2 + \cdots.
 $$
 
-Thus,
+Thus we arrive at the following.
 
-$$
+::::{proof:formula} Matrix exponential for $2\times 2$ defective
+
+:::{math}
+:label: ls-2x2exp-defective
 e^{t\mathbf{A}} = \bigl( e^{t\lambda} \meye \bigr) \,  \bigl( \mathbf{I} + t(\mathbf{A}-\lambda \mathbf{I}) \bigr)  =  e^{t\lambda} \bigl( \mathbf{I} + t(\mathbf{A}-\lambda \mathbf{I}) \bigr).
-$$
+:::
+
+::::
 
 ::::{admonition} Example
 :class: tip
@@ -225,5 +276,8 @@ $$
 which is equivalent to the general solution we saw before for this problem, $e^{-t\omega_0}(c_1+c_2t)$.
 ::::
 
-Obviously the formulas lead to some intense algebra for particular examples, even in the $2\times 2$ case. A computer can handle it, but the elementwise expressions get hopelessly long in all but special cases. The formulas we are deriving tend to be far more useful as the foundation for deeper investigations of the general case.
+## Propagators
 
+Obviously the formulas lead to some intense algebra for particular examples, even in the $2\times 2$ case. A computer can handle it, but the elementwise expressions get tediously long in all but special cases. 
+
+The theoretical implications are more significant. 
