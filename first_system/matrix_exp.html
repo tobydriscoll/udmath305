@@ -493,18 +493,23 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#power-series">
-   7.1. Power series
+  <a class="reference internal nav-link" href="#definition">
+   7.1. Definition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connection-to-fundamental-matrices">
+   7.2. Connection to fundamental matrices
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#defective-matrix-case">
-   7.2. Defective matrix case
+   7.3. Defective matrix case
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#propagators">
-   7.3. Propagators
+   7.4. Propagators
   </a>
  </li>
 </ul>
@@ -520,25 +525,19 @@
                 
   <div class="section" id="the-matrix-exponential">
 <h1><span class="section-number">7. </span>The matrix exponential<a class="headerlink" href="#the-matrix-exponential" title="Permalink to this headline">¶</a></h1>
-<p>Suppose that <span class="math notranslate nohighlight">\(\mathbf{X}(t)\)</span> is a fundamental matrix for the constant-coefficient problem <span class="math notranslate nohighlight">\(\bfx'=\mathbf{A}\bfx\)</span>. If we impose on the general solution <span class="math notranslate nohighlight">\(\mathbf{X}(t)\mathbf{c}\)</span> an initial condition at <span class="math notranslate nohighlight">\(t=0\)</span>, we obtain</p>
+<p>As we well know by now, the solution of the scalar linear IVP <span class="math notranslate nohighlight">\(x'=ax\)</span>, <span class="math notranslate nohighlight">\(x(0)=x_0\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
-\bfx_0 = \bfx(0) = \mathbf{X}(0)\mathbf{c}.
+x(t) = e^{at} x_0.
 \]</div>
-<p>Solving this linear system symbolically for <span class="math notranslate nohighlight">\(\mathbf{c}\)</span>, the general solution becomes</p>
+<p>Wouldn’t it be interesting if in the vector case <span class="math notranslate nohighlight">\(\mathbf{x}'=\mathbf{A} \mathbf{x}\)</span>, <span class="math notranslate nohighlight">\(\bfx(0)=\bfx_0\)</span>, we could write</p>
 <div class="math notranslate nohighlight">
 \[
-\bfx = \mathbf{X}(t) \mathbf{X}(0)^{-1} \bfx_0.
+\bfx(t) = e^{\bfA t} \bfx_0 ?
 \]</div>
-<p>The matrix <span class="math notranslate nohighlight">\(\mathbf{Y}(t) = \mathbf{X}(t) \mathbf{X}(0)^{-1}\)</span> is interesting. First, it also satisfies <span class="math notranslate nohighlight">\(\mathbf{Y}'=\bfA \mathbf{Y}\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-\mathbf{Y}' = \bigl[ \mathbf{X}(t) \mathbf{X}(0)^{-1} \bigr]\,' =  \mathbf{X}(t)' \mathbf{X}(0)^{-1} = \bfA \mathbf{X}(t) \mathbf{X}(0)^{-1} = \bfA \mathbf{Y}.
-\]</div>
-<p>Hence <span class="math notranslate nohighlight">\(\mathbf{Y}(t)\)</span> is also a fundamental matrix. Second, it has the property that <span class="math notranslate nohighlight">\(\mathbf{Y}(0)=\mathbf{I}\)</span>, which is what makes it especially useful for the initial-value problem.</p>
-<p>Thinking back to scalar problems, the function <span class="math notranslate nohighlight">\(g(t)\)</span> that satisfies <span class="math notranslate nohighlight">\(g'=a g\)</span> and <span class="math notranslate nohighlight">\(g(0)=1\)</span> is <span class="math notranslate nohighlight">\(g(t)=e^{at}\)</span>. Amazingly, this exponential function can also be extended to having matrix arguments.</p>
-<div class="section" id="power-series">
-<h2><span class="section-number">7.1. </span>Power series<a class="headerlink" href="#power-series" title="Permalink to this headline">¶</a></h2>
+<p>Funny you should ask.</p>
+<div class="section" id="definition">
+<h2><span class="section-number">7.1. </span>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
 <p>We know the Taylor series</p>
 <div class="math notranslate nohighlight">
 \[e^{at} = 1 + at + \frac{1}{2!}(at)^2 + \frac{1}{3!} (at)^3 + \cdots.\]</div>
@@ -558,14 +557,59 @@
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(e^{t\mathbf{A}}=\mathbf{I}\)</span> if <span class="math notranslate nohighlight">\(t=0\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle \dd{}{t}e^{t\mathbf{A}} = \mathbf{A} e^{t\mathbf{A}} = e^{t\mathbf{A}}\mathbf{A}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\([e^{t\mathbf{A}}]^{-1} = e^{-t\mathbf{A}}\)</span>, and</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{B}=\mathbf{B}\mathbf{A}\)</span>, then <span class="math notranslate nohighlight">\(e^{t(\mathbf{A}+\mathbf{B})} = e^{t\mathbf{A}}e^{t\mathbf{B}} = e^{t\mathbf{B}}e^{t\mathbf{A}}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([e^{t\mathbf{A}}]^{-1} = e^{-t\mathbf{A}}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{(s+t)\mathbf{A}} = e^{s\bfA} \cdot e^{t\bfA} = e^{t\bfA} \cdot e^{s\bfA}\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{B}=\mathbf{B}\mathbf{A}\)</span>, then <span class="math notranslate nohighlight">\(e^{t(\mathbf{A}+\mathbf{B})} = e^{t\mathbf{A}}\cdot e^{t\mathbf{B}} = e^{t\mathbf{B}}\cdot e^{t\mathbf{A}}\)</span>.</p></li>
 </ol>
-</div></div><p>These conclusions follow pretty easily from the series definition <a class="reference internal" href="#equation-fs-eq-matrixexp">(7.5)</a>. Furthermore, the matrix <span class="math notranslate nohighlight">\(\mathbf{Y}(t)\)</span> above is equal to <span class="math notranslate nohighlight">\(e^{t\mathbf{A}}\)</span>.</p>
-<div class="proof proof-type-formula" id="id2">
+</div></div><p>These conclusions follow pretty easily from the series definition <a class="reference internal" href="#equation-fs-eq-matrixexp">(7.5)</a>. They are all essential to what we normally expect from an exponential function, although in the last case we had to restrict the applicability.</p>
+<p>From these properties we can make the connection to the IVP.</p>
+<div class="proof proof-type-theorem" id="id2">
 
     <div class="proof-title">
-        <span class="proof-type">Formula 7.4</span>
+        <span class="proof-type">Theorem 7.4</span>
+        
+    </div><div class="proof-content">
+<p>If <span class="math notranslate nohighlight">\(\bfA\)</span> is a constant square matrix, then</p>
+<div class="math notranslate nohighlight">
+\[
+\bfx(t) = e^{t \bfA} \bfx_0
+\]</div>
+<p>solves the initial-value problem <span class="math notranslate nohighlight">\(\mathbf{x}'=\mathbf{A} \mathbf{x}\)</span>, with <span class="math notranslate nohighlight">\(\bfx(0)=\bfx_0\)</span>.</p>
+</div></div><div class="proof proof-type-proof">
+
+    <div class="proof-title">
+        <span class="proof-type">Proof </span>
+        
+    </div><div class="proof-content">
+<p>With <span class="math notranslate nohighlight">\(\bfx\)</span> as defined in the theorem statement, we calculate</p>
+<div class="math notranslate nohighlight">
+\[
+\dd{}{t} \bfx(t) = \Bigl( \dd{}{t}e^{t \bfA} \Bigr) \bfx_0 =  \mathbf{A} e^{t\mathbf{A}} \bfx_0 = \bfA \bfx(t),
+\]</div>
+<p>using property 2 above. Furthermore,</p>
+<div class="math notranslate nohighlight">
+\[
+\bfx(0) = e^{0 \bfA} \bfx_0 = \meye \bfx_0 = \bfx_0,
+\]</div>
+<p>using property 1 above.</p>
+</div></div></div>
+<div class="section" id="connection-to-fundamental-matrices">
+<h2><span class="section-number">7.2. </span>Connection to fundamental matrices<a class="headerlink" href="#connection-to-fundamental-matrices" title="Permalink to this headline">¶</a></h2>
+<p>We already had a solution procedure for <span class="math notranslate nohighlight">\(\mathbf{x}'=\mathbf{A} \mathbf{x}\)</span> with <span class="math notranslate nohighlight">\(\bfx(0)=\bfx_0\)</span>. We use a fundamental matrix to write the general solution <span class="math notranslate nohighlight">\(\bfx = \mathbf{X}(t) \mathbf{c}\)</span>, then apply the initial condition to get</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{x}_0 = \mathbf{x}(0) = \mathbf{X}(0) \mathbf{c}.
+\]</div>
+<p>This is a linear system that can be solved for <span class="math notranslate nohighlight">\(\mathbf{c}\)</span> using a matrix inverse, leading to</p>
+<div class="math notranslate nohighlight">
+\[
+\bfx(t) = \mathbf{X}(t) \mathbf{X}(0)^{-1} \bfx_0.
+\]</div>
+<p>Since the solution of an IVP is unique (and the matrices here are invertible), we get the following useful result.</p>
+<div class="proof proof-type-formula" id="id3">
+
+    <div class="proof-title">
+        <span class="proof-type">Formula 7.5</span>
         
             <span class="proof-title-name">(Matrix exponential)</span>
         
@@ -701,17 +745,17 @@ Whee! -->
 </details></div>
 </div>
 <div class="section" id="defective-matrix-case">
-<h2><span class="section-number">7.2. </span>Defective matrix case<a class="headerlink" href="#defective-matrix-case" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3. </span>Defective matrix case<a class="headerlink" href="#defective-matrix-case" title="Permalink to this headline">¶</a></h2>
 <p>There is one situation in <span class="math notranslate nohighlight">\(\bfx'=\bfA \bfx\)</span> for which we have not yet produced a fundamental matrix in the constant-coefficient case: when <span class="math notranslate nohighlight">\(\bfA\)</span> is defective. It’s complicated to spell out what happens in full generality, but it’s easily managed for the <span class="math notranslate nohighlight">\(2\times 2\)</span> case.</p>
 <p><a class="reference internal" href="../linalg/multiplicity.html#thm-la-2x2defective"><span class="std std-numref">Theorem 14.7</span></a> states that for a <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix with a repeated eigenvalue, the matrix is either a multiple of the identity, or defective. In the latter case, something useful happens, which we state without proof.</p>
-<div class="proof proof-type-theorem" id="id3">
+<div class="proof proof-type-theorem" id="id4">
 
     <div class="proof-title">
-        <span class="proof-type">Theorem 7.5</span>
+        <span class="proof-type">Theorem 7.6</span>
         
     </div><div class="proof-content">
 <p>If <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is a defective <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix with double eigenvalue <span class="math notranslate nohighlight">\(\lambda\)</span>, then <span class="math notranslate nohighlight">\((\mathbf{A}-\lambda \mathbf{I})^2= \boldsymbol{0}\)</span>.</p>
-</div></div><p>Note that by part 4 of the matrix exponential theorem above,</p>
+</div></div><p>Note that by part 5 of the matrix exponential properties theorem above,</p>
 <div class="math notranslate nohighlight">
 \[
 e^{t\mathbf{A}} = e^{t\lambda\mathbf{I}} \,  e^{t(\mathbf{A}-\lambda \mathbf{I})}.
@@ -728,10 +772,10 @@ e^{t\lambda} \mathbf{I},
 e^{t(\mathbf{A}-\lambda \mathbf{I})} = \mathbf{I} + t(\mathbf{A}-\lambda \mathbf{I}) + \frac{1}{2!}t^2 (\mathbf{A}-\lambda \mathbf{I})^2 + \cdots.
 \]</div>
 <p>Thus we arrive at the following.</p>
-<div class="proof proof-type-formula" id="id4">
+<div class="proof proof-type-formula" id="id5">
 
     <div class="proof-title">
-        <span class="proof-type">Formula 7.6</span>
+        <span class="proof-type">Formula 7.7</span>
         
             <span class="proof-title-name">(Matrix exponential for <span class="math notranslate nohighlight">\(2\times 2\)</span> defective)</span>
         
@@ -782,9 +826,11 @@ e^{-t\omega_0}[ c_1 (1+t\omega_0) + c_2 t],
 </div>
 </div>
 <div class="section" id="propagators">
-<h2><span class="section-number">7.3. </span>Propagators<a class="headerlink" href="#propagators" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.4. </span>Propagators<a class="headerlink" href="#propagators" title="Permalink to this headline">¶</a></h2>
 <p>Obviously the formulas lead to some intense algebra for particular examples, even in the <span class="math notranslate nohighlight">\(2\times 2\)</span> case. A computer can handle it, but the elementwise expressions get tediously long in all but special cases.</p>
-<p>The theoretical implications are more significant.</p>
+<p>The theoretical implications are more significant. The interpretation of <span class="math notranslate nohighlight">\(e^{t\bfA}\)</span> in the ODE context is that it transforms a vector initial condition to the solution vector at a time <span class="math notranslate nohighlight">\(t\)</span>. This is a linear operator; the solutions of linear equations behave linearly.</p>
+<p>Property 3 above implies that to invert that transformation, you can use <span class="math notranslate nohighlight">\(e^{-t\bfA}\)</span>, which is the same as running the ODE in “negative time.” More formally, it’s a statement about <em>time reversibility</em>.</p>
+<p>Property 4 above implies that the evolution at time <span class="math notranslate nohighlight">\(t+s\)</span> is equivalent to evolving by time <span class="math notranslate nohighlight">\(t\)</span>, then by time <span class="math notranslate nohighlight">\(s\)</span> (or vice versa). This is a statement about <em>time invariance</em>. A linear equation with a non-constant coefficient matrix also has a propagator matrix, but it’s not a matrix exponential, and the time invariance is broken.</p>
 </div>
 </div>
 

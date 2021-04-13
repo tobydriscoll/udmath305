@@ -1,28 +1,20 @@
 # The matrix exponential
 
-Suppose that $\mathbf{X}(t)$ is a fundamental matrix for the constant-coefficient problem $\bfx'=\mathbf{A}\bfx$. If we impose on the general solution $\mathbf{X}(t)\mathbf{c}$ an initial condition at $t=0$, we obtain
+As we well know by now, the solution of the scalar linear IVP $x'=ax$, $x(0)=x_0$ is 
 
 $$
-\bfx_0 = \bfx(0) = \mathbf{X}(0)\mathbf{c}.
+x(t) = e^{at} x_0.
 $$
 
-Solving this linear system symbolically for $\mathbf{c}$, the general solution becomes
+Wouldn't it be interesting if in the vector case $\mathbf{x}'=\mathbf{A} \mathbf{x}$, $\bfx(0)=\bfx_0$, we could write
 
 $$
-\bfx = \mathbf{X}(t) \mathbf{X}(0)^{-1} \bfx_0.
+\bfx(t) = e^{\bfA t} \bfx_0 ?
 $$
 
-The matrix $\mathbf{Y}(t) = \mathbf{X}(t) \mathbf{X}(0)^{-1}$ is interesting. First, it also satisfies $\mathbf{Y}'=\bfA \mathbf{Y}$:
+Funny you should ask. 
 
-$$
-\mathbf{Y}' = \bigl[ \mathbf{X}(t) \mathbf{X}(0)^{-1} \bigr]\,' =  \mathbf{X}(t)' \mathbf{X}(0)^{-1} = \bfA \mathbf{X}(t) \mathbf{X}(0)^{-1} = \bfA \mathbf{Y}.
-$$
-
-Hence $\mathbf{Y}(t)$ is also a fundamental matrix. Second, it has the property that $\mathbf{Y}(0)=\mathbf{I}$, which is what makes it especially useful for the initial-value problem. 
-
-Thinking back to scalar problems, the function $g(t)$ that satisfies $g'=a g$ and $g(0)=1$ is $g(t)=e^{at}$. Amazingly, this exponential function can also be extended to having matrix arguments.
-
-## Power series
+## Definition
 
 We know the Taylor series 
 
@@ -45,11 +37,56 @@ Let $\mathbf{A},\mathbf{B}$ be $n\times n$ matrices. Then
 
 1. $e^{t\mathbf{A}}=\mathbf{I}$ if $t=0$,
 2. $\displaystyle \dd{}{t}e^{t\mathbf{A}} = \mathbf{A} e^{t\mathbf{A}} = e^{t\mathbf{A}}\mathbf{A}$,
-3. $[e^{t\mathbf{A}}]^{-1} = e^{-t\mathbf{A}}$, and
-4. If $\mathbf{A}\mathbf{B}=\mathbf{B}\mathbf{A}$, then $e^{t(\mathbf{A}+\mathbf{B})} = e^{t\mathbf{A}}e^{t\mathbf{B}} = e^{t\mathbf{B}}e^{t\mathbf{A}}$.
+3. $[e^{t\mathbf{A}}]^{-1} = e^{-t\mathbf{A}}$,
+4. $e^{(s+t)\mathbf{A}} = e^{s\bfA} \cdot e^{t\bfA} = e^{t\bfA} \cdot e^{s\bfA}$
+5. If $\mathbf{A}\mathbf{B}=\mathbf{B}\mathbf{A}$, then $e^{t(\mathbf{A}+\mathbf{B})} = e^{t\mathbf{A}}\cdot e^{t\mathbf{B}} = e^{t\mathbf{B}}\cdot e^{t\mathbf{A}}$.
 ::::
 
-These conclusions follow pretty easily from the series definition {eq}`fs-eq-matrixexp`. Furthermore, the matrix $\mathbf{Y}(t)$ above is equal to $e^{t\mathbf{A}}$. 
+These conclusions follow pretty easily from the series definition {eq}`fs-eq-matrixexp`. They are all essential to what we normally expect from an exponential function, although in the last case we had to restrict the applicability.
+
+From these properties we can make the connection to the IVP.
+
+```{proof:theorem}
+If $\bfA$ is a constant square matrix, then
+
+$$
+\bfx(t) = e^{t \bfA} \bfx_0
+$$
+
+solves the initial-value problem $\mathbf{x}'=\mathbf{A} \mathbf{x}$, with $\bfx(0)=\bfx_0$.
+```
+
+```{proof:proof}
+With $\bfx$ as defined in the theorem statement, we calculate
+
+$$
+\dd{}{t} \bfx(t) = \Bigl( \dd{}{t}e^{t \bfA} \Bigr) \bfx_0 =  \mathbf{A} e^{t\mathbf{A}} \bfx_0 = \bfA \bfx(t),
+$$
+
+using property 2 above. Furthermore,
+
+$$
+\bfx(0) = e^{0 \bfA} \bfx_0 = \meye \bfx_0 = \bfx_0,
+$$
+
+using property 1 above.
+```
+
+## Connection to fundamental matrices
+
+We already had a solution procedure for $\mathbf{x}'=\mathbf{A} \mathbf{x}$ with $\bfx(0)=\bfx_0$. We use a fundamental matrix to write the general solution $\bfx = \mathbf{X}(t) \mathbf{c}$, then apply the initial condition to get 
+
+$$
+\mathbf{x}_0 = \mathbf{x}(0) = \mathbf{X}(0) \mathbf{c}.
+$$
+
+This is a linear system that can be solved for $\mathbf{c}$ using a matrix inverse, leading to
+
+$$
+\bfx(t) = \mathbf{X}(t) \mathbf{X}(0)^{-1} \bfx_0.
+$$
+
+Since the solution of an IVP is unique (and the matrices here are invertible), we get the following useful result.
 
 ::::{proof:formula} Matrix exponential
 If $\mathbf{X}(t)$ is any fundamental matrix for $\bfx'=\bfA\bfx$, then 
@@ -203,7 +240,7 @@ There is one situation in $\bfx'=\bfA \bfx$ for which we have not yet produced a
 If $\mathbf{A}$ is a defective $2\times 2$ matrix with double eigenvalue $\lambda$, then $(\mathbf{A}-\lambda \mathbf{I})^2= \boldsymbol{0}$.
 :::
 
-Note that by part 4 of the matrix exponential theorem above,
+Note that by part 5 of the matrix exponential properties theorem above,
 
 $$
 e^{t\mathbf{A}} = e^{t\lambda\mathbf{I}} \,  e^{t(\mathbf{A}-\lambda \mathbf{I})}.
@@ -280,4 +317,8 @@ which is equivalent to the general solution we saw before for this problem, $e^{
 
 Obviously the formulas lead to some intense algebra for particular examples, even in the $2\times 2$ case. A computer can handle it, but the elementwise expressions get tediously long in all but special cases. 
 
-The theoretical implications are more significant. 
+The theoretical implications are more significant. The interpretation of $e^{t\bfA}$ in the ODE context is that it transforms a vector initial condition to the solution vector at a time $t$. This is a linear operator; the solutions of linear equations behave linearly.
+
+Property 3 above implies that to invert that transformation, you can use $e^{-t\bfA}$, which is the same as running the ODE in "negative time." More formally, it's a statement about *time reversibility*. 
+
+Property 4 above implies that the evolution at time $t+s$ is equivalent to evolving by time $t$, then by time $s$ (or vice versa). This is a statement about *time invariance*. A linear equation with a non-constant coefficient matrix also has a propagator matrix, but it's not a matrix exponential, and the time invariance is broken.
