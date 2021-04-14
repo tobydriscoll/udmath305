@@ -49,8 +49,8 @@ We begin with the steady states. We have $x'=f(x)=x(a-bx)$, with roots $x=0$ and
 
 | Steady state | Stability |
 |-----------|-----------|
-| $x_* = 0$ | unstable |
-| $x_* = \frac{a}{b}$ | asymptotically stable | 
+| $\hat{x} = 0$ | unstable |
+| $\hat{x} = \frac{a}{b}$ | asymptotically stable | 
 
 :::{index} carrying capacity
 :::

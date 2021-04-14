@@ -12,7 +12,7 @@ we say the equation is {term}`autonomous`. These equations are the simplest plac
 :::
 :::{index} equilibrium
 :::
-Even before attempting a full solution of the problem, we can see that a value $x_*$ that satisfies $f(x_*)=0$ is special: the constant function $x(t)\equiv x_*$ is a solution. Such a value is called a {term}`steady state`,  {term}`equilibrium solution`, or {term}`fixed point`. One of the most important characteristics of each steady state is its **stability**, as we first encountered in the phase plane. Here we use some definitions to formalize the idea a bit more.
+Even before attempting a full solution of the problem, we can see that a value $\hat{x}$ that satisfies $f(\hat{x})=0$ is special: the constant function $x(t)\equiv \hat{x}$ is a solution. Such a value is called a {term}`steady state`,  {term}`equilibrium solution`, or {term}`fixed point`. One of the most important characteristics of each steady state is its **stability**, as we first encountered in the phase plane. Here we use some definitions to formalize the idea a bit more.
 
 <!-- Imagine holding a broom with bristles pointed down using two fingers. This is ideally a pendulum with a steady state of the broom pointing straight down. You will have no difficulty holding the broom in approximately that position as long as you want.
 
@@ -29,22 +29,22 @@ $$
 $$
 
 ::::{proof:definition} Asymptotic stability
-The steady state $x_*$ is said to be {term}`asymptotically stable` if there is a positive number $\delta$ such that 
+The steady state $\hat{x}$ is said to be {term}`asymptotically stable` if there is a positive number $\delta$ such that 
 
 $$
-\lim_{t\to\infty} x(t,X) = x_*
+\lim_{t\to\infty} x(t,X) = \hat{x}
 $$
 
-whenever $|X-x_*|< \delta$. 
+whenever $|X-\hat{x}|< \delta$. 
 ::::
 
-In words, asymptotic stability means that if you start close enough to $x_*$, then you end up there as $t \to \infty$. There is a weaker form of the property that is a bit more difficult to parse.
+In words, asymptotic stability means that if you start close enough to $\hat{x}$, then you end up there as $t \to \infty$. There is a weaker form of the property that is a bit more difficult to parse.
 
 ::::{proof:definition} Stability
-The steady state $x_*$ is said to be {term}`stable` if, for any $\epsilon>0$, you can ensure that $|x(t,X)-x_*|<\epsilon$ for all time whenever $|X-x_*|<\delta$, where $\delta$ depends on $\epsilon$. 
+The steady state $\hat{x}$ is said to be {term}`stable` if, for any $\epsilon>0$, you can ensure that $|x(t,X)-\hat{x}|<\epsilon$ for all time whenever $|X-\hat{x}|<\delta$, where $\delta$ depends on $\epsilon$. 
 ::::
 
-Stability means that you can stay as close as you like to $x_*$ by starting off close enough to it. Any point that is asymptotically stable is stable by this definition as well. We will call this **weak stability** to highlight the contrast with asymptotic stability. Finally, a steady state that is not at least weakly stable is called **unstable**.
+Stability means that you can stay as close as you like to $\hat{x}$ by starting off close enough to it. Any point that is asymptotically stable is stable by this definition as well. We will call this **weak stability** to highlight the contrast with asymptotic stability. Finally, a steady state that is not at least weakly stable is called **unstable**.
 
 :::{index} phase line diagram
 :::
@@ -79,7 +79,7 @@ Graphically it is now clear that the steady states at $x=\pm 1$ are stable, whil
 
 An analytical test for stability is:
 
-- If $f'(x_*)<0$, then $x_*$ is asymptotically stable.
-- If $f'(x_*)>0$, then $x_*$ is unstable.
+- If $f'(\hat{x})<0$, then $\hat{x}$ is asymptotically stable.
+- If $f'(\hat{x})>0$, then $\hat{x}$ is unstable.
 
-As you might surmise, the case $f'(x_*)=0$ is ambiguous, and a phase line or other analysis is needed to reveal the stability.
+As you might surmise, the case $f'(\hat{x})=0$ is ambiguous, and a phase line or other analysis is needed to reveal the stability.
