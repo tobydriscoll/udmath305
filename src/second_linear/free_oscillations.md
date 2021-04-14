@@ -219,7 +219,7 @@ which are negative and real. This gives an exponentially decaying homogeneous so
   - real, negative, repeated
   - critically damped
 * - $Z > 1$
-  - real, negative 
+  - real, negative, distinct 
   - overdamped
 ```
 
