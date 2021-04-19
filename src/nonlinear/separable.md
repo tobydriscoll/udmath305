@@ -44,10 +44,10 @@ $$
 \frac{1}{4}x^4 - 2x  = C + \frac{1}{3}t^3.
 $$
 
-We could work hard to try to solve explicitly for $x$, but it's probably best to leave it in implicit form. This is a common limitation of separable solutions. Even in implicit form, though, we can solve for the arbitrary constant by setting $x=4$ and $t=0$:
+We could work hard to try to solve explicitly for $x$, but it's probably best to leave it in implicit form. This is a common limitation of separable solutions. Even in implicit form, though, we can solve for the arbitrary constant by setting $x=4$ and $t=0$ in the implicit equation, leading to
 
 $$
-4^4/4 - 2 \cdot 4 = C + 0$, 
+4^4/4 - 2 \cdot 4 = C + 0.
 $$
 
 Hence $C=56$.
@@ -77,8 +77,16 @@ $$
 Thus $\ln|x| = \ln|t|-t+C$, or 
 
 $$
-x=A t e^{-t}.
+|x| = e^C |t| e^{-t}.
 $$ 
+
+Once we take off the absolute values, we have
+
+$$
+x= \pm A t e^{-t} \quad (A>0).
+$$ 
+
+We divided the equation through by $x$ and therefore eliminated $x=0$ as a possibility, so we need to check that separately. We easily see that $x\equiv 0$ is a steady state, so $A=0$ is allowed as well in our solution formula.
 
 Note that this problem is also linear, so it could be approached that way as well. Of course you must get the same solution either way!
 :::
