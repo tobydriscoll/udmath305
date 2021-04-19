@@ -502,7 +502,7 @@
 x'=f(x),
 \]</div>
 <p>we say the equation is <a class="reference internal" href="../first_linear/overview.html#term-autonomous"><span class="xref std std-term">autonomous</span></a>. These equations are the simplest place to start.</p>
-<span class="target" id="index-0"></span><p id="index-1">Even before attempting a full solution of the problem, we can see that a value <span class="math notranslate nohighlight">\(x_*\)</span> that satisfies <span class="math notranslate nohighlight">\(f(x_*)=0\)</span> is special: the constant function <span class="math notranslate nohighlight">\(x(t)\equiv x_*\)</span> is a solution. Such a value is called a <span class="xref std std-term">steady state</span>,  <a class="reference internal" href="../first_system/overview.html#term-equilibrium-solution"><span class="xref std std-term">equilibrium solution</span></a>, or <span class="xref std std-term">fixed point</span>. One of the most important characteristics of each steady state is its <strong>stability</strong>, as we first encountered in the phase plane. Here we use some definitions to formalize the idea a bit more.</p>
+<span class="target" id="index-0"></span><p id="index-1">Even before attempting a full solution of the problem, we can see that a value <span class="math notranslate nohighlight">\(\hat{x}\)</span> that satisfies <span class="math notranslate nohighlight">\(f(\hat{x})=0\)</span> is special: the constant function <span class="math notranslate nohighlight">\(x(t)\equiv \hat{x}\)</span> is a solution. Such a value is called a <span class="xref std std-term">steady state</span>,  <a class="reference internal" href="../first_system/overview.html#term-equilibrium-solution"><span class="xref std std-term">equilibrium solution</span></a>, or <span class="xref std std-term">fixed point</span>. One of the most important characteristics of each steady state is its <strong>stability</strong>, as we first encountered in the phase plane. Here we use some definitions to formalize the idea a bit more.</p>
 <!-- Imagine holding a broom with bristles pointed down using two fingers. This is ideally a pendulum with a steady state of the broom pointing straight down. You will have no difficulty holding the broom in approximately that position as long as you want.
 
 Now imagine trying to hold the broom using the same two fingers, but with the bristles pointing upward. This is an *inverted pendulum*, and ideally there is a steady state with the broom pointing straight up. Yet you will find it difficult to hold the broom in that position for more than a few seconds.
@@ -523,13 +523,13 @@ The distinction between these steady states is the property of {term}`stability`
             <span class="proof-title-name">(Asymptotic stability)</span>
         
     </div><div class="proof-content">
-<p>The steady state <span class="math notranslate nohighlight">\(x_*\)</span> is said to be <a class="reference internal" href="../first_system/overview.html#term-asymptotically-stable"><span class="xref std std-term">asymptotically stable</span></a> if there is a positive number <span class="math notranslate nohighlight">\(\delta\)</span> such that</p>
+<p>The steady state <span class="math notranslate nohighlight">\(\hat{x}\)</span> is said to be <a class="reference internal" href="../first_system/overview.html#term-asymptotically-stable"><span class="xref std std-term">asymptotically stable</span></a> if there is a positive number <span class="math notranslate nohighlight">\(\delta\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
-\lim_{t\to\infty} x(t,X) = x_*
+\lim_{t\to\infty} x(t,X) = \hat{x}
 \]</div>
-<p>whenever <span class="math notranslate nohighlight">\(|X-x_*|&lt; \delta\)</span>.</p>
-</div></div><p>In words, asymptotic stability means that if you start close enough to <span class="math notranslate nohighlight">\(x_*\)</span>, then you end up there as <span class="math notranslate nohighlight">\(t \to \infty\)</span>. There is a weaker form of the property that is a bit more difficult to parse.</p>
+<p>whenever <span class="math notranslate nohighlight">\(|X-\hat{x}|&lt; \delta\)</span>.</p>
+</div></div><p>In words, asymptotic stability means that if you start close enough to <span class="math notranslate nohighlight">\(\hat{x}\)</span>, then you end up there as <span class="math notranslate nohighlight">\(t \to \infty\)</span>. There is a weaker form of the property that is a bit more difficult to parse.</p>
 <div class="proof proof-type-definition" id="id2">
 
     <div class="proof-title">
@@ -538,8 +538,8 @@ The distinction between these steady states is the property of {term}`stability`
             <span class="proof-title-name">(Stability)</span>
         
     </div><div class="proof-content">
-<p>The steady state <span class="math notranslate nohighlight">\(x_*\)</span> is said to be <a class="reference internal" href="../first_system/overview.html#term-stable"><span class="xref std std-term">stable</span></a> if, for any <span class="math notranslate nohighlight">\(\epsilon&gt;0\)</span>, you can ensure that <span class="math notranslate nohighlight">\(|x(t,X)-x_*|&lt;\epsilon\)</span> for all time whenever <span class="math notranslate nohighlight">\(|X-x_*|&lt;\delta\)</span>, where <span class="math notranslate nohighlight">\(\delta\)</span> depends on <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
-</div></div><p>Stability means that you can stay as close as you like to <span class="math notranslate nohighlight">\(x_*\)</span> by starting off close enough to it. Any point that is asymptotically stable is stable by this definition as well. We will call this <strong>weak stability</strong> to highlight the contrast with asymptotic stability. Finally, a steady state that is not at least weakly stable is called <strong>unstable</strong>.</p>
+<p>The steady state <span class="math notranslate nohighlight">\(\hat{x}\)</span> is said to be <a class="reference internal" href="../first_system/overview.html#term-stable"><span class="xref std std-term">stable</span></a> if, for any <span class="math notranslate nohighlight">\(\epsilon&gt;0\)</span>, you can ensure that <span class="math notranslate nohighlight">\(|x(t,X)-\hat{x}|&lt;\epsilon\)</span> for all time whenever <span class="math notranslate nohighlight">\(|X-\hat{x}|&lt;\delta\)</span>, where <span class="math notranslate nohighlight">\(\delta\)</span> depends on <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+</div></div><p>Stability means that you can stay as close as you like to <span class="math notranslate nohighlight">\(\hat{x}\)</span> by starting off close enough to it. Any point that is asymptotically stable is stable by this definition as well. We will call this <strong>weak stability</strong> to highlight the contrast with asymptotic stability. Finally, a steady state that is not at least weakly stable is called <strong>unstable</strong>.</p>
 <p id="index-2">One tool for discriminating between stable and unstable equilibria is a <a class="reference internal" href="overview.html#term-phase-line-diagram"><span class="xref std std-term">phase line diagram</span></a>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
@@ -557,10 +557,10 @@ The distinction between these steady states is the property of {term}`stability`
 </div>
 <p>An analytical test for stability is:</p>
 <ul class="simple">
-<li><p>If <span class="math notranslate nohighlight">\(f'(x_*)&lt;0\)</span>, then <span class="math notranslate nohighlight">\(x_*\)</span> is asymptotically stable.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(f'(x_*)&gt;0\)</span>, then <span class="math notranslate nohighlight">\(x_*\)</span> is unstable.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f'(\hat{x})&lt;0\)</span>, then <span class="math notranslate nohighlight">\(\hat{x}\)</span> is asymptotically stable.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f'(\hat{x})&gt;0\)</span>, then <span class="math notranslate nohighlight">\(\hat{x}\)</span> is unstable.</p></li>
 </ul>
-<p>As you might surmise, the case <span class="math notranslate nohighlight">\(f'(x_*)=0\)</span> is ambiguous, and a phase line or other analysis is needed to reveal the stability.</p>
+<p>As you might surmise, the case <span class="math notranslate nohighlight">\(f'(\hat{x})=0\)</span> is ambiguous, and a phase line or other analysis is needed to reveal the stability.</p>
 </div>
 
     <script type="text/x-thebe-config">

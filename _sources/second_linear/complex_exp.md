@@ -89,7 +89,7 @@ $$
 z = |z|\cdot \frac{z}{|z|},
 $$
 
-where $|z|$ is the modulus (distance from origin in the plane). Since \frac{z}{|z|} has modulus equal to 1, it must lie on the unit circle. Hence there is a real $\theta$ such that
+where $|z|$ is the modulus (distance from origin in the plane). Since $\frac{z}{|z|}$ has modulus equal to 1, it must lie on the unit circle. Hence there is a real $\theta$ such that
 
 ```{math}
 :label: secondlin-polar

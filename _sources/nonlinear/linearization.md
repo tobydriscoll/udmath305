@@ -31,10 +31,10 @@ This trick works for any nonlinear second-order equation $\theta''=g(t,\theta,\t
 \end{align*}
 
 
-As we did with single scalar equations, we will pay close attention to steady states or fixed points of these systems. Here this means finding constants $(x_*,y_*)$ such that 
+As we did with single scalar equations, we will pay close attention to steady states or fixed points of these systems. Here this means finding constants $(\hat{x},y_*)$ such that 
 
 $$
-F(x_*,y_*)=G(x_*,y_*)=0.
+F(\hat{x},y_*)=G(\hat{x},y_*)=0.
 $$
 
 For the nonlinear pendulum, both $(0,0)$ (straight down, at rest) and $(\pi,0)$ (straight up, at rest) are steady states. 
@@ -42,16 +42,16 @@ For the nonlinear pendulum, both $(0,0)$ (straight down, at rest) and $(\pi,0)$ 
 We are interested in the stability of fixed points, i.e., the dynamics close to them. We will use linear approximations of the functions $F$ and $G$ near a fixed point:
 
 \begin{align*}
-	F(x,y) & \approx F(x_*,y_*) + \pp{F}{x}\cdot (x-x_*) + \pp{F}{y} \cdot (y-y_*),\\
-	G(x,y) & \approx G(x_*,y_*) + \pp{G}{x} \cdot (x-x_*) + \pp{G}{y} \cdot (y-y_*),\\
+	F(x,y) & \approx F(\hat{x},y_*) + \pp{F}{x}\cdot (x-\hat{x}) + \pp{F}{y} \cdot (y-y_*),\\
+	G(x,y) & \approx G(\hat{x},y_*) + \pp{G}{x} \cdot (x-\hat{x}) + \pp{G}{y} \cdot (y-y_*),\\
 \end{align*}
 
-where it is understood for brevity that the partial derivatives are all evaluated at $(x_*,y_*)$. Given that $(x_*,y_*)$ is a fixed point, $F(x_*,y_*)=G(x_*,y_*)=0$. 
+where it is understood for brevity that the partial derivatives are all evaluated at $(\hat{x},y_*)$. Given that $(\hat{x},y_*)$ is a fixed point, $F(\hat{x},y_*)=G(\hat{x},y_*)=0$. 
 
 Now define 
 
 $$
-u_1(t)=x(t)-x_*,\quad u_2(t)=y(t)-y_*.
+u_1(t)=x(t)-\hat{x},\quad u_2(t)=y(t)-y_*.
 $$
 
 Then 
@@ -81,7 +81,7 @@ The Jacobian matrix is essentially the derivative of a 2D vector field. As such,
 
 ## Stability
 
-Let's summarize. In the neighborhood of a fixed point $(x_*,y_*)$, we can define the *deviation from equilibrium* by the variables $u_1(t)=x(t)-x_*$, $u_2(t)=y(t)-y_*$. These variables approximately satisfy $\mathbf{u}'=\mathbf{J}(x_*,y_*)\mathbf{u}$, which is a linear, constant-coefficient system in two dimensions. Thus, **near a steady state, dynamics are mostly linear.** 
+Let's summarize. In the neighborhood of a fixed point $(\hat{x},y_*)$, we can define the *deviation from equilibrium* by the variables $u_1(t)=x(t)-\hat{x}$, $u_2(t)=y(t)-y_*$. These variables approximately satisfy $\mathbf{u}'=\mathbf{J}(\hat{x},y_*)\mathbf{u}$, which is a linear, constant-coefficient system in two dimensions. Thus, **near a steady state, dynamics are mostly linear.** 
 
 We are now right back into the phase plane we studied earlier. In particular: 
 

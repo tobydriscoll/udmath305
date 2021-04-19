@@ -496,8 +496,13 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nonautonomous-scalar-problems">
-   5.1. Nonautonomous scalar problems
+  <a class="reference internal nav-link" href="#scalar-equations">
+   5.1. Scalar equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autonomous-2d-equations">
+   5.2. Autonomous 2D equations
   </a>
  </li>
 </ul>
@@ -513,7 +518,7 @@
                 
   <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% nothing</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -527,28 +532,19 @@
 </div>
 <div class="section" id="direction-fields">
 <h1><span class="section-number">5. </span>Direction fields<a class="headerlink" href="#direction-fields" title="Permalink to this headline">¶</a></h1>
-<p>An autonomous system in two dimensions has the particular form</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-	\dd{x_1}{t} &amp; = f_1(x_1,x_2), \\
-	\dd{x_2}{t} &amp; = f_2(x_1,x_2). \\
-\end{align*}\]</div>
-<p>For such a system we can use a simple visualization to suggest solution behavior. For instance, here is a direction field for the linear ODE system</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\dd{x}{t} &amp; = -y,\\
-\dd{y}{t} &amp; = x.
-\end{align*}\]</div>
-<p>We will use a custom function <code class="docutils literal notranslate"><span class="pre">slopefield.m</span></code>.</p>
+<p>For low-dimensional systems, there is a graphical tool known as a <strong>direction field</strong> that aids with estimating the behavior of solutions.</p>
+<div class="section" id="scalar-equations">
+<h2><span class="section-number">5.1. </span>Scalar equations<a class="headerlink" href="#scalar-equations" title="Permalink to this headline">¶</a></h2>
+<p>In the scalar equation <span class="math notranslate nohighlight">\(x'=f(t,x)\)</span>, <span class="math notranslate nohighlight">\(f\)</span> gives the slope of any solution at any point in the <span class="math notranslate nohighlight">\((t,x)\)</span> plane. Hence, while it is usually not easy to draw solution curves, it is straightforward to draw the instantaneous slopes of them. We give MATLAB code for it here.</p>
 <div class="toggle docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">slopefield</span><span class="p">(</span>varargin<span class="p">)</span><span class="w"></span>
-<span class="c">% SLOPEFIELD Plot a slope field (aka direction field).</span><span class="w"></span>
-<span class="c">%    SLOPEFIELD(F,TLIM,YLIM) plots arrows in the (t,y) plane that represent</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">dirfield</span><span class="p">(</span>varargin<span class="p">)</span><span class="w"></span>
+<span class="c">% DIRFIELD Plot a direction field.</span><span class="w"></span>
+<span class="c">%    DIRFIELD(F,TLIM,XLIM) plots arrows in the (t,x) plane that represent</span><span class="w"></span>
 <span class="c">%    the slope field of the ODE dydt = F(t,y). The function F must accept</span><span class="w"></span>
-<span class="c">%    both arguments. The vectors TLIM and</span><span class="w"></span>
-<span class="c">%    YLIM define the bounds of the plot in their respective directions.</span><span class="w"></span>
+<span class="c">%    both arguments. The vectors TLIM and XLIM define the bounds of the </span><span class="w"></span>
+<span class="c">%    plot in their respective directions.</span><span class="w"></span>
 <span class="c">%</span><span class="w"></span>
-<span class="c">%    SLOPEFIELD(F,G,XLIM,YLIM) plots arrows in the (x,y) plane that</span><span class="w"></span>
+<span class="c">%    DIRFIELD(F,G,XLIM,YLIM) plots arrows in the (x,y) plane that</span><span class="w"></span>
 <span class="c">%    represent the slope field of the ODE system </span><span class="w"></span>
 <span class="c">% </span><span class="w"></span>
 <span class="c">%       dx/dt = f(x,y),  dy/dt = g(x,y). </span><span class="w"></span>
@@ -563,17 +559,17 @@
 <span class="c">%</span><span class="w"></span>
 <span class="c">%    Examples:</span><span class="w"></span>
 <span class="c">%</span><span class="w"></span>
-<span class="c">%       slopefield(@(t,y) y,[0 3],[-1 1])</span><span class="w"></span>
+<span class="c">%       dirfield(@(t,y) y,[0 3],[-1 1])</span><span class="w"></span>
 <span class="c">%</span><span class="w"></span>
-<span class="c">%       slopefield(@(t,y) t^2-y,[0 2],[-1 1])</span><span class="w"></span>
+<span class="c">%       dirfield(@(t,y) t^2-y,[0 2],[-1 1])</span><span class="w"></span>
 <span class="c">%</span><span class="w"></span>
 <span class="c">%       f = @(x,y) 3*x - x*y/2;</span><span class="w"></span>
 <span class="c">%       g = @(x,y) -y + x*y/4;</span><span class="w"></span>
-<span class="c">%       slopefield(f,g,[0 10],[0 12])</span><span class="w"></span>
+<span class="c">%       dirfield(f,g,[0 10],[0 12])</span><span class="w"></span>
 <span class="c">%</span><span class="w"></span>
 <span class="c">%    See also QUIVER.</span><span class="w"></span>
 
-<span class="c">% Copyright 2019 by Toby Driscoll. Free for non-commerical use. </span><span class="w"></span>
+<span class="c">% Copyright 2021 by Toby Driscoll. Free for non-commercial use. </span><span class="w"></span>
 
 <span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">varargin</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">};</span><span class="w"></span>
 <span class="k">if</span><span class="w"> </span><span class="nb">isnumeric</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="w">    </span><span class="c">% y&#39;=f(t,y)</span><span class="w"></span>
@@ -589,7 +585,7 @@
 <span class="w">    </span><span class="n">denorm</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="nb">nargin</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">drawfield</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="nb">xlim</span><span class="p">,</span><span class="nb">ylim</span><span class="p">,</span><span class="n">denorm</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="nb">xlabel</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
-<span class="w">    </span><span class="nb">title</span><span class="p">([</span><span class="s">&#39;Slope field for x&#39;&#39;=&#39;</span><span class="p">,</span><span class="nb">func2str</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s">&#39;, y&#39;&#39;=&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">func2str</span><span class="p">(</span><span class="n">g</span><span class="p">)])</span><span class="w"></span>
+<span class="w">    </span><span class="nb">title</span><span class="p">([</span><span class="s">&#39;Direction field for x&#39;&#39;=&#39;</span><span class="p">,</span><span class="nb">func2str</span><span class="p">(</span><span class="n">f</span><span class="p">),</span><span class="s">&#39;, y&#39;&#39;=&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">func2str</span><span class="p">(</span><span class="n">g</span><span class="p">)])</span><span class="w"></span>
 <span class="k">end</span><span class="w"></span>
 <span class="k">end</span><span class="w"></span>
 
@@ -618,11 +614,11 @@
 </pre></div>
 </div>
 </div>
+<p>For instance, the logistic equation <span class="math notranslate nohighlight">\(x'=ax-bx^2\)</span> can be visualized for <span class="math notranslate nohighlight">\(a=3, \)</span>b=2$ via</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="p">;</span><span class="w">   </span><span class="n">G</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-
-<span class="n">slopefield</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">])</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>^<span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="n">dirfield</span><span class="p">(</span><span class="n">f</span><span class="p">,[</span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="p">],[</span><span class="mi">0</span><span class="w"> </span><span class="mf">1.6</span><span class="p">])</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -630,6 +626,58 @@
 <img alt="../_images/direction_2_0.png" src="../_images/direction_2_0.png" />
 </div>
 </div>
+<p>Since the logistic equation is autonomous, the picture is the same along every vertical line. Here you can clearly see the instability of <span class="math notranslate nohighlight">\(\hat{x}=0\)</span> and asymptotic stability of <span class="math notranslate nohighlight">\(\hat{x}=K=1.5\)</span>.</p>
+<p>Here is a direction field for <span class="math notranslate nohighlight">\(x'=t-x^2\)</span>. Note that the arrows are horizontal along the sideways parabola <span class="math notranslate nohighlight">\(t=x^2\)</span>, because that is where the slope is zero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="o">-</span><span class="n">x</span>^<span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="n">dirfield</span><span class="p">(</span><span class="n">f</span><span class="p">,[</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">])</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/direction_4_0.png" src="../_images/direction_4_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="autonomous-2d-equations">
+<h2><span class="section-number">5.2. </span>Autonomous 2D equations<a class="headerlink" href="#autonomous-2d-equations" title="Permalink to this headline">¶</a></h2>
+<p>An autonomous system in two dimensions has the particular form</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	\dd{x_1}{t} &amp; = f_1(x_1,x_2), \\
+	\dd{x_2}{t} &amp; = f_2(x_1,x_2), \\
+\end{align*}\]</div>
+<p>or, if we prefer to name <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> as <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	\dd{x}{t} &amp; = F(x,y), \\
+	\dd{y}{t} &amp; = G(x,y). \\
+\end{align*}\]</div>
+<p>In this case we interpret a solution <span class="math notranslate nohighlight">\([x(t),y(t)]\)</span> as a curve in the <span class="math notranslate nohighlight">\(x-y\)</span> plane parameterized by <span class="math notranslate nohighlight">\(t\)</span>. The tangent vector to this curve is</p>
+<div class="math notranslate nohighlight">
+\[
+\bigl[ x'(t),y'(t) \bigr] = \bigl[ F(x,y), G(x,y) \bigr].
+\]</div>
+<p>This quantity can be drawn as a vector field in the <span class="math notranslate nohighlight">\(x-y\)</span> plane, without knowing the solution.</p>
+<p>For instance, here is a direction field for the linear ODE system</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\dd{x}{t} &amp; = -y,\\
+\dd{y}{t} &amp; = x.
+\end{align*}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="p">;</span><span class="w">   </span><span class="n">G</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="n">dirfield</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">])</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/direction_6_0.png" src="../_images/direction_6_0.png" />
+</div>
+</div>
+<p>Based on this picture, we should expect to see solutions circulating around the origin. In fact, this system is <span class="math notranslate nohighlight">\(\bfx'=\bfA\bfx\)</span> with matrix <span class="math notranslate nohighlight">\(\bfA=\twomat{0}{-1}{1}{0}\)</span>, and the origin is a center.</p>
 <p>Here is a slope field in the first quadrant for the nonlinear system</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -641,41 +689,14 @@
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="mi">3</span><span class="o">.*</span><span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">.*</span><span class="n">y</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
 <span class="n">G</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="o">.*</span><span class="n">y</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">slopefield</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,[</span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="p">],[</span><span class="mi">0</span><span class="w"> </span><span class="mi">12</span><span class="p">])</span><span class="w"></span>
+<span class="n">dirfield</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,[</span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="p">],[</span><span class="mi">0</span><span class="w"> </span><span class="mi">12</span><span class="p">])</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/direction_4_0.png" src="../_images/direction_4_0.png" />
+<img alt="../_images/direction_8_0.png" src="../_images/direction_8_0.png" />
 </div>
 </div>
-<div class="section" id="nonautonomous-scalar-problems">
-<h2><span class="section-number">5.1. </span>Nonautonomous scalar problems<a class="headerlink" href="#nonautonomous-scalar-problems" title="Permalink to this headline">¶</a></h2>
-<p>We can use a simple trick to create direction fields for the nonautonomous scalar problem</p>
-<div class="math notranslate nohighlight">
-\[
-x'=f(t,x)
-\]</div>
-<p>as well. Introducing the variables <span class="math notranslate nohighlight">\(u_1=t\)</span> and <span class="math notranslate nohighlight">\(u_2=x\)</span>, we have</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-\dd{u_1}{t} &amp; = 1, \\
-\dd{u_2}{t} &amp; = f(u_1,u_2),
-\end{align*}\]</div>
-<p>which has the form of a two-dimensional autonomous system.</p>
-<p>Here is a direction field for <span class="math notranslate nohighlight">\(x'=t-x^2\)</span>. Note that the arrows are horizontal along the sideways parabola <span class="math notranslate nohighlight">\(t=x^2\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="o">-</span><span class="n">x</span>^<span class="mi">2</span><span class="p">;</span><span class="w"></span>
-<span class="n">slopefield</span><span class="p">(</span><span class="n">f</span><span class="p">,[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">])</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/direction_6_0.png" src="../_images/direction_6_0.png" />
-</div>
-</div>
-<p>Direction fields are useful to get an overall sense of how a small system or scalar problem behaves.</p>
 </div>
 </div>
 

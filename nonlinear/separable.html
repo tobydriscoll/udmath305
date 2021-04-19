@@ -540,10 +540,10 @@ Solution<div class="summary-down docutils">
 \[
 \frac{1}{4}x^4 - 2x  = C + \frac{1}{3}t^3.
 \]</div>
-<p class="card-text">We could work hard to try to solve explicitly for <span class="math notranslate nohighlight">\(x\)</span>, but it’s probably best to leave it in implicit form. This is a common limitation of separable solutions. Even in implicit form, though, we can solve for the arbitrary constant by setting <span class="math notranslate nohighlight">\(x=4\)</span> and <span class="math notranslate nohighlight">\(t=0\)</span>:</p>
+<p class="card-text">We could work hard to try to solve explicitly for <span class="math notranslate nohighlight">\(x\)</span>, but it’s probably best to leave it in implicit form. This is a common limitation of separable solutions. Even in implicit form, though, we can solve for the arbitrary constant by setting <span class="math notranslate nohighlight">\(x=4\)</span> and <span class="math notranslate nohighlight">\(t=0\)</span> in the implicit equation, leading to</p>
 <div class="math notranslate nohighlight">
 \[
-4^4/4 - 2 \cdot 4 = C + 0$, 
+4^4/4 - 2 \cdot 4 = C + 0.
 \]</div>
 <p class="card-text">Hence <span class="math notranslate nohighlight">\(C=56\)</span>.</p>
 </div>
@@ -572,8 +572,14 @@ Solution<div class="summary-down docutils">
 <p class="card-text">Thus <span class="math notranslate nohighlight">\(\ln|x| = \ln|t|-t+C\)</span>, or</p>
 <div class="math notranslate nohighlight">
 \[
-x=A t e^{-t}.
+|x| = e^C |t| e^{-t}.
 \]</div>
+<p class="card-text">Once we take off the absolute values, we have</p>
+<div class="math notranslate nohighlight">
+\[
+x= \pm A t e^{-t} \quad (A&gt;0).
+\]</div>
+<p class="card-text">We divided the equation through by <span class="math notranslate nohighlight">\(x\)</span> and therefore eliminated <span class="math notranslate nohighlight">\(x=0\)</span> as a possibility, so we need to check that separately. We easily see that <span class="math notranslate nohighlight">\(x\equiv 0\)</span> is a steady state, so <span class="math notranslate nohighlight">\(A=0\)</span> is allowed as well in our solution formula.</p>
 <p class="card-text">Note that this problem is also linear, so it could be approached that way as well. Of course you must get the same solution either way!</p>
 </div>
 </details></div>
