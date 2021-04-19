@@ -17,37 +17,27 @@ kernelspec:
 ---
 tags: ["hide-cell"]
 ---
-% nothing
+%
 ```
 
 # Direction fields
 
-An autonomous system in two dimensions has the particular form 
+For low-dimensional systems, there is a graphical tool known as a **direction field** that aids with estimating the behavior of solutions. 
 
-\begin{align*}
-	\dd{x_1}{t} & = f_1(x_1,x_2), \\
-	\dd{x_2}{t} & = f_2(x_1,x_2). \\
-\end{align*}
+## Scalar equations
 
-For such a system we can use a simple visualization to suggest solution behavior. For instance, here is a direction field for the linear ODE system
-
-\begin{align*}
-\dd{x}{t} & = -y,\\
-\dd{y}{t} & = x.
-\end{align*}
-
-We will use a custom function `slopefield.m`. 
+In the scalar equation $x'=f(t,x)$, $f$ gives the slope of any solution at any point in the $(t,x)$ plane. Hence, while it is usually not easy to draw solution curves, it is straightforward to draw the instantaneous slopes of them. We give MATLAB code for it here.
 
 ::::{toggle}
 :::{code-block} matlab
-function slopefield(varargin)
-% SLOPEFIELD Plot a slope field (aka direction field).
-%    SLOPEFIELD(F,TLIM,YLIM) plots arrows in the (t,y) plane that represent
+function dirfield(varargin)
+% DIRFIELD Plot a direction field.
+%    DIRFIELD(F,TLIM,XLIM) plots arrows in the (t,x) plane that represent
 %    the slope field of the ODE dydt = F(t,y). The function F must accept
-%    both arguments. The vectors TLIM and
-%    YLIM define the bounds of the plot in their respective directions.
+%    both arguments. The vectors TLIM and XLIM define the bounds of the 
+%    plot in their respective directions.
 %
-%    SLOPEFIELD(F,G,XLIM,YLIM) plots arrows in the (x,y) plane that
+%    DIRFIELD(F,G,XLIM,YLIM) plots arrows in the (x,y) plane that
 %    represent the slope field of the ODE system 
 % 
 %       dx/dt = f(x,y),  dy/dt = g(x,y). 
@@ -62,17 +52,17 @@ function slopefield(varargin)
 %
 %    Examples:
 %
-%       slopefield(@(t,y) y,[0 3],[-1 1])
+%       dirfield(@(t,y) y,[0 3],[-1 1])
 %
-%       slopefield(@(t,y) t^2-y,[0 2],[-1 1])
+%       dirfield(@(t,y) t^2-y,[0 2],[-1 1])
 %
 %       f = @(x,y) 3*x - x*y/2;
 %       g = @(x,y) -y + x*y/4;
-%       slopefield(f,g,[0 10],[0 12])
+%       dirfield(f,g,[0 10],[0 12])
 %
 %    See also QUIVER.
 
-% Copyright 2019 by Toby Driscoll. Free for non-commerical use. 
+% Copyright 2021 by Toby Driscoll. Free for non-commercial use. 
 
 [f,g] = varargin{1:2};
 if isnumeric(g)    % y'=f(t,y)
@@ -88,7 +78,7 @@ else               % x'=f(x,y), y'=g(x,y)
     denorm = (nargin > 4);
     drawfield(f,g,xlim,ylim,denorm)
     xlabel x, ylabel y
-    title(['Slope field for x''=',func2str(f),', y''=', func2str(g)])
+    title(['Direction field for x''=',func2str(f),', y''=', func2str(g)])
 end
 end
 
@@ -117,11 +107,62 @@ end
 :::
 ::::
 
+
+For instance, the logistic equation $x'=ax-bx^2$ can be visualized for $a=3$, $b=2$ via
+
+```{code-cell}
+f = @(t,x) 3*x-2*x^2;
+dirfield(f,[0 2],[0 1.6])
+```
+
+Since the logistic equation is autonomous, the picture is the same along every vertical line. Here you can clearly see the instability of $\hat{x}=0$ and asymptotic stability of $\hat{x}=K=1.5$. 
+
+Here is a direction field for $x'=t-x^2$. Note that the arrows are horizontal along the sideways parabola $t=x^2$, because that is where the slope is zero. 
+
+```{code-cell}
+f = @(t,x) t-x^2;
+dirfield(f,[-1 2],[-2 2])
+```
+
+## Autonomous 2D equations
+
+An autonomous system in two dimensions has the particular form 
+
+\begin{align*}
+	\dd{x_1}{t} & = f_1(x_1,x_2), \\
+	\dd{x_2}{t} & = f_2(x_1,x_2), \\
+\end{align*}
+
+or, if we prefer to name $x_1$ and $x_2$ as $x$ and $y$,
+
+\begin{align*}
+	\dd{x}{t} & = F(x,y), \\
+	\dd{y}{t} & = G(x,y). \\
+\end{align*}
+
+In this case we interpret a solution $[x(t),y(t)]$ as a curve in the $x-y$ plane parameterized by $t$. The tangent vector to this curve is
+
+$$
+\bigl[ x'(t),y'(t) \bigr] = \bigl[ F(x,y), G(x,y) \bigr].
+$$
+
+This quantity can be drawn as a vector field in the $x-y$ plane, without knowing the solution.
+
+
+For instance, here is a direction field for the linear ODE system
+
+\begin{align*}
+\dd{x}{t} & = -y,\\
+\dd{y}{t} & = x.
+\end{align*}
+
+
 ```{code-cell}
 F = @(x,y) -y;   G = @(x,y) x;
-
-slopefield(F,G,[-2 2],[-2 2])
+dirfield(F,G,[-2 2],[-2 2])
 ```
+
+Based on this picture, we should expect to see solutions circulating around the origin. In fact, this system is $\bfx'=\bfA\bfx$ with matrix $\bfA=\twomat{0}{-1}{1}{0}$, and the origin is a center.
 
 Here is a slope field in the first quadrant for the nonlinear system
 
@@ -134,31 +175,5 @@ Here is a slope field in the first quadrant for the nonlinear system
 F = @(x,y) 3.*x-x.*y/2;
 G = @(x,y) -y + x.*y/4;
 
-slopefield(F,G,[0 10],[0 12])
+dirfield(F,G,[0 10],[0 12])
 ```
-
-## Nonautonomous scalar problems
-
-We can use a simple trick to create direction fields for the nonautonomous scalar problem 
-
-$$
-x'=f(t,x)
-$$ 
-
-as well. Introducing the variables $u_1=t$ and $u_2=x$, we have 
-
-\begin{align*}
-\dd{u_1}{t} & = 1, \\
-\dd{u_2}{t} & = f(u_1,u_2),
-\end{align*}
-
-which has the form of a two-dimensional autonomous system. 
-
-Here is a direction field for $x'=t-x^2$. Note that the arrows are horizontal along the sideways parabola $t=x^2$. 
-
-```{code-cell}
-f = @(t,x) t-x^2;
-slopefield(f,[-2 2],[-2 2])
-```
-
-Direction fields are useful to get an overall sense of how a small system or scalar problem behaves.
