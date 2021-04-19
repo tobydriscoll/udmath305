@@ -108,7 +108,7 @@ end
 ::::
 
 
-For instance, the logistic equation $x'=ax-bx^2$ can be visualized for $a=3, $b=2$ via
+For instance, the logistic equation $x'=ax-bx^2$ can be visualized for $a=3$, $b=2$ via
 
 ```{code-cell}
 f = @(t,x) 3*x-2*x^2;
