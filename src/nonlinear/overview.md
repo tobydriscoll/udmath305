@@ -9,5 +9,9 @@ As with linear problems, nonlinear ODEs of order higher than one can be converte
 **Terms in this part**
 
 :::{glossary}
+Jacobian matrix
+  Matrix of first partial derivatives of a nonlinear vector-valued function.
+
 phase line diagram
   Plot for a scalar autonomous equation that reveals steady states and their stability.
+:::
