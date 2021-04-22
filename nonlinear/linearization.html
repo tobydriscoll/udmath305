@@ -528,23 +528,23 @@
 	\dd{x}{t} &amp; = F(x,y), \\
 	\dd{y}{t} &amp; = G(x,y).
 \end{align*}\]</div>
-<p>As we did with single scalar equations, we will pay close attention to steady states or fixed points of these systems. Here this means finding constants <span class="math notranslate nohighlight">\((\hat{x},y_*)\)</span> such that</p>
+<p>As we did with single scalar equations, we will pay close attention to steady states or fixed points of these systems. Here this means finding constants <span class="math notranslate nohighlight">\((\hat{x},\hat{y})\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
-F(\hat{x},y_*)=G(\hat{x},y_*)=0.
+F(\hat{x},\hat{y})=G(\hat{x},\hat{y})=0.
 \]</div>
 <p>For the nonlinear pendulum, both <span class="math notranslate nohighlight">\((0,0)\)</span> (straight down, at rest) and <span class="math notranslate nohighlight">\((\pi,0)\)</span> (straight up, at rest) are steady states.</p>
 <p>We are interested in the stability of fixed points, i.e., the dynamics close to them. We will use linear approximations of the functions <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(G\)</span> near a fixed point:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-	F(x,y) &amp; \approx F(\hat{x},y_*) + \pp{F}{x}\cdot (x-\hat{x}) + \pp{F}{y} \cdot (y-y_*),\\
-	G(x,y) &amp; \approx G(\hat{x},y_*) + \pp{G}{x} \cdot (x-\hat{x}) + \pp{G}{y} \cdot (y-y_*),\\
+	F(x,y) &amp; \approx F(\hat{x},\hat{y}) + \pp{F}{x}\cdot (x-\hat{x}) + \pp{F}{y} \cdot (y-\hat{y}),\\
+	G(x,y) &amp; \approx G(\hat{x},\hat{y}) + \pp{G}{x} \cdot (x-\hat{x}) + \pp{G}{y} \cdot (y-\hat{y}),\\
 \end{align*}\]</div>
-<p>where it is understood for brevity that the partial derivatives are all evaluated at <span class="math notranslate nohighlight">\((\hat{x},y_*)\)</span>. Given that <span class="math notranslate nohighlight">\((\hat{x},y_*)\)</span> is a fixed point, <span class="math notranslate nohighlight">\(F(\hat{x},y_*)=G(\hat{x},y_*)=0\)</span>.</p>
+<p>where it is understood for brevity that the partial derivatives are all evaluated at <span class="math notranslate nohighlight">\((\hat{x},\hat{y})\)</span>. Given that <span class="math notranslate nohighlight">\((\hat{x},\hat{y})\)</span> is a fixed point, <span class="math notranslate nohighlight">\(F(\hat{x},\hat{y})=G(\hat{x},\hat{y})=0\)</span>.</p>
 <p>Now define</p>
 <div class="math notranslate nohighlight">
 \[
-u_1(t)=x(t)-\hat{x},\quad u_2(t)=y(t)-y_*.
+u_1(t)=x(t)-\hat{x},\quad u_2(t)=y(t)-\hat{y}.
 \]</div>
 <p>Then</p>
 <div class="amsmath math notranslate nohighlight">
@@ -561,13 +561,13 @@ u_1(t)=x(t)-\hat{x},\quad u_2(t)=y(t)-y_*.
             <span class="proof-title-name">(Jacobian matrix)</span>
         
     </div><div class="proof-content">
-<p>The <span class="xref std std-term">Jacobian matrix</span> of the system <span class="math notranslate nohighlight">\(x'=F(x,y),\, y'=G(x,y)\)</span> is</p>
+<p>The <a class="reference internal" href="overview.html#term-Jacobian-matrix"><span class="xref std std-term">Jacobian matrix</span></a> of the system <span class="math notranslate nohighlight">\(x'=F(x,y),\, y'=G(x,y)\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-nl-eq-jacobian">
 <span class="eqno">(6.4)<a class="headerlink" href="#equation-nl-eq-jacobian" title="Permalink to this equation">¶</a></span>\[\mathbf{J}(x,y) = \twomat{\displaystyle \pp{F}{x}}{\displaystyle \pp{F}{y}}{\displaystyle \pp{G}{x}}{\displaystyle \pp{G}{y}}.\]</div>
 </div></div><p>The Jacobian matrix is essentially the derivative of a 2D vector field. As such, it is also a function of the variables <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <div class="section" id="stability">
 <h2><span class="section-number">6.1. </span>Stability<a class="headerlink" href="#stability" title="Permalink to this headline">¶</a></h2>
-<p>Let’s summarize. In the neighborhood of a fixed point <span class="math notranslate nohighlight">\((\hat{x},y_*)\)</span>, we can define the <em>deviation from equilibrium</em> by the variables <span class="math notranslate nohighlight">\(u_1(t)=x(t)-\hat{x}\)</span>, <span class="math notranslate nohighlight">\(u_2(t)=y(t)-y_*\)</span>. These variables approximately satisfy <span class="math notranslate nohighlight">\(\mathbf{u}'=\mathbf{J}(\hat{x},y_*)\mathbf{u}\)</span>, which is a linear, constant-coefficient system in two dimensions. Thus, <strong>near a steady state, dynamics are mostly linear.</strong></p>
+<p>Let’s summarize. In the neighborhood of a fixed point <span class="math notranslate nohighlight">\((\hat{x},\hat{y})\)</span>, we can define the <em>deviation from equilibrium</em> by the variables <span class="math notranslate nohighlight">\(u_1(t)=x(t)-\hat{x}\)</span>, <span class="math notranslate nohighlight">\(u_2(t)=y(t)-\hat{y}\)</span>. These variables approximately satisfy <span class="math notranslate nohighlight">\(\mathbf{u}'=\mathbf{J}(\hat{x},\hat{y})\mathbf{u}\)</span>, which is a linear, constant-coefficient system in two dimensions. Thus, <strong>near a steady state, dynamics are mostly linear.</strong></p>
 <p>We are now right back into the phase plane we studied earlier. In particular:</p>
 <div class="proof proof-type-observation">
 
@@ -585,7 +585,7 @@ u_1(t)=x(t)-\hat{x},\quad u_2(t)=y(t)-y_*.
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 	\dd{x}{t} &amp; = y, \\
-	\dd{y}{t} &amp; = -\frac{g}{L}\sin(x) - \gamma y\.
+	\dd{y}{t} &amp; = -\frac{g}{L}\sin(x) - \gamma y.
 \end{align*}\]</div>
 <p>These define <span class="math notranslate nohighlight">\(F(x,y)\)</span> and <span class="math notranslate nohighlight">\(G(x,y)\)</span>. From here we note all the first partial derivatives:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -598,13 +598,18 @@ u_1(t)=x(t)-\hat{x},\quad u_2(t)=y(t)-y_*.
 \[\begin{split}\begin{bmatrix} 
 0 &amp; 1 \\ -g/L &amp; -\gamma
 \end{bmatrix}.\end{split}\]</div>
-<p>We get <span class="math notranslate nohighlight">\(T=-\gamma &lt; 0\)</span> and <span class="math notranslate nohighlight">\(D=g/L &gt; 0\)</span>, which is a stable sink. That comports with our experience with a pendulum hanging straight down!</p>
+<p>The eigenvalues are roots of <span class="math notranslate nohighlight">\(\lambda^2 +\gamma \lambda + \frac{g}{L}\)</span>, the same as a linear oscillator with <span class="math notranslate nohighlight">\(\omega_0 = \sqrt{g/L}\)</span> and <span class="math notranslate nohighlight">\(Z = \gamma/2\omega_0\)</span>. If <span class="math notranslate nohighlight">\(Z&lt;1\)</span>, we get a stable spiral. If <span class="math notranslate nohighlight">\(Z\ge 1\)</span>, we get a stable node. This all agrees well with our experience with a pendulum hanging straight down.</p>
 <p>The other steady state is at <span class="math notranslate nohighlight">\((\pi,0)\)</span>. Now the Jacobian is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix} 
 0 &amp; 1 \\ g/L &amp; -\gamma
 \end{bmatrix},\end{split}\]</div>
-<p>with <span class="math notranslate nohighlight">\(T=-\gamma\)</span> and <span class="math notranslate nohighlight">\(D=-g/L\)</span>. This implies a saddle point, so the inverted pendulum is indeed unstable.</p>
+<p>with characteristic polynomial <span class="math notranslate nohighlight">\(\lambda^2 + \gamma \lambda - \frac{g}{L}\)</span>. The eigenvalues are</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_1 = -\gamma + \sqrt{\gamma^2+4\frac{g}{L}}, \quad \lambda_2 = -\gamma - \sqrt{\gamma^2+4\frac{g}{L}}.
+\]</div>
+<p>It’s obvious that <span class="math notranslate nohighlight">\(\lambda_2 &lt; 0\)</span>. Since <span class="math notranslate nohighlight">\(\gamma^2+4\frac{g}{L} &gt; \gamma^2\)</span>, it follows that <span class="math notranslate nohighlight">\(\lambda_1 &gt; 0\)</span>. Hence this equilibrium is a saddle point.</p>
 </div>
 <p>The caveat on using eigenvalues for stability is when they both have zero real part, which is weakly stable in the linear sense. In such cases the details of the nonlinear terms of the system can swing the stability either way.</p>
 <div class="tip admonition">

@@ -31,10 +31,10 @@ This trick works for any nonlinear second-order equation $\theta''=g(t,\theta,\t
 \end{align*}
 
 
-As we did with single scalar equations, we will pay close attention to steady states or fixed points of these systems. Here this means finding constants $(\hat{x},y_*)$ such that 
+As we did with single scalar equations, we will pay close attention to steady states or fixed points of these systems. Here this means finding constants $(\hat{x},\hat{y})$ such that 
 
 $$
-F(\hat{x},y_*)=G(\hat{x},y_*)=0.
+F(\hat{x},\hat{y})=G(\hat{x},\hat{y})=0.
 $$
 
 For the nonlinear pendulum, both $(0,0)$ (straight down, at rest) and $(\pi,0)$ (straight up, at rest) are steady states. 
@@ -42,16 +42,16 @@ For the nonlinear pendulum, both $(0,0)$ (straight down, at rest) and $(\pi,0)$ 
 We are interested in the stability of fixed points, i.e., the dynamics close to them. We will use linear approximations of the functions $F$ and $G$ near a fixed point:
 
 \begin{align*}
-	F(x,y) & \approx F(\hat{x},y_*) + \pp{F}{x}\cdot (x-\hat{x}) + \pp{F}{y} \cdot (y-y_*),\\
-	G(x,y) & \approx G(\hat{x},y_*) + \pp{G}{x} \cdot (x-\hat{x}) + \pp{G}{y} \cdot (y-y_*),\\
+	F(x,y) & \approx F(\hat{x},\hat{y}) + \pp{F}{x}\cdot (x-\hat{x}) + \pp{F}{y} \cdot (y-\hat{y}),\\
+	G(x,y) & \approx G(\hat{x},\hat{y}) + \pp{G}{x} \cdot (x-\hat{x}) + \pp{G}{y} \cdot (y-\hat{y}),\\
 \end{align*}
 
-where it is understood for brevity that the partial derivatives are all evaluated at $(\hat{x},y_*)$. Given that $(\hat{x},y_*)$ is a fixed point, $F(\hat{x},y_*)=G(\hat{x},y_*)=0$. 
+where it is understood for brevity that the partial derivatives are all evaluated at $(\hat{x},\hat{y})$. Given that $(\hat{x},\hat{y})$ is a fixed point, $F(\hat{x},\hat{y})=G(\hat{x},\hat{y})=0$. 
 
 Now define 
 
 $$
-u_1(t)=x(t)-\hat{x},\quad u_2(t)=y(t)-y_*.
+u_1(t)=x(t)-\hat{x},\quad u_2(t)=y(t)-\hat{y}.
 $$
 
 Then 
@@ -81,7 +81,7 @@ The Jacobian matrix is essentially the derivative of a 2D vector field. As such,
 
 ## Stability
 
-Let's summarize. In the neighborhood of a fixed point $(\hat{x},y_*)$, we can define the *deviation from equilibrium* by the variables $u_1(t)=x(t)-\hat{x}$, $u_2(t)=y(t)-y_*$. These variables approximately satisfy $\mathbf{u}'=\mathbf{J}(\hat{x},y_*)\mathbf{u}$, which is a linear, constant-coefficient system in two dimensions. Thus, **near a steady state, dynamics are mostly linear.** 
+Let's summarize. In the neighborhood of a fixed point $(\hat{x},\hat{y})$, we can define the *deviation from equilibrium* by the variables $u_1(t)=x(t)-\hat{x}$, $u_2(t)=y(t)-\hat{y}$. These variables approximately satisfy $\mathbf{u}'=\mathbf{J}(\hat{x},\hat{y})\mathbf{u}$, which is a linear, constant-coefficient system in two dimensions. Thus, **near a steady state, dynamics are mostly linear.** 
 
 We are now right back into the phase plane we studied earlier. In particular: 
 
@@ -102,7 +102,7 @@ with $\gamma > 0$. It transforms into the first-order system
 
 \begin{align*}
 	\dd{x}{t} & = y, \\
-	\dd{y}{t} & = -\frac{g}{L}\sin(x) - \gamma y\.
+	\dd{y}{t} & = -\frac{g}{L}\sin(x) - \gamma y.
 \end{align*}
 
 These define $F(x,y)$ and $G(x,y)$. From here we note all the first partial derivatives: 
@@ -120,7 +120,7 @@ The first steady state we consider is at the origin. Here the Jacobian matrix is
 \end{bmatrix}.
 :::
 
-We get $T=-\gamma < 0$ and $D=g/L > 0$, which is a stable sink. That comports with our experience with a pendulum hanging straight down!
+The eigenvalues are roots of $\lambda^2 +\gamma \lambda + \frac{g}{L}$, the same as a linear oscillator with $\omega_0 = \sqrt{g/L}$ and $Z = \gamma/2\omega_0$. If $Z<1$, we get a stable spiral. If $Z\ge 1$, we get a stable node. This all agrees well with our experience with a pendulum hanging straight down.
 
 The other steady state is at $(\pi,0)$. Now the Jacobian is
 
@@ -130,7 +130,13 @@ The other steady state is at $(\pi,0)$. Now the Jacobian is
 \end{bmatrix},
 :::
 
-with $T=-\gamma$ and $D=-g/L$. This implies a saddle point, so the inverted pendulum is indeed unstable. 
+with characteristic polynomial $\lambda^2 + \gamma \lambda - \frac{g}{L}$. The eigenvalues are 
+
+$$
+\lambda_1 = -\gamma + \sqrt{\gamma^2+4\frac{g}{L}}, \quad \lambda_2 = -\gamma - \sqrt{\gamma^2+4\frac{g}{L}}.
+$$
+
+It's obvious that $\lambda_2 < 0$. Since $\gamma^2+4\frac{g}{L} > \gamma^2$, it follows that $\lambda_1 > 0$. Hence this equilibrium is a saddle point.
 ::::
 
 The caveat on using eigenvalues for stability is when they both have zero real part, which is weakly stable in the linear sense. In such cases the details of the nonlinear terms of the system can swing the stability either way. 
