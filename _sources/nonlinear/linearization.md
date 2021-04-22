@@ -136,7 +136,7 @@ $$
 \lambda_1 = -\gamma + \sqrt{\gamma^2+4\frac{g}{L}}, \quad \lambda_2 = -\gamma - \sqrt{\gamma^2+4\frac{g}{L}}.
 $$
 
-It's obvious that $\lambda_2 < 0$. Since $\gamma^2+4\frac{g}{L} > \gamma^2$, it follows that $\lambda_1 > 0$. Hence this equilibrium is a saddle point.
+It's obvious that $\lambda_2 < 0$. Since $\gamma^2+\frac{4g}{L} > \gamma^2$, it follows that $\lambda_1 > 0$. Hence this equilibrium is a saddle point.
 ::::
 
 The caveat on using eigenvalues for stability is when they both have zero real part, which is weakly stable in the linear sense. In such cases the details of the nonlinear terms of the system can swing the stability either way. 
@@ -184,3 +184,5 @@ However, as we zoom out, the nonlinearity of the system makes its influence felt
 
 For a different system, however, the nonlinearity could cause this point to be asymptotically stable or unstable.
 ::::
+
+<div style="max-width:608px"><div style="position:relative;padding-bottom:66.118421052632%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2358381/sp/235838100/embedIframeJs/uiconf_id/43030021/partner_id/2358381?iframeembed=true&playerId=kaltura_player&entry_id=1_703u26n1&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_kplxqi9v" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
